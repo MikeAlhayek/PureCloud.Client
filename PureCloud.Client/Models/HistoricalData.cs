@@ -65,7 +65,7 @@ public partial class HistoricalData : IEquatable<HistoricalData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalData);
+        return Equals(obj as HistoricalData);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class HistoricalData : IEquatable<HistoricalData>
 
         return true &&
             (
-                this.Daily == other.Daily ||
-                this.Daily != null &&
-                this.Daily.Equals(other.Daily)
+                Daily == other.Daily ||
+                Daily != null &&
+                Daily.Equals(other.Daily)
             ) &&
             (
-                this.QuarterHour == other.QuarterHour ||
-                this.QuarterHour != null &&
-                this.QuarterHour.Equals(other.QuarterHour)
+                QuarterHour == other.QuarterHour ||
+                QuarterHour != null &&
+                QuarterHour.Equals(other.QuarterHour)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class HistoricalData : IEquatable<HistoricalData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Daily != null)
+            if (Daily != null)
             {
-                hash = hash * 59 + this.Daily.GetHashCode();
+                hash = hash * 59 + Daily.GetHashCode();
             }
 
-            if (this.QuarterHour != null)
+            if (QuarterHour != null)
             {
-                hash = hash * 59 + this.QuarterHour.GetHashCode();
+                hash = hash * 59 + QuarterHour.GetHashCode();
             }
 
             return hash;

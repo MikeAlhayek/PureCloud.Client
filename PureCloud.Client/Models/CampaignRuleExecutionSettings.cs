@@ -97,7 +97,7 @@ public partial class CampaignRuleExecutionSettings : IEquatable<CampaignRuleExec
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignRuleExecutionSettings);
+        return Equals(obj as CampaignRuleExecutionSettings);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class CampaignRuleExecutionSettings : IEquatable<CampaignRuleExec
 
         return true &&
             (
-                this.Frequency == other.Frequency ||
-                this.Frequency != null &&
-                this.Frequency.Equals(other.Frequency)
+                Frequency == other.Frequency ||
+                Frequency != null &&
+                Frequency.Equals(other.Frequency)
             ) &&
             (
-                this.TimeZoneId == other.TimeZoneId ||
-                this.TimeZoneId != null &&
-                this.TimeZoneId.Equals(other.TimeZoneId)
+                TimeZoneId == other.TimeZoneId ||
+                TimeZoneId != null &&
+                TimeZoneId.Equals(other.TimeZoneId)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class CampaignRuleExecutionSettings : IEquatable<CampaignRuleExec
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Frequency != null)
+            if (Frequency != null)
             {
-                hash = hash * 59 + this.Frequency.GetHashCode();
+                hash = hash * 59 + Frequency.GetHashCode();
             }
 
-            if (this.TimeZoneId != null)
+            if (TimeZoneId != null)
             {
-                hash = hash * 59 + this.TimeZoneId.GetHashCode();
+                hash = hash * 59 + TimeZoneId.GetHashCode();
             }
 
             return hash;

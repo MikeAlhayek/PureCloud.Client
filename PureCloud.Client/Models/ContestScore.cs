@@ -77,7 +77,7 @@ public partial class ContestScore : IEquatable<ContestScore>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestScore);
+        return Equals(obj as ContestScore);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ContestScore : IEquatable<ContestScore>
 
         return true &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             ) &&
             (
-                this.TotalPoints == other.TotalPoints ||
-                this.TotalPoints != null &&
-                this.TotalPoints.Equals(other.TotalPoints)
+                TotalPoints == other.TotalPoints ||
+                TotalPoints != null &&
+                TotalPoints.Equals(other.TotalPoints)
             ) &&
             (
-                this.PercentOfGoal == other.PercentOfGoal ||
-                this.PercentOfGoal != null &&
-                this.PercentOfGoal.Equals(other.PercentOfGoal)
+                PercentOfGoal == other.PercentOfGoal ||
+                PercentOfGoal != null &&
+                PercentOfGoal.Equals(other.PercentOfGoal)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ContestScore : IEquatable<ContestScore>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
-            if (this.TotalPoints != null)
+            if (TotalPoints != null)
             {
-                hash = hash * 59 + this.TotalPoints.GetHashCode();
+                hash = hash * 59 + TotalPoints.GetHashCode();
             }
 
-            if (this.PercentOfGoal != null)
+            if (PercentOfGoal != null)
             {
-                hash = hash * 59 + this.PercentOfGoal.GetHashCode();
+                hash = hash * 59 + PercentOfGoal.GetHashCode();
             }
 
             return hash;

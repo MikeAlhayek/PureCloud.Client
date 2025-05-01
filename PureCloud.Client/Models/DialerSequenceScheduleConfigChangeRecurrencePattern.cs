@@ -112,7 +112,7 @@ public partial class DialerSequenceScheduleConfigChangeRecurrencePattern : IEqua
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerSequenceScheduleConfigChangeRecurrencePattern);
+        return Equals(obj as DialerSequenceScheduleConfigChangeRecurrencePattern);
     }
 
     /// <summary>
@@ -130,24 +130,24 @@ public partial class DialerSequenceScheduleConfigChangeRecurrencePattern : IEqua
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.DaysOfWeek == other.DaysOfWeek ||
-                this.DaysOfWeek != null &&
-                this.DaysOfWeek.SequenceEqual(other.DaysOfWeek)
+                DaysOfWeek == other.DaysOfWeek ||
+                DaysOfWeek != null &&
+                DaysOfWeek.SequenceEqual(other.DaysOfWeek)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -162,24 +162,24 @@ public partial class DialerSequenceScheduleConfigChangeRecurrencePattern : IEqua
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.DaysOfWeek != null)
+            if (DaysOfWeek != null)
             {
-                hash = hash * 59 + this.DaysOfWeek.GetHashCode();
+                hash = hash * 59 + DaysOfWeek.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

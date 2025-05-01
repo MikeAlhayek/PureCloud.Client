@@ -71,7 +71,7 @@ public partial class ScimGenesysUserExternalId : IEquatable<ScimGenesysUserExter
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimGenesysUserExternalId);
+        return Equals(obj as ScimGenesysUserExternalId);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ScimGenesysUserExternalId : IEquatable<ScimGenesysUserExter
 
         return true &&
             (
-                this.Authority == other.Authority ||
-                this.Authority != null &&
-                this.Authority.Equals(other.Authority)
+                Authority == other.Authority ||
+                Authority != null &&
+                Authority.Equals(other.Authority)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ScimGenesysUserExternalId : IEquatable<ScimGenesysUserExter
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Authority != null)
+            if (Authority != null)
             {
-                hash = hash * 59 + this.Authority.GetHashCode();
+                hash = hash * 59 + Authority.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

@@ -189,7 +189,7 @@ public partial class SpeechTextAnalyticsConversationSummary : IEquatable<SpeechT
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SpeechTextAnalyticsConversationSummary);
+        return Equals(obj as SpeechTextAnalyticsConversationSummary);
     }
 
     /// <summary>
@@ -207,39 +207,39 @@ public partial class SpeechTextAnalyticsConversationSummary : IEquatable<SpeechT
 
         return true &&
             (
-                this.SummaryType == other.SummaryType ||
-                this.SummaryType != null &&
-                this.SummaryType.Equals(other.SummaryType)
+                SummaryType == other.SummaryType ||
+                SummaryType != null &&
+                SummaryType.Equals(other.SummaryType)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.AgentId == other.AgentId ||
-                this.AgentId != null &&
-                this.AgentId.Equals(other.AgentId)
+                AgentId == other.AgentId ||
+                AgentId != null &&
+                AgentId.Equals(other.AgentId)
             ) &&
             (
-                this.Summary == other.Summary ||
-                this.Summary != null &&
-                this.Summary.Equals(other.Summary)
+                Summary == other.Summary ||
+                Summary != null &&
+                Summary.Equals(other.Summary)
             ) &&
             (
-                this.Generated == other.Generated ||
-                this.Generated != null &&
-                this.Generated.Equals(other.Generated)
+                Generated == other.Generated ||
+                Generated != null &&
+                Generated.Equals(other.Generated)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             );
     }
 
@@ -254,39 +254,39 @@ public partial class SpeechTextAnalyticsConversationSummary : IEquatable<SpeechT
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SummaryType != null)
+            if (SummaryType != null)
             {
-                hash = hash * 59 + this.SummaryType.GetHashCode();
+                hash = hash * 59 + SummaryType.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.AgentId != null)
+            if (AgentId != null)
             {
-                hash = hash * 59 + this.AgentId.GetHashCode();
+                hash = hash * 59 + AgentId.GetHashCode();
             }
 
-            if (this.Summary != null)
+            if (Summary != null)
             {
-                hash = hash * 59 + this.Summary.GetHashCode();
+                hash = hash * 59 + Summary.GetHashCode();
             }
 
-            if (this.Generated != null)
+            if (Generated != null)
             {
-                hash = hash * 59 + this.Generated.GetHashCode();
+                hash = hash * 59 + Generated.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
             return hash;

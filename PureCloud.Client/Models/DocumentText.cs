@@ -145,7 +145,7 @@ public partial class DocumentText : IEquatable<DocumentText>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentText);
+        return Equals(obj as DocumentText);
     }
 
     /// <summary>
@@ -163,24 +163,24 @@ public partial class DocumentText : IEquatable<DocumentText>
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Marks == other.Marks ||
-                this.Marks != null &&
-                this.Marks.SequenceEqual(other.Marks)
+                Marks == other.Marks ||
+                Marks != null &&
+                Marks.SequenceEqual(other.Marks)
             ) &&
             (
-                this.Hyperlink == other.Hyperlink ||
-                this.Hyperlink != null &&
-                this.Hyperlink.Equals(other.Hyperlink)
+                Hyperlink == other.Hyperlink ||
+                Hyperlink != null &&
+                Hyperlink.Equals(other.Hyperlink)
             ) &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.Equals(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.Equals(other.Properties)
             );
     }
 
@@ -195,24 +195,24 @@ public partial class DocumentText : IEquatable<DocumentText>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Marks != null)
+            if (Marks != null)
             {
-                hash = hash * 59 + this.Marks.GetHashCode();
+                hash = hash * 59 + Marks.GetHashCode();
             }
 
-            if (this.Hyperlink != null)
+            if (Hyperlink != null)
             {
-                hash = hash * 59 + this.Hyperlink.GetHashCode();
+                hash = hash * 59 + Hyperlink.GetHashCode();
             }
 
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
             return hash;

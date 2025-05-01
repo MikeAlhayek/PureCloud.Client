@@ -103,7 +103,7 @@ public partial class RecordingTemplateHeader : IEquatable<RecordingTemplateHeade
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingTemplateHeader);
+        return Equals(obj as RecordingTemplateHeader);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class RecordingTemplateHeader : IEquatable<RecordingTemplateHeade
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Media == other.Media ||
-                this.Media != null &&
-                this.Media.Equals(other.Media)
+                Media == other.Media ||
+                Media != null &&
+                Media.Equals(other.Media)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class RecordingTemplateHeader : IEquatable<RecordingTemplateHeade
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Media != null)
+            if (Media != null)
             {
-                hash = hash * 59 + this.Media.GetHashCode();
+                hash = hash * 59 + Media.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class ValidateAddressResponse : IEquatable<ValidateAddressRespons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValidateAddressResponse);
+        return Equals(obj as ValidateAddressResponse);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ValidateAddressResponse : IEquatable<ValidateAddressRespons
 
         return true &&
             (
-                this.Valid == other.Valid ||
-                this.Valid != null &&
-                this.Valid.Equals(other.Valid)
+                Valid == other.Valid ||
+                Valid != null &&
+                Valid.Equals(other.Valid)
             ) &&
             (
-                this.Response == other.Response ||
-                this.Response != null &&
-                this.Response.Equals(other.Response)
+                Response == other.Response ||
+                Response != null &&
+                Response.Equals(other.Response)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ValidateAddressResponse : IEquatable<ValidateAddressRespons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Valid != null)
+            if (Valid != null)
             {
-                hash = hash * 59 + this.Valid.GetHashCode();
+                hash = hash * 59 + Valid.GetHashCode();
             }
 
-            if (this.Response != null)
+            if (Response != null)
             {
-                hash = hash * 59 + this.Response.GetHashCode();
+                hash = hash * 59 + Response.GetHashCode();
             }
 
             return hash;

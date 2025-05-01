@@ -58,7 +58,7 @@ public partial class ActionSurvey : IEquatable<ActionSurvey>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionSurvey);
+        return Equals(obj as ActionSurvey);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class ActionSurvey : IEquatable<ActionSurvey>
 
         return true &&
             (
-                this.Questions == other.Questions ||
-                this.Questions != null &&
-                this.Questions.SequenceEqual(other.Questions)
+                Questions == other.Questions ||
+                Questions != null &&
+                Questions.SequenceEqual(other.Questions)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class ActionSurvey : IEquatable<ActionSurvey>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Questions != null)
+            if (Questions != null)
             {
-                hash = hash * 59 + this.Questions.GetHashCode();
+                hash = hash * 59 + Questions.GetHashCode();
             }
 
             return hash;

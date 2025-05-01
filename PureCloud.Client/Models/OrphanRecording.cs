@@ -562,7 +562,7 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OrphanRecording);
+        return Equals(obj as OrphanRecording);
     }
 
     /// <summary>
@@ -580,84 +580,84 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.CreatedTime == other.CreatedTime ||
-                this.CreatedTime != null &&
-                this.CreatedTime.Equals(other.CreatedTime)
+                CreatedTime == other.CreatedTime ||
+                CreatedTime != null &&
+                CreatedTime.Equals(other.CreatedTime)
             ) &&
             (
-                this.RecoveredTime == other.RecoveredTime ||
-                this.RecoveredTime != null &&
-                this.RecoveredTime.Equals(other.RecoveredTime)
+                RecoveredTime == other.RecoveredTime ||
+                RecoveredTime != null &&
+                RecoveredTime.Equals(other.RecoveredTime)
             ) &&
             (
-                this.ProviderType == other.ProviderType ||
-                this.ProviderType != null &&
-                this.ProviderType.Equals(other.ProviderType)
+                ProviderType == other.ProviderType ||
+                ProviderType != null &&
+                ProviderType.Equals(other.ProviderType)
             ) &&
             (
-                this.MediaSizeBytes == other.MediaSizeBytes ||
-                this.MediaSizeBytes != null &&
-                this.MediaSizeBytes.Equals(other.MediaSizeBytes)
+                MediaSizeBytes == other.MediaSizeBytes ||
+                MediaSizeBytes != null &&
+                MediaSizeBytes.Equals(other.MediaSizeBytes)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.MediaSubtype == other.MediaSubtype ||
-                this.MediaSubtype != null &&
-                this.MediaSubtype.Equals(other.MediaSubtype)
+                MediaSubtype == other.MediaSubtype ||
+                MediaSubtype != null &&
+                MediaSubtype.Equals(other.MediaSubtype)
             ) &&
             (
-                this.MediaSubject == other.MediaSubject ||
-                this.MediaSubject != null &&
-                this.MediaSubject.Equals(other.MediaSubject)
+                MediaSubject == other.MediaSubject ||
+                MediaSubject != null &&
+                MediaSubject.Equals(other.MediaSubject)
             ) &&
             (
-                this.FileState == other.FileState ||
-                this.FileState != null &&
-                this.FileState.Equals(other.FileState)
+                FileState == other.FileState ||
+                FileState != null &&
+                FileState.Equals(other.FileState)
             ) &&
             (
-                this.ProviderEndpoint == other.ProviderEndpoint ||
-                this.ProviderEndpoint != null &&
-                this.ProviderEndpoint.Equals(other.ProviderEndpoint)
+                ProviderEndpoint == other.ProviderEndpoint ||
+                ProviderEndpoint != null &&
+                ProviderEndpoint.Equals(other.ProviderEndpoint)
             ) &&
             (
-                this.Recording == other.Recording ||
-                this.Recording != null &&
-                this.Recording.Equals(other.Recording)
+                Recording == other.Recording ||
+                Recording != null &&
+                Recording.Equals(other.Recording)
             ) &&
             (
-                this.OrphanStatus == other.OrphanStatus ||
-                this.OrphanStatus != null &&
-                this.OrphanStatus.Equals(other.OrphanStatus)
+                OrphanStatus == other.OrphanStatus ||
+                OrphanStatus != null &&
+                OrphanStatus.Equals(other.OrphanStatus)
             ) &&
             (
-                this.SourceOrphaningId == other.SourceOrphaningId ||
-                this.SourceOrphaningId != null &&
-                this.SourceOrphaningId.Equals(other.SourceOrphaningId)
+                SourceOrphaningId == other.SourceOrphaningId ||
+                SourceOrphaningId != null &&
+                SourceOrphaningId.Equals(other.SourceOrphaningId)
             ) &&
             (
-                this.Region == other.Region ||
-                this.Region != null &&
-                this.Region.Equals(other.Region)
+                Region == other.Region ||
+                Region != null &&
+                Region.Equals(other.Region)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -672,84 +672,84 @@ public partial class OrphanRecording : IEquatable<OrphanRecording>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.CreatedTime != null)
+            if (CreatedTime != null)
             {
-                hash = hash * 59 + this.CreatedTime.GetHashCode();
+                hash = hash * 59 + CreatedTime.GetHashCode();
             }
 
-            if (this.RecoveredTime != null)
+            if (RecoveredTime != null)
             {
-                hash = hash * 59 + this.RecoveredTime.GetHashCode();
+                hash = hash * 59 + RecoveredTime.GetHashCode();
             }
 
-            if (this.ProviderType != null)
+            if (ProviderType != null)
             {
-                hash = hash * 59 + this.ProviderType.GetHashCode();
+                hash = hash * 59 + ProviderType.GetHashCode();
             }
 
-            if (this.MediaSizeBytes != null)
+            if (MediaSizeBytes != null)
             {
-                hash = hash * 59 + this.MediaSizeBytes.GetHashCode();
+                hash = hash * 59 + MediaSizeBytes.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.MediaSubtype != null)
+            if (MediaSubtype != null)
             {
-                hash = hash * 59 + this.MediaSubtype.GetHashCode();
+                hash = hash * 59 + MediaSubtype.GetHashCode();
             }
 
-            if (this.MediaSubject != null)
+            if (MediaSubject != null)
             {
-                hash = hash * 59 + this.MediaSubject.GetHashCode();
+                hash = hash * 59 + MediaSubject.GetHashCode();
             }
 
-            if (this.FileState != null)
+            if (FileState != null)
             {
-                hash = hash * 59 + this.FileState.GetHashCode();
+                hash = hash * 59 + FileState.GetHashCode();
             }
 
-            if (this.ProviderEndpoint != null)
+            if (ProviderEndpoint != null)
             {
-                hash = hash * 59 + this.ProviderEndpoint.GetHashCode();
+                hash = hash * 59 + ProviderEndpoint.GetHashCode();
             }
 
-            if (this.Recording != null)
+            if (Recording != null)
             {
-                hash = hash * 59 + this.Recording.GetHashCode();
+                hash = hash * 59 + Recording.GetHashCode();
             }
 
-            if (this.OrphanStatus != null)
+            if (OrphanStatus != null)
             {
-                hash = hash * 59 + this.OrphanStatus.GetHashCode();
+                hash = hash * 59 + OrphanStatus.GetHashCode();
             }
 
-            if (this.SourceOrphaningId != null)
+            if (SourceOrphaningId != null)
             {
-                hash = hash * 59 + this.SourceOrphaningId.GetHashCode();
+                hash = hash * 59 + SourceOrphaningId.GetHashCode();
             }
 
-            if (this.Region != null)
+            if (Region != null)
             {
-                hash = hash * 59 + this.Region.GetHashCode();
+                hash = hash * 59 + Region.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class SupportCenterStyleSetting : IEquatable<SupportCenterStyleSe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportCenterStyleSetting);
+        return Equals(obj as SupportCenterStyleSetting);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class SupportCenterStyleSetting : IEquatable<SupportCenterStyleSe
 
         return true &&
             (
-                this.HeroStyle == other.HeroStyle ||
-                this.HeroStyle != null &&
-                this.HeroStyle.Equals(other.HeroStyle)
+                HeroStyle == other.HeroStyle ||
+                HeroStyle != null &&
+                HeroStyle.Equals(other.HeroStyle)
             ) &&
             (
-                this.GlobalStyle == other.GlobalStyle ||
-                this.GlobalStyle != null &&
-                this.GlobalStyle.Equals(other.GlobalStyle)
+                GlobalStyle == other.GlobalStyle ||
+                GlobalStyle != null &&
+                GlobalStyle.Equals(other.GlobalStyle)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class SupportCenterStyleSetting : IEquatable<SupportCenterStyleSe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.HeroStyle != null)
+            if (HeroStyle != null)
             {
-                hash = hash * 59 + this.HeroStyle.GetHashCode();
+                hash = hash * 59 + HeroStyle.GetHashCode();
             }
 
-            if (this.GlobalStyle != null)
+            if (GlobalStyle != null)
             {
-                hash = hash * 59 + this.GlobalStyle.GetHashCode();
+                hash = hash * 59 + GlobalStyle.GetHashCode();
             }
 
             return hash;

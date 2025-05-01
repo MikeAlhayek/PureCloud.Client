@@ -85,7 +85,7 @@ public partial class ExternalDataSource : IEquatable<ExternalDataSource>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalDataSource);
+        return Equals(obj as ExternalDataSource);
     }
 
     /// <summary>
@@ -103,14 +103,14 @@ public partial class ExternalDataSource : IEquatable<ExternalDataSource>
 
         return true &&
             (
-                this.Platform == other.Platform ||
-                this.Platform != null &&
-                this.Platform.Equals(other.Platform)
+                Platform == other.Platform ||
+                Platform != null &&
+                Platform.Equals(other.Platform)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             );
     }
 
@@ -125,14 +125,14 @@ public partial class ExternalDataSource : IEquatable<ExternalDataSource>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Platform != null)
+            if (Platform != null)
             {
-                hash = hash * 59 + this.Platform.GetHashCode();
+                hash = hash * 59 + Platform.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
             return hash;

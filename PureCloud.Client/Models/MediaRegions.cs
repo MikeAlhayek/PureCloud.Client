@@ -71,7 +71,7 @@ public partial class MediaRegions : IEquatable<MediaRegions>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaRegions);
+        return Equals(obj as MediaRegions);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class MediaRegions : IEquatable<MediaRegions>
 
         return true &&
             (
-                this.AwsHomeRegion == other.AwsHomeRegion ||
-                this.AwsHomeRegion != null &&
-                this.AwsHomeRegion.Equals(other.AwsHomeRegion)
+                AwsHomeRegion == other.AwsHomeRegion ||
+                AwsHomeRegion != null &&
+                AwsHomeRegion.Equals(other.AwsHomeRegion)
             ) &&
             (
-                this.AwsCoreRegions == other.AwsCoreRegions ||
-                this.AwsCoreRegions != null &&
-                this.AwsCoreRegions.SequenceEqual(other.AwsCoreRegions)
+                AwsCoreRegions == other.AwsCoreRegions ||
+                AwsCoreRegions != null &&
+                AwsCoreRegions.SequenceEqual(other.AwsCoreRegions)
             ) &&
             (
-                this.AwsSatelliteRegions == other.AwsSatelliteRegions ||
-                this.AwsSatelliteRegions != null &&
-                this.AwsSatelliteRegions.SequenceEqual(other.AwsSatelliteRegions)
+                AwsSatelliteRegions == other.AwsSatelliteRegions ||
+                AwsSatelliteRegions != null &&
+                AwsSatelliteRegions.SequenceEqual(other.AwsSatelliteRegions)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class MediaRegions : IEquatable<MediaRegions>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AwsHomeRegion != null)
+            if (AwsHomeRegion != null)
             {
-                hash = hash * 59 + this.AwsHomeRegion.GetHashCode();
+                hash = hash * 59 + AwsHomeRegion.GetHashCode();
             }
 
-            if (this.AwsCoreRegions != null)
+            if (AwsCoreRegions != null)
             {
-                hash = hash * 59 + this.AwsCoreRegions.GetHashCode();
+                hash = hash * 59 + AwsCoreRegions.GetHashCode();
             }
 
-            if (this.AwsSatelliteRegions != null)
+            if (AwsSatelliteRegions != null)
             {
-                hash = hash * 59 + this.AwsSatelliteRegions.GetHashCode();
+                hash = hash * 59 + AwsSatelliteRegions.GetHashCode();
             }
 
             return hash;

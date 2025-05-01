@@ -155,7 +155,7 @@ public partial class PhoneEstablishedEvent : IEquatable<PhoneEstablishedEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PhoneEstablishedEvent);
+        return Equals(obj as PhoneEstablishedEvent);
     }
 
     /// <summary>
@@ -173,49 +173,49 @@ public partial class PhoneEstablishedEvent : IEquatable<PhoneEstablishedEvent>
 
         return true &&
             (
-                this.EventId == other.EventId ||
-                this.EventId != null &&
-                this.EventId.Equals(other.EventId)
+                EventId == other.EventId ||
+                EventId != null &&
+                EventId.Equals(other.EventId)
             ) &&
             (
-                this.EventDateTime == other.EventDateTime ||
-                this.EventDateTime != null &&
-                this.EventDateTime.Equals(other.EventDateTime)
+                EventDateTime == other.EventDateTime ||
+                EventDateTime != null &&
+                EventDateTime.Equals(other.EventDateTime)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.CommunicationId == other.CommunicationId ||
-                this.CommunicationId != null &&
-                this.CommunicationId.Equals(other.CommunicationId)
+                CommunicationId == other.CommunicationId ||
+                CommunicationId != null &&
+                CommunicationId.Equals(other.CommunicationId)
             ) &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.Ani == other.Ani ||
-                this.Ani != null &&
-                this.Ani.Equals(other.Ani)
+                Ani == other.Ani ||
+                Ani != null &&
+                Ani.Equals(other.Ani)
             ) &&
             (
-                this.Dnis == other.Dnis ||
-                this.Dnis != null &&
-                this.Dnis.Equals(other.Dnis)
+                Dnis == other.Dnis ||
+                Dnis != null &&
+                Dnis.Equals(other.Dnis)
             ) &&
             (
-                this.InitialConfiguration == other.InitialConfiguration ||
-                this.InitialConfiguration != null &&
-                this.InitialConfiguration.Equals(other.InitialConfiguration)
+                InitialConfiguration == other.InitialConfiguration ||
+                InitialConfiguration != null &&
+                InitialConfiguration.Equals(other.InitialConfiguration)
             ) &&
             (
-                this.SourceConfiguration == other.SourceConfiguration ||
-                this.SourceConfiguration != null &&
-                this.SourceConfiguration.Equals(other.SourceConfiguration)
+                SourceConfiguration == other.SourceConfiguration ||
+                SourceConfiguration != null &&
+                SourceConfiguration.Equals(other.SourceConfiguration)
             );
     }
 
@@ -230,49 +230,49 @@ public partial class PhoneEstablishedEvent : IEquatable<PhoneEstablishedEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventId != null)
+            if (EventId != null)
             {
-                hash = hash * 59 + this.EventId.GetHashCode();
+                hash = hash * 59 + EventId.GetHashCode();
             }
 
-            if (this.EventDateTime != null)
+            if (EventDateTime != null)
             {
-                hash = hash * 59 + this.EventDateTime.GetHashCode();
+                hash = hash * 59 + EventDateTime.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.CommunicationId != null)
+            if (CommunicationId != null)
             {
-                hash = hash * 59 + this.CommunicationId.GetHashCode();
+                hash = hash * 59 + CommunicationId.GetHashCode();
             }
 
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.Ani != null)
+            if (Ani != null)
             {
-                hash = hash * 59 + this.Ani.GetHashCode();
+                hash = hash * 59 + Ani.GetHashCode();
             }
 
-            if (this.Dnis != null)
+            if (Dnis != null)
             {
-                hash = hash * 59 + this.Dnis.GetHashCode();
+                hash = hash * 59 + Dnis.GetHashCode();
             }
 
-            if (this.InitialConfiguration != null)
+            if (InitialConfiguration != null)
             {
-                hash = hash * 59 + this.InitialConfiguration.GetHashCode();
+                hash = hash * 59 + InitialConfiguration.GetHashCode();
             }
 
-            if (this.SourceConfiguration != null)
+            if (SourceConfiguration != null)
             {
-                hash = hash * 59 + this.SourceConfiguration.GetHashCode();
+                hash = hash * 59 + SourceConfiguration.GetHashCode();
             }
 
             return hash;

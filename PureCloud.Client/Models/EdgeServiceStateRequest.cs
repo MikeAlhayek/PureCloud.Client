@@ -71,7 +71,7 @@ public partial class EdgeServiceStateRequest : IEquatable<EdgeServiceStateReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeServiceStateRequest);
+        return Equals(obj as EdgeServiceStateRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class EdgeServiceStateRequest : IEquatable<EdgeServiceStateReques
 
         return true &&
             (
-                this.InService == other.InService ||
-                this.InService != null &&
-                this.InService.Equals(other.InService)
+                InService == other.InService ||
+                InService != null &&
+                InService.Equals(other.InService)
             ) &&
             (
-                this.CallDrainingWaitTimeSeconds == other.CallDrainingWaitTimeSeconds ||
-                this.CallDrainingWaitTimeSeconds != null &&
-                this.CallDrainingWaitTimeSeconds.Equals(other.CallDrainingWaitTimeSeconds)
+                CallDrainingWaitTimeSeconds == other.CallDrainingWaitTimeSeconds ||
+                CallDrainingWaitTimeSeconds != null &&
+                CallDrainingWaitTimeSeconds.Equals(other.CallDrainingWaitTimeSeconds)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class EdgeServiceStateRequest : IEquatable<EdgeServiceStateReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.InService != null)
+            if (InService != null)
             {
-                hash = hash * 59 + this.InService.GetHashCode();
+                hash = hash * 59 + InService.GetHashCode();
             }
 
-            if (this.CallDrainingWaitTimeSeconds != null)
+            if (CallDrainingWaitTimeSeconds != null)
             {
-                hash = hash * 59 + this.CallDrainingWaitTimeSeconds.GetHashCode();
+                hash = hash * 59 + CallDrainingWaitTimeSeconds.GetHashCode();
             }
 
             return hash;

@@ -51,7 +51,7 @@ public partial class TopicDuration : IEquatable<TopicDuration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TopicDuration);
+        return Equals(obj as TopicDuration);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class TopicDuration : IEquatable<TopicDuration>
 
         return true &&
             (
-                this.TotalMilliseconds == other.TotalMilliseconds ||
-                this.TotalMilliseconds != null &&
-                this.TotalMilliseconds.Equals(other.TotalMilliseconds)
+                TotalMilliseconds == other.TotalMilliseconds ||
+                TotalMilliseconds != null &&
+                TotalMilliseconds.Equals(other.TotalMilliseconds)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class TopicDuration : IEquatable<TopicDuration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TotalMilliseconds != null)
+            if (TotalMilliseconds != null)
             {
-                hash = hash * 59 + this.TotalMilliseconds.GetHashCode();
+                hash = hash * 59 + TotalMilliseconds.GetHashCode();
             }
 
             return hash;

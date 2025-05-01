@@ -283,7 +283,7 @@ public partial class ConversationMessageContent : IEquatable<ConversationMessage
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationMessageContent);
+        return Equals(obj as ConversationMessageContent);
     }
 
     /// <summary>
@@ -301,59 +301,59 @@ public partial class ConversationMessageContent : IEquatable<ConversationMessage
 
         return true &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.Location == other.Location ||
-                this.Location != null &&
-                this.Location.Equals(other.Location)
+                Location == other.Location ||
+                Location != null &&
+                Location.Equals(other.Location)
             ) &&
             (
-                this.Attachment == other.Attachment ||
-                this.Attachment != null &&
-                this.Attachment.Equals(other.Attachment)
+                Attachment == other.Attachment ||
+                Attachment != null &&
+                Attachment.Equals(other.Attachment)
             ) &&
             (
-                this.QuickReply == other.QuickReply ||
-                this.QuickReply != null &&
-                this.QuickReply.Equals(other.QuickReply)
+                QuickReply == other.QuickReply ||
+                QuickReply != null &&
+                QuickReply.Equals(other.QuickReply)
             ) &&
             (
-                this.ButtonResponse == other.ButtonResponse ||
-                this.ButtonResponse != null &&
-                this.ButtonResponse.Equals(other.ButtonResponse)
+                ButtonResponse == other.ButtonResponse ||
+                ButtonResponse != null &&
+                ButtonResponse.Equals(other.ButtonResponse)
             ) &&
             (
-                this.Template == other.Template ||
-                this.Template != null &&
-                this.Template.Equals(other.Template)
+                Template == other.Template ||
+                Template != null &&
+                Template.Equals(other.Template)
             ) &&
             (
-                this.Story == other.Story ||
-                this.Story != null &&
-                this.Story.Equals(other.Story)
+                Story == other.Story ||
+                Story != null &&
+                Story.Equals(other.Story)
             ) &&
             (
-                this.Card == other.Card ||
-                this.Card != null &&
-                this.Card.Equals(other.Card)
+                Card == other.Card ||
+                Card != null &&
+                Card.Equals(other.Card)
             ) &&
             (
-                this.Carousel == other.Carousel ||
-                this.Carousel != null &&
-                this.Carousel.Equals(other.Carousel)
+                Carousel == other.Carousel ||
+                Carousel != null &&
+                Carousel.Equals(other.Carousel)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.QuickReplyV2 == other.QuickReplyV2 ||
-                this.QuickReplyV2 != null &&
-                this.QuickReplyV2.Equals(other.QuickReplyV2)
+                QuickReplyV2 == other.QuickReplyV2 ||
+                QuickReplyV2 != null &&
+                QuickReplyV2.Equals(other.QuickReplyV2)
             );
     }
 
@@ -368,59 +368,59 @@ public partial class ConversationMessageContent : IEquatable<ConversationMessage
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.Location != null)
+            if (Location != null)
             {
-                hash = hash * 59 + this.Location.GetHashCode();
+                hash = hash * 59 + Location.GetHashCode();
             }
 
-            if (this.Attachment != null)
+            if (Attachment != null)
             {
-                hash = hash * 59 + this.Attachment.GetHashCode();
+                hash = hash * 59 + Attachment.GetHashCode();
             }
 
-            if (this.QuickReply != null)
+            if (QuickReply != null)
             {
-                hash = hash * 59 + this.QuickReply.GetHashCode();
+                hash = hash * 59 + QuickReply.GetHashCode();
             }
 
-            if (this.ButtonResponse != null)
+            if (ButtonResponse != null)
             {
-                hash = hash * 59 + this.ButtonResponse.GetHashCode();
+                hash = hash * 59 + ButtonResponse.GetHashCode();
             }
 
-            if (this.Template != null)
+            if (Template != null)
             {
-                hash = hash * 59 + this.Template.GetHashCode();
+                hash = hash * 59 + Template.GetHashCode();
             }
 
-            if (this.Story != null)
+            if (Story != null)
             {
-                hash = hash * 59 + this.Story.GetHashCode();
+                hash = hash * 59 + Story.GetHashCode();
             }
 
-            if (this.Card != null)
+            if (Card != null)
             {
-                hash = hash * 59 + this.Card.GetHashCode();
+                hash = hash * 59 + Card.GetHashCode();
             }
 
-            if (this.Carousel != null)
+            if (Carousel != null)
             {
-                hash = hash * 59 + this.Carousel.GetHashCode();
+                hash = hash * 59 + Carousel.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.QuickReplyV2 != null)
+            if (QuickReplyV2 != null)
             {
-                hash = hash * 59 + this.QuickReplyV2.GetHashCode();
+                hash = hash * 59 + QuickReplyV2.GetHashCode();
             }
 
             return hash;

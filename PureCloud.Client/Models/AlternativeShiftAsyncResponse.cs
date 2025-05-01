@@ -58,7 +58,7 @@ public partial class AlternativeShiftAsyncResponse : IEquatable<AlternativeShift
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftAsyncResponse);
+        return Equals(obj as AlternativeShiftAsyncResponse);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class AlternativeShiftAsyncResponse : IEquatable<AlternativeShift
 
         return true &&
             (
-                this.Job == other.Job ||
-                this.Job != null &&
-                this.Job.Equals(other.Job)
+                Job == other.Job ||
+                Job != null &&
+                Job.Equals(other.Job)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class AlternativeShiftAsyncResponse : IEquatable<AlternativeShift
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Job != null)
+            if (Job != null)
             {
-                hash = hash * 59 + this.Job.GetHashCode();
+                hash = hash * 59 + Job.GetHashCode();
             }
 
             return hash;

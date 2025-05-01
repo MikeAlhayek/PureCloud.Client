@@ -53,7 +53,7 @@ public partial class OAuthLastTokenIssued : IEquatable<OAuthLastTokenIssued>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OAuthLastTokenIssued);
+        return Equals(obj as OAuthLastTokenIssued);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class OAuthLastTokenIssued : IEquatable<OAuthLastTokenIssued>
 
         return true &&
             (
-                this.DateIssued == other.DateIssued ||
-                this.DateIssued != null &&
-                this.DateIssued.Equals(other.DateIssued)
+                DateIssued == other.DateIssued ||
+                DateIssued != null &&
+                DateIssued.Equals(other.DateIssued)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class OAuthLastTokenIssued : IEquatable<OAuthLastTokenIssued>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateIssued != null)
+            if (DateIssued != null)
             {
-                hash = hash * 59 + this.DateIssued.GetHashCode();
+                hash = hash * 59 + DateIssued.GetHashCode();
             }
 
             return hash;

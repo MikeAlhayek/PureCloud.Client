@@ -127,7 +127,7 @@ public partial class CommonAlertBulkUpdateRequest : IEquatable<CommonAlertBulkUp
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CommonAlertBulkUpdateRequest);
+        return Equals(obj as CommonAlertBulkUpdateRequest);
     }
 
     /// <summary>
@@ -145,24 +145,24 @@ public partial class CommonAlertBulkUpdateRequest : IEquatable<CommonAlertBulkUp
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.AlertIds == other.AlertIds ||
-                this.AlertIds != null &&
-                this.AlertIds.SequenceEqual(other.AlertIds)
+                AlertIds == other.AlertIds ||
+                AlertIds != null &&
+                AlertIds.SequenceEqual(other.AlertIds)
             ) &&
             (
-                this.MuteSnooze == other.MuteSnooze ||
-                this.MuteSnooze != null &&
-                this.MuteSnooze.Equals(other.MuteSnooze)
+                MuteSnooze == other.MuteSnooze ||
+                MuteSnooze != null &&
+                MuteSnooze.Equals(other.MuteSnooze)
             ) &&
             (
-                this.Unread == other.Unread ||
-                this.Unread != null &&
-                this.Unread.Equals(other.Unread)
+                Unread == other.Unread ||
+                Unread != null &&
+                Unread.Equals(other.Unread)
             );
     }
 
@@ -177,24 +177,24 @@ public partial class CommonAlertBulkUpdateRequest : IEquatable<CommonAlertBulkUp
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.AlertIds != null)
+            if (AlertIds != null)
             {
-                hash = hash * 59 + this.AlertIds.GetHashCode();
+                hash = hash * 59 + AlertIds.GetHashCode();
             }
 
-            if (this.MuteSnooze != null)
+            if (MuteSnooze != null)
             {
-                hash = hash * 59 + this.MuteSnooze.GetHashCode();
+                hash = hash * 59 + MuteSnooze.GetHashCode();
             }
 
-            if (this.Unread != null)
+            if (Unread != null)
             {
-                hash = hash * 59 + this.Unread.GetHashCode();
+                hash = hash * 59 + Unread.GetHashCode();
             }
 
             return hash;

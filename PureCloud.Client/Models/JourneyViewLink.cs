@@ -139,7 +139,7 @@ public partial class JourneyViewLink : IEquatable<JourneyViewLink>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewLink);
+        return Equals(obj as JourneyViewLink);
     }
 
     /// <summary>
@@ -157,29 +157,29 @@ public partial class JourneyViewLink : IEquatable<JourneyViewLink>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ConstraintWithin == other.ConstraintWithin ||
-                this.ConstraintWithin != null &&
-                this.ConstraintWithin.Equals(other.ConstraintWithin)
+                ConstraintWithin == other.ConstraintWithin ||
+                ConstraintWithin != null &&
+                ConstraintWithin.Equals(other.ConstraintWithin)
             ) &&
             (
-                this.ConstraintAfter == other.ConstraintAfter ||
-                this.ConstraintAfter != null &&
-                this.ConstraintAfter.Equals(other.ConstraintAfter)
+                ConstraintAfter == other.ConstraintAfter ||
+                ConstraintAfter != null &&
+                ConstraintAfter.Equals(other.ConstraintAfter)
             ) &&
             (
-                this.EventCountType == other.EventCountType ||
-                this.EventCountType != null &&
-                this.EventCountType.Equals(other.EventCountType)
+                EventCountType == other.EventCountType ||
+                EventCountType != null &&
+                EventCountType.Equals(other.EventCountType)
             ) &&
             (
-                this.JoinAttributes == other.JoinAttributes ||
-                this.JoinAttributes != null &&
-                this.JoinAttributes.SequenceEqual(other.JoinAttributes)
+                JoinAttributes == other.JoinAttributes ||
+                JoinAttributes != null &&
+                JoinAttributes.SequenceEqual(other.JoinAttributes)
             );
     }
 
@@ -194,29 +194,29 @@ public partial class JourneyViewLink : IEquatable<JourneyViewLink>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ConstraintWithin != null)
+            if (ConstraintWithin != null)
             {
-                hash = hash * 59 + this.ConstraintWithin.GetHashCode();
+                hash = hash * 59 + ConstraintWithin.GetHashCode();
             }
 
-            if (this.ConstraintAfter != null)
+            if (ConstraintAfter != null)
             {
-                hash = hash * 59 + this.ConstraintAfter.GetHashCode();
+                hash = hash * 59 + ConstraintAfter.GetHashCode();
             }
 
-            if (this.EventCountType != null)
+            if (EventCountType != null)
             {
-                hash = hash * 59 + this.EventCountType.GetHashCode();
+                hash = hash * 59 + EventCountType.GetHashCode();
             }
 
-            if (this.JoinAttributes != null)
+            if (JoinAttributes != null)
             {
-                hash = hash * 59 + this.JoinAttributes.GetHashCode();
+                hash = hash * 59 + JoinAttributes.GetHashCode();
             }
 
             return hash;

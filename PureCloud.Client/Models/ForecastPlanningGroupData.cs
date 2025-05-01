@@ -83,7 +83,7 @@ public partial class ForecastPlanningGroupData : IEquatable<ForecastPlanningGrou
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ForecastPlanningGroupData);
+        return Equals(obj as ForecastPlanningGroupData);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class ForecastPlanningGroupData : IEquatable<ForecastPlanningGrou
 
         return true &&
             (
-                this.PlanningGroupId == other.PlanningGroupId ||
-                this.PlanningGroupId != null &&
-                this.PlanningGroupId.Equals(other.PlanningGroupId)
+                PlanningGroupId == other.PlanningGroupId ||
+                PlanningGroupId != null &&
+                PlanningGroupId.Equals(other.PlanningGroupId)
             ) &&
             (
-                this.OfferedPerInterval == other.OfferedPerInterval ||
-                this.OfferedPerInterval != null &&
-                this.OfferedPerInterval.SequenceEqual(other.OfferedPerInterval)
+                OfferedPerInterval == other.OfferedPerInterval ||
+                OfferedPerInterval != null &&
+                OfferedPerInterval.SequenceEqual(other.OfferedPerInterval)
             ) &&
             (
-                this.AverageHandleTimeSecondsPerInterval == other.AverageHandleTimeSecondsPerInterval ||
-                this.AverageHandleTimeSecondsPerInterval != null &&
-                this.AverageHandleTimeSecondsPerInterval.SequenceEqual(other.AverageHandleTimeSecondsPerInterval)
+                AverageHandleTimeSecondsPerInterval == other.AverageHandleTimeSecondsPerInterval ||
+                AverageHandleTimeSecondsPerInterval != null &&
+                AverageHandleTimeSecondsPerInterval.SequenceEqual(other.AverageHandleTimeSecondsPerInterval)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class ForecastPlanningGroupData : IEquatable<ForecastPlanningGrou
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PlanningGroupId != null)
+            if (PlanningGroupId != null)
             {
-                hash = hash * 59 + this.PlanningGroupId.GetHashCode();
+                hash = hash * 59 + PlanningGroupId.GetHashCode();
             }
 
-            if (this.OfferedPerInterval != null)
+            if (OfferedPerInterval != null)
             {
-                hash = hash * 59 + this.OfferedPerInterval.GetHashCode();
+                hash = hash * 59 + OfferedPerInterval.GetHashCode();
             }
 
-            if (this.AverageHandleTimeSecondsPerInterval != null)
+            if (AverageHandleTimeSecondsPerInterval != null)
             {
-                hash = hash * 59 + this.AverageHandleTimeSecondsPerInterval.GetHashCode();
+                hash = hash * 59 + AverageHandleTimeSecondsPerInterval.GetHashCode();
             }
 
             return hash;

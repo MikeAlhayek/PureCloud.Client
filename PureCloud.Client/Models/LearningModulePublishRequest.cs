@@ -53,7 +53,7 @@ public partial class LearningModulePublishRequest : IEquatable<LearningModulePub
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModulePublishRequest);
+        return Equals(obj as LearningModulePublishRequest);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class LearningModulePublishRequest : IEquatable<LearningModulePub
 
         return true &&
             (
-                this.TermsAndConditionsAccepted == other.TermsAndConditionsAccepted ||
-                this.TermsAndConditionsAccepted != null &&
-                this.TermsAndConditionsAccepted.Equals(other.TermsAndConditionsAccepted)
+                TermsAndConditionsAccepted == other.TermsAndConditionsAccepted ||
+                TermsAndConditionsAccepted != null &&
+                TermsAndConditionsAccepted.Equals(other.TermsAndConditionsAccepted)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class LearningModulePublishRequest : IEquatable<LearningModulePub
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TermsAndConditionsAccepted != null)
+            if (TermsAndConditionsAccepted != null)
             {
-                hash = hash * 59 + this.TermsAndConditionsAccepted.GetHashCode();
+                hash = hash * 59 + TermsAndConditionsAccepted.GetHashCode();
             }
 
             return hash;

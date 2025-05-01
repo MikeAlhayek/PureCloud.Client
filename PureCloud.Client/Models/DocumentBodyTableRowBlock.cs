@@ -71,7 +71,7 @@ public partial class DocumentBodyTableRowBlock : IEquatable<DocumentBodyTableRow
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyTableRowBlock);
+        return Equals(obj as DocumentBodyTableRowBlock);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class DocumentBodyTableRowBlock : IEquatable<DocumentBodyTableRow
 
         return true &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.Equals(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.Equals(other.Properties)
             ) &&
             (
-                this.Cells == other.Cells ||
-                this.Cells != null &&
-                this.Cells.SequenceEqual(other.Cells)
+                Cells == other.Cells ||
+                Cells != null &&
+                Cells.SequenceEqual(other.Cells)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class DocumentBodyTableRowBlock : IEquatable<DocumentBodyTableRow
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
-            if (this.Cells != null)
+            if (Cells != null)
             {
-                hash = hash * 59 + this.Cells.GetHashCode();
+                hash = hash * 59 + Cells.GetHashCode();
             }
 
             return hash;

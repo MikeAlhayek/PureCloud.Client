@@ -209,7 +209,7 @@ public partial class Script : IEquatable<Script>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Script);
+        return Equals(obj as Script);
     }
 
     /// <summary>
@@ -227,79 +227,79 @@ public partial class Script : IEquatable<Script>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.VersionId == other.VersionId ||
-                this.VersionId != null &&
-                this.VersionId.Equals(other.VersionId)
+                VersionId == other.VersionId ||
+                VersionId != null &&
+                VersionId.Equals(other.VersionId)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             ) &&
             (
-                this.PublishedDate == other.PublishedDate ||
-                this.PublishedDate != null &&
-                this.PublishedDate.Equals(other.PublishedDate)
+                PublishedDate == other.PublishedDate ||
+                PublishedDate != null &&
+                PublishedDate.Equals(other.PublishedDate)
             ) &&
             (
-                this.VersionDate == other.VersionDate ||
-                this.VersionDate != null &&
-                this.VersionDate.Equals(other.VersionDate)
+                VersionDate == other.VersionDate ||
+                VersionDate != null &&
+                VersionDate.Equals(other.VersionDate)
             ) &&
             (
-                this.StartPageId == other.StartPageId ||
-                this.StartPageId != null &&
-                this.StartPageId.Equals(other.StartPageId)
+                StartPageId == other.StartPageId ||
+                StartPageId != null &&
+                StartPageId.Equals(other.StartPageId)
             ) &&
             (
-                this.StartPageName == other.StartPageName ||
-                this.StartPageName != null &&
-                this.StartPageName.Equals(other.StartPageName)
+                StartPageName == other.StartPageName ||
+                StartPageName != null &&
+                StartPageName.Equals(other.StartPageName)
             ) &&
             (
-                this.Features == other.Features ||
-                this.Features != null &&
-                this.Features.Equals(other.Features)
+                Features == other.Features ||
+                Features != null &&
+                Features.Equals(other.Features)
             ) &&
             (
-                this.Variables == other.Variables ||
-                this.Variables != null &&
-                this.Variables.Equals(other.Variables)
+                Variables == other.Variables ||
+                Variables != null &&
+                Variables.Equals(other.Variables)
             ) &&
             (
-                this.CustomActions == other.CustomActions ||
-                this.CustomActions != null &&
-                this.CustomActions.Equals(other.CustomActions)
+                CustomActions == other.CustomActions ||
+                CustomActions != null &&
+                CustomActions.Equals(other.CustomActions)
             ) &&
             (
-                this.Pages == other.Pages ||
-                this.Pages != null &&
-                this.Pages.SequenceEqual(other.Pages)
+                Pages == other.Pages ||
+                Pages != null &&
+                Pages.SequenceEqual(other.Pages)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -314,79 +314,79 @@ public partial class Script : IEquatable<Script>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.VersionId != null)
+            if (VersionId != null)
             {
-                hash = hash * 59 + this.VersionId.GetHashCode();
+                hash = hash * 59 + VersionId.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
-            if (this.PublishedDate != null)
+            if (PublishedDate != null)
             {
-                hash = hash * 59 + this.PublishedDate.GetHashCode();
+                hash = hash * 59 + PublishedDate.GetHashCode();
             }
 
-            if (this.VersionDate != null)
+            if (VersionDate != null)
             {
-                hash = hash * 59 + this.VersionDate.GetHashCode();
+                hash = hash * 59 + VersionDate.GetHashCode();
             }
 
-            if (this.StartPageId != null)
+            if (StartPageId != null)
             {
-                hash = hash * 59 + this.StartPageId.GetHashCode();
+                hash = hash * 59 + StartPageId.GetHashCode();
             }
 
-            if (this.StartPageName != null)
+            if (StartPageName != null)
             {
-                hash = hash * 59 + this.StartPageName.GetHashCode();
+                hash = hash * 59 + StartPageName.GetHashCode();
             }
 
-            if (this.Features != null)
+            if (Features != null)
             {
-                hash = hash * 59 + this.Features.GetHashCode();
+                hash = hash * 59 + Features.GetHashCode();
             }
 
-            if (this.Variables != null)
+            if (Variables != null)
             {
-                hash = hash * 59 + this.Variables.GetHashCode();
+                hash = hash * 59 + Variables.GetHashCode();
             }
 
-            if (this.CustomActions != null)
+            if (CustomActions != null)
             {
-                hash = hash * 59 + this.CustomActions.GetHashCode();
+                hash = hash * 59 + CustomActions.GetHashCode();
             }
 
-            if (this.Pages != null)
+            if (Pages != null)
             {
-                hash = hash * 59 + this.Pages.GetHashCode();
+                hash = hash * 59 + Pages.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

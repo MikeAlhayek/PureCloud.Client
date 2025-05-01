@@ -311,7 +311,7 @@ public partial class EvaluationAggregationQueryMe : IEquatable<EvaluationAggrega
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationAggregationQueryMe);
+        return Equals(obj as EvaluationAggregationQueryMe);
     }
 
     /// <summary>
@@ -329,34 +329,34 @@ public partial class EvaluationAggregationQueryMe : IEquatable<EvaluationAggrega
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.GroupBy == other.GroupBy ||
-                this.GroupBy != null &&
-                this.GroupBy.SequenceEqual(other.GroupBy)
+                GroupBy == other.GroupBy ||
+                GroupBy != null &&
+                GroupBy.SequenceEqual(other.GroupBy)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.AlternateTimeDimension == other.AlternateTimeDimension ||
-                this.AlternateTimeDimension != null &&
-                this.AlternateTimeDimension.Equals(other.AlternateTimeDimension)
+                AlternateTimeDimension == other.AlternateTimeDimension ||
+                AlternateTimeDimension != null &&
+                AlternateTimeDimension.Equals(other.AlternateTimeDimension)
             ) &&
             (
-                this.ContextId == other.ContextId ||
-                this.ContextId != null &&
-                this.ContextId.Equals(other.ContextId)
+                ContextId == other.ContextId ||
+                ContextId != null &&
+                ContextId.Equals(other.ContextId)
             );
     }
 
@@ -371,34 +371,34 @@ public partial class EvaluationAggregationQueryMe : IEquatable<EvaluationAggrega
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.GroupBy != null)
+            if (GroupBy != null)
             {
-                hash = hash * 59 + this.GroupBy.GetHashCode();
+                hash = hash * 59 + GroupBy.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.AlternateTimeDimension != null)
+            if (AlternateTimeDimension != null)
             {
-                hash = hash * 59 + this.AlternateTimeDimension.GetHashCode();
+                hash = hash * 59 + AlternateTimeDimension.GetHashCode();
             }
 
-            if (this.ContextId != null)
+            if (ContextId != null)
             {
-                hash = hash * 59 + this.ContextId.GetHashCode();
+                hash = hash * 59 + ContextId.GetHashCode();
             }
 
             return hash;

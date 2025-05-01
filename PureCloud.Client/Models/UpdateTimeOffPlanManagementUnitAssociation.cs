@@ -53,7 +53,7 @@ public partial class UpdateTimeOffPlanManagementUnitAssociation : IEquatable<Upd
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateTimeOffPlanManagementUnitAssociation);
+        return Equals(obj as UpdateTimeOffPlanManagementUnitAssociation);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class UpdateTimeOffPlanManagementUnitAssociation : IEquatable<Upd
 
         return true &&
             (
-                this.StaffingGroupIds == other.StaffingGroupIds ||
-                this.StaffingGroupIds != null &&
-                this.StaffingGroupIds.Equals(other.StaffingGroupIds)
+                StaffingGroupIds == other.StaffingGroupIds ||
+                StaffingGroupIds != null &&
+                StaffingGroupIds.Equals(other.StaffingGroupIds)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class UpdateTimeOffPlanManagementUnitAssociation : IEquatable<Upd
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StaffingGroupIds != null)
+            if (StaffingGroupIds != null)
             {
-                hash = hash * 59 + this.StaffingGroupIds.GetHashCode();
+                hash = hash * 59 + StaffingGroupIds.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class WorkbinUpdate : IEquatable<WorkbinUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkbinUpdate);
+        return Equals(obj as WorkbinUpdate);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class WorkbinUpdate : IEquatable<WorkbinUpdate>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class WorkbinUpdate : IEquatable<WorkbinUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
             return hash;

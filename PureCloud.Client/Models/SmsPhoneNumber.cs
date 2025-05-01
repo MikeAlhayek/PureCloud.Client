@@ -534,7 +534,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SmsPhoneNumber);
+        return Equals(obj as SmsPhoneNumber);
     }
 
     /// <summary>
@@ -552,139 +552,139 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.PhoneNumberType == other.PhoneNumberType ||
-                this.PhoneNumberType != null &&
-                this.PhoneNumberType.Equals(other.PhoneNumberType)
+                PhoneNumberType == other.PhoneNumberType ||
+                PhoneNumberType != null &&
+                PhoneNumberType.Equals(other.PhoneNumberType)
             ) &&
             (
-                this.ProvisionedThroughPureCloudEnvironment == other.ProvisionedThroughPureCloudEnvironment ||
-                this.ProvisionedThroughPureCloudEnvironment != null &&
-                this.ProvisionedThroughPureCloudEnvironment.Equals(other.ProvisionedThroughPureCloudEnvironment)
+                ProvisionedThroughPureCloudEnvironment == other.ProvisionedThroughPureCloudEnvironment ||
+                ProvisionedThroughPureCloudEnvironment != null &&
+                ProvisionedThroughPureCloudEnvironment.Equals(other.ProvisionedThroughPureCloudEnvironment)
             ) &&
             (
-                this.PhoneNumberStatus == other.PhoneNumberStatus ||
-                this.PhoneNumberStatus != null &&
-                this.PhoneNumberStatus.Equals(other.PhoneNumberStatus)
+                PhoneNumberStatus == other.PhoneNumberStatus ||
+                PhoneNumberStatus != null &&
+                PhoneNumberStatus.Equals(other.PhoneNumberStatus)
             ) &&
             (
-                this.Capabilities == other.Capabilities ||
-                this.Capabilities != null &&
-                this.Capabilities.SequenceEqual(other.Capabilities)
+                Capabilities == other.Capabilities ||
+                Capabilities != null &&
+                Capabilities.SequenceEqual(other.Capabilities)
             ) &&
             (
-                this.CountryCode == other.CountryCode ||
-                this.CountryCode != null &&
-                this.CountryCode.Equals(other.CountryCode)
+                CountryCode == other.CountryCode ||
+                CountryCode != null &&
+                CountryCode.Equals(other.CountryCode)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.PurchaseDate == other.PurchaseDate ||
-                this.PurchaseDate != null &&
-                this.PurchaseDate.Equals(other.PurchaseDate)
+                PurchaseDate == other.PurchaseDate ||
+                PurchaseDate != null &&
+                PurchaseDate.Equals(other.PurchaseDate)
             ) &&
             (
-                this.CancellationDate == other.CancellationDate ||
-                this.CancellationDate != null &&
-                this.CancellationDate.Equals(other.CancellationDate)
+                CancellationDate == other.CancellationDate ||
+                CancellationDate != null &&
+                CancellationDate.Equals(other.CancellationDate)
             ) &&
             (
-                this.RenewalDate == other.RenewalDate ||
-                this.RenewalDate != null &&
-                this.RenewalDate.Equals(other.RenewalDate)
+                RenewalDate == other.RenewalDate ||
+                RenewalDate != null &&
+                RenewalDate.Equals(other.RenewalDate)
             ) &&
             (
-                this.AutoRenewable == other.AutoRenewable ||
-                this.AutoRenewable != null &&
-                this.AutoRenewable.Equals(other.AutoRenewable)
+                AutoRenewable == other.AutoRenewable ||
+                AutoRenewable != null &&
+                AutoRenewable.Equals(other.AutoRenewable)
             ) &&
             (
-                this.AddressId == other.AddressId ||
-                this.AddressId != null &&
-                this.AddressId.Equals(other.AddressId)
+                AddressId == other.AddressId ||
+                AddressId != null &&
+                AddressId.Equals(other.AddressId)
             ) &&
             (
-                this.ShortCodeBillingType == other.ShortCodeBillingType ||
-                this.ShortCodeBillingType != null &&
-                this.ShortCodeBillingType.Equals(other.ShortCodeBillingType)
+                ShortCodeBillingType == other.ShortCodeBillingType ||
+                ShortCodeBillingType != null &&
+                ShortCodeBillingType.Equals(other.ShortCodeBillingType)
             ) &&
             (
-                this.ProvisioningStatus == other.ProvisioningStatus ||
-                this.ProvisioningStatus != null &&
-                this.ProvisioningStatus.Equals(other.ProvisioningStatus)
+                ProvisioningStatus == other.ProvisioningStatus ||
+                ProvisioningStatus != null &&
+                ProvisioningStatus.Equals(other.ProvisioningStatus)
             ) &&
             (
-                this.Country == other.Country ||
-                this.Country != null &&
-                this.Country.Equals(other.Country)
+                Country == other.Country ||
+                Country != null &&
+                Country.Equals(other.Country)
             ) &&
             (
-                this.SupportsSms == other.SupportsSms ||
-                this.SupportsSms != null &&
-                this.SupportsSms.Equals(other.SupportsSms)
+                SupportsSms == other.SupportsSms ||
+                SupportsSms != null &&
+                SupportsSms.Equals(other.SupportsSms)
             ) &&
             (
-                this.SupportsMms == other.SupportsMms ||
-                this.SupportsMms != null &&
-                this.SupportsMms.Equals(other.SupportsMms)
+                SupportsMms == other.SupportsMms ||
+                SupportsMms != null &&
+                SupportsMms.Equals(other.SupportsMms)
             ) &&
             (
-                this.SupportsVoice == other.SupportsVoice ||
-                this.SupportsVoice != null &&
-                this.SupportsVoice.Equals(other.SupportsVoice)
+                SupportsVoice == other.SupportsVoice ||
+                SupportsVoice != null &&
+                SupportsVoice.Equals(other.SupportsVoice)
             ) &&
             (
-                this.Integration == other.Integration ||
-                this.Integration != null &&
-                this.Integration.Equals(other.Integration)
+                Integration == other.Integration ||
+                Integration != null &&
+                Integration.Equals(other.Integration)
             ) &&
             (
-                this.Compliance == other.Compliance ||
-                this.Compliance != null &&
-                this.Compliance.Equals(other.Compliance)
+                Compliance == other.Compliance ||
+                Compliance != null &&
+                Compliance.Equals(other.Compliance)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -699,139 +699,139 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.PhoneNumberType != null)
+            if (PhoneNumberType != null)
             {
-                hash = hash * 59 + this.PhoneNumberType.GetHashCode();
+                hash = hash * 59 + PhoneNumberType.GetHashCode();
             }
 
-            if (this.ProvisionedThroughPureCloudEnvironment != null)
+            if (ProvisionedThroughPureCloudEnvironment != null)
             {
-                hash = hash * 59 + this.ProvisionedThroughPureCloudEnvironment.GetHashCode();
+                hash = hash * 59 + ProvisionedThroughPureCloudEnvironment.GetHashCode();
             }
 
-            if (this.PhoneNumberStatus != null)
+            if (PhoneNumberStatus != null)
             {
-                hash = hash * 59 + this.PhoneNumberStatus.GetHashCode();
+                hash = hash * 59 + PhoneNumberStatus.GetHashCode();
             }
 
-            if (this.Capabilities != null)
+            if (Capabilities != null)
             {
-                hash = hash * 59 + this.Capabilities.GetHashCode();
+                hash = hash * 59 + Capabilities.GetHashCode();
             }
 
-            if (this.CountryCode != null)
+            if (CountryCode != null)
             {
-                hash = hash * 59 + this.CountryCode.GetHashCode();
+                hash = hash * 59 + CountryCode.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.PurchaseDate != null)
+            if (PurchaseDate != null)
             {
-                hash = hash * 59 + this.PurchaseDate.GetHashCode();
+                hash = hash * 59 + PurchaseDate.GetHashCode();
             }
 
-            if (this.CancellationDate != null)
+            if (CancellationDate != null)
             {
-                hash = hash * 59 + this.CancellationDate.GetHashCode();
+                hash = hash * 59 + CancellationDate.GetHashCode();
             }
 
-            if (this.RenewalDate != null)
+            if (RenewalDate != null)
             {
-                hash = hash * 59 + this.RenewalDate.GetHashCode();
+                hash = hash * 59 + RenewalDate.GetHashCode();
             }
 
-            if (this.AutoRenewable != null)
+            if (AutoRenewable != null)
             {
-                hash = hash * 59 + this.AutoRenewable.GetHashCode();
+                hash = hash * 59 + AutoRenewable.GetHashCode();
             }
 
-            if (this.AddressId != null)
+            if (AddressId != null)
             {
-                hash = hash * 59 + this.AddressId.GetHashCode();
+                hash = hash * 59 + AddressId.GetHashCode();
             }
 
-            if (this.ShortCodeBillingType != null)
+            if (ShortCodeBillingType != null)
             {
-                hash = hash * 59 + this.ShortCodeBillingType.GetHashCode();
+                hash = hash * 59 + ShortCodeBillingType.GetHashCode();
             }
 
-            if (this.ProvisioningStatus != null)
+            if (ProvisioningStatus != null)
             {
-                hash = hash * 59 + this.ProvisioningStatus.GetHashCode();
+                hash = hash * 59 + ProvisioningStatus.GetHashCode();
             }
 
-            if (this.Country != null)
+            if (Country != null)
             {
-                hash = hash * 59 + this.Country.GetHashCode();
+                hash = hash * 59 + Country.GetHashCode();
             }
 
-            if (this.SupportsSms != null)
+            if (SupportsSms != null)
             {
-                hash = hash * 59 + this.SupportsSms.GetHashCode();
+                hash = hash * 59 + SupportsSms.GetHashCode();
             }
 
-            if (this.SupportsMms != null)
+            if (SupportsMms != null)
             {
-                hash = hash * 59 + this.SupportsMms.GetHashCode();
+                hash = hash * 59 + SupportsMms.GetHashCode();
             }
 
-            if (this.SupportsVoice != null)
+            if (SupportsVoice != null)
             {
-                hash = hash * 59 + this.SupportsVoice.GetHashCode();
+                hash = hash * 59 + SupportsVoice.GetHashCode();
             }
 
-            if (this.Integration != null)
+            if (Integration != null)
             {
-                hash = hash * 59 + this.Integration.GetHashCode();
+                hash = hash * 59 + Integration.GetHashCode();
             }
 
-            if (this.Compliance != null)
+            if (Compliance != null)
             {
-                hash = hash * 59 + this.Compliance.GetHashCode();
+                hash = hash * 59 + Compliance.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

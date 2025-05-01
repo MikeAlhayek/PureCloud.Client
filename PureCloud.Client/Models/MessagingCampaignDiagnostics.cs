@@ -61,7 +61,7 @@ public partial class MessagingCampaignDiagnostics : IEquatable<MessagingCampaign
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessagingCampaignDiagnostics);
+        return Equals(obj as MessagingCampaignDiagnostics);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class MessagingCampaignDiagnostics : IEquatable<MessagingCampaign
 
         return true &&
             (
-                this.TimeZoneRescheduledContactsCount == other.TimeZoneRescheduledContactsCount ||
-                this.TimeZoneRescheduledContactsCount != null &&
-                this.TimeZoneRescheduledContactsCount.Equals(other.TimeZoneRescheduledContactsCount)
+                TimeZoneRescheduledContactsCount == other.TimeZoneRescheduledContactsCount ||
+                TimeZoneRescheduledContactsCount != null &&
+                TimeZoneRescheduledContactsCount.Equals(other.TimeZoneRescheduledContactsCount)
             ) &&
             (
-                this.FilteredOutContactsCount == other.FilteredOutContactsCount ||
-                this.FilteredOutContactsCount != null &&
-                this.FilteredOutContactsCount.Equals(other.FilteredOutContactsCount)
+                FilteredOutContactsCount == other.FilteredOutContactsCount ||
+                FilteredOutContactsCount != null &&
+                FilteredOutContactsCount.Equals(other.FilteredOutContactsCount)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class MessagingCampaignDiagnostics : IEquatable<MessagingCampaign
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeZoneRescheduledContactsCount != null)
+            if (TimeZoneRescheduledContactsCount != null)
             {
-                hash = hash * 59 + this.TimeZoneRescheduledContactsCount.GetHashCode();
+                hash = hash * 59 + TimeZoneRescheduledContactsCount.GetHashCode();
             }
 
-            if (this.FilteredOutContactsCount != null)
+            if (FilteredOutContactsCount != null)
             {
-                hash = hash * 59 + this.FilteredOutContactsCount.GetHashCode();
+                hash = hash * 59 + FilteredOutContactsCount.GetHashCode();
             }
 
             return hash;

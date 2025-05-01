@@ -95,7 +95,7 @@ public partial class RegionTimeZone : IEquatable<RegionTimeZone>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RegionTimeZone);
+        return Equals(obj as RegionTimeZone);
     }
 
     /// <summary>
@@ -113,29 +113,29 @@ public partial class RegionTimeZone : IEquatable<RegionTimeZone>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Offset == other.Offset ||
-                this.Offset != null &&
-                this.Offset.Equals(other.Offset)
+                Offset == other.Offset ||
+                Offset != null &&
+                Offset.Equals(other.Offset)
             ) &&
             (
-                this.CanonicalId == other.CanonicalId ||
-                this.CanonicalId != null &&
-                this.CanonicalId.Equals(other.CanonicalId)
+                CanonicalId == other.CanonicalId ||
+                CanonicalId != null &&
+                CanonicalId.Equals(other.CanonicalId)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -150,29 +150,29 @@ public partial class RegionTimeZone : IEquatable<RegionTimeZone>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Offset != null)
+            if (Offset != null)
             {
-                hash = hash * 59 + this.Offset.GetHashCode();
+                hash = hash * 59 + Offset.GetHashCode();
             }
 
-            if (this.CanonicalId != null)
+            if (CanonicalId != null)
             {
-                hash = hash * 59 + this.CanonicalId.GetHashCode();
+                hash = hash * 59 + CanonicalId.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -97,7 +97,7 @@ public partial class WorkitemWrapupUpdate : IEquatable<WorkitemWrapupUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemWrapupUpdate);
+        return Equals(obj as WorkitemWrapupUpdate);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class WorkitemWrapupUpdate : IEquatable<WorkitemWrapupUpdate>
 
         return true &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.WrapupCode == other.WrapupCode ||
-                this.WrapupCode != null &&
-                this.WrapupCode.Equals(other.WrapupCode)
+                WrapupCode == other.WrapupCode ||
+                WrapupCode != null &&
+                WrapupCode.Equals(other.WrapupCode)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class WorkitemWrapupUpdate : IEquatable<WorkitemWrapupUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.WrapupCode != null)
+            if (WrapupCode != null)
             {
-                hash = hash * 59 + this.WrapupCode.GetHashCode();
+                hash = hash * 59 + WrapupCode.GetHashCode();
             }
 
             return hash;

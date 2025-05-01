@@ -65,7 +65,7 @@ public partial class NextOccurrenceDetails : IEquatable<NextOccurrenceDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NextOccurrenceDetails);
+        return Equals(obj as NextOccurrenceDetails);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class NextOccurrenceDetails : IEquatable<NextOccurrenceDetails>
 
         return true &&
             (
-                this.StartOccurrenceDetails == other.StartOccurrenceDetails ||
-                this.StartOccurrenceDetails != null &&
-                this.StartOccurrenceDetails.Equals(other.StartOccurrenceDetails)
+                StartOccurrenceDetails == other.StartOccurrenceDetails ||
+                StartOccurrenceDetails != null &&
+                StartOccurrenceDetails.Equals(other.StartOccurrenceDetails)
             ) &&
             (
-                this.EndOccurrenceDetails == other.EndOccurrenceDetails ||
-                this.EndOccurrenceDetails != null &&
-                this.EndOccurrenceDetails.Equals(other.EndOccurrenceDetails)
+                EndOccurrenceDetails == other.EndOccurrenceDetails ||
+                EndOccurrenceDetails != null &&
+                EndOccurrenceDetails.Equals(other.EndOccurrenceDetails)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class NextOccurrenceDetails : IEquatable<NextOccurrenceDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartOccurrenceDetails != null)
+            if (StartOccurrenceDetails != null)
             {
-                hash = hash * 59 + this.StartOccurrenceDetails.GetHashCode();
+                hash = hash * 59 + StartOccurrenceDetails.GetHashCode();
             }
 
-            if (this.EndOccurrenceDetails != null)
+            if (EndOccurrenceDetails != null)
             {
-                hash = hash * 59 + this.EndOccurrenceDetails.GetHashCode();
+                hash = hash * 59 + EndOccurrenceDetails.GetHashCode();
             }
 
             return hash;

@@ -140,7 +140,7 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GamificationScorecardChangeTopicEvaluationDetail);
+        return Equals(obj as GamificationScorecardChangeTopicEvaluationDetail);
     }
 
     /// <summary>
@@ -158,49 +158,49 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
 
         return true &&
             (
-                this.EvaluationId == other.EvaluationId ||
-                this.EvaluationId != null &&
-                this.EvaluationId.Equals(other.EvaluationId)
+                EvaluationId == other.EvaluationId ||
+                EvaluationId != null &&
+                EvaluationId.Equals(other.EvaluationId)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.ConversationDate == other.ConversationDate ||
-                this.ConversationDate != null &&
-                this.ConversationDate.Equals(other.ConversationDate)
+                ConversationDate == other.ConversationDate ||
+                ConversationDate != null &&
+                ConversationDate.Equals(other.ConversationDate)
             ) &&
             (
-                this.FormName == other.FormName ||
-                this.FormName != null &&
-                this.FormName.Equals(other.FormName)
+                FormName == other.FormName ||
+                FormName != null &&
+                FormName.Equals(other.FormName)
             ) &&
             (
-                this.Points == other.Points ||
-                this.Points != null &&
-                this.Points.Equals(other.Points)
+                Points == other.Points ||
+                Points != null &&
+                Points.Equals(other.Points)
             ) &&
             (
-                this.MaxPoints == other.MaxPoints ||
-                this.MaxPoints != null &&
-                this.MaxPoints.Equals(other.MaxPoints)
+                MaxPoints == other.MaxPoints ||
+                MaxPoints != null &&
+                MaxPoints.Equals(other.MaxPoints)
             ) &&
             (
-                this.EvaluationScore == other.EvaluationScore ||
-                this.EvaluationScore != null &&
-                this.EvaluationScore.Equals(other.EvaluationScore)
+                EvaluationScore == other.EvaluationScore ||
+                EvaluationScore != null &&
+                EvaluationScore.Equals(other.EvaluationScore)
             ) &&
             (
-                this.EvaluationScoreDouble == other.EvaluationScoreDouble ||
-                this.EvaluationScoreDouble != null &&
-                this.EvaluationScoreDouble.Equals(other.EvaluationScoreDouble)
+                EvaluationScoreDouble == other.EvaluationScoreDouble ||
+                EvaluationScoreDouble != null &&
+                EvaluationScoreDouble.Equals(other.EvaluationScoreDouble)
             ) &&
             (
-                this.MediaTypes == other.MediaTypes ||
-                this.MediaTypes != null &&
-                this.MediaTypes.SequenceEqual(other.MediaTypes)
+                MediaTypes == other.MediaTypes ||
+                MediaTypes != null &&
+                MediaTypes.SequenceEqual(other.MediaTypes)
             );
     }
 
@@ -215,49 +215,49 @@ public partial class GamificationScorecardChangeTopicEvaluationDetail : IEquatab
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EvaluationId != null)
+            if (EvaluationId != null)
             {
-                hash = hash * 59 + this.EvaluationId.GetHashCode();
+                hash = hash * 59 + EvaluationId.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.ConversationDate != null)
+            if (ConversationDate != null)
             {
-                hash = hash * 59 + this.ConversationDate.GetHashCode();
+                hash = hash * 59 + ConversationDate.GetHashCode();
             }
 
-            if (this.FormName != null)
+            if (FormName != null)
             {
-                hash = hash * 59 + this.FormName.GetHashCode();
+                hash = hash * 59 + FormName.GetHashCode();
             }
 
-            if (this.Points != null)
+            if (Points != null)
             {
-                hash = hash * 59 + this.Points.GetHashCode();
+                hash = hash * 59 + Points.GetHashCode();
             }
 
-            if (this.MaxPoints != null)
+            if (MaxPoints != null)
             {
-                hash = hash * 59 + this.MaxPoints.GetHashCode();
+                hash = hash * 59 + MaxPoints.GetHashCode();
             }
 
-            if (this.EvaluationScore != null)
+            if (EvaluationScore != null)
             {
-                hash = hash * 59 + this.EvaluationScore.GetHashCode();
+                hash = hash * 59 + EvaluationScore.GetHashCode();
             }
 
-            if (this.EvaluationScoreDouble != null)
+            if (EvaluationScoreDouble != null)
             {
-                hash = hash * 59 + this.EvaluationScoreDouble.GetHashCode();
+                hash = hash * 59 + EvaluationScoreDouble.GetHashCode();
             }
 
-            if (this.MediaTypes != null)
+            if (MediaTypes != null)
             {
-                hash = hash * 59 + this.MediaTypes.GetHashCode();
+                hash = hash * 59 + MediaTypes.GetHashCode();
             }
 
             return hash;

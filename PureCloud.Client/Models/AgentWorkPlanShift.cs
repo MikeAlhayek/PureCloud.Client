@@ -202,7 +202,7 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentWorkPlanShift);
+        return Equals(obj as AgentWorkPlanShift);
     }
 
     /// <summary>
@@ -220,69 +220,69 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
 
         return true &&
             (
-                this.Days == other.Days ||
-                this.Days != null &&
-                this.Days.Equals(other.Days)
+                Days == other.Days ||
+                Days != null &&
+                Days.Equals(other.Days)
             ) &&
             (
-                this.FlexibleStartTime == other.FlexibleStartTime ||
-                this.FlexibleStartTime != null &&
-                this.FlexibleStartTime.Equals(other.FlexibleStartTime)
+                FlexibleStartTime == other.FlexibleStartTime ||
+                FlexibleStartTime != null &&
+                FlexibleStartTime.Equals(other.FlexibleStartTime)
             ) &&
             (
-                this.ExactStartTimeMinutesFromMidnight == other.ExactStartTimeMinutesFromMidnight ||
-                this.ExactStartTimeMinutesFromMidnight != null &&
-                this.ExactStartTimeMinutesFromMidnight.Equals(other.ExactStartTimeMinutesFromMidnight)
+                ExactStartTimeMinutesFromMidnight == other.ExactStartTimeMinutesFromMidnight ||
+                ExactStartTimeMinutesFromMidnight != null &&
+                ExactStartTimeMinutesFromMidnight.Equals(other.ExactStartTimeMinutesFromMidnight)
             ) &&
             (
-                this.EarliestStartTimeMinutesFromMidnight == other.EarliestStartTimeMinutesFromMidnight ||
-                this.EarliestStartTimeMinutesFromMidnight != null &&
-                this.EarliestStartTimeMinutesFromMidnight.Equals(other.EarliestStartTimeMinutesFromMidnight)
+                EarliestStartTimeMinutesFromMidnight == other.EarliestStartTimeMinutesFromMidnight ||
+                EarliestStartTimeMinutesFromMidnight != null &&
+                EarliestStartTimeMinutesFromMidnight.Equals(other.EarliestStartTimeMinutesFromMidnight)
             ) &&
             (
-                this.LatestStartTimeMinutesFromMidnight == other.LatestStartTimeMinutesFromMidnight ||
-                this.LatestStartTimeMinutesFromMidnight != null &&
-                this.LatestStartTimeMinutesFromMidnight.Equals(other.LatestStartTimeMinutesFromMidnight)
+                LatestStartTimeMinutesFromMidnight == other.LatestStartTimeMinutesFromMidnight ||
+                LatestStartTimeMinutesFromMidnight != null &&
+                LatestStartTimeMinutesFromMidnight.Equals(other.LatestStartTimeMinutesFromMidnight)
             ) &&
             (
-                this.EarliestStopTimeMinutesFromMidnight == other.EarliestStopTimeMinutesFromMidnight ||
-                this.EarliestStopTimeMinutesFromMidnight != null &&
-                this.EarliestStopTimeMinutesFromMidnight.Equals(other.EarliestStopTimeMinutesFromMidnight)
+                EarliestStopTimeMinutesFromMidnight == other.EarliestStopTimeMinutesFromMidnight ||
+                EarliestStopTimeMinutesFromMidnight != null &&
+                EarliestStopTimeMinutesFromMidnight.Equals(other.EarliestStopTimeMinutesFromMidnight)
             ) &&
             (
-                this.ConstrainLatestStopTime == other.ConstrainLatestStopTime ||
-                this.ConstrainLatestStopTime != null &&
-                this.ConstrainLatestStopTime.Equals(other.ConstrainLatestStopTime)
+                ConstrainLatestStopTime == other.ConstrainLatestStopTime ||
+                ConstrainLatestStopTime != null &&
+                ConstrainLatestStopTime.Equals(other.ConstrainLatestStopTime)
             ) &&
             (
-                this.LatestStopTimeMinutesFromMidnight == other.LatestStopTimeMinutesFromMidnight ||
-                this.LatestStopTimeMinutesFromMidnight != null &&
-                this.LatestStopTimeMinutesFromMidnight.Equals(other.LatestStopTimeMinutesFromMidnight)
+                LatestStopTimeMinutesFromMidnight == other.LatestStopTimeMinutesFromMidnight ||
+                LatestStopTimeMinutesFromMidnight != null &&
+                LatestStopTimeMinutesFromMidnight.Equals(other.LatestStopTimeMinutesFromMidnight)
             ) &&
             (
-                this.FlexiblePaidTime == other.FlexiblePaidTime ||
-                this.FlexiblePaidTime != null &&
-                this.FlexiblePaidTime.Equals(other.FlexiblePaidTime)
+                FlexiblePaidTime == other.FlexiblePaidTime ||
+                FlexiblePaidTime != null &&
+                FlexiblePaidTime.Equals(other.FlexiblePaidTime)
             ) &&
             (
-                this.ExactPaidTimeMinutes == other.ExactPaidTimeMinutes ||
-                this.ExactPaidTimeMinutes != null &&
-                this.ExactPaidTimeMinutes.Equals(other.ExactPaidTimeMinutes)
+                ExactPaidTimeMinutes == other.ExactPaidTimeMinutes ||
+                ExactPaidTimeMinutes != null &&
+                ExactPaidTimeMinutes.Equals(other.ExactPaidTimeMinutes)
             ) &&
             (
-                this.MinimumPaidTimeMinutes == other.MinimumPaidTimeMinutes ||
-                this.MinimumPaidTimeMinutes != null &&
-                this.MinimumPaidTimeMinutes.Equals(other.MinimumPaidTimeMinutes)
+                MinimumPaidTimeMinutes == other.MinimumPaidTimeMinutes ||
+                MinimumPaidTimeMinutes != null &&
+                MinimumPaidTimeMinutes.Equals(other.MinimumPaidTimeMinutes)
             ) &&
             (
-                this.MaximumPaidTimeMinutes == other.MaximumPaidTimeMinutes ||
-                this.MaximumPaidTimeMinutes != null &&
-                this.MaximumPaidTimeMinutes.Equals(other.MaximumPaidTimeMinutes)
+                MaximumPaidTimeMinutes == other.MaximumPaidTimeMinutes ||
+                MaximumPaidTimeMinutes != null &&
+                MaximumPaidTimeMinutes.Equals(other.MaximumPaidTimeMinutes)
             ) &&
             (
-                this.Activities == other.Activities ||
-                this.Activities != null &&
-                this.Activities.SequenceEqual(other.Activities)
+                Activities == other.Activities ||
+                Activities != null &&
+                Activities.SequenceEqual(other.Activities)
             );
     }
 
@@ -297,69 +297,69 @@ public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Days != null)
+            if (Days != null)
             {
-                hash = hash * 59 + this.Days.GetHashCode();
+                hash = hash * 59 + Days.GetHashCode();
             }
 
-            if (this.FlexibleStartTime != null)
+            if (FlexibleStartTime != null)
             {
-                hash = hash * 59 + this.FlexibleStartTime.GetHashCode();
+                hash = hash * 59 + FlexibleStartTime.GetHashCode();
             }
 
-            if (this.ExactStartTimeMinutesFromMidnight != null)
+            if (ExactStartTimeMinutesFromMidnight != null)
             {
-                hash = hash * 59 + this.ExactStartTimeMinutesFromMidnight.GetHashCode();
+                hash = hash * 59 + ExactStartTimeMinutesFromMidnight.GetHashCode();
             }
 
-            if (this.EarliestStartTimeMinutesFromMidnight != null)
+            if (EarliestStartTimeMinutesFromMidnight != null)
             {
-                hash = hash * 59 + this.EarliestStartTimeMinutesFromMidnight.GetHashCode();
+                hash = hash * 59 + EarliestStartTimeMinutesFromMidnight.GetHashCode();
             }
 
-            if (this.LatestStartTimeMinutesFromMidnight != null)
+            if (LatestStartTimeMinutesFromMidnight != null)
             {
-                hash = hash * 59 + this.LatestStartTimeMinutesFromMidnight.GetHashCode();
+                hash = hash * 59 + LatestStartTimeMinutesFromMidnight.GetHashCode();
             }
 
-            if (this.EarliestStopTimeMinutesFromMidnight != null)
+            if (EarliestStopTimeMinutesFromMidnight != null)
             {
-                hash = hash * 59 + this.EarliestStopTimeMinutesFromMidnight.GetHashCode();
+                hash = hash * 59 + EarliestStopTimeMinutesFromMidnight.GetHashCode();
             }
 
-            if (this.ConstrainLatestStopTime != null)
+            if (ConstrainLatestStopTime != null)
             {
-                hash = hash * 59 + this.ConstrainLatestStopTime.GetHashCode();
+                hash = hash * 59 + ConstrainLatestStopTime.GetHashCode();
             }
 
-            if (this.LatestStopTimeMinutesFromMidnight != null)
+            if (LatestStopTimeMinutesFromMidnight != null)
             {
-                hash = hash * 59 + this.LatestStopTimeMinutesFromMidnight.GetHashCode();
+                hash = hash * 59 + LatestStopTimeMinutesFromMidnight.GetHashCode();
             }
 
-            if (this.FlexiblePaidTime != null)
+            if (FlexiblePaidTime != null)
             {
-                hash = hash * 59 + this.FlexiblePaidTime.GetHashCode();
+                hash = hash * 59 + FlexiblePaidTime.GetHashCode();
             }
 
-            if (this.ExactPaidTimeMinutes != null)
+            if (ExactPaidTimeMinutes != null)
             {
-                hash = hash * 59 + this.ExactPaidTimeMinutes.GetHashCode();
+                hash = hash * 59 + ExactPaidTimeMinutes.GetHashCode();
             }
 
-            if (this.MinimumPaidTimeMinutes != null)
+            if (MinimumPaidTimeMinutes != null)
             {
-                hash = hash * 59 + this.MinimumPaidTimeMinutes.GetHashCode();
+                hash = hash * 59 + MinimumPaidTimeMinutes.GetHashCode();
             }
 
-            if (this.MaximumPaidTimeMinutes != null)
+            if (MaximumPaidTimeMinutes != null)
             {
-                hash = hash * 59 + this.MaximumPaidTimeMinutes.GetHashCode();
+                hash = hash * 59 + MaximumPaidTimeMinutes.GetHashCode();
             }
 
-            if (this.Activities != null)
+            if (Activities != null)
             {
-                hash = hash * 59 + this.Activities.GetHashCode();
+                hash = hash * 59 + Activities.GetHashCode();
             }
 
             return hash;

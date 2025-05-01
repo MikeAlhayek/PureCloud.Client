@@ -77,7 +77,7 @@ public partial class TimeOffSettingsRequest : IEquatable<TimeOffSettingsRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeOffSettingsRequest);
+        return Equals(obj as TimeOffSettingsRequest);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class TimeOffSettingsRequest : IEquatable<TimeOffSettingsRequest>
 
         return true &&
             (
-                this.SubmissionRangeEnforced == other.SubmissionRangeEnforced ||
-                this.SubmissionRangeEnforced != null &&
-                this.SubmissionRangeEnforced.Equals(other.SubmissionRangeEnforced)
+                SubmissionRangeEnforced == other.SubmissionRangeEnforced ||
+                SubmissionRangeEnforced != null &&
+                SubmissionRangeEnforced.Equals(other.SubmissionRangeEnforced)
             ) &&
             (
-                this.SubmissionEarliestDaysFromNow == other.SubmissionEarliestDaysFromNow ||
-                this.SubmissionEarliestDaysFromNow != null &&
-                this.SubmissionEarliestDaysFromNow.Equals(other.SubmissionEarliestDaysFromNow)
+                SubmissionEarliestDaysFromNow == other.SubmissionEarliestDaysFromNow ||
+                SubmissionEarliestDaysFromNow != null &&
+                SubmissionEarliestDaysFromNow.Equals(other.SubmissionEarliestDaysFromNow)
             ) &&
             (
-                this.SubmissionLatestDaysFromNow == other.SubmissionLatestDaysFromNow ||
-                this.SubmissionLatestDaysFromNow != null &&
-                this.SubmissionLatestDaysFromNow.Equals(other.SubmissionLatestDaysFromNow)
+                SubmissionLatestDaysFromNow == other.SubmissionLatestDaysFromNow ||
+                SubmissionLatestDaysFromNow != null &&
+                SubmissionLatestDaysFromNow.Equals(other.SubmissionLatestDaysFromNow)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class TimeOffSettingsRequest : IEquatable<TimeOffSettingsRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SubmissionRangeEnforced != null)
+            if (SubmissionRangeEnforced != null)
             {
-                hash = hash * 59 + this.SubmissionRangeEnforced.GetHashCode();
+                hash = hash * 59 + SubmissionRangeEnforced.GetHashCode();
             }
 
-            if (this.SubmissionEarliestDaysFromNow != null)
+            if (SubmissionEarliestDaysFromNow != null)
             {
-                hash = hash * 59 + this.SubmissionEarliestDaysFromNow.GetHashCode();
+                hash = hash * 59 + SubmissionEarliestDaysFromNow.GetHashCode();
             }
 
-            if (this.SubmissionLatestDaysFromNow != null)
+            if (SubmissionLatestDaysFromNow != null)
             {
-                hash = hash * 59 + this.SubmissionLatestDaysFromNow.GetHashCode();
+                hash = hash * 59 + SubmissionLatestDaysFromNow.GetHashCode();
             }
 
             return hash;

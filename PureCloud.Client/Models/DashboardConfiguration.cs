@@ -257,7 +257,7 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DashboardConfiguration);
+        return Equals(obj as DashboardConfiguration);
     }
 
     /// <summary>
@@ -275,84 +275,84 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Rows == other.Rows ||
-                this.Rows != null &&
-                this.Rows.Equals(other.Rows)
+                Rows == other.Rows ||
+                Rows != null &&
+                Rows.Equals(other.Rows)
             ) &&
             (
-                this.Columns == other.Columns ||
-                this.Columns != null &&
-                this.Columns.Equals(other.Columns)
+                Columns == other.Columns ||
+                Columns != null &&
+                Columns.Equals(other.Columns)
             ) &&
             (
-                this.Widgets == other.Widgets ||
-                this.Widgets != null &&
-                this.Widgets.SequenceEqual(other.Widgets)
+                Widgets == other.Widgets ||
+                Widgets != null &&
+                Widgets.SequenceEqual(other.Widgets)
             ) &&
             (
-                this.Favorite == other.Favorite ||
-                this.Favorite != null &&
-                this.Favorite.Equals(other.Favorite)
+                Favorite == other.Favorite ||
+                Favorite != null &&
+                Favorite.Equals(other.Favorite)
             ) &&
             (
-                this.PublicDashboard == other.PublicDashboard ||
-                this.PublicDashboard != null &&
-                this.PublicDashboard.Equals(other.PublicDashboard)
+                PublicDashboard == other.PublicDashboard ||
+                PublicDashboard != null &&
+                PublicDashboard.Equals(other.PublicDashboard)
             ) &&
             (
-                this.Restricted == other.Restricted ||
-                this.Restricted != null &&
-                this.Restricted.Equals(other.Restricted)
+                Restricted == other.Restricted ||
+                Restricted != null &&
+                Restricted.Equals(other.Restricted)
             ) &&
             (
-                this.LayoutType == other.LayoutType ||
-                this.LayoutType != null &&
-                this.LayoutType.Equals(other.LayoutType)
+                LayoutType == other.LayoutType ||
+                LayoutType != null &&
+                LayoutType.Equals(other.LayoutType)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.DateDeleted == other.DateDeleted ||
-                this.DateDeleted != null &&
-                this.DateDeleted.Equals(other.DateDeleted)
+                DateDeleted == other.DateDeleted ||
+                DateDeleted != null &&
+                DateDeleted.Equals(other.DateDeleted)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.Shared == other.Shared ||
-                this.Shared != null &&
-                this.Shared.Equals(other.Shared)
+                Shared == other.Shared ||
+                Shared != null &&
+                Shared.Equals(other.Shared)
             ) &&
             (
-                this.DashboardsSharedWith == other.DashboardsSharedWith ||
-                this.DashboardsSharedWith != null &&
-                this.DashboardsSharedWith.Equals(other.DashboardsSharedWith)
+                DashboardsSharedWith == other.DashboardsSharedWith ||
+                DashboardsSharedWith != null &&
+                DashboardsSharedWith.Equals(other.DashboardsSharedWith)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -367,84 +367,84 @@ public partial class DashboardConfiguration : IEquatable<DashboardConfiguration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Rows != null)
+            if (Rows != null)
             {
-                hash = hash * 59 + this.Rows.GetHashCode();
+                hash = hash * 59 + Rows.GetHashCode();
             }
 
-            if (this.Columns != null)
+            if (Columns != null)
             {
-                hash = hash * 59 + this.Columns.GetHashCode();
+                hash = hash * 59 + Columns.GetHashCode();
             }
 
-            if (this.Widgets != null)
+            if (Widgets != null)
             {
-                hash = hash * 59 + this.Widgets.GetHashCode();
+                hash = hash * 59 + Widgets.GetHashCode();
             }
 
-            if (this.Favorite != null)
+            if (Favorite != null)
             {
-                hash = hash * 59 + this.Favorite.GetHashCode();
+                hash = hash * 59 + Favorite.GetHashCode();
             }
 
-            if (this.PublicDashboard != null)
+            if (PublicDashboard != null)
             {
-                hash = hash * 59 + this.PublicDashboard.GetHashCode();
+                hash = hash * 59 + PublicDashboard.GetHashCode();
             }
 
-            if (this.Restricted != null)
+            if (Restricted != null)
             {
-                hash = hash * 59 + this.Restricted.GetHashCode();
+                hash = hash * 59 + Restricted.GetHashCode();
             }
 
-            if (this.LayoutType != null)
+            if (LayoutType != null)
             {
-                hash = hash * 59 + this.LayoutType.GetHashCode();
+                hash = hash * 59 + LayoutType.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.DateDeleted != null)
+            if (DateDeleted != null)
             {
-                hash = hash * 59 + this.DateDeleted.GetHashCode();
+                hash = hash * 59 + DateDeleted.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.Shared != null)
+            if (Shared != null)
             {
-                hash = hash * 59 + this.Shared.GetHashCode();
+                hash = hash * 59 + Shared.GetHashCode();
             }
 
-            if (this.DashboardsSharedWith != null)
+            if (DashboardsSharedWith != null)
             {
-                hash = hash * 59 + this.DashboardsSharedWith.GetHashCode();
+                hash = hash * 59 + DashboardsSharedWith.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

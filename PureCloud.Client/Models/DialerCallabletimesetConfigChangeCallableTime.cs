@@ -76,7 +76,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTime : IEquatable<
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerCallabletimesetConfigChangeCallableTime);
+        return Equals(obj as DialerCallabletimesetConfigChangeCallableTime);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class DialerCallabletimesetConfigChangeCallableTime : IEquatable<
 
         return true &&
             (
-                this.TimeSlots == other.TimeSlots ||
-                this.TimeSlots != null &&
-                this.TimeSlots.SequenceEqual(other.TimeSlots)
+                TimeSlots == other.TimeSlots ||
+                TimeSlots != null &&
+                TimeSlots.SequenceEqual(other.TimeSlots)
             ) &&
             (
-                this.TimeZoneId == other.TimeZoneId ||
-                this.TimeZoneId != null &&
-                this.TimeZoneId.Equals(other.TimeZoneId)
+                TimeZoneId == other.TimeZoneId ||
+                TimeZoneId != null &&
+                TimeZoneId.Equals(other.TimeZoneId)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class DialerCallabletimesetConfigChangeCallableTime : IEquatable<
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeSlots != null)
+            if (TimeSlots != null)
             {
-                hash = hash * 59 + this.TimeSlots.GetHashCode();
+                hash = hash * 59 + TimeSlots.GetHashCode();
             }
 
-            if (this.TimeZoneId != null)
+            if (TimeZoneId != null)
             {
-                hash = hash * 59 + this.TimeZoneId.GetHashCode();
+                hash = hash * 59 + TimeZoneId.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class NTPSettings : IEquatable<NTPSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NTPSettings);
+        return Equals(obj as NTPSettings);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class NTPSettings : IEquatable<NTPSettings>
 
         return true &&
             (
-                this.Servers == other.Servers ||
-                this.Servers != null &&
-                this.Servers.SequenceEqual(other.Servers)
+                Servers == other.Servers ||
+                Servers != null &&
+                Servers.SequenceEqual(other.Servers)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class NTPSettings : IEquatable<NTPSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Servers != null)
+            if (Servers != null)
             {
-                hash = hash * 59 + this.Servers.GetHashCode();
+                hash = hash * 59 + Servers.GetHashCode();
             }
 
             return hash;

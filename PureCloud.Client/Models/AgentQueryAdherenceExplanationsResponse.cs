@@ -76,7 +76,7 @@ public partial class AgentQueryAdherenceExplanationsResponse : IEquatable<AgentQ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentQueryAdherenceExplanationsResponse);
+        return Equals(obj as AgentQueryAdherenceExplanationsResponse);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class AgentQueryAdherenceExplanationsResponse : IEquatable<AgentQ
 
         return true &&
             (
-                this.Job == other.Job ||
-                this.Job != null &&
-                this.Job.Equals(other.Job)
+                Job == other.Job ||
+                Job != null &&
+                Job.Equals(other.Job)
             ) &&
             (
-                this.Result == other.Result ||
-                this.Result != null &&
-                this.Result.Equals(other.Result)
+                Result == other.Result ||
+                Result != null &&
+                Result.Equals(other.Result)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class AgentQueryAdherenceExplanationsResponse : IEquatable<AgentQ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Job != null)
+            if (Job != null)
             {
-                hash = hash * 59 + this.Job.GetHashCode();
+                hash = hash * 59 + Job.GetHashCode();
             }
 
-            if (this.Result != null)
+            if (Result != null)
             {
-                hash = hash * 59 + this.Result.GetHashCode();
+                hash = hash * 59 + Result.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
             return hash;

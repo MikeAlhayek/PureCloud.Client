@@ -154,7 +154,7 @@ public partial class InboundDomain : IEquatable<InboundDomain>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InboundDomain);
+        return Equals(obj as InboundDomain);
     }
 
     /// <summary>
@@ -172,39 +172,39 @@ public partial class InboundDomain : IEquatable<InboundDomain>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.MxRecordStatus == other.MxRecordStatus ||
-                this.MxRecordStatus != null &&
-                this.MxRecordStatus.Equals(other.MxRecordStatus)
+                MxRecordStatus == other.MxRecordStatus ||
+                MxRecordStatus != null &&
+                MxRecordStatus.Equals(other.MxRecordStatus)
             ) &&
             (
-                this.SubDomain == other.SubDomain ||
-                this.SubDomain != null &&
-                this.SubDomain.Equals(other.SubDomain)
+                SubDomain == other.SubDomain ||
+                SubDomain != null &&
+                SubDomain.Equals(other.SubDomain)
             ) &&
             (
-                this.MailFromSettings == other.MailFromSettings ||
-                this.MailFromSettings != null &&
-                this.MailFromSettings.Equals(other.MailFromSettings)
+                MailFromSettings == other.MailFromSettings ||
+                MailFromSettings != null &&
+                MailFromSettings.Equals(other.MailFromSettings)
             ) &&
             (
-                this.CustomSMTPServer == other.CustomSMTPServer ||
-                this.CustomSMTPServer != null &&
-                this.CustomSMTPServer.Equals(other.CustomSMTPServer)
+                CustomSMTPServer == other.CustomSMTPServer ||
+                CustomSMTPServer != null &&
+                CustomSMTPServer.Equals(other.CustomSMTPServer)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -219,39 +219,39 @@ public partial class InboundDomain : IEquatable<InboundDomain>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.MxRecordStatus != null)
+            if (MxRecordStatus != null)
             {
-                hash = hash * 59 + this.MxRecordStatus.GetHashCode();
+                hash = hash * 59 + MxRecordStatus.GetHashCode();
             }
 
-            if (this.SubDomain != null)
+            if (SubDomain != null)
             {
-                hash = hash * 59 + this.SubDomain.GetHashCode();
+                hash = hash * 59 + SubDomain.GetHashCode();
             }
 
-            if (this.MailFromSettings != null)
+            if (MailFromSettings != null)
             {
-                hash = hash * 59 + this.MailFromSettings.GetHashCode();
+                hash = hash * 59 + MailFromSettings.GetHashCode();
             }
 
-            if (this.CustomSMTPServer != null)
+            if (CustomSMTPServer != null)
             {
-                hash = hash * 59 + this.CustomSMTPServer.GetHashCode();
+                hash = hash * 59 + CustomSMTPServer.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

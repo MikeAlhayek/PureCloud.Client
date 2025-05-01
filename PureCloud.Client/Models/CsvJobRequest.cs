@@ -71,7 +71,7 @@ public partial class CsvJobRequest : IEquatable<CsvJobRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CsvJobRequest);
+        return Equals(obj as CsvJobRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class CsvJobRequest : IEquatable<CsvJobRequest>
 
         return true &&
             (
-                this.UploadId == other.UploadId ||
-                this.UploadId != null &&
-                this.UploadId.Equals(other.UploadId)
+                UploadId == other.UploadId ||
+                UploadId != null &&
+                UploadId.Equals(other.UploadId)
             ) &&
             (
-                this.SettingsId == other.SettingsId ||
-                this.SettingsId != null &&
-                this.SettingsId.Equals(other.SettingsId)
+                SettingsId == other.SettingsId ||
+                SettingsId != null &&
+                SettingsId.Equals(other.SettingsId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class CsvJobRequest : IEquatable<CsvJobRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadId != null)
+            if (UploadId != null)
             {
-                hash = hash * 59 + this.UploadId.GetHashCode();
+                hash = hash * 59 + UploadId.GetHashCode();
             }
 
-            if (this.SettingsId != null)
+            if (SettingsId != null)
             {
-                hash = hash * 59 + this.SettingsId.GetHashCode();
+                hash = hash * 59 + SettingsId.GetHashCode();
             }
 
             return hash;

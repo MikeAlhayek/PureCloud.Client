@@ -77,7 +77,7 @@ public partial class WfmHistoricalAdherenceResultWrapper : IEquatable<WfmHistori
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalAdherenceResultWrapper);
+        return Equals(obj as WfmHistoricalAdherenceResultWrapper);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class WfmHistoricalAdherenceResultWrapper : IEquatable<WfmHistori
 
         return true &&
             (
-                this.EntityId == other.EntityId ||
-                this.EntityId != null &&
-                this.EntityId.Equals(other.EntityId)
+                EntityId == other.EntityId ||
+                EntityId != null &&
+                EntityId.Equals(other.EntityId)
             ) &&
             (
-                this.Data == other.Data ||
-                this.Data != null &&
-                this.Data.SequenceEqual(other.Data)
+                Data == other.Data ||
+                Data != null &&
+                Data.SequenceEqual(other.Data)
             ) &&
             (
-                this.LookupIdToSecondaryPresenceId == other.LookupIdToSecondaryPresenceId ||
-                this.LookupIdToSecondaryPresenceId != null &&
-                this.LookupIdToSecondaryPresenceId.SequenceEqual(other.LookupIdToSecondaryPresenceId)
+                LookupIdToSecondaryPresenceId == other.LookupIdToSecondaryPresenceId ||
+                LookupIdToSecondaryPresenceId != null &&
+                LookupIdToSecondaryPresenceId.SequenceEqual(other.LookupIdToSecondaryPresenceId)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class WfmHistoricalAdherenceResultWrapper : IEquatable<WfmHistori
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EntityId != null)
+            if (EntityId != null)
             {
-                hash = hash * 59 + this.EntityId.GetHashCode();
+                hash = hash * 59 + EntityId.GetHashCode();
             }
 
-            if (this.Data != null)
+            if (Data != null)
             {
-                hash = hash * 59 + this.Data.GetHashCode();
+                hash = hash * 59 + Data.GetHashCode();
             }
 
-            if (this.LookupIdToSecondaryPresenceId != null)
+            if (LookupIdToSecondaryPresenceId != null)
             {
-                hash = hash * 59 + this.LookupIdToSecondaryPresenceId.GetHashCode();
+                hash = hash * 59 + LookupIdToSecondaryPresenceId.GetHashCode();
             }
 
             return hash;

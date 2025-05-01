@@ -63,7 +63,7 @@ public partial class EdgeMetricsTopicEdgeMetricSubsystemMedia : IEquatable<EdgeM
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeMetricsTopicEdgeMetricSubsystemMedia);
+        return Equals(obj as EdgeMetricsTopicEdgeMetricSubsystemMedia);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class EdgeMetricsTopicEdgeMetricSubsystemMedia : IEquatable<EdgeM
 
         return true &&
             (
-                this.ProcessName == other.ProcessName ||
-                this.ProcessName != null &&
-                this.ProcessName.Equals(other.ProcessName)
+                ProcessName == other.ProcessName ||
+                ProcessName != null &&
+                ProcessName.Equals(other.ProcessName)
             ) &&
             (
-                this.DelayMs == other.DelayMs ||
-                this.DelayMs != null &&
-                this.DelayMs.Equals(other.DelayMs)
+                DelayMs == other.DelayMs ||
+                DelayMs != null &&
+                DelayMs.Equals(other.DelayMs)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class EdgeMetricsTopicEdgeMetricSubsystemMedia : IEquatable<EdgeM
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ProcessName != null)
+            if (ProcessName != null)
             {
-                hash = hash * 59 + this.ProcessName.GetHashCode();
+                hash = hash * 59 + ProcessName.GetHashCode();
             }
 
-            if (this.DelayMs != null)
+            if (DelayMs != null)
             {
-                hash = hash * 59 + this.DelayMs.GetHashCode();
+                hash = hash * 59 + DelayMs.GetHashCode();
             }
 
             return hash;

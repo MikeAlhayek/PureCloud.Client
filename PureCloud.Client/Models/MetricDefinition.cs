@@ -236,7 +236,7 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MetricDefinition);
+        return Equals(obj as MetricDefinition);
     }
 
     /// <summary>
@@ -254,64 +254,64 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.UnitType == other.UnitType ||
-                this.UnitType != null &&
-                this.UnitType.Equals(other.UnitType)
+                UnitType == other.UnitType ||
+                UnitType != null &&
+                UnitType.Equals(other.UnitType)
             ) &&
             (
-                this.ShortName == other.ShortName ||
-                this.ShortName != null &&
-                this.ShortName.Equals(other.ShortName)
+                ShortName == other.ShortName ||
+                ShortName != null &&
+                ShortName.Equals(other.ShortName)
             ) &&
             (
-                this.DividendMetrics == other.DividendMetrics ||
-                this.DividendMetrics != null &&
-                this.DividendMetrics.SequenceEqual(other.DividendMetrics)
+                DividendMetrics == other.DividendMetrics ||
+                DividendMetrics != null &&
+                DividendMetrics.SequenceEqual(other.DividendMetrics)
             ) &&
             (
-                this.DivisorMetrics == other.DivisorMetrics ||
-                this.DivisorMetrics != null &&
-                this.DivisorMetrics.SequenceEqual(other.DivisorMetrics)
+                DivisorMetrics == other.DivisorMetrics ||
+                DivisorMetrics != null &&
+                DivisorMetrics.SequenceEqual(other.DivisorMetrics)
             ) &&
             (
-                this.DefaultObjective == other.DefaultObjective ||
-                this.DefaultObjective != null &&
-                this.DefaultObjective.Equals(other.DefaultObjective)
+                DefaultObjective == other.DefaultObjective ||
+                DefaultObjective != null &&
+                DefaultObjective.Equals(other.DefaultObjective)
             ) &&
             (
-                this.LockTemplateId == other.LockTemplateId ||
-                this.LockTemplateId != null &&
-                this.LockTemplateId.Equals(other.LockTemplateId)
+                LockTemplateId == other.LockTemplateId ||
+                LockTemplateId != null &&
+                LockTemplateId.Equals(other.LockTemplateId)
             ) &&
             (
-                this.MediaTypeFilteringAllowed == other.MediaTypeFilteringAllowed ||
-                this.MediaTypeFilteringAllowed != null &&
-                this.MediaTypeFilteringAllowed.Equals(other.MediaTypeFilteringAllowed)
+                MediaTypeFilteringAllowed == other.MediaTypeFilteringAllowed ||
+                MediaTypeFilteringAllowed != null &&
+                MediaTypeFilteringAllowed.Equals(other.MediaTypeFilteringAllowed)
             ) &&
             (
-                this.InitialDirectionFilteringAllowed == other.InitialDirectionFilteringAllowed ||
-                this.InitialDirectionFilteringAllowed != null &&
-                this.InitialDirectionFilteringAllowed.Equals(other.InitialDirectionFilteringAllowed)
+                InitialDirectionFilteringAllowed == other.InitialDirectionFilteringAllowed ||
+                InitialDirectionFilteringAllowed != null &&
+                InitialDirectionFilteringAllowed.Equals(other.InitialDirectionFilteringAllowed)
             ) &&
             (
-                this.QueueFilteringAllowed == other.QueueFilteringAllowed ||
-                this.QueueFilteringAllowed != null &&
-                this.QueueFilteringAllowed.Equals(other.QueueFilteringAllowed)
+                QueueFilteringAllowed == other.QueueFilteringAllowed ||
+                QueueFilteringAllowed != null &&
+                QueueFilteringAllowed.Equals(other.QueueFilteringAllowed)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -326,64 +326,64 @@ public partial class MetricDefinition : IEquatable<MetricDefinition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.UnitType != null)
+            if (UnitType != null)
             {
-                hash = hash * 59 + this.UnitType.GetHashCode();
+                hash = hash * 59 + UnitType.GetHashCode();
             }
 
-            if (this.ShortName != null)
+            if (ShortName != null)
             {
-                hash = hash * 59 + this.ShortName.GetHashCode();
+                hash = hash * 59 + ShortName.GetHashCode();
             }
 
-            if (this.DividendMetrics != null)
+            if (DividendMetrics != null)
             {
-                hash = hash * 59 + this.DividendMetrics.GetHashCode();
+                hash = hash * 59 + DividendMetrics.GetHashCode();
             }
 
-            if (this.DivisorMetrics != null)
+            if (DivisorMetrics != null)
             {
-                hash = hash * 59 + this.DivisorMetrics.GetHashCode();
+                hash = hash * 59 + DivisorMetrics.GetHashCode();
             }
 
-            if (this.DefaultObjective != null)
+            if (DefaultObjective != null)
             {
-                hash = hash * 59 + this.DefaultObjective.GetHashCode();
+                hash = hash * 59 + DefaultObjective.GetHashCode();
             }
 
-            if (this.LockTemplateId != null)
+            if (LockTemplateId != null)
             {
-                hash = hash * 59 + this.LockTemplateId.GetHashCode();
+                hash = hash * 59 + LockTemplateId.GetHashCode();
             }
 
-            if (this.MediaTypeFilteringAllowed != null)
+            if (MediaTypeFilteringAllowed != null)
             {
-                hash = hash * 59 + this.MediaTypeFilteringAllowed.GetHashCode();
+                hash = hash * 59 + MediaTypeFilteringAllowed.GetHashCode();
             }
 
-            if (this.InitialDirectionFilteringAllowed != null)
+            if (InitialDirectionFilteringAllowed != null)
             {
-                hash = hash * 59 + this.InitialDirectionFilteringAllowed.GetHashCode();
+                hash = hash * 59 + InitialDirectionFilteringAllowed.GetHashCode();
             }
 
-            if (this.QueueFilteringAllowed != null)
+            if (QueueFilteringAllowed != null)
             {
-                hash = hash * 59 + this.QueueFilteringAllowed.GetHashCode();
+                hash = hash * 59 + QueueFilteringAllowed.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -116,7 +116,7 @@ public partial class AuditQuerySort : IEquatable<AuditQuerySort>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuditQuerySort);
+        return Equals(obj as AuditQuerySort);
     }
 
     /// <summary>
@@ -134,14 +134,14 @@ public partial class AuditQuerySort : IEquatable<AuditQuerySort>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.SortOrder == other.SortOrder ||
-                this.SortOrder != null &&
-                this.SortOrder.Equals(other.SortOrder)
+                SortOrder == other.SortOrder ||
+                SortOrder != null &&
+                SortOrder.Equals(other.SortOrder)
             );
     }
 
@@ -156,14 +156,14 @@ public partial class AuditQuerySort : IEquatable<AuditQuerySort>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.SortOrder != null)
+            if (SortOrder != null)
             {
-                hash = hash * 59 + this.SortOrder.GetHashCode();
+                hash = hash * 59 + SortOrder.GetHashCode();
             }
 
             return hash;

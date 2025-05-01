@@ -85,7 +85,7 @@ public partial class CalibrationAssignment : IEquatable<CalibrationAssignment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CalibrationAssignment);
+        return Equals(obj as CalibrationAssignment);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class CalibrationAssignment : IEquatable<CalibrationAssignment>
 
         return true &&
             (
-                this.Calibrator == other.Calibrator ||
-                this.Calibrator != null &&
-                this.Calibrator.Equals(other.Calibrator)
+                Calibrator == other.Calibrator ||
+                Calibrator != null &&
+                Calibrator.Equals(other.Calibrator)
             ) &&
             (
-                this.Evaluators == other.Evaluators ||
-                this.Evaluators != null &&
-                this.Evaluators.SequenceEqual(other.Evaluators)
+                Evaluators == other.Evaluators ||
+                Evaluators != null &&
+                Evaluators.SequenceEqual(other.Evaluators)
             ) &&
             (
-                this.EvaluationForm == other.EvaluationForm ||
-                this.EvaluationForm != null &&
-                this.EvaluationForm.Equals(other.EvaluationForm)
+                EvaluationForm == other.EvaluationForm ||
+                EvaluationForm != null &&
+                EvaluationForm.Equals(other.EvaluationForm)
             ) &&
             (
-                this.ExpertEvaluator == other.ExpertEvaluator ||
-                this.ExpertEvaluator != null &&
-                this.ExpertEvaluator.Equals(other.ExpertEvaluator)
+                ExpertEvaluator == other.ExpertEvaluator ||
+                ExpertEvaluator != null &&
+                ExpertEvaluator.Equals(other.ExpertEvaluator)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class CalibrationAssignment : IEquatable<CalibrationAssignment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Calibrator != null)
+            if (Calibrator != null)
             {
-                hash = hash * 59 + this.Calibrator.GetHashCode();
+                hash = hash * 59 + Calibrator.GetHashCode();
             }
 
-            if (this.Evaluators != null)
+            if (Evaluators != null)
             {
-                hash = hash * 59 + this.Evaluators.GetHashCode();
+                hash = hash * 59 + Evaluators.GetHashCode();
             }
 
-            if (this.EvaluationForm != null)
+            if (EvaluationForm != null)
             {
-                hash = hash * 59 + this.EvaluationForm.GetHashCode();
+                hash = hash * 59 + EvaluationForm.GetHashCode();
             }
 
-            if (this.ExpertEvaluator != null)
+            if (ExpertEvaluator != null)
             {
-                hash = hash * 59 + this.ExpertEvaluator.GetHashCode();
+                hash = hash * 59 + ExpertEvaluator.GetHashCode();
             }
 
             return hash;

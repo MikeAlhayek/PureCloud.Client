@@ -65,7 +65,7 @@ public partial class NuanceMixDlgSettings : IEquatable<NuanceMixDlgSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NuanceMixDlgSettings);
+        return Equals(obj as NuanceMixDlgSettings);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class NuanceMixDlgSettings : IEquatable<NuanceMixDlgSettings>
 
         return true &&
             (
-                this.ChannelId == other.ChannelId ||
-                this.ChannelId != null &&
-                this.ChannelId.Equals(other.ChannelId)
+                ChannelId == other.ChannelId ||
+                ChannelId != null &&
+                ChannelId.Equals(other.ChannelId)
             ) &&
             (
-                this.InputParameters == other.InputParameters ||
-                this.InputParameters != null &&
-                this.InputParameters.SequenceEqual(other.InputParameters)
+                InputParameters == other.InputParameters ||
+                InputParameters != null &&
+                InputParameters.SequenceEqual(other.InputParameters)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class NuanceMixDlgSettings : IEquatable<NuanceMixDlgSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ChannelId != null)
+            if (ChannelId != null)
             {
-                hash = hash * 59 + this.ChannelId.GetHashCode();
+                hash = hash * 59 + ChannelId.GetHashCode();
             }
 
-            if (this.InputParameters != null)
+            if (InputParameters != null)
             {
-                hash = hash * 59 + this.InputParameters.GetHashCode();
+                hash = hash * 59 + InputParameters.GetHashCode();
             }
 
             return hash;

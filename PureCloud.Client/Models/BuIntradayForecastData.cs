@@ -64,7 +64,7 @@ public partial class BuIntradayForecastData : IEquatable<BuIntradayForecastData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuIntradayForecastData);
+        return Equals(obj as BuIntradayForecastData);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class BuIntradayForecastData : IEquatable<BuIntradayForecastData>
 
         return true &&
             (
-                this.Offered == other.Offered ||
-                this.Offered != null &&
-                this.Offered.Equals(other.Offered)
+                Offered == other.Offered ||
+                Offered != null &&
+                Offered.Equals(other.Offered)
             ) &&
             (
-                this.AverageHandleTimeSeconds == other.AverageHandleTimeSeconds ||
-                this.AverageHandleTimeSeconds != null &&
-                this.AverageHandleTimeSeconds.Equals(other.AverageHandleTimeSeconds)
+                AverageHandleTimeSeconds == other.AverageHandleTimeSeconds ||
+                AverageHandleTimeSeconds != null &&
+                AverageHandleTimeSeconds.Equals(other.AverageHandleTimeSeconds)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class BuIntradayForecastData : IEquatable<BuIntradayForecastData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Offered != null)
+            if (Offered != null)
             {
-                hash = hash * 59 + this.Offered.GetHashCode();
+                hash = hash * 59 + Offered.GetHashCode();
             }
 
-            if (this.AverageHandleTimeSeconds != null)
+            if (AverageHandleTimeSeconds != null)
             {
-                hash = hash * 59 + this.AverageHandleTimeSeconds.GetHashCode();
+                hash = hash * 59 + AverageHandleTimeSeconds.GetHashCode();
             }
 
             return hash;

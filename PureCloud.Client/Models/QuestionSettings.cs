@@ -64,7 +64,7 @@ public partial class QuestionSettings : IEquatable<QuestionSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QuestionSettings);
+        return Equals(obj as QuestionSettings);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class QuestionSettings : IEquatable<QuestionSettings>
 
         return true &&
             (
-                this.QuestionContextId == other.QuestionContextId ||
-                this.QuestionContextId != null &&
-                this.QuestionContextId.Equals(other.QuestionContextId)
+                QuestionContextId == other.QuestionContextId ||
+                QuestionContextId != null &&
+                QuestionContextId.Equals(other.QuestionContextId)
             ) &&
             (
-                this.Settings == other.Settings ||
-                this.Settings != null &&
-                this.Settings.Equals(other.Settings)
+                Settings == other.Settings ||
+                Settings != null &&
+                Settings.Equals(other.Settings)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class QuestionSettings : IEquatable<QuestionSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QuestionContextId != null)
+            if (QuestionContextId != null)
             {
-                hash = hash * 59 + this.QuestionContextId.GetHashCode();
+                hash = hash * 59 + QuestionContextId.GetHashCode();
             }
 
-            if (this.Settings != null)
+            if (Settings != null)
             {
-                hash = hash * 59 + this.Settings.GetHashCode();
+                hash = hash * 59 + Settings.GetHashCode();
             }
 
             return hash;

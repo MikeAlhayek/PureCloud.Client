@@ -58,7 +58,7 @@ public partial class AfterCallWorkUpdate : IEquatable<AfterCallWorkUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AfterCallWorkUpdate);
+        return Equals(obj as AfterCallWorkUpdate);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class AfterCallWorkUpdate : IEquatable<AfterCallWorkUpdate>
 
         return true &&
             (
-                this.AfterCallWorkRequired == other.AfterCallWorkRequired ||
-                this.AfterCallWorkRequired != null &&
-                this.AfterCallWorkRequired.Equals(other.AfterCallWorkRequired)
+                AfterCallWorkRequired == other.AfterCallWorkRequired ||
+                AfterCallWorkRequired != null &&
+                AfterCallWorkRequired.Equals(other.AfterCallWorkRequired)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class AfterCallWorkUpdate : IEquatable<AfterCallWorkUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AfterCallWorkRequired != null)
+            if (AfterCallWorkRequired != null)
             {
-                hash = hash * 59 + this.AfterCallWorkRequired.GetHashCode();
+                hash = hash * 59 + AfterCallWorkRequired.GetHashCode();
             }
 
             return hash;

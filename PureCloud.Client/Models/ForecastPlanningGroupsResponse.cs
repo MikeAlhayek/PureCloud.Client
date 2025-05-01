@@ -64,7 +64,7 @@ public partial class ForecastPlanningGroupsResponse : IEquatable<ForecastPlannin
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ForecastPlanningGroupsResponse);
+        return Equals(obj as ForecastPlanningGroupsResponse);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class ForecastPlanningGroupsResponse : IEquatable<ForecastPlannin
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.BusinessUnitServiceGoalImpact == other.BusinessUnitServiceGoalImpact ||
-                this.BusinessUnitServiceGoalImpact != null &&
-                this.BusinessUnitServiceGoalImpact.Equals(other.BusinessUnitServiceGoalImpact)
+                BusinessUnitServiceGoalImpact == other.BusinessUnitServiceGoalImpact ||
+                BusinessUnitServiceGoalImpact != null &&
+                BusinessUnitServiceGoalImpact.Equals(other.BusinessUnitServiceGoalImpact)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class ForecastPlanningGroupsResponse : IEquatable<ForecastPlannin
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.BusinessUnitServiceGoalImpact != null)
+            if (BusinessUnitServiceGoalImpact != null)
             {
-                hash = hash * 59 + this.BusinessUnitServiceGoalImpact.GetHashCode();
+                hash = hash * 59 + BusinessUnitServiceGoalImpact.GetHashCode();
             }
 
             return hash;

@@ -173,7 +173,7 @@ public partial class Program : IEquatable<Program>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Program);
+        return Equals(obj as Program);
     }
 
     /// <summary>
@@ -191,64 +191,64 @@ public partial class Program : IEquatable<Program>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Published == other.Published ||
-                this.Published != null &&
-                this.Published.Equals(other.Published)
+                Published == other.Published ||
+                Published != null &&
+                Published.Equals(other.Published)
             ) &&
             (
-                this.Topics == other.Topics ||
-                this.Topics != null &&
-                this.Topics.SequenceEqual(other.Topics)
+                Topics == other.Topics ||
+                Topics != null &&
+                Topics.SequenceEqual(other.Topics)
             ) &&
             (
-                this.Tags == other.Tags ||
-                this.Tags != null &&
-                this.Tags.SequenceEqual(other.Tags)
+                Tags == other.Tags ||
+                Tags != null &&
+                Tags.SequenceEqual(other.Tags)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.PublishedBy == other.PublishedBy ||
-                this.PublishedBy != null &&
-                this.PublishedBy.Equals(other.PublishedBy)
+                PublishedBy == other.PublishedBy ||
+                PublishedBy != null &&
+                PublishedBy.Equals(other.PublishedBy)
             ) &&
             (
-                this.DatePublished == other.DatePublished ||
-                this.DatePublished != null &&
-                this.DatePublished.Equals(other.DatePublished)
+                DatePublished == other.DatePublished ||
+                DatePublished != null &&
+                DatePublished.Equals(other.DatePublished)
             ) &&
             (
-                this.TopicLinksJob == other.TopicLinksJob ||
-                this.TopicLinksJob != null &&
-                this.TopicLinksJob.Equals(other.TopicLinksJob)
+                TopicLinksJob == other.TopicLinksJob ||
+                TopicLinksJob != null &&
+                TopicLinksJob.Equals(other.TopicLinksJob)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -263,64 +263,64 @@ public partial class Program : IEquatable<Program>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Published != null)
+            if (Published != null)
             {
-                hash = hash * 59 + this.Published.GetHashCode();
+                hash = hash * 59 + Published.GetHashCode();
             }
 
-            if (this.Topics != null)
+            if (Topics != null)
             {
-                hash = hash * 59 + this.Topics.GetHashCode();
+                hash = hash * 59 + Topics.GetHashCode();
             }
 
-            if (this.Tags != null)
+            if (Tags != null)
             {
-                hash = hash * 59 + this.Tags.GetHashCode();
+                hash = hash * 59 + Tags.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.PublishedBy != null)
+            if (PublishedBy != null)
             {
-                hash = hash * 59 + this.PublishedBy.GetHashCode();
+                hash = hash * 59 + PublishedBy.GetHashCode();
             }
 
-            if (this.DatePublished != null)
+            if (DatePublished != null)
             {
-                hash = hash * 59 + this.DatePublished.GetHashCode();
+                hash = hash * 59 + DatePublished.GetHashCode();
             }
 
-            if (this.TopicLinksJob != null)
+            if (TopicLinksJob != null)
             {
-                hash = hash * 59 + this.TopicLinksJob.GetHashCode();
+                hash = hash * 59 + TopicLinksJob.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

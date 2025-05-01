@@ -163,7 +163,7 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CobrowseSettings);
+        return Equals(obj as CobrowseSettings);
     }
 
     /// <summary>
@@ -181,44 +181,44 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.AllowAgentControl == other.AllowAgentControl ||
-                this.AllowAgentControl != null &&
-                this.AllowAgentControl.Equals(other.AllowAgentControl)
+                AllowAgentControl == other.AllowAgentControl ||
+                AllowAgentControl != null &&
+                AllowAgentControl.Equals(other.AllowAgentControl)
             ) &&
             (
-                this.AllowAgentNavigation == other.AllowAgentNavigation ||
-                this.AllowAgentNavigation != null &&
-                this.AllowAgentNavigation.Equals(other.AllowAgentNavigation)
+                AllowAgentNavigation == other.AllowAgentNavigation ||
+                AllowAgentNavigation != null &&
+                AllowAgentNavigation.Equals(other.AllowAgentNavigation)
             ) &&
             (
-                this.AllowDraw == other.AllowDraw ||
-                this.AllowDraw != null &&
-                this.AllowDraw.Equals(other.AllowDraw)
+                AllowDraw == other.AllowDraw ||
+                AllowDraw != null &&
+                AllowDraw.Equals(other.AllowDraw)
             ) &&
             (
-                this.MaskSelectors == other.MaskSelectors ||
-                this.MaskSelectors != null &&
-                this.MaskSelectors.SequenceEqual(other.MaskSelectors)
+                MaskSelectors == other.MaskSelectors ||
+                MaskSelectors != null &&
+                MaskSelectors.SequenceEqual(other.MaskSelectors)
             ) &&
             (
-                this.Channels == other.Channels ||
-                this.Channels != null &&
-                this.Channels.SequenceEqual(other.Channels)
+                Channels == other.Channels ||
+                Channels != null &&
+                Channels.SequenceEqual(other.Channels)
             ) &&
             (
-                this.ReadonlySelectors == other.ReadonlySelectors ||
-                this.ReadonlySelectors != null &&
-                this.ReadonlySelectors.SequenceEqual(other.ReadonlySelectors)
+                ReadonlySelectors == other.ReadonlySelectors ||
+                ReadonlySelectors != null &&
+                ReadonlySelectors.SequenceEqual(other.ReadonlySelectors)
             ) &&
             (
-                this.PauseCriteria == other.PauseCriteria ||
-                this.PauseCriteria != null &&
-                this.PauseCriteria.SequenceEqual(other.PauseCriteria)
+                PauseCriteria == other.PauseCriteria ||
+                PauseCriteria != null &&
+                PauseCriteria.SequenceEqual(other.PauseCriteria)
             );
     }
 
@@ -233,44 +233,44 @@ public partial class CobrowseSettings : IEquatable<CobrowseSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.AllowAgentControl != null)
+            if (AllowAgentControl != null)
             {
-                hash = hash * 59 + this.AllowAgentControl.GetHashCode();
+                hash = hash * 59 + AllowAgentControl.GetHashCode();
             }
 
-            if (this.AllowAgentNavigation != null)
+            if (AllowAgentNavigation != null)
             {
-                hash = hash * 59 + this.AllowAgentNavigation.GetHashCode();
+                hash = hash * 59 + AllowAgentNavigation.GetHashCode();
             }
 
-            if (this.AllowDraw != null)
+            if (AllowDraw != null)
             {
-                hash = hash * 59 + this.AllowDraw.GetHashCode();
+                hash = hash * 59 + AllowDraw.GetHashCode();
             }
 
-            if (this.MaskSelectors != null)
+            if (MaskSelectors != null)
             {
-                hash = hash * 59 + this.MaskSelectors.GetHashCode();
+                hash = hash * 59 + MaskSelectors.GetHashCode();
             }
 
-            if (this.Channels != null)
+            if (Channels != null)
             {
-                hash = hash * 59 + this.Channels.GetHashCode();
+                hash = hash * 59 + Channels.GetHashCode();
             }
 
-            if (this.ReadonlySelectors != null)
+            if (ReadonlySelectors != null)
             {
-                hash = hash * 59 + this.ReadonlySelectors.GetHashCode();
+                hash = hash * 59 + ReadonlySelectors.GetHashCode();
             }
 
-            if (this.PauseCriteria != null)
+            if (PauseCriteria != null)
             {
-                hash = hash * 59 + this.PauseCriteria.GetHashCode();
+                hash = hash * 59 + PauseCriteria.GetHashCode();
             }
 
             return hash;

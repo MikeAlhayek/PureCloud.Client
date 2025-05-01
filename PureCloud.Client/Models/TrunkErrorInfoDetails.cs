@@ -74,7 +74,7 @@ public partial class TrunkErrorInfoDetails : IEquatable<TrunkErrorInfoDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkErrorInfoDetails);
+        return Equals(obj as TrunkErrorInfoDetails);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class TrunkErrorInfoDetails : IEquatable<TrunkErrorInfoDetails>
 
         return true &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Hostname == other.Hostname ||
-                this.Hostname != null &&
-                this.Hostname.Equals(other.Hostname)
+                Hostname == other.Hostname ||
+                Hostname != null &&
+                Hostname.Equals(other.Hostname)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class TrunkErrorInfoDetails : IEquatable<TrunkErrorInfoDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Hostname != null)
+            if (Hostname != null)
             {
-                hash = hash * 59 + this.Hostname.GetHashCode();
+                hash = hash * 59 + Hostname.GetHashCode();
             }
 
             return hash;

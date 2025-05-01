@@ -211,7 +211,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MatchCriteriaTestResult);
+        return Equals(obj as MatchCriteriaTestResult);
     }
 
     /// <summary>
@@ -229,39 +229,39 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
 
         return true &&
             (
-                this.JsonPath == other.JsonPath ||
-                this.JsonPath != null &&
-                this.JsonPath.Equals(other.JsonPath)
+                JsonPath == other.JsonPath ||
+                JsonPath != null &&
+                JsonPath.Equals(other.JsonPath)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             ) &&
             (
-                this.GeneratedJsonPathCondition == other.GeneratedJsonPathCondition ||
-                this.GeneratedJsonPathCondition != null &&
-                this.GeneratedJsonPathCondition.Equals(other.GeneratedJsonPathCondition)
+                GeneratedJsonPathCondition == other.GeneratedJsonPathCondition ||
+                GeneratedJsonPathCondition != null &&
+                GeneratedJsonPathCondition.Equals(other.GeneratedJsonPathCondition)
             ) &&
             (
-                this.Match == other.Match ||
-                this.Match != null &&
-                this.Match.Equals(other.Match)
+                Match == other.Match ||
+                Match != null &&
+                Match.Equals(other.Match)
             ) &&
             (
-                this.JsonPathExtraction == other.JsonPathExtraction ||
-                this.JsonPathExtraction != null &&
-                this.JsonPathExtraction.SequenceEqual(other.JsonPathExtraction)
+                JsonPathExtraction == other.JsonPathExtraction ||
+                JsonPathExtraction != null &&
+                JsonPathExtraction.SequenceEqual(other.JsonPathExtraction)
             );
     }
 
@@ -276,39 +276,39 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.JsonPath != null)
+            if (JsonPath != null)
             {
-                hash = hash * 59 + this.JsonPath.GetHashCode();
+                hash = hash * 59 + JsonPath.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
-            if (this.GeneratedJsonPathCondition != null)
+            if (GeneratedJsonPathCondition != null)
             {
-                hash = hash * 59 + this.GeneratedJsonPathCondition.GetHashCode();
+                hash = hash * 59 + GeneratedJsonPathCondition.GetHashCode();
             }
 
-            if (this.Match != null)
+            if (Match != null)
             {
-                hash = hash * 59 + this.Match.GetHashCode();
+                hash = hash * 59 + Match.GetHashCode();
             }
 
-            if (this.JsonPathExtraction != null)
+            if (JsonPathExtraction != null)
             {
-                hash = hash * 59 + this.JsonPathExtraction.GetHashCode();
+                hash = hash * 59 + JsonPathExtraction.GetHashCode();
             }
 
             return hash;

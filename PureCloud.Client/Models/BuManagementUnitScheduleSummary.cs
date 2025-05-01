@@ -101,7 +101,7 @@ public partial class BuManagementUnitScheduleSummary : IEquatable<BuManagementUn
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuManagementUnitScheduleSummary);
+        return Equals(obj as BuManagementUnitScheduleSummary);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class BuManagementUnitScheduleSummary : IEquatable<BuManagementUn
 
         return true &&
             (
-                this.ManagementUnit == other.ManagementUnit ||
-                this.ManagementUnit != null &&
-                this.ManagementUnit.Equals(other.ManagementUnit)
+                ManagementUnit == other.ManagementUnit ||
+                ManagementUnit != null &&
+                ManagementUnit.Equals(other.ManagementUnit)
             ) &&
             (
-                this.AgentCount == other.AgentCount ||
-                this.AgentCount != null &&
-                this.AgentCount.Equals(other.AgentCount)
+                AgentCount == other.AgentCount ||
+                AgentCount != null &&
+                AgentCount.Equals(other.AgentCount)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.Agents == other.Agents ||
-                this.Agents != null &&
-                this.Agents.SequenceEqual(other.Agents)
+                Agents == other.Agents ||
+                Agents != null &&
+                Agents.SequenceEqual(other.Agents)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class BuManagementUnitScheduleSummary : IEquatable<BuManagementUn
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnit != null)
+            if (ManagementUnit != null)
             {
-                hash = hash * 59 + this.ManagementUnit.GetHashCode();
+                hash = hash * 59 + ManagementUnit.GetHashCode();
             }
 
-            if (this.AgentCount != null)
+            if (AgentCount != null)
             {
-                hash = hash * 59 + this.AgentCount.GetHashCode();
+                hash = hash * 59 + AgentCount.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.Agents != null)
+            if (Agents != null)
             {
-                hash = hash * 59 + this.Agents.GetHashCode();
+                hash = hash * 59 + Agents.GetHashCode();
             }
 
             return hash;

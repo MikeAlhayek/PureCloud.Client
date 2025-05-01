@@ -58,7 +58,7 @@ public partial class BulkCallbackDisconnectRequest : IEquatable<BulkCallbackDisc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BulkCallbackDisconnectRequest);
+        return Equals(obj as BulkCallbackDisconnectRequest);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class BulkCallbackDisconnectRequest : IEquatable<BulkCallbackDisc
 
         return true &&
             (
-                this.CallbackDisconnectIdentifiers == other.CallbackDisconnectIdentifiers ||
-                this.CallbackDisconnectIdentifiers != null &&
-                this.CallbackDisconnectIdentifiers.SequenceEqual(other.CallbackDisconnectIdentifiers)
+                CallbackDisconnectIdentifiers == other.CallbackDisconnectIdentifiers ||
+                CallbackDisconnectIdentifiers != null &&
+                CallbackDisconnectIdentifiers.SequenceEqual(other.CallbackDisconnectIdentifiers)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class BulkCallbackDisconnectRequest : IEquatable<BulkCallbackDisc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CallbackDisconnectIdentifiers != null)
+            if (CallbackDisconnectIdentifiers != null)
             {
-                hash = hash * 59 + this.CallbackDisconnectIdentifiers.GetHashCode();
+                hash = hash * 59 + CallbackDisconnectIdentifiers.GetHashCode();
             }
 
             return hash;

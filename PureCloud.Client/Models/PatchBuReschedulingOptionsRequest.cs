@@ -53,7 +53,7 @@ public partial class PatchBuReschedulingOptionsRequest : IEquatable<PatchBuResch
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchBuReschedulingOptionsRequest);
+        return Equals(obj as PatchBuReschedulingOptionsRequest);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class PatchBuReschedulingOptionsRequest : IEquatable<PatchBuResch
 
         return true &&
             (
-                this.ManagementUnits == other.ManagementUnits ||
-                this.ManagementUnits != null &&
-                this.ManagementUnits.SequenceEqual(other.ManagementUnits)
+                ManagementUnits == other.ManagementUnits ||
+                ManagementUnits != null &&
+                ManagementUnits.SequenceEqual(other.ManagementUnits)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class PatchBuReschedulingOptionsRequest : IEquatable<PatchBuResch
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnits != null)
+            if (ManagementUnits != null)
             {
-                hash = hash * 59 + this.ManagementUnits.GetHashCode();
+                hash = hash * 59 + ManagementUnits.GetHashCode();
             }
 
             return hash;

@@ -77,7 +77,7 @@ public partial class QueueConversationEventTopicMessageMetadata : IEquatable<Que
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationEventTopicMessageMetadata);
+        return Equals(obj as QueueConversationEventTopicMessageMetadata);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class QueueConversationEventTopicMessageMetadata : IEquatable<Que
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Events == other.Events ||
-                this.Events != null &&
-                this.Events.SequenceEqual(other.Events)
+                Events == other.Events ||
+                Events != null &&
+                Events.SequenceEqual(other.Events)
             ) &&
             (
-                this.Content == other.Content ||
-                this.Content != null &&
-                this.Content.SequenceEqual(other.Content)
+                Content == other.Content ||
+                Content != null &&
+                Content.SequenceEqual(other.Content)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class QueueConversationEventTopicMessageMetadata : IEquatable<Que
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Events != null)
+            if (Events != null)
             {
-                hash = hash * 59 + this.Events.GetHashCode();
+                hash = hash * 59 + Events.GetHashCode();
             }
 
-            if (this.Content != null)
+            if (Content != null)
             {
-                hash = hash * 59 + this.Content.GetHashCode();
+                hash = hash * 59 + Content.GetHashCode();
             }
 
             return hash;

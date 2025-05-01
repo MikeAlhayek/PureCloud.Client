@@ -463,12 +463,12 @@ public partial class LicenseApi : ILicenseApi
     /// <returns></returns>
     public LicenseApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -482,17 +482,17 @@ public partial class LicenseApi : ILicenseApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -502,7 +502,7 @@ public partial class LicenseApi : ILicenseApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -528,7 +528,7 @@ public partial class LicenseApi : ILicenseApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -540,7 +540,7 @@ public partial class LicenseApi : ILicenseApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -586,7 +586,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -595,7 +595,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -608,7 +608,7 @@ public partial class LicenseApi : ILicenseApi
         // Path params
         if (licenseId != null)
         {
-            localVarPathParams.Add("licenseId", this.Configuration.ApiClient.ParameterToString(licenseId));
+            localVarPathParams.Add("licenseId", Configuration.ApiClient.ParameterToString(licenseId));
         }
 
         // Query params
@@ -624,11 +624,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -654,7 +654,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<LicenseDefinition>(localVarStatusCode,
             localVarHeaders,
-            (LicenseDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseDefinition)),
+            (LicenseDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -703,7 +703,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -712,7 +712,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -725,7 +725,7 @@ public partial class LicenseApi : ILicenseApi
         // Path params
         if (licenseId != null)
         {
-            localVarPathParams.Add("licenseId", this.Configuration.ApiClient.ParameterToString(licenseId));
+            localVarPathParams.Add("licenseId", Configuration.ApiClient.ParameterToString(licenseId));
         }
 
         // Query params
@@ -741,11 +741,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -771,7 +771,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<LicenseDefinition>(localVarStatusCode,
             localVarHeaders,
-            (LicenseDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseDefinition)),
+            (LicenseDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -813,7 +813,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -822,7 +822,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -847,11 +847,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -877,7 +877,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<List<LicenseDefinition>>(localVarStatusCode,
             localVarHeaders,
-            (List<LicenseDefinition>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<LicenseDefinition>)),
+            (List<LicenseDefinition>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<LicenseDefinition>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -919,7 +919,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -928,7 +928,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -953,11 +953,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -983,7 +983,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<List<LicenseDefinition>>(localVarStatusCode,
             localVarHeaders,
-            (List<LicenseDefinition>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<LicenseDefinition>)),
+            (List<LicenseDefinition>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<LicenseDefinition>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1032,7 +1032,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1041,7 +1041,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1054,7 +1054,7 @@ public partial class LicenseApi : ILicenseApi
         // Path params
         if (featureName != null)
         {
-            localVarPathParams.Add("featureName", this.Configuration.ApiClient.ParameterToString(featureName));
+            localVarPathParams.Add("featureName", Configuration.ApiClient.ParameterToString(featureName));
         }
 
         // Query params
@@ -1070,11 +1070,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1100,7 +1100,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<LicenseOrgToggle>(localVarStatusCode,
             localVarHeaders,
-            (LicenseOrgToggle)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseOrgToggle)),
+            (LicenseOrgToggle)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseOrgToggle)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1149,7 +1149,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1158,7 +1158,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1171,7 +1171,7 @@ public partial class LicenseApi : ILicenseApi
         // Path params
         if (featureName != null)
         {
-            localVarPathParams.Add("featureName", this.Configuration.ApiClient.ParameterToString(featureName));
+            localVarPathParams.Add("featureName", Configuration.ApiClient.ParameterToString(featureName));
         }
 
         // Query params
@@ -1187,11 +1187,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1217,7 +1217,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<LicenseOrgToggle>(localVarStatusCode,
             localVarHeaders,
-            (LicenseOrgToggle)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseOrgToggle)),
+            (LicenseOrgToggle)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseOrgToggle)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1266,7 +1266,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1275,7 +1275,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1288,7 +1288,7 @@ public partial class LicenseApi : ILicenseApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -1304,11 +1304,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1334,7 +1334,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<LicenseUser>(localVarStatusCode,
             localVarHeaders,
-            (LicenseUser)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseUser)),
+            (LicenseUser)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseUser)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1383,7 +1383,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1392,7 +1392,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1405,7 +1405,7 @@ public partial class LicenseApi : ILicenseApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -1421,11 +1421,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1451,7 +1451,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<LicenseUser>(localVarStatusCode,
             localVarHeaders,
-            (LicenseUser)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseUser)),
+            (LicenseUser)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseUser)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1497,7 +1497,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1506,7 +1506,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1521,12 +1521,12 @@ public partial class LicenseApi : ILicenseApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -1540,11 +1540,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1570,7 +1570,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<UserLicensesEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (UserLicensesEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserLicensesEntityListing)),
+            (UserLicensesEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserLicensesEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1616,7 +1616,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1625,7 +1625,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1640,12 +1640,12 @@ public partial class LicenseApi : ILicenseApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -1659,11 +1659,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1689,7 +1689,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<UserLicensesEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (UserLicensesEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserLicensesEntityListing)),
+            (UserLicensesEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserLicensesEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1734,7 +1734,7 @@ public partial class LicenseApi : ILicenseApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1743,7 +1743,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1764,7 +1764,7 @@ public partial class LicenseApi : ILicenseApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1777,11 +1777,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1807,7 +1807,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<List<string>>(localVarStatusCode,
             localVarHeaders,
-            (List<string>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)),
+            (List<string>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1852,7 +1852,7 @@ public partial class LicenseApi : ILicenseApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1861,7 +1861,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1882,7 +1882,7 @@ public partial class LicenseApi : ILicenseApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1895,11 +1895,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1925,7 +1925,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<List<string>>(localVarStatusCode,
             localVarHeaders,
-            (List<string>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)),
+            (List<string>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1970,7 +1970,7 @@ public partial class LicenseApi : ILicenseApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1979,7 +1979,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2000,7 +2000,7 @@ public partial class LicenseApi : ILicenseApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2013,11 +2013,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2043,7 +2043,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<List<LicenseUpdateStatus>>(localVarStatusCode,
             localVarHeaders,
-            (List<LicenseUpdateStatus>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<LicenseUpdateStatus>)),
+            (List<LicenseUpdateStatus>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<LicenseUpdateStatus>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2088,7 +2088,7 @@ public partial class LicenseApi : ILicenseApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2097,7 +2097,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2118,7 +2118,7 @@ public partial class LicenseApi : ILicenseApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2131,11 +2131,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2161,7 +2161,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<List<LicenseUpdateStatus>>(localVarStatusCode,
             localVarHeaders,
-            (List<LicenseUpdateStatus>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<LicenseUpdateStatus>)),
+            (List<LicenseUpdateStatus>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<LicenseUpdateStatus>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2210,7 +2210,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2219,7 +2219,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2232,7 +2232,7 @@ public partial class LicenseApi : ILicenseApi
         // Path params
         if (featureName != null)
         {
-            localVarPathParams.Add("featureName", this.Configuration.ApiClient.ParameterToString(featureName));
+            localVarPathParams.Add("featureName", Configuration.ApiClient.ParameterToString(featureName));
         }
 
         // Query params
@@ -2248,11 +2248,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2278,7 +2278,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<LicenseOrgToggle>(localVarStatusCode,
             localVarHeaders,
-            (LicenseOrgToggle)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseOrgToggle)),
+            (LicenseOrgToggle)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseOrgToggle)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2327,7 +2327,7 @@ public partial class LicenseApi : ILicenseApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2336,7 +2336,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2349,7 +2349,7 @@ public partial class LicenseApi : ILicenseApi
         // Path params
         if (featureName != null)
         {
-            localVarPathParams.Add("featureName", this.Configuration.ApiClient.ParameterToString(featureName));
+            localVarPathParams.Add("featureName", Configuration.ApiClient.ParameterToString(featureName));
         }
 
         // Query params
@@ -2365,11 +2365,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2395,7 +2395,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<LicenseOrgToggle>(localVarStatusCode,
             localVarHeaders,
-            (LicenseOrgToggle)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseOrgToggle)),
+            (LicenseOrgToggle)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LicenseOrgToggle)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2440,7 +2440,7 @@ public partial class LicenseApi : ILicenseApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2449,7 +2449,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2470,7 +2470,7 @@ public partial class LicenseApi : ILicenseApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2483,11 +2483,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2513,7 +2513,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
+            (Dictionary<string, object>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2558,7 +2558,7 @@ public partial class LicenseApi : ILicenseApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2567,7 +2567,7 @@ public partial class LicenseApi : ILicenseApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2588,7 +2588,7 @@ public partial class LicenseApi : ILicenseApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2601,11 +2601,11 @@ public partial class LicenseApi : ILicenseApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2631,7 +2631,7 @@ public partial class LicenseApi : ILicenseApi
 
         return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
+            (Dictionary<string, object>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

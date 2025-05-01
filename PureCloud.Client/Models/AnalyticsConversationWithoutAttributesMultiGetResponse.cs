@@ -51,7 +51,7 @@ public partial class AnalyticsConversationWithoutAttributesMultiGetResponse : IE
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsConversationWithoutAttributesMultiGetResponse);
+        return Equals(obj as AnalyticsConversationWithoutAttributesMultiGetResponse);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class AnalyticsConversationWithoutAttributesMultiGetResponse : IE
 
         return true &&
             (
-                this.Conversations == other.Conversations ||
-                this.Conversations != null &&
-                this.Conversations.SequenceEqual(other.Conversations)
+                Conversations == other.Conversations ||
+                Conversations != null &&
+                Conversations.SequenceEqual(other.Conversations)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class AnalyticsConversationWithoutAttributesMultiGetResponse : IE
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Conversations != null)
+            if (Conversations != null)
             {
-                hash = hash * 59 + this.Conversations.GetHashCode();
+                hash = hash * 59 + Conversations.GetHashCode();
             }
 
             return hash;

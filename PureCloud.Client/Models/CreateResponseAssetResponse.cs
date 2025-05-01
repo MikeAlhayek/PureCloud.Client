@@ -71,7 +71,7 @@ public partial class CreateResponseAssetResponse : IEquatable<CreateResponseAsse
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateResponseAssetResponse);
+        return Equals(obj as CreateResponseAssetResponse);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class CreateResponseAssetResponse : IEquatable<CreateResponseAsse
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Headers == other.Headers ||
-                this.Headers != null &&
-                this.Headers.SequenceEqual(other.Headers)
+                Headers == other.Headers ||
+                Headers != null &&
+                Headers.SequenceEqual(other.Headers)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class CreateResponseAssetResponse : IEquatable<CreateResponseAsse
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Headers != null)
+            if (Headers != null)
             {
-                hash = hash * 59 + this.Headers.GetHashCode();
+                hash = hash * 59 + Headers.GetHashCode();
             }
 
             return hash;

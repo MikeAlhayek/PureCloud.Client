@@ -82,7 +82,7 @@ public partial class BillingUsage : IEquatable<BillingUsage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BillingUsage);
+        return Equals(obj as BillingUsage);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class BillingUsage : IEquatable<BillingUsage>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.TotalUsage == other.TotalUsage ||
-                this.TotalUsage != null &&
-                this.TotalUsage.Equals(other.TotalUsage)
+                TotalUsage == other.TotalUsage ||
+                TotalUsage != null &&
+                TotalUsage.Equals(other.TotalUsage)
             ) &&
             (
-                this.Resources == other.Resources ||
-                this.Resources != null &&
-                this.Resources.SequenceEqual(other.Resources)
+                Resources == other.Resources ||
+                Resources != null &&
+                Resources.SequenceEqual(other.Resources)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class BillingUsage : IEquatable<BillingUsage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.TotalUsage != null)
+            if (TotalUsage != null)
             {
-                hash = hash * 59 + this.TotalUsage.GetHashCode();
+                hash = hash * 59 + TotalUsage.GetHashCode();
             }
 
-            if (this.Resources != null)
+            if (Resources != null)
             {
-                hash = hash * 59 + this.Resources.GetHashCode();
+                hash = hash * 59 + Resources.GetHashCode();
             }
 
             return hash;

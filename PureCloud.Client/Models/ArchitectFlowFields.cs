@@ -64,7 +64,7 @@ public partial class ArchitectFlowFields : IEquatable<ArchitectFlowFields>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArchitectFlowFields);
+        return Equals(obj as ArchitectFlowFields);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class ArchitectFlowFields : IEquatable<ArchitectFlowFields>
 
         return true &&
             (
-                this.ArchitectFlow == other.ArchitectFlow ||
-                this.ArchitectFlow != null &&
-                this.ArchitectFlow.Equals(other.ArchitectFlow)
+                ArchitectFlow == other.ArchitectFlow ||
+                ArchitectFlow != null &&
+                ArchitectFlow.Equals(other.ArchitectFlow)
             ) &&
             (
-                this.FlowRequestMappings == other.FlowRequestMappings ||
-                this.FlowRequestMappings != null &&
-                this.FlowRequestMappings.SequenceEqual(other.FlowRequestMappings)
+                FlowRequestMappings == other.FlowRequestMappings ||
+                FlowRequestMappings != null &&
+                FlowRequestMappings.SequenceEqual(other.FlowRequestMappings)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class ArchitectFlowFields : IEquatable<ArchitectFlowFields>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ArchitectFlow != null)
+            if (ArchitectFlow != null)
             {
-                hash = hash * 59 + this.ArchitectFlow.GetHashCode();
+                hash = hash * 59 + ArchitectFlow.GetHashCode();
             }
 
-            if (this.FlowRequestMappings != null)
+            if (FlowRequestMappings != null)
             {
-                hash = hash * 59 + this.FlowRequestMappings.GetHashCode();
+                hash = hash * 59 + FlowRequestMappings.GetHashCode();
             }
 
             return hash;

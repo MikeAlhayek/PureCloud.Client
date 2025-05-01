@@ -97,7 +97,7 @@ public partial class SearchSort : IEquatable<SearchSort>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SearchSort);
+        return Equals(obj as SearchSort);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class SearchSort : IEquatable<SearchSort>
 
         return true &&
             (
-                this.SortOrder == other.SortOrder ||
-                this.SortOrder != null &&
-                this.SortOrder.Equals(other.SortOrder)
+                SortOrder == other.SortOrder ||
+                SortOrder != null &&
+                SortOrder.Equals(other.SortOrder)
             ) &&
             (
-                this.SortBy == other.SortBy ||
-                this.SortBy != null &&
-                this.SortBy.Equals(other.SortBy)
+                SortBy == other.SortBy ||
+                SortBy != null &&
+                SortBy.Equals(other.SortBy)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class SearchSort : IEquatable<SearchSort>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SortOrder != null)
+            if (SortOrder != null)
             {
-                hash = hash * 59 + this.SortOrder.GetHashCode();
+                hash = hash * 59 + SortOrder.GetHashCode();
             }
 
-            if (this.SortBy != null)
+            if (SortBy != null)
             {
-                hash = hash * 59 + this.SortBy.GetHashCode();
+                hash = hash * 59 + SortBy.GetHashCode();
             }
 
             return hash;

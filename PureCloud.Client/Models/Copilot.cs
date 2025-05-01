@@ -195,7 +195,7 @@ public partial class Copilot : IEquatable<Copilot>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Copilot);
+        return Equals(obj as Copilot);
     }
 
     /// <summary>
@@ -213,59 +213,59 @@ public partial class Copilot : IEquatable<Copilot>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.LiveOnQueue == other.LiveOnQueue ||
-                this.LiveOnQueue != null &&
-                this.LiveOnQueue.Equals(other.LiveOnQueue)
+                LiveOnQueue == other.LiveOnQueue ||
+                LiveOnQueue != null &&
+                LiveOnQueue.Equals(other.LiveOnQueue)
             ) &&
             (
-                this.DefaultLanguage == other.DefaultLanguage ||
-                this.DefaultLanguage != null &&
-                this.DefaultLanguage.Equals(other.DefaultLanguage)
+                DefaultLanguage == other.DefaultLanguage ||
+                DefaultLanguage != null &&
+                DefaultLanguage.Equals(other.DefaultLanguage)
             ) &&
             (
-                this.KnowledgeAnswerConfig == other.KnowledgeAnswerConfig ||
-                this.KnowledgeAnswerConfig != null &&
-                this.KnowledgeAnswerConfig.Equals(other.KnowledgeAnswerConfig)
+                KnowledgeAnswerConfig == other.KnowledgeAnswerConfig ||
+                KnowledgeAnswerConfig != null &&
+                KnowledgeAnswerConfig.Equals(other.KnowledgeAnswerConfig)
             ) &&
             (
-                this.SummaryGenerationConfig == other.SummaryGenerationConfig ||
-                this.SummaryGenerationConfig != null &&
-                this.SummaryGenerationConfig.Equals(other.SummaryGenerationConfig)
+                SummaryGenerationConfig == other.SummaryGenerationConfig ||
+                SummaryGenerationConfig != null &&
+                SummaryGenerationConfig.Equals(other.SummaryGenerationConfig)
             ) &&
             (
-                this.WrapupCodePredictionConfig == other.WrapupCodePredictionConfig ||
-                this.WrapupCodePredictionConfig != null &&
-                this.WrapupCodePredictionConfig.Equals(other.WrapupCodePredictionConfig)
+                WrapupCodePredictionConfig == other.WrapupCodePredictionConfig ||
+                WrapupCodePredictionConfig != null &&
+                WrapupCodePredictionConfig.Equals(other.WrapupCodePredictionConfig)
             ) &&
             (
-                this.AnswerGenerationConfig == other.AnswerGenerationConfig ||
-                this.AnswerGenerationConfig != null &&
-                this.AnswerGenerationConfig.Equals(other.AnswerGenerationConfig)
+                AnswerGenerationConfig == other.AnswerGenerationConfig ||
+                AnswerGenerationConfig != null &&
+                AnswerGenerationConfig.Equals(other.AnswerGenerationConfig)
             ) &&
             (
-                this.NluEngineType == other.NluEngineType ||
-                this.NluEngineType != null &&
-                this.NluEngineType.Equals(other.NluEngineType)
+                NluEngineType == other.NluEngineType ||
+                NluEngineType != null &&
+                NluEngineType.Equals(other.NluEngineType)
             ) &&
             (
-                this.NluConfig == other.NluConfig ||
-                this.NluConfig != null &&
-                this.NluConfig.Equals(other.NluConfig)
+                NluConfig == other.NluConfig ||
+                NluConfig != null &&
+                NluConfig.Equals(other.NluConfig)
             ) &&
             (
-                this.RuleEngineConfig == other.RuleEngineConfig ||
-                this.RuleEngineConfig != null &&
-                this.RuleEngineConfig.Equals(other.RuleEngineConfig)
+                RuleEngineConfig == other.RuleEngineConfig ||
+                RuleEngineConfig != null &&
+                RuleEngineConfig.Equals(other.RuleEngineConfig)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -280,59 +280,59 @@ public partial class Copilot : IEquatable<Copilot>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.LiveOnQueue != null)
+            if (LiveOnQueue != null)
             {
-                hash = hash * 59 + this.LiveOnQueue.GetHashCode();
+                hash = hash * 59 + LiveOnQueue.GetHashCode();
             }
 
-            if (this.DefaultLanguage != null)
+            if (DefaultLanguage != null)
             {
-                hash = hash * 59 + this.DefaultLanguage.GetHashCode();
+                hash = hash * 59 + DefaultLanguage.GetHashCode();
             }
 
-            if (this.KnowledgeAnswerConfig != null)
+            if (KnowledgeAnswerConfig != null)
             {
-                hash = hash * 59 + this.KnowledgeAnswerConfig.GetHashCode();
+                hash = hash * 59 + KnowledgeAnswerConfig.GetHashCode();
             }
 
-            if (this.SummaryGenerationConfig != null)
+            if (SummaryGenerationConfig != null)
             {
-                hash = hash * 59 + this.SummaryGenerationConfig.GetHashCode();
+                hash = hash * 59 + SummaryGenerationConfig.GetHashCode();
             }
 
-            if (this.WrapupCodePredictionConfig != null)
+            if (WrapupCodePredictionConfig != null)
             {
-                hash = hash * 59 + this.WrapupCodePredictionConfig.GetHashCode();
+                hash = hash * 59 + WrapupCodePredictionConfig.GetHashCode();
             }
 
-            if (this.AnswerGenerationConfig != null)
+            if (AnswerGenerationConfig != null)
             {
-                hash = hash * 59 + this.AnswerGenerationConfig.GetHashCode();
+                hash = hash * 59 + AnswerGenerationConfig.GetHashCode();
             }
 
-            if (this.NluEngineType != null)
+            if (NluEngineType != null)
             {
-                hash = hash * 59 + this.NluEngineType.GetHashCode();
+                hash = hash * 59 + NluEngineType.GetHashCode();
             }
 
-            if (this.NluConfig != null)
+            if (NluConfig != null)
             {
-                hash = hash * 59 + this.NluConfig.GetHashCode();
+                hash = hash * 59 + NluConfig.GetHashCode();
             }
 
-            if (this.RuleEngineConfig != null)
+            if (RuleEngineConfig != null)
             {
-                hash = hash * 59 + this.RuleEngineConfig.GetHashCode();
+                hash = hash * 59 + RuleEngineConfig.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

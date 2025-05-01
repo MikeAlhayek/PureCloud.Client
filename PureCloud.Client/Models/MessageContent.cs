@@ -361,7 +361,7 @@ public partial class MessageContent : IEquatable<MessageContent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessageContent);
+        return Equals(obj as MessageContent);
     }
 
     /// <summary>
@@ -379,89 +379,89 @@ public partial class MessageContent : IEquatable<MessageContent>
 
         return true &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.Attachment == other.Attachment ||
-                this.Attachment != null &&
-                this.Attachment.Equals(other.Attachment)
+                Attachment == other.Attachment ||
+                Attachment != null &&
+                Attachment.Equals(other.Attachment)
             ) &&
             (
-                this.QuickReply == other.QuickReply ||
-                this.QuickReply != null &&
-                this.QuickReply.Equals(other.QuickReply)
+                QuickReply == other.QuickReply ||
+                QuickReply != null &&
+                QuickReply.Equals(other.QuickReply)
             ) &&
             (
-                this.ButtonResponse == other.ButtonResponse ||
-                this.ButtonResponse != null &&
-                this.ButtonResponse.Equals(other.ButtonResponse)
+                ButtonResponse == other.ButtonResponse ||
+                ButtonResponse != null &&
+                ButtonResponse.Equals(other.ButtonResponse)
             ) &&
             (
-                this.Generic == other.Generic ||
-                this.Generic != null &&
-                this.Generic.Equals(other.Generic)
+                Generic == other.Generic ||
+                Generic != null &&
+                Generic.Equals(other.Generic)
             ) &&
             (
-                this.List == other.List ||
-                this.List != null &&
-                this.List.Equals(other.List)
+                List == other.List ||
+                List != null &&
+                List.Equals(other.List)
             ) &&
             (
-                this.Template == other.Template ||
-                this.Template != null &&
-                this.Template.Equals(other.Template)
+                Template == other.Template ||
+                Template != null &&
+                Template.Equals(other.Template)
             ) &&
             (
-                this.Reactions == other.Reactions ||
-                this.Reactions != null &&
-                this.Reactions.SequenceEqual(other.Reactions)
+                Reactions == other.Reactions ||
+                Reactions != null &&
+                Reactions.SequenceEqual(other.Reactions)
             ) &&
             (
-                this.Mention == other.Mention ||
-                this.Mention != null &&
-                this.Mention.Equals(other.Mention)
+                Mention == other.Mention ||
+                Mention != null &&
+                Mention.Equals(other.Mention)
             ) &&
             (
-                this.Postback == other.Postback ||
-                this.Postback != null &&
-                this.Postback.Equals(other.Postback)
+                Postback == other.Postback ||
+                Postback != null &&
+                Postback.Equals(other.Postback)
             ) &&
             (
-                this.Story == other.Story ||
-                this.Story != null &&
-                this.Story.Equals(other.Story)
+                Story == other.Story ||
+                Story != null &&
+                Story.Equals(other.Story)
             ) &&
             (
-                this.Card == other.Card ||
-                this.Card != null &&
-                this.Card.Equals(other.Card)
+                Card == other.Card ||
+                Card != null &&
+                Card.Equals(other.Card)
             ) &&
             (
-                this.Carousel == other.Carousel ||
-                this.Carousel != null &&
-                this.Carousel.Equals(other.Carousel)
+                Carousel == other.Carousel ||
+                Carousel != null &&
+                Carousel.Equals(other.Carousel)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.QuickReplyV2 == other.QuickReplyV2 ||
-                this.QuickReplyV2 != null &&
-                this.QuickReplyV2.Equals(other.QuickReplyV2)
+                QuickReplyV2 == other.QuickReplyV2 ||
+                QuickReplyV2 != null &&
+                QuickReplyV2.Equals(other.QuickReplyV2)
             ) &&
             (
-                this.DatePicker == other.DatePicker ||
-                this.DatePicker != null &&
-                this.DatePicker.Equals(other.DatePicker)
+                DatePicker == other.DatePicker ||
+                DatePicker != null &&
+                DatePicker.Equals(other.DatePicker)
             ) &&
             (
-                this.Location == other.Location ||
-                this.Location != null &&
-                this.Location.Equals(other.Location)
+                Location == other.Location ||
+                Location != null &&
+                Location.Equals(other.Location)
             );
     }
 
@@ -476,89 +476,89 @@ public partial class MessageContent : IEquatable<MessageContent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.Attachment != null)
+            if (Attachment != null)
             {
-                hash = hash * 59 + this.Attachment.GetHashCode();
+                hash = hash * 59 + Attachment.GetHashCode();
             }
 
-            if (this.QuickReply != null)
+            if (QuickReply != null)
             {
-                hash = hash * 59 + this.QuickReply.GetHashCode();
+                hash = hash * 59 + QuickReply.GetHashCode();
             }
 
-            if (this.ButtonResponse != null)
+            if (ButtonResponse != null)
             {
-                hash = hash * 59 + this.ButtonResponse.GetHashCode();
+                hash = hash * 59 + ButtonResponse.GetHashCode();
             }
 
-            if (this.Generic != null)
+            if (Generic != null)
             {
-                hash = hash * 59 + this.Generic.GetHashCode();
+                hash = hash * 59 + Generic.GetHashCode();
             }
 
-            if (this.List != null)
+            if (List != null)
             {
-                hash = hash * 59 + this.List.GetHashCode();
+                hash = hash * 59 + List.GetHashCode();
             }
 
-            if (this.Template != null)
+            if (Template != null)
             {
-                hash = hash * 59 + this.Template.GetHashCode();
+                hash = hash * 59 + Template.GetHashCode();
             }
 
-            if (this.Reactions != null)
+            if (Reactions != null)
             {
-                hash = hash * 59 + this.Reactions.GetHashCode();
+                hash = hash * 59 + Reactions.GetHashCode();
             }
 
-            if (this.Mention != null)
+            if (Mention != null)
             {
-                hash = hash * 59 + this.Mention.GetHashCode();
+                hash = hash * 59 + Mention.GetHashCode();
             }
 
-            if (this.Postback != null)
+            if (Postback != null)
             {
-                hash = hash * 59 + this.Postback.GetHashCode();
+                hash = hash * 59 + Postback.GetHashCode();
             }
 
-            if (this.Story != null)
+            if (Story != null)
             {
-                hash = hash * 59 + this.Story.GetHashCode();
+                hash = hash * 59 + Story.GetHashCode();
             }
 
-            if (this.Card != null)
+            if (Card != null)
             {
-                hash = hash * 59 + this.Card.GetHashCode();
+                hash = hash * 59 + Card.GetHashCode();
             }
 
-            if (this.Carousel != null)
+            if (Carousel != null)
             {
-                hash = hash * 59 + this.Carousel.GetHashCode();
+                hash = hash * 59 + Carousel.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.QuickReplyV2 != null)
+            if (QuickReplyV2 != null)
             {
-                hash = hash * 59 + this.QuickReplyV2.GetHashCode();
+                hash = hash * 59 + QuickReplyV2.GetHashCode();
             }
 
-            if (this.DatePicker != null)
+            if (DatePicker != null)
             {
-                hash = hash * 59 + this.DatePicker.GetHashCode();
+                hash = hash * 59 + DatePicker.GetHashCode();
             }
 
-            if (this.Location != null)
+            if (Location != null)
             {
-                hash = hash * 59 + this.Location.GetHashCode();
+                hash = hash * 59 + Location.GetHashCode();
             }
 
             return hash;

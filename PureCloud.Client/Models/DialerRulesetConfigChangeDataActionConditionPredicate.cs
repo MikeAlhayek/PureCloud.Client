@@ -186,7 +186,7 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerRulesetConfigChangeDataActionConditionPredicate);
+        return Equals(obj as DialerRulesetConfigChangeDataActionConditionPredicate);
     }
 
     /// <summary>
@@ -204,34 +204,34 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
 
         return true &&
             (
-                this.OutputField == other.OutputField ||
-                this.OutputField != null &&
-                this.OutputField.Equals(other.OutputField)
+                OutputField == other.OutputField ||
+                OutputField != null &&
+                OutputField.Equals(other.OutputField)
             ) &&
             (
-                this.OutputOperator == other.OutputOperator ||
-                this.OutputOperator != null &&
-                this.OutputOperator.Equals(other.OutputOperator)
+                OutputOperator == other.OutputOperator ||
+                OutputOperator != null &&
+                OutputOperator.Equals(other.OutputOperator)
             ) &&
             (
-                this.ComparisonValue == other.ComparisonValue ||
-                this.ComparisonValue != null &&
-                this.ComparisonValue.Equals(other.ComparisonValue)
+                ComparisonValue == other.ComparisonValue ||
+                ComparisonValue != null &&
+                ComparisonValue.Equals(other.ComparisonValue)
             ) &&
             (
-                this.OutputFieldMissingResolution == other.OutputFieldMissingResolution ||
-                this.OutputFieldMissingResolution != null &&
-                this.OutputFieldMissingResolution.Equals(other.OutputFieldMissingResolution)
+                OutputFieldMissingResolution == other.OutputFieldMissingResolution ||
+                OutputFieldMissingResolution != null &&
+                OutputFieldMissingResolution.Equals(other.OutputFieldMissingResolution)
             ) &&
             (
-                this.Inverted == other.Inverted ||
-                this.Inverted != null &&
-                this.Inverted.Equals(other.Inverted)
+                Inverted == other.Inverted ||
+                Inverted != null &&
+                Inverted.Equals(other.Inverted)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -246,34 +246,34 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutputField != null)
+            if (OutputField != null)
             {
-                hash = hash * 59 + this.OutputField.GetHashCode();
+                hash = hash * 59 + OutputField.GetHashCode();
             }
 
-            if (this.OutputOperator != null)
+            if (OutputOperator != null)
             {
-                hash = hash * 59 + this.OutputOperator.GetHashCode();
+                hash = hash * 59 + OutputOperator.GetHashCode();
             }
 
-            if (this.ComparisonValue != null)
+            if (ComparisonValue != null)
             {
-                hash = hash * 59 + this.ComparisonValue.GetHashCode();
+                hash = hash * 59 + ComparisonValue.GetHashCode();
             }
 
-            if (this.OutputFieldMissingResolution != null)
+            if (OutputFieldMissingResolution != null)
             {
-                hash = hash * 59 + this.OutputFieldMissingResolution.GetHashCode();
+                hash = hash * 59 + OutputFieldMissingResolution.GetHashCode();
             }
 
-            if (this.Inverted != null)
+            if (Inverted != null)
             {
-                hash = hash * 59 + this.Inverted.GetHashCode();
+                hash = hash * 59 + Inverted.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

@@ -147,7 +147,7 @@ public partial class OutcomeAttributionJobStateResponse : IEquatable<OutcomeAttr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomeAttributionJobStateResponse);
+        return Equals(obj as OutcomeAttributionJobStateResponse);
     }
 
     /// <summary>
@@ -165,34 +165,34 @@ public partial class OutcomeAttributionJobStateResponse : IEquatable<OutcomeAttr
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.ResultsUri == other.ResultsUri ||
-                this.ResultsUri != null &&
-                this.ResultsUri.Equals(other.ResultsUri)
+                ResultsUri == other.ResultsUri ||
+                ResultsUri != null &&
+                ResultsUri.Equals(other.ResultsUri)
             ) &&
             (
-                this.PercentFailedThreshold == other.PercentFailedThreshold ||
-                this.PercentFailedThreshold != null &&
-                this.PercentFailedThreshold.Equals(other.PercentFailedThreshold)
+                PercentFailedThreshold == other.PercentFailedThreshold ||
+                PercentFailedThreshold != null &&
+                PercentFailedThreshold.Equals(other.PercentFailedThreshold)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             );
     }
 
@@ -207,34 +207,34 @@ public partial class OutcomeAttributionJobStateResponse : IEquatable<OutcomeAttr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.ResultsUri != null)
+            if (ResultsUri != null)
             {
-                hash = hash * 59 + this.ResultsUri.GetHashCode();
+                hash = hash * 59 + ResultsUri.GetHashCode();
             }
 
-            if (this.PercentFailedThreshold != null)
+            if (PercentFailedThreshold != null)
             {
-                hash = hash * 59 + this.PercentFailedThreshold.GetHashCode();
+                hash = hash * 59 + PercentFailedThreshold.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
             return hash;

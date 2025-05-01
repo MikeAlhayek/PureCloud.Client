@@ -101,7 +101,7 @@ public partial class SchedulingTestingOptionsRequest : IEquatable<SchedulingTest
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SchedulingTestingOptionsRequest);
+        return Equals(obj as SchedulingTestingOptionsRequest);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class SchedulingTestingOptionsRequest : IEquatable<SchedulingTest
 
         return true &&
             (
-                this.FastScheduling == other.FastScheduling ||
-                this.FastScheduling != null &&
-                this.FastScheduling.Equals(other.FastScheduling)
+                FastScheduling == other.FastScheduling ||
+                FastScheduling != null &&
+                FastScheduling.Equals(other.FastScheduling)
             ) &&
             (
-                this.DelayScheduling == other.DelayScheduling ||
-                this.DelayScheduling != null &&
-                this.DelayScheduling.Equals(other.DelayScheduling)
+                DelayScheduling == other.DelayScheduling ||
+                DelayScheduling != null &&
+                DelayScheduling.Equals(other.DelayScheduling)
             ) &&
             (
-                this.FailScheduling == other.FailScheduling ||
-                this.FailScheduling != null &&
-                this.FailScheduling.Equals(other.FailScheduling)
+                FailScheduling == other.FailScheduling ||
+                FailScheduling != null &&
+                FailScheduling.Equals(other.FailScheduling)
             ) &&
             (
-                this.PopulateWarnings == other.PopulateWarnings ||
-                this.PopulateWarnings != null &&
-                this.PopulateWarnings.Equals(other.PopulateWarnings)
+                PopulateWarnings == other.PopulateWarnings ||
+                PopulateWarnings != null &&
+                PopulateWarnings.Equals(other.PopulateWarnings)
             ) &&
             (
-                this.PopulateDeprecatedWarnings == other.PopulateDeprecatedWarnings ||
-                this.PopulateDeprecatedWarnings != null &&
-                this.PopulateDeprecatedWarnings.Equals(other.PopulateDeprecatedWarnings)
+                PopulateDeprecatedWarnings == other.PopulateDeprecatedWarnings ||
+                PopulateDeprecatedWarnings != null &&
+                PopulateDeprecatedWarnings.Equals(other.PopulateDeprecatedWarnings)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class SchedulingTestingOptionsRequest : IEquatable<SchedulingTest
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FastScheduling != null)
+            if (FastScheduling != null)
             {
-                hash = hash * 59 + this.FastScheduling.GetHashCode();
+                hash = hash * 59 + FastScheduling.GetHashCode();
             }
 
-            if (this.DelayScheduling != null)
+            if (DelayScheduling != null)
             {
-                hash = hash * 59 + this.DelayScheduling.GetHashCode();
+                hash = hash * 59 + DelayScheduling.GetHashCode();
             }
 
-            if (this.FailScheduling != null)
+            if (FailScheduling != null)
             {
-                hash = hash * 59 + this.FailScheduling.GetHashCode();
+                hash = hash * 59 + FailScheduling.GetHashCode();
             }
 
-            if (this.PopulateWarnings != null)
+            if (PopulateWarnings != null)
             {
-                hash = hash * 59 + this.PopulateWarnings.GetHashCode();
+                hash = hash * 59 + PopulateWarnings.GetHashCode();
             }
 
-            if (this.PopulateDeprecatedWarnings != null)
+            if (PopulateDeprecatedWarnings != null)
             {
-                hash = hash * 59 + this.PopulateDeprecatedWarnings.GetHashCode();
+                hash = hash * 59 + PopulateDeprecatedWarnings.GetHashCode();
             }
 
             return hash;

@@ -181,7 +181,7 @@ public partial class DigitalDataActionConditionPredicate : IEquatable<DigitalDat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DigitalDataActionConditionPredicate);
+        return Equals(obj as DigitalDataActionConditionPredicate);
     }
 
     /// <summary>
@@ -199,29 +199,29 @@ public partial class DigitalDataActionConditionPredicate : IEquatable<DigitalDat
 
         return true &&
             (
-                this.OutputField == other.OutputField ||
-                this.OutputField != null &&
-                this.OutputField.Equals(other.OutputField)
+                OutputField == other.OutputField ||
+                OutputField != null &&
+                OutputField.Equals(other.OutputField)
             ) &&
             (
-                this.OutputOperator == other.OutputOperator ||
-                this.OutputOperator != null &&
-                this.OutputOperator.Equals(other.OutputOperator)
+                OutputOperator == other.OutputOperator ||
+                OutputOperator != null &&
+                OutputOperator.Equals(other.OutputOperator)
             ) &&
             (
-                this.ComparisonValue == other.ComparisonValue ||
-                this.ComparisonValue != null &&
-                this.ComparisonValue.Equals(other.ComparisonValue)
+                ComparisonValue == other.ComparisonValue ||
+                ComparisonValue != null &&
+                ComparisonValue.Equals(other.ComparisonValue)
             ) &&
             (
-                this.Inverted == other.Inverted ||
-                this.Inverted != null &&
-                this.Inverted.Equals(other.Inverted)
+                Inverted == other.Inverted ||
+                Inverted != null &&
+                Inverted.Equals(other.Inverted)
             ) &&
             (
-                this.OutputFieldMissingResolution == other.OutputFieldMissingResolution ||
-                this.OutputFieldMissingResolution != null &&
-                this.OutputFieldMissingResolution.Equals(other.OutputFieldMissingResolution)
+                OutputFieldMissingResolution == other.OutputFieldMissingResolution ||
+                OutputFieldMissingResolution != null &&
+                OutputFieldMissingResolution.Equals(other.OutputFieldMissingResolution)
             );
     }
 
@@ -236,29 +236,29 @@ public partial class DigitalDataActionConditionPredicate : IEquatable<DigitalDat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutputField != null)
+            if (OutputField != null)
             {
-                hash = hash * 59 + this.OutputField.GetHashCode();
+                hash = hash * 59 + OutputField.GetHashCode();
             }
 
-            if (this.OutputOperator != null)
+            if (OutputOperator != null)
             {
-                hash = hash * 59 + this.OutputOperator.GetHashCode();
+                hash = hash * 59 + OutputOperator.GetHashCode();
             }
 
-            if (this.ComparisonValue != null)
+            if (ComparisonValue != null)
             {
-                hash = hash * 59 + this.ComparisonValue.GetHashCode();
+                hash = hash * 59 + ComparisonValue.GetHashCode();
             }
 
-            if (this.Inverted != null)
+            if (Inverted != null)
             {
-                hash = hash * 59 + this.Inverted.GetHashCode();
+                hash = hash * 59 + Inverted.GetHashCode();
             }
 
-            if (this.OutputFieldMissingResolution != null)
+            if (OutputFieldMissingResolution != null)
             {
-                hash = hash * 59 + this.OutputFieldMissingResolution.GetHashCode();
+                hash = hash * 59 + OutputFieldMissingResolution.GetHashCode();
             }
 
             return hash;

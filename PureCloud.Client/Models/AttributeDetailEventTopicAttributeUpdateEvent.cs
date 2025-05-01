@@ -117,7 +117,7 @@ public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AttributeDetailEventTopicAttributeUpdateEvent);
+        return Equals(obj as AttributeDetailEventTopicAttributeUpdateEvent);
     }
 
     /// <summary>
@@ -135,39 +135,39 @@ public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<
 
         return true &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.ParticipantId == other.ParticipantId ||
-                this.ParticipantId != null &&
-                this.ParticipantId.Equals(other.ParticipantId)
+                ParticipantId == other.ParticipantId ||
+                ParticipantId != null &&
+                ParticipantId.Equals(other.ParticipantId)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.ConversationExternalContactIds == other.ConversationExternalContactIds ||
-                this.ConversationExternalContactIds != null &&
-                this.ConversationExternalContactIds.SequenceEqual(other.ConversationExternalContactIds)
+                ConversationExternalContactIds == other.ConversationExternalContactIds ||
+                ConversationExternalContactIds != null &&
+                ConversationExternalContactIds.SequenceEqual(other.ConversationExternalContactIds)
             ) &&
             (
-                this.ConversationExternalOrganizationIds == other.ConversationExternalOrganizationIds ||
-                this.ConversationExternalOrganizationIds != null &&
-                this.ConversationExternalOrganizationIds.SequenceEqual(other.ConversationExternalOrganizationIds)
+                ConversationExternalOrganizationIds == other.ConversationExternalOrganizationIds ||
+                ConversationExternalOrganizationIds != null &&
+                ConversationExternalOrganizationIds.SequenceEqual(other.ConversationExternalOrganizationIds)
             ) &&
             (
-                this.Communications == other.Communications ||
-                this.Communications != null &&
-                this.Communications.SequenceEqual(other.Communications)
+                Communications == other.Communications ||
+                Communications != null &&
+                Communications.SequenceEqual(other.Communications)
             );
     }
 
@@ -182,39 +182,39 @@ public partial class AttributeDetailEventTopicAttributeUpdateEvent : IEquatable<
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.ParticipantId != null)
+            if (ParticipantId != null)
             {
-                hash = hash * 59 + this.ParticipantId.GetHashCode();
+                hash = hash * 59 + ParticipantId.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.ConversationExternalContactIds != null)
+            if (ConversationExternalContactIds != null)
             {
-                hash = hash * 59 + this.ConversationExternalContactIds.GetHashCode();
+                hash = hash * 59 + ConversationExternalContactIds.GetHashCode();
             }
 
-            if (this.ConversationExternalOrganizationIds != null)
+            if (ConversationExternalOrganizationIds != null)
             {
-                hash = hash * 59 + this.ConversationExternalOrganizationIds.GetHashCode();
+                hash = hash * 59 + ConversationExternalOrganizationIds.GetHashCode();
             }
 
-            if (this.Communications != null)
+            if (Communications != null)
             {
-                hash = hash * 59 + this.Communications.GetHashCode();
+                hash = hash * 59 + Communications.GetHashCode();
             }
 
             return hash;

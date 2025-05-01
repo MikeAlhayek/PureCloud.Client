@@ -167,7 +167,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuIntradayDataUpdateTopicBuIntradayDataGroup);
+        return Equals(obj as WfmBuIntradayDataUpdateTopicBuIntradayDataGroup);
     }
 
     /// <summary>
@@ -185,39 +185,39 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup : IEquatabl
 
         return true &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.ForecastDataSummary == other.ForecastDataSummary ||
-                this.ForecastDataSummary != null &&
-                this.ForecastDataSummary.Equals(other.ForecastDataSummary)
+                ForecastDataSummary == other.ForecastDataSummary ||
+                ForecastDataSummary != null &&
+                ForecastDataSummary.Equals(other.ForecastDataSummary)
             ) &&
             (
-                this.ForecastDataPerInterval == other.ForecastDataPerInterval ||
-                this.ForecastDataPerInterval != null &&
-                this.ForecastDataPerInterval.SequenceEqual(other.ForecastDataPerInterval)
+                ForecastDataPerInterval == other.ForecastDataPerInterval ||
+                ForecastDataPerInterval != null &&
+                ForecastDataPerInterval.SequenceEqual(other.ForecastDataPerInterval)
             ) &&
             (
-                this.ScheduleDataSummary == other.ScheduleDataSummary ||
-                this.ScheduleDataSummary != null &&
-                this.ScheduleDataSummary.Equals(other.ScheduleDataSummary)
+                ScheduleDataSummary == other.ScheduleDataSummary ||
+                ScheduleDataSummary != null &&
+                ScheduleDataSummary.Equals(other.ScheduleDataSummary)
             ) &&
             (
-                this.ScheduleDataPerInterval == other.ScheduleDataPerInterval ||
-                this.ScheduleDataPerInterval != null &&
-                this.ScheduleDataPerInterval.SequenceEqual(other.ScheduleDataPerInterval)
+                ScheduleDataPerInterval == other.ScheduleDataPerInterval ||
+                ScheduleDataPerInterval != null &&
+                ScheduleDataPerInterval.SequenceEqual(other.ScheduleDataPerInterval)
             ) &&
             (
-                this.PerformancePredictionDataSummary == other.PerformancePredictionDataSummary ||
-                this.PerformancePredictionDataSummary != null &&
-                this.PerformancePredictionDataSummary.Equals(other.PerformancePredictionDataSummary)
+                PerformancePredictionDataSummary == other.PerformancePredictionDataSummary ||
+                PerformancePredictionDataSummary != null &&
+                PerformancePredictionDataSummary.Equals(other.PerformancePredictionDataSummary)
             ) &&
             (
-                this.PerformancePredictionDataPerInterval == other.PerformancePredictionDataPerInterval ||
-                this.PerformancePredictionDataPerInterval != null &&
-                this.PerformancePredictionDataPerInterval.SequenceEqual(other.PerformancePredictionDataPerInterval)
+                PerformancePredictionDataPerInterval == other.PerformancePredictionDataPerInterval ||
+                PerformancePredictionDataPerInterval != null &&
+                PerformancePredictionDataPerInterval.SequenceEqual(other.PerformancePredictionDataPerInterval)
             );
     }
 
@@ -232,39 +232,39 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.ForecastDataSummary != null)
+            if (ForecastDataSummary != null)
             {
-                hash = hash * 59 + this.ForecastDataSummary.GetHashCode();
+                hash = hash * 59 + ForecastDataSummary.GetHashCode();
             }
 
-            if (this.ForecastDataPerInterval != null)
+            if (ForecastDataPerInterval != null)
             {
-                hash = hash * 59 + this.ForecastDataPerInterval.GetHashCode();
+                hash = hash * 59 + ForecastDataPerInterval.GetHashCode();
             }
 
-            if (this.ScheduleDataSummary != null)
+            if (ScheduleDataSummary != null)
             {
-                hash = hash * 59 + this.ScheduleDataSummary.GetHashCode();
+                hash = hash * 59 + ScheduleDataSummary.GetHashCode();
             }
 
-            if (this.ScheduleDataPerInterval != null)
+            if (ScheduleDataPerInterval != null)
             {
-                hash = hash * 59 + this.ScheduleDataPerInterval.GetHashCode();
+                hash = hash * 59 + ScheduleDataPerInterval.GetHashCode();
             }
 
-            if (this.PerformancePredictionDataSummary != null)
+            if (PerformancePredictionDataSummary != null)
             {
-                hash = hash * 59 + this.PerformancePredictionDataSummary.GetHashCode();
+                hash = hash * 59 + PerformancePredictionDataSummary.GetHashCode();
             }
 
-            if (this.PerformancePredictionDataPerInterval != null)
+            if (PerformancePredictionDataPerInterval != null)
             {
-                hash = hash * 59 + this.PerformancePredictionDataPerInterval.GetHashCode();
+                hash = hash * 59 + PerformancePredictionDataPerInterval.GetHashCode();
             }
 
             return hash;

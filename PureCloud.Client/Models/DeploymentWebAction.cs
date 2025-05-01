@@ -217,7 +217,7 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DeploymentWebAction);
+        return Equals(obj as DeploymentWebAction);
     }
 
     /// <summary>
@@ -235,54 +235,54 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.CustomerId == other.CustomerId ||
-                this.CustomerId != null &&
-                this.CustomerId.Equals(other.CustomerId)
+                CustomerId == other.CustomerId ||
+                CustomerId != null &&
+                CustomerId.Equals(other.CustomerId)
             ) &&
             (
-                this.CustomerIdType == other.CustomerIdType ||
-                this.CustomerIdType != null &&
-                this.CustomerIdType.Equals(other.CustomerIdType)
+                CustomerIdType == other.CustomerIdType ||
+                CustomerIdType != null &&
+                CustomerIdType.Equals(other.CustomerIdType)
             ) &&
             (
-                this.ActionMapId == other.ActionMapId ||
-                this.ActionMapId != null &&
-                this.ActionMapId.Equals(other.ActionMapId)
+                ActionMapId == other.ActionMapId ||
+                ActionMapId != null &&
+                ActionMapId.Equals(other.ActionMapId)
             ) &&
             (
-                this.ActionMapVersion == other.ActionMapVersion ||
-                this.ActionMapVersion != null &&
-                this.ActionMapVersion.Equals(other.ActionMapVersion)
+                ActionMapVersion == other.ActionMapVersion ||
+                ActionMapVersion != null &&
+                ActionMapVersion.Equals(other.ActionMapVersion)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.WebMessagingOfferProperties == other.WebMessagingOfferProperties ||
-                this.WebMessagingOfferProperties != null &&
-                this.WebMessagingOfferProperties.Equals(other.WebMessagingOfferProperties)
+                WebMessagingOfferProperties == other.WebMessagingOfferProperties ||
+                WebMessagingOfferProperties != null &&
+                WebMessagingOfferProperties.Equals(other.WebMessagingOfferProperties)
             ) &&
             (
-                this.ContentOfferProperties == other.ContentOfferProperties ||
-                this.ContentOfferProperties != null &&
-                this.ContentOfferProperties.Equals(other.ContentOfferProperties)
+                ContentOfferProperties == other.ContentOfferProperties ||
+                ContentOfferProperties != null &&
+                ContentOfferProperties.Equals(other.ContentOfferProperties)
             ) &&
             (
-                this.OpenActionProperties == other.OpenActionProperties ||
-                this.OpenActionProperties != null &&
-                this.OpenActionProperties.Equals(other.OpenActionProperties)
+                OpenActionProperties == other.OpenActionProperties ||
+                OpenActionProperties != null &&
+                OpenActionProperties.Equals(other.OpenActionProperties)
             );
     }
 
@@ -297,54 +297,54 @@ public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.CustomerId != null)
+            if (CustomerId != null)
             {
-                hash = hash * 59 + this.CustomerId.GetHashCode();
+                hash = hash * 59 + CustomerId.GetHashCode();
             }
 
-            if (this.CustomerIdType != null)
+            if (CustomerIdType != null)
             {
-                hash = hash * 59 + this.CustomerIdType.GetHashCode();
+                hash = hash * 59 + CustomerIdType.GetHashCode();
             }
 
-            if (this.ActionMapId != null)
+            if (ActionMapId != null)
             {
-                hash = hash * 59 + this.ActionMapId.GetHashCode();
+                hash = hash * 59 + ActionMapId.GetHashCode();
             }
 
-            if (this.ActionMapVersion != null)
+            if (ActionMapVersion != null)
             {
-                hash = hash * 59 + this.ActionMapVersion.GetHashCode();
+                hash = hash * 59 + ActionMapVersion.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.WebMessagingOfferProperties != null)
+            if (WebMessagingOfferProperties != null)
             {
-                hash = hash * 59 + this.WebMessagingOfferProperties.GetHashCode();
+                hash = hash * 59 + WebMessagingOfferProperties.GetHashCode();
             }
 
-            if (this.ContentOfferProperties != null)
+            if (ContentOfferProperties != null)
             {
-                hash = hash * 59 + this.ContentOfferProperties.GetHashCode();
+                hash = hash * 59 + ContentOfferProperties.GetHashCode();
             }
 
-            if (this.OpenActionProperties != null)
+            if (OpenActionProperties != null)
             {
-                hash = hash * 59 + this.OpenActionProperties.GetHashCode();
+                hash = hash * 59 + OpenActionProperties.GetHashCode();
             }
 
             return hash;

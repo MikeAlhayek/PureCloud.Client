@@ -83,7 +83,7 @@ public partial class EmailColumn : IEquatable<EmailColumn>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailColumn);
+        return Equals(obj as EmailColumn);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class EmailColumn : IEquatable<EmailColumn>
 
         return true &&
             (
-                this.ColumnName == other.ColumnName ||
-                this.ColumnName != null &&
-                this.ColumnName.Equals(other.ColumnName)
+                ColumnName == other.ColumnName ||
+                ColumnName != null &&
+                ColumnName.Equals(other.ColumnName)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ContactableTimeColumn == other.ContactableTimeColumn ||
-                this.ContactableTimeColumn != null &&
-                this.ContactableTimeColumn.Equals(other.ContactableTimeColumn)
+                ContactableTimeColumn == other.ContactableTimeColumn ||
+                ContactableTimeColumn != null &&
+                ContactableTimeColumn.Equals(other.ContactableTimeColumn)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class EmailColumn : IEquatable<EmailColumn>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ColumnName != null)
+            if (ColumnName != null)
             {
-                hash = hash * 59 + this.ColumnName.GetHashCode();
+                hash = hash * 59 + ColumnName.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ContactableTimeColumn != null)
+            if (ContactableTimeColumn != null)
             {
-                hash = hash * 59 + this.ContactableTimeColumn.GetHashCode();
+                hash = hash * 59 + ContactableTimeColumn.GetHashCode();
             }
 
             return hash;

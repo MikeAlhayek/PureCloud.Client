@@ -106,7 +106,7 @@ public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity);
+        return Equals(obj as WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity);
     }
 
     /// <summary>
@@ -124,14 +124,14 @@ public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisa
 
         return true &&
             (
-                this.RequestId == other.RequestId ||
-                this.RequestId != null &&
-                this.RequestId.Equals(other.RequestId)
+                RequestId == other.RequestId ||
+                RequestId != null &&
+                RequestId.Equals(other.RequestId)
             ) &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             );
     }
 
@@ -146,14 +146,14 @@ public partial class WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RequestId != null)
+            if (RequestId != null)
             {
-                hash = hash * 59 + this.RequestId.GetHashCode();
+                hash = hash * 59 + RequestId.GetHashCode();
             }
 
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
             return hash;

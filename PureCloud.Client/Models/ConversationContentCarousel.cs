@@ -59,7 +59,7 @@ public partial class ConversationContentCarousel : IEquatable<ConversationConten
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationContentCarousel);
+        return Equals(obj as ConversationContentCarousel);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ConversationContentCarousel : IEquatable<ConversationConten
 
         return true &&
             (
-                this.Cards == other.Cards ||
-                this.Cards != null &&
-                this.Cards.SequenceEqual(other.Cards)
+                Cards == other.Cards ||
+                Cards != null &&
+                Cards.SequenceEqual(other.Cards)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ConversationContentCarousel : IEquatable<ConversationConten
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Cards != null)
+            if (Cards != null)
             {
-                hash = hash * 59 + this.Cards.GetHashCode();
+                hash = hash * 59 + Cards.GetHashCode();
             }
 
             return hash;

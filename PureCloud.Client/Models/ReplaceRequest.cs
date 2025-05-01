@@ -74,7 +74,7 @@ public partial class ReplaceRequest : IEquatable<ReplaceRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReplaceRequest);
+        return Equals(obj as ReplaceRequest);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class ReplaceRequest : IEquatable<ReplaceRequest>
 
         return true &&
             (
-                this.ChangeNumber == other.ChangeNumber ||
-                this.ChangeNumber != null &&
-                this.ChangeNumber.Equals(other.ChangeNumber)
+                ChangeNumber == other.ChangeNumber ||
+                ChangeNumber != null &&
+                ChangeNumber.Equals(other.ChangeNumber)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.AuthToken == other.AuthToken ||
-                this.AuthToken != null &&
-                this.AuthToken.Equals(other.AuthToken)
+                AuthToken == other.AuthToken ||
+                AuthToken != null &&
+                AuthToken.Equals(other.AuthToken)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class ReplaceRequest : IEquatable<ReplaceRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ChangeNumber != null)
+            if (ChangeNumber != null)
             {
-                hash = hash * 59 + this.ChangeNumber.GetHashCode();
+                hash = hash * 59 + ChangeNumber.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.AuthToken != null)
+            if (AuthToken != null)
             {
-                hash = hash * 59 + this.AuthToken.GetHashCode();
+                hash = hash * 59 + AuthToken.GetHashCode();
             }
 
             return hash;

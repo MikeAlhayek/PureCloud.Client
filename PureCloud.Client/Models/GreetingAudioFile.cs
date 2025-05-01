@@ -74,7 +74,7 @@ public partial class GreetingAudioFile : IEquatable<GreetingAudioFile>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GreetingAudioFile);
+        return Equals(obj as GreetingAudioFile);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class GreetingAudioFile : IEquatable<GreetingAudioFile>
 
         return true &&
             (
-                this.DurationMilliseconds == other.DurationMilliseconds ||
-                this.DurationMilliseconds != null &&
-                this.DurationMilliseconds.Equals(other.DurationMilliseconds)
+                DurationMilliseconds == other.DurationMilliseconds ||
+                DurationMilliseconds != null &&
+                DurationMilliseconds.Equals(other.DurationMilliseconds)
             ) &&
             (
-                this.SizeBytes == other.SizeBytes ||
-                this.SizeBytes != null &&
-                this.SizeBytes.Equals(other.SizeBytes)
+                SizeBytes == other.SizeBytes ||
+                SizeBytes != null &&
+                SizeBytes.Equals(other.SizeBytes)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class GreetingAudioFile : IEquatable<GreetingAudioFile>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DurationMilliseconds != null)
+            if (DurationMilliseconds != null)
             {
-                hash = hash * 59 + this.DurationMilliseconds.GetHashCode();
+                hash = hash * 59 + DurationMilliseconds.GetHashCode();
             }
 
-            if (this.SizeBytes != null)
+            if (SizeBytes != null)
             {
-                hash = hash * 59 + this.SizeBytes.GetHashCode();
+                hash = hash * 59 + SizeBytes.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

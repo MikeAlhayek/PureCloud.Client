@@ -89,7 +89,7 @@ public partial class ContentPositionProperties : IEquatable<ContentPositionPrope
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentPositionProperties);
+        return Equals(obj as ContentPositionProperties);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ContentPositionProperties : IEquatable<ContentPositionPrope
 
         return true &&
             (
-                this.Top == other.Top ||
-                this.Top != null &&
-                this.Top.Equals(other.Top)
+                Top == other.Top ||
+                Top != null &&
+                Top.Equals(other.Top)
             ) &&
             (
-                this.Bottom == other.Bottom ||
-                this.Bottom != null &&
-                this.Bottom.Equals(other.Bottom)
+                Bottom == other.Bottom ||
+                Bottom != null &&
+                Bottom.Equals(other.Bottom)
             ) &&
             (
-                this.Left == other.Left ||
-                this.Left != null &&
-                this.Left.Equals(other.Left)
+                Left == other.Left ||
+                Left != null &&
+                Left.Equals(other.Left)
             ) &&
             (
-                this.Right == other.Right ||
-                this.Right != null &&
-                this.Right.Equals(other.Right)
+                Right == other.Right ||
+                Right != null &&
+                Right.Equals(other.Right)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ContentPositionProperties : IEquatable<ContentPositionPrope
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Top != null)
+            if (Top != null)
             {
-                hash = hash * 59 + this.Top.GetHashCode();
+                hash = hash * 59 + Top.GetHashCode();
             }
 
-            if (this.Bottom != null)
+            if (Bottom != null)
             {
-                hash = hash * 59 + this.Bottom.GetHashCode();
+                hash = hash * 59 + Bottom.GetHashCode();
             }
 
-            if (this.Left != null)
+            if (Left != null)
             {
-                hash = hash * 59 + this.Left.GetHashCode();
+                hash = hash * 59 + Left.GetHashCode();
             }
 
-            if (this.Right != null)
+            if (Right != null)
             {
-                hash = hash * 59 + this.Right.GetHashCode();
+                hash = hash * 59 + Right.GetHashCode();
             }
 
             return hash;

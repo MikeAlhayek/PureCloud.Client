@@ -59,7 +59,7 @@ public partial class NluQualityReportSummary : IEquatable<NluQualityReportSummar
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluQualityReportSummary);
+        return Equals(obj as NluQualityReportSummary);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class NluQualityReportSummary : IEquatable<NluQualityReportSummar
 
         return true &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class NluQualityReportSummary : IEquatable<NluQualityReportSummar
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
             return hash;

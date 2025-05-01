@@ -81,7 +81,7 @@ public partial class UserStations : IEquatable<UserStations>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserStations);
+        return Equals(obj as UserStations);
     }
 
     /// <summary>
@@ -99,24 +99,24 @@ public partial class UserStations : IEquatable<UserStations>
 
         return true &&
             (
-                this.AssociatedStation == other.AssociatedStation ||
-                this.AssociatedStation != null &&
-                this.AssociatedStation.Equals(other.AssociatedStation)
+                AssociatedStation == other.AssociatedStation ||
+                AssociatedStation != null &&
+                AssociatedStation.Equals(other.AssociatedStation)
             ) &&
             (
-                this.EffectiveStation == other.EffectiveStation ||
-                this.EffectiveStation != null &&
-                this.EffectiveStation.Equals(other.EffectiveStation)
+                EffectiveStation == other.EffectiveStation ||
+                EffectiveStation != null &&
+                EffectiveStation.Equals(other.EffectiveStation)
             ) &&
             (
-                this.DefaultStation == other.DefaultStation ||
-                this.DefaultStation != null &&
-                this.DefaultStation.Equals(other.DefaultStation)
+                DefaultStation == other.DefaultStation ||
+                DefaultStation != null &&
+                DefaultStation.Equals(other.DefaultStation)
             ) &&
             (
-                this.LastAssociatedStation == other.LastAssociatedStation ||
-                this.LastAssociatedStation != null &&
-                this.LastAssociatedStation.Equals(other.LastAssociatedStation)
+                LastAssociatedStation == other.LastAssociatedStation ||
+                LastAssociatedStation != null &&
+                LastAssociatedStation.Equals(other.LastAssociatedStation)
             );
     }
 
@@ -131,24 +131,24 @@ public partial class UserStations : IEquatable<UserStations>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AssociatedStation != null)
+            if (AssociatedStation != null)
             {
-                hash = hash * 59 + this.AssociatedStation.GetHashCode();
+                hash = hash * 59 + AssociatedStation.GetHashCode();
             }
 
-            if (this.EffectiveStation != null)
+            if (EffectiveStation != null)
             {
-                hash = hash * 59 + this.EffectiveStation.GetHashCode();
+                hash = hash * 59 + EffectiveStation.GetHashCode();
             }
 
-            if (this.DefaultStation != null)
+            if (DefaultStation != null)
             {
-                hash = hash * 59 + this.DefaultStation.GetHashCode();
+                hash = hash * 59 + DefaultStation.GetHashCode();
             }
 
-            if (this.LastAssociatedStation != null)
+            if (LastAssociatedStation != null)
             {
-                hash = hash * 59 + this.LastAssociatedStation.GetHashCode();
+                hash = hash * 59 + LastAssociatedStation.GetHashCode();
             }
 
             return hash;

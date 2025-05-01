@@ -144,7 +144,7 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CobrowseWebMessagingSession);
+        return Equals(obj as CobrowseWebMessagingSession);
     }
 
     /// <summary>
@@ -162,39 +162,39 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.JoinCode == other.JoinCode ||
-                this.JoinCode != null &&
-                this.JoinCode.Equals(other.JoinCode)
+                JoinCode == other.JoinCode ||
+                JoinCode != null &&
+                JoinCode.Equals(other.JoinCode)
             ) &&
             (
-                this.WebsocketUrl == other.WebsocketUrl ||
-                this.WebsocketUrl != null &&
-                this.WebsocketUrl.Equals(other.WebsocketUrl)
+                WebsocketUrl == other.WebsocketUrl ||
+                WebsocketUrl != null &&
+                WebsocketUrl.Equals(other.WebsocketUrl)
             ) &&
             (
-                this.DateOfferEnds == other.DateOfferEnds ||
-                this.DateOfferEnds != null &&
-                this.DateOfferEnds.Equals(other.DateOfferEnds)
+                DateOfferEnds == other.DateOfferEnds ||
+                DateOfferEnds != null &&
+                DateOfferEnds.Equals(other.DateOfferEnds)
             ) &&
             (
-                this.CommunicationType == other.CommunicationType ||
-                this.CommunicationType != null &&
-                this.CommunicationType.Equals(other.CommunicationType)
+                CommunicationType == other.CommunicationType ||
+                CommunicationType != null &&
+                CommunicationType.Equals(other.CommunicationType)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -209,39 +209,39 @@ public partial class CobrowseWebMessagingSession : IEquatable<CobrowseWebMessagi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.JoinCode != null)
+            if (JoinCode != null)
             {
-                hash = hash * 59 + this.JoinCode.GetHashCode();
+                hash = hash * 59 + JoinCode.GetHashCode();
             }
 
-            if (this.WebsocketUrl != null)
+            if (WebsocketUrl != null)
             {
-                hash = hash * 59 + this.WebsocketUrl.GetHashCode();
+                hash = hash * 59 + WebsocketUrl.GetHashCode();
             }
 
-            if (this.DateOfferEnds != null)
+            if (DateOfferEnds != null)
             {
-                hash = hash * 59 + this.DateOfferEnds.GetHashCode();
+                hash = hash * 59 + DateOfferEnds.GetHashCode();
             }
 
-            if (this.CommunicationType != null)
+            if (CommunicationType != null)
             {
-                hash = hash * 59 + this.CommunicationType.GetHashCode();
+                hash = hash * 59 + CommunicationType.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

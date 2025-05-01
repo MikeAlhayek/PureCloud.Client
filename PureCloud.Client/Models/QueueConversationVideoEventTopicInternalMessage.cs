@@ -295,7 +295,7 @@ public partial class QueueConversationVideoEventTopicInternalMessage : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationVideoEventTopicInternalMessage);
+        return Equals(obj as QueueConversationVideoEventTopicInternalMessage);
     }
 
     /// <summary>
@@ -313,69 +313,69 @@ public partial class QueueConversationVideoEventTopicInternalMessage : IEquatabl
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.InitialState == other.InitialState ||
-                this.InitialState != null &&
-                this.InitialState.Equals(other.InitialState)
+                InitialState == other.InitialState ||
+                InitialState != null &&
+                InitialState.Equals(other.InitialState)
             ) &&
             (
-                this.Provider == other.Provider ||
-                this.Provider != null &&
-                this.Provider.Equals(other.Provider)
+                Provider == other.Provider ||
+                Provider != null &&
+                Provider.Equals(other.Provider)
             ) &&
             (
-                this.PeerId == other.PeerId ||
-                this.PeerId != null &&
-                this.PeerId.Equals(other.PeerId)
+                PeerId == other.PeerId ||
+                PeerId != null &&
+                PeerId.Equals(other.PeerId)
             ) &&
             (
-                this.DisconnectType == other.DisconnectType ||
-                this.DisconnectType != null &&
-                this.DisconnectType.Equals(other.DisconnectType)
+                DisconnectType == other.DisconnectType ||
+                DisconnectType != null &&
+                DisconnectType.Equals(other.DisconnectType)
             ) &&
             (
-                this.ConnectedTime == other.ConnectedTime ||
-                this.ConnectedTime != null &&
-                this.ConnectedTime.Equals(other.ConnectedTime)
+                ConnectedTime == other.ConnectedTime ||
+                ConnectedTime != null &&
+                ConnectedTime.Equals(other.ConnectedTime)
             ) &&
             (
-                this.DisconnectedTime == other.DisconnectedTime ||
-                this.DisconnectedTime != null &&
-                this.DisconnectedTime.Equals(other.DisconnectedTime)
+                DisconnectedTime == other.DisconnectedTime ||
+                DisconnectedTime != null &&
+                DisconnectedTime.Equals(other.DisconnectedTime)
             ) &&
             (
-                this.TargetUserId == other.TargetUserId ||
-                this.TargetUserId != null &&
-                this.TargetUserId.Equals(other.TargetUserId)
+                TargetUserId == other.TargetUserId ||
+                TargetUserId != null &&
+                TargetUserId.Equals(other.TargetUserId)
             ) &&
             (
-                this.SourceUserId == other.SourceUserId ||
-                this.SourceUserId != null &&
-                this.SourceUserId.Equals(other.SourceUserId)
+                SourceUserId == other.SourceUserId ||
+                SourceUserId != null &&
+                SourceUserId.Equals(other.SourceUserId)
             ) &&
             (
-                this.ToAddress == other.ToAddress ||
-                this.ToAddress != null &&
-                this.ToAddress.Equals(other.ToAddress)
+                ToAddress == other.ToAddress ||
+                ToAddress != null &&
+                ToAddress.Equals(other.ToAddress)
             ) &&
             (
-                this.FromAddress == other.FromAddress ||
-                this.FromAddress != null &&
-                this.FromAddress.Equals(other.FromAddress)
+                FromAddress == other.FromAddress ||
+                FromAddress != null &&
+                FromAddress.Equals(other.FromAddress)
             ) &&
             (
-                this.Messages == other.Messages ||
-                this.Messages != null &&
-                this.Messages.SequenceEqual(other.Messages)
+                Messages == other.Messages ||
+                Messages != null &&
+                Messages.SequenceEqual(other.Messages)
             );
     }
 
@@ -390,69 +390,69 @@ public partial class QueueConversationVideoEventTopicInternalMessage : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.InitialState != null)
+            if (InitialState != null)
             {
-                hash = hash * 59 + this.InitialState.GetHashCode();
+                hash = hash * 59 + InitialState.GetHashCode();
             }
 
-            if (this.Provider != null)
+            if (Provider != null)
             {
-                hash = hash * 59 + this.Provider.GetHashCode();
+                hash = hash * 59 + Provider.GetHashCode();
             }
 
-            if (this.PeerId != null)
+            if (PeerId != null)
             {
-                hash = hash * 59 + this.PeerId.GetHashCode();
+                hash = hash * 59 + PeerId.GetHashCode();
             }
 
-            if (this.DisconnectType != null)
+            if (DisconnectType != null)
             {
-                hash = hash * 59 + this.DisconnectType.GetHashCode();
+                hash = hash * 59 + DisconnectType.GetHashCode();
             }
 
-            if (this.ConnectedTime != null)
+            if (ConnectedTime != null)
             {
-                hash = hash * 59 + this.ConnectedTime.GetHashCode();
+                hash = hash * 59 + ConnectedTime.GetHashCode();
             }
 
-            if (this.DisconnectedTime != null)
+            if (DisconnectedTime != null)
             {
-                hash = hash * 59 + this.DisconnectedTime.GetHashCode();
+                hash = hash * 59 + DisconnectedTime.GetHashCode();
             }
 
-            if (this.TargetUserId != null)
+            if (TargetUserId != null)
             {
-                hash = hash * 59 + this.TargetUserId.GetHashCode();
+                hash = hash * 59 + TargetUserId.GetHashCode();
             }
 
-            if (this.SourceUserId != null)
+            if (SourceUserId != null)
             {
-                hash = hash * 59 + this.SourceUserId.GetHashCode();
+                hash = hash * 59 + SourceUserId.GetHashCode();
             }
 
-            if (this.ToAddress != null)
+            if (ToAddress != null)
             {
-                hash = hash * 59 + this.ToAddress.GetHashCode();
+                hash = hash * 59 + ToAddress.GetHashCode();
             }
 
-            if (this.FromAddress != null)
+            if (FromAddress != null)
             {
-                hash = hash * 59 + this.FromAddress.GetHashCode();
+                hash = hash * 59 + FromAddress.GetHashCode();
             }
 
-            if (this.Messages != null)
+            if (Messages != null)
             {
-                hash = hash * 59 + this.Messages.GetHashCode();
+                hash = hash * 59 + Messages.GetHashCode();
             }
 
             return hash;

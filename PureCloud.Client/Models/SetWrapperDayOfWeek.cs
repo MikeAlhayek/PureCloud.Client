@@ -108,7 +108,7 @@ public partial class SetWrapperDayOfWeek : IEquatable<SetWrapperDayOfWeek>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SetWrapperDayOfWeek);
+        return Equals(obj as SetWrapperDayOfWeek);
     }
 
     /// <summary>
@@ -126,9 +126,9 @@ public partial class SetWrapperDayOfWeek : IEquatable<SetWrapperDayOfWeek>
 
         return true &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             );
     }
 
@@ -143,9 +143,9 @@ public partial class SetWrapperDayOfWeek : IEquatable<SetWrapperDayOfWeek>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
             return hash;

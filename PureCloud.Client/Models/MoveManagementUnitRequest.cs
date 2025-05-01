@@ -59,7 +59,7 @@ public partial class MoveManagementUnitRequest : IEquatable<MoveManagementUnitRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MoveManagementUnitRequest);
+        return Equals(obj as MoveManagementUnitRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class MoveManagementUnitRequest : IEquatable<MoveManagementUnitRe
 
         return true &&
             (
-                this.BusinessUnitId == other.BusinessUnitId ||
-                this.BusinessUnitId != null &&
-                this.BusinessUnitId.Equals(other.BusinessUnitId)
+                BusinessUnitId == other.BusinessUnitId ||
+                BusinessUnitId != null &&
+                BusinessUnitId.Equals(other.BusinessUnitId)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class MoveManagementUnitRequest : IEquatable<MoveManagementUnitRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BusinessUnitId != null)
+            if (BusinessUnitId != null)
             {
-                hash = hash * 59 + this.BusinessUnitId.GetHashCode();
+                hash = hash * 59 + BusinessUnitId.GetHashCode();
             }
 
             return hash;

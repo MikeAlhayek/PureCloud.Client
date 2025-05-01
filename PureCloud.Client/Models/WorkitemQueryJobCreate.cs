@@ -205,7 +205,7 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemQueryJobCreate);
+        return Equals(obj as WorkitemQueryJobCreate);
     }
 
     /// <summary>
@@ -223,49 +223,49 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
 
         return true &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.Filters == other.Filters ||
-                this.Filters != null &&
-                this.Filters.SequenceEqual(other.Filters)
+                Filters == other.Filters ||
+                Filters != null &&
+                Filters.SequenceEqual(other.Filters)
             ) &&
             (
-                this.QueryFilters == other.QueryFilters ||
-                this.QueryFilters != null &&
-                this.QueryFilters.SequenceEqual(other.QueryFilters)
+                QueryFilters == other.QueryFilters ||
+                QueryFilters != null &&
+                QueryFilters.SequenceEqual(other.QueryFilters)
             ) &&
             (
-                this.Expands == other.Expands ||
-                this.Expands != null &&
-                this.Expands.SequenceEqual(other.Expands)
+                Expands == other.Expands ||
+                Expands != null &&
+                Expands.SequenceEqual(other.Expands)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.Equals(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.Equals(other.Sort)
             ) &&
             (
-                this.DateIntervalStart == other.DateIntervalStart ||
-                this.DateIntervalStart != null &&
-                this.DateIntervalStart.Equals(other.DateIntervalStart)
+                DateIntervalStart == other.DateIntervalStart ||
+                DateIntervalStart != null &&
+                DateIntervalStart.Equals(other.DateIntervalStart)
             ) &&
             (
-                this.DateIntervalEnd == other.DateIntervalEnd ||
-                this.DateIntervalEnd != null &&
-                this.DateIntervalEnd.Equals(other.DateIntervalEnd)
+                DateIntervalEnd == other.DateIntervalEnd ||
+                DateIntervalEnd != null &&
+                DateIntervalEnd.Equals(other.DateIntervalEnd)
             );
     }
 
@@ -280,49 +280,49 @@ public partial class WorkitemQueryJobCreate : IEquatable<WorkitemQueryJobCreate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.Filters != null)
+            if (Filters != null)
             {
-                hash = hash * 59 + this.Filters.GetHashCode();
+                hash = hash * 59 + Filters.GetHashCode();
             }
 
-            if (this.QueryFilters != null)
+            if (QueryFilters != null)
             {
-                hash = hash * 59 + this.QueryFilters.GetHashCode();
+                hash = hash * 59 + QueryFilters.GetHashCode();
             }
 
-            if (this.Expands != null)
+            if (Expands != null)
             {
-                hash = hash * 59 + this.Expands.GetHashCode();
+                hash = hash * 59 + Expands.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
-            if (this.DateIntervalStart != null)
+            if (DateIntervalStart != null)
             {
-                hash = hash * 59 + this.DateIntervalStart.GetHashCode();
+                hash = hash * 59 + DateIntervalStart.GetHashCode();
             }
 
-            if (this.DateIntervalEnd != null)
+            if (DateIntervalEnd != null)
             {
-                hash = hash * 59 + this.DateIntervalEnd.GetHashCode();
+                hash = hash * 59 + DateIntervalEnd.GetHashCode();
             }
 
             return hash;

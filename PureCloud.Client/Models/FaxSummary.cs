@@ -74,7 +74,7 @@ public partial class FaxSummary : IEquatable<FaxSummary>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FaxSummary);
+        return Equals(obj as FaxSummary);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class FaxSummary : IEquatable<FaxSummary>
 
         return true &&
             (
-                this.ReadCount == other.ReadCount ||
-                this.ReadCount != null &&
-                this.ReadCount.Equals(other.ReadCount)
+                ReadCount == other.ReadCount ||
+                ReadCount != null &&
+                ReadCount.Equals(other.ReadCount)
             ) &&
             (
-                this.UnreadCount == other.UnreadCount ||
-                this.UnreadCount != null &&
-                this.UnreadCount.Equals(other.UnreadCount)
+                UnreadCount == other.UnreadCount ||
+                UnreadCount != null &&
+                UnreadCount.Equals(other.UnreadCount)
             ) &&
             (
-                this.TotalCount == other.TotalCount ||
-                this.TotalCount != null &&
-                this.TotalCount.Equals(other.TotalCount)
+                TotalCount == other.TotalCount ||
+                TotalCount != null &&
+                TotalCount.Equals(other.TotalCount)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class FaxSummary : IEquatable<FaxSummary>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ReadCount != null)
+            if (ReadCount != null)
             {
-                hash = hash * 59 + this.ReadCount.GetHashCode();
+                hash = hash * 59 + ReadCount.GetHashCode();
             }
 
-            if (this.UnreadCount != null)
+            if (UnreadCount != null)
             {
-                hash = hash * 59 + this.UnreadCount.GetHashCode();
+                hash = hash * 59 + UnreadCount.GetHashCode();
             }
 
-            if (this.TotalCount != null)
+            if (TotalCount != null)
             {
-                hash = hash * 59 + this.TotalCount.GetHashCode();
+                hash = hash * 59 + TotalCount.GetHashCode();
             }
 
             return hash;

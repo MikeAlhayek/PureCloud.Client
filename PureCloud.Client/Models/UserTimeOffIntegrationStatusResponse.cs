@@ -121,7 +121,7 @@ public partial class UserTimeOffIntegrationStatusResponse : IEquatable<UserTimeO
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserTimeOffIntegrationStatusResponse);
+        return Equals(obj as UserTimeOffIntegrationStatusResponse);
     }
 
     /// <summary>
@@ -139,19 +139,19 @@ public partial class UserTimeOffIntegrationStatusResponse : IEquatable<UserTimeO
 
         return true &&
             (
-                this.TimeOffRequest == other.TimeOffRequest ||
-                this.TimeOffRequest != null &&
-                this.TimeOffRequest.Equals(other.TimeOffRequest)
+                TimeOffRequest == other.TimeOffRequest ||
+                TimeOffRequest != null &&
+                TimeOffRequest.Equals(other.TimeOffRequest)
             ) &&
             (
-                this.IntegrationStatus == other.IntegrationStatus ||
-                this.IntegrationStatus != null &&
-                this.IntegrationStatus.Equals(other.IntegrationStatus)
+                IntegrationStatus == other.IntegrationStatus ||
+                IntegrationStatus != null &&
+                IntegrationStatus.Equals(other.IntegrationStatus)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             );
     }
 
@@ -166,19 +166,19 @@ public partial class UserTimeOffIntegrationStatusResponse : IEquatable<UserTimeO
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeOffRequest != null)
+            if (TimeOffRequest != null)
             {
-                hash = hash * 59 + this.TimeOffRequest.GetHashCode();
+                hash = hash * 59 + TimeOffRequest.GetHashCode();
             }
 
-            if (this.IntegrationStatus != null)
+            if (IntegrationStatus != null)
             {
-                hash = hash * 59 + this.IntegrationStatus.GetHashCode();
+                hash = hash * 59 + IntegrationStatus.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
             return hash;

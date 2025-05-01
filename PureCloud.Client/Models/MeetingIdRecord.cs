@@ -103,7 +103,7 @@ public partial class MeetingIdRecord : IEquatable<MeetingIdRecord>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MeetingIdRecord);
+        return Equals(obj as MeetingIdRecord);
     }
 
     /// <summary>
@@ -121,29 +121,29 @@ public partial class MeetingIdRecord : IEquatable<MeetingIdRecord>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Ephemeral == other.Ephemeral ||
-                this.Ephemeral != null &&
-                this.Ephemeral.Equals(other.Ephemeral)
+                Ephemeral == other.Ephemeral ||
+                Ephemeral != null &&
+                Ephemeral.Equals(other.Ephemeral)
             ) &&
             (
-                this.ConferenceId == other.ConferenceId ||
-                this.ConferenceId != null &&
-                this.ConferenceId.Equals(other.ConferenceId)
+                ConferenceId == other.ConferenceId ||
+                ConferenceId != null &&
+                ConferenceId.Equals(other.ConferenceId)
             ) &&
             (
-                this.DateExpired == other.DateExpired ||
-                this.DateExpired != null &&
-                this.DateExpired.Equals(other.DateExpired)
+                DateExpired == other.DateExpired ||
+                DateExpired != null &&
+                DateExpired.Equals(other.DateExpired)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -158,29 +158,29 @@ public partial class MeetingIdRecord : IEquatable<MeetingIdRecord>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Ephemeral != null)
+            if (Ephemeral != null)
             {
-                hash = hash * 59 + this.Ephemeral.GetHashCode();
+                hash = hash * 59 + Ephemeral.GetHashCode();
             }
 
-            if (this.ConferenceId != null)
+            if (ConferenceId != null)
             {
-                hash = hash * 59 + this.ConferenceId.GetHashCode();
+                hash = hash * 59 + ConferenceId.GetHashCode();
             }
 
-            if (this.DateExpired != null)
+            if (DateExpired != null)
             {
-                hash = hash * 59 + this.DateExpired.GetHashCode();
+                hash = hash * 59 + DateExpired.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

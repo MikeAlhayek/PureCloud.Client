@@ -113,7 +113,7 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ResponseAssetStatus);
+        return Equals(obj as ResponseAssetStatus);
     }
 
     /// <summary>
@@ -131,24 +131,24 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.ErrorMessage == other.ErrorMessage ||
-                this.ErrorMessage != null &&
-                this.ErrorMessage.Equals(other.ErrorMessage)
+                ErrorMessage == other.ErrorMessage ||
+                ErrorMessage != null &&
+                ErrorMessage.Equals(other.ErrorMessage)
             );
     }
 
@@ -163,24 +163,24 @@ public partial class ResponseAssetStatus : IEquatable<ResponseAssetStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.ErrorMessage != null)
+            if (ErrorMessage != null)
             {
-                hash = hash * 59 + this.ErrorMessage.GetHashCode();
+                hash = hash * 59 + ErrorMessage.GetHashCode();
             }
 
             return hash;

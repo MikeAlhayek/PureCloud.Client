@@ -71,7 +71,7 @@ public partial class LearningAssignmentUserQuery : IEquatable<LearningAssignment
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentUserQuery);
+        return Equals(obj as LearningAssignmentUserQuery);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class LearningAssignmentUserQuery : IEquatable<LearningAssignment
 
         return true &&
             (
-                this.Rule == other.Rule ||
-                this.Rule != null &&
-                this.Rule.Equals(other.Rule)
+                Rule == other.Rule ||
+                Rule != null &&
+                Rule.Equals(other.Rule)
             ) &&
             (
-                this.SearchTerm == other.SearchTerm ||
-                this.SearchTerm != null &&
-                this.SearchTerm.Equals(other.SearchTerm)
+                SearchTerm == other.SearchTerm ||
+                SearchTerm != null &&
+                SearchTerm.Equals(other.SearchTerm)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class LearningAssignmentUserQuery : IEquatable<LearningAssignment
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Rule != null)
+            if (Rule != null)
             {
-                hash = hash * 59 + this.Rule.GetHashCode();
+                hash = hash * 59 + Rule.GetHashCode();
             }
 
-            if (this.SearchTerm != null)
+            if (SearchTerm != null)
             {
-                hash = hash * 59 + this.SearchTerm.GetHashCode();
+                hash = hash * 59 + SearchTerm.GetHashCode();
             }
 
             return hash;

@@ -83,7 +83,7 @@ public partial class PerformancePredictionOutputs : IEquatable<PerformancePredic
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PerformancePredictionOutputs);
+        return Equals(obj as PerformancePredictionOutputs);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class PerformancePredictionOutputs : IEquatable<PerformancePredic
 
         return true &&
             (
-                this.CalculationStartDate == other.CalculationStartDate ||
-                this.CalculationStartDate != null &&
-                this.CalculationStartDate.Equals(other.CalculationStartDate)
+                CalculationStartDate == other.CalculationStartDate ||
+                CalculationStartDate != null &&
+                CalculationStartDate.Equals(other.CalculationStartDate)
             ) &&
             (
-                this.CalculationIntervalLengthMinutes == other.CalculationIntervalLengthMinutes ||
-                this.CalculationIntervalLengthMinutes != null &&
-                this.CalculationIntervalLengthMinutes.Equals(other.CalculationIntervalLengthMinutes)
+                CalculationIntervalLengthMinutes == other.CalculationIntervalLengthMinutes ||
+                CalculationIntervalLengthMinutes != null &&
+                CalculationIntervalLengthMinutes.Equals(other.CalculationIntervalLengthMinutes)
             ) &&
             (
-                this.PlanningGroupResults == other.PlanningGroupResults ||
-                this.PlanningGroupResults != null &&
-                this.PlanningGroupResults.SequenceEqual(other.PlanningGroupResults)
+                PlanningGroupResults == other.PlanningGroupResults ||
+                PlanningGroupResults != null &&
+                PlanningGroupResults.SequenceEqual(other.PlanningGroupResults)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class PerformancePredictionOutputs : IEquatable<PerformancePredic
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CalculationStartDate != null)
+            if (CalculationStartDate != null)
             {
-                hash = hash * 59 + this.CalculationStartDate.GetHashCode();
+                hash = hash * 59 + CalculationStartDate.GetHashCode();
             }
 
-            if (this.CalculationIntervalLengthMinutes != null)
+            if (CalculationIntervalLengthMinutes != null)
             {
-                hash = hash * 59 + this.CalculationIntervalLengthMinutes.GetHashCode();
+                hash = hash * 59 + CalculationIntervalLengthMinutes.GetHashCode();
             }
 
-            if (this.PlanningGroupResults != null)
+            if (PlanningGroupResults != null)
             {
-                hash = hash * 59 + this.PlanningGroupResults.GetHashCode();
+                hash = hash * 59 + PlanningGroupResults.GetHashCode();
             }
 
             return hash;

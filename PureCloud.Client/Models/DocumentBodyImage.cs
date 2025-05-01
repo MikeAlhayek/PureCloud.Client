@@ -83,7 +83,7 @@ public partial class DocumentBodyImage : IEquatable<DocumentBodyImage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyImage);
+        return Equals(obj as DocumentBodyImage);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class DocumentBodyImage : IEquatable<DocumentBodyImage>
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Hyperlink == other.Hyperlink ||
-                this.Hyperlink != null &&
-                this.Hyperlink.Equals(other.Hyperlink)
+                Hyperlink == other.Hyperlink ||
+                Hyperlink != null &&
+                Hyperlink.Equals(other.Hyperlink)
             ) &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.Equals(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.Equals(other.Properties)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class DocumentBodyImage : IEquatable<DocumentBodyImage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Hyperlink != null)
+            if (Hyperlink != null)
             {
-                hash = hash * 59 + this.Hyperlink.GetHashCode();
+                hash = hash * 59 + Hyperlink.GetHashCode();
             }
 
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
             return hash;

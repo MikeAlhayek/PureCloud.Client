@@ -185,7 +185,7 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationProperties);
+        return Equals(obj as ConversationProperties);
     }
 
     /// <summary>
@@ -203,64 +203,64 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
 
         return true &&
             (
-                this.IsWaiting == other.IsWaiting ||
-                this.IsWaiting != null &&
-                this.IsWaiting.Equals(other.IsWaiting)
+                IsWaiting == other.IsWaiting ||
+                IsWaiting != null &&
+                IsWaiting.Equals(other.IsWaiting)
             ) &&
             (
-                this.IsActive == other.IsActive ||
-                this.IsActive != null &&
-                this.IsActive.Equals(other.IsActive)
+                IsActive == other.IsActive ||
+                IsActive != null &&
+                IsActive.Equals(other.IsActive)
             ) &&
             (
-                this.IsAcd == other.IsAcd ||
-                this.IsAcd != null &&
-                this.IsAcd.Equals(other.IsAcd)
+                IsAcd == other.IsAcd ||
+                IsAcd != null &&
+                IsAcd.Equals(other.IsAcd)
             ) &&
             (
-                this.IsPreferred == other.IsPreferred ||
-                this.IsPreferred != null &&
-                this.IsPreferred.Equals(other.IsPreferred)
+                IsPreferred == other.IsPreferred ||
+                IsPreferred != null &&
+                IsPreferred.Equals(other.IsPreferred)
             ) &&
             (
-                this.IsScreenshare == other.IsScreenshare ||
-                this.IsScreenshare != null &&
-                this.IsScreenshare.Equals(other.IsScreenshare)
+                IsScreenshare == other.IsScreenshare ||
+                IsScreenshare != null &&
+                IsScreenshare.Equals(other.IsScreenshare)
             ) &&
             (
-                this.IsCobrowse == other.IsCobrowse ||
-                this.IsCobrowse != null &&
-                this.IsCobrowse.Equals(other.IsCobrowse)
+                IsCobrowse == other.IsCobrowse ||
+                IsCobrowse != null &&
+                IsCobrowse.Equals(other.IsCobrowse)
             ) &&
             (
-                this.IsVoicemail == other.IsVoicemail ||
-                this.IsVoicemail != null &&
-                this.IsVoicemail.Equals(other.IsVoicemail)
+                IsVoicemail == other.IsVoicemail ||
+                IsVoicemail != null &&
+                IsVoicemail.Equals(other.IsVoicemail)
             ) &&
             (
-                this.IsFlagged == other.IsFlagged ||
-                this.IsFlagged != null &&
-                this.IsFlagged.Equals(other.IsFlagged)
+                IsFlagged == other.IsFlagged ||
+                IsFlagged != null &&
+                IsFlagged.Equals(other.IsFlagged)
             ) &&
             (
-                this.IsMonitored == other.IsMonitored ||
-                this.IsMonitored != null &&
-                this.IsMonitored.Equals(other.IsMonitored)
+                IsMonitored == other.IsMonitored ||
+                IsMonitored != null &&
+                IsMonitored.Equals(other.IsMonitored)
             ) &&
             (
-                this.IsScreenMonitored == other.IsScreenMonitored ||
-                this.IsScreenMonitored != null &&
-                this.IsScreenMonitored.Equals(other.IsScreenMonitored)
+                IsScreenMonitored == other.IsScreenMonitored ||
+                IsScreenMonitored != null &&
+                IsScreenMonitored.Equals(other.IsScreenMonitored)
             ) &&
             (
-                this.FilterWrapUpNotes == other.FilterWrapUpNotes ||
-                this.FilterWrapUpNotes != null &&
-                this.FilterWrapUpNotes.Equals(other.FilterWrapUpNotes)
+                FilterWrapUpNotes == other.FilterWrapUpNotes ||
+                FilterWrapUpNotes != null &&
+                FilterWrapUpNotes.Equals(other.FilterWrapUpNotes)
             ) &&
             (
-                this.MatchAll == other.MatchAll ||
-                this.MatchAll != null &&
-                this.MatchAll.Equals(other.MatchAll)
+                MatchAll == other.MatchAll ||
+                MatchAll != null &&
+                MatchAll.Equals(other.MatchAll)
             );
     }
 
@@ -275,64 +275,64 @@ public partial class ConversationProperties : IEquatable<ConversationProperties>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IsWaiting != null)
+            if (IsWaiting != null)
             {
-                hash = hash * 59 + this.IsWaiting.GetHashCode();
+                hash = hash * 59 + IsWaiting.GetHashCode();
             }
 
-            if (this.IsActive != null)
+            if (IsActive != null)
             {
-                hash = hash * 59 + this.IsActive.GetHashCode();
+                hash = hash * 59 + IsActive.GetHashCode();
             }
 
-            if (this.IsAcd != null)
+            if (IsAcd != null)
             {
-                hash = hash * 59 + this.IsAcd.GetHashCode();
+                hash = hash * 59 + IsAcd.GetHashCode();
             }
 
-            if (this.IsPreferred != null)
+            if (IsPreferred != null)
             {
-                hash = hash * 59 + this.IsPreferred.GetHashCode();
+                hash = hash * 59 + IsPreferred.GetHashCode();
             }
 
-            if (this.IsScreenshare != null)
+            if (IsScreenshare != null)
             {
-                hash = hash * 59 + this.IsScreenshare.GetHashCode();
+                hash = hash * 59 + IsScreenshare.GetHashCode();
             }
 
-            if (this.IsCobrowse != null)
+            if (IsCobrowse != null)
             {
-                hash = hash * 59 + this.IsCobrowse.GetHashCode();
+                hash = hash * 59 + IsCobrowse.GetHashCode();
             }
 
-            if (this.IsVoicemail != null)
+            if (IsVoicemail != null)
             {
-                hash = hash * 59 + this.IsVoicemail.GetHashCode();
+                hash = hash * 59 + IsVoicemail.GetHashCode();
             }
 
-            if (this.IsFlagged != null)
+            if (IsFlagged != null)
             {
-                hash = hash * 59 + this.IsFlagged.GetHashCode();
+                hash = hash * 59 + IsFlagged.GetHashCode();
             }
 
-            if (this.IsMonitored != null)
+            if (IsMonitored != null)
             {
-                hash = hash * 59 + this.IsMonitored.GetHashCode();
+                hash = hash * 59 + IsMonitored.GetHashCode();
             }
 
-            if (this.IsScreenMonitored != null)
+            if (IsScreenMonitored != null)
             {
-                hash = hash * 59 + this.IsScreenMonitored.GetHashCode();
+                hash = hash * 59 + IsScreenMonitored.GetHashCode();
             }
 
-            if (this.FilterWrapUpNotes != null)
+            if (FilterWrapUpNotes != null)
             {
-                hash = hash * 59 + this.FilterWrapUpNotes.GetHashCode();
+                hash = hash * 59 + FilterWrapUpNotes.GetHashCode();
             }
 
-            if (this.MatchAll != null)
+            if (MatchAll != null)
             {
-                hash = hash * 59 + this.MatchAll.GetHashCode();
+                hash = hash * 59 + MatchAll.GetHashCode();
             }
 
             return hash;

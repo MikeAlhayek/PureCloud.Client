@@ -77,7 +77,7 @@ public partial class EdgeLogsJobRequest : IEquatable<EdgeLogsJobRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeLogsJobRequest);
+        return Equals(obj as EdgeLogsJobRequest);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class EdgeLogsJobRequest : IEquatable<EdgeLogsJobRequest>
 
         return true &&
             (
-                this.Path == other.Path ||
-                this.Path != null &&
-                this.Path.Equals(other.Path)
+                Path == other.Path ||
+                Path != null &&
+                Path.Equals(other.Path)
             ) &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.Equals(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.Equals(other.Query)
             ) &&
             (
-                this.Recurse == other.Recurse ||
-                this.Recurse != null &&
-                this.Recurse.Equals(other.Recurse)
+                Recurse == other.Recurse ||
+                Recurse != null &&
+                Recurse.Equals(other.Recurse)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class EdgeLogsJobRequest : IEquatable<EdgeLogsJobRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Path != null)
+            if (Path != null)
             {
-                hash = hash * 59 + this.Path.GetHashCode();
+                hash = hash * 59 + Path.GetHashCode();
             }
 
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
-            if (this.Recurse != null)
+            if (Recurse != null)
             {
-                hash = hash * 59 + this.Recurse.GetHashCode();
+                hash = hash * 59 + Recurse.GetHashCode();
             }
 
             return hash;

@@ -101,7 +101,7 @@ public partial class LearningModuleReassignSummary : IEquatable<LearningModuleRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModuleReassignSummary);
+        return Equals(obj as LearningModuleReassignSummary);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class LearningModuleReassignSummary : IEquatable<LearningModuleRe
 
         return true &&
             (
-                this.TotalReassigned == other.TotalReassigned ||
-                this.TotalReassigned != null &&
-                this.TotalReassigned.Equals(other.TotalReassigned)
+                TotalReassigned == other.TotalReassigned ||
+                TotalReassigned != null &&
+                TotalReassigned.Equals(other.TotalReassigned)
             ) &&
             (
-                this.CompletedCount == other.CompletedCount ||
-                this.CompletedCount != null &&
-                this.CompletedCount.Equals(other.CompletedCount)
+                CompletedCount == other.CompletedCount ||
+                CompletedCount != null &&
+                CompletedCount.Equals(other.CompletedCount)
             ) &&
             (
-                this.InProgressCount == other.InProgressCount ||
-                this.InProgressCount != null &&
-                this.InProgressCount.Equals(other.InProgressCount)
+                InProgressCount == other.InProgressCount ||
+                InProgressCount != null &&
+                InProgressCount.Equals(other.InProgressCount)
             ) &&
             (
-                this.AssignedCount == other.AssignedCount ||
-                this.AssignedCount != null &&
-                this.AssignedCount.Equals(other.AssignedCount)
+                AssignedCount == other.AssignedCount ||
+                AssignedCount != null &&
+                AssignedCount.Equals(other.AssignedCount)
             ) &&
             (
-                this.NotCompletedCount == other.NotCompletedCount ||
-                this.NotCompletedCount != null &&
-                this.NotCompletedCount.Equals(other.NotCompletedCount)
+                NotCompletedCount == other.NotCompletedCount ||
+                NotCompletedCount != null &&
+                NotCompletedCount.Equals(other.NotCompletedCount)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class LearningModuleReassignSummary : IEquatable<LearningModuleRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TotalReassigned != null)
+            if (TotalReassigned != null)
             {
-                hash = hash * 59 + this.TotalReassigned.GetHashCode();
+                hash = hash * 59 + TotalReassigned.GetHashCode();
             }
 
-            if (this.CompletedCount != null)
+            if (CompletedCount != null)
             {
-                hash = hash * 59 + this.CompletedCount.GetHashCode();
+                hash = hash * 59 + CompletedCount.GetHashCode();
             }
 
-            if (this.InProgressCount != null)
+            if (InProgressCount != null)
             {
-                hash = hash * 59 + this.InProgressCount.GetHashCode();
+                hash = hash * 59 + InProgressCount.GetHashCode();
             }
 
-            if (this.AssignedCount != null)
+            if (AssignedCount != null)
             {
-                hash = hash * 59 + this.AssignedCount.GetHashCode();
+                hash = hash * 59 + AssignedCount.GetHashCode();
             }
 
-            if (this.NotCompletedCount != null)
+            if (NotCompletedCount != null)
             {
-                hash = hash * 59 + this.NotCompletedCount.GetHashCode();
+                hash = hash * 59 + NotCompletedCount.GetHashCode();
             }
 
             return hash;

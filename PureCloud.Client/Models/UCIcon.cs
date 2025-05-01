@@ -51,7 +51,7 @@ public partial class UCIcon : IEquatable<UCIcon>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UCIcon);
+        return Equals(obj as UCIcon);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class UCIcon : IEquatable<UCIcon>
 
         return true &&
             (
-                this.Vector == other.Vector ||
-                this.Vector != null &&
-                this.Vector.Equals(other.Vector)
+                Vector == other.Vector ||
+                Vector != null &&
+                Vector.Equals(other.Vector)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class UCIcon : IEquatable<UCIcon>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Vector != null)
+            if (Vector != null)
             {
-                hash = hash * 59 + this.Vector.GetHashCode();
+                hash = hash * 59 + Vector.GetHashCode();
             }
 
             return hash;

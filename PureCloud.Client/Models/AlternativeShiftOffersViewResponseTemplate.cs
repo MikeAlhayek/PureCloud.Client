@@ -142,7 +142,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftOffersViewResponseTemplate);
+        return Equals(obj as AlternativeShiftOffersViewResponseTemplate);
     }
 
     /// <summary>
@@ -160,44 +160,44 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
 
         return true &&
             (
-                this.JobId == other.JobId ||
-                this.JobId != null &&
-                this.JobId.Equals(other.JobId)
+                JobId == other.JobId ||
+                JobId != null &&
+                JobId.Equals(other.JobId)
             ) &&
             (
-                this.BusinessUnitId == other.BusinessUnitId ||
-                this.BusinessUnitId != null &&
-                this.BusinessUnitId.Equals(other.BusinessUnitId)
+                BusinessUnitId == other.BusinessUnitId ||
+                BusinessUnitId != null &&
+                BusinessUnitId.Equals(other.BusinessUnitId)
             ) &&
             (
-                this.AgentId == other.AgentId ||
-                this.AgentId != null &&
-                this.AgentId.Equals(other.AgentId)
+                AgentId == other.AgentId ||
+                AgentId != null &&
+                AgentId.Equals(other.AgentId)
             ) &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             ) &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             ) &&
             (
-                this.OfferWeekDate == other.OfferWeekDate ||
-                this.OfferWeekDate != null &&
-                this.OfferWeekDate.Equals(other.OfferWeekDate)
+                OfferWeekDate == other.OfferWeekDate ||
+                OfferWeekDate != null &&
+                OfferWeekDate.Equals(other.OfferWeekDate)
             ) &&
             (
-                this.Shifts == other.Shifts ||
-                this.Shifts != null &&
-                this.Shifts.SequenceEqual(other.Shifts)
+                Shifts == other.Shifts ||
+                Shifts != null &&
+                Shifts.SequenceEqual(other.Shifts)
             ) &&
             (
-                this.AlternativeDays == other.AlternativeDays ||
-                this.AlternativeDays != null &&
-                this.AlternativeDays.SequenceEqual(other.AlternativeDays)
+                AlternativeDays == other.AlternativeDays ||
+                AlternativeDays != null &&
+                AlternativeDays.SequenceEqual(other.AlternativeDays)
             );
     }
 
@@ -212,44 +212,44 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.JobId != null)
+            if (JobId != null)
             {
-                hash = hash * 59 + this.JobId.GetHashCode();
+                hash = hash * 59 + JobId.GetHashCode();
             }
 
-            if (this.BusinessUnitId != null)
+            if (BusinessUnitId != null)
             {
-                hash = hash * 59 + this.BusinessUnitId.GetHashCode();
+                hash = hash * 59 + BusinessUnitId.GetHashCode();
             }
 
-            if (this.AgentId != null)
+            if (AgentId != null)
             {
-                hash = hash * 59 + this.AgentId.GetHashCode();
+                hash = hash * 59 + AgentId.GetHashCode();
             }
 
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
-            if (this.OfferWeekDate != null)
+            if (OfferWeekDate != null)
             {
-                hash = hash * 59 + this.OfferWeekDate.GetHashCode();
+                hash = hash * 59 + OfferWeekDate.GetHashCode();
             }
 
-            if (this.Shifts != null)
+            if (Shifts != null)
             {
-                hash = hash * 59 + this.Shifts.GetHashCode();
+                hash = hash * 59 + Shifts.GetHashCode();
             }
 
-            if (this.AlternativeDays != null)
+            if (AlternativeDays != null)
             {
-                hash = hash * 59 + this.AlternativeDays.GetHashCode();
+                hash = hash * 59 + AlternativeDays.GetHashCode();
             }
 
             return hash;

@@ -171,7 +171,7 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateBusinessUnitSettingsRequest);
+        return Equals(obj as UpdateBusinessUnitSettingsRequest);
     }
 
     /// <summary>
@@ -189,34 +189,34 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
 
         return true &&
             (
-                this.StartDayOfWeek == other.StartDayOfWeek ||
-                this.StartDayOfWeek != null &&
-                this.StartDayOfWeek.Equals(other.StartDayOfWeek)
+                StartDayOfWeek == other.StartDayOfWeek ||
+                StartDayOfWeek != null &&
+                StartDayOfWeek.Equals(other.StartDayOfWeek)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.ShortTermForecasting == other.ShortTermForecasting ||
-                this.ShortTermForecasting != null &&
-                this.ShortTermForecasting.Equals(other.ShortTermForecasting)
+                ShortTermForecasting == other.ShortTermForecasting ||
+                ShortTermForecasting != null &&
+                ShortTermForecasting.Equals(other.ShortTermForecasting)
             ) &&
             (
-                this.Scheduling == other.Scheduling ||
-                this.Scheduling != null &&
-                this.Scheduling.Equals(other.Scheduling)
+                Scheduling == other.Scheduling ||
+                Scheduling != null &&
+                Scheduling.Equals(other.Scheduling)
             ) &&
             (
-                this.Notifications == other.Notifications ||
-                this.Notifications != null &&
-                this.Notifications.Equals(other.Notifications)
+                Notifications == other.Notifications ||
+                Notifications != null &&
+                Notifications.Equals(other.Notifications)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -231,34 +231,34 @@ public partial class UpdateBusinessUnitSettingsRequest : IEquatable<UpdateBusine
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDayOfWeek != null)
+            if (StartDayOfWeek != null)
             {
-                hash = hash * 59 + this.StartDayOfWeek.GetHashCode();
+                hash = hash * 59 + StartDayOfWeek.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.ShortTermForecasting != null)
+            if (ShortTermForecasting != null)
             {
-                hash = hash * 59 + this.ShortTermForecasting.GetHashCode();
+                hash = hash * 59 + ShortTermForecasting.GetHashCode();
             }
 
-            if (this.Scheduling != null)
+            if (Scheduling != null)
             {
-                hash = hash * 59 + this.Scheduling.GetHashCode();
+                hash = hash * 59 + Scheduling.GetHashCode();
             }
 
-            if (this.Notifications != null)
+            if (Notifications != null)
             {
-                hash = hash * 59 + this.Notifications.GetHashCode();
+                hash = hash * 59 + Notifications.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

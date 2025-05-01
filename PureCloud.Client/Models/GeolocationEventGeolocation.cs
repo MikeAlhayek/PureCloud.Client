@@ -96,7 +96,7 @@ public partial class GeolocationEventGeolocation : IEquatable<GeolocationEventGe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GeolocationEventGeolocation);
+        return Equals(obj as GeolocationEventGeolocation);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class GeolocationEventGeolocation : IEquatable<GeolocationEventGe
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Country == other.Country ||
-                this.Country != null &&
-                this.Country.Equals(other.Country)
+                Country == other.Country ||
+                Country != null &&
+                Country.Equals(other.Country)
             ) &&
             (
-                this.Region == other.Region ||
-                this.Region != null &&
-                this.Region.Equals(other.Region)
+                Region == other.Region ||
+                Region != null &&
+                Region.Equals(other.Region)
             ) &&
             (
-                this.City == other.City ||
-                this.City != null &&
-                this.City.Equals(other.City)
+                City == other.City ||
+                City != null &&
+                City.Equals(other.City)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class GeolocationEventGeolocation : IEquatable<GeolocationEventGe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Country != null)
+            if (Country != null)
             {
-                hash = hash * 59 + this.Country.GetHashCode();
+                hash = hash * 59 + Country.GetHashCode();
             }
 
-            if (this.Region != null)
+            if (Region != null)
             {
-                hash = hash * 59 + this.Region.GetHashCode();
+                hash = hash * 59 + Region.GetHashCode();
             }
 
-            if (this.City != null)
+            if (City != null)
             {
-                hash = hash * 59 + this.City.GetHashCode();
+                hash = hash * 59 + City.GetHashCode();
             }
 
             return hash;

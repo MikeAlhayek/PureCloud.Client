@@ -64,7 +64,7 @@ public partial class TrunkConnectedStatus : IEquatable<TrunkConnectedStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkConnectedStatus);
+        return Equals(obj as TrunkConnectedStatus);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class TrunkConnectedStatus : IEquatable<TrunkConnectedStatus>
 
         return true &&
             (
-                this.Connected == other.Connected ||
-                this.Connected != null &&
-                this.Connected.Equals(other.Connected)
+                Connected == other.Connected ||
+                Connected != null &&
+                Connected.Equals(other.Connected)
             ) &&
             (
-                this.ConnectedStateTime == other.ConnectedStateTime ||
-                this.ConnectedStateTime != null &&
-                this.ConnectedStateTime.Equals(other.ConnectedStateTime)
+                ConnectedStateTime == other.ConnectedStateTime ||
+                ConnectedStateTime != null &&
+                ConnectedStateTime.Equals(other.ConnectedStateTime)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class TrunkConnectedStatus : IEquatable<TrunkConnectedStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Connected != null)
+            if (Connected != null)
             {
-                hash = hash * 59 + this.Connected.GetHashCode();
+                hash = hash * 59 + Connected.GetHashCode();
             }
 
-            if (this.ConnectedStateTime != null)
+            if (ConnectedStateTime != null)
             {
-                hash = hash * 59 + this.ConnectedStateTime.GetHashCode();
+                hash = hash * 59 + ConnectedStateTime.GetHashCode();
             }
 
             return hash;

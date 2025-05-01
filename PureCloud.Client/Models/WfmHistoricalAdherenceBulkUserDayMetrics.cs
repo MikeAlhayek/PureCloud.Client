@@ -173,7 +173,7 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalAdherenceBulkUserDayMetrics);
+        return Equals(obj as WfmHistoricalAdherenceBulkUserDayMetrics);
     }
 
     /// <summary>
@@ -191,59 +191,59 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
 
         return true &&
             (
-                this.DayStartOffsetSeconds == other.DayStartOffsetSeconds ||
-                this.DayStartOffsetSeconds != null &&
-                this.DayStartOffsetSeconds.Equals(other.DayStartOffsetSeconds)
+                DayStartOffsetSeconds == other.DayStartOffsetSeconds ||
+                DayStartOffsetSeconds != null &&
+                DayStartOffsetSeconds.Equals(other.DayStartOffsetSeconds)
             ) &&
             (
-                this.AdherenceScheduleSeconds == other.AdherenceScheduleSeconds ||
-                this.AdherenceScheduleSeconds != null &&
-                this.AdherenceScheduleSeconds.Equals(other.AdherenceScheduleSeconds)
+                AdherenceScheduleSeconds == other.AdherenceScheduleSeconds ||
+                AdherenceScheduleSeconds != null &&
+                AdherenceScheduleSeconds.Equals(other.AdherenceScheduleSeconds)
             ) &&
             (
-                this.ConformanceScheduleSeconds == other.ConformanceScheduleSeconds ||
-                this.ConformanceScheduleSeconds != null &&
-                this.ConformanceScheduleSeconds.Equals(other.ConformanceScheduleSeconds)
+                ConformanceScheduleSeconds == other.ConformanceScheduleSeconds ||
+                ConformanceScheduleSeconds != null &&
+                ConformanceScheduleSeconds.Equals(other.ConformanceScheduleSeconds)
             ) &&
             (
-                this.ConformanceActualSeconds == other.ConformanceActualSeconds ||
-                this.ConformanceActualSeconds != null &&
-                this.ConformanceActualSeconds.Equals(other.ConformanceActualSeconds)
+                ConformanceActualSeconds == other.ConformanceActualSeconds ||
+                ConformanceActualSeconds != null &&
+                ConformanceActualSeconds.Equals(other.ConformanceActualSeconds)
             ) &&
             (
-                this.ExceptionCount == other.ExceptionCount ||
-                this.ExceptionCount != null &&
-                this.ExceptionCount.Equals(other.ExceptionCount)
+                ExceptionCount == other.ExceptionCount ||
+                ExceptionCount != null &&
+                ExceptionCount.Equals(other.ExceptionCount)
             ) &&
             (
-                this.ExceptionDurationSeconds == other.ExceptionDurationSeconds ||
-                this.ExceptionDurationSeconds != null &&
-                this.ExceptionDurationSeconds.Equals(other.ExceptionDurationSeconds)
+                ExceptionDurationSeconds == other.ExceptionDurationSeconds ||
+                ExceptionDurationSeconds != null &&
+                ExceptionDurationSeconds.Equals(other.ExceptionDurationSeconds)
             ) &&
             (
-                this.ImpactSeconds == other.ImpactSeconds ||
-                this.ImpactSeconds != null &&
-                this.ImpactSeconds.Equals(other.ImpactSeconds)
+                ImpactSeconds == other.ImpactSeconds ||
+                ImpactSeconds != null &&
+                ImpactSeconds.Equals(other.ImpactSeconds)
             ) &&
             (
-                this.ScheduleLengthSeconds == other.ScheduleLengthSeconds ||
-                this.ScheduleLengthSeconds != null &&
-                this.ScheduleLengthSeconds.Equals(other.ScheduleLengthSeconds)
+                ScheduleLengthSeconds == other.ScheduleLengthSeconds ||
+                ScheduleLengthSeconds != null &&
+                ScheduleLengthSeconds.Equals(other.ScheduleLengthSeconds)
             ) &&
             (
-                this.ActualLengthSeconds == other.ActualLengthSeconds ||
-                this.ActualLengthSeconds != null &&
-                this.ActualLengthSeconds.Equals(other.ActualLengthSeconds)
+                ActualLengthSeconds == other.ActualLengthSeconds ||
+                ActualLengthSeconds != null &&
+                ActualLengthSeconds.Equals(other.ActualLengthSeconds)
             ) &&
             (
-                this.AdherencePercentage == other.AdherencePercentage ||
-                this.AdherencePercentage != null &&
-                this.AdherencePercentage.Equals(other.AdherencePercentage)
+                AdherencePercentage == other.AdherencePercentage ||
+                AdherencePercentage != null &&
+                AdherencePercentage.Equals(other.AdherencePercentage)
             ) &&
             (
-                this.ConformancePercentage == other.ConformancePercentage ||
-                this.ConformancePercentage != null &&
-                this.ConformancePercentage.Equals(other.ConformancePercentage)
+                ConformancePercentage == other.ConformancePercentage ||
+                ConformancePercentage != null &&
+                ConformancePercentage.Equals(other.ConformancePercentage)
             );
     }
 
@@ -258,59 +258,59 @@ public partial class WfmHistoricalAdherenceBulkUserDayMetrics : IEquatable<WfmHi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DayStartOffsetSeconds != null)
+            if (DayStartOffsetSeconds != null)
             {
-                hash = hash * 59 + this.DayStartOffsetSeconds.GetHashCode();
+                hash = hash * 59 + DayStartOffsetSeconds.GetHashCode();
             }
 
-            if (this.AdherenceScheduleSeconds != null)
+            if (AdherenceScheduleSeconds != null)
             {
-                hash = hash * 59 + this.AdherenceScheduleSeconds.GetHashCode();
+                hash = hash * 59 + AdherenceScheduleSeconds.GetHashCode();
             }
 
-            if (this.ConformanceScheduleSeconds != null)
+            if (ConformanceScheduleSeconds != null)
             {
-                hash = hash * 59 + this.ConformanceScheduleSeconds.GetHashCode();
+                hash = hash * 59 + ConformanceScheduleSeconds.GetHashCode();
             }
 
-            if (this.ConformanceActualSeconds != null)
+            if (ConformanceActualSeconds != null)
             {
-                hash = hash * 59 + this.ConformanceActualSeconds.GetHashCode();
+                hash = hash * 59 + ConformanceActualSeconds.GetHashCode();
             }
 
-            if (this.ExceptionCount != null)
+            if (ExceptionCount != null)
             {
-                hash = hash * 59 + this.ExceptionCount.GetHashCode();
+                hash = hash * 59 + ExceptionCount.GetHashCode();
             }
 
-            if (this.ExceptionDurationSeconds != null)
+            if (ExceptionDurationSeconds != null)
             {
-                hash = hash * 59 + this.ExceptionDurationSeconds.GetHashCode();
+                hash = hash * 59 + ExceptionDurationSeconds.GetHashCode();
             }
 
-            if (this.ImpactSeconds != null)
+            if (ImpactSeconds != null)
             {
-                hash = hash * 59 + this.ImpactSeconds.GetHashCode();
+                hash = hash * 59 + ImpactSeconds.GetHashCode();
             }
 
-            if (this.ScheduleLengthSeconds != null)
+            if (ScheduleLengthSeconds != null)
             {
-                hash = hash * 59 + this.ScheduleLengthSeconds.GetHashCode();
+                hash = hash * 59 + ScheduleLengthSeconds.GetHashCode();
             }
 
-            if (this.ActualLengthSeconds != null)
+            if (ActualLengthSeconds != null)
             {
-                hash = hash * 59 + this.ActualLengthSeconds.GetHashCode();
+                hash = hash * 59 + ActualLengthSeconds.GetHashCode();
             }
 
-            if (this.AdherencePercentage != null)
+            if (AdherencePercentage != null)
             {
-                hash = hash * 59 + this.AdherencePercentage.GetHashCode();
+                hash = hash * 59 + AdherencePercentage.GetHashCode();
             }
 
-            if (this.ConformancePercentage != null)
+            if (ConformancePercentage != null)
             {
-                hash = hash * 59 + this.ConformancePercentage.GetHashCode();
+                hash = hash * 59 + ConformancePercentage.GetHashCode();
             }
 
             return hash;

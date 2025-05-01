@@ -132,7 +132,7 @@ public partial class AlertablePresences : IEquatable<AlertablePresences>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlertablePresences);
+        return Equals(obj as AlertablePresences);
     }
 
     /// <summary>
@@ -150,9 +150,9 @@ public partial class AlertablePresences : IEquatable<AlertablePresences>
 
         return true &&
             (
-                this._AlertablePresences == other._AlertablePresences ||
-                this._AlertablePresences != null &&
-                this._AlertablePresences.SequenceEqual(other._AlertablePresences)
+                _AlertablePresences == other._AlertablePresences ||
+                _AlertablePresences != null &&
+                _AlertablePresences.SequenceEqual(other._AlertablePresences)
             );
     }
 
@@ -167,9 +167,9 @@ public partial class AlertablePresences : IEquatable<AlertablePresences>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this._AlertablePresences != null)
+            if (_AlertablePresences != null)
             {
-                hash = hash * 59 + this._AlertablePresences.GetHashCode();
+                hash = hash * 59 + _AlertablePresences.GetHashCode();
             }
 
             return hash;

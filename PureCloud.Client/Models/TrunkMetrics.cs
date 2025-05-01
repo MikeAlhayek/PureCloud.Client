@@ -97,7 +97,7 @@ public partial class TrunkMetrics : IEquatable<TrunkMetrics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkMetrics);
+        return Equals(obj as TrunkMetrics);
     }
 
     /// <summary>
@@ -115,29 +115,29 @@ public partial class TrunkMetrics : IEquatable<TrunkMetrics>
 
         return true &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.LogicalInterface == other.LogicalInterface ||
-                this.LogicalInterface != null &&
-                this.LogicalInterface.Equals(other.LogicalInterface)
+                LogicalInterface == other.LogicalInterface ||
+                LogicalInterface != null &&
+                LogicalInterface.Equals(other.LogicalInterface)
             ) &&
             (
-                this.Trunk == other.Trunk ||
-                this.Trunk != null &&
-                this.Trunk.Equals(other.Trunk)
+                Trunk == other.Trunk ||
+                Trunk != null &&
+                Trunk.Equals(other.Trunk)
             ) &&
             (
-                this.Calls == other.Calls ||
-                this.Calls != null &&
-                this.Calls.Equals(other.Calls)
+                Calls == other.Calls ||
+                Calls != null &&
+                Calls.Equals(other.Calls)
             ) &&
             (
-                this.Qos == other.Qos ||
-                this.Qos != null &&
-                this.Qos.Equals(other.Qos)
+                Qos == other.Qos ||
+                Qos != null &&
+                Qos.Equals(other.Qos)
             );
     }
 
@@ -152,29 +152,29 @@ public partial class TrunkMetrics : IEquatable<TrunkMetrics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.LogicalInterface != null)
+            if (LogicalInterface != null)
             {
-                hash = hash * 59 + this.LogicalInterface.GetHashCode();
+                hash = hash * 59 + LogicalInterface.GetHashCode();
             }
 
-            if (this.Trunk != null)
+            if (Trunk != null)
             {
-                hash = hash * 59 + this.Trunk.GetHashCode();
+                hash = hash * 59 + Trunk.GetHashCode();
             }
 
-            if (this.Calls != null)
+            if (Calls != null)
             {
-                hash = hash * 59 + this.Calls.GetHashCode();
+                hash = hash * 59 + Calls.GetHashCode();
             }
 
-            if (this.Qos != null)
+            if (Qos != null)
             {
-                hash = hash * 59 + this.Qos.GetHashCode();
+                hash = hash * 59 + Qos.GetHashCode();
             }
 
             return hash;

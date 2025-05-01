@@ -605,7 +605,7 @@ public partial class Miner : IEquatable<Miner>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Miner);
+        return Equals(obj as Miner);
     }
 
     /// <summary>
@@ -623,119 +623,119 @@ public partial class Miner : IEquatable<Miner>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.MinerType == other.MinerType ||
-                this.MinerType != null &&
-                this.MinerType.Equals(other.MinerType)
+                MinerType == other.MinerType ||
+                MinerType != null &&
+                MinerType.Equals(other.MinerType)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ConversationsDateRangeStart == other.ConversationsDateRangeStart ||
-                this.ConversationsDateRangeStart != null &&
-                this.ConversationsDateRangeStart.Equals(other.ConversationsDateRangeStart)
+                ConversationsDateRangeStart == other.ConversationsDateRangeStart ||
+                ConversationsDateRangeStart != null &&
+                ConversationsDateRangeStart.Equals(other.ConversationsDateRangeStart)
             ) &&
             (
-                this.ConversationsDateRangeEnd == other.ConversationsDateRangeEnd ||
-                this.ConversationsDateRangeEnd != null &&
-                this.ConversationsDateRangeEnd.Equals(other.ConversationsDateRangeEnd)
+                ConversationsDateRangeEnd == other.ConversationsDateRangeEnd ||
+                ConversationsDateRangeEnd != null &&
+                ConversationsDateRangeEnd.Equals(other.ConversationsDateRangeEnd)
             ) &&
             (
-                this.DateCompleted == other.DateCompleted ||
-                this.DateCompleted != null &&
-                this.DateCompleted.Equals(other.DateCompleted)
+                DateCompleted == other.DateCompleted ||
+                DateCompleted != null &&
+                DateCompleted.Equals(other.DateCompleted)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             ) &&
             (
-                this.WarningInfo == other.WarningInfo ||
-                this.WarningInfo != null &&
-                this.WarningInfo.Equals(other.WarningInfo)
+                WarningInfo == other.WarningInfo ||
+                WarningInfo != null &&
+                WarningInfo.Equals(other.WarningInfo)
             ) &&
             (
-                this.ConversationDataUploaded == other.ConversationDataUploaded ||
-                this.ConversationDataUploaded != null &&
-                this.ConversationDataUploaded.Equals(other.ConversationDataUploaded)
+                ConversationDataUploaded == other.ConversationDataUploaded ||
+                ConversationDataUploaded != null &&
+                ConversationDataUploaded.Equals(other.ConversationDataUploaded)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.ParticipantType == other.ParticipantType ||
-                this.ParticipantType != null &&
-                this.ParticipantType.Equals(other.ParticipantType)
+                ParticipantType == other.ParticipantType ||
+                ParticipantType != null &&
+                ParticipantType.Equals(other.ParticipantType)
             ) &&
             (
-                this.QueueIds == other.QueueIds ||
-                this.QueueIds != null &&
-                this.QueueIds.SequenceEqual(other.QueueIds)
+                QueueIds == other.QueueIds ||
+                QueueIds != null &&
+                QueueIds.SequenceEqual(other.QueueIds)
             ) &&
             (
-                this.DateTriggered == other.DateTriggered ||
-                this.DateTriggered != null &&
-                this.DateTriggered.Equals(other.DateTriggered)
+                DateTriggered == other.DateTriggered ||
+                DateTriggered != null &&
+                DateTriggered.Equals(other.DateTriggered)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.LatestDraftVersion == other.LatestDraftVersion ||
-                this.LatestDraftVersion != null &&
-                this.LatestDraftVersion.Equals(other.LatestDraftVersion)
+                LatestDraftVersion == other.LatestDraftVersion ||
+                LatestDraftVersion != null &&
+                LatestDraftVersion.Equals(other.LatestDraftVersion)
             ) &&
             (
-                this.ConversationsFetchedCount == other.ConversationsFetchedCount ||
-                this.ConversationsFetchedCount != null &&
-                this.ConversationsFetchedCount.Equals(other.ConversationsFetchedCount)
+                ConversationsFetchedCount == other.ConversationsFetchedCount ||
+                ConversationsFetchedCount != null &&
+                ConversationsFetchedCount.Equals(other.ConversationsFetchedCount)
             ) &&
             (
-                this.ConversationsValidCount == other.ConversationsValidCount ||
-                this.ConversationsValidCount != null &&
-                this.ConversationsValidCount.Equals(other.ConversationsValidCount)
+                ConversationsValidCount == other.ConversationsValidCount ||
+                ConversationsValidCount != null &&
+                ConversationsValidCount.Equals(other.ConversationsValidCount)
             ) &&
             (
-                this.GetminedItemCount == other.GetminedItemCount ||
-                this.GetminedItemCount != null &&
-                this.GetminedItemCount.Equals(other.GetminedItemCount)
+                GetminedItemCount == other.GetminedItemCount ||
+                GetminedItemCount != null &&
+                GetminedItemCount.Equals(other.GetminedItemCount)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -750,119 +750,119 @@ public partial class Miner : IEquatable<Miner>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.MinerType != null)
+            if (MinerType != null)
             {
-                hash = hash * 59 + this.MinerType.GetHashCode();
+                hash = hash * 59 + MinerType.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ConversationsDateRangeStart != null)
+            if (ConversationsDateRangeStart != null)
             {
-                hash = hash * 59 + this.ConversationsDateRangeStart.GetHashCode();
+                hash = hash * 59 + ConversationsDateRangeStart.GetHashCode();
             }
 
-            if (this.ConversationsDateRangeEnd != null)
+            if (ConversationsDateRangeEnd != null)
             {
-                hash = hash * 59 + this.ConversationsDateRangeEnd.GetHashCode();
+                hash = hash * 59 + ConversationsDateRangeEnd.GetHashCode();
             }
 
-            if (this.DateCompleted != null)
+            if (DateCompleted != null)
             {
-                hash = hash * 59 + this.DateCompleted.GetHashCode();
+                hash = hash * 59 + DateCompleted.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
-            if (this.WarningInfo != null)
+            if (WarningInfo != null)
             {
-                hash = hash * 59 + this.WarningInfo.GetHashCode();
+                hash = hash * 59 + WarningInfo.GetHashCode();
             }
 
-            if (this.ConversationDataUploaded != null)
+            if (ConversationDataUploaded != null)
             {
-                hash = hash * 59 + this.ConversationDataUploaded.GetHashCode();
+                hash = hash * 59 + ConversationDataUploaded.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.ParticipantType != null)
+            if (ParticipantType != null)
             {
-                hash = hash * 59 + this.ParticipantType.GetHashCode();
+                hash = hash * 59 + ParticipantType.GetHashCode();
             }
 
-            if (this.QueueIds != null)
+            if (QueueIds != null)
             {
-                hash = hash * 59 + this.QueueIds.GetHashCode();
+                hash = hash * 59 + QueueIds.GetHashCode();
             }
 
-            if (this.DateTriggered != null)
+            if (DateTriggered != null)
             {
-                hash = hash * 59 + this.DateTriggered.GetHashCode();
+                hash = hash * 59 + DateTriggered.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.LatestDraftVersion != null)
+            if (LatestDraftVersion != null)
             {
-                hash = hash * 59 + this.LatestDraftVersion.GetHashCode();
+                hash = hash * 59 + LatestDraftVersion.GetHashCode();
             }
 
-            if (this.ConversationsFetchedCount != null)
+            if (ConversationsFetchedCount != null)
             {
-                hash = hash * 59 + this.ConversationsFetchedCount.GetHashCode();
+                hash = hash * 59 + ConversationsFetchedCount.GetHashCode();
             }
 
-            if (this.ConversationsValidCount != null)
+            if (ConversationsValidCount != null)
             {
-                hash = hash * 59 + this.ConversationsValidCount.GetHashCode();
+                hash = hash * 59 + ConversationsValidCount.GetHashCode();
             }
 
-            if (this.GetminedItemCount != null)
+            if (GetminedItemCount != null)
             {
-                hash = hash * 59 + this.GetminedItemCount.GetHashCode();
+                hash = hash * 59 + GetminedItemCount.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

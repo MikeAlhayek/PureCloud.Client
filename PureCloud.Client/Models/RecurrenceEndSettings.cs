@@ -65,7 +65,7 @@ public partial class RecurrenceEndSettings : IEquatable<RecurrenceEndSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecurrenceEndSettings);
+        return Equals(obj as RecurrenceEndSettings);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class RecurrenceEndSettings : IEquatable<RecurrenceEndSettings>
 
         return true &&
             (
-                this.LastDate == other.LastDate ||
-                this.LastDate != null &&
-                this.LastDate.Equals(other.LastDate)
+                LastDate == other.LastDate ||
+                LastDate != null &&
+                LastDate.Equals(other.LastDate)
             ) &&
             (
-                this.NoEndDate == other.NoEndDate ||
-                this.NoEndDate != null &&
-                this.NoEndDate.Equals(other.NoEndDate)
+                NoEndDate == other.NoEndDate ||
+                NoEndDate != null &&
+                NoEndDate.Equals(other.NoEndDate)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class RecurrenceEndSettings : IEquatable<RecurrenceEndSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LastDate != null)
+            if (LastDate != null)
             {
-                hash = hash * 59 + this.LastDate.GetHashCode();
+                hash = hash * 59 + LastDate.GetHashCode();
             }
 
-            if (this.NoEndDate != null)
+            if (NoEndDate != null)
             {
-                hash = hash * 59 + this.NoEndDate.GetHashCode();
+                hash = hash * 59 + NoEndDate.GetHashCode();
             }
 
             return hash;

@@ -250,7 +250,7 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AppEventResponse);
+        return Equals(obj as AppEventResponse);
     }
 
     /// <summary>
@@ -268,89 +268,89 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.CustomerId == other.CustomerId ||
-                this.CustomerId != null &&
-                this.CustomerId.Equals(other.CustomerId)
+                CustomerId == other.CustomerId ||
+                CustomerId != null &&
+                CustomerId.Equals(other.CustomerId)
             ) &&
             (
-                this.CustomerIdType == other.CustomerIdType ||
-                this.CustomerIdType != null &&
-                this.CustomerIdType.Equals(other.CustomerIdType)
+                CustomerIdType == other.CustomerIdType ||
+                CustomerIdType != null &&
+                CustomerIdType.Equals(other.CustomerIdType)
             ) &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             ) &&
             (
-                this.ScreenName == other.ScreenName ||
-                this.ScreenName != null &&
-                this.ScreenName.Equals(other.ScreenName)
+                ScreenName == other.ScreenName ||
+                ScreenName != null &&
+                ScreenName.Equals(other.ScreenName)
             ) &&
             (
-                this.App == other.App ||
-                this.App != null &&
-                this.App.Equals(other.App)
+                App == other.App ||
+                App != null &&
+                App.Equals(other.App)
             ) &&
             (
-                this.Device == other.Device ||
-                this.Device != null &&
-                this.Device.Equals(other.Device)
+                Device == other.Device ||
+                Device != null &&
+                Device.Equals(other.Device)
             ) &&
             (
-                this.IpOrganization == other.IpOrganization ||
-                this.IpOrganization != null &&
-                this.IpOrganization.Equals(other.IpOrganization)
+                IpOrganization == other.IpOrganization ||
+                IpOrganization != null &&
+                IpOrganization.Equals(other.IpOrganization)
             ) &&
             (
-                this.Geolocation == other.Geolocation ||
-                this.Geolocation != null &&
-                this.Geolocation.Equals(other.Geolocation)
+                Geolocation == other.Geolocation ||
+                Geolocation != null &&
+                Geolocation.Equals(other.Geolocation)
             ) &&
             (
-                this.SdkLibrary == other.SdkLibrary ||
-                this.SdkLibrary != null &&
-                this.SdkLibrary.Equals(other.SdkLibrary)
+                SdkLibrary == other.SdkLibrary ||
+                SdkLibrary != null &&
+                SdkLibrary.Equals(other.SdkLibrary)
             ) &&
             (
-                this.NetworkConnectivity == other.NetworkConnectivity ||
-                this.NetworkConnectivity != null &&
-                this.NetworkConnectivity.Equals(other.NetworkConnectivity)
+                NetworkConnectivity == other.NetworkConnectivity ||
+                NetworkConnectivity != null &&
+                NetworkConnectivity.Equals(other.NetworkConnectivity)
             ) &&
             (
-                this.MktCampaign == other.MktCampaign ||
-                this.MktCampaign != null &&
-                this.MktCampaign.Equals(other.MktCampaign)
+                MktCampaign == other.MktCampaign ||
+                MktCampaign != null &&
+                MktCampaign.Equals(other.MktCampaign)
             ) &&
             (
-                this.Session == other.Session ||
-                this.Session != null &&
-                this.Session.Equals(other.Session)
+                Session == other.Session ||
+                Session != null &&
+                Session.Equals(other.Session)
             ) &&
             (
-                this.SearchQuery == other.SearchQuery ||
-                this.SearchQuery != null &&
-                this.SearchQuery.Equals(other.SearchQuery)
+                SearchQuery == other.SearchQuery ||
+                SearchQuery != null &&
+                SearchQuery.Equals(other.SearchQuery)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.Traits == other.Traits ||
-                this.Traits != null &&
-                this.Traits.SequenceEqual(other.Traits)
+                Traits == other.Traits ||
+                Traits != null &&
+                Traits.SequenceEqual(other.Traits)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             );
     }
 
@@ -365,89 +365,89 @@ public partial class AppEventResponse : IEquatable<AppEventResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.CustomerId != null)
+            if (CustomerId != null)
             {
-                hash = hash * 59 + this.CustomerId.GetHashCode();
+                hash = hash * 59 + CustomerId.GetHashCode();
             }
 
-            if (this.CustomerIdType != null)
+            if (CustomerIdType != null)
             {
-                hash = hash * 59 + this.CustomerIdType.GetHashCode();
+                hash = hash * 59 + CustomerIdType.GetHashCode();
             }
 
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
-            if (this.ScreenName != null)
+            if (ScreenName != null)
             {
-                hash = hash * 59 + this.ScreenName.GetHashCode();
+                hash = hash * 59 + ScreenName.GetHashCode();
             }
 
-            if (this.App != null)
+            if (App != null)
             {
-                hash = hash * 59 + this.App.GetHashCode();
+                hash = hash * 59 + App.GetHashCode();
             }
 
-            if (this.Device != null)
+            if (Device != null)
             {
-                hash = hash * 59 + this.Device.GetHashCode();
+                hash = hash * 59 + Device.GetHashCode();
             }
 
-            if (this.IpOrganization != null)
+            if (IpOrganization != null)
             {
-                hash = hash * 59 + this.IpOrganization.GetHashCode();
+                hash = hash * 59 + IpOrganization.GetHashCode();
             }
 
-            if (this.Geolocation != null)
+            if (Geolocation != null)
             {
-                hash = hash * 59 + this.Geolocation.GetHashCode();
+                hash = hash * 59 + Geolocation.GetHashCode();
             }
 
-            if (this.SdkLibrary != null)
+            if (SdkLibrary != null)
             {
-                hash = hash * 59 + this.SdkLibrary.GetHashCode();
+                hash = hash * 59 + SdkLibrary.GetHashCode();
             }
 
-            if (this.NetworkConnectivity != null)
+            if (NetworkConnectivity != null)
             {
-                hash = hash * 59 + this.NetworkConnectivity.GetHashCode();
+                hash = hash * 59 + NetworkConnectivity.GetHashCode();
             }
 
-            if (this.MktCampaign != null)
+            if (MktCampaign != null)
             {
-                hash = hash * 59 + this.MktCampaign.GetHashCode();
+                hash = hash * 59 + MktCampaign.GetHashCode();
             }
 
-            if (this.Session != null)
+            if (Session != null)
             {
-                hash = hash * 59 + this.Session.GetHashCode();
+                hash = hash * 59 + Session.GetHashCode();
             }
 
-            if (this.SearchQuery != null)
+            if (SearchQuery != null)
             {
-                hash = hash * 59 + this.SearchQuery.GetHashCode();
+                hash = hash * 59 + SearchQuery.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.Traits != null)
+            if (Traits != null)
             {
-                hash = hash * 59 + this.Traits.GetHashCode();
+                hash = hash * 59 + Traits.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
             return hash;

@@ -96,7 +96,7 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicEmailAttr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes);
+        return Equals(obj as OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicEmailAttr
 
         return true &&
             (
-                this.EmailSubject == other.EmailSubject ||
-                this.EmailSubject != null &&
-                this.EmailSubject.Equals(other.EmailSubject)
+                EmailSubject == other.EmailSubject ||
+                EmailSubject != null &&
+                EmailSubject.Equals(other.EmailSubject)
             ) &&
             (
-                this.ConfiguredEmailAddress == other.ConfiguredEmailAddress ||
-                this.ConfiguredEmailAddress != null &&
-                this.ConfiguredEmailAddress.Equals(other.ConfiguredEmailAddress)
+                ConfiguredEmailAddress == other.ConfiguredEmailAddress ||
+                ConfiguredEmailAddress != null &&
+                ConfiguredEmailAddress.Equals(other.ConfiguredEmailAddress)
             ) &&
             (
-                this.ContactEmailAddress == other.ContactEmailAddress ||
-                this.ContactEmailAddress != null &&
-                this.ContactEmailAddress.Equals(other.ContactEmailAddress)
+                ContactEmailAddress == other.ContactEmailAddress ||
+                ContactEmailAddress != null &&
+                ContactEmailAddress.Equals(other.ContactEmailAddress)
             ) &&
             (
-                this.ReplyToAddress == other.ReplyToAddress ||
-                this.ReplyToAddress != null &&
-                this.ReplyToAddress.Equals(other.ReplyToAddress)
+                ReplyToAddress == other.ReplyToAddress ||
+                ReplyToAddress != null &&
+                ReplyToAddress.Equals(other.ReplyToAddress)
             ) &&
             (
-                this.ContactEmailColumnName == other.ContactEmailColumnName ||
-                this.ContactEmailColumnName != null &&
-                this.ContactEmailColumnName.Equals(other.ContactEmailColumnName)
+                ContactEmailColumnName == other.ContactEmailColumnName ||
+                ContactEmailColumnName != null &&
+                ContactEmailColumnName.Equals(other.ContactEmailColumnName)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class OutboundMessagingCampaignPreContactEmailEventTopicEmailAttr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EmailSubject != null)
+            if (EmailSubject != null)
             {
-                hash = hash * 59 + this.EmailSubject.GetHashCode();
+                hash = hash * 59 + EmailSubject.GetHashCode();
             }
 
-            if (this.ConfiguredEmailAddress != null)
+            if (ConfiguredEmailAddress != null)
             {
-                hash = hash * 59 + this.ConfiguredEmailAddress.GetHashCode();
+                hash = hash * 59 + ConfiguredEmailAddress.GetHashCode();
             }
 
-            if (this.ContactEmailAddress != null)
+            if (ContactEmailAddress != null)
             {
-                hash = hash * 59 + this.ContactEmailAddress.GetHashCode();
+                hash = hash * 59 + ContactEmailAddress.GetHashCode();
             }
 
-            if (this.ReplyToAddress != null)
+            if (ReplyToAddress != null)
             {
-                hash = hash * 59 + this.ReplyToAddress.GetHashCode();
+                hash = hash * 59 + ReplyToAddress.GetHashCode();
             }
 
-            if (this.ContactEmailColumnName != null)
+            if (ContactEmailColumnName != null)
             {
-                hash = hash * 59 + this.ContactEmailColumnName.GetHashCode();
+                hash = hash * 59 + ContactEmailColumnName.GetHashCode();
             }
 
             return hash;

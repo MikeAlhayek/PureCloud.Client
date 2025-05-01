@@ -132,7 +132,7 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AvailableTimeOffRange);
+        return Equals(obj as AvailableTimeOffRange);
     }
 
     /// <summary>
@@ -150,34 +150,34 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
 
         return true &&
             (
-                this.TimeOffLimit == other.TimeOffLimit ||
-                this.TimeOffLimit != null &&
-                this.TimeOffLimit.Equals(other.TimeOffLimit)
+                TimeOffLimit == other.TimeOffLimit ||
+                TimeOffLimit != null &&
+                TimeOffLimit.Equals(other.TimeOffLimit)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             ) &&
             (
-                this.AvailableMinutesPerInterval == other.AvailableMinutesPerInterval ||
-                this.AvailableMinutesPerInterval != null &&
-                this.AvailableMinutesPerInterval.SequenceEqual(other.AvailableMinutesPerInterval)
+                AvailableMinutesPerInterval == other.AvailableMinutesPerInterval ||
+                AvailableMinutesPerInterval != null &&
+                AvailableMinutesPerInterval.SequenceEqual(other.AvailableMinutesPerInterval)
             ) &&
             (
-                this.WaitlistedRequestsPerInterval == other.WaitlistedRequestsPerInterval ||
-                this.WaitlistedRequestsPerInterval != null &&
-                this.WaitlistedRequestsPerInterval.SequenceEqual(other.WaitlistedRequestsPerInterval)
+                WaitlistedRequestsPerInterval == other.WaitlistedRequestsPerInterval ||
+                WaitlistedRequestsPerInterval != null &&
+                WaitlistedRequestsPerInterval.SequenceEqual(other.WaitlistedRequestsPerInterval)
             ) &&
             (
-                this.WaitlistEnabled == other.WaitlistEnabled ||
-                this.WaitlistEnabled != null &&
-                this.WaitlistEnabled.Equals(other.WaitlistEnabled)
+                WaitlistEnabled == other.WaitlistEnabled ||
+                WaitlistEnabled != null &&
+                WaitlistEnabled.Equals(other.WaitlistEnabled)
             );
     }
 
@@ -192,34 +192,34 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeOffLimit != null)
+            if (TimeOffLimit != null)
             {
-                hash = hash * 59 + this.TimeOffLimit.GetHashCode();
+                hash = hash * 59 + TimeOffLimit.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
-            if (this.AvailableMinutesPerInterval != null)
+            if (AvailableMinutesPerInterval != null)
             {
-                hash = hash * 59 + this.AvailableMinutesPerInterval.GetHashCode();
+                hash = hash * 59 + AvailableMinutesPerInterval.GetHashCode();
             }
 
-            if (this.WaitlistedRequestsPerInterval != null)
+            if (WaitlistedRequestsPerInterval != null)
             {
-                hash = hash * 59 + this.WaitlistedRequestsPerInterval.GetHashCode();
+                hash = hash * 59 + WaitlistedRequestsPerInterval.GetHashCode();
             }
 
-            if (this.WaitlistEnabled != null)
+            if (WaitlistEnabled != null)
             {
-                hash = hash * 59 + this.WaitlistEnabled.GetHashCode();
+                hash = hash * 59 + WaitlistEnabled.GetHashCode();
             }
 
             return hash;

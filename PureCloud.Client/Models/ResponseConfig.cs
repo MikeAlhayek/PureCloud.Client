@@ -89,7 +89,7 @@ public partial class ResponseConfig : IEquatable<ResponseConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ResponseConfig);
+        return Equals(obj as ResponseConfig);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ResponseConfig : IEquatable<ResponseConfig>
 
         return true &&
             (
-                this.TranslationMap == other.TranslationMap ||
-                this.TranslationMap != null &&
-                this.TranslationMap.SequenceEqual(other.TranslationMap)
+                TranslationMap == other.TranslationMap ||
+                TranslationMap != null &&
+                TranslationMap.SequenceEqual(other.TranslationMap)
             ) &&
             (
-                this.TranslationMapDefaults == other.TranslationMapDefaults ||
-                this.TranslationMapDefaults != null &&
-                this.TranslationMapDefaults.SequenceEqual(other.TranslationMapDefaults)
+                TranslationMapDefaults == other.TranslationMapDefaults ||
+                TranslationMapDefaults != null &&
+                TranslationMapDefaults.SequenceEqual(other.TranslationMapDefaults)
             ) &&
             (
-                this.SuccessTemplate == other.SuccessTemplate ||
-                this.SuccessTemplate != null &&
-                this.SuccessTemplate.Equals(other.SuccessTemplate)
+                SuccessTemplate == other.SuccessTemplate ||
+                SuccessTemplate != null &&
+                SuccessTemplate.Equals(other.SuccessTemplate)
             ) &&
             (
-                this.SuccessTemplateUri == other.SuccessTemplateUri ||
-                this.SuccessTemplateUri != null &&
-                this.SuccessTemplateUri.Equals(other.SuccessTemplateUri)
+                SuccessTemplateUri == other.SuccessTemplateUri ||
+                SuccessTemplateUri != null &&
+                SuccessTemplateUri.Equals(other.SuccessTemplateUri)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ResponseConfig : IEquatable<ResponseConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TranslationMap != null)
+            if (TranslationMap != null)
             {
-                hash = hash * 59 + this.TranslationMap.GetHashCode();
+                hash = hash * 59 + TranslationMap.GetHashCode();
             }
 
-            if (this.TranslationMapDefaults != null)
+            if (TranslationMapDefaults != null)
             {
-                hash = hash * 59 + this.TranslationMapDefaults.GetHashCode();
+                hash = hash * 59 + TranslationMapDefaults.GetHashCode();
             }
 
-            if (this.SuccessTemplate != null)
+            if (SuccessTemplate != null)
             {
-                hash = hash * 59 + this.SuccessTemplate.GetHashCode();
+                hash = hash * 59 + SuccessTemplate.GetHashCode();
             }
 
-            if (this.SuccessTemplateUri != null)
+            if (SuccessTemplateUri != null)
             {
-                hash = hash * 59 + this.SuccessTemplateUri.GetHashCode();
+                hash = hash * 59 + SuccessTemplateUri.GetHashCode();
             }
 
             return hash;

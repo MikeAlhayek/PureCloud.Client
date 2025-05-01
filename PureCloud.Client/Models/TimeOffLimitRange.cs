@@ -103,7 +103,7 @@ public partial class TimeOffLimitRange : IEquatable<TimeOffLimitRange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeOffLimitRange);
+        return Equals(obj as TimeOffLimitRange);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class TimeOffLimitRange : IEquatable<TimeOffLimitRange>
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             ) &&
             (
-                this.LimitMinutesPerInterval == other.LimitMinutesPerInterval ||
-                this.LimitMinutesPerInterval != null &&
-                this.LimitMinutesPerInterval.SequenceEqual(other.LimitMinutesPerInterval)
+                LimitMinutesPerInterval == other.LimitMinutesPerInterval ||
+                LimitMinutesPerInterval != null &&
+                LimitMinutesPerInterval.SequenceEqual(other.LimitMinutesPerInterval)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class TimeOffLimitRange : IEquatable<TimeOffLimitRange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
-            if (this.LimitMinutesPerInterval != null)
+            if (LimitMinutesPerInterval != null)
             {
-                hash = hash * 59 + this.LimitMinutesPerInterval.GetHashCode();
+                hash = hash * 59 + LimitMinutesPerInterval.GetHashCode();
             }
 
             return hash;

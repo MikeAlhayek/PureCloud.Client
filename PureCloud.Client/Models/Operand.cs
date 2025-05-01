@@ -187,7 +187,7 @@ public partial class Operand : IEquatable<Operand>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Operand);
+        return Equals(obj as Operand);
     }
 
     /// <summary>
@@ -205,49 +205,49 @@ public partial class Operand : IEquatable<Operand>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Occurrence == other.Occurrence ||
-                this.Occurrence != null &&
-                this.Occurrence.Equals(other.Occurrence)
+                Occurrence == other.Occurrence ||
+                Occurrence != null &&
+                Occurrence.Equals(other.Occurrence)
             ) &&
             (
-                this.Inverted == other.Inverted ||
-                this.Inverted != null &&
-                this.Inverted.Equals(other.Inverted)
+                Inverted == other.Inverted ||
+                Inverted != null &&
+                Inverted.Equals(other.Inverted)
             ) &&
             (
-                this.Term == other.Term ||
-                this.Term != null &&
-                this.Term.Equals(other.Term)
+                Term == other.Term ||
+                Term != null &&
+                Term.Equals(other.Term)
             ) &&
             (
-                this.TopicId == other.TopicId ||
-                this.TopicId != null &&
-                this.TopicId.Equals(other.TopicId)
+                TopicId == other.TopicId ||
+                TopicId != null &&
+                TopicId.Equals(other.TopicId)
             ) &&
             (
-                this.VoiceSecondsPosition == other.VoiceSecondsPosition ||
-                this.VoiceSecondsPosition != null &&
-                this.VoiceSecondsPosition.Equals(other.VoiceSecondsPosition)
+                VoiceSecondsPosition == other.VoiceSecondsPosition ||
+                VoiceSecondsPosition != null &&
+                VoiceSecondsPosition.Equals(other.VoiceSecondsPosition)
             ) &&
             (
-                this.DigitalWordsPosition == other.DigitalWordsPosition ||
-                this.DigitalWordsPosition != null &&
-                this.DigitalWordsPosition.Equals(other.DigitalWordsPosition)
+                DigitalWordsPosition == other.DigitalWordsPosition ||
+                DigitalWordsPosition != null &&
+                DigitalWordsPosition.Equals(other.DigitalWordsPosition)
             ) &&
             (
-                this.InfixOperator == other.InfixOperator ||
-                this.InfixOperator != null &&
-                this.InfixOperator.Equals(other.InfixOperator)
+                InfixOperator == other.InfixOperator ||
+                InfixOperator != null &&
+                InfixOperator.Equals(other.InfixOperator)
             ) &&
             (
-                this.Operands == other.Operands ||
-                this.Operands != null &&
-                this.Operands.SequenceEqual(other.Operands)
+                Operands == other.Operands ||
+                Operands != null &&
+                Operands.SequenceEqual(other.Operands)
             );
     }
 
@@ -262,49 +262,49 @@ public partial class Operand : IEquatable<Operand>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Occurrence != null)
+            if (Occurrence != null)
             {
-                hash = hash * 59 + this.Occurrence.GetHashCode();
+                hash = hash * 59 + Occurrence.GetHashCode();
             }
 
-            if (this.Inverted != null)
+            if (Inverted != null)
             {
-                hash = hash * 59 + this.Inverted.GetHashCode();
+                hash = hash * 59 + Inverted.GetHashCode();
             }
 
-            if (this.Term != null)
+            if (Term != null)
             {
-                hash = hash * 59 + this.Term.GetHashCode();
+                hash = hash * 59 + Term.GetHashCode();
             }
 
-            if (this.TopicId != null)
+            if (TopicId != null)
             {
-                hash = hash * 59 + this.TopicId.GetHashCode();
+                hash = hash * 59 + TopicId.GetHashCode();
             }
 
-            if (this.VoiceSecondsPosition != null)
+            if (VoiceSecondsPosition != null)
             {
-                hash = hash * 59 + this.VoiceSecondsPosition.GetHashCode();
+                hash = hash * 59 + VoiceSecondsPosition.GetHashCode();
             }
 
-            if (this.DigitalWordsPosition != null)
+            if (DigitalWordsPosition != null)
             {
-                hash = hash * 59 + this.DigitalWordsPosition.GetHashCode();
+                hash = hash * 59 + DigitalWordsPosition.GetHashCode();
             }
 
-            if (this.InfixOperator != null)
+            if (InfixOperator != null)
             {
-                hash = hash * 59 + this.InfixOperator.GetHashCode();
+                hash = hash * 59 + InfixOperator.GetHashCode();
             }
 
-            if (this.Operands != null)
+            if (Operands != null)
             {
-                hash = hash * 59 + this.Operands.GetHashCode();
+                hash = hash * 59 + Operands.GetHashCode();
             }
 
             return hash;

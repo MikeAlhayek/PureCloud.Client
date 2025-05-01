@@ -115,7 +115,7 @@ public partial class WhatsAppEmbeddedSignupIntegrationRequest : IEquatable<Whats
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WhatsAppEmbeddedSignupIntegrationRequest);
+        return Equals(obj as WhatsAppEmbeddedSignupIntegrationRequest);
     }
 
     /// <summary>
@@ -133,34 +133,34 @@ public partial class WhatsAppEmbeddedSignupIntegrationRequest : IEquatable<Whats
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.SupportedContent == other.SupportedContent ||
-                this.SupportedContent != null &&
-                this.SupportedContent.Equals(other.SupportedContent)
+                SupportedContent == other.SupportedContent ||
+                SupportedContent != null &&
+                SupportedContent.Equals(other.SupportedContent)
             ) &&
             (
-                this.MessagingSetting == other.MessagingSetting ||
-                this.MessagingSetting != null &&
-                this.MessagingSetting.Equals(other.MessagingSetting)
+                MessagingSetting == other.MessagingSetting ||
+                MessagingSetting != null &&
+                MessagingSetting.Equals(other.MessagingSetting)
             ) &&
             (
-                this.EmbeddedSignupAccessToken == other.EmbeddedSignupAccessToken ||
-                this.EmbeddedSignupAccessToken != null &&
-                this.EmbeddedSignupAccessToken.Equals(other.EmbeddedSignupAccessToken)
+                EmbeddedSignupAccessToken == other.EmbeddedSignupAccessToken ||
+                EmbeddedSignupAccessToken != null &&
+                EmbeddedSignupAccessToken.Equals(other.EmbeddedSignupAccessToken)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -175,34 +175,34 @@ public partial class WhatsAppEmbeddedSignupIntegrationRequest : IEquatable<Whats
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.SupportedContent != null)
+            if (SupportedContent != null)
             {
-                hash = hash * 59 + this.SupportedContent.GetHashCode();
+                hash = hash * 59 + SupportedContent.GetHashCode();
             }
 
-            if (this.MessagingSetting != null)
+            if (MessagingSetting != null)
             {
-                hash = hash * 59 + this.MessagingSetting.GetHashCode();
+                hash = hash * 59 + MessagingSetting.GetHashCode();
             }
 
-            if (this.EmbeddedSignupAccessToken != null)
+            if (EmbeddedSignupAccessToken != null)
             {
-                hash = hash * 59 + this.EmbeddedSignupAccessToken.GetHashCode();
+                hash = hash * 59 + EmbeddedSignupAccessToken.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

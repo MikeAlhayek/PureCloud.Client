@@ -85,7 +85,7 @@ public partial class AnswerOption : IEquatable<AnswerOption>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnswerOption);
+        return Equals(obj as AnswerOption);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class AnswerOption : IEquatable<AnswerOption>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.AssistanceConditions == other.AssistanceConditions ||
-                this.AssistanceConditions != null &&
-                this.AssistanceConditions.SequenceEqual(other.AssistanceConditions)
+                AssistanceConditions == other.AssistanceConditions ||
+                AssistanceConditions != null &&
+                AssistanceConditions.SequenceEqual(other.AssistanceConditions)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class AnswerOption : IEquatable<AnswerOption>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.AssistanceConditions != null)
+            if (AssistanceConditions != null)
             {
-                hash = hash * 59 + this.AssistanceConditions.GetHashCode();
+                hash = hash * 59 + AssistanceConditions.GetHashCode();
             }
 
             return hash;

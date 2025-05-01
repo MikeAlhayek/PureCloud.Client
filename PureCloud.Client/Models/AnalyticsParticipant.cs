@@ -320,7 +320,7 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsParticipant);
+        return Equals(obj as AnalyticsParticipant);
     }
 
     /// <summary>
@@ -338,59 +338,59 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
 
         return true &&
             (
-                this.ExternalContactId == other.ExternalContactId ||
-                this.ExternalContactId != null &&
-                this.ExternalContactId.Equals(other.ExternalContactId)
+                ExternalContactId == other.ExternalContactId ||
+                ExternalContactId != null &&
+                ExternalContactId.Equals(other.ExternalContactId)
             ) &&
             (
-                this.ExternalOrganizationId == other.ExternalOrganizationId ||
-                this.ExternalOrganizationId != null &&
-                this.ExternalOrganizationId.Equals(other.ExternalOrganizationId)
+                ExternalOrganizationId == other.ExternalOrganizationId ||
+                ExternalOrganizationId != null &&
+                ExternalOrganizationId.Equals(other.ExternalOrganizationId)
             ) &&
             (
-                this.FlaggedReason == other.FlaggedReason ||
-                this.FlaggedReason != null &&
-                this.FlaggedReason.Equals(other.FlaggedReason)
+                FlaggedReason == other.FlaggedReason ||
+                FlaggedReason != null &&
+                FlaggedReason.Equals(other.FlaggedReason)
             ) &&
             (
-                this.ParticipantId == other.ParticipantId ||
-                this.ParticipantId != null &&
-                this.ParticipantId.Equals(other.ParticipantId)
+                ParticipantId == other.ParticipantId ||
+                ParticipantId != null &&
+                ParticipantId.Equals(other.ParticipantId)
             ) &&
             (
-                this.ParticipantName == other.ParticipantName ||
-                this.ParticipantName != null &&
-                this.ParticipantName.Equals(other.ParticipantName)
+                ParticipantName == other.ParticipantName ||
+                ParticipantName != null &&
+                ParticipantName.Equals(other.ParticipantName)
             ) &&
             (
-                this.Purpose == other.Purpose ||
-                this.Purpose != null &&
-                this.Purpose.Equals(other.Purpose)
+                Purpose == other.Purpose ||
+                Purpose != null &&
+                Purpose.Equals(other.Purpose)
             ) &&
             (
-                this.ScreenRecording == other.ScreenRecording ||
-                this.ScreenRecording != null &&
-                this.ScreenRecording.Equals(other.ScreenRecording)
+                ScreenRecording == other.ScreenRecording ||
+                ScreenRecording != null &&
+                ScreenRecording.Equals(other.ScreenRecording)
             ) &&
             (
-                this.TeamId == other.TeamId ||
-                this.TeamId != null &&
-                this.TeamId.Equals(other.TeamId)
+                TeamId == other.TeamId ||
+                TeamId != null &&
+                TeamId.Equals(other.TeamId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.Sessions == other.Sessions ||
-                this.Sessions != null &&
-                this.Sessions.SequenceEqual(other.Sessions)
+                Sessions == other.Sessions ||
+                Sessions != null &&
+                Sessions.SequenceEqual(other.Sessions)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             );
     }
 
@@ -405,59 +405,59 @@ public partial class AnalyticsParticipant : IEquatable<AnalyticsParticipant>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExternalContactId != null)
+            if (ExternalContactId != null)
             {
-                hash = hash * 59 + this.ExternalContactId.GetHashCode();
+                hash = hash * 59 + ExternalContactId.GetHashCode();
             }
 
-            if (this.ExternalOrganizationId != null)
+            if (ExternalOrganizationId != null)
             {
-                hash = hash * 59 + this.ExternalOrganizationId.GetHashCode();
+                hash = hash * 59 + ExternalOrganizationId.GetHashCode();
             }
 
-            if (this.FlaggedReason != null)
+            if (FlaggedReason != null)
             {
-                hash = hash * 59 + this.FlaggedReason.GetHashCode();
+                hash = hash * 59 + FlaggedReason.GetHashCode();
             }
 
-            if (this.ParticipantId != null)
+            if (ParticipantId != null)
             {
-                hash = hash * 59 + this.ParticipantId.GetHashCode();
+                hash = hash * 59 + ParticipantId.GetHashCode();
             }
 
-            if (this.ParticipantName != null)
+            if (ParticipantName != null)
             {
-                hash = hash * 59 + this.ParticipantName.GetHashCode();
+                hash = hash * 59 + ParticipantName.GetHashCode();
             }
 
-            if (this.Purpose != null)
+            if (Purpose != null)
             {
-                hash = hash * 59 + this.Purpose.GetHashCode();
+                hash = hash * 59 + Purpose.GetHashCode();
             }
 
-            if (this.ScreenRecording != null)
+            if (ScreenRecording != null)
             {
-                hash = hash * 59 + this.ScreenRecording.GetHashCode();
+                hash = hash * 59 + ScreenRecording.GetHashCode();
             }
 
-            if (this.TeamId != null)
+            if (TeamId != null)
             {
-                hash = hash * 59 + this.TeamId.GetHashCode();
+                hash = hash * 59 + TeamId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.Sessions != null)
+            if (Sessions != null)
             {
-                hash = hash * 59 + this.Sessions.GetHashCode();
+                hash = hash * 59 + Sessions.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
             return hash;

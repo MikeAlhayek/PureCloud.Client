@@ -83,7 +83,7 @@ public partial class PhraseTranslation : IEquatable<PhraseTranslation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PhraseTranslation);
+        return Equals(obj as PhraseTranslation);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class PhraseTranslation : IEquatable<PhraseTranslation>
 
         return true &&
             (
-                this.StartTimeMs == other.StartTimeMs ||
-                this.StartTimeMs != null &&
-                this.StartTimeMs.Equals(other.StartTimeMs)
+                StartTimeMs == other.StartTimeMs ||
+                StartTimeMs != null &&
+                StartTimeMs.Equals(other.StartTimeMs)
             ) &&
             (
-                this.ParticipantPurpose == other.ParticipantPurpose ||
-                this.ParticipantPurpose != null &&
-                this.ParticipantPurpose.Equals(other.ParticipantPurpose)
+                ParticipantPurpose == other.ParticipantPurpose ||
+                ParticipantPurpose != null &&
+                ParticipantPurpose.Equals(other.ParticipantPurpose)
             ) &&
             (
-                this.TranslatedText == other.TranslatedText ||
-                this.TranslatedText != null &&
-                this.TranslatedText.Equals(other.TranslatedText)
+                TranslatedText == other.TranslatedText ||
+                TranslatedText != null &&
+                TranslatedText.Equals(other.TranslatedText)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class PhraseTranslation : IEquatable<PhraseTranslation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartTimeMs != null)
+            if (StartTimeMs != null)
             {
-                hash = hash * 59 + this.StartTimeMs.GetHashCode();
+                hash = hash * 59 + StartTimeMs.GetHashCode();
             }
 
-            if (this.ParticipantPurpose != null)
+            if (ParticipantPurpose != null)
             {
-                hash = hash * 59 + this.ParticipantPurpose.GetHashCode();
+                hash = hash * 59 + ParticipantPurpose.GetHashCode();
             }
 
-            if (this.TranslatedText != null)
+            if (TranslatedText != null)
             {
-                hash = hash * 59 + this.TranslatedText.GetHashCode();
+                hash = hash * 59 + TranslatedText.GetHashCode();
             }
 
             return hash;

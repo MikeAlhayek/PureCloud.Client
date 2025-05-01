@@ -73,7 +73,7 @@ public partial class AgentActivityChangedTopicPresence : IEquatable<AgentActivit
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentActivityChangedTopicPresence);
+        return Equals(obj as AgentActivityChangedTopicPresence);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class AgentActivityChangedTopicPresence : IEquatable<AgentActivit
 
         return true &&
             (
-                this.PresenceDefinition == other.PresenceDefinition ||
-                this.PresenceDefinition != null &&
-                this.PresenceDefinition.Equals(other.PresenceDefinition)
+                PresenceDefinition == other.PresenceDefinition ||
+                PresenceDefinition != null &&
+                PresenceDefinition.Equals(other.PresenceDefinition)
             ) &&
             (
-                this.PresenceMessage == other.PresenceMessage ||
-                this.PresenceMessage != null &&
-                this.PresenceMessage.Equals(other.PresenceMessage)
+                PresenceMessage == other.PresenceMessage ||
+                PresenceMessage != null &&
+                PresenceMessage.Equals(other.PresenceMessage)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class AgentActivityChangedTopicPresence : IEquatable<AgentActivit
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PresenceDefinition != null)
+            if (PresenceDefinition != null)
             {
-                hash = hash * 59 + this.PresenceDefinition.GetHashCode();
+                hash = hash * 59 + PresenceDefinition.GetHashCode();
             }
 
-            if (this.PresenceMessage != null)
+            if (PresenceMessage != null)
             {
-                hash = hash * 59 + this.PresenceMessage.GetHashCode();
+                hash = hash * 59 + PresenceMessage.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
             return hash;

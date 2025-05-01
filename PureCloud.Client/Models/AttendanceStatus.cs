@@ -141,7 +141,7 @@ public partial class AttendanceStatus : IEquatable<AttendanceStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AttendanceStatus);
+        return Equals(obj as AttendanceStatus);
     }
 
     /// <summary>
@@ -159,19 +159,19 @@ public partial class AttendanceStatus : IEquatable<AttendanceStatus>
 
         return true &&
             (
-                this.DateWorkday == other.DateWorkday ||
-                this.DateWorkday != null &&
-                this.DateWorkday.Equals(other.DateWorkday)
+                DateWorkday == other.DateWorkday ||
+                DateWorkday != null &&
+                DateWorkday.Equals(other.DateWorkday)
             ) &&
             (
-                this.AttendanceStatusType == other.AttendanceStatusType ||
-                this.AttendanceStatusType != null &&
-                this.AttendanceStatusType.Equals(other.AttendanceStatusType)
+                AttendanceStatusType == other.AttendanceStatusType ||
+                AttendanceStatusType != null &&
+                AttendanceStatusType.Equals(other.AttendanceStatusType)
             ) &&
             (
-                this.HasEvaluation == other.HasEvaluation ||
-                this.HasEvaluation != null &&
-                this.HasEvaluation.Equals(other.HasEvaluation)
+                HasEvaluation == other.HasEvaluation ||
+                HasEvaluation != null &&
+                HasEvaluation.Equals(other.HasEvaluation)
             );
     }
 
@@ -186,19 +186,19 @@ public partial class AttendanceStatus : IEquatable<AttendanceStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateWorkday != null)
+            if (DateWorkday != null)
             {
-                hash = hash * 59 + this.DateWorkday.GetHashCode();
+                hash = hash * 59 + DateWorkday.GetHashCode();
             }
 
-            if (this.AttendanceStatusType != null)
+            if (AttendanceStatusType != null)
             {
-                hash = hash * 59 + this.AttendanceStatusType.GetHashCode();
+                hash = hash * 59 + AttendanceStatusType.GetHashCode();
             }
 
-            if (this.HasEvaluation != null)
+            if (HasEvaluation != null)
             {
-                hash = hash * 59 + this.HasEvaluation.GetHashCode();
+                hash = hash * 59 + HasEvaluation.GetHashCode();
             }
 
             return hash;

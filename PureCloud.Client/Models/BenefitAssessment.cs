@@ -152,7 +152,7 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BenefitAssessment);
+        return Equals(obj as BenefitAssessment);
     }
 
     /// <summary>
@@ -170,44 +170,44 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Queues == other.Queues ||
-                this.Queues != null &&
-                this.Queues.SequenceEqual(other.Queues)
+                Queues == other.Queues ||
+                Queues != null &&
+                Queues.SequenceEqual(other.Queues)
             ) &&
             (
-                this.KpiAssessments == other.KpiAssessments ||
-                this.KpiAssessments != null &&
-                this.KpiAssessments.SequenceEqual(other.KpiAssessments)
+                KpiAssessments == other.KpiAssessments ||
+                KpiAssessments != null &&
+                KpiAssessments.SequenceEqual(other.KpiAssessments)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.JobId == other.JobId ||
-                this.JobId != null &&
-                this.JobId.Equals(other.JobId)
+                JobId == other.JobId ||
+                JobId != null &&
+                JobId.Equals(other.JobId)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -222,44 +222,44 @@ public partial class BenefitAssessment : IEquatable<BenefitAssessment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Queues != null)
+            if (Queues != null)
             {
-                hash = hash * 59 + this.Queues.GetHashCode();
+                hash = hash * 59 + Queues.GetHashCode();
             }
 
-            if (this.KpiAssessments != null)
+            if (KpiAssessments != null)
             {
-                hash = hash * 59 + this.KpiAssessments.GetHashCode();
+                hash = hash * 59 + KpiAssessments.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.JobId != null)
+            if (JobId != null)
             {
-                hash = hash * 59 + this.JobId.GetHashCode();
+                hash = hash * 59 + JobId.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

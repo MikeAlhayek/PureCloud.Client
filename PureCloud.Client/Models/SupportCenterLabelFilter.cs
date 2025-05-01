@@ -53,7 +53,7 @@ public partial class SupportCenterLabelFilter : IEquatable<SupportCenterLabelFil
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportCenterLabelFilter);
+        return Equals(obj as SupportCenterLabelFilter);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class SupportCenterLabelFilter : IEquatable<SupportCenterLabelFil
 
         return true &&
             (
-                this.Labels == other.Labels ||
-                this.Labels != null &&
-                this.Labels.SequenceEqual(other.Labels)
+                Labels == other.Labels ||
+                Labels != null &&
+                Labels.SequenceEqual(other.Labels)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class SupportCenterLabelFilter : IEquatable<SupportCenterLabelFil
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Labels != null)
+            if (Labels != null)
             {
-                hash = hash * 59 + this.Labels.GetHashCode();
+                hash = hash * 59 + Labels.GetHashCode();
             }
 
             return hash;

@@ -87,7 +87,7 @@ public partial class FlowHealthErrorInfo : IEquatable<FlowHealthErrorInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowHealthErrorInfo);
+        return Equals(obj as FlowHealthErrorInfo);
     }
 
     /// <summary>
@@ -105,24 +105,24 @@ public partial class FlowHealthErrorInfo : IEquatable<FlowHealthErrorInfo>
 
         return true &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.MessageWithParams == other.MessageWithParams ||
-                this.MessageWithParams != null &&
-                this.MessageWithParams.Equals(other.MessageWithParams)
+                MessageWithParams == other.MessageWithParams ||
+                MessageWithParams != null &&
+                MessageWithParams.Equals(other.MessageWithParams)
             ) &&
             (
-                this.MessageParams == other.MessageParams ||
-                this.MessageParams != null &&
-                this.MessageParams.SequenceEqual(other.MessageParams)
+                MessageParams == other.MessageParams ||
+                MessageParams != null &&
+                MessageParams.SequenceEqual(other.MessageParams)
             );
     }
 
@@ -137,24 +137,24 @@ public partial class FlowHealthErrorInfo : IEquatable<FlowHealthErrorInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.MessageWithParams != null)
+            if (MessageWithParams != null)
             {
-                hash = hash * 59 + this.MessageWithParams.GetHashCode();
+                hash = hash * 59 + MessageWithParams.GetHashCode();
             }
 
-            if (this.MessageParams != null)
+            if (MessageParams != null)
             {
-                hash = hash * 59 + this.MessageParams.GetHashCode();
+                hash = hash * 59 + MessageParams.GetHashCode();
             }
 
             return hash;

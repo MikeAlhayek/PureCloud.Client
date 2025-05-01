@@ -89,7 +89,7 @@ public partial class PolicyTestResult : IEquatable<PolicyTestResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PolicyTestResult);
+        return Equals(obj as PolicyTestResult);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class PolicyTestResult : IEquatable<PolicyTestResult>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Result == other.Result ||
-                this.Result != null &&
-                this.Result.Equals(other.Result)
+                Result == other.Result ||
+                Result != null &&
+                Result.Equals(other.Result)
             ) &&
             (
-                this.PolicyConditionResults == other.PolicyConditionResults ||
-                this.PolicyConditionResults != null &&
-                this.PolicyConditionResults.SequenceEqual(other.PolicyConditionResults)
+                PolicyConditionResults == other.PolicyConditionResults ||
+                PolicyConditionResults != null &&
+                PolicyConditionResults.SequenceEqual(other.PolicyConditionResults)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class PolicyTestResult : IEquatable<PolicyTestResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Result != null)
+            if (Result != null)
             {
-                hash = hash * 59 + this.Result.GetHashCode();
+                hash = hash * 59 + Result.GetHashCode();
             }
 
-            if (this.PolicyConditionResults != null)
+            if (PolicyConditionResults != null)
             {
-                hash = hash * 59 + this.PolicyConditionResults.GetHashCode();
+                hash = hash * 59 + PolicyConditionResults.GetHashCode();
             }
 
             return hash;

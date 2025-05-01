@@ -121,7 +121,7 @@ public partial class IntentFeedback : IEquatable<IntentFeedback>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IntentFeedback);
+        return Equals(obj as IntentFeedback);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class IntentFeedback : IEquatable<IntentFeedback>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Probability == other.Probability ||
-                this.Probability != null &&
-                this.Probability.Equals(other.Probability)
+                Probability == other.Probability ||
+                Probability != null &&
+                Probability.Equals(other.Probability)
             ) &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.Assessment == other.Assessment ||
-                this.Assessment != null &&
-                this.Assessment.Equals(other.Assessment)
+                Assessment == other.Assessment ||
+                Assessment != null &&
+                Assessment.Equals(other.Assessment)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class IntentFeedback : IEquatable<IntentFeedback>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Probability != null)
+            if (Probability != null)
             {
-                hash = hash * 59 + this.Probability.GetHashCode();
+                hash = hash * 59 + Probability.GetHashCode();
             }
 
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.Assessment != null)
+            if (Assessment != null)
             {
-                hash = hash * 59 + this.Assessment.GetHashCode();
+                hash = hash * 59 + Assessment.GetHashCode();
             }
 
             return hash;

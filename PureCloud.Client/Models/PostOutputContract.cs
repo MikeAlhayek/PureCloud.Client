@@ -59,7 +59,7 @@ public partial class PostOutputContract : IEquatable<PostOutputContract>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PostOutputContract);
+        return Equals(obj as PostOutputContract);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class PostOutputContract : IEquatable<PostOutputContract>
 
         return true &&
             (
-                this.SuccessSchema == other.SuccessSchema ||
-                this.SuccessSchema != null &&
-                this.SuccessSchema.Equals(other.SuccessSchema)
+                SuccessSchema == other.SuccessSchema ||
+                SuccessSchema != null &&
+                SuccessSchema.Equals(other.SuccessSchema)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class PostOutputContract : IEquatable<PostOutputContract>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SuccessSchema != null)
+            if (SuccessSchema != null)
             {
-                hash = hash * 59 + this.SuccessSchema.GetHashCode();
+                hash = hash * 59 + SuccessSchema.GetHashCode();
             }
 
             return hash;

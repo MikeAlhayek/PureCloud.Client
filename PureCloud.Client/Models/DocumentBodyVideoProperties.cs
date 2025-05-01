@@ -139,7 +139,7 @@ public partial class DocumentBodyVideoProperties : IEquatable<DocumentBodyVideoP
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyVideoProperties);
+        return Equals(obj as DocumentBodyVideoProperties);
     }
 
     /// <summary>
@@ -157,29 +157,29 @@ public partial class DocumentBodyVideoProperties : IEquatable<DocumentBodyVideoP
 
         return true &&
             (
-                this.BackgroundColor == other.BackgroundColor ||
-                this.BackgroundColor != null &&
-                this.BackgroundColor.Equals(other.BackgroundColor)
+                BackgroundColor == other.BackgroundColor ||
+                BackgroundColor != null &&
+                BackgroundColor.Equals(other.BackgroundColor)
             ) &&
             (
-                this.Align == other.Align ||
-                this.Align != null &&
-                this.Align.Equals(other.Align)
+                Align == other.Align ||
+                Align != null &&
+                Align.Equals(other.Align)
             ) &&
             (
-                this.Indentation == other.Indentation ||
-                this.Indentation != null &&
-                this.Indentation.Equals(other.Indentation)
+                Indentation == other.Indentation ||
+                Indentation != null &&
+                Indentation.Equals(other.Indentation)
             ) &&
             (
-                this.Width == other.Width ||
-                this.Width != null &&
-                this.Width.Equals(other.Width)
+                Width == other.Width ||
+                Width != null &&
+                Width.Equals(other.Width)
             ) &&
             (
-                this.Height == other.Height ||
-                this.Height != null &&
-                this.Height.Equals(other.Height)
+                Height == other.Height ||
+                Height != null &&
+                Height.Equals(other.Height)
             );
     }
 
@@ -194,29 +194,29 @@ public partial class DocumentBodyVideoProperties : IEquatable<DocumentBodyVideoP
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BackgroundColor != null)
+            if (BackgroundColor != null)
             {
-                hash = hash * 59 + this.BackgroundColor.GetHashCode();
+                hash = hash * 59 + BackgroundColor.GetHashCode();
             }
 
-            if (this.Align != null)
+            if (Align != null)
             {
-                hash = hash * 59 + this.Align.GetHashCode();
+                hash = hash * 59 + Align.GetHashCode();
             }
 
-            if (this.Indentation != null)
+            if (Indentation != null)
             {
-                hash = hash * 59 + this.Indentation.GetHashCode();
+                hash = hash * 59 + Indentation.GetHashCode();
             }
 
-            if (this.Width != null)
+            if (Width != null)
             {
-                hash = hash * 59 + this.Width.GetHashCode();
+                hash = hash * 59 + Width.GetHashCode();
             }
 
-            if (this.Height != null)
+            if (Height != null)
             {
-                hash = hash * 59 + this.Height.GetHashCode();
+                hash = hash * 59 + Height.GetHashCode();
             }
 
             return hash;

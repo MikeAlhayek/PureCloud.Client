@@ -65,7 +65,7 @@ public partial class TrunkBaseAssignment : IEquatable<TrunkBaseAssignment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkBaseAssignment);
+        return Equals(obj as TrunkBaseAssignment);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class TrunkBaseAssignment : IEquatable<TrunkBaseAssignment>
 
         return true &&
             (
-                this.Family == other.Family ||
-                this.Family != null &&
-                this.Family.Equals(other.Family)
+                Family == other.Family ||
+                Family != null &&
+                Family.Equals(other.Family)
             ) &&
             (
-                this.TrunkBase == other.TrunkBase ||
-                this.TrunkBase != null &&
-                this.TrunkBase.Equals(other.TrunkBase)
+                TrunkBase == other.TrunkBase ||
+                TrunkBase != null &&
+                TrunkBase.Equals(other.TrunkBase)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class TrunkBaseAssignment : IEquatable<TrunkBaseAssignment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Family != null)
+            if (Family != null)
             {
-                hash = hash * 59 + this.Family.GetHashCode();
+                hash = hash * 59 + Family.GetHashCode();
             }
 
-            if (this.TrunkBase != null)
+            if (TrunkBase != null)
             {
-                hash = hash * 59 + this.TrunkBase.GetHashCode();
+                hash = hash * 59 + TrunkBase.GetHashCode();
             }
 
             return hash;

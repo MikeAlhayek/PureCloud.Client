@@ -59,7 +59,7 @@ public partial class ConversationEnrichmentLanguage : IEquatable<ConversationEnr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationEnrichmentLanguage);
+        return Equals(obj as ConversationEnrichmentLanguage);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ConversationEnrichmentLanguage : IEquatable<ConversationEnr
 
         return true &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ConversationEnrichmentLanguage : IEquatable<ConversationEnr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
             return hash;

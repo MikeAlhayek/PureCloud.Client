@@ -221,7 +221,7 @@ public partial class OpenReceiptNormalizedMessage : IEquatable<OpenReceiptNormal
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenReceiptNormalizedMessage);
+        return Equals(obj as OpenReceiptNormalizedMessage);
     }
 
     /// <summary>
@@ -239,39 +239,39 @@ public partial class OpenReceiptNormalizedMessage : IEquatable<OpenReceiptNormal
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Channel == other.Channel ||
-                this.Channel != null &&
-                this.Channel.Equals(other.Channel)
+                Channel == other.Channel ||
+                Channel != null &&
+                Channel.Equals(other.Channel)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Reasons == other.Reasons ||
-                this.Reasons != null &&
-                this.Reasons.SequenceEqual(other.Reasons)
+                Reasons == other.Reasons ||
+                Reasons != null &&
+                Reasons.SequenceEqual(other.Reasons)
             ) &&
             (
-                this.IsFinalReceipt == other.IsFinalReceipt ||
-                this.IsFinalReceipt != null &&
-                this.IsFinalReceipt.Equals(other.IsFinalReceipt)
+                IsFinalReceipt == other.IsFinalReceipt ||
+                IsFinalReceipt != null &&
+                IsFinalReceipt.Equals(other.IsFinalReceipt)
             ) &&
             (
-                this.Direction == other.Direction ||
-                this.Direction != null &&
-                this.Direction.Equals(other.Direction)
+                Direction == other.Direction ||
+                Direction != null &&
+                Direction.Equals(other.Direction)
             );
     }
 
@@ -286,39 +286,39 @@ public partial class OpenReceiptNormalizedMessage : IEquatable<OpenReceiptNormal
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Channel != null)
+            if (Channel != null)
             {
-                hash = hash * 59 + this.Channel.GetHashCode();
+                hash = hash * 59 + Channel.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Reasons != null)
+            if (Reasons != null)
             {
-                hash = hash * 59 + this.Reasons.GetHashCode();
+                hash = hash * 59 + Reasons.GetHashCode();
             }
 
-            if (this.IsFinalReceipt != null)
+            if (IsFinalReceipt != null)
             {
-                hash = hash * 59 + this.IsFinalReceipt.GetHashCode();
+                hash = hash * 59 + IsFinalReceipt.GetHashCode();
             }
 
-            if (this.Direction != null)
+            if (Direction != null)
             {
-                hash = hash * 59 + this.Direction.GetHashCode();
+                hash = hash * 59 + Direction.GetHashCode();
             }
 
             return hash;

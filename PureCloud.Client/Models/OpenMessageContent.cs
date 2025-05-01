@@ -91,7 +91,7 @@ public partial class OpenMessageContent : IEquatable<OpenMessageContent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenMessageContent);
+        return Equals(obj as OpenMessageContent);
     }
 
     /// <summary>
@@ -109,14 +109,14 @@ public partial class OpenMessageContent : IEquatable<OpenMessageContent>
 
         return true &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.Attachment == other.Attachment ||
-                this.Attachment != null &&
-                this.Attachment.Equals(other.Attachment)
+                Attachment == other.Attachment ||
+                Attachment != null &&
+                Attachment.Equals(other.Attachment)
             );
     }
 
@@ -131,14 +131,14 @@ public partial class OpenMessageContent : IEquatable<OpenMessageContent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.Attachment != null)
+            if (Attachment != null)
             {
-                hash = hash * 59 + this.Attachment.GetHashCode();
+                hash = hash * 59 + Attachment.GetHashCode();
             }
 
             return hash;

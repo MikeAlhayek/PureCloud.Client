@@ -59,7 +59,7 @@ public partial class TextBotWaitForInputAction : IEquatable<TextBotWaitForInputA
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotWaitForInputAction);
+        return Equals(obj as TextBotWaitForInputAction);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class TextBotWaitForInputAction : IEquatable<TextBotWaitForInputA
 
         return true &&
             (
-                this.ModeConstraints == other.ModeConstraints ||
-                this.ModeConstraints != null &&
-                this.ModeConstraints.Equals(other.ModeConstraints)
+                ModeConstraints == other.ModeConstraints ||
+                ModeConstraints != null &&
+                ModeConstraints.Equals(other.ModeConstraints)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class TextBotWaitForInputAction : IEquatable<TextBotWaitForInputA
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ModeConstraints != null)
+            if (ModeConstraints != null)
             {
-                hash = hash * 59 + this.ModeConstraints.GetHashCode();
+                hash = hash * 59 + ModeConstraints.GetHashCode();
             }
 
             return hash;

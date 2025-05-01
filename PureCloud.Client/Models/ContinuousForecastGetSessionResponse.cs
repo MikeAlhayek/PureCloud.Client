@@ -121,7 +121,7 @@ public partial class ContinuousForecastGetSessionResponse : IEquatable<Continuou
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContinuousForecastGetSessionResponse);
+        return Equals(obj as ContinuousForecastGetSessionResponse);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class ContinuousForecastGetSessionResponse : IEquatable<Continuou
 
         return true &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.LastSuccessfulSessionId == other.LastSuccessfulSessionId ||
-                this.LastSuccessfulSessionId != null &&
-                this.LastSuccessfulSessionId.Equals(other.LastSuccessfulSessionId)
+                LastSuccessfulSessionId == other.LastSuccessfulSessionId ||
+                LastSuccessfulSessionId != null &&
+                LastSuccessfulSessionId.Equals(other.LastSuccessfulSessionId)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class ContinuousForecastGetSessionResponse : IEquatable<Continuou
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.LastSuccessfulSessionId != null)
+            if (LastSuccessfulSessionId != null)
             {
-                hash = hash * 59 + this.LastSuccessfulSessionId.GetHashCode();
+                hash = hash * 59 + LastSuccessfulSessionId.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
             return hash;

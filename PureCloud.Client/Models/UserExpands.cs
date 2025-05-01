@@ -121,7 +121,7 @@ public partial class UserExpands : IEquatable<UserExpands>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserExpands);
+        return Equals(obj as UserExpands);
     }
 
     /// <summary>
@@ -139,44 +139,44 @@ public partial class UserExpands : IEquatable<UserExpands>
 
         return true &&
             (
-                this.RoutingStatus == other.RoutingStatus ||
-                this.RoutingStatus != null &&
-                this.RoutingStatus.Equals(other.RoutingStatus)
+                RoutingStatus == other.RoutingStatus ||
+                RoutingStatus != null &&
+                RoutingStatus.Equals(other.RoutingStatus)
             ) &&
             (
-                this.Presence == other.Presence ||
-                this.Presence != null &&
-                this.Presence.Equals(other.Presence)
+                Presence == other.Presence ||
+                Presence != null &&
+                Presence.Equals(other.Presence)
             ) &&
             (
-                this.IntegrationPresence == other.IntegrationPresence ||
-                this.IntegrationPresence != null &&
-                this.IntegrationPresence.Equals(other.IntegrationPresence)
+                IntegrationPresence == other.IntegrationPresence ||
+                IntegrationPresence != null &&
+                IntegrationPresence.Equals(other.IntegrationPresence)
             ) &&
             (
-                this.ConversationSummary == other.ConversationSummary ||
-                this.ConversationSummary != null &&
-                this.ConversationSummary.Equals(other.ConversationSummary)
+                ConversationSummary == other.ConversationSummary ||
+                ConversationSummary != null &&
+                ConversationSummary.Equals(other.ConversationSummary)
             ) &&
             (
-                this.OutOfOffice == other.OutOfOffice ||
-                this.OutOfOffice != null &&
-                this.OutOfOffice.Equals(other.OutOfOffice)
+                OutOfOffice == other.OutOfOffice ||
+                OutOfOffice != null &&
+                OutOfOffice.Equals(other.OutOfOffice)
             ) &&
             (
-                this.Geolocation == other.Geolocation ||
-                this.Geolocation != null &&
-                this.Geolocation.Equals(other.Geolocation)
+                Geolocation == other.Geolocation ||
+                Geolocation != null &&
+                Geolocation.Equals(other.Geolocation)
             ) &&
             (
-                this.Station == other.Station ||
-                this.Station != null &&
-                this.Station.Equals(other.Station)
+                Station == other.Station ||
+                Station != null &&
+                Station.Equals(other.Station)
             ) &&
             (
-                this.Authorization == other.Authorization ||
-                this.Authorization != null &&
-                this.Authorization.Equals(other.Authorization)
+                Authorization == other.Authorization ||
+                Authorization != null &&
+                Authorization.Equals(other.Authorization)
             );
     }
 
@@ -191,44 +191,44 @@ public partial class UserExpands : IEquatable<UserExpands>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RoutingStatus != null)
+            if (RoutingStatus != null)
             {
-                hash = hash * 59 + this.RoutingStatus.GetHashCode();
+                hash = hash * 59 + RoutingStatus.GetHashCode();
             }
 
-            if (this.Presence != null)
+            if (Presence != null)
             {
-                hash = hash * 59 + this.Presence.GetHashCode();
+                hash = hash * 59 + Presence.GetHashCode();
             }
 
-            if (this.IntegrationPresence != null)
+            if (IntegrationPresence != null)
             {
-                hash = hash * 59 + this.IntegrationPresence.GetHashCode();
+                hash = hash * 59 + IntegrationPresence.GetHashCode();
             }
 
-            if (this.ConversationSummary != null)
+            if (ConversationSummary != null)
             {
-                hash = hash * 59 + this.ConversationSummary.GetHashCode();
+                hash = hash * 59 + ConversationSummary.GetHashCode();
             }
 
-            if (this.OutOfOffice != null)
+            if (OutOfOffice != null)
             {
-                hash = hash * 59 + this.OutOfOffice.GetHashCode();
+                hash = hash * 59 + OutOfOffice.GetHashCode();
             }
 
-            if (this.Geolocation != null)
+            if (Geolocation != null)
             {
-                hash = hash * 59 + this.Geolocation.GetHashCode();
+                hash = hash * 59 + Geolocation.GetHashCode();
             }
 
-            if (this.Station != null)
+            if (Station != null)
             {
-                hash = hash * 59 + this.Station.GetHashCode();
+                hash = hash * 59 + Station.GetHashCode();
             }
 
-            if (this.Authorization != null)
+            if (Authorization != null)
             {
-                hash = hash * 59 + this.Authorization.GetHashCode();
+                hash = hash * 59 + Authorization.GetHashCode();
             }
 
             return hash;

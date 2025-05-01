@@ -129,7 +129,7 @@ public partial class QueueConversationCallEventTopicFaxStatus : IEquatable<Queue
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationCallEventTopicFaxStatus);
+        return Equals(obj as QueueConversationCallEventTopicFaxStatus);
     }
 
     /// <summary>
@@ -147,44 +147,44 @@ public partial class QueueConversationCallEventTopicFaxStatus : IEquatable<Queue
 
         return true &&
             (
-                this.Direction == other.Direction ||
-                this.Direction != null &&
-                this.Direction.Equals(other.Direction)
+                Direction == other.Direction ||
+                Direction != null &&
+                Direction.Equals(other.Direction)
             ) &&
             (
-                this.ExpectedPages == other.ExpectedPages ||
-                this.ExpectedPages != null &&
-                this.ExpectedPages.Equals(other.ExpectedPages)
+                ExpectedPages == other.ExpectedPages ||
+                ExpectedPages != null &&
+                ExpectedPages.Equals(other.ExpectedPages)
             ) &&
             (
-                this.ActivePage == other.ActivePage ||
-                this.ActivePage != null &&
-                this.ActivePage.Equals(other.ActivePage)
+                ActivePage == other.ActivePage ||
+                ActivePage != null &&
+                ActivePage.Equals(other.ActivePage)
             ) &&
             (
-                this.LinesTransmitted == other.LinesTransmitted ||
-                this.LinesTransmitted != null &&
-                this.LinesTransmitted.Equals(other.LinesTransmitted)
+                LinesTransmitted == other.LinesTransmitted ||
+                LinesTransmitted != null &&
+                LinesTransmitted.Equals(other.LinesTransmitted)
             ) &&
             (
-                this.BytesTransmitted == other.BytesTransmitted ||
-                this.BytesTransmitted != null &&
-                this.BytesTransmitted.Equals(other.BytesTransmitted)
+                BytesTransmitted == other.BytesTransmitted ||
+                BytesTransmitted != null &&
+                BytesTransmitted.Equals(other.BytesTransmitted)
             ) &&
             (
-                this.DataRate == other.DataRate ||
-                this.DataRate != null &&
-                this.DataRate.Equals(other.DataRate)
+                DataRate == other.DataRate ||
+                DataRate != null &&
+                DataRate.Equals(other.DataRate)
             ) &&
             (
-                this.PageErrors == other.PageErrors ||
-                this.PageErrors != null &&
-                this.PageErrors.Equals(other.PageErrors)
+                PageErrors == other.PageErrors ||
+                PageErrors != null &&
+                PageErrors.Equals(other.PageErrors)
             ) &&
             (
-                this.LineErrors == other.LineErrors ||
-                this.LineErrors != null &&
-                this.LineErrors.Equals(other.LineErrors)
+                LineErrors == other.LineErrors ||
+                LineErrors != null &&
+                LineErrors.Equals(other.LineErrors)
             );
     }
 
@@ -199,44 +199,44 @@ public partial class QueueConversationCallEventTopicFaxStatus : IEquatable<Queue
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Direction != null)
+            if (Direction != null)
             {
-                hash = hash * 59 + this.Direction.GetHashCode();
+                hash = hash * 59 + Direction.GetHashCode();
             }
 
-            if (this.ExpectedPages != null)
+            if (ExpectedPages != null)
             {
-                hash = hash * 59 + this.ExpectedPages.GetHashCode();
+                hash = hash * 59 + ExpectedPages.GetHashCode();
             }
 
-            if (this.ActivePage != null)
+            if (ActivePage != null)
             {
-                hash = hash * 59 + this.ActivePage.GetHashCode();
+                hash = hash * 59 + ActivePage.GetHashCode();
             }
 
-            if (this.LinesTransmitted != null)
+            if (LinesTransmitted != null)
             {
-                hash = hash * 59 + this.LinesTransmitted.GetHashCode();
+                hash = hash * 59 + LinesTransmitted.GetHashCode();
             }
 
-            if (this.BytesTransmitted != null)
+            if (BytesTransmitted != null)
             {
-                hash = hash * 59 + this.BytesTransmitted.GetHashCode();
+                hash = hash * 59 + BytesTransmitted.GetHashCode();
             }
 
-            if (this.DataRate != null)
+            if (DataRate != null)
             {
-                hash = hash * 59 + this.DataRate.GetHashCode();
+                hash = hash * 59 + DataRate.GetHashCode();
             }
 
-            if (this.PageErrors != null)
+            if (PageErrors != null)
             {
-                hash = hash * 59 + this.PageErrors.GetHashCode();
+                hash = hash * 59 + PageErrors.GetHashCode();
             }
 
-            if (this.LineErrors != null)
+            if (LineErrors != null)
             {
-                hash = hash * 59 + this.LineErrors.GetHashCode();
+                hash = hash * 59 + LineErrors.GetHashCode();
             }
 
             return hash;

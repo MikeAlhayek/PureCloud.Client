@@ -172,7 +172,7 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsMediaEndpointStat);
+        return Equals(obj as AnalyticsMediaEndpointStat);
     }
 
     /// <summary>
@@ -190,59 +190,59 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
 
         return true &&
             (
-                this.Codecs == other.Codecs ||
-                this.Codecs != null &&
-                this.Codecs.SequenceEqual(other.Codecs)
+                Codecs == other.Codecs ||
+                Codecs != null &&
+                Codecs.SequenceEqual(other.Codecs)
             ) &&
             (
-                this.DiscardedPackets == other.DiscardedPackets ||
-                this.DiscardedPackets != null &&
-                this.DiscardedPackets.Equals(other.DiscardedPackets)
+                DiscardedPackets == other.DiscardedPackets ||
+                DiscardedPackets != null &&
+                DiscardedPackets.Equals(other.DiscardedPackets)
             ) &&
             (
-                this.DuplicatePackets == other.DuplicatePackets ||
-                this.DuplicatePackets != null &&
-                this.DuplicatePackets.Equals(other.DuplicatePackets)
+                DuplicatePackets == other.DuplicatePackets ||
+                DuplicatePackets != null &&
+                DuplicatePackets.Equals(other.DuplicatePackets)
             ) &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.InvalidPackets == other.InvalidPackets ||
-                this.InvalidPackets != null &&
-                this.InvalidPackets.Equals(other.InvalidPackets)
+                InvalidPackets == other.InvalidPackets ||
+                InvalidPackets != null &&
+                InvalidPackets.Equals(other.InvalidPackets)
             ) &&
             (
-                this.MaxLatencyMs == other.MaxLatencyMs ||
-                this.MaxLatencyMs != null &&
-                this.MaxLatencyMs.Equals(other.MaxLatencyMs)
+                MaxLatencyMs == other.MaxLatencyMs ||
+                MaxLatencyMs != null &&
+                MaxLatencyMs.Equals(other.MaxLatencyMs)
             ) &&
             (
-                this.MinMos == other.MinMos ||
-                this.MinMos != null &&
-                this.MinMos.Equals(other.MinMos)
+                MinMos == other.MinMos ||
+                MinMos != null &&
+                MinMos.Equals(other.MinMos)
             ) &&
             (
-                this.MinRFactor == other.MinRFactor ||
-                this.MinRFactor != null &&
-                this.MinRFactor.Equals(other.MinRFactor)
+                MinRFactor == other.MinRFactor ||
+                MinRFactor != null &&
+                MinRFactor.Equals(other.MinRFactor)
             ) &&
             (
-                this.OverrunPackets == other.OverrunPackets ||
-                this.OverrunPackets != null &&
-                this.OverrunPackets.Equals(other.OverrunPackets)
+                OverrunPackets == other.OverrunPackets ||
+                OverrunPackets != null &&
+                OverrunPackets.Equals(other.OverrunPackets)
             ) &&
             (
-                this.ReceivedPackets == other.ReceivedPackets ||
-                this.ReceivedPackets != null &&
-                this.ReceivedPackets.Equals(other.ReceivedPackets)
+                ReceivedPackets == other.ReceivedPackets ||
+                ReceivedPackets != null &&
+                ReceivedPackets.Equals(other.ReceivedPackets)
             ) &&
             (
-                this.UnderrunPackets == other.UnderrunPackets ||
-                this.UnderrunPackets != null &&
-                this.UnderrunPackets.Equals(other.UnderrunPackets)
+                UnderrunPackets == other.UnderrunPackets ||
+                UnderrunPackets != null &&
+                UnderrunPackets.Equals(other.UnderrunPackets)
             );
     }
 
@@ -257,59 +257,59 @@ public partial class AnalyticsMediaEndpointStat : IEquatable<AnalyticsMediaEndpo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Codecs != null)
+            if (Codecs != null)
             {
-                hash = hash * 59 + this.Codecs.GetHashCode();
+                hash = hash * 59 + Codecs.GetHashCode();
             }
 
-            if (this.DiscardedPackets != null)
+            if (DiscardedPackets != null)
             {
-                hash = hash * 59 + this.DiscardedPackets.GetHashCode();
+                hash = hash * 59 + DiscardedPackets.GetHashCode();
             }
 
-            if (this.DuplicatePackets != null)
+            if (DuplicatePackets != null)
             {
-                hash = hash * 59 + this.DuplicatePackets.GetHashCode();
+                hash = hash * 59 + DuplicatePackets.GetHashCode();
             }
 
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.InvalidPackets != null)
+            if (InvalidPackets != null)
             {
-                hash = hash * 59 + this.InvalidPackets.GetHashCode();
+                hash = hash * 59 + InvalidPackets.GetHashCode();
             }
 
-            if (this.MaxLatencyMs != null)
+            if (MaxLatencyMs != null)
             {
-                hash = hash * 59 + this.MaxLatencyMs.GetHashCode();
+                hash = hash * 59 + MaxLatencyMs.GetHashCode();
             }
 
-            if (this.MinMos != null)
+            if (MinMos != null)
             {
-                hash = hash * 59 + this.MinMos.GetHashCode();
+                hash = hash * 59 + MinMos.GetHashCode();
             }
 
-            if (this.MinRFactor != null)
+            if (MinRFactor != null)
             {
-                hash = hash * 59 + this.MinRFactor.GetHashCode();
+                hash = hash * 59 + MinRFactor.GetHashCode();
             }
 
-            if (this.OverrunPackets != null)
+            if (OverrunPackets != null)
             {
-                hash = hash * 59 + this.OverrunPackets.GetHashCode();
+                hash = hash * 59 + OverrunPackets.GetHashCode();
             }
 
-            if (this.ReceivedPackets != null)
+            if (ReceivedPackets != null)
             {
-                hash = hash * 59 + this.ReceivedPackets.GetHashCode();
+                hash = hash * 59 + ReceivedPackets.GetHashCode();
             }
 
-            if (this.UnderrunPackets != null)
+            if (UnderrunPackets != null)
             {
-                hash = hash * 59 + this.UnderrunPackets.GetHashCode();
+                hash = hash * 59 + UnderrunPackets.GetHashCode();
             }
 
             return hash;

@@ -74,7 +74,7 @@ public partial class ChatBadgeTopicChatBadge : IEquatable<ChatBadgeTopicChatBadg
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatBadgeTopicChatBadge);
+        return Equals(obj as ChatBadgeTopicChatBadge);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class ChatBadgeTopicChatBadge : IEquatable<ChatBadgeTopicChatBadg
 
         return true &&
             (
-                this.Entity == other.Entity ||
-                this.Entity != null &&
-                this.Entity.Equals(other.Entity)
+                Entity == other.Entity ||
+                Entity != null &&
+                Entity.Equals(other.Entity)
             ) &&
             (
-                this.UnreadCount == other.UnreadCount ||
-                this.UnreadCount != null &&
-                this.UnreadCount.Equals(other.UnreadCount)
+                UnreadCount == other.UnreadCount ||
+                UnreadCount != null &&
+                UnreadCount.Equals(other.UnreadCount)
             ) &&
             (
-                this.LastUnreadNotificationDate == other.LastUnreadNotificationDate ||
-                this.LastUnreadNotificationDate != null &&
-                this.LastUnreadNotificationDate.Equals(other.LastUnreadNotificationDate)
+                LastUnreadNotificationDate == other.LastUnreadNotificationDate ||
+                LastUnreadNotificationDate != null &&
+                LastUnreadNotificationDate.Equals(other.LastUnreadNotificationDate)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class ChatBadgeTopicChatBadge : IEquatable<ChatBadgeTopicChatBadg
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entity != null)
+            if (Entity != null)
             {
-                hash = hash * 59 + this.Entity.GetHashCode();
+                hash = hash * 59 + Entity.GetHashCode();
             }
 
-            if (this.UnreadCount != null)
+            if (UnreadCount != null)
             {
-                hash = hash * 59 + this.UnreadCount.GetHashCode();
+                hash = hash * 59 + UnreadCount.GetHashCode();
             }
 
-            if (this.LastUnreadNotificationDate != null)
+            if (LastUnreadNotificationDate != null)
             {
-                hash = hash * 59 + this.LastUnreadNotificationDate.GetHashCode();
+                hash = hash * 59 + LastUnreadNotificationDate.GetHashCode();
             }
 
             return hash;

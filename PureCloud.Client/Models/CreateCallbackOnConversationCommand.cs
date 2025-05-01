@@ -179,7 +179,7 @@ public partial class CreateCallbackOnConversationCommand : IEquatable<CreateCall
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateCallbackOnConversationCommand);
+        return Equals(obj as CreateCallbackOnConversationCommand);
     }
 
     /// <summary>
@@ -197,59 +197,59 @@ public partial class CreateCallbackOnConversationCommand : IEquatable<CreateCall
 
         return true &&
             (
-                this.ScriptId == other.ScriptId ||
-                this.ScriptId != null &&
-                this.ScriptId.Equals(other.ScriptId)
+                ScriptId == other.ScriptId ||
+                ScriptId != null &&
+                ScriptId.Equals(other.ScriptId)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.RoutingData == other.RoutingData ||
-                this.RoutingData != null &&
-                this.RoutingData.Equals(other.RoutingData)
+                RoutingData == other.RoutingData ||
+                RoutingData != null &&
+                RoutingData.Equals(other.RoutingData)
             ) &&
             (
-                this.CallbackUserName == other.CallbackUserName ||
-                this.CallbackUserName != null &&
-                this.CallbackUserName.Equals(other.CallbackUserName)
+                CallbackUserName == other.CallbackUserName ||
+                CallbackUserName != null &&
+                CallbackUserName.Equals(other.CallbackUserName)
             ) &&
             (
-                this.CallbackNumbers == other.CallbackNumbers ||
-                this.CallbackNumbers != null &&
-                this.CallbackNumbers.SequenceEqual(other.CallbackNumbers)
+                CallbackNumbers == other.CallbackNumbers ||
+                CallbackNumbers != null &&
+                CallbackNumbers.SequenceEqual(other.CallbackNumbers)
             ) &&
             (
-                this.CallbackScheduledTime == other.CallbackScheduledTime ||
-                this.CallbackScheduledTime != null &&
-                this.CallbackScheduledTime.Equals(other.CallbackScheduledTime)
+                CallbackScheduledTime == other.CallbackScheduledTime ||
+                CallbackScheduledTime != null &&
+                CallbackScheduledTime.Equals(other.CallbackScheduledTime)
             ) &&
             (
-                this.CountryCode == other.CountryCode ||
-                this.CountryCode != null &&
-                this.CountryCode.Equals(other.CountryCode)
+                CountryCode == other.CountryCode ||
+                CountryCode != null &&
+                CountryCode.Equals(other.CountryCode)
             ) &&
             (
-                this.ValidateCallbackNumbers == other.ValidateCallbackNumbers ||
-                this.ValidateCallbackNumbers != null &&
-                this.ValidateCallbackNumbers.Equals(other.ValidateCallbackNumbers)
+                ValidateCallbackNumbers == other.ValidateCallbackNumbers ||
+                ValidateCallbackNumbers != null &&
+                ValidateCallbackNumbers.Equals(other.ValidateCallbackNumbers)
             ) &&
             (
-                this.Data == other.Data ||
-                this.Data != null &&
-                this.Data.SequenceEqual(other.Data)
+                Data == other.Data ||
+                Data != null &&
+                Data.SequenceEqual(other.Data)
             ) &&
             (
-                this.CallerId == other.CallerId ||
-                this.CallerId != null &&
-                this.CallerId.Equals(other.CallerId)
+                CallerId == other.CallerId ||
+                CallerId != null &&
+                CallerId.Equals(other.CallerId)
             ) &&
             (
-                this.CallerIdName == other.CallerIdName ||
-                this.CallerIdName != null &&
-                this.CallerIdName.Equals(other.CallerIdName)
+                CallerIdName == other.CallerIdName ||
+                CallerIdName != null &&
+                CallerIdName.Equals(other.CallerIdName)
             );
     }
 
@@ -264,59 +264,59 @@ public partial class CreateCallbackOnConversationCommand : IEquatable<CreateCall
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ScriptId != null)
+            if (ScriptId != null)
             {
-                hash = hash * 59 + this.ScriptId.GetHashCode();
+                hash = hash * 59 + ScriptId.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.RoutingData != null)
+            if (RoutingData != null)
             {
-                hash = hash * 59 + this.RoutingData.GetHashCode();
+                hash = hash * 59 + RoutingData.GetHashCode();
             }
 
-            if (this.CallbackUserName != null)
+            if (CallbackUserName != null)
             {
-                hash = hash * 59 + this.CallbackUserName.GetHashCode();
+                hash = hash * 59 + CallbackUserName.GetHashCode();
             }
 
-            if (this.CallbackNumbers != null)
+            if (CallbackNumbers != null)
             {
-                hash = hash * 59 + this.CallbackNumbers.GetHashCode();
+                hash = hash * 59 + CallbackNumbers.GetHashCode();
             }
 
-            if (this.CallbackScheduledTime != null)
+            if (CallbackScheduledTime != null)
             {
-                hash = hash * 59 + this.CallbackScheduledTime.GetHashCode();
+                hash = hash * 59 + CallbackScheduledTime.GetHashCode();
             }
 
-            if (this.CountryCode != null)
+            if (CountryCode != null)
             {
-                hash = hash * 59 + this.CountryCode.GetHashCode();
+                hash = hash * 59 + CountryCode.GetHashCode();
             }
 
-            if (this.ValidateCallbackNumbers != null)
+            if (ValidateCallbackNumbers != null)
             {
-                hash = hash * 59 + this.ValidateCallbackNumbers.GetHashCode();
+                hash = hash * 59 + ValidateCallbackNumbers.GetHashCode();
             }
 
-            if (this.Data != null)
+            if (Data != null)
             {
-                hash = hash * 59 + this.Data.GetHashCode();
+                hash = hash * 59 + Data.GetHashCode();
             }
 
-            if (this.CallerId != null)
+            if (CallerId != null)
             {
-                hash = hash * 59 + this.CallerId.GetHashCode();
+                hash = hash * 59 + CallerId.GetHashCode();
             }
 
-            if (this.CallerIdName != null)
+            if (CallerIdName != null)
             {
-                hash = hash * 59 + this.CallerIdName.GetHashCode();
+                hash = hash * 59 + CallerIdName.GetHashCode();
             }
 
             return hash;

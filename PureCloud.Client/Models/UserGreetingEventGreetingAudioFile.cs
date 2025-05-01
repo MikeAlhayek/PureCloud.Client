@@ -63,7 +63,7 @@ public partial class UserGreetingEventGreetingAudioFile : IEquatable<UserGreetin
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserGreetingEventGreetingAudioFile);
+        return Equals(obj as UserGreetingEventGreetingAudioFile);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class UserGreetingEventGreetingAudioFile : IEquatable<UserGreetin
 
         return true &&
             (
-                this.DurationMilliseconds == other.DurationMilliseconds ||
-                this.DurationMilliseconds != null &&
-                this.DurationMilliseconds.Equals(other.DurationMilliseconds)
+                DurationMilliseconds == other.DurationMilliseconds ||
+                DurationMilliseconds != null &&
+                DurationMilliseconds.Equals(other.DurationMilliseconds)
             ) &&
             (
-                this.SizeBytes == other.SizeBytes ||
-                this.SizeBytes != null &&
-                this.SizeBytes.Equals(other.SizeBytes)
+                SizeBytes == other.SizeBytes ||
+                SizeBytes != null &&
+                SizeBytes.Equals(other.SizeBytes)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class UserGreetingEventGreetingAudioFile : IEquatable<UserGreetin
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DurationMilliseconds != null)
+            if (DurationMilliseconds != null)
             {
-                hash = hash * 59 + this.DurationMilliseconds.GetHashCode();
+                hash = hash * 59 + DurationMilliseconds.GetHashCode();
             }
 
-            if (this.SizeBytes != null)
+            if (SizeBytes != null)
             {
-                hash = hash * 59 + this.SizeBytes.GetHashCode();
+                hash = hash * 59 + SizeBytes.GetHashCode();
             }
 
             return hash;

@@ -64,7 +64,7 @@ public partial class AmazonLexRequest : IEquatable<AmazonLexRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AmazonLexRequest);
+        return Equals(obj as AmazonLexRequest);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class AmazonLexRequest : IEquatable<AmazonLexRequest>
 
         return true &&
             (
-                this.RequestAttributes == other.RequestAttributes ||
-                this.RequestAttributes != null &&
-                this.RequestAttributes.SequenceEqual(other.RequestAttributes)
+                RequestAttributes == other.RequestAttributes ||
+                RequestAttributes != null &&
+                RequestAttributes.SequenceEqual(other.RequestAttributes)
             ) &&
             (
-                this.SessionAttributes == other.SessionAttributes ||
-                this.SessionAttributes != null &&
-                this.SessionAttributes.SequenceEqual(other.SessionAttributes)
+                SessionAttributes == other.SessionAttributes ||
+                SessionAttributes != null &&
+                SessionAttributes.SequenceEqual(other.SessionAttributes)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class AmazonLexRequest : IEquatable<AmazonLexRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RequestAttributes != null)
+            if (RequestAttributes != null)
             {
-                hash = hash * 59 + this.RequestAttributes.GetHashCode();
+                hash = hash * 59 + RequestAttributes.GetHashCode();
             }
 
-            if (this.SessionAttributes != null)
+            if (SessionAttributes != null)
             {
-                hash = hash * 59 + this.SessionAttributes.GetHashCode();
+                hash = hash * 59 + SessionAttributes.GetHashCode();
             }
 
             return hash;

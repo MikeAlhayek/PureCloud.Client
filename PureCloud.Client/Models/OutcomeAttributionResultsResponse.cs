@@ -181,7 +181,7 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomeAttributionResultsResponse);
+        return Equals(obj as OutcomeAttributionResultsResponse);
     }
 
     /// <summary>
@@ -199,44 +199,44 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
 
         return true &&
             (
-                this.OutcomeId == other.OutcomeId ||
-                this.OutcomeId != null &&
-                this.OutcomeId.Equals(other.OutcomeId)
+                OutcomeId == other.OutcomeId ||
+                OutcomeId != null &&
+                OutcomeId.Equals(other.OutcomeId)
             ) &&
             (
-                this.Index == other.Index ||
-                this.Index != null &&
-                this.Index.Equals(other.Index)
+                Index == other.Index ||
+                Index != null &&
+                Index.Equals(other.Index)
             ) &&
             (
-                this.ExternalContactId == other.ExternalContactId ||
-                this.ExternalContactId != null &&
-                this.ExternalContactId.Equals(other.ExternalContactId)
+                ExternalContactId == other.ExternalContactId ||
+                ExternalContactId != null &&
+                ExternalContactId.Equals(other.ExternalContactId)
             ) &&
             (
-                this.AssociatedValue == other.AssociatedValue ||
-                this.AssociatedValue != null &&
-                this.AssociatedValue.Equals(other.AssociatedValue)
+                AssociatedValue == other.AssociatedValue ||
+                AssociatedValue != null &&
+                AssociatedValue.Equals(other.AssociatedValue)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Touchpoints == other.Touchpoints ||
-                this.Touchpoints != null &&
-                this.Touchpoints.SequenceEqual(other.Touchpoints)
+                Touchpoints == other.Touchpoints ||
+                Touchpoints != null &&
+                Touchpoints.SequenceEqual(other.Touchpoints)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             );
     }
 
@@ -251,44 +251,44 @@ public partial class OutcomeAttributionResultsResponse : IEquatable<OutcomeAttri
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutcomeId != null)
+            if (OutcomeId != null)
             {
-                hash = hash * 59 + this.OutcomeId.GetHashCode();
+                hash = hash * 59 + OutcomeId.GetHashCode();
             }
 
-            if (this.Index != null)
+            if (Index != null)
             {
-                hash = hash * 59 + this.Index.GetHashCode();
+                hash = hash * 59 + Index.GetHashCode();
             }
 
-            if (this.ExternalContactId != null)
+            if (ExternalContactId != null)
             {
-                hash = hash * 59 + this.ExternalContactId.GetHashCode();
+                hash = hash * 59 + ExternalContactId.GetHashCode();
             }
 
-            if (this.AssociatedValue != null)
+            if (AssociatedValue != null)
             {
-                hash = hash * 59 + this.AssociatedValue.GetHashCode();
+                hash = hash * 59 + AssociatedValue.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Touchpoints != null)
+            if (Touchpoints != null)
             {
-                hash = hash * 59 + this.Touchpoints.GetHashCode();
+                hash = hash * 59 + Touchpoints.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
             return hash;

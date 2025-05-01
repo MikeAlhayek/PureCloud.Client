@@ -65,7 +65,7 @@ public partial class LastResultOverallConditionSettings : IEquatable<LastResultO
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LastResultOverallConditionSettings);
+        return Equals(obj as LastResultOverallConditionSettings);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class LastResultOverallConditionSettings : IEquatable<LastResultO
 
         return true &&
             (
-                this.EmailWrapupCodes == other.EmailWrapupCodes ||
-                this.EmailWrapupCodes != null &&
-                this.EmailWrapupCodes.SequenceEqual(other.EmailWrapupCodes)
+                EmailWrapupCodes == other.EmailWrapupCodes ||
+                EmailWrapupCodes != null &&
+                EmailWrapupCodes.SequenceEqual(other.EmailWrapupCodes)
             ) &&
             (
-                this.SmsWrapupCodes == other.SmsWrapupCodes ||
-                this.SmsWrapupCodes != null &&
-                this.SmsWrapupCodes.SequenceEqual(other.SmsWrapupCodes)
+                SmsWrapupCodes == other.SmsWrapupCodes ||
+                SmsWrapupCodes != null &&
+                SmsWrapupCodes.SequenceEqual(other.SmsWrapupCodes)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class LastResultOverallConditionSettings : IEquatable<LastResultO
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EmailWrapupCodes != null)
+            if (EmailWrapupCodes != null)
             {
-                hash = hash * 59 + this.EmailWrapupCodes.GetHashCode();
+                hash = hash * 59 + EmailWrapupCodes.GetHashCode();
             }
 
-            if (this.SmsWrapupCodes != null)
+            if (SmsWrapupCodes != null)
             {
-                hash = hash * 59 + this.SmsWrapupCodes.GetHashCode();
+                hash = hash * 59 + SmsWrapupCodes.GetHashCode();
             }
 
             return hash;

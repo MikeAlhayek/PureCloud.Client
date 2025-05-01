@@ -63,7 +63,7 @@ public partial class LimitDocumentation : IEquatable<LimitDocumentation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LimitDocumentation);
+        return Equals(obj as LimitDocumentation);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class LimitDocumentation : IEquatable<LimitDocumentation>
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Namespaces == other.Namespaces ||
-                this.Namespaces != null &&
-                this.Namespaces.SequenceEqual(other.Namespaces)
+                Namespaces == other.Namespaces ||
+                Namespaces != null &&
+                Namespaces.SequenceEqual(other.Namespaces)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class LimitDocumentation : IEquatable<LimitDocumentation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Namespaces != null)
+            if (Namespaces != null)
             {
-                hash = hash * 59 + this.Namespaces.GetHashCode();
+                hash = hash * 59 + Namespaces.GetHashCode();
             }
 
             return hash;

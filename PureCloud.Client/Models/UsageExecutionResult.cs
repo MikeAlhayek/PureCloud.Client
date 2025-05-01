@@ -65,7 +65,7 @@ public partial class UsageExecutionResult : IEquatable<UsageExecutionResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UsageExecutionResult);
+        return Equals(obj as UsageExecutionResult);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class UsageExecutionResult : IEquatable<UsageExecutionResult>
 
         return true &&
             (
-                this.ExecutionId == other.ExecutionId ||
-                this.ExecutionId != null &&
-                this.ExecutionId.Equals(other.ExecutionId)
+                ExecutionId == other.ExecutionId ||
+                ExecutionId != null &&
+                ExecutionId.Equals(other.ExecutionId)
             ) &&
             (
-                this.ResultsUri == other.ResultsUri ||
-                this.ResultsUri != null &&
-                this.ResultsUri.Equals(other.ResultsUri)
+                ResultsUri == other.ResultsUri ||
+                ResultsUri != null &&
+                ResultsUri.Equals(other.ResultsUri)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class UsageExecutionResult : IEquatable<UsageExecutionResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExecutionId != null)
+            if (ExecutionId != null)
             {
-                hash = hash * 59 + this.ExecutionId.GetHashCode();
+                hash = hash * 59 + ExecutionId.GetHashCode();
             }
 
-            if (this.ResultsUri != null)
+            if (ResultsUri != null)
             {
-                hash = hash * 59 + this.ResultsUri.GetHashCode();
+                hash = hash * 59 + ResultsUri.GetHashCode();
             }
 
             return hash;

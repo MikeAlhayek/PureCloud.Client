@@ -83,7 +83,7 @@ public partial class SuggestSearchRequest : IEquatable<SuggestSearchRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SuggestSearchRequest);
+        return Equals(obj as SuggestSearchRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class SuggestSearchRequest : IEquatable<SuggestSearchRequest>
 
         return true &&
             (
-                this.Expand == other.Expand ||
-                this.Expand != null &&
-                this.Expand.SequenceEqual(other.Expand)
+                Expand == other.Expand ||
+                Expand != null &&
+                Expand.SequenceEqual(other.Expand)
             ) &&
             (
-                this.Types == other.Types ||
-                this.Types != null &&
-                this.Types.SequenceEqual(other.Types)
+                Types == other.Types ||
+                Types != null &&
+                Types.SequenceEqual(other.Types)
             ) &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.SequenceEqual(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.SequenceEqual(other.Query)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class SuggestSearchRequest : IEquatable<SuggestSearchRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Expand != null)
+            if (Expand != null)
             {
-                hash = hash * 59 + this.Expand.GetHashCode();
+                hash = hash * 59 + Expand.GetHashCode();
             }
 
-            if (this.Types != null)
+            if (Types != null)
             {
-                hash = hash * 59 + this.Types.GetHashCode();
+                hash = hash * 59 + Types.GetHashCode();
             }
 
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
             return hash;

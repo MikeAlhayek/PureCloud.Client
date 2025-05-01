@@ -101,7 +101,7 @@ public partial class EdgeMetricsNetwork : IEquatable<EdgeMetricsNetwork>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeMetricsNetwork);
+        return Equals(obj as EdgeMetricsNetwork);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class EdgeMetricsNetwork : IEquatable<EdgeMetricsNetwork>
 
         return true &&
             (
-                this.Ifname == other.Ifname ||
-                this.Ifname != null &&
-                this.Ifname.Equals(other.Ifname)
+                Ifname == other.Ifname ||
+                Ifname != null &&
+                Ifname.Equals(other.Ifname)
             ) &&
             (
-                this.SentBytesPerSec == other.SentBytesPerSec ||
-                this.SentBytesPerSec != null &&
-                this.SentBytesPerSec.Equals(other.SentBytesPerSec)
+                SentBytesPerSec == other.SentBytesPerSec ||
+                SentBytesPerSec != null &&
+                SentBytesPerSec.Equals(other.SentBytesPerSec)
             ) &&
             (
-                this.ReceivedBytesPerSec == other.ReceivedBytesPerSec ||
-                this.ReceivedBytesPerSec != null &&
-                this.ReceivedBytesPerSec.Equals(other.ReceivedBytesPerSec)
+                ReceivedBytesPerSec == other.ReceivedBytesPerSec ||
+                ReceivedBytesPerSec != null &&
+                ReceivedBytesPerSec.Equals(other.ReceivedBytesPerSec)
             ) &&
             (
-                this.BandwidthBitsPerSec == other.BandwidthBitsPerSec ||
-                this.BandwidthBitsPerSec != null &&
-                this.BandwidthBitsPerSec.Equals(other.BandwidthBitsPerSec)
+                BandwidthBitsPerSec == other.BandwidthBitsPerSec ||
+                BandwidthBitsPerSec != null &&
+                BandwidthBitsPerSec.Equals(other.BandwidthBitsPerSec)
             ) &&
             (
-                this.UtilizationPct == other.UtilizationPct ||
-                this.UtilizationPct != null &&
-                this.UtilizationPct.Equals(other.UtilizationPct)
+                UtilizationPct == other.UtilizationPct ||
+                UtilizationPct != null &&
+                UtilizationPct.Equals(other.UtilizationPct)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class EdgeMetricsNetwork : IEquatable<EdgeMetricsNetwork>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Ifname != null)
+            if (Ifname != null)
             {
-                hash = hash * 59 + this.Ifname.GetHashCode();
+                hash = hash * 59 + Ifname.GetHashCode();
             }
 
-            if (this.SentBytesPerSec != null)
+            if (SentBytesPerSec != null)
             {
-                hash = hash * 59 + this.SentBytesPerSec.GetHashCode();
+                hash = hash * 59 + SentBytesPerSec.GetHashCode();
             }
 
-            if (this.ReceivedBytesPerSec != null)
+            if (ReceivedBytesPerSec != null)
             {
-                hash = hash * 59 + this.ReceivedBytesPerSec.GetHashCode();
+                hash = hash * 59 + ReceivedBytesPerSec.GetHashCode();
             }
 
-            if (this.BandwidthBitsPerSec != null)
+            if (BandwidthBitsPerSec != null)
             {
-                hash = hash * 59 + this.BandwidthBitsPerSec.GetHashCode();
+                hash = hash * 59 + BandwidthBitsPerSec.GetHashCode();
             }
 
-            if (this.UtilizationPct != null)
+            if (UtilizationPct != null)
             {
-                hash = hash * 59 + this.UtilizationPct.GetHashCode();
+                hash = hash * 59 + UtilizationPct.GetHashCode();
             }
 
             return hash;

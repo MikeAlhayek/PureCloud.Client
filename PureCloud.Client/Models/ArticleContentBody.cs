@@ -50,7 +50,7 @@ public partial class ArticleContentBody : IEquatable<ArticleContentBody>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArticleContentBody);
+        return Equals(obj as ArticleContentBody);
     }
 
     /// <summary>
@@ -68,9 +68,9 @@ public partial class ArticleContentBody : IEquatable<ArticleContentBody>
 
         return true &&
             (
-                this.LocationUrl == other.LocationUrl ||
-                this.LocationUrl != null &&
-                this.LocationUrl.Equals(other.LocationUrl)
+                LocationUrl == other.LocationUrl ||
+                LocationUrl != null &&
+                LocationUrl.Equals(other.LocationUrl)
             );
     }
 
@@ -85,9 +85,9 @@ public partial class ArticleContentBody : IEquatable<ArticleContentBody>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LocationUrl != null)
+            if (LocationUrl != null)
             {
-                hash = hash * 59 + this.LocationUrl.GetHashCode();
+                hash = hash * 59 + LocationUrl.GetHashCode();
             }
 
             return hash;

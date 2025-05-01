@@ -83,7 +83,7 @@ public partial class CsvUploadDetailsResponse : IEquatable<CsvUploadDetailsRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CsvUploadDetailsResponse);
+        return Equals(obj as CsvUploadDetailsResponse);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class CsvUploadDetailsResponse : IEquatable<CsvUploadDetailsRespo
 
         return true &&
             (
-                this.UploadId == other.UploadId ||
-                this.UploadId != null &&
-                this.UploadId.Equals(other.UploadId)
+                UploadId == other.UploadId ||
+                UploadId != null &&
+                UploadId.Equals(other.UploadId)
             ) &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.ValidationResult == other.ValidationResult ||
-                this.ValidationResult != null &&
-                this.ValidationResult.Equals(other.ValidationResult)
+                ValidationResult == other.ValidationResult ||
+                ValidationResult != null &&
+                ValidationResult.Equals(other.ValidationResult)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class CsvUploadDetailsResponse : IEquatable<CsvUploadDetailsRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadId != null)
+            if (UploadId != null)
             {
-                hash = hash * 59 + this.UploadId.GetHashCode();
+                hash = hash * 59 + UploadId.GetHashCode();
             }
 
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.ValidationResult != null)
+            if (ValidationResult != null)
             {
-                hash = hash * 59 + this.ValidationResult.GetHashCode();
+                hash = hash * 59 + ValidationResult.GetHashCode();
             }
 
             return hash;

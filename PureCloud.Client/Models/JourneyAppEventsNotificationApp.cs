@@ -85,7 +85,7 @@ public partial class JourneyAppEventsNotificationApp : IEquatable<JourneyAppEven
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyAppEventsNotificationApp);
+        return Equals(obj as JourneyAppEventsNotificationApp);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class JourneyAppEventsNotificationApp : IEquatable<JourneyAppEven
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Namespace == other.Namespace ||
-                this.Namespace != null &&
-                this.Namespace.Equals(other.Namespace)
+                Namespace == other.Namespace ||
+                Namespace != null &&
+                Namespace.Equals(other.Namespace)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.BuildNumber == other.BuildNumber ||
-                this.BuildNumber != null &&
-                this.BuildNumber.Equals(other.BuildNumber)
+                BuildNumber == other.BuildNumber ||
+                BuildNumber != null &&
+                BuildNumber.Equals(other.BuildNumber)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class JourneyAppEventsNotificationApp : IEquatable<JourneyAppEven
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Namespace != null)
+            if (Namespace != null)
             {
-                hash = hash * 59 + this.Namespace.GetHashCode();
+                hash = hash * 59 + Namespace.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.BuildNumber != null)
+            if (BuildNumber != null)
             {
-                hash = hash * 59 + this.BuildNumber.GetHashCode();
+                hash = hash * 59 + BuildNumber.GetHashCode();
             }
 
             return hash;

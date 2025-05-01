@@ -63,7 +63,7 @@ public partial class SocialMediaDetailDataContainer : IEquatable<SocialMediaDeta
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SocialMediaDetailDataContainer);
+        return Equals(obj as SocialMediaDetailDataContainer);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class SocialMediaDetailDataContainer : IEquatable<SocialMediaDeta
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.Messages == other.Messages ||
-                this.Messages != null &&
-                this.Messages.SequenceEqual(other.Messages)
+                Messages == other.Messages ||
+                Messages != null &&
+                Messages.SequenceEqual(other.Messages)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class SocialMediaDetailDataContainer : IEquatable<SocialMediaDeta
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.Messages != null)
+            if (Messages != null)
             {
-                hash = hash * 59 + this.Messages.GetHashCode();
+                hash = hash * 59 + Messages.GetHashCode();
             }
 
             return hash;

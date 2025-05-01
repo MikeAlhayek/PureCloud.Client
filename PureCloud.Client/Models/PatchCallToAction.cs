@@ -103,7 +103,7 @@ public partial class PatchCallToAction : IEquatable<PatchCallToAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchCallToAction);
+        return Equals(obj as PatchCallToAction);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class PatchCallToAction : IEquatable<PatchCallToAction>
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Target == other.Target ||
-                this.Target != null &&
-                this.Target.Equals(other.Target)
+                Target == other.Target ||
+                Target != null &&
+                Target.Equals(other.Target)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class PatchCallToAction : IEquatable<PatchCallToAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Target != null)
+            if (Target != null)
             {
-                hash = hash * 59 + this.Target.GetHashCode();
+                hash = hash * 59 + Target.GetHashCode();
             }
 
             return hash;

@@ -103,7 +103,7 @@ public partial class ReportingInterval : IEquatable<ReportingInterval>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingInterval);
+        return Equals(obj as ReportingInterval);
     }
 
     /// <summary>
@@ -121,14 +121,14 @@ public partial class ReportingInterval : IEquatable<ReportingInterval>
 
         return true &&
             (
-                this.IntervalType == other.IntervalType ||
-                this.IntervalType != null &&
-                this.IntervalType.Equals(other.IntervalType)
+                IntervalType == other.IntervalType ||
+                IntervalType != null &&
+                IntervalType.Equals(other.IntervalType)
             ) &&
             (
-                this.IntervalValue == other.IntervalValue ||
-                this.IntervalValue != null &&
-                this.IntervalValue.Equals(other.IntervalValue)
+                IntervalValue == other.IntervalValue ||
+                IntervalValue != null &&
+                IntervalValue.Equals(other.IntervalValue)
             );
     }
 
@@ -143,14 +143,14 @@ public partial class ReportingInterval : IEquatable<ReportingInterval>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IntervalType != null)
+            if (IntervalType != null)
             {
-                hash = hash * 59 + this.IntervalType.GetHashCode();
+                hash = hash * 59 + IntervalType.GetHashCode();
             }
 
-            if (this.IntervalValue != null)
+            if (IntervalValue != null)
             {
-                hash = hash * 59 + this.IntervalValue.GetHashCode();
+                hash = hash * 59 + IntervalValue.GetHashCode();
             }
 
             return hash;

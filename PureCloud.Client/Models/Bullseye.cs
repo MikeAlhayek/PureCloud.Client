@@ -52,7 +52,7 @@ public partial class Bullseye : IEquatable<Bullseye>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Bullseye);
+        return Equals(obj as Bullseye);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class Bullseye : IEquatable<Bullseye>
 
         return true &&
             (
-                this.Rings == other.Rings ||
-                this.Rings != null &&
-                this.Rings.SequenceEqual(other.Rings)
+                Rings == other.Rings ||
+                Rings != null &&
+                Rings.SequenceEqual(other.Rings)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class Bullseye : IEquatable<Bullseye>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Rings != null)
+            if (Rings != null)
             {
-                hash = hash * 59 + this.Rings.GetHashCode();
+                hash = hash * 59 + Rings.GetHashCode();
             }
 
             return hash;

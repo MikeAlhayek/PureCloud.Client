@@ -41,7 +41,7 @@ public partial class ExternalContactsOrganizationChangedTopicObject : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsOrganizationChangedTopicObject);
+        return Equals(obj as ExternalContactsOrganizationChangedTopicObject);
     }
 
     /// <summary>

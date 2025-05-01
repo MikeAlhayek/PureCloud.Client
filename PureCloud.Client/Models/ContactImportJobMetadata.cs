@@ -118,7 +118,7 @@ public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetad
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactImportJobMetadata);
+        return Equals(obj as ContactImportJobMetadata);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetad
 
         return true &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.DryRunFailedCount == other.DryRunFailedCount ||
-                this.DryRunFailedCount != null &&
-                this.DryRunFailedCount.Equals(other.DryRunFailedCount)
+                DryRunFailedCount == other.DryRunFailedCount ||
+                DryRunFailedCount != null &&
+                DryRunFailedCount.Equals(other.DryRunFailedCount)
             ) &&
             (
-                this.DryRunSuccessCount == other.DryRunSuccessCount ||
-                this.DryRunSuccessCount != null &&
-                this.DryRunSuccessCount.Equals(other.DryRunSuccessCount)
+                DryRunSuccessCount == other.DryRunSuccessCount ||
+                DryRunSuccessCount != null &&
+                DryRunSuccessCount.Equals(other.DryRunSuccessCount)
             ) &&
             (
-                this.DryRunReportDownloadUrl == other.DryRunReportDownloadUrl ||
-                this.DryRunReportDownloadUrl != null &&
-                this.DryRunReportDownloadUrl.Equals(other.DryRunReportDownloadUrl)
+                DryRunReportDownloadUrl == other.DryRunReportDownloadUrl ||
+                DryRunReportDownloadUrl != null &&
+                DryRunReportDownloadUrl.Equals(other.DryRunReportDownloadUrl)
             ) &&
             (
-                this.ImportFailedCount == other.ImportFailedCount ||
-                this.ImportFailedCount != null &&
-                this.ImportFailedCount.Equals(other.ImportFailedCount)
+                ImportFailedCount == other.ImportFailedCount ||
+                ImportFailedCount != null &&
+                ImportFailedCount.Equals(other.ImportFailedCount)
             ) &&
             (
-                this.ImportSuccessCount == other.ImportSuccessCount ||
-                this.ImportSuccessCount != null &&
-                this.ImportSuccessCount.Equals(other.ImportSuccessCount)
+                ImportSuccessCount == other.ImportSuccessCount ||
+                ImportSuccessCount != null &&
+                ImportSuccessCount.Equals(other.ImportSuccessCount)
             ) &&
             (
-                this.ImportReportDownloadUrl == other.ImportReportDownloadUrl ||
-                this.ImportReportDownloadUrl != null &&
-                this.ImportReportDownloadUrl.Equals(other.ImportReportDownloadUrl)
+                ImportReportDownloadUrl == other.ImportReportDownloadUrl ||
+                ImportReportDownloadUrl != null &&
+                ImportReportDownloadUrl.Equals(other.ImportReportDownloadUrl)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class ContactImportJobMetadata : IEquatable<ContactImportJobMetad
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.DryRunFailedCount != null)
+            if (DryRunFailedCount != null)
             {
-                hash = hash * 59 + this.DryRunFailedCount.GetHashCode();
+                hash = hash * 59 + DryRunFailedCount.GetHashCode();
             }
 
-            if (this.DryRunSuccessCount != null)
+            if (DryRunSuccessCount != null)
             {
-                hash = hash * 59 + this.DryRunSuccessCount.GetHashCode();
+                hash = hash * 59 + DryRunSuccessCount.GetHashCode();
             }
 
-            if (this.DryRunReportDownloadUrl != null)
+            if (DryRunReportDownloadUrl != null)
             {
-                hash = hash * 59 + this.DryRunReportDownloadUrl.GetHashCode();
+                hash = hash * 59 + DryRunReportDownloadUrl.GetHashCode();
             }
 
-            if (this.ImportFailedCount != null)
+            if (ImportFailedCount != null)
             {
-                hash = hash * 59 + this.ImportFailedCount.GetHashCode();
+                hash = hash * 59 + ImportFailedCount.GetHashCode();
             }
 
-            if (this.ImportSuccessCount != null)
+            if (ImportSuccessCount != null)
             {
-                hash = hash * 59 + this.ImportSuccessCount.GetHashCode();
+                hash = hash * 59 + ImportSuccessCount.GetHashCode();
             }
 
-            if (this.ImportReportDownloadUrl != null)
+            if (ImportReportDownloadUrl != null)
             {
-                hash = hash * 59 + this.ImportReportDownloadUrl.GetHashCode();
+                hash = hash * 59 + ImportReportDownloadUrl.GetHashCode();
             }
 
             return hash;

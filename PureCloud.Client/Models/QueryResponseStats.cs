@@ -53,7 +53,7 @@ public partial class QueryResponseStats : IEquatable<QueryResponseStats>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueryResponseStats);
+        return Equals(obj as QueryResponseStats);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class QueryResponseStats : IEquatable<QueryResponseStats>
 
         return true &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class QueryResponseStats : IEquatable<QueryResponseStats>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
             return hash;

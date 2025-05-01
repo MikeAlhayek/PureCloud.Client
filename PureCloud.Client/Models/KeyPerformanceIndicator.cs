@@ -377,7 +377,7 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KeyPerformanceIndicator);
+        return Equals(obj as KeyPerformanceIndicator);
     }
 
     /// <summary>
@@ -395,79 +395,79 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.OptimizationType == other.OptimizationType ||
-                this.OptimizationType != null &&
-                this.OptimizationType.Equals(other.OptimizationType)
+                OptimizationType == other.OptimizationType ||
+                OptimizationType != null &&
+                OptimizationType.Equals(other.OptimizationType)
             ) &&
             (
-                this.ProblemType == other.ProblemType ||
-                this.ProblemType != null &&
-                this.ProblemType.Equals(other.ProblemType)
+                ProblemType == other.ProblemType ||
+                ProblemType != null &&
+                ProblemType.Equals(other.ProblemType)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.KpiType == other.KpiType ||
-                this.KpiType != null &&
-                this.KpiType.Equals(other.KpiType)
+                KpiType == other.KpiType ||
+                KpiType != null &&
+                KpiType.Equals(other.KpiType)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.WrapUpCodeConfig == other.WrapUpCodeConfig ||
-                this.WrapUpCodeConfig != null &&
-                this.WrapUpCodeConfig.Equals(other.WrapUpCodeConfig)
+                WrapUpCodeConfig == other.WrapUpCodeConfig ||
+                WrapUpCodeConfig != null &&
+                WrapUpCodeConfig.Equals(other.WrapUpCodeConfig)
             ) &&
             (
-                this.OutcomeConfig == other.OutcomeConfig ||
-                this.OutcomeConfig != null &&
-                this.OutcomeConfig.Equals(other.OutcomeConfig)
+                OutcomeConfig == other.OutcomeConfig ||
+                OutcomeConfig != null &&
+                OutcomeConfig.Equals(other.OutcomeConfig)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.KpiGroup == other.KpiGroup ||
-                this.KpiGroup != null &&
-                this.KpiGroup.Equals(other.KpiGroup)
+                KpiGroup == other.KpiGroup ||
+                KpiGroup != null &&
+                KpiGroup.Equals(other.KpiGroup)
             ) &&
             (
-                this.Queues == other.Queues ||
-                this.Queues != null &&
-                this.Queues.SequenceEqual(other.Queues)
+                Queues == other.Queues ||
+                Queues != null &&
+                Queues.SequenceEqual(other.Queues)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -482,79 +482,79 @@ public partial class KeyPerformanceIndicator : IEquatable<KeyPerformanceIndicato
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.OptimizationType != null)
+            if (OptimizationType != null)
             {
-                hash = hash * 59 + this.OptimizationType.GetHashCode();
+                hash = hash * 59 + OptimizationType.GetHashCode();
             }
 
-            if (this.ProblemType != null)
+            if (ProblemType != null)
             {
-                hash = hash * 59 + this.ProblemType.GetHashCode();
+                hash = hash * 59 + ProblemType.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.KpiType != null)
+            if (KpiType != null)
             {
-                hash = hash * 59 + this.KpiType.GetHashCode();
+                hash = hash * 59 + KpiType.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.WrapUpCodeConfig != null)
+            if (WrapUpCodeConfig != null)
             {
-                hash = hash * 59 + this.WrapUpCodeConfig.GetHashCode();
+                hash = hash * 59 + WrapUpCodeConfig.GetHashCode();
             }
 
-            if (this.OutcomeConfig != null)
+            if (OutcomeConfig != null)
             {
-                hash = hash * 59 + this.OutcomeConfig.GetHashCode();
+                hash = hash * 59 + OutcomeConfig.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.KpiGroup != null)
+            if (KpiGroup != null)
             {
-                hash = hash * 59 + this.KpiGroup.GetHashCode();
+                hash = hash * 59 + KpiGroup.GetHashCode();
             }
 
-            if (this.Queues != null)
+            if (Queues != null)
             {
-                hash = hash * 59 + this.Queues.GetHashCode();
+                hash = hash * 59 + Queues.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

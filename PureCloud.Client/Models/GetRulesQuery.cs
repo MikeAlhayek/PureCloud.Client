@@ -329,7 +329,7 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GetRulesQuery);
+        return Equals(obj as GetRulesQuery);
     }
 
     /// <summary>
@@ -347,49 +347,49 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
 
         return true &&
             (
-                this.RuleType == other.RuleType ||
-                this.RuleType != null &&
-                this.RuleType.Equals(other.RuleType)
+                RuleType == other.RuleType ||
+                RuleType != null &&
+                RuleType.Equals(other.RuleType)
             ) &&
             (
-                this.QueryType == other.QueryType ||
-                this.QueryType != null &&
-                this.QueryType.Equals(other.QueryType)
+                QueryType == other.QueryType ||
+                QueryType != null &&
+                QueryType.Equals(other.QueryType)
             ) &&
             (
-                this.EnabledType == other.EnabledType ||
-                this.EnabledType != null &&
-                this.EnabledType.Equals(other.EnabledType)
+                EnabledType == other.EnabledType ||
+                EnabledType != null &&
+                EnabledType.Equals(other.EnabledType)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.SortBy == other.SortBy ||
-                this.SortBy != null &&
-                this.SortBy.Equals(other.SortBy)
+                SortBy == other.SortBy ||
+                SortBy != null &&
+                SortBy.Equals(other.SortBy)
             ) &&
             (
-                this.SortOrder == other.SortOrder ||
-                this.SortOrder != null &&
-                this.SortOrder.Equals(other.SortOrder)
+                SortOrder == other.SortOrder ||
+                SortOrder != null &&
+                SortOrder.Equals(other.SortOrder)
             ) &&
             (
-                this.RuleName == other.RuleName ||
-                this.RuleName != null &&
-                this.RuleName.Equals(other.RuleName)
+                RuleName == other.RuleName ||
+                RuleName != null &&
+                RuleName.Equals(other.RuleName)
             ) &&
             (
-                this.NameSearchType == other.NameSearchType ||
-                this.NameSearchType != null &&
-                this.NameSearchType.Equals(other.NameSearchType)
+                NameSearchType == other.NameSearchType ||
+                NameSearchType != null &&
+                NameSearchType.Equals(other.NameSearchType)
             );
     }
 
@@ -404,49 +404,49 @@ public partial class GetRulesQuery : IEquatable<GetRulesQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RuleType != null)
+            if (RuleType != null)
             {
-                hash = hash * 59 + this.RuleType.GetHashCode();
+                hash = hash * 59 + RuleType.GetHashCode();
             }
 
-            if (this.QueryType != null)
+            if (QueryType != null)
             {
-                hash = hash * 59 + this.QueryType.GetHashCode();
+                hash = hash * 59 + QueryType.GetHashCode();
             }
 
-            if (this.EnabledType != null)
+            if (EnabledType != null)
             {
-                hash = hash * 59 + this.EnabledType.GetHashCode();
+                hash = hash * 59 + EnabledType.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.SortBy != null)
+            if (SortBy != null)
             {
-                hash = hash * 59 + this.SortBy.GetHashCode();
+                hash = hash * 59 + SortBy.GetHashCode();
             }
 
-            if (this.SortOrder != null)
+            if (SortOrder != null)
             {
-                hash = hash * 59 + this.SortOrder.GetHashCode();
+                hash = hash * 59 + SortOrder.GetHashCode();
             }
 
-            if (this.RuleName != null)
+            if (RuleName != null)
             {
-                hash = hash * 59 + this.RuleName.GetHashCode();
+                hash = hash * 59 + RuleName.GetHashCode();
             }
 
-            if (this.NameSearchType != null)
+            if (NameSearchType != null)
             {
-                hash = hash * 59 + this.NameSearchType.GetHashCode();
+                hash = hash * 59 + NameSearchType.GetHashCode();
             }
 
             return hash;

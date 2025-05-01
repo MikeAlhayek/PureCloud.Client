@@ -93,7 +93,7 @@ public partial class DocumentUpload : IEquatable<DocumentUpload>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentUpload);
+        return Equals(obj as DocumentUpload);
     }
 
     /// <summary>
@@ -111,24 +111,24 @@ public partial class DocumentUpload : IEquatable<DocumentUpload>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Workspace == other.Workspace ||
-                this.Workspace != null &&
-                this.Workspace.Equals(other.Workspace)
+                Workspace == other.Workspace ||
+                Workspace != null &&
+                Workspace.Equals(other.Workspace)
             ) &&
             (
-                this.Tags == other.Tags ||
-                this.Tags != null &&
-                this.Tags.SequenceEqual(other.Tags)
+                Tags == other.Tags ||
+                Tags != null &&
+                Tags.SequenceEqual(other.Tags)
             ) &&
             (
-                this.TagIds == other.TagIds ||
-                this.TagIds != null &&
-                this.TagIds.SequenceEqual(other.TagIds)
+                TagIds == other.TagIds ||
+                TagIds != null &&
+                TagIds.SequenceEqual(other.TagIds)
             );
     }
 
@@ -143,24 +143,24 @@ public partial class DocumentUpload : IEquatable<DocumentUpload>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Workspace != null)
+            if (Workspace != null)
             {
-                hash = hash * 59 + this.Workspace.GetHashCode();
+                hash = hash * 59 + Workspace.GetHashCode();
             }
 
-            if (this.Tags != null)
+            if (Tags != null)
             {
-                hash = hash * 59 + this.Tags.GetHashCode();
+                hash = hash * 59 + Tags.GetHashCode();
             }
 
-            if (this.TagIds != null)
+            if (TagIds != null)
             {
-                hash = hash * 59 + this.TagIds.GetHashCode();
+                hash = hash * 59 + TagIds.GetHashCode();
             }
 
             return hash;

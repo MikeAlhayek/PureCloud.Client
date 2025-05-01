@@ -1971,12 +1971,12 @@ public partial class LearningApi : ILearningApi
     /// <returns></returns>
     public LearningApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1990,17 +1990,17 @@ public partial class LearningApi : ILearningApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -2010,7 +2010,7 @@ public partial class LearningApi : ILearningApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -2036,7 +2036,7 @@ public partial class LearningApi : ILearningApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -2048,7 +2048,7 @@ public partial class LearningApi : ILearningApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -2093,7 +2093,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2102,7 +2102,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2115,7 +2115,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
@@ -2131,11 +2131,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2209,7 +2209,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2218,7 +2218,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2231,7 +2231,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
@@ -2247,11 +2247,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2325,7 +2325,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2334,7 +2334,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2347,7 +2347,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -2363,11 +2363,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2441,7 +2441,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2450,7 +2450,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2463,7 +2463,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -2479,11 +2479,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2560,7 +2560,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2569,7 +2569,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2582,13 +2582,13 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -2602,11 +2602,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2632,7 +2632,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2683,7 +2683,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2692,7 +2692,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2705,13 +2705,13 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -2725,11 +2725,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2755,7 +2755,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2817,7 +2817,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2826,7 +2826,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2839,28 +2839,28 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         if (stepId != null)
         {
-            localVarPathParams.Add("stepId", this.Configuration.ApiClient.ParameterToString(stepId));
+            localVarPathParams.Add("stepId", Configuration.ApiClient.ParameterToString(stepId));
         }
 
         // Query params
         if (shareableContentObjectId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("shareableContentObjectId", this.Configuration.ApiClient.ParameterToString(shareableContentObjectId)));
+            localVarQueryParams.Add(new Tuple<string, string>("shareableContentObjectId", Configuration.ApiClient.ParameterToString(shareableContentObjectId)));
         }
 
         if (defaultShareableContentObject != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("defaultShareableContentObject", this.Configuration.ApiClient.ParameterToString(defaultShareableContentObject)));
+            localVarQueryParams.Add(new Tuple<string, string>("defaultShareableContentObject", Configuration.ApiClient.ParameterToString(defaultShareableContentObject)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -2874,11 +2874,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2904,7 +2904,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentStep>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentStep)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentStep)),
+            (LearningAssignmentStep)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentStep)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2967,7 +2967,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2976,7 +2976,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2989,28 +2989,28 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         if (stepId != null)
         {
-            localVarPathParams.Add("stepId", this.Configuration.ApiClient.ParameterToString(stepId));
+            localVarPathParams.Add("stepId", Configuration.ApiClient.ParameterToString(stepId));
         }
 
         // Query params
         if (shareableContentObjectId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("shareableContentObjectId", this.Configuration.ApiClient.ParameterToString(shareableContentObjectId)));
+            localVarQueryParams.Add(new Tuple<string, string>("shareableContentObjectId", Configuration.ApiClient.ParameterToString(shareableContentObjectId)));
         }
 
         if (defaultShareableContentObject != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("defaultShareableContentObject", this.Configuration.ApiClient.ParameterToString(defaultShareableContentObject)));
+            localVarQueryParams.Add(new Tuple<string, string>("defaultShareableContentObject", Configuration.ApiClient.ParameterToString(defaultShareableContentObject)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3024,11 +3024,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3054,7 +3054,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentStep>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentStep)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentStep)),
+            (LearningAssignmentStep)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentStep)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3126,7 +3126,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3135,7 +3135,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3150,77 +3150,77 @@ public partial class LearningApi : ILearningApi
         // Query params
         if (moduleId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId)));
+            localVarQueryParams.Add(new Tuple<string, string>("moduleId", Configuration.ApiClient.ParameterToString(moduleId)));
         }
 
         if (interval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("interval", this.Configuration.ApiClient.ParameterToString(interval)));
+            localVarQueryParams.Add(new Tuple<string, string>("interval", Configuration.ApiClient.ParameterToString(interval)));
         }
 
         if (completionInterval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("completionInterval", this.Configuration.ApiClient.ParameterToString(completionInterval)));
+            localVarQueryParams.Add(new Tuple<string, string>("completionInterval", Configuration.ApiClient.ParameterToString(completionInterval)));
         }
 
         if (overdue != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("overdue", this.Configuration.ApiClient.ParameterToString(overdue)));
+            localVarQueryParams.Add(new Tuple<string, string>("overdue", Configuration.ApiClient.ParameterToString(overdue)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pass != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pass", this.Configuration.ApiClient.ParameterToString(pass)));
+            localVarQueryParams.Add(new Tuple<string, string>("pass", Configuration.ApiClient.ParameterToString(pass)));
         }
 
         if (minPercentageScore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("minPercentageScore", this.Configuration.ApiClient.ParameterToString(minPercentageScore)));
+            localVarQueryParams.Add(new Tuple<string, string>("minPercentageScore", Configuration.ApiClient.ParameterToString(minPercentageScore)));
         }
 
         if (maxPercentageScore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("maxPercentageScore", this.Configuration.ApiClient.ParameterToString(maxPercentageScore)));
+            localVarQueryParams.Add(new Tuple<string, string>("maxPercentageScore", Configuration.ApiClient.ParameterToString(maxPercentageScore)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (userId != null)
         {
-            userId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            userId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (types != null)
         {
-            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", this.Configuration.ApiClient.ParameterToString(obj))); });
+            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (states != null)
         {
-            states.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("states", this.Configuration.ApiClient.ParameterToString(obj))); });
+            states.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("states", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3234,11 +3234,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3264,7 +3264,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentsDomainEntity>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentsDomainEntity)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentsDomainEntity)),
+            (LearningAssignmentsDomainEntity)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentsDomainEntity)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3336,7 +3336,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3345,7 +3345,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3360,77 +3360,77 @@ public partial class LearningApi : ILearningApi
         // Query params
         if (moduleId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId)));
+            localVarQueryParams.Add(new Tuple<string, string>("moduleId", Configuration.ApiClient.ParameterToString(moduleId)));
         }
 
         if (interval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("interval", this.Configuration.ApiClient.ParameterToString(interval)));
+            localVarQueryParams.Add(new Tuple<string, string>("interval", Configuration.ApiClient.ParameterToString(interval)));
         }
 
         if (completionInterval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("completionInterval", this.Configuration.ApiClient.ParameterToString(completionInterval)));
+            localVarQueryParams.Add(new Tuple<string, string>("completionInterval", Configuration.ApiClient.ParameterToString(completionInterval)));
         }
 
         if (overdue != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("overdue", this.Configuration.ApiClient.ParameterToString(overdue)));
+            localVarQueryParams.Add(new Tuple<string, string>("overdue", Configuration.ApiClient.ParameterToString(overdue)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pass != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pass", this.Configuration.ApiClient.ParameterToString(pass)));
+            localVarQueryParams.Add(new Tuple<string, string>("pass", Configuration.ApiClient.ParameterToString(pass)));
         }
 
         if (minPercentageScore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("minPercentageScore", this.Configuration.ApiClient.ParameterToString(minPercentageScore)));
+            localVarQueryParams.Add(new Tuple<string, string>("minPercentageScore", Configuration.ApiClient.ParameterToString(minPercentageScore)));
         }
 
         if (maxPercentageScore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("maxPercentageScore", this.Configuration.ApiClient.ParameterToString(maxPercentageScore)));
+            localVarQueryParams.Add(new Tuple<string, string>("maxPercentageScore", Configuration.ApiClient.ParameterToString(maxPercentageScore)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (userId != null)
         {
-            userId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            userId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (types != null)
         {
-            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", this.Configuration.ApiClient.ParameterToString(obj))); });
+            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (states != null)
         {
-            states.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("states", this.Configuration.ApiClient.ParameterToString(obj))); });
+            states.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("states", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3444,11 +3444,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3474,7 +3474,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentsDomainEntity>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentsDomainEntity)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentsDomainEntity)),
+            (LearningAssignmentsDomainEntity)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentsDomainEntity)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3544,7 +3544,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3553,7 +3553,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3568,72 +3568,72 @@ public partial class LearningApi : ILearningApi
         // Query params
         if (moduleId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId)));
+            localVarQueryParams.Add(new Tuple<string, string>("moduleId", Configuration.ApiClient.ParameterToString(moduleId)));
         }
 
         if (interval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("interval", this.Configuration.ApiClient.ParameterToString(interval)));
+            localVarQueryParams.Add(new Tuple<string, string>("interval", Configuration.ApiClient.ParameterToString(interval)));
         }
 
         if (completionInterval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("completionInterval", this.Configuration.ApiClient.ParameterToString(completionInterval)));
+            localVarQueryParams.Add(new Tuple<string, string>("completionInterval", Configuration.ApiClient.ParameterToString(completionInterval)));
         }
 
         if (overdue != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("overdue", this.Configuration.ApiClient.ParameterToString(overdue)));
+            localVarQueryParams.Add(new Tuple<string, string>("overdue", Configuration.ApiClient.ParameterToString(overdue)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pass != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pass", this.Configuration.ApiClient.ParameterToString(pass)));
+            localVarQueryParams.Add(new Tuple<string, string>("pass", Configuration.ApiClient.ParameterToString(pass)));
         }
 
         if (minPercentageScore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("minPercentageScore", this.Configuration.ApiClient.ParameterToString(minPercentageScore)));
+            localVarQueryParams.Add(new Tuple<string, string>("minPercentageScore", Configuration.ApiClient.ParameterToString(minPercentageScore)));
         }
 
         if (maxPercentageScore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("maxPercentageScore", this.Configuration.ApiClient.ParameterToString(maxPercentageScore)));
+            localVarQueryParams.Add(new Tuple<string, string>("maxPercentageScore", Configuration.ApiClient.ParameterToString(maxPercentageScore)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (types != null)
         {
-            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", this.Configuration.ApiClient.ParameterToString(obj))); });
+            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (states != null)
         {
-            states.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("states", this.Configuration.ApiClient.ParameterToString(obj))); });
+            states.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("states", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3647,11 +3647,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3677,7 +3677,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentsDomainEntity>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentsDomainEntity)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentsDomainEntity)),
+            (LearningAssignmentsDomainEntity)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentsDomainEntity)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3747,7 +3747,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3756,7 +3756,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3771,72 +3771,72 @@ public partial class LearningApi : ILearningApi
         // Query params
         if (moduleId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId)));
+            localVarQueryParams.Add(new Tuple<string, string>("moduleId", Configuration.ApiClient.ParameterToString(moduleId)));
         }
 
         if (interval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("interval", this.Configuration.ApiClient.ParameterToString(interval)));
+            localVarQueryParams.Add(new Tuple<string, string>("interval", Configuration.ApiClient.ParameterToString(interval)));
         }
 
         if (completionInterval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("completionInterval", this.Configuration.ApiClient.ParameterToString(completionInterval)));
+            localVarQueryParams.Add(new Tuple<string, string>("completionInterval", Configuration.ApiClient.ParameterToString(completionInterval)));
         }
 
         if (overdue != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("overdue", this.Configuration.ApiClient.ParameterToString(overdue)));
+            localVarQueryParams.Add(new Tuple<string, string>("overdue", Configuration.ApiClient.ParameterToString(overdue)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pass != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pass", this.Configuration.ApiClient.ParameterToString(pass)));
+            localVarQueryParams.Add(new Tuple<string, string>("pass", Configuration.ApiClient.ParameterToString(pass)));
         }
 
         if (minPercentageScore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("minPercentageScore", this.Configuration.ApiClient.ParameterToString(minPercentageScore)));
+            localVarQueryParams.Add(new Tuple<string, string>("minPercentageScore", Configuration.ApiClient.ParameterToString(minPercentageScore)));
         }
 
         if (maxPercentageScore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("maxPercentageScore", this.Configuration.ApiClient.ParameterToString(maxPercentageScore)));
+            localVarQueryParams.Add(new Tuple<string, string>("maxPercentageScore", Configuration.ApiClient.ParameterToString(maxPercentageScore)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (types != null)
         {
-            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", this.Configuration.ApiClient.ParameterToString(obj))); });
+            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (states != null)
         {
-            states.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("states", this.Configuration.ApiClient.ParameterToString(obj))); });
+            states.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("states", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3850,11 +3850,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3880,7 +3880,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentsDomainEntity>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentsDomainEntity)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentsDomainEntity)),
+            (LearningAssignmentsDomainEntity)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentsDomainEntity)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3931,7 +3931,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3940,7 +3940,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3953,13 +3953,13 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3973,11 +3973,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4003,7 +4003,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
+            (LearningModule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4054,7 +4054,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4063,7 +4063,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4076,13 +4076,13 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4096,11 +4096,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4126,7 +4126,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
+            (LearningModule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4182,7 +4182,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4191,7 +4191,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4204,12 +4204,12 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -4225,11 +4225,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4255,7 +4255,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModuleJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModuleJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleJobResponse)),
+            (LearningModuleJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4312,7 +4312,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4321,7 +4321,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4334,12 +4334,12 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -4355,11 +4355,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4385,7 +4385,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModuleJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModuleJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleJobResponse)),
+            (LearningModuleJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4434,7 +4434,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4443,7 +4443,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4456,7 +4456,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -4472,11 +4472,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4502,7 +4502,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModulePreviewGetResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModulePreviewGetResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePreviewGetResponse)),
+            (LearningModulePreviewGetResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePreviewGetResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4551,7 +4551,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4560,7 +4560,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4573,7 +4573,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -4589,11 +4589,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4619,7 +4619,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModulePreviewGetResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModulePreviewGetResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePreviewGetResponse)),
+            (LearningModulePreviewGetResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePreviewGetResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4668,7 +4668,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4677,7 +4677,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4690,7 +4690,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -4706,11 +4706,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4736,7 +4736,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModuleRule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModuleRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleRule)),
+            (LearningModuleRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4785,7 +4785,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4794,7 +4794,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4807,7 +4807,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -4823,11 +4823,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4853,7 +4853,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModuleRule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModuleRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleRule)),
+            (LearningModuleRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4911,7 +4911,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4920,7 +4920,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4933,18 +4933,18 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4958,11 +4958,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4988,7 +4988,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
+            (LearningModule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5047,7 +5047,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5056,7 +5056,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5069,18 +5069,18 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -5094,11 +5094,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5124,7 +5124,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
+            (LearningModule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5188,7 +5188,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5197,7 +5197,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5212,57 +5212,57 @@ public partial class LearningApi : ILearningApi
         // Query params
         if (isArchived != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("isArchived", this.Configuration.ApiClient.ParameterToString(isArchived)));
+            localVarQueryParams.Add(new Tuple<string, string>("isArchived", Configuration.ApiClient.ParameterToString(isArchived)));
         }
 
         if (types != null)
         {
-            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", this.Configuration.ApiClient.ParameterToString(obj))); });
+            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (searchTerm != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("searchTerm", this.Configuration.ApiClient.ParameterToString(searchTerm)));
+            localVarQueryParams.Add(new Tuple<string, string>("searchTerm", Configuration.ApiClient.ParameterToString(searchTerm)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (isPublished != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("isPublished", this.Configuration.ApiClient.ParameterToString(isPublished)));
+            localVarQueryParams.Add(new Tuple<string, string>("isPublished", Configuration.ApiClient.ParameterToString(isPublished)));
         }
 
         if (statuses != null)
         {
-            statuses.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("statuses", this.Configuration.ApiClient.ParameterToString(obj))); });
+            statuses.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("statuses", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (externalIds != null)
         {
-            externalIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("externalIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            externalIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("externalIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -5276,11 +5276,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5306,7 +5306,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModulesDomainEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LearningModulesDomainEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulesDomainEntityListing)),
+            (LearningModulesDomainEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulesDomainEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5370,7 +5370,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5379,7 +5379,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5394,57 +5394,57 @@ public partial class LearningApi : ILearningApi
         // Query params
         if (isArchived != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("isArchived", this.Configuration.ApiClient.ParameterToString(isArchived)));
+            localVarQueryParams.Add(new Tuple<string, string>("isArchived", Configuration.ApiClient.ParameterToString(isArchived)));
         }
 
         if (types != null)
         {
-            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", this.Configuration.ApiClient.ParameterToString(obj))); });
+            types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (searchTerm != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("searchTerm", this.Configuration.ApiClient.ParameterToString(searchTerm)));
+            localVarQueryParams.Add(new Tuple<string, string>("searchTerm", Configuration.ApiClient.ParameterToString(searchTerm)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (isPublished != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("isPublished", this.Configuration.ApiClient.ParameterToString(isPublished)));
+            localVarQueryParams.Add(new Tuple<string, string>("isPublished", Configuration.ApiClient.ParameterToString(isPublished)));
         }
 
         if (statuses != null)
         {
-            statuses.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("statuses", this.Configuration.ApiClient.ParameterToString(obj))); });
+            statuses.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("statuses", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (externalIds != null)
         {
-            externalIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("externalIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            externalIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("externalIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -5458,11 +5458,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5488,7 +5488,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModulesDomainEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LearningModulesDomainEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulesDomainEntityListing)),
+            (LearningModulesDomainEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulesDomainEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5549,7 +5549,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5558,7 +5558,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5573,37 +5573,37 @@ public partial class LearningApi : ILearningApi
         // Query params
         if (userIds != null)
         {
-            userIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            userIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (searchTerm != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("searchTerm", this.Configuration.ApiClient.ParameterToString(searchTerm)));
+            localVarQueryParams.Add(new Tuple<string, string>("searchTerm", Configuration.ApiClient.ParameterToString(searchTerm)));
         }
 
         if (overdue != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("overdue", this.Configuration.ApiClient.ParameterToString(overdue)));
+            localVarQueryParams.Add(new Tuple<string, string>("overdue", Configuration.ApiClient.ParameterToString(overdue)));
         }
 
         if (assignmentStates != null)
         {
-            assignmentStates.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("assignmentStates", this.Configuration.ApiClient.ParameterToString(obj))); });
+            assignmentStates.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("assignmentStates", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -5617,11 +5617,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5647,7 +5647,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<AssignedLearningModuleDomainEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (AssignedLearningModuleDomainEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignedLearningModuleDomainEntityListing)),
+            (AssignedLearningModuleDomainEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignedLearningModuleDomainEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5708,7 +5708,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5717,7 +5717,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5732,37 +5732,37 @@ public partial class LearningApi : ILearningApi
         // Query params
         if (userIds != null)
         {
-            userIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            userIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (searchTerm != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("searchTerm", this.Configuration.ApiClient.ParameterToString(searchTerm)));
+            localVarQueryParams.Add(new Tuple<string, string>("searchTerm", Configuration.ApiClient.ParameterToString(searchTerm)));
         }
 
         if (overdue != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("overdue", this.Configuration.ApiClient.ParameterToString(overdue)));
+            localVarQueryParams.Add(new Tuple<string, string>("overdue", Configuration.ApiClient.ParameterToString(overdue)));
         }
 
         if (assignmentStates != null)
         {
-            assignmentStates.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("assignmentStates", this.Configuration.ApiClient.ParameterToString(obj))); });
+            assignmentStates.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("assignmentStates", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -5776,11 +5776,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5806,7 +5806,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<AssignedLearningModuleDomainEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (AssignedLearningModuleDomainEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignedLearningModuleDomainEntityListing)),
+            (AssignedLearningModuleDomainEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignedLearningModuleDomainEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5855,7 +5855,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5864,7 +5864,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5877,7 +5877,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (coverArtId != null)
         {
-            localVarPathParams.Add("coverArtId", this.Configuration.ApiClient.ParameterToString(coverArtId));
+            localVarPathParams.Add("coverArtId", Configuration.ApiClient.ParameterToString(coverArtId));
         }
 
         // Query params
@@ -5893,11 +5893,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5923,7 +5923,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModuleCoverArtResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModuleCoverArtResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleCoverArtResponse)),
+            (LearningModuleCoverArtResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleCoverArtResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5972,7 +5972,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5981,7 +5981,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5994,7 +5994,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (coverArtId != null)
         {
-            localVarPathParams.Add("coverArtId", this.Configuration.ApiClient.ParameterToString(coverArtId));
+            localVarPathParams.Add("coverArtId", Configuration.ApiClient.ParameterToString(coverArtId));
         }
 
         // Query params
@@ -6010,11 +6010,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6040,7 +6040,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModuleCoverArtResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModuleCoverArtResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleCoverArtResponse)),
+            (LearningModuleCoverArtResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleCoverArtResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6089,7 +6089,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6098,7 +6098,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6111,7 +6111,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (scormId != null)
         {
-            localVarPathParams.Add("scormId", this.Configuration.ApiClient.ParameterToString(scormId));
+            localVarPathParams.Add("scormId", Configuration.ApiClient.ParameterToString(scormId));
         }
 
         // Query params
@@ -6127,11 +6127,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6157,7 +6157,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningScormResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningScormResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScormResponse)),
+            (LearningScormResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScormResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6206,7 +6206,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6215,7 +6215,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6228,7 +6228,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (scormId != null)
         {
-            localVarPathParams.Add("scormId", this.Configuration.ApiClient.ParameterToString(scormId));
+            localVarPathParams.Add("scormId", Configuration.ApiClient.ParameterToString(scormId));
         }
 
         // Query params
@@ -6244,11 +6244,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6274,7 +6274,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningScormResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningScormResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScormResponse)),
+            (LearningScormResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScormResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6326,7 +6326,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6335,7 +6335,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6348,7 +6348,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
@@ -6360,7 +6360,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6373,11 +6373,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6403,7 +6403,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6455,7 +6455,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6464,7 +6464,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6477,7 +6477,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
@@ -6489,7 +6489,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6502,11 +6502,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6532,7 +6532,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6584,7 +6584,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6593,7 +6593,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6606,7 +6606,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
@@ -6618,7 +6618,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6631,11 +6631,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6661,7 +6661,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6713,7 +6713,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6722,7 +6722,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6735,7 +6735,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
@@ -6747,7 +6747,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6760,11 +6760,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6790,7 +6790,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6849,7 +6849,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6858,7 +6858,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6871,12 +6871,12 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         if (stepId != null)
         {
-            localVarPathParams.Add("stepId", this.Configuration.ApiClient.ParameterToString(stepId));
+            localVarPathParams.Add("stepId", Configuration.ApiClient.ParameterToString(stepId));
         }
 
         // Query params
@@ -6888,7 +6888,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6901,11 +6901,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6931,7 +6931,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentStep>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentStep)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentStep)),
+            (LearningAssignmentStep)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentStep)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6991,7 +6991,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7000,7 +7000,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7013,12 +7013,12 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         if (stepId != null)
         {
-            localVarPathParams.Add("stepId", this.Configuration.ApiClient.ParameterToString(stepId));
+            localVarPathParams.Add("stepId", Configuration.ApiClient.ParameterToString(stepId));
         }
 
         // Query params
@@ -7030,7 +7030,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7043,11 +7043,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7073,7 +7073,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentStep>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentStep)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentStep)),
+            (LearningAssignmentStep)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentStep)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7137,7 +7137,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7146,7 +7146,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7159,12 +7159,12 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7176,7 +7176,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7189,11 +7189,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7219,7 +7219,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7285,7 +7285,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7294,7 +7294,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7307,12 +7307,12 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7324,7 +7324,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7337,11 +7337,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7367,7 +7367,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7417,7 +7417,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7426,7 +7426,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7447,7 +7447,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7460,11 +7460,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7490,7 +7490,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<AssessmentScoringSet>(localVarStatusCode,
             localVarHeaders,
-            (AssessmentScoringSet)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssessmentScoringSet)),
+            (AssessmentScoringSet)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssessmentScoringSet)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7540,7 +7540,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7549,7 +7549,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7570,7 +7570,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7583,11 +7583,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7613,7 +7613,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<AssessmentScoringSet>(localVarStatusCode,
             localVarHeaders,
-            (AssessmentScoringSet)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssessmentScoringSet)),
+            (AssessmentScoringSet)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssessmentScoringSet)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7662,7 +7662,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7671,7 +7671,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7684,7 +7684,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
@@ -7700,11 +7700,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7730,7 +7730,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7779,7 +7779,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7788,7 +7788,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7801,7 +7801,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
@@ -7817,11 +7817,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7847,7 +7847,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7896,7 +7896,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7905,7 +7905,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7918,7 +7918,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
@@ -7934,11 +7934,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7964,7 +7964,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8013,7 +8013,7 @@ public partial class LearningApi : ILearningApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8022,7 +8022,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8035,7 +8035,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (assignmentId != null)
         {
-            localVarPathParams.Add("assignmentId", this.Configuration.ApiClient.ParameterToString(assignmentId));
+            localVarPathParams.Add("assignmentId", Configuration.ApiClient.ParameterToString(assignmentId));
         }
 
         // Query params
@@ -8051,11 +8051,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8081,7 +8081,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8126,7 +8126,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8135,7 +8135,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8156,7 +8156,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8169,11 +8169,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8199,7 +8199,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8244,7 +8244,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8253,7 +8253,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8274,7 +8274,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8287,11 +8287,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8317,7 +8317,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignment>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
+            (LearningAssignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8367,7 +8367,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8376,7 +8376,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8397,7 +8397,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8410,11 +8410,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8440,7 +8440,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentAggregateResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentAggregateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentAggregateResponse)),
+            (LearningAssignmentAggregateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentAggregateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8490,7 +8490,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8499,7 +8499,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8520,7 +8520,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8533,11 +8533,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8563,7 +8563,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentAggregateResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentAggregateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentAggregateResponse)),
+            (LearningAssignmentAggregateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentAggregateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8608,7 +8608,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8617,7 +8617,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8638,7 +8638,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8651,11 +8651,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8681,7 +8681,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentBulkAddResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentBulkAddResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentBulkAddResponse)),
+            (LearningAssignmentBulkAddResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentBulkAddResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8726,7 +8726,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8735,7 +8735,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8756,7 +8756,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8769,11 +8769,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8799,7 +8799,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentBulkAddResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentBulkAddResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentBulkAddResponse)),
+            (LearningAssignmentBulkAddResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentBulkAddResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8844,7 +8844,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8853,7 +8853,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8874,7 +8874,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8887,11 +8887,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8917,7 +8917,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentBulkRemoveResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentBulkRemoveResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentBulkRemoveResponse)),
+            (LearningAssignmentBulkRemoveResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentBulkRemoveResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8962,7 +8962,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8971,7 +8971,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8992,7 +8992,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9005,11 +9005,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9035,7 +9035,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentBulkRemoveResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentBulkRemoveResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentBulkRemoveResponse)),
+            (LearningAssignmentBulkRemoveResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentBulkRemoveResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9092,7 +9092,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9101,7 +9101,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9114,7 +9114,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -9126,7 +9126,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9139,11 +9139,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9169,7 +9169,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModuleJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModuleJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleJobResponse)),
+            (LearningModuleJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9227,7 +9227,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9236,7 +9236,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9249,7 +9249,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -9261,7 +9261,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9274,11 +9274,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9304,7 +9304,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModuleJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModuleJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleJobResponse)),
+            (LearningModuleJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9356,7 +9356,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9365,7 +9365,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9378,7 +9378,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -9390,7 +9390,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9403,11 +9403,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9433,7 +9433,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModulePublishResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModulePublishResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePublishResponse)),
+            (LearningModulePublishResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePublishResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9485,7 +9485,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9494,7 +9494,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9507,7 +9507,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -9519,7 +9519,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9532,11 +9532,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9562,7 +9562,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModulePublishResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModulePublishResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePublishResponse)),
+            (LearningModulePublishResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePublishResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9612,7 +9612,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9621,7 +9621,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9642,7 +9642,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9655,11 +9655,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9685,7 +9685,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
+            (LearningModule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9735,7 +9735,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9744,7 +9744,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9765,7 +9765,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9778,11 +9778,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9808,7 +9808,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
+            (LearningModule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9872,7 +9872,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9881,7 +9881,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9896,12 +9896,12 @@ public partial class LearningApi : ILearningApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -9911,7 +9911,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9924,11 +9924,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9954,7 +9954,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentUserListing>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentUserListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentUserListing)),
+            (LearningAssignmentUserListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentUserListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10020,7 +10020,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10029,7 +10029,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10044,12 +10044,12 @@ public partial class LearningApi : ILearningApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -10059,7 +10059,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10072,11 +10072,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10102,7 +10102,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningAssignmentUserListing>(localVarStatusCode,
             localVarHeaders,
-            (LearningAssignmentUserListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentUserListing)),
+            (LearningAssignmentUserListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentUserListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10152,7 +10152,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10161,7 +10161,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10182,7 +10182,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10195,11 +10195,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10225,7 +10225,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningScheduleSlotsQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningScheduleSlotsQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScheduleSlotsQueryResponse)),
+            (LearningScheduleSlotsQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScheduleSlotsQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10275,7 +10275,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10284,7 +10284,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10305,7 +10305,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10318,11 +10318,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10348,7 +10348,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningScheduleSlotsQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningScheduleSlotsQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScheduleSlotsQueryResponse)),
+            (LearningScheduleSlotsQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScheduleSlotsQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10393,7 +10393,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10402,7 +10402,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10423,7 +10423,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10436,11 +10436,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10466,7 +10466,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningScormUploadResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningScormUploadResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScormUploadResponse)),
+            (LearningScormUploadResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScormUploadResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10511,7 +10511,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10520,7 +10520,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10541,7 +10541,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10554,11 +10554,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10584,7 +10584,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningScormUploadResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningScormUploadResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScormUploadResponse)),
+            (LearningScormUploadResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScormUploadResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10641,7 +10641,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10650,7 +10650,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10663,7 +10663,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -10675,7 +10675,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10688,11 +10688,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10718,7 +10718,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
+            (LearningModule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10776,7 +10776,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10785,7 +10785,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10798,7 +10798,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -10810,7 +10810,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10823,11 +10823,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10853,7 +10853,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
+            (LearningModule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10910,7 +10910,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10919,7 +10919,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10932,7 +10932,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -10944,7 +10944,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10957,11 +10957,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10987,7 +10987,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModulePreviewUpdateResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModulePreviewUpdateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePreviewUpdateResponse)),
+            (LearningModulePreviewUpdateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePreviewUpdateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11045,7 +11045,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11054,7 +11054,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11067,7 +11067,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -11079,7 +11079,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11092,11 +11092,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11122,7 +11122,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModulePreviewUpdateResponse>(localVarStatusCode,
             localVarHeaders,
-            (LearningModulePreviewUpdateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePreviewUpdateResponse)),
+            (LearningModulePreviewUpdateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulePreviewUpdateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11179,7 +11179,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11188,7 +11188,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11201,7 +11201,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -11213,7 +11213,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11226,11 +11226,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11256,7 +11256,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModuleRule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModuleRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleRule)),
+            (LearningModuleRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11314,7 +11314,7 @@ public partial class LearningApi : ILearningApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11323,7 +11323,7 @@ public partial class LearningApi : ILearningApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11336,7 +11336,7 @@ public partial class LearningApi : ILearningApi
         // Path params
         if (moduleId != null)
         {
-            localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+            localVarPathParams.Add("moduleId", Configuration.ApiClient.ParameterToString(moduleId));
         }
 
         // Query params
@@ -11348,7 +11348,7 @@ public partial class LearningApi : ILearningApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11361,11 +11361,11 @@ public partial class LearningApi : ILearningApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11391,7 +11391,7 @@ public partial class LearningApi : ILearningApi
 
         return new ApiResponse<LearningModuleRule>(localVarStatusCode,
             localVarHeaders,
-            (LearningModuleRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleRule)),
+            (LearningModuleRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

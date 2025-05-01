@@ -63,7 +63,7 @@ public partial class SkillGroupMemberDivisions : IEquatable<SkillGroupMemberDivi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SkillGroupMemberDivisions);
+        return Equals(obj as SkillGroupMemberDivisions);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class SkillGroupMemberDivisions : IEquatable<SkillGroupMemberDivi
 
         return true &&
             (
-                this.AddDivisionIds == other.AddDivisionIds ||
-                this.AddDivisionIds != null &&
-                this.AddDivisionIds.SequenceEqual(other.AddDivisionIds)
+                AddDivisionIds == other.AddDivisionIds ||
+                AddDivisionIds != null &&
+                AddDivisionIds.SequenceEqual(other.AddDivisionIds)
             ) &&
             (
-                this.RemoveDivisionIds == other.RemoveDivisionIds ||
-                this.RemoveDivisionIds != null &&
-                this.RemoveDivisionIds.SequenceEqual(other.RemoveDivisionIds)
+                RemoveDivisionIds == other.RemoveDivisionIds ||
+                RemoveDivisionIds != null &&
+                RemoveDivisionIds.SequenceEqual(other.RemoveDivisionIds)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class SkillGroupMemberDivisions : IEquatable<SkillGroupMemberDivi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AddDivisionIds != null)
+            if (AddDivisionIds != null)
             {
-                hash = hash * 59 + this.AddDivisionIds.GetHashCode();
+                hash = hash * 59 + AddDivisionIds.GetHashCode();
             }
 
-            if (this.RemoveDivisionIds != null)
+            if (RemoveDivisionIds != null)
             {
-                hash = hash * 59 + this.RemoveDivisionIds.GetHashCode();
+                hash = hash * 59 + RemoveDivisionIds.GetHashCode();
             }
 
             return hash;

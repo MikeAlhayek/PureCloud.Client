@@ -91,7 +91,7 @@ public partial class WebMessagingRecipient : IEquatable<WebMessagingRecipient>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebMessagingRecipient);
+        return Equals(obj as WebMessagingRecipient);
     }
 
     /// <summary>
@@ -109,29 +109,29 @@ public partial class WebMessagingRecipient : IEquatable<WebMessagingRecipient>
 
         return true &&
             (
-                this.FirstName == other.FirstName ||
-                this.FirstName != null &&
-                this.FirstName.Equals(other.FirstName)
+                FirstName == other.FirstName ||
+                FirstName != null &&
+                FirstName.Equals(other.FirstName)
             ) &&
             (
-                this.LastName == other.LastName ||
-                this.LastName != null &&
-                this.LastName.Equals(other.LastName)
+                LastName == other.LastName ||
+                LastName != null &&
+                LastName.Equals(other.LastName)
             ) &&
             (
-                this.Nickname == other.Nickname ||
-                this.Nickname != null &&
-                this.Nickname.Equals(other.Nickname)
+                Nickname == other.Nickname ||
+                Nickname != null &&
+                Nickname.Equals(other.Nickname)
             ) &&
             (
-                this.Image == other.Image ||
-                this.Image != null &&
-                this.Image.Equals(other.Image)
+                Image == other.Image ||
+                Image != null &&
+                Image.Equals(other.Image)
             ) &&
             (
-                this.AdditionalIds == other.AdditionalIds ||
-                this.AdditionalIds != null &&
-                this.AdditionalIds.SequenceEqual(other.AdditionalIds)
+                AdditionalIds == other.AdditionalIds ||
+                AdditionalIds != null &&
+                AdditionalIds.SequenceEqual(other.AdditionalIds)
             );
     }
 
@@ -146,29 +146,29 @@ public partial class WebMessagingRecipient : IEquatable<WebMessagingRecipient>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FirstName != null)
+            if (FirstName != null)
             {
-                hash = hash * 59 + this.FirstName.GetHashCode();
+                hash = hash * 59 + FirstName.GetHashCode();
             }
 
-            if (this.LastName != null)
+            if (LastName != null)
             {
-                hash = hash * 59 + this.LastName.GetHashCode();
+                hash = hash * 59 + LastName.GetHashCode();
             }
 
-            if (this.Nickname != null)
+            if (Nickname != null)
             {
-                hash = hash * 59 + this.Nickname.GetHashCode();
+                hash = hash * 59 + Nickname.GetHashCode();
             }
 
-            if (this.Image != null)
+            if (Image != null)
             {
-                hash = hash * 59 + this.Image.GetHashCode();
+                hash = hash * 59 + Image.GetHashCode();
             }
 
-            if (this.AdditionalIds != null)
+            if (AdditionalIds != null)
             {
-                hash = hash * 59 + this.AdditionalIds.GetHashCode();
+                hash = hash * 59 + AdditionalIds.GetHashCode();
             }
 
             return hash;

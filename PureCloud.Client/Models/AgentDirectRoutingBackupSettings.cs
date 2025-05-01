@@ -98,7 +98,7 @@ public partial class AgentDirectRoutingBackupSettings : IEquatable<AgentDirectRo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentDirectRoutingBackupSettings);
+        return Equals(obj as AgentDirectRoutingBackupSettings);
     }
 
     /// <summary>
@@ -116,29 +116,29 @@ public partial class AgentDirectRoutingBackupSettings : IEquatable<AgentDirectRo
 
         return true &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.WaitForAgent == other.WaitForAgent ||
-                this.WaitForAgent != null &&
-                this.WaitForAgent.Equals(other.WaitForAgent)
+                WaitForAgent == other.WaitForAgent ||
+                WaitForAgent != null &&
+                WaitForAgent.Equals(other.WaitForAgent)
             ) &&
             (
-                this.AgentWaitSeconds == other.AgentWaitSeconds ||
-                this.AgentWaitSeconds != null &&
-                this.AgentWaitSeconds.Equals(other.AgentWaitSeconds)
+                AgentWaitSeconds == other.AgentWaitSeconds ||
+                AgentWaitSeconds != null &&
+                AgentWaitSeconds.Equals(other.AgentWaitSeconds)
             ) &&
             (
-                this.BackedUpUsers == other.BackedUpUsers ||
-                this.BackedUpUsers != null &&
-                this.BackedUpUsers.SequenceEqual(other.BackedUpUsers)
+                BackedUpUsers == other.BackedUpUsers ||
+                BackedUpUsers != null &&
+                BackedUpUsers.SequenceEqual(other.BackedUpUsers)
             );
     }
 
@@ -153,29 +153,29 @@ public partial class AgentDirectRoutingBackupSettings : IEquatable<AgentDirectRo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.WaitForAgent != null)
+            if (WaitForAgent != null)
             {
-                hash = hash * 59 + this.WaitForAgent.GetHashCode();
+                hash = hash * 59 + WaitForAgent.GetHashCode();
             }
 
-            if (this.AgentWaitSeconds != null)
+            if (AgentWaitSeconds != null)
             {
-                hash = hash * 59 + this.AgentWaitSeconds.GetHashCode();
+                hash = hash * 59 + AgentWaitSeconds.GetHashCode();
             }
 
-            if (this.BackedUpUsers != null)
+            if (BackedUpUsers != null)
             {
-                hash = hash * 59 + this.BackedUpUsers.GetHashCode();
+                hash = hash * 59 + BackedUpUsers.GetHashCode();
             }
 
             return hash;

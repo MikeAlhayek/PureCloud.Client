@@ -105,7 +105,7 @@ public partial class FooterTemplate : IEquatable<FooterTemplate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FooterTemplate);
+        return Equals(obj as FooterTemplate);
     }
 
     /// <summary>
@@ -123,14 +123,14 @@ public partial class FooterTemplate : IEquatable<FooterTemplate>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ApplicableResources == other.ApplicableResources ||
-                this.ApplicableResources != null &&
-                this.ApplicableResources.SequenceEqual(other.ApplicableResources)
+                ApplicableResources == other.ApplicableResources ||
+                ApplicableResources != null &&
+                ApplicableResources.SequenceEqual(other.ApplicableResources)
             );
     }
 
@@ -145,14 +145,14 @@ public partial class FooterTemplate : IEquatable<FooterTemplate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ApplicableResources != null)
+            if (ApplicableResources != null)
             {
-                hash = hash * 59 + this.ApplicableResources.GetHashCode();
+                hash = hash * 59 + ApplicableResources.GetHashCode();
             }
 
             return hash;

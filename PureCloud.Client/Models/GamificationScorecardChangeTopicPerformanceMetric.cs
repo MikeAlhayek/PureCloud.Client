@@ -96,7 +96,7 @@ public partial class GamificationScorecardChangeTopicPerformanceMetric : IEquata
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GamificationScorecardChangeTopicPerformanceMetric);
+        return Equals(obj as GamificationScorecardChangeTopicPerformanceMetric);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class GamificationScorecardChangeTopicPerformanceMetric : IEquata
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Points == other.Points ||
-                this.Points != null &&
-                this.Points.Equals(other.Points)
+                Points == other.Points ||
+                Points != null &&
+                Points.Equals(other.Points)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.PunctualityEvents == other.PunctualityEvents ||
-                this.PunctualityEvents != null &&
-                this.PunctualityEvents.SequenceEqual(other.PunctualityEvents)
+                PunctualityEvents == other.PunctualityEvents ||
+                PunctualityEvents != null &&
+                PunctualityEvents.SequenceEqual(other.PunctualityEvents)
             ) &&
             (
-                this.EvaluationDetails == other.EvaluationDetails ||
-                this.EvaluationDetails != null &&
-                this.EvaluationDetails.SequenceEqual(other.EvaluationDetails)
+                EvaluationDetails == other.EvaluationDetails ||
+                EvaluationDetails != null &&
+                EvaluationDetails.SequenceEqual(other.EvaluationDetails)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class GamificationScorecardChangeTopicPerformanceMetric : IEquata
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Points != null)
+            if (Points != null)
             {
-                hash = hash * 59 + this.Points.GetHashCode();
+                hash = hash * 59 + Points.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.PunctualityEvents != null)
+            if (PunctualityEvents != null)
             {
-                hash = hash * 59 + this.PunctualityEvents.GetHashCode();
+                hash = hash * 59 + PunctualityEvents.GetHashCode();
             }
 
-            if (this.EvaluationDetails != null)
+            if (EvaluationDetails != null)
             {
-                hash = hash * 59 + this.EvaluationDetails.GetHashCode();
+                hash = hash * 59 + EvaluationDetails.GetHashCode();
             }
 
             return hash;

@@ -89,7 +89,7 @@ public partial class ExecutionDataEntity : IEquatable<ExecutionDataEntity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExecutionDataEntity);
+        return Equals(obj as ExecutionDataEntity);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ExecutionDataEntity : IEquatable<ExecutionDataEntity>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DownloadUri == other.DownloadUri ||
-                this.DownloadUri != null &&
-                this.DownloadUri.Equals(other.DownloadUri)
+                DownloadUri == other.DownloadUri ||
+                DownloadUri != null &&
+                DownloadUri.Equals(other.DownloadUri)
             ) &&
             (
-                this.Failed == other.Failed ||
-                this.Failed != null &&
-                this.Failed.Equals(other.Failed)
+                Failed == other.Failed ||
+                Failed != null &&
+                Failed.Equals(other.Failed)
             ) &&
             (
-                this.StatusCode == other.StatusCode ||
-                this.StatusCode != null &&
-                this.StatusCode.Equals(other.StatusCode)
+                StatusCode == other.StatusCode ||
+                StatusCode != null &&
+                StatusCode.Equals(other.StatusCode)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ExecutionDataEntity : IEquatable<ExecutionDataEntity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DownloadUri != null)
+            if (DownloadUri != null)
             {
-                hash = hash * 59 + this.DownloadUri.GetHashCode();
+                hash = hash * 59 + DownloadUri.GetHashCode();
             }
 
-            if (this.Failed != null)
+            if (Failed != null)
             {
-                hash = hash * 59 + this.Failed.GetHashCode();
+                hash = hash * 59 + Failed.GetHashCode();
             }
 
-            if (this.StatusCode != null)
+            if (StatusCode != null)
             {
-                hash = hash * 59 + this.StatusCode.GetHashCode();
+                hash = hash * 59 + StatusCode.GetHashCode();
             }
 
             return hash;

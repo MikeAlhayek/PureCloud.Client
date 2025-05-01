@@ -41,7 +41,7 @@ public partial class DialerAttemptLimitsConfigChangeObject : IEquatable<DialerAt
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerAttemptLimitsConfigChangeObject);
+        return Equals(obj as DialerAttemptLimitsConfigChangeObject);
     }
 
     /// <summary>

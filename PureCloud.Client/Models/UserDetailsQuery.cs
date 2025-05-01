@@ -175,7 +175,7 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserDetailsQuery);
+        return Equals(obj as UserDetailsQuery);
     }
 
     /// <summary>
@@ -193,44 +193,44 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.UserFilters == other.UserFilters ||
-                this.UserFilters != null &&
-                this.UserFilters.SequenceEqual(other.UserFilters)
+                UserFilters == other.UserFilters ||
+                UserFilters != null &&
+                UserFilters.SequenceEqual(other.UserFilters)
             ) &&
             (
-                this.PresenceFilters == other.PresenceFilters ||
-                this.PresenceFilters != null &&
-                this.PresenceFilters.SequenceEqual(other.PresenceFilters)
+                PresenceFilters == other.PresenceFilters ||
+                PresenceFilters != null &&
+                PresenceFilters.SequenceEqual(other.PresenceFilters)
             ) &&
             (
-                this.RoutingStatusFilters == other.RoutingStatusFilters ||
-                this.RoutingStatusFilters != null &&
-                this.RoutingStatusFilters.SequenceEqual(other.RoutingStatusFilters)
+                RoutingStatusFilters == other.RoutingStatusFilters ||
+                RoutingStatusFilters != null &&
+                RoutingStatusFilters.SequenceEqual(other.RoutingStatusFilters)
             ) &&
             (
-                this.Order == other.Order ||
-                this.Order != null &&
-                this.Order.Equals(other.Order)
+                Order == other.Order ||
+                Order != null &&
+                Order.Equals(other.Order)
             ) &&
             (
-                this.PresenceAggregations == other.PresenceAggregations ||
-                this.PresenceAggregations != null &&
-                this.PresenceAggregations.SequenceEqual(other.PresenceAggregations)
+                PresenceAggregations == other.PresenceAggregations ||
+                PresenceAggregations != null &&
+                PresenceAggregations.SequenceEqual(other.PresenceAggregations)
             ) &&
             (
-                this.RoutingStatusAggregations == other.RoutingStatusAggregations ||
-                this.RoutingStatusAggregations != null &&
-                this.RoutingStatusAggregations.SequenceEqual(other.RoutingStatusAggregations)
+                RoutingStatusAggregations == other.RoutingStatusAggregations ||
+                RoutingStatusAggregations != null &&
+                RoutingStatusAggregations.SequenceEqual(other.RoutingStatusAggregations)
             ) &&
             (
-                this.Paging == other.Paging ||
-                this.Paging != null &&
-                this.Paging.Equals(other.Paging)
+                Paging == other.Paging ||
+                Paging != null &&
+                Paging.Equals(other.Paging)
             );
     }
 
@@ -245,44 +245,44 @@ public partial class UserDetailsQuery : IEquatable<UserDetailsQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.UserFilters != null)
+            if (UserFilters != null)
             {
-                hash = hash * 59 + this.UserFilters.GetHashCode();
+                hash = hash * 59 + UserFilters.GetHashCode();
             }
 
-            if (this.PresenceFilters != null)
+            if (PresenceFilters != null)
             {
-                hash = hash * 59 + this.PresenceFilters.GetHashCode();
+                hash = hash * 59 + PresenceFilters.GetHashCode();
             }
 
-            if (this.RoutingStatusFilters != null)
+            if (RoutingStatusFilters != null)
             {
-                hash = hash * 59 + this.RoutingStatusFilters.GetHashCode();
+                hash = hash * 59 + RoutingStatusFilters.GetHashCode();
             }
 
-            if (this.Order != null)
+            if (Order != null)
             {
-                hash = hash * 59 + this.Order.GetHashCode();
+                hash = hash * 59 + Order.GetHashCode();
             }
 
-            if (this.PresenceAggregations != null)
+            if (PresenceAggregations != null)
             {
-                hash = hash * 59 + this.PresenceAggregations.GetHashCode();
+                hash = hash * 59 + PresenceAggregations.GetHashCode();
             }
 
-            if (this.RoutingStatusAggregations != null)
+            if (RoutingStatusAggregations != null)
             {
-                hash = hash * 59 + this.RoutingStatusAggregations.GetHashCode();
+                hash = hash * 59 + RoutingStatusAggregations.GetHashCode();
             }
 
-            if (this.Paging != null)
+            if (Paging != null)
             {
-                hash = hash * 59 + this.Paging.GetHashCode();
+                hash = hash * 59 + Paging.GetHashCode();
             }
 
             return hash;

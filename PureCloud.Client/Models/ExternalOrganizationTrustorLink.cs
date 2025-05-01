@@ -119,7 +119,7 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalOrganizationTrustorLink);
+        return Equals(obj as ExternalOrganizationTrustorLink);
     }
 
     /// <summary>
@@ -137,39 +137,39 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.ExternalOrganizationId == other.ExternalOrganizationId ||
-                this.ExternalOrganizationId != null &&
-                this.ExternalOrganizationId.Equals(other.ExternalOrganizationId)
+                ExternalOrganizationId == other.ExternalOrganizationId ||
+                ExternalOrganizationId != null &&
+                ExternalOrganizationId.Equals(other.ExternalOrganizationId)
             ) &&
             (
-                this.TrustorOrgId == other.TrustorOrgId ||
-                this.TrustorOrgId != null &&
-                this.TrustorOrgId.Equals(other.TrustorOrgId)
+                TrustorOrgId == other.TrustorOrgId ||
+                TrustorOrgId != null &&
+                TrustorOrgId.Equals(other.TrustorOrgId)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.ExternalOrganizationUri == other.ExternalOrganizationUri ||
-                this.ExternalOrganizationUri != null &&
-                this.ExternalOrganizationUri.Equals(other.ExternalOrganizationUri)
+                ExternalOrganizationUri == other.ExternalOrganizationUri ||
+                ExternalOrganizationUri != null &&
+                ExternalOrganizationUri.Equals(other.ExternalOrganizationUri)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -184,39 +184,39 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.ExternalOrganizationId != null)
+            if (ExternalOrganizationId != null)
             {
-                hash = hash * 59 + this.ExternalOrganizationId.GetHashCode();
+                hash = hash * 59 + ExternalOrganizationId.GetHashCode();
             }
 
-            if (this.TrustorOrgId != null)
+            if (TrustorOrgId != null)
             {
-                hash = hash * 59 + this.TrustorOrgId.GetHashCode();
+                hash = hash * 59 + TrustorOrgId.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.ExternalOrganizationUri != null)
+            if (ExternalOrganizationUri != null)
             {
-                hash = hash * 59 + this.ExternalOrganizationUri.GetHashCode();
+                hash = hash * 59 + ExternalOrganizationUri.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

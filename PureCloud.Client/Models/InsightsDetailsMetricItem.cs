@@ -101,7 +101,7 @@ public partial class InsightsDetailsMetricItem : IEquatable<InsightsDetailsMetri
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InsightsDetailsMetricItem);
+        return Equals(obj as InsightsDetailsMetricItem);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class InsightsDetailsMetricItem : IEquatable<InsightsDetailsMetri
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.ComparativePeriod == other.ComparativePeriod ||
-                this.ComparativePeriod != null &&
-                this.ComparativePeriod.Equals(other.ComparativePeriod)
+                ComparativePeriod == other.ComparativePeriod ||
+                ComparativePeriod != null &&
+                ComparativePeriod.Equals(other.ComparativePeriod)
             ) &&
             (
-                this.PrimaryPeriod == other.PrimaryPeriod ||
-                this.PrimaryPeriod != null &&
-                this.PrimaryPeriod.Equals(other.PrimaryPeriod)
+                PrimaryPeriod == other.PrimaryPeriod ||
+                PrimaryPeriod != null &&
+                PrimaryPeriod.Equals(other.PrimaryPeriod)
             ) &&
             (
-                this.PercentOfGoalChange == other.PercentOfGoalChange ||
-                this.PercentOfGoalChange != null &&
-                this.PercentOfGoalChange.Equals(other.PercentOfGoalChange)
+                PercentOfGoalChange == other.PercentOfGoalChange ||
+                PercentOfGoalChange != null &&
+                PercentOfGoalChange.Equals(other.PercentOfGoalChange)
             ) &&
             (
-                this.ValueChange == other.ValueChange ||
-                this.ValueChange != null &&
-                this.ValueChange.Equals(other.ValueChange)
+                ValueChange == other.ValueChange ||
+                ValueChange != null &&
+                ValueChange.Equals(other.ValueChange)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class InsightsDetailsMetricItem : IEquatable<InsightsDetailsMetri
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.ComparativePeriod != null)
+            if (ComparativePeriod != null)
             {
-                hash = hash * 59 + this.ComparativePeriod.GetHashCode();
+                hash = hash * 59 + ComparativePeriod.GetHashCode();
             }
 
-            if (this.PrimaryPeriod != null)
+            if (PrimaryPeriod != null)
             {
-                hash = hash * 59 + this.PrimaryPeriod.GetHashCode();
+                hash = hash * 59 + PrimaryPeriod.GetHashCode();
             }
 
-            if (this.PercentOfGoalChange != null)
+            if (PercentOfGoalChange != null)
             {
-                hash = hash * 59 + this.PercentOfGoalChange.GetHashCode();
+                hash = hash * 59 + PercentOfGoalChange.GetHashCode();
             }
 
-            if (this.ValueChange != null)
+            if (ValueChange != null)
             {
-                hash = hash * 59 + this.ValueChange.GetHashCode();
+                hash = hash * 59 + ValueChange.GetHashCode();
             }
 
             return hash;

@@ -164,7 +164,7 @@ public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentWorkPlanBiddingPreferenceResponse);
+        return Equals(obj as AgentWorkPlanBiddingPreferenceResponse);
     }
 
     /// <summary>
@@ -182,39 +182,39 @@ public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Submitted == other.Submitted ||
-                this.Submitted != null &&
-                this.Submitted.Equals(other.Submitted)
+                Submitted == other.Submitted ||
+                Submitted != null &&
+                Submitted.Equals(other.Submitted)
             ) &&
             (
-                this.AssignedWorkPlan == other.AssignedWorkPlan ||
-                this.AssignedWorkPlan != null &&
-                this.AssignedWorkPlan.Equals(other.AssignedWorkPlan)
+                AssignedWorkPlan == other.AssignedWorkPlan ||
+                AssignedWorkPlan != null &&
+                AssignedWorkPlan.Equals(other.AssignedWorkPlan)
             ) &&
             (
-                this.OverriddenWorkPlan == other.OverriddenWorkPlan ||
-                this.OverriddenWorkPlan != null &&
-                this.OverriddenWorkPlan.Equals(other.OverriddenWorkPlan)
+                OverriddenWorkPlan == other.OverriddenWorkPlan ||
+                OverriddenWorkPlan != null &&
+                OverriddenWorkPlan.Equals(other.OverriddenWorkPlan)
             ) &&
             (
-                this.OverrideReason == other.OverrideReason ||
-                this.OverrideReason != null &&
-                this.OverrideReason.Equals(other.OverrideReason)
+                OverrideReason == other.OverrideReason ||
+                OverrideReason != null &&
+                OverrideReason.Equals(other.OverrideReason)
             ) &&
             (
-                this.AgentWorkPlanBidPreferences == other.AgentWorkPlanBidPreferences ||
-                this.AgentWorkPlanBidPreferences != null &&
-                this.AgentWorkPlanBidPreferences.SequenceEqual(other.AgentWorkPlanBidPreferences)
+                AgentWorkPlanBidPreferences == other.AgentWorkPlanBidPreferences ||
+                AgentWorkPlanBidPreferences != null &&
+                AgentWorkPlanBidPreferences.SequenceEqual(other.AgentWorkPlanBidPreferences)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -229,39 +229,39 @@ public partial class AgentWorkPlanBiddingPreferenceResponse : IEquatable<AgentWo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Submitted != null)
+            if (Submitted != null)
             {
-                hash = hash * 59 + this.Submitted.GetHashCode();
+                hash = hash * 59 + Submitted.GetHashCode();
             }
 
-            if (this.AssignedWorkPlan != null)
+            if (AssignedWorkPlan != null)
             {
-                hash = hash * 59 + this.AssignedWorkPlan.GetHashCode();
+                hash = hash * 59 + AssignedWorkPlan.GetHashCode();
             }
 
-            if (this.OverriddenWorkPlan != null)
+            if (OverriddenWorkPlan != null)
             {
-                hash = hash * 59 + this.OverriddenWorkPlan.GetHashCode();
+                hash = hash * 59 + OverriddenWorkPlan.GetHashCode();
             }
 
-            if (this.OverrideReason != null)
+            if (OverrideReason != null)
             {
-                hash = hash * 59 + this.OverrideReason.GetHashCode();
+                hash = hash * 59 + OverrideReason.GetHashCode();
             }
 
-            if (this.AgentWorkPlanBidPreferences != null)
+            if (AgentWorkPlanBidPreferences != null)
             {
-                hash = hash * 59 + this.AgentWorkPlanBidPreferences.GetHashCode();
+                hash = hash * 59 + AgentWorkPlanBidPreferences.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

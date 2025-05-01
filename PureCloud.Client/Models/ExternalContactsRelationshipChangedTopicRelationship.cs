@@ -118,7 +118,7 @@ public partial class ExternalContactsRelationshipChangedTopicRelationship : IEqu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsRelationshipChangedTopicRelationship);
+        return Equals(obj as ExternalContactsRelationshipChangedTopicRelationship);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class ExternalContactsRelationshipChangedTopicRelationship : IEqu
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.ExternalOrganization == other.ExternalOrganization ||
-                this.ExternalOrganization != null &&
-                this.ExternalOrganization.Equals(other.ExternalOrganization)
+                ExternalOrganization == other.ExternalOrganization ||
+                ExternalOrganization != null &&
+                ExternalOrganization.Equals(other.ExternalOrganization)
             ) &&
             (
-                this.Relationship == other.Relationship ||
-                this.Relationship != null &&
-                this.Relationship.Equals(other.Relationship)
+                Relationship == other.Relationship ||
+                Relationship != null &&
+                Relationship.Equals(other.Relationship)
             ) &&
             (
-                this.CreateDate == other.CreateDate ||
-                this.CreateDate != null &&
-                this.CreateDate.Equals(other.CreateDate)
+                CreateDate == other.CreateDate ||
+                CreateDate != null &&
+                CreateDate.Equals(other.CreateDate)
             ) &&
             (
-                this.ModifyDate == other.ModifyDate ||
-                this.ModifyDate != null &&
-                this.ModifyDate.Equals(other.ModifyDate)
+                ModifyDate == other.ModifyDate ||
+                ModifyDate != null &&
+                ModifyDate.Equals(other.ModifyDate)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class ExternalContactsRelationshipChangedTopicRelationship : IEqu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.ExternalOrganization != null)
+            if (ExternalOrganization != null)
             {
-                hash = hash * 59 + this.ExternalOrganization.GetHashCode();
+                hash = hash * 59 + ExternalOrganization.GetHashCode();
             }
 
-            if (this.Relationship != null)
+            if (Relationship != null)
             {
-                hash = hash * 59 + this.Relationship.GetHashCode();
+                hash = hash * 59 + Relationship.GetHashCode();
             }
 
-            if (this.CreateDate != null)
+            if (CreateDate != null)
             {
-                hash = hash * 59 + this.CreateDate.GetHashCode();
+                hash = hash * 59 + CreateDate.GetHashCode();
             }
 
-            if (this.ModifyDate != null)
+            if (ModifyDate != null)
             {
-                hash = hash * 59 + this.ModifyDate.GetHashCode();
+                hash = hash * 59 + ModifyDate.GetHashCode();
             }
 
             return hash;

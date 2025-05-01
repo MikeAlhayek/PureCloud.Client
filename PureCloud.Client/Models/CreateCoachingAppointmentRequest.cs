@@ -191,7 +191,7 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateCoachingAppointmentRequest);
+        return Equals(obj as CreateCoachingAppointmentRequest);
     }
 
     /// <summary>
@@ -209,64 +209,64 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.FacilitatorId == other.FacilitatorId ||
-                this.FacilitatorId != null &&
-                this.FacilitatorId.Equals(other.FacilitatorId)
+                FacilitatorId == other.FacilitatorId ||
+                FacilitatorId != null &&
+                FacilitatorId.Equals(other.FacilitatorId)
             ) &&
             (
-                this.AttendeeIds == other.AttendeeIds ||
-                this.AttendeeIds != null &&
-                this.AttendeeIds.SequenceEqual(other.AttendeeIds)
+                AttendeeIds == other.AttendeeIds ||
+                AttendeeIds != null &&
+                AttendeeIds.SequenceEqual(other.AttendeeIds)
             ) &&
             (
-                this.ConversationIds == other.ConversationIds ||
-                this.ConversationIds != null &&
-                this.ConversationIds.SequenceEqual(other.ConversationIds)
+                ConversationIds == other.ConversationIds ||
+                ConversationIds != null &&
+                ConversationIds.SequenceEqual(other.ConversationIds)
             ) &&
             (
-                this.DocumentIds == other.DocumentIds ||
-                this.DocumentIds != null &&
-                this.DocumentIds.SequenceEqual(other.DocumentIds)
+                DocumentIds == other.DocumentIds ||
+                DocumentIds != null &&
+                DocumentIds.SequenceEqual(other.DocumentIds)
             ) &&
             (
-                this.WfmSchedule == other.WfmSchedule ||
-                this.WfmSchedule != null &&
-                this.WfmSchedule.Equals(other.WfmSchedule)
+                WfmSchedule == other.WfmSchedule ||
+                WfmSchedule != null &&
+                WfmSchedule.Equals(other.WfmSchedule)
             ) &&
             (
-                this.ExternalLinks == other.ExternalLinks ||
-                this.ExternalLinks != null &&
-                this.ExternalLinks.SequenceEqual(other.ExternalLinks)
+                ExternalLinks == other.ExternalLinks ||
+                ExternalLinks != null &&
+                ExternalLinks.SequenceEqual(other.ExternalLinks)
             ) &&
             (
-                this.Location == other.Location ||
-                this.Location != null &&
-                this.Location.Equals(other.Location)
+                Location == other.Location ||
+                Location != null &&
+                Location.Equals(other.Location)
             ) &&
             (
-                this.ShareInsightsData == other.ShareInsightsData ||
-                this.ShareInsightsData != null &&
-                this.ShareInsightsData.Equals(other.ShareInsightsData)
+                ShareInsightsData == other.ShareInsightsData ||
+                ShareInsightsData != null &&
+                ShareInsightsData.Equals(other.ShareInsightsData)
             );
     }
 
@@ -281,64 +281,64 @@ public partial class CreateCoachingAppointmentRequest : IEquatable<CreateCoachin
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.FacilitatorId != null)
+            if (FacilitatorId != null)
             {
-                hash = hash * 59 + this.FacilitatorId.GetHashCode();
+                hash = hash * 59 + FacilitatorId.GetHashCode();
             }
 
-            if (this.AttendeeIds != null)
+            if (AttendeeIds != null)
             {
-                hash = hash * 59 + this.AttendeeIds.GetHashCode();
+                hash = hash * 59 + AttendeeIds.GetHashCode();
             }
 
-            if (this.ConversationIds != null)
+            if (ConversationIds != null)
             {
-                hash = hash * 59 + this.ConversationIds.GetHashCode();
+                hash = hash * 59 + ConversationIds.GetHashCode();
             }
 
-            if (this.DocumentIds != null)
+            if (DocumentIds != null)
             {
-                hash = hash * 59 + this.DocumentIds.GetHashCode();
+                hash = hash * 59 + DocumentIds.GetHashCode();
             }
 
-            if (this.WfmSchedule != null)
+            if (WfmSchedule != null)
             {
-                hash = hash * 59 + this.WfmSchedule.GetHashCode();
+                hash = hash * 59 + WfmSchedule.GetHashCode();
             }
 
-            if (this.ExternalLinks != null)
+            if (ExternalLinks != null)
             {
-                hash = hash * 59 + this.ExternalLinks.GetHashCode();
+                hash = hash * 59 + ExternalLinks.GetHashCode();
             }
 
-            if (this.Location != null)
+            if (Location != null)
             {
-                hash = hash * 59 + this.Location.GetHashCode();
+                hash = hash * 59 + Location.GetHashCode();
             }
 
-            if (this.ShareInsightsData != null)
+            if (ShareInsightsData != null)
             {
-                hash = hash * 59 + this.ShareInsightsData.GetHashCode();
+                hash = hash * 59 + ShareInsightsData.GetHashCode();
             }
 
             return hash;

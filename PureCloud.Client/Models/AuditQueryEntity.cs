@@ -65,7 +65,7 @@ public partial class AuditQueryEntity : IEquatable<AuditQueryEntity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuditQueryEntity);
+        return Equals(obj as AuditQueryEntity);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class AuditQueryEntity : IEquatable<AuditQueryEntity>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.SequenceEqual(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.SequenceEqual(other.Actions)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class AuditQueryEntity : IEquatable<AuditQueryEntity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
             return hash;

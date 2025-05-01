@@ -89,7 +89,7 @@ public partial class TrendData : IEquatable<TrendData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrendData);
+        return Equals(obj as TrendData);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class TrendData : IEquatable<TrendData>
 
         return true &&
             (
-                this.DateStartWorkday == other.DateStartWorkday ||
-                this.DateStartWorkday != null &&
-                this.DateStartWorkday.Equals(other.DateStartWorkday)
+                DateStartWorkday == other.DateStartWorkday ||
+                DateStartWorkday != null &&
+                DateStartWorkday.Equals(other.DateStartWorkday)
             ) &&
             (
-                this.DateEndWorkday == other.DateEndWorkday ||
-                this.DateEndWorkday != null &&
-                this.DateEndWorkday.Equals(other.DateEndWorkday)
+                DateEndWorkday == other.DateEndWorkday ||
+                DateEndWorkday != null &&
+                DateEndWorkday.Equals(other.DateEndWorkday)
             ) &&
             (
-                this.PercentOfGoal == other.PercentOfGoal ||
-                this.PercentOfGoal != null &&
-                this.PercentOfGoal.Equals(other.PercentOfGoal)
+                PercentOfGoal == other.PercentOfGoal ||
+                PercentOfGoal != null &&
+                PercentOfGoal.Equals(other.PercentOfGoal)
             ) &&
             (
-                this.AverageValue == other.AverageValue ||
-                this.AverageValue != null &&
-                this.AverageValue.Equals(other.AverageValue)
+                AverageValue == other.AverageValue ||
+                AverageValue != null &&
+                AverageValue.Equals(other.AverageValue)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class TrendData : IEquatable<TrendData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateStartWorkday != null)
+            if (DateStartWorkday != null)
             {
-                hash = hash * 59 + this.DateStartWorkday.GetHashCode();
+                hash = hash * 59 + DateStartWorkday.GetHashCode();
             }
 
-            if (this.DateEndWorkday != null)
+            if (DateEndWorkday != null)
             {
-                hash = hash * 59 + this.DateEndWorkday.GetHashCode();
+                hash = hash * 59 + DateEndWorkday.GetHashCode();
             }
 
-            if (this.PercentOfGoal != null)
+            if (PercentOfGoal != null)
             {
-                hash = hash * 59 + this.PercentOfGoal.GetHashCode();
+                hash = hash * 59 + PercentOfGoal.GetHashCode();
             }
 
-            if (this.AverageValue != null)
+            if (AverageValue != null)
             {
-                hash = hash * 59 + this.AverageValue.GetHashCode();
+                hash = hash * 59 + AverageValue.GetHashCode();
             }
 
             return hash;

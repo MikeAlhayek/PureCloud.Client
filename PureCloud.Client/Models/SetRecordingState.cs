@@ -85,7 +85,7 @@ public partial class SetRecordingState : IEquatable<SetRecordingState>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SetRecordingState);
+        return Equals(obj as SetRecordingState);
     }
 
     /// <summary>
@@ -103,9 +103,9 @@ public partial class SetRecordingState : IEquatable<SetRecordingState>
 
         return true &&
             (
-                this.RecordingState == other.RecordingState ||
-                this.RecordingState != null &&
-                this.RecordingState.Equals(other.RecordingState)
+                RecordingState == other.RecordingState ||
+                RecordingState != null &&
+                RecordingState.Equals(other.RecordingState)
             );
     }
 
@@ -120,9 +120,9 @@ public partial class SetRecordingState : IEquatable<SetRecordingState>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RecordingState != null)
+            if (RecordingState != null)
             {
-                hash = hash * 59 + this.RecordingState.GetHashCode();
+                hash = hash * 59 + RecordingState.GetHashCode();
             }
 
             return hash;

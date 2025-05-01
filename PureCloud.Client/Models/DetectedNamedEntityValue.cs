@@ -71,7 +71,7 @@ public partial class DetectedNamedEntityValue : IEquatable<DetectedNamedEntityVa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DetectedNamedEntityValue);
+        return Equals(obj as DetectedNamedEntityValue);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class DetectedNamedEntityValue : IEquatable<DetectedNamedEntityVa
 
         return true &&
             (
-                this.Raw == other.Raw ||
-                this.Raw != null &&
-                this.Raw.Equals(other.Raw)
+                Raw == other.Raw ||
+                Raw != null &&
+                Raw.Equals(other.Raw)
             ) &&
             (
-                this.Resolved == other.Resolved ||
-                this.Resolved != null &&
-                this.Resolved.Equals(other.Resolved)
+                Resolved == other.Resolved ||
+                Resolved != null &&
+                Resolved.Equals(other.Resolved)
             ) &&
             (
-                this.Unit == other.Unit ||
-                this.Unit != null &&
-                this.Unit.Equals(other.Unit)
+                Unit == other.Unit ||
+                Unit != null &&
+                Unit.Equals(other.Unit)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class DetectedNamedEntityValue : IEquatable<DetectedNamedEntityVa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Raw != null)
+            if (Raw != null)
             {
-                hash = hash * 59 + this.Raw.GetHashCode();
+                hash = hash * 59 + Raw.GetHashCode();
             }
 
-            if (this.Resolved != null)
+            if (Resolved != null)
             {
-                hash = hash * 59 + this.Resolved.GetHashCode();
+                hash = hash * 59 + Resolved.GetHashCode();
             }
 
-            if (this.Unit != null)
+            if (Unit != null)
             {
-                hash = hash * 59 + this.Unit.GetHashCode();
+                hash = hash * 59 + Unit.GetHashCode();
             }
 
             return hash;

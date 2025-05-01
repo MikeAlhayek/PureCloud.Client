@@ -95,7 +95,7 @@ public partial class LexSlot : IEquatable<LexSlot>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LexSlot);
+        return Equals(obj as LexSlot);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class LexSlot : IEquatable<LexSlot>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class LexSlot : IEquatable<LexSlot>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
             return hash;

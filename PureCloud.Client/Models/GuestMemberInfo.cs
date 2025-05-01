@@ -131,7 +131,7 @@ public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GuestMemberInfo);
+        return Equals(obj as GuestMemberInfo);
     }
 
     /// <summary>
@@ -149,39 +149,39 @@ public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
 
         return true &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.FirstName == other.FirstName ||
-                this.FirstName != null &&
-                this.FirstName.Equals(other.FirstName)
+                FirstName == other.FirstName ||
+                FirstName != null &&
+                FirstName.Equals(other.FirstName)
             ) &&
             (
-                this.LastName == other.LastName ||
-                this.LastName != null &&
-                this.LastName.Equals(other.LastName)
+                LastName == other.LastName ||
+                LastName != null &&
+                LastName.Equals(other.LastName)
             ) &&
             (
-                this.Email == other.Email ||
-                this.Email != null &&
-                this.Email.Equals(other.Email)
+                Email == other.Email ||
+                Email != null &&
+                Email.Equals(other.Email)
             ) &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.AvatarImageUrl == other.AvatarImageUrl ||
-                this.AvatarImageUrl != null &&
-                this.AvatarImageUrl.Equals(other.AvatarImageUrl)
+                AvatarImageUrl == other.AvatarImageUrl ||
+                AvatarImageUrl != null &&
+                AvatarImageUrl.Equals(other.AvatarImageUrl)
             ) &&
             (
-                this.CustomFields == other.CustomFields ||
-                this.CustomFields != null &&
-                this.CustomFields.SequenceEqual(other.CustomFields)
+                CustomFields == other.CustomFields ||
+                CustomFields != null &&
+                CustomFields.SequenceEqual(other.CustomFields)
             );
     }
 
@@ -196,39 +196,39 @@ public partial class GuestMemberInfo : IEquatable<GuestMemberInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.FirstName != null)
+            if (FirstName != null)
             {
-                hash = hash * 59 + this.FirstName.GetHashCode();
+                hash = hash * 59 + FirstName.GetHashCode();
             }
 
-            if (this.LastName != null)
+            if (LastName != null)
             {
-                hash = hash * 59 + this.LastName.GetHashCode();
+                hash = hash * 59 + LastName.GetHashCode();
             }
 
-            if (this.Email != null)
+            if (Email != null)
             {
-                hash = hash * 59 + this.Email.GetHashCode();
+                hash = hash * 59 + Email.GetHashCode();
             }
 
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.AvatarImageUrl != null)
+            if (AvatarImageUrl != null)
             {
-                hash = hash * 59 + this.AvatarImageUrl.GetHashCode();
+                hash = hash * 59 + AvatarImageUrl.GetHashCode();
             }
 
-            if (this.CustomFields != null)
+            if (CustomFields != null)
             {
-                hash = hash * 59 + this.CustomFields.GetHashCode();
+                hash = hash * 59 + CustomFields.GetHashCode();
             }
 
             return hash;

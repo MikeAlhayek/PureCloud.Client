@@ -118,7 +118,7 @@ public partial class ExternalContactsRelationshipChangedTopicPhoneNumber : IEqua
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsRelationshipChangedTopicPhoneNumber);
+        return Equals(obj as ExternalContactsRelationshipChangedTopicPhoneNumber);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class ExternalContactsRelationshipChangedTopicPhoneNumber : IEqua
 
         return true &&
             (
-                this.Display == other.Display ||
-                this.Display != null &&
-                this.Display.Equals(other.Display)
+                Display == other.Display ||
+                Display != null &&
+                Display.Equals(other.Display)
             ) &&
             (
-                this.Extension == other.Extension ||
-                this.Extension != null &&
-                this.Extension.Equals(other.Extension)
+                Extension == other.Extension ||
+                Extension != null &&
+                Extension.Equals(other.Extension)
             ) &&
             (
-                this.AcceptsSMS == other.AcceptsSMS ||
-                this.AcceptsSMS != null &&
-                this.AcceptsSMS.Equals(other.AcceptsSMS)
+                AcceptsSMS == other.AcceptsSMS ||
+                AcceptsSMS != null &&
+                AcceptsSMS.Equals(other.AcceptsSMS)
             ) &&
             (
-                this.UserInput == other.UserInput ||
-                this.UserInput != null &&
-                this.UserInput.Equals(other.UserInput)
+                UserInput == other.UserInput ||
+                UserInput != null &&
+                UserInput.Equals(other.UserInput)
             ) &&
             (
-                this.E164 == other.E164 ||
-                this.E164 != null &&
-                this.E164.Equals(other.E164)
+                E164 == other.E164 ||
+                E164 != null &&
+                E164.Equals(other.E164)
             ) &&
             (
-                this.CountryCode == other.CountryCode ||
-                this.CountryCode != null &&
-                this.CountryCode.Equals(other.CountryCode)
+                CountryCode == other.CountryCode ||
+                CountryCode != null &&
+                CountryCode.Equals(other.CountryCode)
             ) &&
             (
-                this.NormalizationCountryCode == other.NormalizationCountryCode ||
-                this.NormalizationCountryCode != null &&
-                this.NormalizationCountryCode.Equals(other.NormalizationCountryCode)
+                NormalizationCountryCode == other.NormalizationCountryCode ||
+                NormalizationCountryCode != null &&
+                NormalizationCountryCode.Equals(other.NormalizationCountryCode)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class ExternalContactsRelationshipChangedTopicPhoneNumber : IEqua
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Display != null)
+            if (Display != null)
             {
-                hash = hash * 59 + this.Display.GetHashCode();
+                hash = hash * 59 + Display.GetHashCode();
             }
 
-            if (this.Extension != null)
+            if (Extension != null)
             {
-                hash = hash * 59 + this.Extension.GetHashCode();
+                hash = hash * 59 + Extension.GetHashCode();
             }
 
-            if (this.AcceptsSMS != null)
+            if (AcceptsSMS != null)
             {
-                hash = hash * 59 + this.AcceptsSMS.GetHashCode();
+                hash = hash * 59 + AcceptsSMS.GetHashCode();
             }
 
-            if (this.UserInput != null)
+            if (UserInput != null)
             {
-                hash = hash * 59 + this.UserInput.GetHashCode();
+                hash = hash * 59 + UserInput.GetHashCode();
             }
 
-            if (this.E164 != null)
+            if (E164 != null)
             {
-                hash = hash * 59 + this.E164.GetHashCode();
+                hash = hash * 59 + E164.GetHashCode();
             }
 
-            if (this.CountryCode != null)
+            if (CountryCode != null)
             {
-                hash = hash * 59 + this.CountryCode.GetHashCode();
+                hash = hash * 59 + CountryCode.GetHashCode();
             }
 
-            if (this.NormalizationCountryCode != null)
+            if (NormalizationCountryCode != null)
             {
-                hash = hash * 59 + this.NormalizationCountryCode.GetHashCode();
+                hash = hash * 59 + NormalizationCountryCode.GetHashCode();
             }
 
             return hash;

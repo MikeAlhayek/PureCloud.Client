@@ -184,7 +184,7 @@ public partial class UserRecording : IEquatable<UserRecording>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserRecording);
+        return Equals(obj as UserRecording);
     }
 
     /// <summary>
@@ -202,69 +202,69 @@ public partial class UserRecording : IEquatable<UserRecording>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ContentUri == other.ContentUri ||
-                this.ContentUri != null &&
-                this.ContentUri.Equals(other.ContentUri)
+                ContentUri == other.ContentUri ||
+                ContentUri != null &&
+                ContentUri.Equals(other.ContentUri)
             ) &&
             (
-                this.Workspace == other.Workspace ||
-                this.Workspace != null &&
-                this.Workspace.Equals(other.Workspace)
+                Workspace == other.Workspace ||
+                Workspace != null &&
+                Workspace.Equals(other.Workspace)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.ContentLength == other.ContentLength ||
-                this.ContentLength != null &&
-                this.ContentLength.Equals(other.ContentLength)
+                ContentLength == other.ContentLength ||
+                ContentLength != null &&
+                ContentLength.Equals(other.ContentLength)
             ) &&
             (
-                this.DurationMilliseconds == other.DurationMilliseconds ||
-                this.DurationMilliseconds != null &&
-                this.DurationMilliseconds.Equals(other.DurationMilliseconds)
+                DurationMilliseconds == other.DurationMilliseconds ||
+                DurationMilliseconds != null &&
+                DurationMilliseconds.Equals(other.DurationMilliseconds)
             ) &&
             (
-                this.Thumbnails == other.Thumbnails ||
-                this.Thumbnails != null &&
-                this.Thumbnails.SequenceEqual(other.Thumbnails)
+                Thumbnails == other.Thumbnails ||
+                Thumbnails != null &&
+                Thumbnails.SequenceEqual(other.Thumbnails)
             ) &&
             (
-                this.Read == other.Read ||
-                this.Read != null &&
-                this.Read.Equals(other.Read)
+                Read == other.Read ||
+                Read != null &&
+                Read.Equals(other.Read)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -279,69 +279,69 @@ public partial class UserRecording : IEquatable<UserRecording>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ContentUri != null)
+            if (ContentUri != null)
             {
-                hash = hash * 59 + this.ContentUri.GetHashCode();
+                hash = hash * 59 + ContentUri.GetHashCode();
             }
 
-            if (this.Workspace != null)
+            if (Workspace != null)
             {
-                hash = hash * 59 + this.Workspace.GetHashCode();
+                hash = hash * 59 + Workspace.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.ContentLength != null)
+            if (ContentLength != null)
             {
-                hash = hash * 59 + this.ContentLength.GetHashCode();
+                hash = hash * 59 + ContentLength.GetHashCode();
             }
 
-            if (this.DurationMilliseconds != null)
+            if (DurationMilliseconds != null)
             {
-                hash = hash * 59 + this.DurationMilliseconds.GetHashCode();
+                hash = hash * 59 + DurationMilliseconds.GetHashCode();
             }
 
-            if (this.Thumbnails != null)
+            if (Thumbnails != null)
             {
-                hash = hash * 59 + this.Thumbnails.GetHashCode();
+                hash = hash * 59 + Thumbnails.GetHashCode();
             }
 
-            if (this.Read != null)
+            if (Read != null)
             {
-                hash = hash * 59 + this.Read.GetHashCode();
+                hash = hash * 59 + Read.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

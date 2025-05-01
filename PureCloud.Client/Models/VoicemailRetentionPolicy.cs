@@ -97,7 +97,7 @@ public partial class VoicemailRetentionPolicy : IEquatable<VoicemailRetentionPol
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VoicemailRetentionPolicy);
+        return Equals(obj as VoicemailRetentionPolicy);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class VoicemailRetentionPolicy : IEquatable<VoicemailRetentionPol
 
         return true &&
             (
-                this.VoicemailRetentionPolicyType == other.VoicemailRetentionPolicyType ||
-                this.VoicemailRetentionPolicyType != null &&
-                this.VoicemailRetentionPolicyType.Equals(other.VoicemailRetentionPolicyType)
+                VoicemailRetentionPolicyType == other.VoicemailRetentionPolicyType ||
+                VoicemailRetentionPolicyType != null &&
+                VoicemailRetentionPolicyType.Equals(other.VoicemailRetentionPolicyType)
             ) &&
             (
-                this.NumberOfDays == other.NumberOfDays ||
-                this.NumberOfDays != null &&
-                this.NumberOfDays.Equals(other.NumberOfDays)
+                NumberOfDays == other.NumberOfDays ||
+                NumberOfDays != null &&
+                NumberOfDays.Equals(other.NumberOfDays)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class VoicemailRetentionPolicy : IEquatable<VoicemailRetentionPol
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.VoicemailRetentionPolicyType != null)
+            if (VoicemailRetentionPolicyType != null)
             {
-                hash = hash * 59 + this.VoicemailRetentionPolicyType.GetHashCode();
+                hash = hash * 59 + VoicemailRetentionPolicyType.GetHashCode();
             }
 
-            if (this.NumberOfDays != null)
+            if (NumberOfDays != null)
             {
-                hash = hash * 59 + this.NumberOfDays.GetHashCode();
+                hash = hash * 59 + NumberOfDays.GetHashCode();
             }
 
             return hash;

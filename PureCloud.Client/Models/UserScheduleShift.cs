@@ -119,7 +119,7 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserScheduleShift);
+        return Equals(obj as UserScheduleShift);
     }
 
     /// <summary>
@@ -137,39 +137,39 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
 
         return true &&
             (
-                this.WeekSchedule == other.WeekSchedule ||
-                this.WeekSchedule != null &&
-                this.WeekSchedule.Equals(other.WeekSchedule)
+                WeekSchedule == other.WeekSchedule ||
+                WeekSchedule != null &&
+                WeekSchedule.Equals(other.WeekSchedule)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.Activities == other.Activities ||
-                this.Activities != null &&
-                this.Activities.SequenceEqual(other.Activities)
+                Activities == other.Activities ||
+                Activities != null &&
+                Activities.SequenceEqual(other.Activities)
             ) &&
             (
-                this.Delete == other.Delete ||
-                this.Delete != null &&
-                this.Delete.Equals(other.Delete)
+                Delete == other.Delete ||
+                Delete != null &&
+                Delete.Equals(other.Delete)
             ) &&
             (
-                this.ManuallyEdited == other.ManuallyEdited ||
-                this.ManuallyEdited != null &&
-                this.ManuallyEdited.Equals(other.ManuallyEdited)
+                ManuallyEdited == other.ManuallyEdited ||
+                ManuallyEdited != null &&
+                ManuallyEdited.Equals(other.ManuallyEdited)
             );
     }
 
@@ -184,39 +184,39 @@ public partial class UserScheduleShift : IEquatable<UserScheduleShift>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WeekSchedule != null)
+            if (WeekSchedule != null)
             {
-                hash = hash * 59 + this.WeekSchedule.GetHashCode();
+                hash = hash * 59 + WeekSchedule.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.Activities != null)
+            if (Activities != null)
             {
-                hash = hash * 59 + this.Activities.GetHashCode();
+                hash = hash * 59 + Activities.GetHashCode();
             }
 
-            if (this.Delete != null)
+            if (Delete != null)
             {
-                hash = hash * 59 + this.Delete.GetHashCode();
+                hash = hash * 59 + Delete.GetHashCode();
             }
 
-            if (this.ManuallyEdited != null)
+            if (ManuallyEdited != null)
             {
-                hash = hash * 59 + this.ManuallyEdited.GetHashCode();
+                hash = hash * 59 + ManuallyEdited.GetHashCode();
             }
 
             return hash;

@@ -125,7 +125,7 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IntegrationStatusInfo);
+        return Equals(obj as IntegrationStatusInfo);
     }
 
     /// <summary>
@@ -143,24 +143,24 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
 
         return true &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.Effective == other.Effective ||
-                this.Effective != null &&
-                this.Effective.Equals(other.Effective)
+                Effective == other.Effective ||
+                Effective != null &&
+                Effective.Equals(other.Effective)
             ) &&
             (
-                this.Detail == other.Detail ||
-                this.Detail != null &&
-                this.Detail.Equals(other.Detail)
+                Detail == other.Detail ||
+                Detail != null &&
+                Detail.Equals(other.Detail)
             ) &&
             (
-                this.LastUpdated == other.LastUpdated ||
-                this.LastUpdated != null &&
-                this.LastUpdated.Equals(other.LastUpdated)
+                LastUpdated == other.LastUpdated ||
+                LastUpdated != null &&
+                LastUpdated.Equals(other.LastUpdated)
             );
     }
 
@@ -175,24 +175,24 @@ public partial class IntegrationStatusInfo : IEquatable<IntegrationStatusInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.Effective != null)
+            if (Effective != null)
             {
-                hash = hash * 59 + this.Effective.GetHashCode();
+                hash = hash * 59 + Effective.GetHashCode();
             }
 
-            if (this.Detail != null)
+            if (Detail != null)
             {
-                hash = hash * 59 + this.Detail.GetHashCode();
+                hash = hash * 59 + Detail.GetHashCode();
             }
 
-            if (this.LastUpdated != null)
+            if (LastUpdated != null)
             {
-                hash = hash * 59 + this.LastUpdated.GetHashCode();
+                hash = hash * 59 + LastUpdated.GetHashCode();
             }
 
             return hash;

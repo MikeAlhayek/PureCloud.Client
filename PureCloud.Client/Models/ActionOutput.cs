@@ -112,7 +112,7 @@ public partial class ActionOutput : IEquatable<ActionOutput>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionOutput);
+        return Equals(obj as ActionOutput);
     }
 
     /// <summary>
@@ -130,34 +130,34 @@ public partial class ActionOutput : IEquatable<ActionOutput>
 
         return true &&
             (
-                this.SuccessSchema == other.SuccessSchema ||
-                this.SuccessSchema != null &&
-                this.SuccessSchema.Equals(other.SuccessSchema)
+                SuccessSchema == other.SuccessSchema ||
+                SuccessSchema != null &&
+                SuccessSchema.Equals(other.SuccessSchema)
             ) &&
             (
-                this.SuccessSchemaUri == other.SuccessSchemaUri ||
-                this.SuccessSchemaUri != null &&
-                this.SuccessSchemaUri.Equals(other.SuccessSchemaUri)
+                SuccessSchemaUri == other.SuccessSchemaUri ||
+                SuccessSchemaUri != null &&
+                SuccessSchemaUri.Equals(other.SuccessSchemaUri)
             ) &&
             (
-                this.ErrorSchema == other.ErrorSchema ||
-                this.ErrorSchema != null &&
-                this.ErrorSchema.Equals(other.ErrorSchema)
+                ErrorSchema == other.ErrorSchema ||
+                ErrorSchema != null &&
+                ErrorSchema.Equals(other.ErrorSchema)
             ) &&
             (
-                this.ErrorSchemaUri == other.ErrorSchemaUri ||
-                this.ErrorSchemaUri != null &&
-                this.ErrorSchemaUri.Equals(other.ErrorSchemaUri)
+                ErrorSchemaUri == other.ErrorSchemaUri ||
+                ErrorSchemaUri != null &&
+                ErrorSchemaUri.Equals(other.ErrorSchemaUri)
             ) &&
             (
-                this.SuccessSchemaFlattened == other.SuccessSchemaFlattened ||
-                this.SuccessSchemaFlattened != null &&
-                this.SuccessSchemaFlattened.Equals(other.SuccessSchemaFlattened)
+                SuccessSchemaFlattened == other.SuccessSchemaFlattened ||
+                SuccessSchemaFlattened != null &&
+                SuccessSchemaFlattened.Equals(other.SuccessSchemaFlattened)
             ) &&
             (
-                this.ErrorSchemaFlattened == other.ErrorSchemaFlattened ||
-                this.ErrorSchemaFlattened != null &&
-                this.ErrorSchemaFlattened.Equals(other.ErrorSchemaFlattened)
+                ErrorSchemaFlattened == other.ErrorSchemaFlattened ||
+                ErrorSchemaFlattened != null &&
+                ErrorSchemaFlattened.Equals(other.ErrorSchemaFlattened)
             );
     }
 
@@ -172,34 +172,34 @@ public partial class ActionOutput : IEquatable<ActionOutput>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SuccessSchema != null)
+            if (SuccessSchema != null)
             {
-                hash = hash * 59 + this.SuccessSchema.GetHashCode();
+                hash = hash * 59 + SuccessSchema.GetHashCode();
             }
 
-            if (this.SuccessSchemaUri != null)
+            if (SuccessSchemaUri != null)
             {
-                hash = hash * 59 + this.SuccessSchemaUri.GetHashCode();
+                hash = hash * 59 + SuccessSchemaUri.GetHashCode();
             }
 
-            if (this.ErrorSchema != null)
+            if (ErrorSchema != null)
             {
-                hash = hash * 59 + this.ErrorSchema.GetHashCode();
+                hash = hash * 59 + ErrorSchema.GetHashCode();
             }
 
-            if (this.ErrorSchemaUri != null)
+            if (ErrorSchemaUri != null)
             {
-                hash = hash * 59 + this.ErrorSchemaUri.GetHashCode();
+                hash = hash * 59 + ErrorSchemaUri.GetHashCode();
             }
 
-            if (this.SuccessSchemaFlattened != null)
+            if (SuccessSchemaFlattened != null)
             {
-                hash = hash * 59 + this.SuccessSchemaFlattened.GetHashCode();
+                hash = hash * 59 + SuccessSchemaFlattened.GetHashCode();
             }
 
-            if (this.ErrorSchemaFlattened != null)
+            if (ErrorSchemaFlattened != null)
             {
-                hash = hash * 59 + this.ErrorSchemaFlattened.GetHashCode();
+                hash = hash * 59 + ErrorSchemaFlattened.GetHashCode();
             }
 
             return hash;

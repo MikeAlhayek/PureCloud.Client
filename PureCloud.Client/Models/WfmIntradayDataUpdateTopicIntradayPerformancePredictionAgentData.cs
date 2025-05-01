@@ -52,7 +52,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData);
+        return Equals(obj as WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgen
 
         return true &&
             (
-                this.InteractingTimeSeconds == other.InteractingTimeSeconds ||
-                this.InteractingTimeSeconds != null &&
-                this.InteractingTimeSeconds.Equals(other.InteractingTimeSeconds)
+                InteractingTimeSeconds == other.InteractingTimeSeconds ||
+                InteractingTimeSeconds != null &&
+                InteractingTimeSeconds.Equals(other.InteractingTimeSeconds)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.InteractingTimeSeconds != null)
+            if (InteractingTimeSeconds != null)
             {
-                hash = hash * 59 + this.InteractingTimeSeconds.GetHashCode();
+                hash = hash * 59 + InteractingTimeSeconds.GetHashCode();
             }
 
             return hash;

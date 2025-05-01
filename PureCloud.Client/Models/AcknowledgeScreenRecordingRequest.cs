@@ -73,7 +73,7 @@ public partial class AcknowledgeScreenRecordingRequest : IEquatable<AcknowledgeS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AcknowledgeScreenRecordingRequest);
+        return Equals(obj as AcknowledgeScreenRecordingRequest);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class AcknowledgeScreenRecordingRequest : IEquatable<AcknowledgeS
 
         return true &&
             (
-                this.ParticipantJid == other.ParticipantJid ||
-                this.ParticipantJid != null &&
-                this.ParticipantJid.Equals(other.ParticipantJid)
+                ParticipantJid == other.ParticipantJid ||
+                ParticipantJid != null &&
+                ParticipantJid.Equals(other.ParticipantJid)
             ) &&
             (
-                this.RoomId == other.RoomId ||
-                this.RoomId != null &&
-                this.RoomId.Equals(other.RoomId)
+                RoomId == other.RoomId ||
+                RoomId != null &&
+                RoomId.Equals(other.RoomId)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class AcknowledgeScreenRecordingRequest : IEquatable<AcknowledgeS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ParticipantJid != null)
+            if (ParticipantJid != null)
             {
-                hash = hash * 59 + this.ParticipantJid.GetHashCode();
+                hash = hash * 59 + ParticipantJid.GetHashCode();
             }
 
-            if (this.RoomId != null)
+            if (RoomId != null)
             {
-                hash = hash * 59 + this.RoomId.GetHashCode();
+                hash = hash * 59 + RoomId.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
             return hash;

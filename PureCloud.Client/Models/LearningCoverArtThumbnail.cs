@@ -65,7 +65,7 @@ public partial class LearningCoverArtThumbnail : IEquatable<LearningCoverArtThum
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningCoverArtThumbnail);
+        return Equals(obj as LearningCoverArtThumbnail);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class LearningCoverArtThumbnail : IEquatable<LearningCoverArtThum
 
         return true &&
             (
-                this.Resolution == other.Resolution ||
-                this.Resolution != null &&
-                this.Resolution.Equals(other.Resolution)
+                Resolution == other.Resolution ||
+                Resolution != null &&
+                Resolution.Equals(other.Resolution)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class LearningCoverArtThumbnail : IEquatable<LearningCoverArtThum
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Resolution != null)
+            if (Resolution != null)
             {
-                hash = hash * 59 + this.Resolution.GetHashCode();
+                hash = hash * 59 + Resolution.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
             return hash;

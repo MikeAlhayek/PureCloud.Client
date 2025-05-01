@@ -71,7 +71,7 @@ public partial class PlanningPeriodSettings : IEquatable<PlanningPeriodSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PlanningPeriodSettings);
+        return Equals(obj as PlanningPeriodSettings);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class PlanningPeriodSettings : IEquatable<PlanningPeriodSettings>
 
         return true &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class PlanningPeriodSettings : IEquatable<PlanningPeriodSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
             return hash;

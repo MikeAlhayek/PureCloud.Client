@@ -115,7 +115,7 @@ public partial class QueryResponseMetric : IEquatable<QueryResponseMetric>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueryResponseMetric);
+        return Equals(obj as QueryResponseMetric);
     }
 
     /// <summary>
@@ -133,14 +133,14 @@ public partial class QueryResponseMetric : IEquatable<QueryResponseMetric>
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Stats == other.Stats ||
-                this.Stats != null &&
-                this.Stats.Equals(other.Stats)
+                Stats == other.Stats ||
+                Stats != null &&
+                Stats.Equals(other.Stats)
             );
     }
 
@@ -155,14 +155,14 @@ public partial class QueryResponseMetric : IEquatable<QueryResponseMetric>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Stats != null)
+            if (Stats != null)
             {
-                hash = hash * 59 + this.Stats.GetHashCode();
+                hash = hash * 59 + Stats.GetHashCode();
             }
 
             return hash;

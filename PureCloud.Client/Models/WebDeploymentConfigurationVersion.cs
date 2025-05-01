@@ -349,7 +349,7 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebDeploymentConfigurationVersion);
+        return Equals(obj as WebDeploymentConfigurationVersion);
     }
 
     /// <summary>
@@ -367,119 +367,119 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.HeadlessMode == other.HeadlessMode ||
-                this.HeadlessMode != null &&
-                this.HeadlessMode.Equals(other.HeadlessMode)
+                HeadlessMode == other.HeadlessMode ||
+                HeadlessMode != null &&
+                HeadlessMode.Equals(other.HeadlessMode)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Languages == other.Languages ||
-                this.Languages != null &&
-                this.Languages.SequenceEqual(other.Languages)
+                Languages == other.Languages ||
+                Languages != null &&
+                Languages.SequenceEqual(other.Languages)
             ) &&
             (
-                this.DefaultLanguage == other.DefaultLanguage ||
-                this.DefaultLanguage != null &&
-                this.DefaultLanguage.Equals(other.DefaultLanguage)
+                DefaultLanguage == other.DefaultLanguage ||
+                DefaultLanguage != null &&
+                DefaultLanguage.Equals(other.DefaultLanguage)
             ) &&
             (
-                this.CustomI18nLabels == other.CustomI18nLabels ||
-                this.CustomI18nLabels != null &&
-                this.CustomI18nLabels.SequenceEqual(other.CustomI18nLabels)
+                CustomI18nLabels == other.CustomI18nLabels ||
+                CustomI18nLabels != null &&
+                CustomI18nLabels.SequenceEqual(other.CustomI18nLabels)
             ) &&
             (
-                this.Messenger == other.Messenger ||
-                this.Messenger != null &&
-                this.Messenger.Equals(other.Messenger)
+                Messenger == other.Messenger ||
+                Messenger != null &&
+                Messenger.Equals(other.Messenger)
             ) &&
             (
-                this.Position == other.Position ||
-                this.Position != null &&
-                this.Position.Equals(other.Position)
+                Position == other.Position ||
+                Position != null &&
+                Position.Equals(other.Position)
             ) &&
             (
-                this.SupportCenter == other.SupportCenter ||
-                this.SupportCenter != null &&
-                this.SupportCenter.Equals(other.SupportCenter)
+                SupportCenter == other.SupportCenter ||
+                SupportCenter != null &&
+                SupportCenter.Equals(other.SupportCenter)
             ) &&
             (
-                this.Cobrowse == other.Cobrowse ||
-                this.Cobrowse != null &&
-                this.Cobrowse.Equals(other.Cobrowse)
+                Cobrowse == other.Cobrowse ||
+                Cobrowse != null &&
+                Cobrowse.Equals(other.Cobrowse)
             ) &&
             (
-                this.JourneyEvents == other.JourneyEvents ||
-                this.JourneyEvents != null &&
-                this.JourneyEvents.Equals(other.JourneyEvents)
+                JourneyEvents == other.JourneyEvents ||
+                JourneyEvents != null &&
+                JourneyEvents.Equals(other.JourneyEvents)
             ) &&
             (
-                this.AuthenticationSettings == other.AuthenticationSettings ||
-                this.AuthenticationSettings != null &&
-                this.AuthenticationSettings.Equals(other.AuthenticationSettings)
+                AuthenticationSettings == other.AuthenticationSettings ||
+                AuthenticationSettings != null &&
+                AuthenticationSettings.Equals(other.AuthenticationSettings)
             ) &&
             (
-                this.Video == other.Video ||
-                this.Video != null &&
-                this.Video.Equals(other.Video)
+                Video == other.Video ||
+                Video != null &&
+                Video.Equals(other.Video)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.DatePublished == other.DatePublished ||
-                this.DatePublished != null &&
-                this.DatePublished.Equals(other.DatePublished)
+                DatePublished == other.DatePublished ||
+                DatePublished != null &&
+                DatePublished.Equals(other.DatePublished)
             ) &&
             (
-                this.LastModifiedUser == other.LastModifiedUser ||
-                this.LastModifiedUser != null &&
-                this.LastModifiedUser.Equals(other.LastModifiedUser)
+                LastModifiedUser == other.LastModifiedUser ||
+                LastModifiedUser != null &&
+                LastModifiedUser.Equals(other.LastModifiedUser)
             ) &&
             (
-                this.CreatedUser == other.CreatedUser ||
-                this.CreatedUser != null &&
-                this.CreatedUser.Equals(other.CreatedUser)
+                CreatedUser == other.CreatedUser ||
+                CreatedUser != null &&
+                CreatedUser.Equals(other.CreatedUser)
             ) &&
             (
-                this.PublishedUser == other.PublishedUser ||
-                this.PublishedUser != null &&
-                this.PublishedUser.Equals(other.PublishedUser)
+                PublishedUser == other.PublishedUser ||
+                PublishedUser != null &&
+                PublishedUser.Equals(other.PublishedUser)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -494,119 +494,119 @@ public partial class WebDeploymentConfigurationVersion : IEquatable<WebDeploymen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.HeadlessMode != null)
+            if (HeadlessMode != null)
             {
-                hash = hash * 59 + this.HeadlessMode.GetHashCode();
+                hash = hash * 59 + HeadlessMode.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Languages != null)
+            if (Languages != null)
             {
-                hash = hash * 59 + this.Languages.GetHashCode();
+                hash = hash * 59 + Languages.GetHashCode();
             }
 
-            if (this.DefaultLanguage != null)
+            if (DefaultLanguage != null)
             {
-                hash = hash * 59 + this.DefaultLanguage.GetHashCode();
+                hash = hash * 59 + DefaultLanguage.GetHashCode();
             }
 
-            if (this.CustomI18nLabels != null)
+            if (CustomI18nLabels != null)
             {
-                hash = hash * 59 + this.CustomI18nLabels.GetHashCode();
+                hash = hash * 59 + CustomI18nLabels.GetHashCode();
             }
 
-            if (this.Messenger != null)
+            if (Messenger != null)
             {
-                hash = hash * 59 + this.Messenger.GetHashCode();
+                hash = hash * 59 + Messenger.GetHashCode();
             }
 
-            if (this.Position != null)
+            if (Position != null)
             {
-                hash = hash * 59 + this.Position.GetHashCode();
+                hash = hash * 59 + Position.GetHashCode();
             }
 
-            if (this.SupportCenter != null)
+            if (SupportCenter != null)
             {
-                hash = hash * 59 + this.SupportCenter.GetHashCode();
+                hash = hash * 59 + SupportCenter.GetHashCode();
             }
 
-            if (this.Cobrowse != null)
+            if (Cobrowse != null)
             {
-                hash = hash * 59 + this.Cobrowse.GetHashCode();
+                hash = hash * 59 + Cobrowse.GetHashCode();
             }
 
-            if (this.JourneyEvents != null)
+            if (JourneyEvents != null)
             {
-                hash = hash * 59 + this.JourneyEvents.GetHashCode();
+                hash = hash * 59 + JourneyEvents.GetHashCode();
             }
 
-            if (this.AuthenticationSettings != null)
+            if (AuthenticationSettings != null)
             {
-                hash = hash * 59 + this.AuthenticationSettings.GetHashCode();
+                hash = hash * 59 + AuthenticationSettings.GetHashCode();
             }
 
-            if (this.Video != null)
+            if (Video != null)
             {
-                hash = hash * 59 + this.Video.GetHashCode();
+                hash = hash * 59 + Video.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.DatePublished != null)
+            if (DatePublished != null)
             {
-                hash = hash * 59 + this.DatePublished.GetHashCode();
+                hash = hash * 59 + DatePublished.GetHashCode();
             }
 
-            if (this.LastModifiedUser != null)
+            if (LastModifiedUser != null)
             {
-                hash = hash * 59 + this.LastModifiedUser.GetHashCode();
+                hash = hash * 59 + LastModifiedUser.GetHashCode();
             }
 
-            if (this.CreatedUser != null)
+            if (CreatedUser != null)
             {
-                hash = hash * 59 + this.CreatedUser.GetHashCode();
+                hash = hash * 59 + CreatedUser.GetHashCode();
             }
 
-            if (this.PublishedUser != null)
+            if (PublishedUser != null)
             {
-                hash = hash * 59 + this.PublishedUser.GetHashCode();
+                hash = hash * 59 + PublishedUser.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

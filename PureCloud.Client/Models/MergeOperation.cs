@@ -71,7 +71,7 @@ public partial class MergeOperation : IEquatable<MergeOperation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MergeOperation);
+        return Equals(obj as MergeOperation);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class MergeOperation : IEquatable<MergeOperation>
 
         return true &&
             (
-                this.SourceContact == other.SourceContact ||
-                this.SourceContact != null &&
-                this.SourceContact.Equals(other.SourceContact)
+                SourceContact == other.SourceContact ||
+                SourceContact != null &&
+                SourceContact.Equals(other.SourceContact)
             ) &&
             (
-                this.TargetContact == other.TargetContact ||
-                this.TargetContact != null &&
-                this.TargetContact.Equals(other.TargetContact)
+                TargetContact == other.TargetContact ||
+                TargetContact != null &&
+                TargetContact.Equals(other.TargetContact)
             ) &&
             (
-                this.ResultingContact == other.ResultingContact ||
-                this.ResultingContact != null &&
-                this.ResultingContact.Equals(other.ResultingContact)
+                ResultingContact == other.ResultingContact ||
+                ResultingContact != null &&
+                ResultingContact.Equals(other.ResultingContact)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class MergeOperation : IEquatable<MergeOperation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SourceContact != null)
+            if (SourceContact != null)
             {
-                hash = hash * 59 + this.SourceContact.GetHashCode();
+                hash = hash * 59 + SourceContact.GetHashCode();
             }
 
-            if (this.TargetContact != null)
+            if (TargetContact != null)
             {
-                hash = hash * 59 + this.TargetContact.GetHashCode();
+                hash = hash * 59 + TargetContact.GetHashCode();
             }
 
-            if (this.ResultingContact != null)
+            if (ResultingContact != null)
             {
-                hash = hash * 59 + this.ResultingContact.GetHashCode();
+                hash = hash * 59 + ResultingContact.GetHashCode();
             }
 
             return hash;

@@ -169,7 +169,7 @@ public partial class VoicemailOrganizationPolicy : IEquatable<VoicemailOrganizat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VoicemailOrganizationPolicy);
+        return Equals(obj as VoicemailOrganizationPolicy);
     }
 
     /// <summary>
@@ -187,59 +187,59 @@ public partial class VoicemailOrganizationPolicy : IEquatable<VoicemailOrganizat
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.AlertTimeoutSeconds == other.AlertTimeoutSeconds ||
-                this.AlertTimeoutSeconds != null &&
-                this.AlertTimeoutSeconds.Equals(other.AlertTimeoutSeconds)
+                AlertTimeoutSeconds == other.AlertTimeoutSeconds ||
+                AlertTimeoutSeconds != null &&
+                AlertTimeoutSeconds.Equals(other.AlertTimeoutSeconds)
             ) &&
             (
-                this.PinConfiguration == other.PinConfiguration ||
-                this.PinConfiguration != null &&
-                this.PinConfiguration.Equals(other.PinConfiguration)
+                PinConfiguration == other.PinConfiguration ||
+                PinConfiguration != null &&
+                PinConfiguration.Equals(other.PinConfiguration)
             ) &&
             (
-                this.VoicemailExtension == other.VoicemailExtension ||
-                this.VoicemailExtension != null &&
-                this.VoicemailExtension.Equals(other.VoicemailExtension)
+                VoicemailExtension == other.VoicemailExtension ||
+                VoicemailExtension != null &&
+                VoicemailExtension.Equals(other.VoicemailExtension)
             ) &&
             (
-                this.PinRequired == other.PinRequired ||
-                this.PinRequired != null &&
-                this.PinRequired.Equals(other.PinRequired)
+                PinRequired == other.PinRequired ||
+                PinRequired != null &&
+                PinRequired.Equals(other.PinRequired)
             ) &&
             (
-                this.InteractiveResponseRequired == other.InteractiveResponseRequired ||
-                this.InteractiveResponseRequired != null &&
-                this.InteractiveResponseRequired.Equals(other.InteractiveResponseRequired)
+                InteractiveResponseRequired == other.InteractiveResponseRequired ||
+                InteractiveResponseRequired != null &&
+                InteractiveResponseRequired.Equals(other.InteractiveResponseRequired)
             ) &&
             (
-                this.SendEmailNotifications == other.SendEmailNotifications ||
-                this.SendEmailNotifications != null &&
-                this.SendEmailNotifications.Equals(other.SendEmailNotifications)
+                SendEmailNotifications == other.SendEmailNotifications ||
+                SendEmailNotifications != null &&
+                SendEmailNotifications.Equals(other.SendEmailNotifications)
             ) &&
             (
-                this.IncludeEmailTranscriptions == other.IncludeEmailTranscriptions ||
-                this.IncludeEmailTranscriptions != null &&
-                this.IncludeEmailTranscriptions.Equals(other.IncludeEmailTranscriptions)
+                IncludeEmailTranscriptions == other.IncludeEmailTranscriptions ||
+                IncludeEmailTranscriptions != null &&
+                IncludeEmailTranscriptions.Equals(other.IncludeEmailTranscriptions)
             ) &&
             (
-                this.DisableEmailPii == other.DisableEmailPii ||
-                this.DisableEmailPii != null &&
-                this.DisableEmailPii.Equals(other.DisableEmailPii)
+                DisableEmailPii == other.DisableEmailPii ||
+                DisableEmailPii != null &&
+                DisableEmailPii.Equals(other.DisableEmailPii)
             ) &&
             (
-                this.MaximumRecordingTimeSeconds == other.MaximumRecordingTimeSeconds ||
-                this.MaximumRecordingTimeSeconds != null &&
-                this.MaximumRecordingTimeSeconds.Equals(other.MaximumRecordingTimeSeconds)
+                MaximumRecordingTimeSeconds == other.MaximumRecordingTimeSeconds ||
+                MaximumRecordingTimeSeconds != null &&
+                MaximumRecordingTimeSeconds.Equals(other.MaximumRecordingTimeSeconds)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             );
     }
 
@@ -254,59 +254,59 @@ public partial class VoicemailOrganizationPolicy : IEquatable<VoicemailOrganizat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.AlertTimeoutSeconds != null)
+            if (AlertTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.AlertTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + AlertTimeoutSeconds.GetHashCode();
             }
 
-            if (this.PinConfiguration != null)
+            if (PinConfiguration != null)
             {
-                hash = hash * 59 + this.PinConfiguration.GetHashCode();
+                hash = hash * 59 + PinConfiguration.GetHashCode();
             }
 
-            if (this.VoicemailExtension != null)
+            if (VoicemailExtension != null)
             {
-                hash = hash * 59 + this.VoicemailExtension.GetHashCode();
+                hash = hash * 59 + VoicemailExtension.GetHashCode();
             }
 
-            if (this.PinRequired != null)
+            if (PinRequired != null)
             {
-                hash = hash * 59 + this.PinRequired.GetHashCode();
+                hash = hash * 59 + PinRequired.GetHashCode();
             }
 
-            if (this.InteractiveResponseRequired != null)
+            if (InteractiveResponseRequired != null)
             {
-                hash = hash * 59 + this.InteractiveResponseRequired.GetHashCode();
+                hash = hash * 59 + InteractiveResponseRequired.GetHashCode();
             }
 
-            if (this.SendEmailNotifications != null)
+            if (SendEmailNotifications != null)
             {
-                hash = hash * 59 + this.SendEmailNotifications.GetHashCode();
+                hash = hash * 59 + SendEmailNotifications.GetHashCode();
             }
 
-            if (this.IncludeEmailTranscriptions != null)
+            if (IncludeEmailTranscriptions != null)
             {
-                hash = hash * 59 + this.IncludeEmailTranscriptions.GetHashCode();
+                hash = hash * 59 + IncludeEmailTranscriptions.GetHashCode();
             }
 
-            if (this.DisableEmailPii != null)
+            if (DisableEmailPii != null)
             {
-                hash = hash * 59 + this.DisableEmailPii.GetHashCode();
+                hash = hash * 59 + DisableEmailPii.GetHashCode();
             }
 
-            if (this.MaximumRecordingTimeSeconds != null)
+            if (MaximumRecordingTimeSeconds != null)
             {
-                hash = hash * 59 + this.MaximumRecordingTimeSeconds.GetHashCode();
+                hash = hash * 59 + MaximumRecordingTimeSeconds.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
             return hash;

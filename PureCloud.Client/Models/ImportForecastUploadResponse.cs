@@ -89,7 +89,7 @@ public partial class ImportForecastUploadResponse : IEquatable<ImportForecastUpl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ImportForecastUploadResponse);
+        return Equals(obj as ImportForecastUploadResponse);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ImportForecastUploadResponse : IEquatable<ImportForecastUpl
 
         return true &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Headers == other.Headers ||
-                this.Headers != null &&
-                this.Headers.SequenceEqual(other.Headers)
+                Headers == other.Headers ||
+                Headers != null &&
+                Headers.SequenceEqual(other.Headers)
             ) &&
             (
-                this.UploadBodySchema == other.UploadBodySchema ||
-                this.UploadBodySchema != null &&
-                this.UploadBodySchema.Equals(other.UploadBodySchema)
+                UploadBodySchema == other.UploadBodySchema ||
+                UploadBodySchema != null &&
+                UploadBodySchema.Equals(other.UploadBodySchema)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ImportForecastUploadResponse : IEquatable<ImportForecastUpl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Headers != null)
+            if (Headers != null)
             {
-                hash = hash * 59 + this.Headers.GetHashCode();
+                hash = hash * 59 + Headers.GetHashCode();
             }
 
-            if (this.UploadBodySchema != null)
+            if (UploadBodySchema != null)
             {
-                hash = hash * 59 + this.UploadBodySchema.GetHashCode();
+                hash = hash * 59 + UploadBodySchema.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class UserInsightsTrends : IEquatable<UserInsightsTrends>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserInsightsTrends);
+        return Equals(obj as UserInsightsTrends);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class UserInsightsTrends : IEquatable<UserInsightsTrends>
 
         return true &&
             (
-                this.ComparativePeriod == other.ComparativePeriod ||
-                this.ComparativePeriod != null &&
-                this.ComparativePeriod.SequenceEqual(other.ComparativePeriod)
+                ComparativePeriod == other.ComparativePeriod ||
+                ComparativePeriod != null &&
+                ComparativePeriod.SequenceEqual(other.ComparativePeriod)
             ) &&
             (
-                this.PrimaryPeriod == other.PrimaryPeriod ||
-                this.PrimaryPeriod != null &&
-                this.PrimaryPeriod.SequenceEqual(other.PrimaryPeriod)
+                PrimaryPeriod == other.PrimaryPeriod ||
+                PrimaryPeriod != null &&
+                PrimaryPeriod.SequenceEqual(other.PrimaryPeriod)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class UserInsightsTrends : IEquatable<UserInsightsTrends>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ComparativePeriod != null)
+            if (ComparativePeriod != null)
             {
-                hash = hash * 59 + this.ComparativePeriod.GetHashCode();
+                hash = hash * 59 + ComparativePeriod.GetHashCode();
             }
 
-            if (this.PrimaryPeriod != null)
+            if (PrimaryPeriod != null)
             {
-                hash = hash * 59 + this.PrimaryPeriod.GetHashCode();
+                hash = hash * 59 + PrimaryPeriod.GetHashCode();
             }
 
             return hash;

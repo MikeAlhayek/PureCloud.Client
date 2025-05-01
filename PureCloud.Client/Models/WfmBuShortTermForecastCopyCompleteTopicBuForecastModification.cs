@@ -313,7 +313,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuShortTermForecastCopyCompleteTopicBuForecastModification);
+        return Equals(obj as WfmBuShortTermForecastCopyCompleteTopicBuForecastModification);
     }
 
     /// <summary>
@@ -331,69 +331,69 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.StartIntervalIndex == other.StartIntervalIndex ||
-                this.StartIntervalIndex != null &&
-                this.StartIntervalIndex.Equals(other.StartIntervalIndex)
+                StartIntervalIndex == other.StartIntervalIndex ||
+                StartIntervalIndex != null &&
+                StartIntervalIndex.Equals(other.StartIntervalIndex)
             ) &&
             (
-                this.EndIntervalIndex == other.EndIntervalIndex ||
-                this.EndIntervalIndex != null &&
-                this.EndIntervalIndex.Equals(other.EndIntervalIndex)
+                EndIntervalIndex == other.EndIntervalIndex ||
+                EndIntervalIndex != null &&
+                EndIntervalIndex.Equals(other.EndIntervalIndex)
             ) &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.LegacyMetric == other.LegacyMetric ||
-                this.LegacyMetric != null &&
-                this.LegacyMetric.Equals(other.LegacyMetric)
+                LegacyMetric == other.LegacyMetric ||
+                LegacyMetric != null &&
+                LegacyMetric.Equals(other.LegacyMetric)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             ) &&
             (
-                this.SecondaryValues == other.SecondaryValues ||
-                this.SecondaryValues != null &&
-                this.SecondaryValues.SequenceEqual(other.SecondaryValues)
+                SecondaryValues == other.SecondaryValues ||
+                SecondaryValues != null &&
+                SecondaryValues.SequenceEqual(other.SecondaryValues)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             ) &&
             (
-                this.SecondaryGranularity == other.SecondaryGranularity ||
-                this.SecondaryGranularity != null &&
-                this.SecondaryGranularity.Equals(other.SecondaryGranularity)
+                SecondaryGranularity == other.SecondaryGranularity ||
+                SecondaryGranularity != null &&
+                SecondaryGranularity.Equals(other.SecondaryGranularity)
             ) &&
             (
-                this.DisplayGranularity == other.DisplayGranularity ||
-                this.DisplayGranularity != null &&
-                this.DisplayGranularity.Equals(other.DisplayGranularity)
+                DisplayGranularity == other.DisplayGranularity ||
+                DisplayGranularity != null &&
+                DisplayGranularity.Equals(other.DisplayGranularity)
             ) &&
             (
-                this.PlanningGroupIds == other.PlanningGroupIds ||
-                this.PlanningGroupIds != null &&
-                this.PlanningGroupIds.SequenceEqual(other.PlanningGroupIds)
+                PlanningGroupIds == other.PlanningGroupIds ||
+                PlanningGroupIds != null &&
+                PlanningGroupIds.SequenceEqual(other.PlanningGroupIds)
             );
     }
 
@@ -408,69 +408,69 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuForecastModificati
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.StartIntervalIndex != null)
+            if (StartIntervalIndex != null)
             {
-                hash = hash * 59 + this.StartIntervalIndex.GetHashCode();
+                hash = hash * 59 + StartIntervalIndex.GetHashCode();
             }
 
-            if (this.EndIntervalIndex != null)
+            if (EndIntervalIndex != null)
             {
-                hash = hash * 59 + this.EndIntervalIndex.GetHashCode();
+                hash = hash * 59 + EndIntervalIndex.GetHashCode();
             }
 
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.LegacyMetric != null)
+            if (LegacyMetric != null)
             {
-                hash = hash * 59 + this.LegacyMetric.GetHashCode();
+                hash = hash * 59 + LegacyMetric.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
-            if (this.SecondaryValues != null)
+            if (SecondaryValues != null)
             {
-                hash = hash * 59 + this.SecondaryValues.GetHashCode();
+                hash = hash * 59 + SecondaryValues.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
-            if (this.SecondaryGranularity != null)
+            if (SecondaryGranularity != null)
             {
-                hash = hash * 59 + this.SecondaryGranularity.GetHashCode();
+                hash = hash * 59 + SecondaryGranularity.GetHashCode();
             }
 
-            if (this.DisplayGranularity != null)
+            if (DisplayGranularity != null)
             {
-                hash = hash * 59 + this.DisplayGranularity.GetHashCode();
+                hash = hash * 59 + DisplayGranularity.GetHashCode();
             }
 
-            if (this.PlanningGroupIds != null)
+            if (PlanningGroupIds != null)
             {
-                hash = hash * 59 + this.PlanningGroupIds.GetHashCode();
+                hash = hash * 59 + PlanningGroupIds.GetHashCode();
             }
 
             return hash;

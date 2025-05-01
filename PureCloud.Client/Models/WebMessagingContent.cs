@@ -171,7 +171,7 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebMessagingContent);
+        return Equals(obj as WebMessagingContent);
     }
 
     /// <summary>
@@ -189,39 +189,39 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
 
         return true &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.Attachment == other.Attachment ||
-                this.Attachment != null &&
-                this.Attachment.Equals(other.Attachment)
+                Attachment == other.Attachment ||
+                Attachment != null &&
+                Attachment.Equals(other.Attachment)
             ) &&
             (
-                this.QuickReply == other.QuickReply ||
-                this.QuickReply != null &&
-                this.QuickReply.Equals(other.QuickReply)
+                QuickReply == other.QuickReply ||
+                QuickReply != null &&
+                QuickReply.Equals(other.QuickReply)
             ) &&
             (
-                this.ButtonResponse == other.ButtonResponse ||
-                this.ButtonResponse != null &&
-                this.ButtonResponse.Equals(other.ButtonResponse)
+                ButtonResponse == other.ButtonResponse ||
+                ButtonResponse != null &&
+                ButtonResponse.Equals(other.ButtonResponse)
             ) &&
             (
-                this.Generic == other.Generic ||
-                this.Generic != null &&
-                this.Generic.Equals(other.Generic)
+                Generic == other.Generic ||
+                Generic != null &&
+                Generic.Equals(other.Generic)
             ) &&
             (
-                this.Card == other.Card ||
-                this.Card != null &&
-                this.Card.Equals(other.Card)
+                Card == other.Card ||
+                Card != null &&
+                Card.Equals(other.Card)
             ) &&
             (
-                this.Carousel == other.Carousel ||
-                this.Carousel != null &&
-                this.Carousel.Equals(other.Carousel)
+                Carousel == other.Carousel ||
+                Carousel != null &&
+                Carousel.Equals(other.Carousel)
             );
     }
 
@@ -236,39 +236,39 @@ public partial class WebMessagingContent : IEquatable<WebMessagingContent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.Attachment != null)
+            if (Attachment != null)
             {
-                hash = hash * 59 + this.Attachment.GetHashCode();
+                hash = hash * 59 + Attachment.GetHashCode();
             }
 
-            if (this.QuickReply != null)
+            if (QuickReply != null)
             {
-                hash = hash * 59 + this.QuickReply.GetHashCode();
+                hash = hash * 59 + QuickReply.GetHashCode();
             }
 
-            if (this.ButtonResponse != null)
+            if (ButtonResponse != null)
             {
-                hash = hash * 59 + this.ButtonResponse.GetHashCode();
+                hash = hash * 59 + ButtonResponse.GetHashCode();
             }
 
-            if (this.Generic != null)
+            if (Generic != null)
             {
-                hash = hash * 59 + this.Generic.GetHashCode();
+                hash = hash * 59 + Generic.GetHashCode();
             }
 
-            if (this.Card != null)
+            if (Card != null)
             {
-                hash = hash * 59 + this.Card.GetHashCode();
+                hash = hash * 59 + Card.GetHashCode();
             }
 
-            if (this.Carousel != null)
+            if (Carousel != null)
             {
-                hash = hash * 59 + this.Carousel.GetHashCode();
+                hash = hash * 59 + Carousel.GetHashCode();
             }
 
             return hash;

@@ -255,7 +255,7 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyWebActionEventsNotificationBlockedWebActionOfferMessage);
+        return Equals(obj as JourneyWebActionEventsNotificationBlockedWebActionOfferMessage);
     }
 
     /// <summary>
@@ -273,54 +273,54 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
 
         return true &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.ActionMap == other.ActionMap ||
-                this.ActionMap != null &&
-                this.ActionMap.Equals(other.ActionMap)
+                ActionMap == other.ActionMap ||
+                ActionMap != null &&
+                ActionMap.Equals(other.ActionMap)
             ) &&
             (
-                this.ActionTarget == other.ActionTarget ||
-                this.ActionTarget != null &&
-                this.ActionTarget.Equals(other.ActionTarget)
+                ActionTarget == other.ActionTarget ||
+                ActionTarget != null &&
+                ActionTarget.Equals(other.ActionTarget)
             ) &&
             (
-                this.BlockingReason == other.BlockingReason ||
-                this.BlockingReason != null &&
-                this.BlockingReason.Equals(other.BlockingReason)
+                BlockingReason == other.BlockingReason ||
+                BlockingReason != null &&
+                BlockingReason.Equals(other.BlockingReason)
             ) &&
             (
-                this.BlockingActionMap == other.BlockingActionMap ||
-                this.BlockingActionMap != null &&
-                this.BlockingActionMap.Equals(other.BlockingActionMap)
+                BlockingActionMap == other.BlockingActionMap ||
+                BlockingActionMap != null &&
+                BlockingActionMap.Equals(other.BlockingActionMap)
             ) &&
             (
-                this.BlockingAction == other.BlockingAction ||
-                this.BlockingAction != null &&
-                this.BlockingAction.Equals(other.BlockingAction)
+                BlockingAction == other.BlockingAction ||
+                BlockingAction != null &&
+                BlockingAction.Equals(other.BlockingAction)
             ) &&
             (
-                this.BlockingFrequencyCapBehaviour == other.BlockingFrequencyCapBehaviour ||
-                this.BlockingFrequencyCapBehaviour != null &&
-                this.BlockingFrequencyCapBehaviour.Equals(other.BlockingFrequencyCapBehaviour)
+                BlockingFrequencyCapBehaviour == other.BlockingFrequencyCapBehaviour ||
+                BlockingFrequencyCapBehaviour != null &&
+                BlockingFrequencyCapBehaviour.Equals(other.BlockingFrequencyCapBehaviour)
             ) &&
             (
-                this.BlockingPageUrlConditions == other.BlockingPageUrlConditions ||
-                this.BlockingPageUrlConditions != null &&
-                this.BlockingPageUrlConditions.SequenceEqual(other.BlockingPageUrlConditions)
+                BlockingPageUrlConditions == other.BlockingPageUrlConditions ||
+                BlockingPageUrlConditions != null &&
+                BlockingPageUrlConditions.SequenceEqual(other.BlockingPageUrlConditions)
             ) &&
             (
-                this.BlockingScheduleGroup == other.BlockingScheduleGroup ||
-                this.BlockingScheduleGroup != null &&
-                this.BlockingScheduleGroup.Equals(other.BlockingScheduleGroup)
+                BlockingScheduleGroup == other.BlockingScheduleGroup ||
+                BlockingScheduleGroup != null &&
+                BlockingScheduleGroup.Equals(other.BlockingScheduleGroup)
             ) &&
             (
-                this.BlockingEmergencyScheduleGroup == other.BlockingEmergencyScheduleGroup ||
-                this.BlockingEmergencyScheduleGroup != null &&
-                this.BlockingEmergencyScheduleGroup.Equals(other.BlockingEmergencyScheduleGroup)
+                BlockingEmergencyScheduleGroup == other.BlockingEmergencyScheduleGroup ||
+                BlockingEmergencyScheduleGroup != null &&
+                BlockingEmergencyScheduleGroup.Equals(other.BlockingEmergencyScheduleGroup)
             );
     }
 
@@ -335,54 +335,54 @@ public partial class JourneyWebActionEventsNotificationBlockedWebActionOfferMess
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.ActionMap != null)
+            if (ActionMap != null)
             {
-                hash = hash * 59 + this.ActionMap.GetHashCode();
+                hash = hash * 59 + ActionMap.GetHashCode();
             }
 
-            if (this.ActionTarget != null)
+            if (ActionTarget != null)
             {
-                hash = hash * 59 + this.ActionTarget.GetHashCode();
+                hash = hash * 59 + ActionTarget.GetHashCode();
             }
 
-            if (this.BlockingReason != null)
+            if (BlockingReason != null)
             {
-                hash = hash * 59 + this.BlockingReason.GetHashCode();
+                hash = hash * 59 + BlockingReason.GetHashCode();
             }
 
-            if (this.BlockingActionMap != null)
+            if (BlockingActionMap != null)
             {
-                hash = hash * 59 + this.BlockingActionMap.GetHashCode();
+                hash = hash * 59 + BlockingActionMap.GetHashCode();
             }
 
-            if (this.BlockingAction != null)
+            if (BlockingAction != null)
             {
-                hash = hash * 59 + this.BlockingAction.GetHashCode();
+                hash = hash * 59 + BlockingAction.GetHashCode();
             }
 
-            if (this.BlockingFrequencyCapBehaviour != null)
+            if (BlockingFrequencyCapBehaviour != null)
             {
-                hash = hash * 59 + this.BlockingFrequencyCapBehaviour.GetHashCode();
+                hash = hash * 59 + BlockingFrequencyCapBehaviour.GetHashCode();
             }
 
-            if (this.BlockingPageUrlConditions != null)
+            if (BlockingPageUrlConditions != null)
             {
-                hash = hash * 59 + this.BlockingPageUrlConditions.GetHashCode();
+                hash = hash * 59 + BlockingPageUrlConditions.GetHashCode();
             }
 
-            if (this.BlockingScheduleGroup != null)
+            if (BlockingScheduleGroup != null)
             {
-                hash = hash * 59 + this.BlockingScheduleGroup.GetHashCode();
+                hash = hash * 59 + BlockingScheduleGroup.GetHashCode();
             }
 
-            if (this.BlockingEmergencyScheduleGroup != null)
+            if (BlockingEmergencyScheduleGroup != null)
             {
-                hash = hash * 59 + this.BlockingEmergencyScheduleGroup.GetHashCode();
+                hash = hash * 59 + BlockingEmergencyScheduleGroup.GetHashCode();
             }
 
             return hash;

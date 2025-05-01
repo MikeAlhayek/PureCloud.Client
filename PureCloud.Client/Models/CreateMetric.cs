@@ -169,7 +169,7 @@ public partial class CreateMetric : IEquatable<CreateMetric>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateMetric);
+        return Equals(obj as CreateMetric);
     }
 
     /// <summary>
@@ -187,39 +187,39 @@ public partial class CreateMetric : IEquatable<CreateMetric>
 
         return true &&
             (
-                this.MetricDefinitionId == other.MetricDefinitionId ||
-                this.MetricDefinitionId != null &&
-                this.MetricDefinitionId.Equals(other.MetricDefinitionId)
+                MetricDefinitionId == other.MetricDefinitionId ||
+                MetricDefinitionId != null &&
+                MetricDefinitionId.Equals(other.MetricDefinitionId)
             ) &&
             (
-                this.ExternalMetricDefinitionId == other.ExternalMetricDefinitionId ||
-                this.ExternalMetricDefinitionId != null &&
-                this.ExternalMetricDefinitionId.Equals(other.ExternalMetricDefinitionId)
+                ExternalMetricDefinitionId == other.ExternalMetricDefinitionId ||
+                ExternalMetricDefinitionId != null &&
+                ExternalMetricDefinitionId.Equals(other.ExternalMetricDefinitionId)
             ) &&
             (
-                this.Objective == other.Objective ||
-                this.Objective != null &&
-                this.Objective.Equals(other.Objective)
+                Objective == other.Objective ||
+                Objective != null &&
+                Objective.Equals(other.Objective)
             ) &&
             (
-                this.PerformanceProfileId == other.PerformanceProfileId ||
-                this.PerformanceProfileId != null &&
-                this.PerformanceProfileId.Equals(other.PerformanceProfileId)
+                PerformanceProfileId == other.PerformanceProfileId ||
+                PerformanceProfileId != null &&
+                PerformanceProfileId.Equals(other.PerformanceProfileId)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Precision == other.Precision ||
-                this.Precision != null &&
-                this.Precision.Equals(other.Precision)
+                Precision == other.Precision ||
+                Precision != null &&
+                Precision.Equals(other.Precision)
             ) &&
             (
-                this.TimeDisplayUnit == other.TimeDisplayUnit ||
-                this.TimeDisplayUnit != null &&
-                this.TimeDisplayUnit.Equals(other.TimeDisplayUnit)
+                TimeDisplayUnit == other.TimeDisplayUnit ||
+                TimeDisplayUnit != null &&
+                TimeDisplayUnit.Equals(other.TimeDisplayUnit)
             );
     }
 
@@ -234,39 +234,39 @@ public partial class CreateMetric : IEquatable<CreateMetric>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MetricDefinitionId != null)
+            if (MetricDefinitionId != null)
             {
-                hash = hash * 59 + this.MetricDefinitionId.GetHashCode();
+                hash = hash * 59 + MetricDefinitionId.GetHashCode();
             }
 
-            if (this.ExternalMetricDefinitionId != null)
+            if (ExternalMetricDefinitionId != null)
             {
-                hash = hash * 59 + this.ExternalMetricDefinitionId.GetHashCode();
+                hash = hash * 59 + ExternalMetricDefinitionId.GetHashCode();
             }
 
-            if (this.Objective != null)
+            if (Objective != null)
             {
-                hash = hash * 59 + this.Objective.GetHashCode();
+                hash = hash * 59 + Objective.GetHashCode();
             }
 
-            if (this.PerformanceProfileId != null)
+            if (PerformanceProfileId != null)
             {
-                hash = hash * 59 + this.PerformanceProfileId.GetHashCode();
+                hash = hash * 59 + PerformanceProfileId.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Precision != null)
+            if (Precision != null)
             {
-                hash = hash * 59 + this.Precision.GetHashCode();
+                hash = hash * 59 + Precision.GetHashCode();
             }
 
-            if (this.TimeDisplayUnit != null)
+            if (TimeDisplayUnit != null)
             {
-                hash = hash * 59 + this.TimeDisplayUnit.GetHashCode();
+                hash = hash * 59 + TimeDisplayUnit.GetHashCode();
             }
 
             return hash;

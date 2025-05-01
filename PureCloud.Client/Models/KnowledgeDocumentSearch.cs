@@ -215,7 +215,7 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentSearch);
+        return Equals(obj as KnowledgeDocumentSearch);
     }
 
     /// <summary>
@@ -233,64 +233,64 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
 
         return true &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.Equals(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.Equals(other.Query)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.SearchId == other.SearchId ||
-                this.SearchId != null &&
-                this.SearchId.Equals(other.SearchId)
+                SearchId == other.SearchId ||
+                SearchId != null &&
+                SearchId.Equals(other.SearchId)
             ) &&
             (
-                this.Total == other.Total ||
-                this.Total != null &&
-                this.Total.Equals(other.Total)
+                Total == other.Total ||
+                Total != null &&
+                Total.Equals(other.Total)
             ) &&
             (
-                this.PageCount == other.PageCount ||
-                this.PageCount != null &&
-                this.PageCount.Equals(other.PageCount)
+                PageCount == other.PageCount ||
+                PageCount != null &&
+                PageCount.Equals(other.PageCount)
             ) &&
             (
-                this.QueryType == other.QueryType ||
-                this.QueryType != null &&
-                this.QueryType.Equals(other.QueryType)
+                QueryType == other.QueryType ||
+                QueryType != null &&
+                QueryType.Equals(other.QueryType)
             ) &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             ) &&
             (
-                this.Application == other.Application ||
-                this.Application != null &&
-                this.Application.Equals(other.Application)
+                Application == other.Application ||
+                Application != null &&
+                Application.Equals(other.Application)
             ) &&
             (
-                this.ConversationContext == other.ConversationContext ||
-                this.ConversationContext != null &&
-                this.ConversationContext.Equals(other.ConversationContext)
+                ConversationContext == other.ConversationContext ||
+                ConversationContext != null &&
+                ConversationContext.Equals(other.ConversationContext)
             ) &&
             (
-                this.ConfidenceThreshold == other.ConfidenceThreshold ||
-                this.ConfidenceThreshold != null &&
-                this.ConfidenceThreshold.Equals(other.ConfidenceThreshold)
+                ConfidenceThreshold == other.ConfidenceThreshold ||
+                ConfidenceThreshold != null &&
+                ConfidenceThreshold.Equals(other.ConfidenceThreshold)
             ) &&
             (
-                this.AnswerGeneration == other.AnswerGeneration ||
-                this.AnswerGeneration != null &&
-                this.AnswerGeneration.Equals(other.AnswerGeneration)
+                AnswerGeneration == other.AnswerGeneration ||
+                AnswerGeneration != null &&
+                AnswerGeneration.Equals(other.AnswerGeneration)
             );
     }
 
@@ -305,64 +305,64 @@ public partial class KnowledgeDocumentSearch : IEquatable<KnowledgeDocumentSearc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.SearchId != null)
+            if (SearchId != null)
             {
-                hash = hash * 59 + this.SearchId.GetHashCode();
+                hash = hash * 59 + SearchId.GetHashCode();
             }
 
-            if (this.Total != null)
+            if (Total != null)
             {
-                hash = hash * 59 + this.Total.GetHashCode();
+                hash = hash * 59 + Total.GetHashCode();
             }
 
-            if (this.PageCount != null)
+            if (PageCount != null)
             {
-                hash = hash * 59 + this.PageCount.GetHashCode();
+                hash = hash * 59 + PageCount.GetHashCode();
             }
 
-            if (this.QueryType != null)
+            if (QueryType != null)
             {
-                hash = hash * 59 + this.QueryType.GetHashCode();
+                hash = hash * 59 + QueryType.GetHashCode();
             }
 
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
-            if (this.Application != null)
+            if (Application != null)
             {
-                hash = hash * 59 + this.Application.GetHashCode();
+                hash = hash * 59 + Application.GetHashCode();
             }
 
-            if (this.ConversationContext != null)
+            if (ConversationContext != null)
             {
-                hash = hash * 59 + this.ConversationContext.GetHashCode();
+                hash = hash * 59 + ConversationContext.GetHashCode();
             }
 
-            if (this.ConfidenceThreshold != null)
+            if (ConfidenceThreshold != null)
             {
-                hash = hash * 59 + this.ConfidenceThreshold.GetHashCode();
+                hash = hash * 59 + ConfidenceThreshold.GetHashCode();
             }
 
-            if (this.AnswerGeneration != null)
+            if (AnswerGeneration != null)
             {
-                hash = hash * 59 + this.AnswerGeneration.GetHashCode();
+                hash = hash * 59 + AnswerGeneration.GetHashCode();
             }
 
             return hash;

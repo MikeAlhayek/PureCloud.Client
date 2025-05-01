@@ -53,7 +53,7 @@ public partial class EventSetting : IEquatable<EventSetting>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EventSetting);
+        return Equals(obj as EventSetting);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class EventSetting : IEquatable<EventSetting>
 
         return true &&
             (
-                this.Typing == other.Typing ||
-                this.Typing != null &&
-                this.Typing.Equals(other.Typing)
+                Typing == other.Typing ||
+                Typing != null &&
+                Typing.Equals(other.Typing)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class EventSetting : IEquatable<EventSetting>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Typing != null)
+            if (Typing != null)
             {
-                hash = hash * 59 + this.Typing.GetHashCode();
+                hash = hash * 59 + Typing.GetHashCode();
             }
 
             return hash;

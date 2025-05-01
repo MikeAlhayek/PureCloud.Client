@@ -82,7 +82,7 @@ public partial class MuAgentsWorkPlansResult : IEquatable<MuAgentsWorkPlansResul
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MuAgentsWorkPlansResult);
+        return Equals(obj as MuAgentsWorkPlansResult);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class MuAgentsWorkPlansResult : IEquatable<MuAgentsWorkPlansResul
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.ReferenceStartWeekDate == other.ReferenceStartWeekDate ||
-                this.ReferenceStartWeekDate != null &&
-                this.ReferenceStartWeekDate.Equals(other.ReferenceStartWeekDate)
+                ReferenceStartWeekDate == other.ReferenceStartWeekDate ||
+                ReferenceStartWeekDate != null &&
+                ReferenceStartWeekDate.Equals(other.ReferenceStartWeekDate)
             ) &&
             (
-                this.WorkPlanLookup == other.WorkPlanLookup ||
-                this.WorkPlanLookup != null &&
-                this.WorkPlanLookup.SequenceEqual(other.WorkPlanLookup)
+                WorkPlanLookup == other.WorkPlanLookup ||
+                WorkPlanLookup != null &&
+                WorkPlanLookup.SequenceEqual(other.WorkPlanLookup)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class MuAgentsWorkPlansResult : IEquatable<MuAgentsWorkPlansResul
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.ReferenceStartWeekDate != null)
+            if (ReferenceStartWeekDate != null)
             {
-                hash = hash * 59 + this.ReferenceStartWeekDate.GetHashCode();
+                hash = hash * 59 + ReferenceStartWeekDate.GetHashCode();
             }
 
-            if (this.WorkPlanLookup != null)
+            if (WorkPlanLookup != null)
             {
-                hash = hash * 59 + this.WorkPlanLookup.GetHashCode();
+                hash = hash * 59 + WorkPlanLookup.GetHashCode();
             }
 
             return hash;

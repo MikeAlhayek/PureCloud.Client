@@ -58,7 +58,7 @@ public partial class BotList : IEquatable<BotList>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BotList);
+        return Equals(obj as BotList);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class BotList : IEquatable<BotList>
 
         return true &&
             (
-                this.ChatBots == other.ChatBots ||
-                this.ChatBots != null &&
-                this.ChatBots.SequenceEqual(other.ChatBots)
+                ChatBots == other.ChatBots ||
+                ChatBots != null &&
+                ChatBots.SequenceEqual(other.ChatBots)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class BotList : IEquatable<BotList>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ChatBots != null)
+            if (ChatBots != null)
             {
-                hash = hash * 59 + this.ChatBots.GetHashCode();
+                hash = hash * 59 + ChatBots.GetHashCode();
             }
 
             return hash;

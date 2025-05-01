@@ -95,7 +95,7 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentQueryResponse);
+        return Equals(obj as KnowledgeDocumentQueryResponse);
     }
 
     /// <summary>
@@ -113,29 +113,29 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
 
         return true &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.Total == other.Total ||
-                this.Total != null &&
-                this.Total.Equals(other.Total)
+                Total == other.Total ||
+                Total != null &&
+                Total.Equals(other.Total)
             ) &&
             (
-                this.PageCount == other.PageCount ||
-                this.PageCount != null &&
-                this.PageCount.Equals(other.PageCount)
+                PageCount == other.PageCount ||
+                PageCount != null &&
+                PageCount.Equals(other.PageCount)
             ) &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             );
     }
 
@@ -150,29 +150,29 @@ public partial class KnowledgeDocumentQueryResponse : IEquatable<KnowledgeDocume
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.Total != null)
+            if (Total != null)
             {
-                hash = hash * 59 + this.Total.GetHashCode();
+                hash = hash * 59 + Total.GetHashCode();
             }
 
-            if (this.PageCount != null)
+            if (PageCount != null)
             {
-                hash = hash * 59 + this.PageCount.GetHashCode();
+                hash = hash * 59 + PageCount.GetHashCode();
             }
 
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
             return hash;

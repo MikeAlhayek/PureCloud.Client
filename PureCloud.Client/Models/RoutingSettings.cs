@@ -53,7 +53,7 @@ public partial class RoutingSettings : IEquatable<RoutingSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoutingSettings);
+        return Equals(obj as RoutingSettings);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class RoutingSettings : IEquatable<RoutingSettings>
 
         return true &&
             (
-                this.ResetAgentScoreOnPresenceChange == other.ResetAgentScoreOnPresenceChange ||
-                this.ResetAgentScoreOnPresenceChange != null &&
-                this.ResetAgentScoreOnPresenceChange.Equals(other.ResetAgentScoreOnPresenceChange)
+                ResetAgentScoreOnPresenceChange == other.ResetAgentScoreOnPresenceChange ||
+                ResetAgentScoreOnPresenceChange != null &&
+                ResetAgentScoreOnPresenceChange.Equals(other.ResetAgentScoreOnPresenceChange)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class RoutingSettings : IEquatable<RoutingSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ResetAgentScoreOnPresenceChange != null)
+            if (ResetAgentScoreOnPresenceChange != null)
             {
-                hash = hash * 59 + this.ResetAgentScoreOnPresenceChange.GetHashCode();
+                hash = hash * 59 + ResetAgentScoreOnPresenceChange.GetHashCode();
             }
 
             return hash;

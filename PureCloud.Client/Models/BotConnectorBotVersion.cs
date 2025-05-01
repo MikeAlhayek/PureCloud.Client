@@ -82,7 +82,7 @@ public partial class BotConnectorBotVersion : IEquatable<BotConnectorBotVersion>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BotConnectorBotVersion);
+        return Equals(obj as BotConnectorBotVersion);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class BotConnectorBotVersion : IEquatable<BotConnectorBotVersion>
 
         return true &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.SupportedLanguages == other.SupportedLanguages ||
-                this.SupportedLanguages != null &&
-                this.SupportedLanguages.SequenceEqual(other.SupportedLanguages)
+                SupportedLanguages == other.SupportedLanguages ||
+                SupportedLanguages != null &&
+                SupportedLanguages.SequenceEqual(other.SupportedLanguages)
             ) &&
             (
-                this.Intents == other.Intents ||
-                this.Intents != null &&
-                this.Intents.SequenceEqual(other.Intents)
+                Intents == other.Intents ||
+                Intents != null &&
+                Intents.SequenceEqual(other.Intents)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class BotConnectorBotVersion : IEquatable<BotConnectorBotVersion>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.SupportedLanguages != null)
+            if (SupportedLanguages != null)
             {
-                hash = hash * 59 + this.SupportedLanguages.GetHashCode();
+                hash = hash * 59 + SupportedLanguages.GetHashCode();
             }
 
-            if (this.Intents != null)
+            if (Intents != null)
             {
-                hash = hash * 59 + this.Intents.GetHashCode();
+                hash = hash * 59 + Intents.GetHashCode();
             }
 
             return hash;

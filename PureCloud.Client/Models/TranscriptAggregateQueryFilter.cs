@@ -109,7 +109,7 @@ public partial class TranscriptAggregateQueryFilter : IEquatable<TranscriptAggre
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptAggregateQueryFilter);
+        return Equals(obj as TranscriptAggregateQueryFilter);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class TranscriptAggregateQueryFilter : IEquatable<TranscriptAggre
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Clauses == other.Clauses ||
-                this.Clauses != null &&
-                this.Clauses.SequenceEqual(other.Clauses)
+                Clauses == other.Clauses ||
+                Clauses != null &&
+                Clauses.SequenceEqual(other.Clauses)
             ) &&
             (
-                this.Predicates == other.Predicates ||
-                this.Predicates != null &&
-                this.Predicates.SequenceEqual(other.Predicates)
+                Predicates == other.Predicates ||
+                Predicates != null &&
+                Predicates.SequenceEqual(other.Predicates)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class TranscriptAggregateQueryFilter : IEquatable<TranscriptAggre
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Clauses != null)
+            if (Clauses != null)
             {
-                hash = hash * 59 + this.Clauses.GetHashCode();
+                hash = hash * 59 + Clauses.GetHashCode();
             }
 
-            if (this.Predicates != null)
+            if (Predicates != null)
             {
-                hash = hash * 59 + this.Predicates.GetHashCode();
+                hash = hash * 59 + Predicates.GetHashCode();
             }
 
             return hash;

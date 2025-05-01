@@ -70,7 +70,7 @@ public partial class ActivityCodeContainer : IEquatable<ActivityCodeContainer>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActivityCodeContainer);
+        return Equals(obj as ActivityCodeContainer);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class ActivityCodeContainer : IEquatable<ActivityCodeContainer>
 
         return true &&
             (
-                this.ActivityCodes == other.ActivityCodes ||
-                this.ActivityCodes != null &&
-                this.ActivityCodes.SequenceEqual(other.ActivityCodes)
+                ActivityCodes == other.ActivityCodes ||
+                ActivityCodes != null &&
+                ActivityCodes.SequenceEqual(other.ActivityCodes)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class ActivityCodeContainer : IEquatable<ActivityCodeContainer>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityCodes != null)
+            if (ActivityCodes != null)
             {
-                hash = hash * 59 + this.ActivityCodes.GetHashCode();
+                hash = hash * 59 + ActivityCodes.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

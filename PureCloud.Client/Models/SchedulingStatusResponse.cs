@@ -135,7 +135,7 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SchedulingStatusResponse);
+        return Equals(obj as SchedulingStatusResponse);
     }
 
     /// <summary>
@@ -153,29 +153,29 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ErrorDetails == other.ErrorDetails ||
-                this.ErrorDetails != null &&
-                this.ErrorDetails.SequenceEqual(other.ErrorDetails)
+                ErrorDetails == other.ErrorDetails ||
+                ErrorDetails != null &&
+                ErrorDetails.SequenceEqual(other.ErrorDetails)
             ) &&
             (
-                this.SchedulingResultUri == other.SchedulingResultUri ||
-                this.SchedulingResultUri != null &&
-                this.SchedulingResultUri.Equals(other.SchedulingResultUri)
+                SchedulingResultUri == other.SchedulingResultUri ||
+                SchedulingResultUri != null &&
+                SchedulingResultUri.Equals(other.SchedulingResultUri)
             ) &&
             (
-                this.PercentComplete == other.PercentComplete ||
-                this.PercentComplete != null &&
-                this.PercentComplete.Equals(other.PercentComplete)
+                PercentComplete == other.PercentComplete ||
+                PercentComplete != null &&
+                PercentComplete.Equals(other.PercentComplete)
             );
     }
 
@@ -190,29 +190,29 @@ public partial class SchedulingStatusResponse : IEquatable<SchedulingStatusRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ErrorDetails != null)
+            if (ErrorDetails != null)
             {
-                hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                hash = hash * 59 + ErrorDetails.GetHashCode();
             }
 
-            if (this.SchedulingResultUri != null)
+            if (SchedulingResultUri != null)
             {
-                hash = hash * 59 + this.SchedulingResultUri.GetHashCode();
+                hash = hash * 59 + SchedulingResultUri.GetHashCode();
             }
 
-            if (this.PercentComplete != null)
+            if (PercentComplete != null)
             {
-                hash = hash * 59 + this.PercentComplete.GetHashCode();
+                hash = hash * 59 + PercentComplete.GetHashCode();
             }
 
             return hash;

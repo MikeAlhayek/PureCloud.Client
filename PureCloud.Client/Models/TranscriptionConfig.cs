@@ -91,7 +91,7 @@ public partial class TranscriptionConfig : IEquatable<TranscriptionConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptionConfig);
+        return Equals(obj as TranscriptionConfig);
     }
 
     /// <summary>
@@ -109,9 +109,9 @@ public partial class TranscriptionConfig : IEquatable<TranscriptionConfig>
 
         return true &&
             (
-                this.VendorName == other.VendorName ||
-                this.VendorName != null &&
-                this.VendorName.Equals(other.VendorName)
+                VendorName == other.VendorName ||
+                VendorName != null &&
+                VendorName.Equals(other.VendorName)
             );
     }
 
@@ -126,9 +126,9 @@ public partial class TranscriptionConfig : IEquatable<TranscriptionConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.VendorName != null)
+            if (VendorName != null)
             {
-                hash = hash * 59 + this.VendorName.GetHashCode();
+                hash = hash * 59 + VendorName.GetHashCode();
             }
 
             return hash;

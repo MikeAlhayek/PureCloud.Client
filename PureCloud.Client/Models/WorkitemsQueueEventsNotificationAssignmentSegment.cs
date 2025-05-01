@@ -256,7 +256,7 @@ public partial class WorkitemsQueueEventsNotificationAssignmentSegment : IEquata
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemsQueueEventsNotificationAssignmentSegment);
+        return Equals(obj as WorkitemsQueueEventsNotificationAssignmentSegment);
     }
 
     /// <summary>
@@ -274,19 +274,19 @@ public partial class WorkitemsQueueEventsNotificationAssignmentSegment : IEquata
 
         return true &&
             (
-                this.StartState == other.StartState ||
-                this.StartState != null &&
-                this.StartState.Equals(other.StartState)
+                StartState == other.StartState ||
+                StartState != null &&
+                StartState.Equals(other.StartState)
             ) &&
             (
-                this.EndState == other.EndState ||
-                this.EndState != null &&
-                this.EndState.Equals(other.EndState)
+                EndState == other.EndState ||
+                EndState != null &&
+                EndState.Equals(other.EndState)
             ) &&
             (
-                this.DurationMs == other.DurationMs ||
-                this.DurationMs != null &&
-                this.DurationMs.Equals(other.DurationMs)
+                DurationMs == other.DurationMs ||
+                DurationMs != null &&
+                DurationMs.Equals(other.DurationMs)
             );
     }
 
@@ -301,19 +301,19 @@ public partial class WorkitemsQueueEventsNotificationAssignmentSegment : IEquata
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartState != null)
+            if (StartState != null)
             {
-                hash = hash * 59 + this.StartState.GetHashCode();
+                hash = hash * 59 + StartState.GetHashCode();
             }
 
-            if (this.EndState != null)
+            if (EndState != null)
             {
-                hash = hash * 59 + this.EndState.GetHashCode();
+                hash = hash * 59 + EndState.GetHashCode();
             }
 
-            if (this.DurationMs != null)
+            if (DurationMs != null)
             {
-                hash = hash * 59 + this.DurationMs.GetHashCode();
+                hash = hash * 59 + DurationMs.GetHashCode();
             }
 
             return hash;

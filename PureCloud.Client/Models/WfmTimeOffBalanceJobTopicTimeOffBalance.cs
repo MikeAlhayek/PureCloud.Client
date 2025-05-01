@@ -96,7 +96,7 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalance : IEquatable<WfmTim
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmTimeOffBalanceJobTopicTimeOffBalance);
+        return Equals(obj as WfmTimeOffBalanceJobTopicTimeOffBalance);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalance : IEquatable<WfmTim
 
         return true &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.HrisTimeOffTypeId == other.HrisTimeOffTypeId ||
-                this.HrisTimeOffTypeId != null &&
-                this.HrisTimeOffTypeId.Equals(other.HrisTimeOffTypeId)
+                HrisTimeOffTypeId == other.HrisTimeOffTypeId ||
+                HrisTimeOffTypeId != null &&
+                HrisTimeOffTypeId.Equals(other.HrisTimeOffTypeId)
             ) &&
             (
-                this.HrisTimeOffTypeSecondaryId == other.HrisTimeOffTypeSecondaryId ||
-                this.HrisTimeOffTypeSecondaryId != null &&
-                this.HrisTimeOffTypeSecondaryId.Equals(other.HrisTimeOffTypeSecondaryId)
+                HrisTimeOffTypeSecondaryId == other.HrisTimeOffTypeSecondaryId ||
+                HrisTimeOffTypeSecondaryId != null &&
+                HrisTimeOffTypeSecondaryId.Equals(other.HrisTimeOffTypeSecondaryId)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.BalanceMinutesPerDay == other.BalanceMinutesPerDay ||
-                this.BalanceMinutesPerDay != null &&
-                this.BalanceMinutesPerDay.SequenceEqual(other.BalanceMinutesPerDay)
+                BalanceMinutesPerDay == other.BalanceMinutesPerDay ||
+                BalanceMinutesPerDay != null &&
+                BalanceMinutesPerDay.SequenceEqual(other.BalanceMinutesPerDay)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalance : IEquatable<WfmTim
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.HrisTimeOffTypeId != null)
+            if (HrisTimeOffTypeId != null)
             {
-                hash = hash * 59 + this.HrisTimeOffTypeId.GetHashCode();
+                hash = hash * 59 + HrisTimeOffTypeId.GetHashCode();
             }
 
-            if (this.HrisTimeOffTypeSecondaryId != null)
+            if (HrisTimeOffTypeSecondaryId != null)
             {
-                hash = hash * 59 + this.HrisTimeOffTypeSecondaryId.GetHashCode();
+                hash = hash * 59 + HrisTimeOffTypeSecondaryId.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.BalanceMinutesPerDay != null)
+            if (BalanceMinutesPerDay != null)
             {
-                hash = hash * 59 + this.BalanceMinutesPerDay.GetHashCode();
+                hash = hash * 59 + BalanceMinutesPerDay.GetHashCode();
             }
 
             return hash;

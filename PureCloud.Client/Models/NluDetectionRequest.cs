@@ -71,7 +71,7 @@ public partial class NluDetectionRequest : IEquatable<NluDetectionRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluDetectionRequest);
+        return Equals(obj as NluDetectionRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class NluDetectionRequest : IEquatable<NluDetectionRequest>
 
         return true &&
             (
-                this.Input == other.Input ||
-                this.Input != null &&
-                this.Input.Equals(other.Input)
+                Input == other.Input ||
+                Input != null &&
+                Input.Equals(other.Input)
             ) &&
             (
-                this.Context == other.Context ||
-                this.Context != null &&
-                this.Context.Equals(other.Context)
+                Context == other.Context ||
+                Context != null &&
+                Context.Equals(other.Context)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class NluDetectionRequest : IEquatable<NluDetectionRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Input != null)
+            if (Input != null)
             {
-                hash = hash * 59 + this.Input.GetHashCode();
+                hash = hash * 59 + Input.GetHashCode();
             }
 
-            if (this.Context != null)
+            if (Context != null)
             {
-                hash = hash * 59 + this.Context.GetHashCode();
+                hash = hash * 59 + Context.GetHashCode();
             }
 
             return hash;

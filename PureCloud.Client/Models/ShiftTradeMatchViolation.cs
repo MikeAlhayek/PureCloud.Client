@@ -301,7 +301,7 @@ public partial class ShiftTradeMatchViolation : IEquatable<ShiftTradeMatchViolat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShiftTradeMatchViolation);
+        return Equals(obj as ShiftTradeMatchViolation);
     }
 
     /// <summary>
@@ -319,14 +319,14 @@ public partial class ShiftTradeMatchViolation : IEquatable<ShiftTradeMatchViolat
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Params == other.Params ||
-                this.Params != null &&
-                this.Params.SequenceEqual(other.Params)
+                Params == other.Params ||
+                Params != null &&
+                Params.SequenceEqual(other.Params)
             );
     }
 
@@ -341,14 +341,14 @@ public partial class ShiftTradeMatchViolation : IEquatable<ShiftTradeMatchViolat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Params != null)
+            if (Params != null)
             {
-                hash = hash * 59 + this.Params.GetHashCode();
+                hash = hash * 59 + Params.GetHashCode();
             }
 
             return hash;

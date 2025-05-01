@@ -59,7 +59,7 @@ public partial class LicenseBatchAssignmentRequest : IEquatable<LicenseBatchAssi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LicenseBatchAssignmentRequest);
+        return Equals(obj as LicenseBatchAssignmentRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class LicenseBatchAssignmentRequest : IEquatable<LicenseBatchAssi
 
         return true &&
             (
-                this.Assignments == other.Assignments ||
-                this.Assignments != null &&
-                this.Assignments.SequenceEqual(other.Assignments)
+                Assignments == other.Assignments ||
+                Assignments != null &&
+                Assignments.SequenceEqual(other.Assignments)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class LicenseBatchAssignmentRequest : IEquatable<LicenseBatchAssi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Assignments != null)
+            if (Assignments != null)
             {
-                hash = hash * 59 + this.Assignments.GetHashCode();
+                hash = hash * 59 + Assignments.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class Subscription : IEquatable<Subscription>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Subscription);
+        return Equals(obj as Subscription);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class Subscription : IEquatable<Subscription>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Topic == other.Topic ||
-                this.Topic != null &&
-                this.Topic.Equals(other.Topic)
+                Topic == other.Topic ||
+                Topic != null &&
+                Topic.Equals(other.Topic)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class Subscription : IEquatable<Subscription>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Topic != null)
+            if (Topic != null)
             {
-                hash = hash * 59 + this.Topic.GetHashCode();
+                hash = hash * 59 + Topic.GetHashCode();
             }
 
             return hash;

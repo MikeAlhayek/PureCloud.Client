@@ -83,7 +83,7 @@ public partial class NamedEntityTypeItem : IEquatable<NamedEntityTypeItem>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NamedEntityTypeItem);
+        return Equals(obj as NamedEntityTypeItem);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class NamedEntityTypeItem : IEquatable<NamedEntityTypeItem>
 
         return true &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Synonyms == other.Synonyms ||
-                this.Synonyms != null &&
-                this.Synonyms.SequenceEqual(other.Synonyms)
+                Synonyms == other.Synonyms ||
+                Synonyms != null &&
+                Synonyms.SequenceEqual(other.Synonyms)
             ) &&
             (
-                this.AdditionalLanguages == other.AdditionalLanguages ||
-                this.AdditionalLanguages != null &&
-                this.AdditionalLanguages.SequenceEqual(other.AdditionalLanguages)
+                AdditionalLanguages == other.AdditionalLanguages ||
+                AdditionalLanguages != null &&
+                AdditionalLanguages.SequenceEqual(other.AdditionalLanguages)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class NamedEntityTypeItem : IEquatable<NamedEntityTypeItem>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Synonyms != null)
+            if (Synonyms != null)
             {
-                hash = hash * 59 + this.Synonyms.GetHashCode();
+                hash = hash * 59 + Synonyms.GetHashCode();
             }
 
-            if (this.AdditionalLanguages != null)
+            if (AdditionalLanguages != null)
             {
-                hash = hash * 59 + this.AdditionalLanguages.GetHashCode();
+                hash = hash * 59 + AdditionalLanguages.GetHashCode();
             }
 
             return hash;

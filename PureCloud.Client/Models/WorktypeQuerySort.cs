@@ -91,7 +91,7 @@ public partial class WorktypeQuerySort : IEquatable<WorktypeQuerySort>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorktypeQuerySort);
+        return Equals(obj as WorktypeQuerySort);
     }
 
     /// <summary>
@@ -109,14 +109,14 @@ public partial class WorktypeQuerySort : IEquatable<WorktypeQuerySort>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Ascending == other.Ascending ||
-                this.Ascending != null &&
-                this.Ascending.Equals(other.Ascending)
+                Ascending == other.Ascending ||
+                Ascending != null &&
+                Ascending.Equals(other.Ascending)
             );
     }
 
@@ -131,14 +131,14 @@ public partial class WorktypeQuerySort : IEquatable<WorktypeQuerySort>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Ascending != null)
+            if (Ascending != null)
             {
-                hash = hash * 59 + this.Ascending.GetHashCode();
+                hash = hash * 59 + Ascending.GetHashCode();
             }
 
             return hash;

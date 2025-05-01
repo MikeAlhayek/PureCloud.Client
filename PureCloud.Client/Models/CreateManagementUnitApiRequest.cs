@@ -175,7 +175,7 @@ public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagemen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateManagementUnitApiRequest);
+        return Equals(obj as CreateManagementUnitApiRequest);
     }
 
     /// <summary>
@@ -193,34 +193,34 @@ public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagemen
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.StartDayOfWeek == other.StartDayOfWeek ||
-                this.StartDayOfWeek != null &&
-                this.StartDayOfWeek.Equals(other.StartDayOfWeek)
+                StartDayOfWeek == other.StartDayOfWeek ||
+                StartDayOfWeek != null &&
+                StartDayOfWeek.Equals(other.StartDayOfWeek)
             ) &&
             (
-                this.Settings == other.Settings ||
-                this.Settings != null &&
-                this.Settings.Equals(other.Settings)
+                Settings == other.Settings ||
+                Settings != null &&
+                Settings.Equals(other.Settings)
             ) &&
             (
-                this.DivisionId == other.DivisionId ||
-                this.DivisionId != null &&
-                this.DivisionId.Equals(other.DivisionId)
+                DivisionId == other.DivisionId ||
+                DivisionId != null &&
+                DivisionId.Equals(other.DivisionId)
             ) &&
             (
-                this.BusinessUnitId == other.BusinessUnitId ||
-                this.BusinessUnitId != null &&
-                this.BusinessUnitId.Equals(other.BusinessUnitId)
+                BusinessUnitId == other.BusinessUnitId ||
+                BusinessUnitId != null &&
+                BusinessUnitId.Equals(other.BusinessUnitId)
             );
     }
 
@@ -235,34 +235,34 @@ public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagemen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.StartDayOfWeek != null)
+            if (StartDayOfWeek != null)
             {
-                hash = hash * 59 + this.StartDayOfWeek.GetHashCode();
+                hash = hash * 59 + StartDayOfWeek.GetHashCode();
             }
 
-            if (this.Settings != null)
+            if (Settings != null)
             {
-                hash = hash * 59 + this.Settings.GetHashCode();
+                hash = hash * 59 + Settings.GetHashCode();
             }
 
-            if (this.DivisionId != null)
+            if (DivisionId != null)
             {
-                hash = hash * 59 + this.DivisionId.GetHashCode();
+                hash = hash * 59 + DivisionId.GetHashCode();
             }
 
-            if (this.BusinessUnitId != null)
+            if (BusinessUnitId != null)
             {
-                hash = hash * 59 + this.BusinessUnitId.GetHashCode();
+                hash = hash * 59 + BusinessUnitId.GetHashCode();
             }
 
             return hash;

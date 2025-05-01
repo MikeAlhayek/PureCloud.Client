@@ -999,12 +999,12 @@ public partial class WebChatApi : IWebChatApi
     /// <returns></returns>
     public WebChatApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1018,17 +1018,17 @@ public partial class WebChatApi : IWebChatApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1038,7 +1038,7 @@ public partial class WebChatApi : IWebChatApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -1064,7 +1064,7 @@ public partial class WebChatApi : IWebChatApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -1076,7 +1076,7 @@ public partial class WebChatApi : IWebChatApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -1121,7 +1121,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1130,7 +1130,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1143,7 +1143,7 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (deploymentId != null)
         {
-            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
+            localVarPathParams.Add("deploymentId", Configuration.ApiClient.ParameterToString(deploymentId));
         }
 
         // Query params
@@ -1159,11 +1159,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1237,7 +1237,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1246,7 +1246,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1259,7 +1259,7 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (deploymentId != null)
         {
-            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
+            localVarPathParams.Add("deploymentId", Configuration.ApiClient.ParameterToString(deploymentId));
         }
 
         // Query params
@@ -1275,11 +1275,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1360,7 +1360,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1369,7 +1369,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1382,12 +1382,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (memberId != null)
         {
-            localVarPathParams.Add("memberId", this.Configuration.ApiClient.ParameterToString(memberId));
+            localVarPathParams.Add("memberId", Configuration.ApiClient.ParameterToString(memberId));
         }
 
         // Query params
@@ -1402,11 +1402,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1488,7 +1488,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1497,7 +1497,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1510,12 +1510,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (memberId != null)
         {
-            localVarPathParams.Add("memberId", this.Configuration.ApiClient.ParameterToString(memberId));
+            localVarPathParams.Add("memberId", Configuration.ApiClient.ParameterToString(memberId));
         }
 
         // Query params
@@ -1530,11 +1530,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1601,7 +1601,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1610,7 +1610,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1635,11 +1635,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1706,7 +1706,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1715,7 +1715,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1740,11 +1740,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1819,7 +1819,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1828,7 +1828,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1841,7 +1841,7 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (deploymentId != null)
         {
-            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
+            localVarPathParams.Add("deploymentId", Configuration.ApiClient.ParameterToString(deploymentId));
         }
 
         // Query params
@@ -1857,11 +1857,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1887,7 +1887,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatDeployment>(localVarStatusCode,
             localVarHeaders,
-            (WebChatDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
+            (WebChatDeployment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1936,7 +1936,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1945,7 +1945,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1958,7 +1958,7 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (deploymentId != null)
         {
-            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
+            localVarPathParams.Add("deploymentId", Configuration.ApiClient.ParameterToString(deploymentId));
         }
 
         // Query params
@@ -1974,11 +1974,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2004,7 +2004,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatDeployment>(localVarStatusCode,
             localVarHeaders,
-            (WebChatDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
+            (WebChatDeployment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2046,7 +2046,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2055,7 +2055,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2080,11 +2080,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2110,7 +2110,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatDeploymentEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WebChatDeploymentEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeploymentEntityListing)),
+            (WebChatDeploymentEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeploymentEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2152,7 +2152,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2161,7 +2161,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2186,11 +2186,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2216,7 +2216,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatDeploymentEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WebChatDeploymentEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeploymentEntityListing)),
+            (WebChatDeploymentEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeploymentEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2272,7 +2272,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2281,7 +2281,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2294,12 +2294,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (mediaRequestId != null)
         {
-            localVarPathParams.Add("mediaRequestId", this.Configuration.ApiClient.ParameterToString(mediaRequestId));
+            localVarPathParams.Add("mediaRequestId", Configuration.ApiClient.ParameterToString(mediaRequestId));
         }
 
         // Query params
@@ -2314,11 +2314,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2344,7 +2344,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatGuestMediaRequest>(localVarStatusCode,
             localVarHeaders,
-            (WebChatGuestMediaRequest)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequest)),
+            (WebChatGuestMediaRequest)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequest)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2401,7 +2401,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2410,7 +2410,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2423,12 +2423,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (mediaRequestId != null)
         {
-            localVarPathParams.Add("mediaRequestId", this.Configuration.ApiClient.ParameterToString(mediaRequestId));
+            localVarPathParams.Add("mediaRequestId", Configuration.ApiClient.ParameterToString(mediaRequestId));
         }
 
         // Query params
@@ -2443,11 +2443,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2473,7 +2473,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatGuestMediaRequest>(localVarStatusCode,
             localVarHeaders,
-            (WebChatGuestMediaRequest)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequest)),
+            (WebChatGuestMediaRequest)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequest)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2522,7 +2522,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2531,7 +2531,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2544,7 +2544,7 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -2559,11 +2559,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2589,7 +2589,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatGuestMediaRequestEntityList>(localVarStatusCode,
             localVarHeaders,
-            (WebChatGuestMediaRequestEntityList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequestEntityList)),
+            (WebChatGuestMediaRequestEntityList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequestEntityList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2638,7 +2638,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2647,7 +2647,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2660,7 +2660,7 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -2675,11 +2675,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2705,7 +2705,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatGuestMediaRequestEntityList>(localVarStatusCode,
             localVarHeaders,
-            (WebChatGuestMediaRequestEntityList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequestEntityList)),
+            (WebChatGuestMediaRequestEntityList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequestEntityList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2761,7 +2761,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2770,7 +2770,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2783,12 +2783,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (memberId != null)
         {
-            localVarPathParams.Add("memberId", this.Configuration.ApiClient.ParameterToString(memberId));
+            localVarPathParams.Add("memberId", Configuration.ApiClient.ParameterToString(memberId));
         }
 
         // Query params
@@ -2803,11 +2803,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2833,7 +2833,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatMemberInfo>(localVarStatusCode,
             localVarHeaders,
-            (WebChatMemberInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMemberInfo)),
+            (WebChatMemberInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMemberInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2890,7 +2890,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2899,7 +2899,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2912,12 +2912,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (memberId != null)
         {
-            localVarPathParams.Add("memberId", this.Configuration.ApiClient.ParameterToString(memberId));
+            localVarPathParams.Add("memberId", Configuration.ApiClient.ParameterToString(memberId));
         }
 
         // Query params
@@ -2932,11 +2932,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2962,7 +2962,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatMemberInfo>(localVarStatusCode,
             localVarHeaders,
-            (WebChatMemberInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMemberInfo)),
+            (WebChatMemberInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMemberInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3017,7 +3017,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3026,7 +3026,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3039,23 +3039,23 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (excludeDisconnectedMembers != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("excludeDisconnectedMembers", this.Configuration.ApiClient.ParameterToString(excludeDisconnectedMembers)));
+            localVarQueryParams.Add(new Tuple<string, string>("excludeDisconnectedMembers", Configuration.ApiClient.ParameterToString(excludeDisconnectedMembers)));
         }
 
         // Header params
@@ -3068,11 +3068,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3098,7 +3098,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatMemberInfoEntityList>(localVarStatusCode,
             localVarHeaders,
-            (WebChatMemberInfoEntityList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMemberInfoEntityList)),
+            (WebChatMemberInfoEntityList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMemberInfoEntityList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3153,7 +3153,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3162,7 +3162,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3175,23 +3175,23 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (excludeDisconnectedMembers != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("excludeDisconnectedMembers", this.Configuration.ApiClient.ParameterToString(excludeDisconnectedMembers)));
+            localVarQueryParams.Add(new Tuple<string, string>("excludeDisconnectedMembers", Configuration.ApiClient.ParameterToString(excludeDisconnectedMembers)));
         }
 
         // Header params
@@ -3204,11 +3204,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3234,7 +3234,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatMemberInfoEntityList>(localVarStatusCode,
             localVarHeaders,
-            (WebChatMemberInfoEntityList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMemberInfoEntityList)),
+            (WebChatMemberInfoEntityList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMemberInfoEntityList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3290,7 +3290,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3299,7 +3299,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3312,12 +3312,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -3332,11 +3332,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3362,7 +3362,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatMessage>(localVarStatusCode,
             localVarHeaders,
-            (WebChatMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessage)),
+            (WebChatMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3419,7 +3419,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3428,7 +3428,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3441,12 +3441,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -3461,11 +3461,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3491,7 +3491,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatMessage>(localVarStatusCode,
             localVarHeaders,
-            (WebChatMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessage)),
+            (WebChatMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3548,7 +3548,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3557,7 +3557,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3570,28 +3570,28 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (maxResults != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("maxResults", this.Configuration.ApiClient.ParameterToString(maxResults)));
+            localVarQueryParams.Add(new Tuple<string, string>("maxResults", Configuration.ApiClient.ParameterToString(maxResults)));
         }
 
         // Header params
@@ -3604,11 +3604,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3634,7 +3634,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatMessageEntityList>(localVarStatusCode,
             localVarHeaders,
-            (WebChatMessageEntityList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessageEntityList)),
+            (WebChatMessageEntityList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessageEntityList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3691,7 +3691,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3700,7 +3700,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3713,28 +3713,28 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (maxResults != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("maxResults", this.Configuration.ApiClient.ParameterToString(maxResults)));
+            localVarQueryParams.Add(new Tuple<string, string>("maxResults", Configuration.ApiClient.ParameterToString(maxResults)));
         }
 
         // Header params
@@ -3747,11 +3747,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3777,7 +3777,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatMessageEntityList>(localVarStatusCode,
             localVarHeaders,
-            (WebChatMessageEntityList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessageEntityList)),
+            (WebChatMessageEntityList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessageEntityList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3819,7 +3819,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3828,7 +3828,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3853,11 +3853,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3883,7 +3883,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatSettings>(localVarStatusCode,
             localVarHeaders,
-            (WebChatSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatSettings)),
+            (WebChatSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3925,7 +3925,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3934,7 +3934,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3959,11 +3959,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3989,7 +3989,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatSettings>(localVarStatusCode,
             localVarHeaders,
-            (WebChatSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatSettings)),
+            (WebChatSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4053,7 +4053,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4062,7 +4062,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4075,12 +4075,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (mediaRequestId != null)
         {
-            localVarPathParams.Add("mediaRequestId", this.Configuration.ApiClient.ParameterToString(mediaRequestId));
+            localVarPathParams.Add("mediaRequestId", Configuration.ApiClient.ParameterToString(mediaRequestId));
         }
 
         // Query params
@@ -4092,7 +4092,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4104,11 +4104,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4134,7 +4134,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatGuestMediaRequest>(localVarStatusCode,
             localVarHeaders,
-            (WebChatGuestMediaRequest)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequest)),
+            (WebChatGuestMediaRequest)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequest)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4200,7 +4200,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4209,7 +4209,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4222,12 +4222,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (mediaRequestId != null)
         {
-            localVarPathParams.Add("mediaRequestId", this.Configuration.ApiClient.ParameterToString(mediaRequestId));
+            localVarPathParams.Add("mediaRequestId", Configuration.ApiClient.ParameterToString(mediaRequestId));
         }
 
         // Query params
@@ -4239,7 +4239,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4251,11 +4251,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4281,7 +4281,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatGuestMediaRequest>(localVarStatusCode,
             localVarHeaders,
-            (WebChatGuestMediaRequest)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequest)),
+            (WebChatGuestMediaRequest)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatGuestMediaRequest)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4331,7 +4331,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4340,7 +4340,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4361,7 +4361,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4374,11 +4374,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4404,7 +4404,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatDeployment>(localVarStatusCode,
             localVarHeaders,
-            (WebChatDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
+            (WebChatDeployment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4454,7 +4454,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4463,7 +4463,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4484,7 +4484,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4497,11 +4497,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4527,7 +4527,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatDeployment>(localVarStatusCode,
             localVarHeaders,
-            (WebChatDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
+            (WebChatDeployment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4591,7 +4591,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4600,7 +4600,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4613,12 +4613,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (memberId != null)
         {
-            localVarPathParams.Add("memberId", this.Configuration.ApiClient.ParameterToString(memberId));
+            localVarPathParams.Add("memberId", Configuration.ApiClient.ParameterToString(memberId));
         }
 
         // Query params
@@ -4630,7 +4630,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4642,11 +4642,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4672,7 +4672,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatMessage>(localVarStatusCode,
             localVarHeaders,
-            (WebChatMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessage)),
+            (WebChatMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4738,7 +4738,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4747,7 +4747,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4760,12 +4760,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (memberId != null)
         {
-            localVarPathParams.Add("memberId", this.Configuration.ApiClient.ParameterToString(memberId));
+            localVarPathParams.Add("memberId", Configuration.ApiClient.ParameterToString(memberId));
         }
 
         // Query params
@@ -4777,7 +4777,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4789,11 +4789,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4819,7 +4819,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatMessage>(localVarStatusCode,
             localVarHeaders,
-            (WebChatMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessage)),
+            (WebChatMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4875,7 +4875,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4884,7 +4884,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4897,12 +4897,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (memberId != null)
         {
-            localVarPathParams.Add("memberId", this.Configuration.ApiClient.ParameterToString(memberId));
+            localVarPathParams.Add("memberId", Configuration.ApiClient.ParameterToString(memberId));
         }
 
         // Query params
@@ -4917,11 +4917,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4947,7 +4947,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatTyping>(localVarStatusCode,
             localVarHeaders,
-            (WebChatTyping)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatTyping)),
+            (WebChatTyping)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatTyping)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5004,7 +5004,7 @@ public partial class WebChatApi : IWebChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5013,7 +5013,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5026,12 +5026,12 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (memberId != null)
         {
-            localVarPathParams.Add("memberId", this.Configuration.ApiClient.ParameterToString(memberId));
+            localVarPathParams.Add("memberId", Configuration.ApiClient.ParameterToString(memberId));
         }
 
         // Query params
@@ -5046,11 +5046,11 @@ public partial class WebChatApi : IWebChatApi
         // authentication (Guest Chat JWT) required
         if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
         {
-            localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5076,7 +5076,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatTyping>(localVarStatusCode,
             localVarHeaders,
-            (WebChatTyping)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatTyping)),
+            (WebChatTyping)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatTyping)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5126,7 +5126,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5135,7 +5135,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5156,7 +5156,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5166,7 +5166,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5192,7 +5192,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<CreateWebChatConversationResponse>(localVarStatusCode,
             localVarHeaders,
-            (CreateWebChatConversationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateWebChatConversationResponse)),
+            (CreateWebChatConversationResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateWebChatConversationResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5242,7 +5242,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5251,7 +5251,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5272,7 +5272,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5282,7 +5282,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5308,7 +5308,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<CreateWebChatConversationResponse>(localVarStatusCode,
             localVarHeaders,
-            (CreateWebChatConversationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateWebChatConversationResponse)),
+            (CreateWebChatConversationResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateWebChatConversationResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5365,7 +5365,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5374,7 +5374,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5387,7 +5387,7 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (deploymentId != null)
         {
-            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
+            localVarPathParams.Add("deploymentId", Configuration.ApiClient.ParameterToString(deploymentId));
         }
 
         // Query params
@@ -5399,7 +5399,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5412,11 +5412,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5442,7 +5442,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatDeployment>(localVarStatusCode,
             localVarHeaders,
-            (WebChatDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
+            (WebChatDeployment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5500,7 +5500,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5509,7 +5509,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5522,7 +5522,7 @@ public partial class WebChatApi : IWebChatApi
         // Path params
         if (deploymentId != null)
         {
-            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
+            localVarPathParams.Add("deploymentId", Configuration.ApiClient.ParameterToString(deploymentId));
         }
 
         // Query params
@@ -5534,7 +5534,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5547,11 +5547,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5577,7 +5577,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatDeployment>(localVarStatusCode,
             localVarHeaders,
-            (WebChatDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
+            (WebChatDeployment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatDeployment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5627,7 +5627,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5636,7 +5636,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5657,7 +5657,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5670,11 +5670,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5700,7 +5700,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatSettings>(localVarStatusCode,
             localVarHeaders,
-            (WebChatSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatSettings)),
+            (WebChatSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5750,7 +5750,7 @@ public partial class WebChatApi : IWebChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5759,7 +5759,7 @@ public partial class WebChatApi : IWebChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5780,7 +5780,7 @@ public partial class WebChatApi : IWebChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5793,11 +5793,11 @@ public partial class WebChatApi : IWebChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5823,7 +5823,7 @@ public partial class WebChatApi : IWebChatApi
 
         return new ApiResponse<WebChatSettings>(localVarStatusCode,
             localVarHeaders,
-            (WebChatSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatSettings)),
+            (WebChatSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WebChatSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

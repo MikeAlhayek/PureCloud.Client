@@ -101,7 +101,7 @@ public partial class GenericTemplate : IEquatable<GenericTemplate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GenericTemplate);
+        return Equals(obj as GenericTemplate);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class GenericTemplate : IEquatable<GenericTemplate>
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Components == other.Components ||
-                this.Components != null &&
-                this.Components.SequenceEqual(other.Components)
+                Components == other.Components ||
+                Components != null &&
+                Components.SequenceEqual(other.Components)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.Equals(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.Equals(other.Actions)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class GenericTemplate : IEquatable<GenericTemplate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Components != null)
+            if (Components != null)
             {
-                hash = hash * 59 + this.Components.GetHashCode();
+                hash = hash * 59 + Components.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
             return hash;

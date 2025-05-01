@@ -295,7 +295,7 @@ public partial class Operation : IEquatable<Operation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Operation);
+        return Equals(obj as Operation);
     }
 
     /// <summary>
@@ -313,54 +313,54 @@ public partial class Operation : IEquatable<Operation>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Complete == other.Complete ||
-                this.Complete != null &&
-                this.Complete.Equals(other.Complete)
+                Complete == other.Complete ||
+                Complete != null &&
+                Complete.Equals(other.Complete)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Client == other.Client ||
-                this.Client != null &&
-                this.Client.Equals(other.Client)
+                Client == other.Client ||
+                Client != null &&
+                Client.Equals(other.Client)
             ) &&
             (
-                this.ErrorMessage == other.ErrorMessage ||
-                this.ErrorMessage != null &&
-                this.ErrorMessage.Equals(other.ErrorMessage)
+                ErrorMessage == other.ErrorMessage ||
+                ErrorMessage != null &&
+                ErrorMessage.Equals(other.ErrorMessage)
             ) &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.ErrorDetails == other.ErrorDetails ||
-                this.ErrorDetails != null &&
-                this.ErrorDetails.SequenceEqual(other.ErrorDetails)
+                ErrorDetails == other.ErrorDetails ||
+                ErrorDetails != null &&
+                ErrorDetails.SequenceEqual(other.ErrorDetails)
             ) &&
             (
-                this.ErrorMessageParams == other.ErrorMessageParams ||
-                this.ErrorMessageParams != null &&
-                this.ErrorMessageParams.SequenceEqual(other.ErrorMessageParams)
+                ErrorMessageParams == other.ErrorMessageParams ||
+                ErrorMessageParams != null &&
+                ErrorMessageParams.SequenceEqual(other.ErrorMessageParams)
             ) &&
             (
-                this.ActionName == other.ActionName ||
-                this.ActionName != null &&
-                this.ActionName.Equals(other.ActionName)
+                ActionName == other.ActionName ||
+                ActionName != null &&
+                ActionName.Equals(other.ActionName)
             ) &&
             (
-                this.ActionStatus == other.ActionStatus ||
-                this.ActionStatus != null &&
-                this.ActionStatus.Equals(other.ActionStatus)
+                ActionStatus == other.ActionStatus ||
+                ActionStatus != null &&
+                ActionStatus.Equals(other.ActionStatus)
             );
     }
 
@@ -375,54 +375,54 @@ public partial class Operation : IEquatable<Operation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Complete != null)
+            if (Complete != null)
             {
-                hash = hash * 59 + this.Complete.GetHashCode();
+                hash = hash * 59 + Complete.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Client != null)
+            if (Client != null)
             {
-                hash = hash * 59 + this.Client.GetHashCode();
+                hash = hash * 59 + Client.GetHashCode();
             }
 
-            if (this.ErrorMessage != null)
+            if (ErrorMessage != null)
             {
-                hash = hash * 59 + this.ErrorMessage.GetHashCode();
+                hash = hash * 59 + ErrorMessage.GetHashCode();
             }
 
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.ErrorDetails != null)
+            if (ErrorDetails != null)
             {
-                hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                hash = hash * 59 + ErrorDetails.GetHashCode();
             }
 
-            if (this.ErrorMessageParams != null)
+            if (ErrorMessageParams != null)
             {
-                hash = hash * 59 + this.ErrorMessageParams.GetHashCode();
+                hash = hash * 59 + ErrorMessageParams.GetHashCode();
             }
 
-            if (this.ActionName != null)
+            if (ActionName != null)
             {
-                hash = hash * 59 + this.ActionName.GetHashCode();
+                hash = hash * 59 + ActionName.GetHashCode();
             }
 
-            if (this.ActionStatus != null)
+            if (ActionStatus != null)
             {
-                hash = hash * 59 + this.ActionStatus.GetHashCode();
+                hash = hash * 59 + ActionStatus.GetHashCode();
             }
 
             return hash;

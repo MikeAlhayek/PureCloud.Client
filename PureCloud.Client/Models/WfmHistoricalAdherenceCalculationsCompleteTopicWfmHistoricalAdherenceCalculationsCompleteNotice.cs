@@ -122,7 +122,7 @@ public partial class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistorica
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice);
+        return Equals(obj as WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice);
     }
 
     /// <summary>
@@ -140,24 +140,24 @@ public partial class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistorica
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.DownloadUrls == other.DownloadUrls ||
-                this.DownloadUrls != null &&
-                this.DownloadUrls.SequenceEqual(other.DownloadUrls)
+                DownloadUrls == other.DownloadUrls ||
+                DownloadUrls != null &&
+                DownloadUrls.SequenceEqual(other.DownloadUrls)
             ) &&
             (
-                this.QueryState == other.QueryState ||
-                this.QueryState != null &&
-                this.QueryState.Equals(other.QueryState)
+                QueryState == other.QueryState ||
+                QueryState != null &&
+                QueryState.Equals(other.QueryState)
             );
     }
 
@@ -172,24 +172,24 @@ public partial class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistorica
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.DownloadUrls != null)
+            if (DownloadUrls != null)
             {
-                hash = hash * 59 + this.DownloadUrls.GetHashCode();
+                hash = hash * 59 + DownloadUrls.GetHashCode();
             }
 
-            if (this.QueryState != null)
+            if (QueryState != null)
             {
-                hash = hash * 59 + this.QueryState.GetHashCode();
+                hash = hash * 59 + QueryState.GetHashCode();
             }
 
             return hash;

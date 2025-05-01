@@ -59,7 +59,7 @@ public partial class MessagingSettingDefaultRequest : IEquatable<MessagingSettin
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessagingSettingDefaultRequest);
+        return Equals(obj as MessagingSettingDefaultRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class MessagingSettingDefaultRequest : IEquatable<MessagingSettin
 
         return true &&
             (
-                this.SettingId == other.SettingId ||
-                this.SettingId != null &&
-                this.SettingId.Equals(other.SettingId)
+                SettingId == other.SettingId ||
+                SettingId != null &&
+                SettingId.Equals(other.SettingId)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class MessagingSettingDefaultRequest : IEquatable<MessagingSettin
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SettingId != null)
+            if (SettingId != null)
             {
-                hash = hash * 59 + this.SettingId.GetHashCode();
+                hash = hash * 59 + SettingId.GetHashCode();
             }
 
             return hash;

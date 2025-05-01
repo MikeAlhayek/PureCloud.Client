@@ -425,7 +425,7 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BatchConversationEventRequest);
+        return Equals(obj as BatchConversationEventRequest);
     }
 
     /// <summary>
@@ -443,164 +443,164 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
 
         return true &&
             (
-                this.EndTransferEvents == other.EndTransferEvents ||
-                this.EndTransferEvents != null &&
-                this.EndTransferEvents.SequenceEqual(other.EndTransferEvents)
+                EndTransferEvents == other.EndTransferEvents ||
+                EndTransferEvents != null &&
+                EndTransferEvents.SequenceEqual(other.EndTransferEvents)
             ) &&
             (
-                this.PhoneTransferEvents == other.PhoneTransferEvents ||
-                this.PhoneTransferEvents != null &&
-                this.PhoneTransferEvents.SequenceEqual(other.PhoneTransferEvents)
+                PhoneTransferEvents == other.PhoneTransferEvents ||
+                PhoneTransferEvents != null &&
+                PhoneTransferEvents.SequenceEqual(other.PhoneTransferEvents)
             ) &&
             (
-                this.ProgressTransferEvents == other.ProgressTransferEvents ||
-                this.ProgressTransferEvents != null &&
-                this.ProgressTransferEvents.SequenceEqual(other.ProgressTransferEvents)
+                ProgressTransferEvents == other.ProgressTransferEvents ||
+                ProgressTransferEvents != null &&
+                ProgressTransferEvents.SequenceEqual(other.ProgressTransferEvents)
             ) &&
             (
-                this.RoutingTransferEvents == other.RoutingTransferEvents ||
-                this.RoutingTransferEvents != null &&
-                this.RoutingTransferEvents.SequenceEqual(other.RoutingTransferEvents)
+                RoutingTransferEvents == other.RoutingTransferEvents ||
+                RoutingTransferEvents != null &&
+                RoutingTransferEvents.SequenceEqual(other.RoutingTransferEvents)
             ) &&
             (
-                this.UserTransferEvents == other.UserTransferEvents ||
-                this.UserTransferEvents != null &&
-                this.UserTransferEvents.SequenceEqual(other.UserTransferEvents)
+                UserTransferEvents == other.UserTransferEvents ||
+                UserTransferEvents != null &&
+                UserTransferEvents.SequenceEqual(other.UserTransferEvents)
             ) &&
             (
-                this.CommunicationAnsweredEvents == other.CommunicationAnsweredEvents ||
-                this.CommunicationAnsweredEvents != null &&
-                this.CommunicationAnsweredEvents.SequenceEqual(other.CommunicationAnsweredEvents)
+                CommunicationAnsweredEvents == other.CommunicationAnsweredEvents ||
+                CommunicationAnsweredEvents != null &&
+                CommunicationAnsweredEvents.SequenceEqual(other.CommunicationAnsweredEvents)
             ) &&
             (
-                this.CommunicationDispositionAppliedEvents == other.CommunicationDispositionAppliedEvents ||
-                this.CommunicationDispositionAppliedEvents != null &&
-                this.CommunicationDispositionAppliedEvents.SequenceEqual(other.CommunicationDispositionAppliedEvents)
+                CommunicationDispositionAppliedEvents == other.CommunicationDispositionAppliedEvents ||
+                CommunicationDispositionAppliedEvents != null &&
+                CommunicationDispositionAppliedEvents.SequenceEqual(other.CommunicationDispositionAppliedEvents)
             ) &&
             (
-                this.HoldUpdatedEvents == other.HoldUpdatedEvents ||
-                this.HoldUpdatedEvents != null &&
-                this.HoldUpdatedEvents.SequenceEqual(other.HoldUpdatedEvents)
+                HoldUpdatedEvents == other.HoldUpdatedEvents ||
+                HoldUpdatedEvents != null &&
+                HoldUpdatedEvents.SequenceEqual(other.HoldUpdatedEvents)
             ) &&
             (
-                this.ExternalEstablishedEvents == other.ExternalEstablishedEvents ||
-                this.ExternalEstablishedEvents != null &&
-                this.ExternalEstablishedEvents.SequenceEqual(other.ExternalEstablishedEvents)
+                ExternalEstablishedEvents == other.ExternalEstablishedEvents ||
+                ExternalEstablishedEvents != null &&
+                ExternalEstablishedEvents.SequenceEqual(other.ExternalEstablishedEvents)
             ) &&
             (
-                this.IvrEstablishedEvents == other.IvrEstablishedEvents ||
-                this.IvrEstablishedEvents != null &&
-                this.IvrEstablishedEvents.SequenceEqual(other.IvrEstablishedEvents)
+                IvrEstablishedEvents == other.IvrEstablishedEvents ||
+                IvrEstablishedEvents != null &&
+                IvrEstablishedEvents.SequenceEqual(other.IvrEstablishedEvents)
             ) &&
             (
-                this.PhoneEstablishedEvents == other.PhoneEstablishedEvents ||
-                this.PhoneEstablishedEvents != null &&
-                this.PhoneEstablishedEvents.SequenceEqual(other.PhoneEstablishedEvents)
+                PhoneEstablishedEvents == other.PhoneEstablishedEvents ||
+                PhoneEstablishedEvents != null &&
+                PhoneEstablishedEvents.SequenceEqual(other.PhoneEstablishedEvents)
             ) &&
             (
-                this.RoutingEstablishedEvents == other.RoutingEstablishedEvents ||
-                this.RoutingEstablishedEvents != null &&
-                this.RoutingEstablishedEvents.SequenceEqual(other.RoutingEstablishedEvents)
+                RoutingEstablishedEvents == other.RoutingEstablishedEvents ||
+                RoutingEstablishedEvents != null &&
+                RoutingEstablishedEvents.SequenceEqual(other.RoutingEstablishedEvents)
             ) &&
             (
-                this.UserEstablishedEvents == other.UserEstablishedEvents ||
-                this.UserEstablishedEvents != null &&
-                this.UserEstablishedEvents.SequenceEqual(other.UserEstablishedEvents)
+                UserEstablishedEvents == other.UserEstablishedEvents ||
+                UserEstablishedEvents != null &&
+                UserEstablishedEvents.SequenceEqual(other.UserEstablishedEvents)
             ) &&
             (
-                this.AudioUpdatedEvents == other.AudioUpdatedEvents ||
-                this.AudioUpdatedEvents != null &&
-                this.AudioUpdatedEvents.SequenceEqual(other.AudioUpdatedEvents)
+                AudioUpdatedEvents == other.AudioUpdatedEvents ||
+                AudioUpdatedEvents != null &&
+                AudioUpdatedEvents.SequenceEqual(other.AudioUpdatedEvents)
             ) &&
             (
-                this.CommunicationEndedEvents == other.CommunicationEndedEvents ||
-                this.CommunicationEndedEvents != null &&
-                this.CommunicationEndedEvents.SequenceEqual(other.CommunicationEndedEvents)
+                CommunicationEndedEvents == other.CommunicationEndedEvents ||
+                CommunicationEndedEvents != null &&
+                CommunicationEndedEvents.SequenceEqual(other.CommunicationEndedEvents)
             ) &&
             (
-                this.ConsultTransferEvents == other.ConsultTransferEvents ||
-                this.ConsultTransferEvents != null &&
-                this.ConsultTransferEvents.SequenceEqual(other.ConsultTransferEvents)
+                ConsultTransferEvents == other.ConsultTransferEvents ||
+                ConsultTransferEvents != null &&
+                ConsultTransferEvents.SequenceEqual(other.ConsultTransferEvents)
             ) &&
             (
-                this.ProgressConsultTransferEvents == other.ProgressConsultTransferEvents ||
-                this.ProgressConsultTransferEvents != null &&
-                this.ProgressConsultTransferEvents.SequenceEqual(other.ProgressConsultTransferEvents)
+                ProgressConsultTransferEvents == other.ProgressConsultTransferEvents ||
+                ProgressConsultTransferEvents != null &&
+                ProgressConsultTransferEvents.SequenceEqual(other.ProgressConsultTransferEvents)
             ) &&
             (
-                this.EndConsultTransferEvents == other.EndConsultTransferEvents ||
-                this.EndConsultTransferEvents != null &&
-                this.EndConsultTransferEvents.SequenceEqual(other.EndConsultTransferEvents)
+                EndConsultTransferEvents == other.EndConsultTransferEvents ||
+                EndConsultTransferEvents != null &&
+                EndConsultTransferEvents.SequenceEqual(other.EndConsultTransferEvents)
             ) &&
             (
-                this.EmailBeginTransmittingEvents == other.EmailBeginTransmittingEvents ||
-                this.EmailBeginTransmittingEvents != null &&
-                this.EmailBeginTransmittingEvents.SequenceEqual(other.EmailBeginTransmittingEvents)
+                EmailBeginTransmittingEvents == other.EmailBeginTransmittingEvents ||
+                EmailBeginTransmittingEvents != null &&
+                EmailBeginTransmittingEvents.SequenceEqual(other.EmailBeginTransmittingEvents)
             ) &&
             (
-                this.EmailCommunicationEndedEvents == other.EmailCommunicationEndedEvents ||
-                this.EmailCommunicationEndedEvents != null &&
-                this.EmailCommunicationEndedEvents.SequenceEqual(other.EmailCommunicationEndedEvents)
+                EmailCommunicationEndedEvents == other.EmailCommunicationEndedEvents ||
+                EmailCommunicationEndedEvents != null &&
+                EmailCommunicationEndedEvents.SequenceEqual(other.EmailCommunicationEndedEvents)
             ) &&
             (
-                this.EmailExternalEstablishedEvents == other.EmailExternalEstablishedEvents ||
-                this.EmailExternalEstablishedEvents != null &&
-                this.EmailExternalEstablishedEvents.SequenceEqual(other.EmailExternalEstablishedEvents)
+                EmailExternalEstablishedEvents == other.EmailExternalEstablishedEvents ||
+                EmailExternalEstablishedEvents != null &&
+                EmailExternalEstablishedEvents.SequenceEqual(other.EmailExternalEstablishedEvents)
             ) &&
             (
-                this.EmailFlowEstablishedEvents == other.EmailFlowEstablishedEvents ||
-                this.EmailFlowEstablishedEvents != null &&
-                this.EmailFlowEstablishedEvents.SequenceEqual(other.EmailFlowEstablishedEvents)
+                EmailFlowEstablishedEvents == other.EmailFlowEstablishedEvents ||
+                EmailFlowEstablishedEvents != null &&
+                EmailFlowEstablishedEvents.SequenceEqual(other.EmailFlowEstablishedEvents)
             ) &&
             (
-                this.EmailRoutingEstablishedEvents == other.EmailRoutingEstablishedEvents ||
-                this.EmailRoutingEstablishedEvents != null &&
-                this.EmailRoutingEstablishedEvents.SequenceEqual(other.EmailRoutingEstablishedEvents)
+                EmailRoutingEstablishedEvents == other.EmailRoutingEstablishedEvents ||
+                EmailRoutingEstablishedEvents != null &&
+                EmailRoutingEstablishedEvents.SequenceEqual(other.EmailRoutingEstablishedEvents)
             ) &&
             (
-                this.EmailUserEstablishedEvents == other.EmailUserEstablishedEvents ||
-                this.EmailUserEstablishedEvents != null &&
-                this.EmailUserEstablishedEvents.SequenceEqual(other.EmailUserEstablishedEvents)
+                EmailUserEstablishedEvents == other.EmailUserEstablishedEvents ||
+                EmailUserEstablishedEvents != null &&
+                EmailUserEstablishedEvents.SequenceEqual(other.EmailUserEstablishedEvents)
             ) &&
             (
-                this.EmailCommunicationAnsweredEvents == other.EmailCommunicationAnsweredEvents ||
-                this.EmailCommunicationAnsweredEvents != null &&
-                this.EmailCommunicationAnsweredEvents.SequenceEqual(other.EmailCommunicationAnsweredEvents)
+                EmailCommunicationAnsweredEvents == other.EmailCommunicationAnsweredEvents ||
+                EmailCommunicationAnsweredEvents != null &&
+                EmailCommunicationAnsweredEvents.SequenceEqual(other.EmailCommunicationAnsweredEvents)
             ) &&
             (
-                this.EmailCommunicationDispositionAppliedEvents == other.EmailCommunicationDispositionAppliedEvents ||
-                this.EmailCommunicationDispositionAppliedEvents != null &&
-                this.EmailCommunicationDispositionAppliedEvents.SequenceEqual(other.EmailCommunicationDispositionAppliedEvents)
+                EmailCommunicationDispositionAppliedEvents == other.EmailCommunicationDispositionAppliedEvents ||
+                EmailCommunicationDispositionAppliedEvents != null &&
+                EmailCommunicationDispositionAppliedEvents.SequenceEqual(other.EmailCommunicationDispositionAppliedEvents)
             ) &&
             (
-                this.EmailCommunicationSentMessageEvents == other.EmailCommunicationSentMessageEvents ||
-                this.EmailCommunicationSentMessageEvents != null &&
-                this.EmailCommunicationSentMessageEvents.SequenceEqual(other.EmailCommunicationSentMessageEvents)
+                EmailCommunicationSentMessageEvents == other.EmailCommunicationSentMessageEvents ||
+                EmailCommunicationSentMessageEvents != null &&
+                EmailCommunicationSentMessageEvents.SequenceEqual(other.EmailCommunicationSentMessageEvents)
             ) &&
             (
-                this.EmailHoldUpdatedEvents == other.EmailHoldUpdatedEvents ||
-                this.EmailHoldUpdatedEvents != null &&
-                this.EmailHoldUpdatedEvents.SequenceEqual(other.EmailHoldUpdatedEvents)
+                EmailHoldUpdatedEvents == other.EmailHoldUpdatedEvents ||
+                EmailHoldUpdatedEvents != null &&
+                EmailHoldUpdatedEvents.SequenceEqual(other.EmailHoldUpdatedEvents)
             ) &&
             (
-                this.EmailEndTransferEvents == other.EmailEndTransferEvents ||
-                this.EmailEndTransferEvents != null &&
-                this.EmailEndTransferEvents.SequenceEqual(other.EmailEndTransferEvents)
+                EmailEndTransferEvents == other.EmailEndTransferEvents ||
+                EmailEndTransferEvents != null &&
+                EmailEndTransferEvents.SequenceEqual(other.EmailEndTransferEvents)
             ) &&
             (
-                this.EmailProgressTransferEvents == other.EmailProgressTransferEvents ||
-                this.EmailProgressTransferEvents != null &&
-                this.EmailProgressTransferEvents.SequenceEqual(other.EmailProgressTransferEvents)
+                EmailProgressTransferEvents == other.EmailProgressTransferEvents ||
+                EmailProgressTransferEvents != null &&
+                EmailProgressTransferEvents.SequenceEqual(other.EmailProgressTransferEvents)
             ) &&
             (
-                this.EmailRoutingTransferEvents == other.EmailRoutingTransferEvents ||
-                this.EmailRoutingTransferEvents != null &&
-                this.EmailRoutingTransferEvents.SequenceEqual(other.EmailRoutingTransferEvents)
+                EmailRoutingTransferEvents == other.EmailRoutingTransferEvents ||
+                EmailRoutingTransferEvents != null &&
+                EmailRoutingTransferEvents.SequenceEqual(other.EmailRoutingTransferEvents)
             ) &&
             (
-                this.EmailUserTransferEvents == other.EmailUserTransferEvents ||
-                this.EmailUserTransferEvents != null &&
-                this.EmailUserTransferEvents.SequenceEqual(other.EmailUserTransferEvents)
+                EmailUserTransferEvents == other.EmailUserTransferEvents ||
+                EmailUserTransferEvents != null &&
+                EmailUserTransferEvents.SequenceEqual(other.EmailUserTransferEvents)
             );
     }
 
@@ -615,164 +615,164 @@ public partial class BatchConversationEventRequest : IEquatable<BatchConversatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EndTransferEvents != null)
+            if (EndTransferEvents != null)
             {
-                hash = hash * 59 + this.EndTransferEvents.GetHashCode();
+                hash = hash * 59 + EndTransferEvents.GetHashCode();
             }
 
-            if (this.PhoneTransferEvents != null)
+            if (PhoneTransferEvents != null)
             {
-                hash = hash * 59 + this.PhoneTransferEvents.GetHashCode();
+                hash = hash * 59 + PhoneTransferEvents.GetHashCode();
             }
 
-            if (this.ProgressTransferEvents != null)
+            if (ProgressTransferEvents != null)
             {
-                hash = hash * 59 + this.ProgressTransferEvents.GetHashCode();
+                hash = hash * 59 + ProgressTransferEvents.GetHashCode();
             }
 
-            if (this.RoutingTransferEvents != null)
+            if (RoutingTransferEvents != null)
             {
-                hash = hash * 59 + this.RoutingTransferEvents.GetHashCode();
+                hash = hash * 59 + RoutingTransferEvents.GetHashCode();
             }
 
-            if (this.UserTransferEvents != null)
+            if (UserTransferEvents != null)
             {
-                hash = hash * 59 + this.UserTransferEvents.GetHashCode();
+                hash = hash * 59 + UserTransferEvents.GetHashCode();
             }
 
-            if (this.CommunicationAnsweredEvents != null)
+            if (CommunicationAnsweredEvents != null)
             {
-                hash = hash * 59 + this.CommunicationAnsweredEvents.GetHashCode();
+                hash = hash * 59 + CommunicationAnsweredEvents.GetHashCode();
             }
 
-            if (this.CommunicationDispositionAppliedEvents != null)
+            if (CommunicationDispositionAppliedEvents != null)
             {
-                hash = hash * 59 + this.CommunicationDispositionAppliedEvents.GetHashCode();
+                hash = hash * 59 + CommunicationDispositionAppliedEvents.GetHashCode();
             }
 
-            if (this.HoldUpdatedEvents != null)
+            if (HoldUpdatedEvents != null)
             {
-                hash = hash * 59 + this.HoldUpdatedEvents.GetHashCode();
+                hash = hash * 59 + HoldUpdatedEvents.GetHashCode();
             }
 
-            if (this.ExternalEstablishedEvents != null)
+            if (ExternalEstablishedEvents != null)
             {
-                hash = hash * 59 + this.ExternalEstablishedEvents.GetHashCode();
+                hash = hash * 59 + ExternalEstablishedEvents.GetHashCode();
             }
 
-            if (this.IvrEstablishedEvents != null)
+            if (IvrEstablishedEvents != null)
             {
-                hash = hash * 59 + this.IvrEstablishedEvents.GetHashCode();
+                hash = hash * 59 + IvrEstablishedEvents.GetHashCode();
             }
 
-            if (this.PhoneEstablishedEvents != null)
+            if (PhoneEstablishedEvents != null)
             {
-                hash = hash * 59 + this.PhoneEstablishedEvents.GetHashCode();
+                hash = hash * 59 + PhoneEstablishedEvents.GetHashCode();
             }
 
-            if (this.RoutingEstablishedEvents != null)
+            if (RoutingEstablishedEvents != null)
             {
-                hash = hash * 59 + this.RoutingEstablishedEvents.GetHashCode();
+                hash = hash * 59 + RoutingEstablishedEvents.GetHashCode();
             }
 
-            if (this.UserEstablishedEvents != null)
+            if (UserEstablishedEvents != null)
             {
-                hash = hash * 59 + this.UserEstablishedEvents.GetHashCode();
+                hash = hash * 59 + UserEstablishedEvents.GetHashCode();
             }
 
-            if (this.AudioUpdatedEvents != null)
+            if (AudioUpdatedEvents != null)
             {
-                hash = hash * 59 + this.AudioUpdatedEvents.GetHashCode();
+                hash = hash * 59 + AudioUpdatedEvents.GetHashCode();
             }
 
-            if (this.CommunicationEndedEvents != null)
+            if (CommunicationEndedEvents != null)
             {
-                hash = hash * 59 + this.CommunicationEndedEvents.GetHashCode();
+                hash = hash * 59 + CommunicationEndedEvents.GetHashCode();
             }
 
-            if (this.ConsultTransferEvents != null)
+            if (ConsultTransferEvents != null)
             {
-                hash = hash * 59 + this.ConsultTransferEvents.GetHashCode();
+                hash = hash * 59 + ConsultTransferEvents.GetHashCode();
             }
 
-            if (this.ProgressConsultTransferEvents != null)
+            if (ProgressConsultTransferEvents != null)
             {
-                hash = hash * 59 + this.ProgressConsultTransferEvents.GetHashCode();
+                hash = hash * 59 + ProgressConsultTransferEvents.GetHashCode();
             }
 
-            if (this.EndConsultTransferEvents != null)
+            if (EndConsultTransferEvents != null)
             {
-                hash = hash * 59 + this.EndConsultTransferEvents.GetHashCode();
+                hash = hash * 59 + EndConsultTransferEvents.GetHashCode();
             }
 
-            if (this.EmailBeginTransmittingEvents != null)
+            if (EmailBeginTransmittingEvents != null)
             {
-                hash = hash * 59 + this.EmailBeginTransmittingEvents.GetHashCode();
+                hash = hash * 59 + EmailBeginTransmittingEvents.GetHashCode();
             }
 
-            if (this.EmailCommunicationEndedEvents != null)
+            if (EmailCommunicationEndedEvents != null)
             {
-                hash = hash * 59 + this.EmailCommunicationEndedEvents.GetHashCode();
+                hash = hash * 59 + EmailCommunicationEndedEvents.GetHashCode();
             }
 
-            if (this.EmailExternalEstablishedEvents != null)
+            if (EmailExternalEstablishedEvents != null)
             {
-                hash = hash * 59 + this.EmailExternalEstablishedEvents.GetHashCode();
+                hash = hash * 59 + EmailExternalEstablishedEvents.GetHashCode();
             }
 
-            if (this.EmailFlowEstablishedEvents != null)
+            if (EmailFlowEstablishedEvents != null)
             {
-                hash = hash * 59 + this.EmailFlowEstablishedEvents.GetHashCode();
+                hash = hash * 59 + EmailFlowEstablishedEvents.GetHashCode();
             }
 
-            if (this.EmailRoutingEstablishedEvents != null)
+            if (EmailRoutingEstablishedEvents != null)
             {
-                hash = hash * 59 + this.EmailRoutingEstablishedEvents.GetHashCode();
+                hash = hash * 59 + EmailRoutingEstablishedEvents.GetHashCode();
             }
 
-            if (this.EmailUserEstablishedEvents != null)
+            if (EmailUserEstablishedEvents != null)
             {
-                hash = hash * 59 + this.EmailUserEstablishedEvents.GetHashCode();
+                hash = hash * 59 + EmailUserEstablishedEvents.GetHashCode();
             }
 
-            if (this.EmailCommunicationAnsweredEvents != null)
+            if (EmailCommunicationAnsweredEvents != null)
             {
-                hash = hash * 59 + this.EmailCommunicationAnsweredEvents.GetHashCode();
+                hash = hash * 59 + EmailCommunicationAnsweredEvents.GetHashCode();
             }
 
-            if (this.EmailCommunicationDispositionAppliedEvents != null)
+            if (EmailCommunicationDispositionAppliedEvents != null)
             {
-                hash = hash * 59 + this.EmailCommunicationDispositionAppliedEvents.GetHashCode();
+                hash = hash * 59 + EmailCommunicationDispositionAppliedEvents.GetHashCode();
             }
 
-            if (this.EmailCommunicationSentMessageEvents != null)
+            if (EmailCommunicationSentMessageEvents != null)
             {
-                hash = hash * 59 + this.EmailCommunicationSentMessageEvents.GetHashCode();
+                hash = hash * 59 + EmailCommunicationSentMessageEvents.GetHashCode();
             }
 
-            if (this.EmailHoldUpdatedEvents != null)
+            if (EmailHoldUpdatedEvents != null)
             {
-                hash = hash * 59 + this.EmailHoldUpdatedEvents.GetHashCode();
+                hash = hash * 59 + EmailHoldUpdatedEvents.GetHashCode();
             }
 
-            if (this.EmailEndTransferEvents != null)
+            if (EmailEndTransferEvents != null)
             {
-                hash = hash * 59 + this.EmailEndTransferEvents.GetHashCode();
+                hash = hash * 59 + EmailEndTransferEvents.GetHashCode();
             }
 
-            if (this.EmailProgressTransferEvents != null)
+            if (EmailProgressTransferEvents != null)
             {
-                hash = hash * 59 + this.EmailProgressTransferEvents.GetHashCode();
+                hash = hash * 59 + EmailProgressTransferEvents.GetHashCode();
             }
 
-            if (this.EmailRoutingTransferEvents != null)
+            if (EmailRoutingTransferEvents != null)
             {
-                hash = hash * 59 + this.EmailRoutingTransferEvents.GetHashCode();
+                hash = hash * 59 + EmailRoutingTransferEvents.GetHashCode();
             }
 
-            if (this.EmailUserTransferEvents != null)
+            if (EmailUserTransferEvents != null)
             {
-                hash = hash * 59 + this.EmailUserTransferEvents.GetHashCode();
+                hash = hash * 59 + EmailUserTransferEvents.GetHashCode();
             }
 
             return hash;

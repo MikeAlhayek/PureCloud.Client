@@ -89,7 +89,7 @@ public partial class TestModeResults : IEquatable<TestModeResults>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TestModeResults);
+        return Equals(obj as TestModeResults);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class TestModeResults : IEquatable<TestModeResults>
 
         return true &&
             (
-                this.SchemaValidation == other.SchemaValidation ||
-                this.SchemaValidation != null &&
-                this.SchemaValidation.Equals(other.SchemaValidation)
+                SchemaValidation == other.SchemaValidation ||
+                SchemaValidation != null &&
+                SchemaValidation.Equals(other.SchemaValidation)
             ) &&
             (
-                this.TargetValidation == other.TargetValidation ||
-                this.TargetValidation != null &&
-                this.TargetValidation.Equals(other.TargetValidation)
+                TargetValidation == other.TargetValidation ||
+                TargetValidation != null &&
+                TargetValidation.Equals(other.TargetValidation)
             ) &&
             (
-                this.JsonPathValidation == other.JsonPathValidation ||
-                this.JsonPathValidation != null &&
-                this.JsonPathValidation.Equals(other.JsonPathValidation)
+                JsonPathValidation == other.JsonPathValidation ||
+                JsonPathValidation != null &&
+                JsonPathValidation.Equals(other.JsonPathValidation)
             ) &&
             (
-                this.TriggerMatches == other.TriggerMatches ||
-                this.TriggerMatches != null &&
-                this.TriggerMatches.Equals(other.TriggerMatches)
+                TriggerMatches == other.TriggerMatches ||
+                TriggerMatches != null &&
+                TriggerMatches.Equals(other.TriggerMatches)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class TestModeResults : IEquatable<TestModeResults>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SchemaValidation != null)
+            if (SchemaValidation != null)
             {
-                hash = hash * 59 + this.SchemaValidation.GetHashCode();
+                hash = hash * 59 + SchemaValidation.GetHashCode();
             }
 
-            if (this.TargetValidation != null)
+            if (TargetValidation != null)
             {
-                hash = hash * 59 + this.TargetValidation.GetHashCode();
+                hash = hash * 59 + TargetValidation.GetHashCode();
             }
 
-            if (this.JsonPathValidation != null)
+            if (JsonPathValidation != null)
             {
-                hash = hash * 59 + this.JsonPathValidation.GetHashCode();
+                hash = hash * 59 + JsonPathValidation.GetHashCode();
             }
 
-            if (this.TriggerMatches != null)
+            if (TriggerMatches != null)
             {
-                hash = hash * 59 + this.TriggerMatches.GetHashCode();
+                hash = hash * 59 + TriggerMatches.GetHashCode();
             }
 
             return hash;

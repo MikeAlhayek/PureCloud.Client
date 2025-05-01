@@ -159,7 +159,7 @@ public partial class UserSearchRulePart : IEquatable<UserSearchRulePart>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserSearchRulePart);
+        return Equals(obj as UserSearchRulePart);
     }
 
     /// <summary>
@@ -177,19 +177,19 @@ public partial class UserSearchRulePart : IEquatable<UserSearchRulePart>
 
         return true &&
             (
-                this.Operation == other.Operation ||
-                this.Operation != null &&
-                this.Operation.Equals(other.Operation)
+                Operation == other.Operation ||
+                Operation != null &&
+                Operation.Equals(other.Operation)
             ) &&
             (
-                this.Selector == other.Selector ||
-                this.Selector != null &&
-                this.Selector.Equals(other.Selector)
+                Selector == other.Selector ||
+                Selector != null &&
+                Selector.Equals(other.Selector)
             ) &&
             (
-                this.Ids == other.Ids ||
-                this.Ids != null &&
-                this.Ids.SequenceEqual(other.Ids)
+                Ids == other.Ids ||
+                Ids != null &&
+                Ids.SequenceEqual(other.Ids)
             );
     }
 
@@ -204,19 +204,19 @@ public partial class UserSearchRulePart : IEquatable<UserSearchRulePart>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Operation != null)
+            if (Operation != null)
             {
-                hash = hash * 59 + this.Operation.GetHashCode();
+                hash = hash * 59 + Operation.GetHashCode();
             }
 
-            if (this.Selector != null)
+            if (Selector != null)
             {
-                hash = hash * 59 + this.Selector.GetHashCode();
+                hash = hash * 59 + Selector.GetHashCode();
             }
 
-            if (this.Ids != null)
+            if (Ids != null)
             {
-                hash = hash * 59 + this.Ids.GetHashCode();
+                hash = hash * 59 + Ids.GetHashCode();
             }
 
             return hash;

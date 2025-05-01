@@ -85,7 +85,7 @@ public partial class DomainNetworkCommandResponse : IEquatable<DomainNetworkComm
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainNetworkCommandResponse);
+        return Equals(obj as DomainNetworkCommandResponse);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class DomainNetworkCommandResponse : IEquatable<DomainNetworkComm
 
         return true &&
             (
-                this.CorrelationId == other.CorrelationId ||
-                this.CorrelationId != null &&
-                this.CorrelationId.Equals(other.CorrelationId)
+                CorrelationId == other.CorrelationId ||
+                CorrelationId != null &&
+                CorrelationId.Equals(other.CorrelationId)
             ) &&
             (
-                this.CommandName == other.CommandName ||
-                this.CommandName != null &&
-                this.CommandName.Equals(other.CommandName)
+                CommandName == other.CommandName ||
+                CommandName != null &&
+                CommandName.Equals(other.CommandName)
             ) &&
             (
-                this.Acknowledged == other.Acknowledged ||
-                this.Acknowledged != null &&
-                this.Acknowledged.Equals(other.Acknowledged)
+                Acknowledged == other.Acknowledged ||
+                Acknowledged != null &&
+                Acknowledged.Equals(other.Acknowledged)
             ) &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class DomainNetworkCommandResponse : IEquatable<DomainNetworkComm
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CorrelationId != null)
+            if (CorrelationId != null)
             {
-                hash = hash * 59 + this.CorrelationId.GetHashCode();
+                hash = hash * 59 + CorrelationId.GetHashCode();
             }
 
-            if (this.CommandName != null)
+            if (CommandName != null)
             {
-                hash = hash * 59 + this.CommandName.GetHashCode();
+                hash = hash * 59 + CommandName.GetHashCode();
             }
 
-            if (this.Acknowledged != null)
+            if (Acknowledged != null)
             {
-                hash = hash * 59 + this.Acknowledged.GetHashCode();
+                hash = hash * 59 + Acknowledged.GetHashCode();
             }
 
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
             return hash;

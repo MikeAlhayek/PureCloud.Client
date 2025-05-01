@@ -133,7 +133,7 @@ public partial class ConversationThreadingWindowSetting : IEquatable<Conversatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationThreadingWindowSetting);
+        return Equals(obj as ConversationThreadingWindowSetting);
     }
 
     /// <summary>
@@ -151,14 +151,14 @@ public partial class ConversationThreadingWindowSetting : IEquatable<Conversatio
 
         return true &&
             (
-                this.MessengerType == other.MessengerType ||
-                this.MessengerType != null &&
-                this.MessengerType.Equals(other.MessengerType)
+                MessengerType == other.MessengerType ||
+                MessengerType != null &&
+                MessengerType.Equals(other.MessengerType)
             ) &&
             (
-                this.TimeoutInMinutes == other.TimeoutInMinutes ||
-                this.TimeoutInMinutes != null &&
-                this.TimeoutInMinutes.Equals(other.TimeoutInMinutes)
+                TimeoutInMinutes == other.TimeoutInMinutes ||
+                TimeoutInMinutes != null &&
+                TimeoutInMinutes.Equals(other.TimeoutInMinutes)
             );
     }
 
@@ -173,14 +173,14 @@ public partial class ConversationThreadingWindowSetting : IEquatable<Conversatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MessengerType != null)
+            if (MessengerType != null)
             {
-                hash = hash * 59 + this.MessengerType.GetHashCode();
+                hash = hash * 59 + MessengerType.GetHashCode();
             }
 
-            if (this.TimeoutInMinutes != null)
+            if (TimeoutInMinutes != null)
             {
-                hash = hash * 59 + this.TimeoutInMinutes.GetHashCode();
+                hash = hash * 59 + TimeoutInMinutes.GetHashCode();
             }
 
             return hash;

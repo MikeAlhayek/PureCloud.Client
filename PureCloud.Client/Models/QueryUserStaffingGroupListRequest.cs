@@ -59,7 +59,7 @@ public partial class QueryUserStaffingGroupListRequest : IEquatable<QueryUserSta
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueryUserStaffingGroupListRequest);
+        return Equals(obj as QueryUserStaffingGroupListRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class QueryUserStaffingGroupListRequest : IEquatable<QueryUserSta
 
         return true &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class QueryUserStaffingGroupListRequest : IEquatable<QueryUserSta
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
             return hash;

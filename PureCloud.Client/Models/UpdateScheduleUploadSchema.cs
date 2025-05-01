@@ -119,7 +119,7 @@ public partial class UpdateScheduleUploadSchema : IEquatable<UpdateScheduleUploa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateScheduleUploadSchema);
+        return Equals(obj as UpdateScheduleUploadSchema);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class UpdateScheduleUploadSchema : IEquatable<UpdateScheduleUploa
 
         return true &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Published == other.Published ||
-                this.Published != null &&
-                this.Published.Equals(other.Published)
+                Published == other.Published ||
+                Published != null &&
+                Published.Equals(other.Published)
             ) &&
             (
-                this.ShortTermForecast == other.ShortTermForecast ||
-                this.ShortTermForecast != null &&
-                this.ShortTermForecast.Equals(other.ShortTermForecast)
+                ShortTermForecast == other.ShortTermForecast ||
+                ShortTermForecast != null &&
+                ShortTermForecast.Equals(other.ShortTermForecast)
             ) &&
             (
-                this.HeadcountForecast == other.HeadcountForecast ||
-                this.HeadcountForecast != null &&
-                this.HeadcountForecast.Equals(other.HeadcountForecast)
+                HeadcountForecast == other.HeadcountForecast ||
+                HeadcountForecast != null &&
+                HeadcountForecast.Equals(other.HeadcountForecast)
             ) &&
             (
-                this.AgentSchedules == other.AgentSchedules ||
-                this.AgentSchedules != null &&
-                this.AgentSchedules.SequenceEqual(other.AgentSchedules)
+                AgentSchedules == other.AgentSchedules ||
+                AgentSchedules != null &&
+                AgentSchedules.SequenceEqual(other.AgentSchedules)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class UpdateScheduleUploadSchema : IEquatable<UpdateScheduleUploa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Published != null)
+            if (Published != null)
             {
-                hash = hash * 59 + this.Published.GetHashCode();
+                hash = hash * 59 + Published.GetHashCode();
             }
 
-            if (this.ShortTermForecast != null)
+            if (ShortTermForecast != null)
             {
-                hash = hash * 59 + this.ShortTermForecast.GetHashCode();
+                hash = hash * 59 + ShortTermForecast.GetHashCode();
             }
 
-            if (this.HeadcountForecast != null)
+            if (HeadcountForecast != null)
             {
-                hash = hash * 59 + this.HeadcountForecast.GetHashCode();
+                hash = hash * 59 + HeadcountForecast.GetHashCode();
             }
 
-            if (this.AgentSchedules != null)
+            if (AgentSchedules != null)
             {
-                hash = hash * 59 + this.AgentSchedules.GetHashCode();
+                hash = hash * 59 + AgentSchedules.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

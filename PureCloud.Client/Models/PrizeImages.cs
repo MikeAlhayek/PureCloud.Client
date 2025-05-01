@@ -51,7 +51,7 @@ public partial class PrizeImages : IEquatable<PrizeImages>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PrizeImages);
+        return Equals(obj as PrizeImages);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class PrizeImages : IEquatable<PrizeImages>
 
         return true &&
             (
-                this.ImageUrl == other.ImageUrl ||
-                this.ImageUrl != null &&
-                this.ImageUrl.Equals(other.ImageUrl)
+                ImageUrl == other.ImageUrl ||
+                ImageUrl != null &&
+                ImageUrl.Equals(other.ImageUrl)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class PrizeImages : IEquatable<PrizeImages>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ImageUrl != null)
+            if (ImageUrl != null)
             {
-                hash = hash * 59 + this.ImageUrl.GetHashCode();
+                hash = hash * 59 + ImageUrl.GetHashCode();
             }
 
             return hash;

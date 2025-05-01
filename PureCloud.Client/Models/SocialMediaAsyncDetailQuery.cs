@@ -133,7 +133,7 @@ public partial class SocialMediaAsyncDetailQuery : IEquatable<SocialMediaAsyncDe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SocialMediaAsyncDetailQuery);
+        return Equals(obj as SocialMediaAsyncDetailQuery);
     }
 
     /// <summary>
@@ -151,29 +151,29 @@ public partial class SocialMediaAsyncDetailQuery : IEquatable<SocialMediaAsyncDe
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.Order == other.Order ||
-                this.Order != null &&
-                this.Order.Equals(other.Order)
+                Order == other.Order ||
+                Order != null &&
+                Order.Equals(other.Order)
             );
     }
 
@@ -188,29 +188,29 @@ public partial class SocialMediaAsyncDetailQuery : IEquatable<SocialMediaAsyncDe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.Order != null)
+            if (Order != null)
             {
-                hash = hash * 59 + this.Order.GetHashCode();
+                hash = hash * 59 + Order.GetHashCode();
             }
 
             return hash;

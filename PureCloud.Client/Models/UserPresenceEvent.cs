@@ -119,7 +119,7 @@ public partial class UserPresenceEvent : IEquatable<UserPresenceEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserPresenceEvent);
+        return Equals(obj as UserPresenceEvent);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class UserPresenceEvent : IEquatable<UserPresenceEvent>
 
         return true &&
             (
-                this.EventId == other.EventId ||
-                this.EventId != null &&
-                this.EventId.Equals(other.EventId)
+                EventId == other.EventId ||
+                EventId != null &&
+                EventId.Equals(other.EventId)
             ) &&
             (
-                this.EventDateTime == other.EventDateTime ||
-                this.EventDateTime != null &&
-                this.EventDateTime.Equals(other.EventDateTime)
+                EventDateTime == other.EventDateTime ||
+                EventDateTime != null &&
+                EventDateTime.Equals(other.EventDateTime)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.SourceId == other.SourceId ||
-                this.SourceId != null &&
-                this.SourceId.Equals(other.SourceId)
+                SourceId == other.SourceId ||
+                SourceId != null &&
+                SourceId.Equals(other.SourceId)
             ) &&
             (
-                this.PresenceDefinitionId == other.PresenceDefinitionId ||
-                this.PresenceDefinitionId != null &&
-                this.PresenceDefinitionId.Equals(other.PresenceDefinitionId)
+                PresenceDefinitionId == other.PresenceDefinitionId ||
+                PresenceDefinitionId != null &&
+                PresenceDefinitionId.Equals(other.PresenceDefinitionId)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class UserPresenceEvent : IEquatable<UserPresenceEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventId != null)
+            if (EventId != null)
             {
-                hash = hash * 59 + this.EventId.GetHashCode();
+                hash = hash * 59 + EventId.GetHashCode();
             }
 
-            if (this.EventDateTime != null)
+            if (EventDateTime != null)
             {
-                hash = hash * 59 + this.EventDateTime.GetHashCode();
+                hash = hash * 59 + EventDateTime.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.SourceId != null)
+            if (SourceId != null)
             {
-                hash = hash * 59 + this.SourceId.GetHashCode();
+                hash = hash * 59 + SourceId.GetHashCode();
             }
 
-            if (this.PresenceDefinitionId != null)
+            if (PresenceDefinitionId != null)
             {
-                hash = hash * 59 + this.PresenceDefinitionId.GetHashCode();
+                hash = hash * 59 + PresenceDefinitionId.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
             return hash;

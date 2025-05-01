@@ -109,7 +109,7 @@ public partial class ContinuousForecastSessionResponse : IEquatable<ContinuousFo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContinuousForecastSessionResponse);
+        return Equals(obj as ContinuousForecastSessionResponse);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class ContinuousForecastSessionResponse : IEquatable<ContinuousFo
 
         return true &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Files == other.Files ||
-                this.Files != null &&
-                this.Files.Equals(other.Files)
+                Files == other.Files ||
+                Files != null &&
+                Files.Equals(other.Files)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class ContinuousForecastSessionResponse : IEquatable<ContinuousFo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Files != null)
+            if (Files != null)
             {
-                hash = hash * 59 + this.Files.GetHashCode();
+                hash = hash * 59 + Files.GetHashCode();
             }
 
             return hash;

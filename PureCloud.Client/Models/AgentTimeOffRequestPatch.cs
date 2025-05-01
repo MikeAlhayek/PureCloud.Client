@@ -96,7 +96,7 @@ public partial class AgentTimeOffRequestPatch : IEquatable<AgentTimeOffRequestPa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentTimeOffRequestPatch);
+        return Equals(obj as AgentTimeOffRequestPatch);
     }
 
     /// <summary>
@@ -114,19 +114,19 @@ public partial class AgentTimeOffRequestPatch : IEquatable<AgentTimeOffRequestPa
 
         return true &&
             (
-                this.MarkedAsRead == other.MarkedAsRead ||
-                this.MarkedAsRead != null &&
-                this.MarkedAsRead.Equals(other.MarkedAsRead)
+                MarkedAsRead == other.MarkedAsRead ||
+                MarkedAsRead != null &&
+                MarkedAsRead.Equals(other.MarkedAsRead)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             );
     }
 
@@ -141,19 +141,19 @@ public partial class AgentTimeOffRequestPatch : IEquatable<AgentTimeOffRequestPa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MarkedAsRead != null)
+            if (MarkedAsRead != null)
             {
-                hash = hash * 59 + this.MarkedAsRead.GetHashCode();
+                hash = hash * 59 + MarkedAsRead.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
             return hash;

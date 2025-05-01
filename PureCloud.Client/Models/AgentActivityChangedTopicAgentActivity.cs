@@ -106,7 +106,7 @@ public partial class AgentActivityChangedTopicAgentActivity : IEquatable<AgentAc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentActivityChangedTopicAgentActivity);
+        return Equals(obj as AgentActivityChangedTopicAgentActivity);
     }
 
     /// <summary>
@@ -124,34 +124,34 @@ public partial class AgentActivityChangedTopicAgentActivity : IEquatable<AgentAc
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.RoutingStatus == other.RoutingStatus ||
-                this.RoutingStatus != null &&
-                this.RoutingStatus.Equals(other.RoutingStatus)
+                RoutingStatus == other.RoutingStatus ||
+                RoutingStatus != null &&
+                RoutingStatus.Equals(other.RoutingStatus)
             ) &&
             (
-                this.Presence == other.Presence ||
-                this.Presence != null &&
-                this.Presence.Equals(other.Presence)
+                Presence == other.Presence ||
+                Presence != null &&
+                Presence.Equals(other.Presence)
             ) &&
             (
-                this.OutOfOffice == other.OutOfOffice ||
-                this.OutOfOffice != null &&
-                this.OutOfOffice.Equals(other.OutOfOffice)
+                OutOfOffice == other.OutOfOffice ||
+                OutOfOffice != null &&
+                OutOfOffice.Equals(other.OutOfOffice)
             ) &&
             (
-                this.ActiveQueueIds == other.ActiveQueueIds ||
-                this.ActiveQueueIds != null &&
-                this.ActiveQueueIds.SequenceEqual(other.ActiveQueueIds)
+                ActiveQueueIds == other.ActiveQueueIds ||
+                ActiveQueueIds != null &&
+                ActiveQueueIds.SequenceEqual(other.ActiveQueueIds)
             ) &&
             (
-                this.DateActiveQueuesChanged == other.DateActiveQueuesChanged ||
-                this.DateActiveQueuesChanged != null &&
-                this.DateActiveQueuesChanged.Equals(other.DateActiveQueuesChanged)
+                DateActiveQueuesChanged == other.DateActiveQueuesChanged ||
+                DateActiveQueuesChanged != null &&
+                DateActiveQueuesChanged.Equals(other.DateActiveQueuesChanged)
             );
     }
 
@@ -166,34 +166,34 @@ public partial class AgentActivityChangedTopicAgentActivity : IEquatable<AgentAc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.RoutingStatus != null)
+            if (RoutingStatus != null)
             {
-                hash = hash * 59 + this.RoutingStatus.GetHashCode();
+                hash = hash * 59 + RoutingStatus.GetHashCode();
             }
 
-            if (this.Presence != null)
+            if (Presence != null)
             {
-                hash = hash * 59 + this.Presence.GetHashCode();
+                hash = hash * 59 + Presence.GetHashCode();
             }
 
-            if (this.OutOfOffice != null)
+            if (OutOfOffice != null)
             {
-                hash = hash * 59 + this.OutOfOffice.GetHashCode();
+                hash = hash * 59 + OutOfOffice.GetHashCode();
             }
 
-            if (this.ActiveQueueIds != null)
+            if (ActiveQueueIds != null)
             {
-                hash = hash * 59 + this.ActiveQueueIds.GetHashCode();
+                hash = hash * 59 + ActiveQueueIds.GetHashCode();
             }
 
-            if (this.DateActiveQueuesChanged != null)
+            if (DateActiveQueuesChanged != null)
             {
-                hash = hash * 59 + this.DateActiveQueuesChanged.GetHashCode();
+                hash = hash * 59 + DateActiveQueuesChanged.GetHashCode();
             }
 
             return hash;

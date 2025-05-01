@@ -95,7 +95,7 @@ public partial class LearningAssignmentCreate : IEquatable<LearningAssignmentCre
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentCreate);
+        return Equals(obj as LearningAssignmentCreate);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class LearningAssignmentCreate : IEquatable<LearningAssignmentCre
 
         return true &&
             (
-                this.ModuleId == other.ModuleId ||
-                this.ModuleId != null &&
-                this.ModuleId.Equals(other.ModuleId)
+                ModuleId == other.ModuleId ||
+                ModuleId != null &&
+                ModuleId.Equals(other.ModuleId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.RecommendedCompletionDate == other.RecommendedCompletionDate ||
-                this.RecommendedCompletionDate != null &&
-                this.RecommendedCompletionDate.Equals(other.RecommendedCompletionDate)
+                RecommendedCompletionDate == other.RecommendedCompletionDate ||
+                RecommendedCompletionDate != null &&
+                RecommendedCompletionDate.Equals(other.RecommendedCompletionDate)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class LearningAssignmentCreate : IEquatable<LearningAssignmentCre
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ModuleId != null)
+            if (ModuleId != null)
             {
-                hash = hash * 59 + this.ModuleId.GetHashCode();
+                hash = hash * 59 + ModuleId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.RecommendedCompletionDate != null)
+            if (RecommendedCompletionDate != null)
             {
-                hash = hash * 59 + this.RecommendedCompletionDate.GetHashCode();
+                hash = hash * 59 + RecommendedCompletionDate.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
             return hash;

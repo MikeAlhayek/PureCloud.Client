@@ -102,7 +102,7 @@ public partial class ArchitectJobMessage : IEquatable<ArchitectJobMessage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArchitectJobMessage);
+        return Equals(obj as ArchitectJobMessage);
     }
 
     /// <summary>
@@ -120,19 +120,19 @@ public partial class ArchitectJobMessage : IEquatable<ArchitectJobMessage>
 
         return true &&
             (
-                this.DateTime == other.DateTime ||
-                this.DateTime != null &&
-                this.DateTime.Equals(other.DateTime)
+                DateTime == other.DateTime ||
+                DateTime != null &&
+                DateTime.Equals(other.DateTime)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             );
     }
 
@@ -147,19 +147,19 @@ public partial class ArchitectJobMessage : IEquatable<ArchitectJobMessage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateTime != null)
+            if (DateTime != null)
             {
-                hash = hash * 59 + this.DateTime.GetHashCode();
+                hash = hash * 59 + DateTime.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
             return hash;

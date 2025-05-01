@@ -65,7 +65,7 @@ public partial class ChatSettings : IEquatable<ChatSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatSettings);
+        return Equals(obj as ChatSettings);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ChatSettings : IEquatable<ChatSettings>
 
         return true &&
             (
-                this.MessageRetentionPeriodDays == other.MessageRetentionPeriodDays ||
-                this.MessageRetentionPeriodDays != null &&
-                this.MessageRetentionPeriodDays.Equals(other.MessageRetentionPeriodDays)
+                MessageRetentionPeriodDays == other.MessageRetentionPeriodDays ||
+                MessageRetentionPeriodDays != null &&
+                MessageRetentionPeriodDays.Equals(other.MessageRetentionPeriodDays)
             ) &&
             (
-                this.ReactionsEnabled == other.ReactionsEnabled ||
-                this.ReactionsEnabled != null &&
-                this.ReactionsEnabled.Equals(other.ReactionsEnabled)
+                ReactionsEnabled == other.ReactionsEnabled ||
+                ReactionsEnabled != null &&
+                ReactionsEnabled.Equals(other.ReactionsEnabled)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ChatSettings : IEquatable<ChatSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MessageRetentionPeriodDays != null)
+            if (MessageRetentionPeriodDays != null)
             {
-                hash = hash * 59 + this.MessageRetentionPeriodDays.GetHashCode();
+                hash = hash * 59 + MessageRetentionPeriodDays.GetHashCode();
             }
 
-            if (this.ReactionsEnabled != null)
+            if (ReactionsEnabled != null)
             {
-                hash = hash * 59 + this.ReactionsEnabled.GetHashCode();
+                hash = hash * 59 + ReactionsEnabled.GetHashCode();
             }
 
             return hash;

@@ -247,7 +247,7 @@ public partial class UpdateActivityCodeRequest : IEquatable<UpdateActivityCodeRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateActivityCodeRequest);
+        return Equals(obj as UpdateActivityCodeRequest);
     }
 
     /// <summary>
@@ -265,59 +265,59 @@ public partial class UpdateActivityCodeRequest : IEquatable<UpdateActivityCodeRe
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.CountsAsPaidTime == other.CountsAsPaidTime ||
-                this.CountsAsPaidTime != null &&
-                this.CountsAsPaidTime.Equals(other.CountsAsPaidTime)
+                CountsAsPaidTime == other.CountsAsPaidTime ||
+                CountsAsPaidTime != null &&
+                CountsAsPaidTime.Equals(other.CountsAsPaidTime)
             ) &&
             (
-                this.CountsAsWorkTime == other.CountsAsWorkTime ||
-                this.CountsAsWorkTime != null &&
-                this.CountsAsWorkTime.Equals(other.CountsAsWorkTime)
+                CountsAsWorkTime == other.CountsAsWorkTime ||
+                CountsAsWorkTime != null &&
+                CountsAsWorkTime.Equals(other.CountsAsWorkTime)
             ) &&
             (
-                this.AgentTimeOffSelectable == other.AgentTimeOffSelectable ||
-                this.AgentTimeOffSelectable != null &&
-                this.AgentTimeOffSelectable.Equals(other.AgentTimeOffSelectable)
+                AgentTimeOffSelectable == other.AgentTimeOffSelectable ||
+                AgentTimeOffSelectable != null &&
+                AgentTimeOffSelectable.Equals(other.AgentTimeOffSelectable)
             ) &&
             (
-                this.CountsTowardShrinkage == other.CountsTowardShrinkage ||
-                this.CountsTowardShrinkage != null &&
-                this.CountsTowardShrinkage.Equals(other.CountsTowardShrinkage)
+                CountsTowardShrinkage == other.CountsTowardShrinkage ||
+                CountsTowardShrinkage != null &&
+                CountsTowardShrinkage.Equals(other.CountsTowardShrinkage)
             ) &&
             (
-                this.PlannedShrinkage == other.PlannedShrinkage ||
-                this.PlannedShrinkage != null &&
-                this.PlannedShrinkage.Equals(other.PlannedShrinkage)
+                PlannedShrinkage == other.PlannedShrinkage ||
+                PlannedShrinkage != null &&
+                PlannedShrinkage.Equals(other.PlannedShrinkage)
             ) &&
             (
-                this.Interruptible == other.Interruptible ||
-                this.Interruptible != null &&
-                this.Interruptible.Equals(other.Interruptible)
+                Interruptible == other.Interruptible ||
+                Interruptible != null &&
+                Interruptible.Equals(other.Interruptible)
             ) &&
             (
-                this.SecondaryPresences == other.SecondaryPresences ||
-                this.SecondaryPresences != null &&
-                this.SecondaryPresences.Equals(other.SecondaryPresences)
+                SecondaryPresences == other.SecondaryPresences ||
+                SecondaryPresences != null &&
+                SecondaryPresences.Equals(other.SecondaryPresences)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -332,59 +332,59 @@ public partial class UpdateActivityCodeRequest : IEquatable<UpdateActivityCodeRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.CountsAsPaidTime != null)
+            if (CountsAsPaidTime != null)
             {
-                hash = hash * 59 + this.CountsAsPaidTime.GetHashCode();
+                hash = hash * 59 + CountsAsPaidTime.GetHashCode();
             }
 
-            if (this.CountsAsWorkTime != null)
+            if (CountsAsWorkTime != null)
             {
-                hash = hash * 59 + this.CountsAsWorkTime.GetHashCode();
+                hash = hash * 59 + CountsAsWorkTime.GetHashCode();
             }
 
-            if (this.AgentTimeOffSelectable != null)
+            if (AgentTimeOffSelectable != null)
             {
-                hash = hash * 59 + this.AgentTimeOffSelectable.GetHashCode();
+                hash = hash * 59 + AgentTimeOffSelectable.GetHashCode();
             }
 
-            if (this.CountsTowardShrinkage != null)
+            if (CountsTowardShrinkage != null)
             {
-                hash = hash * 59 + this.CountsTowardShrinkage.GetHashCode();
+                hash = hash * 59 + CountsTowardShrinkage.GetHashCode();
             }
 
-            if (this.PlannedShrinkage != null)
+            if (PlannedShrinkage != null)
             {
-                hash = hash * 59 + this.PlannedShrinkage.GetHashCode();
+                hash = hash * 59 + PlannedShrinkage.GetHashCode();
             }
 
-            if (this.Interruptible != null)
+            if (Interruptible != null)
             {
-                hash = hash * 59 + this.Interruptible.GetHashCode();
+                hash = hash * 59 + Interruptible.GetHashCode();
             }
 
-            if (this.SecondaryPresences != null)
+            if (SecondaryPresences != null)
             {
-                hash = hash * 59 + this.SecondaryPresences.GetHashCode();
+                hash = hash * 59 + SecondaryPresences.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

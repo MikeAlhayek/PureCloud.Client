@@ -76,7 +76,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig);
+        return Equals(obj as OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig
 
         return true &&
             (
-                this.WhatsAppColumns == other.WhatsAppColumns ||
-                this.WhatsAppColumns != null &&
-                this.WhatsAppColumns.SequenceEqual(other.WhatsAppColumns)
+                WhatsAppColumns == other.WhatsAppColumns ||
+                WhatsAppColumns != null &&
+                WhatsAppColumns.SequenceEqual(other.WhatsAppColumns)
             ) &&
             (
-                this.Integration == other.Integration ||
-                this.Integration != null &&
-                this.Integration.Equals(other.Integration)
+                Integration == other.Integration ||
+                Integration != null &&
+                Integration.Equals(other.Integration)
             ) &&
             (
-                this.ContentTemplate == other.ContentTemplate ||
-                this.ContentTemplate != null &&
-                this.ContentTemplate.Equals(other.ContentTemplate)
+                ContentTemplate == other.ContentTemplate ||
+                ContentTemplate != null &&
+                ContentTemplate.Equals(other.ContentTemplate)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WhatsAppColumns != null)
+            if (WhatsAppColumns != null)
             {
-                hash = hash * 59 + this.WhatsAppColumns.GetHashCode();
+                hash = hash * 59 + WhatsAppColumns.GetHashCode();
             }
 
-            if (this.Integration != null)
+            if (Integration != null)
             {
-                hash = hash * 59 + this.Integration.GetHashCode();
+                hash = hash * 59 + Integration.GetHashCode();
             }
 
-            if (this.ContentTemplate != null)
+            if (ContentTemplate != null)
             {
-                hash = hash * 59 + this.ContentTemplate.GetHashCode();
+                hash = hash * 59 + ContentTemplate.GetHashCode();
             }
 
             return hash;

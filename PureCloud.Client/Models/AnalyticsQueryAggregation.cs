@@ -126,7 +126,7 @@ public partial class AnalyticsQueryAggregation : IEquatable<AnalyticsQueryAggreg
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsQueryAggregation);
+        return Equals(obj as AnalyticsQueryAggregation);
     }
 
     /// <summary>
@@ -144,29 +144,29 @@ public partial class AnalyticsQueryAggregation : IEquatable<AnalyticsQueryAggreg
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Dimension == other.Dimension ||
-                this.Dimension != null &&
-                this.Dimension.Equals(other.Dimension)
+                Dimension == other.Dimension ||
+                Dimension != null &&
+                Dimension.Equals(other.Dimension)
             ) &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Size == other.Size ||
-                this.Size != null &&
-                this.Size.Equals(other.Size)
+                Size == other.Size ||
+                Size != null &&
+                Size.Equals(other.Size)
             ) &&
             (
-                this.Ranges == other.Ranges ||
-                this.Ranges != null &&
-                this.Ranges.SequenceEqual(other.Ranges)
+                Ranges == other.Ranges ||
+                Ranges != null &&
+                Ranges.SequenceEqual(other.Ranges)
             );
     }
 
@@ -181,29 +181,29 @@ public partial class AnalyticsQueryAggregation : IEquatable<AnalyticsQueryAggreg
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Dimension != null)
+            if (Dimension != null)
             {
-                hash = hash * 59 + this.Dimension.GetHashCode();
+                hash = hash * 59 + Dimension.GetHashCode();
             }
 
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Size != null)
+            if (Size != null)
             {
-                hash = hash * 59 + this.Size.GetHashCode();
+                hash = hash * 59 + Size.GetHashCode();
             }
 
-            if (this.Ranges != null)
+            if (Ranges != null)
             {
-                hash = hash * 59 + this.Ranges.GetHashCode();
+                hash = hash * 59 + Ranges.GetHashCode();
             }
 
             return hash;

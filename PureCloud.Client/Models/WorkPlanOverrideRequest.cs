@@ -127,7 +127,7 @@ public partial class WorkPlanOverrideRequest : IEquatable<WorkPlanOverrideReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanOverrideRequest);
+        return Equals(obj as WorkPlanOverrideRequest);
     }
 
     /// <summary>
@@ -145,24 +145,24 @@ public partial class WorkPlanOverrideRequest : IEquatable<WorkPlanOverrideReques
 
         return true &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             ) &&
             (
-                this.WorkPlanId == other.WorkPlanId ||
-                this.WorkPlanId != null &&
-                this.WorkPlanId.Equals(other.WorkPlanId)
+                WorkPlanId == other.WorkPlanId ||
+                WorkPlanId != null &&
+                WorkPlanId.Equals(other.WorkPlanId)
             );
     }
 
@@ -177,24 +177,24 @@ public partial class WorkPlanOverrideRequest : IEquatable<WorkPlanOverrideReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
-            if (this.WorkPlanId != null)
+            if (WorkPlanId != null)
             {
-                hash = hash * 59 + this.WorkPlanId.GetHashCode();
+                hash = hash * 59 + WorkPlanId.GetHashCode();
             }
 
             return hash;

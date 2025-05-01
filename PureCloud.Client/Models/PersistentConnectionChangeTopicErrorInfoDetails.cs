@@ -96,7 +96,7 @@ public partial class PersistentConnectionChangeTopicErrorInfoDetails : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PersistentConnectionChangeTopicErrorInfoDetails);
+        return Equals(obj as PersistentConnectionChangeTopicErrorInfoDetails);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class PersistentConnectionChangeTopicErrorInfoDetails : IEquatabl
 
         return true &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.UserMessage == other.UserMessage ||
-                this.UserMessage != null &&
-                this.UserMessage.Equals(other.UserMessage)
+                UserMessage == other.UserMessage ||
+                UserMessage != null &&
+                UserMessage.Equals(other.UserMessage)
             ) &&
             (
-                this.UserParams == other.UserParams ||
-                this.UserParams != null &&
-                this.UserParams.SequenceEqual(other.UserParams)
+                UserParams == other.UserParams ||
+                UserParams != null &&
+                UserParams.SequenceEqual(other.UserParams)
             ) &&
             (
-                this.Hostname == other.Hostname ||
-                this.Hostname != null &&
-                this.Hostname.Equals(other.Hostname)
+                Hostname == other.Hostname ||
+                Hostname != null &&
+                Hostname.Equals(other.Hostname)
             ) &&
             (
-                this.Location == other.Location ||
-                this.Location != null &&
-                this.Location.Equals(other.Location)
+                Location == other.Location ||
+                Location != null &&
+                Location.Equals(other.Location)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class PersistentConnectionChangeTopicErrorInfoDetails : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.UserMessage != null)
+            if (UserMessage != null)
             {
-                hash = hash * 59 + this.UserMessage.GetHashCode();
+                hash = hash * 59 + UserMessage.GetHashCode();
             }
 
-            if (this.UserParams != null)
+            if (UserParams != null)
             {
-                hash = hash * 59 + this.UserParams.GetHashCode();
+                hash = hash * 59 + UserParams.GetHashCode();
             }
 
-            if (this.Hostname != null)
+            if (Hostname != null)
             {
-                hash = hash * 59 + this.Hostname.GetHashCode();
+                hash = hash * 59 + Hostname.GetHashCode();
             }
 
-            if (this.Location != null)
+            if (Location != null)
             {
-                hash = hash * 59 + this.Location.GetHashCode();
+                hash = hash * 59 + Location.GetHashCode();
             }
 
             return hash;

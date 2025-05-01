@@ -89,7 +89,7 @@ public partial class ShiftTradeMatchReviewResponse : IEquatable<ShiftTradeMatchR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShiftTradeMatchReviewResponse);
+        return Equals(obj as ShiftTradeMatchReviewResponse);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ShiftTradeMatchReviewResponse : IEquatable<ShiftTradeMatchR
 
         return true &&
             (
-                this.InitiatingUser == other.InitiatingUser ||
-                this.InitiatingUser != null &&
-                this.InitiatingUser.Equals(other.InitiatingUser)
+                InitiatingUser == other.InitiatingUser ||
+                InitiatingUser != null &&
+                InitiatingUser.Equals(other.InitiatingUser)
             ) &&
             (
-                this.ReceivingUser == other.ReceivingUser ||
-                this.ReceivingUser != null &&
-                this.ReceivingUser.Equals(other.ReceivingUser)
+                ReceivingUser == other.ReceivingUser ||
+                ReceivingUser != null &&
+                ReceivingUser.Equals(other.ReceivingUser)
             ) &&
             (
-                this.Violations == other.Violations ||
-                this.Violations != null &&
-                this.Violations.SequenceEqual(other.Violations)
+                Violations == other.Violations ||
+                Violations != null &&
+                Violations.SequenceEqual(other.Violations)
             ) &&
             (
-                this.AdminReviewViolations == other.AdminReviewViolations ||
-                this.AdminReviewViolations != null &&
-                this.AdminReviewViolations.SequenceEqual(other.AdminReviewViolations)
+                AdminReviewViolations == other.AdminReviewViolations ||
+                AdminReviewViolations != null &&
+                AdminReviewViolations.SequenceEqual(other.AdminReviewViolations)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ShiftTradeMatchReviewResponse : IEquatable<ShiftTradeMatchR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.InitiatingUser != null)
+            if (InitiatingUser != null)
             {
-                hash = hash * 59 + this.InitiatingUser.GetHashCode();
+                hash = hash * 59 + InitiatingUser.GetHashCode();
             }
 
-            if (this.ReceivingUser != null)
+            if (ReceivingUser != null)
             {
-                hash = hash * 59 + this.ReceivingUser.GetHashCode();
+                hash = hash * 59 + ReceivingUser.GetHashCode();
             }
 
-            if (this.Violations != null)
+            if (Violations != null)
             {
-                hash = hash * 59 + this.Violations.GetHashCode();
+                hash = hash * 59 + Violations.GetHashCode();
             }
 
-            if (this.AdminReviewViolations != null)
+            if (AdminReviewViolations != null)
             {
-                hash = hash * 59 + this.AdminReviewViolations.GetHashCode();
+                hash = hash * 59 + AdminReviewViolations.GetHashCode();
             }
 
             return hash;

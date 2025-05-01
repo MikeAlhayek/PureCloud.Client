@@ -63,7 +63,7 @@ public partial class CriteriaCategoryInfo : IEquatable<CriteriaCategoryInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CriteriaCategoryInfo);
+        return Equals(obj as CriteriaCategoryInfo);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class CriteriaCategoryInfo : IEquatable<CriteriaCategoryInfo>
 
         return true &&
             (
-                this.CategoryId == other.CategoryId ||
-                this.CategoryId != null &&
-                this.CategoryId.Equals(other.CategoryId)
+                CategoryId == other.CategoryId ||
+                CategoryId != null &&
+                CategoryId.Equals(other.CategoryId)
             ) &&
             (
-                this.DisplayOrder == other.DisplayOrder ||
-                this.DisplayOrder != null &&
-                this.DisplayOrder.Equals(other.DisplayOrder)
+                DisplayOrder == other.DisplayOrder ||
+                DisplayOrder != null &&
+                DisplayOrder.Equals(other.DisplayOrder)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class CriteriaCategoryInfo : IEquatable<CriteriaCategoryInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CategoryId != null)
+            if (CategoryId != null)
             {
-                hash = hash * 59 + this.CategoryId.GetHashCode();
+                hash = hash * 59 + CategoryId.GetHashCode();
             }
 
-            if (this.DisplayOrder != null)
+            if (DisplayOrder != null)
             {
-                hash = hash * 59 + this.DisplayOrder.GetHashCode();
+                hash = hash * 59 + DisplayOrder.GetHashCode();
             }
 
             return hash;

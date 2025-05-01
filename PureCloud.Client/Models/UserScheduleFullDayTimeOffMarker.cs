@@ -113,7 +113,7 @@ public partial class UserScheduleFullDayTimeOffMarker : IEquatable<UserScheduleF
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserScheduleFullDayTimeOffMarker);
+        return Equals(obj as UserScheduleFullDayTimeOffMarker);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class UserScheduleFullDayTimeOffMarker : IEquatable<UserScheduleF
 
         return true &&
             (
-                this.ManagementUnitDate == other.ManagementUnitDate ||
-                this.ManagementUnitDate != null &&
-                this.ManagementUnitDate.Equals(other.ManagementUnitDate)
+                ManagementUnitDate == other.ManagementUnitDate ||
+                ManagementUnitDate != null &&
+                ManagementUnitDate.Equals(other.ManagementUnitDate)
             ) &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.IsPaid == other.IsPaid ||
-                this.IsPaid != null &&
-                this.IsPaid.Equals(other.IsPaid)
+                IsPaid == other.IsPaid ||
+                IsPaid != null &&
+                IsPaid.Equals(other.IsPaid)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Delete == other.Delete ||
-                this.Delete != null &&
-                this.Delete.Equals(other.Delete)
+                Delete == other.Delete ||
+                Delete != null &&
+                Delete.Equals(other.Delete)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class UserScheduleFullDayTimeOffMarker : IEquatable<UserScheduleF
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnitDate != null)
+            if (ManagementUnitDate != null)
             {
-                hash = hash * 59 + this.ManagementUnitDate.GetHashCode();
+                hash = hash * 59 + ManagementUnitDate.GetHashCode();
             }
 
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.IsPaid != null)
+            if (IsPaid != null)
             {
-                hash = hash * 59 + this.IsPaid.GetHashCode();
+                hash = hash * 59 + IsPaid.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Delete != null)
+            if (Delete != null)
             {
-                hash = hash * 59 + this.Delete.GetHashCode();
+                hash = hash * 59 + Delete.GetHashCode();
             }
 
             return hash;

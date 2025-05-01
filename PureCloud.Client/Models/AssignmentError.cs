@@ -64,7 +64,7 @@ public partial class AssignmentError : IEquatable<AssignmentError>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AssignmentError);
+        return Equals(obj as AssignmentError);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class AssignmentError : IEquatable<AssignmentError>
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class AssignmentError : IEquatable<AssignmentError>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
             return hash;

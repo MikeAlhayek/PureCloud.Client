@@ -183,7 +183,7 @@ public partial class LearningModulePreviewUpdateStep : IEquatable<LearningModule
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModulePreviewUpdateStep);
+        return Equals(obj as LearningModulePreviewUpdateStep);
     }
 
     /// <summary>
@@ -201,34 +201,34 @@ public partial class LearningModulePreviewUpdateStep : IEquatable<LearningModule
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.SuccessStatus == other.SuccessStatus ||
-                this.SuccessStatus != null &&
-                this.SuccessStatus.Equals(other.SuccessStatus)
+                SuccessStatus == other.SuccessStatus ||
+                SuccessStatus != null &&
+                SuccessStatus.Equals(other.SuccessStatus)
             ) &&
             (
-                this.CompletionStatus == other.CompletionStatus ||
-                this.CompletionStatus != null &&
-                this.CompletionStatus.Equals(other.CompletionStatus)
+                CompletionStatus == other.CompletionStatus ||
+                CompletionStatus != null &&
+                CompletionStatus.Equals(other.CompletionStatus)
             ) &&
             (
-                this.CompletionPercentage == other.CompletionPercentage ||
-                this.CompletionPercentage != null &&
-                this.CompletionPercentage.Equals(other.CompletionPercentage)
+                CompletionPercentage == other.CompletionPercentage ||
+                CompletionPercentage != null &&
+                CompletionPercentage.Equals(other.CompletionPercentage)
             ) &&
             (
-                this.PercentageScore == other.PercentageScore ||
-                this.PercentageScore != null &&
-                this.PercentageScore.Equals(other.PercentageScore)
+                PercentageScore == other.PercentageScore ||
+                PercentageScore != null &&
+                PercentageScore.Equals(other.PercentageScore)
             ) &&
             (
-                this.Structure == other.Structure ||
-                this.Structure != null &&
-                this.Structure.SequenceEqual(other.Structure)
+                Structure == other.Structure ||
+                Structure != null &&
+                Structure.SequenceEqual(other.Structure)
             );
     }
 
@@ -243,34 +243,34 @@ public partial class LearningModulePreviewUpdateStep : IEquatable<LearningModule
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.SuccessStatus != null)
+            if (SuccessStatus != null)
             {
-                hash = hash * 59 + this.SuccessStatus.GetHashCode();
+                hash = hash * 59 + SuccessStatus.GetHashCode();
             }
 
-            if (this.CompletionStatus != null)
+            if (CompletionStatus != null)
             {
-                hash = hash * 59 + this.CompletionStatus.GetHashCode();
+                hash = hash * 59 + CompletionStatus.GetHashCode();
             }
 
-            if (this.CompletionPercentage != null)
+            if (CompletionPercentage != null)
             {
-                hash = hash * 59 + this.CompletionPercentage.GetHashCode();
+                hash = hash * 59 + CompletionPercentage.GetHashCode();
             }
 
-            if (this.PercentageScore != null)
+            if (PercentageScore != null)
             {
-                hash = hash * 59 + this.PercentageScore.GetHashCode();
+                hash = hash * 59 + PercentageScore.GetHashCode();
             }
 
-            if (this.Structure != null)
+            if (Structure != null)
             {
-                hash = hash * 59 + this.Structure.GetHashCode();
+                hash = hash * 59 + Structure.GetHashCode();
             }
 
             return hash;

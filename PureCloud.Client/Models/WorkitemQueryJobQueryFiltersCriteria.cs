@@ -97,7 +97,7 @@ public partial class WorkitemQueryJobQueryFiltersCriteria : IEquatable<WorkitemQ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemQueryJobQueryFiltersCriteria);
+        return Equals(obj as WorkitemQueryJobQueryFiltersCriteria);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class WorkitemQueryJobQueryFiltersCriteria : IEquatable<WorkitemQ
 
         return true &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Predicates == other.Predicates ||
-                this.Predicates != null &&
-                this.Predicates.SequenceEqual(other.Predicates)
+                Predicates == other.Predicates ||
+                Predicates != null &&
+                Predicates.SequenceEqual(other.Predicates)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class WorkitemQueryJobQueryFiltersCriteria : IEquatable<WorkitemQ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Predicates != null)
+            if (Predicates != null)
             {
-                hash = hash * 59 + this.Predicates.GetHashCode();
+                hash = hash * 59 + Predicates.GetHashCode();
             }
 
             return hash;

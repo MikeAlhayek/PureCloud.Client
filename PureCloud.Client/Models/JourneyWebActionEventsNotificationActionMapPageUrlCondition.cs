@@ -166,7 +166,7 @@ public partial class JourneyWebActionEventsNotificationActionMapPageUrlCondition
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyWebActionEventsNotificationActionMapPageUrlCondition);
+        return Equals(obj as JourneyWebActionEventsNotificationActionMapPageUrlCondition);
     }
 
     /// <summary>
@@ -184,14 +184,14 @@ public partial class JourneyWebActionEventsNotificationActionMapPageUrlCondition
 
         return true &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             );
     }
 
@@ -206,14 +206,14 @@ public partial class JourneyWebActionEventsNotificationActionMapPageUrlCondition
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
             return hash;

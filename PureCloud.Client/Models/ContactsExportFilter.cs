@@ -101,7 +101,7 @@ public partial class ContactsExportFilter : IEquatable<ContactsExportFilter>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactsExportFilter);
+        return Equals(obj as ContactsExportFilter);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class ContactsExportFilter : IEquatable<ContactsExportFilter>
 
         return true &&
             (
-                this.Eq == other.Eq ||
-                this.Eq != null &&
-                this.Eq.Equals(other.Eq)
+                Eq == other.Eq ||
+                Eq != null &&
+                Eq.Equals(other.Eq)
             ) &&
             (
-                this.In == other.In ||
-                this.In != null &&
-                this.In.Equals(other.In)
+                In == other.In ||
+                In != null &&
+                In.Equals(other.In)
             ) &&
             (
-                this.And == other.And ||
-                this.And != null &&
-                this.And.SequenceEqual(other.And)
+                And == other.And ||
+                And != null &&
+                And.SequenceEqual(other.And)
             ) &&
             (
-                this.Or == other.Or ||
-                this.Or != null &&
-                this.Or.SequenceEqual(other.Or)
+                Or == other.Or ||
+                Or != null &&
+                Or.SequenceEqual(other.Or)
             ) &&
             (
-                this.Not == other.Not ||
-                this.Not != null &&
-                this.Not.Equals(other.Not)
+                Not == other.Not ||
+                Not != null &&
+                Not.Equals(other.Not)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class ContactsExportFilter : IEquatable<ContactsExportFilter>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Eq != null)
+            if (Eq != null)
             {
-                hash = hash * 59 + this.Eq.GetHashCode();
+                hash = hash * 59 + Eq.GetHashCode();
             }
 
-            if (this.In != null)
+            if (In != null)
             {
-                hash = hash * 59 + this.In.GetHashCode();
+                hash = hash * 59 + In.GetHashCode();
             }
 
-            if (this.And != null)
+            if (And != null)
             {
-                hash = hash * 59 + this.And.GetHashCode();
+                hash = hash * 59 + And.GetHashCode();
             }
 
-            if (this.Or != null)
+            if (Or != null)
             {
-                hash = hash * 59 + this.Or.GetHashCode();
+                hash = hash * 59 + Or.GetHashCode();
             }
 
-            if (this.Not != null)
+            if (Not != null)
             {
-                hash = hash * 59 + this.Not.GetHashCode();
+                hash = hash * 59 + Not.GetHashCode();
             }
 
             return hash;

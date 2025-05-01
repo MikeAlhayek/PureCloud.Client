@@ -173,7 +173,7 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OperationalEventNotificationTopicOperationalEventNotification);
+        return Equals(obj as OperationalEventNotificationTopicOperationalEventNotification);
     }
 
     /// <summary>
@@ -191,64 +191,64 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
 
         return true &&
             (
-                this.EventEntity == other.EventEntity ||
-                this.EventEntity != null &&
-                this.EventEntity.Equals(other.EventEntity)
+                EventEntity == other.EventEntity ||
+                EventEntity != null &&
+                EventEntity.Equals(other.EventEntity)
             ) &&
             (
-                this.EntityId == other.EntityId ||
-                this.EntityId != null &&
-                this.EntityId.Equals(other.EntityId)
+                EntityId == other.EntityId ||
+                EntityId != null &&
+                EntityId.Equals(other.EntityId)
             ) &&
             (
-                this.EntityName == other.EntityName ||
-                this.EntityName != null &&
-                this.EntityName.Equals(other.EntityName)
+                EntityName == other.EntityName ||
+                EntityName != null &&
+                EntityName.Equals(other.EntityName)
             ) &&
             (
-                this.PreviousValue == other.PreviousValue ||
-                this.PreviousValue != null &&
-                this.PreviousValue.Equals(other.PreviousValue)
+                PreviousValue == other.PreviousValue ||
+                PreviousValue != null &&
+                PreviousValue.Equals(other.PreviousValue)
             ) &&
             (
-                this.CurrentValue == other.CurrentValue ||
-                this.CurrentValue != null &&
-                this.CurrentValue.Equals(other.CurrentValue)
+                CurrentValue == other.CurrentValue ||
+                CurrentValue != null &&
+                CurrentValue.Equals(other.CurrentValue)
             ) &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.ParentEntity == other.ParentEntity ||
-                this.ParentEntity != null &&
-                this.ParentEntity.Equals(other.ParentEntity)
+                ParentEntity == other.ParentEntity ||
+                ParentEntity != null &&
+                ParentEntity.Equals(other.ParentEntity)
             ) &&
             (
-                this.EntityType == other.EntityType ||
-                this.EntityType != null &&
-                this.EntityType.Equals(other.EntityType)
+                EntityType == other.EntityType ||
+                EntityType != null &&
+                EntityType.Equals(other.EntityType)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.EntityToken == other.EntityToken ||
-                this.EntityToken != null &&
-                this.EntityToken.Equals(other.EntityToken)
+                EntityToken == other.EntityToken ||
+                EntityToken != null &&
+                EntityToken.Equals(other.EntityToken)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             );
     }
 
@@ -263,64 +263,64 @@ public partial class OperationalEventNotificationTopicOperationalEventNotificati
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventEntity != null)
+            if (EventEntity != null)
             {
-                hash = hash * 59 + this.EventEntity.GetHashCode();
+                hash = hash * 59 + EventEntity.GetHashCode();
             }
 
-            if (this.EntityId != null)
+            if (EntityId != null)
             {
-                hash = hash * 59 + this.EntityId.GetHashCode();
+                hash = hash * 59 + EntityId.GetHashCode();
             }
 
-            if (this.EntityName != null)
+            if (EntityName != null)
             {
-                hash = hash * 59 + this.EntityName.GetHashCode();
+                hash = hash * 59 + EntityName.GetHashCode();
             }
 
-            if (this.PreviousValue != null)
+            if (PreviousValue != null)
             {
-                hash = hash * 59 + this.PreviousValue.GetHashCode();
+                hash = hash * 59 + PreviousValue.GetHashCode();
             }
 
-            if (this.CurrentValue != null)
+            if (CurrentValue != null)
             {
-                hash = hash * 59 + this.CurrentValue.GetHashCode();
+                hash = hash * 59 + CurrentValue.GetHashCode();
             }
 
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.ParentEntity != null)
+            if (ParentEntity != null)
             {
-                hash = hash * 59 + this.ParentEntity.GetHashCode();
+                hash = hash * 59 + ParentEntity.GetHashCode();
             }
 
-            if (this.EntityType != null)
+            if (EntityType != null)
             {
-                hash = hash * 59 + this.EntityType.GetHashCode();
+                hash = hash * 59 + EntityType.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.EntityToken != null)
+            if (EntityToken != null)
             {
-                hash = hash * 59 + this.EntityToken.GetHashCode();
+                hash = hash * 59 + EntityToken.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
             return hash;

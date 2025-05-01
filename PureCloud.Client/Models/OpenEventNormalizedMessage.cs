@@ -115,7 +115,7 @@ public partial class OpenEventNormalizedMessage : IEquatable<OpenEventNormalized
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenEventNormalizedMessage);
+        return Equals(obj as OpenEventNormalizedMessage);
     }
 
     /// <summary>
@@ -133,24 +133,24 @@ public partial class OpenEventNormalizedMessage : IEquatable<OpenEventNormalized
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Channel == other.Channel ||
-                this.Channel != null &&
-                this.Channel.Equals(other.Channel)
+                Channel == other.Channel ||
+                Channel != null &&
+                Channel.Equals(other.Channel)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Events == other.Events ||
-                this.Events != null &&
-                this.Events.SequenceEqual(other.Events)
+                Events == other.Events ||
+                Events != null &&
+                Events.SequenceEqual(other.Events)
             );
     }
 
@@ -165,24 +165,24 @@ public partial class OpenEventNormalizedMessage : IEquatable<OpenEventNormalized
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Channel != null)
+            if (Channel != null)
             {
-                hash = hash * 59 + this.Channel.GetHashCode();
+                hash = hash * 59 + Channel.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Events != null)
+            if (Events != null)
             {
-                hash = hash * 59 + this.Events.GetHashCode();
+                hash = hash * 59 + Events.GetHashCode();
             }
 
             return hash;

@@ -74,7 +74,7 @@ public partial class SurveyScoringSet : IEquatable<SurveyScoringSet>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SurveyScoringSet);
+        return Equals(obj as SurveyScoringSet);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class SurveyScoringSet : IEquatable<SurveyScoringSet>
 
         return true &&
             (
-                this.TotalScore == other.TotalScore ||
-                this.TotalScore != null &&
-                this.TotalScore.Equals(other.TotalScore)
+                TotalScore == other.TotalScore ||
+                TotalScore != null &&
+                TotalScore.Equals(other.TotalScore)
             ) &&
             (
-                this.NpsScore == other.NpsScore ||
-                this.NpsScore != null &&
-                this.NpsScore.Equals(other.NpsScore)
+                NpsScore == other.NpsScore ||
+                NpsScore != null &&
+                NpsScore.Equals(other.NpsScore)
             ) &&
             (
-                this.QuestionGroupScores == other.QuestionGroupScores ||
-                this.QuestionGroupScores != null &&
-                this.QuestionGroupScores.SequenceEqual(other.QuestionGroupScores)
+                QuestionGroupScores == other.QuestionGroupScores ||
+                QuestionGroupScores != null &&
+                QuestionGroupScores.SequenceEqual(other.QuestionGroupScores)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class SurveyScoringSet : IEquatable<SurveyScoringSet>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TotalScore != null)
+            if (TotalScore != null)
             {
-                hash = hash * 59 + this.TotalScore.GetHashCode();
+                hash = hash * 59 + TotalScore.GetHashCode();
             }
 
-            if (this.NpsScore != null)
+            if (NpsScore != null)
             {
-                hash = hash * 59 + this.NpsScore.GetHashCode();
+                hash = hash * 59 + NpsScore.GetHashCode();
             }
 
-            if (this.QuestionGroupScores != null)
+            if (QuestionGroupScores != null)
             {
-                hash = hash * 59 + this.QuestionGroupScores.GetHashCode();
+                hash = hash * 59 + QuestionGroupScores.GetHashCode();
             }
 
             return hash;

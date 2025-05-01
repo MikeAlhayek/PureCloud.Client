@@ -65,7 +65,7 @@ public partial class ServiceLevel : IEquatable<ServiceLevel>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ServiceLevel);
+        return Equals(obj as ServiceLevel);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ServiceLevel : IEquatable<ServiceLevel>
 
         return true &&
             (
-                this.Percentage == other.Percentage ||
-                this.Percentage != null &&
-                this.Percentage.Equals(other.Percentage)
+                Percentage == other.Percentage ||
+                Percentage != null &&
+                Percentage.Equals(other.Percentage)
             ) &&
             (
-                this.DurationMs == other.DurationMs ||
-                this.DurationMs != null &&
-                this.DurationMs.Equals(other.DurationMs)
+                DurationMs == other.DurationMs ||
+                DurationMs != null &&
+                DurationMs.Equals(other.DurationMs)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ServiceLevel : IEquatable<ServiceLevel>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Percentage != null)
+            if (Percentage != null)
             {
-                hash = hash * 59 + this.Percentage.GetHashCode();
+                hash = hash * 59 + Percentage.GetHashCode();
             }
 
-            if (this.DurationMs != null)
+            if (DurationMs != null)
             {
-                hash = hash * 59 + this.DurationMs.GetHashCode();
+                hash = hash * 59 + DurationMs.GetHashCode();
             }
 
             return hash;

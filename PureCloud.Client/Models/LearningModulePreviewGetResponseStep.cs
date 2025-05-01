@@ -193,7 +193,7 @@ public partial class LearningModulePreviewGetResponseStep : IEquatable<LearningM
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModulePreviewGetResponseStep);
+        return Equals(obj as LearningModulePreviewGetResponseStep);
     }
 
     /// <summary>
@@ -211,44 +211,44 @@ public partial class LearningModulePreviewGetResponseStep : IEquatable<LearningM
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ModuleStep == other.ModuleStep ||
-                this.ModuleStep != null &&
-                this.ModuleStep.Equals(other.ModuleStep)
+                ModuleStep == other.ModuleStep ||
+                ModuleStep != null &&
+                ModuleStep.Equals(other.ModuleStep)
             ) &&
             (
-                this.Structure == other.Structure ||
-                this.Structure != null &&
-                this.Structure.SequenceEqual(other.Structure)
+                Structure == other.Structure ||
+                Structure != null &&
+                Structure.SequenceEqual(other.Structure)
             ) &&
             (
-                this.SuccessStatus == other.SuccessStatus ||
-                this.SuccessStatus != null &&
-                this.SuccessStatus.Equals(other.SuccessStatus)
+                SuccessStatus == other.SuccessStatus ||
+                SuccessStatus != null &&
+                SuccessStatus.Equals(other.SuccessStatus)
             ) &&
             (
-                this.CompletionStatus == other.CompletionStatus ||
-                this.CompletionStatus != null &&
-                this.CompletionStatus.Equals(other.CompletionStatus)
+                CompletionStatus == other.CompletionStatus ||
+                CompletionStatus != null &&
+                CompletionStatus.Equals(other.CompletionStatus)
             ) &&
             (
-                this.CompletionPercentage == other.CompletionPercentage ||
-                this.CompletionPercentage != null &&
-                this.CompletionPercentage.Equals(other.CompletionPercentage)
+                CompletionPercentage == other.CompletionPercentage ||
+                CompletionPercentage != null &&
+                CompletionPercentage.Equals(other.CompletionPercentage)
             ) &&
             (
-                this.PercentageScore == other.PercentageScore ||
-                this.PercentageScore != null &&
-                this.PercentageScore.Equals(other.PercentageScore)
+                PercentageScore == other.PercentageScore ||
+                PercentageScore != null &&
+                PercentageScore.Equals(other.PercentageScore)
             ) &&
             (
-                this.SignedCookie == other.SignedCookie ||
-                this.SignedCookie != null &&
-                this.SignedCookie.Equals(other.SignedCookie)
+                SignedCookie == other.SignedCookie ||
+                SignedCookie != null &&
+                SignedCookie.Equals(other.SignedCookie)
             );
     }
 
@@ -263,44 +263,44 @@ public partial class LearningModulePreviewGetResponseStep : IEquatable<LearningM
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ModuleStep != null)
+            if (ModuleStep != null)
             {
-                hash = hash * 59 + this.ModuleStep.GetHashCode();
+                hash = hash * 59 + ModuleStep.GetHashCode();
             }
 
-            if (this.Structure != null)
+            if (Structure != null)
             {
-                hash = hash * 59 + this.Structure.GetHashCode();
+                hash = hash * 59 + Structure.GetHashCode();
             }
 
-            if (this.SuccessStatus != null)
+            if (SuccessStatus != null)
             {
-                hash = hash * 59 + this.SuccessStatus.GetHashCode();
+                hash = hash * 59 + SuccessStatus.GetHashCode();
             }
 
-            if (this.CompletionStatus != null)
+            if (CompletionStatus != null)
             {
-                hash = hash * 59 + this.CompletionStatus.GetHashCode();
+                hash = hash * 59 + CompletionStatus.GetHashCode();
             }
 
-            if (this.CompletionPercentage != null)
+            if (CompletionPercentage != null)
             {
-                hash = hash * 59 + this.CompletionPercentage.GetHashCode();
+                hash = hash * 59 + CompletionPercentage.GetHashCode();
             }
 
-            if (this.PercentageScore != null)
+            if (PercentageScore != null)
             {
-                hash = hash * 59 + this.PercentageScore.GetHashCode();
+                hash = hash * 59 + PercentageScore.GetHashCode();
             }
 
-            if (this.SignedCookie != null)
+            if (SignedCookie != null)
             {
-                hash = hash * 59 + this.SignedCookie.GetHashCode();
+                hash = hash * 59 + SignedCookie.GetHashCode();
             }
 
             return hash;

@@ -138,7 +138,7 @@ public partial class BuAsyncAgentSchedulesQueryResponse : IEquatable<BuAsyncAgen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuAsyncAgentSchedulesQueryResponse);
+        return Equals(obj as BuAsyncAgentSchedulesQueryResponse);
     }
 
     /// <summary>
@@ -156,29 +156,29 @@ public partial class BuAsyncAgentSchedulesQueryResponse : IEquatable<BuAsyncAgen
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.OperationId == other.OperationId ||
-                this.OperationId != null &&
-                this.OperationId.Equals(other.OperationId)
+                OperationId == other.OperationId ||
+                OperationId != null &&
+                OperationId.Equals(other.OperationId)
             ) &&
             (
-                this.Result == other.Result ||
-                this.Result != null &&
-                this.Result.Equals(other.Result)
+                Result == other.Result ||
+                Result != null &&
+                Result.Equals(other.Result)
             ) &&
             (
-                this.Progress == other.Progress ||
-                this.Progress != null &&
-                this.Progress.Equals(other.Progress)
+                Progress == other.Progress ||
+                Progress != null &&
+                Progress.Equals(other.Progress)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             );
     }
 
@@ -193,29 +193,29 @@ public partial class BuAsyncAgentSchedulesQueryResponse : IEquatable<BuAsyncAgen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.OperationId != null)
+            if (OperationId != null)
             {
-                hash = hash * 59 + this.OperationId.GetHashCode();
+                hash = hash * 59 + OperationId.GetHashCode();
             }
 
-            if (this.Result != null)
+            if (Result != null)
             {
-                hash = hash * 59 + this.Result.GetHashCode();
+                hash = hash * 59 + Result.GetHashCode();
             }
 
-            if (this.Progress != null)
+            if (Progress != null)
             {
-                hash = hash * 59 + this.Progress.GetHashCode();
+                hash = hash * 59 + Progress.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
             return hash;

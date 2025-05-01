@@ -113,7 +113,7 @@ public partial class JourneyViewElementFilterRange : IEquatable<JourneyViewEleme
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewElementFilterRange);
+        return Equals(obj as JourneyViewElementFilterRange);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class JourneyViewElementFilterRange : IEquatable<JourneyViewEleme
 
         return true &&
             (
-                this.Lt == other.Lt ||
-                this.Lt != null &&
-                this.Lt.Equals(other.Lt)
+                Lt == other.Lt ||
+                Lt != null &&
+                Lt.Equals(other.Lt)
             ) &&
             (
-                this.Lte == other.Lte ||
-                this.Lte != null &&
-                this.Lte.Equals(other.Lte)
+                Lte == other.Lte ||
+                Lte != null &&
+                Lte.Equals(other.Lte)
             ) &&
             (
-                this.Gt == other.Gt ||
-                this.Gt != null &&
-                this.Gt.Equals(other.Gt)
+                Gt == other.Gt ||
+                Gt != null &&
+                Gt.Equals(other.Gt)
             ) &&
             (
-                this.Gte == other.Gte ||
-                this.Gte != null &&
-                this.Gte.Equals(other.Gte)
+                Gte == other.Gte ||
+                Gte != null &&
+                Gte.Equals(other.Gte)
             ) &&
             (
-                this.Eq == other.Eq ||
-                this.Eq != null &&
-                this.Eq.Equals(other.Eq)
+                Eq == other.Eq ||
+                Eq != null &&
+                Eq.Equals(other.Eq)
             ) &&
             (
-                this.Neq == other.Neq ||
-                this.Neq != null &&
-                this.Neq.Equals(other.Neq)
+                Neq == other.Neq ||
+                Neq != null &&
+                Neq.Equals(other.Neq)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class JourneyViewElementFilterRange : IEquatable<JourneyViewEleme
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Lt != null)
+            if (Lt != null)
             {
-                hash = hash * 59 + this.Lt.GetHashCode();
+                hash = hash * 59 + Lt.GetHashCode();
             }
 
-            if (this.Lte != null)
+            if (Lte != null)
             {
-                hash = hash * 59 + this.Lte.GetHashCode();
+                hash = hash * 59 + Lte.GetHashCode();
             }
 
-            if (this.Gt != null)
+            if (Gt != null)
             {
-                hash = hash * 59 + this.Gt.GetHashCode();
+                hash = hash * 59 + Gt.GetHashCode();
             }
 
-            if (this.Gte != null)
+            if (Gte != null)
             {
-                hash = hash * 59 + this.Gte.GetHashCode();
+                hash = hash * 59 + Gte.GetHashCode();
             }
 
-            if (this.Eq != null)
+            if (Eq != null)
             {
-                hash = hash * 59 + this.Eq.GetHashCode();
+                hash = hash * 59 + Eq.GetHashCode();
             }
 
-            if (this.Neq != null)
+            if (Neq != null)
             {
-                hash = hash * 59 + this.Neq.GetHashCode();
+                hash = hash * 59 + Neq.GetHashCode();
             }
 
             return hash;

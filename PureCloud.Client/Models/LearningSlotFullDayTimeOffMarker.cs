@@ -113,7 +113,7 @@ public partial class LearningSlotFullDayTimeOffMarker : IEquatable<LearningSlotF
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningSlotFullDayTimeOffMarker);
+        return Equals(obj as LearningSlotFullDayTimeOffMarker);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class LearningSlotFullDayTimeOffMarker : IEquatable<LearningSlotF
 
         return true &&
             (
-                this.BusinessUnitDate == other.BusinessUnitDate ||
-                this.BusinessUnitDate != null &&
-                this.BusinessUnitDate.Equals(other.BusinessUnitDate)
+                BusinessUnitDate == other.BusinessUnitDate ||
+                BusinessUnitDate != null &&
+                BusinessUnitDate.Equals(other.BusinessUnitDate)
             ) &&
             (
-                this.LengthMinutes == other.LengthMinutes ||
-                this.LengthMinutes != null &&
-                this.LengthMinutes.Equals(other.LengthMinutes)
+                LengthMinutes == other.LengthMinutes ||
+                LengthMinutes != null &&
+                LengthMinutes.Equals(other.LengthMinutes)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.Paid == other.Paid ||
-                this.Paid != null &&
-                this.Paid.Equals(other.Paid)
+                Paid == other.Paid ||
+                Paid != null &&
+                Paid.Equals(other.Paid)
             ) &&
             (
-                this.TimeOffRequestId == other.TimeOffRequestId ||
-                this.TimeOffRequestId != null &&
-                this.TimeOffRequestId.Equals(other.TimeOffRequestId)
+                TimeOffRequestId == other.TimeOffRequestId ||
+                TimeOffRequestId != null &&
+                TimeOffRequestId.Equals(other.TimeOffRequestId)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class LearningSlotFullDayTimeOffMarker : IEquatable<LearningSlotF
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BusinessUnitDate != null)
+            if (BusinessUnitDate != null)
             {
-                hash = hash * 59 + this.BusinessUnitDate.GetHashCode();
+                hash = hash * 59 + BusinessUnitDate.GetHashCode();
             }
 
-            if (this.LengthMinutes != null)
+            if (LengthMinutes != null)
             {
-                hash = hash * 59 + this.LengthMinutes.GetHashCode();
+                hash = hash * 59 + LengthMinutes.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.Paid != null)
+            if (Paid != null)
             {
-                hash = hash * 59 + this.Paid.GetHashCode();
+                hash = hash * 59 + Paid.GetHashCode();
             }
 
-            if (this.TimeOffRequestId != null)
+            if (TimeOffRequestId != null)
             {
-                hash = hash * 59 + this.TimeOffRequestId.GetHashCode();
+                hash = hash * 59 + TimeOffRequestId.GetHashCode();
             }
 
             return hash;

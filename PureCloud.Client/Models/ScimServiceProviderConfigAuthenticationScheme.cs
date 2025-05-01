@@ -145,7 +145,7 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimServiceProviderConfigAuthenticationScheme);
+        return Equals(obj as ScimServiceProviderConfigAuthenticationScheme);
     }
 
     /// <summary>
@@ -163,34 +163,34 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.SpecUri == other.SpecUri ||
-                this.SpecUri != null &&
-                this.SpecUri.Equals(other.SpecUri)
+                SpecUri == other.SpecUri ||
+                SpecUri != null &&
+                SpecUri.Equals(other.SpecUri)
             ) &&
             (
-                this.DocumentationUri == other.DocumentationUri ||
-                this.DocumentationUri != null &&
-                this.DocumentationUri.Equals(other.DocumentationUri)
+                DocumentationUri == other.DocumentationUri ||
+                DocumentationUri != null &&
+                DocumentationUri.Equals(other.DocumentationUri)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Primary == other.Primary ||
-                this.Primary != null &&
-                this.Primary.Equals(other.Primary)
+                Primary == other.Primary ||
+                Primary != null &&
+                Primary.Equals(other.Primary)
             );
     }
 
@@ -205,34 +205,34 @@ public partial class ScimServiceProviderConfigAuthenticationScheme : IEquatable<
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.SpecUri != null)
+            if (SpecUri != null)
             {
-                hash = hash * 59 + this.SpecUri.GetHashCode();
+                hash = hash * 59 + SpecUri.GetHashCode();
             }
 
-            if (this.DocumentationUri != null)
+            if (DocumentationUri != null)
             {
-                hash = hash * 59 + this.DocumentationUri.GetHashCode();
+                hash = hash * 59 + DocumentationUri.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Primary != null)
+            if (Primary != null)
             {
-                hash = hash * 59 + this.Primary.GetHashCode();
+                hash = hash * 59 + Primary.GetHashCode();
             }
 
             return hash;

@@ -63,7 +63,7 @@ public partial class MediaResult : IEquatable<MediaResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaResult);
+        return Equals(obj as MediaResult);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class MediaResult : IEquatable<MediaResult>
 
         return true &&
             (
-                this.MediaUri == other.MediaUri ||
-                this.MediaUri != null &&
-                this.MediaUri.Equals(other.MediaUri)
+                MediaUri == other.MediaUri ||
+                MediaUri != null &&
+                MediaUri.Equals(other.MediaUri)
             ) &&
             (
-                this.WaveformData == other.WaveformData ||
-                this.WaveformData != null &&
-                this.WaveformData.SequenceEqual(other.WaveformData)
+                WaveformData == other.WaveformData ||
+                WaveformData != null &&
+                WaveformData.SequenceEqual(other.WaveformData)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class MediaResult : IEquatable<MediaResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MediaUri != null)
+            if (MediaUri != null)
             {
-                hash = hash * 59 + this.MediaUri.GetHashCode();
+                hash = hash * 59 + MediaUri.GetHashCode();
             }
 
-            if (this.WaveformData != null)
+            if (WaveformData != null)
             {
-                hash = hash * 59 + this.WaveformData.GetHashCode();
+                hash = hash * 59 + WaveformData.GetHashCode();
             }
 
             return hash;

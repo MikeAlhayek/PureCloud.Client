@@ -89,7 +89,7 @@ public partial class PushIntegration : IEquatable<PushIntegration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PushIntegration);
+        return Equals(obj as PushIntegration);
     }
 
     /// <summary>
@@ -107,14 +107,14 @@ public partial class PushIntegration : IEquatable<PushIntegration>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Provider == other.Provider ||
-                this.Provider != null &&
-                this.Provider.Equals(other.Provider)
+                Provider == other.Provider ||
+                Provider != null &&
+                Provider.Equals(other.Provider)
             );
     }
 
@@ -129,14 +129,14 @@ public partial class PushIntegration : IEquatable<PushIntegration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Provider != null)
+            if (Provider != null)
             {
-                hash = hash * 59 + this.Provider.GetHashCode();
+                hash = hash * 59 + Provider.GetHashCode();
             }
 
             return hash;

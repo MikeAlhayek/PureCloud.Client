@@ -59,7 +59,7 @@ public partial class MonthlyPlanningPeriodSettings : IEquatable<MonthlyPlanningP
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MonthlyPlanningPeriodSettings);
+        return Equals(obj as MonthlyPlanningPeriodSettings);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class MonthlyPlanningPeriodSettings : IEquatable<MonthlyPlanningP
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class MonthlyPlanningPeriodSettings : IEquatable<MonthlyPlanningP
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
             return hash;

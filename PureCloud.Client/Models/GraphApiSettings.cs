@@ -117,7 +117,7 @@ public partial class GraphApiSettings : IEquatable<GraphApiSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GraphApiSettings);
+        return Equals(obj as GraphApiSettings);
     }
 
     /// <summary>
@@ -135,19 +135,19 @@ public partial class GraphApiSettings : IEquatable<GraphApiSettings>
 
         return true &&
             (
-                this.Integration == other.Integration ||
-                this.Integration != null &&
-                this.Integration.Equals(other.Integration)
+                Integration == other.Integration ||
+                Integration != null &&
+                Integration.Equals(other.Integration)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             );
     }
 
@@ -162,19 +162,19 @@ public partial class GraphApiSettings : IEquatable<GraphApiSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Integration != null)
+            if (Integration != null)
             {
-                hash = hash * 59 + this.Integration.GetHashCode();
+                hash = hash * 59 + Integration.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
             return hash;

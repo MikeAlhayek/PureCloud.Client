@@ -53,7 +53,7 @@ public partial class DispositionParameters : IEquatable<DispositionParameters>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DispositionParameters);
+        return Equals(obj as DispositionParameters);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class DispositionParameters : IEquatable<DispositionParameters>
 
         return true &&
             (
-                this.AdjustableLiveSpeakerDetection == other.AdjustableLiveSpeakerDetection ||
-                this.AdjustableLiveSpeakerDetection != null &&
-                this.AdjustableLiveSpeakerDetection.Equals(other.AdjustableLiveSpeakerDetection)
+                AdjustableLiveSpeakerDetection == other.AdjustableLiveSpeakerDetection ||
+                AdjustableLiveSpeakerDetection != null &&
+                AdjustableLiveSpeakerDetection.Equals(other.AdjustableLiveSpeakerDetection)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class DispositionParameters : IEquatable<DispositionParameters>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AdjustableLiveSpeakerDetection != null)
+            if (AdjustableLiveSpeakerDetection != null)
             {
-                hash = hash * 59 + this.AdjustableLiveSpeakerDetection.GetHashCode();
+                hash = hash * 59 + AdjustableLiveSpeakerDetection.GetHashCode();
             }
 
             return hash;

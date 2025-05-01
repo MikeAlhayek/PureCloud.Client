@@ -205,7 +205,7 @@ public partial class RoutingTransferEvent : IEquatable<RoutingTransferEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoutingTransferEvent);
+        return Equals(obj as RoutingTransferEvent);
     }
 
     /// <summary>
@@ -223,59 +223,59 @@ public partial class RoutingTransferEvent : IEquatable<RoutingTransferEvent>
 
         return true &&
             (
-                this.EventId == other.EventId ||
-                this.EventId != null &&
-                this.EventId.Equals(other.EventId)
+                EventId == other.EventId ||
+                EventId != null &&
+                EventId.Equals(other.EventId)
             ) &&
             (
-                this.EventDateTime == other.EventDateTime ||
-                this.EventDateTime != null &&
-                this.EventDateTime.Equals(other.EventDateTime)
+                EventDateTime == other.EventDateTime ||
+                EventDateTime != null &&
+                EventDateTime.Equals(other.EventDateTime)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.TransferType == other.TransferType ||
-                this.TransferType != null &&
-                this.TransferType.Equals(other.TransferType)
+                TransferType == other.TransferType ||
+                TransferType != null &&
+                TransferType.Equals(other.TransferType)
             ) &&
             (
-                this.CommandId == other.CommandId ||
-                this.CommandId != null &&
-                this.CommandId.Equals(other.CommandId)
+                CommandId == other.CommandId ||
+                CommandId != null &&
+                CommandId.Equals(other.CommandId)
             ) &&
             (
-                this.InitiatingCommunicationId == other.InitiatingCommunicationId ||
-                this.InitiatingCommunicationId != null &&
-                this.InitiatingCommunicationId.Equals(other.InitiatingCommunicationId)
+                InitiatingCommunicationId == other.InitiatingCommunicationId ||
+                InitiatingCommunicationId != null &&
+                InitiatingCommunicationId.Equals(other.InitiatingCommunicationId)
             ) &&
             (
-                this.TargetCommunicationId == other.TargetCommunicationId ||
-                this.TargetCommunicationId != null &&
-                this.TargetCommunicationId.Equals(other.TargetCommunicationId)
+                TargetCommunicationId == other.TargetCommunicationId ||
+                TargetCommunicationId != null &&
+                TargetCommunicationId.Equals(other.TargetCommunicationId)
             ) &&
             (
-                this.ObjectCommunicationId == other.ObjectCommunicationId ||
-                this.ObjectCommunicationId != null &&
-                this.ObjectCommunicationId.Equals(other.ObjectCommunicationId)
+                ObjectCommunicationId == other.ObjectCommunicationId ||
+                ObjectCommunicationId != null &&
+                ObjectCommunicationId.Equals(other.ObjectCommunicationId)
             ) &&
             (
-                this.DestinationQueueId == other.DestinationQueueId ||
-                this.DestinationQueueId != null &&
-                this.DestinationQueueId.Equals(other.DestinationQueueId)
+                DestinationQueueId == other.DestinationQueueId ||
+                DestinationQueueId != null &&
+                DestinationQueueId.Equals(other.DestinationQueueId)
             ) &&
             (
-                this.LanguageId == other.LanguageId ||
-                this.LanguageId != null &&
-                this.LanguageId.Equals(other.LanguageId)
+                LanguageId == other.LanguageId ||
+                LanguageId != null &&
+                LanguageId.Equals(other.LanguageId)
             ) &&
             (
-                this.SkillIds == other.SkillIds ||
-                this.SkillIds != null &&
-                this.SkillIds.SequenceEqual(other.SkillIds)
+                SkillIds == other.SkillIds ||
+                SkillIds != null &&
+                SkillIds.SequenceEqual(other.SkillIds)
             );
     }
 
@@ -290,59 +290,59 @@ public partial class RoutingTransferEvent : IEquatable<RoutingTransferEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventId != null)
+            if (EventId != null)
             {
-                hash = hash * 59 + this.EventId.GetHashCode();
+                hash = hash * 59 + EventId.GetHashCode();
             }
 
-            if (this.EventDateTime != null)
+            if (EventDateTime != null)
             {
-                hash = hash * 59 + this.EventDateTime.GetHashCode();
+                hash = hash * 59 + EventDateTime.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.TransferType != null)
+            if (TransferType != null)
             {
-                hash = hash * 59 + this.TransferType.GetHashCode();
+                hash = hash * 59 + TransferType.GetHashCode();
             }
 
-            if (this.CommandId != null)
+            if (CommandId != null)
             {
-                hash = hash * 59 + this.CommandId.GetHashCode();
+                hash = hash * 59 + CommandId.GetHashCode();
             }
 
-            if (this.InitiatingCommunicationId != null)
+            if (InitiatingCommunicationId != null)
             {
-                hash = hash * 59 + this.InitiatingCommunicationId.GetHashCode();
+                hash = hash * 59 + InitiatingCommunicationId.GetHashCode();
             }
 
-            if (this.TargetCommunicationId != null)
+            if (TargetCommunicationId != null)
             {
-                hash = hash * 59 + this.TargetCommunicationId.GetHashCode();
+                hash = hash * 59 + TargetCommunicationId.GetHashCode();
             }
 
-            if (this.ObjectCommunicationId != null)
+            if (ObjectCommunicationId != null)
             {
-                hash = hash * 59 + this.ObjectCommunicationId.GetHashCode();
+                hash = hash * 59 + ObjectCommunicationId.GetHashCode();
             }
 
-            if (this.DestinationQueueId != null)
+            if (DestinationQueueId != null)
             {
-                hash = hash * 59 + this.DestinationQueueId.GetHashCode();
+                hash = hash * 59 + DestinationQueueId.GetHashCode();
             }
 
-            if (this.LanguageId != null)
+            if (LanguageId != null)
             {
-                hash = hash * 59 + this.LanguageId.GetHashCode();
+                hash = hash * 59 + LanguageId.GetHashCode();
             }
 
-            if (this.SkillIds != null)
+            if (SkillIds != null)
             {
-                hash = hash * 59 + this.SkillIds.GetHashCode();
+                hash = hash * 59 + SkillIds.GetHashCode();
             }
 
             return hash;

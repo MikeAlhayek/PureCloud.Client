@@ -74,7 +74,7 @@ public partial class FilterPreviewResponse : IEquatable<FilterPreviewResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FilterPreviewResponse);
+        return Equals(obj as FilterPreviewResponse);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class FilterPreviewResponse : IEquatable<FilterPreviewResponse>
 
         return true &&
             (
-                this.FilteredContacts == other.FilteredContacts ||
-                this.FilteredContacts != null &&
-                this.FilteredContacts.Equals(other.FilteredContacts)
+                FilteredContacts == other.FilteredContacts ||
+                FilteredContacts != null &&
+                FilteredContacts.Equals(other.FilteredContacts)
             ) &&
             (
-                this.TotalContacts == other.TotalContacts ||
-                this.TotalContacts != null &&
-                this.TotalContacts.Equals(other.TotalContacts)
+                TotalContacts == other.TotalContacts ||
+                TotalContacts != null &&
+                TotalContacts.Equals(other.TotalContacts)
             ) &&
             (
-                this.Preview == other.Preview ||
-                this.Preview != null &&
-                this.Preview.SequenceEqual(other.Preview)
+                Preview == other.Preview ||
+                Preview != null &&
+                Preview.SequenceEqual(other.Preview)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class FilterPreviewResponse : IEquatable<FilterPreviewResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FilteredContacts != null)
+            if (FilteredContacts != null)
             {
-                hash = hash * 59 + this.FilteredContacts.GetHashCode();
+                hash = hash * 59 + FilteredContacts.GetHashCode();
             }
 
-            if (this.TotalContacts != null)
+            if (TotalContacts != null)
             {
-                hash = hash * 59 + this.TotalContacts.GetHashCode();
+                hash = hash * 59 + TotalContacts.GetHashCode();
             }
 
-            if (this.Preview != null)
+            if (Preview != null)
             {
-                hash = hash * 59 + this.Preview.GetHashCode();
+                hash = hash * 59 + Preview.GetHashCode();
             }
 
             return hash;

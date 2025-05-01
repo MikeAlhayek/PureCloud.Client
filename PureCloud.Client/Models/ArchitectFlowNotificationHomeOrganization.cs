@@ -73,7 +73,7 @@ public partial class ArchitectFlowNotificationHomeOrganization : IEquatable<Arch
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArchitectFlowNotificationHomeOrganization);
+        return Equals(obj as ArchitectFlowNotificationHomeOrganization);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class ArchitectFlowNotificationHomeOrganization : IEquatable<Arch
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ThirdPartyOrgName == other.ThirdPartyOrgName ||
-                this.ThirdPartyOrgName != null &&
-                this.ThirdPartyOrgName.Equals(other.ThirdPartyOrgName)
+                ThirdPartyOrgName == other.ThirdPartyOrgName ||
+                ThirdPartyOrgName != null &&
+                ThirdPartyOrgName.Equals(other.ThirdPartyOrgName)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class ArchitectFlowNotificationHomeOrganization : IEquatable<Arch
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ThirdPartyOrgName != null)
+            if (ThirdPartyOrgName != null)
             {
-                hash = hash * 59 + this.ThirdPartyOrgName.GetHashCode();
+                hash = hash * 59 + ThirdPartyOrgName.GetHashCode();
             }
 
             return hash;

@@ -119,7 +119,7 @@ public partial class WhatsAppDefinition : IEquatable<WhatsAppDefinition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WhatsAppDefinition);
+        return Equals(obj as WhatsAppDefinition);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class WhatsAppDefinition : IEquatable<WhatsAppDefinition>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Namespace == other.Namespace ||
-                this.Namespace != null &&
-                this.Namespace.Equals(other.Namespace)
+                Namespace == other.Namespace ||
+                Namespace != null &&
+                Namespace.Equals(other.Namespace)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Buttons == other.Buttons ||
-                this.Buttons != null &&
-                this.Buttons.SequenceEqual(other.Buttons)
+                Buttons == other.Buttons ||
+                Buttons != null &&
+                Buttons.SequenceEqual(other.Buttons)
             ) &&
             (
-                this.MessageFooter == other.MessageFooter ||
-                this.MessageFooter != null &&
-                this.MessageFooter.Equals(other.MessageFooter)
+                MessageFooter == other.MessageFooter ||
+                MessageFooter != null &&
+                MessageFooter.Equals(other.MessageFooter)
             ) &&
             (
-                this.Header == other.Header ||
-                this.Header != null &&
-                this.Header.Equals(other.Header)
+                Header == other.Header ||
+                Header != null &&
+                Header.Equals(other.Header)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class WhatsAppDefinition : IEquatable<WhatsAppDefinition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Namespace != null)
+            if (Namespace != null)
             {
-                hash = hash * 59 + this.Namespace.GetHashCode();
+                hash = hash * 59 + Namespace.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Buttons != null)
+            if (Buttons != null)
             {
-                hash = hash * 59 + this.Buttons.GetHashCode();
+                hash = hash * 59 + Buttons.GetHashCode();
             }
 
-            if (this.MessageFooter != null)
+            if (MessageFooter != null)
             {
-                hash = hash * 59 + this.MessageFooter.GetHashCode();
+                hash = hash * 59 + MessageFooter.GetHashCode();
             }
 
-            if (this.Header != null)
+            if (Header != null)
             {
-                hash = hash * 59 + this.Header.GetHashCode();
+                hash = hash * 59 + Header.GetHashCode();
             }
 
             return hash;

@@ -83,7 +83,7 @@ public partial class UnansweredPhraseGroupPatchRequestBody : IEquatable<Unanswer
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UnansweredPhraseGroupPatchRequestBody);
+        return Equals(obj as UnansweredPhraseGroupPatchRequestBody);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class UnansweredPhraseGroupPatchRequestBody : IEquatable<Unanswer
 
         return true &&
             (
-                this.PhraseAssociations == other.PhraseAssociations ||
-                this.PhraseAssociations != null &&
-                this.PhraseAssociations.SequenceEqual(other.PhraseAssociations)
+                PhraseAssociations == other.PhraseAssociations ||
+                PhraseAssociations != null &&
+                PhraseAssociations.SequenceEqual(other.PhraseAssociations)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.DateEnd == other.DateEnd ||
-                this.DateEnd != null &&
-                this.DateEnd.Equals(other.DateEnd)
+                DateEnd == other.DateEnd ||
+                DateEnd != null &&
+                DateEnd.Equals(other.DateEnd)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class UnansweredPhraseGroupPatchRequestBody : IEquatable<Unanswer
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PhraseAssociations != null)
+            if (PhraseAssociations != null)
             {
-                hash = hash * 59 + this.PhraseAssociations.GetHashCode();
+                hash = hash * 59 + PhraseAssociations.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.DateEnd != null)
+            if (DateEnd != null)
             {
-                hash = hash * 59 + this.DateEnd.GetHashCode();
+                hash = hash * 59 + DateEnd.GetHashCode();
             }
 
             return hash;

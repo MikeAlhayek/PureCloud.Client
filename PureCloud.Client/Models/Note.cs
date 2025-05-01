@@ -186,7 +186,7 @@ public partial class Note : IEquatable<Note>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Note);
+        return Equals(obj as Note);
     }
 
     /// <summary>
@@ -204,54 +204,54 @@ public partial class Note : IEquatable<Note>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.EntityId == other.EntityId ||
-                this.EntityId != null &&
-                this.EntityId.Equals(other.EntityId)
+                EntityId == other.EntityId ||
+                EntityId != null &&
+                EntityId.Equals(other.EntityId)
             ) &&
             (
-                this.EntityType == other.EntityType ||
-                this.EntityType != null &&
-                this.EntityType.Equals(other.EntityType)
+                EntityType == other.EntityType ||
+                EntityType != null &&
+                EntityType.Equals(other.EntityType)
             ) &&
             (
-                this.NoteText == other.NoteText ||
-                this.NoteText != null &&
-                this.NoteText.Equals(other.NoteText)
+                NoteText == other.NoteText ||
+                NoteText != null &&
+                NoteText.Equals(other.NoteText)
             ) &&
             (
-                this.ModifyDate == other.ModifyDate ||
-                this.ModifyDate != null &&
-                this.ModifyDate.Equals(other.ModifyDate)
+                ModifyDate == other.ModifyDate ||
+                ModifyDate != null &&
+                ModifyDate.Equals(other.ModifyDate)
             ) &&
             (
-                this.CreateDate == other.CreateDate ||
-                this.CreateDate != null &&
-                this.CreateDate.Equals(other.CreateDate)
+                CreateDate == other.CreateDate ||
+                CreateDate != null &&
+                CreateDate.Equals(other.CreateDate)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.ExternalDataSources == other.ExternalDataSources ||
-                this.ExternalDataSources != null &&
-                this.ExternalDataSources.SequenceEqual(other.ExternalDataSources)
+                ExternalDataSources == other.ExternalDataSources ||
+                ExternalDataSources != null &&
+                ExternalDataSources.SequenceEqual(other.ExternalDataSources)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -266,54 +266,54 @@ public partial class Note : IEquatable<Note>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.EntityId != null)
+            if (EntityId != null)
             {
-                hash = hash * 59 + this.EntityId.GetHashCode();
+                hash = hash * 59 + EntityId.GetHashCode();
             }
 
-            if (this.EntityType != null)
+            if (EntityType != null)
             {
-                hash = hash * 59 + this.EntityType.GetHashCode();
+                hash = hash * 59 + EntityType.GetHashCode();
             }
 
-            if (this.NoteText != null)
+            if (NoteText != null)
             {
-                hash = hash * 59 + this.NoteText.GetHashCode();
+                hash = hash * 59 + NoteText.GetHashCode();
             }
 
-            if (this.ModifyDate != null)
+            if (ModifyDate != null)
             {
-                hash = hash * 59 + this.ModifyDate.GetHashCode();
+                hash = hash * 59 + ModifyDate.GetHashCode();
             }
 
-            if (this.CreateDate != null)
+            if (CreateDate != null)
             {
-                hash = hash * 59 + this.CreateDate.GetHashCode();
+                hash = hash * 59 + CreateDate.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.ExternalDataSources != null)
+            if (ExternalDataSources != null)
             {
-                hash = hash * 59 + this.ExternalDataSources.GetHashCode();
+                hash = hash * 59 + ExternalDataSources.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

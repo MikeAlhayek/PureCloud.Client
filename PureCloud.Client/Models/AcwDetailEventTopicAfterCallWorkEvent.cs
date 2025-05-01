@@ -470,7 +470,7 @@ public partial class AcwDetailEventTopicAfterCallWorkEvent : IEquatable<AcwDetai
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AcwDetailEventTopicAfterCallWorkEvent);
+        return Equals(obj as AcwDetailEventTopicAfterCallWorkEvent);
     }
 
     /// <summary>
@@ -488,119 +488,119 @@ public partial class AcwDetailEventTopicAfterCallWorkEvent : IEquatable<AcwDetai
 
         return true &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.ParticipantId == other.ParticipantId ||
-                this.ParticipantId != null &&
-                this.ParticipantId.Equals(other.ParticipantId)
+                ParticipantId == other.ParticipantId ||
+                ParticipantId != null &&
+                ParticipantId.Equals(other.ParticipantId)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.Provider == other.Provider ||
-                this.Provider != null &&
-                this.Provider.Equals(other.Provider)
+                Provider == other.Provider ||
+                Provider != null &&
+                Provider.Equals(other.Provider)
             ) &&
             (
-                this.Direction == other.Direction ||
-                this.Direction != null &&
-                this.Direction.Equals(other.Direction)
+                Direction == other.Direction ||
+                Direction != null &&
+                Direction.Equals(other.Direction)
             ) &&
             (
-                this.Ani == other.Ani ||
-                this.Ani != null &&
-                this.Ani.Equals(other.Ani)
+                Ani == other.Ani ||
+                Ani != null &&
+                Ani.Equals(other.Ani)
             ) &&
             (
-                this.Dnis == other.Dnis ||
-                this.Dnis != null &&
-                this.Dnis.Equals(other.Dnis)
+                Dnis == other.Dnis ||
+                Dnis != null &&
+                Dnis.Equals(other.Dnis)
             ) &&
             (
-                this.AddressTo == other.AddressTo ||
-                this.AddressTo != null &&
-                this.AddressTo.Equals(other.AddressTo)
+                AddressTo == other.AddressTo ||
+                AddressTo != null &&
+                AddressTo.Equals(other.AddressTo)
             ) &&
             (
-                this.AddressFrom == other.AddressFrom ||
-                this.AddressFrom != null &&
-                this.AddressFrom.Equals(other.AddressFrom)
+                AddressFrom == other.AddressFrom ||
+                AddressFrom != null &&
+                AddressFrom.Equals(other.AddressFrom)
             ) &&
             (
-                this.CallbackUserName == other.CallbackUserName ||
-                this.CallbackUserName != null &&
-                this.CallbackUserName.Equals(other.CallbackUserName)
+                CallbackUserName == other.CallbackUserName ||
+                CallbackUserName != null &&
+                CallbackUserName.Equals(other.CallbackUserName)
             ) &&
             (
-                this.CallbackNumbers == other.CallbackNumbers ||
-                this.CallbackNumbers != null &&
-                this.CallbackNumbers.SequenceEqual(other.CallbackNumbers)
+                CallbackNumbers == other.CallbackNumbers ||
+                CallbackNumbers != null &&
+                CallbackNumbers.SequenceEqual(other.CallbackNumbers)
             ) &&
             (
-                this.CallbackScheduledTime == other.CallbackScheduledTime ||
-                this.CallbackScheduledTime != null &&
-                this.CallbackScheduledTime.Equals(other.CallbackScheduledTime)
+                CallbackScheduledTime == other.CallbackScheduledTime ||
+                CallbackScheduledTime != null &&
+                CallbackScheduledTime.Equals(other.CallbackScheduledTime)
             ) &&
             (
-                this.Subject == other.Subject ||
-                this.Subject != null &&
-                this.Subject.Equals(other.Subject)
+                Subject == other.Subject ||
+                Subject != null &&
+                Subject.Equals(other.Subject)
             ) &&
             (
-                this.MessageType == other.MessageType ||
-                this.MessageType != null &&
-                this.MessageType.Equals(other.MessageType)
+                MessageType == other.MessageType ||
+                MessageType != null &&
+                MessageType.Equals(other.MessageType)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.WrapupCode == other.WrapupCode ||
-                this.WrapupCode != null &&
-                this.WrapupCode.Equals(other.WrapupCode)
+                WrapupCode == other.WrapupCode ||
+                WrapupCode != null &&
+                WrapupCode.Equals(other.WrapupCode)
             ) &&
             (
-                this.WrapupNotes == other.WrapupNotes ||
-                this.WrapupNotes != null &&
-                this.WrapupNotes.Equals(other.WrapupNotes)
+                WrapupNotes == other.WrapupNotes ||
+                WrapupNotes != null &&
+                WrapupNotes.Equals(other.WrapupNotes)
             ) &&
             (
-                this.WrapupDurationMs == other.WrapupDurationMs ||
-                this.WrapupDurationMs != null &&
-                this.WrapupDurationMs.Equals(other.WrapupDurationMs)
+                WrapupDurationMs == other.WrapupDurationMs ||
+                WrapupDurationMs != null &&
+                WrapupDurationMs.Equals(other.WrapupDurationMs)
             ) &&
             (
-                this.ConversationExternalContactIds == other.ConversationExternalContactIds ||
-                this.ConversationExternalContactIds != null &&
-                this.ConversationExternalContactIds.SequenceEqual(other.ConversationExternalContactIds)
+                ConversationExternalContactIds == other.ConversationExternalContactIds ||
+                ConversationExternalContactIds != null &&
+                ConversationExternalContactIds.SequenceEqual(other.ConversationExternalContactIds)
             ) &&
             (
-                this.ConversationExternalOrganizationIds == other.ConversationExternalOrganizationIds ||
-                this.ConversationExternalOrganizationIds != null &&
-                this.ConversationExternalOrganizationIds.SequenceEqual(other.ConversationExternalOrganizationIds)
+                ConversationExternalOrganizationIds == other.ConversationExternalOrganizationIds ||
+                ConversationExternalOrganizationIds != null &&
+                ConversationExternalOrganizationIds.SequenceEqual(other.ConversationExternalOrganizationIds)
             );
     }
 
@@ -615,119 +615,119 @@ public partial class AcwDetailEventTopicAfterCallWorkEvent : IEquatable<AcwDetai
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.ParticipantId != null)
+            if (ParticipantId != null)
             {
-                hash = hash * 59 + this.ParticipantId.GetHashCode();
+                hash = hash * 59 + ParticipantId.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.Provider != null)
+            if (Provider != null)
             {
-                hash = hash * 59 + this.Provider.GetHashCode();
+                hash = hash * 59 + Provider.GetHashCode();
             }
 
-            if (this.Direction != null)
+            if (Direction != null)
             {
-                hash = hash * 59 + this.Direction.GetHashCode();
+                hash = hash * 59 + Direction.GetHashCode();
             }
 
-            if (this.Ani != null)
+            if (Ani != null)
             {
-                hash = hash * 59 + this.Ani.GetHashCode();
+                hash = hash * 59 + Ani.GetHashCode();
             }
 
-            if (this.Dnis != null)
+            if (Dnis != null)
             {
-                hash = hash * 59 + this.Dnis.GetHashCode();
+                hash = hash * 59 + Dnis.GetHashCode();
             }
 
-            if (this.AddressTo != null)
+            if (AddressTo != null)
             {
-                hash = hash * 59 + this.AddressTo.GetHashCode();
+                hash = hash * 59 + AddressTo.GetHashCode();
             }
 
-            if (this.AddressFrom != null)
+            if (AddressFrom != null)
             {
-                hash = hash * 59 + this.AddressFrom.GetHashCode();
+                hash = hash * 59 + AddressFrom.GetHashCode();
             }
 
-            if (this.CallbackUserName != null)
+            if (CallbackUserName != null)
             {
-                hash = hash * 59 + this.CallbackUserName.GetHashCode();
+                hash = hash * 59 + CallbackUserName.GetHashCode();
             }
 
-            if (this.CallbackNumbers != null)
+            if (CallbackNumbers != null)
             {
-                hash = hash * 59 + this.CallbackNumbers.GetHashCode();
+                hash = hash * 59 + CallbackNumbers.GetHashCode();
             }
 
-            if (this.CallbackScheduledTime != null)
+            if (CallbackScheduledTime != null)
             {
-                hash = hash * 59 + this.CallbackScheduledTime.GetHashCode();
+                hash = hash * 59 + CallbackScheduledTime.GetHashCode();
             }
 
-            if (this.Subject != null)
+            if (Subject != null)
             {
-                hash = hash * 59 + this.Subject.GetHashCode();
+                hash = hash * 59 + Subject.GetHashCode();
             }
 
-            if (this.MessageType != null)
+            if (MessageType != null)
             {
-                hash = hash * 59 + this.MessageType.GetHashCode();
+                hash = hash * 59 + MessageType.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.WrapupCode != null)
+            if (WrapupCode != null)
             {
-                hash = hash * 59 + this.WrapupCode.GetHashCode();
+                hash = hash * 59 + WrapupCode.GetHashCode();
             }
 
-            if (this.WrapupNotes != null)
+            if (WrapupNotes != null)
             {
-                hash = hash * 59 + this.WrapupNotes.GetHashCode();
+                hash = hash * 59 + WrapupNotes.GetHashCode();
             }
 
-            if (this.WrapupDurationMs != null)
+            if (WrapupDurationMs != null)
             {
-                hash = hash * 59 + this.WrapupDurationMs.GetHashCode();
+                hash = hash * 59 + WrapupDurationMs.GetHashCode();
             }
 
-            if (this.ConversationExternalContactIds != null)
+            if (ConversationExternalContactIds != null)
             {
-                hash = hash * 59 + this.ConversationExternalContactIds.GetHashCode();
+                hash = hash * 59 + ConversationExternalContactIds.GetHashCode();
             }
 
-            if (this.ConversationExternalOrganizationIds != null)
+            if (ConversationExternalOrganizationIds != null)
             {
-                hash = hash * 59 + this.ConversationExternalOrganizationIds.GetHashCode();
+                hash = hash * 59 + ConversationExternalOrganizationIds.GetHashCode();
             }
 
             return hash;

@@ -63,7 +63,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReferen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReference);
+        return Equals(obj as WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReference);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReferen
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.SecondaryPresences == other.SecondaryPresences ||
-                this.SecondaryPresences != null &&
-                this.SecondaryPresences.SequenceEqual(other.SecondaryPresences)
+                SecondaryPresences == other.SecondaryPresences ||
+                SecondaryPresences != null &&
+                SecondaryPresences.SequenceEqual(other.SecondaryPresences)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReferen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.SecondaryPresences != null)
+            if (SecondaryPresences != null)
             {
-                hash = hash * 59 + this.SecondaryPresences.GetHashCode();
+                hash = hash * 59 + SecondaryPresences.GetHashCode();
             }
 
             return hash;

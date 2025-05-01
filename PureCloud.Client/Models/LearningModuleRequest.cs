@@ -235,7 +235,7 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModuleRequest);
+        return Equals(obj as LearningModuleRequest);
     }
 
     /// <summary>
@@ -253,64 +253,64 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.CompletionTimeInDays == other.CompletionTimeInDays ||
-                this.CompletionTimeInDays != null &&
-                this.CompletionTimeInDays.Equals(other.CompletionTimeInDays)
+                CompletionTimeInDays == other.CompletionTimeInDays ||
+                CompletionTimeInDays != null &&
+                CompletionTimeInDays.Equals(other.CompletionTimeInDays)
             ) &&
             (
-                this.InformSteps == other.InformSteps ||
-                this.InformSteps != null &&
-                this.InformSteps.SequenceEqual(other.InformSteps)
+                InformSteps == other.InformSteps ||
+                InformSteps != null &&
+                InformSteps.SequenceEqual(other.InformSteps)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.AssessmentForm == other.AssessmentForm ||
-                this.AssessmentForm != null &&
-                this.AssessmentForm.Equals(other.AssessmentForm)
+                AssessmentForm == other.AssessmentForm ||
+                AssessmentForm != null &&
+                AssessmentForm.Equals(other.AssessmentForm)
             ) &&
             (
-                this.CoverArt == other.CoverArt ||
-                this.CoverArt != null &&
-                this.CoverArt.Equals(other.CoverArt)
+                CoverArt == other.CoverArt ||
+                CoverArt != null &&
+                CoverArt.Equals(other.CoverArt)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.ExcludedFromCatalog == other.ExcludedFromCatalog ||
-                this.ExcludedFromCatalog != null &&
-                this.ExcludedFromCatalog.Equals(other.ExcludedFromCatalog)
+                ExcludedFromCatalog == other.ExcludedFromCatalog ||
+                ExcludedFromCatalog != null &&
+                ExcludedFromCatalog.Equals(other.ExcludedFromCatalog)
             ) &&
             (
-                this.ExternalId == other.ExternalId ||
-                this.ExternalId != null &&
-                this.ExternalId.Equals(other.ExternalId)
+                ExternalId == other.ExternalId ||
+                ExternalId != null &&
+                ExternalId.Equals(other.ExternalId)
             ) &&
             (
-                this.EnforceContentOrder == other.EnforceContentOrder ||
-                this.EnforceContentOrder != null &&
-                this.EnforceContentOrder.Equals(other.EnforceContentOrder)
+                EnforceContentOrder == other.EnforceContentOrder ||
+                EnforceContentOrder != null &&
+                EnforceContentOrder.Equals(other.EnforceContentOrder)
             ) &&
             (
-                this.ReviewAssessmentResults == other.ReviewAssessmentResults ||
-                this.ReviewAssessmentResults != null &&
-                this.ReviewAssessmentResults.Equals(other.ReviewAssessmentResults)
+                ReviewAssessmentResults == other.ReviewAssessmentResults ||
+                ReviewAssessmentResults != null &&
+                ReviewAssessmentResults.Equals(other.ReviewAssessmentResults)
             );
     }
 
@@ -325,64 +325,64 @@ public partial class LearningModuleRequest : IEquatable<LearningModuleRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.CompletionTimeInDays != null)
+            if (CompletionTimeInDays != null)
             {
-                hash = hash * 59 + this.CompletionTimeInDays.GetHashCode();
+                hash = hash * 59 + CompletionTimeInDays.GetHashCode();
             }
 
-            if (this.InformSteps != null)
+            if (InformSteps != null)
             {
-                hash = hash * 59 + this.InformSteps.GetHashCode();
+                hash = hash * 59 + InformSteps.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.AssessmentForm != null)
+            if (AssessmentForm != null)
             {
-                hash = hash * 59 + this.AssessmentForm.GetHashCode();
+                hash = hash * 59 + AssessmentForm.GetHashCode();
             }
 
-            if (this.CoverArt != null)
+            if (CoverArt != null)
             {
-                hash = hash * 59 + this.CoverArt.GetHashCode();
+                hash = hash * 59 + CoverArt.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.ExcludedFromCatalog != null)
+            if (ExcludedFromCatalog != null)
             {
-                hash = hash * 59 + this.ExcludedFromCatalog.GetHashCode();
+                hash = hash * 59 + ExcludedFromCatalog.GetHashCode();
             }
 
-            if (this.ExternalId != null)
+            if (ExternalId != null)
             {
-                hash = hash * 59 + this.ExternalId.GetHashCode();
+                hash = hash * 59 + ExternalId.GetHashCode();
             }
 
-            if (this.EnforceContentOrder != null)
+            if (EnforceContentOrder != null)
             {
-                hash = hash * 59 + this.EnforceContentOrder.GetHashCode();
+                hash = hash * 59 + EnforceContentOrder.GetHashCode();
             }
 
-            if (this.ReviewAssessmentResults != null)
+            if (ReviewAssessmentResults != null)
             {
-                hash = hash * 59 + this.ReviewAssessmentResults.GetHashCode();
+                hash = hash * 59 + ReviewAssessmentResults.GetHashCode();
             }
 
             return hash;

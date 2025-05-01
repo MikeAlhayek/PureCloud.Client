@@ -87,7 +87,7 @@ public partial class AggregationResultEntry : IEquatable<AggregationResultEntry>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AggregationResultEntry);
+        return Equals(obj as AggregationResultEntry);
     }
 
     /// <summary>
@@ -105,24 +105,24 @@ public partial class AggregationResultEntry : IEquatable<AggregationResultEntry>
 
         return true &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Gte == other.Gte ||
-                this.Gte != null &&
-                this.Gte.Equals(other.Gte)
+                Gte == other.Gte ||
+                Gte != null &&
+                Gte.Equals(other.Gte)
             ) &&
             (
-                this.Lt == other.Lt ||
-                this.Lt != null &&
-                this.Lt.Equals(other.Lt)
+                Lt == other.Lt ||
+                Lt != null &&
+                Lt.Equals(other.Lt)
             );
     }
 
@@ -137,24 +137,24 @@ public partial class AggregationResultEntry : IEquatable<AggregationResultEntry>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Gte != null)
+            if (Gte != null)
             {
-                hash = hash * 59 + this.Gte.GetHashCode();
+                hash = hash * 59 + Gte.GetHashCode();
             }
 
-            if (this.Lt != null)
+            if (Lt != null)
             {
-                hash = hash * 59 + this.Lt.GetHashCode();
+                hash = hash * 59 + Lt.GetHashCode();
             }
 
             return hash;

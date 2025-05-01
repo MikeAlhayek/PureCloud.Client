@@ -108,7 +108,7 @@ public partial class AcwSettings : IEquatable<AcwSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AcwSettings);
+        return Equals(obj as AcwSettings);
     }
 
     /// <summary>
@@ -126,14 +126,14 @@ public partial class AcwSettings : IEquatable<AcwSettings>
 
         return true &&
             (
-                this.WrapupPrompt == other.WrapupPrompt ||
-                this.WrapupPrompt != null &&
-                this.WrapupPrompt.Equals(other.WrapupPrompt)
+                WrapupPrompt == other.WrapupPrompt ||
+                WrapupPrompt != null &&
+                WrapupPrompt.Equals(other.WrapupPrompt)
             ) &&
             (
-                this.TimeoutMs == other.TimeoutMs ||
-                this.TimeoutMs != null &&
-                this.TimeoutMs.Equals(other.TimeoutMs)
+                TimeoutMs == other.TimeoutMs ||
+                TimeoutMs != null &&
+                TimeoutMs.Equals(other.TimeoutMs)
             );
     }
 
@@ -148,14 +148,14 @@ public partial class AcwSettings : IEquatable<AcwSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WrapupPrompt != null)
+            if (WrapupPrompt != null)
             {
-                hash = hash * 59 + this.WrapupPrompt.GetHashCode();
+                hash = hash * 59 + WrapupPrompt.GetHashCode();
             }
 
-            if (this.TimeoutMs != null)
+            if (TimeoutMs != null)
             {
-                hash = hash * 59 + this.TimeoutMs.GetHashCode();
+                hash = hash * 59 + TimeoutMs.GetHashCode();
             }
 
             return hash;

@@ -59,7 +59,7 @@ public partial class ContextEntity : IEquatable<ContextEntity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContextEntity);
+        return Equals(obj as ContextEntity);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ContextEntity : IEquatable<ContextEntity>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ContextEntity : IEquatable<ContextEntity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
             return hash;

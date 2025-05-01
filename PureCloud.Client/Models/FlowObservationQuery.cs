@@ -123,7 +123,7 @@ public partial class FlowObservationQuery : IEquatable<FlowObservationQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowObservationQuery);
+        return Equals(obj as FlowObservationQuery);
     }
 
     /// <summary>
@@ -141,19 +141,19 @@ public partial class FlowObservationQuery : IEquatable<FlowObservationQuery>
 
         return true &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.DetailMetrics == other.DetailMetrics ||
-                this.DetailMetrics != null &&
-                this.DetailMetrics.SequenceEqual(other.DetailMetrics)
+                DetailMetrics == other.DetailMetrics ||
+                DetailMetrics != null &&
+                DetailMetrics.SequenceEqual(other.DetailMetrics)
             );
     }
 
@@ -168,19 +168,19 @@ public partial class FlowObservationQuery : IEquatable<FlowObservationQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.DetailMetrics != null)
+            if (DetailMetrics != null)
             {
-                hash = hash * 59 + this.DetailMetrics.GetHashCode();
+                hash = hash * 59 + DetailMetrics.GetHashCode();
             }
 
             return hash;

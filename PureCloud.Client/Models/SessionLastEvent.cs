@@ -83,7 +83,7 @@ public partial class SessionLastEvent : IEquatable<SessionLastEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SessionLastEvent);
+        return Equals(obj as SessionLastEvent);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class SessionLastEvent : IEquatable<SessionLastEvent>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class SessionLastEvent : IEquatable<SessionLastEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
             return hash;

@@ -100,7 +100,7 @@ public partial class BuAgentScheduleRescheduleResponse : IEquatable<BuAgentSched
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuAgentScheduleRescheduleResponse);
+        return Equals(obj as BuAgentScheduleRescheduleResponse);
     }
 
     /// <summary>
@@ -118,29 +118,29 @@ public partial class BuAgentScheduleRescheduleResponse : IEquatable<BuAgentSched
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Shifts == other.Shifts ||
-                this.Shifts != null &&
-                this.Shifts.SequenceEqual(other.Shifts)
+                Shifts == other.Shifts ||
+                Shifts != null &&
+                Shifts.SequenceEqual(other.Shifts)
             ) &&
             (
-                this.FullDayTimeOffMarkers == other.FullDayTimeOffMarkers ||
-                this.FullDayTimeOffMarkers != null &&
-                this.FullDayTimeOffMarkers.SequenceEqual(other.FullDayTimeOffMarkers)
+                FullDayTimeOffMarkers == other.FullDayTimeOffMarkers ||
+                FullDayTimeOffMarkers != null &&
+                FullDayTimeOffMarkers.SequenceEqual(other.FullDayTimeOffMarkers)
             ) &&
             (
-                this.WorkPlan == other.WorkPlan ||
-                this.WorkPlan != null &&
-                this.WorkPlan.Equals(other.WorkPlan)
+                WorkPlan == other.WorkPlan ||
+                WorkPlan != null &&
+                WorkPlan.Equals(other.WorkPlan)
             ) &&
             (
-                this.WorkPlansPerWeek == other.WorkPlansPerWeek ||
-                this.WorkPlansPerWeek != null &&
-                this.WorkPlansPerWeek.SequenceEqual(other.WorkPlansPerWeek)
+                WorkPlansPerWeek == other.WorkPlansPerWeek ||
+                WorkPlansPerWeek != null &&
+                WorkPlansPerWeek.SequenceEqual(other.WorkPlansPerWeek)
             );
     }
 
@@ -155,29 +155,29 @@ public partial class BuAgentScheduleRescheduleResponse : IEquatable<BuAgentSched
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Shifts != null)
+            if (Shifts != null)
             {
-                hash = hash * 59 + this.Shifts.GetHashCode();
+                hash = hash * 59 + Shifts.GetHashCode();
             }
 
-            if (this.FullDayTimeOffMarkers != null)
+            if (FullDayTimeOffMarkers != null)
             {
-                hash = hash * 59 + this.FullDayTimeOffMarkers.GetHashCode();
+                hash = hash * 59 + FullDayTimeOffMarkers.GetHashCode();
             }
 
-            if (this.WorkPlan != null)
+            if (WorkPlan != null)
             {
-                hash = hash * 59 + this.WorkPlan.GetHashCode();
+                hash = hash * 59 + WorkPlan.GetHashCode();
             }
 
-            if (this.WorkPlansPerWeek != null)
+            if (WorkPlansPerWeek != null)
             {
-                hash = hash * 59 + this.WorkPlansPerWeek.GetHashCode();
+                hash = hash * 59 + WorkPlansPerWeek.GetHashCode();
             }
 
             return hash;

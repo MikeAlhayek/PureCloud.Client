@@ -153,7 +153,7 @@ public partial class WorkitemsAttributeChangeWorkitemStatusCategory : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemsAttributeChangeWorkitemStatusCategory);
+        return Equals(obj as WorkitemsAttributeChangeWorkitemStatusCategory);
     }
 
     /// <summary>
@@ -171,14 +171,14 @@ public partial class WorkitemsAttributeChangeWorkitemStatusCategory : IEquatable
 
         return true &&
             (
-                this.NewValue == other.NewValue ||
-                this.NewValue != null &&
-                this.NewValue.Equals(other.NewValue)
+                NewValue == other.NewValue ||
+                NewValue != null &&
+                NewValue.Equals(other.NewValue)
             ) &&
             (
-                this.OldValue == other.OldValue ||
-                this.OldValue != null &&
-                this.OldValue.Equals(other.OldValue)
+                OldValue == other.OldValue ||
+                OldValue != null &&
+                OldValue.Equals(other.OldValue)
             );
     }
 
@@ -193,14 +193,14 @@ public partial class WorkitemsAttributeChangeWorkitemStatusCategory : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.NewValue != null)
+            if (NewValue != null)
             {
-                hash = hash * 59 + this.NewValue.GetHashCode();
+                hash = hash * 59 + NewValue.GetHashCode();
             }
 
-            if (this.OldValue != null)
+            if (OldValue != null)
             {
-                hash = hash * 59 + this.OldValue.GetHashCode();
+                hash = hash * 59 + OldValue.GetHashCode();
             }
 
             return hash;

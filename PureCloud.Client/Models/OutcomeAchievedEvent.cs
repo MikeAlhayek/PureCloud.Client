@@ -167,7 +167,7 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomeAchievedEvent);
+        return Equals(obj as OutcomeAchievedEvent);
     }
 
     /// <summary>
@@ -185,54 +185,54 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
 
         return true &&
             (
-                this.Outcome == other.Outcome ||
-                this.Outcome != null &&
-                this.Outcome.Equals(other.Outcome)
+                Outcome == other.Outcome ||
+                Outcome != null &&
+                Outcome.Equals(other.Outcome)
             ) &&
             (
-                this.UserAgentString == other.UserAgentString ||
-                this.UserAgentString != null &&
-                this.UserAgentString.Equals(other.UserAgentString)
+                UserAgentString == other.UserAgentString ||
+                UserAgentString != null &&
+                UserAgentString.Equals(other.UserAgentString)
             ) &&
             (
-                this.Browser == other.Browser ||
-                this.Browser != null &&
-                this.Browser.Equals(other.Browser)
+                Browser == other.Browser ||
+                Browser != null &&
+                Browser.Equals(other.Browser)
             ) &&
             (
-                this.Device == other.Device ||
-                this.Device != null &&
-                this.Device.Equals(other.Device)
+                Device == other.Device ||
+                Device != null &&
+                Device.Equals(other.Device)
             ) &&
             (
-                this.Geolocation == other.Geolocation ||
-                this.Geolocation != null &&
-                this.Geolocation.Equals(other.Geolocation)
+                Geolocation == other.Geolocation ||
+                Geolocation != null &&
+                Geolocation.Equals(other.Geolocation)
             ) &&
             (
-                this.IpAddress == other.IpAddress ||
-                this.IpAddress != null &&
-                this.IpAddress.Equals(other.IpAddress)
+                IpAddress == other.IpAddress ||
+                IpAddress != null &&
+                IpAddress.Equals(other.IpAddress)
             ) &&
             (
-                this.IpOrganization == other.IpOrganization ||
-                this.IpOrganization != null &&
-                this.IpOrganization.Equals(other.IpOrganization)
+                IpOrganization == other.IpOrganization ||
+                IpOrganization != null &&
+                IpOrganization.Equals(other.IpOrganization)
             ) &&
             (
-                this.MktCampaign == other.MktCampaign ||
-                this.MktCampaign != null &&
-                this.MktCampaign.Equals(other.MktCampaign)
+                MktCampaign == other.MktCampaign ||
+                MktCampaign != null &&
+                MktCampaign.Equals(other.MktCampaign)
             ) &&
             (
-                this.VisitReferrer == other.VisitReferrer ||
-                this.VisitReferrer != null &&
-                this.VisitReferrer.Equals(other.VisitReferrer)
+                VisitReferrer == other.VisitReferrer ||
+                VisitReferrer != null &&
+                VisitReferrer.Equals(other.VisitReferrer)
             ) &&
             (
-                this.VisitCreatedDate == other.VisitCreatedDate ||
-                this.VisitCreatedDate != null &&
-                this.VisitCreatedDate.Equals(other.VisitCreatedDate)
+                VisitCreatedDate == other.VisitCreatedDate ||
+                VisitCreatedDate != null &&
+                VisitCreatedDate.Equals(other.VisitCreatedDate)
             );
     }
 
@@ -247,54 +247,54 @@ public partial class OutcomeAchievedEvent : IEquatable<OutcomeAchievedEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Outcome != null)
+            if (Outcome != null)
             {
-                hash = hash * 59 + this.Outcome.GetHashCode();
+                hash = hash * 59 + Outcome.GetHashCode();
             }
 
-            if (this.UserAgentString != null)
+            if (UserAgentString != null)
             {
-                hash = hash * 59 + this.UserAgentString.GetHashCode();
+                hash = hash * 59 + UserAgentString.GetHashCode();
             }
 
-            if (this.Browser != null)
+            if (Browser != null)
             {
-                hash = hash * 59 + this.Browser.GetHashCode();
+                hash = hash * 59 + Browser.GetHashCode();
             }
 
-            if (this.Device != null)
+            if (Device != null)
             {
-                hash = hash * 59 + this.Device.GetHashCode();
+                hash = hash * 59 + Device.GetHashCode();
             }
 
-            if (this.Geolocation != null)
+            if (Geolocation != null)
             {
-                hash = hash * 59 + this.Geolocation.GetHashCode();
+                hash = hash * 59 + Geolocation.GetHashCode();
             }
 
-            if (this.IpAddress != null)
+            if (IpAddress != null)
             {
-                hash = hash * 59 + this.IpAddress.GetHashCode();
+                hash = hash * 59 + IpAddress.GetHashCode();
             }
 
-            if (this.IpOrganization != null)
+            if (IpOrganization != null)
             {
-                hash = hash * 59 + this.IpOrganization.GetHashCode();
+                hash = hash * 59 + IpOrganization.GetHashCode();
             }
 
-            if (this.MktCampaign != null)
+            if (MktCampaign != null)
             {
-                hash = hash * 59 + this.MktCampaign.GetHashCode();
+                hash = hash * 59 + MktCampaign.GetHashCode();
             }
 
-            if (this.VisitReferrer != null)
+            if (VisitReferrer != null)
             {
-                hash = hash * 59 + this.VisitReferrer.GetHashCode();
+                hash = hash * 59 + VisitReferrer.GetHashCode();
             }
 
-            if (this.VisitCreatedDate != null)
+            if (VisitCreatedDate != null)
             {
-                hash = hash * 59 + this.VisitCreatedDate.GetHashCode();
+                hash = hash * 59 + VisitCreatedDate.GetHashCode();
             }
 
             return hash;

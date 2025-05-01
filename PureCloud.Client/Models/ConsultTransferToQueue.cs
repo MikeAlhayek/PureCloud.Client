@@ -133,7 +133,7 @@ public partial class ConsultTransferToQueue : IEquatable<ConsultTransferToQueue>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConsultTransferToQueue);
+        return Equals(obj as ConsultTransferToQueue);
     }
 
     /// <summary>
@@ -151,24 +151,24 @@ public partial class ConsultTransferToQueue : IEquatable<ConsultTransferToQueue>
 
         return true &&
             (
-                this.SpeakTo == other.SpeakTo ||
-                this.SpeakTo != null &&
-                this.SpeakTo.Equals(other.SpeakTo)
+                SpeakTo == other.SpeakTo ||
+                SpeakTo != null &&
+                SpeakTo.Equals(other.SpeakTo)
             ) &&
             (
-                this.ConsultingUserId == other.ConsultingUserId ||
-                this.ConsultingUserId != null &&
-                this.ConsultingUserId.Equals(other.ConsultingUserId)
+                ConsultingUserId == other.ConsultingUserId ||
+                ConsultingUserId != null &&
+                ConsultingUserId.Equals(other.ConsultingUserId)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.QueueName == other.QueueName ||
-                this.QueueName != null &&
-                this.QueueName.Equals(other.QueueName)
+                QueueName == other.QueueName ||
+                QueueName != null &&
+                QueueName.Equals(other.QueueName)
             );
     }
 
@@ -183,24 +183,24 @@ public partial class ConsultTransferToQueue : IEquatable<ConsultTransferToQueue>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SpeakTo != null)
+            if (SpeakTo != null)
             {
-                hash = hash * 59 + this.SpeakTo.GetHashCode();
+                hash = hash * 59 + SpeakTo.GetHashCode();
             }
 
-            if (this.ConsultingUserId != null)
+            if (ConsultingUserId != null)
             {
-                hash = hash * 59 + this.ConsultingUserId.GetHashCode();
+                hash = hash * 59 + ConsultingUserId.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.QueueName != null)
+            if (QueueName != null)
             {
-                hash = hash * 59 + this.QueueName.GetHashCode();
+                hash = hash * 59 + QueueName.GetHashCode();
             }
 
             return hash;

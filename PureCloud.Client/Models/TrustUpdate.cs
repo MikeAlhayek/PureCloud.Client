@@ -71,7 +71,7 @@ public partial class TrustUpdate : IEquatable<TrustUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrustUpdate);
+        return Equals(obj as TrustUpdate);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class TrustUpdate : IEquatable<TrustUpdate>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.DateExpired == other.DateExpired ||
-                this.DateExpired != null &&
-                this.DateExpired.Equals(other.DateExpired)
+                DateExpired == other.DateExpired ||
+                DateExpired != null &&
+                DateExpired.Equals(other.DateExpired)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class TrustUpdate : IEquatable<TrustUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.DateExpired != null)
+            if (DateExpired != null)
             {
-                hash = hash * 59 + this.DateExpired.GetHashCode();
+                hash = hash * 59 + DateExpired.GetHashCode();
             }
 
             return hash;

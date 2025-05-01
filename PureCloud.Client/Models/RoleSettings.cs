@@ -85,7 +85,7 @@ public partial class RoleSettings : IEquatable<RoleSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoleSettings);
+        return Equals(obj as RoleSettings);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class RoleSettings : IEquatable<RoleSettings>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.BackfillEnabled == other.BackfillEnabled ||
-                this.BackfillEnabled != null &&
-                this.BackfillEnabled.Equals(other.BackfillEnabled)
+                BackfillEnabled == other.BackfillEnabled ||
+                BackfillEnabled != null &&
+                BackfillEnabled.Equals(other.BackfillEnabled)
             ) &&
             (
-                this.AuthorizationGrantDivisionAware == other.AuthorizationGrantDivisionAware ||
-                this.AuthorizationGrantDivisionAware != null &&
-                this.AuthorizationGrantDivisionAware.Equals(other.AuthorizationGrantDivisionAware)
+                AuthorizationGrantDivisionAware == other.AuthorizationGrantDivisionAware ||
+                AuthorizationGrantDivisionAware != null &&
+                AuthorizationGrantDivisionAware.Equals(other.AuthorizationGrantDivisionAware)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class RoleSettings : IEquatable<RoleSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.BackfillEnabled != null)
+            if (BackfillEnabled != null)
             {
-                hash = hash * 59 + this.BackfillEnabled.GetHashCode();
+                hash = hash * 59 + BackfillEnabled.GetHashCode();
             }
 
-            if (this.AuthorizationGrantDivisionAware != null)
+            if (AuthorizationGrantDivisionAware != null)
             {
-                hash = hash * 59 + this.AuthorizationGrantDivisionAware.GetHashCode();
+                hash = hash * 59 + AuthorizationGrantDivisionAware.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

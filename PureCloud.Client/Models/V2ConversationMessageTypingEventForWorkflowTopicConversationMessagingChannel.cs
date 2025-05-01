@@ -163,7 +163,7 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel);
+        return Equals(obj as V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel);
     }
 
     /// <summary>
@@ -181,29 +181,29 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Platform == other.Platform ||
-                this.Platform != null &&
-                this.Platform.Equals(other.Platform)
+                Platform == other.Platform ||
+                Platform != null &&
+                Platform.Equals(other.Platform)
             ) &&
             (
-                this.To == other.To ||
-                this.To != null &&
-                this.To.Equals(other.To)
+                To == other.To ||
+                To != null &&
+                To.Equals(other.To)
             ) &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.Time == other.Time ||
-                this.Time != null &&
-                this.Time.Equals(other.Time)
+                Time == other.Time ||
+                Time != null &&
+                Time.Equals(other.Time)
             );
     }
 
@@ -218,29 +218,29 @@ public partial class V2ConversationMessageTypingEventForWorkflowTopicConversatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Platform != null)
+            if (Platform != null)
             {
-                hash = hash * 59 + this.Platform.GetHashCode();
+                hash = hash * 59 + Platform.GetHashCode();
             }
 
-            if (this.To != null)
+            if (To != null)
             {
-                hash = hash * 59 + this.To.GetHashCode();
+                hash = hash * 59 + To.GetHashCode();
             }
 
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.Time != null)
+            if (Time != null)
             {
-                hash = hash * 59 + this.Time.GetHashCode();
+                hash = hash * 59 + Time.GetHashCode();
             }
 
             return hash;

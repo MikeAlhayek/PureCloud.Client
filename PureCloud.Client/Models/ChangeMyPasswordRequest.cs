@@ -71,7 +71,7 @@ public partial class ChangeMyPasswordRequest : IEquatable<ChangeMyPasswordReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChangeMyPasswordRequest);
+        return Equals(obj as ChangeMyPasswordRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ChangeMyPasswordRequest : IEquatable<ChangeMyPasswordReques
 
         return true &&
             (
-                this.NewPassword == other.NewPassword ||
-                this.NewPassword != null &&
-                this.NewPassword.Equals(other.NewPassword)
+                NewPassword == other.NewPassword ||
+                NewPassword != null &&
+                NewPassword.Equals(other.NewPassword)
             ) &&
             (
-                this.OldPassword == other.OldPassword ||
-                this.OldPassword != null &&
-                this.OldPassword.Equals(other.OldPassword)
+                OldPassword == other.OldPassword ||
+                OldPassword != null &&
+                OldPassword.Equals(other.OldPassword)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ChangeMyPasswordRequest : IEquatable<ChangeMyPasswordReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.NewPassword != null)
+            if (NewPassword != null)
             {
-                hash = hash * 59 + this.NewPassword.GetHashCode();
+                hash = hash * 59 + NewPassword.GetHashCode();
             }
 
-            if (this.OldPassword != null)
+            if (OldPassword != null)
             {
-                hash = hash * 59 + this.OldPassword.GetHashCode();
+                hash = hash * 59 + OldPassword.GetHashCode();
             }
 
             return hash;

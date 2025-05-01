@@ -169,7 +169,7 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WeekSchedule);
+        return Equals(obj as WeekSchedule);
     }
 
     /// <summary>
@@ -187,59 +187,59 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Published == other.Published ||
-                this.Published != null &&
-                this.Published.Equals(other.Published)
+                Published == other.Published ||
+                Published != null &&
+                Published.Equals(other.Published)
             ) &&
             (
-                this.GenerationResults == other.GenerationResults ||
-                this.GenerationResults != null &&
-                this.GenerationResults.Equals(other.GenerationResults)
+                GenerationResults == other.GenerationResults ||
+                GenerationResults != null &&
+                GenerationResults.Equals(other.GenerationResults)
             ) &&
             (
-                this.ShortTermForecast == other.ShortTermForecast ||
-                this.ShortTermForecast != null &&
-                this.ShortTermForecast.Equals(other.ShortTermForecast)
+                ShortTermForecast == other.ShortTermForecast ||
+                ShortTermForecast != null &&
+                ShortTermForecast.Equals(other.ShortTermForecast)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.UserSchedules == other.UserSchedules ||
-                this.UserSchedules != null &&
-                this.UserSchedules.SequenceEqual(other.UserSchedules)
+                UserSchedules == other.UserSchedules ||
+                UserSchedules != null &&
+                UserSchedules.SequenceEqual(other.UserSchedules)
             ) &&
             (
-                this.HeadcountForecast == other.HeadcountForecast ||
-                this.HeadcountForecast != null &&
-                this.HeadcountForecast.Equals(other.HeadcountForecast)
+                HeadcountForecast == other.HeadcountForecast ||
+                HeadcountForecast != null &&
+                HeadcountForecast.Equals(other.HeadcountForecast)
             ) &&
             (
-                this.AgentSchedulesVersion == other.AgentSchedulesVersion ||
-                this.AgentSchedulesVersion != null &&
-                this.AgentSchedulesVersion.Equals(other.AgentSchedulesVersion)
+                AgentSchedulesVersion == other.AgentSchedulesVersion ||
+                AgentSchedulesVersion != null &&
+                AgentSchedulesVersion.Equals(other.AgentSchedulesVersion)
             );
     }
 
@@ -254,59 +254,59 @@ public partial class WeekSchedule : IEquatable<WeekSchedule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Published != null)
+            if (Published != null)
             {
-                hash = hash * 59 + this.Published.GetHashCode();
+                hash = hash * 59 + Published.GetHashCode();
             }
 
-            if (this.GenerationResults != null)
+            if (GenerationResults != null)
             {
-                hash = hash * 59 + this.GenerationResults.GetHashCode();
+                hash = hash * 59 + GenerationResults.GetHashCode();
             }
 
-            if (this.ShortTermForecast != null)
+            if (ShortTermForecast != null)
             {
-                hash = hash * 59 + this.ShortTermForecast.GetHashCode();
+                hash = hash * 59 + ShortTermForecast.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.UserSchedules != null)
+            if (UserSchedules != null)
             {
-                hash = hash * 59 + this.UserSchedules.GetHashCode();
+                hash = hash * 59 + UserSchedules.GetHashCode();
             }
 
-            if (this.HeadcountForecast != null)
+            if (HeadcountForecast != null)
             {
-                hash = hash * 59 + this.HeadcountForecast.GetHashCode();
+                hash = hash * 59 + HeadcountForecast.GetHashCode();
             }
 
-            if (this.AgentSchedulesVersion != null)
+            if (AgentSchedulesVersion != null)
             {
-                hash = hash * 59 + this.AgentSchedulesVersion.GetHashCode();
+                hash = hash * 59 + AgentSchedulesVersion.GetHashCode();
             }
 
             return hash;

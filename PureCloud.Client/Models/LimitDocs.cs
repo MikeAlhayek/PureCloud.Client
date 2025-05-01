@@ -107,7 +107,7 @@ public partial class LimitDocs : IEquatable<LimitDocs>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LimitDocs);
+        return Equals(obj as LimitDocs);
     }
 
     /// <summary>
@@ -125,34 +125,34 @@ public partial class LimitDocs : IEquatable<LimitDocs>
 
         return true &&
             (
-                this.Key == other.Key ||
-                this.Key != null &&
-                this.Key.Equals(other.Key)
+                Key == other.Key ||
+                Key != null &&
+                Key.Equals(other.Key)
             ) &&
             (
-                this.DefaultValue == other.DefaultValue ||
-                this.DefaultValue != null &&
-                this.DefaultValue.Equals(other.DefaultValue)
+                DefaultValue == other.DefaultValue ||
+                DefaultValue != null &&
+                DefaultValue.Equals(other.DefaultValue)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Resource == other.Resource ||
-                this.Resource != null &&
-                this.Resource.Equals(other.Resource)
+                Resource == other.Resource ||
+                Resource != null &&
+                Resource.Equals(other.Resource)
             ) &&
             (
-                this.Configurable == other.Configurable ||
-                this.Configurable != null &&
-                this.Configurable.Equals(other.Configurable)
+                Configurable == other.Configurable ||
+                Configurable != null &&
+                Configurable.Equals(other.Configurable)
             ) &&
             (
-                this.Trackable == other.Trackable ||
-                this.Trackable != null &&
-                this.Trackable.Equals(other.Trackable)
+                Trackable == other.Trackable ||
+                Trackable != null &&
+                Trackable.Equals(other.Trackable)
             );
     }
 
@@ -167,34 +167,34 @@ public partial class LimitDocs : IEquatable<LimitDocs>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Key != null)
+            if (Key != null)
             {
-                hash = hash * 59 + this.Key.GetHashCode();
+                hash = hash * 59 + Key.GetHashCode();
             }
 
-            if (this.DefaultValue != null)
+            if (DefaultValue != null)
             {
-                hash = hash * 59 + this.DefaultValue.GetHashCode();
+                hash = hash * 59 + DefaultValue.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Resource != null)
+            if (Resource != null)
             {
-                hash = hash * 59 + this.Resource.GetHashCode();
+                hash = hash * 59 + Resource.GetHashCode();
             }
 
-            if (this.Configurable != null)
+            if (Configurable != null)
             {
-                hash = hash * 59 + this.Configurable.GetHashCode();
+                hash = hash * 59 + Configurable.GetHashCode();
             }
 
-            if (this.Trackable != null)
+            if (Trackable != null)
             {
-                hash = hash * 59 + this.Trackable.GetHashCode();
+                hash = hash * 59 + Trackable.GetHashCode();
             }
 
             return hash;

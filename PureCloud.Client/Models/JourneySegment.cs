@@ -251,7 +251,7 @@ public partial class JourneySegment : IEquatable<JourneySegment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneySegment);
+        return Equals(obj as JourneySegment);
     }
 
     /// <summary>
@@ -269,79 +269,79 @@ public partial class JourneySegment : IEquatable<JourneySegment>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.IsActive == other.IsActive ||
-                this.IsActive != null &&
-                this.IsActive.Equals(other.IsActive)
+                IsActive == other.IsActive ||
+                IsActive != null &&
+                IsActive.Equals(other.IsActive)
             ) &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Color == other.Color ||
-                this.Color != null &&
-                this.Color.Equals(other.Color)
+                Color == other.Color ||
+                Color != null &&
+                Color.Equals(other.Color)
             ) &&
             (
-                this.Scope == other.Scope ||
-                this.Scope != null &&
-                this.Scope.Equals(other.Scope)
+                Scope == other.Scope ||
+                Scope != null &&
+                Scope.Equals(other.Scope)
             ) &&
             (
-                this.ShouldDisplayToAgent == other.ShouldDisplayToAgent ||
-                this.ShouldDisplayToAgent != null &&
-                this.ShouldDisplayToAgent.Equals(other.ShouldDisplayToAgent)
+                ShouldDisplayToAgent == other.ShouldDisplayToAgent ||
+                ShouldDisplayToAgent != null &&
+                ShouldDisplayToAgent.Equals(other.ShouldDisplayToAgent)
             ) &&
             (
-                this.Context == other.Context ||
-                this.Context != null &&
-                this.Context.Equals(other.Context)
+                Context == other.Context ||
+                Context != null &&
+                Context.Equals(other.Context)
             ) &&
             (
-                this.Journey == other.Journey ||
-                this.Journey != null &&
-                this.Journey.Equals(other.Journey)
+                Journey == other.Journey ||
+                Journey != null &&
+                Journey.Equals(other.Journey)
             ) &&
             (
-                this.ExternalSegment == other.ExternalSegment ||
-                this.ExternalSegment != null &&
-                this.ExternalSegment.Equals(other.ExternalSegment)
+                ExternalSegment == other.ExternalSegment ||
+                ExternalSegment != null &&
+                ExternalSegment.Equals(other.ExternalSegment)
             ) &&
             (
-                this.AssignmentExpirationDays == other.AssignmentExpirationDays ||
-                this.AssignmentExpirationDays != null &&
-                this.AssignmentExpirationDays.Equals(other.AssignmentExpirationDays)
+                AssignmentExpirationDays == other.AssignmentExpirationDays ||
+                AssignmentExpirationDays != null &&
+                AssignmentExpirationDays.Equals(other.AssignmentExpirationDays)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             );
     }
 
@@ -356,79 +356,79 @@ public partial class JourneySegment : IEquatable<JourneySegment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.IsActive != null)
+            if (IsActive != null)
             {
-                hash = hash * 59 + this.IsActive.GetHashCode();
+                hash = hash * 59 + IsActive.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Color != null)
+            if (Color != null)
             {
-                hash = hash * 59 + this.Color.GetHashCode();
+                hash = hash * 59 + Color.GetHashCode();
             }
 
-            if (this.Scope != null)
+            if (Scope != null)
             {
-                hash = hash * 59 + this.Scope.GetHashCode();
+                hash = hash * 59 + Scope.GetHashCode();
             }
 
-            if (this.ShouldDisplayToAgent != null)
+            if (ShouldDisplayToAgent != null)
             {
-                hash = hash * 59 + this.ShouldDisplayToAgent.GetHashCode();
+                hash = hash * 59 + ShouldDisplayToAgent.GetHashCode();
             }
 
-            if (this.Context != null)
+            if (Context != null)
             {
-                hash = hash * 59 + this.Context.GetHashCode();
+                hash = hash * 59 + Context.GetHashCode();
             }
 
-            if (this.Journey != null)
+            if (Journey != null)
             {
-                hash = hash * 59 + this.Journey.GetHashCode();
+                hash = hash * 59 + Journey.GetHashCode();
             }
 
-            if (this.ExternalSegment != null)
+            if (ExternalSegment != null)
             {
-                hash = hash * 59 + this.ExternalSegment.GetHashCode();
+                hash = hash * 59 + ExternalSegment.GetHashCode();
             }
 
-            if (this.AssignmentExpirationDays != null)
+            if (AssignmentExpirationDays != null)
             {
-                hash = hash * 59 + this.AssignmentExpirationDays.GetHashCode();
+                hash = hash * 59 + AssignmentExpirationDays.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
             return hash;

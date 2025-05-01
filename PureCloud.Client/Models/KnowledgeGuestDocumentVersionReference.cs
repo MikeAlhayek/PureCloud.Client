@@ -69,7 +69,7 @@ public partial class KnowledgeGuestDocumentVersionReference : IEquatable<Knowled
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeGuestDocumentVersionReference);
+        return Equals(obj as KnowledgeGuestDocumentVersionReference);
     }
 
     /// <summary>
@@ -87,14 +87,14 @@ public partial class KnowledgeGuestDocumentVersionReference : IEquatable<Knowled
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.VersionId == other.VersionId ||
-                this.VersionId != null &&
-                this.VersionId.Equals(other.VersionId)
+                VersionId == other.VersionId ||
+                VersionId != null &&
+                VersionId.Equals(other.VersionId)
             );
     }
 
@@ -109,14 +109,14 @@ public partial class KnowledgeGuestDocumentVersionReference : IEquatable<Knowled
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.VersionId != null)
+            if (VersionId != null)
             {
-                hash = hash * 59 + this.VersionId.GetHashCode();
+                hash = hash * 59 + VersionId.GetHashCode();
             }
 
             return hash;

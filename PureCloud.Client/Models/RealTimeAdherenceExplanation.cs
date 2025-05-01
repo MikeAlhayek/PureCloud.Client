@@ -129,7 +129,7 @@ public partial class RealTimeAdherenceExplanation : IEquatable<RealTimeAdherence
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RealTimeAdherenceExplanation);
+        return Equals(obj as RealTimeAdherenceExplanation);
     }
 
     /// <summary>
@@ -147,29 +147,29 @@ public partial class RealTimeAdherenceExplanation : IEquatable<RealTimeAdherence
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.LengthMinutes == other.LengthMinutes ||
-                this.LengthMinutes != null &&
-                this.LengthMinutes.Equals(other.LengthMinutes)
+                LengthMinutes == other.LengthMinutes ||
+                LengthMinutes != null &&
+                LengthMinutes.Equals(other.LengthMinutes)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -184,29 +184,29 @@ public partial class RealTimeAdherenceExplanation : IEquatable<RealTimeAdherence
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.LengthMinutes != null)
+            if (LengthMinutes != null)
             {
-                hash = hash * 59 + this.LengthMinutes.GetHashCode();
+                hash = hash * 59 + LengthMinutes.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

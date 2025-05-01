@@ -185,7 +185,7 @@ public partial class ResolutionDetailQueryPredicate : IEquatable<ResolutionDetai
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ResolutionDetailQueryPredicate);
+        return Equals(obj as ResolutionDetailQueryPredicate);
     }
 
     /// <summary>
@@ -203,29 +203,29 @@ public partial class ResolutionDetailQueryPredicate : IEquatable<ResolutionDetai
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Range == other.Range ||
-                this.Range != null &&
-                this.Range.Equals(other.Range)
+                Range == other.Range ||
+                Range != null &&
+                Range.Equals(other.Range)
             );
     }
 
@@ -240,29 +240,29 @@ public partial class ResolutionDetailQueryPredicate : IEquatable<ResolutionDetai
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Range != null)
+            if (Range != null)
             {
-                hash = hash * 59 + this.Range.GetHashCode();
+                hash = hash * 59 + Range.GetHashCode();
             }
 
             return hash;

@@ -103,7 +103,7 @@ public partial class FeedbackAddRequest : IEquatable<FeedbackAddRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FeedbackAddRequest);
+        return Equals(obj as FeedbackAddRequest);
     }
 
     /// <summary>
@@ -121,14 +121,14 @@ public partial class FeedbackAddRequest : IEquatable<FeedbackAddRequest>
 
         return true &&
             (
-                this.Rating == other.Rating ||
-                this.Rating != null &&
-                this.Rating.Equals(other.Rating)
+                Rating == other.Rating ||
+                Rating != null &&
+                Rating.Equals(other.Rating)
             ) &&
             (
-                this.Summary == other.Summary ||
-                this.Summary != null &&
-                this.Summary.Equals(other.Summary)
+                Summary == other.Summary ||
+                Summary != null &&
+                Summary.Equals(other.Summary)
             );
     }
 
@@ -143,14 +143,14 @@ public partial class FeedbackAddRequest : IEquatable<FeedbackAddRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Rating != null)
+            if (Rating != null)
             {
-                hash = hash * 59 + this.Rating.GetHashCode();
+                hash = hash * 59 + Rating.GetHashCode();
             }
 
-            if (this.Summary != null)
+            if (Summary != null)
             {
-                hash = hash * 59 + this.Summary.GetHashCode();
+                hash = hash * 59 + Summary.GetHashCode();
             }
 
             return hash;

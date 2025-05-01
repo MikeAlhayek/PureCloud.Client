@@ -137,7 +137,7 @@ public partial class GetUploadSourceUrlJobStatusResponse : IEquatable<GetUploadS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GetUploadSourceUrlJobStatusResponse);
+        return Equals(obj as GetUploadSourceUrlJobStatusResponse);
     }
 
     /// <summary>
@@ -155,29 +155,29 @@ public partial class GetUploadSourceUrlJobStatusResponse : IEquatable<GetUploadS
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.ErrorInformation == other.ErrorInformation ||
-                this.ErrorInformation != null &&
-                this.ErrorInformation.Equals(other.ErrorInformation)
+                ErrorInformation == other.ErrorInformation ||
+                ErrorInformation != null &&
+                ErrorInformation.Equals(other.ErrorInformation)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -192,29 +192,29 @@ public partial class GetUploadSourceUrlJobStatusResponse : IEquatable<GetUploadS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.ErrorInformation != null)
+            if (ErrorInformation != null)
             {
-                hash = hash * 59 + this.ErrorInformation.GetHashCode();
+                hash = hash * 59 + ErrorInformation.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

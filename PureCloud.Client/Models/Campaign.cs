@@ -622,7 +622,7 @@ public partial class Campaign : IEquatable<Campaign>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Campaign);
+        return Equals(obj as Campaign);
     }
 
     /// <summary>
@@ -640,204 +640,204 @@ public partial class Campaign : IEquatable<Campaign>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.ContactList == other.ContactList ||
-                this.ContactList != null &&
-                this.ContactList.Equals(other.ContactList)
+                ContactList == other.ContactList ||
+                ContactList != null &&
+                ContactList.Equals(other.ContactList)
             ) &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.DialingMode == other.DialingMode ||
-                this.DialingMode != null &&
-                this.DialingMode.Equals(other.DialingMode)
+                DialingMode == other.DialingMode ||
+                DialingMode != null &&
+                DialingMode.Equals(other.DialingMode)
             ) &&
             (
-                this.Script == other.Script ||
-                this.Script != null &&
-                this.Script.Equals(other.Script)
+                Script == other.Script ||
+                Script != null &&
+                Script.Equals(other.Script)
             ) &&
             (
-                this.EdgeGroup == other.EdgeGroup ||
-                this.EdgeGroup != null &&
-                this.EdgeGroup.Equals(other.EdgeGroup)
+                EdgeGroup == other.EdgeGroup ||
+                EdgeGroup != null &&
+                EdgeGroup.Equals(other.EdgeGroup)
             ) &&
             (
-                this.Site == other.Site ||
-                this.Site != null &&
-                this.Site.Equals(other.Site)
+                Site == other.Site ||
+                Site != null &&
+                Site.Equals(other.Site)
             ) &&
             (
-                this.CampaignStatus == other.CampaignStatus ||
-                this.CampaignStatus != null &&
-                this.CampaignStatus.Equals(other.CampaignStatus)
+                CampaignStatus == other.CampaignStatus ||
+                CampaignStatus != null &&
+                CampaignStatus.Equals(other.CampaignStatus)
             ) &&
             (
-                this.PhoneColumns == other.PhoneColumns ||
-                this.PhoneColumns != null &&
-                this.PhoneColumns.SequenceEqual(other.PhoneColumns)
+                PhoneColumns == other.PhoneColumns ||
+                PhoneColumns != null &&
+                PhoneColumns.SequenceEqual(other.PhoneColumns)
             ) &&
             (
-                this.AbandonRate == other.AbandonRate ||
-                this.AbandonRate != null &&
-                this.AbandonRate.Equals(other.AbandonRate)
+                AbandonRate == other.AbandonRate ||
+                AbandonRate != null &&
+                AbandonRate.Equals(other.AbandonRate)
             ) &&
             (
-                this.DncLists == other.DncLists ||
-                this.DncLists != null &&
-                this.DncLists.SequenceEqual(other.DncLists)
+                DncLists == other.DncLists ||
+                DncLists != null &&
+                DncLists.SequenceEqual(other.DncLists)
             ) &&
             (
-                this.CallableTimeSet == other.CallableTimeSet ||
-                this.CallableTimeSet != null &&
-                this.CallableTimeSet.Equals(other.CallableTimeSet)
+                CallableTimeSet == other.CallableTimeSet ||
+                CallableTimeSet != null &&
+                CallableTimeSet.Equals(other.CallableTimeSet)
             ) &&
             (
-                this.CallAnalysisResponseSet == other.CallAnalysisResponseSet ||
-                this.CallAnalysisResponseSet != null &&
-                this.CallAnalysisResponseSet.Equals(other.CallAnalysisResponseSet)
+                CallAnalysisResponseSet == other.CallAnalysisResponseSet ||
+                CallAnalysisResponseSet != null &&
+                CallAnalysisResponseSet.Equals(other.CallAnalysisResponseSet)
             ) &&
             (
-                this.Errors == other.Errors ||
-                this.Errors != null &&
-                this.Errors.SequenceEqual(other.Errors)
+                Errors == other.Errors ||
+                Errors != null &&
+                Errors.SequenceEqual(other.Errors)
             ) &&
             (
-                this.CallerName == other.CallerName ||
-                this.CallerName != null &&
-                this.CallerName.Equals(other.CallerName)
+                CallerName == other.CallerName ||
+                CallerName != null &&
+                CallerName.Equals(other.CallerName)
             ) &&
             (
-                this.CallerAddress == other.CallerAddress ||
-                this.CallerAddress != null &&
-                this.CallerAddress.Equals(other.CallerAddress)
+                CallerAddress == other.CallerAddress ||
+                CallerAddress != null &&
+                CallerAddress.Equals(other.CallerAddress)
             ) &&
             (
-                this.OutboundLineCount == other.OutboundLineCount ||
-                this.OutboundLineCount != null &&
-                this.OutboundLineCount.Equals(other.OutboundLineCount)
+                OutboundLineCount == other.OutboundLineCount ||
+                OutboundLineCount != null &&
+                OutboundLineCount.Equals(other.OutboundLineCount)
             ) &&
             (
-                this.RuleSets == other.RuleSets ||
-                this.RuleSets != null &&
-                this.RuleSets.SequenceEqual(other.RuleSets)
+                RuleSets == other.RuleSets ||
+                RuleSets != null &&
+                RuleSets.SequenceEqual(other.RuleSets)
             ) &&
             (
-                this.SkipPreviewDisabled == other.SkipPreviewDisabled ||
-                this.SkipPreviewDisabled != null &&
-                this.SkipPreviewDisabled.Equals(other.SkipPreviewDisabled)
+                SkipPreviewDisabled == other.SkipPreviewDisabled ||
+                SkipPreviewDisabled != null &&
+                SkipPreviewDisabled.Equals(other.SkipPreviewDisabled)
             ) &&
             (
-                this.PreviewTimeOutSeconds == other.PreviewTimeOutSeconds ||
-                this.PreviewTimeOutSeconds != null &&
-                this.PreviewTimeOutSeconds.Equals(other.PreviewTimeOutSeconds)
+                PreviewTimeOutSeconds == other.PreviewTimeOutSeconds ||
+                PreviewTimeOutSeconds != null &&
+                PreviewTimeOutSeconds.Equals(other.PreviewTimeOutSeconds)
             ) &&
             (
-                this.AlwaysRunning == other.AlwaysRunning ||
-                this.AlwaysRunning != null &&
-                this.AlwaysRunning.Equals(other.AlwaysRunning)
+                AlwaysRunning == other.AlwaysRunning ||
+                AlwaysRunning != null &&
+                AlwaysRunning.Equals(other.AlwaysRunning)
             ) &&
             (
-                this.ContactSort == other.ContactSort ||
-                this.ContactSort != null &&
-                this.ContactSort.Equals(other.ContactSort)
+                ContactSort == other.ContactSort ||
+                ContactSort != null &&
+                ContactSort.Equals(other.ContactSort)
             ) &&
             (
-                this.ContactSorts == other.ContactSorts ||
-                this.ContactSorts != null &&
-                this.ContactSorts.SequenceEqual(other.ContactSorts)
+                ContactSorts == other.ContactSorts ||
+                ContactSorts != null &&
+                ContactSorts.SequenceEqual(other.ContactSorts)
             ) &&
             (
-                this.NoAnswerTimeout == other.NoAnswerTimeout ||
-                this.NoAnswerTimeout != null &&
-                this.NoAnswerTimeout.Equals(other.NoAnswerTimeout)
+                NoAnswerTimeout == other.NoAnswerTimeout ||
+                NoAnswerTimeout != null &&
+                NoAnswerTimeout.Equals(other.NoAnswerTimeout)
             ) &&
             (
-                this.CallAnalysisLanguage == other.CallAnalysisLanguage ||
-                this.CallAnalysisLanguage != null &&
-                this.CallAnalysisLanguage.Equals(other.CallAnalysisLanguage)
+                CallAnalysisLanguage == other.CallAnalysisLanguage ||
+                CallAnalysisLanguage != null &&
+                CallAnalysisLanguage.Equals(other.CallAnalysisLanguage)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.ContactListFilters == other.ContactListFilters ||
-                this.ContactListFilters != null &&
-                this.ContactListFilters.SequenceEqual(other.ContactListFilters)
+                ContactListFilters == other.ContactListFilters ||
+                ContactListFilters != null &&
+                ContactListFilters.SequenceEqual(other.ContactListFilters)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.AgentOwnedColumn == other.AgentOwnedColumn ||
-                this.AgentOwnedColumn != null &&
-                this.AgentOwnedColumn.Equals(other.AgentOwnedColumn)
+                AgentOwnedColumn == other.AgentOwnedColumn ||
+                AgentOwnedColumn != null &&
+                AgentOwnedColumn.Equals(other.AgentOwnedColumn)
             ) &&
             (
-                this.DynamicContactQueueingSettings == other.DynamicContactQueueingSettings ||
-                this.DynamicContactQueueingSettings != null &&
-                this.DynamicContactQueueingSettings.Equals(other.DynamicContactQueueingSettings)
+                DynamicContactQueueingSettings == other.DynamicContactQueueingSettings ||
+                DynamicContactQueueingSettings != null &&
+                DynamicContactQueueingSettings.Equals(other.DynamicContactQueueingSettings)
             ) &&
             (
-                this.SkillColumns == other.SkillColumns ||
-                this.SkillColumns != null &&
-                this.SkillColumns.SequenceEqual(other.SkillColumns)
+                SkillColumns == other.SkillColumns ||
+                SkillColumns != null &&
+                SkillColumns.SequenceEqual(other.SkillColumns)
             ) &&
             (
-                this.MaxCallsPerAgent == other.MaxCallsPerAgent ||
-                this.MaxCallsPerAgent != null &&
-                this.MaxCallsPerAgent.Equals(other.MaxCallsPerAgent)
+                MaxCallsPerAgent == other.MaxCallsPerAgent ||
+                MaxCallsPerAgent != null &&
+                MaxCallsPerAgent.Equals(other.MaxCallsPerAgent)
             ) &&
             (
-                this.MaxCallsPerAgentDecimal == other.MaxCallsPerAgentDecimal ||
-                this.MaxCallsPerAgentDecimal != null &&
-                this.MaxCallsPerAgentDecimal.Equals(other.MaxCallsPerAgentDecimal)
+                MaxCallsPerAgentDecimal == other.MaxCallsPerAgentDecimal ||
+                MaxCallsPerAgentDecimal != null &&
+                MaxCallsPerAgentDecimal.Equals(other.MaxCallsPerAgentDecimal)
             ) &&
             (
-                this.CallbackAutoAnswer == other.CallbackAutoAnswer ||
-                this.CallbackAutoAnswer != null &&
-                this.CallbackAutoAnswer.Equals(other.CallbackAutoAnswer)
+                CallbackAutoAnswer == other.CallbackAutoAnswer ||
+                CallbackAutoAnswer != null &&
+                CallbackAutoAnswer.Equals(other.CallbackAutoAnswer)
             ) &&
             (
-                this.DynamicLineBalancingSettings == other.DynamicLineBalancingSettings ||
-                this.DynamicLineBalancingSettings != null &&
-                this.DynamicLineBalancingSettings.Equals(other.DynamicLineBalancingSettings)
+                DynamicLineBalancingSettings == other.DynamicLineBalancingSettings ||
+                DynamicLineBalancingSettings != null &&
+                DynamicLineBalancingSettings.Equals(other.DynamicLineBalancingSettings)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -852,204 +852,204 @@ public partial class Campaign : IEquatable<Campaign>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.ContactList != null)
+            if (ContactList != null)
             {
-                hash = hash * 59 + this.ContactList.GetHashCode();
+                hash = hash * 59 + ContactList.GetHashCode();
             }
 
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.DialingMode != null)
+            if (DialingMode != null)
             {
-                hash = hash * 59 + this.DialingMode.GetHashCode();
+                hash = hash * 59 + DialingMode.GetHashCode();
             }
 
-            if (this.Script != null)
+            if (Script != null)
             {
-                hash = hash * 59 + this.Script.GetHashCode();
+                hash = hash * 59 + Script.GetHashCode();
             }
 
-            if (this.EdgeGroup != null)
+            if (EdgeGroup != null)
             {
-                hash = hash * 59 + this.EdgeGroup.GetHashCode();
+                hash = hash * 59 + EdgeGroup.GetHashCode();
             }
 
-            if (this.Site != null)
+            if (Site != null)
             {
-                hash = hash * 59 + this.Site.GetHashCode();
+                hash = hash * 59 + Site.GetHashCode();
             }
 
-            if (this.CampaignStatus != null)
+            if (CampaignStatus != null)
             {
-                hash = hash * 59 + this.CampaignStatus.GetHashCode();
+                hash = hash * 59 + CampaignStatus.GetHashCode();
             }
 
-            if (this.PhoneColumns != null)
+            if (PhoneColumns != null)
             {
-                hash = hash * 59 + this.PhoneColumns.GetHashCode();
+                hash = hash * 59 + PhoneColumns.GetHashCode();
             }
 
-            if (this.AbandonRate != null)
+            if (AbandonRate != null)
             {
-                hash = hash * 59 + this.AbandonRate.GetHashCode();
+                hash = hash * 59 + AbandonRate.GetHashCode();
             }
 
-            if (this.DncLists != null)
+            if (DncLists != null)
             {
-                hash = hash * 59 + this.DncLists.GetHashCode();
+                hash = hash * 59 + DncLists.GetHashCode();
             }
 
-            if (this.CallableTimeSet != null)
+            if (CallableTimeSet != null)
             {
-                hash = hash * 59 + this.CallableTimeSet.GetHashCode();
+                hash = hash * 59 + CallableTimeSet.GetHashCode();
             }
 
-            if (this.CallAnalysisResponseSet != null)
+            if (CallAnalysisResponseSet != null)
             {
-                hash = hash * 59 + this.CallAnalysisResponseSet.GetHashCode();
+                hash = hash * 59 + CallAnalysisResponseSet.GetHashCode();
             }
 
-            if (this.Errors != null)
+            if (Errors != null)
             {
-                hash = hash * 59 + this.Errors.GetHashCode();
+                hash = hash * 59 + Errors.GetHashCode();
             }
 
-            if (this.CallerName != null)
+            if (CallerName != null)
             {
-                hash = hash * 59 + this.CallerName.GetHashCode();
+                hash = hash * 59 + CallerName.GetHashCode();
             }
 
-            if (this.CallerAddress != null)
+            if (CallerAddress != null)
             {
-                hash = hash * 59 + this.CallerAddress.GetHashCode();
+                hash = hash * 59 + CallerAddress.GetHashCode();
             }
 
-            if (this.OutboundLineCount != null)
+            if (OutboundLineCount != null)
             {
-                hash = hash * 59 + this.OutboundLineCount.GetHashCode();
+                hash = hash * 59 + OutboundLineCount.GetHashCode();
             }
 
-            if (this.RuleSets != null)
+            if (RuleSets != null)
             {
-                hash = hash * 59 + this.RuleSets.GetHashCode();
+                hash = hash * 59 + RuleSets.GetHashCode();
             }
 
-            if (this.SkipPreviewDisabled != null)
+            if (SkipPreviewDisabled != null)
             {
-                hash = hash * 59 + this.SkipPreviewDisabled.GetHashCode();
+                hash = hash * 59 + SkipPreviewDisabled.GetHashCode();
             }
 
-            if (this.PreviewTimeOutSeconds != null)
+            if (PreviewTimeOutSeconds != null)
             {
-                hash = hash * 59 + this.PreviewTimeOutSeconds.GetHashCode();
+                hash = hash * 59 + PreviewTimeOutSeconds.GetHashCode();
             }
 
-            if (this.AlwaysRunning != null)
+            if (AlwaysRunning != null)
             {
-                hash = hash * 59 + this.AlwaysRunning.GetHashCode();
+                hash = hash * 59 + AlwaysRunning.GetHashCode();
             }
 
-            if (this.ContactSort != null)
+            if (ContactSort != null)
             {
-                hash = hash * 59 + this.ContactSort.GetHashCode();
+                hash = hash * 59 + ContactSort.GetHashCode();
             }
 
-            if (this.ContactSorts != null)
+            if (ContactSorts != null)
             {
-                hash = hash * 59 + this.ContactSorts.GetHashCode();
+                hash = hash * 59 + ContactSorts.GetHashCode();
             }
 
-            if (this.NoAnswerTimeout != null)
+            if (NoAnswerTimeout != null)
             {
-                hash = hash * 59 + this.NoAnswerTimeout.GetHashCode();
+                hash = hash * 59 + NoAnswerTimeout.GetHashCode();
             }
 
-            if (this.CallAnalysisLanguage != null)
+            if (CallAnalysisLanguage != null)
             {
-                hash = hash * 59 + this.CallAnalysisLanguage.GetHashCode();
+                hash = hash * 59 + CallAnalysisLanguage.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.ContactListFilters != null)
+            if (ContactListFilters != null)
             {
-                hash = hash * 59 + this.ContactListFilters.GetHashCode();
+                hash = hash * 59 + ContactListFilters.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.AgentOwnedColumn != null)
+            if (AgentOwnedColumn != null)
             {
-                hash = hash * 59 + this.AgentOwnedColumn.GetHashCode();
+                hash = hash * 59 + AgentOwnedColumn.GetHashCode();
             }
 
-            if (this.DynamicContactQueueingSettings != null)
+            if (DynamicContactQueueingSettings != null)
             {
-                hash = hash * 59 + this.DynamicContactQueueingSettings.GetHashCode();
+                hash = hash * 59 + DynamicContactQueueingSettings.GetHashCode();
             }
 
-            if (this.SkillColumns != null)
+            if (SkillColumns != null)
             {
-                hash = hash * 59 + this.SkillColumns.GetHashCode();
+                hash = hash * 59 + SkillColumns.GetHashCode();
             }
 
-            if (this.MaxCallsPerAgent != null)
+            if (MaxCallsPerAgent != null)
             {
-                hash = hash * 59 + this.MaxCallsPerAgent.GetHashCode();
+                hash = hash * 59 + MaxCallsPerAgent.GetHashCode();
             }
 
-            if (this.MaxCallsPerAgentDecimal != null)
+            if (MaxCallsPerAgentDecimal != null)
             {
-                hash = hash * 59 + this.MaxCallsPerAgentDecimal.GetHashCode();
+                hash = hash * 59 + MaxCallsPerAgentDecimal.GetHashCode();
             }
 
-            if (this.CallbackAutoAnswer != null)
+            if (CallbackAutoAnswer != null)
             {
-                hash = hash * 59 + this.CallbackAutoAnswer.GetHashCode();
+                hash = hash * 59 + CallbackAutoAnswer.GetHashCode();
             }
 
-            if (this.DynamicLineBalancingSettings != null)
+            if (DynamicLineBalancingSettings != null)
             {
-                hash = hash * 59 + this.DynamicLineBalancingSettings.GetHashCode();
+                hash = hash * 59 + DynamicLineBalancingSettings.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

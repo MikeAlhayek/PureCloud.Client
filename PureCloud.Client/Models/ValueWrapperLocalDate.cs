@@ -53,7 +53,7 @@ public partial class ValueWrapperLocalDate : IEquatable<ValueWrapperLocalDate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValueWrapperLocalDate);
+        return Equals(obj as ValueWrapperLocalDate);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ValueWrapperLocalDate : IEquatable<ValueWrapperLocalDate>
 
         return true &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ValueWrapperLocalDate : IEquatable<ValueWrapperLocalDate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

@@ -74,7 +74,7 @@ public partial class TagQueryRequest : IEquatable<TagQueryRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TagQueryRequest);
+        return Equals(obj as TagQueryRequest);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class TagQueryRequest : IEquatable<TagQueryRequest>
 
         return true &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.Equals(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.Equals(other.Query)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class TagQueryRequest : IEquatable<TagQueryRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
             return hash;

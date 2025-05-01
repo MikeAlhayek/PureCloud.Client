@@ -52,7 +52,7 @@ public partial class AnalyticsAgentStateCountsResponse : IEquatable<AnalyticsAge
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsAgentStateCountsResponse);
+        return Equals(obj as AnalyticsAgentStateCountsResponse);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class AnalyticsAgentStateCountsResponse : IEquatable<AnalyticsAge
 
         return true &&
             (
-                this.SegmentCounts == other.SegmentCounts ||
-                this.SegmentCounts != null &&
-                this.SegmentCounts.SequenceEqual(other.SegmentCounts)
+                SegmentCounts == other.SegmentCounts ||
+                SegmentCounts != null &&
+                SegmentCounts.SequenceEqual(other.SegmentCounts)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class AnalyticsAgentStateCountsResponse : IEquatable<AnalyticsAge
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SegmentCounts != null)
+            if (SegmentCounts != null)
             {
-                hash = hash * 59 + this.SegmentCounts.GetHashCode();
+                hash = hash * 59 + SegmentCounts.GetHashCode();
             }
 
             return hash;

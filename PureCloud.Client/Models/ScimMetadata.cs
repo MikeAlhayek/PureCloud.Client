@@ -125,7 +125,7 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimMetadata);
+        return Equals(obj as ScimMetadata);
     }
 
     /// <summary>
@@ -143,24 +143,24 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
 
         return true &&
             (
-                this.ResourceType == other.ResourceType ||
-                this.ResourceType != null &&
-                this.ResourceType.Equals(other.ResourceType)
+                ResourceType == other.ResourceType ||
+                ResourceType != null &&
+                ResourceType.Equals(other.ResourceType)
             ) &&
             (
-                this.LastModified == other.LastModified ||
-                this.LastModified != null &&
-                this.LastModified.Equals(other.LastModified)
+                LastModified == other.LastModified ||
+                LastModified != null &&
+                LastModified.Equals(other.LastModified)
             ) &&
             (
-                this.Location == other.Location ||
-                this.Location != null &&
-                this.Location.Equals(other.Location)
+                Location == other.Location ||
+                Location != null &&
+                Location.Equals(other.Location)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -175,24 +175,24 @@ public partial class ScimMetadata : IEquatable<ScimMetadata>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ResourceType != null)
+            if (ResourceType != null)
             {
-                hash = hash * 59 + this.ResourceType.GetHashCode();
+                hash = hash * 59 + ResourceType.GetHashCode();
             }
 
-            if (this.LastModified != null)
+            if (LastModified != null)
             {
-                hash = hash * 59 + this.LastModified.GetHashCode();
+                hash = hash * 59 + LastModified.GetHashCode();
             }
 
-            if (this.Location != null)
+            if (Location != null)
             {
-                hash = hash * 59 + this.Location.GetHashCode();
+                hash = hash * 59 + Location.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

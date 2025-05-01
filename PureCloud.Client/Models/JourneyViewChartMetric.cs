@@ -121,7 +121,7 @@ public partial class JourneyViewChartMetric : IEquatable<JourneyViewChartMetric>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewChartMetric);
+        return Equals(obj as JourneyViewChartMetric);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class JourneyViewChartMetric : IEquatable<JourneyViewChartMetric>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ElementId == other.ElementId ||
-                this.ElementId != null &&
-                this.ElementId.Equals(other.ElementId)
+                ElementId == other.ElementId ||
+                ElementId != null &&
+                ElementId.Equals(other.ElementId)
             ) &&
             (
-                this.Aggregate == other.Aggregate ||
-                this.Aggregate != null &&
-                this.Aggregate.Equals(other.Aggregate)
+                Aggregate == other.Aggregate ||
+                Aggregate != null &&
+                Aggregate.Equals(other.Aggregate)
             ) &&
             (
-                this.DisplayLabel == other.DisplayLabel ||
-                this.DisplayLabel != null &&
-                this.DisplayLabel.Equals(other.DisplayLabel)
+                DisplayLabel == other.DisplayLabel ||
+                DisplayLabel != null &&
+                DisplayLabel.Equals(other.DisplayLabel)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class JourneyViewChartMetric : IEquatable<JourneyViewChartMetric>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ElementId != null)
+            if (ElementId != null)
             {
-                hash = hash * 59 + this.ElementId.GetHashCode();
+                hash = hash * 59 + ElementId.GetHashCode();
             }
 
-            if (this.Aggregate != null)
+            if (Aggregate != null)
             {
-                hash = hash * 59 + this.Aggregate.GetHashCode();
+                hash = hash * 59 + Aggregate.GetHashCode();
             }
 
-            if (this.DisplayLabel != null)
+            if (DisplayLabel != null)
             {
-                hash = hash * 59 + this.DisplayLabel.GetHashCode();
+                hash = hash * 59 + DisplayLabel.GetHashCode();
             }
 
             return hash;

@@ -109,7 +109,7 @@ public partial class PositionSettings : IEquatable<PositionSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PositionSettings);
+        return Equals(obj as PositionSettings);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class PositionSettings : IEquatable<PositionSettings>
 
         return true &&
             (
-                this.Alignment == other.Alignment ||
-                this.Alignment != null &&
-                this.Alignment.Equals(other.Alignment)
+                Alignment == other.Alignment ||
+                Alignment != null &&
+                Alignment.Equals(other.Alignment)
             ) &&
             (
-                this.SideSpace == other.SideSpace ||
-                this.SideSpace != null &&
-                this.SideSpace.Equals(other.SideSpace)
+                SideSpace == other.SideSpace ||
+                SideSpace != null &&
+                SideSpace.Equals(other.SideSpace)
             ) &&
             (
-                this.BottomSpace == other.BottomSpace ||
-                this.BottomSpace != null &&
-                this.BottomSpace.Equals(other.BottomSpace)
+                BottomSpace == other.BottomSpace ||
+                BottomSpace != null &&
+                BottomSpace.Equals(other.BottomSpace)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class PositionSettings : IEquatable<PositionSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Alignment != null)
+            if (Alignment != null)
             {
-                hash = hash * 59 + this.Alignment.GetHashCode();
+                hash = hash * 59 + Alignment.GetHashCode();
             }
 
-            if (this.SideSpace != null)
+            if (SideSpace != null)
             {
-                hash = hash * 59 + this.SideSpace.GetHashCode();
+                hash = hash * 59 + SideSpace.GetHashCode();
             }
 
-            if (this.BottomSpace != null)
+            if (BottomSpace != null)
             {
-                hash = hash * 59 + this.BottomSpace.GetHashCode();
+                hash = hash * 59 + BottomSpace.GetHashCode();
             }
 
             return hash;

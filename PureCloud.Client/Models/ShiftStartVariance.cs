@@ -127,7 +127,7 @@ public partial class ShiftStartVariance : IEquatable<ShiftStartVariance>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShiftStartVariance);
+        return Equals(obj as ShiftStartVariance);
     }
 
     /// <summary>
@@ -145,14 +145,14 @@ public partial class ShiftStartVariance : IEquatable<ShiftStartVariance>
 
         return true &&
             (
-                this.ApplicableDays == other.ApplicableDays ||
-                this.ApplicableDays != null &&
-                this.ApplicableDays.SequenceEqual(other.ApplicableDays)
+                ApplicableDays == other.ApplicableDays ||
+                ApplicableDays != null &&
+                ApplicableDays.SequenceEqual(other.ApplicableDays)
             ) &&
             (
-                this.MaxShiftStartVarianceMinutes == other.MaxShiftStartVarianceMinutes ||
-                this.MaxShiftStartVarianceMinutes != null &&
-                this.MaxShiftStartVarianceMinutes.Equals(other.MaxShiftStartVarianceMinutes)
+                MaxShiftStartVarianceMinutes == other.MaxShiftStartVarianceMinutes ||
+                MaxShiftStartVarianceMinutes != null &&
+                MaxShiftStartVarianceMinutes.Equals(other.MaxShiftStartVarianceMinutes)
             );
     }
 
@@ -167,14 +167,14 @@ public partial class ShiftStartVariance : IEquatable<ShiftStartVariance>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ApplicableDays != null)
+            if (ApplicableDays != null)
             {
-                hash = hash * 59 + this.ApplicableDays.GetHashCode();
+                hash = hash * 59 + ApplicableDays.GetHashCode();
             }
 
-            if (this.MaxShiftStartVarianceMinutes != null)
+            if (MaxShiftStartVarianceMinutes != null)
             {
-                hash = hash * 59 + this.MaxShiftStartVarianceMinutes.GetHashCode();
+                hash = hash * 59 + MaxShiftStartVarianceMinutes.GetHashCode();
             }
 
             return hash;

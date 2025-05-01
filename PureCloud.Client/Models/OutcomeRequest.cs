@@ -143,7 +143,7 @@ public partial class OutcomeRequest : IEquatable<OutcomeRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomeRequest);
+        return Equals(obj as OutcomeRequest);
     }
 
     /// <summary>
@@ -161,44 +161,44 @@ public partial class OutcomeRequest : IEquatable<OutcomeRequest>
 
         return true &&
             (
-                this.IsActive == other.IsActive ||
-                this.IsActive != null &&
-                this.IsActive.Equals(other.IsActive)
+                IsActive == other.IsActive ||
+                IsActive != null &&
+                IsActive.Equals(other.IsActive)
             ) &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.IsPositive == other.IsPositive ||
-                this.IsPositive != null &&
-                this.IsPositive.Equals(other.IsPositive)
+                IsPositive == other.IsPositive ||
+                IsPositive != null &&
+                IsPositive.Equals(other.IsPositive)
             ) &&
             (
-                this.Context == other.Context ||
-                this.Context != null &&
-                this.Context.Equals(other.Context)
+                Context == other.Context ||
+                Context != null &&
+                Context.Equals(other.Context)
             ) &&
             (
-                this.Journey == other.Journey ||
-                this.Journey != null &&
-                this.Journey.Equals(other.Journey)
+                Journey == other.Journey ||
+                Journey != null &&
+                Journey.Equals(other.Journey)
             ) &&
             (
-                this.AssociatedValueField == other.AssociatedValueField ||
-                this.AssociatedValueField != null &&
-                this.AssociatedValueField.Equals(other.AssociatedValueField)
+                AssociatedValueField == other.AssociatedValueField ||
+                AssociatedValueField != null &&
+                AssociatedValueField.Equals(other.AssociatedValueField)
             );
     }
 
@@ -213,44 +213,44 @@ public partial class OutcomeRequest : IEquatable<OutcomeRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IsActive != null)
+            if (IsActive != null)
             {
-                hash = hash * 59 + this.IsActive.GetHashCode();
+                hash = hash * 59 + IsActive.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.IsPositive != null)
+            if (IsPositive != null)
             {
-                hash = hash * 59 + this.IsPositive.GetHashCode();
+                hash = hash * 59 + IsPositive.GetHashCode();
             }
 
-            if (this.Context != null)
+            if (Context != null)
             {
-                hash = hash * 59 + this.Context.GetHashCode();
+                hash = hash * 59 + Context.GetHashCode();
             }
 
-            if (this.Journey != null)
+            if (Journey != null)
             {
-                hash = hash * 59 + this.Journey.GetHashCode();
+                hash = hash * 59 + Journey.GetHashCode();
             }
 
-            if (this.AssociatedValueField != null)
+            if (AssociatedValueField != null)
             {
-                hash = hash * 59 + this.AssociatedValueField.GetHashCode();
+                hash = hash * 59 + AssociatedValueField.GetHashCode();
             }
 
             return hash;

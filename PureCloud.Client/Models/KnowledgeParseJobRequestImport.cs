@@ -65,7 +65,7 @@ public partial class KnowledgeParseJobRequestImport : IEquatable<KnowledgeParseJ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeParseJobRequestImport);
+        return Equals(obj as KnowledgeParseJobRequestImport);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class KnowledgeParseJobRequestImport : IEquatable<KnowledgeParseJ
 
         return true &&
             (
-                this.Edits == other.Edits ||
-                this.Edits != null &&
-                this.Edits.SequenceEqual(other.Edits)
+                Edits == other.Edits ||
+                Edits != null &&
+                Edits.SequenceEqual(other.Edits)
             ) &&
             (
-                this.Excludes == other.Excludes ||
-                this.Excludes != null &&
-                this.Excludes.SequenceEqual(other.Excludes)
+                Excludes == other.Excludes ||
+                Excludes != null &&
+                Excludes.SequenceEqual(other.Excludes)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class KnowledgeParseJobRequestImport : IEquatable<KnowledgeParseJ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Edits != null)
+            if (Edits != null)
             {
-                hash = hash * 59 + this.Edits.GetHashCode();
+                hash = hash * 59 + Edits.GetHashCode();
             }
 
-            if (this.Excludes != null)
+            if (Excludes != null)
             {
-                hash = hash * 59 + this.Excludes.GetHashCode();
+                hash = hash * 59 + Excludes.GetHashCode();
             }
 
             return hash;

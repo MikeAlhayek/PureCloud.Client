@@ -201,7 +201,7 @@ public partial class PatchSurveyQuestion : IEquatable<PatchSurveyQuestion>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchSurveyQuestion);
+        return Equals(obj as PatchSurveyQuestion);
     }
 
     /// <summary>
@@ -219,29 +219,29 @@ public partial class PatchSurveyQuestion : IEquatable<PatchSurveyQuestion>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Label == other.Label ||
-                this.Label != null &&
-                this.Label.Equals(other.Label)
+                Label == other.Label ||
+                Label != null &&
+                Label.Equals(other.Label)
             ) &&
             (
-                this.CustomerProperty == other.CustomerProperty ||
-                this.CustomerProperty != null &&
-                this.CustomerProperty.Equals(other.CustomerProperty)
+                CustomerProperty == other.CustomerProperty ||
+                CustomerProperty != null &&
+                CustomerProperty.Equals(other.CustomerProperty)
             ) &&
             (
-                this.Choices == other.Choices ||
-                this.Choices != null &&
-                this.Choices.SequenceEqual(other.Choices)
+                Choices == other.Choices ||
+                Choices != null &&
+                Choices.SequenceEqual(other.Choices)
             ) &&
             (
-                this.IsMandatory == other.IsMandatory ||
-                this.IsMandatory != null &&
-                this.IsMandatory.Equals(other.IsMandatory)
+                IsMandatory == other.IsMandatory ||
+                IsMandatory != null &&
+                IsMandatory.Equals(other.IsMandatory)
             );
     }
 
@@ -256,29 +256,29 @@ public partial class PatchSurveyQuestion : IEquatable<PatchSurveyQuestion>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Label != null)
+            if (Label != null)
             {
-                hash = hash * 59 + this.Label.GetHashCode();
+                hash = hash * 59 + Label.GetHashCode();
             }
 
-            if (this.CustomerProperty != null)
+            if (CustomerProperty != null)
             {
-                hash = hash * 59 + this.CustomerProperty.GetHashCode();
+                hash = hash * 59 + CustomerProperty.GetHashCode();
             }
 
-            if (this.Choices != null)
+            if (Choices != null)
             {
-                hash = hash * 59 + this.Choices.GetHashCode();
+                hash = hash * 59 + Choices.GetHashCode();
             }
 
-            if (this.IsMandatory != null)
+            if (IsMandatory != null)
             {
-                hash = hash * 59 + this.IsMandatory.GetHashCode();
+                hash = hash * 59 + IsMandatory.GetHashCode();
             }
 
             return hash;

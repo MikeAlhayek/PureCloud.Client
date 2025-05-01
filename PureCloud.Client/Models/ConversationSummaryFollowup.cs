@@ -75,7 +75,7 @@ public partial class ConversationSummaryFollowup : IEquatable<ConversationSummar
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationSummaryFollowup);
+        return Equals(obj as ConversationSummaryFollowup);
     }
 
     /// <summary>
@@ -93,19 +93,19 @@ public partial class ConversationSummaryFollowup : IEquatable<ConversationSummar
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             );
     }
 
@@ -120,19 +120,19 @@ public partial class ConversationSummaryFollowup : IEquatable<ConversationSummar
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
             return hash;

@@ -203,12 +203,12 @@ public partial class StationsApi : IStationsApi
     /// <returns></returns>
     public StationsApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -222,17 +222,17 @@ public partial class StationsApi : IStationsApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -242,7 +242,7 @@ public partial class StationsApi : IStationsApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -268,7 +268,7 @@ public partial class StationsApi : IStationsApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -280,7 +280,7 @@ public partial class StationsApi : IStationsApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -325,7 +325,7 @@ public partial class StationsApi : IStationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -334,7 +334,7 @@ public partial class StationsApi : IStationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -347,7 +347,7 @@ public partial class StationsApi : IStationsApi
         // Path params
         if (stationId != null)
         {
-            localVarPathParams.Add("stationId", this.Configuration.ApiClient.ParameterToString(stationId));
+            localVarPathParams.Add("stationId", Configuration.ApiClient.ParameterToString(stationId));
         }
 
         // Query params
@@ -363,11 +363,11 @@ public partial class StationsApi : IStationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -441,7 +441,7 @@ public partial class StationsApi : IStationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -450,7 +450,7 @@ public partial class StationsApi : IStationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -463,7 +463,7 @@ public partial class StationsApi : IStationsApi
         // Path params
         if (stationId != null)
         {
-            localVarPathParams.Add("stationId", this.Configuration.ApiClient.ParameterToString(stationId));
+            localVarPathParams.Add("stationId", Configuration.ApiClient.ParameterToString(stationId));
         }
 
         // Query params
@@ -479,11 +479,11 @@ public partial class StationsApi : IStationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -558,7 +558,7 @@ public partial class StationsApi : IStationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -567,7 +567,7 @@ public partial class StationsApi : IStationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -580,7 +580,7 @@ public partial class StationsApi : IStationsApi
         // Path params
         if (stationId != null)
         {
-            localVarPathParams.Add("stationId", this.Configuration.ApiClient.ParameterToString(stationId));
+            localVarPathParams.Add("stationId", Configuration.ApiClient.ParameterToString(stationId));
         }
 
         // Query params
@@ -596,11 +596,11 @@ public partial class StationsApi : IStationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -626,7 +626,7 @@ public partial class StationsApi : IStationsApi
 
         return new ApiResponse<Station>(localVarStatusCode,
             localVarHeaders,
-            (Station)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Station)),
+            (Station)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Station)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -675,7 +675,7 @@ public partial class StationsApi : IStationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -684,7 +684,7 @@ public partial class StationsApi : IStationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -697,7 +697,7 @@ public partial class StationsApi : IStationsApi
         // Path params
         if (stationId != null)
         {
-            localVarPathParams.Add("stationId", this.Configuration.ApiClient.ParameterToString(stationId));
+            localVarPathParams.Add("stationId", Configuration.ApiClient.ParameterToString(stationId));
         }
 
         // Query params
@@ -713,11 +713,11 @@ public partial class StationsApi : IStationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -743,7 +743,7 @@ public partial class StationsApi : IStationsApi
 
         return new ApiResponse<Station>(localVarStatusCode,
             localVarHeaders,
-            (Station)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Station)),
+            (Station)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Station)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -801,7 +801,7 @@ public partial class StationsApi : IStationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -810,7 +810,7 @@ public partial class StationsApi : IStationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -825,42 +825,42 @@ public partial class StationsApi : IStationsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (userSelectable != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("userSelectable", this.Configuration.ApiClient.ParameterToString(userSelectable)));
+            localVarQueryParams.Add(new Tuple<string, string>("userSelectable", Configuration.ApiClient.ParameterToString(userSelectable)));
         }
 
         if (webRtcUserId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("webRtcUserId", this.Configuration.ApiClient.ParameterToString(webRtcUserId)));
+            localVarQueryParams.Add(new Tuple<string, string>("webRtcUserId", Configuration.ApiClient.ParameterToString(webRtcUserId)));
         }
 
         if (id != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(id)));
+            localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(id)));
         }
 
         if (lineAppearanceId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lineAppearanceId", this.Configuration.ApiClient.ParameterToString(lineAppearanceId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lineAppearanceId", Configuration.ApiClient.ParameterToString(lineAppearanceId)));
         }
 
         // Header params
@@ -874,11 +874,11 @@ public partial class StationsApi : IStationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -904,7 +904,7 @@ public partial class StationsApi : IStationsApi
 
         return new ApiResponse<StationEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (StationEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(StationEntityListing)),
+            (StationEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(StationEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -962,7 +962,7 @@ public partial class StationsApi : IStationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -971,7 +971,7 @@ public partial class StationsApi : IStationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -986,42 +986,42 @@ public partial class StationsApi : IStationsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (userSelectable != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("userSelectable", this.Configuration.ApiClient.ParameterToString(userSelectable)));
+            localVarQueryParams.Add(new Tuple<string, string>("userSelectable", Configuration.ApiClient.ParameterToString(userSelectable)));
         }
 
         if (webRtcUserId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("webRtcUserId", this.Configuration.ApiClient.ParameterToString(webRtcUserId)));
+            localVarQueryParams.Add(new Tuple<string, string>("webRtcUserId", Configuration.ApiClient.ParameterToString(webRtcUserId)));
         }
 
         if (id != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(id)));
+            localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(id)));
         }
 
         if (lineAppearanceId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lineAppearanceId", this.Configuration.ApiClient.ParameterToString(lineAppearanceId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lineAppearanceId", Configuration.ApiClient.ParameterToString(lineAppearanceId)));
         }
 
         // Header params
@@ -1035,11 +1035,11 @@ public partial class StationsApi : IStationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1065,7 +1065,7 @@ public partial class StationsApi : IStationsApi
 
         return new ApiResponse<StationEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (StationEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(StationEntityListing)),
+            (StationEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(StationEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

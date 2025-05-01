@@ -81,7 +81,7 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallableContactsDiagnostic);
+        return Equals(obj as CallableContactsDiagnostic);
     }
 
     /// <summary>
@@ -99,24 +99,24 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
 
         return true &&
             (
-                this.AttemptLimits == other.AttemptLimits ||
-                this.AttemptLimits != null &&
-                this.AttemptLimits.Equals(other.AttemptLimits)
+                AttemptLimits == other.AttemptLimits ||
+                AttemptLimits != null &&
+                AttemptLimits.Equals(other.AttemptLimits)
             ) &&
             (
-                this.DncLists == other.DncLists ||
-                this.DncLists != null &&
-                this.DncLists.SequenceEqual(other.DncLists)
+                DncLists == other.DncLists ||
+                DncLists != null &&
+                DncLists.SequenceEqual(other.DncLists)
             ) &&
             (
-                this.CallableTimeSet == other.CallableTimeSet ||
-                this.CallableTimeSet != null &&
-                this.CallableTimeSet.Equals(other.CallableTimeSet)
+                CallableTimeSet == other.CallableTimeSet ||
+                CallableTimeSet != null &&
+                CallableTimeSet.Equals(other.CallableTimeSet)
             ) &&
             (
-                this.RuleSets == other.RuleSets ||
-                this.RuleSets != null &&
-                this.RuleSets.SequenceEqual(other.RuleSets)
+                RuleSets == other.RuleSets ||
+                RuleSets != null &&
+                RuleSets.SequenceEqual(other.RuleSets)
             );
     }
 
@@ -131,24 +131,24 @@ public partial class CallableContactsDiagnostic : IEquatable<CallableContactsDia
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AttemptLimits != null)
+            if (AttemptLimits != null)
             {
-                hash = hash * 59 + this.AttemptLimits.GetHashCode();
+                hash = hash * 59 + AttemptLimits.GetHashCode();
             }
 
-            if (this.DncLists != null)
+            if (DncLists != null)
             {
-                hash = hash * 59 + this.DncLists.GetHashCode();
+                hash = hash * 59 + DncLists.GetHashCode();
             }
 
-            if (this.CallableTimeSet != null)
+            if (CallableTimeSet != null)
             {
-                hash = hash * 59 + this.CallableTimeSet.GetHashCode();
+                hash = hash * 59 + CallableTimeSet.GetHashCode();
             }
 
-            if (this.RuleSets != null)
+            if (RuleSets != null)
             {
-                hash = hash * 59 + this.RuleSets.GetHashCode();
+                hash = hash * 59 + RuleSets.GetHashCode();
             }
 
             return hash;

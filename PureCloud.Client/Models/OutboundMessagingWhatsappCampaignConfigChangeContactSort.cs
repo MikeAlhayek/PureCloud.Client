@@ -111,7 +111,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeContactSort : 
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingWhatsappCampaignConfigChangeContactSort);
+        return Equals(obj as OutboundMessagingWhatsappCampaignConfigChangeContactSort);
     }
 
     /// <summary>
@@ -129,24 +129,24 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeContactSort : 
 
         return true &&
             (
-                this.FieldName == other.FieldName ||
-                this.FieldName != null &&
-                this.FieldName.Equals(other.FieldName)
+                FieldName == other.FieldName ||
+                FieldName != null &&
+                FieldName.Equals(other.FieldName)
             ) &&
             (
-                this.Direction == other.Direction ||
-                this.Direction != null &&
-                this.Direction.Equals(other.Direction)
+                Direction == other.Direction ||
+                Direction != null &&
+                Direction.Equals(other.Direction)
             ) &&
             (
-                this.Numeric == other.Numeric ||
-                this.Numeric != null &&
-                this.Numeric.Equals(other.Numeric)
+                Numeric == other.Numeric ||
+                Numeric != null &&
+                Numeric.Equals(other.Numeric)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -161,24 +161,24 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeContactSort : 
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FieldName != null)
+            if (FieldName != null)
             {
-                hash = hash * 59 + this.FieldName.GetHashCode();
+                hash = hash * 59 + FieldName.GetHashCode();
             }
 
-            if (this.Direction != null)
+            if (Direction != null)
             {
-                hash = hash * 59 + this.Direction.GetHashCode();
+                hash = hash * 59 + Direction.GetHashCode();
             }
 
-            if (this.Numeric != null)
+            if (Numeric != null)
             {
-                hash = hash * 59 + this.Numeric.GetHashCode();
+                hash = hash * 59 + Numeric.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

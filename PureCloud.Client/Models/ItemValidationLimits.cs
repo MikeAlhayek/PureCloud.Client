@@ -71,7 +71,7 @@ public partial class ItemValidationLimits : IEquatable<ItemValidationLimits>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ItemValidationLimits);
+        return Equals(obj as ItemValidationLimits);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ItemValidationLimits : IEquatable<ItemValidationLimits>
 
         return true &&
             (
-                this.MinLength == other.MinLength ||
-                this.MinLength != null &&
-                this.MinLength.Equals(other.MinLength)
+                MinLength == other.MinLength ||
+                MinLength != null &&
+                MinLength.Equals(other.MinLength)
             ) &&
             (
-                this.MaxLength == other.MaxLength ||
-                this.MaxLength != null &&
-                this.MaxLength.Equals(other.MaxLength)
+                MaxLength == other.MaxLength ||
+                MaxLength != null &&
+                MaxLength.Equals(other.MaxLength)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ItemValidationLimits : IEquatable<ItemValidationLimits>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MinLength != null)
+            if (MinLength != null)
             {
-                hash = hash * 59 + this.MinLength.GetHashCode();
+                hash = hash * 59 + MinLength.GetHashCode();
             }
 
-            if (this.MaxLength != null)
+            if (MaxLength != null)
             {
-                hash = hash * 59 + this.MaxLength.GetHashCode();
+                hash = hash * 59 + MaxLength.GetHashCode();
             }
 
             return hash;

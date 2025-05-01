@@ -70,7 +70,7 @@ public partial class AgentWorkPlans : IEquatable<AgentWorkPlans>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentWorkPlans);
+        return Equals(obj as AgentWorkPlans);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class AgentWorkPlans : IEquatable<AgentWorkPlans>
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.WorkPlanLookupKeysPerWeek == other.WorkPlanLookupKeysPerWeek ||
-                this.WorkPlanLookupKeysPerWeek != null &&
-                this.WorkPlanLookupKeysPerWeek.SequenceEqual(other.WorkPlanLookupKeysPerWeek)
+                WorkPlanLookupKeysPerWeek == other.WorkPlanLookupKeysPerWeek ||
+                WorkPlanLookupKeysPerWeek != null &&
+                WorkPlanLookupKeysPerWeek.SequenceEqual(other.WorkPlanLookupKeysPerWeek)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class AgentWorkPlans : IEquatable<AgentWorkPlans>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.WorkPlanLookupKeysPerWeek != null)
+            if (WorkPlanLookupKeysPerWeek != null)
             {
-                hash = hash * 59 + this.WorkPlanLookupKeysPerWeek.GetHashCode();
+                hash = hash * 59 + WorkPlanLookupKeysPerWeek.GetHashCode();
             }
 
             return hash;

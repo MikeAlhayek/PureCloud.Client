@@ -212,7 +212,7 @@ public partial class Room : IEquatable<Room>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Room);
+        return Equals(obj as Room);
     }
 
     /// <summary>
@@ -230,59 +230,59 @@ public partial class Room : IEquatable<Room>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.RoomType == other.RoomType ||
-                this.RoomType != null &&
-                this.RoomType.Equals(other.RoomType)
+                RoomType == other.RoomType ||
+                RoomType != null &&
+                RoomType.Equals(other.RoomType)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Subject == other.Subject ||
-                this.Subject != null &&
-                this.Subject.Equals(other.Subject)
+                Subject == other.Subject ||
+                Subject != null &&
+                Subject.Equals(other.Subject)
             ) &&
             (
-                this.ParticipantLimit == other.ParticipantLimit ||
-                this.ParticipantLimit != null &&
-                this.ParticipantLimit.Equals(other.ParticipantLimit)
+                ParticipantLimit == other.ParticipantLimit ||
+                ParticipantLimit != null &&
+                ParticipantLimit.Equals(other.ParticipantLimit)
             ) &&
             (
-                this.Owners == other.Owners ||
-                this.Owners != null &&
-                this.Owners.SequenceEqual(other.Owners)
+                Owners == other.Owners ||
+                Owners != null &&
+                Owners.SequenceEqual(other.Owners)
             ) &&
             (
-                this.PinnedMessages == other.PinnedMessages ||
-                this.PinnedMessages != null &&
-                this.PinnedMessages.SequenceEqual(other.PinnedMessages)
+                PinnedMessages == other.PinnedMessages ||
+                PinnedMessages != null &&
+                PinnedMessages.SequenceEqual(other.PinnedMessages)
             ) &&
             (
-                this.Jid == other.Jid ||
-                this.Jid != null &&
-                this.Jid.Equals(other.Jid)
+                Jid == other.Jid ||
+                Jid != null &&
+                Jid.Equals(other.Jid)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -297,59 +297,59 @@ public partial class Room : IEquatable<Room>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.RoomType != null)
+            if (RoomType != null)
             {
-                hash = hash * 59 + this.RoomType.GetHashCode();
+                hash = hash * 59 + RoomType.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Subject != null)
+            if (Subject != null)
             {
-                hash = hash * 59 + this.Subject.GetHashCode();
+                hash = hash * 59 + Subject.GetHashCode();
             }
 
-            if (this.ParticipantLimit != null)
+            if (ParticipantLimit != null)
             {
-                hash = hash * 59 + this.ParticipantLimit.GetHashCode();
+                hash = hash * 59 + ParticipantLimit.GetHashCode();
             }
 
-            if (this.Owners != null)
+            if (Owners != null)
             {
-                hash = hash * 59 + this.Owners.GetHashCode();
+                hash = hash * 59 + Owners.GetHashCode();
             }
 
-            if (this.PinnedMessages != null)
+            if (PinnedMessages != null)
             {
-                hash = hash * 59 + this.PinnedMessages.GetHashCode();
+                hash = hash * 59 + PinnedMessages.GetHashCode();
             }
 
-            if (this.Jid != null)
+            if (Jid != null)
             {
-                hash = hash * 59 + this.Jid.GetHashCode();
+                hash = hash * 59 + Jid.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -163,7 +163,7 @@ public partial class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate);
+        return Equals(obj as EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate);
     }
 
     /// <summary>
@@ -181,29 +181,29 @@ public partial class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate : IEquatabl
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.DownloadStartTime == other.DownloadStartTime ||
-                this.DownloadStartTime != null &&
-                this.DownloadStartTime.Equals(other.DownloadStartTime)
+                DownloadStartTime == other.DownloadStartTime ||
+                DownloadStartTime != null &&
+                DownloadStartTime.Equals(other.DownloadStartTime)
             ) &&
             (
-                this.ExecuteStartTime == other.ExecuteStartTime ||
-                this.ExecuteStartTime != null &&
-                this.ExecuteStartTime.Equals(other.ExecuteStartTime)
+                ExecuteStartTime == other.ExecuteStartTime ||
+                ExecuteStartTime != null &&
+                ExecuteStartTime.Equals(other.ExecuteStartTime)
             ) &&
             (
-                this.ExecuteStopTime == other.ExecuteStopTime ||
-                this.ExecuteStopTime != null &&
-                this.ExecuteStopTime.Equals(other.ExecuteStopTime)
+                ExecuteStopTime == other.ExecuteStopTime ||
+                ExecuteStopTime != null &&
+                ExecuteStopTime.Equals(other.ExecuteStopTime)
             );
     }
 
@@ -218,29 +218,29 @@ public partial class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.DownloadStartTime != null)
+            if (DownloadStartTime != null)
             {
-                hash = hash * 59 + this.DownloadStartTime.GetHashCode();
+                hash = hash * 59 + DownloadStartTime.GetHashCode();
             }
 
-            if (this.ExecuteStartTime != null)
+            if (ExecuteStartTime != null)
             {
-                hash = hash * 59 + this.ExecuteStartTime.GetHashCode();
+                hash = hash * 59 + ExecuteStartTime.GetHashCode();
             }
 
-            if (this.ExecuteStopTime != null)
+            if (ExecuteStopTime != null)
             {
-                hash = hash * 59 + this.ExecuteStopTime.GetHashCode();
+                hash = hash * 59 + ExecuteStopTime.GetHashCode();
             }
 
             return hash;

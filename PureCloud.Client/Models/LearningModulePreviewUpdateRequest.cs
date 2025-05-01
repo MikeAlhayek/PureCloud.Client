@@ -151,7 +151,7 @@ public partial class LearningModulePreviewUpdateRequest : IEquatable<LearningMod
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModulePreviewUpdateRequest);
+        return Equals(obj as LearningModulePreviewUpdateRequest);
     }
 
     /// <summary>
@@ -169,29 +169,29 @@ public partial class LearningModulePreviewUpdateRequest : IEquatable<LearningMod
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.CurrentStep == other.CurrentStep ||
-                this.CurrentStep != null &&
-                this.CurrentStep.Equals(other.CurrentStep)
+                CurrentStep == other.CurrentStep ||
+                CurrentStep != null &&
+                CurrentStep.Equals(other.CurrentStep)
             ) &&
             (
-                this.Steps == other.Steps ||
-                this.Steps != null &&
-                this.Steps.SequenceEqual(other.Steps)
+                Steps == other.Steps ||
+                Steps != null &&
+                Steps.SequenceEqual(other.Steps)
             ) &&
             (
-                this.Assessment == other.Assessment ||
-                this.Assessment != null &&
-                this.Assessment.Equals(other.Assessment)
+                Assessment == other.Assessment ||
+                Assessment != null &&
+                Assessment.Equals(other.Assessment)
             ) &&
             (
-                this.AssessmentForm == other.AssessmentForm ||
-                this.AssessmentForm != null &&
-                this.AssessmentForm.Equals(other.AssessmentForm)
+                AssessmentForm == other.AssessmentForm ||
+                AssessmentForm != null &&
+                AssessmentForm.Equals(other.AssessmentForm)
             );
     }
 
@@ -206,29 +206,29 @@ public partial class LearningModulePreviewUpdateRequest : IEquatable<LearningMod
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.CurrentStep != null)
+            if (CurrentStep != null)
             {
-                hash = hash * 59 + this.CurrentStep.GetHashCode();
+                hash = hash * 59 + CurrentStep.GetHashCode();
             }
 
-            if (this.Steps != null)
+            if (Steps != null)
             {
-                hash = hash * 59 + this.Steps.GetHashCode();
+                hash = hash * 59 + Steps.GetHashCode();
             }
 
-            if (this.Assessment != null)
+            if (Assessment != null)
             {
-                hash = hash * 59 + this.Assessment.GetHashCode();
+                hash = hash * 59 + Assessment.GetHashCode();
             }
 
-            if (this.AssessmentForm != null)
+            if (AssessmentForm != null)
             {
-                hash = hash * 59 + this.AssessmentForm.GetHashCode();
+                hash = hash * 59 + AssessmentForm.GetHashCode();
             }
 
             return hash;

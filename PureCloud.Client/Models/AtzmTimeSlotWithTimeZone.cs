@@ -76,7 +76,7 @@ public partial class AtzmTimeSlotWithTimeZone : IEquatable<AtzmTimeSlotWithTimeZ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AtzmTimeSlotWithTimeZone);
+        return Equals(obj as AtzmTimeSlotWithTimeZone);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class AtzmTimeSlotWithTimeZone : IEquatable<AtzmTimeSlotWithTimeZ
 
         return true &&
             (
-                this.EarliestCallableTime == other.EarliestCallableTime ||
-                this.EarliestCallableTime != null &&
-                this.EarliestCallableTime.Equals(other.EarliestCallableTime)
+                EarliestCallableTime == other.EarliestCallableTime ||
+                EarliestCallableTime != null &&
+                EarliestCallableTime.Equals(other.EarliestCallableTime)
             ) &&
             (
-                this.LatestCallableTime == other.LatestCallableTime ||
-                this.LatestCallableTime != null &&
-                this.LatestCallableTime.Equals(other.LatestCallableTime)
+                LatestCallableTime == other.LatestCallableTime ||
+                LatestCallableTime != null &&
+                LatestCallableTime.Equals(other.LatestCallableTime)
             ) &&
             (
-                this.TimeZoneId == other.TimeZoneId ||
-                this.TimeZoneId != null &&
-                this.TimeZoneId.Equals(other.TimeZoneId)
+                TimeZoneId == other.TimeZoneId ||
+                TimeZoneId != null &&
+                TimeZoneId.Equals(other.TimeZoneId)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class AtzmTimeSlotWithTimeZone : IEquatable<AtzmTimeSlotWithTimeZ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EarliestCallableTime != null)
+            if (EarliestCallableTime != null)
             {
-                hash = hash * 59 + this.EarliestCallableTime.GetHashCode();
+                hash = hash * 59 + EarliestCallableTime.GetHashCode();
             }
 
-            if (this.LatestCallableTime != null)
+            if (LatestCallableTime != null)
             {
-                hash = hash * 59 + this.LatestCallableTime.GetHashCode();
+                hash = hash * 59 + LatestCallableTime.GetHashCode();
             }
 
-            if (this.TimeZoneId != null)
+            if (TimeZoneId != null)
             {
-                hash = hash * 59 + this.TimeZoneId.GetHashCode();
+                hash = hash * 59 + TimeZoneId.GetHashCode();
             }
 
             return hash;

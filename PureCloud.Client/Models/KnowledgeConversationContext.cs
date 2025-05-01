@@ -163,7 +163,7 @@ public partial class KnowledgeConversationContext : IEquatable<KnowledgeConversa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeConversationContext);
+        return Equals(obj as KnowledgeConversationContext);
     }
 
     /// <summary>
@@ -181,24 +181,24 @@ public partial class KnowledgeConversationContext : IEquatable<KnowledgeConversa
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.ExternalContactId == other.ExternalContactId ||
-                this.ExternalContactId != null &&
-                this.ExternalContactId.Equals(other.ExternalContactId)
+                ExternalContactId == other.ExternalContactId ||
+                ExternalContactId != null &&
+                ExternalContactId.Equals(other.ExternalContactId)
             );
     }
 
@@ -213,24 +213,24 @@ public partial class KnowledgeConversationContext : IEquatable<KnowledgeConversa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.ExternalContactId != null)
+            if (ExternalContactId != null)
             {
-                hash = hash * 59 + this.ExternalContactId.GetHashCode();
+                hash = hash * 59 + ExternalContactId.GetHashCode();
             }
 
             return hash;

@@ -145,7 +145,7 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationQuestionScore);
+        return Equals(obj as EvaluationQuestionScore);
     }
 
     /// <summary>
@@ -163,49 +163,49 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
 
         return true &&
             (
-                this.QuestionId == other.QuestionId ||
-                this.QuestionId != null &&
-                this.QuestionId.Equals(other.QuestionId)
+                QuestionId == other.QuestionId ||
+                QuestionId != null &&
+                QuestionId.Equals(other.QuestionId)
             ) &&
             (
-                this.AnswerId == other.AnswerId ||
-                this.AnswerId != null &&
-                this.AnswerId.Equals(other.AnswerId)
+                AnswerId == other.AnswerId ||
+                AnswerId != null &&
+                AnswerId.Equals(other.AnswerId)
             ) &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             ) &&
             (
-                this.MarkedNA == other.MarkedNA ||
-                this.MarkedNA != null &&
-                this.MarkedNA.Equals(other.MarkedNA)
+                MarkedNA == other.MarkedNA ||
+                MarkedNA != null &&
+                MarkedNA.Equals(other.MarkedNA)
             ) &&
             (
-                this.SystemMarkedNA == other.SystemMarkedNA ||
-                this.SystemMarkedNA != null &&
-                this.SystemMarkedNA.Equals(other.SystemMarkedNA)
+                SystemMarkedNA == other.SystemMarkedNA ||
+                SystemMarkedNA != null &&
+                SystemMarkedNA.Equals(other.SystemMarkedNA)
             ) &&
             (
-                this.AssistedAnswerId == other.AssistedAnswerId ||
-                this.AssistedAnswerId != null &&
-                this.AssistedAnswerId.Equals(other.AssistedAnswerId)
+                AssistedAnswerId == other.AssistedAnswerId ||
+                AssistedAnswerId != null &&
+                AssistedAnswerId.Equals(other.AssistedAnswerId)
             ) &&
             (
-                this.FailedKillQuestion == other.FailedKillQuestion ||
-                this.FailedKillQuestion != null &&
-                this.FailedKillQuestion.Equals(other.FailedKillQuestion)
+                FailedKillQuestion == other.FailedKillQuestion ||
+                FailedKillQuestion != null &&
+                FailedKillQuestion.Equals(other.FailedKillQuestion)
             ) &&
             (
-                this.Comments == other.Comments ||
-                this.Comments != null &&
-                this.Comments.Equals(other.Comments)
+                Comments == other.Comments ||
+                Comments != null &&
+                Comments.Equals(other.Comments)
             ) &&
             (
-                this.AiAnswer == other.AiAnswer ||
-                this.AiAnswer != null &&
-                this.AiAnswer.Equals(other.AiAnswer)
+                AiAnswer == other.AiAnswer ||
+                AiAnswer != null &&
+                AiAnswer.Equals(other.AiAnswer)
             );
     }
 
@@ -220,49 +220,49 @@ public partial class EvaluationQuestionScore : IEquatable<EvaluationQuestionScor
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QuestionId != null)
+            if (QuestionId != null)
             {
-                hash = hash * 59 + this.QuestionId.GetHashCode();
+                hash = hash * 59 + QuestionId.GetHashCode();
             }
 
-            if (this.AnswerId != null)
+            if (AnswerId != null)
             {
-                hash = hash * 59 + this.AnswerId.GetHashCode();
+                hash = hash * 59 + AnswerId.GetHashCode();
             }
 
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
-            if (this.MarkedNA != null)
+            if (MarkedNA != null)
             {
-                hash = hash * 59 + this.MarkedNA.GetHashCode();
+                hash = hash * 59 + MarkedNA.GetHashCode();
             }
 
-            if (this.SystemMarkedNA != null)
+            if (SystemMarkedNA != null)
             {
-                hash = hash * 59 + this.SystemMarkedNA.GetHashCode();
+                hash = hash * 59 + SystemMarkedNA.GetHashCode();
             }
 
-            if (this.AssistedAnswerId != null)
+            if (AssistedAnswerId != null)
             {
-                hash = hash * 59 + this.AssistedAnswerId.GetHashCode();
+                hash = hash * 59 + AssistedAnswerId.GetHashCode();
             }
 
-            if (this.FailedKillQuestion != null)
+            if (FailedKillQuestion != null)
             {
-                hash = hash * 59 + this.FailedKillQuestion.GetHashCode();
+                hash = hash * 59 + FailedKillQuestion.GetHashCode();
             }
 
-            if (this.Comments != null)
+            if (Comments != null)
             {
-                hash = hash * 59 + this.Comments.GetHashCode();
+                hash = hash * 59 + Comments.GetHashCode();
             }
 
-            if (this.AiAnswer != null)
+            if (AiAnswer != null)
             {
-                hash = hash * 59 + this.AiAnswer.GetHashCode();
+                hash = hash * 59 + AiAnswer.GetHashCode();
             }
 
             return hash;

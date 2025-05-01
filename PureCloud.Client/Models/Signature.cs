@@ -121,7 +121,7 @@ public partial class Signature : IEquatable<Signature>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Signature);
+        return Equals(obj as Signature);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class Signature : IEquatable<Signature>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.CannedResponseId == other.CannedResponseId ||
-                this.CannedResponseId != null &&
-                this.CannedResponseId.Equals(other.CannedResponseId)
+                CannedResponseId == other.CannedResponseId ||
+                CannedResponseId != null &&
+                CannedResponseId.Equals(other.CannedResponseId)
             ) &&
             (
-                this.AlwaysIncluded == other.AlwaysIncluded ||
-                this.AlwaysIncluded != null &&
-                this.AlwaysIncluded.Equals(other.AlwaysIncluded)
+                AlwaysIncluded == other.AlwaysIncluded ||
+                AlwaysIncluded != null &&
+                AlwaysIncluded.Equals(other.AlwaysIncluded)
             ) &&
             (
-                this.InclusionType == other.InclusionType ||
-                this.InclusionType != null &&
-                this.InclusionType.Equals(other.InclusionType)
+                InclusionType == other.InclusionType ||
+                InclusionType != null &&
+                InclusionType.Equals(other.InclusionType)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class Signature : IEquatable<Signature>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.CannedResponseId != null)
+            if (CannedResponseId != null)
             {
-                hash = hash * 59 + this.CannedResponseId.GetHashCode();
+                hash = hash * 59 + CannedResponseId.GetHashCode();
             }
 
-            if (this.AlwaysIncluded != null)
+            if (AlwaysIncluded != null)
             {
-                hash = hash * 59 + this.AlwaysIncluded.GetHashCode();
+                hash = hash * 59 + AlwaysIncluded.GetHashCode();
             }
 
-            if (this.InclusionType != null)
+            if (InclusionType != null)
             {
-                hash = hash * 59 + this.InclusionType.GetHashCode();
+                hash = hash * 59 + InclusionType.GetHashCode();
             }
 
             return hash;

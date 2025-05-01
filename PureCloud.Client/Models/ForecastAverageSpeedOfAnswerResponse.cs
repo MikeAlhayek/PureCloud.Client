@@ -53,7 +53,7 @@ public partial class ForecastAverageSpeedOfAnswerResponse : IEquatable<ForecastA
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ForecastAverageSpeedOfAnswerResponse);
+        return Equals(obj as ForecastAverageSpeedOfAnswerResponse);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ForecastAverageSpeedOfAnswerResponse : IEquatable<ForecastA
 
         return true &&
             (
-                this.Seconds == other.Seconds ||
-                this.Seconds != null &&
-                this.Seconds.Equals(other.Seconds)
+                Seconds == other.Seconds ||
+                Seconds != null &&
+                Seconds.Equals(other.Seconds)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ForecastAverageSpeedOfAnswerResponse : IEquatable<ForecastA
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Seconds != null)
+            if (Seconds != null)
             {
-                hash = hash * 59 + this.Seconds.GetHashCode();
+                hash = hash * 59 + Seconds.GetHashCode();
             }
 
             return hash;

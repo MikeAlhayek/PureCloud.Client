@@ -71,7 +71,7 @@ public partial class FlowHealthIntentVersionInfo : IEquatable<FlowHealthIntentVe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowHealthIntentVersionInfo);
+        return Equals(obj as FlowHealthIntentVersionInfo);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class FlowHealthIntentVersionInfo : IEquatable<FlowHealthIntentVe
 
         return true &&
             (
-                this.NluVersion == other.NluVersion ||
-                this.NluVersion != null &&
-                this.NluVersion.Equals(other.NluVersion)
+                NluVersion == other.NluVersion ||
+                NluVersion != null &&
+                NluVersion.Equals(other.NluVersion)
             ) &&
             (
-                this.FlowVersion == other.FlowVersion ||
-                this.FlowVersion != null &&
-                this.FlowVersion.Equals(other.FlowVersion)
+                FlowVersion == other.FlowVersion ||
+                FlowVersion != null &&
+                FlowVersion.Equals(other.FlowVersion)
             ) &&
             (
-                this.NluDomain == other.NluDomain ||
-                this.NluDomain != null &&
-                this.NluDomain.Equals(other.NluDomain)
+                NluDomain == other.NluDomain ||
+                NluDomain != null &&
+                NluDomain.Equals(other.NluDomain)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class FlowHealthIntentVersionInfo : IEquatable<FlowHealthIntentVe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.NluVersion != null)
+            if (NluVersion != null)
             {
-                hash = hash * 59 + this.NluVersion.GetHashCode();
+                hash = hash * 59 + NluVersion.GetHashCode();
             }
 
-            if (this.FlowVersion != null)
+            if (FlowVersion != null)
             {
-                hash = hash * 59 + this.FlowVersion.GetHashCode();
+                hash = hash * 59 + FlowVersion.GetHashCode();
             }
 
-            if (this.NluDomain != null)
+            if (NluDomain != null)
             {
-                hash = hash * 59 + this.NluDomain.GetHashCode();
+                hash = hash * 59 + NluDomain.GetHashCode();
             }
 
             return hash;

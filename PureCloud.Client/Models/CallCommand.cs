@@ -70,7 +70,7 @@ public partial class CallCommand : IEquatable<CallCommand>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallCommand);
+        return Equals(obj as CallCommand);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class CallCommand : IEquatable<CallCommand>
 
         return true &&
             (
-                this.CallNumber == other.CallNumber ||
-                this.CallNumber != null &&
-                this.CallNumber.Equals(other.CallNumber)
+                CallNumber == other.CallNumber ||
+                CallNumber != null &&
+                CallNumber.Equals(other.CallNumber)
             ) &&
             (
-                this.PhoneColumn == other.PhoneColumn ||
-                this.PhoneColumn != null &&
-                this.PhoneColumn.Equals(other.PhoneColumn)
+                PhoneColumn == other.PhoneColumn ||
+                PhoneColumn != null &&
+                PhoneColumn.Equals(other.PhoneColumn)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class CallCommand : IEquatable<CallCommand>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CallNumber != null)
+            if (CallNumber != null)
             {
-                hash = hash * 59 + this.CallNumber.GetHashCode();
+                hash = hash * 59 + CallNumber.GetHashCode();
             }
 
-            if (this.PhoneColumn != null)
+            if (PhoneColumn != null)
             {
-                hash = hash * 59 + this.PhoneColumn.GetHashCode();
+                hash = hash * 59 + PhoneColumn.GetHashCode();
             }
 
             return hash;

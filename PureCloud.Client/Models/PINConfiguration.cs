@@ -63,7 +63,7 @@ public partial class PINConfiguration : IEquatable<PINConfiguration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PINConfiguration);
+        return Equals(obj as PINConfiguration);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class PINConfiguration : IEquatable<PINConfiguration>
 
         return true &&
             (
-                this.MinimumLength == other.MinimumLength ||
-                this.MinimumLength != null &&
-                this.MinimumLength.Equals(other.MinimumLength)
+                MinimumLength == other.MinimumLength ||
+                MinimumLength != null &&
+                MinimumLength.Equals(other.MinimumLength)
             ) &&
             (
-                this.MaximumLength == other.MaximumLength ||
-                this.MaximumLength != null &&
-                this.MaximumLength.Equals(other.MaximumLength)
+                MaximumLength == other.MaximumLength ||
+                MaximumLength != null &&
+                MaximumLength.Equals(other.MaximumLength)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class PINConfiguration : IEquatable<PINConfiguration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MinimumLength != null)
+            if (MinimumLength != null)
             {
-                hash = hash * 59 + this.MinimumLength.GetHashCode();
+                hash = hash * 59 + MinimumLength.GetHashCode();
             }
 
-            if (this.MaximumLength != null)
+            if (MaximumLength != null)
             {
-                hash = hash * 59 + this.MaximumLength.GetHashCode();
+                hash = hash * 59 + MaximumLength.GetHashCode();
             }
 
             return hash;

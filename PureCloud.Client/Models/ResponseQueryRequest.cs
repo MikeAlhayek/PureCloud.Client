@@ -89,7 +89,7 @@ public partial class ResponseQueryRequest : IEquatable<ResponseQueryRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ResponseQueryRequest);
+        return Equals(obj as ResponseQueryRequest);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ResponseQueryRequest : IEquatable<ResponseQueryRequest>
 
         return true &&
             (
-                this.QueryPhrase == other.QueryPhrase ||
-                this.QueryPhrase != null &&
-                this.QueryPhrase.Equals(other.QueryPhrase)
+                QueryPhrase == other.QueryPhrase ||
+                QueryPhrase != null &&
+                QueryPhrase.Equals(other.QueryPhrase)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.Filters == other.Filters ||
-                this.Filters != null &&
-                this.Filters.SequenceEqual(other.Filters)
+                Filters == other.Filters ||
+                Filters != null &&
+                Filters.SequenceEqual(other.Filters)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ResponseQueryRequest : IEquatable<ResponseQueryRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueryPhrase != null)
+            if (QueryPhrase != null)
             {
-                hash = hash * 59 + this.QueryPhrase.GetHashCode();
+                hash = hash * 59 + QueryPhrase.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.Filters != null)
+            if (Filters != null)
             {
-                hash = hash * 59 + this.Filters.GetHashCode();
+                hash = hash * 59 + Filters.GetHashCode();
             }
 
             return hash;

@@ -61,7 +61,7 @@ public partial class MetadataDocumentation : IEquatable<MetadataDocumentation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MetadataDocumentation);
+        return Equals(obj as MetadataDocumentation);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class MetadataDocumentation : IEquatable<MetadataDocumentation>
 
         return true &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Location == other.Location ||
-                this.Location != null &&
-                this.Location.Equals(other.Location)
+                Location == other.Location ||
+                Location != null &&
+                Location.Equals(other.Location)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class MetadataDocumentation : IEquatable<MetadataDocumentation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Location != null)
+            if (Location != null)
             {
-                hash = hash * 59 + this.Location.GetHashCode();
+                hash = hash * 59 + Location.GetHashCode();
             }
 
             return hash;

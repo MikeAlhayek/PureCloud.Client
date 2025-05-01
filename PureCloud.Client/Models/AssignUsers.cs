@@ -71,7 +71,7 @@ public partial class AssignUsers : IEquatable<AssignUsers>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AssignUsers);
+        return Equals(obj as AssignUsers);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class AssignUsers : IEquatable<AssignUsers>
 
         return true &&
             (
-                this.MembersToAssign == other.MembersToAssign ||
-                this.MembersToAssign != null &&
-                this.MembersToAssign.SequenceEqual(other.MembersToAssign)
+                MembersToAssign == other.MembersToAssign ||
+                MembersToAssign != null &&
+                MembersToAssign.SequenceEqual(other.MembersToAssign)
             ) &&
             (
-                this.MembersToRemove == other.MembersToRemove ||
-                this.MembersToRemove != null &&
-                this.MembersToRemove.SequenceEqual(other.MembersToRemove)
+                MembersToRemove == other.MembersToRemove ||
+                MembersToRemove != null &&
+                MembersToRemove.SequenceEqual(other.MembersToRemove)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class AssignUsers : IEquatable<AssignUsers>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MembersToAssign != null)
+            if (MembersToAssign != null)
             {
-                hash = hash * 59 + this.MembersToAssign.GetHashCode();
+                hash = hash * 59 + MembersToAssign.GetHashCode();
             }
 
-            if (this.MembersToRemove != null)
+            if (MembersToRemove != null)
             {
-                hash = hash * 59 + this.MembersToRemove.GetHashCode();
+                hash = hash * 59 + MembersToRemove.GetHashCode();
             }
 
             return hash;

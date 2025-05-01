@@ -101,7 +101,7 @@ public partial class RoutingConversationAttributesResponse : IEquatable<RoutingC
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoutingConversationAttributesResponse);
+        return Equals(obj as RoutingConversationAttributesResponse);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class RoutingConversationAttributesResponse : IEquatable<RoutingC
 
         return true &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.Skills == other.Skills ||
-                this.Skills != null &&
-                this.Skills.SequenceEqual(other.Skills)
+                Skills == other.Skills ||
+                Skills != null &&
+                Skills.SequenceEqual(other.Skills)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Label == other.Label ||
-                this.Label != null &&
-                this.Label.Equals(other.Label)
+                Label == other.Label ||
+                Label != null &&
+                Label.Equals(other.Label)
             ) &&
             (
-                this.ScoredAgents == other.ScoredAgents ||
-                this.ScoredAgents != null &&
-                this.ScoredAgents.SequenceEqual(other.ScoredAgents)
+                ScoredAgents == other.ScoredAgents ||
+                ScoredAgents != null &&
+                ScoredAgents.SequenceEqual(other.ScoredAgents)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class RoutingConversationAttributesResponse : IEquatable<RoutingC
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.Skills != null)
+            if (Skills != null)
             {
-                hash = hash * 59 + this.Skills.GetHashCode();
+                hash = hash * 59 + Skills.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Label != null)
+            if (Label != null)
             {
-                hash = hash * 59 + this.Label.GetHashCode();
+                hash = hash * 59 + Label.GetHashCode();
             }
 
-            if (this.ScoredAgents != null)
+            if (ScoredAgents != null)
             {
-                hash = hash * 59 + this.ScoredAgents.GetHashCode();
+                hash = hash * 59 + ScoredAgents.GetHashCode();
             }
 
             return hash;

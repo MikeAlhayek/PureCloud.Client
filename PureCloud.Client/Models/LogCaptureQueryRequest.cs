@@ -109,7 +109,7 @@ public partial class LogCaptureQueryRequest : IEquatable<LogCaptureQueryRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LogCaptureQueryRequest);
+        return Equals(obj as LogCaptureQueryRequest);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class LogCaptureQueryRequest : IEquatable<LogCaptureQueryRequest>
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.SortOrder == other.SortOrder ||
-                this.SortOrder != null &&
-                this.SortOrder.Equals(other.SortOrder)
+                SortOrder == other.SortOrder ||
+                SortOrder != null &&
+                SortOrder.Equals(other.SortOrder)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class LogCaptureQueryRequest : IEquatable<LogCaptureQueryRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.SortOrder != null)
+            if (SortOrder != null)
             {
-                hash = hash * 59 + this.SortOrder.GetHashCode();
+                hash = hash * 59 + SortOrder.GetHashCode();
             }
 
             return hash;

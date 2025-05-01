@@ -53,7 +53,7 @@ public partial class Digits : IEquatable<Digits>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Digits);
+        return Equals(obj as Digits);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class Digits : IEquatable<Digits>
 
         return true &&
             (
-                this._Digits == other._Digits ||
-                this._Digits != null &&
-                this._Digits.Equals(other._Digits)
+                _Digits == other._Digits ||
+                _Digits != null &&
+                _Digits.Equals(other._Digits)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class Digits : IEquatable<Digits>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this._Digits != null)
+            if (_Digits != null)
             {
-                hash = hash * 59 + this._Digits.GetHashCode();
+                hash = hash * 59 + _Digits.GetHashCode();
             }
 
             return hash;

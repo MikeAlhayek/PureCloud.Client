@@ -70,7 +70,7 @@ public partial class AvailableTimeOffRequest : IEquatable<AvailableTimeOffReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AvailableTimeOffRequest);
+        return Equals(obj as AvailableTimeOffRequest);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class AvailableTimeOffRequest : IEquatable<AvailableTimeOffReques
 
         return true &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.DateRanges == other.DateRanges ||
-                this.DateRanges != null &&
-                this.DateRanges.SequenceEqual(other.DateRanges)
+                DateRanges == other.DateRanges ||
+                DateRanges != null &&
+                DateRanges.SequenceEqual(other.DateRanges)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class AvailableTimeOffRequest : IEquatable<AvailableTimeOffReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.DateRanges != null)
+            if (DateRanges != null)
             {
-                hash = hash * 59 + this.DateRanges.GetHashCode();
+                hash = hash * 59 + DateRanges.GetHashCode();
             }
 
             return hash;

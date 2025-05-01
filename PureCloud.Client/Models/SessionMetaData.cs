@@ -65,7 +65,7 @@ public partial class SessionMetaData : IEquatable<SessionMetaData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SessionMetaData);
+        return Equals(obj as SessionMetaData);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class SessionMetaData : IEquatable<SessionMetaData>
 
         return true &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.DownloadResult == other.DownloadResult ||
-                this.DownloadResult != null &&
-                this.DownloadResult.Equals(other.DownloadResult)
+                DownloadResult == other.DownloadResult ||
+                DownloadResult != null &&
+                DownloadResult.Equals(other.DownloadResult)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class SessionMetaData : IEquatable<SessionMetaData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.DownloadResult != null)
+            if (DownloadResult != null)
             {
-                hash = hash * 59 + this.DownloadResult.GetHashCode();
+                hash = hash * 59 + DownloadResult.GetHashCode();
             }
 
             return hash;

@@ -70,7 +70,7 @@ public partial class BuCopyScheduleRequest : IEquatable<BuCopyScheduleRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuCopyScheduleRequest);
+        return Equals(obj as BuCopyScheduleRequest);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class BuCopyScheduleRequest : IEquatable<BuCopyScheduleRequest>
 
         return true &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class BuCopyScheduleRequest : IEquatable<BuCopyScheduleRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
             return hash;

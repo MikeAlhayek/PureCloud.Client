@@ -151,7 +151,7 @@ public partial class MessengerSettings : IEquatable<MessengerSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessengerSettings);
+        return Equals(obj as MessengerSettings);
     }
 
     /// <summary>
@@ -169,39 +169,39 @@ public partial class MessengerSettings : IEquatable<MessengerSettings>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Styles == other.Styles ||
-                this.Styles != null &&
-                this.Styles.Equals(other.Styles)
+                Styles == other.Styles ||
+                Styles != null &&
+                Styles.Equals(other.Styles)
             ) &&
             (
-                this.LauncherButton == other.LauncherButton ||
-                this.LauncherButton != null &&
-                this.LauncherButton.Equals(other.LauncherButton)
+                LauncherButton == other.LauncherButton ||
+                LauncherButton != null &&
+                LauncherButton.Equals(other.LauncherButton)
             ) &&
             (
-                this.FileUpload == other.FileUpload ||
-                this.FileUpload != null &&
-                this.FileUpload.Equals(other.FileUpload)
+                FileUpload == other.FileUpload ||
+                FileUpload != null &&
+                FileUpload.Equals(other.FileUpload)
             ) &&
             (
-                this.Apps == other.Apps ||
-                this.Apps != null &&
-                this.Apps.Equals(other.Apps)
+                Apps == other.Apps ||
+                Apps != null &&
+                Apps.Equals(other.Apps)
             ) &&
             (
-                this.HomeScreen == other.HomeScreen ||
-                this.HomeScreen != null &&
-                this.HomeScreen.Equals(other.HomeScreen)
+                HomeScreen == other.HomeScreen ||
+                HomeScreen != null &&
+                HomeScreen.Equals(other.HomeScreen)
             ) &&
             (
-                this.SessionPersistenceType == other.SessionPersistenceType ||
-                this.SessionPersistenceType != null &&
-                this.SessionPersistenceType.Equals(other.SessionPersistenceType)
+                SessionPersistenceType == other.SessionPersistenceType ||
+                SessionPersistenceType != null &&
+                SessionPersistenceType.Equals(other.SessionPersistenceType)
             );
     }
 
@@ -216,39 +216,39 @@ public partial class MessengerSettings : IEquatable<MessengerSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Styles != null)
+            if (Styles != null)
             {
-                hash = hash * 59 + this.Styles.GetHashCode();
+                hash = hash * 59 + Styles.GetHashCode();
             }
 
-            if (this.LauncherButton != null)
+            if (LauncherButton != null)
             {
-                hash = hash * 59 + this.LauncherButton.GetHashCode();
+                hash = hash * 59 + LauncherButton.GetHashCode();
             }
 
-            if (this.FileUpload != null)
+            if (FileUpload != null)
             {
-                hash = hash * 59 + this.FileUpload.GetHashCode();
+                hash = hash * 59 + FileUpload.GetHashCode();
             }
 
-            if (this.Apps != null)
+            if (Apps != null)
             {
-                hash = hash * 59 + this.Apps.GetHashCode();
+                hash = hash * 59 + Apps.GetHashCode();
             }
 
-            if (this.HomeScreen != null)
+            if (HomeScreen != null)
             {
-                hash = hash * 59 + this.HomeScreen.GetHashCode();
+                hash = hash * 59 + HomeScreen.GetHashCode();
             }
 
-            if (this.SessionPersistenceType != null)
+            if (SessionPersistenceType != null)
             {
-                hash = hash * 59 + this.SessionPersistenceType.GetHashCode();
+                hash = hash * 59 + SessionPersistenceType.GetHashCode();
             }
 
             return hash;

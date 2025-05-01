@@ -65,7 +65,7 @@ public partial class V2FlowExecutionDataFlowidTopicProcessAutomation : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2FlowExecutionDataFlowidTopicProcessAutomation);
+        return Equals(obj as V2FlowExecutionDataFlowidTopicProcessAutomation);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class V2FlowExecutionDataFlowidTopicProcessAutomation : IEquatabl
 
         return true &&
             (
-                this.TriggerId == other.TriggerId ||
-                this.TriggerId != null &&
-                this.TriggerId.Equals(other.TriggerId)
+                TriggerId == other.TriggerId ||
+                TriggerId != null &&
+                TriggerId.Equals(other.TriggerId)
             ) &&
             (
-                this.TriggerName == other.TriggerName ||
-                this.TriggerName != null &&
-                this.TriggerName.Equals(other.TriggerName)
+                TriggerName == other.TriggerName ||
+                TriggerName != null &&
+                TriggerName.Equals(other.TriggerName)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class V2FlowExecutionDataFlowidTopicProcessAutomation : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TriggerId != null)
+            if (TriggerId != null)
             {
-                hash = hash * 59 + this.TriggerId.GetHashCode();
+                hash = hash * 59 + TriggerId.GetHashCode();
             }
 
-            if (this.TriggerName != null)
+            if (TriggerName != null)
             {
-                hash = hash * 59 + this.TriggerName.GetHashCode();
+                hash = hash * 59 + TriggerName.GetHashCode();
             }
 
             return hash;

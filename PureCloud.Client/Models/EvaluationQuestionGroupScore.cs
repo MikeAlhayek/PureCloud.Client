@@ -231,7 +231,7 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationQuestionGroupScore);
+        return Equals(obj as EvaluationQuestionGroupScore);
     }
 
     /// <summary>
@@ -249,84 +249,84 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
 
         return true &&
             (
-                this.QuestionGroupId == other.QuestionGroupId ||
-                this.QuestionGroupId != null &&
-                this.QuestionGroupId.Equals(other.QuestionGroupId)
+                QuestionGroupId == other.QuestionGroupId ||
+                QuestionGroupId != null &&
+                QuestionGroupId.Equals(other.QuestionGroupId)
             ) &&
             (
-                this.TotalScore == other.TotalScore ||
-                this.TotalScore != null &&
-                this.TotalScore.Equals(other.TotalScore)
+                TotalScore == other.TotalScore ||
+                TotalScore != null &&
+                TotalScore.Equals(other.TotalScore)
             ) &&
             (
-                this.MaxTotalScore == other.MaxTotalScore ||
-                this.MaxTotalScore != null &&
-                this.MaxTotalScore.Equals(other.MaxTotalScore)
+                MaxTotalScore == other.MaxTotalScore ||
+                MaxTotalScore != null &&
+                MaxTotalScore.Equals(other.MaxTotalScore)
             ) &&
             (
-                this.MarkedNA == other.MarkedNA ||
-                this.MarkedNA != null &&
-                this.MarkedNA.Equals(other.MarkedNA)
+                MarkedNA == other.MarkedNA ||
+                MarkedNA != null &&
+                MarkedNA.Equals(other.MarkedNA)
             ) &&
             (
-                this.SystemMarkedNA == other.SystemMarkedNA ||
-                this.SystemMarkedNA != null &&
-                this.SystemMarkedNA.Equals(other.SystemMarkedNA)
+                SystemMarkedNA == other.SystemMarkedNA ||
+                SystemMarkedNA != null &&
+                SystemMarkedNA.Equals(other.SystemMarkedNA)
             ) &&
             (
-                this.TotalCriticalScore == other.TotalCriticalScore ||
-                this.TotalCriticalScore != null &&
-                this.TotalCriticalScore.Equals(other.TotalCriticalScore)
+                TotalCriticalScore == other.TotalCriticalScore ||
+                TotalCriticalScore != null &&
+                TotalCriticalScore.Equals(other.TotalCriticalScore)
             ) &&
             (
-                this.MaxTotalCriticalScore == other.MaxTotalCriticalScore ||
-                this.MaxTotalCriticalScore != null &&
-                this.MaxTotalCriticalScore.Equals(other.MaxTotalCriticalScore)
+                MaxTotalCriticalScore == other.MaxTotalCriticalScore ||
+                MaxTotalCriticalScore != null &&
+                MaxTotalCriticalScore.Equals(other.MaxTotalCriticalScore)
             ) &&
             (
-                this.TotalNonCriticalScore == other.TotalNonCriticalScore ||
-                this.TotalNonCriticalScore != null &&
-                this.TotalNonCriticalScore.Equals(other.TotalNonCriticalScore)
+                TotalNonCriticalScore == other.TotalNonCriticalScore ||
+                TotalNonCriticalScore != null &&
+                TotalNonCriticalScore.Equals(other.TotalNonCriticalScore)
             ) &&
             (
-                this.MaxTotalNonCriticalScore == other.MaxTotalNonCriticalScore ||
-                this.MaxTotalNonCriticalScore != null &&
-                this.MaxTotalNonCriticalScore.Equals(other.MaxTotalNonCriticalScore)
+                MaxTotalNonCriticalScore == other.MaxTotalNonCriticalScore ||
+                MaxTotalNonCriticalScore != null &&
+                MaxTotalNonCriticalScore.Equals(other.MaxTotalNonCriticalScore)
             ) &&
             (
-                this.TotalScoreUnweighted == other.TotalScoreUnweighted ||
-                this.TotalScoreUnweighted != null &&
-                this.TotalScoreUnweighted.Equals(other.TotalScoreUnweighted)
+                TotalScoreUnweighted == other.TotalScoreUnweighted ||
+                TotalScoreUnweighted != null &&
+                TotalScoreUnweighted.Equals(other.TotalScoreUnweighted)
             ) &&
             (
-                this.MaxTotalScoreUnweighted == other.MaxTotalScoreUnweighted ||
-                this.MaxTotalScoreUnweighted != null &&
-                this.MaxTotalScoreUnweighted.Equals(other.MaxTotalScoreUnweighted)
+                MaxTotalScoreUnweighted == other.MaxTotalScoreUnweighted ||
+                MaxTotalScoreUnweighted != null &&
+                MaxTotalScoreUnweighted.Equals(other.MaxTotalScoreUnweighted)
             ) &&
             (
-                this.TotalCriticalScoreUnweighted == other.TotalCriticalScoreUnweighted ||
-                this.TotalCriticalScoreUnweighted != null &&
-                this.TotalCriticalScoreUnweighted.Equals(other.TotalCriticalScoreUnweighted)
+                TotalCriticalScoreUnweighted == other.TotalCriticalScoreUnweighted ||
+                TotalCriticalScoreUnweighted != null &&
+                TotalCriticalScoreUnweighted.Equals(other.TotalCriticalScoreUnweighted)
             ) &&
             (
-                this.MaxTotalCriticalScoreUnweighted == other.MaxTotalCriticalScoreUnweighted ||
-                this.MaxTotalCriticalScoreUnweighted != null &&
-                this.MaxTotalCriticalScoreUnweighted.Equals(other.MaxTotalCriticalScoreUnweighted)
+                MaxTotalCriticalScoreUnweighted == other.MaxTotalCriticalScoreUnweighted ||
+                MaxTotalCriticalScoreUnweighted != null &&
+                MaxTotalCriticalScoreUnweighted.Equals(other.MaxTotalCriticalScoreUnweighted)
             ) &&
             (
-                this.TotalNonCriticalScoreUnweighted == other.TotalNonCriticalScoreUnweighted ||
-                this.TotalNonCriticalScoreUnweighted != null &&
-                this.TotalNonCriticalScoreUnweighted.Equals(other.TotalNonCriticalScoreUnweighted)
+                TotalNonCriticalScoreUnweighted == other.TotalNonCriticalScoreUnweighted ||
+                TotalNonCriticalScoreUnweighted != null &&
+                TotalNonCriticalScoreUnweighted.Equals(other.TotalNonCriticalScoreUnweighted)
             ) &&
             (
-                this.MaxTotalNonCriticalScoreUnweighted == other.MaxTotalNonCriticalScoreUnweighted ||
-                this.MaxTotalNonCriticalScoreUnweighted != null &&
-                this.MaxTotalNonCriticalScoreUnweighted.Equals(other.MaxTotalNonCriticalScoreUnweighted)
+                MaxTotalNonCriticalScoreUnweighted == other.MaxTotalNonCriticalScoreUnweighted ||
+                MaxTotalNonCriticalScoreUnweighted != null &&
+                MaxTotalNonCriticalScoreUnweighted.Equals(other.MaxTotalNonCriticalScoreUnweighted)
             ) &&
             (
-                this.QuestionScores == other.QuestionScores ||
-                this.QuestionScores != null &&
-                this.QuestionScores.SequenceEqual(other.QuestionScores)
+                QuestionScores == other.QuestionScores ||
+                QuestionScores != null &&
+                QuestionScores.SequenceEqual(other.QuestionScores)
             );
     }
 
@@ -341,84 +341,84 @@ public partial class EvaluationQuestionGroupScore : IEquatable<EvaluationQuestio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QuestionGroupId != null)
+            if (QuestionGroupId != null)
             {
-                hash = hash * 59 + this.QuestionGroupId.GetHashCode();
+                hash = hash * 59 + QuestionGroupId.GetHashCode();
             }
 
-            if (this.TotalScore != null)
+            if (TotalScore != null)
             {
-                hash = hash * 59 + this.TotalScore.GetHashCode();
+                hash = hash * 59 + TotalScore.GetHashCode();
             }
 
-            if (this.MaxTotalScore != null)
+            if (MaxTotalScore != null)
             {
-                hash = hash * 59 + this.MaxTotalScore.GetHashCode();
+                hash = hash * 59 + MaxTotalScore.GetHashCode();
             }
 
-            if (this.MarkedNA != null)
+            if (MarkedNA != null)
             {
-                hash = hash * 59 + this.MarkedNA.GetHashCode();
+                hash = hash * 59 + MarkedNA.GetHashCode();
             }
 
-            if (this.SystemMarkedNA != null)
+            if (SystemMarkedNA != null)
             {
-                hash = hash * 59 + this.SystemMarkedNA.GetHashCode();
+                hash = hash * 59 + SystemMarkedNA.GetHashCode();
             }
 
-            if (this.TotalCriticalScore != null)
+            if (TotalCriticalScore != null)
             {
-                hash = hash * 59 + this.TotalCriticalScore.GetHashCode();
+                hash = hash * 59 + TotalCriticalScore.GetHashCode();
             }
 
-            if (this.MaxTotalCriticalScore != null)
+            if (MaxTotalCriticalScore != null)
             {
-                hash = hash * 59 + this.MaxTotalCriticalScore.GetHashCode();
+                hash = hash * 59 + MaxTotalCriticalScore.GetHashCode();
             }
 
-            if (this.TotalNonCriticalScore != null)
+            if (TotalNonCriticalScore != null)
             {
-                hash = hash * 59 + this.TotalNonCriticalScore.GetHashCode();
+                hash = hash * 59 + TotalNonCriticalScore.GetHashCode();
             }
 
-            if (this.MaxTotalNonCriticalScore != null)
+            if (MaxTotalNonCriticalScore != null)
             {
-                hash = hash * 59 + this.MaxTotalNonCriticalScore.GetHashCode();
+                hash = hash * 59 + MaxTotalNonCriticalScore.GetHashCode();
             }
 
-            if (this.TotalScoreUnweighted != null)
+            if (TotalScoreUnweighted != null)
             {
-                hash = hash * 59 + this.TotalScoreUnweighted.GetHashCode();
+                hash = hash * 59 + TotalScoreUnweighted.GetHashCode();
             }
 
-            if (this.MaxTotalScoreUnweighted != null)
+            if (MaxTotalScoreUnweighted != null)
             {
-                hash = hash * 59 + this.MaxTotalScoreUnweighted.GetHashCode();
+                hash = hash * 59 + MaxTotalScoreUnweighted.GetHashCode();
             }
 
-            if (this.TotalCriticalScoreUnweighted != null)
+            if (TotalCriticalScoreUnweighted != null)
             {
-                hash = hash * 59 + this.TotalCriticalScoreUnweighted.GetHashCode();
+                hash = hash * 59 + TotalCriticalScoreUnweighted.GetHashCode();
             }
 
-            if (this.MaxTotalCriticalScoreUnweighted != null)
+            if (MaxTotalCriticalScoreUnweighted != null)
             {
-                hash = hash * 59 + this.MaxTotalCriticalScoreUnweighted.GetHashCode();
+                hash = hash * 59 + MaxTotalCriticalScoreUnweighted.GetHashCode();
             }
 
-            if (this.TotalNonCriticalScoreUnweighted != null)
+            if (TotalNonCriticalScoreUnweighted != null)
             {
-                hash = hash * 59 + this.TotalNonCriticalScoreUnweighted.GetHashCode();
+                hash = hash * 59 + TotalNonCriticalScoreUnweighted.GetHashCode();
             }
 
-            if (this.MaxTotalNonCriticalScoreUnweighted != null)
+            if (MaxTotalNonCriticalScoreUnweighted != null)
             {
-                hash = hash * 59 + this.MaxTotalNonCriticalScoreUnweighted.GetHashCode();
+                hash = hash * 59 + MaxTotalNonCriticalScoreUnweighted.GetHashCode();
             }
 
-            if (this.QuestionScores != null)
+            if (QuestionScores != null)
             {
-                hash = hash * 59 + this.QuestionScores.GetHashCode();
+                hash = hash * 59 + QuestionScores.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class SipDownloadResponse : IEquatable<SipDownloadResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SipDownloadResponse);
+        return Equals(obj as SipDownloadResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class SipDownloadResponse : IEquatable<SipDownloadResponse>
 
         return true &&
             (
-                this.DownloadId == other.DownloadId ||
-                this.DownloadId != null &&
-                this.DownloadId.Equals(other.DownloadId)
+                DownloadId == other.DownloadId ||
+                DownloadId != null &&
+                DownloadId.Equals(other.DownloadId)
             ) &&
             (
-                this.DocumentId == other.DocumentId ||
-                this.DocumentId != null &&
-                this.DocumentId.Equals(other.DocumentId)
+                DocumentId == other.DocumentId ||
+                DocumentId != null &&
+                DocumentId.Equals(other.DocumentId)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class SipDownloadResponse : IEquatable<SipDownloadResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DownloadId != null)
+            if (DownloadId != null)
             {
-                hash = hash * 59 + this.DownloadId.GetHashCode();
+                hash = hash * 59 + DownloadId.GetHashCode();
             }
 
-            if (this.DocumentId != null)
+            if (DocumentId != null)
             {
-                hash = hash * 59 + this.DocumentId.GetHashCode();
+                hash = hash * 59 + DocumentId.GetHashCode();
             }
 
             return hash;

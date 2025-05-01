@@ -113,7 +113,7 @@ public partial class UserRoutingStatusErrorInfo : IEquatable<UserRoutingStatusEr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserRoutingStatusErrorInfo);
+        return Equals(obj as UserRoutingStatusErrorInfo);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class UserRoutingStatusErrorInfo : IEquatable<UserRoutingStatusEr
 
         return true &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.CorrelationId == other.CorrelationId ||
-                this.CorrelationId != null &&
-                this.CorrelationId.Equals(other.CorrelationId)
+                CorrelationId == other.CorrelationId ||
+                CorrelationId != null &&
+                CorrelationId.Equals(other.CorrelationId)
             ) &&
             (
-                this.UserMessage == other.UserMessage ||
-                this.UserMessage != null &&
-                this.UserMessage.Equals(other.UserMessage)
+                UserMessage == other.UserMessage ||
+                UserMessage != null &&
+                UserMessage.Equals(other.UserMessage)
             ) &&
             (
-                this.UserParamsMessage == other.UserParamsMessage ||
-                this.UserParamsMessage != null &&
-                this.UserParamsMessage.Equals(other.UserParamsMessage)
+                UserParamsMessage == other.UserParamsMessage ||
+                UserParamsMessage != null &&
+                UserParamsMessage.Equals(other.UserParamsMessage)
             ) &&
             (
-                this.UserParams == other.UserParams ||
-                this.UserParams != null &&
-                this.UserParams.SequenceEqual(other.UserParams)
+                UserParams == other.UserParams ||
+                UserParams != null &&
+                UserParams.SequenceEqual(other.UserParams)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class UserRoutingStatusErrorInfo : IEquatable<UserRoutingStatusEr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.CorrelationId != null)
+            if (CorrelationId != null)
             {
-                hash = hash * 59 + this.CorrelationId.GetHashCode();
+                hash = hash * 59 + CorrelationId.GetHashCode();
             }
 
-            if (this.UserMessage != null)
+            if (UserMessage != null)
             {
-                hash = hash * 59 + this.UserMessage.GetHashCode();
+                hash = hash * 59 + UserMessage.GetHashCode();
             }
 
-            if (this.UserParamsMessage != null)
+            if (UserParamsMessage != null)
             {
-                hash = hash * 59 + this.UserParamsMessage.GetHashCode();
+                hash = hash * 59 + UserParamsMessage.GetHashCode();
             }
 
-            if (this.UserParams != null)
+            if (UserParams != null)
             {
-                hash = hash * 59 + this.UserParams.GetHashCode();
+                hash = hash * 59 + UserParams.GetHashCode();
             }
 
             return hash;

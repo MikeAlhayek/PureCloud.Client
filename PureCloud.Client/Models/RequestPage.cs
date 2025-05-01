@@ -95,7 +95,7 @@ public partial class RequestPage : IEquatable<RequestPage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RequestPage);
+        return Equals(obj as RequestPage);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class RequestPage : IEquatable<RequestPage>
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Keywords == other.Keywords ||
-                this.Keywords != null &&
-                this.Keywords.Equals(other.Keywords)
+                Keywords == other.Keywords ||
+                Keywords != null &&
+                Keywords.Equals(other.Keywords)
             ) &&
             (
-                this.Lang == other.Lang ||
-                this.Lang != null &&
-                this.Lang.Equals(other.Lang)
+                Lang == other.Lang ||
+                Lang != null &&
+                Lang.Equals(other.Lang)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class RequestPage : IEquatable<RequestPage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Keywords != null)
+            if (Keywords != null)
             {
-                hash = hash * 59 + this.Keywords.GetHashCode();
+                hash = hash * 59 + Keywords.GetHashCode();
             }
 
-            if (this.Lang != null)
+            if (Lang != null)
             {
-                hash = hash * 59 + this.Lang.GetHashCode();
+                hash = hash * 59 + Lang.GetHashCode();
             }
 
             return hash;

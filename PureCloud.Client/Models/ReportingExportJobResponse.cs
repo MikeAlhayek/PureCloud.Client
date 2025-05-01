@@ -1489,7 +1489,7 @@ public partial class ReportingExportJobResponse : IEquatable<ReportingExportJobR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingExportJobResponse);
+        return Equals(obj as ReportingExportJobResponse);
     }
 
     /// <summary>
@@ -1507,169 +1507,169 @@ public partial class ReportingExportJobResponse : IEquatable<ReportingExportJobR
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.RunId == other.RunId ||
-                this.RunId != null &&
-                this.RunId.Equals(other.RunId)
+                RunId == other.RunId ||
+                RunId != null &&
+                RunId.Equals(other.RunId)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.ExportFormat == other.ExportFormat ||
-                this.ExportFormat != null &&
-                this.ExportFormat.Equals(other.ExportFormat)
+                ExportFormat == other.ExportFormat ||
+                ExportFormat != null &&
+                ExportFormat.Equals(other.ExportFormat)
             ) &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.ViewType == other.ViewType ||
-                this.ViewType != null &&
-                this.ViewType.Equals(other.ViewType)
+                ViewType == other.ViewType ||
+                ViewType != null &&
+                ViewType.Equals(other.ViewType)
             ) &&
             (
-                this.ExportErrorMessagesType == other.ExportErrorMessagesType ||
-                this.ExportErrorMessagesType != null &&
-                this.ExportErrorMessagesType.Equals(other.ExportErrorMessagesType)
+                ExportErrorMessagesType == other.ExportErrorMessagesType ||
+                ExportErrorMessagesType != null &&
+                ExportErrorMessagesType.Equals(other.ExportErrorMessagesType)
             ) &&
             (
-                this.Period == other.Period ||
-                this.Period != null &&
-                this.Period.Equals(other.Period)
+                Period == other.Period ||
+                Period != null &&
+                Period.Equals(other.Period)
             ) &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             ) &&
             (
-                this.Read == other.Read ||
-                this.Read != null &&
-                this.Read.Equals(other.Read)
+                Read == other.Read ||
+                Read != null &&
+                Read.Equals(other.Read)
             ) &&
             (
-                this.CreatedDateTime == other.CreatedDateTime ||
-                this.CreatedDateTime != null &&
-                this.CreatedDateTime.Equals(other.CreatedDateTime)
+                CreatedDateTime == other.CreatedDateTime ||
+                CreatedDateTime != null &&
+                CreatedDateTime.Equals(other.CreatedDateTime)
             ) &&
             (
-                this.ModifiedDateTime == other.ModifiedDateTime ||
-                this.ModifiedDateTime != null &&
-                this.ModifiedDateTime.Equals(other.ModifiedDateTime)
+                ModifiedDateTime == other.ModifiedDateTime ||
+                ModifiedDateTime != null &&
+                ModifiedDateTime.Equals(other.ModifiedDateTime)
             ) &&
             (
-                this.Locale == other.Locale ||
-                this.Locale != null &&
-                this.Locale.Equals(other.Locale)
+                Locale == other.Locale ||
+                Locale != null &&
+                Locale.Equals(other.Locale)
             ) &&
             (
-                this.PercentageComplete == other.PercentageComplete ||
-                this.PercentageComplete != null &&
-                this.PercentageComplete.Equals(other.PercentageComplete)
+                PercentageComplete == other.PercentageComplete ||
+                PercentageComplete != null &&
+                PercentageComplete.Equals(other.PercentageComplete)
             ) &&
             (
-                this.HasFormatDurations == other.HasFormatDurations ||
-                this.HasFormatDurations != null &&
-                this.HasFormatDurations.Equals(other.HasFormatDurations)
+                HasFormatDurations == other.HasFormatDurations ||
+                HasFormatDurations != null &&
+                HasFormatDurations.Equals(other.HasFormatDurations)
             ) &&
             (
-                this.HasSplitFilters == other.HasSplitFilters ||
-                this.HasSplitFilters != null &&
-                this.HasSplitFilters.Equals(other.HasSplitFilters)
+                HasSplitFilters == other.HasSplitFilters ||
+                HasSplitFilters != null &&
+                HasSplitFilters.Equals(other.HasSplitFilters)
             ) &&
             (
-                this.ExcludeEmptyRows == other.ExcludeEmptyRows ||
-                this.ExcludeEmptyRows != null &&
-                this.ExcludeEmptyRows.Equals(other.ExcludeEmptyRows)
+                ExcludeEmptyRows == other.ExcludeEmptyRows ||
+                ExcludeEmptyRows != null &&
+                ExcludeEmptyRows.Equals(other.ExcludeEmptyRows)
             ) &&
             (
-                this.HasSplitByMedia == other.HasSplitByMedia ||
-                this.HasSplitByMedia != null &&
-                this.HasSplitByMedia.Equals(other.HasSplitByMedia)
+                HasSplitByMedia == other.HasSplitByMedia ||
+                HasSplitByMedia != null &&
+                HasSplitByMedia.Equals(other.HasSplitByMedia)
             ) &&
             (
-                this.HasSummaryRow == other.HasSummaryRow ||
-                this.HasSummaryRow != null &&
-                this.HasSummaryRow.Equals(other.HasSummaryRow)
+                HasSummaryRow == other.HasSummaryRow ||
+                HasSummaryRow != null &&
+                HasSummaryRow.Equals(other.HasSummaryRow)
             ) &&
             (
-                this.CsvDelimiter == other.CsvDelimiter ||
-                this.CsvDelimiter != null &&
-                this.CsvDelimiter.Equals(other.CsvDelimiter)
+                CsvDelimiter == other.CsvDelimiter ||
+                CsvDelimiter != null &&
+                CsvDelimiter.Equals(other.CsvDelimiter)
             ) &&
             (
-                this.SelectedColumns == other.SelectedColumns ||
-                this.SelectedColumns != null &&
-                this.SelectedColumns.SequenceEqual(other.SelectedColumns)
+                SelectedColumns == other.SelectedColumns ||
+                SelectedColumns != null &&
+                SelectedColumns.SequenceEqual(other.SelectedColumns)
             ) &&
             (
-                this.HasCustomParticipantAttributes == other.HasCustomParticipantAttributes ||
-                this.HasCustomParticipantAttributes != null &&
-                this.HasCustomParticipantAttributes.Equals(other.HasCustomParticipantAttributes)
+                HasCustomParticipantAttributes == other.HasCustomParticipantAttributes ||
+                HasCustomParticipantAttributes != null &&
+                HasCustomParticipantAttributes.Equals(other.HasCustomParticipantAttributes)
             ) &&
             (
-                this.RecipientEmails == other.RecipientEmails ||
-                this.RecipientEmails != null &&
-                this.RecipientEmails.SequenceEqual(other.RecipientEmails)
+                RecipientEmails == other.RecipientEmails ||
+                RecipientEmails != null &&
+                RecipientEmails.SequenceEqual(other.RecipientEmails)
             ) &&
             (
-                this.EmailStatuses == other.EmailStatuses ||
-                this.EmailStatuses != null &&
-                this.EmailStatuses.SequenceEqual(other.EmailStatuses)
+                EmailStatuses == other.EmailStatuses ||
+                EmailStatuses != null &&
+                EmailStatuses.SequenceEqual(other.EmailStatuses)
             ) &&
             (
-                this.EmailErrorDescription == other.EmailErrorDescription ||
-                this.EmailErrorDescription != null &&
-                this.EmailErrorDescription.Equals(other.EmailErrorDescription)
+                EmailErrorDescription == other.EmailErrorDescription ||
+                EmailErrorDescription != null &&
+                EmailErrorDescription.Equals(other.EmailErrorDescription)
             ) &&
             (
-                this.IncludeDurationFormatInHeader == other.IncludeDurationFormatInHeader ||
-                this.IncludeDurationFormatInHeader != null &&
-                this.IncludeDurationFormatInHeader.Equals(other.IncludeDurationFormatInHeader)
+                IncludeDurationFormatInHeader == other.IncludeDurationFormatInHeader ||
+                IncludeDurationFormatInHeader != null &&
+                IncludeDurationFormatInHeader.Equals(other.IncludeDurationFormatInHeader)
             ) &&
             (
-                this.DurationFormat == other.DurationFormat ||
-                this.DurationFormat != null &&
-                this.DurationFormat.Equals(other.DurationFormat)
+                DurationFormat == other.DurationFormat ||
+                DurationFormat != null &&
+                DurationFormat.Equals(other.DurationFormat)
             ) &&
             (
-                this.ExportAllowedToRerun == other.ExportAllowedToRerun ||
-                this.ExportAllowedToRerun != null &&
-                this.ExportAllowedToRerun.Equals(other.ExportAllowedToRerun)
+                ExportAllowedToRerun == other.ExportAllowedToRerun ||
+                ExportAllowedToRerun != null &&
+                ExportAllowedToRerun.Equals(other.ExportAllowedToRerun)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -1684,169 +1684,169 @@ public partial class ReportingExportJobResponse : IEquatable<ReportingExportJobR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.RunId != null)
+            if (RunId != null)
             {
-                hash = hash * 59 + this.RunId.GetHashCode();
+                hash = hash * 59 + RunId.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.ExportFormat != null)
+            if (ExportFormat != null)
             {
-                hash = hash * 59 + this.ExportFormat.GetHashCode();
+                hash = hash * 59 + ExportFormat.GetHashCode();
             }
 
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.ViewType != null)
+            if (ViewType != null)
             {
-                hash = hash * 59 + this.ViewType.GetHashCode();
+                hash = hash * 59 + ViewType.GetHashCode();
             }
 
-            if (this.ExportErrorMessagesType != null)
+            if (ExportErrorMessagesType != null)
             {
-                hash = hash * 59 + this.ExportErrorMessagesType.GetHashCode();
+                hash = hash * 59 + ExportErrorMessagesType.GetHashCode();
             }
 
-            if (this.Period != null)
+            if (Period != null)
             {
-                hash = hash * 59 + this.Period.GetHashCode();
+                hash = hash * 59 + Period.GetHashCode();
             }
 
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
-            if (this.Read != null)
+            if (Read != null)
             {
-                hash = hash * 59 + this.Read.GetHashCode();
+                hash = hash * 59 + Read.GetHashCode();
             }
 
-            if (this.CreatedDateTime != null)
+            if (CreatedDateTime != null)
             {
-                hash = hash * 59 + this.CreatedDateTime.GetHashCode();
+                hash = hash * 59 + CreatedDateTime.GetHashCode();
             }
 
-            if (this.ModifiedDateTime != null)
+            if (ModifiedDateTime != null)
             {
-                hash = hash * 59 + this.ModifiedDateTime.GetHashCode();
+                hash = hash * 59 + ModifiedDateTime.GetHashCode();
             }
 
-            if (this.Locale != null)
+            if (Locale != null)
             {
-                hash = hash * 59 + this.Locale.GetHashCode();
+                hash = hash * 59 + Locale.GetHashCode();
             }
 
-            if (this.PercentageComplete != null)
+            if (PercentageComplete != null)
             {
-                hash = hash * 59 + this.PercentageComplete.GetHashCode();
+                hash = hash * 59 + PercentageComplete.GetHashCode();
             }
 
-            if (this.HasFormatDurations != null)
+            if (HasFormatDurations != null)
             {
-                hash = hash * 59 + this.HasFormatDurations.GetHashCode();
+                hash = hash * 59 + HasFormatDurations.GetHashCode();
             }
 
-            if (this.HasSplitFilters != null)
+            if (HasSplitFilters != null)
             {
-                hash = hash * 59 + this.HasSplitFilters.GetHashCode();
+                hash = hash * 59 + HasSplitFilters.GetHashCode();
             }
 
-            if (this.ExcludeEmptyRows != null)
+            if (ExcludeEmptyRows != null)
             {
-                hash = hash * 59 + this.ExcludeEmptyRows.GetHashCode();
+                hash = hash * 59 + ExcludeEmptyRows.GetHashCode();
             }
 
-            if (this.HasSplitByMedia != null)
+            if (HasSplitByMedia != null)
             {
-                hash = hash * 59 + this.HasSplitByMedia.GetHashCode();
+                hash = hash * 59 + HasSplitByMedia.GetHashCode();
             }
 
-            if (this.HasSummaryRow != null)
+            if (HasSummaryRow != null)
             {
-                hash = hash * 59 + this.HasSummaryRow.GetHashCode();
+                hash = hash * 59 + HasSummaryRow.GetHashCode();
             }
 
-            if (this.CsvDelimiter != null)
+            if (CsvDelimiter != null)
             {
-                hash = hash * 59 + this.CsvDelimiter.GetHashCode();
+                hash = hash * 59 + CsvDelimiter.GetHashCode();
             }
 
-            if (this.SelectedColumns != null)
+            if (SelectedColumns != null)
             {
-                hash = hash * 59 + this.SelectedColumns.GetHashCode();
+                hash = hash * 59 + SelectedColumns.GetHashCode();
             }
 
-            if (this.HasCustomParticipantAttributes != null)
+            if (HasCustomParticipantAttributes != null)
             {
-                hash = hash * 59 + this.HasCustomParticipantAttributes.GetHashCode();
+                hash = hash * 59 + HasCustomParticipantAttributes.GetHashCode();
             }
 
-            if (this.RecipientEmails != null)
+            if (RecipientEmails != null)
             {
-                hash = hash * 59 + this.RecipientEmails.GetHashCode();
+                hash = hash * 59 + RecipientEmails.GetHashCode();
             }
 
-            if (this.EmailStatuses != null)
+            if (EmailStatuses != null)
             {
-                hash = hash * 59 + this.EmailStatuses.GetHashCode();
+                hash = hash * 59 + EmailStatuses.GetHashCode();
             }
 
-            if (this.EmailErrorDescription != null)
+            if (EmailErrorDescription != null)
             {
-                hash = hash * 59 + this.EmailErrorDescription.GetHashCode();
+                hash = hash * 59 + EmailErrorDescription.GetHashCode();
             }
 
-            if (this.IncludeDurationFormatInHeader != null)
+            if (IncludeDurationFormatInHeader != null)
             {
-                hash = hash * 59 + this.IncludeDurationFormatInHeader.GetHashCode();
+                hash = hash * 59 + IncludeDurationFormatInHeader.GetHashCode();
             }
 
-            if (this.DurationFormat != null)
+            if (DurationFormat != null)
             {
-                hash = hash * 59 + this.DurationFormat.GetHashCode();
+                hash = hash * 59 + DurationFormat.GetHashCode();
             }
 
-            if (this.ExportAllowedToRerun != null)
+            if (ExportAllowedToRerun != null)
             {
-                hash = hash * 59 + this.ExportAllowedToRerun.GetHashCode();
+                hash = hash * 59 + ExportAllowedToRerun.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

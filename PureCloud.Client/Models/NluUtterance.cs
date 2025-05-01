@@ -107,7 +107,7 @@ public partial class NluUtterance : IEquatable<NluUtterance>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluUtterance);
+        return Equals(obj as NluUtterance);
     }
 
     /// <summary>
@@ -125,19 +125,19 @@ public partial class NluUtterance : IEquatable<NluUtterance>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.Segments == other.Segments ||
-                this.Segments != null &&
-                this.Segments.SequenceEqual(other.Segments)
+                Segments == other.Segments ||
+                Segments != null &&
+                Segments.SequenceEqual(other.Segments)
             );
     }
 
@@ -152,19 +152,19 @@ public partial class NluUtterance : IEquatable<NluUtterance>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.Segments != null)
+            if (Segments != null)
             {
-                hash = hash * 59 + this.Segments.GetHashCode();
+                hash = hash * 59 + Segments.GetHashCode();
             }
 
             return hash;

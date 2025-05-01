@@ -225,7 +225,7 @@ public partial class ContentOffer : IEquatable<ContentOffer>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentOffer);
+        return Equals(obj as ContentOffer);
     }
 
     /// <summary>
@@ -243,44 +243,44 @@ public partial class ContentOffer : IEquatable<ContentOffer>
 
         return true &&
             (
-                this.ImageUrl == other.ImageUrl ||
-                this.ImageUrl != null &&
-                this.ImageUrl.Equals(other.ImageUrl)
+                ImageUrl == other.ImageUrl ||
+                ImageUrl != null &&
+                ImageUrl.Equals(other.ImageUrl)
             ) &&
             (
-                this.DisplayMode == other.DisplayMode ||
-                this.DisplayMode != null &&
-                this.DisplayMode.Equals(other.DisplayMode)
+                DisplayMode == other.DisplayMode ||
+                DisplayMode != null &&
+                DisplayMode.Equals(other.DisplayMode)
             ) &&
             (
-                this.LayoutMode == other.LayoutMode ||
-                this.LayoutMode != null &&
-                this.LayoutMode.Equals(other.LayoutMode)
+                LayoutMode == other.LayoutMode ||
+                LayoutMode != null &&
+                LayoutMode.Equals(other.LayoutMode)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Headline == other.Headline ||
-                this.Headline != null &&
-                this.Headline.Equals(other.Headline)
+                Headline == other.Headline ||
+                Headline != null &&
+                Headline.Equals(other.Headline)
             ) &&
             (
-                this.Body == other.Body ||
-                this.Body != null &&
-                this.Body.Equals(other.Body)
+                Body == other.Body ||
+                Body != null &&
+                Body.Equals(other.Body)
             ) &&
             (
-                this.CallToAction == other.CallToAction ||
-                this.CallToAction != null &&
-                this.CallToAction.Equals(other.CallToAction)
+                CallToAction == other.CallToAction ||
+                CallToAction != null &&
+                CallToAction.Equals(other.CallToAction)
             ) &&
             (
-                this.Style == other.Style ||
-                this.Style != null &&
-                this.Style.Equals(other.Style)
+                Style == other.Style ||
+                Style != null &&
+                Style.Equals(other.Style)
             );
     }
 
@@ -295,44 +295,44 @@ public partial class ContentOffer : IEquatable<ContentOffer>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ImageUrl != null)
+            if (ImageUrl != null)
             {
-                hash = hash * 59 + this.ImageUrl.GetHashCode();
+                hash = hash * 59 + ImageUrl.GetHashCode();
             }
 
-            if (this.DisplayMode != null)
+            if (DisplayMode != null)
             {
-                hash = hash * 59 + this.DisplayMode.GetHashCode();
+                hash = hash * 59 + DisplayMode.GetHashCode();
             }
 
-            if (this.LayoutMode != null)
+            if (LayoutMode != null)
             {
-                hash = hash * 59 + this.LayoutMode.GetHashCode();
+                hash = hash * 59 + LayoutMode.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Headline != null)
+            if (Headline != null)
             {
-                hash = hash * 59 + this.Headline.GetHashCode();
+                hash = hash * 59 + Headline.GetHashCode();
             }
 
-            if (this.Body != null)
+            if (Body != null)
             {
-                hash = hash * 59 + this.Body.GetHashCode();
+                hash = hash * 59 + Body.GetHashCode();
             }
 
-            if (this.CallToAction != null)
+            if (CallToAction != null)
             {
-                hash = hash * 59 + this.CallToAction.GetHashCode();
+                hash = hash * 59 + CallToAction.GetHashCode();
             }
 
-            if (this.Style != null)
+            if (Style != null)
             {
-                hash = hash * 59 + this.Style.GetHashCode();
+                hash = hash * 59 + Style.GetHashCode();
             }
 
             return hash;

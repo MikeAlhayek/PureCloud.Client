@@ -70,7 +70,7 @@ public partial class BuAbandonRate : IEquatable<BuAbandonRate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuAbandonRate);
+        return Equals(obj as BuAbandonRate);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class BuAbandonRate : IEquatable<BuAbandonRate>
 
         return true &&
             (
-                this.Include == other.Include ||
-                this.Include != null &&
-                this.Include.Equals(other.Include)
+                Include == other.Include ||
+                Include != null &&
+                Include.Equals(other.Include)
             ) &&
             (
-                this.Percent == other.Percent ||
-                this.Percent != null &&
-                this.Percent.Equals(other.Percent)
+                Percent == other.Percent ||
+                Percent != null &&
+                Percent.Equals(other.Percent)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class BuAbandonRate : IEquatable<BuAbandonRate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Include != null)
+            if (Include != null)
             {
-                hash = hash * 59 + this.Include.GetHashCode();
+                hash = hash * 59 + Include.GetHashCode();
             }
 
-            if (this.Percent != null)
+            if (Percent != null)
             {
-                hash = hash * 59 + this.Percent.GetHashCode();
+                hash = hash * 59 + Percent.GetHashCode();
             }
 
             return hash;

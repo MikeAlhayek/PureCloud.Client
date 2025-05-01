@@ -151,7 +151,7 @@ public partial class ConversationMessageEvent : IEquatable<ConversationMessageEv
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationMessageEvent);
+        return Equals(obj as ConversationMessageEvent);
     }
 
     /// <summary>
@@ -169,29 +169,29 @@ public partial class ConversationMessageEvent : IEquatable<ConversationMessageEv
 
         return true &&
             (
-                this.EventType == other.EventType ||
-                this.EventType != null &&
-                this.EventType.Equals(other.EventType)
+                EventType == other.EventType ||
+                EventType != null &&
+                EventType.Equals(other.EventType)
             ) &&
             (
-                this.CoBrowse == other.CoBrowse ||
-                this.CoBrowse != null &&
-                this.CoBrowse.Equals(other.CoBrowse)
+                CoBrowse == other.CoBrowse ||
+                CoBrowse != null &&
+                CoBrowse.Equals(other.CoBrowse)
             ) &&
             (
-                this.Typing == other.Typing ||
-                this.Typing != null &&
-                this.Typing.Equals(other.Typing)
+                Typing == other.Typing ||
+                Typing != null &&
+                Typing.Equals(other.Typing)
             ) &&
             (
-                this.Presence == other.Presence ||
-                this.Presence != null &&
-                this.Presence.Equals(other.Presence)
+                Presence == other.Presence ||
+                Presence != null &&
+                Presence.Equals(other.Presence)
             ) &&
             (
-                this.Video == other.Video ||
-                this.Video != null &&
-                this.Video.Equals(other.Video)
+                Video == other.Video ||
+                Video != null &&
+                Video.Equals(other.Video)
             );
     }
 
@@ -206,29 +206,29 @@ public partial class ConversationMessageEvent : IEquatable<ConversationMessageEv
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventType != null)
+            if (EventType != null)
             {
-                hash = hash * 59 + this.EventType.GetHashCode();
+                hash = hash * 59 + EventType.GetHashCode();
             }
 
-            if (this.CoBrowse != null)
+            if (CoBrowse != null)
             {
-                hash = hash * 59 + this.CoBrowse.GetHashCode();
+                hash = hash * 59 + CoBrowse.GetHashCode();
             }
 
-            if (this.Typing != null)
+            if (Typing != null)
             {
-                hash = hash * 59 + this.Typing.GetHashCode();
+                hash = hash * 59 + Typing.GetHashCode();
             }
 
-            if (this.Presence != null)
+            if (Presence != null)
             {
-                hash = hash * 59 + this.Presence.GetHashCode();
+                hash = hash * 59 + Presence.GetHashCode();
             }
 
-            if (this.Video != null)
+            if (Video != null)
             {
-                hash = hash * 59 + this.Video.GetHashCode();
+                hash = hash * 59 + Video.GetHashCode();
             }
 
             return hash;

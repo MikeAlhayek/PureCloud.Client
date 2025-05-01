@@ -53,7 +53,7 @@ public partial class GenesysBotConnector : IEquatable<GenesysBotConnector>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GenesysBotConnector);
+        return Equals(obj as GenesysBotConnector);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class GenesysBotConnector : IEquatable<GenesysBotConnector>
 
         return true &&
             (
-                this.QueryParameters == other.QueryParameters ||
-                this.QueryParameters != null &&
-                this.QueryParameters.SequenceEqual(other.QueryParameters)
+                QueryParameters == other.QueryParameters ||
+                QueryParameters != null &&
+                QueryParameters.SequenceEqual(other.QueryParameters)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class GenesysBotConnector : IEquatable<GenesysBotConnector>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueryParameters != null)
+            if (QueryParameters != null)
             {
-                hash = hash * 59 + this.QueryParameters.GetHashCode();
+                hash = hash * 59 + QueryParameters.GetHashCode();
             }
 
             return hash;

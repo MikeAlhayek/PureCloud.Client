@@ -171,7 +171,7 @@ public partial class WorkspaceMember : IEquatable<WorkspaceMember>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkspaceMember);
+        return Equals(obj as WorkspaceMember);
     }
 
     /// <summary>
@@ -189,49 +189,49 @@ public partial class WorkspaceMember : IEquatable<WorkspaceMember>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Workspace == other.Workspace ||
-                this.Workspace != null &&
-                this.Workspace.Equals(other.Workspace)
+                Workspace == other.Workspace ||
+                Workspace != null &&
+                Workspace.Equals(other.Workspace)
             ) &&
             (
-                this.MemberType == other.MemberType ||
-                this.MemberType != null &&
-                this.MemberType.Equals(other.MemberType)
+                MemberType == other.MemberType ||
+                MemberType != null &&
+                MemberType.Equals(other.MemberType)
             ) &&
             (
-                this.Member == other.Member ||
-                this.Member != null &&
-                this.Member.Equals(other.Member)
+                Member == other.Member ||
+                Member != null &&
+                Member.Equals(other.Member)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Group == other.Group ||
-                this.Group != null &&
-                this.Group.Equals(other.Group)
+                Group == other.Group ||
+                Group != null &&
+                Group.Equals(other.Group)
             ) &&
             (
-                this.SecurityProfile == other.SecurityProfile ||
-                this.SecurityProfile != null &&
-                this.SecurityProfile.Equals(other.SecurityProfile)
+                SecurityProfile == other.SecurityProfile ||
+                SecurityProfile != null &&
+                SecurityProfile.Equals(other.SecurityProfile)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -246,49 +246,49 @@ public partial class WorkspaceMember : IEquatable<WorkspaceMember>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Workspace != null)
+            if (Workspace != null)
             {
-                hash = hash * 59 + this.Workspace.GetHashCode();
+                hash = hash * 59 + Workspace.GetHashCode();
             }
 
-            if (this.MemberType != null)
+            if (MemberType != null)
             {
-                hash = hash * 59 + this.MemberType.GetHashCode();
+                hash = hash * 59 + MemberType.GetHashCode();
             }
 
-            if (this.Member != null)
+            if (Member != null)
             {
-                hash = hash * 59 + this.Member.GetHashCode();
+                hash = hash * 59 + Member.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Group != null)
+            if (Group != null)
             {
-                hash = hash * 59 + this.Group.GetHashCode();
+                hash = hash * 59 + Group.GetHashCode();
             }
 
-            if (this.SecurityProfile != null)
+            if (SecurityProfile != null)
             {
-                hash = hash * 59 + this.SecurityProfile.GetHashCode();
+                hash = hash * 59 + SecurityProfile.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

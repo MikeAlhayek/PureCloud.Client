@@ -400,7 +400,7 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsAgentStateAgentSessionResult);
+        return Equals(obj as AnalyticsAgentStateAgentSessionResult);
     }
 
     /// <summary>
@@ -418,54 +418,54 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.SessionStart == other.SessionStart ||
-                this.SessionStart != null &&
-                this.SessionStart.Equals(other.SessionStart)
+                SessionStart == other.SessionStart ||
+                SessionStart != null &&
+                SessionStart.Equals(other.SessionStart)
             ) &&
             (
-                this.SegmentStart == other.SegmentStart ||
-                this.SegmentStart != null &&
-                this.SegmentStart.Equals(other.SegmentStart)
+                SegmentStart == other.SegmentStart ||
+                SegmentStart != null &&
+                SegmentStart.Equals(other.SegmentStart)
             ) &&
             (
-                this.SegmentType == other.SegmentType ||
-                this.SegmentType != null &&
-                this.SegmentType.Equals(other.SegmentType)
+                SegmentType == other.SegmentType ||
+                SegmentType != null &&
+                SegmentType.Equals(other.SegmentType)
             ) &&
             (
-                this.RoutedQueueId == other.RoutedQueueId ||
-                this.RoutedQueueId != null &&
-                this.RoutedQueueId.Equals(other.RoutedQueueId)
+                RoutedQueueId == other.RoutedQueueId ||
+                RoutedQueueId != null &&
+                RoutedQueueId.Equals(other.RoutedQueueId)
             ) &&
             (
-                this.RequestedRoutingSkillIds == other.RequestedRoutingSkillIds ||
-                this.RequestedRoutingSkillIds != null &&
-                this.RequestedRoutingSkillIds.SequenceEqual(other.RequestedRoutingSkillIds)
+                RequestedRoutingSkillIds == other.RequestedRoutingSkillIds ||
+                RequestedRoutingSkillIds != null &&
+                RequestedRoutingSkillIds.SequenceEqual(other.RequestedRoutingSkillIds)
             ) &&
             (
-                this.RequestedLanguageId == other.RequestedLanguageId ||
-                this.RequestedLanguageId != null &&
-                this.RequestedLanguageId.Equals(other.RequestedLanguageId)
+                RequestedLanguageId == other.RequestedLanguageId ||
+                RequestedLanguageId != null &&
+                RequestedLanguageId.Equals(other.RequestedLanguageId)
             ) &&
             (
-                this.OriginatingDirection == other.OriginatingDirection ||
-                this.OriginatingDirection != null &&
-                this.OriginatingDirection.Equals(other.OriginatingDirection)
+                OriginatingDirection == other.OriginatingDirection ||
+                OriginatingDirection != null &&
+                OriginatingDirection.Equals(other.OriginatingDirection)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             );
     }
 
@@ -480,54 +480,54 @@ public partial class AnalyticsAgentStateAgentSessionResult : IEquatable<Analytic
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.SessionStart != null)
+            if (SessionStart != null)
             {
-                hash = hash * 59 + this.SessionStart.GetHashCode();
+                hash = hash * 59 + SessionStart.GetHashCode();
             }
 
-            if (this.SegmentStart != null)
+            if (SegmentStart != null)
             {
-                hash = hash * 59 + this.SegmentStart.GetHashCode();
+                hash = hash * 59 + SegmentStart.GetHashCode();
             }
 
-            if (this.SegmentType != null)
+            if (SegmentType != null)
             {
-                hash = hash * 59 + this.SegmentType.GetHashCode();
+                hash = hash * 59 + SegmentType.GetHashCode();
             }
 
-            if (this.RoutedQueueId != null)
+            if (RoutedQueueId != null)
             {
-                hash = hash * 59 + this.RoutedQueueId.GetHashCode();
+                hash = hash * 59 + RoutedQueueId.GetHashCode();
             }
 
-            if (this.RequestedRoutingSkillIds != null)
+            if (RequestedRoutingSkillIds != null)
             {
-                hash = hash * 59 + this.RequestedRoutingSkillIds.GetHashCode();
+                hash = hash * 59 + RequestedRoutingSkillIds.GetHashCode();
             }
 
-            if (this.RequestedLanguageId != null)
+            if (RequestedLanguageId != null)
             {
-                hash = hash * 59 + this.RequestedLanguageId.GetHashCode();
+                hash = hash * 59 + RequestedLanguageId.GetHashCode();
             }
 
-            if (this.OriginatingDirection != null)
+            if (OriginatingDirection != null)
             {
-                hash = hash * 59 + this.OriginatingDirection.GetHashCode();
+                hash = hash * 59 + OriginatingDirection.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
             return hash;

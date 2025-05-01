@@ -95,7 +95,7 @@ public partial class NuanceChannel : IEquatable<NuanceChannel>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NuanceChannel);
+        return Equals(obj as NuanceChannel);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class NuanceChannel : IEquatable<NuanceChannel>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Modes == other.Modes ||
-                this.Modes != null &&
-                this.Modes.SequenceEqual(other.Modes)
+                Modes == other.Modes ||
+                Modes != null &&
+                Modes.SequenceEqual(other.Modes)
             ) &&
             (
-                this.Color == other.Color ||
-                this.Color != null &&
-                this.Color.Equals(other.Color)
+                Color == other.Color ||
+                Color != null &&
+                Color.Equals(other.Color)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class NuanceChannel : IEquatable<NuanceChannel>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Modes != null)
+            if (Modes != null)
             {
-                hash = hash * 59 + this.Modes.GetHashCode();
+                hash = hash * 59 + Modes.GetHashCode();
             }
 
-            if (this.Color != null)
+            if (Color != null)
             {
-                hash = hash * 59 + this.Color.GetHashCode();
+                hash = hash * 59 + Color.GetHashCode();
             }
 
             return hash;

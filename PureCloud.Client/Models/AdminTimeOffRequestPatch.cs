@@ -198,7 +198,7 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdminTimeOffRequestPatch);
+        return Equals(obj as AdminTimeOffRequestPatch);
     }
 
     /// <summary>
@@ -216,54 +216,54 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.Paid == other.Paid ||
-                this.Paid != null &&
-                this.Paid.Equals(other.Paid)
+                Paid == other.Paid ||
+                Paid != null &&
+                Paid.Equals(other.Paid)
             ) &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             ) &&
             (
-                this.FullDayManagementUnitDates == other.FullDayManagementUnitDates ||
-                this.FullDayManagementUnitDates != null &&
-                this.FullDayManagementUnitDates.SequenceEqual(other.FullDayManagementUnitDates)
+                FullDayManagementUnitDates == other.FullDayManagementUnitDates ||
+                FullDayManagementUnitDates != null &&
+                FullDayManagementUnitDates.SequenceEqual(other.FullDayManagementUnitDates)
             ) &&
             (
-                this.PartialDayStartDateTimes == other.PartialDayStartDateTimes ||
-                this.PartialDayStartDateTimes != null &&
-                this.PartialDayStartDateTimes.SequenceEqual(other.PartialDayStartDateTimes)
+                PartialDayStartDateTimes == other.PartialDayStartDateTimes ||
+                PartialDayStartDateTimes != null &&
+                PartialDayStartDateTimes.SequenceEqual(other.PartialDayStartDateTimes)
             ) &&
             (
-                this.DailyDurationMinutes == other.DailyDurationMinutes ||
-                this.DailyDurationMinutes != null &&
-                this.DailyDurationMinutes.Equals(other.DailyDurationMinutes)
+                DailyDurationMinutes == other.DailyDurationMinutes ||
+                DailyDurationMinutes != null &&
+                DailyDurationMinutes.Equals(other.DailyDurationMinutes)
             ) &&
             (
-                this.DurationMinutes == other.DurationMinutes ||
-                this.DurationMinutes != null &&
-                this.DurationMinutes.SequenceEqual(other.DurationMinutes)
+                DurationMinutes == other.DurationMinutes ||
+                DurationMinutes != null &&
+                DurationMinutes.SequenceEqual(other.DurationMinutes)
             ) &&
             (
-                this.PayableMinutes == other.PayableMinutes ||
-                this.PayableMinutes != null &&
-                this.PayableMinutes.SequenceEqual(other.PayableMinutes)
+                PayableMinutes == other.PayableMinutes ||
+                PayableMinutes != null &&
+                PayableMinutes.SequenceEqual(other.PayableMinutes)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -278,54 +278,54 @@ public partial class AdminTimeOffRequestPatch : IEquatable<AdminTimeOffRequestPa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.Paid != null)
+            if (Paid != null)
             {
-                hash = hash * 59 + this.Paid.GetHashCode();
+                hash = hash * 59 + Paid.GetHashCode();
             }
 
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
-            if (this.FullDayManagementUnitDates != null)
+            if (FullDayManagementUnitDates != null)
             {
-                hash = hash * 59 + this.FullDayManagementUnitDates.GetHashCode();
+                hash = hash * 59 + FullDayManagementUnitDates.GetHashCode();
             }
 
-            if (this.PartialDayStartDateTimes != null)
+            if (PartialDayStartDateTimes != null)
             {
-                hash = hash * 59 + this.PartialDayStartDateTimes.GetHashCode();
+                hash = hash * 59 + PartialDayStartDateTimes.GetHashCode();
             }
 
-            if (this.DailyDurationMinutes != null)
+            if (DailyDurationMinutes != null)
             {
-                hash = hash * 59 + this.DailyDurationMinutes.GetHashCode();
+                hash = hash * 59 + DailyDurationMinutes.GetHashCode();
             }
 
-            if (this.DurationMinutes != null)
+            if (DurationMinutes != null)
             {
-                hash = hash * 59 + this.DurationMinutes.GetHashCode();
+                hash = hash * 59 + DurationMinutes.GetHashCode();
             }
 
-            if (this.PayableMinutes != null)
+            if (PayableMinutes != null)
             {
-                hash = hash * 59 + this.PayableMinutes.GetHashCode();
+                hash = hash * 59 + PayableMinutes.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

@@ -97,7 +97,7 @@ public partial class DraftManipulationRequest : IEquatable<DraftManipulationRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DraftManipulationRequest);
+        return Equals(obj as DraftManipulationRequest);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class DraftManipulationRequest : IEquatable<DraftManipulationRequ
 
         return true &&
             (
-                this.Translate == other.Translate ||
-                this.Translate != null &&
-                this.Translate.Equals(other.Translate)
+                Translate == other.Translate ||
+                Translate != null &&
+                Translate.Equals(other.Translate)
             ) &&
             (
-                this.DraftType == other.DraftType ||
-                this.DraftType != null &&
-                this.DraftType.Equals(other.DraftType)
+                DraftType == other.DraftType ||
+                DraftType != null &&
+                DraftType.Equals(other.DraftType)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class DraftManipulationRequest : IEquatable<DraftManipulationRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Translate != null)
+            if (Translate != null)
             {
-                hash = hash * 59 + this.Translate.GetHashCode();
+                hash = hash * 59 + Translate.GetHashCode();
             }
 
-            if (this.DraftType != null)
+            if (DraftType != null)
             {
-                hash = hash * 59 + this.DraftType.GetHashCode();
+                hash = hash * 59 + DraftType.GetHashCode();
             }
 
             return hash;

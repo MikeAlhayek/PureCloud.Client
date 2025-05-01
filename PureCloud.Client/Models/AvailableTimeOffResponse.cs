@@ -51,7 +51,7 @@ public partial class AvailableTimeOffResponse : IEquatable<AvailableTimeOffRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AvailableTimeOffResponse);
+        return Equals(obj as AvailableTimeOffResponse);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class AvailableTimeOffResponse : IEquatable<AvailableTimeOffRespo
 
         return true &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class AvailableTimeOffResponse : IEquatable<AvailableTimeOffRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
             return hash;

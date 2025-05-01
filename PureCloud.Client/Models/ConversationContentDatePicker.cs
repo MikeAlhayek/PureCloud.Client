@@ -113,7 +113,7 @@ public partial class ConversationContentDatePicker : IEquatable<ConversationCont
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationContentDatePicker);
+        return Equals(obj as ConversationContentDatePicker);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class ConversationContentDatePicker : IEquatable<ConversationCont
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Subtitle == other.Subtitle ||
-                this.Subtitle != null &&
-                this.Subtitle.Equals(other.Subtitle)
+                Subtitle == other.Subtitle ||
+                Subtitle != null &&
+                Subtitle.Equals(other.Subtitle)
             ) &&
             (
-                this.ImageUrl == other.ImageUrl ||
-                this.ImageUrl != null &&
-                this.ImageUrl.Equals(other.ImageUrl)
+                ImageUrl == other.ImageUrl ||
+                ImageUrl != null &&
+                ImageUrl.Equals(other.ImageUrl)
             ) &&
             (
-                this.DateMinimum == other.DateMinimum ||
-                this.DateMinimum != null &&
-                this.DateMinimum.Equals(other.DateMinimum)
+                DateMinimum == other.DateMinimum ||
+                DateMinimum != null &&
+                DateMinimum.Equals(other.DateMinimum)
             ) &&
             (
-                this.DateMaximum == other.DateMaximum ||
-                this.DateMaximum != null &&
-                this.DateMaximum.Equals(other.DateMaximum)
+                DateMaximum == other.DateMaximum ||
+                DateMaximum != null &&
+                DateMaximum.Equals(other.DateMaximum)
             ) &&
             (
-                this.AvailableTimes == other.AvailableTimes ||
-                this.AvailableTimes != null &&
-                this.AvailableTimes.SequenceEqual(other.AvailableTimes)
+                AvailableTimes == other.AvailableTimes ||
+                AvailableTimes != null &&
+                AvailableTimes.SequenceEqual(other.AvailableTimes)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class ConversationContentDatePicker : IEquatable<ConversationCont
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Subtitle != null)
+            if (Subtitle != null)
             {
-                hash = hash * 59 + this.Subtitle.GetHashCode();
+                hash = hash * 59 + Subtitle.GetHashCode();
             }
 
-            if (this.ImageUrl != null)
+            if (ImageUrl != null)
             {
-                hash = hash * 59 + this.ImageUrl.GetHashCode();
+                hash = hash * 59 + ImageUrl.GetHashCode();
             }
 
-            if (this.DateMinimum != null)
+            if (DateMinimum != null)
             {
-                hash = hash * 59 + this.DateMinimum.GetHashCode();
+                hash = hash * 59 + DateMinimum.GetHashCode();
             }
 
-            if (this.DateMaximum != null)
+            if (DateMaximum != null)
             {
-                hash = hash * 59 + this.DateMaximum.GetHashCode();
+                hash = hash * 59 + DateMaximum.GetHashCode();
             }
 
-            if (this.AvailableTimes != null)
+            if (AvailableTimes != null)
             {
-                hash = hash * 59 + this.AvailableTimes.GetHashCode();
+                hash = hash * 59 + AvailableTimes.GetHashCode();
             }
 
             return hash;

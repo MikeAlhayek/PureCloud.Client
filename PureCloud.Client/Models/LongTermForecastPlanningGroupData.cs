@@ -83,7 +83,7 @@ public partial class LongTermForecastPlanningGroupData : IEquatable<LongTermFore
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LongTermForecastPlanningGroupData);
+        return Equals(obj as LongTermForecastPlanningGroupData);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class LongTermForecastPlanningGroupData : IEquatable<LongTermFore
 
         return true &&
             (
-                this.PlanningGroupId == other.PlanningGroupId ||
-                this.PlanningGroupId != null &&
-                this.PlanningGroupId.Equals(other.PlanningGroupId)
+                PlanningGroupId == other.PlanningGroupId ||
+                PlanningGroupId != null &&
+                PlanningGroupId.Equals(other.PlanningGroupId)
             ) &&
             (
-                this.OfferedPerDay == other.OfferedPerDay ||
-                this.OfferedPerDay != null &&
-                this.OfferedPerDay.SequenceEqual(other.OfferedPerDay)
+                OfferedPerDay == other.OfferedPerDay ||
+                OfferedPerDay != null &&
+                OfferedPerDay.SequenceEqual(other.OfferedPerDay)
             ) &&
             (
-                this.AverageHandleTimeSecondsPerDay == other.AverageHandleTimeSecondsPerDay ||
-                this.AverageHandleTimeSecondsPerDay != null &&
-                this.AverageHandleTimeSecondsPerDay.SequenceEqual(other.AverageHandleTimeSecondsPerDay)
+                AverageHandleTimeSecondsPerDay == other.AverageHandleTimeSecondsPerDay ||
+                AverageHandleTimeSecondsPerDay != null &&
+                AverageHandleTimeSecondsPerDay.SequenceEqual(other.AverageHandleTimeSecondsPerDay)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class LongTermForecastPlanningGroupData : IEquatable<LongTermFore
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PlanningGroupId != null)
+            if (PlanningGroupId != null)
             {
-                hash = hash * 59 + this.PlanningGroupId.GetHashCode();
+                hash = hash * 59 + PlanningGroupId.GetHashCode();
             }
 
-            if (this.OfferedPerDay != null)
+            if (OfferedPerDay != null)
             {
-                hash = hash * 59 + this.OfferedPerDay.GetHashCode();
+                hash = hash * 59 + OfferedPerDay.GetHashCode();
             }
 
-            if (this.AverageHandleTimeSecondsPerDay != null)
+            if (AverageHandleTimeSecondsPerDay != null)
             {
-                hash = hash * 59 + this.AverageHandleTimeSecondsPerDay.GetHashCode();
+                hash = hash * 59 + AverageHandleTimeSecondsPerDay.GetHashCode();
             }
 
             return hash;

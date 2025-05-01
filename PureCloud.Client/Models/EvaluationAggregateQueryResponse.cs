@@ -52,7 +52,7 @@ public partial class EvaluationAggregateQueryResponse : IEquatable<EvaluationAgg
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationAggregateQueryResponse);
+        return Equals(obj as EvaluationAggregateQueryResponse);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class EvaluationAggregateQueryResponse : IEquatable<EvaluationAgg
 
         return true &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class EvaluationAggregateQueryResponse : IEquatable<EvaluationAgg
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
             return hash;

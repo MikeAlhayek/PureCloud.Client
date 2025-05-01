@@ -115,7 +115,7 @@ public partial class Feedback : IEquatable<Feedback>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Feedback);
+        return Equals(obj as Feedback);
     }
 
     /// <summary>
@@ -133,19 +133,19 @@ public partial class Feedback : IEquatable<Feedback>
 
         return true &&
             (
-                this.SuggestionId == other.SuggestionId ||
-                this.SuggestionId != null &&
-                this.SuggestionId.Equals(other.SuggestionId)
+                SuggestionId == other.SuggestionId ||
+                SuggestionId != null &&
+                SuggestionId.Equals(other.SuggestionId)
             ) &&
             (
-                this.UserProvided == other.UserProvided ||
-                this.UserProvided != null &&
-                this.UserProvided.Equals(other.UserProvided)
+                UserProvided == other.UserProvided ||
+                UserProvided != null &&
+                UserProvided.Equals(other.UserProvided)
             ) &&
             (
-                this.Relevance == other.Relevance ||
-                this.Relevance != null &&
-                this.Relevance.Equals(other.Relevance)
+                Relevance == other.Relevance ||
+                Relevance != null &&
+                Relevance.Equals(other.Relevance)
             );
     }
 
@@ -160,19 +160,19 @@ public partial class Feedback : IEquatable<Feedback>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SuggestionId != null)
+            if (SuggestionId != null)
             {
-                hash = hash * 59 + this.SuggestionId.GetHashCode();
+                hash = hash * 59 + SuggestionId.GetHashCode();
             }
 
-            if (this.UserProvided != null)
+            if (UserProvided != null)
             {
-                hash = hash * 59 + this.UserProvided.GetHashCode();
+                hash = hash * 59 + UserProvided.GetHashCode();
             }
 
-            if (this.Relevance != null)
+            if (Relevance != null)
             {
-                hash = hash * 59 + this.Relevance.GetHashCode();
+                hash = hash * 59 + Relevance.GetHashCode();
             }
 
             return hash;

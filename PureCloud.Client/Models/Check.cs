@@ -185,7 +185,7 @@ public partial class Check : IEquatable<Check>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Check);
+        return Equals(obj as Check);
     }
 
     /// <summary>
@@ -203,14 +203,14 @@ public partial class Check : IEquatable<Check>
 
         return true &&
             (
-                this.Result == other.Result ||
-                this.Result != null &&
-                this.Result.Equals(other.Result)
+                Result == other.Result ||
+                Result != null &&
+                Result.Equals(other.Result)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -225,14 +225,14 @@ public partial class Check : IEquatable<Check>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Result != null)
+            if (Result != null)
             {
-                hash = hash * 59 + this.Result.GetHashCode();
+                hash = hash * 59 + Result.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

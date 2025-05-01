@@ -188,7 +188,7 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyOutcomeEventsNotificationDevice);
+        return Equals(obj as JourneyOutcomeEventsNotificationDevice);
     }
 
     /// <summary>
@@ -206,54 +206,54 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.IsMobile == other.IsMobile ||
-                this.IsMobile != null &&
-                this.IsMobile.Equals(other.IsMobile)
+                IsMobile == other.IsMobile ||
+                IsMobile != null &&
+                IsMobile.Equals(other.IsMobile)
             ) &&
             (
-                this.ScreenHeight == other.ScreenHeight ||
-                this.ScreenHeight != null &&
-                this.ScreenHeight.Equals(other.ScreenHeight)
+                ScreenHeight == other.ScreenHeight ||
+                ScreenHeight != null &&
+                ScreenHeight.Equals(other.ScreenHeight)
             ) &&
             (
-                this.ScreenWidth == other.ScreenWidth ||
-                this.ScreenWidth != null &&
-                this.ScreenWidth.Equals(other.ScreenWidth)
+                ScreenWidth == other.ScreenWidth ||
+                ScreenWidth != null &&
+                ScreenWidth.Equals(other.ScreenWidth)
             ) &&
             (
-                this.ScreenDensity == other.ScreenDensity ||
-                this.ScreenDensity != null &&
-                this.ScreenDensity.Equals(other.ScreenDensity)
+                ScreenDensity == other.ScreenDensity ||
+                ScreenDensity != null &&
+                ScreenDensity.Equals(other.ScreenDensity)
             ) &&
             (
-                this.Fingerprint == other.Fingerprint ||
-                this.Fingerprint != null &&
-                this.Fingerprint.Equals(other.Fingerprint)
+                Fingerprint == other.Fingerprint ||
+                Fingerprint != null &&
+                Fingerprint.Equals(other.Fingerprint)
             ) &&
             (
-                this.OsFamily == other.OsFamily ||
-                this.OsFamily != null &&
-                this.OsFamily.Equals(other.OsFamily)
+                OsFamily == other.OsFamily ||
+                OsFamily != null &&
+                OsFamily.Equals(other.OsFamily)
             ) &&
             (
-                this.OsVersion == other.OsVersion ||
-                this.OsVersion != null &&
-                this.OsVersion.Equals(other.OsVersion)
+                OsVersion == other.OsVersion ||
+                OsVersion != null &&
+                OsVersion.Equals(other.OsVersion)
             ) &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.Manufacturer == other.Manufacturer ||
-                this.Manufacturer != null &&
-                this.Manufacturer.Equals(other.Manufacturer)
+                Manufacturer == other.Manufacturer ||
+                Manufacturer != null &&
+                Manufacturer.Equals(other.Manufacturer)
             );
     }
 
@@ -268,54 +268,54 @@ public partial class JourneyOutcomeEventsNotificationDevice : IEquatable<Journey
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.IsMobile != null)
+            if (IsMobile != null)
             {
-                hash = hash * 59 + this.IsMobile.GetHashCode();
+                hash = hash * 59 + IsMobile.GetHashCode();
             }
 
-            if (this.ScreenHeight != null)
+            if (ScreenHeight != null)
             {
-                hash = hash * 59 + this.ScreenHeight.GetHashCode();
+                hash = hash * 59 + ScreenHeight.GetHashCode();
             }
 
-            if (this.ScreenWidth != null)
+            if (ScreenWidth != null)
             {
-                hash = hash * 59 + this.ScreenWidth.GetHashCode();
+                hash = hash * 59 + ScreenWidth.GetHashCode();
             }
 
-            if (this.ScreenDensity != null)
+            if (ScreenDensity != null)
             {
-                hash = hash * 59 + this.ScreenDensity.GetHashCode();
+                hash = hash * 59 + ScreenDensity.GetHashCode();
             }
 
-            if (this.Fingerprint != null)
+            if (Fingerprint != null)
             {
-                hash = hash * 59 + this.Fingerprint.GetHashCode();
+                hash = hash * 59 + Fingerprint.GetHashCode();
             }
 
-            if (this.OsFamily != null)
+            if (OsFamily != null)
             {
-                hash = hash * 59 + this.OsFamily.GetHashCode();
+                hash = hash * 59 + OsFamily.GetHashCode();
             }
 
-            if (this.OsVersion != null)
+            if (OsVersion != null)
             {
-                hash = hash * 59 + this.OsVersion.GetHashCode();
+                hash = hash * 59 + OsVersion.GetHashCode();
             }
 
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.Manufacturer != null)
+            if (Manufacturer != null)
             {
-                hash = hash * 59 + this.Manufacturer.GetHashCode();
+                hash = hash * 59 + Manufacturer.GetHashCode();
             }
 
             return hash;

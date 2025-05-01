@@ -109,7 +109,7 @@ public partial class Button : IEquatable<Button>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Button);
+        return Equals(obj as Button);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class Button : IEquatable<Button>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Content == other.Content ||
-                this.Content != null &&
-                this.Content.Equals(other.Content)
+                Content == other.Content ||
+                Content != null &&
+                Content.Equals(other.Content)
             ) &&
             (
-                this.ContentText == other.ContentText ||
-                this.ContentText != null &&
-                this.ContentText.Equals(other.ContentText)
+                ContentText == other.ContentText ||
+                ContentText != null &&
+                ContentText.Equals(other.ContentText)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class Button : IEquatable<Button>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Content != null)
+            if (Content != null)
             {
-                hash = hash * 59 + this.Content.GetHashCode();
+                hash = hash * 59 + Content.GetHashCode();
             }
 
-            if (this.ContentText != null)
+            if (ContentText != null)
             {
-                hash = hash * 59 + this.ContentText.GetHashCode();
+                hash = hash * 59 + ContentText.GetHashCode();
             }
 
             return hash;

@@ -290,7 +290,7 @@ public partial class IntegrationType : IEquatable<IntegrationType>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IntegrationType);
+        return Equals(obj as IntegrationType);
     }
 
     /// <summary>
@@ -308,124 +308,124 @@ public partial class IntegrationType : IEquatable<IntegrationType>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Provider == other.Provider ||
-                this.Provider != null &&
-                this.Provider.Equals(other.Provider)
+                Provider == other.Provider ||
+                Provider != null &&
+                Provider.Equals(other.Provider)
             ) &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.Images == other.Images ||
-                this.Images != null &&
-                this.Images.SequenceEqual(other.Images)
+                Images == other.Images ||
+                Images != null &&
+                Images.SequenceEqual(other.Images)
             ) &&
             (
-                this.ConfigPropertiesSchemaUri == other.ConfigPropertiesSchemaUri ||
-                this.ConfigPropertiesSchemaUri != null &&
-                this.ConfigPropertiesSchemaUri.Equals(other.ConfigPropertiesSchemaUri)
+                ConfigPropertiesSchemaUri == other.ConfigPropertiesSchemaUri ||
+                ConfigPropertiesSchemaUri != null &&
+                ConfigPropertiesSchemaUri.Equals(other.ConfigPropertiesSchemaUri)
             ) &&
             (
-                this.ConfigAdvancedSchemaUri == other.ConfigAdvancedSchemaUri ||
-                this.ConfigAdvancedSchemaUri != null &&
-                this.ConfigAdvancedSchemaUri.Equals(other.ConfigAdvancedSchemaUri)
+                ConfigAdvancedSchemaUri == other.ConfigAdvancedSchemaUri ||
+                ConfigAdvancedSchemaUri != null &&
+                ConfigAdvancedSchemaUri.Equals(other.ConfigAdvancedSchemaUri)
             ) &&
             (
-                this.HelpUri == other.HelpUri ||
-                this.HelpUri != null &&
-                this.HelpUri.Equals(other.HelpUri)
+                HelpUri == other.HelpUri ||
+                HelpUri != null &&
+                HelpUri.Equals(other.HelpUri)
             ) &&
             (
-                this.TermsOfServiceUri == other.TermsOfServiceUri ||
-                this.TermsOfServiceUri != null &&
-                this.TermsOfServiceUri.Equals(other.TermsOfServiceUri)
+                TermsOfServiceUri == other.TermsOfServiceUri ||
+                TermsOfServiceUri != null &&
+                TermsOfServiceUri.Equals(other.TermsOfServiceUri)
             ) &&
             (
-                this.VendorName == other.VendorName ||
-                this.VendorName != null &&
-                this.VendorName.Equals(other.VendorName)
+                VendorName == other.VendorName ||
+                VendorName != null &&
+                VendorName.Equals(other.VendorName)
             ) &&
             (
-                this.VendorWebsiteUri == other.VendorWebsiteUri ||
-                this.VendorWebsiteUri != null &&
-                this.VendorWebsiteUri.Equals(other.VendorWebsiteUri)
+                VendorWebsiteUri == other.VendorWebsiteUri ||
+                VendorWebsiteUri != null &&
+                VendorWebsiteUri.Equals(other.VendorWebsiteUri)
             ) &&
             (
-                this.MarketplaceUri == other.MarketplaceUri ||
-                this.MarketplaceUri != null &&
-                this.MarketplaceUri.Equals(other.MarketplaceUri)
+                MarketplaceUri == other.MarketplaceUri ||
+                MarketplaceUri != null &&
+                MarketplaceUri.Equals(other.MarketplaceUri)
             ) &&
             (
-                this.FaqUri == other.FaqUri ||
-                this.FaqUri != null &&
-                this.FaqUri.Equals(other.FaqUri)
+                FaqUri == other.FaqUri ||
+                FaqUri != null &&
+                FaqUri.Equals(other.FaqUri)
             ) &&
             (
-                this.PrivacyPolicyUri == other.PrivacyPolicyUri ||
-                this.PrivacyPolicyUri != null &&
-                this.PrivacyPolicyUri.Equals(other.PrivacyPolicyUri)
+                PrivacyPolicyUri == other.PrivacyPolicyUri ||
+                PrivacyPolicyUri != null &&
+                PrivacyPolicyUri.Equals(other.PrivacyPolicyUri)
             ) &&
             (
-                this.SupportContactUri == other.SupportContactUri ||
-                this.SupportContactUri != null &&
-                this.SupportContactUri.Equals(other.SupportContactUri)
+                SupportContactUri == other.SupportContactUri ||
+                SupportContactUri != null &&
+                SupportContactUri.Equals(other.SupportContactUri)
             ) &&
             (
-                this.SalesContactUri == other.SalesContactUri ||
-                this.SalesContactUri != null &&
-                this.SalesContactUri.Equals(other.SalesContactUri)
+                SalesContactUri == other.SalesContactUri ||
+                SalesContactUri != null &&
+                SalesContactUri.Equals(other.SalesContactUri)
             ) &&
             (
-                this.HelpLinks == other.HelpLinks ||
-                this.HelpLinks != null &&
-                this.HelpLinks.SequenceEqual(other.HelpLinks)
+                HelpLinks == other.HelpLinks ||
+                HelpLinks != null &&
+                HelpLinks.SequenceEqual(other.HelpLinks)
             ) &&
             (
-                this.Credentials == other.Credentials ||
-                this.Credentials != null &&
-                this.Credentials.SequenceEqual(other.Credentials)
+                Credentials == other.Credentials ||
+                Credentials != null &&
+                Credentials.SequenceEqual(other.Credentials)
             ) &&
             (
-                this.NonInstallable == other.NonInstallable ||
-                this.NonInstallable != null &&
-                this.NonInstallable.Equals(other.NonInstallable)
+                NonInstallable == other.NonInstallable ||
+                NonInstallable != null &&
+                NonInstallable.Equals(other.NonInstallable)
             ) &&
             (
-                this.MaxInstances == other.MaxInstances ||
-                this.MaxInstances != null &&
-                this.MaxInstances.Equals(other.MaxInstances)
+                MaxInstances == other.MaxInstances ||
+                MaxInstances != null &&
+                MaxInstances.Equals(other.MaxInstances)
             ) &&
             (
-                this.UserPermissions == other.UserPermissions ||
-                this.UserPermissions != null &&
-                this.UserPermissions.SequenceEqual(other.UserPermissions)
+                UserPermissions == other.UserPermissions ||
+                UserPermissions != null &&
+                UserPermissions.SequenceEqual(other.UserPermissions)
             ) &&
             (
-                this.VendorOAuthClientIds == other.VendorOAuthClientIds ||
-                this.VendorOAuthClientIds != null &&
-                this.VendorOAuthClientIds.SequenceEqual(other.VendorOAuthClientIds)
+                VendorOAuthClientIds == other.VendorOAuthClientIds ||
+                VendorOAuthClientIds != null &&
+                VendorOAuthClientIds.SequenceEqual(other.VendorOAuthClientIds)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -440,124 +440,124 @@ public partial class IntegrationType : IEquatable<IntegrationType>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Provider != null)
+            if (Provider != null)
             {
-                hash = hash * 59 + this.Provider.GetHashCode();
+                hash = hash * 59 + Provider.GetHashCode();
             }
 
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.Images != null)
+            if (Images != null)
             {
-                hash = hash * 59 + this.Images.GetHashCode();
+                hash = hash * 59 + Images.GetHashCode();
             }
 
-            if (this.ConfigPropertiesSchemaUri != null)
+            if (ConfigPropertiesSchemaUri != null)
             {
-                hash = hash * 59 + this.ConfigPropertiesSchemaUri.GetHashCode();
+                hash = hash * 59 + ConfigPropertiesSchemaUri.GetHashCode();
             }
 
-            if (this.ConfigAdvancedSchemaUri != null)
+            if (ConfigAdvancedSchemaUri != null)
             {
-                hash = hash * 59 + this.ConfigAdvancedSchemaUri.GetHashCode();
+                hash = hash * 59 + ConfigAdvancedSchemaUri.GetHashCode();
             }
 
-            if (this.HelpUri != null)
+            if (HelpUri != null)
             {
-                hash = hash * 59 + this.HelpUri.GetHashCode();
+                hash = hash * 59 + HelpUri.GetHashCode();
             }
 
-            if (this.TermsOfServiceUri != null)
+            if (TermsOfServiceUri != null)
             {
-                hash = hash * 59 + this.TermsOfServiceUri.GetHashCode();
+                hash = hash * 59 + TermsOfServiceUri.GetHashCode();
             }
 
-            if (this.VendorName != null)
+            if (VendorName != null)
             {
-                hash = hash * 59 + this.VendorName.GetHashCode();
+                hash = hash * 59 + VendorName.GetHashCode();
             }
 
-            if (this.VendorWebsiteUri != null)
+            if (VendorWebsiteUri != null)
             {
-                hash = hash * 59 + this.VendorWebsiteUri.GetHashCode();
+                hash = hash * 59 + VendorWebsiteUri.GetHashCode();
             }
 
-            if (this.MarketplaceUri != null)
+            if (MarketplaceUri != null)
             {
-                hash = hash * 59 + this.MarketplaceUri.GetHashCode();
+                hash = hash * 59 + MarketplaceUri.GetHashCode();
             }
 
-            if (this.FaqUri != null)
+            if (FaqUri != null)
             {
-                hash = hash * 59 + this.FaqUri.GetHashCode();
+                hash = hash * 59 + FaqUri.GetHashCode();
             }
 
-            if (this.PrivacyPolicyUri != null)
+            if (PrivacyPolicyUri != null)
             {
-                hash = hash * 59 + this.PrivacyPolicyUri.GetHashCode();
+                hash = hash * 59 + PrivacyPolicyUri.GetHashCode();
             }
 
-            if (this.SupportContactUri != null)
+            if (SupportContactUri != null)
             {
-                hash = hash * 59 + this.SupportContactUri.GetHashCode();
+                hash = hash * 59 + SupportContactUri.GetHashCode();
             }
 
-            if (this.SalesContactUri != null)
+            if (SalesContactUri != null)
             {
-                hash = hash * 59 + this.SalesContactUri.GetHashCode();
+                hash = hash * 59 + SalesContactUri.GetHashCode();
             }
 
-            if (this.HelpLinks != null)
+            if (HelpLinks != null)
             {
-                hash = hash * 59 + this.HelpLinks.GetHashCode();
+                hash = hash * 59 + HelpLinks.GetHashCode();
             }
 
-            if (this.Credentials != null)
+            if (Credentials != null)
             {
-                hash = hash * 59 + this.Credentials.GetHashCode();
+                hash = hash * 59 + Credentials.GetHashCode();
             }
 
-            if (this.NonInstallable != null)
+            if (NonInstallable != null)
             {
-                hash = hash * 59 + this.NonInstallable.GetHashCode();
+                hash = hash * 59 + NonInstallable.GetHashCode();
             }
 
-            if (this.MaxInstances != null)
+            if (MaxInstances != null)
             {
-                hash = hash * 59 + this.MaxInstances.GetHashCode();
+                hash = hash * 59 + MaxInstances.GetHashCode();
             }
 
-            if (this.UserPermissions != null)
+            if (UserPermissions != null)
             {
-                hash = hash * 59 + this.UserPermissions.GetHashCode();
+                hash = hash * 59 + UserPermissions.GetHashCode();
             }
 
-            if (this.VendorOAuthClientIds != null)
+            if (VendorOAuthClientIds != null)
             {
-                hash = hash * 59 + this.VendorOAuthClientIds.GetHashCode();
+                hash = hash * 59 + VendorOAuthClientIds.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

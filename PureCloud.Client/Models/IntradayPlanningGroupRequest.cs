@@ -127,7 +127,7 @@ public partial class IntradayPlanningGroupRequest : IEquatable<IntradayPlanningG
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IntradayPlanningGroupRequest);
+        return Equals(obj as IntradayPlanningGroupRequest);
     }
 
     /// <summary>
@@ -145,24 +145,24 @@ public partial class IntradayPlanningGroupRequest : IEquatable<IntradayPlanningG
 
         return true &&
             (
-                this.BusinessUnitDate == other.BusinessUnitDate ||
-                this.BusinessUnitDate != null &&
-                this.BusinessUnitDate.Equals(other.BusinessUnitDate)
+                BusinessUnitDate == other.BusinessUnitDate ||
+                BusinessUnitDate != null &&
+                BusinessUnitDate.Equals(other.BusinessUnitDate)
             ) &&
             (
-                this.Categories == other.Categories ||
-                this.Categories != null &&
-                this.Categories.SequenceEqual(other.Categories)
+                Categories == other.Categories ||
+                Categories != null &&
+                Categories.SequenceEqual(other.Categories)
             ) &&
             (
-                this.PlanningGroupIds == other.PlanningGroupIds ||
-                this.PlanningGroupIds != null &&
-                this.PlanningGroupIds.SequenceEqual(other.PlanningGroupIds)
+                PlanningGroupIds == other.PlanningGroupIds ||
+                PlanningGroupIds != null &&
+                PlanningGroupIds.SequenceEqual(other.PlanningGroupIds)
             ) &&
             (
-                this.IntervalLengthMinutes == other.IntervalLengthMinutes ||
-                this.IntervalLengthMinutes != null &&
-                this.IntervalLengthMinutes.Equals(other.IntervalLengthMinutes)
+                IntervalLengthMinutes == other.IntervalLengthMinutes ||
+                IntervalLengthMinutes != null &&
+                IntervalLengthMinutes.Equals(other.IntervalLengthMinutes)
             );
     }
 
@@ -177,24 +177,24 @@ public partial class IntradayPlanningGroupRequest : IEquatable<IntradayPlanningG
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BusinessUnitDate != null)
+            if (BusinessUnitDate != null)
             {
-                hash = hash * 59 + this.BusinessUnitDate.GetHashCode();
+                hash = hash * 59 + BusinessUnitDate.GetHashCode();
             }
 
-            if (this.Categories != null)
+            if (Categories != null)
             {
-                hash = hash * 59 + this.Categories.GetHashCode();
+                hash = hash * 59 + Categories.GetHashCode();
             }
 
-            if (this.PlanningGroupIds != null)
+            if (PlanningGroupIds != null)
             {
-                hash = hash * 59 + this.PlanningGroupIds.GetHashCode();
+                hash = hash * 59 + PlanningGroupIds.GetHashCode();
             }
 
-            if (this.IntervalLengthMinutes != null)
+            if (IntervalLengthMinutes != null)
             {
-                hash = hash * 59 + this.IntervalLengthMinutes.GetHashCode();
+                hash = hash * 59 + IntervalLengthMinutes.GetHashCode();
             }
 
             return hash;

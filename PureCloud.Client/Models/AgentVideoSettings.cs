@@ -120,7 +120,7 @@ public partial class AgentVideoSettings : IEquatable<AgentVideoSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentVideoSettings);
+        return Equals(obj as AgentVideoSettings);
     }
 
     /// <summary>
@@ -138,24 +138,24 @@ public partial class AgentVideoSettings : IEquatable<AgentVideoSettings>
 
         return true &&
             (
-                this.AllowCamera == other.AllowCamera ||
-                this.AllowCamera != null &&
-                this.AllowCamera.Equals(other.AllowCamera)
+                AllowCamera == other.AllowCamera ||
+                AllowCamera != null &&
+                AllowCamera.Equals(other.AllowCamera)
             ) &&
             (
-                this.AllowScreenShare == other.AllowScreenShare ||
-                this.AllowScreenShare != null &&
-                this.AllowScreenShare.Equals(other.AllowScreenShare)
+                AllowScreenShare == other.AllowScreenShare ||
+                AllowScreenShare != null &&
+                AllowScreenShare.Equals(other.AllowScreenShare)
             ) &&
             (
-                this.Background == other.Background ||
-                this.Background != null &&
-                this.Background.Equals(other.Background)
+                Background == other.Background ||
+                Background != null &&
+                Background.Equals(other.Background)
             ) &&
             (
-                this.BackgroundImage == other.BackgroundImage ||
-                this.BackgroundImage != null &&
-                this.BackgroundImage.Equals(other.BackgroundImage)
+                BackgroundImage == other.BackgroundImage ||
+                BackgroundImage != null &&
+                BackgroundImage.Equals(other.BackgroundImage)
             );
     }
 
@@ -170,24 +170,24 @@ public partial class AgentVideoSettings : IEquatable<AgentVideoSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AllowCamera != null)
+            if (AllowCamera != null)
             {
-                hash = hash * 59 + this.AllowCamera.GetHashCode();
+                hash = hash * 59 + AllowCamera.GetHashCode();
             }
 
-            if (this.AllowScreenShare != null)
+            if (AllowScreenShare != null)
             {
-                hash = hash * 59 + this.AllowScreenShare.GetHashCode();
+                hash = hash * 59 + AllowScreenShare.GetHashCode();
             }
 
-            if (this.Background != null)
+            if (Background != null)
             {
-                hash = hash * 59 + this.Background.GetHashCode();
+                hash = hash * 59 + Background.GetHashCode();
             }
 
-            if (this.BackgroundImage != null)
+            if (BackgroundImage != null)
             {
-                hash = hash * 59 + this.BackgroundImage.GetHashCode();
+                hash = hash * 59 + BackgroundImage.GetHashCode();
             }
 
             return hash;

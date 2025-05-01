@@ -101,7 +101,7 @@ public partial class ConversationContentLocation : IEquatable<ConversationConten
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationContentLocation);
+        return Equals(obj as ConversationContentLocation);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class ConversationContentLocation : IEquatable<ConversationConten
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Latitude == other.Latitude ||
-                this.Latitude != null &&
-                this.Latitude.Equals(other.Latitude)
+                Latitude == other.Latitude ||
+                Latitude != null &&
+                Latitude.Equals(other.Latitude)
             ) &&
             (
-                this.Longitude == other.Longitude ||
-                this.Longitude != null &&
-                this.Longitude.Equals(other.Longitude)
+                Longitude == other.Longitude ||
+                Longitude != null &&
+                Longitude.Equals(other.Longitude)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class ConversationContentLocation : IEquatable<ConversationConten
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Latitude != null)
+            if (Latitude != null)
             {
-                hash = hash * 59 + this.Latitude.GetHashCode();
+                hash = hash * 59 + Latitude.GetHashCode();
             }
 
-            if (this.Longitude != null)
+            if (Longitude != null)
             {
-                hash = hash * 59 + this.Longitude.GetHashCode();
+                hash = hash * 59 + Longitude.GetHashCode();
             }
 
             return hash;

@@ -83,7 +83,7 @@ public partial class FromEmailAddress : IEquatable<FromEmailAddress>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FromEmailAddress);
+        return Equals(obj as FromEmailAddress);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class FromEmailAddress : IEquatable<FromEmailAddress>
 
         return true &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.FriendlyName == other.FriendlyName ||
-                this.FriendlyName != null &&
-                this.FriendlyName.Equals(other.FriendlyName)
+                FriendlyName == other.FriendlyName ||
+                FriendlyName != null &&
+                FriendlyName.Equals(other.FriendlyName)
             ) &&
             (
-                this.LocalPart == other.LocalPart ||
-                this.LocalPart != null &&
-                this.LocalPart.Equals(other.LocalPart)
+                LocalPart == other.LocalPart ||
+                LocalPart != null &&
+                LocalPart.Equals(other.LocalPart)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class FromEmailAddress : IEquatable<FromEmailAddress>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.FriendlyName != null)
+            if (FriendlyName != null)
             {
-                hash = hash * 59 + this.FriendlyName.GetHashCode();
+                hash = hash * 59 + FriendlyName.GetHashCode();
             }
 
-            if (this.LocalPart != null)
+            if (LocalPart != null)
             {
-                hash = hash * 59 + this.LocalPart.GetHashCode();
+                hash = hash * 59 + LocalPart.GetHashCode();
             }
 
             return hash;

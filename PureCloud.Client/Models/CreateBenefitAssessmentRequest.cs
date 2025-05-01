@@ -59,7 +59,7 @@ public partial class CreateBenefitAssessmentRequest : IEquatable<CreateBenefitAs
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateBenefitAssessmentRequest);
+        return Equals(obj as CreateBenefitAssessmentRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class CreateBenefitAssessmentRequest : IEquatable<CreateBenefitAs
 
         return true &&
             (
-                this.QueueIds == other.QueueIds ||
-                this.QueueIds != null &&
-                this.QueueIds.SequenceEqual(other.QueueIds)
+                QueueIds == other.QueueIds ||
+                QueueIds != null &&
+                QueueIds.SequenceEqual(other.QueueIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class CreateBenefitAssessmentRequest : IEquatable<CreateBenefitAs
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueueIds != null)
+            if (QueueIds != null)
             {
-                hash = hash * 59 + this.QueueIds.GetHashCode();
+                hash = hash * 59 + QueueIds.GetHashCode();
             }
 
             return hash;

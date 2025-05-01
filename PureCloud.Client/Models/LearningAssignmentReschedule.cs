@@ -71,7 +71,7 @@ public partial class LearningAssignmentReschedule : IEquatable<LearningAssignmen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentReschedule);
+        return Equals(obj as LearningAssignmentReschedule);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class LearningAssignmentReschedule : IEquatable<LearningAssignmen
 
         return true &&
             (
-                this.DateRecommendedForCompletion == other.DateRecommendedForCompletion ||
-                this.DateRecommendedForCompletion != null &&
-                this.DateRecommendedForCompletion.Equals(other.DateRecommendedForCompletion)
+                DateRecommendedForCompletion == other.DateRecommendedForCompletion ||
+                DateRecommendedForCompletion != null &&
+                DateRecommendedForCompletion.Equals(other.DateRecommendedForCompletion)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class LearningAssignmentReschedule : IEquatable<LearningAssignmen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateRecommendedForCompletion != null)
+            if (DateRecommendedForCompletion != null)
             {
-                hash = hash * 59 + this.DateRecommendedForCompletion.GetHashCode();
+                hash = hash * 59 + DateRecommendedForCompletion.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
             return hash;

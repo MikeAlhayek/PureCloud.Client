@@ -100,7 +100,7 @@ public partial class WfmBuScheduleTopicSchedulerMessageSeverityCount : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuScheduleTopicSchedulerMessageSeverityCount);
+        return Equals(obj as WfmBuScheduleTopicSchedulerMessageSeverityCount);
     }
 
     /// <summary>
@@ -118,14 +118,14 @@ public partial class WfmBuScheduleTopicSchedulerMessageSeverityCount : IEquatabl
 
         return true &&
             (
-                this.Severity == other.Severity ||
-                this.Severity != null &&
-                this.Severity.Equals(other.Severity)
+                Severity == other.Severity ||
+                Severity != null &&
+                Severity.Equals(other.Severity)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             );
     }
 
@@ -140,14 +140,14 @@ public partial class WfmBuScheduleTopicSchedulerMessageSeverityCount : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Severity != null)
+            if (Severity != null)
             {
-                hash = hash * 59 + this.Severity.GetHashCode();
+                hash = hash * 59 + Severity.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
             return hash;

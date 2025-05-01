@@ -106,7 +106,7 @@ public partial class AlternativeShiftAgentScheduledShift : IEquatable<Alternativ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftAgentScheduledShift);
+        return Equals(obj as AlternativeShiftAgentScheduledShift);
     }
 
     /// <summary>
@@ -124,29 +124,29 @@ public partial class AlternativeShiftAgentScheduledShift : IEquatable<Alternativ
 
         return true &&
             (
-                this.DayIndex == other.DayIndex ||
-                this.DayIndex != null &&
-                this.DayIndex.Equals(other.DayIndex)
+                DayIndex == other.DayIndex ||
+                DayIndex != null &&
+                DayIndex.Equals(other.DayIndex)
             ) &&
             (
-                this.ReferenceKey == other.ReferenceKey ||
-                this.ReferenceKey != null &&
-                this.ReferenceKey.Equals(other.ReferenceKey)
+                ReferenceKey == other.ReferenceKey ||
+                ReferenceKey != null &&
+                ReferenceKey.Equals(other.ReferenceKey)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.LengthMinutes == other.LengthMinutes ||
-                this.LengthMinutes != null &&
-                this.LengthMinutes.Equals(other.LengthMinutes)
+                LengthMinutes == other.LengthMinutes ||
+                LengthMinutes != null &&
+                LengthMinutes.Equals(other.LengthMinutes)
             ) &&
             (
-                this.Activities == other.Activities ||
-                this.Activities != null &&
-                this.Activities.SequenceEqual(other.Activities)
+                Activities == other.Activities ||
+                Activities != null &&
+                Activities.SequenceEqual(other.Activities)
             );
     }
 
@@ -161,29 +161,29 @@ public partial class AlternativeShiftAgentScheduledShift : IEquatable<Alternativ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DayIndex != null)
+            if (DayIndex != null)
             {
-                hash = hash * 59 + this.DayIndex.GetHashCode();
+                hash = hash * 59 + DayIndex.GetHashCode();
             }
 
-            if (this.ReferenceKey != null)
+            if (ReferenceKey != null)
             {
-                hash = hash * 59 + this.ReferenceKey.GetHashCode();
+                hash = hash * 59 + ReferenceKey.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.LengthMinutes != null)
+            if (LengthMinutes != null)
             {
-                hash = hash * 59 + this.LengthMinutes.GetHashCode();
+                hash = hash * 59 + LengthMinutes.GetHashCode();
             }
 
-            if (this.Activities != null)
+            if (Activities != null)
             {
-                hash = hash * 59 + this.Activities.GetHashCode();
+                hash = hash * 59 + Activities.GetHashCode();
             }
 
             return hash;

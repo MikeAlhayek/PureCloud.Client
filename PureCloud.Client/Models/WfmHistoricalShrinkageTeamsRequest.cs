@@ -121,7 +121,7 @@ public partial class WfmHistoricalShrinkageTeamsRequest : IEquatable<WfmHistoric
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalShrinkageTeamsRequest);
+        return Equals(obj as WfmHistoricalShrinkageTeamsRequest);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class WfmHistoricalShrinkageTeamsRequest : IEquatable<WfmHistoric
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class WfmHistoricalShrinkageTeamsRequest : IEquatable<WfmHistoric
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
             return hash;

@@ -59,7 +59,7 @@ public partial class NuanceBotLaunchSettings : IEquatable<NuanceBotLaunchSetting
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NuanceBotLaunchSettings);
+        return Equals(obj as NuanceBotLaunchSettings);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class NuanceBotLaunchSettings : IEquatable<NuanceBotLaunchSetting
 
         return true &&
             (
-                this.BotExecutionConfigurations == other.BotExecutionConfigurations ||
-                this.BotExecutionConfigurations != null &&
-                this.BotExecutionConfigurations.SequenceEqual(other.BotExecutionConfigurations)
+                BotExecutionConfigurations == other.BotExecutionConfigurations ||
+                BotExecutionConfigurations != null &&
+                BotExecutionConfigurations.SequenceEqual(other.BotExecutionConfigurations)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class NuanceBotLaunchSettings : IEquatable<NuanceBotLaunchSetting
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BotExecutionConfigurations != null)
+            if (BotExecutionConfigurations != null)
             {
-                hash = hash * 59 + this.BotExecutionConfigurations.GetHashCode();
+                hash = hash * 59 + BotExecutionConfigurations.GetHashCode();
             }
 
             return hash;

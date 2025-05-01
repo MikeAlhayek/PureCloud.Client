@@ -144,7 +144,7 @@ public partial class PredictorModel : IEquatable<PredictorModel>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PredictorModel);
+        return Equals(obj as PredictorModel);
     }
 
     /// <summary>
@@ -162,39 +162,39 @@ public partial class PredictorModel : IEquatable<PredictorModel>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Kpi == other.Kpi ||
-                this.Kpi != null &&
-                this.Kpi.Equals(other.Kpi)
+                Kpi == other.Kpi ||
+                Kpi != null &&
+                Kpi.Equals(other.Kpi)
             ) &&
             (
-                this.Queues == other.Queues ||
-                this.Queues != null &&
-                this.Queues.SequenceEqual(other.Queues)
+                Queues == other.Queues ||
+                Queues != null &&
+                Queues.SequenceEqual(other.Queues)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateTrained == other.DateTrained ||
-                this.DateTrained != null &&
-                this.DateTrained.Equals(other.DateTrained)
+                DateTrained == other.DateTrained ||
+                DateTrained != null &&
+                DateTrained.Equals(other.DateTrained)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.Features == other.Features ||
-                this.Features != null &&
-                this.Features.SequenceEqual(other.Features)
+                Features == other.Features ||
+                Features != null &&
+                Features.SequenceEqual(other.Features)
             );
     }
 
@@ -209,39 +209,39 @@ public partial class PredictorModel : IEquatable<PredictorModel>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Kpi != null)
+            if (Kpi != null)
             {
-                hash = hash * 59 + this.Kpi.GetHashCode();
+                hash = hash * 59 + Kpi.GetHashCode();
             }
 
-            if (this.Queues != null)
+            if (Queues != null)
             {
-                hash = hash * 59 + this.Queues.GetHashCode();
+                hash = hash * 59 + Queues.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateTrained != null)
+            if (DateTrained != null)
             {
-                hash = hash * 59 + this.DateTrained.GetHashCode();
+                hash = hash * 59 + DateTrained.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.Features != null)
+            if (Features != null)
             {
-                hash = hash * 59 + this.Features.GetHashCode();
+                hash = hash * 59 + Features.GetHashCode();
             }
 
             return hash;

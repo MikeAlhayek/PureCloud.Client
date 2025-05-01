@@ -52,7 +52,7 @@ public partial class GeneralTopic : IEquatable<GeneralTopic>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GeneralTopic);
+        return Equals(obj as GeneralTopic);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class GeneralTopic : IEquatable<GeneralTopic>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class GeneralTopic : IEquatable<GeneralTopic>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
             return hash;

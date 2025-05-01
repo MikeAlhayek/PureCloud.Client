@@ -70,7 +70,7 @@ public partial class ActionContractInput : IEquatable<ActionContractInput>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionContractInput);
+        return Equals(obj as ActionContractInput);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class ActionContractInput : IEquatable<ActionContractInput>
 
         return true &&
             (
-                this.Input == other.Input ||
-                this.Input != null &&
-                this.Input.Equals(other.Input)
+                Input == other.Input ||
+                Input != null &&
+                Input.Equals(other.Input)
             ) &&
             (
-                this.Output == other.Output ||
-                this.Output != null &&
-                this.Output.Equals(other.Output)
+                Output == other.Output ||
+                Output != null &&
+                Output.Equals(other.Output)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class ActionContractInput : IEquatable<ActionContractInput>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Input != null)
+            if (Input != null)
             {
-                hash = hash * 59 + this.Input.GetHashCode();
+                hash = hash * 59 + Input.GetHashCode();
             }
 
-            if (this.Output != null)
+            if (Output != null)
             {
-                hash = hash * 59 + this.Output.GetHashCode();
+                hash = hash * 59 + Output.GetHashCode();
             }
 
             return hash;

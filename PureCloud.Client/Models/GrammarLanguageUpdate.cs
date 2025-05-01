@@ -65,7 +65,7 @@ public partial class GrammarLanguageUpdate : IEquatable<GrammarLanguageUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GrammarLanguageUpdate);
+        return Equals(obj as GrammarLanguageUpdate);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class GrammarLanguageUpdate : IEquatable<GrammarLanguageUpdate>
 
         return true &&
             (
-                this.VoiceFileMetadata == other.VoiceFileMetadata ||
-                this.VoiceFileMetadata != null &&
-                this.VoiceFileMetadata.Equals(other.VoiceFileMetadata)
+                VoiceFileMetadata == other.VoiceFileMetadata ||
+                VoiceFileMetadata != null &&
+                VoiceFileMetadata.Equals(other.VoiceFileMetadata)
             ) &&
             (
-                this.DtmfFileMetadata == other.DtmfFileMetadata ||
-                this.DtmfFileMetadata != null &&
-                this.DtmfFileMetadata.Equals(other.DtmfFileMetadata)
+                DtmfFileMetadata == other.DtmfFileMetadata ||
+                DtmfFileMetadata != null &&
+                DtmfFileMetadata.Equals(other.DtmfFileMetadata)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class GrammarLanguageUpdate : IEquatable<GrammarLanguageUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.VoiceFileMetadata != null)
+            if (VoiceFileMetadata != null)
             {
-                hash = hash * 59 + this.VoiceFileMetadata.GetHashCode();
+                hash = hash * 59 + VoiceFileMetadata.GetHashCode();
             }
 
-            if (this.DtmfFileMetadata != null)
+            if (DtmfFileMetadata != null)
             {
-                hash = hash * 59 + this.DtmfFileMetadata.GetHashCode();
+                hash = hash * 59 + DtmfFileMetadata.GetHashCode();
             }
 
             return hash;

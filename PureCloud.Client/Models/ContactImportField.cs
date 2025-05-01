@@ -71,7 +71,7 @@ public partial class ContactImportField : IEquatable<ContactImportField>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactImportField);
+        return Equals(obj as ContactImportField);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ContactImportField : IEquatable<ContactImportField>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Included == other.Included ||
-                this.Included != null &&
-                this.Included.Equals(other.Included)
+                Included == other.Included ||
+                Included != null &&
+                Included.Equals(other.Included)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ContactImportField : IEquatable<ContactImportField>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Included != null)
+            if (Included != null)
             {
-                hash = hash * 59 + this.Included.GetHashCode();
+                hash = hash * 59 + Included.GetHashCode();
             }
 
             return hash;

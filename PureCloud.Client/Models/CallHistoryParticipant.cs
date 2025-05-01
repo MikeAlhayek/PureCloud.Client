@@ -424,7 +424,7 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallHistoryParticipant);
+        return Equals(obj as CallHistoryParticipant);
     }
 
     /// <summary>
@@ -442,99 +442,99 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             ) &&
             (
-                this.EndTime == other.EndTime ||
-                this.EndTime != null &&
-                this.EndTime.Equals(other.EndTime)
+                EndTime == other.EndTime ||
+                EndTime != null &&
+                EndTime.Equals(other.EndTime)
             ) &&
             (
-                this.Purpose == other.Purpose ||
-                this.Purpose != null &&
-                this.Purpose.Equals(other.Purpose)
+                Purpose == other.Purpose ||
+                Purpose != null &&
+                Purpose.Equals(other.Purpose)
             ) &&
             (
-                this.Direction == other.Direction ||
-                this.Direction != null &&
-                this.Direction.Equals(other.Direction)
+                Direction == other.Direction ||
+                Direction != null &&
+                Direction.Equals(other.Direction)
             ) &&
             (
-                this.Ani == other.Ani ||
-                this.Ani != null &&
-                this.Ani.Equals(other.Ani)
+                Ani == other.Ani ||
+                Ani != null &&
+                Ani.Equals(other.Ani)
             ) &&
             (
-                this.Dnis == other.Dnis ||
-                this.Dnis != null &&
-                this.Dnis.Equals(other.Dnis)
+                Dnis == other.Dnis ||
+                Dnis != null &&
+                Dnis.Equals(other.Dnis)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.Group == other.Group ||
-                this.Group != null &&
-                this.Group.Equals(other.Group)
+                Group == other.Group ||
+                Group != null &&
+                Group.Equals(other.Group)
             ) &&
             (
-                this.DisconnectType == other.DisconnectType ||
-                this.DisconnectType != null &&
-                this.DisconnectType.Equals(other.DisconnectType)
+                DisconnectType == other.DisconnectType ||
+                DisconnectType != null &&
+                DisconnectType.Equals(other.DisconnectType)
             ) &&
             (
-                this.ExternalContact == other.ExternalContact ||
-                this.ExternalContact != null &&
-                this.ExternalContact.Equals(other.ExternalContact)
+                ExternalContact == other.ExternalContact ||
+                ExternalContact != null &&
+                ExternalContact.Equals(other.ExternalContact)
             ) &&
             (
-                this.ExternalOrganization == other.ExternalOrganization ||
-                this.ExternalOrganization != null &&
-                this.ExternalOrganization.Equals(other.ExternalOrganization)
+                ExternalOrganization == other.ExternalOrganization ||
+                ExternalOrganization != null &&
+                ExternalOrganization.Equals(other.ExternalOrganization)
             ) &&
             (
-                this.DidInteract == other.DidInteract ||
-                this.DidInteract != null &&
-                this.DidInteract.Equals(other.DidInteract)
+                DidInteract == other.DidInteract ||
+                DidInteract != null &&
+                DidInteract.Equals(other.DidInteract)
             ) &&
             (
-                this.SipResponseCodes == other.SipResponseCodes ||
-                this.SipResponseCodes != null &&
-                this.SipResponseCodes.SequenceEqual(other.SipResponseCodes)
+                SipResponseCodes == other.SipResponseCodes ||
+                SipResponseCodes != null &&
+                SipResponseCodes.SequenceEqual(other.SipResponseCodes)
             ) &&
             (
-                this.FlaggedReason == other.FlaggedReason ||
-                this.FlaggedReason != null &&
-                this.FlaggedReason.Equals(other.FlaggedReason)
+                FlaggedReason == other.FlaggedReason ||
+                FlaggedReason != null &&
+                FlaggedReason.Equals(other.FlaggedReason)
             ) &&
             (
-                this.OutboundCampaign == other.OutboundCampaign ||
-                this.OutboundCampaign != null &&
-                this.OutboundCampaign.Equals(other.OutboundCampaign)
+                OutboundCampaign == other.OutboundCampaign ||
+                OutboundCampaign != null &&
+                OutboundCampaign.Equals(other.OutboundCampaign)
             );
     }
 
@@ -549,99 +549,99 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
-            if (this.EndTime != null)
+            if (EndTime != null)
             {
-                hash = hash * 59 + this.EndTime.GetHashCode();
+                hash = hash * 59 + EndTime.GetHashCode();
             }
 
-            if (this.Purpose != null)
+            if (Purpose != null)
             {
-                hash = hash * 59 + this.Purpose.GetHashCode();
+                hash = hash * 59 + Purpose.GetHashCode();
             }
 
-            if (this.Direction != null)
+            if (Direction != null)
             {
-                hash = hash * 59 + this.Direction.GetHashCode();
+                hash = hash * 59 + Direction.GetHashCode();
             }
 
-            if (this.Ani != null)
+            if (Ani != null)
             {
-                hash = hash * 59 + this.Ani.GetHashCode();
+                hash = hash * 59 + Ani.GetHashCode();
             }
 
-            if (this.Dnis != null)
+            if (Dnis != null)
             {
-                hash = hash * 59 + this.Dnis.GetHashCode();
+                hash = hash * 59 + Dnis.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.Group != null)
+            if (Group != null)
             {
-                hash = hash * 59 + this.Group.GetHashCode();
+                hash = hash * 59 + Group.GetHashCode();
             }
 
-            if (this.DisconnectType != null)
+            if (DisconnectType != null)
             {
-                hash = hash * 59 + this.DisconnectType.GetHashCode();
+                hash = hash * 59 + DisconnectType.GetHashCode();
             }
 
-            if (this.ExternalContact != null)
+            if (ExternalContact != null)
             {
-                hash = hash * 59 + this.ExternalContact.GetHashCode();
+                hash = hash * 59 + ExternalContact.GetHashCode();
             }
 
-            if (this.ExternalOrganization != null)
+            if (ExternalOrganization != null)
             {
-                hash = hash * 59 + this.ExternalOrganization.GetHashCode();
+                hash = hash * 59 + ExternalOrganization.GetHashCode();
             }
 
-            if (this.DidInteract != null)
+            if (DidInteract != null)
             {
-                hash = hash * 59 + this.DidInteract.GetHashCode();
+                hash = hash * 59 + DidInteract.GetHashCode();
             }
 
-            if (this.SipResponseCodes != null)
+            if (SipResponseCodes != null)
             {
-                hash = hash * 59 + this.SipResponseCodes.GetHashCode();
+                hash = hash * 59 + SipResponseCodes.GetHashCode();
             }
 
-            if (this.FlaggedReason != null)
+            if (FlaggedReason != null)
             {
-                hash = hash * 59 + this.FlaggedReason.GetHashCode();
+                hash = hash * 59 + FlaggedReason.GetHashCode();
             }
 
-            if (this.OutboundCampaign != null)
+            if (OutboundCampaign != null)
             {
-                hash = hash * 59 + this.OutboundCampaign.GetHashCode();
+                hash = hash * 59 + OutboundCampaign.GetHashCode();
             }
 
             return hash;

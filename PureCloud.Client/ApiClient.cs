@@ -132,18 +132,18 @@ public class ApiClient
     {
         get
         {
-            return this.gatewayConfig;
+            return gatewayConfig;
         }
         set
         {
             if (value != null)
             {
-                this.gatewayConfig = value;
+                gatewayConfig = value;
             }
             else
             {
                 // Reset
-                this.gatewayConfig = null;
+                gatewayConfig = null;
             }
         }
     }
@@ -155,7 +155,7 @@ public class ApiClient
     {
         if (pathType.Equals("login"))
         {
-            if (this.GatewayConfig == null || string.IsNullOrEmpty(this.GatewayConfig.Host))
+            if (GatewayConfig == null || string.IsNullOrEmpty(GatewayConfig.Host))
             {
                 var regex = new Regex(@"://(api)\.");
                 var authUrl = regex.Replace(baseUri.ToString(), "://login.");
@@ -163,21 +163,21 @@ public class ApiClient
             }
             else
             {
-                string confUrl = this.GatewayConfig.Protocol + "://" + this.GatewayConfig.Host;
-                if (this.GatewayConfig.Port > 0)
+                string confUrl = GatewayConfig.Protocol + "://" + GatewayConfig.Host;
+                if (GatewayConfig.Port > 0)
                 {
-                    confUrl = confUrl + ":" + this.GatewayConfig.Port.ToString();
+                    confUrl = confUrl + ":" + GatewayConfig.Port.ToString();
                 }
 
-                if (!string.IsNullOrEmpty(this.GatewayConfig.PathParamsLogin))
+                if (!string.IsNullOrEmpty(GatewayConfig.PathParamsLogin))
                 {
-                    if (this.GatewayConfig.PathParamsLogin.StartsWith("/"))
+                    if (GatewayConfig.PathParamsLogin.StartsWith("/"))
                     {
-                        confUrl = confUrl + this.GatewayConfig.PathParamsLogin;
+                        confUrl = confUrl + GatewayConfig.PathParamsLogin;
                     }
                     else
                     {
-                        confUrl = confUrl + "/" + this.GatewayConfig.PathParamsLogin;
+                        confUrl = confUrl + "/" + GatewayConfig.PathParamsLogin;
                     }
                 }
                 return new Uri(confUrl);
@@ -185,27 +185,27 @@ public class ApiClient
         }
         else
         {
-            if (this.GatewayConfig == null || string.IsNullOrEmpty(this.GatewayConfig.Host))
+            if (GatewayConfig == null || string.IsNullOrEmpty(GatewayConfig.Host))
             {
                 return baseUri;
             }
             else
             {
-                string confUrl = this.GatewayConfig.Protocol + "://" + this.GatewayConfig.Host;
-                if (this.GatewayConfig.Port > 0)
+                string confUrl = GatewayConfig.Protocol + "://" + GatewayConfig.Host;
+                if (GatewayConfig.Port > 0)
                 {
-                    confUrl = confUrl + ":" + this.GatewayConfig.Port.ToString();
+                    confUrl = confUrl + ":" + GatewayConfig.Port.ToString();
                 }
 
-                if (!string.IsNullOrEmpty(this.GatewayConfig.PathParamsApi))
+                if (!string.IsNullOrEmpty(GatewayConfig.PathParamsApi))
                 {
-                    if (this.GatewayConfig.PathParamsApi.StartsWith("/"))
+                    if (GatewayConfig.PathParamsApi.StartsWith("/"))
                     {
-                        confUrl = confUrl + this.GatewayConfig.PathParamsApi;
+                        confUrl = confUrl + GatewayConfig.PathParamsApi;
                     }
                     else
                     {
-                        confUrl = confUrl + "/" + this.GatewayConfig.PathParamsApi;
+                        confUrl = confUrl + "/" + GatewayConfig.PathParamsApi;
                     }
                 }
                 return new Uri(confUrl);
@@ -224,7 +224,7 @@ public class ApiClient
         string username,
         string password)
     {
-        this.GatewayConfig = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi, username, password);
+        GatewayConfig = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi, username, password);
     }
 
     ///<Summary>
@@ -236,7 +236,7 @@ public class ApiClient
         string pathParamsLogin,
         string pathParamsApi)
     {
-        this.GatewayConfig = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi);
+        GatewayConfig = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi);
     }
 
 
@@ -365,7 +365,7 @@ public class ApiClient
         // Set SDK version
         request.AddHeader("purecloud-sdk", "231.1.0");
 
-        Retry retry = new Retry(this.RetryConfig);
+        Retry retry = new Retry(RetryConfig);
         RestResponse response;
 
 
@@ -462,7 +462,7 @@ public class ApiClient
             path, method, queryParams, postBody, headerParams, formParams, fileParams,
             pathParams, contentType);
 
-        Retry retry = new Retry(this.RetryConfig);
+        Retry retry = new Retry(RetryConfig);
         RestResponse response;
 
         var options = new RestClientOptions(GetConfUri("api", ClientOptions.BaseUrl)) { };
@@ -876,7 +876,7 @@ public class ApiClient
                 {
                     throw new ArgumentException("BackOffIntervalMs should be a positive integer");
                 }
-                this.backoffIntervalMs = value;
+                backoffIntervalMs = value;
             }
         }
 
@@ -895,7 +895,7 @@ public class ApiClient
                 {
                     throw new ArgumentException("RetryAfterDefaultMs should be a positive integer");
                 }
-                this.retryAfterDefaultMs = value;
+                retryAfterDefaultMs = value;
             }
         }
 
@@ -914,7 +914,7 @@ public class ApiClient
                 {
                     throw new ArgumentException("MaxRetryTimeSec should be a positive integer");
                 }
-                this.maxRetryTimeSec = value;
+                maxRetryTimeSec = value;
             }
         }
 
@@ -933,7 +933,7 @@ public class ApiClient
                 {
                     throw new ArgumentException("RetryMax should be a positive integer");
                 }
-                this.retryMax = value;
+                retryMax = value;
             }
         }
     }
@@ -970,10 +970,10 @@ public class ApiClient
         ///</Summary>
         public GatewayConfiguration()
         {
-            this.protocol = "https";
-            this.port = -1;
-            this.pathParamsLogin = "";
-            this.pathParamsApi = "";
+            protocol = "https";
+            port = -1;
+            pathParamsLogin = "";
+            pathParamsApi = "";
         }
 
         ///<Summary>
@@ -987,13 +987,13 @@ public class ApiClient
             string username,
             string password)
         {
-            this.Host = host;
-            this.Protocol = protocol;
-            this.Port = port;
-            this.PathParamsLogin = pathParamsLogin;
-            this.PathParamsApi = pathParamsApi;
-            this.Username = username;
-            this.Password = password;
+            Host = host;
+            Protocol = protocol;
+            Port = port;
+            PathParamsLogin = pathParamsLogin;
+            PathParamsApi = pathParamsApi;
+            Username = username;
+            Password = password;
         }
 
         ///<Summary>
@@ -1005,11 +1005,11 @@ public class ApiClient
             string pathParamsLogin,
             string pathParamsApi)
         {
-            this.Host = host;
-            this.Protocol = protocol;
-            this.Port = port;
-            this.PathParamsLogin = pathParamsLogin;
-            this.PathParamsApi = pathParamsApi;
+            Host = host;
+            Protocol = protocol;
+            Port = port;
+            PathParamsLogin = pathParamsLogin;
+            PathParamsApi = pathParamsApi;
         }
 
         ///<Summary>
@@ -1019,13 +1019,13 @@ public class ApiClient
         {
             get
             {
-                return this.host;
+                return host;
             }
             set
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    this.host = value;
+                    host = value;
                 }
             }
         }
@@ -1037,17 +1037,17 @@ public class ApiClient
         {
             get
             {
-                return this.protocol;
+                return protocol;
             }
             set
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    this.protocol = value;
+                    protocol = value;
                 }
                 else
                 {
-                    this.protocol = "https";
+                    protocol = "https";
                 }
             }
         }
@@ -1059,17 +1059,17 @@ public class ApiClient
         {
             get
             {
-                return this.port;
+                return port;
             }
             set
             {
                 if (value > -1)
                 {
-                    this.port = value;
+                    port = value;
                 }
                 else
                 {
-                    this.port = -1;
+                    port = -1;
                 }
             }
         }
@@ -1081,21 +1081,21 @@ public class ApiClient
         {
             get
             {
-                return this.pathParamsLogin;
+                return pathParamsLogin;
             }
             set
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    this.pathParamsLogin = value;
-                    if (this.pathParamsLogin.EndsWith("/"))
+                    pathParamsLogin = value;
+                    if (pathParamsLogin.EndsWith("/"))
                     {
-                        this.pathParamsLogin = this.pathParamsLogin.Substring(0, this.pathParamsLogin.Length - 1);
+                        pathParamsLogin = pathParamsLogin.Substring(0, pathParamsLogin.Length - 1);
                     }
                 }
                 else
                 {
-                    this.pathParamsLogin = "";
+                    pathParamsLogin = "";
                 }
             }
         }
@@ -1107,21 +1107,21 @@ public class ApiClient
         {
             get
             {
-                return this.pathParamsApi;
+                return pathParamsApi;
             }
             set
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    this.pathParamsApi = value;
-                    if (this.pathParamsApi.EndsWith("/"))
+                    pathParamsApi = value;
+                    if (pathParamsApi.EndsWith("/"))
                     {
-                        this.pathParamsApi = this.pathParamsApi.Substring(0, this.pathParamsApi.Length - 1);
+                        pathParamsApi = pathParamsApi.Substring(0, pathParamsApi.Length - 1);
                     }
                 }
                 else
                 {
-                    this.pathParamsApi = "";
+                    pathParamsApi = "";
                 }
             }
         }
@@ -1133,13 +1133,13 @@ public class ApiClient
         {
             get
             {
-                return this.username;
+                return username;
             }
             set
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    this.username = value;
+                    username = value;
                 }
             }
         }
@@ -1151,13 +1151,13 @@ public class ApiClient
         {
             get
             {
-                return this.password;
+                return password;
             }
             set
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    this.password = value;
+                    password = value;
                 }
             }
         }
@@ -1190,7 +1190,7 @@ public class ApiClient
             }
             set
             {
-                this.httpMessageHandler = value;
+                httpMessageHandler = value;
             }
         }
 
@@ -1205,7 +1205,7 @@ public class ApiClient
             }
             set
             {
-                this.proxy = value;
+                proxy = value;
             }
         }
 
@@ -1228,10 +1228,10 @@ public class ApiClient
 
         public Retry(RetryConfiguration retryConfiguration)
         {
-            this.backoffIntervalMs = retryConfiguration.BackOffIntervalMs;
-            this.retryAfterDefaultMs = retryConfiguration.RetryAfterDefaultMs;
-            this.maxRetryTimeSec = retryConfiguration.MaxRetryTimeSec;
-            this.retryMax = retryConfiguration.RetryMax;
+            backoffIntervalMs = retryConfiguration.BackOffIntervalMs;
+            retryAfterDefaultMs = retryConfiguration.RetryAfterDefaultMs;
+            maxRetryTimeSec = retryConfiguration.MaxRetryTimeSec;
+            retryMax = retryConfiguration.RetryMax;
             stopwatch = Stopwatch.StartNew();
         }
 

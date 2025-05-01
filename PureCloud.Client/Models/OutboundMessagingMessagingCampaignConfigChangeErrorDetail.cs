@@ -65,7 +65,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeErrorDetail :
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingMessagingCampaignConfigChangeErrorDetail);
+        return Equals(obj as OutboundMessagingMessagingCampaignConfigChangeErrorDetail);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeErrorDetail :
 
         return true &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.Details == other.Details ||
-                this.Details != null &&
-                this.Details.Equals(other.Details)
+                Details == other.Details ||
+                Details != null &&
+                Details.Equals(other.Details)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeErrorDetail :
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.Details != null)
+            if (Details != null)
             {
-                hash = hash * 59 + this.Details.GetHashCode();
+                hash = hash * 59 + Details.GetHashCode();
             }
 
             return hash;

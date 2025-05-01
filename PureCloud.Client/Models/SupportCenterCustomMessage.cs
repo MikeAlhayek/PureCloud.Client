@@ -97,7 +97,7 @@ public partial class SupportCenterCustomMessage : IEquatable<SupportCenterCustom
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportCenterCustomMessage);
+        return Equals(obj as SupportCenterCustomMessage);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class SupportCenterCustomMessage : IEquatable<SupportCenterCustom
 
         return true &&
             (
-                this.DefaultValue == other.DefaultValue ||
-                this.DefaultValue != null &&
-                this.DefaultValue.Equals(other.DefaultValue)
+                DefaultValue == other.DefaultValue ||
+                DefaultValue != null &&
+                DefaultValue.Equals(other.DefaultValue)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class SupportCenterCustomMessage : IEquatable<SupportCenterCustom
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DefaultValue != null)
+            if (DefaultValue != null)
             {
-                hash = hash * 59 + this.DefaultValue.GetHashCode();
+                hash = hash * 59 + DefaultValue.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

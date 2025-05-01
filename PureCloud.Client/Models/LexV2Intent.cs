@@ -95,7 +95,7 @@ public partial class LexV2Intent : IEquatable<LexV2Intent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LexV2Intent);
+        return Equals(obj as LexV2Intent);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class LexV2Intent : IEquatable<LexV2Intent>
 
         return true &&
             (
-                this.IntentName == other.IntentName ||
-                this.IntentName != null &&
-                this.IntentName.Equals(other.IntentName)
+                IntentName == other.IntentName ||
+                IntentName != null &&
+                IntentName.Equals(other.IntentName)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Slots == other.Slots ||
-                this.Slots != null &&
-                this.Slots.SequenceEqual(other.Slots)
+                Slots == other.Slots ||
+                Slots != null &&
+                Slots.SequenceEqual(other.Slots)
             ) &&
             (
-                this.IntentId == other.IntentId ||
-                this.IntentId != null &&
-                this.IntentId.Equals(other.IntentId)
+                IntentId == other.IntentId ||
+                IntentId != null &&
+                IntentId.Equals(other.IntentId)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class LexV2Intent : IEquatable<LexV2Intent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IntentName != null)
+            if (IntentName != null)
             {
-                hash = hash * 59 + this.IntentName.GetHashCode();
+                hash = hash * 59 + IntentName.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Slots != null)
+            if (Slots != null)
             {
-                hash = hash * 59 + this.Slots.GetHashCode();
+                hash = hash * 59 + Slots.GetHashCode();
             }
 
-            if (this.IntentId != null)
+            if (IntentId != null)
             {
-                hash = hash * 59 + this.IntentId.GetHashCode();
+                hash = hash * 59 + IntentId.GetHashCode();
             }
 
             return hash;

@@ -523,7 +523,7 @@ public partial class QueueConversationSocialExpressionEventTopicCobrowse : IEqua
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationSocialExpressionEventTopicCobrowse);
+        return Equals(obj as QueueConversationSocialExpressionEventTopicCobrowse);
     }
 
     /// <summary>
@@ -541,104 +541,104 @@ public partial class QueueConversationSocialExpressionEventTopicCobrowse : IEqua
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.InitialState == other.InitialState ||
-                this.InitialState != null &&
-                this.InitialState.Equals(other.InitialState)
+                InitialState == other.InitialState ||
+                InitialState != null &&
+                InitialState.Equals(other.InitialState)
             ) &&
             (
-                this.DisconnectType == other.DisconnectType ||
-                this.DisconnectType != null &&
-                this.DisconnectType.Equals(other.DisconnectType)
+                DisconnectType == other.DisconnectType ||
+                DisconnectType != null &&
+                DisconnectType.Equals(other.DisconnectType)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Self == other.Self ||
-                this.Self != null &&
-                this.Self.Equals(other.Self)
+                Self == other.Self ||
+                Self != null &&
+                Self.Equals(other.Self)
             ) &&
             (
-                this.RoomId == other.RoomId ||
-                this.RoomId != null &&
-                this.RoomId.Equals(other.RoomId)
+                RoomId == other.RoomId ||
+                RoomId != null &&
+                RoomId.Equals(other.RoomId)
             ) &&
             (
-                this.CobrowseSessionId == other.CobrowseSessionId ||
-                this.CobrowseSessionId != null &&
-                this.CobrowseSessionId.Equals(other.CobrowseSessionId)
+                CobrowseSessionId == other.CobrowseSessionId ||
+                CobrowseSessionId != null &&
+                CobrowseSessionId.Equals(other.CobrowseSessionId)
             ) &&
             (
-                this.CobrowseRole == other.CobrowseRole ||
-                this.CobrowseRole != null &&
-                this.CobrowseRole.Equals(other.CobrowseRole)
+                CobrowseRole == other.CobrowseRole ||
+                CobrowseRole != null &&
+                CobrowseRole.Equals(other.CobrowseRole)
             ) &&
             (
-                this.Controlling == other.Controlling ||
-                this.Controlling != null &&
-                this.Controlling.SequenceEqual(other.Controlling)
+                Controlling == other.Controlling ||
+                Controlling != null &&
+                Controlling.SequenceEqual(other.Controlling)
             ) &&
             (
-                this.ViewerUrl == other.ViewerUrl ||
-                this.ViewerUrl != null &&
-                this.ViewerUrl.Equals(other.ViewerUrl)
+                ViewerUrl == other.ViewerUrl ||
+                ViewerUrl != null &&
+                ViewerUrl.Equals(other.ViewerUrl)
             ) &&
             (
-                this.Provider == other.Provider ||
-                this.Provider != null &&
-                this.Provider.Equals(other.Provider)
+                Provider == other.Provider ||
+                Provider != null &&
+                Provider.Equals(other.Provider)
             ) &&
             (
-                this.ScriptId == other.ScriptId ||
-                this.ScriptId != null &&
-                this.ScriptId.Equals(other.ScriptId)
+                ScriptId == other.ScriptId ||
+                ScriptId != null &&
+                ScriptId.Equals(other.ScriptId)
             ) &&
             (
-                this.PeerId == other.PeerId ||
-                this.PeerId != null &&
-                this.PeerId.Equals(other.PeerId)
+                PeerId == other.PeerId ||
+                PeerId != null &&
+                PeerId.Equals(other.PeerId)
             ) &&
             (
-                this.ProviderEventTime == other.ProviderEventTime ||
-                this.ProviderEventTime != null &&
-                this.ProviderEventTime.Equals(other.ProviderEventTime)
+                ProviderEventTime == other.ProviderEventTime ||
+                ProviderEventTime != null &&
+                ProviderEventTime.Equals(other.ProviderEventTime)
             ) &&
             (
-                this.ConnectedTime == other.ConnectedTime ||
-                this.ConnectedTime != null &&
-                this.ConnectedTime.Equals(other.ConnectedTime)
+                ConnectedTime == other.ConnectedTime ||
+                ConnectedTime != null &&
+                ConnectedTime.Equals(other.ConnectedTime)
             ) &&
             (
-                this.DisconnectedTime == other.DisconnectedTime ||
-                this.DisconnectedTime != null &&
-                this.DisconnectedTime.Equals(other.DisconnectedTime)
+                DisconnectedTime == other.DisconnectedTime ||
+                DisconnectedTime != null &&
+                DisconnectedTime.Equals(other.DisconnectedTime)
             ) &&
             (
-                this.Wrapup == other.Wrapup ||
-                this.Wrapup != null &&
-                this.Wrapup.Equals(other.Wrapup)
+                Wrapup == other.Wrapup ||
+                Wrapup != null &&
+                Wrapup.Equals(other.Wrapup)
             ) &&
             (
-                this.AfterCallWork == other.AfterCallWork ||
-                this.AfterCallWork != null &&
-                this.AfterCallWork.Equals(other.AfterCallWork)
+                AfterCallWork == other.AfterCallWork ||
+                AfterCallWork != null &&
+                AfterCallWork.Equals(other.AfterCallWork)
             ) &&
             (
-                this.AfterCallWorkRequired == other.AfterCallWorkRequired ||
-                this.AfterCallWorkRequired != null &&
-                this.AfterCallWorkRequired.Equals(other.AfterCallWorkRequired)
+                AfterCallWorkRequired == other.AfterCallWorkRequired ||
+                AfterCallWorkRequired != null &&
+                AfterCallWorkRequired.Equals(other.AfterCallWorkRequired)
             ) &&
             (
-                this.QueueMediaSettings == other.QueueMediaSettings ||
-                this.QueueMediaSettings != null &&
-                this.QueueMediaSettings.Equals(other.QueueMediaSettings)
+                QueueMediaSettings == other.QueueMediaSettings ||
+                QueueMediaSettings != null &&
+                QueueMediaSettings.Equals(other.QueueMediaSettings)
             );
     }
 
@@ -653,104 +653,104 @@ public partial class QueueConversationSocialExpressionEventTopicCobrowse : IEqua
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.InitialState != null)
+            if (InitialState != null)
             {
-                hash = hash * 59 + this.InitialState.GetHashCode();
+                hash = hash * 59 + InitialState.GetHashCode();
             }
 
-            if (this.DisconnectType != null)
+            if (DisconnectType != null)
             {
-                hash = hash * 59 + this.DisconnectType.GetHashCode();
+                hash = hash * 59 + DisconnectType.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Self != null)
+            if (Self != null)
             {
-                hash = hash * 59 + this.Self.GetHashCode();
+                hash = hash * 59 + Self.GetHashCode();
             }
 
-            if (this.RoomId != null)
+            if (RoomId != null)
             {
-                hash = hash * 59 + this.RoomId.GetHashCode();
+                hash = hash * 59 + RoomId.GetHashCode();
             }
 
-            if (this.CobrowseSessionId != null)
+            if (CobrowseSessionId != null)
             {
-                hash = hash * 59 + this.CobrowseSessionId.GetHashCode();
+                hash = hash * 59 + CobrowseSessionId.GetHashCode();
             }
 
-            if (this.CobrowseRole != null)
+            if (CobrowseRole != null)
             {
-                hash = hash * 59 + this.CobrowseRole.GetHashCode();
+                hash = hash * 59 + CobrowseRole.GetHashCode();
             }
 
-            if (this.Controlling != null)
+            if (Controlling != null)
             {
-                hash = hash * 59 + this.Controlling.GetHashCode();
+                hash = hash * 59 + Controlling.GetHashCode();
             }
 
-            if (this.ViewerUrl != null)
+            if (ViewerUrl != null)
             {
-                hash = hash * 59 + this.ViewerUrl.GetHashCode();
+                hash = hash * 59 + ViewerUrl.GetHashCode();
             }
 
-            if (this.Provider != null)
+            if (Provider != null)
             {
-                hash = hash * 59 + this.Provider.GetHashCode();
+                hash = hash * 59 + Provider.GetHashCode();
             }
 
-            if (this.ScriptId != null)
+            if (ScriptId != null)
             {
-                hash = hash * 59 + this.ScriptId.GetHashCode();
+                hash = hash * 59 + ScriptId.GetHashCode();
             }
 
-            if (this.PeerId != null)
+            if (PeerId != null)
             {
-                hash = hash * 59 + this.PeerId.GetHashCode();
+                hash = hash * 59 + PeerId.GetHashCode();
             }
 
-            if (this.ProviderEventTime != null)
+            if (ProviderEventTime != null)
             {
-                hash = hash * 59 + this.ProviderEventTime.GetHashCode();
+                hash = hash * 59 + ProviderEventTime.GetHashCode();
             }
 
-            if (this.ConnectedTime != null)
+            if (ConnectedTime != null)
             {
-                hash = hash * 59 + this.ConnectedTime.GetHashCode();
+                hash = hash * 59 + ConnectedTime.GetHashCode();
             }
 
-            if (this.DisconnectedTime != null)
+            if (DisconnectedTime != null)
             {
-                hash = hash * 59 + this.DisconnectedTime.GetHashCode();
+                hash = hash * 59 + DisconnectedTime.GetHashCode();
             }
 
-            if (this.Wrapup != null)
+            if (Wrapup != null)
             {
-                hash = hash * 59 + this.Wrapup.GetHashCode();
+                hash = hash * 59 + Wrapup.GetHashCode();
             }
 
-            if (this.AfterCallWork != null)
+            if (AfterCallWork != null)
             {
-                hash = hash * 59 + this.AfterCallWork.GetHashCode();
+                hash = hash * 59 + AfterCallWork.GetHashCode();
             }
 
-            if (this.AfterCallWorkRequired != null)
+            if (AfterCallWorkRequired != null)
             {
-                hash = hash * 59 + this.AfterCallWorkRequired.GetHashCode();
+                hash = hash * 59 + AfterCallWorkRequired.GetHashCode();
             }
 
-            if (this.QueueMediaSettings != null)
+            if (QueueMediaSettings != null)
             {
-                hash = hash * 59 + this.QueueMediaSettings.GetHashCode();
+                hash = hash * 59 + QueueMediaSettings.GetHashCode();
             }
 
             return hash;

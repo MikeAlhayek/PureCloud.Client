@@ -65,7 +65,7 @@ public partial class LearningAssignmentBulkRemoveResponse : IEquatable<LearningA
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentBulkRemoveResponse);
+        return Equals(obj as LearningAssignmentBulkRemoveResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class LearningAssignmentBulkRemoveResponse : IEquatable<LearningA
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.DisallowedEntities == other.DisallowedEntities ||
-                this.DisallowedEntities != null &&
-                this.DisallowedEntities.SequenceEqual(other.DisallowedEntities)
+                DisallowedEntities == other.DisallowedEntities ||
+                DisallowedEntities != null &&
+                DisallowedEntities.SequenceEqual(other.DisallowedEntities)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class LearningAssignmentBulkRemoveResponse : IEquatable<LearningA
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.DisallowedEntities != null)
+            if (DisallowedEntities != null)
             {
-                hash = hash * 59 + this.DisallowedEntities.GetHashCode();
+                hash = hash * 59 + DisallowedEntities.GetHashCode();
             }
 
             return hash;

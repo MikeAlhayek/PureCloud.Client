@@ -75,7 +75,7 @@ public partial class Channel : IEquatable<Channel>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Channel);
+        return Equals(obj as Channel);
     }
 
     /// <summary>
@@ -93,19 +93,19 @@ public partial class Channel : IEquatable<Channel>
 
         return true &&
             (
-                this.ConnectUri == other.ConnectUri ||
-                this.ConnectUri != null &&
-                this.ConnectUri.Equals(other.ConnectUri)
+                ConnectUri == other.ConnectUri ||
+                ConnectUri != null &&
+                ConnectUri.Equals(other.ConnectUri)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Expires == other.Expires ||
-                this.Expires != null &&
-                this.Expires.Equals(other.Expires)
+                Expires == other.Expires ||
+                Expires != null &&
+                Expires.Equals(other.Expires)
             );
     }
 
@@ -120,19 +120,19 @@ public partial class Channel : IEquatable<Channel>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConnectUri != null)
+            if (ConnectUri != null)
             {
-                hash = hash * 59 + this.ConnectUri.GetHashCode();
+                hash = hash * 59 + ConnectUri.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Expires != null)
+            if (Expires != null)
             {
-                hash = hash * 59 + this.Expires.GetHashCode();
+                hash = hash * 59 + Expires.GetHashCode();
             }
 
             return hash;

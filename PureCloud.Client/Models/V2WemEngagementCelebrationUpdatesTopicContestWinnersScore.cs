@@ -52,7 +52,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinnersScore :
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2WemEngagementCelebrationUpdatesTopicContestWinnersScore);
+        return Equals(obj as V2WemEngagementCelebrationUpdatesTopicContestWinnersScore);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinnersScore :
 
         return true &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinnersScore :
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
             return hash;

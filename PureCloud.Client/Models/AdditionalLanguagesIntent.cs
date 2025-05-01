@@ -62,7 +62,7 @@ public partial class AdditionalLanguagesIntent : IEquatable<AdditionalLanguagesI
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdditionalLanguagesIntent);
+        return Equals(obj as AdditionalLanguagesIntent);
     }
 
     /// <summary>
@@ -80,14 +80,14 @@ public partial class AdditionalLanguagesIntent : IEquatable<AdditionalLanguagesI
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Utterances == other.Utterances ||
-                this.Utterances != null &&
-                this.Utterances.SequenceEqual(other.Utterances)
+                Utterances == other.Utterances ||
+                Utterances != null &&
+                Utterances.SequenceEqual(other.Utterances)
             );
     }
 
@@ -102,14 +102,14 @@ public partial class AdditionalLanguagesIntent : IEquatable<AdditionalLanguagesI
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Utterances != null)
+            if (Utterances != null)
             {
-                hash = hash * 59 + this.Utterances.GetHashCode();
+                hash = hash * 59 + Utterances.GetHashCode();
             }
 
             return hash;

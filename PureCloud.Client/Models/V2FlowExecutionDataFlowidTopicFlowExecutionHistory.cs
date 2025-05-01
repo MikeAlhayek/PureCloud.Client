@@ -312,7 +312,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2FlowExecutionDataFlowidTopicFlowExecutionHistory);
+        return Equals(obj as V2FlowExecutionDataFlowidTopicFlowExecutionHistory);
     }
 
     /// <summary>
@@ -330,89 +330,89 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
 
         return true &&
             (
-                this.ExecutionId == other.ExecutionId ||
-                this.ExecutionId != null &&
-                this.ExecutionId.Equals(other.ExecutionId)
+                ExecutionId == other.ExecutionId ||
+                ExecutionId != null &&
+                ExecutionId.Equals(other.ExecutionId)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.DivisionId == other.DivisionId ||
-                this.DivisionId != null &&
-                this.DivisionId.Equals(other.DivisionId)
+                DivisionId == other.DivisionId ||
+                DivisionId != null &&
+                DivisionId.Equals(other.DivisionId)
             ) &&
             (
-                this.EndDateTime == other.EndDateTime ||
-                this.EndDateTime != null &&
-                this.EndDateTime.Equals(other.EndDateTime)
+                EndDateTime == other.EndDateTime ||
+                EndDateTime != null &&
+                EndDateTime.Equals(other.EndDateTime)
             ) &&
             (
-                this.Endpoint == other.Endpoint ||
-                this.Endpoint != null &&
-                this.Endpoint.Equals(other.Endpoint)
+                Endpoint == other.Endpoint ||
+                Endpoint != null &&
+                Endpoint.Equals(other.Endpoint)
             ) &&
             (
-                this.Errors == other.Errors ||
-                this.Errors != null &&
-                this.Errors.SequenceEqual(other.Errors)
+                Errors == other.Errors ||
+                Errors != null &&
+                Errors.SequenceEqual(other.Errors)
             ) &&
             (
-                this.Execution == other.Execution ||
-                this.Execution != null &&
-                this.Execution.SequenceEqual(other.Execution)
+                Execution == other.Execution ||
+                Execution != null &&
+                Execution.SequenceEqual(other.Execution)
             ) &&
             (
-                this.FlowExitReason == other.FlowExitReason ||
-                this.FlowExitReason != null &&
-                this.FlowExitReason.Equals(other.FlowExitReason)
+                FlowExitReason == other.FlowExitReason ||
+                FlowExitReason != null &&
+                FlowExitReason.Equals(other.FlowExitReason)
             ) &&
             (
-                this.FlowId == other.FlowId ||
-                this.FlowId != null &&
-                this.FlowId.Equals(other.FlowId)
+                FlowId == other.FlowId ||
+                FlowId != null &&
+                FlowId.Equals(other.FlowId)
             ) &&
             (
-                this.FlowIsDebug == other.FlowIsDebug ||
-                this.FlowIsDebug != null &&
-                this.FlowIsDebug.Equals(other.FlowIsDebug)
+                FlowIsDebug == other.FlowIsDebug ||
+                FlowIsDebug != null &&
+                FlowIsDebug.Equals(other.FlowIsDebug)
             ) &&
             (
-                this.ExecutionItemsTruncated == other.ExecutionItemsTruncated ||
-                this.ExecutionItemsTruncated != null &&
-                this.ExecutionItemsTruncated.Equals(other.ExecutionItemsTruncated)
+                ExecutionItemsTruncated == other.ExecutionItemsTruncated ||
+                ExecutionItemsTruncated != null &&
+                ExecutionItemsTruncated.Equals(other.ExecutionItemsTruncated)
             ) &&
             (
-                this.FlowType == other.FlowType ||
-                this.FlowType != null &&
-                this.FlowType.Equals(other.FlowType)
+                FlowType == other.FlowType ||
+                FlowType != null &&
+                FlowType.Equals(other.FlowType)
             ) &&
             (
-                this.FlowVersion == other.FlowVersion ||
-                this.FlowVersion != null &&
-                this.FlowVersion.Equals(other.FlowVersion)
+                FlowVersion == other.FlowVersion ||
+                FlowVersion != null &&
+                FlowVersion.Equals(other.FlowVersion)
             ) &&
             (
-                this.MessageType == other.MessageType ||
-                this.MessageType != null &&
-                this.MessageType.Equals(other.MessageType)
+                MessageType == other.MessageType ||
+                MessageType != null &&
+                MessageType.Equals(other.MessageType)
             ) &&
             (
-                this.InvokingContext == other.InvokingContext ||
-                this.InvokingContext != null &&
-                this.InvokingContext.Equals(other.InvokingContext)
+                InvokingContext == other.InvokingContext ||
+                InvokingContext != null &&
+                InvokingContext.Equals(other.InvokingContext)
             ) &&
             (
-                this.StartDateTime == other.StartDateTime ||
-                this.StartDateTime != null &&
-                this.StartDateTime.Equals(other.StartDateTime)
+                StartDateTime == other.StartDateTime ||
+                StartDateTime != null &&
+                StartDateTime.Equals(other.StartDateTime)
             ) &&
             (
-                this.Warnings == other.Warnings ||
-                this.Warnings != null &&
-                this.Warnings.SequenceEqual(other.Warnings)
+                Warnings == other.Warnings ||
+                Warnings != null &&
+                Warnings.SequenceEqual(other.Warnings)
             );
     }
 
@@ -427,89 +427,89 @@ public partial class V2FlowExecutionDataFlowidTopicFlowExecutionHistory : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExecutionId != null)
+            if (ExecutionId != null)
             {
-                hash = hash * 59 + this.ExecutionId.GetHashCode();
+                hash = hash * 59 + ExecutionId.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.DivisionId != null)
+            if (DivisionId != null)
             {
-                hash = hash * 59 + this.DivisionId.GetHashCode();
+                hash = hash * 59 + DivisionId.GetHashCode();
             }
 
-            if (this.EndDateTime != null)
+            if (EndDateTime != null)
             {
-                hash = hash * 59 + this.EndDateTime.GetHashCode();
+                hash = hash * 59 + EndDateTime.GetHashCode();
             }
 
-            if (this.Endpoint != null)
+            if (Endpoint != null)
             {
-                hash = hash * 59 + this.Endpoint.GetHashCode();
+                hash = hash * 59 + Endpoint.GetHashCode();
             }
 
-            if (this.Errors != null)
+            if (Errors != null)
             {
-                hash = hash * 59 + this.Errors.GetHashCode();
+                hash = hash * 59 + Errors.GetHashCode();
             }
 
-            if (this.Execution != null)
+            if (Execution != null)
             {
-                hash = hash * 59 + this.Execution.GetHashCode();
+                hash = hash * 59 + Execution.GetHashCode();
             }
 
-            if (this.FlowExitReason != null)
+            if (FlowExitReason != null)
             {
-                hash = hash * 59 + this.FlowExitReason.GetHashCode();
+                hash = hash * 59 + FlowExitReason.GetHashCode();
             }
 
-            if (this.FlowId != null)
+            if (FlowId != null)
             {
-                hash = hash * 59 + this.FlowId.GetHashCode();
+                hash = hash * 59 + FlowId.GetHashCode();
             }
 
-            if (this.FlowIsDebug != null)
+            if (FlowIsDebug != null)
             {
-                hash = hash * 59 + this.FlowIsDebug.GetHashCode();
+                hash = hash * 59 + FlowIsDebug.GetHashCode();
             }
 
-            if (this.ExecutionItemsTruncated != null)
+            if (ExecutionItemsTruncated != null)
             {
-                hash = hash * 59 + this.ExecutionItemsTruncated.GetHashCode();
+                hash = hash * 59 + ExecutionItemsTruncated.GetHashCode();
             }
 
-            if (this.FlowType != null)
+            if (FlowType != null)
             {
-                hash = hash * 59 + this.FlowType.GetHashCode();
+                hash = hash * 59 + FlowType.GetHashCode();
             }
 
-            if (this.FlowVersion != null)
+            if (FlowVersion != null)
             {
-                hash = hash * 59 + this.FlowVersion.GetHashCode();
+                hash = hash * 59 + FlowVersion.GetHashCode();
             }
 
-            if (this.MessageType != null)
+            if (MessageType != null)
             {
-                hash = hash * 59 + this.MessageType.GetHashCode();
+                hash = hash * 59 + MessageType.GetHashCode();
             }
 
-            if (this.InvokingContext != null)
+            if (InvokingContext != null)
             {
-                hash = hash * 59 + this.InvokingContext.GetHashCode();
+                hash = hash * 59 + InvokingContext.GetHashCode();
             }
 
-            if (this.StartDateTime != null)
+            if (StartDateTime != null)
             {
-                hash = hash * 59 + this.StartDateTime.GetHashCode();
+                hash = hash * 59 + StartDateTime.GetHashCode();
             }
 
-            if (this.Warnings != null)
+            if (Warnings != null)
             {
-                hash = hash * 59 + this.Warnings.GetHashCode();
+                hash = hash * 59 + Warnings.GetHashCode();
             }
 
             return hash;

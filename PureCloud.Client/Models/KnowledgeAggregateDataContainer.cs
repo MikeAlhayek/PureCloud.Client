@@ -64,7 +64,7 @@ public partial class KnowledgeAggregateDataContainer : IEquatable<KnowledgeAggre
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeAggregateDataContainer);
+        return Equals(obj as KnowledgeAggregateDataContainer);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class KnowledgeAggregateDataContainer : IEquatable<KnowledgeAggre
 
         return true &&
             (
-                this.Group == other.Group ||
-                this.Group != null &&
-                this.Group.SequenceEqual(other.Group)
+                Group == other.Group ||
+                Group != null &&
+                Group.SequenceEqual(other.Group)
             ) &&
             (
-                this.Data == other.Data ||
-                this.Data != null &&
-                this.Data.SequenceEqual(other.Data)
+                Data == other.Data ||
+                Data != null &&
+                Data.SequenceEqual(other.Data)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class KnowledgeAggregateDataContainer : IEquatable<KnowledgeAggre
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Group != null)
+            if (Group != null)
             {
-                hash = hash * 59 + this.Group.GetHashCode();
+                hash = hash * 59 + Group.GetHashCode();
             }
 
-            if (this.Data != null)
+            if (Data != null)
             {
-                hash = hash * 59 + this.Data.GetHashCode();
+                hash = hash * 59 + Data.GetHashCode();
             }
 
             return hash;

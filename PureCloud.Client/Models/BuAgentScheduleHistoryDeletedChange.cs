@@ -76,7 +76,7 @@ public partial class BuAgentScheduleHistoryDeletedChange : IEquatable<BuAgentSch
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuAgentScheduleHistoryDeletedChange);
+        return Equals(obj as BuAgentScheduleHistoryDeletedChange);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class BuAgentScheduleHistoryDeletedChange : IEquatable<BuAgentSch
 
         return true &&
             (
-                this.ShiftIds == other.ShiftIds ||
-                this.ShiftIds != null &&
-                this.ShiftIds.SequenceEqual(other.ShiftIds)
+                ShiftIds == other.ShiftIds ||
+                ShiftIds != null &&
+                ShiftIds.SequenceEqual(other.ShiftIds)
             ) &&
             (
-                this.FullDayTimeOffMarkerDates == other.FullDayTimeOffMarkerDates ||
-                this.FullDayTimeOffMarkerDates != null &&
-                this.FullDayTimeOffMarkerDates.SequenceEqual(other.FullDayTimeOffMarkerDates)
+                FullDayTimeOffMarkerDates == other.FullDayTimeOffMarkerDates ||
+                FullDayTimeOffMarkerDates != null &&
+                FullDayTimeOffMarkerDates.SequenceEqual(other.FullDayTimeOffMarkerDates)
             ) &&
             (
-                this.AgentSchedule == other.AgentSchedule ||
-                this.AgentSchedule != null &&
-                this.AgentSchedule.Equals(other.AgentSchedule)
+                AgentSchedule == other.AgentSchedule ||
+                AgentSchedule != null &&
+                AgentSchedule.Equals(other.AgentSchedule)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class BuAgentScheduleHistoryDeletedChange : IEquatable<BuAgentSch
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ShiftIds != null)
+            if (ShiftIds != null)
             {
-                hash = hash * 59 + this.ShiftIds.GetHashCode();
+                hash = hash * 59 + ShiftIds.GetHashCode();
             }
 
-            if (this.FullDayTimeOffMarkerDates != null)
+            if (FullDayTimeOffMarkerDates != null)
             {
-                hash = hash * 59 + this.FullDayTimeOffMarkerDates.GetHashCode();
+                hash = hash * 59 + FullDayTimeOffMarkerDates.GetHashCode();
             }
 
-            if (this.AgentSchedule != null)
+            if (AgentSchedule != null)
             {
-                hash = hash * 59 + this.AgentSchedule.GetHashCode();
+                hash = hash * 59 + AgentSchedule.GetHashCode();
             }
 
             return hash;

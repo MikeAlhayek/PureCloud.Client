@@ -131,7 +131,7 @@ public partial class ReplacementTerm : IEquatable<ReplacementTerm>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReplacementTerm);
+        return Equals(obj as ReplacementTerm);
     }
 
     /// <summary>
@@ -149,19 +149,19 @@ public partial class ReplacementTerm : IEquatable<ReplacementTerm>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ExistingValue == other.ExistingValue ||
-                this.ExistingValue != null &&
-                this.ExistingValue.Equals(other.ExistingValue)
+                ExistingValue == other.ExistingValue ||
+                ExistingValue != null &&
+                ExistingValue.Equals(other.ExistingValue)
             ) &&
             (
-                this.UpdatedValue == other.UpdatedValue ||
-                this.UpdatedValue != null &&
-                this.UpdatedValue.Equals(other.UpdatedValue)
+                UpdatedValue == other.UpdatedValue ||
+                UpdatedValue != null &&
+                UpdatedValue.Equals(other.UpdatedValue)
             );
     }
 
@@ -176,19 +176,19 @@ public partial class ReplacementTerm : IEquatable<ReplacementTerm>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ExistingValue != null)
+            if (ExistingValue != null)
             {
-                hash = hash * 59 + this.ExistingValue.GetHashCode();
+                hash = hash * 59 + ExistingValue.GetHashCode();
             }
 
-            if (this.UpdatedValue != null)
+            if (UpdatedValue != null)
             {
-                hash = hash * 59 + this.UpdatedValue.GetHashCode();
+                hash = hash * 59 + UpdatedValue.GetHashCode();
             }
 
             return hash;

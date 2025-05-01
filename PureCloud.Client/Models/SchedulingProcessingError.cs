@@ -93,7 +93,7 @@ public partial class SchedulingProcessingError : IEquatable<SchedulingProcessing
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SchedulingProcessingError);
+        return Equals(obj as SchedulingProcessingError);
     }
 
     /// <summary>
@@ -111,14 +111,14 @@ public partial class SchedulingProcessingError : IEquatable<SchedulingProcessing
 
         return true &&
             (
-                this.InternalErrorCode == other.InternalErrorCode ||
-                this.InternalErrorCode != null &&
-                this.InternalErrorCode.Equals(other.InternalErrorCode)
+                InternalErrorCode == other.InternalErrorCode ||
+                InternalErrorCode != null &&
+                InternalErrorCode.Equals(other.InternalErrorCode)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             );
     }
 
@@ -133,14 +133,14 @@ public partial class SchedulingProcessingError : IEquatable<SchedulingProcessing
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.InternalErrorCode != null)
+            if (InternalErrorCode != null)
             {
-                hash = hash * 59 + this.InternalErrorCode.GetHashCode();
+                hash = hash * 59 + InternalErrorCode.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
             return hash;

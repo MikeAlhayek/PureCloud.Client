@@ -121,7 +121,7 @@ public partial class DashboardConfigurationQueryRequest : IEquatable<DashboardCo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DashboardConfigurationQueryRequest);
+        return Equals(obj as DashboardConfigurationQueryRequest);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class DashboardConfigurationQueryRequest : IEquatable<DashboardCo
 
         return true &&
             (
-                this.DashboardConfigurationIds == other.DashboardConfigurationIds ||
-                this.DashboardConfigurationIds != null &&
-                this.DashboardConfigurationIds.SequenceEqual(other.DashboardConfigurationIds)
+                DashboardConfigurationIds == other.DashboardConfigurationIds ||
+                DashboardConfigurationIds != null &&
+                DashboardConfigurationIds.SequenceEqual(other.DashboardConfigurationIds)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.SortBy == other.SortBy ||
-                this.SortBy != null &&
-                this.SortBy.Equals(other.SortBy)
+                SortBy == other.SortBy ||
+                SortBy != null &&
+                SortBy.Equals(other.SortBy)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class DashboardConfigurationQueryRequest : IEquatable<DashboardCo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DashboardConfigurationIds != null)
+            if (DashboardConfigurationIds != null)
             {
-                hash = hash * 59 + this.DashboardConfigurationIds.GetHashCode();
+                hash = hash * 59 + DashboardConfigurationIds.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.SortBy != null)
+            if (SortBy != null)
             {
-                hash = hash * 59 + this.SortBy.GetHashCode();
+                hash = hash * 59 + SortBy.GetHashCode();
             }
 
             return hash;

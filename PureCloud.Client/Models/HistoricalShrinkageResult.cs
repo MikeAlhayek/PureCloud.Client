@@ -125,7 +125,7 @@ public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalShrinkageResult);
+        return Equals(obj as HistoricalShrinkageResult);
     }
 
     /// <summary>
@@ -143,39 +143,39 @@ public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageR
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.TotalScheduledDurationSeconds == other.TotalScheduledDurationSeconds ||
-                this.TotalScheduledDurationSeconds != null &&
-                this.TotalScheduledDurationSeconds.Equals(other.TotalScheduledDurationSeconds)
+                TotalScheduledDurationSeconds == other.TotalScheduledDurationSeconds ||
+                TotalScheduledDurationSeconds != null &&
+                TotalScheduledDurationSeconds.Equals(other.TotalScheduledDurationSeconds)
             ) &&
             (
-                this.TotalLoggedInDurationSeconds == other.TotalLoggedInDurationSeconds ||
-                this.TotalLoggedInDurationSeconds != null &&
-                this.TotalLoggedInDurationSeconds.Equals(other.TotalLoggedInDurationSeconds)
+                TotalLoggedInDurationSeconds == other.TotalLoggedInDurationSeconds ||
+                TotalLoggedInDurationSeconds != null &&
+                TotalLoggedInDurationSeconds.Equals(other.TotalLoggedInDurationSeconds)
             ) &&
             (
-                this.AggregatedShrinkage == other.AggregatedShrinkage ||
-                this.AggregatedShrinkage != null &&
-                this.AggregatedShrinkage.Equals(other.AggregatedShrinkage)
+                AggregatedShrinkage == other.AggregatedShrinkage ||
+                AggregatedShrinkage != null &&
+                AggregatedShrinkage.Equals(other.AggregatedShrinkage)
             ) &&
             (
-                this.ShrinkageForActivityCategories == other.ShrinkageForActivityCategories ||
-                this.ShrinkageForActivityCategories != null &&
-                this.ShrinkageForActivityCategories.SequenceEqual(other.ShrinkageForActivityCategories)
+                ShrinkageForActivityCategories == other.ShrinkageForActivityCategories ||
+                ShrinkageForActivityCategories != null &&
+                ShrinkageForActivityCategories.SequenceEqual(other.ShrinkageForActivityCategories)
             ) &&
             (
-                this.BusinessUnitIds == other.BusinessUnitIds ||
-                this.BusinessUnitIds != null &&
-                this.BusinessUnitIds.SequenceEqual(other.BusinessUnitIds)
+                BusinessUnitIds == other.BusinessUnitIds ||
+                BusinessUnitIds != null &&
+                BusinessUnitIds.SequenceEqual(other.BusinessUnitIds)
             );
     }
 
@@ -190,39 +190,39 @@ public partial class HistoricalShrinkageResult : IEquatable<HistoricalShrinkageR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.TotalScheduledDurationSeconds != null)
+            if (TotalScheduledDurationSeconds != null)
             {
-                hash = hash * 59 + this.TotalScheduledDurationSeconds.GetHashCode();
+                hash = hash * 59 + TotalScheduledDurationSeconds.GetHashCode();
             }
 
-            if (this.TotalLoggedInDurationSeconds != null)
+            if (TotalLoggedInDurationSeconds != null)
             {
-                hash = hash * 59 + this.TotalLoggedInDurationSeconds.GetHashCode();
+                hash = hash * 59 + TotalLoggedInDurationSeconds.GetHashCode();
             }
 
-            if (this.AggregatedShrinkage != null)
+            if (AggregatedShrinkage != null)
             {
-                hash = hash * 59 + this.AggregatedShrinkage.GetHashCode();
+                hash = hash * 59 + AggregatedShrinkage.GetHashCode();
             }
 
-            if (this.ShrinkageForActivityCategories != null)
+            if (ShrinkageForActivityCategories != null)
             {
-                hash = hash * 59 + this.ShrinkageForActivityCategories.GetHashCode();
+                hash = hash * 59 + ShrinkageForActivityCategories.GetHashCode();
             }
 
-            if (this.BusinessUnitIds != null)
+            if (BusinessUnitIds != null)
             {
-                hash = hash * 59 + this.BusinessUnitIds.GetHashCode();
+                hash = hash * 59 + BusinessUnitIds.GetHashCode();
             }
 
             return hash;

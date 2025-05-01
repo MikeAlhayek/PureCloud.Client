@@ -2283,12 +2283,12 @@ public partial class SocialMediaApi : ISocialMediaApi
     /// <returns></returns>
     public SocialMediaApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -2302,17 +2302,17 @@ public partial class SocialMediaApi : ISocialMediaApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -2322,7 +2322,7 @@ public partial class SocialMediaApi : ISocialMediaApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -2348,7 +2348,7 @@ public partial class SocialMediaApi : ISocialMediaApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -2360,7 +2360,7 @@ public partial class SocialMediaApi : ISocialMediaApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -2405,7 +2405,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2414,7 +2414,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2427,7 +2427,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (escalationRuleId != null)
         {
-            localVarPathParams.Add("escalationRuleId", this.Configuration.ApiClient.ParameterToString(escalationRuleId));
+            localVarPathParams.Add("escalationRuleId", Configuration.ApiClient.ParameterToString(escalationRuleId));
         }
 
         // Query params
@@ -2443,11 +2443,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2521,7 +2521,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2530,7 +2530,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2543,7 +2543,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (escalationRuleId != null)
         {
-            localVarPathParams.Add("escalationRuleId", this.Configuration.ApiClient.ParameterToString(escalationRuleId));
+            localVarPathParams.Add("escalationRuleId", Configuration.ApiClient.ParameterToString(escalationRuleId));
         }
 
         // Query params
@@ -2559,11 +2559,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2639,7 +2639,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2648,7 +2648,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2661,7 +2661,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -2677,11 +2677,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2757,7 +2757,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2766,7 +2766,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2779,7 +2779,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -2795,11 +2795,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2875,7 +2875,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2884,7 +2884,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2897,13 +2897,13 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
         if (hardDelete != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", this.Configuration.ApiClient.ParameterToString(hardDelete)));
+            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", Configuration.ApiClient.ParameterToString(hardDelete)));
         }
 
         // Header params
@@ -2917,11 +2917,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2997,7 +2997,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3006,7 +3006,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3019,13 +3019,13 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
         if (hardDelete != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", this.Configuration.ApiClient.ParameterToString(hardDelete)));
+            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", Configuration.ApiClient.ParameterToString(hardDelete)));
         }
 
         // Header params
@@ -3039,11 +3039,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3126,7 +3126,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3135,7 +3135,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3148,18 +3148,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         // Query params
         if (hardDelete != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", this.Configuration.ApiClient.ParameterToString(hardDelete)));
+            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", Configuration.ApiClient.ParameterToString(hardDelete)));
         }
 
         // Header params
@@ -3173,11 +3173,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3261,7 +3261,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3270,7 +3270,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3283,18 +3283,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         // Query params
         if (hardDelete != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", this.Configuration.ApiClient.ParameterToString(hardDelete)));
+            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", Configuration.ApiClient.ParameterToString(hardDelete)));
         }
 
         // Header params
@@ -3308,11 +3308,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3397,7 +3397,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3406,7 +3406,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3419,18 +3419,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         // Query params
         if (hardDelete != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", this.Configuration.ApiClient.ParameterToString(hardDelete)));
+            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", Configuration.ApiClient.ParameterToString(hardDelete)));
         }
 
         // Header params
@@ -3444,11 +3444,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3534,7 +3534,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3543,7 +3543,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3556,18 +3556,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         // Query params
         if (hardDelete != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", this.Configuration.ApiClient.ParameterToString(hardDelete)));
+            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", Configuration.ApiClient.ParameterToString(hardDelete)));
         }
 
         // Header params
@@ -3581,11 +3581,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3668,7 +3668,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3677,7 +3677,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3690,18 +3690,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         // Query params
         if (hardDelete != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", this.Configuration.ApiClient.ParameterToString(hardDelete)));
+            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", Configuration.ApiClient.ParameterToString(hardDelete)));
         }
 
         // Header params
@@ -3715,11 +3715,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3803,7 +3803,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3812,7 +3812,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3825,18 +3825,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         // Query params
         if (hardDelete != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", this.Configuration.ApiClient.ParameterToString(hardDelete)));
+            localVarQueryParams.Add(new Tuple<string, string>("hardDelete", Configuration.ApiClient.ParameterToString(hardDelete)));
         }
 
         // Header params
@@ -3850,11 +3850,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3929,7 +3929,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3938,7 +3938,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3951,7 +3951,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -3967,11 +3967,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3997,7 +3997,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<AsyncQueryStatus>(localVarStatusCode,
             localVarHeaders,
-            (AsyncQueryStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryStatus)),
+            (AsyncQueryStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4046,7 +4046,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4055,7 +4055,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4068,7 +4068,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -4084,11 +4084,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4114,7 +4114,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<AsyncQueryStatus>(localVarStatusCode,
             localVarHeaders,
-            (AsyncQueryStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryStatus)),
+            (AsyncQueryStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4165,7 +4165,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4174,7 +4174,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4187,13 +4187,13 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -4207,11 +4207,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4237,7 +4237,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialMediaAsyncAggregateQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (SocialMediaAsyncAggregateQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialMediaAsyncAggregateQueryResponse)),
+            (SocialMediaAsyncAggregateQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialMediaAsyncAggregateQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4288,7 +4288,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4297,7 +4297,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4310,13 +4310,13 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -4330,11 +4330,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4360,7 +4360,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialMediaAsyncAggregateQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (SocialMediaAsyncAggregateQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialMediaAsyncAggregateQueryResponse)),
+            (SocialMediaAsyncAggregateQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialMediaAsyncAggregateQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4409,7 +4409,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4418,7 +4418,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4431,7 +4431,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -4447,11 +4447,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4477,7 +4477,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<AsyncQueryStatus>(localVarStatusCode,
             localVarHeaders,
-            (AsyncQueryStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryStatus)),
+            (AsyncQueryStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4526,7 +4526,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4535,7 +4535,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4548,7 +4548,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -4564,11 +4564,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4594,7 +4594,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<AsyncQueryStatus>(localVarStatusCode,
             localVarHeaders,
-            (AsyncQueryStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryStatus)),
+            (AsyncQueryStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4645,7 +4645,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4654,7 +4654,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4667,13 +4667,13 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -4687,11 +4687,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4717,7 +4717,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialMediaAsyncDetailQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (SocialMediaAsyncDetailQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialMediaAsyncDetailQueryResponse)),
+            (SocialMediaAsyncDetailQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialMediaAsyncDetailQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4768,7 +4768,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4777,7 +4777,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4790,13 +4790,13 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -4810,11 +4810,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4840,7 +4840,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialMediaAsyncDetailQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (SocialMediaAsyncDetailQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialMediaAsyncDetailQueryResponse)),
+            (SocialMediaAsyncDetailQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialMediaAsyncDetailQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4889,7 +4889,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4898,7 +4898,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4911,7 +4911,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (escalationRuleId != null)
         {
-            localVarPathParams.Add("escalationRuleId", this.Configuration.ApiClient.ParameterToString(escalationRuleId));
+            localVarPathParams.Add("escalationRuleId", Configuration.ApiClient.ParameterToString(escalationRuleId));
         }
 
         // Query params
@@ -4927,11 +4927,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4957,7 +4957,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<EscalationRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (EscalationRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
+            (EscalationRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5006,7 +5006,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5015,7 +5015,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5028,7 +5028,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (escalationRuleId != null)
         {
-            localVarPathParams.Add("escalationRuleId", this.Configuration.ApiClient.ParameterToString(escalationRuleId));
+            localVarPathParams.Add("escalationRuleId", Configuration.ApiClient.ParameterToString(escalationRuleId));
         }
 
         // Query params
@@ -5044,11 +5044,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5074,7 +5074,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<EscalationRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (EscalationRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
+            (EscalationRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5127,7 +5127,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5136,7 +5136,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5151,17 +5151,17 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -5175,11 +5175,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5205,7 +5205,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialEscalationResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SocialEscalationResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialEscalationResponseEntityListing)),
+            (SocialEscalationResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialEscalationResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5258,7 +5258,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5267,7 +5267,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5282,17 +5282,17 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -5306,11 +5306,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5336,7 +5336,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialEscalationResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SocialEscalationResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialEscalationResponseEntityListing)),
+            (SocialEscalationResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialEscalationResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5387,7 +5387,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5396,7 +5396,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5409,13 +5409,13 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -5429,11 +5429,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5459,7 +5459,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialTopicResponse>(localVarStatusCode,
             localVarHeaders,
-            (SocialTopicResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
+            (SocialTopicResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5510,7 +5510,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5519,7 +5519,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5532,13 +5532,13 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -5552,11 +5552,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5582,7 +5582,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialTopicResponse>(localVarStatusCode,
             localVarHeaders,
-            (SocialTopicResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
+            (SocialTopicResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5637,7 +5637,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5646,7 +5646,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5659,23 +5659,23 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -5689,11 +5689,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5719,7 +5719,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<DataIngestionRuleResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DataIngestionRuleResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataIngestionRuleResponseEntityListing)),
+            (DataIngestionRuleResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataIngestionRuleResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5774,7 +5774,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5783,7 +5783,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5796,23 +5796,23 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -5826,11 +5826,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5856,7 +5856,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<DataIngestionRuleResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DataIngestionRuleResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataIngestionRuleResponseEntityListing)),
+            (DataIngestionRuleResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataIngestionRuleResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5914,7 +5914,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5923,7 +5923,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5936,18 +5936,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -5961,11 +5961,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5991,7 +5991,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
+            (FacebookDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6050,7 +6050,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6059,7 +6059,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6072,18 +6072,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -6097,11 +6097,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6127,7 +6127,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
+            (FacebookDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6192,7 +6192,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6201,7 +6201,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6214,23 +6214,23 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         if (dataIngestionRuleVersion != null)
         {
-            localVarPathParams.Add("dataIngestionRuleVersion", this.Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
+            localVarPathParams.Add("dataIngestionRuleVersion", Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -6244,11 +6244,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6274,7 +6274,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleVersionResponse>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleVersionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleVersionResponse)),
+            (FacebookDataIngestionRuleVersionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleVersionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6341,7 +6341,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6350,7 +6350,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6363,23 +6363,23 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         if (dataIngestionRuleVersion != null)
         {
-            localVarPathParams.Add("dataIngestionRuleVersion", this.Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
+            localVarPathParams.Add("dataIngestionRuleVersion", Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -6393,11 +6393,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6423,7 +6423,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleVersionResponse>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleVersionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleVersionResponse)),
+            (FacebookDataIngestionRuleVersionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleVersionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6485,7 +6485,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6494,7 +6494,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6507,28 +6507,28 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -6542,11 +6542,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6572,7 +6572,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleVersionResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleVersionResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleVersionResponseEntityListing)),
+            (FacebookDataIngestionRuleVersionResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleVersionResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6635,7 +6635,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6644,7 +6644,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6657,28 +6657,28 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -6692,11 +6692,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6722,7 +6722,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleVersionResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleVersionResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleVersionResponseEntityListing)),
+            (FacebookDataIngestionRuleVersionResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleVersionResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6782,7 +6782,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6791,7 +6791,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6804,18 +6804,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -6829,11 +6829,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6859,7 +6859,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
+            (OpenDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6920,7 +6920,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6929,7 +6929,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6942,18 +6942,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -6967,11 +6967,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6997,7 +6997,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
+            (OpenDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7064,7 +7064,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7073,7 +7073,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7086,23 +7086,23 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         if (dataIngestionRuleVersion != null)
         {
-            localVarPathParams.Add("dataIngestionRuleVersion", this.Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
+            localVarPathParams.Add("dataIngestionRuleVersion", Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -7116,11 +7116,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7146,7 +7146,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleVersionResponse>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleVersionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleVersionResponse)),
+            (OpenDataIngestionRuleVersionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleVersionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7215,7 +7215,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7224,7 +7224,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7237,23 +7237,23 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         if (dataIngestionRuleVersion != null)
         {
-            localVarPathParams.Add("dataIngestionRuleVersion", this.Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
+            localVarPathParams.Add("dataIngestionRuleVersion", Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -7267,11 +7267,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7297,7 +7297,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleVersionResponse>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleVersionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleVersionResponse)),
+            (OpenDataIngestionRuleVersionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleVersionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7361,7 +7361,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7370,7 +7370,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7383,28 +7383,28 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -7418,11 +7418,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7448,7 +7448,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleVersionResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleVersionResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleVersionResponseEntityListing)),
+            (OpenDataIngestionRuleVersionResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleVersionResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7513,7 +7513,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7522,7 +7522,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7535,28 +7535,28 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -7570,11 +7570,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7600,7 +7600,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleVersionResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleVersionResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleVersionResponseEntityListing)),
+            (OpenDataIngestionRuleVersionResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleVersionResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7658,7 +7658,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7667,7 +7667,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7680,18 +7680,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -7705,11 +7705,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7735,7 +7735,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
+            (TwitterDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7794,7 +7794,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7803,7 +7803,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7816,18 +7816,18 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -7841,11 +7841,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7871,7 +7871,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
+            (TwitterDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7936,7 +7936,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7945,7 +7945,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7958,23 +7958,23 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         if (dataIngestionRuleVersion != null)
         {
-            localVarPathParams.Add("dataIngestionRuleVersion", this.Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
+            localVarPathParams.Add("dataIngestionRuleVersion", Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -7988,11 +7988,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8018,7 +8018,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleVersionResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleVersionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleVersionResponse)),
+            (TwitterDataIngestionRuleVersionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleVersionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8085,7 +8085,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8094,7 +8094,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8107,23 +8107,23 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         if (dataIngestionRuleVersion != null)
         {
-            localVarPathParams.Add("dataIngestionRuleVersion", this.Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
+            localVarPathParams.Add("dataIngestionRuleVersion", Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
         }
 
         // Query params
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -8137,11 +8137,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8167,7 +8167,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleVersionResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleVersionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleVersionResponse)),
+            (TwitterDataIngestionRuleVersionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleVersionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8229,7 +8229,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8238,7 +8238,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8251,28 +8251,28 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -8286,11 +8286,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8316,7 +8316,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleVersionResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleVersionResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleVersionResponseEntityListing)),
+            (TwitterDataIngestionRuleVersionResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleVersionResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8379,7 +8379,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8388,7 +8388,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8401,28 +8401,28 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -8436,11 +8436,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8466,7 +8466,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleVersionResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleVersionResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleVersionResponseEntityListing)),
+            (TwitterDataIngestionRuleVersionResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleVersionResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8516,7 +8516,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8525,7 +8525,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8540,22 +8540,22 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (divisionIds != null)
         {
-            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -8569,11 +8569,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8599,7 +8599,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialTopicResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SocialTopicResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponseEntityListing)),
+            (SocialTopicResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8649,7 +8649,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8658,7 +8658,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8673,22 +8673,22 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (divisionIds != null)
         {
-            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         // Header params
@@ -8702,11 +8702,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8732,7 +8732,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialTopicResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SocialTopicResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponseEntityListing)),
+            (SocialTopicResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8784,7 +8784,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8793,7 +8793,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8806,7 +8806,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -8818,7 +8818,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8831,11 +8831,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8861,7 +8861,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialTopicResponse>(localVarStatusCode,
             localVarHeaders,
-            (SocialTopicResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
+            (SocialTopicResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8913,7 +8913,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8922,7 +8922,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8935,7 +8935,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -8947,7 +8947,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8960,11 +8960,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8990,7 +8990,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialTopicResponse>(localVarStatusCode,
             localVarHeaders,
-            (SocialTopicResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
+            (SocialTopicResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9049,7 +9049,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9058,7 +9058,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9071,12 +9071,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         // Query params
@@ -9088,7 +9088,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9101,11 +9101,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9131,7 +9131,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
+            (FacebookDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9191,7 +9191,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9200,7 +9200,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9213,12 +9213,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         // Query params
@@ -9230,7 +9230,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9243,11 +9243,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9273,7 +9273,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
+            (FacebookDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9334,7 +9334,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9343,7 +9343,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9356,12 +9356,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         // Query params
@@ -9373,7 +9373,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9386,11 +9386,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9416,7 +9416,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
+            (OpenDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9478,7 +9478,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9487,7 +9487,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9500,12 +9500,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         // Query params
@@ -9517,7 +9517,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9530,11 +9530,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9560,7 +9560,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
+            (OpenDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9619,7 +9619,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9628,7 +9628,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9641,12 +9641,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         // Query params
@@ -9658,7 +9658,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9671,11 +9671,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9701,7 +9701,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
+            (TwitterDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9761,7 +9761,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9770,7 +9770,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9783,12 +9783,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         // Query params
@@ -9800,7 +9800,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9813,11 +9813,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9843,7 +9843,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
+            (TwitterDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9893,7 +9893,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9902,7 +9902,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9923,7 +9923,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9936,11 +9936,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9966,7 +9966,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<AsyncQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (AsyncQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryResponse)),
+            (AsyncQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10016,7 +10016,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10025,7 +10025,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10046,7 +10046,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10059,11 +10059,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10089,7 +10089,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<AsyncQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (AsyncQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryResponse)),
+            (AsyncQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10139,7 +10139,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10148,7 +10148,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10169,7 +10169,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10182,11 +10182,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10212,7 +10212,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<AsyncQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (AsyncQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryResponse)),
+            (AsyncQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10262,7 +10262,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10271,7 +10271,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10292,7 +10292,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10305,11 +10305,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10335,7 +10335,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<AsyncQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (AsyncQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryResponse)),
+            (AsyncQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AsyncQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10380,7 +10380,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10389,7 +10389,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10410,7 +10410,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10423,11 +10423,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10453,7 +10453,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<EscalationRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (EscalationRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
+            (EscalationRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10498,7 +10498,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10507,7 +10507,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10528,7 +10528,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10541,11 +10541,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10571,7 +10571,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<EscalationRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (EscalationRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
+            (EscalationRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10623,7 +10623,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10632,7 +10632,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10647,7 +10647,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Query params
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -10657,7 +10657,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10670,11 +10670,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10700,7 +10700,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<ManualEscalationResponse>(localVarStatusCode,
             localVarHeaders,
-            (ManualEscalationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ManualEscalationResponse)),
+            (ManualEscalationResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ManualEscalationResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10752,7 +10752,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10761,7 +10761,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10776,7 +10776,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Query params
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -10786,7 +10786,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10799,11 +10799,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10829,7 +10829,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<ManualEscalationResponse>(localVarStatusCode,
             localVarHeaders,
-            (ManualEscalationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ManualEscalationResponse)),
+            (ManualEscalationResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ManualEscalationResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10881,7 +10881,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10890,7 +10890,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10903,7 +10903,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -10915,7 +10915,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10928,11 +10928,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10958,7 +10958,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
+            (FacebookDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11010,7 +11010,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11019,7 +11019,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11032,7 +11032,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -11044,7 +11044,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11057,11 +11057,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11087,7 +11087,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
+            (FacebookDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11141,7 +11141,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11150,7 +11150,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11163,7 +11163,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -11175,7 +11175,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11188,11 +11188,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11218,7 +11218,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
+            (OpenDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11272,7 +11272,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11281,7 +11281,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11294,7 +11294,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -11306,7 +11306,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11319,11 +11319,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11349,7 +11349,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
+            (OpenDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11401,7 +11401,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11410,7 +11410,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11423,7 +11423,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -11435,7 +11435,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11448,11 +11448,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11478,7 +11478,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
+            (TwitterDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11530,7 +11530,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11539,7 +11539,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11552,7 +11552,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -11564,7 +11564,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11577,11 +11577,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11607,7 +11607,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
+            (TwitterDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11652,7 +11652,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11661,7 +11661,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11682,7 +11682,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11695,11 +11695,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11725,7 +11725,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialTopicResponse>(localVarStatusCode,
             localVarHeaders,
-            (SocialTopicResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
+            (SocialTopicResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11770,7 +11770,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11779,7 +11779,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11800,7 +11800,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11813,11 +11813,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11843,7 +11843,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<SocialTopicResponse>(localVarStatusCode,
             localVarHeaders,
-            (SocialTopicResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
+            (SocialTopicResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialTopicResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11893,7 +11893,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11902,7 +11902,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11923,7 +11923,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11936,11 +11936,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11966,7 +11966,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataHistoricalTweetResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataHistoricalTweetResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataHistoricalTweetResponse)),
+            (TwitterDataHistoricalTweetResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataHistoricalTweetResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12016,7 +12016,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12025,7 +12025,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12046,7 +12046,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12059,11 +12059,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12089,7 +12089,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataHistoricalTweetResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataHistoricalTweetResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataHistoricalTweetResponse)),
+            (TwitterDataHistoricalTweetResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataHistoricalTweetResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12141,7 +12141,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12150,7 +12150,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12163,7 +12163,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (escalationRuleId != null)
         {
-            localVarPathParams.Add("escalationRuleId", this.Configuration.ApiClient.ParameterToString(escalationRuleId));
+            localVarPathParams.Add("escalationRuleId", Configuration.ApiClient.ParameterToString(escalationRuleId));
         }
 
         // Query params
@@ -12175,7 +12175,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12188,11 +12188,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12218,7 +12218,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<EscalationRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (EscalationRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
+            (EscalationRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12270,7 +12270,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12279,7 +12279,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12292,7 +12292,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (escalationRuleId != null)
         {
-            localVarPathParams.Add("escalationRuleId", this.Configuration.ApiClient.ParameterToString(escalationRuleId));
+            localVarPathParams.Add("escalationRuleId", Configuration.ApiClient.ParameterToString(escalationRuleId));
         }
 
         // Query params
@@ -12304,7 +12304,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12317,11 +12317,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12347,7 +12347,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<EscalationRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (EscalationRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
+            (EscalationRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EscalationRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12406,7 +12406,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12415,7 +12415,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12428,12 +12428,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         // Query params
@@ -12445,7 +12445,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12458,11 +12458,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12488,7 +12488,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
+            (FacebookDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12548,7 +12548,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12557,7 +12557,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12570,12 +12570,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (facebookIngestionRuleId != null)
         {
-            localVarPathParams.Add("facebookIngestionRuleId", this.Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
+            localVarPathParams.Add("facebookIngestionRuleId", Configuration.ApiClient.ParameterToString(facebookIngestionRuleId));
         }
 
         // Query params
@@ -12587,7 +12587,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12600,11 +12600,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12630,7 +12630,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<FacebookDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (FacebookDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
+            (FacebookDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12691,7 +12691,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12700,7 +12700,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12713,12 +12713,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         // Query params
@@ -12730,7 +12730,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12743,11 +12743,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12773,7 +12773,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
+            (OpenDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12835,7 +12835,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12844,7 +12844,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12857,12 +12857,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (openId != null)
         {
-            localVarPathParams.Add("openId", this.Configuration.ApiClient.ParameterToString(openId));
+            localVarPathParams.Add("openId", Configuration.ApiClient.ParameterToString(openId));
         }
 
         // Query params
@@ -12874,7 +12874,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12887,11 +12887,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12917,7 +12917,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<OpenDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (OpenDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
+            (OpenDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12976,7 +12976,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12985,7 +12985,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12998,12 +12998,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         // Query params
@@ -13015,7 +13015,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13028,11 +13028,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13058,7 +13058,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
+            (TwitterDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13118,7 +13118,7 @@ public partial class SocialMediaApi : ISocialMediaApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13127,7 +13127,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13140,12 +13140,12 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (twitterIngestionRuleId != null)
         {
-            localVarPathParams.Add("twitterIngestionRuleId", this.Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
+            localVarPathParams.Add("twitterIngestionRuleId", Configuration.ApiClient.ParameterToString(twitterIngestionRuleId));
         }
 
         // Query params
@@ -13157,7 +13157,7 @@ public partial class SocialMediaApi : ISocialMediaApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13170,11 +13170,11 @@ public partial class SocialMediaApi : ISocialMediaApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13200,7 +13200,7 @@ public partial class SocialMediaApi : ISocialMediaApi
 
         return new ApiResponse<TwitterDataIngestionRuleResponse>(localVarStatusCode,
             localVarHeaders,
-            (TwitterDataIngestionRuleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
+            (TwitterDataIngestionRuleResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TwitterDataIngestionRuleResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

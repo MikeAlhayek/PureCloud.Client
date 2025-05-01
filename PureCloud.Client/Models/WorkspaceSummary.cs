@@ -63,7 +63,7 @@ public partial class WorkspaceSummary : IEquatable<WorkspaceSummary>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkspaceSummary);
+        return Equals(obj as WorkspaceSummary);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class WorkspaceSummary : IEquatable<WorkspaceSummary>
 
         return true &&
             (
-                this.TotalDocumentCount == other.TotalDocumentCount ||
-                this.TotalDocumentCount != null &&
-                this.TotalDocumentCount.Equals(other.TotalDocumentCount)
+                TotalDocumentCount == other.TotalDocumentCount ||
+                TotalDocumentCount != null &&
+                TotalDocumentCount.Equals(other.TotalDocumentCount)
             ) &&
             (
-                this.TotalDocumentByteCount == other.TotalDocumentByteCount ||
-                this.TotalDocumentByteCount != null &&
-                this.TotalDocumentByteCount.Equals(other.TotalDocumentByteCount)
+                TotalDocumentByteCount == other.TotalDocumentByteCount ||
+                TotalDocumentByteCount != null &&
+                TotalDocumentByteCount.Equals(other.TotalDocumentByteCount)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class WorkspaceSummary : IEquatable<WorkspaceSummary>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TotalDocumentCount != null)
+            if (TotalDocumentCount != null)
             {
-                hash = hash * 59 + this.TotalDocumentCount.GetHashCode();
+                hash = hash * 59 + TotalDocumentCount.GetHashCode();
             }
 
-            if (this.TotalDocumentByteCount != null)
+            if (TotalDocumentByteCount != null)
             {
-                hash = hash * 59 + this.TotalDocumentByteCount.GetHashCode();
+                hash = hash * 59 + TotalDocumentByteCount.GetHashCode();
             }
 
             return hash;

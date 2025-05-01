@@ -326,7 +326,7 @@ public partial class UpdateUser : IEquatable<UpdateUser>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateUser);
+        return Equals(obj as UpdateUser);
     }
 
     /// <summary>
@@ -344,114 +344,114 @@ public partial class UpdateUser : IEquatable<UpdateUser>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Chat == other.Chat ||
-                this.Chat != null &&
-                this.Chat.Equals(other.Chat)
+                Chat == other.Chat ||
+                Chat != null &&
+                Chat.Equals(other.Chat)
             ) &&
             (
-                this.Department == other.Department ||
-                this.Department != null &&
-                this.Department.Equals(other.Department)
+                Department == other.Department ||
+                Department != null &&
+                Department.Equals(other.Department)
             ) &&
             (
-                this.Email == other.Email ||
-                this.Email != null &&
-                this.Email.Equals(other.Email)
+                Email == other.Email ||
+                Email != null &&
+                Email.Equals(other.Email)
             ) &&
             (
-                this.PrimaryContactInfo == other.PrimaryContactInfo ||
-                this.PrimaryContactInfo != null &&
-                this.PrimaryContactInfo.SequenceEqual(other.PrimaryContactInfo)
+                PrimaryContactInfo == other.PrimaryContactInfo ||
+                PrimaryContactInfo != null &&
+                PrimaryContactInfo.SequenceEqual(other.PrimaryContactInfo)
             ) &&
             (
-                this.Addresses == other.Addresses ||
-                this.Addresses != null &&
-                this.Addresses.SequenceEqual(other.Addresses)
+                Addresses == other.Addresses ||
+                Addresses != null &&
+                Addresses.SequenceEqual(other.Addresses)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Username == other.Username ||
-                this.Username != null &&
-                this.Username.Equals(other.Username)
+                Username == other.Username ||
+                Username != null &&
+                Username.Equals(other.Username)
             ) &&
             (
-                this.PreferredName == other.PreferredName ||
-                this.PreferredName != null &&
-                this.PreferredName.Equals(other.PreferredName)
+                PreferredName == other.PreferredName ||
+                PreferredName != null &&
+                PreferredName.Equals(other.PreferredName)
             ) &&
             (
-                this.Manager == other.Manager ||
-                this.Manager != null &&
-                this.Manager.Equals(other.Manager)
+                Manager == other.Manager ||
+                Manager != null &&
+                Manager.Equals(other.Manager)
             ) &&
             (
-                this.Images == other.Images ||
-                this.Images != null &&
-                this.Images.SequenceEqual(other.Images)
+                Images == other.Images ||
+                Images != null &&
+                Images.SequenceEqual(other.Images)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.ProfileSkills == other.ProfileSkills ||
-                this.ProfileSkills != null &&
-                this.ProfileSkills.SequenceEqual(other.ProfileSkills)
+                ProfileSkills == other.ProfileSkills ||
+                ProfileSkills != null &&
+                ProfileSkills.SequenceEqual(other.ProfileSkills)
             ) &&
             (
-                this.Locations == other.Locations ||
-                this.Locations != null &&
-                this.Locations.SequenceEqual(other.Locations)
+                Locations == other.Locations ||
+                Locations != null &&
+                Locations.SequenceEqual(other.Locations)
             ) &&
             (
-                this.Groups == other.Groups ||
-                this.Groups != null &&
-                this.Groups.SequenceEqual(other.Groups)
+                Groups == other.Groups ||
+                Groups != null &&
+                Groups.SequenceEqual(other.Groups)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.AcdAutoAnswer == other.AcdAutoAnswer ||
-                this.AcdAutoAnswer != null &&
-                this.AcdAutoAnswer.Equals(other.AcdAutoAnswer)
+                AcdAutoAnswer == other.AcdAutoAnswer ||
+                AcdAutoAnswer != null &&
+                AcdAutoAnswer.Equals(other.AcdAutoAnswer)
             ) &&
             (
-                this.Certifications == other.Certifications ||
-                this.Certifications != null &&
-                this.Certifications.SequenceEqual(other.Certifications)
+                Certifications == other.Certifications ||
+                Certifications != null &&
+                Certifications.SequenceEqual(other.Certifications)
             ) &&
             (
-                this.Biography == other.Biography ||
-                this.Biography != null &&
-                this.Biography.Equals(other.Biography)
+                Biography == other.Biography ||
+                Biography != null &&
+                Biography.Equals(other.Biography)
             ) &&
             (
-                this.EmployerInfo == other.EmployerInfo ||
-                this.EmployerInfo != null &&
-                this.EmployerInfo.Equals(other.EmployerInfo)
+                EmployerInfo == other.EmployerInfo ||
+                EmployerInfo != null &&
+                EmployerInfo.Equals(other.EmployerInfo)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -466,114 +466,114 @@ public partial class UpdateUser : IEquatable<UpdateUser>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Chat != null)
+            if (Chat != null)
             {
-                hash = hash * 59 + this.Chat.GetHashCode();
+                hash = hash * 59 + Chat.GetHashCode();
             }
 
-            if (this.Department != null)
+            if (Department != null)
             {
-                hash = hash * 59 + this.Department.GetHashCode();
+                hash = hash * 59 + Department.GetHashCode();
             }
 
-            if (this.Email != null)
+            if (Email != null)
             {
-                hash = hash * 59 + this.Email.GetHashCode();
+                hash = hash * 59 + Email.GetHashCode();
             }
 
-            if (this.PrimaryContactInfo != null)
+            if (PrimaryContactInfo != null)
             {
-                hash = hash * 59 + this.PrimaryContactInfo.GetHashCode();
+                hash = hash * 59 + PrimaryContactInfo.GetHashCode();
             }
 
-            if (this.Addresses != null)
+            if (Addresses != null)
             {
-                hash = hash * 59 + this.Addresses.GetHashCode();
+                hash = hash * 59 + Addresses.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Username != null)
+            if (Username != null)
             {
-                hash = hash * 59 + this.Username.GetHashCode();
+                hash = hash * 59 + Username.GetHashCode();
             }
 
-            if (this.PreferredName != null)
+            if (PreferredName != null)
             {
-                hash = hash * 59 + this.PreferredName.GetHashCode();
+                hash = hash * 59 + PreferredName.GetHashCode();
             }
 
-            if (this.Manager != null)
+            if (Manager != null)
             {
-                hash = hash * 59 + this.Manager.GetHashCode();
+                hash = hash * 59 + Manager.GetHashCode();
             }
 
-            if (this.Images != null)
+            if (Images != null)
             {
-                hash = hash * 59 + this.Images.GetHashCode();
+                hash = hash * 59 + Images.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.ProfileSkills != null)
+            if (ProfileSkills != null)
             {
-                hash = hash * 59 + this.ProfileSkills.GetHashCode();
+                hash = hash * 59 + ProfileSkills.GetHashCode();
             }
 
-            if (this.Locations != null)
+            if (Locations != null)
             {
-                hash = hash * 59 + this.Locations.GetHashCode();
+                hash = hash * 59 + Locations.GetHashCode();
             }
 
-            if (this.Groups != null)
+            if (Groups != null)
             {
-                hash = hash * 59 + this.Groups.GetHashCode();
+                hash = hash * 59 + Groups.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.AcdAutoAnswer != null)
+            if (AcdAutoAnswer != null)
             {
-                hash = hash * 59 + this.AcdAutoAnswer.GetHashCode();
+                hash = hash * 59 + AcdAutoAnswer.GetHashCode();
             }
 
-            if (this.Certifications != null)
+            if (Certifications != null)
             {
-                hash = hash * 59 + this.Certifications.GetHashCode();
+                hash = hash * 59 + Certifications.GetHashCode();
             }
 
-            if (this.Biography != null)
+            if (Biography != null)
             {
-                hash = hash * 59 + this.Biography.GetHashCode();
+                hash = hash * 59 + Biography.GetHashCode();
             }
 
-            if (this.EmployerInfo != null)
+            if (EmployerInfo != null)
             {
-                hash = hash * 59 + this.EmployerInfo.GetHashCode();
+                hash = hash * 59 + EmployerInfo.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

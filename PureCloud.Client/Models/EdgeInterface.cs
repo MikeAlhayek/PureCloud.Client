@@ -167,7 +167,7 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeInterface);
+        return Equals(obj as EdgeInterface);
     }
 
     /// <summary>
@@ -185,44 +185,44 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.IpAddress == other.IpAddress ||
-                this.IpAddress != null &&
-                this.IpAddress.Equals(other.IpAddress)
+                IpAddress == other.IpAddress ||
+                IpAddress != null &&
+                IpAddress.Equals(other.IpAddress)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.MacAddress == other.MacAddress ||
-                this.MacAddress != null &&
-                this.MacAddress.Equals(other.MacAddress)
+                MacAddress == other.MacAddress ||
+                MacAddress != null &&
+                MacAddress.Equals(other.MacAddress)
             ) &&
             (
-                this.IfName == other.IfName ||
-                this.IfName != null &&
-                this.IfName.Equals(other.IfName)
+                IfName == other.IfName ||
+                IfName != null &&
+                IfName.Equals(other.IfName)
             ) &&
             (
-                this.Endpoints == other.Endpoints ||
-                this.Endpoints != null &&
-                this.Endpoints.SequenceEqual(other.Endpoints)
+                Endpoints == other.Endpoints ||
+                Endpoints != null &&
+                Endpoints.SequenceEqual(other.Endpoints)
             ) &&
             (
-                this.LineTypes == other.LineTypes ||
-                this.LineTypes != null &&
-                this.LineTypes.SequenceEqual(other.LineTypes)
+                LineTypes == other.LineTypes ||
+                LineTypes != null &&
+                LineTypes.SequenceEqual(other.LineTypes)
             ) &&
             (
-                this.AddressFamilyId == other.AddressFamilyId ||
-                this.AddressFamilyId != null &&
-                this.AddressFamilyId.Equals(other.AddressFamilyId)
+                AddressFamilyId == other.AddressFamilyId ||
+                AddressFamilyId != null &&
+                AddressFamilyId.Equals(other.AddressFamilyId)
             );
     }
 
@@ -237,44 +237,44 @@ public partial class EdgeInterface : IEquatable<EdgeInterface>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.IpAddress != null)
+            if (IpAddress != null)
             {
-                hash = hash * 59 + this.IpAddress.GetHashCode();
+                hash = hash * 59 + IpAddress.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.MacAddress != null)
+            if (MacAddress != null)
             {
-                hash = hash * 59 + this.MacAddress.GetHashCode();
+                hash = hash * 59 + MacAddress.GetHashCode();
             }
 
-            if (this.IfName != null)
+            if (IfName != null)
             {
-                hash = hash * 59 + this.IfName.GetHashCode();
+                hash = hash * 59 + IfName.GetHashCode();
             }
 
-            if (this.Endpoints != null)
+            if (Endpoints != null)
             {
-                hash = hash * 59 + this.Endpoints.GetHashCode();
+                hash = hash * 59 + Endpoints.GetHashCode();
             }
 
-            if (this.LineTypes != null)
+            if (LineTypes != null)
             {
-                hash = hash * 59 + this.LineTypes.GetHashCode();
+                hash = hash * 59 + LineTypes.GetHashCode();
             }
 
-            if (this.AddressFamilyId != null)
+            if (AddressFamilyId != null)
             {
-                hash = hash * 59 + this.AddressFamilyId.GetHashCode();
+                hash = hash * 59 + AddressFamilyId.GetHashCode();
             }
 
             return hash;

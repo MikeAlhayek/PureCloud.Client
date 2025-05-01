@@ -109,7 +109,7 @@ public partial class Warning : IEquatable<Warning>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Warning);
+        return Equals(obj as Warning);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class Warning : IEquatable<Warning>
 
         return true &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.RangeType == other.RangeType ||
-                this.RangeType != null &&
-                this.RangeType.Equals(other.RangeType)
+                RangeType == other.RangeType ||
+                RangeType != null &&
+                RangeType.Equals(other.RangeType)
             ) &&
             (
-                this.Color == other.Color ||
-                this.Color != null &&
-                this.Color.Equals(other.Color)
+                Color == other.Color ||
+                Color != null &&
+                Color.Equals(other.Color)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class Warning : IEquatable<Warning>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.RangeType != null)
+            if (RangeType != null)
             {
-                hash = hash * 59 + this.RangeType.GetHashCode();
+                hash = hash * 59 + RangeType.GetHashCode();
             }
 
-            if (this.Color != null)
+            if (Color != null)
             {
-                hash = hash * 59 + this.Color.GetHashCode();
+                hash = hash * 59 + Color.GetHashCode();
             }
 
             return hash;

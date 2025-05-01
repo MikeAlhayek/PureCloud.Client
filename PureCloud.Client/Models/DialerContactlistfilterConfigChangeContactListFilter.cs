@@ -184,7 +184,7 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerContactlistfilterConfigChangeContactListFilter);
+        return Equals(obj as DialerContactlistfilterConfigChangeContactListFilter);
     }
 
     /// <summary>
@@ -202,54 +202,54 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
 
         return true &&
             (
-                this.ContactList == other.ContactList ||
-                this.ContactList != null &&
-                this.ContactList.Equals(other.ContactList)
+                ContactList == other.ContactList ||
+                ContactList != null &&
+                ContactList.Equals(other.ContactList)
             ) &&
             (
-                this.ContactListColumns == other.ContactListColumns ||
-                this.ContactListColumns != null &&
-                this.ContactListColumns.SequenceEqual(other.ContactListColumns)
+                ContactListColumns == other.ContactListColumns ||
+                ContactListColumns != null &&
+                ContactListColumns.SequenceEqual(other.ContactListColumns)
             ) &&
             (
-                this.Clauses == other.Clauses ||
-                this.Clauses != null &&
-                this.Clauses.SequenceEqual(other.Clauses)
+                Clauses == other.Clauses ||
+                Clauses != null &&
+                Clauses.SequenceEqual(other.Clauses)
             ) &&
             (
-                this.FilterType == other.FilterType ||
-                this.FilterType != null &&
-                this.FilterType.Equals(other.FilterType)
+                FilterType == other.FilterType ||
+                FilterType != null &&
+                FilterType.Equals(other.FilterType)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -264,54 +264,54 @@ public partial class DialerContactlistfilterConfigChangeContactListFilter : IEqu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactList != null)
+            if (ContactList != null)
             {
-                hash = hash * 59 + this.ContactList.GetHashCode();
+                hash = hash * 59 + ContactList.GetHashCode();
             }
 
-            if (this.ContactListColumns != null)
+            if (ContactListColumns != null)
             {
-                hash = hash * 59 + this.ContactListColumns.GetHashCode();
+                hash = hash * 59 + ContactListColumns.GetHashCode();
             }
 
-            if (this.Clauses != null)
+            if (Clauses != null)
             {
-                hash = hash * 59 + this.Clauses.GetHashCode();
+                hash = hash * 59 + Clauses.GetHashCode();
             }
 
-            if (this.FilterType != null)
+            if (FilterType != null)
             {
-                hash = hash * 59 + this.FilterType.GetHashCode();
+                hash = hash * 59 + FilterType.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

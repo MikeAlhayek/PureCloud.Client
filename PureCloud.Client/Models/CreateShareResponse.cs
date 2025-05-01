@@ -210,7 +210,7 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateShareResponse);
+        return Equals(obj as CreateShareResponse);
     }
 
     /// <summary>
@@ -228,59 +228,59 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.SharedEntityType == other.SharedEntityType ||
-                this.SharedEntityType != null &&
-                this.SharedEntityType.Equals(other.SharedEntityType)
+                SharedEntityType == other.SharedEntityType ||
+                SharedEntityType != null &&
+                SharedEntityType.Equals(other.SharedEntityType)
             ) &&
             (
-                this.SharedEntity == other.SharedEntity ||
-                this.SharedEntity != null &&
-                this.SharedEntity.Equals(other.SharedEntity)
+                SharedEntity == other.SharedEntity ||
+                SharedEntity != null &&
+                SharedEntity.Equals(other.SharedEntity)
             ) &&
             (
-                this.MemberType == other.MemberType ||
-                this.MemberType != null &&
-                this.MemberType.Equals(other.MemberType)
+                MemberType == other.MemberType ||
+                MemberType != null &&
+                MemberType.Equals(other.MemberType)
             ) &&
             (
-                this.Member == other.Member ||
-                this.Member != null &&
-                this.Member.Equals(other.Member)
+                Member == other.Member ||
+                Member != null &&
+                Member.Equals(other.Member)
             ) &&
             (
-                this.SharedBy == other.SharedBy ||
-                this.SharedBy != null &&
-                this.SharedBy.Equals(other.SharedBy)
+                SharedBy == other.SharedBy ||
+                SharedBy != null &&
+                SharedBy.Equals(other.SharedBy)
             ) &&
             (
-                this.Workspace == other.Workspace ||
-                this.Workspace != null &&
-                this.Workspace.Equals(other.Workspace)
+                Workspace == other.Workspace ||
+                Workspace != null &&
+                Workspace.Equals(other.Workspace)
             ) &&
             (
-                this.Succeeded == other.Succeeded ||
-                this.Succeeded != null &&
-                this.Succeeded.SequenceEqual(other.Succeeded)
+                Succeeded == other.Succeeded ||
+                Succeeded != null &&
+                Succeeded.SequenceEqual(other.Succeeded)
             ) &&
             (
-                this.Failed == other.Failed ||
-                this.Failed != null &&
-                this.Failed.SequenceEqual(other.Failed)
+                Failed == other.Failed ||
+                Failed != null &&
+                Failed.SequenceEqual(other.Failed)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -295,59 +295,59 @@ public partial class CreateShareResponse : IEquatable<CreateShareResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.SharedEntityType != null)
+            if (SharedEntityType != null)
             {
-                hash = hash * 59 + this.SharedEntityType.GetHashCode();
+                hash = hash * 59 + SharedEntityType.GetHashCode();
             }
 
-            if (this.SharedEntity != null)
+            if (SharedEntity != null)
             {
-                hash = hash * 59 + this.SharedEntity.GetHashCode();
+                hash = hash * 59 + SharedEntity.GetHashCode();
             }
 
-            if (this.MemberType != null)
+            if (MemberType != null)
             {
-                hash = hash * 59 + this.MemberType.GetHashCode();
+                hash = hash * 59 + MemberType.GetHashCode();
             }
 
-            if (this.Member != null)
+            if (Member != null)
             {
-                hash = hash * 59 + this.Member.GetHashCode();
+                hash = hash * 59 + Member.GetHashCode();
             }
 
-            if (this.SharedBy != null)
+            if (SharedBy != null)
             {
-                hash = hash * 59 + this.SharedBy.GetHashCode();
+                hash = hash * 59 + SharedBy.GetHashCode();
             }
 
-            if (this.Workspace != null)
+            if (Workspace != null)
             {
-                hash = hash * 59 + this.Workspace.GetHashCode();
+                hash = hash * 59 + Workspace.GetHashCode();
             }
 
-            if (this.Succeeded != null)
+            if (Succeeded != null)
             {
-                hash = hash * 59 + this.Succeeded.GetHashCode();
+                hash = hash * 59 + Succeeded.GetHashCode();
             }
 
-            if (this.Failed != null)
+            if (Failed != null)
             {
-                hash = hash * 59 + this.Failed.GetHashCode();
+                hash = hash * 59 + Failed.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

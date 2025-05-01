@@ -77,7 +77,7 @@ public partial class ConversationSummariesGetResponse : IEquatable<ConversationS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationSummariesGetResponse);
+        return Equals(obj as ConversationSummariesGetResponse);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ConversationSummariesGetResponse : IEquatable<ConversationS
 
         return true &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.Summary == other.Summary ||
-                this.Summary != null &&
-                this.Summary.Equals(other.Summary)
+                Summary == other.Summary ||
+                Summary != null &&
+                Summary.Equals(other.Summary)
             ) &&
             (
-                this.SessionSummaries == other.SessionSummaries ||
-                this.SessionSummaries != null &&
-                this.SessionSummaries.SequenceEqual(other.SessionSummaries)
+                SessionSummaries == other.SessionSummaries ||
+                SessionSummaries != null &&
+                SessionSummaries.SequenceEqual(other.SessionSummaries)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ConversationSummariesGetResponse : IEquatable<ConversationS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.Summary != null)
+            if (Summary != null)
             {
-                hash = hash * 59 + this.Summary.GetHashCode();
+                hash = hash * 59 + Summary.GetHashCode();
             }
 
-            if (this.SessionSummaries != null)
+            if (SessionSummaries != null)
             {
-                hash = hash * 59 + this.SessionSummaries.GetHashCode();
+                hash = hash * 59 + SessionSummaries.GetHashCode();
             }
 
             return hash;

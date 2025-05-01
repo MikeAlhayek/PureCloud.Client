@@ -41,7 +41,7 @@ public partial class ConversationEventTopicObject : IEquatable<ConversationEvent
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationEventTopicObject);
+        return Equals(obj as ConversationEventTopicObject);
     }
 
     /// <summary>

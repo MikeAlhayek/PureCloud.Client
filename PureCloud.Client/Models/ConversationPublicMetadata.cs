@@ -65,7 +65,7 @@ public partial class ConversationPublicMetadata : IEquatable<ConversationPublicM
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationPublicMetadata);
+        return Equals(obj as ConversationPublicMetadata);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ConversationPublicMetadata : IEquatable<ConversationPublicM
 
         return true &&
             (
-                this.RootId == other.RootId ||
-                this.RootId != null &&
-                this.RootId.Equals(other.RootId)
+                RootId == other.RootId ||
+                RootId != null &&
+                RootId.Equals(other.RootId)
             ) &&
             (
-                this.ReplyToId == other.ReplyToId ||
-                this.ReplyToId != null &&
-                this.ReplyToId.Equals(other.ReplyToId)
+                ReplyToId == other.ReplyToId ||
+                ReplyToId != null &&
+                ReplyToId.Equals(other.ReplyToId)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ConversationPublicMetadata : IEquatable<ConversationPublicM
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RootId != null)
+            if (RootId != null)
             {
-                hash = hash * 59 + this.RootId.GetHashCode();
+                hash = hash * 59 + RootId.GetHashCode();
             }
 
-            if (this.ReplyToId != null)
+            if (ReplyToId != null)
             {
-                hash = hash * 59 + this.ReplyToId.GetHashCode();
+                hash = hash * 59 + ReplyToId.GetHashCode();
             }
 
             return hash;

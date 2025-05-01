@@ -77,7 +77,7 @@ public partial class ReportingTurnIntent : IEquatable<ReportingTurnIntent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingTurnIntent);
+        return Equals(obj as ReportingTurnIntent);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ReportingTurnIntent : IEquatable<ReportingTurnIntent>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             ) &&
             (
-                this.Slots == other.Slots ||
-                this.Slots != null &&
-                this.Slots.SequenceEqual(other.Slots)
+                Slots == other.Slots ||
+                Slots != null &&
+                Slots.SequenceEqual(other.Slots)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ReportingTurnIntent : IEquatable<ReportingTurnIntent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
-            if (this.Slots != null)
+            if (Slots != null)
             {
-                hash = hash * 59 + this.Slots.GetHashCode();
+                hash = hash * 59 + Slots.GetHashCode();
             }
 
             return hash;

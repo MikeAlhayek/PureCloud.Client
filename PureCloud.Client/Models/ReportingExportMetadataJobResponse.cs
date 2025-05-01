@@ -896,7 +896,7 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingExportMetadataJobResponse);
+        return Equals(obj as ReportingExportMetadataJobResponse);
     }
 
     /// <summary>
@@ -914,54 +914,54 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ViewType == other.ViewType ||
-                this.ViewType != null &&
-                this.ViewType.Equals(other.ViewType)
+                ViewType == other.ViewType ||
+                ViewType != null &&
+                ViewType.Equals(other.ViewType)
             ) &&
             (
-                this.DateLimitations == other.DateLimitations ||
-                this.DateLimitations != null &&
-                this.DateLimitations.Equals(other.DateLimitations)
+                DateLimitations == other.DateLimitations ||
+                DateLimitations != null &&
+                DateLimitations.Equals(other.DateLimitations)
             ) &&
             (
-                this.RequiredFilters == other.RequiredFilters ||
-                this.RequiredFilters != null &&
-                this.RequiredFilters.SequenceEqual(other.RequiredFilters)
+                RequiredFilters == other.RequiredFilters ||
+                RequiredFilters != null &&
+                RequiredFilters.SequenceEqual(other.RequiredFilters)
             ) &&
             (
-                this.SupportedFilters == other.SupportedFilters ||
-                this.SupportedFilters != null &&
-                this.SupportedFilters.SequenceEqual(other.SupportedFilters)
+                SupportedFilters == other.SupportedFilters ||
+                SupportedFilters != null &&
+                SupportedFilters.SequenceEqual(other.SupportedFilters)
             ) &&
             (
-                this.RequiredColumnIds == other.RequiredColumnIds ||
-                this.RequiredColumnIds != null &&
-                this.RequiredColumnIds.SequenceEqual(other.RequiredColumnIds)
+                RequiredColumnIds == other.RequiredColumnIds ||
+                RequiredColumnIds != null &&
+                RequiredColumnIds.SequenceEqual(other.RequiredColumnIds)
             ) &&
             (
-                this.DependentColumnIds == other.DependentColumnIds ||
-                this.DependentColumnIds != null &&
-                this.DependentColumnIds.SequenceEqual(other.DependentColumnIds)
+                DependentColumnIds == other.DependentColumnIds ||
+                DependentColumnIds != null &&
+                DependentColumnIds.SequenceEqual(other.DependentColumnIds)
             ) &&
             (
-                this.AvailableColumnIds == other.AvailableColumnIds ||
-                this.AvailableColumnIds != null &&
-                this.AvailableColumnIds.SequenceEqual(other.AvailableColumnIds)
+                AvailableColumnIds == other.AvailableColumnIds ||
+                AvailableColumnIds != null &&
+                AvailableColumnIds.SequenceEqual(other.AvailableColumnIds)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -976,54 +976,54 @@ public partial class ReportingExportMetadataJobResponse : IEquatable<ReportingEx
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ViewType != null)
+            if (ViewType != null)
             {
-                hash = hash * 59 + this.ViewType.GetHashCode();
+                hash = hash * 59 + ViewType.GetHashCode();
             }
 
-            if (this.DateLimitations != null)
+            if (DateLimitations != null)
             {
-                hash = hash * 59 + this.DateLimitations.GetHashCode();
+                hash = hash * 59 + DateLimitations.GetHashCode();
             }
 
-            if (this.RequiredFilters != null)
+            if (RequiredFilters != null)
             {
-                hash = hash * 59 + this.RequiredFilters.GetHashCode();
+                hash = hash * 59 + RequiredFilters.GetHashCode();
             }
 
-            if (this.SupportedFilters != null)
+            if (SupportedFilters != null)
             {
-                hash = hash * 59 + this.SupportedFilters.GetHashCode();
+                hash = hash * 59 + SupportedFilters.GetHashCode();
             }
 
-            if (this.RequiredColumnIds != null)
+            if (RequiredColumnIds != null)
             {
-                hash = hash * 59 + this.RequiredColumnIds.GetHashCode();
+                hash = hash * 59 + RequiredColumnIds.GetHashCode();
             }
 
-            if (this.DependentColumnIds != null)
+            if (DependentColumnIds != null)
             {
-                hash = hash * 59 + this.DependentColumnIds.GetHashCode();
+                hash = hash * 59 + DependentColumnIds.GetHashCode();
             }
 
-            if (this.AvailableColumnIds != null)
+            if (AvailableColumnIds != null)
             {
-                hash = hash * 59 + this.AvailableColumnIds.GetHashCode();
+                hash = hash * 59 + AvailableColumnIds.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

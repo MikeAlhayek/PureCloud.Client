@@ -74,7 +74,7 @@ public partial class QueueMessagingAddresses : IEquatable<QueueMessagingAddresse
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueMessagingAddresses);
+        return Equals(obj as QueueMessagingAddresses);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class QueueMessagingAddresses : IEquatable<QueueMessagingAddresse
 
         return true &&
             (
-                this.SmsAddress == other.SmsAddress ||
-                this.SmsAddress != null &&
-                this.SmsAddress.Equals(other.SmsAddress)
+                SmsAddress == other.SmsAddress ||
+                SmsAddress != null &&
+                SmsAddress.Equals(other.SmsAddress)
             ) &&
             (
-                this.OpenMessagingRecipient == other.OpenMessagingRecipient ||
-                this.OpenMessagingRecipient != null &&
-                this.OpenMessagingRecipient.Equals(other.OpenMessagingRecipient)
+                OpenMessagingRecipient == other.OpenMessagingRecipient ||
+                OpenMessagingRecipient != null &&
+                OpenMessagingRecipient.Equals(other.OpenMessagingRecipient)
             ) &&
             (
-                this.WhatsAppRecipient == other.WhatsAppRecipient ||
-                this.WhatsAppRecipient != null &&
-                this.WhatsAppRecipient.Equals(other.WhatsAppRecipient)
+                WhatsAppRecipient == other.WhatsAppRecipient ||
+                WhatsAppRecipient != null &&
+                WhatsAppRecipient.Equals(other.WhatsAppRecipient)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class QueueMessagingAddresses : IEquatable<QueueMessagingAddresse
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SmsAddress != null)
+            if (SmsAddress != null)
             {
-                hash = hash * 59 + this.SmsAddress.GetHashCode();
+                hash = hash * 59 + SmsAddress.GetHashCode();
             }
 
-            if (this.OpenMessagingRecipient != null)
+            if (OpenMessagingRecipient != null)
             {
-                hash = hash * 59 + this.OpenMessagingRecipient.GetHashCode();
+                hash = hash * 59 + OpenMessagingRecipient.GetHashCode();
             }
 
-            if (this.WhatsAppRecipient != null)
+            if (WhatsAppRecipient != null)
             {
-                hash = hash * 59 + this.WhatsAppRecipient.GetHashCode();
+                hash = hash * 59 + WhatsAppRecipient.GetHashCode();
             }
 
             return hash;

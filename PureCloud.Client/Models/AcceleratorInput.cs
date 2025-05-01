@@ -82,7 +82,7 @@ public partial class AcceleratorInput : IEquatable<AcceleratorInput>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AcceleratorInput);
+        return Equals(obj as AcceleratorInput);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class AcceleratorInput : IEquatable<AcceleratorInput>
 
         return true &&
             (
-                this.DryRun == other.DryRun ||
-                this.DryRun != null &&
-                this.DryRun.Equals(other.DryRun)
+                DryRun == other.DryRun ||
+                DryRun != null &&
+                DryRun.Equals(other.DryRun)
             ) &&
             (
-                this.AcceleratorId == other.AcceleratorId ||
-                this.AcceleratorId != null &&
-                this.AcceleratorId.Equals(other.AcceleratorId)
+                AcceleratorId == other.AcceleratorId ||
+                AcceleratorId != null &&
+                AcceleratorId.Equals(other.AcceleratorId)
             ) &&
             (
-                this.Parameters == other.Parameters ||
-                this.Parameters != null &&
-                this.Parameters.SequenceEqual(other.Parameters)
+                Parameters == other.Parameters ||
+                Parameters != null &&
+                Parameters.SequenceEqual(other.Parameters)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class AcceleratorInput : IEquatable<AcceleratorInput>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DryRun != null)
+            if (DryRun != null)
             {
-                hash = hash * 59 + this.DryRun.GetHashCode();
+                hash = hash * 59 + DryRun.GetHashCode();
             }
 
-            if (this.AcceleratorId != null)
+            if (AcceleratorId != null)
             {
-                hash = hash * 59 + this.AcceleratorId.GetHashCode();
+                hash = hash * 59 + AcceleratorId.GetHashCode();
             }
 
-            if (this.Parameters != null)
+            if (Parameters != null)
             {
-                hash = hash * 59 + this.Parameters.GetHashCode();
+                hash = hash * 59 + Parameters.GetHashCode();
             }
 
             return hash;

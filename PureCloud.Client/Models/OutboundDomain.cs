@@ -148,7 +148,7 @@ public partial class OutboundDomain : IEquatable<OutboundDomain>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundDomain);
+        return Equals(obj as OutboundDomain);
     }
 
     /// <summary>
@@ -166,34 +166,34 @@ public partial class OutboundDomain : IEquatable<OutboundDomain>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.CnameVerificationResult == other.CnameVerificationResult ||
-                this.CnameVerificationResult != null &&
-                this.CnameVerificationResult.Equals(other.CnameVerificationResult)
+                CnameVerificationResult == other.CnameVerificationResult ||
+                CnameVerificationResult != null &&
+                CnameVerificationResult.Equals(other.CnameVerificationResult)
             ) &&
             (
-                this.DkimVerificationResult == other.DkimVerificationResult ||
-                this.DkimVerificationResult != null &&
-                this.DkimVerificationResult.Equals(other.DkimVerificationResult)
+                DkimVerificationResult == other.DkimVerificationResult ||
+                DkimVerificationResult != null &&
+                DkimVerificationResult.Equals(other.DkimVerificationResult)
             ) &&
             (
-                this.SenderType == other.SenderType ||
-                this.SenderType != null &&
-                this.SenderType.Equals(other.SenderType)
+                SenderType == other.SenderType ||
+                SenderType != null &&
+                SenderType.Equals(other.SenderType)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -208,34 +208,34 @@ public partial class OutboundDomain : IEquatable<OutboundDomain>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.CnameVerificationResult != null)
+            if (CnameVerificationResult != null)
             {
-                hash = hash * 59 + this.CnameVerificationResult.GetHashCode();
+                hash = hash * 59 + CnameVerificationResult.GetHashCode();
             }
 
-            if (this.DkimVerificationResult != null)
+            if (DkimVerificationResult != null)
             {
-                hash = hash * 59 + this.DkimVerificationResult.GetHashCode();
+                hash = hash * 59 + DkimVerificationResult.GetHashCode();
             }
 
-            if (this.SenderType != null)
+            if (SenderType != null)
             {
-                hash = hash * 59 + this.SenderType.GetHashCode();
+                hash = hash * 59 + SenderType.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

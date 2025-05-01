@@ -74,7 +74,7 @@ public partial class PublishTopicTestPhraseDetectedPhrase : IEquatable<PublishTo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PublishTopicTestPhraseDetectedPhrase);
+        return Equals(obj as PublishTopicTestPhraseDetectedPhrase);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class PublishTopicTestPhraseDetectedPhrase : IEquatable<PublishTo
 
         return true &&
             (
-                this.FoundPhrase == other.FoundPhrase ||
-                this.FoundPhrase != null &&
-                this.FoundPhrase.Equals(other.FoundPhrase)
+                FoundPhrase == other.FoundPhrase ||
+                FoundPhrase != null &&
+                FoundPhrase.Equals(other.FoundPhrase)
             ) &&
             (
-                this.Snippet == other.Snippet ||
-                this.Snippet != null &&
-                this.Snippet.Equals(other.Snippet)
+                Snippet == other.Snippet ||
+                Snippet != null &&
+                Snippet.Equals(other.Snippet)
             ) &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class PublishTopicTestPhraseDetectedPhrase : IEquatable<PublishTo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FoundPhrase != null)
+            if (FoundPhrase != null)
             {
-                hash = hash * 59 + this.FoundPhrase.GetHashCode();
+                hash = hash * 59 + FoundPhrase.GetHashCode();
             }
 
-            if (this.Snippet != null)
+            if (Snippet != null)
             {
-                hash = hash * 59 + this.Snippet.GetHashCode();
+                hash = hash * 59 + Snippet.GetHashCode();
             }
 
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
             return hash;

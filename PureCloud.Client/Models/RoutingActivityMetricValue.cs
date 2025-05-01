@@ -151,7 +151,7 @@ public partial class RoutingActivityMetricValue : IEquatable<RoutingActivityMetr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoutingActivityMetricValue);
+        return Equals(obj as RoutingActivityMetricValue);
     }
 
     /// <summary>
@@ -169,29 +169,29 @@ public partial class RoutingActivityMetricValue : IEquatable<RoutingActivityMetr
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Qualifier == other.Qualifier ||
-                this.Qualifier != null &&
-                this.Qualifier.Equals(other.Qualifier)
+                Qualifier == other.Qualifier ||
+                Qualifier != null &&
+                Qualifier.Equals(other.Qualifier)
             ) &&
             (
-                this.SecondaryQualifier == other.SecondaryQualifier ||
-                this.SecondaryQualifier != null &&
-                this.SecondaryQualifier.Equals(other.SecondaryQualifier)
+                SecondaryQualifier == other.SecondaryQualifier ||
+                SecondaryQualifier != null &&
+                SecondaryQualifier.Equals(other.SecondaryQualifier)
             ) &&
             (
-                this.EntityIds == other.EntityIds ||
-                this.EntityIds != null &&
-                this.EntityIds.SequenceEqual(other.EntityIds)
+                EntityIds == other.EntityIds ||
+                EntityIds != null &&
+                EntityIds.SequenceEqual(other.EntityIds)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             );
     }
 
@@ -206,29 +206,29 @@ public partial class RoutingActivityMetricValue : IEquatable<RoutingActivityMetr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Qualifier != null)
+            if (Qualifier != null)
             {
-                hash = hash * 59 + this.Qualifier.GetHashCode();
+                hash = hash * 59 + Qualifier.GetHashCode();
             }
 
-            if (this.SecondaryQualifier != null)
+            if (SecondaryQualifier != null)
             {
-                hash = hash * 59 + this.SecondaryQualifier.GetHashCode();
+                hash = hash * 59 + SecondaryQualifier.GetHashCode();
             }
 
-            if (this.EntityIds != null)
+            if (EntityIds != null)
             {
-                hash = hash * 59 + this.EntityIds.GetHashCode();
+                hash = hash * 59 + EntityIds.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
             return hash;

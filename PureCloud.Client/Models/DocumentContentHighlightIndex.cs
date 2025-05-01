@@ -65,7 +65,7 @@ public partial class DocumentContentHighlightIndex : IEquatable<DocumentContentH
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentContentHighlightIndex);
+        return Equals(obj as DocumentContentHighlightIndex);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class DocumentContentHighlightIndex : IEquatable<DocumentContentH
 
         return true &&
             (
-                this.StartIndex == other.StartIndex ||
-                this.StartIndex != null &&
-                this.StartIndex.Equals(other.StartIndex)
+                StartIndex == other.StartIndex ||
+                StartIndex != null &&
+                StartIndex.Equals(other.StartIndex)
             ) &&
             (
-                this.EndIndex == other.EndIndex ||
-                this.EndIndex != null &&
-                this.EndIndex.Equals(other.EndIndex)
+                EndIndex == other.EndIndex ||
+                EndIndex != null &&
+                EndIndex.Equals(other.EndIndex)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class DocumentContentHighlightIndex : IEquatable<DocumentContentH
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartIndex != null)
+            if (StartIndex != null)
             {
-                hash = hash * 59 + this.StartIndex.GetHashCode();
+                hash = hash * 59 + StartIndex.GetHashCode();
             }
 
-            if (this.EndIndex != null)
+            if (EndIndex != null)
             {
-                hash = hash * 59 + this.EndIndex.GetHashCode();
+                hash = hash * 59 + EndIndex.GetHashCode();
             }
 
             return hash;

@@ -63,7 +63,7 @@ public partial class FlowOutcomeDetailEventTopicFlowMilestone : IEquatable<FlowO
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowOutcomeDetailEventTopicFlowMilestone);
+        return Equals(obj as FlowOutcomeDetailEventTopicFlowMilestone);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class FlowOutcomeDetailEventTopicFlowMilestone : IEquatable<FlowO
 
         return true &&
             (
-                this.MilestoneId == other.MilestoneId ||
-                this.MilestoneId != null &&
-                this.MilestoneId.Equals(other.MilestoneId)
+                MilestoneId == other.MilestoneId ||
+                MilestoneId != null &&
+                MilestoneId.Equals(other.MilestoneId)
             ) &&
             (
-                this.MilestoneTime == other.MilestoneTime ||
-                this.MilestoneTime != null &&
-                this.MilestoneTime.Equals(other.MilestoneTime)
+                MilestoneTime == other.MilestoneTime ||
+                MilestoneTime != null &&
+                MilestoneTime.Equals(other.MilestoneTime)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class FlowOutcomeDetailEventTopicFlowMilestone : IEquatable<FlowO
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MilestoneId != null)
+            if (MilestoneId != null)
             {
-                hash = hash * 59 + this.MilestoneId.GetHashCode();
+                hash = hash * 59 + MilestoneId.GetHashCode();
             }
 
-            if (this.MilestoneTime != null)
+            if (MilestoneTime != null)
             {
-                hash = hash * 59 + this.MilestoneTime.GetHashCode();
+                hash = hash * 59 + MilestoneTime.GetHashCode();
             }
 
             return hash;

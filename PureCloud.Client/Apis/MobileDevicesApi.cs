@@ -283,12 +283,12 @@ public partial class MobileDevicesApi : IMobileDevicesApi
     /// <returns></returns>
     public MobileDevicesApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -302,17 +302,17 @@ public partial class MobileDevicesApi : IMobileDevicesApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -322,7 +322,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -348,7 +348,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -360,7 +360,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -405,7 +405,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -414,7 +414,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -427,7 +427,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Path params
         if (deviceId != null)
         {
-            localVarPathParams.Add("deviceId", this.Configuration.ApiClient.ParameterToString(deviceId));
+            localVarPathParams.Add("deviceId", Configuration.ApiClient.ParameterToString(deviceId));
         }
 
         // Query params
@@ -443,11 +443,11 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -521,7 +521,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -530,7 +530,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -543,7 +543,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Path params
         if (deviceId != null)
         {
-            localVarPathParams.Add("deviceId", this.Configuration.ApiClient.ParameterToString(deviceId));
+            localVarPathParams.Add("deviceId", Configuration.ApiClient.ParameterToString(deviceId));
         }
 
         // Query params
@@ -559,11 +559,11 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -638,7 +638,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -647,7 +647,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -660,7 +660,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Path params
         if (deviceId != null)
         {
-            localVarPathParams.Add("deviceId", this.Configuration.ApiClient.ParameterToString(deviceId));
+            localVarPathParams.Add("deviceId", Configuration.ApiClient.ParameterToString(deviceId));
         }
 
         // Query params
@@ -676,11 +676,11 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -706,7 +706,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
         return new ApiResponse<UserDevice>(localVarStatusCode,
             localVarHeaders,
-            (UserDevice)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
+            (UserDevice)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -755,7 +755,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -764,7 +764,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -777,7 +777,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Path params
         if (deviceId != null)
         {
-            localVarPathParams.Add("deviceId", this.Configuration.ApiClient.ParameterToString(deviceId));
+            localVarPathParams.Add("deviceId", Configuration.ApiClient.ParameterToString(deviceId));
         }
 
         // Query params
@@ -793,11 +793,11 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -823,7 +823,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
         return new ApiResponse<UserDevice>(localVarStatusCode,
             localVarHeaders,
-            (UserDevice)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
+            (UserDevice)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -871,7 +871,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -880,7 +880,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -895,17 +895,17 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -919,11 +919,11 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -949,7 +949,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
         return new ApiResponse<DirectoryUserDevicesListing>(localVarStatusCode,
             localVarHeaders,
-            (DirectoryUserDevicesListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DirectoryUserDevicesListing)),
+            (DirectoryUserDevicesListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DirectoryUserDevicesListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -997,7 +997,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1006,7 +1006,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1021,17 +1021,17 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -1045,11 +1045,11 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1075,7 +1075,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
         return new ApiResponse<DirectoryUserDevicesListing>(localVarStatusCode,
             localVarHeaders,
-            (DirectoryUserDevicesListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DirectoryUserDevicesListing)),
+            (DirectoryUserDevicesListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DirectoryUserDevicesListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1125,7 +1125,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1134,7 +1134,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1155,7 +1155,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1168,11 +1168,11 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1198,7 +1198,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
         return new ApiResponse<UserDevice>(localVarStatusCode,
             localVarHeaders,
-            (UserDevice)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
+            (UserDevice)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1248,7 +1248,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1257,7 +1257,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1278,7 +1278,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1291,11 +1291,11 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1321,7 +1321,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
         return new ApiResponse<UserDevice>(localVarStatusCode,
             localVarHeaders,
-            (UserDevice)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
+            (UserDevice)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1373,7 +1373,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1382,7 +1382,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1395,7 +1395,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Path params
         if (deviceId != null)
         {
-            localVarPathParams.Add("deviceId", this.Configuration.ApiClient.ParameterToString(deviceId));
+            localVarPathParams.Add("deviceId", Configuration.ApiClient.ParameterToString(deviceId));
         }
 
         // Query params
@@ -1407,7 +1407,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1420,11 +1420,11 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1450,7 +1450,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
         return new ApiResponse<UserDevice>(localVarStatusCode,
             localVarHeaders,
-            (UserDevice)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
+            (UserDevice)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1502,7 +1502,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1511,7 +1511,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1524,7 +1524,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Path params
         if (deviceId != null)
         {
-            localVarPathParams.Add("deviceId", this.Configuration.ApiClient.ParameterToString(deviceId));
+            localVarPathParams.Add("deviceId", Configuration.ApiClient.ParameterToString(deviceId));
         }
 
         // Query params
@@ -1536,7 +1536,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1549,11 +1549,11 @@ public partial class MobileDevicesApi : IMobileDevicesApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1579,7 +1579,7 @@ public partial class MobileDevicesApi : IMobileDevicesApi
 
         return new ApiResponse<UserDevice>(localVarStatusCode,
             localVarHeaders,
-            (UserDevice)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
+            (UserDevice)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserDevice)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

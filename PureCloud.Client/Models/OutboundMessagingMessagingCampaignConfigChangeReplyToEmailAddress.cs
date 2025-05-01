@@ -65,7 +65,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailA
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress);
+        return Equals(obj as OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailA
 
         return true &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.Route == other.Route ||
-                this.Route != null &&
-                this.Route.Equals(other.Route)
+                Route == other.Route ||
+                Route != null &&
+                Route.Equals(other.Route)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailA
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.Route != null)
+            if (Route != null)
             {
-                hash = hash * 59 + this.Route.GetHashCode();
+                hash = hash * 59 + Route.GetHashCode();
             }
 
             return hash;

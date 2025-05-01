@@ -74,7 +74,7 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults);
+        return Equals(obj as WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
 
         return true &&
             (
-                this.WeekNumber == other.WeekNumber ||
-                this.WeekNumber != null &&
-                this.WeekNumber.Equals(other.WeekNumber)
+                WeekNumber == other.WeekNumber ||
+                WeekNumber != null &&
+                WeekNumber.Equals(other.WeekNumber)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.DownloadUrlExpirationDate == other.DownloadUrlExpirationDate ||
-                this.DownloadUrlExpirationDate != null &&
-                this.DownloadUrlExpirationDate.Equals(other.DownloadUrlExpirationDate)
+                DownloadUrlExpirationDate == other.DownloadUrlExpirationDate ||
+                DownloadUrlExpirationDate != null &&
+                DownloadUrlExpirationDate.Equals(other.DownloadUrlExpirationDate)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class WfmBuShortTermForecastStaffingRequirementsGenerateCompleteT
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WeekNumber != null)
+            if (WeekNumber != null)
             {
-                hash = hash * 59 + this.WeekNumber.GetHashCode();
+                hash = hash * 59 + WeekNumber.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.DownloadUrlExpirationDate != null)
+            if (DownloadUrlExpirationDate != null)
             {
-                hash = hash * 59 + this.DownloadUrlExpirationDate.GetHashCode();
+                hash = hash * 59 + DownloadUrlExpirationDate.GetHashCode();
             }
 
             return hash;

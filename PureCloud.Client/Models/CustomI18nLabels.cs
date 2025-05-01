@@ -65,7 +65,7 @@ public partial class CustomI18nLabels : IEquatable<CustomI18nLabels>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CustomI18nLabels);
+        return Equals(obj as CustomI18nLabels);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class CustomI18nLabels : IEquatable<CustomI18nLabels>
 
         return true &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.LocalizedLabels == other.LocalizedLabels ||
-                this.LocalizedLabels != null &&
-                this.LocalizedLabels.SequenceEqual(other.LocalizedLabels)
+                LocalizedLabels == other.LocalizedLabels ||
+                LocalizedLabels != null &&
+                LocalizedLabels.SequenceEqual(other.LocalizedLabels)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class CustomI18nLabels : IEquatable<CustomI18nLabels>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.LocalizedLabels != null)
+            if (LocalizedLabels != null)
             {
-                hash = hash * 59 + this.LocalizedLabels.GetHashCode();
+                hash = hash * 59 + LocalizedLabels.GetHashCode();
             }
 
             return hash;

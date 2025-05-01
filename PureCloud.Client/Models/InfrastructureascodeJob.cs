@@ -217,7 +217,7 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InfrastructureascodeJob);
+        return Equals(obj as InfrastructureascodeJob);
     }
 
     /// <summary>
@@ -235,54 +235,54 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DryRun == other.DryRun ||
-                this.DryRun != null &&
-                this.DryRun.Equals(other.DryRun)
+                DryRun == other.DryRun ||
+                DryRun != null &&
+                DryRun.Equals(other.DryRun)
             ) &&
             (
-                this.AcceleratorId == other.AcceleratorId ||
-                this.AcceleratorId != null &&
-                this.AcceleratorId.Equals(other.AcceleratorId)
+                AcceleratorId == other.AcceleratorId ||
+                AcceleratorId != null &&
+                AcceleratorId.Equals(other.AcceleratorId)
             ) &&
             (
-                this.DateSubmitted == other.DateSubmitted ||
-                this.DateSubmitted != null &&
-                this.DateSubmitted.Equals(other.DateSubmitted)
+                DateSubmitted == other.DateSubmitted ||
+                DateSubmitted != null &&
+                DateSubmitted.Equals(other.DateSubmitted)
             ) &&
             (
-                this.SubmittedBy == other.SubmittedBy ||
-                this.SubmittedBy != null &&
-                this.SubmittedBy.Equals(other.SubmittedBy)
+                SubmittedBy == other.SubmittedBy ||
+                SubmittedBy != null &&
+                SubmittedBy.Equals(other.SubmittedBy)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             ) &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.Equals(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.Equals(other.Results)
             ) &&
             (
-                this.RollbackResults == other.RollbackResults ||
-                this.RollbackResults != null &&
-                this.RollbackResults.Equals(other.RollbackResults)
+                RollbackResults == other.RollbackResults ||
+                RollbackResults != null &&
+                RollbackResults.Equals(other.RollbackResults)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -297,54 +297,54 @@ public partial class InfrastructureascodeJob : IEquatable<InfrastructureascodeJo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DryRun != null)
+            if (DryRun != null)
             {
-                hash = hash * 59 + this.DryRun.GetHashCode();
+                hash = hash * 59 + DryRun.GetHashCode();
             }
 
-            if (this.AcceleratorId != null)
+            if (AcceleratorId != null)
             {
-                hash = hash * 59 + this.AcceleratorId.GetHashCode();
+                hash = hash * 59 + AcceleratorId.GetHashCode();
             }
 
-            if (this.DateSubmitted != null)
+            if (DateSubmitted != null)
             {
-                hash = hash * 59 + this.DateSubmitted.GetHashCode();
+                hash = hash * 59 + DateSubmitted.GetHashCode();
             }
 
-            if (this.SubmittedBy != null)
+            if (SubmittedBy != null)
             {
-                hash = hash * 59 + this.SubmittedBy.GetHashCode();
+                hash = hash * 59 + SubmittedBy.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
-            if (this.RollbackResults != null)
+            if (RollbackResults != null)
             {
-                hash = hash * 59 + this.RollbackResults.GetHashCode();
+                hash = hash * 59 + RollbackResults.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

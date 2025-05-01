@@ -77,7 +77,7 @@ public partial class WorkitemsChangeWorkitemDelta : IEquatable<WorkitemsChangeWo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemsChangeWorkitemDelta);
+        return Equals(obj as WorkitemsChangeWorkitemDelta);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class WorkitemsChangeWorkitemDelta : IEquatable<WorkitemsChangeWo
 
         return true &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.Delta == other.Delta ||
-                this.Delta != null &&
-                this.Delta.Equals(other.Delta)
+                Delta == other.Delta ||
+                Delta != null &&
+                Delta.Equals(other.Delta)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class WorkitemsChangeWorkitemDelta : IEquatable<WorkitemsChangeWo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.Delta != null)
+            if (Delta != null)
             {
-                hash = hash * 59 + this.Delta.GetHashCode();
+                hash = hash * 59 + Delta.GetHashCode();
             }
 
             return hash;

@@ -89,7 +89,7 @@ public partial class CreateWebChatConversationResponse : IEquatable<CreateWebCha
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateWebChatConversationResponse);
+        return Equals(obj as CreateWebChatConversationResponse);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class CreateWebChatConversationResponse : IEquatable<CreateWebCha
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Jwt == other.Jwt ||
-                this.Jwt != null &&
-                this.Jwt.Equals(other.Jwt)
+                Jwt == other.Jwt ||
+                Jwt != null &&
+                Jwt.Equals(other.Jwt)
             ) &&
             (
-                this.EventStreamUri == other.EventStreamUri ||
-                this.EventStreamUri != null &&
-                this.EventStreamUri.Equals(other.EventStreamUri)
+                EventStreamUri == other.EventStreamUri ||
+                EventStreamUri != null &&
+                EventStreamUri.Equals(other.EventStreamUri)
             ) &&
             (
-                this.Member == other.Member ||
-                this.Member != null &&
-                this.Member.Equals(other.Member)
+                Member == other.Member ||
+                Member != null &&
+                Member.Equals(other.Member)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class CreateWebChatConversationResponse : IEquatable<CreateWebCha
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Jwt != null)
+            if (Jwt != null)
             {
-                hash = hash * 59 + this.Jwt.GetHashCode();
+                hash = hash * 59 + Jwt.GetHashCode();
             }
 
-            if (this.EventStreamUri != null)
+            if (EventStreamUri != null)
             {
-                hash = hash * 59 + this.EventStreamUri.GetHashCode();
+                hash = hash * 59 + EventStreamUri.GetHashCode();
             }
 
-            if (this.Member != null)
+            if (Member != null)
             {
-                hash = hash * 59 + this.Member.GetHashCode();
+                hash = hash * 59 + Member.GetHashCode();
             }
 
             return hash;

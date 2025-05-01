@@ -58,7 +58,7 @@ public partial class ActivityPlanAsaImpactOverride : IEquatable<ActivityPlanAsaI
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActivityPlanAsaImpactOverride);
+        return Equals(obj as ActivityPlanAsaImpactOverride);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class ActivityPlanAsaImpactOverride : IEquatable<ActivityPlanAsaI
 
         return true &&
             (
-                this.IncreaseByPercent == other.IncreaseByPercent ||
-                this.IncreaseByPercent != null &&
-                this.IncreaseByPercent.Equals(other.IncreaseByPercent)
+                IncreaseByPercent == other.IncreaseByPercent ||
+                IncreaseByPercent != null &&
+                IncreaseByPercent.Equals(other.IncreaseByPercent)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class ActivityPlanAsaImpactOverride : IEquatable<ActivityPlanAsaI
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IncreaseByPercent != null)
+            if (IncreaseByPercent != null)
             {
-                hash = hash * 59 + this.IncreaseByPercent.GetHashCode();
+                hash = hash * 59 + IncreaseByPercent.GetHashCode();
             }
 
             return hash;

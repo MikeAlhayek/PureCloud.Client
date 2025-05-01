@@ -133,7 +133,7 @@ public partial class MessageMediaAttachment : IEquatable<MessageMediaAttachment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessageMediaAttachment);
+        return Equals(obj as MessageMediaAttachment);
     }
 
     /// <summary>
@@ -151,29 +151,29 @@ public partial class MessageMediaAttachment : IEquatable<MessageMediaAttachment>
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.ContentLength == other.ContentLength ||
-                this.ContentLength != null &&
-                this.ContentLength.Equals(other.ContentLength)
+                ContentLength == other.ContentLength ||
+                ContentLength != null &&
+                ContentLength.Equals(other.ContentLength)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             );
     }
 
@@ -188,29 +188,29 @@ public partial class MessageMediaAttachment : IEquatable<MessageMediaAttachment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.ContentLength != null)
+            if (ContentLength != null)
             {
-                hash = hash * 59 + this.ContentLength.GetHashCode();
+                hash = hash * 59 + ContentLength.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
             return hash;

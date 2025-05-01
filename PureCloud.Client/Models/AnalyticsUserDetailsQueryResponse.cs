@@ -73,7 +73,7 @@ public partial class AnalyticsUserDetailsQueryResponse : IEquatable<AnalyticsUse
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsUserDetailsQueryResponse);
+        return Equals(obj as AnalyticsUserDetailsQueryResponse);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class AnalyticsUserDetailsQueryResponse : IEquatable<AnalyticsUse
 
         return true &&
             (
-                this.UserDetails == other.UserDetails ||
-                this.UserDetails != null &&
-                this.UserDetails.SequenceEqual(other.UserDetails)
+                UserDetails == other.UserDetails ||
+                UserDetails != null &&
+                UserDetails.SequenceEqual(other.UserDetails)
             ) &&
             (
-                this.Aggregations == other.Aggregations ||
-                this.Aggregations != null &&
-                this.Aggregations.SequenceEqual(other.Aggregations)
+                Aggregations == other.Aggregations ||
+                Aggregations != null &&
+                Aggregations.SequenceEqual(other.Aggregations)
             ) &&
             (
-                this.TotalHits == other.TotalHits ||
-                this.TotalHits != null &&
-                this.TotalHits.Equals(other.TotalHits)
+                TotalHits == other.TotalHits ||
+                TotalHits != null &&
+                TotalHits.Equals(other.TotalHits)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class AnalyticsUserDetailsQueryResponse : IEquatable<AnalyticsUse
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserDetails != null)
+            if (UserDetails != null)
             {
-                hash = hash * 59 + this.UserDetails.GetHashCode();
+                hash = hash * 59 + UserDetails.GetHashCode();
             }
 
-            if (this.Aggregations != null)
+            if (Aggregations != null)
             {
-                hash = hash * 59 + this.Aggregations.GetHashCode();
+                hash = hash * 59 + Aggregations.GetHashCode();
             }
 
-            if (this.TotalHits != null)
+            if (TotalHits != null)
             {
-                hash = hash * 59 + this.TotalHits.GetHashCode();
+                hash = hash * 59 + TotalHits.GetHashCode();
             }
 
             return hash;

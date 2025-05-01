@@ -130,7 +130,7 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeMetrics);
+        return Equals(obj as EdgeMetrics);
     }
 
     /// <summary>
@@ -148,44 +148,44 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
 
         return true &&
             (
-                this.Edge == other.Edge ||
-                this.Edge != null &&
-                this.Edge.Equals(other.Edge)
+                Edge == other.Edge ||
+                Edge != null &&
+                Edge.Equals(other.Edge)
             ) &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.UpTimeMsec == other.UpTimeMsec ||
-                this.UpTimeMsec != null &&
-                this.UpTimeMsec.Equals(other.UpTimeMsec)
+                UpTimeMsec == other.UpTimeMsec ||
+                UpTimeMsec != null &&
+                UpTimeMsec.Equals(other.UpTimeMsec)
             ) &&
             (
-                this.Processors == other.Processors ||
-                this.Processors != null &&
-                this.Processors.SequenceEqual(other.Processors)
+                Processors == other.Processors ||
+                Processors != null &&
+                Processors.SequenceEqual(other.Processors)
             ) &&
             (
-                this.Memory == other.Memory ||
-                this.Memory != null &&
-                this.Memory.SequenceEqual(other.Memory)
+                Memory == other.Memory ||
+                Memory != null &&
+                Memory.SequenceEqual(other.Memory)
             ) &&
             (
-                this.Disks == other.Disks ||
-                this.Disks != null &&
-                this.Disks.SequenceEqual(other.Disks)
+                Disks == other.Disks ||
+                Disks != null &&
+                Disks.SequenceEqual(other.Disks)
             ) &&
             (
-                this.Subsystems == other.Subsystems ||
-                this.Subsystems != null &&
-                this.Subsystems.SequenceEqual(other.Subsystems)
+                Subsystems == other.Subsystems ||
+                Subsystems != null &&
+                Subsystems.SequenceEqual(other.Subsystems)
             ) &&
             (
-                this.Networks == other.Networks ||
-                this.Networks != null &&
-                this.Networks.SequenceEqual(other.Networks)
+                Networks == other.Networks ||
+                Networks != null &&
+                Networks.SequenceEqual(other.Networks)
             );
     }
 
@@ -200,44 +200,44 @@ public partial class EdgeMetrics : IEquatable<EdgeMetrics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Edge != null)
+            if (Edge != null)
             {
-                hash = hash * 59 + this.Edge.GetHashCode();
+                hash = hash * 59 + Edge.GetHashCode();
             }
 
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.UpTimeMsec != null)
+            if (UpTimeMsec != null)
             {
-                hash = hash * 59 + this.UpTimeMsec.GetHashCode();
+                hash = hash * 59 + UpTimeMsec.GetHashCode();
             }
 
-            if (this.Processors != null)
+            if (Processors != null)
             {
-                hash = hash * 59 + this.Processors.GetHashCode();
+                hash = hash * 59 + Processors.GetHashCode();
             }
 
-            if (this.Memory != null)
+            if (Memory != null)
             {
-                hash = hash * 59 + this.Memory.GetHashCode();
+                hash = hash * 59 + Memory.GetHashCode();
             }
 
-            if (this.Disks != null)
+            if (Disks != null)
             {
-                hash = hash * 59 + this.Disks.GetHashCode();
+                hash = hash * 59 + Disks.GetHashCode();
             }
 
-            if (this.Subsystems != null)
+            if (Subsystems != null)
             {
-                hash = hash * 59 + this.Subsystems.GetHashCode();
+                hash = hash * 59 + Subsystems.GetHashCode();
             }
 
-            if (this.Networks != null)
+            if (Networks != null)
             {
-                hash = hash * 59 + this.Networks.GetHashCode();
+                hash = hash * 59 + Networks.GetHashCode();
             }
 
             return hash;

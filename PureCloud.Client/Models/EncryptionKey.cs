@@ -182,7 +182,7 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EncryptionKey);
+        return Equals(obj as EncryptionKey);
     }
 
     /// <summary>
@@ -200,49 +200,49 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.CreateDate == other.CreateDate ||
-                this.CreateDate != null &&
-                this.CreateDate.Equals(other.CreateDate)
+                CreateDate == other.CreateDate ||
+                CreateDate != null &&
+                CreateDate.Equals(other.CreateDate)
             ) &&
             (
-                this.KeydataSummary == other.KeydataSummary ||
-                this.KeydataSummary != null &&
-                this.KeydataSummary.Equals(other.KeydataSummary)
+                KeydataSummary == other.KeydataSummary ||
+                KeydataSummary != null &&
+                KeydataSummary.Equals(other.KeydataSummary)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.LocalEncryptionConfiguration == other.LocalEncryptionConfiguration ||
-                this.LocalEncryptionConfiguration != null &&
-                this.LocalEncryptionConfiguration.Equals(other.LocalEncryptionConfiguration)
+                LocalEncryptionConfiguration == other.LocalEncryptionConfiguration ||
+                LocalEncryptionConfiguration != null &&
+                LocalEncryptionConfiguration.Equals(other.LocalEncryptionConfiguration)
             ) &&
             (
-                this.KeyConfigurationType == other.KeyConfigurationType ||
-                this.KeyConfigurationType != null &&
-                this.KeyConfigurationType.Equals(other.KeyConfigurationType)
+                KeyConfigurationType == other.KeyConfigurationType ||
+                KeyConfigurationType != null &&
+                KeyConfigurationType.Equals(other.KeyConfigurationType)
             ) &&
             (
-                this.KmsKeyArn == other.KmsKeyArn ||
-                this.KmsKeyArn != null &&
-                this.KmsKeyArn.Equals(other.KmsKeyArn)
+                KmsKeyArn == other.KmsKeyArn ||
+                KmsKeyArn != null &&
+                KmsKeyArn.Equals(other.KmsKeyArn)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -257,49 +257,49 @@ public partial class EncryptionKey : IEquatable<EncryptionKey>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.CreateDate != null)
+            if (CreateDate != null)
             {
-                hash = hash * 59 + this.CreateDate.GetHashCode();
+                hash = hash * 59 + CreateDate.GetHashCode();
             }
 
-            if (this.KeydataSummary != null)
+            if (KeydataSummary != null)
             {
-                hash = hash * 59 + this.KeydataSummary.GetHashCode();
+                hash = hash * 59 + KeydataSummary.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.LocalEncryptionConfiguration != null)
+            if (LocalEncryptionConfiguration != null)
             {
-                hash = hash * 59 + this.LocalEncryptionConfiguration.GetHashCode();
+                hash = hash * 59 + LocalEncryptionConfiguration.GetHashCode();
             }
 
-            if (this.KeyConfigurationType != null)
+            if (KeyConfigurationType != null)
             {
-                hash = hash * 59 + this.KeyConfigurationType.GetHashCode();
+                hash = hash * 59 + KeyConfigurationType.GetHashCode();
             }
 
-            if (this.KmsKeyArn != null)
+            if (KmsKeyArn != null)
             {
-                hash = hash * 59 + this.KmsKeyArn.GetHashCode();
+                hash = hash * 59 + KmsKeyArn.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

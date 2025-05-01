@@ -121,7 +121,7 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimConfigResourceType);
+        return Equals(obj as ScimConfigResourceType);
     }
 
     /// <summary>
@@ -139,44 +139,44 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Schemas == other.Schemas ||
-                this.Schemas != null &&
-                this.Schemas.SequenceEqual(other.Schemas)
+                Schemas == other.Schemas ||
+                Schemas != null &&
+                Schemas.SequenceEqual(other.Schemas)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Schema == other.Schema ||
-                this.Schema != null &&
-                this.Schema.Equals(other.Schema)
+                Schema == other.Schema ||
+                Schema != null &&
+                Schema.Equals(other.Schema)
             ) &&
             (
-                this.SchemaExtensions == other.SchemaExtensions ||
-                this.SchemaExtensions != null &&
-                this.SchemaExtensions.SequenceEqual(other.SchemaExtensions)
+                SchemaExtensions == other.SchemaExtensions ||
+                SchemaExtensions != null &&
+                SchemaExtensions.SequenceEqual(other.SchemaExtensions)
             ) &&
             (
-                this.Endpoint == other.Endpoint ||
-                this.Endpoint != null &&
-                this.Endpoint.Equals(other.Endpoint)
+                Endpoint == other.Endpoint ||
+                Endpoint != null &&
+                Endpoint.Equals(other.Endpoint)
             ) &&
             (
-                this.Meta == other.Meta ||
-                this.Meta != null &&
-                this.Meta.Equals(other.Meta)
+                Meta == other.Meta ||
+                Meta != null &&
+                Meta.Equals(other.Meta)
             );
     }
 
@@ -191,44 +191,44 @@ public partial class ScimConfigResourceType : IEquatable<ScimConfigResourceType>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Schemas != null)
+            if (Schemas != null)
             {
-                hash = hash * 59 + this.Schemas.GetHashCode();
+                hash = hash * 59 + Schemas.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Schema != null)
+            if (Schema != null)
             {
-                hash = hash * 59 + this.Schema.GetHashCode();
+                hash = hash * 59 + Schema.GetHashCode();
             }
 
-            if (this.SchemaExtensions != null)
+            if (SchemaExtensions != null)
             {
-                hash = hash * 59 + this.SchemaExtensions.GetHashCode();
+                hash = hash * 59 + SchemaExtensions.GetHashCode();
             }
 
-            if (this.Endpoint != null)
+            if (Endpoint != null)
             {
-                hash = hash * 59 + this.Endpoint.GetHashCode();
+                hash = hash * 59 + Endpoint.GetHashCode();
             }
 
-            if (this.Meta != null)
+            if (Meta != null)
             {
-                hash = hash * 59 + this.Meta.GetHashCode();
+                hash = hash * 59 + Meta.GetHashCode();
             }
 
             return hash;

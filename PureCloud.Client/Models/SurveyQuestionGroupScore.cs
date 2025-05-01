@@ -111,7 +111,7 @@ public partial class SurveyQuestionGroupScore : IEquatable<SurveyQuestionGroupSc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SurveyQuestionGroupScore);
+        return Equals(obj as SurveyQuestionGroupScore);
     }
 
     /// <summary>
@@ -129,34 +129,34 @@ public partial class SurveyQuestionGroupScore : IEquatable<SurveyQuestionGroupSc
 
         return true &&
             (
-                this.QuestionGroupId == other.QuestionGroupId ||
-                this.QuestionGroupId != null &&
-                this.QuestionGroupId.Equals(other.QuestionGroupId)
+                QuestionGroupId == other.QuestionGroupId ||
+                QuestionGroupId != null &&
+                QuestionGroupId.Equals(other.QuestionGroupId)
             ) &&
             (
-                this.TotalScore == other.TotalScore ||
-                this.TotalScore != null &&
-                this.TotalScore.Equals(other.TotalScore)
+                TotalScore == other.TotalScore ||
+                TotalScore != null &&
+                TotalScore.Equals(other.TotalScore)
             ) &&
             (
-                this.MaxTotalScore == other.MaxTotalScore ||
-                this.MaxTotalScore != null &&
-                this.MaxTotalScore.Equals(other.MaxTotalScore)
+                MaxTotalScore == other.MaxTotalScore ||
+                MaxTotalScore != null &&
+                MaxTotalScore.Equals(other.MaxTotalScore)
             ) &&
             (
-                this.MarkedNA == other.MarkedNA ||
-                this.MarkedNA != null &&
-                this.MarkedNA.Equals(other.MarkedNA)
+                MarkedNA == other.MarkedNA ||
+                MarkedNA != null &&
+                MarkedNA.Equals(other.MarkedNA)
             ) &&
             (
-                this.SystemMarkedNA == other.SystemMarkedNA ||
-                this.SystemMarkedNA != null &&
-                this.SystemMarkedNA.Equals(other.SystemMarkedNA)
+                SystemMarkedNA == other.SystemMarkedNA ||
+                SystemMarkedNA != null &&
+                SystemMarkedNA.Equals(other.SystemMarkedNA)
             ) &&
             (
-                this.QuestionScores == other.QuestionScores ||
-                this.QuestionScores != null &&
-                this.QuestionScores.SequenceEqual(other.QuestionScores)
+                QuestionScores == other.QuestionScores ||
+                QuestionScores != null &&
+                QuestionScores.SequenceEqual(other.QuestionScores)
             );
     }
 
@@ -171,34 +171,34 @@ public partial class SurveyQuestionGroupScore : IEquatable<SurveyQuestionGroupSc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QuestionGroupId != null)
+            if (QuestionGroupId != null)
             {
-                hash = hash * 59 + this.QuestionGroupId.GetHashCode();
+                hash = hash * 59 + QuestionGroupId.GetHashCode();
             }
 
-            if (this.TotalScore != null)
+            if (TotalScore != null)
             {
-                hash = hash * 59 + this.TotalScore.GetHashCode();
+                hash = hash * 59 + TotalScore.GetHashCode();
             }
 
-            if (this.MaxTotalScore != null)
+            if (MaxTotalScore != null)
             {
-                hash = hash * 59 + this.MaxTotalScore.GetHashCode();
+                hash = hash * 59 + MaxTotalScore.GetHashCode();
             }
 
-            if (this.MarkedNA != null)
+            if (MarkedNA != null)
             {
-                hash = hash * 59 + this.MarkedNA.GetHashCode();
+                hash = hash * 59 + MarkedNA.GetHashCode();
             }
 
-            if (this.SystemMarkedNA != null)
+            if (SystemMarkedNA != null)
             {
-                hash = hash * 59 + this.SystemMarkedNA.GetHashCode();
+                hash = hash * 59 + SystemMarkedNA.GetHashCode();
             }
 
-            if (this.QuestionScores != null)
+            if (QuestionScores != null)
             {
-                hash = hash * 59 + this.QuestionScores.GetHashCode();
+                hash = hash * 59 + QuestionScores.GetHashCode();
             }
 
             return hash;

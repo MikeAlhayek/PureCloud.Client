@@ -109,7 +109,7 @@ public partial class UserRoutingStatusRoutingStatus : IEquatable<UserRoutingStat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserRoutingStatusRoutingStatus);
+        return Equals(obj as UserRoutingStatusRoutingStatus);
     }
 
     /// <summary>
@@ -127,14 +127,14 @@ public partial class UserRoutingStatusRoutingStatus : IEquatable<UserRoutingStat
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             );
     }
 
@@ -149,14 +149,14 @@ public partial class UserRoutingStatusRoutingStatus : IEquatable<UserRoutingStat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
             return hash;

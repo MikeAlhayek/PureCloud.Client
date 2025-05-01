@@ -143,7 +143,7 @@ public partial class DownloadResponse : IEquatable<DownloadResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DownloadResponse);
+        return Equals(obj as DownloadResponse);
     }
 
     /// <summary>
@@ -161,39 +161,39 @@ public partial class DownloadResponse : IEquatable<DownloadResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ContentLocationUri == other.ContentLocationUri ||
-                this.ContentLocationUri != null &&
-                this.ContentLocationUri.Equals(other.ContentLocationUri)
+                ContentLocationUri == other.ContentLocationUri ||
+                ContentLocationUri != null &&
+                ContentLocationUri.Equals(other.ContentLocationUri)
             ) &&
             (
-                this.ImageUri == other.ImageUri ||
-                this.ImageUri != null &&
-                this.ImageUri.Equals(other.ImageUri)
+                ImageUri == other.ImageUri ||
+                ImageUri != null &&
+                ImageUri.Equals(other.ImageUri)
             ) &&
             (
-                this.Thumbnails == other.Thumbnails ||
-                this.Thumbnails != null &&
-                this.Thumbnails.SequenceEqual(other.Thumbnails)
+                Thumbnails == other.Thumbnails ||
+                Thumbnails != null &&
+                Thumbnails.SequenceEqual(other.Thumbnails)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.ResultUri == other.ResultUri ||
-                this.ResultUri != null &&
-                this.ResultUri.Equals(other.ResultUri)
+                ResultUri == other.ResultUri ||
+                ResultUri != null &&
+                ResultUri.Equals(other.ResultUri)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -208,39 +208,39 @@ public partial class DownloadResponse : IEquatable<DownloadResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ContentLocationUri != null)
+            if (ContentLocationUri != null)
             {
-                hash = hash * 59 + this.ContentLocationUri.GetHashCode();
+                hash = hash * 59 + ContentLocationUri.GetHashCode();
             }
 
-            if (this.ImageUri != null)
+            if (ImageUri != null)
             {
-                hash = hash * 59 + this.ImageUri.GetHashCode();
+                hash = hash * 59 + ImageUri.GetHashCode();
             }
 
-            if (this.Thumbnails != null)
+            if (Thumbnails != null)
             {
-                hash = hash * 59 + this.Thumbnails.GetHashCode();
+                hash = hash * 59 + Thumbnails.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.ResultUri != null)
+            if (ResultUri != null)
             {
-                hash = hash * 59 + this.ResultUri.GetHashCode();
+                hash = hash * 59 + ResultUri.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

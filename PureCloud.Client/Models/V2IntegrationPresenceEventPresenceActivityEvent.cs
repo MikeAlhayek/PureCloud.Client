@@ -154,7 +154,7 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2IntegrationPresenceEventPresenceActivityEvent);
+        return Equals(obj as V2IntegrationPresenceEventPresenceActivityEvent);
     }
 
     /// <summary>
@@ -172,44 +172,44 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.EventType == other.EventType ||
-                this.EventType != null &&
-                this.EventType.Equals(other.EventType)
+                EventType == other.EventType ||
+                EventType != null &&
+                EventType.Equals(other.EventType)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             ) &&
             (
-                this.PresenceDefinition == other.PresenceDefinition ||
-                this.PresenceDefinition != null &&
-                this.PresenceDefinition.Equals(other.PresenceDefinition)
+                PresenceDefinition == other.PresenceDefinition ||
+                PresenceDefinition != null &&
+                PresenceDefinition.Equals(other.PresenceDefinition)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.CurrentDisplaySourceId == other.CurrentDisplaySourceId ||
-                this.CurrentDisplaySourceId != null &&
-                this.CurrentDisplaySourceId.Equals(other.CurrentDisplaySourceId)
+                CurrentDisplaySourceId == other.CurrentDisplaySourceId ||
+                CurrentDisplaySourceId != null &&
+                CurrentDisplaySourceId.Equals(other.CurrentDisplaySourceId)
             ) &&
             (
-                this.PreviousDisplaySourceId == other.PreviousDisplaySourceId ||
-                this.PreviousDisplaySourceId != null &&
-                this.PreviousDisplaySourceId.Equals(other.PreviousDisplaySourceId)
+                PreviousDisplaySourceId == other.PreviousDisplaySourceId ||
+                PreviousDisplaySourceId != null &&
+                PreviousDisplaySourceId.Equals(other.PreviousDisplaySourceId)
             );
     }
 
@@ -224,44 +224,44 @@ public partial class V2IntegrationPresenceEventPresenceActivityEvent : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.EventType != null)
+            if (EventType != null)
             {
-                hash = hash * 59 + this.EventType.GetHashCode();
+                hash = hash * 59 + EventType.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
-            if (this.PresenceDefinition != null)
+            if (PresenceDefinition != null)
             {
-                hash = hash * 59 + this.PresenceDefinition.GetHashCode();
+                hash = hash * 59 + PresenceDefinition.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.CurrentDisplaySourceId != null)
+            if (CurrentDisplaySourceId != null)
             {
-                hash = hash * 59 + this.CurrentDisplaySourceId.GetHashCode();
+                hash = hash * 59 + CurrentDisplaySourceId.GetHashCode();
             }
 
-            if (this.PreviousDisplaySourceId != null)
+            if (PreviousDisplaySourceId != null)
             {
-                hash = hash * 59 + this.PreviousDisplaySourceId.GetHashCode();
+                hash = hash * 59 + PreviousDisplaySourceId.GetHashCode();
             }
 
             return hash;

@@ -100,7 +100,7 @@ public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetC
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerRulesetConfigChangeAction);
+        return Equals(obj as DialerRulesetConfigChangeAction);
     }
 
     /// <summary>
@@ -118,29 +118,29 @@ public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetC
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ActionTypeName == other.ActionTypeName ||
-                this.ActionTypeName != null &&
-                this.ActionTypeName.Equals(other.ActionTypeName)
+                ActionTypeName == other.ActionTypeName ||
+                ActionTypeName != null &&
+                ActionTypeName.Equals(other.ActionTypeName)
             ) &&
             (
-                this.UpdateOption == other.UpdateOption ||
-                this.UpdateOption != null &&
-                this.UpdateOption.Equals(other.UpdateOption)
+                UpdateOption == other.UpdateOption ||
+                UpdateOption != null &&
+                UpdateOption.Equals(other.UpdateOption)
             ) &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.SequenceEqual(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.SequenceEqual(other.Properties)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -155,29 +155,29 @@ public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetC
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ActionTypeName != null)
+            if (ActionTypeName != null)
             {
-                hash = hash * 59 + this.ActionTypeName.GetHashCode();
+                hash = hash * 59 + ActionTypeName.GetHashCode();
             }
 
-            if (this.UpdateOption != null)
+            if (UpdateOption != null)
             {
-                hash = hash * 59 + this.UpdateOption.GetHashCode();
+                hash = hash * 59 + UpdateOption.GetHashCode();
             }
 
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

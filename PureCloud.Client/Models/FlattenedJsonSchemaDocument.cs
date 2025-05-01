@@ -64,7 +64,7 @@ public partial class FlattenedJsonSchemaDocument : IEquatable<FlattenedJsonSchem
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlattenedJsonSchemaDocument);
+        return Equals(obj as FlattenedJsonSchemaDocument);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class FlattenedJsonSchemaDocument : IEquatable<FlattenedJsonSchem
 
         return true &&
             (
-                this.Schema == other.Schema ||
-                this.Schema != null &&
-                this.Schema.Equals(other.Schema)
+                Schema == other.Schema ||
+                Schema != null &&
+                Schema.Equals(other.Schema)
             ) &&
             (
-                this.ArrayProperties == other.ArrayProperties ||
-                this.ArrayProperties != null &&
-                this.ArrayProperties.SequenceEqual(other.ArrayProperties)
+                ArrayProperties == other.ArrayProperties ||
+                ArrayProperties != null &&
+                ArrayProperties.SequenceEqual(other.ArrayProperties)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class FlattenedJsonSchemaDocument : IEquatable<FlattenedJsonSchem
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Schema != null)
+            if (Schema != null)
             {
-                hash = hash * 59 + this.Schema.GetHashCode();
+                hash = hash * 59 + Schema.GetHashCode();
             }
 
-            if (this.ArrayProperties != null)
+            if (ArrayProperties != null)
             {
-                hash = hash * 59 + this.ArrayProperties.GetHashCode();
+                hash = hash * 59 + ArrayProperties.GetHashCode();
             }
 
             return hash;

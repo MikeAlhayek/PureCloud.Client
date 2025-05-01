@@ -70,7 +70,7 @@ public partial class AgentPossibleWorkShiftsRequest : IEquatable<AgentPossibleWo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentPossibleWorkShiftsRequest);
+        return Equals(obj as AgentPossibleWorkShiftsRequest);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class AgentPossibleWorkShiftsRequest : IEquatable<AgentPossibleWo
 
         return true &&
             (
-                this.WeekStartDate == other.WeekStartDate ||
-                this.WeekStartDate != null &&
-                this.WeekStartDate.Equals(other.WeekStartDate)
+                WeekStartDate == other.WeekStartDate ||
+                WeekStartDate != null &&
+                WeekStartDate.Equals(other.WeekStartDate)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class AgentPossibleWorkShiftsRequest : IEquatable<AgentPossibleWo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WeekStartDate != null)
+            if (WeekStartDate != null)
             {
-                hash = hash * 59 + this.WeekStartDate.GetHashCode();
+                hash = hash * 59 + WeekStartDate.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class OneOnOne : IEquatable<OneOnOne>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OneOnOne);
+        return Equals(obj as OneOnOne);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class OneOnOne : IEquatable<OneOnOne>
 
         return true &&
             (
-                this.PinnedMessages == other.PinnedMessages ||
-                this.PinnedMessages != null &&
-                this.PinnedMessages.SequenceEqual(other.PinnedMessages)
+                PinnedMessages == other.PinnedMessages ||
+                PinnedMessages != null &&
+                PinnedMessages.SequenceEqual(other.PinnedMessages)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class OneOnOne : IEquatable<OneOnOne>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PinnedMessages != null)
+            if (PinnedMessages != null)
             {
-                hash = hash * 59 + this.PinnedMessages.GetHashCode();
+                hash = hash * 59 + PinnedMessages.GetHashCode();
             }
 
             return hash;

@@ -247,12 +247,12 @@ public partial class SuggestApi : ISuggestApi
     /// <returns></returns>
     public SuggestApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -266,17 +266,17 @@ public partial class SuggestApi : ISuggestApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -286,7 +286,7 @@ public partial class SuggestApi : ISuggestApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -312,7 +312,7 @@ public partial class SuggestApi : ISuggestApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -324,7 +324,7 @@ public partial class SuggestApi : ISuggestApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -374,7 +374,7 @@ public partial class SuggestApi : ISuggestApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -383,7 +383,7 @@ public partial class SuggestApi : ISuggestApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -398,17 +398,17 @@ public partial class SuggestApi : ISuggestApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -422,11 +422,11 @@ public partial class SuggestApi : ISuggestApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -452,7 +452,7 @@ public partial class SuggestApi : ISuggestApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -505,7 +505,7 @@ public partial class SuggestApi : ISuggestApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -514,7 +514,7 @@ public partial class SuggestApi : ISuggestApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -529,17 +529,17 @@ public partial class SuggestApi : ISuggestApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -553,11 +553,11 @@ public partial class SuggestApi : ISuggestApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -583,7 +583,7 @@ public partial class SuggestApi : ISuggestApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -636,7 +636,7 @@ public partial class SuggestApi : ISuggestApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -645,7 +645,7 @@ public partial class SuggestApi : ISuggestApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -660,17 +660,17 @@ public partial class SuggestApi : ISuggestApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -684,11 +684,11 @@ public partial class SuggestApi : ISuggestApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -714,7 +714,7 @@ public partial class SuggestApi : ISuggestApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -767,7 +767,7 @@ public partial class SuggestApi : ISuggestApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -776,7 +776,7 @@ public partial class SuggestApi : ISuggestApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -791,17 +791,17 @@ public partial class SuggestApi : ISuggestApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -815,11 +815,11 @@ public partial class SuggestApi : ISuggestApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -845,7 +845,7 @@ public partial class SuggestApi : ISuggestApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -897,7 +897,7 @@ public partial class SuggestApi : ISuggestApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -906,7 +906,7 @@ public partial class SuggestApi : ISuggestApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -921,7 +921,7 @@ public partial class SuggestApi : ISuggestApi
         // Query params
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -931,7 +931,7 @@ public partial class SuggestApi : ISuggestApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -944,11 +944,11 @@ public partial class SuggestApi : ISuggestApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -974,7 +974,7 @@ public partial class SuggestApi : ISuggestApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1026,7 +1026,7 @@ public partial class SuggestApi : ISuggestApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1035,7 +1035,7 @@ public partial class SuggestApi : ISuggestApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1050,7 +1050,7 @@ public partial class SuggestApi : ISuggestApi
         // Query params
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -1060,7 +1060,7 @@ public partial class SuggestApi : ISuggestApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1073,11 +1073,11 @@ public partial class SuggestApi : ISuggestApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1103,7 +1103,7 @@ public partial class SuggestApi : ISuggestApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1155,7 +1155,7 @@ public partial class SuggestApi : ISuggestApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1164,7 +1164,7 @@ public partial class SuggestApi : ISuggestApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1179,7 +1179,7 @@ public partial class SuggestApi : ISuggestApi
         // Query params
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -1189,7 +1189,7 @@ public partial class SuggestApi : ISuggestApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1202,11 +1202,11 @@ public partial class SuggestApi : ISuggestApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1232,7 +1232,7 @@ public partial class SuggestApi : ISuggestApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1284,7 +1284,7 @@ public partial class SuggestApi : ISuggestApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1293,7 +1293,7 @@ public partial class SuggestApi : ISuggestApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1308,7 +1308,7 @@ public partial class SuggestApi : ISuggestApi
         // Query params
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -1318,7 +1318,7 @@ public partial class SuggestApi : ISuggestApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1331,11 +1331,11 @@ public partial class SuggestApi : ISuggestApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1361,7 +1361,7 @@ public partial class SuggestApi : ISuggestApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

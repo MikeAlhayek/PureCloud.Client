@@ -127,7 +127,7 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyEventDefinition);
+        return Equals(obj as JourneyEventDefinition);
     }
 
     /// <summary>
@@ -145,34 +145,34 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.JsonSchema == other.JsonSchema ||
-                this.JsonSchema != null &&
-                this.JsonSchema.Equals(other.JsonSchema)
+                JsonSchema == other.JsonSchema ||
+                JsonSchema != null &&
+                JsonSchema.Equals(other.JsonSchema)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -187,34 +187,34 @@ public partial class JourneyEventDefinition : IEquatable<JourneyEventDefinition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.JsonSchema != null)
+            if (JsonSchema != null)
             {
-                hash = hash * 59 + this.JsonSchema.GetHashCode();
+                hash = hash * 59 + JsonSchema.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

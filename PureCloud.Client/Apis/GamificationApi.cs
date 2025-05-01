@@ -4315,12 +4315,12 @@ public partial class GamificationApi : IGamificationApi
     /// <returns></returns>
     public GamificationApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -4334,17 +4334,17 @@ public partial class GamificationApi : IGamificationApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -4354,7 +4354,7 @@ public partial class GamificationApi : IGamificationApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -4380,7 +4380,7 @@ public partial class GamificationApi : IGamificationApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -4392,7 +4392,7 @@ public partial class GamificationApi : IGamificationApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -4437,7 +4437,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4446,7 +4446,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4459,7 +4459,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
@@ -4475,11 +4475,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4553,7 +4553,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4562,7 +4562,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4575,7 +4575,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
@@ -4591,11 +4591,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4669,7 +4669,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4678,7 +4678,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4691,7 +4691,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -4707,11 +4707,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4785,7 +4785,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4794,7 +4794,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4807,7 +4807,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -4823,11 +4823,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4902,7 +4902,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4911,7 +4911,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4924,7 +4924,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
@@ -4940,11 +4940,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4970,7 +4970,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ExternalMetricDefinition>(localVarStatusCode,
             localVarHeaders,
-            (ExternalMetricDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
+            (ExternalMetricDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5019,7 +5019,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5028,7 +5028,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5041,7 +5041,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
@@ -5057,11 +5057,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5087,7 +5087,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ExternalMetricDefinition>(localVarStatusCode,
             localVarHeaders,
-            (ExternalMetricDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
+            (ExternalMetricDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5133,7 +5133,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5142,7 +5142,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5157,12 +5157,12 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -5176,11 +5176,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5206,7 +5206,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ExternalMetricDefinitionListing>(localVarStatusCode,
             localVarHeaders,
-            (ExternalMetricDefinitionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinitionListing)),
+            (ExternalMetricDefinitionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinitionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5252,7 +5252,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5261,7 +5261,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5276,12 +5276,12 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -5295,11 +5295,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5325,7 +5325,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ExternalMetricDefinitionListing>(localVarStatusCode,
             localVarHeaders,
-            (ExternalMetricDefinitionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinitionListing)),
+            (ExternalMetricDefinitionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinitionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5374,7 +5374,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5383,7 +5383,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5396,7 +5396,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -5412,11 +5412,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5442,7 +5442,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContestsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
+            (ContestsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5491,7 +5491,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5500,7 +5500,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5513,7 +5513,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -5529,11 +5529,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5559,7 +5559,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContestsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
+            (ContestsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5616,7 +5616,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5625,7 +5625,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5638,28 +5638,28 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (returnsView != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("returnsView", this.Configuration.ApiClient.ParameterToString(returnsView)));
+            localVarQueryParams.Add(new Tuple<string, string>("returnsView", Configuration.ApiClient.ParameterToString(returnsView)));
         }
 
         // Header params
@@ -5673,11 +5673,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5703,7 +5703,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestScoresAgentsPagedList>(localVarStatusCode,
             localVarHeaders,
-            (ContestScoresAgentsPagedList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentsPagedList)),
+            (ContestScoresAgentsPagedList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentsPagedList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5760,7 +5760,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5769,7 +5769,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5782,28 +5782,28 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (returnsView != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("returnsView", this.Configuration.ApiClient.ParameterToString(returnsView)));
+            localVarQueryParams.Add(new Tuple<string, string>("returnsView", Configuration.ApiClient.ParameterToString(returnsView)));
         }
 
         // Header params
@@ -5817,11 +5817,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5847,7 +5847,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestScoresAgentsPagedList>(localVarStatusCode,
             localVarHeaders,
-            (ContestScoresAgentsPagedList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentsPagedList)),
+            (ContestScoresAgentsPagedList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentsPagedList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5904,7 +5904,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5913,7 +5913,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5926,28 +5926,28 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (returnsView != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("returnsView", this.Configuration.ApiClient.ParameterToString(returnsView)));
+            localVarQueryParams.Add(new Tuple<string, string>("returnsView", Configuration.ApiClient.ParameterToString(returnsView)));
         }
 
         // Header params
@@ -5961,11 +5961,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5991,7 +5991,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestScoresAgentsPagedList>(localVarStatusCode,
             localVarHeaders,
-            (ContestScoresAgentsPagedList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentsPagedList)),
+            (ContestScoresAgentsPagedList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentsPagedList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6048,7 +6048,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6057,7 +6057,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6070,28 +6070,28 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (returnsView != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("returnsView", this.Configuration.ApiClient.ParameterToString(returnsView)));
+            localVarQueryParams.Add(new Tuple<string, string>("returnsView", Configuration.ApiClient.ParameterToString(returnsView)));
         }
 
         // Header params
@@ -6105,11 +6105,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6135,7 +6135,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestScoresAgentsPagedList>(localVarStatusCode,
             localVarHeaders,
-            (ContestScoresAgentsPagedList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentsPagedList)),
+            (ContestScoresAgentsPagedList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentsPagedList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6184,7 +6184,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6193,7 +6193,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6206,7 +6206,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -6222,11 +6222,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6252,7 +6252,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestScoresGroupTrendList>(localVarStatusCode,
             localVarHeaders,
-            (ContestScoresGroupTrendList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresGroupTrendList)),
+            (ContestScoresGroupTrendList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresGroupTrendList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6301,7 +6301,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6310,7 +6310,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6323,7 +6323,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -6339,11 +6339,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6369,7 +6369,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestScoresGroupTrendList>(localVarStatusCode,
             localVarHeaders,
-            (ContestScoresGroupTrendList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresGroupTrendList)),
+            (ContestScoresGroupTrendList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresGroupTrendList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6418,7 +6418,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6427,7 +6427,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6440,7 +6440,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -6456,11 +6456,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6486,7 +6486,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestScoresAgentTrendList>(localVarStatusCode,
             localVarHeaders,
-            (ContestScoresAgentTrendList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentTrendList)),
+            (ContestScoresAgentTrendList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentTrendList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6535,7 +6535,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6544,7 +6544,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6557,7 +6557,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -6573,11 +6573,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6603,7 +6603,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestScoresAgentTrendList>(localVarStatusCode,
             localVarHeaders,
-            (ContestScoresAgentTrendList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentTrendList)),
+            (ContestScoresAgentTrendList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestScoresAgentTrendList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6659,7 +6659,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6668,7 +6668,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6681,12 +6681,12 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         if (prizeImageId != null)
         {
-            localVarPathParams.Add("prizeImageId", this.Configuration.ApiClient.ParameterToString(prizeImageId));
+            localVarPathParams.Add("prizeImageId", Configuration.ApiClient.ParameterToString(prizeImageId));
         }
 
         // Query params
@@ -6702,11 +6702,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6732,7 +6732,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PrizeImages>(localVarStatusCode,
             localVarHeaders,
-            (PrizeImages)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PrizeImages)),
+            (PrizeImages)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PrizeImages)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6789,7 +6789,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6798,7 +6798,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6811,12 +6811,12 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         if (prizeImageId != null)
         {
-            localVarPathParams.Add("prizeImageId", this.Configuration.ApiClient.ParameterToString(prizeImageId));
+            localVarPathParams.Add("prizeImageId", Configuration.ApiClient.ParameterToString(prizeImageId));
         }
 
         // Query params
@@ -6832,11 +6832,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6862,7 +6862,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PrizeImages>(localVarStatusCode,
             localVarHeaders,
-            (PrizeImages)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PrizeImages)),
+            (PrizeImages)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PrizeImages)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6918,7 +6918,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6927,7 +6927,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6942,37 +6942,37 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         if (status != null)
         {
-            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", this.Configuration.ApiClient.ParameterToString(obj))); });
+            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -6986,11 +6986,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7016,7 +7016,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetContestsEssentialsListing>(localVarStatusCode,
             localVarHeaders,
-            (GetContestsEssentialsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContestsEssentialsListing)),
+            (GetContestsEssentialsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContestsEssentialsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7072,7 +7072,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7081,7 +7081,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7096,37 +7096,37 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         if (status != null)
         {
-            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", this.Configuration.ApiClient.ParameterToString(obj))); });
+            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -7140,11 +7140,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7170,7 +7170,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetContestsEssentialsListing>(localVarStatusCode,
             localVarHeaders,
-            (GetContestsEssentialsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContestsEssentialsListing)),
+            (GetContestsEssentialsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContestsEssentialsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7228,7 +7228,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7237,7 +7237,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7252,42 +7252,42 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         if (status != null)
         {
-            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", this.Configuration.ApiClient.ParameterToString(obj))); });
+            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (view != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("view", this.Configuration.ApiClient.ParameterToString(view)));
+            localVarQueryParams.Add(new Tuple<string, string>("view", Configuration.ApiClient.ParameterToString(view)));
         }
 
         // Header params
@@ -7301,11 +7301,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7331,7 +7331,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetContestsEssentialsListing>(localVarStatusCode,
             localVarHeaders,
-            (GetContestsEssentialsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContestsEssentialsListing)),
+            (GetContestsEssentialsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContestsEssentialsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7389,7 +7389,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7398,7 +7398,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7413,42 +7413,42 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         if (status != null)
         {
-            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", this.Configuration.ApiClient.ParameterToString(obj))); });
+            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (view != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("view", this.Configuration.ApiClient.ParameterToString(view)));
+            localVarQueryParams.Add(new Tuple<string, string>("view", Configuration.ApiClient.ParameterToString(view)));
         }
 
         // Header params
@@ -7462,11 +7462,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7492,7 +7492,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetContestsEssentialsListing>(localVarStatusCode,
             localVarHeaders,
-            (GetContestsEssentialsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContestsEssentialsListing)),
+            (GetContestsEssentialsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContestsEssentialsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7581,7 +7581,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7590,7 +7590,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7605,57 +7605,57 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortKey != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortKey", this.Configuration.ApiClient.ParameterToString(sortKey)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortKey", Configuration.ApiClient.ParameterToString(sortKey)));
         }
 
         if (sortMetricId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortMetricId", this.Configuration.ApiClient.ParameterToString(sortMetricId)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortMetricId", Configuration.ApiClient.ParameterToString(sortMetricId)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (userIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("userIds", this.Configuration.ApiClient.ParameterToString(userIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("userIds", Configuration.ApiClient.ParameterToString(userIds)));
         }
 
         // Header params
@@ -7669,11 +7669,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7699,7 +7699,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsSummary>(localVarStatusCode,
             localVarHeaders,
-            (InsightsSummary)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsSummary)),
+            (InsightsSummary)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsSummary)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7792,7 +7792,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7801,7 +7801,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7816,57 +7816,57 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortKey != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortKey", this.Configuration.ApiClient.ParameterToString(sortKey)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortKey", Configuration.ApiClient.ParameterToString(sortKey)));
         }
 
         if (sortMetricId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortMetricId", this.Configuration.ApiClient.ParameterToString(sortMetricId)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortMetricId", Configuration.ApiClient.ParameterToString(sortMetricId)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (userIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("userIds", this.Configuration.ApiClient.ParameterToString(userIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("userIds", Configuration.ApiClient.ParameterToString(userIds)));
         }
 
         // Header params
@@ -7880,11 +7880,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7910,7 +7910,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsSummary>(localVarStatusCode,
             localVarHeaders,
-            (InsightsSummary)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsSummary)),
+            (InsightsSummary)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsSummary)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7987,7 +7987,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7996,7 +7996,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8011,27 +8011,27 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         // Header params
@@ -8045,11 +8045,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8075,7 +8075,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsDetails>(localVarStatusCode,
             localVarHeaders,
-            (InsightsDetails)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsDetails)),
+            (InsightsDetails)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsDetails)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8156,7 +8156,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8165,7 +8165,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8180,27 +8180,27 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         // Header params
@@ -8214,11 +8214,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8244,7 +8244,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsDetails>(localVarStatusCode,
             localVarHeaders,
-            (InsightsDetails)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsDetails)),
+            (InsightsDetails)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsDetails)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8335,7 +8335,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8344,7 +8344,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8359,37 +8359,37 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (comparativePeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (primaryPeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
         }
 
         // Header params
@@ -8403,11 +8403,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8433,7 +8433,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsTrend>(localVarStatusCode,
             localVarHeaders,
-            (InsightsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsTrend)),
+            (InsightsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8530,7 +8530,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8539,7 +8539,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8554,37 +8554,37 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (comparativePeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (primaryPeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
         }
 
         // Header params
@@ -8598,11 +8598,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8628,7 +8628,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsTrend>(localVarStatusCode,
             localVarHeaders,
-            (InsightsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsTrend)),
+            (InsightsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8719,7 +8719,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8728,7 +8728,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8743,37 +8743,37 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (comparativePeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (primaryPeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
         }
 
         // Header params
@@ -8787,11 +8787,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8817,7 +8817,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsTrend>(localVarStatusCode,
             localVarHeaders,
-            (InsightsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsTrend)),
+            (InsightsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8914,7 +8914,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8923,7 +8923,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8938,37 +8938,37 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (comparativePeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (primaryPeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
         }
 
         // Header params
@@ -8982,11 +8982,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9012,7 +9012,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsTrend>(localVarStatusCode,
             localVarHeaders,
-            (InsightsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsTrend)),
+            (InsightsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9082,7 +9082,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9091,7 +9091,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9106,22 +9106,22 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         // Header params
@@ -9135,11 +9135,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9165,7 +9165,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsAgents>(localVarStatusCode,
             localVarHeaders,
-            (InsightsAgents)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsAgents)),
+            (InsightsAgents)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsAgents)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9238,7 +9238,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9247,7 +9247,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9262,22 +9262,22 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         // Header params
@@ -9291,11 +9291,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9321,7 +9321,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsAgents>(localVarStatusCode,
             localVarHeaders,
-            (InsightsAgents)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsAgents)),
+            (InsightsAgents)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsAgents)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9411,7 +9411,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9420,7 +9420,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9435,47 +9435,47 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (sortKey != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortKey", this.Configuration.ApiClient.ParameterToString(sortKey)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortKey", Configuration.ApiClient.ParameterToString(sortKey)));
         }
 
         if (sortMetricId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortMetricId", this.Configuration.ApiClient.ParameterToString(sortMetricId)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortMetricId", Configuration.ApiClient.ParameterToString(sortMetricId)));
         }
 
         if (sectionSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sectionSize", this.Configuration.ApiClient.ParameterToString(sectionSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("sectionSize", Configuration.ApiClient.ParameterToString(sectionSize)));
         }
 
         if (userIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("userIds", this.Configuration.ApiClient.ParameterToString(userIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("userIds", Configuration.ApiClient.ParameterToString(userIds)));
         }
 
         // Header params
@@ -9489,11 +9489,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9519,7 +9519,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsRankings>(localVarStatusCode,
             localVarHeaders,
-            (InsightsRankings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsRankings)),
+            (InsightsRankings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsRankings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9614,7 +9614,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9623,7 +9623,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9638,47 +9638,47 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (sortKey != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortKey", this.Configuration.ApiClient.ParameterToString(sortKey)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortKey", Configuration.ApiClient.ParameterToString(sortKey)));
         }
 
         if (sortMetricId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortMetricId", this.Configuration.ApiClient.ParameterToString(sortMetricId)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortMetricId", Configuration.ApiClient.ParameterToString(sortMetricId)));
         }
 
         if (sectionSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sectionSize", this.Configuration.ApiClient.ParameterToString(sectionSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("sectionSize", Configuration.ApiClient.ParameterToString(sectionSize)));
         }
 
         if (userIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("userIds", this.Configuration.ApiClient.ParameterToString(userIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("userIds", Configuration.ApiClient.ParameterToString(userIds)));
         }
 
         // Header params
@@ -9692,11 +9692,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9722,7 +9722,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsRankings>(localVarStatusCode,
             localVarHeaders,
-            (InsightsRankings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsRankings)),
+            (InsightsRankings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsRankings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9813,7 +9813,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9822,7 +9822,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9837,37 +9837,37 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (comparativePeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (primaryPeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
         }
 
         // Header params
@@ -9881,11 +9881,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9911,7 +9911,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserInsightsTrend>(localVarStatusCode,
             localVarHeaders,
-            (UserInsightsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserInsightsTrend)),
+            (UserInsightsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserInsightsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10008,7 +10008,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10017,7 +10017,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10032,37 +10032,37 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (comparativePeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (primaryPeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
         }
 
         // Header params
@@ -10076,11 +10076,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10106,7 +10106,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserInsightsTrend>(localVarStatusCode,
             localVarHeaders,
-            (UserInsightsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserInsightsTrend)),
+            (UserInsightsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserInsightsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10190,7 +10190,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10199,7 +10199,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10212,33 +10212,33 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         // Header params
@@ -10252,11 +10252,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10282,7 +10282,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsDetails>(localVarStatusCode,
             localVarHeaders,
-            (InsightsDetails)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsDetails)),
+            (InsightsDetails)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsDetails)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10371,7 +10371,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10380,7 +10380,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10393,33 +10393,33 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         // Header params
@@ -10433,11 +10433,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10463,7 +10463,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<InsightsDetails>(localVarStatusCode,
             localVarHeaders,
-            (InsightsDetails)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsDetails)),
+            (InsightsDetails)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InsightsDetails)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10561,7 +10561,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10570,7 +10570,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10583,43 +10583,43 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (comparativePeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (primaryPeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
         }
 
         // Header params
@@ -10633,11 +10633,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10663,7 +10663,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserInsightsTrend>(localVarStatusCode,
             localVarHeaders,
-            (UserInsightsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserInsightsTrend)),
+            (UserInsightsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserInsightsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10768,7 +10768,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10777,7 +10777,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10790,43 +10790,43 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (granularity != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
+            localVarQueryParams.Add(new Tuple<string, string>("granularity", Configuration.ApiClient.ParameterToString(granularity)));
         }
 
         if (comparativePeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodStartWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodStartWorkday)));
         }
 
         if (comparativePeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("comparativePeriodEndWorkday", Configuration.ApiClient.ParameterToString(comparativePeriodEndWorkday)));
         }
 
         if (primaryPeriodStartWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodStartWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodStartWorkday)));
         }
 
         if (primaryPeriodEndWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", this.Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("primaryPeriodEndWorkday", Configuration.ApiClient.ParameterToString(primaryPeriodEndWorkday)));
         }
 
         // Header params
@@ -10840,11 +10840,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10870,7 +10870,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserInsightsTrend>(localVarStatusCode,
             localVarHeaders,
-            (UserInsightsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserInsightsTrend)),
+            (UserInsightsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserInsightsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10928,7 +10928,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10937,7 +10937,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10952,17 +10952,17 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (metricId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("metricId", this.Configuration.ApiClient.ParameterToString(metricId)));
+            localVarQueryParams.Add(new Tuple<string, string>("metricId", Configuration.ApiClient.ParameterToString(metricId)));
         }
 
         // Header params
@@ -10976,11 +10976,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11006,7 +11006,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Leaderboard>(localVarStatusCode,
             localVarHeaders,
-            (Leaderboard)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Leaderboard)),
+            (Leaderboard)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Leaderboard)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11065,7 +11065,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11074,7 +11074,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11089,17 +11089,17 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (metricId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("metricId", this.Configuration.ApiClient.ParameterToString(metricId)));
+            localVarQueryParams.Add(new Tuple<string, string>("metricId", Configuration.ApiClient.ParameterToString(metricId)));
         }
 
         // Header params
@@ -11113,11 +11113,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11143,7 +11143,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Leaderboard>(localVarStatusCode,
             localVarHeaders,
-            (Leaderboard)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Leaderboard)),
+            (Leaderboard)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Leaderboard)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11215,7 +11215,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11224,7 +11224,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11239,27 +11239,27 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (metricId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("metricId", this.Configuration.ApiClient.ParameterToString(metricId)));
+            localVarQueryParams.Add(new Tuple<string, string>("metricId", Configuration.ApiClient.ParameterToString(metricId)));
         }
 
         // Header params
@@ -11273,11 +11273,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11303,7 +11303,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Leaderboard>(localVarStatusCode,
             localVarHeaders,
-            (Leaderboard)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Leaderboard)),
+            (Leaderboard)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Leaderboard)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11378,7 +11378,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11387,7 +11387,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11402,27 +11402,27 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (metricId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("metricId", this.Configuration.ApiClient.ParameterToString(metricId)));
+            localVarQueryParams.Add(new Tuple<string, string>("metricId", Configuration.ApiClient.ParameterToString(metricId)));
         }
 
         // Header params
@@ -11436,11 +11436,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11466,7 +11466,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Leaderboard>(localVarStatusCode,
             localVarHeaders,
-            (Leaderboard)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Leaderboard)),
+            (Leaderboard)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Leaderboard)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11522,7 +11522,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11531,7 +11531,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11546,12 +11546,12 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         // Header params
@@ -11565,11 +11565,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11595,7 +11595,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<OverallBestPoints>(localVarStatusCode,
             localVarHeaders,
-            (OverallBestPoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OverallBestPoints)),
+            (OverallBestPoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OverallBestPoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11652,7 +11652,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11661,7 +11661,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11676,12 +11676,12 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         // Header params
@@ -11695,11 +11695,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11725,7 +11725,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<OverallBestPoints>(localVarStatusCode,
             localVarHeaders,
-            (OverallBestPoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OverallBestPoints)),
+            (OverallBestPoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OverallBestPoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11767,7 +11767,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11776,7 +11776,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11801,11 +11801,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11831,7 +11831,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<OverallBestPoints>(localVarStatusCode,
             localVarHeaders,
-            (OverallBestPoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OverallBestPoints)),
+            (OverallBestPoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OverallBestPoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11873,7 +11873,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11882,7 +11882,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11907,11 +11907,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11937,7 +11937,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<OverallBestPoints>(localVarStatusCode,
             localVarHeaders,
-            (OverallBestPoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OverallBestPoints)),
+            (OverallBestPoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OverallBestPoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11986,7 +11986,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11995,7 +11995,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12008,7 +12008,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (metricDefinitionId != null)
         {
-            localVarPathParams.Add("metricDefinitionId", this.Configuration.ApiClient.ParameterToString(metricDefinitionId));
+            localVarPathParams.Add("metricDefinitionId", Configuration.ApiClient.ParameterToString(metricDefinitionId));
         }
 
         // Query params
@@ -12024,11 +12024,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12054,7 +12054,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<MetricDefinition>(localVarStatusCode,
             localVarHeaders,
-            (MetricDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricDefinition)),
+            (MetricDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12103,7 +12103,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12112,7 +12112,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12125,7 +12125,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (metricDefinitionId != null)
         {
-            localVarPathParams.Add("metricDefinitionId", this.Configuration.ApiClient.ParameterToString(metricDefinitionId));
+            localVarPathParams.Add("metricDefinitionId", Configuration.ApiClient.ParameterToString(metricDefinitionId));
         }
 
         // Query params
@@ -12141,11 +12141,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12171,7 +12171,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<MetricDefinition>(localVarStatusCode,
             localVarHeaders,
-            (MetricDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricDefinition)),
+            (MetricDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12213,7 +12213,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12222,7 +12222,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12247,11 +12247,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12277,7 +12277,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetMetricDefinitionsResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetMetricDefinitionsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricDefinitionsResponse)),
+            (GetMetricDefinitionsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricDefinitionsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12319,7 +12319,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12328,7 +12328,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12353,11 +12353,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12383,7 +12383,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetMetricDefinitionsResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetMetricDefinitionsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricDefinitionsResponse)),
+            (GetMetricDefinitionsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricDefinitionsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12432,7 +12432,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12441,7 +12441,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12454,7 +12454,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -12470,11 +12470,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12500,7 +12500,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12549,7 +12549,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12558,7 +12558,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12571,7 +12571,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -12587,11 +12587,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12617,7 +12617,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12666,7 +12666,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12675,7 +12675,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12688,7 +12688,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -12704,11 +12704,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12734,7 +12734,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<MemberListing>(localVarStatusCode,
             localVarHeaders,
-            (MemberListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MemberListing)),
+            (MemberListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MemberListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12783,7 +12783,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12792,7 +12792,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12805,7 +12805,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -12821,11 +12821,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12851,7 +12851,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<MemberListing>(localVarStatusCode,
             localVarHeaders,
-            (MemberListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MemberListing)),
+            (MemberListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MemberListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12909,7 +12909,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12918,7 +12918,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12931,18 +12931,18 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -12956,11 +12956,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12986,7 +12986,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Metric>(localVarStatusCode,
             localVarHeaders,
-            (Metric)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
+            (Metric)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13045,7 +13045,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13054,7 +13054,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13067,18 +13067,18 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -13092,11 +13092,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13122,7 +13122,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Metric>(localVarStatusCode,
             localVarHeaders,
-            (Metric)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
+            (Metric)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13177,7 +13177,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13186,7 +13186,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13199,23 +13199,23 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (metricIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("metricIds", this.Configuration.ApiClient.ParameterToString(metricIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("metricIds", Configuration.ApiClient.ParameterToString(metricIds)));
         }
 
         // Header params
@@ -13229,11 +13229,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13259,7 +13259,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetMetricResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetMetricResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricResponse)),
+            (GetMetricResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13314,7 +13314,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13323,7 +13323,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13336,23 +13336,23 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (metricIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("metricIds", this.Configuration.ApiClient.ParameterToString(metricIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("metricIds", Configuration.ApiClient.ParameterToString(metricIds)));
         }
 
         // Header params
@@ -13366,11 +13366,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13396,7 +13396,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetMetricResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetMetricResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricResponse)),
+            (GetMetricResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13447,7 +13447,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13456,7 +13456,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13469,13 +13469,13 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -13489,11 +13489,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13519,7 +13519,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetMetricsResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetMetricsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricsResponse)),
+            (GetMetricsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13570,7 +13570,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13579,7 +13579,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13592,13 +13592,13 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -13612,11 +13612,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13642,7 +13642,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetMetricsResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetMetricsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricsResponse)),
+            (GetMetricsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMetricsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13684,7 +13684,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13693,7 +13693,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13718,11 +13718,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13748,7 +13748,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetProfilesResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetProfilesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetProfilesResponse)),
+            (GetProfilesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetProfilesResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13790,7 +13790,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13799,7 +13799,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13824,11 +13824,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13854,7 +13854,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetProfilesResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetProfilesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetProfilesResponse)),
+            (GetProfilesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetProfilesResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13905,7 +13905,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13914,7 +13914,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13927,13 +13927,13 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -13947,11 +13947,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13977,7 +13977,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14028,7 +14028,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14037,7 +14037,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14050,13 +14050,13 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -14070,11 +14070,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14100,7 +14100,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14144,7 +14144,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14153,7 +14153,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14168,7 +14168,7 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -14182,11 +14182,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14212,7 +14212,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14256,7 +14256,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14265,7 +14265,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14280,7 +14280,7 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -14294,11 +14294,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14324,7 +14324,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14375,7 +14375,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14384,7 +14384,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14399,12 +14399,12 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -14418,11 +14418,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14448,7 +14448,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayMetricListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayMetricListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayMetricListing)),
+            (WorkdayMetricListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayMetricListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14499,7 +14499,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14508,7 +14508,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14523,12 +14523,12 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -14542,11 +14542,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14572,7 +14572,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayMetricListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayMetricListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayMetricListing)),
+            (WorkdayMetricListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayMetricListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14628,7 +14628,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14637,7 +14637,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14652,12 +14652,12 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         // Header params
@@ -14671,11 +14671,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14701,7 +14701,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<AttendanceStatusListing>(localVarStatusCode,
             localVarHeaders,
-            (AttendanceStatusListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AttendanceStatusListing)),
+            (AttendanceStatusListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AttendanceStatusListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14758,7 +14758,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14767,7 +14767,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14782,12 +14782,12 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         // Header params
@@ -14801,11 +14801,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14831,7 +14831,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<AttendanceStatusListing>(localVarStatusCode,
             localVarHeaders,
-            (AttendanceStatusListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AttendanceStatusListing)),
+            (AttendanceStatusListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AttendanceStatusListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14873,7 +14873,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14882,7 +14882,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14907,11 +14907,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14937,7 +14937,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserBestPoints>(localVarStatusCode,
             localVarHeaders,
-            (UserBestPoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserBestPoints)),
+            (UserBestPoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserBestPoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14979,7 +14979,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14988,7 +14988,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15013,11 +15013,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15043,7 +15043,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserBestPoints>(localVarStatusCode,
             localVarHeaders,
-            (UserBestPoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserBestPoints)),
+            (UserBestPoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserBestPoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15092,7 +15092,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15101,7 +15101,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15116,7 +15116,7 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         // Header params
@@ -15130,11 +15130,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15160,7 +15160,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<AllTimePoints>(localVarStatusCode,
             localVarHeaders,
-            (AllTimePoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AllTimePoints)),
+            (AllTimePoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AllTimePoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15209,7 +15209,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15218,7 +15218,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15233,7 +15233,7 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         // Header params
@@ -15247,11 +15247,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15277,7 +15277,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<AllTimePoints>(localVarStatusCode,
             localVarHeaders,
-            (AllTimePoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AllTimePoints)),
+            (AllTimePoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AllTimePoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15326,7 +15326,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15335,7 +15335,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15350,7 +15350,7 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -15364,11 +15364,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15394,7 +15394,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<SingleWorkdayAveragePoints>(localVarStatusCode,
             localVarHeaders,
-            (SingleWorkdayAveragePoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAveragePoints)),
+            (SingleWorkdayAveragePoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAveragePoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15443,7 +15443,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15452,7 +15452,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15467,7 +15467,7 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -15481,11 +15481,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15511,7 +15511,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<SingleWorkdayAveragePoints>(localVarStatusCode,
             localVarHeaders,
-            (SingleWorkdayAveragePoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAveragePoints)),
+            (SingleWorkdayAveragePoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAveragePoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15569,7 +15569,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15578,7 +15578,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15593,17 +15593,17 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (dayOfWeek != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dayOfWeek", this.Configuration.ApiClient.ParameterToString(dayOfWeek)));
+            localVarQueryParams.Add(new Tuple<string, string>("dayOfWeek", Configuration.ApiClient.ParameterToString(dayOfWeek)));
         }
 
         // Header params
@@ -15617,11 +15617,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15647,7 +15647,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayPointsTrend>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayPointsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayPointsTrend)),
+            (WorkdayPointsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayPointsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15706,7 +15706,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15715,7 +15715,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15730,17 +15730,17 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (dayOfWeek != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dayOfWeek", this.Configuration.ApiClient.ParameterToString(dayOfWeek)));
+            localVarQueryParams.Add(new Tuple<string, string>("dayOfWeek", Configuration.ApiClient.ParameterToString(dayOfWeek)));
         }
 
         // Header params
@@ -15754,11 +15754,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15784,7 +15784,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayPointsTrend>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayPointsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayPointsTrend)),
+            (WorkdayPointsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayPointsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15865,7 +15865,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15874,7 +15874,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15887,38 +15887,38 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (referenceWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", this.Configuration.ApiClient.ParameterToString(referenceWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", Configuration.ApiClient.ParameterToString(referenceWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -15932,11 +15932,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15962,7 +15962,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<MetricValueTrendAverage>(localVarStatusCode,
             localVarHeaders,
-            (MetricValueTrendAverage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
+            (MetricValueTrendAverage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16047,7 +16047,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16056,7 +16056,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16069,38 +16069,38 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (referenceWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", this.Configuration.ApiClient.ParameterToString(referenceWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", Configuration.ApiClient.ParameterToString(referenceWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -16114,11 +16114,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16144,7 +16144,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<MetricValueTrendAverage>(localVarStatusCode,
             localVarHeaders,
-            (MetricValueTrendAverage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
+            (MetricValueTrendAverage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16227,7 +16227,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16236,7 +16236,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16249,43 +16249,43 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (referenceWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", this.Configuration.ApiClient.ParameterToString(referenceWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", Configuration.ApiClient.ParameterToString(referenceWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -16299,11 +16299,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16329,7 +16329,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<MetricValueTrendAverage>(localVarStatusCode,
             localVarHeaders,
-            (MetricValueTrendAverage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
+            (MetricValueTrendAverage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16416,7 +16416,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16425,7 +16425,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16438,43 +16438,43 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (referenceWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", this.Configuration.ApiClient.ParameterToString(referenceWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", Configuration.ApiClient.ParameterToString(referenceWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -16488,11 +16488,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16518,7 +16518,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<MetricValueTrendAverage>(localVarStatusCode,
             localVarHeaders,
-            (MetricValueTrendAverage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
+            (MetricValueTrendAverage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16594,7 +16594,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16603,7 +16603,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16616,38 +16616,38 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (referenceWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", this.Configuration.ApiClient.ParameterToString(referenceWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", Configuration.ApiClient.ParameterToString(referenceWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -16661,11 +16661,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16691,7 +16691,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<MetricValueTrendAverage>(localVarStatusCode,
             localVarHeaders,
-            (MetricValueTrendAverage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
+            (MetricValueTrendAverage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16770,7 +16770,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16779,7 +16779,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16792,38 +16792,38 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (referenceWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", this.Configuration.ApiClient.ParameterToString(referenceWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", Configuration.ApiClient.ParameterToString(referenceWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -16837,11 +16837,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16867,7 +16867,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<MetricValueTrendAverage>(localVarStatusCode,
             localVarHeaders,
-            (MetricValueTrendAverage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
+            (MetricValueTrendAverage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MetricValueTrendAverage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16925,7 +16925,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16934,7 +16934,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16947,18 +16947,18 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -16972,11 +16972,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17002,7 +17002,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayMetricListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayMetricListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayMetricListing)),
+            (WorkdayMetricListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayMetricListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17061,7 +17061,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17070,7 +17070,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17083,18 +17083,18 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -17108,11 +17108,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17138,7 +17138,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayMetricListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayMetricListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayMetricListing)),
+            (WorkdayMetricListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayMetricListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17201,7 +17201,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17210,7 +17210,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17223,18 +17223,18 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         // Header params
@@ -17248,11 +17248,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17278,7 +17278,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<AttendanceStatusListing>(localVarStatusCode,
             localVarHeaders,
-            (AttendanceStatusListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AttendanceStatusListing)),
+            (AttendanceStatusListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AttendanceStatusListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17343,7 +17343,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17352,7 +17352,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17365,18 +17365,18 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         // Header params
@@ -17390,11 +17390,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17420,7 +17420,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<AttendanceStatusListing>(localVarStatusCode,
             localVarHeaders,
-            (AttendanceStatusListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AttendanceStatusListing)),
+            (AttendanceStatusListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AttendanceStatusListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17469,7 +17469,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17478,7 +17478,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17491,7 +17491,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -17507,11 +17507,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17537,7 +17537,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserBestPoints>(localVarStatusCode,
             localVarHeaders,
-            (UserBestPoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserBestPoints)),
+            (UserBestPoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserBestPoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17586,7 +17586,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17595,7 +17595,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17608,7 +17608,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -17624,11 +17624,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17654,7 +17654,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserBestPoints>(localVarStatusCode,
             localVarHeaders,
-            (UserBestPoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserBestPoints)),
+            (UserBestPoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserBestPoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17710,7 +17710,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17719,7 +17719,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17732,13 +17732,13 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         // Header params
@@ -17752,11 +17752,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17782,7 +17782,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<AllTimePoints>(localVarStatusCode,
             localVarHeaders,
-            (AllTimePoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AllTimePoints)),
+            (AllTimePoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AllTimePoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17839,7 +17839,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17848,7 +17848,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17861,13 +17861,13 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         // Header params
@@ -17881,11 +17881,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17911,7 +17911,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<AllTimePoints>(localVarStatusCode,
             localVarHeaders,
-            (AllTimePoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AllTimePoints)),
+            (AllTimePoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AllTimePoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17976,7 +17976,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17985,7 +17985,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17998,23 +17998,23 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (dayOfWeek != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dayOfWeek", this.Configuration.ApiClient.ParameterToString(dayOfWeek)));
+            localVarQueryParams.Add(new Tuple<string, string>("dayOfWeek", Configuration.ApiClient.ParameterToString(dayOfWeek)));
         }
 
         // Header params
@@ -18028,11 +18028,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18058,7 +18058,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayPointsTrend>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayPointsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayPointsTrend)),
+            (WorkdayPointsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayPointsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18125,7 +18125,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18134,7 +18134,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18147,23 +18147,23 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (dayOfWeek != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dayOfWeek", this.Configuration.ApiClient.ParameterToString(dayOfWeek)));
+            localVarQueryParams.Add(new Tuple<string, string>("dayOfWeek", Configuration.ApiClient.ParameterToString(dayOfWeek)));
         }
 
         // Header params
@@ -18177,11 +18177,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18207,7 +18207,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayPointsTrend>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayPointsTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayPointsTrend)),
+            (WorkdayPointsTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayPointsTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18272,7 +18272,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18281,7 +18281,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18294,23 +18294,23 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -18324,11 +18324,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18354,7 +18354,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayValuesTrend>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayValuesTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
+            (WorkdayValuesTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18421,7 +18421,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18430,7 +18430,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18443,23 +18443,23 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -18473,11 +18473,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18503,7 +18503,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayValuesTrend>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayValuesTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
+            (WorkdayValuesTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18566,7 +18566,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18575,7 +18575,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18590,17 +18590,17 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -18614,11 +18614,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18644,7 +18644,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<SingleWorkdayAveragePoints>(localVarStatusCode,
             localVarHeaders,
-            (SingleWorkdayAveragePoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAveragePoints)),
+            (SingleWorkdayAveragePoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAveragePoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18709,7 +18709,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18718,7 +18718,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18733,17 +18733,17 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         // Header params
@@ -18757,11 +18757,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18787,7 +18787,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<SingleWorkdayAveragePoints>(localVarStatusCode,
             localVarHeaders,
-            (SingleWorkdayAveragePoints)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAveragePoints)),
+            (SingleWorkdayAveragePoints)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAveragePoints)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18852,7 +18852,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18861,7 +18861,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18876,22 +18876,22 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -18905,11 +18905,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18935,7 +18935,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<SingleWorkdayAverageValues>(localVarStatusCode,
             localVarHeaders,
-            (SingleWorkdayAverageValues)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAverageValues)),
+            (SingleWorkdayAverageValues)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAverageValues)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19002,7 +19002,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19011,7 +19011,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19026,22 +19026,22 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -19055,11 +19055,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19085,7 +19085,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<SingleWorkdayAverageValues>(localVarStatusCode,
             localVarHeaders,
-            (SingleWorkdayAverageValues)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAverageValues)),
+            (SingleWorkdayAverageValues)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAverageValues)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19157,7 +19157,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19166,7 +19166,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19181,27 +19181,27 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -19215,11 +19215,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19245,7 +19245,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayValuesTrend>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayValuesTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
+            (WorkdayValuesTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19320,7 +19320,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19329,7 +19329,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19344,27 +19344,27 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (filterId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterId", this.Configuration.ApiClient.ParameterToString(filterId)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterId", Configuration.ApiClient.ParameterToString(filterId)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -19378,11 +19378,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19408,7 +19408,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayValuesTrend>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayValuesTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
+            (WorkdayValuesTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19459,7 +19459,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19468,7 +19468,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19483,12 +19483,12 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -19502,11 +19502,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19532,7 +19532,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<SingleWorkdayAverageValues>(localVarStatusCode,
             localVarHeaders,
-            (SingleWorkdayAverageValues)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAverageValues)),
+            (SingleWorkdayAverageValues)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAverageValues)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19583,7 +19583,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19592,7 +19592,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19607,12 +19607,12 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (workday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("workday", this.Configuration.ApiClient.ParameterToString(workday)));
+            localVarQueryParams.Add(new Tuple<string, string>("workday", Configuration.ApiClient.ParameterToString(workday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -19626,11 +19626,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19656,7 +19656,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<SingleWorkdayAverageValues>(localVarStatusCode,
             localVarHeaders,
-            (SingleWorkdayAverageValues)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAverageValues)),
+            (SingleWorkdayAverageValues)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SingleWorkdayAverageValues)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19718,7 +19718,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19727,7 +19727,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19742,27 +19742,27 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (referenceWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", this.Configuration.ApiClient.ParameterToString(referenceWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", Configuration.ApiClient.ParameterToString(referenceWorkday)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -19776,11 +19776,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19806,7 +19806,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayValuesTrend>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayValuesTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
+            (WorkdayValuesTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19869,7 +19869,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19878,7 +19878,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19893,27 +19893,27 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (filterType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filterType", this.Configuration.ApiClient.ParameterToString(filterType)));
+            localVarQueryParams.Add(new Tuple<string, string>("filterType", Configuration.ApiClient.ParameterToString(filterType)));
         }
 
         if (referenceWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", this.Configuration.ApiClient.ParameterToString(referenceWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("referenceWorkday", Configuration.ApiClient.ParameterToString(referenceWorkday)));
         }
 
         if (startWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", this.Configuration.ApiClient.ParameterToString(startWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("startWorkday", Configuration.ApiClient.ParameterToString(startWorkday)));
         }
 
         if (endWorkday != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", this.Configuration.ApiClient.ParameterToString(endWorkday)));
+            localVarQueryParams.Add(new Tuple<string, string>("endWorkday", Configuration.ApiClient.ParameterToString(endWorkday)));
         }
 
         if (timeZone != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("timeZone", this.Configuration.ApiClient.ParameterToString(timeZone)));
+            localVarQueryParams.Add(new Tuple<string, string>("timeZone", Configuration.ApiClient.ParameterToString(timeZone)));
         }
 
         // Header params
@@ -19927,11 +19927,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19957,7 +19957,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<WorkdayValuesTrend>(localVarStatusCode,
             localVarHeaders,
-            (WorkdayValuesTrend)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
+            (WorkdayValuesTrend)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkdayValuesTrend)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19999,7 +19999,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20008,7 +20008,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20033,11 +20033,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20063,7 +20063,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GamificationStatus>(localVarStatusCode,
             localVarHeaders,
-            (GamificationStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GamificationStatus)),
+            (GamificationStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GamificationStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20105,7 +20105,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20114,7 +20114,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20139,11 +20139,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20169,7 +20169,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GamificationStatus>(localVarStatusCode,
             localVarHeaders,
-            (GamificationStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GamificationStatus)),
+            (GamificationStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GamificationStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20218,7 +20218,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20227,7 +20227,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20240,7 +20240,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (templateId != null)
         {
-            localVarPathParams.Add("templateId", this.Configuration.ApiClient.ParameterToString(templateId));
+            localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId));
         }
 
         // Query params
@@ -20256,11 +20256,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20286,7 +20286,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ObjectiveTemplate>(localVarStatusCode,
             localVarHeaders,
-            (ObjectiveTemplate)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ObjectiveTemplate)),
+            (ObjectiveTemplate)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ObjectiveTemplate)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20335,7 +20335,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20344,7 +20344,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20357,7 +20357,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (templateId != null)
         {
-            localVarPathParams.Add("templateId", this.Configuration.ApiClient.ParameterToString(templateId));
+            localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId));
         }
 
         // Query params
@@ -20373,11 +20373,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20403,7 +20403,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ObjectiveTemplate>(localVarStatusCode,
             localVarHeaders,
-            (ObjectiveTemplate)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ObjectiveTemplate)),
+            (ObjectiveTemplate)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ObjectiveTemplate)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20445,7 +20445,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20454,7 +20454,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20479,11 +20479,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20509,7 +20509,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetTemplatesResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetTemplatesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTemplatesResponse)),
+            (GetTemplatesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTemplatesResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20551,7 +20551,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20560,7 +20560,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20585,11 +20585,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20615,7 +20615,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GetTemplatesResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetTemplatesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTemplatesResponse)),
+            (GetTemplatesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTemplatesResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20672,7 +20672,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20681,7 +20681,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20694,7 +20694,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
@@ -20706,7 +20706,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20719,11 +20719,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20749,7 +20749,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ExternalMetricDefinition>(localVarStatusCode,
             localVarHeaders,
-            (ExternalMetricDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
+            (ExternalMetricDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20807,7 +20807,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20816,7 +20816,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20829,7 +20829,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
@@ -20841,7 +20841,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20854,11 +20854,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20884,7 +20884,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ExternalMetricDefinition>(localVarStatusCode,
             localVarHeaders,
-            (ExternalMetricDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
+            (ExternalMetricDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20941,7 +20941,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20950,7 +20950,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20963,7 +20963,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -20975,7 +20975,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20988,11 +20988,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21018,7 +21018,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContestsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
+            (ContestsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21076,7 +21076,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21085,7 +21085,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21098,7 +21098,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -21110,7 +21110,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21123,11 +21123,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21153,7 +21153,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContestsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
+            (ContestsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21198,7 +21198,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21207,7 +21207,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21228,7 +21228,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21241,11 +21241,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21271,7 +21271,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ExternalMetricDataWriteResponse>(localVarStatusCode,
             localVarHeaders,
-            (ExternalMetricDataWriteResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDataWriteResponse)),
+            (ExternalMetricDataWriteResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDataWriteResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21316,7 +21316,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21325,7 +21325,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21346,7 +21346,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21359,11 +21359,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21389,7 +21389,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ExternalMetricDataWriteResponse>(localVarStatusCode,
             localVarHeaders,
-            (ExternalMetricDataWriteResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDataWriteResponse)),
+            (ExternalMetricDataWriteResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDataWriteResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21434,7 +21434,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21443,7 +21443,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21464,7 +21464,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21477,11 +21477,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21507,7 +21507,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ExternalMetricDefinition>(localVarStatusCode,
             localVarHeaders,
-            (ExternalMetricDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
+            (ExternalMetricDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21552,7 +21552,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21561,7 +21561,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21582,7 +21582,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21595,11 +21595,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21625,7 +21625,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ExternalMetricDefinition>(localVarStatusCode,
             localVarHeaders,
-            (ExternalMetricDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
+            (ExternalMetricDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalMetricDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21675,7 +21675,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21684,7 +21684,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21705,7 +21705,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21718,11 +21718,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21748,7 +21748,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContestsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
+            (ContestsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21798,7 +21798,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21807,7 +21807,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21828,7 +21828,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21841,11 +21841,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21871,7 +21871,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContestsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
+            (ContestsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21921,7 +21921,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21930,7 +21930,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21951,7 +21951,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21964,11 +21964,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21994,7 +21994,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UploadUrlResponse>(localVarStatusCode,
             localVarHeaders,
-            (UploadUrlResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
+            (UploadUrlResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22044,7 +22044,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22053,7 +22053,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22074,7 +22074,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22087,11 +22087,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22117,7 +22117,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UploadUrlResponse>(localVarStatusCode,
             localVarHeaders,
-            (UploadUrlResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
+            (UploadUrlResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22166,7 +22166,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22175,7 +22175,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22188,7 +22188,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -22204,11 +22204,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22234,7 +22234,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22283,7 +22283,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22292,7 +22292,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22305,7 +22305,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -22321,11 +22321,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22351,7 +22351,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22400,7 +22400,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22409,7 +22409,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22422,7 +22422,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -22438,11 +22438,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22468,7 +22468,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22517,7 +22517,7 @@ public partial class GamificationApi : IGamificationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22526,7 +22526,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22539,7 +22539,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -22555,11 +22555,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22585,7 +22585,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22642,7 +22642,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22651,7 +22651,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22664,7 +22664,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -22676,7 +22676,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22689,11 +22689,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22719,7 +22719,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Assignment>(localVarStatusCode,
             localVarHeaders,
-            (Assignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Assignment)),
+            (Assignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Assignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22777,7 +22777,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22786,7 +22786,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22799,7 +22799,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -22811,7 +22811,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22824,11 +22824,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22854,7 +22854,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Assignment>(localVarStatusCode,
             localVarHeaders,
-            (Assignment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Assignment)),
+            (Assignment)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Assignment)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22911,7 +22911,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22920,7 +22920,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22933,7 +22933,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -22945,7 +22945,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22958,11 +22958,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22988,7 +22988,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<AssignmentValidation>(localVarStatusCode,
             localVarHeaders,
-            (AssignmentValidation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignmentValidation)),
+            (AssignmentValidation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignmentValidation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23046,7 +23046,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23055,7 +23055,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23068,7 +23068,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -23080,7 +23080,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23093,11 +23093,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23123,7 +23123,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<AssignmentValidation>(localVarStatusCode,
             localVarHeaders,
-            (AssignmentValidation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignmentValidation)),
+            (AssignmentValidation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignmentValidation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23187,7 +23187,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23196,7 +23196,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23209,12 +23209,12 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (sourceProfileId != null)
         {
-            localVarPathParams.Add("sourceProfileId", this.Configuration.ApiClient.ParameterToString(sourceProfileId));
+            localVarPathParams.Add("sourceProfileId", Configuration.ApiClient.ParameterToString(sourceProfileId));
         }
 
         if (sourceMetricId != null)
         {
-            localVarPathParams.Add("sourceMetricId", this.Configuration.ApiClient.ParameterToString(sourceMetricId));
+            localVarPathParams.Add("sourceMetricId", Configuration.ApiClient.ParameterToString(sourceMetricId));
         }
 
         // Query params
@@ -23226,7 +23226,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23239,11 +23239,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23269,7 +23269,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Metric>(localVarStatusCode,
             localVarHeaders,
-            (Metric)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
+            (Metric)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23335,7 +23335,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23344,7 +23344,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23357,12 +23357,12 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (sourceProfileId != null)
         {
-            localVarPathParams.Add("sourceProfileId", this.Configuration.ApiClient.ParameterToString(sourceProfileId));
+            localVarPathParams.Add("sourceProfileId", Configuration.ApiClient.ParameterToString(sourceProfileId));
         }
 
         if (sourceMetricId != null)
         {
-            localVarPathParams.Add("sourceMetricId", this.Configuration.ApiClient.ParameterToString(sourceMetricId));
+            localVarPathParams.Add("sourceMetricId", Configuration.ApiClient.ParameterToString(sourceMetricId));
         }
 
         // Query params
@@ -23374,7 +23374,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23387,11 +23387,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23417,7 +23417,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Metric>(localVarStatusCode,
             localVarHeaders,
-            (Metric)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
+            (Metric)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23474,7 +23474,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23483,7 +23483,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23496,7 +23496,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -23508,7 +23508,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23521,11 +23521,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23551,7 +23551,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Metric>(localVarStatusCode,
             localVarHeaders,
-            (Metric)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
+            (Metric)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23609,7 +23609,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23618,7 +23618,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23631,7 +23631,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -23643,7 +23643,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23656,11 +23656,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23686,7 +23686,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Metric>(localVarStatusCode,
             localVarHeaders,
-            (Metric)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
+            (Metric)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23738,7 +23738,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23747,7 +23747,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23762,7 +23762,7 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (copyMetrics != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("copyMetrics", this.Configuration.ApiClient.ParameterToString(copyMetrics)));
+            localVarQueryParams.Add(new Tuple<string, string>("copyMetrics", Configuration.ApiClient.ParameterToString(copyMetrics)));
         }
 
         // Header params
@@ -23772,7 +23772,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23785,11 +23785,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23815,7 +23815,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23867,7 +23867,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23876,7 +23876,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23891,7 +23891,7 @@ public partial class GamificationApi : IGamificationApi
         // Query params
         if (copyMetrics != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("copyMetrics", this.Configuration.ApiClient.ParameterToString(copyMetrics)));
+            localVarQueryParams.Add(new Tuple<string, string>("copyMetrics", Configuration.ApiClient.ParameterToString(copyMetrics)));
         }
 
         // Header params
@@ -23901,7 +23901,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23914,11 +23914,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23944,7 +23944,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24001,7 +24001,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24010,7 +24010,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24023,7 +24023,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -24035,7 +24035,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24048,11 +24048,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24078,7 +24078,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserProfilesInDateRange>(localVarStatusCode,
             localVarHeaders,
-            (UserProfilesInDateRange)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserProfilesInDateRange)),
+            (UserProfilesInDateRange)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserProfilesInDateRange)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24136,7 +24136,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24145,7 +24145,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24158,7 +24158,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -24170,7 +24170,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24183,11 +24183,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24213,7 +24213,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserProfilesInDateRange>(localVarStatusCode,
             localVarHeaders,
-            (UserProfilesInDateRange)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserProfilesInDateRange)),
+            (UserProfilesInDateRange)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserProfilesInDateRange)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24263,7 +24263,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24272,7 +24272,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24293,7 +24293,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24306,11 +24306,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24336,7 +24336,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserProfilesInDateRange>(localVarStatusCode,
             localVarHeaders,
-            (UserProfilesInDateRange)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserProfilesInDateRange)),
+            (UserProfilesInDateRange)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserProfilesInDateRange)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24386,7 +24386,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24395,7 +24395,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24416,7 +24416,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24429,11 +24429,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24459,7 +24459,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<UserProfilesInDateRange>(localVarStatusCode,
             localVarHeaders,
-            (UserProfilesInDateRange)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserProfilesInDateRange)),
+            (UserProfilesInDateRange)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserProfilesInDateRange)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24516,7 +24516,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24525,7 +24525,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24538,7 +24538,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -24550,7 +24550,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24563,11 +24563,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24593,7 +24593,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContestsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
+            (ContestsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24651,7 +24651,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24660,7 +24660,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24673,7 +24673,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (contestId != null)
         {
-            localVarPathParams.Add("contestId", this.Configuration.ApiClient.ParameterToString(contestId));
+            localVarPathParams.Add("contestId", Configuration.ApiClient.ParameterToString(contestId));
         }
 
         // Query params
@@ -24685,7 +24685,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24698,11 +24698,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24728,7 +24728,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<ContestsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContestsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
+            (ContestsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContestsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24780,7 +24780,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24789,7 +24789,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24802,7 +24802,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -24814,7 +24814,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24827,11 +24827,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24857,7 +24857,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24909,7 +24909,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24918,7 +24918,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24931,7 +24931,7 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         // Query params
@@ -24943,7 +24943,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24956,11 +24956,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24986,7 +24986,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<PerformanceProfile>(localVarStatusCode,
             localVarHeaders,
-            (PerformanceProfile)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
+            (PerformanceProfile)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PerformanceProfile)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25050,7 +25050,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25059,7 +25059,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25072,12 +25072,12 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
@@ -25089,7 +25089,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25102,11 +25102,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25132,7 +25132,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Metric>(localVarStatusCode,
             localVarHeaders,
-            (Metric)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
+            (Metric)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25198,7 +25198,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25207,7 +25207,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25220,12 +25220,12 @@ public partial class GamificationApi : IGamificationApi
         // Path params
         if (profileId != null)
         {
-            localVarPathParams.Add("profileId", this.Configuration.ApiClient.ParameterToString(profileId));
+            localVarPathParams.Add("profileId", Configuration.ApiClient.ParameterToString(profileId));
         }
 
         if (metricId != null)
         {
-            localVarPathParams.Add("metricId", this.Configuration.ApiClient.ParameterToString(metricId));
+            localVarPathParams.Add("metricId", Configuration.ApiClient.ParameterToString(metricId));
         }
 
         // Query params
@@ -25237,7 +25237,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25250,11 +25250,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25280,7 +25280,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<Metric>(localVarStatusCode,
             localVarHeaders,
-            (Metric)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
+            (Metric)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Metric)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25330,7 +25330,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25339,7 +25339,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25360,7 +25360,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (status != null && status.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(status); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(status); // http body (model) parameter
         }
         else
         {
@@ -25373,11 +25373,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25403,7 +25403,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GamificationStatus>(localVarStatusCode,
             localVarHeaders,
-            (GamificationStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GamificationStatus)),
+            (GamificationStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GamificationStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25453,7 +25453,7 @@ public partial class GamificationApi : IGamificationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25462,7 +25462,7 @@ public partial class GamificationApi : IGamificationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25483,7 +25483,7 @@ public partial class GamificationApi : IGamificationApi
         // Body param
         if (status != null && status.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(status); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(status); // http body (model) parameter
         }
         else
         {
@@ -25496,11 +25496,11 @@ public partial class GamificationApi : IGamificationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25526,7 +25526,7 @@ public partial class GamificationApi : IGamificationApi
 
         return new ApiResponse<GamificationStatus>(localVarStatusCode,
             localVarHeaders,
-            (GamificationStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GamificationStatus)),
+            (GamificationStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GamificationStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

@@ -103,7 +103,7 @@ public partial class JourneyViewElementFilter : IEquatable<JourneyViewElementFil
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewElementFilter);
+        return Equals(obj as JourneyViewElementFilter);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class JourneyViewElementFilter : IEquatable<JourneyViewElementFil
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Predicates == other.Predicates ||
-                this.Predicates != null &&
-                this.Predicates.SequenceEqual(other.Predicates)
+                Predicates == other.Predicates ||
+                Predicates != null &&
+                Predicates.SequenceEqual(other.Predicates)
             ) &&
             (
-                this.NumberPredicates == other.NumberPredicates ||
-                this.NumberPredicates != null &&
-                this.NumberPredicates.SequenceEqual(other.NumberPredicates)
+                NumberPredicates == other.NumberPredicates ||
+                NumberPredicates != null &&
+                NumberPredicates.SequenceEqual(other.NumberPredicates)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class JourneyViewElementFilter : IEquatable<JourneyViewElementFil
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Predicates != null)
+            if (Predicates != null)
             {
-                hash = hash * 59 + this.Predicates.GetHashCode();
+                hash = hash * 59 + Predicates.GetHashCode();
             }
 
-            if (this.NumberPredicates != null)
+            if (NumberPredicates != null)
             {
-                hash = hash * 59 + this.NumberPredicates.GetHashCode();
+                hash = hash * 59 + NumberPredicates.GetHashCode();
             }
 
             return hash;

@@ -142,7 +142,7 @@ public partial class ConversationParticipantSearchRequest : IEquatable<Conversat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationParticipantSearchRequest);
+        return Equals(obj as ConversationParticipantSearchRequest);
     }
 
     /// <summary>
@@ -160,34 +160,34 @@ public partial class ConversationParticipantSearchRequest : IEquatable<Conversat
 
         return true &&
             (
-                this.SortOrder == other.SortOrder ||
-                this.SortOrder != null &&
-                this.SortOrder.Equals(other.SortOrder)
+                SortOrder == other.SortOrder ||
+                SortOrder != null &&
+                SortOrder.Equals(other.SortOrder)
             ) &&
             (
-                this.SortBy == other.SortBy ||
-                this.SortBy != null &&
-                this.SortBy.Equals(other.SortBy)
+                SortBy == other.SortBy ||
+                SortBy != null &&
+                SortBy.Equals(other.SortBy)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.SequenceEqual(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.SequenceEqual(other.Sort)
             ) &&
             (
-                this.ReturnFields == other.ReturnFields ||
-                this.ReturnFields != null &&
-                this.ReturnFields.SequenceEqual(other.ReturnFields)
+                ReturnFields == other.ReturnFields ||
+                ReturnFields != null &&
+                ReturnFields.SequenceEqual(other.ReturnFields)
             ) &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.SequenceEqual(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.SequenceEqual(other.Query)
             ) &&
             (
-                this.Cursor == other.Cursor ||
-                this.Cursor != null &&
-                this.Cursor.Equals(other.Cursor)
+                Cursor == other.Cursor ||
+                Cursor != null &&
+                Cursor.Equals(other.Cursor)
             );
     }
 
@@ -202,34 +202,34 @@ public partial class ConversationParticipantSearchRequest : IEquatable<Conversat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SortOrder != null)
+            if (SortOrder != null)
             {
-                hash = hash * 59 + this.SortOrder.GetHashCode();
+                hash = hash * 59 + SortOrder.GetHashCode();
             }
 
-            if (this.SortBy != null)
+            if (SortBy != null)
             {
-                hash = hash * 59 + this.SortBy.GetHashCode();
+                hash = hash * 59 + SortBy.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
-            if (this.ReturnFields != null)
+            if (ReturnFields != null)
             {
-                hash = hash * 59 + this.ReturnFields.GetHashCode();
+                hash = hash * 59 + ReturnFields.GetHashCode();
             }
 
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
-            if (this.Cursor != null)
+            if (Cursor != null)
             {
-                hash = hash * 59 + this.Cursor.GetHashCode();
+                hash = hash * 59 + Cursor.GetHashCode();
             }
 
             return hash;

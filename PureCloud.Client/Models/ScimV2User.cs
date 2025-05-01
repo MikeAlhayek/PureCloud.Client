@@ -213,7 +213,7 @@ public partial class ScimV2User : IEquatable<ScimV2User>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimV2User);
+        return Equals(obj as ScimV2User);
     }
 
     /// <summary>
@@ -231,79 +231,79 @@ public partial class ScimV2User : IEquatable<ScimV2User>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Schemas == other.Schemas ||
-                this.Schemas != null &&
-                this.Schemas.SequenceEqual(other.Schemas)
+                Schemas == other.Schemas ||
+                Schemas != null &&
+                Schemas.SequenceEqual(other.Schemas)
             ) &&
             (
-                this.Active == other.Active ||
-                this.Active != null &&
-                this.Active.Equals(other.Active)
+                Active == other.Active ||
+                Active != null &&
+                Active.Equals(other.Active)
             ) &&
             (
-                this.UserName == other.UserName ||
-                this.UserName != null &&
-                this.UserName.Equals(other.UserName)
+                UserName == other.UserName ||
+                UserName != null &&
+                UserName.Equals(other.UserName)
             ) &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.Password == other.Password ||
-                this.Password != null &&
-                this.Password.Equals(other.Password)
+                Password == other.Password ||
+                Password != null &&
+                Password.Equals(other.Password)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.PhoneNumbers == other.PhoneNumbers ||
-                this.PhoneNumbers != null &&
-                this.PhoneNumbers.SequenceEqual(other.PhoneNumbers)
+                PhoneNumbers == other.PhoneNumbers ||
+                PhoneNumbers != null &&
+                PhoneNumbers.SequenceEqual(other.PhoneNumbers)
             ) &&
             (
-                this.Emails == other.Emails ||
-                this.Emails != null &&
-                this.Emails.SequenceEqual(other.Emails)
+                Emails == other.Emails ||
+                Emails != null &&
+                Emails.SequenceEqual(other.Emails)
             ) &&
             (
-                this.ExternalId == other.ExternalId ||
-                this.ExternalId != null &&
-                this.ExternalId.Equals(other.ExternalId)
+                ExternalId == other.ExternalId ||
+                ExternalId != null &&
+                ExternalId.Equals(other.ExternalId)
             ) &&
             (
-                this.Groups == other.Groups ||
-                this.Groups != null &&
-                this.Groups.SequenceEqual(other.Groups)
+                Groups == other.Groups ||
+                Groups != null &&
+                Groups.SequenceEqual(other.Groups)
             ) &&
             (
-                this.Roles == other.Roles ||
-                this.Roles != null &&
-                this.Roles.SequenceEqual(other.Roles)
+                Roles == other.Roles ||
+                Roles != null &&
+                Roles.SequenceEqual(other.Roles)
             ) &&
             (
-                this.Urnietfparamsscimschemasextensionenterprise20User == other.Urnietfparamsscimschemasextensionenterprise20User ||
-                this.Urnietfparamsscimschemasextensionenterprise20User != null &&
-                this.Urnietfparamsscimschemasextensionenterprise20User.Equals(other.Urnietfparamsscimschemasextensionenterprise20User)
+                Urnietfparamsscimschemasextensionenterprise20User == other.Urnietfparamsscimschemasextensionenterprise20User ||
+                Urnietfparamsscimschemasextensionenterprise20User != null &&
+                Urnietfparamsscimschemasextensionenterprise20User.Equals(other.Urnietfparamsscimschemasextensionenterprise20User)
             ) &&
             (
-                this.Urnietfparamsscimschemasextensiongenesyspurecloud20User == other.Urnietfparamsscimschemasextensiongenesyspurecloud20User ||
-                this.Urnietfparamsscimschemasextensiongenesyspurecloud20User != null &&
-                this.Urnietfparamsscimschemasextensiongenesyspurecloud20User.Equals(other.Urnietfparamsscimschemasextensiongenesyspurecloud20User)
+                Urnietfparamsscimschemasextensiongenesyspurecloud20User == other.Urnietfparamsscimschemasextensiongenesyspurecloud20User ||
+                Urnietfparamsscimschemasextensiongenesyspurecloud20User != null &&
+                Urnietfparamsscimschemasextensiongenesyspurecloud20User.Equals(other.Urnietfparamsscimschemasextensiongenesyspurecloud20User)
             ) &&
             (
-                this.Meta == other.Meta ||
-                this.Meta != null &&
-                this.Meta.Equals(other.Meta)
+                Meta == other.Meta ||
+                Meta != null &&
+                Meta.Equals(other.Meta)
             );
     }
 
@@ -318,79 +318,79 @@ public partial class ScimV2User : IEquatable<ScimV2User>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Schemas != null)
+            if (Schemas != null)
             {
-                hash = hash * 59 + this.Schemas.GetHashCode();
+                hash = hash * 59 + Schemas.GetHashCode();
             }
 
-            if (this.Active != null)
+            if (Active != null)
             {
-                hash = hash * 59 + this.Active.GetHashCode();
+                hash = hash * 59 + Active.GetHashCode();
             }
 
-            if (this.UserName != null)
+            if (UserName != null)
             {
-                hash = hash * 59 + this.UserName.GetHashCode();
+                hash = hash * 59 + UserName.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.Password != null)
+            if (Password != null)
             {
-                hash = hash * 59 + this.Password.GetHashCode();
+                hash = hash * 59 + Password.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.PhoneNumbers != null)
+            if (PhoneNumbers != null)
             {
-                hash = hash * 59 + this.PhoneNumbers.GetHashCode();
+                hash = hash * 59 + PhoneNumbers.GetHashCode();
             }
 
-            if (this.Emails != null)
+            if (Emails != null)
             {
-                hash = hash * 59 + this.Emails.GetHashCode();
+                hash = hash * 59 + Emails.GetHashCode();
             }
 
-            if (this.ExternalId != null)
+            if (ExternalId != null)
             {
-                hash = hash * 59 + this.ExternalId.GetHashCode();
+                hash = hash * 59 + ExternalId.GetHashCode();
             }
 
-            if (this.Groups != null)
+            if (Groups != null)
             {
-                hash = hash * 59 + this.Groups.GetHashCode();
+                hash = hash * 59 + Groups.GetHashCode();
             }
 
-            if (this.Roles != null)
+            if (Roles != null)
             {
-                hash = hash * 59 + this.Roles.GetHashCode();
+                hash = hash * 59 + Roles.GetHashCode();
             }
 
-            if (this.Urnietfparamsscimschemasextensionenterprise20User != null)
+            if (Urnietfparamsscimschemasextensionenterprise20User != null)
             {
-                hash = hash * 59 + this.Urnietfparamsscimschemasextensionenterprise20User.GetHashCode();
+                hash = hash * 59 + Urnietfparamsscimschemasextensionenterprise20User.GetHashCode();
             }
 
-            if (this.Urnietfparamsscimschemasextensiongenesyspurecloud20User != null)
+            if (Urnietfparamsscimschemasextensiongenesyspurecloud20User != null)
             {
-                hash = hash * 59 + this.Urnietfparamsscimschemasextensiongenesyspurecloud20User.GetHashCode();
+                hash = hash * 59 + Urnietfparamsscimschemasextensiongenesyspurecloud20User.GetHashCode();
             }
 
-            if (this.Meta != null)
+            if (Meta != null)
             {
-                hash = hash * 59 + this.Meta.GetHashCode();
+                hash = hash * 59 + Meta.GetHashCode();
             }
 
             return hash;

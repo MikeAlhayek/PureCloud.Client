@@ -107,7 +107,7 @@ public partial class WorkPlanBidGroup : IEquatable<WorkPlanBidGroup>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanBidGroup);
+        return Equals(obj as WorkPlanBidGroup);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class WorkPlanBidGroup : IEquatable<WorkPlanBidGroup>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ManagementUnit == other.ManagementUnit ||
-                this.ManagementUnit != null &&
-                this.ManagementUnit.Equals(other.ManagementUnit)
+                ManagementUnit == other.ManagementUnit ||
+                ManagementUnit != null &&
+                ManagementUnit.Equals(other.ManagementUnit)
             ) &&
             (
-                this.Agents == other.Agents ||
-                this.Agents != null &&
-                this.Agents.SequenceEqual(other.Agents)
+                Agents == other.Agents ||
+                Agents != null &&
+                Agents.SequenceEqual(other.Agents)
             ) &&
             (
-                this.WorkPlans == other.WorkPlans ||
-                this.WorkPlans != null &&
-                this.WorkPlans.SequenceEqual(other.WorkPlans)
+                WorkPlans == other.WorkPlans ||
+                WorkPlans != null &&
+                WorkPlans.SequenceEqual(other.WorkPlans)
             ) &&
             (
-                this.PlanningGroups == other.PlanningGroups ||
-                this.PlanningGroups != null &&
-                this.PlanningGroups.SequenceEqual(other.PlanningGroups)
+                PlanningGroups == other.PlanningGroups ||
+                PlanningGroups != null &&
+                PlanningGroups.SequenceEqual(other.PlanningGroups)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class WorkPlanBidGroup : IEquatable<WorkPlanBidGroup>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ManagementUnit != null)
+            if (ManagementUnit != null)
             {
-                hash = hash * 59 + this.ManagementUnit.GetHashCode();
+                hash = hash * 59 + ManagementUnit.GetHashCode();
             }
 
-            if (this.Agents != null)
+            if (Agents != null)
             {
-                hash = hash * 59 + this.Agents.GetHashCode();
+                hash = hash * 59 + Agents.GetHashCode();
             }
 
-            if (this.WorkPlans != null)
+            if (WorkPlans != null)
             {
-                hash = hash * 59 + this.WorkPlans.GetHashCode();
+                hash = hash * 59 + WorkPlans.GetHashCode();
             }
 
-            if (this.PlanningGroups != null)
+            if (PlanningGroups != null)
             {
-                hash = hash * 59 + this.PlanningGroups.GetHashCode();
+                hash = hash * 59 + PlanningGroups.GetHashCode();
             }
 
             return hash;

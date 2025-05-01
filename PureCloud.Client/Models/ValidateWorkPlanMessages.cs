@@ -65,7 +65,7 @@ public partial class ValidateWorkPlanMessages : IEquatable<ValidateWorkPlanMessa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValidateWorkPlanMessages);
+        return Equals(obj as ValidateWorkPlanMessages);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ValidateWorkPlanMessages : IEquatable<ValidateWorkPlanMessa
 
         return true &&
             (
-                this.ViolationMessages == other.ViolationMessages ||
-                this.ViolationMessages != null &&
-                this.ViolationMessages.SequenceEqual(other.ViolationMessages)
+                ViolationMessages == other.ViolationMessages ||
+                ViolationMessages != null &&
+                ViolationMessages.SequenceEqual(other.ViolationMessages)
             ) &&
             (
-                this.ConstraintConflictMessage == other.ConstraintConflictMessage ||
-                this.ConstraintConflictMessage != null &&
-                this.ConstraintConflictMessage.Equals(other.ConstraintConflictMessage)
+                ConstraintConflictMessage == other.ConstraintConflictMessage ||
+                ConstraintConflictMessage != null &&
+                ConstraintConflictMessage.Equals(other.ConstraintConflictMessage)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ValidateWorkPlanMessages : IEquatable<ValidateWorkPlanMessa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ViolationMessages != null)
+            if (ViolationMessages != null)
             {
-                hash = hash * 59 + this.ViolationMessages.GetHashCode();
+                hash = hash * 59 + ViolationMessages.GetHashCode();
             }
 
-            if (this.ConstraintConflictMessage != null)
+            if (ConstraintConflictMessage != null)
             {
-                hash = hash * 59 + this.ConstraintConflictMessage.GetHashCode();
+                hash = hash * 59 + ConstraintConflictMessage.GetHashCode();
             }
 
             return hash;

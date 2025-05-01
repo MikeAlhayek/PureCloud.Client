@@ -111,7 +111,7 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MetadataProperty);
+        return Equals(obj as MetadataProperty);
     }
 
     /// <summary>
@@ -129,39 +129,39 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Displayname == other.Displayname ||
-                this.Displayname != null &&
-                this.Displayname.Equals(other.Displayname)
+                Displayname == other.Displayname ||
+                Displayname != null &&
+                Displayname.Equals(other.Displayname)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Sensitive == other.Sensitive ||
-                this.Sensitive != null &&
-                this.Sensitive.Equals(other.Sensitive)
+                Sensitive == other.Sensitive ||
+                Sensitive != null &&
+                Sensitive.Equals(other.Sensitive)
             ) &&
             (
-                this.Help == other.Help ||
-                this.Help != null &&
-                this.Help.Equals(other.Help)
+                Help == other.Help ||
+                Help != null &&
+                Help.Equals(other.Help)
             ) &&
             (
-                this.Default == other.Default ||
-                this.Default != null &&
-                this.Default.Equals(other.Default)
+                Default == other.Default ||
+                Default != null &&
+                Default.Equals(other.Default)
             ) &&
             (
-                this.Enum == other.Enum ||
-                this.Enum != null &&
-                this.Enum.SequenceEqual(other.Enum)
+                Enum == other.Enum ||
+                Enum != null &&
+                Enum.SequenceEqual(other.Enum)
             );
     }
 
@@ -176,39 +176,39 @@ public partial class MetadataProperty : IEquatable<MetadataProperty>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Displayname != null)
+            if (Displayname != null)
             {
-                hash = hash * 59 + this.Displayname.GetHashCode();
+                hash = hash * 59 + Displayname.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Sensitive != null)
+            if (Sensitive != null)
             {
-                hash = hash * 59 + this.Sensitive.GetHashCode();
+                hash = hash * 59 + Sensitive.GetHashCode();
             }
 
-            if (this.Help != null)
+            if (Help != null)
             {
-                hash = hash * 59 + this.Help.GetHashCode();
+                hash = hash * 59 + Help.GetHashCode();
             }
 
-            if (this.Default != null)
+            if (Default != null)
             {
-                hash = hash * 59 + this.Default.GetHashCode();
+                hash = hash * 59 + Default.GetHashCode();
             }
 
-            if (this.Enum != null)
+            if (Enum != null)
             {
-                hash = hash * 59 + this.Enum.GetHashCode();
+                hash = hash * 59 + Enum.GetHashCode();
             }
 
             return hash;

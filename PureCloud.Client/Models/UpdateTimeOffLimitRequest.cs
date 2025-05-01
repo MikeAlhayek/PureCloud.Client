@@ -71,7 +71,7 @@ public partial class UpdateTimeOffLimitRequest : IEquatable<UpdateTimeOffLimitRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateTimeOffLimitRequest);
+        return Equals(obj as UpdateTimeOffLimitRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class UpdateTimeOffLimitRequest : IEquatable<UpdateTimeOffLimitRe
 
         return true &&
             (
-                this.DefaultLimitMinutes == other.DefaultLimitMinutes ||
-                this.DefaultLimitMinutes != null &&
-                this.DefaultLimitMinutes.Equals(other.DefaultLimitMinutes)
+                DefaultLimitMinutes == other.DefaultLimitMinutes ||
+                DefaultLimitMinutes != null &&
+                DefaultLimitMinutes.Equals(other.DefaultLimitMinutes)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class UpdateTimeOffLimitRequest : IEquatable<UpdateTimeOffLimitRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DefaultLimitMinutes != null)
+            if (DefaultLimitMinutes != null)
             {
-                hash = hash * 59 + this.DefaultLimitMinutes.GetHashCode();
+                hash = hash * 59 + DefaultLimitMinutes.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

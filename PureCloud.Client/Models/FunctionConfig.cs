@@ -91,7 +91,7 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FunctionConfig);
+        return Equals(obj as FunctionConfig);
     }
 
     /// <summary>
@@ -109,29 +109,29 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Function == other.Function ||
-                this.Function != null &&
-                this.Function.Equals(other.Function)
+                Function == other.Function ||
+                Function != null &&
+                Function.Equals(other.Function)
             ) &&
             (
-                this.Zip == other.Zip ||
-                this.Zip != null &&
-                this.Zip.Equals(other.Zip)
+                Zip == other.Zip ||
+                Zip != null &&
+                Zip.Equals(other.Zip)
             ) &&
             (
-                this.UploadExceptionHistory == other.UploadExceptionHistory ||
-                this.UploadExceptionHistory != null &&
-                this.UploadExceptionHistory.SequenceEqual(other.UploadExceptionHistory)
+                UploadExceptionHistory == other.UploadExceptionHistory ||
+                UploadExceptionHistory != null &&
+                UploadExceptionHistory.SequenceEqual(other.UploadExceptionHistory)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -146,29 +146,29 @@ public partial class FunctionConfig : IEquatable<FunctionConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Function != null)
+            if (Function != null)
             {
-                hash = hash * 59 + this.Function.GetHashCode();
+                hash = hash * 59 + Function.GetHashCode();
             }
 
-            if (this.Zip != null)
+            if (Zip != null)
             {
-                hash = hash * 59 + this.Zip.GetHashCode();
+                hash = hash * 59 + Zip.GetHashCode();
             }
 
-            if (this.UploadExceptionHistory != null)
+            if (UploadExceptionHistory != null)
             {
-                hash = hash * 59 + this.UploadExceptionHistory.GetHashCode();
+                hash = hash * 59 + UploadExceptionHistory.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

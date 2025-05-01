@@ -307,7 +307,7 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrusteeBillingOverview);
+        return Equals(obj as TrusteeBillingOverview);
     }
 
     /// <summary>
@@ -325,89 +325,89 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Organization == other.Organization ||
-                this.Organization != null &&
-                this.Organization.Equals(other.Organization)
+                Organization == other.Organization ||
+                Organization != null &&
+                Organization.Equals(other.Organization)
             ) &&
             (
-                this.Currency == other.Currency ||
-                this.Currency != null &&
-                this.Currency.Equals(other.Currency)
+                Currency == other.Currency ||
+                Currency != null &&
+                Currency.Equals(other.Currency)
             ) &&
             (
-                this.EnabledProducts == other.EnabledProducts ||
-                this.EnabledProducts != null &&
-                this.EnabledProducts.SequenceEqual(other.EnabledProducts)
+                EnabledProducts == other.EnabledProducts ||
+                EnabledProducts != null &&
+                EnabledProducts.SequenceEqual(other.EnabledProducts)
             ) &&
             (
-                this.SubscriptionType == other.SubscriptionType ||
-                this.SubscriptionType != null &&
-                this.SubscriptionType.Equals(other.SubscriptionType)
+                SubscriptionType == other.SubscriptionType ||
+                SubscriptionType != null &&
+                SubscriptionType.Equals(other.SubscriptionType)
             ) &&
             (
-                this.RampPeriodStartDate == other.RampPeriodStartDate ||
-                this.RampPeriodStartDate != null &&
-                this.RampPeriodStartDate.Equals(other.RampPeriodStartDate)
+                RampPeriodStartDate == other.RampPeriodStartDate ||
+                RampPeriodStartDate != null &&
+                RampPeriodStartDate.Equals(other.RampPeriodStartDate)
             ) &&
             (
-                this.RampPeriodEndDate == other.RampPeriodEndDate ||
-                this.RampPeriodEndDate != null &&
-                this.RampPeriodEndDate.Equals(other.RampPeriodEndDate)
+                RampPeriodEndDate == other.RampPeriodEndDate ||
+                RampPeriodEndDate != null &&
+                RampPeriodEndDate.Equals(other.RampPeriodEndDate)
             ) &&
             (
-                this.BillingPeriodStartDate == other.BillingPeriodStartDate ||
-                this.BillingPeriodStartDate != null &&
-                this.BillingPeriodStartDate.Equals(other.BillingPeriodStartDate)
+                BillingPeriodStartDate == other.BillingPeriodStartDate ||
+                BillingPeriodStartDate != null &&
+                BillingPeriodStartDate.Equals(other.BillingPeriodStartDate)
             ) &&
             (
-                this.BillingPeriodEndDate == other.BillingPeriodEndDate ||
-                this.BillingPeriodEndDate != null &&
-                this.BillingPeriodEndDate.Equals(other.BillingPeriodEndDate)
+                BillingPeriodEndDate == other.BillingPeriodEndDate ||
+                BillingPeriodEndDate != null &&
+                BillingPeriodEndDate.Equals(other.BillingPeriodEndDate)
             ) &&
             (
-                this.Usages == other.Usages ||
-                this.Usages != null &&
-                this.Usages.SequenceEqual(other.Usages)
+                Usages == other.Usages ||
+                Usages != null &&
+                Usages.SequenceEqual(other.Usages)
             ) &&
             (
-                this.ContractAmendmentDate == other.ContractAmendmentDate ||
-                this.ContractAmendmentDate != null &&
-                this.ContractAmendmentDate.Equals(other.ContractAmendmentDate)
+                ContractAmendmentDate == other.ContractAmendmentDate ||
+                ContractAmendmentDate != null &&
+                ContractAmendmentDate.Equals(other.ContractAmendmentDate)
             ) &&
             (
-                this.ContractEffectiveDate == other.ContractEffectiveDate ||
-                this.ContractEffectiveDate != null &&
-                this.ContractEffectiveDate.Equals(other.ContractEffectiveDate)
+                ContractEffectiveDate == other.ContractEffectiveDate ||
+                ContractEffectiveDate != null &&
+                ContractEffectiveDate.Equals(other.ContractEffectiveDate)
             ) &&
             (
-                this.ContractEndDate == other.ContractEndDate ||
-                this.ContractEndDate != null &&
-                this.ContractEndDate.Equals(other.ContractEndDate)
+                ContractEndDate == other.ContractEndDate ||
+                ContractEndDate != null &&
+                ContractEndDate.Equals(other.ContractEndDate)
             ) &&
             (
-                this.MinimumMonthlyAmount == other.MinimumMonthlyAmount ||
-                this.MinimumMonthlyAmount != null &&
-                this.MinimumMonthlyAmount.Equals(other.MinimumMonthlyAmount)
+                MinimumMonthlyAmount == other.MinimumMonthlyAmount ||
+                MinimumMonthlyAmount != null &&
+                MinimumMonthlyAmount.Equals(other.MinimumMonthlyAmount)
             ) &&
             (
-                this.InRampPeriod == other.InRampPeriod ||
-                this.InRampPeriod != null &&
-                this.InRampPeriod.Equals(other.InRampPeriod)
+                InRampPeriod == other.InRampPeriod ||
+                InRampPeriod != null &&
+                InRampPeriod.Equals(other.InRampPeriod)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -422,89 +422,89 @@ public partial class TrusteeBillingOverview : IEquatable<TrusteeBillingOverview>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Organization != null)
+            if (Organization != null)
             {
-                hash = hash * 59 + this.Organization.GetHashCode();
+                hash = hash * 59 + Organization.GetHashCode();
             }
 
-            if (this.Currency != null)
+            if (Currency != null)
             {
-                hash = hash * 59 + this.Currency.GetHashCode();
+                hash = hash * 59 + Currency.GetHashCode();
             }
 
-            if (this.EnabledProducts != null)
+            if (EnabledProducts != null)
             {
-                hash = hash * 59 + this.EnabledProducts.GetHashCode();
+                hash = hash * 59 + EnabledProducts.GetHashCode();
             }
 
-            if (this.SubscriptionType != null)
+            if (SubscriptionType != null)
             {
-                hash = hash * 59 + this.SubscriptionType.GetHashCode();
+                hash = hash * 59 + SubscriptionType.GetHashCode();
             }
 
-            if (this.RampPeriodStartDate != null)
+            if (RampPeriodStartDate != null)
             {
-                hash = hash * 59 + this.RampPeriodStartDate.GetHashCode();
+                hash = hash * 59 + RampPeriodStartDate.GetHashCode();
             }
 
-            if (this.RampPeriodEndDate != null)
+            if (RampPeriodEndDate != null)
             {
-                hash = hash * 59 + this.RampPeriodEndDate.GetHashCode();
+                hash = hash * 59 + RampPeriodEndDate.GetHashCode();
             }
 
-            if (this.BillingPeriodStartDate != null)
+            if (BillingPeriodStartDate != null)
             {
-                hash = hash * 59 + this.BillingPeriodStartDate.GetHashCode();
+                hash = hash * 59 + BillingPeriodStartDate.GetHashCode();
             }
 
-            if (this.BillingPeriodEndDate != null)
+            if (BillingPeriodEndDate != null)
             {
-                hash = hash * 59 + this.BillingPeriodEndDate.GetHashCode();
+                hash = hash * 59 + BillingPeriodEndDate.GetHashCode();
             }
 
-            if (this.Usages != null)
+            if (Usages != null)
             {
-                hash = hash * 59 + this.Usages.GetHashCode();
+                hash = hash * 59 + Usages.GetHashCode();
             }
 
-            if (this.ContractAmendmentDate != null)
+            if (ContractAmendmentDate != null)
             {
-                hash = hash * 59 + this.ContractAmendmentDate.GetHashCode();
+                hash = hash * 59 + ContractAmendmentDate.GetHashCode();
             }
 
-            if (this.ContractEffectiveDate != null)
+            if (ContractEffectiveDate != null)
             {
-                hash = hash * 59 + this.ContractEffectiveDate.GetHashCode();
+                hash = hash * 59 + ContractEffectiveDate.GetHashCode();
             }
 
-            if (this.ContractEndDate != null)
+            if (ContractEndDate != null)
             {
-                hash = hash * 59 + this.ContractEndDate.GetHashCode();
+                hash = hash * 59 + ContractEndDate.GetHashCode();
             }
 
-            if (this.MinimumMonthlyAmount != null)
+            if (MinimumMonthlyAmount != null)
             {
-                hash = hash * 59 + this.MinimumMonthlyAmount.GetHashCode();
+                hash = hash * 59 + MinimumMonthlyAmount.GetHashCode();
             }
 
-            if (this.InRampPeriod != null)
+            if (InRampPeriod != null)
             {
-                hash = hash * 59 + this.InRampPeriod.GetHashCode();
+                hash = hash * 59 + InRampPeriod.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

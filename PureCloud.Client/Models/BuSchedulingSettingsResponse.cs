@@ -170,7 +170,7 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuSchedulingSettingsResponse);
+        return Equals(obj as BuSchedulingSettingsResponse);
     }
 
     /// <summary>
@@ -188,34 +188,34 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
 
         return true &&
             (
-                this.MessageSeverities == other.MessageSeverities ||
-                this.MessageSeverities != null &&
-                this.MessageSeverities.SequenceEqual(other.MessageSeverities)
+                MessageSeverities == other.MessageSeverities ||
+                MessageSeverities != null &&
+                MessageSeverities.SequenceEqual(other.MessageSeverities)
             ) &&
             (
-                this.SyncTimeOffProperties == other.SyncTimeOffProperties ||
-                this.SyncTimeOffProperties != null &&
-                this.SyncTimeOffProperties.SequenceEqual(other.SyncTimeOffProperties)
+                SyncTimeOffProperties == other.SyncTimeOffProperties ||
+                SyncTimeOffProperties != null &&
+                SyncTimeOffProperties.SequenceEqual(other.SyncTimeOffProperties)
             ) &&
             (
-                this.ServiceGoalImpact == other.ServiceGoalImpact ||
-                this.ServiceGoalImpact != null &&
-                this.ServiceGoalImpact.Equals(other.ServiceGoalImpact)
+                ServiceGoalImpact == other.ServiceGoalImpact ||
+                ServiceGoalImpact != null &&
+                ServiceGoalImpact.Equals(other.ServiceGoalImpact)
             ) &&
             (
-                this.AllowWorkPlanPerMinuteGranularity == other.AllowWorkPlanPerMinuteGranularity ||
-                this.AllowWorkPlanPerMinuteGranularity != null &&
-                this.AllowWorkPlanPerMinuteGranularity.Equals(other.AllowWorkPlanPerMinuteGranularity)
+                AllowWorkPlanPerMinuteGranularity == other.AllowWorkPlanPerMinuteGranularity ||
+                AllowWorkPlanPerMinuteGranularity != null &&
+                AllowWorkPlanPerMinuteGranularity.Equals(other.AllowWorkPlanPerMinuteGranularity)
             ) &&
             (
-                this.ActivitySmoothingType == other.ActivitySmoothingType ||
-                this.ActivitySmoothingType != null &&
-                this.ActivitySmoothingType.Equals(other.ActivitySmoothingType)
+                ActivitySmoothingType == other.ActivitySmoothingType ||
+                ActivitySmoothingType != null &&
+                ActivitySmoothingType.Equals(other.ActivitySmoothingType)
             ) &&
             (
-                this.InduceScheduleVariability == other.InduceScheduleVariability ||
-                this.InduceScheduleVariability != null &&
-                this.InduceScheduleVariability.Equals(other.InduceScheduleVariability)
+                InduceScheduleVariability == other.InduceScheduleVariability ||
+                InduceScheduleVariability != null &&
+                InduceScheduleVariability.Equals(other.InduceScheduleVariability)
             );
     }
 
@@ -230,34 +230,34 @@ public partial class BuSchedulingSettingsResponse : IEquatable<BuSchedulingSetti
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MessageSeverities != null)
+            if (MessageSeverities != null)
             {
-                hash = hash * 59 + this.MessageSeverities.GetHashCode();
+                hash = hash * 59 + MessageSeverities.GetHashCode();
             }
 
-            if (this.SyncTimeOffProperties != null)
+            if (SyncTimeOffProperties != null)
             {
-                hash = hash * 59 + this.SyncTimeOffProperties.GetHashCode();
+                hash = hash * 59 + SyncTimeOffProperties.GetHashCode();
             }
 
-            if (this.ServiceGoalImpact != null)
+            if (ServiceGoalImpact != null)
             {
-                hash = hash * 59 + this.ServiceGoalImpact.GetHashCode();
+                hash = hash * 59 + ServiceGoalImpact.GetHashCode();
             }
 
-            if (this.AllowWorkPlanPerMinuteGranularity != null)
+            if (AllowWorkPlanPerMinuteGranularity != null)
             {
-                hash = hash * 59 + this.AllowWorkPlanPerMinuteGranularity.GetHashCode();
+                hash = hash * 59 + AllowWorkPlanPerMinuteGranularity.GetHashCode();
             }
 
-            if (this.ActivitySmoothingType != null)
+            if (ActivitySmoothingType != null)
             {
-                hash = hash * 59 + this.ActivitySmoothingType.GetHashCode();
+                hash = hash * 59 + ActivitySmoothingType.GetHashCode();
             }
 
-            if (this.InduceScheduleVariability != null)
+            if (InduceScheduleVariability != null)
             {
-                hash = hash * 59 + this.InduceScheduleVariability.GetHashCode();
+                hash = hash * 59 + InduceScheduleVariability.GetHashCode();
             }
 
             return hash;

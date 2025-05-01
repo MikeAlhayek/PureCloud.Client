@@ -82,7 +82,7 @@ public partial class AgentQueueTimeRequest : IEquatable<AgentQueueTimeRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentQueueTimeRequest);
+        return Equals(obj as AgentQueueTimeRequest);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class AgentQueueTimeRequest : IEquatable<AgentQueueTimeRequest>
 
         return true &&
             (
-                this.AgentId == other.AgentId ||
-                this.AgentId != null &&
-                this.AgentId.Equals(other.AgentId)
+                AgentId == other.AgentId ||
+                AgentId != null &&
+                AgentId.Equals(other.AgentId)
             ) &&
             (
-                this.StartOffsetMinutes == other.StartOffsetMinutes ||
-                this.StartOffsetMinutes != null &&
-                this.StartOffsetMinutes.SequenceEqual(other.StartOffsetMinutes)
+                StartOffsetMinutes == other.StartOffsetMinutes ||
+                StartOffsetMinutes != null &&
+                StartOffsetMinutes.SequenceEqual(other.StartOffsetMinutes)
             ) &&
             (
-                this.OnQueueLengthMinutesPerInterval == other.OnQueueLengthMinutesPerInterval ||
-                this.OnQueueLengthMinutesPerInterval != null &&
-                this.OnQueueLengthMinutesPerInterval.SequenceEqual(other.OnQueueLengthMinutesPerInterval)
+                OnQueueLengthMinutesPerInterval == other.OnQueueLengthMinutesPerInterval ||
+                OnQueueLengthMinutesPerInterval != null &&
+                OnQueueLengthMinutesPerInterval.SequenceEqual(other.OnQueueLengthMinutesPerInterval)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class AgentQueueTimeRequest : IEquatable<AgentQueueTimeRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentId != null)
+            if (AgentId != null)
             {
-                hash = hash * 59 + this.AgentId.GetHashCode();
+                hash = hash * 59 + AgentId.GetHashCode();
             }
 
-            if (this.StartOffsetMinutes != null)
+            if (StartOffsetMinutes != null)
             {
-                hash = hash * 59 + this.StartOffsetMinutes.GetHashCode();
+                hash = hash * 59 + StartOffsetMinutes.GetHashCode();
             }
 
-            if (this.OnQueueLengthMinutesPerInterval != null)
+            if (OnQueueLengthMinutesPerInterval != null)
             {
-                hash = hash * 59 + this.OnQueueLengthMinutesPerInterval.GetHashCode();
+                hash = hash * 59 + OnQueueLengthMinutesPerInterval.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class KnowledgeIntegrationOptionsResponse : IEquatable<KnowledgeI
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeIntegrationOptionsResponse);
+        return Equals(obj as KnowledgeIntegrationOptionsResponse);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class KnowledgeIntegrationOptionsResponse : IEquatable<KnowledgeI
 
         return true &&
             (
-                this.Filters == other.Filters ||
-                this.Filters != null &&
-                this.Filters.SequenceEqual(other.Filters)
+                Filters == other.Filters ||
+                Filters != null &&
+                Filters.SequenceEqual(other.Filters)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class KnowledgeIntegrationOptionsResponse : IEquatable<KnowledgeI
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Filters != null)
+            if (Filters != null)
             {
-                hash = hash * 59 + this.Filters.GetHashCode();
+                hash = hash * 59 + Filters.GetHashCode();
             }
 
             return hash;

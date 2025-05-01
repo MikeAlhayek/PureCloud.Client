@@ -121,7 +121,7 @@ public partial class MailFromResult : IEquatable<MailFromResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MailFromResult);
+        return Equals(obj as MailFromResult);
     }
 
     /// <summary>
@@ -139,19 +139,19 @@ public partial class MailFromResult : IEquatable<MailFromResult>
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Records == other.Records ||
-                this.Records != null &&
-                this.Records.SequenceEqual(other.Records)
+                Records == other.Records ||
+                Records != null &&
+                Records.SequenceEqual(other.Records)
             ) &&
             (
-                this.MailFromDomain == other.MailFromDomain ||
-                this.MailFromDomain != null &&
-                this.MailFromDomain.Equals(other.MailFromDomain)
+                MailFromDomain == other.MailFromDomain ||
+                MailFromDomain != null &&
+                MailFromDomain.Equals(other.MailFromDomain)
             );
     }
 
@@ -166,19 +166,19 @@ public partial class MailFromResult : IEquatable<MailFromResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Records != null)
+            if (Records != null)
             {
-                hash = hash * 59 + this.Records.GetHashCode();
+                hash = hash * 59 + Records.GetHashCode();
             }
 
-            if (this.MailFromDomain != null)
+            if (MailFromDomain != null)
             {
-                hash = hash * 59 + this.MailFromDomain.GetHashCode();
+                hash = hash * 59 + MailFromDomain.GetHashCode();
             }
 
             return hash;

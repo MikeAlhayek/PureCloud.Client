@@ -65,7 +65,7 @@ public partial class DashboardsSharedWith : IEquatable<DashboardsSharedWith>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DashboardsSharedWith);
+        return Equals(obj as DashboardsSharedWith);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class DashboardsSharedWith : IEquatable<DashboardsSharedWith>
 
         return true &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.TeamIds == other.TeamIds ||
-                this.TeamIds != null &&
-                this.TeamIds.SequenceEqual(other.TeamIds)
+                TeamIds == other.TeamIds ||
+                TeamIds != null &&
+                TeamIds.SequenceEqual(other.TeamIds)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class DashboardsSharedWith : IEquatable<DashboardsSharedWith>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.TeamIds != null)
+            if (TeamIds != null)
             {
-                hash = hash * 59 + this.TeamIds.GetHashCode();
+                hash = hash * 59 + TeamIds.GetHashCode();
             }
 
             return hash;

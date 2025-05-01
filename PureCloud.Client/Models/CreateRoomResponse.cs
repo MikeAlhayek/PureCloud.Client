@@ -59,7 +59,7 @@ public partial class CreateRoomResponse : IEquatable<CreateRoomResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateRoomResponse);
+        return Equals(obj as CreateRoomResponse);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class CreateRoomResponse : IEquatable<CreateRoomResponse>
 
         return true &&
             (
-                this.Jid == other.Jid ||
-                this.Jid != null &&
-                this.Jid.Equals(other.Jid)
+                Jid == other.Jid ||
+                Jid != null &&
+                Jid.Equals(other.Jid)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class CreateRoomResponse : IEquatable<CreateRoomResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Jid != null)
+            if (Jid != null)
             {
-                hash = hash * 59 + this.Jid.GetHashCode();
+                hash = hash * 59 + Jid.GetHashCode();
             }
 
             return hash;

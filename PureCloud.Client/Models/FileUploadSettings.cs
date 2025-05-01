@@ -65,7 +65,7 @@ public partial class FileUploadSettings : IEquatable<FileUploadSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FileUploadSettings);
+        return Equals(obj as FileUploadSettings);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class FileUploadSettings : IEquatable<FileUploadSettings>
 
         return true &&
             (
-                this.EnableAttachments == other.EnableAttachments ||
-                this.EnableAttachments != null &&
-                this.EnableAttachments.Equals(other.EnableAttachments)
+                EnableAttachments == other.EnableAttachments ||
+                EnableAttachments != null &&
+                EnableAttachments.Equals(other.EnableAttachments)
             ) &&
             (
-                this.Modes == other.Modes ||
-                this.Modes != null &&
-                this.Modes.SequenceEqual(other.Modes)
+                Modes == other.Modes ||
+                Modes != null &&
+                Modes.SequenceEqual(other.Modes)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class FileUploadSettings : IEquatable<FileUploadSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EnableAttachments != null)
+            if (EnableAttachments != null)
             {
-                hash = hash * 59 + this.EnableAttachments.GetHashCode();
+                hash = hash * 59 + EnableAttachments.GetHashCode();
             }
 
-            if (this.Modes != null)
+            if (Modes != null)
             {
-                hash = hash * 59 + this.Modes.GetHashCode();
+                hash = hash * 59 + Modes.GetHashCode();
             }
 
             return hash;

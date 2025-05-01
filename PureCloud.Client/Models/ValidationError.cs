@@ -71,7 +71,7 @@ public partial class ValidationError : IEquatable<ValidationError>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValidationError);
+        return Equals(obj as ValidationError);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ValidationError : IEquatable<ValidationError>
 
         return true &&
             (
-                this.LineNumber == other.LineNumber ||
-                this.LineNumber != null &&
-                this.LineNumber.Equals(other.LineNumber)
+                LineNumber == other.LineNumber ||
+                LineNumber != null &&
+                LineNumber.Equals(other.LineNumber)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ValidationError : IEquatable<ValidationError>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LineNumber != null)
+            if (LineNumber != null)
             {
-                hash = hash * 59 + this.LineNumber.GetHashCode();
+                hash = hash * 59 + LineNumber.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
             return hash;

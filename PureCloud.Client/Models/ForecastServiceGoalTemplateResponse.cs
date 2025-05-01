@@ -89,7 +89,7 @@ public partial class ForecastServiceGoalTemplateResponse : IEquatable<ForecastSe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ForecastServiceGoalTemplateResponse);
+        return Equals(obj as ForecastServiceGoalTemplateResponse);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ForecastServiceGoalTemplateResponse : IEquatable<ForecastSe
 
         return true &&
             (
-                this.ServiceLevel == other.ServiceLevel ||
-                this.ServiceLevel != null &&
-                this.ServiceLevel.Equals(other.ServiceLevel)
+                ServiceLevel == other.ServiceLevel ||
+                ServiceLevel != null &&
+                ServiceLevel.Equals(other.ServiceLevel)
             ) &&
             (
-                this.AverageSpeedOfAnswer == other.AverageSpeedOfAnswer ||
-                this.AverageSpeedOfAnswer != null &&
-                this.AverageSpeedOfAnswer.Equals(other.AverageSpeedOfAnswer)
+                AverageSpeedOfAnswer == other.AverageSpeedOfAnswer ||
+                AverageSpeedOfAnswer != null &&
+                AverageSpeedOfAnswer.Equals(other.AverageSpeedOfAnswer)
             ) &&
             (
-                this.AbandonRate == other.AbandonRate ||
-                this.AbandonRate != null &&
-                this.AbandonRate.Equals(other.AbandonRate)
+                AbandonRate == other.AbandonRate ||
+                AbandonRate != null &&
+                AbandonRate.Equals(other.AbandonRate)
             ) &&
             (
-                this.ImpactOverride == other.ImpactOverride ||
-                this.ImpactOverride != null &&
-                this.ImpactOverride.Equals(other.ImpactOverride)
+                ImpactOverride == other.ImpactOverride ||
+                ImpactOverride != null &&
+                ImpactOverride.Equals(other.ImpactOverride)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ForecastServiceGoalTemplateResponse : IEquatable<ForecastSe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ServiceLevel != null)
+            if (ServiceLevel != null)
             {
-                hash = hash * 59 + this.ServiceLevel.GetHashCode();
+                hash = hash * 59 + ServiceLevel.GetHashCode();
             }
 
-            if (this.AverageSpeedOfAnswer != null)
+            if (AverageSpeedOfAnswer != null)
             {
-                hash = hash * 59 + this.AverageSpeedOfAnswer.GetHashCode();
+                hash = hash * 59 + AverageSpeedOfAnswer.GetHashCode();
             }
 
-            if (this.AbandonRate != null)
+            if (AbandonRate != null)
             {
-                hash = hash * 59 + this.AbandonRate.GetHashCode();
+                hash = hash * 59 + AbandonRate.GetHashCode();
             }
 
-            if (this.ImpactOverride != null)
+            if (ImpactOverride != null)
             {
-                hash = hash * 59 + this.ImpactOverride.GetHashCode();
+                hash = hash * 59 + ImpactOverride.GetHashCode();
             }
 
             return hash;

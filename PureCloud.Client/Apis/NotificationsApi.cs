@@ -431,12 +431,12 @@ public partial class NotificationsApi : INotificationsApi
     /// <returns></returns>
     public NotificationsApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -450,17 +450,17 @@ public partial class NotificationsApi : INotificationsApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -470,7 +470,7 @@ public partial class NotificationsApi : INotificationsApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -496,7 +496,7 @@ public partial class NotificationsApi : INotificationsApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -508,7 +508,7 @@ public partial class NotificationsApi : INotificationsApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -553,7 +553,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -562,7 +562,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -575,7 +575,7 @@ public partial class NotificationsApi : INotificationsApi
         // Path params
         if (channelId != null)
         {
-            localVarPathParams.Add("channelId", this.Configuration.ApiClient.ParameterToString(channelId));
+            localVarPathParams.Add("channelId", Configuration.ApiClient.ParameterToString(channelId));
         }
 
         // Query params
@@ -591,11 +591,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -669,7 +669,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -678,7 +678,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -691,7 +691,7 @@ public partial class NotificationsApi : INotificationsApi
         // Path params
         if (channelId != null)
         {
-            localVarPathParams.Add("channelId", this.Configuration.ApiClient.ParameterToString(channelId));
+            localVarPathParams.Add("channelId", Configuration.ApiClient.ParameterToString(channelId));
         }
 
         // Query params
@@ -707,11 +707,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -783,7 +783,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -792,7 +792,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -807,12 +807,12 @@ public partial class NotificationsApi : INotificationsApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includePreview != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includePreview", this.Configuration.ApiClient.ParameterToString(includePreview)));
+            localVarQueryParams.Add(new Tuple<string, string>("includePreview", Configuration.ApiClient.ParameterToString(includePreview)));
         }
 
         // Header params
@@ -826,11 +826,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -856,7 +856,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<AvailableTopicEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (AvailableTopicEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AvailableTopicEntityListing)),
+            (AvailableTopicEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AvailableTopicEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -902,7 +902,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -911,7 +911,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -926,12 +926,12 @@ public partial class NotificationsApi : INotificationsApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includePreview != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includePreview", this.Configuration.ApiClient.ParameterToString(includePreview)));
+            localVarQueryParams.Add(new Tuple<string, string>("includePreview", Configuration.ApiClient.ParameterToString(includePreview)));
         }
 
         // Header params
@@ -945,11 +945,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -975,7 +975,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<AvailableTopicEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (AvailableTopicEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AvailableTopicEntityListing)),
+            (AvailableTopicEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AvailableTopicEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1024,7 +1024,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1033,7 +1033,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1046,7 +1046,7 @@ public partial class NotificationsApi : INotificationsApi
         // Path params
         if (channelId != null)
         {
-            localVarPathParams.Add("channelId", this.Configuration.ApiClient.ParameterToString(channelId));
+            localVarPathParams.Add("channelId", Configuration.ApiClient.ParameterToString(channelId));
         }
 
         // Query params
@@ -1062,11 +1062,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1092,7 +1092,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<ChannelTopicEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChannelTopicEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
+            (ChannelTopicEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1141,7 +1141,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1150,7 +1150,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1163,7 +1163,7 @@ public partial class NotificationsApi : INotificationsApi
         // Path params
         if (channelId != null)
         {
-            localVarPathParams.Add("channelId", this.Configuration.ApiClient.ParameterToString(channelId));
+            localVarPathParams.Add("channelId", Configuration.ApiClient.ParameterToString(channelId));
         }
 
         // Query params
@@ -1179,11 +1179,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1209,7 +1209,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<ChannelTopicEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChannelTopicEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
+            (ChannelTopicEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1253,7 +1253,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1262,7 +1262,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1277,7 +1277,7 @@ public partial class NotificationsApi : INotificationsApi
         // Query params
         if (includechannels != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includechannels", this.Configuration.ApiClient.ParameterToString(includechannels)));
+            localVarQueryParams.Add(new Tuple<string, string>("includechannels", Configuration.ApiClient.ParameterToString(includechannels)));
         }
 
         // Header params
@@ -1291,11 +1291,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1321,7 +1321,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<ChannelEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChannelEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelEntityListing)),
+            (ChannelEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1365,7 +1365,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1374,7 +1374,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1389,7 +1389,7 @@ public partial class NotificationsApi : INotificationsApi
         // Query params
         if (includechannels != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includechannels", this.Configuration.ApiClient.ParameterToString(includechannels)));
+            localVarQueryParams.Add(new Tuple<string, string>("includechannels", Configuration.ApiClient.ParameterToString(includechannels)));
         }
 
         // Header params
@@ -1403,11 +1403,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1433,7 +1433,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<ChannelEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChannelEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelEntityListing)),
+            (ChannelEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1481,7 +1481,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1490,7 +1490,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1503,7 +1503,7 @@ public partial class NotificationsApi : INotificationsApi
         // Path params
         if (channelId != null)
         {
-            localVarPathParams.Add("channelId", this.Configuration.ApiClient.ParameterToString(channelId));
+            localVarPathParams.Add("channelId", Configuration.ApiClient.ParameterToString(channelId));
         }
 
         // Query params
@@ -1519,11 +1519,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Head, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1597,7 +1597,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1606,7 +1606,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1619,7 +1619,7 @@ public partial class NotificationsApi : INotificationsApi
         // Path params
         if (channelId != null)
         {
-            localVarPathParams.Add("channelId", this.Configuration.ApiClient.ParameterToString(channelId));
+            localVarPathParams.Add("channelId", Configuration.ApiClient.ParameterToString(channelId));
         }
 
         // Query params
@@ -1635,11 +1635,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Head, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1724,7 +1724,7 @@ public partial class NotificationsApi : INotificationsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1733,7 +1733,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1746,13 +1746,13 @@ public partial class NotificationsApi : INotificationsApi
         // Path params
         if (channelId != null)
         {
-            localVarPathParams.Add("channelId", this.Configuration.ApiClient.ParameterToString(channelId));
+            localVarPathParams.Add("channelId", Configuration.ApiClient.ParameterToString(channelId));
         }
 
         // Query params
         if (ignoreErrors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ignoreErrors", this.Configuration.ApiClient.ParameterToString(ignoreErrors)));
+            localVarQueryParams.Add(new Tuple<string, string>("ignoreErrors", Configuration.ApiClient.ParameterToString(ignoreErrors)));
         }
 
         // Header params
@@ -1762,7 +1762,7 @@ public partial class NotificationsApi : INotificationsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1775,11 +1775,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1805,7 +1805,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<ChannelTopicEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChannelTopicEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
+            (ChannelTopicEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1865,7 +1865,7 @@ public partial class NotificationsApi : INotificationsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1874,7 +1874,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1887,13 +1887,13 @@ public partial class NotificationsApi : INotificationsApi
         // Path params
         if (channelId != null)
         {
-            localVarPathParams.Add("channelId", this.Configuration.ApiClient.ParameterToString(channelId));
+            localVarPathParams.Add("channelId", Configuration.ApiClient.ParameterToString(channelId));
         }
 
         // Query params
         if (ignoreErrors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ignoreErrors", this.Configuration.ApiClient.ParameterToString(ignoreErrors)));
+            localVarQueryParams.Add(new Tuple<string, string>("ignoreErrors", Configuration.ApiClient.ParameterToString(ignoreErrors)));
         }
 
         // Header params
@@ -1903,7 +1903,7 @@ public partial class NotificationsApi : INotificationsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1916,11 +1916,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1946,7 +1946,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<ChannelTopicEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChannelTopicEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
+            (ChannelTopicEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1988,7 +1988,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1997,7 +1997,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2022,11 +2022,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2052,7 +2052,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<Channel>(localVarStatusCode,
             localVarHeaders,
-            (Channel)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Channel)),
+            (Channel)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Channel)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2094,7 +2094,7 @@ public partial class NotificationsApi : INotificationsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2103,7 +2103,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2128,11 +2128,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2158,7 +2158,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<Channel>(localVarStatusCode,
             localVarHeaders,
-            (Channel)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Channel)),
+            (Channel)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Channel)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2217,7 +2217,7 @@ public partial class NotificationsApi : INotificationsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2226,7 +2226,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2239,13 +2239,13 @@ public partial class NotificationsApi : INotificationsApi
         // Path params
         if (channelId != null)
         {
-            localVarPathParams.Add("channelId", this.Configuration.ApiClient.ParameterToString(channelId));
+            localVarPathParams.Add("channelId", Configuration.ApiClient.ParameterToString(channelId));
         }
 
         // Query params
         if (ignoreErrors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ignoreErrors", this.Configuration.ApiClient.ParameterToString(ignoreErrors)));
+            localVarQueryParams.Add(new Tuple<string, string>("ignoreErrors", Configuration.ApiClient.ParameterToString(ignoreErrors)));
         }
 
         // Header params
@@ -2255,7 +2255,7 @@ public partial class NotificationsApi : INotificationsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2268,11 +2268,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2298,7 +2298,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<ChannelTopicEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChannelTopicEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
+            (ChannelTopicEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2358,7 +2358,7 @@ public partial class NotificationsApi : INotificationsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2367,7 +2367,7 @@ public partial class NotificationsApi : INotificationsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2380,13 +2380,13 @@ public partial class NotificationsApi : INotificationsApi
         // Path params
         if (channelId != null)
         {
-            localVarPathParams.Add("channelId", this.Configuration.ApiClient.ParameterToString(channelId));
+            localVarPathParams.Add("channelId", Configuration.ApiClient.ParameterToString(channelId));
         }
 
         // Query params
         if (ignoreErrors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ignoreErrors", this.Configuration.ApiClient.ParameterToString(ignoreErrors)));
+            localVarQueryParams.Add(new Tuple<string, string>("ignoreErrors", Configuration.ApiClient.ParameterToString(ignoreErrors)));
         }
 
         // Header params
@@ -2396,7 +2396,7 @@ public partial class NotificationsApi : INotificationsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2409,11 +2409,11 @@ public partial class NotificationsApi : INotificationsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2439,7 +2439,7 @@ public partial class NotificationsApi : INotificationsApi
 
         return new ApiResponse<ChannelTopicEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChannelTopicEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
+            (ChannelTopicEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelTopicEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

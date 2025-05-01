@@ -103,7 +103,7 @@ public partial class QueueConversationEventTopicDisconnectReason : IEquatable<Qu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationEventTopicDisconnectReason);
+        return Equals(obj as QueueConversationEventTopicDisconnectReason);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class QueueConversationEventTopicDisconnectReason : IEquatable<Qu
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.Phrase == other.Phrase ||
-                this.Phrase != null &&
-                this.Phrase.Equals(other.Phrase)
+                Phrase == other.Phrase ||
+                Phrase != null &&
+                Phrase.Equals(other.Phrase)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class QueueConversationEventTopicDisconnectReason : IEquatable<Qu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.Phrase != null)
+            if (Phrase != null)
             {
-                hash = hash * 59 + this.Phrase.GetHashCode();
+                hash = hash * 59 + Phrase.GetHashCode();
             }
 
             return hash;

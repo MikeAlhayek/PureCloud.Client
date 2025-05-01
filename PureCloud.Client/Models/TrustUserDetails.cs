@@ -61,7 +61,7 @@ public partial class TrustUserDetails : IEquatable<TrustUserDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrustUserDetails);
+        return Equals(obj as TrustUserDetails);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class TrustUserDetails : IEquatable<TrustUserDetails>
 
         return true &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class TrustUserDetails : IEquatable<TrustUserDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
             return hash;

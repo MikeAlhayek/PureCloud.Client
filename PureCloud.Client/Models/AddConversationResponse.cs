@@ -60,7 +60,7 @@ public partial class AddConversationResponse : IEquatable<AddConversationRespons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AddConversationResponse);
+        return Equals(obj as AddConversationResponse);
     }
 
     /// <summary>
@@ -78,14 +78,14 @@ public partial class AddConversationResponse : IEquatable<AddConversationRespons
 
         return true &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.Appointment == other.Appointment ||
-                this.Appointment != null &&
-                this.Appointment.Equals(other.Appointment)
+                Appointment == other.Appointment ||
+                Appointment != null &&
+                Appointment.Equals(other.Appointment)
             );
     }
 
@@ -100,14 +100,14 @@ public partial class AddConversationResponse : IEquatable<AddConversationRespons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.Appointment != null)
+            if (Appointment != null)
             {
-                hash = hash * 59 + this.Appointment.GetHashCode();
+                hash = hash * 59 + Appointment.GetHashCode();
             }
 
             return hash;

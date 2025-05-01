@@ -64,7 +64,7 @@ public partial class CallableWindow : IEquatable<CallableWindow>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallableWindow);
+        return Equals(obj as CallableWindow);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class CallableWindow : IEquatable<CallableWindow>
 
         return true &&
             (
-                this.Mapped == other.Mapped ||
-                this.Mapped != null &&
-                this.Mapped.Equals(other.Mapped)
+                Mapped == other.Mapped ||
+                Mapped != null &&
+                Mapped.Equals(other.Mapped)
             ) &&
             (
-                this.Unmapped == other.Unmapped ||
-                this.Unmapped != null &&
-                this.Unmapped.Equals(other.Unmapped)
+                Unmapped == other.Unmapped ||
+                Unmapped != null &&
+                Unmapped.Equals(other.Unmapped)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class CallableWindow : IEquatable<CallableWindow>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Mapped != null)
+            if (Mapped != null)
             {
-                hash = hash * 59 + this.Mapped.GetHashCode();
+                hash = hash * 59 + Mapped.GetHashCode();
             }
 
-            if (this.Unmapped != null)
+            if (Unmapped != null)
             {
-                hash = hash * 59 + this.Unmapped.GetHashCode();
+                hash = hash * 59 + Unmapped.GetHashCode();
             }
 
             return hash;

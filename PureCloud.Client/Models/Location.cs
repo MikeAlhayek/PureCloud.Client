@@ -98,7 +98,7 @@ public partial class Location : IEquatable<Location>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Location);
+        return Equals(obj as Location);
     }
 
     /// <summary>
@@ -116,29 +116,29 @@ public partial class Location : IEquatable<Location>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.FloorplanId == other.FloorplanId ||
-                this.FloorplanId != null &&
-                this.FloorplanId.Equals(other.FloorplanId)
+                FloorplanId == other.FloorplanId ||
+                FloorplanId != null &&
+                FloorplanId.Equals(other.FloorplanId)
             ) &&
             (
-                this.Coordinates == other.Coordinates ||
-                this.Coordinates != null &&
-                this.Coordinates.SequenceEqual(other.Coordinates)
+                Coordinates == other.Coordinates ||
+                Coordinates != null &&
+                Coordinates.SequenceEqual(other.Coordinates)
             ) &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             ) &&
             (
-                this.LocationDefinition == other.LocationDefinition ||
-                this.LocationDefinition != null &&
-                this.LocationDefinition.Equals(other.LocationDefinition)
+                LocationDefinition == other.LocationDefinition ||
+                LocationDefinition != null &&
+                LocationDefinition.Equals(other.LocationDefinition)
             );
     }
 
@@ -153,29 +153,29 @@ public partial class Location : IEquatable<Location>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.FloorplanId != null)
+            if (FloorplanId != null)
             {
-                hash = hash * 59 + this.FloorplanId.GetHashCode();
+                hash = hash * 59 + FloorplanId.GetHashCode();
             }
 
-            if (this.Coordinates != null)
+            if (Coordinates != null)
             {
-                hash = hash * 59 + this.Coordinates.GetHashCode();
+                hash = hash * 59 + Coordinates.GetHashCode();
             }
 
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
-            if (this.LocationDefinition != null)
+            if (LocationDefinition != null)
             {
-                hash = hash * 59 + this.LocationDefinition.GetHashCode();
+                hash = hash * 59 + LocationDefinition.GetHashCode();
             }
 
             return hash;

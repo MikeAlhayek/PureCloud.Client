@@ -85,7 +85,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAttributionMessage :
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyOutcomeEventsNotificationOutcomeAttributionMessage);
+        return Equals(obj as JourneyOutcomeEventsNotificationOutcomeAttributionMessage);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAttributionMessage :
 
         return true &&
             (
-                this.Outcome == other.Outcome ||
-                this.Outcome != null &&
-                this.Outcome.Equals(other.Outcome)
+                Outcome == other.Outcome ||
+                Outcome != null &&
+                Outcome.Equals(other.Outcome)
             ) &&
             (
-                this.OutcomeTouchpoints == other.OutcomeTouchpoints ||
-                this.OutcomeTouchpoints != null &&
-                this.OutcomeTouchpoints.SequenceEqual(other.OutcomeTouchpoints)
+                OutcomeTouchpoints == other.OutcomeTouchpoints ||
+                OutcomeTouchpoints != null &&
+                OutcomeTouchpoints.SequenceEqual(other.OutcomeTouchpoints)
             ) &&
             (
-                this.SegmentAssignments == other.SegmentAssignments ||
-                this.SegmentAssignments != null &&
-                this.SegmentAssignments.SequenceEqual(other.SegmentAssignments)
+                SegmentAssignments == other.SegmentAssignments ||
+                SegmentAssignments != null &&
+                SegmentAssignments.SequenceEqual(other.SegmentAssignments)
             ) &&
             (
-                this.AssociatedValue == other.AssociatedValue ||
-                this.AssociatedValue != null &&
-                this.AssociatedValue.Equals(other.AssociatedValue)
+                AssociatedValue == other.AssociatedValue ||
+                AssociatedValue != null &&
+                AssociatedValue.Equals(other.AssociatedValue)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class JourneyOutcomeEventsNotificationOutcomeAttributionMessage :
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Outcome != null)
+            if (Outcome != null)
             {
-                hash = hash * 59 + this.Outcome.GetHashCode();
+                hash = hash * 59 + Outcome.GetHashCode();
             }
 
-            if (this.OutcomeTouchpoints != null)
+            if (OutcomeTouchpoints != null)
             {
-                hash = hash * 59 + this.OutcomeTouchpoints.GetHashCode();
+                hash = hash * 59 + OutcomeTouchpoints.GetHashCode();
             }
 
-            if (this.SegmentAssignments != null)
+            if (SegmentAssignments != null)
             {
-                hash = hash * 59 + this.SegmentAssignments.GetHashCode();
+                hash = hash * 59 + SegmentAssignments.GetHashCode();
             }
 
-            if (this.AssociatedValue != null)
+            if (AssociatedValue != null)
             {
-                hash = hash * 59 + this.AssociatedValue.GetHashCode();
+                hash = hash * 59 + AssociatedValue.GetHashCode();
             }
 
             return hash;

@@ -107,7 +107,7 @@ public partial class SurveyQuestionGroup : IEquatable<SurveyQuestionGroup>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SurveyQuestionGroup);
+        return Equals(obj as SurveyQuestionGroup);
     }
 
     /// <summary>
@@ -125,34 +125,34 @@ public partial class SurveyQuestionGroup : IEquatable<SurveyQuestionGroup>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.NaEnabled == other.NaEnabled ||
-                this.NaEnabled != null &&
-                this.NaEnabled.Equals(other.NaEnabled)
+                NaEnabled == other.NaEnabled ||
+                NaEnabled != null &&
+                NaEnabled.Equals(other.NaEnabled)
             ) &&
             (
-                this.Questions == other.Questions ||
-                this.Questions != null &&
-                this.Questions.SequenceEqual(other.Questions)
+                Questions == other.Questions ||
+                Questions != null &&
+                Questions.SequenceEqual(other.Questions)
             ) &&
             (
-                this.VisibilityCondition == other.VisibilityCondition ||
-                this.VisibilityCondition != null &&
-                this.VisibilityCondition.Equals(other.VisibilityCondition)
+                VisibilityCondition == other.VisibilityCondition ||
+                VisibilityCondition != null &&
+                VisibilityCondition.Equals(other.VisibilityCondition)
             );
     }
 
@@ -167,34 +167,34 @@ public partial class SurveyQuestionGroup : IEquatable<SurveyQuestionGroup>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.NaEnabled != null)
+            if (NaEnabled != null)
             {
-                hash = hash * 59 + this.NaEnabled.GetHashCode();
+                hash = hash * 59 + NaEnabled.GetHashCode();
             }
 
-            if (this.Questions != null)
+            if (Questions != null)
             {
-                hash = hash * 59 + this.Questions.GetHashCode();
+                hash = hash * 59 + Questions.GetHashCode();
             }
 
-            if (this.VisibilityCondition != null)
+            if (VisibilityCondition != null)
             {
-                hash = hash * 59 + this.VisibilityCondition.GetHashCode();
+                hash = hash * 59 + VisibilityCondition.GetHashCode();
             }
 
             return hash;

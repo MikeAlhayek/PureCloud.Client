@@ -100,7 +100,7 @@ public partial class WfmMoveManagementUnitTopicMoveManagementUnitNotification : 
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmMoveManagementUnitTopicMoveManagementUnitNotification);
+        return Equals(obj as WfmMoveManagementUnitTopicMoveManagementUnitNotification);
     }
 
     /// <summary>
@@ -118,14 +118,14 @@ public partial class WfmMoveManagementUnitTopicMoveManagementUnitNotification : 
 
         return true &&
             (
-                this.BusinessUnit == other.BusinessUnit ||
-                this.BusinessUnit != null &&
-                this.BusinessUnit.Equals(other.BusinessUnit)
+                BusinessUnit == other.BusinessUnit ||
+                BusinessUnit != null &&
+                BusinessUnit.Equals(other.BusinessUnit)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             );
     }
 
@@ -140,14 +140,14 @@ public partial class WfmMoveManagementUnitTopicMoveManagementUnitNotification : 
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BusinessUnit != null)
+            if (BusinessUnit != null)
             {
-                hash = hash * 59 + this.BusinessUnit.GetHashCode();
+                hash = hash * 59 + BusinessUnit.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
             return hash;

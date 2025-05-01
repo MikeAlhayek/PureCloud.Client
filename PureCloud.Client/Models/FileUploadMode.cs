@@ -97,7 +97,7 @@ public partial class FileUploadMode : IEquatable<FileUploadMode>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FileUploadMode);
+        return Equals(obj as FileUploadMode);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class FileUploadMode : IEquatable<FileUploadMode>
 
         return true &&
             (
-                this.FileTypes == other.FileTypes ||
-                this.FileTypes != null &&
-                this.FileTypes.SequenceEqual(other.FileTypes)
+                FileTypes == other.FileTypes ||
+                FileTypes != null &&
+                FileTypes.SequenceEqual(other.FileTypes)
             ) &&
             (
-                this.MaxFileSizeKB == other.MaxFileSizeKB ||
-                this.MaxFileSizeKB != null &&
-                this.MaxFileSizeKB.Equals(other.MaxFileSizeKB)
+                MaxFileSizeKB == other.MaxFileSizeKB ||
+                MaxFileSizeKB != null &&
+                MaxFileSizeKB.Equals(other.MaxFileSizeKB)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class FileUploadMode : IEquatable<FileUploadMode>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FileTypes != null)
+            if (FileTypes != null)
             {
-                hash = hash * 59 + this.FileTypes.GetHashCode();
+                hash = hash * 59 + FileTypes.GetHashCode();
             }
 
-            if (this.MaxFileSizeKB != null)
+            if (MaxFileSizeKB != null)
             {
-                hash = hash * 59 + this.MaxFileSizeKB.GetHashCode();
+                hash = hash * 59 + MaxFileSizeKB.GetHashCode();
             }
 
             return hash;

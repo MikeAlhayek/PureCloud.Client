@@ -65,7 +65,7 @@ public partial class MessengerApps : IEquatable<MessengerApps>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessengerApps);
+        return Equals(obj as MessengerApps);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class MessengerApps : IEquatable<MessengerApps>
 
         return true &&
             (
-                this.Conversations == other.Conversations ||
-                this.Conversations != null &&
-                this.Conversations.Equals(other.Conversations)
+                Conversations == other.Conversations ||
+                Conversations != null &&
+                Conversations.Equals(other.Conversations)
             ) &&
             (
-                this.Knowledge == other.Knowledge ||
-                this.Knowledge != null &&
-                this.Knowledge.Equals(other.Knowledge)
+                Knowledge == other.Knowledge ||
+                Knowledge != null &&
+                Knowledge.Equals(other.Knowledge)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class MessengerApps : IEquatable<MessengerApps>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Conversations != null)
+            if (Conversations != null)
             {
-                hash = hash * 59 + this.Conversations.GetHashCode();
+                hash = hash * 59 + Conversations.GetHashCode();
             }
 
-            if (this.Knowledge != null)
+            if (Knowledge != null)
             {
-                hash = hash * 59 + this.Knowledge.GetHashCode();
+                hash = hash * 59 + Knowledge.GetHashCode();
             }
 
             return hash;

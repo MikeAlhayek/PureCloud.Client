@@ -59,7 +59,7 @@ public partial class ContactListFilterBulkRetrieveBody : IEquatable<ContactListF
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactListFilterBulkRetrieveBody);
+        return Equals(obj as ContactListFilterBulkRetrieveBody);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ContactListFilterBulkRetrieveBody : IEquatable<ContactListF
 
         return true &&
             (
-                this.Ids == other.Ids ||
-                this.Ids != null &&
-                this.Ids.SequenceEqual(other.Ids)
+                Ids == other.Ids ||
+                Ids != null &&
+                Ids.SequenceEqual(other.Ids)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ContactListFilterBulkRetrieveBody : IEquatable<ContactListF
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Ids != null)
+            if (Ids != null)
             {
-                hash = hash * 59 + this.Ids.GetHashCode();
+                hash = hash * 59 + Ids.GetHashCode();
             }
 
             return hash;

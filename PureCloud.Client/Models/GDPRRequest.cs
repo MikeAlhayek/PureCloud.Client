@@ -242,7 +242,7 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GDPRRequest);
+        return Equals(obj as GDPRRequest);
     }
 
     /// <summary>
@@ -260,54 +260,54 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.ReplacementTerms == other.ReplacementTerms ||
-                this.ReplacementTerms != null &&
-                this.ReplacementTerms.SequenceEqual(other.ReplacementTerms)
+                ReplacementTerms == other.ReplacementTerms ||
+                ReplacementTerms != null &&
+                ReplacementTerms.SequenceEqual(other.ReplacementTerms)
             ) &&
             (
-                this.RequestType == other.RequestType ||
-                this.RequestType != null &&
-                this.RequestType.Equals(other.RequestType)
+                RequestType == other.RequestType ||
+                RequestType != null &&
+                RequestType.Equals(other.RequestType)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Subject == other.Subject ||
-                this.Subject != null &&
-                this.Subject.Equals(other.Subject)
+                Subject == other.Subject ||
+                Subject != null &&
+                Subject.Equals(other.Subject)
             ) &&
             (
-                this.ResultsUrl == other.ResultsUrl ||
-                this.ResultsUrl != null &&
-                this.ResultsUrl.Equals(other.ResultsUrl)
+                ResultsUrl == other.ResultsUrl ||
+                ResultsUrl != null &&
+                ResultsUrl.Equals(other.ResultsUrl)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -322,54 +322,54 @@ public partial class GDPRRequest : IEquatable<GDPRRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.ReplacementTerms != null)
+            if (ReplacementTerms != null)
             {
-                hash = hash * 59 + this.ReplacementTerms.GetHashCode();
+                hash = hash * 59 + ReplacementTerms.GetHashCode();
             }
 
-            if (this.RequestType != null)
+            if (RequestType != null)
             {
-                hash = hash * 59 + this.RequestType.GetHashCode();
+                hash = hash * 59 + RequestType.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Subject != null)
+            if (Subject != null)
             {
-                hash = hash * 59 + this.Subject.GetHashCode();
+                hash = hash * 59 + Subject.GetHashCode();
             }
 
-            if (this.ResultsUrl != null)
+            if (ResultsUrl != null)
             {
-                hash = hash * 59 + this.ResultsUrl.GetHashCode();
+                hash = hash * 59 + ResultsUrl.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

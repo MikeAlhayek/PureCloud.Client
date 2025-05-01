@@ -83,7 +83,7 @@ public partial class CreatePlanningGroupRequest : IEquatable<CreatePlanningGroup
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreatePlanningGroupRequest);
+        return Equals(obj as CreatePlanningGroupRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class CreatePlanningGroupRequest : IEquatable<CreatePlanningGroup
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.RoutePaths == other.RoutePaths ||
-                this.RoutePaths != null &&
-                this.RoutePaths.SequenceEqual(other.RoutePaths)
+                RoutePaths == other.RoutePaths ||
+                RoutePaths != null &&
+                RoutePaths.SequenceEqual(other.RoutePaths)
             ) &&
             (
-                this.ServiceGoalTemplateId == other.ServiceGoalTemplateId ||
-                this.ServiceGoalTemplateId != null &&
-                this.ServiceGoalTemplateId.Equals(other.ServiceGoalTemplateId)
+                ServiceGoalTemplateId == other.ServiceGoalTemplateId ||
+                ServiceGoalTemplateId != null &&
+                ServiceGoalTemplateId.Equals(other.ServiceGoalTemplateId)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class CreatePlanningGroupRequest : IEquatable<CreatePlanningGroup
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.RoutePaths != null)
+            if (RoutePaths != null)
             {
-                hash = hash * 59 + this.RoutePaths.GetHashCode();
+                hash = hash * 59 + RoutePaths.GetHashCode();
             }
 
-            if (this.ServiceGoalTemplateId != null)
+            if (ServiceGoalTemplateId != null)
             {
-                hash = hash * 59 + this.ServiceGoalTemplateId.GetHashCode();
+                hash = hash * 59 + ServiceGoalTemplateId.GetHashCode();
             }
 
             return hash;

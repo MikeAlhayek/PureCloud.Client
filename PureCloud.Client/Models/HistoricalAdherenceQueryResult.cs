@@ -211,7 +211,7 @@ public partial class HistoricalAdherenceQueryResult : IEquatable<HistoricalAdher
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalAdherenceQueryResult);
+        return Equals(obj as HistoricalAdherenceQueryResult);
     }
 
     /// <summary>
@@ -229,59 +229,59 @@ public partial class HistoricalAdherenceQueryResult : IEquatable<HistoricalAdher
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.AdherencePercentage == other.AdherencePercentage ||
-                this.AdherencePercentage != null &&
-                this.AdherencePercentage.Equals(other.AdherencePercentage)
+                AdherencePercentage == other.AdherencePercentage ||
+                AdherencePercentage != null &&
+                AdherencePercentage.Equals(other.AdherencePercentage)
             ) &&
             (
-                this.ConformancePercentage == other.ConformancePercentage ||
-                this.ConformancePercentage != null &&
-                this.ConformancePercentage.Equals(other.ConformancePercentage)
+                ConformancePercentage == other.ConformancePercentage ||
+                ConformancePercentage != null &&
+                ConformancePercentage.Equals(other.ConformancePercentage)
             ) &&
             (
-                this.Impact == other.Impact ||
-                this.Impact != null &&
-                this.Impact.Equals(other.Impact)
+                Impact == other.Impact ||
+                Impact != null &&
+                Impact.Equals(other.Impact)
             ) &&
             (
-                this.ExceptionInfo == other.ExceptionInfo ||
-                this.ExceptionInfo != null &&
-                this.ExceptionInfo.SequenceEqual(other.ExceptionInfo)
+                ExceptionInfo == other.ExceptionInfo ||
+                ExceptionInfo != null &&
+                ExceptionInfo.SequenceEqual(other.ExceptionInfo)
             ) &&
             (
-                this.DayMetrics == other.DayMetrics ||
-                this.DayMetrics != null &&
-                this.DayMetrics.SequenceEqual(other.DayMetrics)
+                DayMetrics == other.DayMetrics ||
+                DayMetrics != null &&
+                DayMetrics.SequenceEqual(other.DayMetrics)
             ) &&
             (
-                this.ActualsEndDate == other.ActualsEndDate ||
-                this.ActualsEndDate != null &&
-                this.ActualsEndDate.Equals(other.ActualsEndDate)
+                ActualsEndDate == other.ActualsEndDate ||
+                ActualsEndDate != null &&
+                ActualsEndDate.Equals(other.ActualsEndDate)
             ) &&
             (
-                this.Actuals == other.Actuals ||
-                this.Actuals != null &&
-                this.Actuals.SequenceEqual(other.Actuals)
+                Actuals == other.Actuals ||
+                Actuals != null &&
+                Actuals.SequenceEqual(other.Actuals)
             );
     }
 
@@ -296,59 +296,59 @@ public partial class HistoricalAdherenceQueryResult : IEquatable<HistoricalAdher
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.AdherencePercentage != null)
+            if (AdherencePercentage != null)
             {
-                hash = hash * 59 + this.AdherencePercentage.GetHashCode();
+                hash = hash * 59 + AdherencePercentage.GetHashCode();
             }
 
-            if (this.ConformancePercentage != null)
+            if (ConformancePercentage != null)
             {
-                hash = hash * 59 + this.ConformancePercentage.GetHashCode();
+                hash = hash * 59 + ConformancePercentage.GetHashCode();
             }
 
-            if (this.Impact != null)
+            if (Impact != null)
             {
-                hash = hash * 59 + this.Impact.GetHashCode();
+                hash = hash * 59 + Impact.GetHashCode();
             }
 
-            if (this.ExceptionInfo != null)
+            if (ExceptionInfo != null)
             {
-                hash = hash * 59 + this.ExceptionInfo.GetHashCode();
+                hash = hash * 59 + ExceptionInfo.GetHashCode();
             }
 
-            if (this.DayMetrics != null)
+            if (DayMetrics != null)
             {
-                hash = hash * 59 + this.DayMetrics.GetHashCode();
+                hash = hash * 59 + DayMetrics.GetHashCode();
             }
 
-            if (this.ActualsEndDate != null)
+            if (ActualsEndDate != null)
             {
-                hash = hash * 59 + this.ActualsEndDate.GetHashCode();
+                hash = hash * 59 + ActualsEndDate.GetHashCode();
             }
 
-            if (this.Actuals != null)
+            if (Actuals != null)
             {
-                hash = hash * 59 + this.Actuals.GetHashCode();
+                hash = hash * 59 + Actuals.GetHashCode();
             }
 
             return hash;

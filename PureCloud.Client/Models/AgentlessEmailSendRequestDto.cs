@@ -174,7 +174,7 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentlessEmailSendRequestDto);
+        return Equals(obj as AgentlessEmailSendRequestDto);
     }
 
     /// <summary>
@@ -192,44 +192,44 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
 
         return true &&
             (
-                this.SenderType == other.SenderType ||
-                this.SenderType != null &&
-                this.SenderType.Equals(other.SenderType)
+                SenderType == other.SenderType ||
+                SenderType != null &&
+                SenderType.Equals(other.SenderType)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.FromAddress == other.FromAddress ||
-                this.FromAddress != null &&
-                this.FromAddress.Equals(other.FromAddress)
+                FromAddress == other.FromAddress ||
+                FromAddress != null &&
+                FromAddress.Equals(other.FromAddress)
             ) &&
             (
-                this.ToAddresses == other.ToAddresses ||
-                this.ToAddresses != null &&
-                this.ToAddresses.SequenceEqual(other.ToAddresses)
+                ToAddresses == other.ToAddresses ||
+                ToAddresses != null &&
+                ToAddresses.SequenceEqual(other.ToAddresses)
             ) &&
             (
-                this.ReplyToAddress == other.ReplyToAddress ||
-                this.ReplyToAddress != null &&
-                this.ReplyToAddress.Equals(other.ReplyToAddress)
+                ReplyToAddress == other.ReplyToAddress ||
+                ReplyToAddress != null &&
+                ReplyToAddress.Equals(other.ReplyToAddress)
             ) &&
             (
-                this.Subject == other.Subject ||
-                this.Subject != null &&
-                this.Subject.Equals(other.Subject)
+                Subject == other.Subject ||
+                Subject != null &&
+                Subject.Equals(other.Subject)
             ) &&
             (
-                this.TextBody == other.TextBody ||
-                this.TextBody != null &&
-                this.TextBody.Equals(other.TextBody)
+                TextBody == other.TextBody ||
+                TextBody != null &&
+                TextBody.Equals(other.TextBody)
             ) &&
             (
-                this.HtmlBody == other.HtmlBody ||
-                this.HtmlBody != null &&
-                this.HtmlBody.Equals(other.HtmlBody)
+                HtmlBody == other.HtmlBody ||
+                HtmlBody != null &&
+                HtmlBody.Equals(other.HtmlBody)
             );
     }
 
@@ -244,44 +244,44 @@ public partial class AgentlessEmailSendRequestDto : IEquatable<AgentlessEmailSen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SenderType != null)
+            if (SenderType != null)
             {
-                hash = hash * 59 + this.SenderType.GetHashCode();
+                hash = hash * 59 + SenderType.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.FromAddress != null)
+            if (FromAddress != null)
             {
-                hash = hash * 59 + this.FromAddress.GetHashCode();
+                hash = hash * 59 + FromAddress.GetHashCode();
             }
 
-            if (this.ToAddresses != null)
+            if (ToAddresses != null)
             {
-                hash = hash * 59 + this.ToAddresses.GetHashCode();
+                hash = hash * 59 + ToAddresses.GetHashCode();
             }
 
-            if (this.ReplyToAddress != null)
+            if (ReplyToAddress != null)
             {
-                hash = hash * 59 + this.ReplyToAddress.GetHashCode();
+                hash = hash * 59 + ReplyToAddress.GetHashCode();
             }
 
-            if (this.Subject != null)
+            if (Subject != null)
             {
-                hash = hash * 59 + this.Subject.GetHashCode();
+                hash = hash * 59 + Subject.GetHashCode();
             }
 
-            if (this.TextBody != null)
+            if (TextBody != null)
             {
-                hash = hash * 59 + this.TextBody.GetHashCode();
+                hash = hash * 59 + TextBody.GetHashCode();
             }
 
-            if (this.HtmlBody != null)
+            if (HtmlBody != null)
             {
-                hash = hash * 59 + this.HtmlBody.GetHashCode();
+                hash = hash * 59 + HtmlBody.GetHashCode();
             }
 
             return hash;

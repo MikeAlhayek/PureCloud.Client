@@ -89,7 +89,7 @@ public partial class Column : IEquatable<Column>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Column);
+        return Equals(obj as Column);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class Column : IEquatable<Column>
 
         return true &&
             (
-                this.ColumnName == other.ColumnName ||
-                this.ColumnName != null &&
-                this.ColumnName.Equals(other.ColumnName)
+                ColumnName == other.ColumnName ||
+                ColumnName != null &&
+                ColumnName.Equals(other.ColumnName)
             ) &&
             (
-                this.ColumnNumber == other.ColumnNumber ||
-                this.ColumnNumber != null &&
-                this.ColumnNumber.Equals(other.ColumnNumber)
+                ColumnNumber == other.ColumnNumber ||
+                ColumnNumber != null &&
+                ColumnNumber.Equals(other.ColumnNumber)
             ) &&
             (
-                this.StartPosition == other.StartPosition ||
-                this.StartPosition != null &&
-                this.StartPosition.Equals(other.StartPosition)
+                StartPosition == other.StartPosition ||
+                StartPosition != null &&
+                StartPosition.Equals(other.StartPosition)
             ) &&
             (
-                this.Length == other.Length ||
-                this.Length != null &&
-                this.Length.Equals(other.Length)
+                Length == other.Length ||
+                Length != null &&
+                Length.Equals(other.Length)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class Column : IEquatable<Column>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ColumnName != null)
+            if (ColumnName != null)
             {
-                hash = hash * 59 + this.ColumnName.GetHashCode();
+                hash = hash * 59 + ColumnName.GetHashCode();
             }
 
-            if (this.ColumnNumber != null)
+            if (ColumnNumber != null)
             {
-                hash = hash * 59 + this.ColumnNumber.GetHashCode();
+                hash = hash * 59 + ColumnNumber.GetHashCode();
             }
 
-            if (this.StartPosition != null)
+            if (StartPosition != null)
             {
-                hash = hash * 59 + this.StartPosition.GetHashCode();
+                hash = hash * 59 + StartPosition.GetHashCode();
             }
 
-            if (this.Length != null)
+            if (Length != null)
             {
-                hash = hash * 59 + this.Length.GetHashCode();
+                hash = hash * 59 + Length.GetHashCode();
             }
 
             return hash;

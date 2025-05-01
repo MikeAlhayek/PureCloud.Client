@@ -71,7 +71,7 @@ public partial class NluDetectionInput : IEquatable<NluDetectionInput>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluDetectionInput);
+        return Equals(obj as NluDetectionInput);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class NluDetectionInput : IEquatable<NluDetectionInput>
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class NluDetectionInput : IEquatable<NluDetectionInput>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
             return hash;

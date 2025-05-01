@@ -157,7 +157,7 @@ public partial class FlowPaths : IEquatable<FlowPaths>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowPaths);
+        return Equals(obj as FlowPaths);
     }
 
     /// <summary>
@@ -175,24 +175,24 @@ public partial class FlowPaths : IEquatable<FlowPaths>
 
         return true &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.DateEnd == other.DateEnd ||
-                this.DateEnd != null &&
-                this.DateEnd.Equals(other.DateEnd)
+                DateEnd == other.DateEnd ||
+                DateEnd != null &&
+                DateEnd.Equals(other.DateEnd)
             ) &&
             (
-                this.Elements == other.Elements ||
-                this.Elements != null &&
-                this.Elements.SequenceEqual(other.Elements)
+                Elements == other.Elements ||
+                Elements != null &&
+                Elements.SequenceEqual(other.Elements)
             );
     }
 
@@ -207,24 +207,24 @@ public partial class FlowPaths : IEquatable<FlowPaths>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.DateEnd != null)
+            if (DateEnd != null)
             {
-                hash = hash * 59 + this.DateEnd.GetHashCode();
+                hash = hash * 59 + DateEnd.GetHashCode();
             }
 
-            if (this.Elements != null)
+            if (Elements != null)
             {
-                hash = hash * 59 + this.Elements.GetHashCode();
+                hash = hash * 59 + Elements.GetHashCode();
             }
 
             return hash;

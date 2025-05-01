@@ -41,7 +41,7 @@ public partial class Void : IEquatable<Void>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Void);
+        return Equals(obj as Void);
     }
 
     /// <summary>

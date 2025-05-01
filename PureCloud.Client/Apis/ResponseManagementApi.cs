@@ -947,12 +947,12 @@ public partial class ResponseManagementApi : IResponseManagementApi
     /// <returns></returns>
     public ResponseManagementApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -966,17 +966,17 @@ public partial class ResponseManagementApi : IResponseManagementApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -986,7 +986,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -1012,7 +1012,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -1024,7 +1024,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -1069,7 +1069,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1078,7 +1078,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1091,7 +1091,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (libraryId != null)
         {
-            localVarPathParams.Add("libraryId", this.Configuration.ApiClient.ParameterToString(libraryId));
+            localVarPathParams.Add("libraryId", Configuration.ApiClient.ParameterToString(libraryId));
         }
 
         // Query params
@@ -1107,11 +1107,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1185,7 +1185,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1194,7 +1194,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1207,7 +1207,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (libraryId != null)
         {
-            localVarPathParams.Add("libraryId", this.Configuration.ApiClient.ParameterToString(libraryId));
+            localVarPathParams.Add("libraryId", Configuration.ApiClient.ParameterToString(libraryId));
         }
 
         // Query params
@@ -1223,11 +1223,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1301,7 +1301,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1310,7 +1310,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1323,7 +1323,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseId != null)
         {
-            localVarPathParams.Add("responseId", this.Configuration.ApiClient.ParameterToString(responseId));
+            localVarPathParams.Add("responseId", Configuration.ApiClient.ParameterToString(responseId));
         }
 
         // Query params
@@ -1339,11 +1339,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1417,7 +1417,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1426,7 +1426,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1439,7 +1439,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseId != null)
         {
-            localVarPathParams.Add("responseId", this.Configuration.ApiClient.ParameterToString(responseId));
+            localVarPathParams.Add("responseId", Configuration.ApiClient.ParameterToString(responseId));
         }
 
         // Query params
@@ -1455,11 +1455,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1533,7 +1533,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1542,7 +1542,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1555,7 +1555,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseAssetId != null)
         {
-            localVarPathParams.Add("responseAssetId", this.Configuration.ApiClient.ParameterToString(responseAssetId));
+            localVarPathParams.Add("responseAssetId", Configuration.ApiClient.ParameterToString(responseAssetId));
         }
 
         // Query params
@@ -1571,11 +1571,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1649,7 +1649,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1658,7 +1658,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1671,7 +1671,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseAssetId != null)
         {
-            localVarPathParams.Add("responseAssetId", this.Configuration.ApiClient.ParameterToString(responseAssetId));
+            localVarPathParams.Add("responseAssetId", Configuration.ApiClient.ParameterToString(responseAssetId));
         }
 
         // Query params
@@ -1687,11 +1687,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1767,7 +1767,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1776,7 +1776,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1791,22 +1791,22 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (messagingTemplateFilter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("messagingTemplateFilter", this.Configuration.ApiClient.ParameterToString(messagingTemplateFilter)));
+            localVarQueryParams.Add(new Tuple<string, string>("messagingTemplateFilter", Configuration.ApiClient.ParameterToString(messagingTemplateFilter)));
         }
 
         if (libraryPrefix != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("libraryPrefix", this.Configuration.ApiClient.ParameterToString(libraryPrefix)));
+            localVarQueryParams.Add(new Tuple<string, string>("libraryPrefix", Configuration.ApiClient.ParameterToString(libraryPrefix)));
         }
 
         // Header params
@@ -1820,11 +1820,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1850,7 +1850,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<LibraryEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LibraryEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
+            (LibraryEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1900,7 +1900,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1909,7 +1909,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1924,22 +1924,22 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (messagingTemplateFilter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("messagingTemplateFilter", this.Configuration.ApiClient.ParameterToString(messagingTemplateFilter)));
+            localVarQueryParams.Add(new Tuple<string, string>("messagingTemplateFilter", Configuration.ApiClient.ParameterToString(messagingTemplateFilter)));
         }
 
         if (libraryPrefix != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("libraryPrefix", this.Configuration.ApiClient.ParameterToString(libraryPrefix)));
+            localVarQueryParams.Add(new Tuple<string, string>("libraryPrefix", Configuration.ApiClient.ParameterToString(libraryPrefix)));
         }
 
         // Header params
@@ -1953,11 +1953,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1983,7 +1983,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<LibraryEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LibraryEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
+            (LibraryEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2032,7 +2032,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2041,7 +2041,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2054,7 +2054,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (libraryId != null)
         {
-            localVarPathParams.Add("libraryId", this.Configuration.ApiClient.ParameterToString(libraryId));
+            localVarPathParams.Add("libraryId", Configuration.ApiClient.ParameterToString(libraryId));
         }
 
         // Query params
@@ -2070,11 +2070,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2100,7 +2100,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Library>(localVarStatusCode,
             localVarHeaders,
-            (Library)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
+            (Library)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2149,7 +2149,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2158,7 +2158,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2171,7 +2171,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (libraryId != null)
         {
-            localVarPathParams.Add("libraryId", this.Configuration.ApiClient.ParameterToString(libraryId));
+            localVarPathParams.Add("libraryId", Configuration.ApiClient.ParameterToString(libraryId));
         }
 
         // Query params
@@ -2187,11 +2187,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2217,7 +2217,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Library>(localVarStatusCode,
             localVarHeaders,
-            (Library)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
+            (Library)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2268,7 +2268,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2277,7 +2277,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2290,13 +2290,13 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseId != null)
         {
-            localVarPathParams.Add("responseId", this.Configuration.ApiClient.ParameterToString(responseId));
+            localVarPathParams.Add("responseId", Configuration.ApiClient.ParameterToString(responseId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -2310,11 +2310,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2340,7 +2340,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Response>(localVarStatusCode,
             localVarHeaders,
-            (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
+            (Response)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2391,7 +2391,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2400,7 +2400,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2413,13 +2413,13 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseId != null)
         {
-            localVarPathParams.Add("responseId", this.Configuration.ApiClient.ParameterToString(responseId));
+            localVarPathParams.Add("responseId", Configuration.ApiClient.ParameterToString(responseId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -2433,11 +2433,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2463,7 +2463,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Response>(localVarStatusCode,
             localVarHeaders,
-            (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
+            (Response)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2512,7 +2512,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2521,7 +2521,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2534,7 +2534,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseAssetId != null)
         {
-            localVarPathParams.Add("responseAssetId", this.Configuration.ApiClient.ParameterToString(responseAssetId));
+            localVarPathParams.Add("responseAssetId", Configuration.ApiClient.ParameterToString(responseAssetId));
         }
 
         // Query params
@@ -2550,11 +2550,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2580,7 +2580,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseAsset>(localVarStatusCode,
             localVarHeaders,
-            (ResponseAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAsset)),
+            (ResponseAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2629,7 +2629,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2638,7 +2638,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2651,7 +2651,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseAssetId != null)
         {
-            localVarPathParams.Add("responseAssetId", this.Configuration.ApiClient.ParameterToString(responseAssetId));
+            localVarPathParams.Add("responseAssetId", Configuration.ApiClient.ParameterToString(responseAssetId));
         }
 
         // Query params
@@ -2667,11 +2667,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2697,7 +2697,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseAsset>(localVarStatusCode,
             localVarHeaders,
-            (ResponseAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAsset)),
+            (ResponseAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2746,7 +2746,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2755,7 +2755,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2768,7 +2768,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (statusId != null)
         {
-            localVarPathParams.Add("statusId", this.Configuration.ApiClient.ParameterToString(statusId));
+            localVarPathParams.Add("statusId", Configuration.ApiClient.ParameterToString(statusId));
         }
 
         // Query params
@@ -2784,11 +2784,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2814,7 +2814,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseAssetStatus>(localVarStatusCode,
             localVarHeaders,
-            (ResponseAssetStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAssetStatus)),
+            (ResponseAssetStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAssetStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2863,7 +2863,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2872,7 +2872,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2885,7 +2885,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (statusId != null)
         {
-            localVarPathParams.Add("statusId", this.Configuration.ApiClient.ParameterToString(statusId));
+            localVarPathParams.Add("statusId", Configuration.ApiClient.ParameterToString(statusId));
         }
 
         // Query params
@@ -2901,11 +2901,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2931,7 +2931,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseAssetStatus>(localVarStatusCode,
             localVarHeaders,
-            (ResponseAssetStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAssetStatus)),
+            (ResponseAssetStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAssetStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2986,7 +2986,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2995,7 +2995,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3010,22 +3010,22 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Query params
         if (libraryId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("libraryId", this.Configuration.ApiClient.ParameterToString(libraryId)));
+            localVarQueryParams.Add(new Tuple<string, string>("libraryId", Configuration.ApiClient.ParameterToString(libraryId)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -3039,11 +3039,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3069,7 +3069,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntityListing)),
+            (ResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3124,7 +3124,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3133,7 +3133,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3148,22 +3148,22 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Query params
         if (libraryId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("libraryId", this.Configuration.ApiClient.ParameterToString(libraryId)));
+            localVarQueryParams.Add(new Tuple<string, string>("libraryId", Configuration.ApiClient.ParameterToString(libraryId)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -3177,11 +3177,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3207,7 +3207,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntityListing)),
+            (ResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3257,7 +3257,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3266,7 +3266,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3287,7 +3287,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -3300,11 +3300,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3330,7 +3330,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Library>(localVarStatusCode,
             localVarHeaders,
-            (Library)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
+            (Library)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3380,7 +3380,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3389,7 +3389,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3410,7 +3410,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -3423,11 +3423,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3453,7 +3453,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Library>(localVarStatusCode,
             localVarHeaders,
-            (Library)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
+            (Library)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3503,7 +3503,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3512,7 +3512,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3533,7 +3533,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -3546,11 +3546,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3576,7 +3576,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<LibraryEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LibraryEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
+            (LibraryEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3626,7 +3626,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3635,7 +3635,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3656,7 +3656,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -3669,11 +3669,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3699,7 +3699,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<LibraryEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LibraryEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
+            (LibraryEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3751,7 +3751,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3760,7 +3760,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3775,7 +3775,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3785,7 +3785,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -3798,11 +3798,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3828,7 +3828,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseAssetSearchResults>(localVarStatusCode,
             localVarHeaders,
-            (ResponseAssetSearchResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAssetSearchResults)),
+            (ResponseAssetSearchResults)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAssetSearchResults)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3880,7 +3880,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3889,7 +3889,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3904,7 +3904,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3914,7 +3914,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -3927,11 +3927,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3957,7 +3957,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseAssetSearchResults>(localVarStatusCode,
             localVarHeaders,
-            (ResponseAssetSearchResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAssetSearchResults)),
+            (ResponseAssetSearchResults)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAssetSearchResults)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4007,7 +4007,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4016,7 +4016,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4037,7 +4037,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4050,11 +4050,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4080,7 +4080,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<CreateResponseAssetResponse>(localVarStatusCode,
             localVarHeaders,
-            (CreateResponseAssetResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateResponseAssetResponse)),
+            (CreateResponseAssetResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateResponseAssetResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4130,7 +4130,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4139,7 +4139,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4160,7 +4160,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4173,11 +4173,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4203,7 +4203,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<CreateResponseAssetResponse>(localVarStatusCode,
             localVarHeaders,
-            (CreateResponseAssetResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateResponseAssetResponse)),
+            (CreateResponseAssetResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateResponseAssetResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4255,7 +4255,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4264,7 +4264,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4279,7 +4279,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -4289,7 +4289,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4302,11 +4302,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4332,7 +4332,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Response>(localVarStatusCode,
             localVarHeaders,
-            (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
+            (Response)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4384,7 +4384,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4393,7 +4393,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4408,7 +4408,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -4418,7 +4418,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4431,11 +4431,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4461,7 +4461,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Response>(localVarStatusCode,
             localVarHeaders,
-            (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
+            (Response)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4511,7 +4511,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4520,7 +4520,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4541,7 +4541,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4554,11 +4554,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4584,7 +4584,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseQueryResults>(localVarStatusCode,
             localVarHeaders,
-            (ResponseQueryResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseQueryResults)),
+            (ResponseQueryResults)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseQueryResults)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4634,7 +4634,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4643,7 +4643,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4664,7 +4664,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4677,11 +4677,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4707,7 +4707,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseQueryResults>(localVarStatusCode,
             localVarHeaders,
-            (ResponseQueryResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseQueryResults)),
+            (ResponseQueryResults)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseQueryResults)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4764,7 +4764,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4773,7 +4773,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4786,7 +4786,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (libraryId != null)
         {
-            localVarPathParams.Add("libraryId", this.Configuration.ApiClient.ParameterToString(libraryId));
+            localVarPathParams.Add("libraryId", Configuration.ApiClient.ParameterToString(libraryId));
         }
 
         // Query params
@@ -4798,7 +4798,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4811,11 +4811,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4841,7 +4841,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Library>(localVarStatusCode,
             localVarHeaders,
-            (Library)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
+            (Library)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4899,7 +4899,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4908,7 +4908,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4921,7 +4921,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (libraryId != null)
         {
-            localVarPathParams.Add("libraryId", this.Configuration.ApiClient.ParameterToString(libraryId));
+            localVarPathParams.Add("libraryId", Configuration.ApiClient.ParameterToString(libraryId));
         }
 
         // Query params
@@ -4933,7 +4933,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4946,11 +4946,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4976,7 +4976,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Library>(localVarStatusCode,
             localVarHeaders,
-            (Library)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
+            (Library)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Library)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5035,7 +5035,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5044,7 +5044,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5057,13 +5057,13 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseId != null)
         {
-            localVarPathParams.Add("responseId", this.Configuration.ApiClient.ParameterToString(responseId));
+            localVarPathParams.Add("responseId", Configuration.ApiClient.ParameterToString(responseId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -5073,7 +5073,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5086,11 +5086,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5116,7 +5116,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Response>(localVarStatusCode,
             localVarHeaders,
-            (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
+            (Response)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5176,7 +5176,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5185,7 +5185,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5198,13 +5198,13 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseId != null)
         {
-            localVarPathParams.Add("responseId", this.Configuration.ApiClient.ParameterToString(responseId));
+            localVarPathParams.Add("responseId", Configuration.ApiClient.ParameterToString(responseId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -5214,7 +5214,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5227,11 +5227,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5257,7 +5257,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<Response>(localVarStatusCode,
             localVarHeaders,
-            (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
+            (Response)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5314,7 +5314,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5323,7 +5323,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5336,7 +5336,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseAssetId != null)
         {
-            localVarPathParams.Add("responseAssetId", this.Configuration.ApiClient.ParameterToString(responseAssetId));
+            localVarPathParams.Add("responseAssetId", Configuration.ApiClient.ParameterToString(responseAssetId));
         }
 
         // Query params
@@ -5348,7 +5348,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5361,11 +5361,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5391,7 +5391,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseAsset>(localVarStatusCode,
             localVarHeaders,
-            (ResponseAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAsset)),
+            (ResponseAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5449,7 +5449,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5458,7 +5458,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5471,7 +5471,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Path params
         if (responseAssetId != null)
         {
-            localVarPathParams.Add("responseAssetId", this.Configuration.ApiClient.ParameterToString(responseAssetId));
+            localVarPathParams.Add("responseAssetId", Configuration.ApiClient.ParameterToString(responseAssetId));
         }
 
         // Query params
@@ -5483,7 +5483,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5496,11 +5496,11 @@ public partial class ResponseManagementApi : IResponseManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5526,7 +5526,7 @@ public partial class ResponseManagementApi : IResponseManagementApi
 
         return new ApiResponse<ResponseAsset>(localVarStatusCode,
             localVarHeaders,
-            (ResponseAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAsset)),
+            (ResponseAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

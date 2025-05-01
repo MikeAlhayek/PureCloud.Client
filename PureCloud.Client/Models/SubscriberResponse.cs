@@ -71,7 +71,7 @@ public partial class SubscriberResponse : IEquatable<SubscriberResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SubscriberResponse);
+        return Equals(obj as SubscriberResponse);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class SubscriberResponse : IEquatable<SubscriberResponse>
 
         return true &&
             (
-                this.MessageReturned == other.MessageReturned ||
-                this.MessageReturned != null &&
-                this.MessageReturned.SequenceEqual(other.MessageReturned)
+                MessageReturned == other.MessageReturned ||
+                MessageReturned != null &&
+                MessageReturned.SequenceEqual(other.MessageReturned)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class SubscriberResponse : IEquatable<SubscriberResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MessageReturned != null)
+            if (MessageReturned != null)
             {
-                hash = hash * 59 + this.MessageReturned.GetHashCode();
+                hash = hash * 59 + MessageReturned.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
             return hash;

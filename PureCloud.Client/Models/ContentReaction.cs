@@ -163,7 +163,7 @@ public partial class ContentReaction : IEquatable<ContentReaction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentReaction);
+        return Equals(obj as ContentReaction);
     }
 
     /// <summary>
@@ -181,14 +181,14 @@ public partial class ContentReaction : IEquatable<ContentReaction>
 
         return true &&
             (
-                this.ReactionType == other.ReactionType ||
-                this.ReactionType != null &&
-                this.ReactionType.Equals(other.ReactionType)
+                ReactionType == other.ReactionType ||
+                ReactionType != null &&
+                ReactionType.Equals(other.ReactionType)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             );
     }
 
@@ -203,14 +203,14 @@ public partial class ContentReaction : IEquatable<ContentReaction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ReactionType != null)
+            if (ReactionType != null)
             {
-                hash = hash * 59 + this.ReactionType.GetHashCode();
+                hash = hash * 59 + ReactionType.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
             return hash;

@@ -77,7 +77,7 @@ public partial class ContestDataPrizes : IEquatable<ContestDataPrizes>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestDataPrizes);
+        return Equals(obj as ContestDataPrizes);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ContestDataPrizes : IEquatable<ContestDataPrizes>
 
         return true &&
             (
-                this.Tier == other.Tier ||
-                this.Tier != null &&
-                this.Tier.Equals(other.Tier)
+                Tier == other.Tier ||
+                Tier != null &&
+                Tier.Equals(other.Tier)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ImageId == other.ImageId ||
-                this.ImageId != null &&
-                this.ImageId.Equals(other.ImageId)
+                ImageId == other.ImageId ||
+                ImageId != null &&
+                ImageId.Equals(other.ImageId)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ContestDataPrizes : IEquatable<ContestDataPrizes>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Tier != null)
+            if (Tier != null)
             {
-                hash = hash * 59 + this.Tier.GetHashCode();
+                hash = hash * 59 + Tier.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ImageId != null)
+            if (ImageId != null)
             {
-                hash = hash * 59 + this.ImageId.GetHashCode();
+                hash = hash * 59 + ImageId.GetHashCode();
             }
 
             return hash;

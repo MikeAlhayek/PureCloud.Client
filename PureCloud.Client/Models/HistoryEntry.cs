@@ -220,7 +220,7 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoryEntry);
+        return Equals(obj as HistoryEntry);
     }
 
     /// <summary>
@@ -238,44 +238,44 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
 
         return true &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.Resource == other.Resource ||
-                this.Resource != null &&
-                this.Resource.Equals(other.Resource)
+                Resource == other.Resource ||
+                Resource != null &&
+                Resource.Equals(other.Resource)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Client == other.Client ||
-                this.Client != null &&
-                this.Client.Equals(other.Client)
+                Client == other.Client ||
+                Client != null &&
+                Client.Equals(other.Client)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Secure == other.Secure ||
-                this.Secure != null &&
-                this.Secure.Equals(other.Secure)
+                Secure == other.Secure ||
+                Secure != null &&
+                Secure.Equals(other.Secure)
             ) &&
             (
-                this.VirtualAgentEnabled == other.VirtualAgentEnabled ||
-                this.VirtualAgentEnabled != null &&
-                this.VirtualAgentEnabled.Equals(other.VirtualAgentEnabled)
+                VirtualAgentEnabled == other.VirtualAgentEnabled ||
+                VirtualAgentEnabled != null &&
+                VirtualAgentEnabled.Equals(other.VirtualAgentEnabled)
             );
     }
 
@@ -290,44 +290,44 @@ public partial class HistoryEntry : IEquatable<HistoryEntry>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.Resource != null)
+            if (Resource != null)
             {
-                hash = hash * 59 + this.Resource.GetHashCode();
+                hash = hash * 59 + Resource.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Client != null)
+            if (Client != null)
             {
-                hash = hash * 59 + this.Client.GetHashCode();
+                hash = hash * 59 + Client.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Secure != null)
+            if (Secure != null)
             {
-                hash = hash * 59 + this.Secure.GetHashCode();
+                hash = hash * 59 + Secure.GetHashCode();
             }
 
-            if (this.VirtualAgentEnabled != null)
+            if (VirtualAgentEnabled != null)
             {
-                hash = hash * 59 + this.VirtualAgentEnabled.GetHashCode();
+                hash = hash * 59 + VirtualAgentEnabled.GetHashCode();
             }
 
             return hash;

@@ -61,7 +61,7 @@ public partial class RecordingJobFailedRecording : IEquatable<RecordingJobFailed
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingJobFailedRecording);
+        return Equals(obj as RecordingJobFailedRecording);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class RecordingJobFailedRecording : IEquatable<RecordingJobFailed
 
         return true &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.Recording == other.Recording ||
-                this.Recording != null &&
-                this.Recording.Equals(other.Recording)
+                Recording == other.Recording ||
+                Recording != null &&
+                Recording.Equals(other.Recording)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class RecordingJobFailedRecording : IEquatable<RecordingJobFailed
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.Recording != null)
+            if (Recording != null)
             {
-                hash = hash * 59 + this.Recording.GetHashCode();
+                hash = hash * 59 + Recording.GetHashCode();
             }
 
             return hash;

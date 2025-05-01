@@ -65,7 +65,7 @@ public partial class ConversationMessageEventTopicMessageMetadataEvent : IEquata
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationMessageEventTopicMessageMetadataEvent);
+        return Equals(obj as ConversationMessageEventTopicMessageMetadataEvent);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ConversationMessageEventTopicMessageMetadataEvent : IEquata
 
         return true &&
             (
-                this.EventType == other.EventType ||
-                this.EventType != null &&
-                this.EventType.Equals(other.EventType)
+                EventType == other.EventType ||
+                EventType != null &&
+                EventType.Equals(other.EventType)
             ) &&
             (
-                this.SubType == other.SubType ||
-                this.SubType != null &&
-                this.SubType.Equals(other.SubType)
+                SubType == other.SubType ||
+                SubType != null &&
+                SubType.Equals(other.SubType)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ConversationMessageEventTopicMessageMetadataEvent : IEquata
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventType != null)
+            if (EventType != null)
             {
-                hash = hash * 59 + this.EventType.GetHashCode();
+                hash = hash * 59 + EventType.GetHashCode();
             }
 
-            if (this.SubType != null)
+            if (SubType != null)
             {
-                hash = hash * 59 + this.SubType.GetHashCode();
+                hash = hash * 59 + SubType.GetHashCode();
             }
 
             return hash;

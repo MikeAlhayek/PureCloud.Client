@@ -279,7 +279,7 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyTableProperties);
+        return Equals(obj as DocumentBodyTableProperties);
     }
 
     /// <summary>
@@ -297,59 +297,59 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
 
         return true &&
             (
-                this.Width == other.Width ||
-                this.Width != null &&
-                this.Width.Equals(other.Width)
+                Width == other.Width ||
+                Width != null &&
+                Width.Equals(other.Width)
             ) &&
             (
-                this.WidthWithUnit == other.WidthWithUnit ||
-                this.WidthWithUnit != null &&
-                this.WidthWithUnit.Equals(other.WidthWithUnit)
+                WidthWithUnit == other.WidthWithUnit ||
+                WidthWithUnit != null &&
+                WidthWithUnit.Equals(other.WidthWithUnit)
             ) &&
             (
-                this.Height == other.Height ||
-                this.Height != null &&
-                this.Height.Equals(other.Height)
+                Height == other.Height ||
+                Height != null &&
+                Height.Equals(other.Height)
             ) &&
             (
-                this.CellSpacing == other.CellSpacing ||
-                this.CellSpacing != null &&
-                this.CellSpacing.Equals(other.CellSpacing)
+                CellSpacing == other.CellSpacing ||
+                CellSpacing != null &&
+                CellSpacing.Equals(other.CellSpacing)
             ) &&
             (
-                this.CellPadding == other.CellPadding ||
-                this.CellPadding != null &&
-                this.CellPadding.Equals(other.CellPadding)
+                CellPadding == other.CellPadding ||
+                CellPadding != null &&
+                CellPadding.Equals(other.CellPadding)
             ) &&
             (
-                this.BorderWidth == other.BorderWidth ||
-                this.BorderWidth != null &&
-                this.BorderWidth.Equals(other.BorderWidth)
+                BorderWidth == other.BorderWidth ||
+                BorderWidth != null &&
+                BorderWidth.Equals(other.BorderWidth)
             ) &&
             (
-                this.Alignment == other.Alignment ||
-                this.Alignment != null &&
-                this.Alignment.Equals(other.Alignment)
+                Alignment == other.Alignment ||
+                Alignment != null &&
+                Alignment.Equals(other.Alignment)
             ) &&
             (
-                this.BorderStyle == other.BorderStyle ||
-                this.BorderStyle != null &&
-                this.BorderStyle.Equals(other.BorderStyle)
+                BorderStyle == other.BorderStyle ||
+                BorderStyle != null &&
+                BorderStyle.Equals(other.BorderStyle)
             ) &&
             (
-                this.BorderColor == other.BorderColor ||
-                this.BorderColor != null &&
-                this.BorderColor.Equals(other.BorderColor)
+                BorderColor == other.BorderColor ||
+                BorderColor != null &&
+                BorderColor.Equals(other.BorderColor)
             ) &&
             (
-                this.BackgroundColor == other.BackgroundColor ||
-                this.BackgroundColor != null &&
-                this.BackgroundColor.Equals(other.BackgroundColor)
+                BackgroundColor == other.BackgroundColor ||
+                BackgroundColor != null &&
+                BackgroundColor.Equals(other.BackgroundColor)
             ) &&
             (
-                this.Caption == other.Caption ||
-                this.Caption != null &&
-                this.Caption.Equals(other.Caption)
+                Caption == other.Caption ||
+                Caption != null &&
+                Caption.Equals(other.Caption)
             );
     }
 
@@ -364,59 +364,59 @@ public partial class DocumentBodyTableProperties : IEquatable<DocumentBodyTableP
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Width != null)
+            if (Width != null)
             {
-                hash = hash * 59 + this.Width.GetHashCode();
+                hash = hash * 59 + Width.GetHashCode();
             }
 
-            if (this.WidthWithUnit != null)
+            if (WidthWithUnit != null)
             {
-                hash = hash * 59 + this.WidthWithUnit.GetHashCode();
+                hash = hash * 59 + WidthWithUnit.GetHashCode();
             }
 
-            if (this.Height != null)
+            if (Height != null)
             {
-                hash = hash * 59 + this.Height.GetHashCode();
+                hash = hash * 59 + Height.GetHashCode();
             }
 
-            if (this.CellSpacing != null)
+            if (CellSpacing != null)
             {
-                hash = hash * 59 + this.CellSpacing.GetHashCode();
+                hash = hash * 59 + CellSpacing.GetHashCode();
             }
 
-            if (this.CellPadding != null)
+            if (CellPadding != null)
             {
-                hash = hash * 59 + this.CellPadding.GetHashCode();
+                hash = hash * 59 + CellPadding.GetHashCode();
             }
 
-            if (this.BorderWidth != null)
+            if (BorderWidth != null)
             {
-                hash = hash * 59 + this.BorderWidth.GetHashCode();
+                hash = hash * 59 + BorderWidth.GetHashCode();
             }
 
-            if (this.Alignment != null)
+            if (Alignment != null)
             {
-                hash = hash * 59 + this.Alignment.GetHashCode();
+                hash = hash * 59 + Alignment.GetHashCode();
             }
 
-            if (this.BorderStyle != null)
+            if (BorderStyle != null)
             {
-                hash = hash * 59 + this.BorderStyle.GetHashCode();
+                hash = hash * 59 + BorderStyle.GetHashCode();
             }
 
-            if (this.BorderColor != null)
+            if (BorderColor != null)
             {
-                hash = hash * 59 + this.BorderColor.GetHashCode();
+                hash = hash * 59 + BorderColor.GetHashCode();
             }
 
-            if (this.BackgroundColor != null)
+            if (BackgroundColor != null)
             {
-                hash = hash * 59 + this.BackgroundColor.GetHashCode();
+                hash = hash * 59 + BackgroundColor.GetHashCode();
             }
 
-            if (this.Caption != null)
+            if (Caption != null)
             {
-                hash = hash * 59 + this.Caption.GetHashCode();
+                hash = hash * 59 + Caption.GetHashCode();
             }
 
             return hash;

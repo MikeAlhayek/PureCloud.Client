@@ -149,7 +149,7 @@ public partial class CampaignRuleCondition : IEquatable<CampaignRuleCondition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignRuleCondition);
+        return Equals(obj as CampaignRuleCondition);
     }
 
     /// <summary>
@@ -167,19 +167,19 @@ public partial class CampaignRuleCondition : IEquatable<CampaignRuleCondition>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Parameters == other.Parameters ||
-                this.Parameters != null &&
-                this.Parameters.Equals(other.Parameters)
+                Parameters == other.Parameters ||
+                Parameters != null &&
+                Parameters.Equals(other.Parameters)
             ) &&
             (
-                this.ConditionType == other.ConditionType ||
-                this.ConditionType != null &&
-                this.ConditionType.Equals(other.ConditionType)
+                ConditionType == other.ConditionType ||
+                ConditionType != null &&
+                ConditionType.Equals(other.ConditionType)
             );
     }
 
@@ -194,19 +194,19 @@ public partial class CampaignRuleCondition : IEquatable<CampaignRuleCondition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Parameters != null)
+            if (Parameters != null)
             {
-                hash = hash * 59 + this.Parameters.GetHashCode();
+                hash = hash * 59 + Parameters.GetHashCode();
             }
 
-            if (this.ConditionType != null)
+            if (ConditionType != null)
             {
-                hash = hash * 59 + this.ConditionType.GetHashCode();
+                hash = hash * 59 + ConditionType.GetHashCode();
             }
 
             return hash;

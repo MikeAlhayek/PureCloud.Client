@@ -118,7 +118,7 @@ public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGre
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserGreetingEventGreeting);
+        return Equals(obj as UserGreetingEventGreeting);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGre
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.OwnerType == other.OwnerType ||
-                this.OwnerType != null &&
-                this.OwnerType.Equals(other.OwnerType)
+                OwnerType == other.OwnerType ||
+                OwnerType != null &&
+                OwnerType.Equals(other.OwnerType)
             ) &&
             (
-                this.Owner == other.Owner ||
-                this.Owner != null &&
-                this.Owner.Equals(other.Owner)
+                Owner == other.Owner ||
+                Owner != null &&
+                Owner.Equals(other.Owner)
             ) &&
             (
-                this.GreetingAudioFile == other.GreetingAudioFile ||
-                this.GreetingAudioFile != null &&
-                this.GreetingAudioFile.Equals(other.GreetingAudioFile)
+                GreetingAudioFile == other.GreetingAudioFile ||
+                GreetingAudioFile != null &&
+                GreetingAudioFile.Equals(other.GreetingAudioFile)
             ) &&
             (
-                this.AudioTTS == other.AudioTTS ||
-                this.AudioTTS != null &&
-                this.AudioTTS.Equals(other.AudioTTS)
+                AudioTTS == other.AudioTTS ||
+                AudioTTS != null &&
+                AudioTTS.Equals(other.AudioTTS)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class UserGreetingEventGreeting : IEquatable<UserGreetingEventGre
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.OwnerType != null)
+            if (OwnerType != null)
             {
-                hash = hash * 59 + this.OwnerType.GetHashCode();
+                hash = hash * 59 + OwnerType.GetHashCode();
             }
 
-            if (this.Owner != null)
+            if (Owner != null)
             {
-                hash = hash * 59 + this.Owner.GetHashCode();
+                hash = hash * 59 + Owner.GetHashCode();
             }
 
-            if (this.GreetingAudioFile != null)
+            if (GreetingAudioFile != null)
             {
-                hash = hash * 59 + this.GreetingAudioFile.GetHashCode();
+                hash = hash * 59 + GreetingAudioFile.GetHashCode();
             }
 
-            if (this.AudioTTS != null)
+            if (AudioTTS != null)
             {
-                hash = hash * 59 + this.AudioTTS.GetHashCode();
+                hash = hash * 59 + AudioTTS.GetHashCode();
             }
 
             return hash;

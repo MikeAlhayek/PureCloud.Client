@@ -41,7 +41,7 @@ public partial class KnowledgeSyncRequest : IEquatable<KnowledgeSyncRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeSyncRequest);
+        return Equals(obj as KnowledgeSyncRequest);
     }
 
     /// <summary>

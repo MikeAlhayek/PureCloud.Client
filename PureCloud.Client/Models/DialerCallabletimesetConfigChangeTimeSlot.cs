@@ -88,7 +88,7 @@ public partial class DialerCallabletimesetConfigChangeTimeSlot : IEquatable<Dial
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerCallabletimesetConfigChangeTimeSlot);
+        return Equals(obj as DialerCallabletimesetConfigChangeTimeSlot);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class DialerCallabletimesetConfigChangeTimeSlot : IEquatable<Dial
 
         return true &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             ) &&
             (
-                this.StopTime == other.StopTime ||
-                this.StopTime != null &&
-                this.StopTime.Equals(other.StopTime)
+                StopTime == other.StopTime ||
+                StopTime != null &&
+                StopTime.Equals(other.StopTime)
             ) &&
             (
-                this.Day == other.Day ||
-                this.Day != null &&
-                this.Day.Equals(other.Day)
+                Day == other.Day ||
+                Day != null &&
+                Day.Equals(other.Day)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class DialerCallabletimesetConfigChangeTimeSlot : IEquatable<Dial
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
-            if (this.StopTime != null)
+            if (StopTime != null)
             {
-                hash = hash * 59 + this.StopTime.GetHashCode();
+                hash = hash * 59 + StopTime.GetHashCode();
             }
 
-            if (this.Day != null)
+            if (Day != null)
             {
-                hash = hash * 59 + this.Day.GetHashCode();
+                hash = hash * 59 + Day.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

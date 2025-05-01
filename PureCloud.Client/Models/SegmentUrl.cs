@@ -65,7 +65,7 @@ public partial class SegmentUrl : IEquatable<SegmentUrl>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SegmentUrl);
+        return Equals(obj as SegmentUrl);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class SegmentUrl : IEquatable<SegmentUrl>
 
         return true &&
             (
-                this.Recording == other.Recording ||
-                this.Recording != null &&
-                this.Recording.Equals(other.Recording)
+                Recording == other.Recording ||
+                Recording != null &&
+                Recording.Equals(other.Recording)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class SegmentUrl : IEquatable<SegmentUrl>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Recording != null)
+            if (Recording != null)
             {
-                hash = hash * 59 + this.Recording.GetHashCode();
+                hash = hash * 59 + Recording.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
             return hash;

@@ -77,7 +77,7 @@ public partial class PlanningPeriodShiftConstraints : IEquatable<PlanningPeriodS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PlanningPeriodShiftConstraints);
+        return Equals(obj as PlanningPeriodShiftConstraints);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class PlanningPeriodShiftConstraints : IEquatable<PlanningPeriodS
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.MinimumCount == other.MinimumCount ||
-                this.MinimumCount != null &&
-                this.MinimumCount.Equals(other.MinimumCount)
+                MinimumCount == other.MinimumCount ||
+                MinimumCount != null &&
+                MinimumCount.Equals(other.MinimumCount)
             ) &&
             (
-                this.MaximumCount == other.MaximumCount ||
-                this.MaximumCount != null &&
-                this.MaximumCount.Equals(other.MaximumCount)
+                MaximumCount == other.MaximumCount ||
+                MaximumCount != null &&
+                MaximumCount.Equals(other.MaximumCount)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class PlanningPeriodShiftConstraints : IEquatable<PlanningPeriodS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.MinimumCount != null)
+            if (MinimumCount != null)
             {
-                hash = hash * 59 + this.MinimumCount.GetHashCode();
+                hash = hash * 59 + MinimumCount.GetHashCode();
             }
 
-            if (this.MaximumCount != null)
+            if (MaximumCount != null)
             {
-                hash = hash * 59 + this.MaximumCount.GetHashCode();
+                hash = hash * 59 + MaximumCount.GetHashCode();
             }
 
             return hash;

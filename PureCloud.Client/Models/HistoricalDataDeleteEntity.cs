@@ -88,7 +88,7 @@ public partial class HistoricalDataDeleteEntity : IEquatable<HistoricalDataDelet
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalDataDeleteEntity);
+        return Equals(obj as HistoricalDataDeleteEntity);
     }
 
     /// <summary>
@@ -106,14 +106,14 @@ public partial class HistoricalDataDeleteEntity : IEquatable<HistoricalDataDelet
 
         return true &&
             (
-                this.RequestId == other.RequestId ||
-                this.RequestId != null &&
-                this.RequestId.Equals(other.RequestId)
+                RequestId == other.RequestId ||
+                RequestId != null &&
+                RequestId.Equals(other.RequestId)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             );
     }
 
@@ -128,14 +128,14 @@ public partial class HistoricalDataDeleteEntity : IEquatable<HistoricalDataDelet
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RequestId != null)
+            if (RequestId != null)
             {
-                hash = hash * 59 + this.RequestId.GetHashCode();
+                hash = hash * 59 + RequestId.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
             return hash;

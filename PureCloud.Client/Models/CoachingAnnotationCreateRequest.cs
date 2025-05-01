@@ -97,7 +97,7 @@ public partial class CoachingAnnotationCreateRequest : IEquatable<CoachingAnnota
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CoachingAnnotationCreateRequest);
+        return Equals(obj as CoachingAnnotationCreateRequest);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class CoachingAnnotationCreateRequest : IEquatable<CoachingAnnota
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.AccessType == other.AccessType ||
-                this.AccessType != null &&
-                this.AccessType.Equals(other.AccessType)
+                AccessType == other.AccessType ||
+                AccessType != null &&
+                AccessType.Equals(other.AccessType)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class CoachingAnnotationCreateRequest : IEquatable<CoachingAnnota
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.AccessType != null)
+            if (AccessType != null)
             {
-                hash = hash * 59 + this.AccessType.GetHashCode();
+                hash = hash * 59 + AccessType.GetHashCode();
             }
 
             return hash;

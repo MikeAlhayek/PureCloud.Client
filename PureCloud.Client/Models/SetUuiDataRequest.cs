@@ -53,7 +53,7 @@ public partial class SetUuiDataRequest : IEquatable<SetUuiDataRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SetUuiDataRequest);
+        return Equals(obj as SetUuiDataRequest);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class SetUuiDataRequest : IEquatable<SetUuiDataRequest>
 
         return true &&
             (
-                this.UuiData == other.UuiData ||
-                this.UuiData != null &&
-                this.UuiData.Equals(other.UuiData)
+                UuiData == other.UuiData ||
+                UuiData != null &&
+                UuiData.Equals(other.UuiData)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class SetUuiDataRequest : IEquatable<SetUuiDataRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UuiData != null)
+            if (UuiData != null)
             {
-                hash = hash * 59 + this.UuiData.GetHashCode();
+                hash = hash * 59 + UuiData.GetHashCode();
             }
 
             return hash;

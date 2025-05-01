@@ -53,7 +53,7 @@ public partial class OpenInboundMessageContent : IEquatable<OpenInboundMessageCo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenInboundMessageContent);
+        return Equals(obj as OpenInboundMessageContent);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class OpenInboundMessageContent : IEquatable<OpenInboundMessageCo
 
         return true &&
             (
-                this.Attachment == other.Attachment ||
-                this.Attachment != null &&
-                this.Attachment.Equals(other.Attachment)
+                Attachment == other.Attachment ||
+                Attachment != null &&
+                Attachment.Equals(other.Attachment)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class OpenInboundMessageContent : IEquatable<OpenInboundMessageCo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Attachment != null)
+            if (Attachment != null)
             {
-                hash = hash * 59 + this.Attachment.GetHashCode();
+                hash = hash * 59 + Attachment.GetHashCode();
             }
 
             return hash;

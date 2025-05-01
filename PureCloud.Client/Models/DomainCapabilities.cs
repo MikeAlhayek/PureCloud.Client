@@ -111,7 +111,7 @@ public partial class DomainCapabilities : IEquatable<DomainCapabilities>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainCapabilities);
+        return Equals(obj as DomainCapabilities);
     }
 
     /// <summary>
@@ -129,34 +129,34 @@ public partial class DomainCapabilities : IEquatable<DomainCapabilities>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Dhcp == other.Dhcp ||
-                this.Dhcp != null &&
-                this.Dhcp.Equals(other.Dhcp)
+                Dhcp == other.Dhcp ||
+                Dhcp != null &&
+                Dhcp.Equals(other.Dhcp)
             ) &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.AutoMetric == other.AutoMetric ||
-                this.AutoMetric != null &&
-                this.AutoMetric.Equals(other.AutoMetric)
+                AutoMetric == other.AutoMetric ||
+                AutoMetric != null &&
+                AutoMetric.Equals(other.AutoMetric)
             ) &&
             (
-                this.SupportsMetric == other.SupportsMetric ||
-                this.SupportsMetric != null &&
-                this.SupportsMetric.Equals(other.SupportsMetric)
+                SupportsMetric == other.SupportsMetric ||
+                SupportsMetric != null &&
+                SupportsMetric.Equals(other.SupportsMetric)
             ) &&
             (
-                this.PingEnabled == other.PingEnabled ||
-                this.PingEnabled != null &&
-                this.PingEnabled.Equals(other.PingEnabled)
+                PingEnabled == other.PingEnabled ||
+                PingEnabled != null &&
+                PingEnabled.Equals(other.PingEnabled)
             );
     }
 
@@ -171,34 +171,34 @@ public partial class DomainCapabilities : IEquatable<DomainCapabilities>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Dhcp != null)
+            if (Dhcp != null)
             {
-                hash = hash * 59 + this.Dhcp.GetHashCode();
+                hash = hash * 59 + Dhcp.GetHashCode();
             }
 
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.AutoMetric != null)
+            if (AutoMetric != null)
             {
-                hash = hash * 59 + this.AutoMetric.GetHashCode();
+                hash = hash * 59 + AutoMetric.GetHashCode();
             }
 
-            if (this.SupportsMetric != null)
+            if (SupportsMetric != null)
             {
-                hash = hash * 59 + this.SupportsMetric.GetHashCode();
+                hash = hash * 59 + SupportsMetric.GetHashCode();
             }
 
-            if (this.PingEnabled != null)
+            if (PingEnabled != null)
             {
-                hash = hash * 59 + this.PingEnabled.GetHashCode();
+                hash = hash * 59 + PingEnabled.GetHashCode();
             }
 
             return hash;

@@ -83,7 +83,7 @@ public partial class CreateStaffingGroupRequest : IEquatable<CreateStaffingGroup
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateStaffingGroupRequest);
+        return Equals(obj as CreateStaffingGroupRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class CreateStaffingGroupRequest : IEquatable<CreateStaffingGroup
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class CreateStaffingGroupRequest : IEquatable<CreateStaffingGroup
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
             return hash;

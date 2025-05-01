@@ -53,7 +53,7 @@ public partial class PatchContextPattern : IEquatable<PatchContextPattern>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchContextPattern);
+        return Equals(obj as PatchContextPattern);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class PatchContextPattern : IEquatable<PatchContextPattern>
 
         return true &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.SequenceEqual(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.SequenceEqual(other.Criteria)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class PatchContextPattern : IEquatable<PatchContextPattern>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
             return hash;

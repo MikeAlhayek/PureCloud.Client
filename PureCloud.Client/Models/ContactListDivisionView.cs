@@ -158,7 +158,7 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactListDivisionView);
+        return Equals(obj as ContactListDivisionView);
     }
 
     /// <summary>
@@ -176,54 +176,54 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.ColumnNames == other.ColumnNames ||
-                this.ColumnNames != null &&
-                this.ColumnNames.SequenceEqual(other.ColumnNames)
+                ColumnNames == other.ColumnNames ||
+                ColumnNames != null &&
+                ColumnNames.SequenceEqual(other.ColumnNames)
             ) &&
             (
-                this.PhoneColumns == other.PhoneColumns ||
-                this.PhoneColumns != null &&
-                this.PhoneColumns.SequenceEqual(other.PhoneColumns)
+                PhoneColumns == other.PhoneColumns ||
+                PhoneColumns != null &&
+                PhoneColumns.SequenceEqual(other.PhoneColumns)
             ) &&
             (
-                this.EmailColumns == other.EmailColumns ||
-                this.EmailColumns != null &&
-                this.EmailColumns.SequenceEqual(other.EmailColumns)
+                EmailColumns == other.EmailColumns ||
+                EmailColumns != null &&
+                EmailColumns.SequenceEqual(other.EmailColumns)
             ) &&
             (
-                this.WhatsAppColumns == other.WhatsAppColumns ||
-                this.WhatsAppColumns != null &&
-                this.WhatsAppColumns.SequenceEqual(other.WhatsAppColumns)
+                WhatsAppColumns == other.WhatsAppColumns ||
+                WhatsAppColumns != null &&
+                WhatsAppColumns.SequenceEqual(other.WhatsAppColumns)
             ) &&
             (
-                this.ImportStatus == other.ImportStatus ||
-                this.ImportStatus != null &&
-                this.ImportStatus.Equals(other.ImportStatus)
+                ImportStatus == other.ImportStatus ||
+                ImportStatus != null &&
+                ImportStatus.Equals(other.ImportStatus)
             ) &&
             (
-                this.Size == other.Size ||
-                this.Size != null &&
-                this.Size.Equals(other.Size)
+                Size == other.Size ||
+                Size != null &&
+                Size.Equals(other.Size)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -238,54 +238,54 @@ public partial class ContactListDivisionView : IEquatable<ContactListDivisionVie
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.ColumnNames != null)
+            if (ColumnNames != null)
             {
-                hash = hash * 59 + this.ColumnNames.GetHashCode();
+                hash = hash * 59 + ColumnNames.GetHashCode();
             }
 
-            if (this.PhoneColumns != null)
+            if (PhoneColumns != null)
             {
-                hash = hash * 59 + this.PhoneColumns.GetHashCode();
+                hash = hash * 59 + PhoneColumns.GetHashCode();
             }
 
-            if (this.EmailColumns != null)
+            if (EmailColumns != null)
             {
-                hash = hash * 59 + this.EmailColumns.GetHashCode();
+                hash = hash * 59 + EmailColumns.GetHashCode();
             }
 
-            if (this.WhatsAppColumns != null)
+            if (WhatsAppColumns != null)
             {
-                hash = hash * 59 + this.WhatsAppColumns.GetHashCode();
+                hash = hash * 59 + WhatsAppColumns.GetHashCode();
             }
 
-            if (this.ImportStatus != null)
+            if (ImportStatus != null)
             {
-                hash = hash * 59 + this.ImportStatus.GetHashCode();
+                hash = hash * 59 + ImportStatus.GetHashCode();
             }
 
-            if (this.Size != null)
+            if (Size != null)
             {
-                hash = hash * 59 + this.Size.GetHashCode();
+                hash = hash * 59 + Size.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

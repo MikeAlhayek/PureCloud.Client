@@ -125,7 +125,7 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LogCaptureUserConfiguration);
+        return Equals(obj as LogCaptureUserConfiguration);
     }
 
     /// <summary>
@@ -143,29 +143,29 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DateStarted == other.DateStarted ||
-                this.DateStarted != null &&
-                this.DateStarted.Equals(other.DateStarted)
+                DateStarted == other.DateStarted ||
+                DateStarted != null &&
+                DateStarted.Equals(other.DateStarted)
             ) &&
             (
-                this.DateExpired == other.DateExpired ||
-                this.DateExpired != null &&
-                this.DateExpired.Equals(other.DateExpired)
+                DateExpired == other.DateExpired ||
+                DateExpired != null &&
+                DateExpired.Equals(other.DateExpired)
             ) &&
             (
-                this.CaptureMethod == other.CaptureMethod ||
-                this.CaptureMethod != null &&
-                this.CaptureMethod.Equals(other.CaptureMethod)
+                CaptureMethod == other.CaptureMethod ||
+                CaptureMethod != null &&
+                CaptureMethod.Equals(other.CaptureMethod)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -180,29 +180,29 @@ public partial class LogCaptureUserConfiguration : IEquatable<LogCaptureUserConf
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DateStarted != null)
+            if (DateStarted != null)
             {
-                hash = hash * 59 + this.DateStarted.GetHashCode();
+                hash = hash * 59 + DateStarted.GetHashCode();
             }
 
-            if (this.DateExpired != null)
+            if (DateExpired != null)
             {
-                hash = hash * 59 + this.DateExpired.GetHashCode();
+                hash = hash * 59 + DateExpired.GetHashCode();
             }
 
-            if (this.CaptureMethod != null)
+            if (CaptureMethod != null)
             {
-                hash = hash * 59 + this.CaptureMethod.GetHashCode();
+                hash = hash * 59 + CaptureMethod.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

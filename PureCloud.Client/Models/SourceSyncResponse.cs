@@ -151,7 +151,7 @@ public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SourceSyncResponse);
+        return Equals(obj as SourceSyncResponse);
     }
 
     /// <summary>
@@ -169,34 +169,34 @@ public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.KnowledgeBase == other.KnowledgeBase ||
-                this.KnowledgeBase != null &&
-                this.KnowledgeBase.Equals(other.KnowledgeBase)
+                KnowledgeBase == other.KnowledgeBase ||
+                KnowledgeBase != null &&
+                KnowledgeBase.Equals(other.KnowledgeBase)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             );
     }
 
@@ -211,34 +211,34 @@ public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.KnowledgeBase != null)
+            if (KnowledgeBase != null)
             {
-                hash = hash * 59 + this.KnowledgeBase.GetHashCode();
+                hash = hash * 59 + KnowledgeBase.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
             return hash;

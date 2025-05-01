@@ -887,12 +887,12 @@ public partial class ScriptsApi : IScriptsApi
     /// <returns></returns>
     public ScriptsApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -906,17 +906,17 @@ public partial class ScriptsApi : IScriptsApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -926,7 +926,7 @@ public partial class ScriptsApi : IScriptsApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -952,7 +952,7 @@ public partial class ScriptsApi : IScriptsApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -964,7 +964,7 @@ public partial class ScriptsApi : IScriptsApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -1010,7 +1010,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1019,7 +1019,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1032,7 +1032,7 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
@@ -1048,11 +1048,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1078,7 +1078,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<Script>(localVarStatusCode,
             localVarHeaders,
-            (Script)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
+            (Script)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1127,7 +1127,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1136,7 +1136,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1149,7 +1149,7 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
@@ -1165,11 +1165,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1195,7 +1195,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<Script>(localVarStatusCode,
             localVarHeaders,
-            (Script)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
+            (Script)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1253,7 +1253,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1262,7 +1262,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1275,18 +1275,18 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         if (pageId != null)
         {
-            localVarPathParams.Add("pageId", this.Configuration.ApiClient.ParameterToString(pageId));
+            localVarPathParams.Add("pageId", Configuration.ApiClient.ParameterToString(pageId));
         }
 
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -1300,11 +1300,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1330,7 +1330,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<Page>(localVarStatusCode,
             localVarHeaders,
-            (Page)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Page)),
+            (Page)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Page)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1389,7 +1389,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1398,7 +1398,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1411,18 +1411,18 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         if (pageId != null)
         {
-            localVarPathParams.Add("pageId", this.Configuration.ApiClient.ParameterToString(pageId));
+            localVarPathParams.Add("pageId", Configuration.ApiClient.ParameterToString(pageId));
         }
 
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -1436,11 +1436,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1466,7 +1466,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<Page>(localVarStatusCode,
             localVarHeaders,
-            (Page)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Page)),
+            (Page)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Page)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1517,7 +1517,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1526,7 +1526,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1539,13 +1539,13 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -1559,11 +1559,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1589,7 +1589,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<List<Page>>(localVarStatusCode,
             localVarHeaders,
-            (List<Page>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Page>)),
+            (List<Page>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Page>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1640,7 +1640,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1649,7 +1649,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1662,13 +1662,13 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -1682,11 +1682,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1712,7 +1712,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<List<Page>>(localVarStatusCode,
             localVarHeaders,
-            (List<Page>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Page>)),
+            (List<Page>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Page>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1774,7 +1774,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1783,7 +1783,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1798,52 +1798,52 @@ public partial class ScriptsApi : IScriptsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (feature != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("feature", this.Configuration.ApiClient.ParameterToString(feature)));
+            localVarQueryParams.Add(new Tuple<string, string>("feature", Configuration.ApiClient.ParameterToString(feature)));
         }
 
         if (flowId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowId", this.Configuration.ApiClient.ParameterToString(flowId)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowId", Configuration.ApiClient.ParameterToString(flowId)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         if (divisionIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(divisionIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(divisionIds)));
         }
 
         // Header params
@@ -1857,11 +1857,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1887,7 +1887,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ScriptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScriptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
+            (ScriptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1949,7 +1949,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1958,7 +1958,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1973,52 +1973,52 @@ public partial class ScriptsApi : IScriptsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (feature != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("feature", this.Configuration.ApiClient.ParameterToString(feature)));
+            localVarQueryParams.Add(new Tuple<string, string>("feature", Configuration.ApiClient.ParameterToString(feature)));
         }
 
         if (flowId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowId", this.Configuration.ApiClient.ParameterToString(flowId)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowId", Configuration.ApiClient.ParameterToString(flowId)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         if (divisionIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(divisionIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(divisionIds)));
         }
 
         // Header params
@@ -2032,11 +2032,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2062,7 +2062,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ScriptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScriptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
+            (ScriptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2124,7 +2124,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2133,7 +2133,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2148,52 +2148,52 @@ public partial class ScriptsApi : IScriptsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (feature != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("feature", this.Configuration.ApiClient.ParameterToString(feature)));
+            localVarQueryParams.Add(new Tuple<string, string>("feature", Configuration.ApiClient.ParameterToString(feature)));
         }
 
         if (flowId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowId", this.Configuration.ApiClient.ParameterToString(flowId)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowId", Configuration.ApiClient.ParameterToString(flowId)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         if (divisionIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(divisionIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(divisionIds)));
         }
 
         // Header params
@@ -2207,11 +2207,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2237,7 +2237,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ScriptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScriptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
+            (ScriptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2299,7 +2299,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2308,7 +2308,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2323,52 +2323,52 @@ public partial class ScriptsApi : IScriptsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (feature != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("feature", this.Configuration.ApiClient.ParameterToString(feature)));
+            localVarQueryParams.Add(new Tuple<string, string>("feature", Configuration.ApiClient.ParameterToString(feature)));
         }
 
         if (flowId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowId", this.Configuration.ApiClient.ParameterToString(flowId)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowId", Configuration.ApiClient.ParameterToString(flowId)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         if (divisionIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(divisionIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(divisionIds)));
         }
 
         // Header params
@@ -2382,11 +2382,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2412,7 +2412,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ScriptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScriptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
+            (ScriptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2470,7 +2470,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2479,7 +2479,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2494,42 +2494,42 @@ public partial class ScriptsApi : IScriptsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (feature != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("feature", this.Configuration.ApiClient.ParameterToString(feature)));
+            localVarQueryParams.Add(new Tuple<string, string>("feature", Configuration.ApiClient.ParameterToString(feature)));
         }
 
         if (flowId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowId", this.Configuration.ApiClient.ParameterToString(flowId)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowId", Configuration.ApiClient.ParameterToString(flowId)));
         }
 
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         if (divisionIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(divisionIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(divisionIds)));
         }
 
         // Header params
@@ -2543,11 +2543,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2573,7 +2573,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ScriptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScriptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
+            (ScriptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2631,7 +2631,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2640,7 +2640,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2655,42 +2655,42 @@ public partial class ScriptsApi : IScriptsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (feature != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("feature", this.Configuration.ApiClient.ParameterToString(feature)));
+            localVarQueryParams.Add(new Tuple<string, string>("feature", Configuration.ApiClient.ParameterToString(feature)));
         }
 
         if (flowId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowId", this.Configuration.ApiClient.ParameterToString(flowId)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowId", Configuration.ApiClient.ParameterToString(flowId)));
         }
 
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         if (divisionIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(divisionIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(divisionIds)));
         }
 
         // Header params
@@ -2704,11 +2704,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2734,7 +2734,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ScriptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScriptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
+            (ScriptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2792,7 +2792,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2801,7 +2801,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2816,42 +2816,42 @@ public partial class ScriptsApi : IScriptsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (feature != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("feature", this.Configuration.ApiClient.ParameterToString(feature)));
+            localVarQueryParams.Add(new Tuple<string, string>("feature", Configuration.ApiClient.ParameterToString(feature)));
         }
 
         if (flowId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowId", this.Configuration.ApiClient.ParameterToString(flowId)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowId", Configuration.ApiClient.ParameterToString(flowId)));
         }
 
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         if (divisionIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(divisionIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(divisionIds)));
         }
 
         // Header params
@@ -2865,11 +2865,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2895,7 +2895,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ScriptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScriptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
+            (ScriptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2953,7 +2953,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2962,7 +2962,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2977,42 +2977,42 @@ public partial class ScriptsApi : IScriptsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (feature != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("feature", this.Configuration.ApiClient.ParameterToString(feature)));
+            localVarQueryParams.Add(new Tuple<string, string>("feature", Configuration.ApiClient.ParameterToString(feature)));
         }
 
         if (flowId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowId", this.Configuration.ApiClient.ParameterToString(flowId)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowId", Configuration.ApiClient.ParameterToString(flowId)));
         }
 
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         if (divisionIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(divisionIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(divisionIds)));
         }
 
         // Header params
@@ -3026,11 +3026,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3056,7 +3056,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ScriptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScriptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
+            (ScriptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScriptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3107,7 +3107,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3116,7 +3116,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3129,13 +3129,13 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -3149,11 +3149,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3179,7 +3179,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<Script>(localVarStatusCode,
             localVarHeaders,
-            (Script)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
+            (Script)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3230,7 +3230,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3239,7 +3239,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3252,13 +3252,13 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -3272,11 +3272,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3302,7 +3302,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<Script>(localVarStatusCode,
             localVarHeaders,
-            (Script)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
+            (Script)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3360,7 +3360,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3369,7 +3369,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3382,18 +3382,18 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         if (pageId != null)
         {
-            localVarPathParams.Add("pageId", this.Configuration.ApiClient.ParameterToString(pageId));
+            localVarPathParams.Add("pageId", Configuration.ApiClient.ParameterToString(pageId));
         }
 
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -3407,11 +3407,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3437,7 +3437,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<Page>(localVarStatusCode,
             localVarHeaders,
-            (Page)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Page)),
+            (Page)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Page)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3496,7 +3496,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3505,7 +3505,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3518,18 +3518,18 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         if (pageId != null)
         {
-            localVarPathParams.Add("pageId", this.Configuration.ApiClient.ParameterToString(pageId));
+            localVarPathParams.Add("pageId", Configuration.ApiClient.ParameterToString(pageId));
         }
 
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -3543,11 +3543,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3573,7 +3573,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<Page>(localVarStatusCode,
             localVarHeaders,
-            (Page)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Page)),
+            (Page)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Page)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3624,7 +3624,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3633,7 +3633,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3646,13 +3646,13 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -3666,11 +3666,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3696,7 +3696,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<List<Page>>(localVarStatusCode,
             localVarHeaders,
-            (List<Page>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Page>)),
+            (List<Page>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Page>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3747,7 +3747,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3756,7 +3756,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3769,13 +3769,13 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -3789,11 +3789,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3819,7 +3819,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<List<Page>>(localVarStatusCode,
             localVarHeaders,
-            (List<Page>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Page>)),
+            (List<Page>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Page>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3876,7 +3876,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3885,7 +3885,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3898,28 +3898,28 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
         if (input != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("input", this.Configuration.ApiClient.ParameterToString(input)));
+            localVarQueryParams.Add(new Tuple<string, string>("input", Configuration.ApiClient.ParameterToString(input)));
         }
 
         if (output != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("output", this.Configuration.ApiClient.ParameterToString(output)));
+            localVarQueryParams.Add(new Tuple<string, string>("output", Configuration.ApiClient.ParameterToString(output)));
         }
 
         if (type != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(type)));
+            localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(type)));
         }
 
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -3933,11 +3933,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3963,7 +3963,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4020,7 +4020,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4029,7 +4029,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4042,28 +4042,28 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
         if (input != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("input", this.Configuration.ApiClient.ParameterToString(input)));
+            localVarQueryParams.Add(new Tuple<string, string>("input", Configuration.ApiClient.ParameterToString(input)));
         }
 
         if (output != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("output", this.Configuration.ApiClient.ParameterToString(output)));
+            localVarQueryParams.Add(new Tuple<string, string>("output", Configuration.ApiClient.ParameterToString(output)));
         }
 
         if (type != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(type)));
+            localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(type)));
         }
 
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -4077,11 +4077,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4107,7 +4107,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4158,7 +4158,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4167,7 +4167,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4180,13 +4180,13 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (uploadId != null)
         {
-            localVarPathParams.Add("uploadId", this.Configuration.ApiClient.ParameterToString(uploadId));
+            localVarPathParams.Add("uploadId", Configuration.ApiClient.ParameterToString(uploadId));
         }
 
         // Query params
         if (longPoll != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("longPoll", this.Configuration.ApiClient.ParameterToString(longPoll)));
+            localVarQueryParams.Add(new Tuple<string, string>("longPoll", Configuration.ApiClient.ParameterToString(longPoll)));
         }
 
         // Header params
@@ -4200,11 +4200,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4230,7 +4230,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ImportScriptStatusResponse>(localVarStatusCode,
             localVarHeaders,
-            (ImportScriptStatusResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImportScriptStatusResponse)),
+            (ImportScriptStatusResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImportScriptStatusResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4281,7 +4281,7 @@ public partial class ScriptsApi : IScriptsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4290,7 +4290,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4303,13 +4303,13 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (uploadId != null)
         {
-            localVarPathParams.Add("uploadId", this.Configuration.ApiClient.ParameterToString(uploadId));
+            localVarPathParams.Add("uploadId", Configuration.ApiClient.ParameterToString(uploadId));
         }
 
         // Query params
         if (longPoll != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("longPoll", this.Configuration.ApiClient.ParameterToString(longPoll)));
+            localVarQueryParams.Add(new Tuple<string, string>("longPoll", Configuration.ApiClient.ParameterToString(longPoll)));
         }
 
         // Header params
@@ -4323,11 +4323,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4353,7 +4353,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ImportScriptStatusResponse>(localVarStatusCode,
             localVarHeaders,
-            (ImportScriptStatusResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImportScriptStatusResponse)),
+            (ImportScriptStatusResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImportScriptStatusResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4405,7 +4405,7 @@ public partial class ScriptsApi : IScriptsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4414,7 +4414,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4427,7 +4427,7 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
@@ -4439,7 +4439,7 @@ public partial class ScriptsApi : IScriptsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4452,11 +4452,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4482,7 +4482,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ExportScriptResponse>(localVarStatusCode,
             localVarHeaders,
-            (ExportScriptResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportScriptResponse)),
+            (ExportScriptResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportScriptResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4534,7 +4534,7 @@ public partial class ScriptsApi : IScriptsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4543,7 +4543,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4556,7 +4556,7 @@ public partial class ScriptsApi : IScriptsApi
         // Path params
         if (scriptId != null)
         {
-            localVarPathParams.Add("scriptId", this.Configuration.ApiClient.ParameterToString(scriptId));
+            localVarPathParams.Add("scriptId", Configuration.ApiClient.ParameterToString(scriptId));
         }
 
         // Query params
@@ -4568,7 +4568,7 @@ public partial class ScriptsApi : IScriptsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4581,11 +4581,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4611,7 +4611,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<ExportScriptResponse>(localVarStatusCode,
             localVarHeaders,
-            (ExportScriptResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportScriptResponse)),
+            (ExportScriptResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportScriptResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4658,7 +4658,7 @@ public partial class ScriptsApi : IScriptsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4667,7 +4667,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4682,7 +4682,7 @@ public partial class ScriptsApi : IScriptsApi
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -4692,7 +4692,7 @@ public partial class ScriptsApi : IScriptsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4705,11 +4705,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4735,7 +4735,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<Script>(localVarStatusCode,
             localVarHeaders,
-            (Script)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
+            (Script)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4782,7 +4782,7 @@ public partial class ScriptsApi : IScriptsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4791,7 +4791,7 @@ public partial class ScriptsApi : IScriptsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4806,7 +4806,7 @@ public partial class ScriptsApi : IScriptsApi
         // Query params
         if (scriptDataVersion != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", this.Configuration.ApiClient.ParameterToString(scriptDataVersion)));
+            localVarQueryParams.Add(new Tuple<string, string>("scriptDataVersion", Configuration.ApiClient.ParameterToString(scriptDataVersion)));
         }
 
         // Header params
@@ -4816,7 +4816,7 @@ public partial class ScriptsApi : IScriptsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4829,11 +4829,11 @@ public partial class ScriptsApi : IScriptsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4859,7 +4859,7 @@ public partial class ScriptsApi : IScriptsApi
 
         return new ApiResponse<Script>(localVarStatusCode,
             localVarHeaders,
-            (Script)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
+            (Script)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Script)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

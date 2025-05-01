@@ -571,7 +571,7 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeImport);
+        return Equals(obj as KnowledgeImport);
     }
 
     /// <summary>
@@ -589,64 +589,64 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.FileType == other.FileType ||
-                this.FileType != null &&
-                this.FileType.Equals(other.FileType)
+                FileType == other.FileType ||
+                FileType != null &&
+                FileType.Equals(other.FileType)
             ) &&
             (
-                this.IgnoreHeaders == other.IgnoreHeaders ||
-                this.IgnoreHeaders != null &&
-                this.IgnoreHeaders.Equals(other.IgnoreHeaders)
+                IgnoreHeaders == other.IgnoreHeaders ||
+                IgnoreHeaders != null &&
+                IgnoreHeaders.Equals(other.IgnoreHeaders)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Report == other.Report ||
-                this.Report != null &&
-                this.Report.Equals(other.Report)
+                Report == other.Report ||
+                Report != null &&
+                Report.Equals(other.Report)
             ) &&
             (
-                this.KnowledgeBase == other.KnowledgeBase ||
-                this.KnowledgeBase != null &&
-                this.KnowledgeBase.Equals(other.KnowledgeBase)
+                KnowledgeBase == other.KnowledgeBase ||
+                KnowledgeBase != null &&
+                KnowledgeBase.Equals(other.KnowledgeBase)
             ) &&
             (
-                this.LanguageCode == other.LanguageCode ||
-                this.LanguageCode != null &&
-                this.LanguageCode.Equals(other.LanguageCode)
+                LanguageCode == other.LanguageCode ||
+                LanguageCode != null &&
+                LanguageCode.Equals(other.LanguageCode)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -661,64 +661,64 @@ public partial class KnowledgeImport : IEquatable<KnowledgeImport>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.FileType != null)
+            if (FileType != null)
             {
-                hash = hash * 59 + this.FileType.GetHashCode();
+                hash = hash * 59 + FileType.GetHashCode();
             }
 
-            if (this.IgnoreHeaders != null)
+            if (IgnoreHeaders != null)
             {
-                hash = hash * 59 + this.IgnoreHeaders.GetHashCode();
+                hash = hash * 59 + IgnoreHeaders.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Report != null)
+            if (Report != null)
             {
-                hash = hash * 59 + this.Report.GetHashCode();
+                hash = hash * 59 + Report.GetHashCode();
             }
 
-            if (this.KnowledgeBase != null)
+            if (KnowledgeBase != null)
             {
-                hash = hash * 59 + this.KnowledgeBase.GetHashCode();
+                hash = hash * 59 + KnowledgeBase.GetHashCode();
             }
 
-            if (this.LanguageCode != null)
+            if (LanguageCode != null)
             {
-                hash = hash * 59 + this.LanguageCode.GetHashCode();
+                hash = hash * 59 + LanguageCode.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

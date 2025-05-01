@@ -85,7 +85,7 @@ public partial class CreateTimeOffLimitRequest : IEquatable<CreateTimeOffLimitRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateTimeOffLimitRequest);
+        return Equals(obj as CreateTimeOffLimitRequest);
     }
 
     /// <summary>
@@ -103,14 +103,14 @@ public partial class CreateTimeOffLimitRequest : IEquatable<CreateTimeOffLimitRe
 
         return true &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             ) &&
             (
-                this.DefaultLimitMinutes == other.DefaultLimitMinutes ||
-                this.DefaultLimitMinutes != null &&
-                this.DefaultLimitMinutes.Equals(other.DefaultLimitMinutes)
+                DefaultLimitMinutes == other.DefaultLimitMinutes ||
+                DefaultLimitMinutes != null &&
+                DefaultLimitMinutes.Equals(other.DefaultLimitMinutes)
             );
     }
 
@@ -125,14 +125,14 @@ public partial class CreateTimeOffLimitRequest : IEquatable<CreateTimeOffLimitRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
-            if (this.DefaultLimitMinutes != null)
+            if (DefaultLimitMinutes != null)
             {
-                hash = hash * 59 + this.DefaultLimitMinutes.GetHashCode();
+                hash = hash * 59 + DefaultLimitMinutes.GetHashCode();
             }
 
             return hash;

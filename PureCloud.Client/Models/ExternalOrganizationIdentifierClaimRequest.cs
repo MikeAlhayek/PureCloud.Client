@@ -97,7 +97,7 @@ public partial class ExternalOrganizationIdentifierClaimRequest : IEquatable<Ext
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalOrganizationIdentifierClaimRequest);
+        return Equals(obj as ExternalOrganizationIdentifierClaimRequest);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class ExternalOrganizationIdentifierClaimRequest : IEquatable<Ext
 
         return true &&
             (
-                this.Operation == other.Operation ||
-                this.Operation != null &&
-                this.Operation.Equals(other.Operation)
+                Operation == other.Operation ||
+                Operation != null &&
+                Operation.Equals(other.Operation)
             ) &&
             (
-                this.Identifier == other.Identifier ||
-                this.Identifier != null &&
-                this.Identifier.Equals(other.Identifier)
+                Identifier == other.Identifier ||
+                Identifier != null &&
+                Identifier.Equals(other.Identifier)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class ExternalOrganizationIdentifierClaimRequest : IEquatable<Ext
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Operation != null)
+            if (Operation != null)
             {
-                hash = hash * 59 + this.Operation.GetHashCode();
+                hash = hash * 59 + Operation.GetHashCode();
             }
 
-            if (this.Identifier != null)
+            if (Identifier != null)
             {
-                hash = hash * 59 + this.Identifier.GetHashCode();
+                hash = hash * 59 + Identifier.GetHashCode();
             }
 
             return hash;

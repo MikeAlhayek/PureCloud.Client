@@ -169,7 +169,7 @@ public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DailyPossibleShift);
+        return Equals(obj as DailyPossibleShift);
     }
 
     /// <summary>
@@ -187,34 +187,34 @@ public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
 
         return true &&
             (
-                this.DayOfWeek == other.DayOfWeek ||
-                this.DayOfWeek != null &&
-                this.DayOfWeek.Equals(other.DayOfWeek)
+                DayOfWeek == other.DayOfWeek ||
+                DayOfWeek != null &&
+                DayOfWeek.Equals(other.DayOfWeek)
             ) &&
             (
-                this.EarliestShiftStartMinutesFromMidnight == other.EarliestShiftStartMinutesFromMidnight ||
-                this.EarliestShiftStartMinutesFromMidnight != null &&
-                this.EarliestShiftStartMinutesFromMidnight.Equals(other.EarliestShiftStartMinutesFromMidnight)
+                EarliestShiftStartMinutesFromMidnight == other.EarliestShiftStartMinutesFromMidnight ||
+                EarliestShiftStartMinutesFromMidnight != null &&
+                EarliestShiftStartMinutesFromMidnight.Equals(other.EarliestShiftStartMinutesFromMidnight)
             ) &&
             (
-                this.Required == other.Required ||
-                this.Required != null &&
-                this.Required.Equals(other.Required)
+                Required == other.Required ||
+                Required != null &&
+                Required.Equals(other.Required)
             ) &&
             (
-                this.MinimumPaidTimeMinutes == other.MinimumPaidTimeMinutes ||
-                this.MinimumPaidTimeMinutes != null &&
-                this.MinimumPaidTimeMinutes.Equals(other.MinimumPaidTimeMinutes)
+                MinimumPaidTimeMinutes == other.MinimumPaidTimeMinutes ||
+                MinimumPaidTimeMinutes != null &&
+                MinimumPaidTimeMinutes.Equals(other.MinimumPaidTimeMinutes)
             ) &&
             (
-                this.MaximumPaidTimeMinutes == other.MaximumPaidTimeMinutes ||
-                this.MaximumPaidTimeMinutes != null &&
-                this.MaximumPaidTimeMinutes.Equals(other.MaximumPaidTimeMinutes)
+                MaximumPaidTimeMinutes == other.MaximumPaidTimeMinutes ||
+                MaximumPaidTimeMinutes != null &&
+                MaximumPaidTimeMinutes.Equals(other.MaximumPaidTimeMinutes)
             ) &&
             (
-                this.IntervalScheduleProbabilities == other.IntervalScheduleProbabilities ||
-                this.IntervalScheduleProbabilities != null &&
-                this.IntervalScheduleProbabilities.SequenceEqual(other.IntervalScheduleProbabilities)
+                IntervalScheduleProbabilities == other.IntervalScheduleProbabilities ||
+                IntervalScheduleProbabilities != null &&
+                IntervalScheduleProbabilities.SequenceEqual(other.IntervalScheduleProbabilities)
             );
     }
 
@@ -229,34 +229,34 @@ public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DayOfWeek != null)
+            if (DayOfWeek != null)
             {
-                hash = hash * 59 + this.DayOfWeek.GetHashCode();
+                hash = hash * 59 + DayOfWeek.GetHashCode();
             }
 
-            if (this.EarliestShiftStartMinutesFromMidnight != null)
+            if (EarliestShiftStartMinutesFromMidnight != null)
             {
-                hash = hash * 59 + this.EarliestShiftStartMinutesFromMidnight.GetHashCode();
+                hash = hash * 59 + EarliestShiftStartMinutesFromMidnight.GetHashCode();
             }
 
-            if (this.Required != null)
+            if (Required != null)
             {
-                hash = hash * 59 + this.Required.GetHashCode();
+                hash = hash * 59 + Required.GetHashCode();
             }
 
-            if (this.MinimumPaidTimeMinutes != null)
+            if (MinimumPaidTimeMinutes != null)
             {
-                hash = hash * 59 + this.MinimumPaidTimeMinutes.GetHashCode();
+                hash = hash * 59 + MinimumPaidTimeMinutes.GetHashCode();
             }
 
-            if (this.MaximumPaidTimeMinutes != null)
+            if (MaximumPaidTimeMinutes != null)
             {
-                hash = hash * 59 + this.MaximumPaidTimeMinutes.GetHashCode();
+                hash = hash * 59 + MaximumPaidTimeMinutes.GetHashCode();
             }
 
-            if (this.IntervalScheduleProbabilities != null)
+            if (IntervalScheduleProbabilities != null)
             {
-                hash = hash * 59 + this.IntervalScheduleProbabilities.GetHashCode();
+                hash = hash * 59 + IntervalScheduleProbabilities.GetHashCode();
             }
 
             return hash;

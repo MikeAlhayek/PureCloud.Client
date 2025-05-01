@@ -63,7 +63,7 @@ public partial class VideoConferenceUpdateTopicParticipantInfo : IEquatable<Vide
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VideoConferenceUpdateTopicParticipantInfo);
+        return Equals(obj as VideoConferenceUpdateTopicParticipantInfo);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class VideoConferenceUpdateTopicParticipantInfo : IEquatable<Vide
 
         return true &&
             (
-                this.ActiveParticipantCount == other.ActiveParticipantCount ||
-                this.ActiveParticipantCount != null &&
-                this.ActiveParticipantCount.Equals(other.ActiveParticipantCount)
+                ActiveParticipantCount == other.ActiveParticipantCount ||
+                ActiveParticipantCount != null &&
+                ActiveParticipantCount.Equals(other.ActiveParticipantCount)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class VideoConferenceUpdateTopicParticipantInfo : IEquatable<Vide
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActiveParticipantCount != null)
+            if (ActiveParticipantCount != null)
             {
-                hash = hash * 59 + this.ActiveParticipantCount.GetHashCode();
+                hash = hash * 59 + ActiveParticipantCount.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

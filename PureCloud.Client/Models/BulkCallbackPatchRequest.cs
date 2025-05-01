@@ -58,7 +58,7 @@ public partial class BulkCallbackPatchRequest : IEquatable<BulkCallbackPatchRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BulkCallbackPatchRequest);
+        return Equals(obj as BulkCallbackPatchRequest);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class BulkCallbackPatchRequest : IEquatable<BulkCallbackPatchRequ
 
         return true &&
             (
-                this.PatchCallbackRequests == other.PatchCallbackRequests ||
-                this.PatchCallbackRequests != null &&
-                this.PatchCallbackRequests.SequenceEqual(other.PatchCallbackRequests)
+                PatchCallbackRequests == other.PatchCallbackRequests ||
+                PatchCallbackRequests != null &&
+                PatchCallbackRequests.SequenceEqual(other.PatchCallbackRequests)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class BulkCallbackPatchRequest : IEquatable<BulkCallbackPatchRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PatchCallbackRequests != null)
+            if (PatchCallbackRequests != null)
             {
-                hash = hash * 59 + this.PatchCallbackRequests.GetHashCode();
+                hash = hash * 59 + PatchCallbackRequests.GetHashCode();
             }
 
             return hash;

@@ -101,7 +101,7 @@ public partial class ReportingTurnKnowledgeSearchEvent : IEquatable<ReportingTur
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingTurnKnowledgeSearchEvent);
+        return Equals(obj as ReportingTurnKnowledgeSearchEvent);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class ReportingTurnKnowledgeSearchEvent : IEquatable<ReportingTur
 
         return true &&
             (
-                this.SearchId == other.SearchId ||
-                this.SearchId != null &&
-                this.SearchId.Equals(other.SearchId)
+                SearchId == other.SearchId ||
+                SearchId != null &&
+                SearchId.Equals(other.SearchId)
             ) &&
             (
-                this.KnowledgeBaseId == other.KnowledgeBaseId ||
-                this.KnowledgeBaseId != null &&
-                this.KnowledgeBaseId.Equals(other.KnowledgeBaseId)
+                KnowledgeBaseId == other.KnowledgeBaseId ||
+                KnowledgeBaseId != null &&
+                KnowledgeBaseId.Equals(other.KnowledgeBaseId)
             ) &&
             (
-                this.Documents == other.Documents ||
-                this.Documents != null &&
-                this.Documents.SequenceEqual(other.Documents)
+                Documents == other.Documents ||
+                Documents != null &&
+                Documents.SequenceEqual(other.Documents)
             ) &&
             (
-                this.SearchQuery == other.SearchQuery ||
-                this.SearchQuery != null &&
-                this.SearchQuery.Equals(other.SearchQuery)
+                SearchQuery == other.SearchQuery ||
+                SearchQuery != null &&
+                SearchQuery.Equals(other.SearchQuery)
             ) &&
             (
-                this.AnswerDocumentId == other.AnswerDocumentId ||
-                this.AnswerDocumentId != null &&
-                this.AnswerDocumentId.Equals(other.AnswerDocumentId)
+                AnswerDocumentId == other.AnswerDocumentId ||
+                AnswerDocumentId != null &&
+                AnswerDocumentId.Equals(other.AnswerDocumentId)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class ReportingTurnKnowledgeSearchEvent : IEquatable<ReportingTur
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SearchId != null)
+            if (SearchId != null)
             {
-                hash = hash * 59 + this.SearchId.GetHashCode();
+                hash = hash * 59 + SearchId.GetHashCode();
             }
 
-            if (this.KnowledgeBaseId != null)
+            if (KnowledgeBaseId != null)
             {
-                hash = hash * 59 + this.KnowledgeBaseId.GetHashCode();
+                hash = hash * 59 + KnowledgeBaseId.GetHashCode();
             }
 
-            if (this.Documents != null)
+            if (Documents != null)
             {
-                hash = hash * 59 + this.Documents.GetHashCode();
+                hash = hash * 59 + Documents.GetHashCode();
             }
 
-            if (this.SearchQuery != null)
+            if (SearchQuery != null)
             {
-                hash = hash * 59 + this.SearchQuery.GetHashCode();
+                hash = hash * 59 + SearchQuery.GetHashCode();
             }
 
-            if (this.AnswerDocumentId != null)
+            if (AnswerDocumentId != null)
             {
-                hash = hash * 59 + this.AnswerDocumentId.GetHashCode();
+                hash = hash * 59 + AnswerDocumentId.GetHashCode();
             }
 
             return hash;

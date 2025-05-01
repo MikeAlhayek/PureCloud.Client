@@ -63,7 +63,7 @@ public partial class VoicemailMessagesTopicVoicemailCopyRecord : IEquatable<Voic
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VoicemailMessagesTopicVoicemailCopyRecord);
+        return Equals(obj as VoicemailMessagesTopicVoicemailCopyRecord);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class VoicemailMessagesTopicVoicemailCopyRecord : IEquatable<Voic
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Group == other.Group ||
-                this.Group != null &&
-                this.Group.Equals(other.Group)
+                Group == other.Group ||
+                Group != null &&
+                Group.Equals(other.Group)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class VoicemailMessagesTopicVoicemailCopyRecord : IEquatable<Voic
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Group != null)
+            if (Group != null)
             {
-                hash = hash * 59 + this.Group.GetHashCode();
+                hash = hash * 59 + Group.GetHashCode();
             }
 
             return hash;

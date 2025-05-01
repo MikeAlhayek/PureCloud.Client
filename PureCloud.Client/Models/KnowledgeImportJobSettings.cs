@@ -89,7 +89,7 @@ public partial class KnowledgeImportJobSettings : IEquatable<KnowledgeImportJobS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeImportJobSettings);
+        return Equals(obj as KnowledgeImportJobSettings);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class KnowledgeImportJobSettings : IEquatable<KnowledgeImportJobS
 
         return true &&
             (
-                this.ImportAsNew == other.ImportAsNew ||
-                this.ImportAsNew != null &&
-                this.ImportAsNew.Equals(other.ImportAsNew)
+                ImportAsNew == other.ImportAsNew ||
+                ImportAsNew != null &&
+                ImportAsNew.Equals(other.ImportAsNew)
             ) &&
             (
-                this.Visible == other.Visible ||
-                this.Visible != null &&
-                this.Visible.Equals(other.Visible)
+                Visible == other.Visible ||
+                Visible != null &&
+                Visible.Equals(other.Visible)
             ) &&
             (
-                this.CategoryId == other.CategoryId ||
-                this.CategoryId != null &&
-                this.CategoryId.Equals(other.CategoryId)
+                CategoryId == other.CategoryId ||
+                CategoryId != null &&
+                CategoryId.Equals(other.CategoryId)
             ) &&
             (
-                this.LabelIds == other.LabelIds ||
-                this.LabelIds != null &&
-                this.LabelIds.SequenceEqual(other.LabelIds)
+                LabelIds == other.LabelIds ||
+                LabelIds != null &&
+                LabelIds.SequenceEqual(other.LabelIds)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class KnowledgeImportJobSettings : IEquatable<KnowledgeImportJobS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ImportAsNew != null)
+            if (ImportAsNew != null)
             {
-                hash = hash * 59 + this.ImportAsNew.GetHashCode();
+                hash = hash * 59 + ImportAsNew.GetHashCode();
             }
 
-            if (this.Visible != null)
+            if (Visible != null)
             {
-                hash = hash * 59 + this.Visible.GetHashCode();
+                hash = hash * 59 + Visible.GetHashCode();
             }
 
-            if (this.CategoryId != null)
+            if (CategoryId != null)
             {
-                hash = hash * 59 + this.CategoryId.GetHashCode();
+                hash = hash * 59 + CategoryId.GetHashCode();
             }
 
-            if (this.LabelIds != null)
+            if (LabelIds != null)
             {
-                hash = hash * 59 + this.LabelIds.GetHashCode();
+                hash = hash * 59 + LabelIds.GetHashCode();
             }
 
             return hash;

@@ -98,7 +98,7 @@ public partial class ObservationMetricData : IEquatable<ObservationMetricData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ObservationMetricData);
+        return Equals(obj as ObservationMetricData);
     }
 
     /// <summary>
@@ -116,29 +116,29 @@ public partial class ObservationMetricData : IEquatable<ObservationMetricData>
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Qualifier == other.Qualifier ||
-                this.Qualifier != null &&
-                this.Qualifier.Equals(other.Qualifier)
+                Qualifier == other.Qualifier ||
+                Qualifier != null &&
+                Qualifier.Equals(other.Qualifier)
             ) &&
             (
-                this.Stats == other.Stats ||
-                this.Stats != null &&
-                this.Stats.Equals(other.Stats)
+                Stats == other.Stats ||
+                Stats != null &&
+                Stats.Equals(other.Stats)
             ) &&
             (
-                this.Truncated == other.Truncated ||
-                this.Truncated != null &&
-                this.Truncated.Equals(other.Truncated)
+                Truncated == other.Truncated ||
+                Truncated != null &&
+                Truncated.Equals(other.Truncated)
             ) &&
             (
-                this.Observations == other.Observations ||
-                this.Observations != null &&
-                this.Observations.SequenceEqual(other.Observations)
+                Observations == other.Observations ||
+                Observations != null &&
+                Observations.SequenceEqual(other.Observations)
             );
     }
 
@@ -153,29 +153,29 @@ public partial class ObservationMetricData : IEquatable<ObservationMetricData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Qualifier != null)
+            if (Qualifier != null)
             {
-                hash = hash * 59 + this.Qualifier.GetHashCode();
+                hash = hash * 59 + Qualifier.GetHashCode();
             }
 
-            if (this.Stats != null)
+            if (Stats != null)
             {
-                hash = hash * 59 + this.Stats.GetHashCode();
+                hash = hash * 59 + Stats.GetHashCode();
             }
 
-            if (this.Truncated != null)
+            if (Truncated != null)
             {
-                hash = hash * 59 + this.Truncated.GetHashCode();
+                hash = hash * 59 + Truncated.GetHashCode();
             }
 
-            if (this.Observations != null)
+            if (Observations != null)
             {
-                hash = hash * 59 + this.Observations.GetHashCode();
+                hash = hash * 59 + Observations.GetHashCode();
             }
 
             return hash;

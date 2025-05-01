@@ -59,7 +59,7 @@ public partial class CriteriaQuery : IEquatable<CriteriaQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CriteriaQuery);
+        return Equals(obj as CriteriaQuery);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class CriteriaQuery : IEquatable<CriteriaQuery>
 
         return true &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.SequenceEqual(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.SequenceEqual(other.Query)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class CriteriaQuery : IEquatable<CriteriaQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
             return hash;

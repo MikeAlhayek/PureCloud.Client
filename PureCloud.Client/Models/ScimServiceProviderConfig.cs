@@ -141,7 +141,7 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimServiceProviderConfig);
+        return Equals(obj as ScimServiceProviderConfig);
     }
 
     /// <summary>
@@ -159,54 +159,54 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
 
         return true &&
             (
-                this.Schemas == other.Schemas ||
-                this.Schemas != null &&
-                this.Schemas.SequenceEqual(other.Schemas)
+                Schemas == other.Schemas ||
+                Schemas != null &&
+                Schemas.SequenceEqual(other.Schemas)
             ) &&
             (
-                this.DocumentationUri == other.DocumentationUri ||
-                this.DocumentationUri != null &&
-                this.DocumentationUri.Equals(other.DocumentationUri)
+                DocumentationUri == other.DocumentationUri ||
+                DocumentationUri != null &&
+                DocumentationUri.Equals(other.DocumentationUri)
             ) &&
             (
-                this.Patch == other.Patch ||
-                this.Patch != null &&
-                this.Patch.Equals(other.Patch)
+                Patch == other.Patch ||
+                Patch != null &&
+                Patch.Equals(other.Patch)
             ) &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             ) &&
             (
-                this.Etag == other.Etag ||
-                this.Etag != null &&
-                this.Etag.Equals(other.Etag)
+                Etag == other.Etag ||
+                Etag != null &&
+                Etag.Equals(other.Etag)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.Equals(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.Equals(other.Sort)
             ) &&
             (
-                this.Bulk == other.Bulk ||
-                this.Bulk != null &&
-                this.Bulk.Equals(other.Bulk)
+                Bulk == other.Bulk ||
+                Bulk != null &&
+                Bulk.Equals(other.Bulk)
             ) &&
             (
-                this.ChangePassword == other.ChangePassword ||
-                this.ChangePassword != null &&
-                this.ChangePassword.Equals(other.ChangePassword)
+                ChangePassword == other.ChangePassword ||
+                ChangePassword != null &&
+                ChangePassword.Equals(other.ChangePassword)
             ) &&
             (
-                this.AuthenticationSchemes == other.AuthenticationSchemes ||
-                this.AuthenticationSchemes != null &&
-                this.AuthenticationSchemes.SequenceEqual(other.AuthenticationSchemes)
+                AuthenticationSchemes == other.AuthenticationSchemes ||
+                AuthenticationSchemes != null &&
+                AuthenticationSchemes.SequenceEqual(other.AuthenticationSchemes)
             ) &&
             (
-                this.Meta == other.Meta ||
-                this.Meta != null &&
-                this.Meta.Equals(other.Meta)
+                Meta == other.Meta ||
+                Meta != null &&
+                Meta.Equals(other.Meta)
             );
     }
 
@@ -221,54 +221,54 @@ public partial class ScimServiceProviderConfig : IEquatable<ScimServiceProviderC
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Schemas != null)
+            if (Schemas != null)
             {
-                hash = hash * 59 + this.Schemas.GetHashCode();
+                hash = hash * 59 + Schemas.GetHashCode();
             }
 
-            if (this.DocumentationUri != null)
+            if (DocumentationUri != null)
             {
-                hash = hash * 59 + this.DocumentationUri.GetHashCode();
+                hash = hash * 59 + DocumentationUri.GetHashCode();
             }
 
-            if (this.Patch != null)
+            if (Patch != null)
             {
-                hash = hash * 59 + this.Patch.GetHashCode();
+                hash = hash * 59 + Patch.GetHashCode();
             }
 
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
-            if (this.Etag != null)
+            if (Etag != null)
             {
-                hash = hash * 59 + this.Etag.GetHashCode();
+                hash = hash * 59 + Etag.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
-            if (this.Bulk != null)
+            if (Bulk != null)
             {
-                hash = hash * 59 + this.Bulk.GetHashCode();
+                hash = hash * 59 + Bulk.GetHashCode();
             }
 
-            if (this.ChangePassword != null)
+            if (ChangePassword != null)
             {
-                hash = hash * 59 + this.ChangePassword.GetHashCode();
+                hash = hash * 59 + ChangePassword.GetHashCode();
             }
 
-            if (this.AuthenticationSchemes != null)
+            if (AuthenticationSchemes != null)
             {
-                hash = hash * 59 + this.AuthenticationSchemes.GetHashCode();
+                hash = hash * 59 + AuthenticationSchemes.GetHashCode();
             }
 
-            if (this.Meta != null)
+            if (Meta != null)
             {
-                hash = hash * 59 + this.Meta.GetHashCode();
+                hash = hash * 59 + Meta.GetHashCode();
             }
 
             return hash;

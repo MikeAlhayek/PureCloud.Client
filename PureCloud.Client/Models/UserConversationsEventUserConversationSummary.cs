@@ -129,7 +129,7 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserConversationsEventUserConversationSummary);
+        return Equals(obj as UserConversationsEventUserConversationSummary);
     }
 
     /// <summary>
@@ -147,44 +147,44 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.Call == other.Call ||
-                this.Call != null &&
-                this.Call.Equals(other.Call)
+                Call == other.Call ||
+                Call != null &&
+                Call.Equals(other.Call)
             ) &&
             (
-                this.Callback == other.Callback ||
-                this.Callback != null &&
-                this.Callback.Equals(other.Callback)
+                Callback == other.Callback ||
+                Callback != null &&
+                Callback.Equals(other.Callback)
             ) &&
             (
-                this.Email == other.Email ||
-                this.Email != null &&
-                this.Email.Equals(other.Email)
+                Email == other.Email ||
+                Email != null &&
+                Email.Equals(other.Email)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Chat == other.Chat ||
-                this.Chat != null &&
-                this.Chat.Equals(other.Chat)
+                Chat == other.Chat ||
+                Chat != null &&
+                Chat.Equals(other.Chat)
             ) &&
             (
-                this.SocialExpression == other.SocialExpression ||
-                this.SocialExpression != null &&
-                this.SocialExpression.Equals(other.SocialExpression)
+                SocialExpression == other.SocialExpression ||
+                SocialExpression != null &&
+                SocialExpression.Equals(other.SocialExpression)
             ) &&
             (
-                this.Video == other.Video ||
-                this.Video != null &&
-                this.Video.Equals(other.Video)
+                Video == other.Video ||
+                Video != null &&
+                Video.Equals(other.Video)
             );
     }
 
@@ -199,44 +199,44 @@ public partial class UserConversationsEventUserConversationSummary : IEquatable<
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.Call != null)
+            if (Call != null)
             {
-                hash = hash * 59 + this.Call.GetHashCode();
+                hash = hash * 59 + Call.GetHashCode();
             }
 
-            if (this.Callback != null)
+            if (Callback != null)
             {
-                hash = hash * 59 + this.Callback.GetHashCode();
+                hash = hash * 59 + Callback.GetHashCode();
             }
 
-            if (this.Email != null)
+            if (Email != null)
             {
-                hash = hash * 59 + this.Email.GetHashCode();
+                hash = hash * 59 + Email.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Chat != null)
+            if (Chat != null)
             {
-                hash = hash * 59 + this.Chat.GetHashCode();
+                hash = hash * 59 + Chat.GetHashCode();
             }
 
-            if (this.SocialExpression != null)
+            if (SocialExpression != null)
             {
-                hash = hash * 59 + this.SocialExpression.GetHashCode();
+                hash = hash * 59 + SocialExpression.GetHashCode();
             }
 
-            if (this.Video != null)
+            if (Video != null)
             {
-                hash = hash * 59 + this.Video.GetHashCode();
+                hash = hash * 59 + Video.GetHashCode();
             }
 
             return hash;

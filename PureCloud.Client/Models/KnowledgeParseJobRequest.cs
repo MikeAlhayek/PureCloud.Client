@@ -71,7 +71,7 @@ public partial class KnowledgeParseJobRequest : IEquatable<KnowledgeParseJobRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeParseJobRequest);
+        return Equals(obj as KnowledgeParseJobRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class KnowledgeParseJobRequest : IEquatable<KnowledgeParseJobRequ
 
         return true &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.Hints == other.Hints ||
-                this.Hints != null &&
-                this.Hints.SequenceEqual(other.Hints)
+                Hints == other.Hints ||
+                Hints != null &&
+                Hints.SequenceEqual(other.Hints)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class KnowledgeParseJobRequest : IEquatable<KnowledgeParseJobRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.Hints != null)
+            if (Hints != null)
             {
-                hash = hash * 59 + this.Hints.GetHashCode();
+                hash = hash * 59 + Hints.GetHashCode();
             }
 
             return hash;

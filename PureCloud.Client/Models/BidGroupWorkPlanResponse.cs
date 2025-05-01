@@ -104,7 +104,7 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BidGroupWorkPlanResponse);
+        return Equals(obj as BidGroupWorkPlanResponse);
     }
 
     /// <summary>
@@ -122,34 +122,34 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ManagementUnit == other.ManagementUnit ||
-                this.ManagementUnit != null &&
-                this.ManagementUnit.Equals(other.ManagementUnit)
+                ManagementUnit == other.ManagementUnit ||
+                ManagementUnit != null &&
+                ManagementUnit.Equals(other.ManagementUnit)
             ) &&
             (
-                this.OverrideAgentCount == other.OverrideAgentCount ||
-                this.OverrideAgentCount != null &&
-                this.OverrideAgentCount.Equals(other.OverrideAgentCount)
+                OverrideAgentCount == other.OverrideAgentCount ||
+                OverrideAgentCount != null &&
+                OverrideAgentCount.Equals(other.OverrideAgentCount)
             ) &&
             (
-                this.SuggestedAgentCount == other.SuggestedAgentCount ||
-                this.SuggestedAgentCount != null &&
-                this.SuggestedAgentCount.Equals(other.SuggestedAgentCount)
+                SuggestedAgentCount == other.SuggestedAgentCount ||
+                SuggestedAgentCount != null &&
+                SuggestedAgentCount.Equals(other.SuggestedAgentCount)
             ) &&
             (
-                this.AgentCountRange == other.AgentCountRange ||
-                this.AgentCountRange != null &&
-                this.AgentCountRange.Equals(other.AgentCountRange)
+                AgentCountRange == other.AgentCountRange ||
+                AgentCountRange != null &&
+                AgentCountRange.Equals(other.AgentCountRange)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -164,34 +164,34 @@ public partial class BidGroupWorkPlanResponse : IEquatable<BidGroupWorkPlanRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ManagementUnit != null)
+            if (ManagementUnit != null)
             {
-                hash = hash * 59 + this.ManagementUnit.GetHashCode();
+                hash = hash * 59 + ManagementUnit.GetHashCode();
             }
 
-            if (this.OverrideAgentCount != null)
+            if (OverrideAgentCount != null)
             {
-                hash = hash * 59 + this.OverrideAgentCount.GetHashCode();
+                hash = hash * 59 + OverrideAgentCount.GetHashCode();
             }
 
-            if (this.SuggestedAgentCount != null)
+            if (SuggestedAgentCount != null)
             {
-                hash = hash * 59 + this.SuggestedAgentCount.GetHashCode();
+                hash = hash * 59 + SuggestedAgentCount.GetHashCode();
             }
 
-            if (this.AgentCountRange != null)
+            if (AgentCountRange != null)
             {
-                hash = hash * 59 + this.AgentCountRange.GetHashCode();
+                hash = hash * 59 + AgentCountRange.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -51,7 +51,7 @@ public partial class TrusteeAuthorization : IEquatable<TrusteeAuthorization>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrusteeAuthorization);
+        return Equals(obj as TrusteeAuthorization);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class TrusteeAuthorization : IEquatable<TrusteeAuthorization>
 
         return true &&
             (
-                this.Permissions == other.Permissions ||
-                this.Permissions != null &&
-                this.Permissions.SequenceEqual(other.Permissions)
+                Permissions == other.Permissions ||
+                Permissions != null &&
+                Permissions.SequenceEqual(other.Permissions)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class TrusteeAuthorization : IEquatable<TrusteeAuthorization>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Permissions != null)
+            if (Permissions != null)
             {
-                hash = hash * 59 + this.Permissions.GetHashCode();
+                hash = hash * 59 + Permissions.GetHashCode();
             }
 
             return hash;

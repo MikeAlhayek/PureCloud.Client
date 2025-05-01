@@ -138,7 +138,7 @@ public partial class PhoneChangeTopicPhoneStatus : IEquatable<PhoneChangeTopicPh
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PhoneChangeTopicPhoneStatus);
+        return Equals(obj as PhoneChangeTopicPhoneStatus);
     }
 
     /// <summary>
@@ -156,34 +156,34 @@ public partial class PhoneChangeTopicPhoneStatus : IEquatable<PhoneChangeTopicPh
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.OperationalStatus == other.OperationalStatus ||
-                this.OperationalStatus != null &&
-                this.OperationalStatus.Equals(other.OperationalStatus)
+                OperationalStatus == other.OperationalStatus ||
+                OperationalStatus != null &&
+                OperationalStatus.Equals(other.OperationalStatus)
             ) &&
             (
-                this.Edge == other.Edge ||
-                this.Edge != null &&
-                this.Edge.Equals(other.Edge)
+                Edge == other.Edge ||
+                Edge != null &&
+                Edge.Equals(other.Edge)
             ) &&
             (
-                this.Provision == other.Provision ||
-                this.Provision != null &&
-                this.Provision.Equals(other.Provision)
+                Provision == other.Provision ||
+                Provision != null &&
+                Provision.Equals(other.Provision)
             ) &&
             (
-                this.LineStatuses == other.LineStatuses ||
-                this.LineStatuses != null &&
-                this.LineStatuses.SequenceEqual(other.LineStatuses)
+                LineStatuses == other.LineStatuses ||
+                LineStatuses != null &&
+                LineStatuses.SequenceEqual(other.LineStatuses)
             ) &&
             (
-                this.EventCreationTime == other.EventCreationTime ||
-                this.EventCreationTime != null &&
-                this.EventCreationTime.Equals(other.EventCreationTime)
+                EventCreationTime == other.EventCreationTime ||
+                EventCreationTime != null &&
+                EventCreationTime.Equals(other.EventCreationTime)
             );
     }
 
@@ -198,34 +198,34 @@ public partial class PhoneChangeTopicPhoneStatus : IEquatable<PhoneChangeTopicPh
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.OperationalStatus != null)
+            if (OperationalStatus != null)
             {
-                hash = hash * 59 + this.OperationalStatus.GetHashCode();
+                hash = hash * 59 + OperationalStatus.GetHashCode();
             }
 
-            if (this.Edge != null)
+            if (Edge != null)
             {
-                hash = hash * 59 + this.Edge.GetHashCode();
+                hash = hash * 59 + Edge.GetHashCode();
             }
 
-            if (this.Provision != null)
+            if (Provision != null)
             {
-                hash = hash * 59 + this.Provision.GetHashCode();
+                hash = hash * 59 + Provision.GetHashCode();
             }
 
-            if (this.LineStatuses != null)
+            if (LineStatuses != null)
             {
-                hash = hash * 59 + this.LineStatuses.GetHashCode();
+                hash = hash * 59 + LineStatuses.GetHashCode();
             }
 
-            if (this.EventCreationTime != null)
+            if (EventCreationTime != null)
             {
-                hash = hash * 59 + this.EventCreationTime.GetHashCode();
+                hash = hash * 59 + EventCreationTime.GetHashCode();
             }
 
             return hash;

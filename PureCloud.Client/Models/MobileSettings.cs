@@ -59,7 +59,7 @@ public partial class MobileSettings : IEquatable<MobileSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MobileSettings);
+        return Equals(obj as MobileSettings);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class MobileSettings : IEquatable<MobileSettings>
 
         return true &&
             (
-                this.Notifications == other.Notifications ||
-                this.Notifications != null &&
-                this.Notifications.Equals(other.Notifications)
+                Notifications == other.Notifications ||
+                Notifications != null &&
+                Notifications.Equals(other.Notifications)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class MobileSettings : IEquatable<MobileSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Notifications != null)
+            if (Notifications != null)
             {
-                hash = hash * 59 + this.Notifications.GetHashCode();
+                hash = hash * 59 + Notifications.GetHashCode();
             }
 
             return hash;

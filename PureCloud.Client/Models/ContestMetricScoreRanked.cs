@@ -101,7 +101,7 @@ public partial class ContestMetricScoreRanked : IEquatable<ContestMetricScoreRan
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestMetricScoreRanked);
+        return Equals(obj as ContestMetricScoreRanked);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class ContestMetricScoreRanked : IEquatable<ContestMetricScoreRan
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             ) &&
             (
-                this.TotalPoints == other.TotalPoints ||
-                this.TotalPoints != null &&
-                this.TotalPoints.Equals(other.TotalPoints)
+                TotalPoints == other.TotalPoints ||
+                TotalPoints != null &&
+                TotalPoints.Equals(other.TotalPoints)
             ) &&
             (
-                this.PercentOfGoal == other.PercentOfGoal ||
-                this.PercentOfGoal != null &&
-                this.PercentOfGoal.Equals(other.PercentOfGoal)
+                PercentOfGoal == other.PercentOfGoal ||
+                PercentOfGoal != null &&
+                PercentOfGoal.Equals(other.PercentOfGoal)
             ) &&
             (
-                this.Rank == other.Rank ||
-                this.Rank != null &&
-                this.Rank.Equals(other.Rank)
+                Rank == other.Rank ||
+                Rank != null &&
+                Rank.Equals(other.Rank)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class ContestMetricScoreRanked : IEquatable<ContestMetricScoreRan
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
-            if (this.TotalPoints != null)
+            if (TotalPoints != null)
             {
-                hash = hash * 59 + this.TotalPoints.GetHashCode();
+                hash = hash * 59 + TotalPoints.GetHashCode();
             }
 
-            if (this.PercentOfGoal != null)
+            if (PercentOfGoal != null)
             {
-                hash = hash * 59 + this.PercentOfGoal.GetHashCode();
+                hash = hash * 59 + PercentOfGoal.GetHashCode();
             }
 
-            if (this.Rank != null)
+            if (Rank != null)
             {
-                hash = hash * 59 + this.Rank.GetHashCode();
+                hash = hash * 59 + Rank.GetHashCode();
             }
 
             return hash;

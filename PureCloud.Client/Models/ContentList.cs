@@ -151,7 +151,7 @@ public partial class ContentList : IEquatable<ContentList>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentList);
+        return Equals(obj as ContentList);
     }
 
     /// <summary>
@@ -169,39 +169,39 @@ public partial class ContentList : IEquatable<ContentList>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ListType == other.ListType ||
-                this.ListType != null &&
-                this.ListType.Equals(other.ListType)
+                ListType == other.ListType ||
+                ListType != null &&
+                ListType.Equals(other.ListType)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.SubmitLabel == other.SubmitLabel ||
-                this.SubmitLabel != null &&
-                this.SubmitLabel.Equals(other.SubmitLabel)
+                SubmitLabel == other.SubmitLabel ||
+                SubmitLabel != null &&
+                SubmitLabel.Equals(other.SubmitLabel)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.Equals(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.Equals(other.Actions)
             ) &&
             (
-                this.Components == other.Components ||
-                this.Components != null &&
-                this.Components.SequenceEqual(other.Components)
+                Components == other.Components ||
+                Components != null &&
+                Components.SequenceEqual(other.Components)
             );
     }
 
@@ -216,39 +216,39 @@ public partial class ContentList : IEquatable<ContentList>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ListType != null)
+            if (ListType != null)
             {
-                hash = hash * 59 + this.ListType.GetHashCode();
+                hash = hash * 59 + ListType.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.SubmitLabel != null)
+            if (SubmitLabel != null)
             {
-                hash = hash * 59 + this.SubmitLabel.GetHashCode();
+                hash = hash * 59 + SubmitLabel.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
-            if (this.Components != null)
+            if (Components != null)
             {
-                hash = hash * 59 + this.Components.GetHashCode();
+                hash = hash * 59 + Components.GetHashCode();
             }
 
             return hash;

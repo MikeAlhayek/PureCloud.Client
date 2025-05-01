@@ -155,7 +155,7 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssessment);
+        return Equals(obj as LearningAssessment);
     }
 
     /// <summary>
@@ -173,44 +173,44 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
 
         return true &&
             (
-                this.AssessmentId == other.AssessmentId ||
-                this.AssessmentId != null &&
-                this.AssessmentId.Equals(other.AssessmentId)
+                AssessmentId == other.AssessmentId ||
+                AssessmentId != null &&
+                AssessmentId.Equals(other.AssessmentId)
             ) &&
             (
-                this.ContextId == other.ContextId ||
-                this.ContextId != null &&
-                this.ContextId.Equals(other.ContextId)
+                ContextId == other.ContextId ||
+                ContextId != null &&
+                ContextId.Equals(other.ContextId)
             ) &&
             (
-                this.AssessmentFormId == other.AssessmentFormId ||
-                this.AssessmentFormId != null &&
-                this.AssessmentFormId.Equals(other.AssessmentFormId)
+                AssessmentFormId == other.AssessmentFormId ||
+                AssessmentFormId != null &&
+                AssessmentFormId.Equals(other.AssessmentFormId)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Answers == other.Answers ||
-                this.Answers != null &&
-                this.Answers.Equals(other.Answers)
+                Answers == other.Answers ||
+                Answers != null &&
+                Answers.Equals(other.Answers)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.DateSubmitted == other.DateSubmitted ||
-                this.DateSubmitted != null &&
-                this.DateSubmitted.Equals(other.DateSubmitted)
+                DateSubmitted == other.DateSubmitted ||
+                DateSubmitted != null &&
+                DateSubmitted.Equals(other.DateSubmitted)
             );
     }
 
@@ -225,44 +225,44 @@ public partial class LearningAssessment : IEquatable<LearningAssessment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AssessmentId != null)
+            if (AssessmentId != null)
             {
-                hash = hash * 59 + this.AssessmentId.GetHashCode();
+                hash = hash * 59 + AssessmentId.GetHashCode();
             }
 
-            if (this.ContextId != null)
+            if (ContextId != null)
             {
-                hash = hash * 59 + this.ContextId.GetHashCode();
+                hash = hash * 59 + ContextId.GetHashCode();
             }
 
-            if (this.AssessmentFormId != null)
+            if (AssessmentFormId != null)
             {
-                hash = hash * 59 + this.AssessmentFormId.GetHashCode();
+                hash = hash * 59 + AssessmentFormId.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Answers != null)
+            if (Answers != null)
             {
-                hash = hash * 59 + this.Answers.GetHashCode();
+                hash = hash * 59 + Answers.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.DateSubmitted != null)
+            if (DateSubmitted != null)
             {
-                hash = hash * 59 + this.DateSubmitted.GetHashCode();
+                hash = hash * 59 + DateSubmitted.GetHashCode();
             }
 
             return hash;

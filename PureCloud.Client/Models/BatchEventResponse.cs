@@ -52,7 +52,7 @@ public partial class BatchEventResponse : IEquatable<BatchEventResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BatchEventResponse);
+        return Equals(obj as BatchEventResponse);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class BatchEventResponse : IEquatable<BatchEventResponse>
 
         return true &&
             (
-                this.Errors == other.Errors ||
-                this.Errors != null &&
-                this.Errors.SequenceEqual(other.Errors)
+                Errors == other.Errors ||
+                Errors != null &&
+                Errors.SequenceEqual(other.Errors)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class BatchEventResponse : IEquatable<BatchEventResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Errors != null)
+            if (Errors != null)
             {
-                hash = hash * 59 + this.Errors.GetHashCode();
+                hash = hash * 59 + Errors.GetHashCode();
             }
 
             return hash;

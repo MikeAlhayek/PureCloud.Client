@@ -89,7 +89,7 @@ public partial class EventTyping : IEquatable<EventTyping>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EventTyping);
+        return Equals(obj as EventTyping);
     }
 
     /// <summary>
@@ -107,14 +107,14 @@ public partial class EventTyping : IEquatable<EventTyping>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Duration == other.Duration ||
-                this.Duration != null &&
-                this.Duration.Equals(other.Duration)
+                Duration == other.Duration ||
+                Duration != null &&
+                Duration.Equals(other.Duration)
             );
     }
 
@@ -129,14 +129,14 @@ public partial class EventTyping : IEquatable<EventTyping>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Duration != null)
+            if (Duration != null)
             {
-                hash = hash * 59 + this.Duration.GetHashCode();
+                hash = hash * 59 + Duration.GetHashCode();
             }
 
             return hash;

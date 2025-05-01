@@ -245,7 +245,7 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentQuery);
+        return Equals(obj as KnowledgeDocumentQuery);
     }
 
     /// <summary>
@@ -263,44 +263,44 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
 
         return true &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.IncludeDraftDocuments == other.IncludeDraftDocuments ||
-                this.IncludeDraftDocuments != null &&
-                this.IncludeDraftDocuments.Equals(other.IncludeDraftDocuments)
+                IncludeDraftDocuments == other.IncludeDraftDocuments ||
+                IncludeDraftDocuments != null &&
+                IncludeDraftDocuments.Equals(other.IncludeDraftDocuments)
             ) &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             ) &&
             (
-                this.IncludeVariations == other.IncludeVariations ||
-                this.IncludeVariations != null &&
-                this.IncludeVariations.Equals(other.IncludeVariations)
+                IncludeVariations == other.IncludeVariations ||
+                IncludeVariations != null &&
+                IncludeVariations.Equals(other.IncludeVariations)
             ) &&
             (
-                this.SortOrder == other.SortOrder ||
-                this.SortOrder != null &&
-                this.SortOrder.Equals(other.SortOrder)
+                SortOrder == other.SortOrder ||
+                SortOrder != null &&
+                SortOrder.Equals(other.SortOrder)
             ) &&
             (
-                this.SortBy == other.SortBy ||
-                this.SortBy != null &&
-                this.SortBy.Equals(other.SortBy)
+                SortBy == other.SortBy ||
+                SortBy != null &&
+                SortBy.Equals(other.SortBy)
             );
     }
 
@@ -315,44 +315,44 @@ public partial class KnowledgeDocumentQuery : IEquatable<KnowledgeDocumentQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.IncludeDraftDocuments != null)
+            if (IncludeDraftDocuments != null)
             {
-                hash = hash * 59 + this.IncludeDraftDocuments.GetHashCode();
+                hash = hash * 59 + IncludeDraftDocuments.GetHashCode();
             }
 
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
-            if (this.IncludeVariations != null)
+            if (IncludeVariations != null)
             {
-                hash = hash * 59 + this.IncludeVariations.GetHashCode();
+                hash = hash * 59 + IncludeVariations.GetHashCode();
             }
 
-            if (this.SortOrder != null)
+            if (SortOrder != null)
             {
-                hash = hash * 59 + this.SortOrder.GetHashCode();
+                hash = hash * 59 + SortOrder.GetHashCode();
             }
 
-            if (this.SortBy != null)
+            if (SortBy != null)
             {
-                hash = hash * 59 + this.SortBy.GetHashCode();
+                hash = hash * 59 + SortBy.GetHashCode();
             }
 
             return hash;

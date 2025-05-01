@@ -54,10 +54,10 @@ public class ApiResponse<T>
     /// <param name="statusDescription">Status description (HTTP status description)</param>
     public ApiResponse(int statusCode, IDictionary<string, string> headers, T data, string rawData, string statusDescription)
     {
-        this.StatusCode = statusCode;
-        this.Headers = headers;
-        this.Data = data;
-        this.RawData = rawData;
-        this.StatusDescription = statusDescription;
+        StatusCode = statusCode;
+        Headers = headers;
+        Data = data;
+        RawData = rawData;
+        StatusDescription = statusDescription;
     }
 }

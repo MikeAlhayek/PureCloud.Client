@@ -127,7 +127,7 @@ public partial class SourceLastSync : IEquatable<SourceLastSync>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SourceLastSync);
+        return Equals(obj as SourceLastSync);
     }
 
     /// <summary>
@@ -145,24 +145,24 @@ public partial class SourceLastSync : IEquatable<SourceLastSync>
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.DateStarted == other.DateStarted ||
-                this.DateStarted != null &&
-                this.DateStarted.Equals(other.DateStarted)
+                DateStarted == other.DateStarted ||
+                DateStarted != null &&
+                DateStarted.Equals(other.DateStarted)
             ) &&
             (
-                this.DateEnded == other.DateEnded ||
-                this.DateEnded != null &&
-                this.DateEnded.Equals(other.DateEnded)
+                DateEnded == other.DateEnded ||
+                DateEnded != null &&
+                DateEnded.Equals(other.DateEnded)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             );
     }
 
@@ -177,24 +177,24 @@ public partial class SourceLastSync : IEquatable<SourceLastSync>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.DateStarted != null)
+            if (DateStarted != null)
             {
-                hash = hash * 59 + this.DateStarted.GetHashCode();
+                hash = hash * 59 + DateStarted.GetHashCode();
             }
 
-            if (this.DateEnded != null)
+            if (DateEnded != null)
             {
-                hash = hash * 59 + this.DateEnded.GetHashCode();
+                hash = hash * 59 + DateEnded.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
             return hash;

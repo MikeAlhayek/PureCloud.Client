@@ -131,7 +131,7 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueUtilizationDiagnostic);
+        return Equals(obj as QueueUtilizationDiagnostic);
     }
 
     /// <summary>
@@ -149,49 +149,49 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
 
         return true &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.UsersInQueue == other.UsersInQueue ||
-                this.UsersInQueue != null &&
-                this.UsersInQueue.Equals(other.UsersInQueue)
+                UsersInQueue == other.UsersInQueue ||
+                UsersInQueue != null &&
+                UsersInQueue.Equals(other.UsersInQueue)
             ) &&
             (
-                this.ActiveUsersInQueue == other.ActiveUsersInQueue ||
-                this.ActiveUsersInQueue != null &&
-                this.ActiveUsersInQueue.Equals(other.ActiveUsersInQueue)
+                ActiveUsersInQueue == other.ActiveUsersInQueue ||
+                ActiveUsersInQueue != null &&
+                ActiveUsersInQueue.Equals(other.ActiveUsersInQueue)
             ) &&
             (
-                this.UsersOnQueue == other.UsersOnQueue ||
-                this.UsersOnQueue != null &&
-                this.UsersOnQueue.Equals(other.UsersOnQueue)
+                UsersOnQueue == other.UsersOnQueue ||
+                UsersOnQueue != null &&
+                UsersOnQueue.Equals(other.UsersOnQueue)
             ) &&
             (
-                this.UsersNotUtilized == other.UsersNotUtilized ||
-                this.UsersNotUtilized != null &&
-                this.UsersNotUtilized.Equals(other.UsersNotUtilized)
+                UsersNotUtilized == other.UsersNotUtilized ||
+                UsersNotUtilized != null &&
+                UsersNotUtilized.Equals(other.UsersNotUtilized)
             ) &&
             (
-                this.UsersOnQueueWithStation == other.UsersOnQueueWithStation ||
-                this.UsersOnQueueWithStation != null &&
-                this.UsersOnQueueWithStation.Equals(other.UsersOnQueueWithStation)
+                UsersOnQueueWithStation == other.UsersOnQueueWithStation ||
+                UsersOnQueueWithStation != null &&
+                UsersOnQueueWithStation.Equals(other.UsersOnQueueWithStation)
             ) &&
             (
-                this.UsersOnACampaignCall == other.UsersOnACampaignCall ||
-                this.UsersOnACampaignCall != null &&
-                this.UsersOnACampaignCall.Equals(other.UsersOnACampaignCall)
+                UsersOnACampaignCall == other.UsersOnACampaignCall ||
+                UsersOnACampaignCall != null &&
+                UsersOnACampaignCall.Equals(other.UsersOnACampaignCall)
             ) &&
             (
-                this.UsersOnDifferentEdgeGroup == other.UsersOnDifferentEdgeGroup ||
-                this.UsersOnDifferentEdgeGroup != null &&
-                this.UsersOnDifferentEdgeGroup.Equals(other.UsersOnDifferentEdgeGroup)
+                UsersOnDifferentEdgeGroup == other.UsersOnDifferentEdgeGroup ||
+                UsersOnDifferentEdgeGroup != null &&
+                UsersOnDifferentEdgeGroup.Equals(other.UsersOnDifferentEdgeGroup)
             ) &&
             (
-                this.UsersOnANonCampaignCall == other.UsersOnANonCampaignCall ||
-                this.UsersOnANonCampaignCall != null &&
-                this.UsersOnANonCampaignCall.Equals(other.UsersOnANonCampaignCall)
+                UsersOnANonCampaignCall == other.UsersOnANonCampaignCall ||
+                UsersOnANonCampaignCall != null &&
+                UsersOnANonCampaignCall.Equals(other.UsersOnANonCampaignCall)
             );
     }
 
@@ -206,49 +206,49 @@ public partial class QueueUtilizationDiagnostic : IEquatable<QueueUtilizationDia
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.UsersInQueue != null)
+            if (UsersInQueue != null)
             {
-                hash = hash * 59 + this.UsersInQueue.GetHashCode();
+                hash = hash * 59 + UsersInQueue.GetHashCode();
             }
 
-            if (this.ActiveUsersInQueue != null)
+            if (ActiveUsersInQueue != null)
             {
-                hash = hash * 59 + this.ActiveUsersInQueue.GetHashCode();
+                hash = hash * 59 + ActiveUsersInQueue.GetHashCode();
             }
 
-            if (this.UsersOnQueue != null)
+            if (UsersOnQueue != null)
             {
-                hash = hash * 59 + this.UsersOnQueue.GetHashCode();
+                hash = hash * 59 + UsersOnQueue.GetHashCode();
             }
 
-            if (this.UsersNotUtilized != null)
+            if (UsersNotUtilized != null)
             {
-                hash = hash * 59 + this.UsersNotUtilized.GetHashCode();
+                hash = hash * 59 + UsersNotUtilized.GetHashCode();
             }
 
-            if (this.UsersOnQueueWithStation != null)
+            if (UsersOnQueueWithStation != null)
             {
-                hash = hash * 59 + this.UsersOnQueueWithStation.GetHashCode();
+                hash = hash * 59 + UsersOnQueueWithStation.GetHashCode();
             }
 
-            if (this.UsersOnACampaignCall != null)
+            if (UsersOnACampaignCall != null)
             {
-                hash = hash * 59 + this.UsersOnACampaignCall.GetHashCode();
+                hash = hash * 59 + UsersOnACampaignCall.GetHashCode();
             }
 
-            if (this.UsersOnDifferentEdgeGroup != null)
+            if (UsersOnDifferentEdgeGroup != null)
             {
-                hash = hash * 59 + this.UsersOnDifferentEdgeGroup.GetHashCode();
+                hash = hash * 59 + UsersOnDifferentEdgeGroup.GetHashCode();
             }
 
-            if (this.UsersOnANonCampaignCall != null)
+            if (UsersOnANonCampaignCall != null)
             {
-                hash = hash * 59 + this.UsersOnANonCampaignCall.GetHashCode();
+                hash = hash * 59 + UsersOnANonCampaignCall.GetHashCode();
             }
 
             return hash;

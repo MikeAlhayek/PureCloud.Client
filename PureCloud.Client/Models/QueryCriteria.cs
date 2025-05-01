@@ -317,7 +317,7 @@ public partial class QueryCriteria : IEquatable<QueryCriteria>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueryCriteria);
+        return Equals(obj as QueryCriteria);
     }
 
     /// <summary>
@@ -335,34 +335,34 @@ public partial class QueryCriteria : IEquatable<QueryCriteria>
 
         return true &&
             (
-                this.CriteriaKey == other.CriteriaKey ||
-                this.CriteriaKey != null &&
-                this.CriteriaKey.Equals(other.CriteriaKey)
+                CriteriaKey == other.CriteriaKey ||
+                CriteriaKey != null &&
+                CriteriaKey.Equals(other.CriteriaKey)
             ) &&
             (
-                this.CriteriaGroups == other.CriteriaGroups ||
-                this.CriteriaGroups != null &&
-                this.CriteriaGroups.SequenceEqual(other.CriteriaGroups)
+                CriteriaGroups == other.CriteriaGroups ||
+                CriteriaGroups != null &&
+                CriteriaGroups.SequenceEqual(other.CriteriaGroups)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Operators == other.Operators ||
-                this.Operators != null &&
-                this.Operators.SequenceEqual(other.Operators)
+                Operators == other.Operators ||
+                Operators != null &&
+                Operators.SequenceEqual(other.Operators)
             ) &&
             (
-                this.DataType == other.DataType ||
-                this.DataType != null &&
-                this.DataType.Equals(other.DataType)
+                DataType == other.DataType ||
+                DataType != null &&
+                DataType.Equals(other.DataType)
             ) &&
             (
-                this.CategoryInfo == other.CategoryInfo ||
-                this.CategoryInfo != null &&
-                this.CategoryInfo.Equals(other.CategoryInfo)
+                CategoryInfo == other.CategoryInfo ||
+                CategoryInfo != null &&
+                CategoryInfo.Equals(other.CategoryInfo)
             );
     }
 
@@ -377,34 +377,34 @@ public partial class QueryCriteria : IEquatable<QueryCriteria>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CriteriaKey != null)
+            if (CriteriaKey != null)
             {
-                hash = hash * 59 + this.CriteriaKey.GetHashCode();
+                hash = hash * 59 + CriteriaKey.GetHashCode();
             }
 
-            if (this.CriteriaGroups != null)
+            if (CriteriaGroups != null)
             {
-                hash = hash * 59 + this.CriteriaGroups.GetHashCode();
+                hash = hash * 59 + CriteriaGroups.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Operators != null)
+            if (Operators != null)
             {
-                hash = hash * 59 + this.Operators.GetHashCode();
+                hash = hash * 59 + Operators.GetHashCode();
             }
 
-            if (this.DataType != null)
+            if (DataType != null)
             {
-                hash = hash * 59 + this.DataType.GetHashCode();
+                hash = hash * 59 + DataType.GetHashCode();
             }
 
-            if (this.CategoryInfo != null)
+            if (CategoryInfo != null)
             {
-                hash = hash * 59 + this.CategoryInfo.GetHashCode();
+                hash = hash * 59 + CategoryInfo.GetHashCode();
             }
 
             return hash;

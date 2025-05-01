@@ -61,7 +61,7 @@ public partial class UserAvailableTimes : IEquatable<UserAvailableTimes>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserAvailableTimes);
+        return Equals(obj as UserAvailableTimes);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class UserAvailableTimes : IEquatable<UserAvailableTimes>
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.AvailableTimes == other.AvailableTimes ||
-                this.AvailableTimes != null &&
-                this.AvailableTimes.SequenceEqual(other.AvailableTimes)
+                AvailableTimes == other.AvailableTimes ||
+                AvailableTimes != null &&
+                AvailableTimes.SequenceEqual(other.AvailableTimes)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class UserAvailableTimes : IEquatable<UserAvailableTimes>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.AvailableTimes != null)
+            if (AvailableTimes != null)
             {
-                hash = hash * 59 + this.AvailableTimes.GetHashCode();
+                hash = hash * 59 + AvailableTimes.GetHashCode();
             }
 
             return hash;

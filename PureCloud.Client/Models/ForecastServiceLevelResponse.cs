@@ -65,7 +65,7 @@ public partial class ForecastServiceLevelResponse : IEquatable<ForecastServiceLe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ForecastServiceLevelResponse);
+        return Equals(obj as ForecastServiceLevelResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ForecastServiceLevelResponse : IEquatable<ForecastServiceLe
 
         return true &&
             (
-                this.Percent == other.Percent ||
-                this.Percent != null &&
-                this.Percent.Equals(other.Percent)
+                Percent == other.Percent ||
+                Percent != null &&
+                Percent.Equals(other.Percent)
             ) &&
             (
-                this.Seconds == other.Seconds ||
-                this.Seconds != null &&
-                this.Seconds.Equals(other.Seconds)
+                Seconds == other.Seconds ||
+                Seconds != null &&
+                Seconds.Equals(other.Seconds)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ForecastServiceLevelResponse : IEquatable<ForecastServiceLe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Percent != null)
+            if (Percent != null)
             {
-                hash = hash * 59 + this.Percent.GetHashCode();
+                hash = hash * 59 + Percent.GetHashCode();
             }
 
-            if (this.Seconds != null)
+            if (Seconds != null)
             {
-                hash = hash * 59 + this.Seconds.GetHashCode();
+                hash = hash * 59 + Seconds.GetHashCode();
             }
 
             return hash;

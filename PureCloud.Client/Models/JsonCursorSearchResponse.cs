@@ -94,7 +94,7 @@ public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JsonCursorSearchResponse);
+        return Equals(obj as JsonCursorSearchResponse);
     }
 
     /// <summary>
@@ -112,24 +112,24 @@ public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchRespo
 
         return true &&
             (
-                this.Types == other.Types ||
-                this.Types != null &&
-                this.Types.SequenceEqual(other.Types)
+                Types == other.Types ||
+                Types != null &&
+                Types.SequenceEqual(other.Types)
             ) &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.Equals(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.Equals(other.Results)
             ) &&
             (
-                this.Aggregations == other.Aggregations ||
-                this.Aggregations != null &&
-                this.Aggregations.Equals(other.Aggregations)
+                Aggregations == other.Aggregations ||
+                Aggregations != null &&
+                Aggregations.Equals(other.Aggregations)
             ) &&
             (
-                this.Cursor == other.Cursor ||
-                this.Cursor != null &&
-                this.Cursor.Equals(other.Cursor)
+                Cursor == other.Cursor ||
+                Cursor != null &&
+                Cursor.Equals(other.Cursor)
             );
     }
 
@@ -144,24 +144,24 @@ public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Types != null)
+            if (Types != null)
             {
-                hash = hash * 59 + this.Types.GetHashCode();
+                hash = hash * 59 + Types.GetHashCode();
             }
 
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
-            if (this.Aggregations != null)
+            if (Aggregations != null)
             {
-                hash = hash * 59 + this.Aggregations.GetHashCode();
+                hash = hash * 59 + Aggregations.GetHashCode();
             }
 
-            if (this.Cursor != null)
+            if (Cursor != null)
             {
-                hash = hash * 59 + this.Cursor.GetHashCode();
+                hash = hash * 59 + Cursor.GetHashCode();
             }
 
             return hash;

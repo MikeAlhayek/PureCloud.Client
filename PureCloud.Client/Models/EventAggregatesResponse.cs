@@ -65,7 +65,7 @@ public partial class EventAggregatesResponse : IEquatable<EventAggregatesRespons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EventAggregatesResponse);
+        return Equals(obj as EventAggregatesResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class EventAggregatesResponse : IEquatable<EventAggregatesRespons
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.EventDefinitionAggregates == other.EventDefinitionAggregates ||
-                this.EventDefinitionAggregates != null &&
-                this.EventDefinitionAggregates.SequenceEqual(other.EventDefinitionAggregates)
+                EventDefinitionAggregates == other.EventDefinitionAggregates ||
+                EventDefinitionAggregates != null &&
+                EventDefinitionAggregates.SequenceEqual(other.EventDefinitionAggregates)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class EventAggregatesResponse : IEquatable<EventAggregatesRespons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.EventDefinitionAggregates != null)
+            if (EventDefinitionAggregates != null)
             {
-                hash = hash * 59 + this.EventDefinitionAggregates.GetHashCode();
+                hash = hash * 59 + EventDefinitionAggregates.GetHashCode();
             }
 
             return hash;

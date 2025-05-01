@@ -627,7 +627,7 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainLogicalInterface);
+        return Equals(obj as DomainLogicalInterface);
     }
 
     /// <summary>
@@ -645,214 +645,214 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.ModifiedByApp == other.ModifiedByApp ||
-                this.ModifiedByApp != null &&
-                this.ModifiedByApp.Equals(other.ModifiedByApp)
+                ModifiedByApp == other.ModifiedByApp ||
+                ModifiedByApp != null &&
+                ModifiedByApp.Equals(other.ModifiedByApp)
             ) &&
             (
-                this.CreatedByApp == other.CreatedByApp ||
-                this.CreatedByApp != null &&
-                this.CreatedByApp.Equals(other.CreatedByApp)
+                CreatedByApp == other.CreatedByApp ||
+                CreatedByApp != null &&
+                CreatedByApp.Equals(other.CreatedByApp)
             ) &&
             (
-                this.EdgeUri == other.EdgeUri ||
-                this.EdgeUri != null &&
-                this.EdgeUri.Equals(other.EdgeUri)
+                EdgeUri == other.EdgeUri ||
+                EdgeUri != null &&
+                EdgeUri.Equals(other.EdgeUri)
             ) &&
             (
-                this.EdgeAssignedId == other.EdgeAssignedId ||
-                this.EdgeAssignedId != null &&
-                this.EdgeAssignedId.Equals(other.EdgeAssignedId)
+                EdgeAssignedId == other.EdgeAssignedId ||
+                EdgeAssignedId != null &&
+                EdgeAssignedId.Equals(other.EdgeAssignedId)
             ) &&
             (
-                this.FriendlyName == other.FriendlyName ||
-                this.FriendlyName != null &&
-                this.FriendlyName.Equals(other.FriendlyName)
+                FriendlyName == other.FriendlyName ||
+                FriendlyName != null &&
+                FriendlyName.Equals(other.FriendlyName)
             ) &&
             (
-                this.VlanTagId == other.VlanTagId ||
-                this.VlanTagId != null &&
-                this.VlanTagId.Equals(other.VlanTagId)
+                VlanTagId == other.VlanTagId ||
+                VlanTagId != null &&
+                VlanTagId.Equals(other.VlanTagId)
             ) &&
             (
-                this.HardwareAddress == other.HardwareAddress ||
-                this.HardwareAddress != null &&
-                this.HardwareAddress.Equals(other.HardwareAddress)
+                HardwareAddress == other.HardwareAddress ||
+                HardwareAddress != null &&
+                HardwareAddress.Equals(other.HardwareAddress)
             ) &&
             (
-                this.PhysicalAdapterId == other.PhysicalAdapterId ||
-                this.PhysicalAdapterId != null &&
-                this.PhysicalAdapterId.Equals(other.PhysicalAdapterId)
+                PhysicalAdapterId == other.PhysicalAdapterId ||
+                PhysicalAdapterId != null &&
+                PhysicalAdapterId.Equals(other.PhysicalAdapterId)
             ) &&
             (
-                this.IfStatus == other.IfStatus ||
-                this.IfStatus != null &&
-                this.IfStatus.Equals(other.IfStatus)
+                IfStatus == other.IfStatus ||
+                IfStatus != null &&
+                IfStatus.Equals(other.IfStatus)
             ) &&
             (
-                this.InterfaceType == other.InterfaceType ||
-                this.InterfaceType != null &&
-                this.InterfaceType.Equals(other.InterfaceType)
+                InterfaceType == other.InterfaceType ||
+                InterfaceType != null &&
+                InterfaceType.Equals(other.InterfaceType)
             ) &&
             (
-                this.PublicNatAddressIpV4 == other.PublicNatAddressIpV4 ||
-                this.PublicNatAddressIpV4 != null &&
-                this.PublicNatAddressIpV4.Equals(other.PublicNatAddressIpV4)
+                PublicNatAddressIpV4 == other.PublicNatAddressIpV4 ||
+                PublicNatAddressIpV4 != null &&
+                PublicNatAddressIpV4.Equals(other.PublicNatAddressIpV4)
             ) &&
             (
-                this.PublicNatAddressIpV6 == other.PublicNatAddressIpV6 ||
-                this.PublicNatAddressIpV6 != null &&
-                this.PublicNatAddressIpV6.Equals(other.PublicNatAddressIpV6)
+                PublicNatAddressIpV6 == other.PublicNatAddressIpV6 ||
+                PublicNatAddressIpV6 != null &&
+                PublicNatAddressIpV6.Equals(other.PublicNatAddressIpV6)
             ) &&
             (
-                this.Routes == other.Routes ||
-                this.Routes != null &&
-                this.Routes.SequenceEqual(other.Routes)
+                Routes == other.Routes ||
+                Routes != null &&
+                Routes.SequenceEqual(other.Routes)
             ) &&
             (
-                this.Addresses == other.Addresses ||
-                this.Addresses != null &&
-                this.Addresses.SequenceEqual(other.Addresses)
+                Addresses == other.Addresses ||
+                Addresses != null &&
+                Addresses.SequenceEqual(other.Addresses)
             ) &&
             (
-                this.Ipv4Capabilities == other.Ipv4Capabilities ||
-                this.Ipv4Capabilities != null &&
-                this.Ipv4Capabilities.Equals(other.Ipv4Capabilities)
+                Ipv4Capabilities == other.Ipv4Capabilities ||
+                Ipv4Capabilities != null &&
+                Ipv4Capabilities.Equals(other.Ipv4Capabilities)
             ) &&
             (
-                this.Ipv6Capabilities == other.Ipv6Capabilities ||
-                this.Ipv6Capabilities != null &&
-                this.Ipv6Capabilities.Equals(other.Ipv6Capabilities)
+                Ipv6Capabilities == other.Ipv6Capabilities ||
+                Ipv6Capabilities != null &&
+                Ipv6Capabilities.Equals(other.Ipv6Capabilities)
             ) &&
             (
-                this.CurrentState == other.CurrentState ||
-                this.CurrentState != null &&
-                this.CurrentState.Equals(other.CurrentState)
+                CurrentState == other.CurrentState ||
+                CurrentState != null &&
+                CurrentState.Equals(other.CurrentState)
             ) &&
             (
-                this.LastModifiedUserId == other.LastModifiedUserId ||
-                this.LastModifiedUserId != null &&
-                this.LastModifiedUserId.Equals(other.LastModifiedUserId)
+                LastModifiedUserId == other.LastModifiedUserId ||
+                LastModifiedUserId != null &&
+                LastModifiedUserId.Equals(other.LastModifiedUserId)
             ) &&
             (
-                this.LastModifiedCorrelationId == other.LastModifiedCorrelationId ||
-                this.LastModifiedCorrelationId != null &&
-                this.LastModifiedCorrelationId.Equals(other.LastModifiedCorrelationId)
+                LastModifiedCorrelationId == other.LastModifiedCorrelationId ||
+                LastModifiedCorrelationId != null &&
+                LastModifiedCorrelationId.Equals(other.LastModifiedCorrelationId)
             ) &&
             (
-                this.CommandResponses == other.CommandResponses ||
-                this.CommandResponses != null &&
-                this.CommandResponses.SequenceEqual(other.CommandResponses)
+                CommandResponses == other.CommandResponses ||
+                CommandResponses != null &&
+                CommandResponses.SequenceEqual(other.CommandResponses)
             ) &&
             (
-                this.InheritPhoneTrunkBasesIPv4 == other.InheritPhoneTrunkBasesIPv4 ||
-                this.InheritPhoneTrunkBasesIPv4 != null &&
-                this.InheritPhoneTrunkBasesIPv4.Equals(other.InheritPhoneTrunkBasesIPv4)
+                InheritPhoneTrunkBasesIPv4 == other.InheritPhoneTrunkBasesIPv4 ||
+                InheritPhoneTrunkBasesIPv4 != null &&
+                InheritPhoneTrunkBasesIPv4.Equals(other.InheritPhoneTrunkBasesIPv4)
             ) &&
             (
-                this.InheritPhoneTrunkBasesIPv6 == other.InheritPhoneTrunkBasesIPv6 ||
-                this.InheritPhoneTrunkBasesIPv6 != null &&
-                this.InheritPhoneTrunkBasesIPv6.Equals(other.InheritPhoneTrunkBasesIPv6)
+                InheritPhoneTrunkBasesIPv6 == other.InheritPhoneTrunkBasesIPv6 ||
+                InheritPhoneTrunkBasesIPv6 != null &&
+                InheritPhoneTrunkBasesIPv6.Equals(other.InheritPhoneTrunkBasesIPv6)
             ) &&
             (
-                this.UseForInternalEdgeCommunication == other.UseForInternalEdgeCommunication ||
-                this.UseForInternalEdgeCommunication != null &&
-                this.UseForInternalEdgeCommunication.Equals(other.UseForInternalEdgeCommunication)
+                UseForInternalEdgeCommunication == other.UseForInternalEdgeCommunication ||
+                UseForInternalEdgeCommunication != null &&
+                UseForInternalEdgeCommunication.Equals(other.UseForInternalEdgeCommunication)
             ) &&
             (
-                this.UseForIndirectEdgeCommunication == other.UseForIndirectEdgeCommunication ||
-                this.UseForIndirectEdgeCommunication != null &&
-                this.UseForIndirectEdgeCommunication.Equals(other.UseForIndirectEdgeCommunication)
+                UseForIndirectEdgeCommunication == other.UseForIndirectEdgeCommunication ||
+                UseForIndirectEdgeCommunication != null &&
+                UseForIndirectEdgeCommunication.Equals(other.UseForIndirectEdgeCommunication)
             ) &&
             (
-                this.UseForCloudProxyEdgeCommunication == other.UseForCloudProxyEdgeCommunication ||
-                this.UseForCloudProxyEdgeCommunication != null &&
-                this.UseForCloudProxyEdgeCommunication.Equals(other.UseForCloudProxyEdgeCommunication)
+                UseForCloudProxyEdgeCommunication == other.UseForCloudProxyEdgeCommunication ||
+                UseForCloudProxyEdgeCommunication != null &&
+                UseForCloudProxyEdgeCommunication.Equals(other.UseForCloudProxyEdgeCommunication)
             ) &&
             (
-                this.UseForWanInterface == other.UseForWanInterface ||
-                this.UseForWanInterface != null &&
-                this.UseForWanInterface.Equals(other.UseForWanInterface)
+                UseForWanInterface == other.UseForWanInterface ||
+                UseForWanInterface != null &&
+                UseForWanInterface.Equals(other.UseForWanInterface)
             ) &&
             (
-                this.ExternalTrunkBaseAssignments == other.ExternalTrunkBaseAssignments ||
-                this.ExternalTrunkBaseAssignments != null &&
-                this.ExternalTrunkBaseAssignments.SequenceEqual(other.ExternalTrunkBaseAssignments)
+                ExternalTrunkBaseAssignments == other.ExternalTrunkBaseAssignments ||
+                ExternalTrunkBaseAssignments != null &&
+                ExternalTrunkBaseAssignments.SequenceEqual(other.ExternalTrunkBaseAssignments)
             ) &&
             (
-                this.PhoneTrunkBaseAssignments == other.PhoneTrunkBaseAssignments ||
-                this.PhoneTrunkBaseAssignments != null &&
-                this.PhoneTrunkBaseAssignments.SequenceEqual(other.PhoneTrunkBaseAssignments)
+                PhoneTrunkBaseAssignments == other.PhoneTrunkBaseAssignments ||
+                PhoneTrunkBaseAssignments != null &&
+                PhoneTrunkBaseAssignments.SequenceEqual(other.PhoneTrunkBaseAssignments)
             ) &&
             (
-                this.TraceEnabled == other.TraceEnabled ||
-                this.TraceEnabled != null &&
-                this.TraceEnabled.Equals(other.TraceEnabled)
+                TraceEnabled == other.TraceEnabled ||
+                TraceEnabled != null &&
+                TraceEnabled.Equals(other.TraceEnabled)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -867,214 +867,214 @@ public partial class DomainLogicalInterface : IEquatable<DomainLogicalInterface>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.ModifiedByApp != null)
+            if (ModifiedByApp != null)
             {
-                hash = hash * 59 + this.ModifiedByApp.GetHashCode();
+                hash = hash * 59 + ModifiedByApp.GetHashCode();
             }
 
-            if (this.CreatedByApp != null)
+            if (CreatedByApp != null)
             {
-                hash = hash * 59 + this.CreatedByApp.GetHashCode();
+                hash = hash * 59 + CreatedByApp.GetHashCode();
             }
 
-            if (this.EdgeUri != null)
+            if (EdgeUri != null)
             {
-                hash = hash * 59 + this.EdgeUri.GetHashCode();
+                hash = hash * 59 + EdgeUri.GetHashCode();
             }
 
-            if (this.EdgeAssignedId != null)
+            if (EdgeAssignedId != null)
             {
-                hash = hash * 59 + this.EdgeAssignedId.GetHashCode();
+                hash = hash * 59 + EdgeAssignedId.GetHashCode();
             }
 
-            if (this.FriendlyName != null)
+            if (FriendlyName != null)
             {
-                hash = hash * 59 + this.FriendlyName.GetHashCode();
+                hash = hash * 59 + FriendlyName.GetHashCode();
             }
 
-            if (this.VlanTagId != null)
+            if (VlanTagId != null)
             {
-                hash = hash * 59 + this.VlanTagId.GetHashCode();
+                hash = hash * 59 + VlanTagId.GetHashCode();
             }
 
-            if (this.HardwareAddress != null)
+            if (HardwareAddress != null)
             {
-                hash = hash * 59 + this.HardwareAddress.GetHashCode();
+                hash = hash * 59 + HardwareAddress.GetHashCode();
             }
 
-            if (this.PhysicalAdapterId != null)
+            if (PhysicalAdapterId != null)
             {
-                hash = hash * 59 + this.PhysicalAdapterId.GetHashCode();
+                hash = hash * 59 + PhysicalAdapterId.GetHashCode();
             }
 
-            if (this.IfStatus != null)
+            if (IfStatus != null)
             {
-                hash = hash * 59 + this.IfStatus.GetHashCode();
+                hash = hash * 59 + IfStatus.GetHashCode();
             }
 
-            if (this.InterfaceType != null)
+            if (InterfaceType != null)
             {
-                hash = hash * 59 + this.InterfaceType.GetHashCode();
+                hash = hash * 59 + InterfaceType.GetHashCode();
             }
 
-            if (this.PublicNatAddressIpV4 != null)
+            if (PublicNatAddressIpV4 != null)
             {
-                hash = hash * 59 + this.PublicNatAddressIpV4.GetHashCode();
+                hash = hash * 59 + PublicNatAddressIpV4.GetHashCode();
             }
 
-            if (this.PublicNatAddressIpV6 != null)
+            if (PublicNatAddressIpV6 != null)
             {
-                hash = hash * 59 + this.PublicNatAddressIpV6.GetHashCode();
+                hash = hash * 59 + PublicNatAddressIpV6.GetHashCode();
             }
 
-            if (this.Routes != null)
+            if (Routes != null)
             {
-                hash = hash * 59 + this.Routes.GetHashCode();
+                hash = hash * 59 + Routes.GetHashCode();
             }
 
-            if (this.Addresses != null)
+            if (Addresses != null)
             {
-                hash = hash * 59 + this.Addresses.GetHashCode();
+                hash = hash * 59 + Addresses.GetHashCode();
             }
 
-            if (this.Ipv4Capabilities != null)
+            if (Ipv4Capabilities != null)
             {
-                hash = hash * 59 + this.Ipv4Capabilities.GetHashCode();
+                hash = hash * 59 + Ipv4Capabilities.GetHashCode();
             }
 
-            if (this.Ipv6Capabilities != null)
+            if (Ipv6Capabilities != null)
             {
-                hash = hash * 59 + this.Ipv6Capabilities.GetHashCode();
+                hash = hash * 59 + Ipv6Capabilities.GetHashCode();
             }
 
-            if (this.CurrentState != null)
+            if (CurrentState != null)
             {
-                hash = hash * 59 + this.CurrentState.GetHashCode();
+                hash = hash * 59 + CurrentState.GetHashCode();
             }
 
-            if (this.LastModifiedUserId != null)
+            if (LastModifiedUserId != null)
             {
-                hash = hash * 59 + this.LastModifiedUserId.GetHashCode();
+                hash = hash * 59 + LastModifiedUserId.GetHashCode();
             }
 
-            if (this.LastModifiedCorrelationId != null)
+            if (LastModifiedCorrelationId != null)
             {
-                hash = hash * 59 + this.LastModifiedCorrelationId.GetHashCode();
+                hash = hash * 59 + LastModifiedCorrelationId.GetHashCode();
             }
 
-            if (this.CommandResponses != null)
+            if (CommandResponses != null)
             {
-                hash = hash * 59 + this.CommandResponses.GetHashCode();
+                hash = hash * 59 + CommandResponses.GetHashCode();
             }
 
-            if (this.InheritPhoneTrunkBasesIPv4 != null)
+            if (InheritPhoneTrunkBasesIPv4 != null)
             {
-                hash = hash * 59 + this.InheritPhoneTrunkBasesIPv4.GetHashCode();
+                hash = hash * 59 + InheritPhoneTrunkBasesIPv4.GetHashCode();
             }
 
-            if (this.InheritPhoneTrunkBasesIPv6 != null)
+            if (InheritPhoneTrunkBasesIPv6 != null)
             {
-                hash = hash * 59 + this.InheritPhoneTrunkBasesIPv6.GetHashCode();
+                hash = hash * 59 + InheritPhoneTrunkBasesIPv6.GetHashCode();
             }
 
-            if (this.UseForInternalEdgeCommunication != null)
+            if (UseForInternalEdgeCommunication != null)
             {
-                hash = hash * 59 + this.UseForInternalEdgeCommunication.GetHashCode();
+                hash = hash * 59 + UseForInternalEdgeCommunication.GetHashCode();
             }
 
-            if (this.UseForIndirectEdgeCommunication != null)
+            if (UseForIndirectEdgeCommunication != null)
             {
-                hash = hash * 59 + this.UseForIndirectEdgeCommunication.GetHashCode();
+                hash = hash * 59 + UseForIndirectEdgeCommunication.GetHashCode();
             }
 
-            if (this.UseForCloudProxyEdgeCommunication != null)
+            if (UseForCloudProxyEdgeCommunication != null)
             {
-                hash = hash * 59 + this.UseForCloudProxyEdgeCommunication.GetHashCode();
+                hash = hash * 59 + UseForCloudProxyEdgeCommunication.GetHashCode();
             }
 
-            if (this.UseForWanInterface != null)
+            if (UseForWanInterface != null)
             {
-                hash = hash * 59 + this.UseForWanInterface.GetHashCode();
+                hash = hash * 59 + UseForWanInterface.GetHashCode();
             }
 
-            if (this.ExternalTrunkBaseAssignments != null)
+            if (ExternalTrunkBaseAssignments != null)
             {
-                hash = hash * 59 + this.ExternalTrunkBaseAssignments.GetHashCode();
+                hash = hash * 59 + ExternalTrunkBaseAssignments.GetHashCode();
             }
 
-            if (this.PhoneTrunkBaseAssignments != null)
+            if (PhoneTrunkBaseAssignments != null)
             {
-                hash = hash * 59 + this.PhoneTrunkBaseAssignments.GetHashCode();
+                hash = hash * 59 + PhoneTrunkBaseAssignments.GetHashCode();
             }
 
-            if (this.TraceEnabled != null)
+            if (TraceEnabled != null)
             {
-                hash = hash * 59 + this.TraceEnabled.GetHashCode();
+                hash = hash * 59 + TraceEnabled.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

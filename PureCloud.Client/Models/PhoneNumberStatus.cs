@@ -53,7 +53,7 @@ public partial class PhoneNumberStatus : IEquatable<PhoneNumberStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PhoneNumberStatus);
+        return Equals(obj as PhoneNumberStatus);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class PhoneNumberStatus : IEquatable<PhoneNumberStatus>
 
         return true &&
             (
-                this.Callable == other.Callable ||
-                this.Callable != null &&
-                this.Callable.Equals(other.Callable)
+                Callable == other.Callable ||
+                Callable != null &&
+                Callable.Equals(other.Callable)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class PhoneNumberStatus : IEquatable<PhoneNumberStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Callable != null)
+            if (Callable != null)
             {
-                hash = hash * 59 + this.Callable.GetHashCode();
+                hash = hash * 59 + Callable.GetHashCode();
             }
 
             return hash;

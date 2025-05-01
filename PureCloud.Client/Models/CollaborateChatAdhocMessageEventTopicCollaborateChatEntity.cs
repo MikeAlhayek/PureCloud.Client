@@ -105,7 +105,7 @@ public partial class CollaborateChatAdhocMessageEventTopicCollaborateChatEntity 
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CollaborateChatAdhocMessageEventTopicCollaborateChatEntity);
+        return Equals(obj as CollaborateChatAdhocMessageEventTopicCollaborateChatEntity);
     }
 
     /// <summary>
@@ -123,19 +123,19 @@ public partial class CollaborateChatAdhocMessageEventTopicCollaborateChatEntity 
 
         return true &&
             (
-                this.EntityJid == other.EntityJid ||
-                this.EntityJid != null &&
-                this.EntityJid.Equals(other.EntityJid)
+                EntityJid == other.EntityJid ||
+                EntityJid != null &&
+                EntityJid.Equals(other.EntityJid)
             ) &&
             (
-                this.EntityId == other.EntityId ||
-                this.EntityId != null &&
-                this.EntityId.Equals(other.EntityId)
+                EntityId == other.EntityId ||
+                EntityId != null &&
+                EntityId.Equals(other.EntityId)
             ) &&
             (
-                this.EntityType == other.EntityType ||
-                this.EntityType != null &&
-                this.EntityType.Equals(other.EntityType)
+                EntityType == other.EntityType ||
+                EntityType != null &&
+                EntityType.Equals(other.EntityType)
             );
     }
 
@@ -150,19 +150,19 @@ public partial class CollaborateChatAdhocMessageEventTopicCollaborateChatEntity 
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EntityJid != null)
+            if (EntityJid != null)
             {
-                hash = hash * 59 + this.EntityJid.GetHashCode();
+                hash = hash * 59 + EntityJid.GetHashCode();
             }
 
-            if (this.EntityId != null)
+            if (EntityId != null)
             {
-                hash = hash * 59 + this.EntityId.GetHashCode();
+                hash = hash * 59 + EntityId.GetHashCode();
             }
 
-            if (this.EntityType != null)
+            if (EntityType != null)
             {
-                hash = hash * 59 + this.EntityType.GetHashCode();
+                hash = hash * 59 + EntityType.GetHashCode();
             }
 
             return hash;

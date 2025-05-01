@@ -53,7 +53,7 @@ public partial class KnowledgeGuestDocumentSuggestionResult : IEquatable<Knowled
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeGuestDocumentSuggestionResult);
+        return Equals(obj as KnowledgeGuestDocumentSuggestionResult);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class KnowledgeGuestDocumentSuggestionResult : IEquatable<Knowled
 
         return true &&
             (
-                this.MatchedPhrase == other.MatchedPhrase ||
-                this.MatchedPhrase != null &&
-                this.MatchedPhrase.Equals(other.MatchedPhrase)
+                MatchedPhrase == other.MatchedPhrase ||
+                MatchedPhrase != null &&
+                MatchedPhrase.Equals(other.MatchedPhrase)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class KnowledgeGuestDocumentSuggestionResult : IEquatable<Knowled
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MatchedPhrase != null)
+            if (MatchedPhrase != null)
             {
-                hash = hash * 59 + this.MatchedPhrase.GetHashCode();
+                hash = hash * 59 + MatchedPhrase.GetHashCode();
             }
 
             return hash;

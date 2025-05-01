@@ -103,7 +103,7 @@ public partial class WorkitemOnAttributeChangeConditionUpdate : IEquatable<Worki
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemOnAttributeChangeConditionUpdate);
+        return Equals(obj as WorkitemOnAttributeChangeConditionUpdate);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class WorkitemOnAttributeChangeConditionUpdate : IEquatable<Worki
 
         return true &&
             (
-                this.Attribute == other.Attribute ||
-                this.Attribute != null &&
-                this.Attribute.Equals(other.Attribute)
+                Attribute == other.Attribute ||
+                Attribute != null &&
+                Attribute.Equals(other.Attribute)
             ) &&
             (
-                this.NewValue == other.NewValue ||
-                this.NewValue != null &&
-                this.NewValue.Equals(other.NewValue)
+                NewValue == other.NewValue ||
+                NewValue != null &&
+                NewValue.Equals(other.NewValue)
             ) &&
             (
-                this.OldValue == other.OldValue ||
-                this.OldValue != null &&
-                this.OldValue.Equals(other.OldValue)
+                OldValue == other.OldValue ||
+                OldValue != null &&
+                OldValue.Equals(other.OldValue)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class WorkitemOnAttributeChangeConditionUpdate : IEquatable<Worki
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Attribute != null)
+            if (Attribute != null)
             {
-                hash = hash * 59 + this.Attribute.GetHashCode();
+                hash = hash * 59 + Attribute.GetHashCode();
             }
 
-            if (this.NewValue != null)
+            if (NewValue != null)
             {
-                hash = hash * 59 + this.NewValue.GetHashCode();
+                hash = hash * 59 + NewValue.GetHashCode();
             }
 
-            if (this.OldValue != null)
+            if (OldValue != null)
             {
-                hash = hash * 59 + this.OldValue.GetHashCode();
+                hash = hash * 59 + OldValue.GetHashCode();
             }
 
             return hash;

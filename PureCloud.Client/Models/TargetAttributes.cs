@@ -65,7 +65,7 @@ public partial class TargetAttributes : IEquatable<TargetAttributes>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TargetAttributes);
+        return Equals(obj as TargetAttributes);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class TargetAttributes : IEquatable<TargetAttributes>
 
         return true &&
             (
-                this.BaseAttributes == other.BaseAttributes ||
-                this.BaseAttributes != null &&
-                this.BaseAttributes.SequenceEqual(other.BaseAttributes)
+                BaseAttributes == other.BaseAttributes ||
+                BaseAttributes != null &&
+                BaseAttributes.SequenceEqual(other.BaseAttributes)
             ) &&
             (
-                this._TargetAttributes == other._TargetAttributes ||
-                this._TargetAttributes != null &&
-                this._TargetAttributes.SequenceEqual(other._TargetAttributes)
+                _TargetAttributes == other._TargetAttributes ||
+                _TargetAttributes != null &&
+                _TargetAttributes.SequenceEqual(other._TargetAttributes)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class TargetAttributes : IEquatable<TargetAttributes>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BaseAttributes != null)
+            if (BaseAttributes != null)
             {
-                hash = hash * 59 + this.BaseAttributes.GetHashCode();
+                hash = hash * 59 + BaseAttributes.GetHashCode();
             }
 
-            if (this._TargetAttributes != null)
+            if (_TargetAttributes != null)
             {
-                hash = hash * 59 + this._TargetAttributes.GetHashCode();
+                hash = hash * 59 + _TargetAttributes.GetHashCode();
             }
 
             return hash;

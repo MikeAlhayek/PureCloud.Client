@@ -61,7 +61,7 @@ public partial class TopicOffset : IEquatable<TopicOffset>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TopicOffset);
+        return Equals(obj as TopicOffset);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class TopicOffset : IEquatable<TopicOffset>
 
         return true &&
             (
-                this.WordCount == other.WordCount ||
-                this.WordCount != null &&
-                this.WordCount.Equals(other.WordCount)
+                WordCount == other.WordCount ||
+                WordCount != null &&
+                WordCount.Equals(other.WordCount)
             ) &&
             (
-                this.CharacterCount == other.CharacterCount ||
-                this.CharacterCount != null &&
-                this.CharacterCount.Equals(other.CharacterCount)
+                CharacterCount == other.CharacterCount ||
+                CharacterCount != null &&
+                CharacterCount.Equals(other.CharacterCount)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class TopicOffset : IEquatable<TopicOffset>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WordCount != null)
+            if (WordCount != null)
             {
-                hash = hash * 59 + this.WordCount.GetHashCode();
+                hash = hash * 59 + WordCount.GetHashCode();
             }
 
-            if (this.CharacterCount != null)
+            if (CharacterCount != null)
             {
-                hash = hash * 59 + this.CharacterCount.GetHashCode();
+                hash = hash * 59 + CharacterCount.GetHashCode();
             }
 
             return hash;

@@ -89,7 +89,7 @@ public partial class WaitlistPosition : IEquatable<WaitlistPosition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WaitlistPosition);
+        return Equals(obj as WaitlistPosition);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class WaitlistPosition : IEquatable<WaitlistPosition>
 
         return true &&
             (
-                this.TimeOffRequest == other.TimeOffRequest ||
-                this.TimeOffRequest != null &&
-                this.TimeOffRequest.Equals(other.TimeOffRequest)
+                TimeOffRequest == other.TimeOffRequest ||
+                TimeOffRequest != null &&
+                TimeOffRequest.Equals(other.TimeOffRequest)
             ) &&
             (
-                this.TimeOffLimit == other.TimeOffLimit ||
-                this.TimeOffLimit != null &&
-                this.TimeOffLimit.Equals(other.TimeOffLimit)
+                TimeOffLimit == other.TimeOffLimit ||
+                TimeOffLimit != null &&
+                TimeOffLimit.Equals(other.TimeOffLimit)
             ) &&
             (
-                this.Date == other.Date ||
-                this.Date != null &&
-                this.Date.Equals(other.Date)
+                Date == other.Date ||
+                Date != null &&
+                Date.Equals(other.Date)
             ) &&
             (
-                this._WaitlistPosition == other._WaitlistPosition ||
-                this._WaitlistPosition != null &&
-                this._WaitlistPosition.Equals(other._WaitlistPosition)
+                _WaitlistPosition == other._WaitlistPosition ||
+                _WaitlistPosition != null &&
+                _WaitlistPosition.Equals(other._WaitlistPosition)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class WaitlistPosition : IEquatable<WaitlistPosition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeOffRequest != null)
+            if (TimeOffRequest != null)
             {
-                hash = hash * 59 + this.TimeOffRequest.GetHashCode();
+                hash = hash * 59 + TimeOffRequest.GetHashCode();
             }
 
-            if (this.TimeOffLimit != null)
+            if (TimeOffLimit != null)
             {
-                hash = hash * 59 + this.TimeOffLimit.GetHashCode();
+                hash = hash * 59 + TimeOffLimit.GetHashCode();
             }
 
-            if (this.Date != null)
+            if (Date != null)
             {
-                hash = hash * 59 + this.Date.GetHashCode();
+                hash = hash * 59 + Date.GetHashCode();
             }
 
-            if (this._WaitlistPosition != null)
+            if (_WaitlistPosition != null)
             {
-                hash = hash * 59 + this._WaitlistPosition.GetHashCode();
+                hash = hash * 59 + _WaitlistPosition.GetHashCode();
             }
 
             return hash;

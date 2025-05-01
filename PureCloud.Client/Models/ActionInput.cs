@@ -76,7 +76,7 @@ public partial class ActionInput : IEquatable<ActionInput>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionInput);
+        return Equals(obj as ActionInput);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class ActionInput : IEquatable<ActionInput>
 
         return true &&
             (
-                this.InputSchema == other.InputSchema ||
-                this.InputSchema != null &&
-                this.InputSchema.Equals(other.InputSchema)
+                InputSchema == other.InputSchema ||
+                InputSchema != null &&
+                InputSchema.Equals(other.InputSchema)
             ) &&
             (
-                this.InputSchemaFlattened == other.InputSchemaFlattened ||
-                this.InputSchemaFlattened != null &&
-                this.InputSchemaFlattened.Equals(other.InputSchemaFlattened)
+                InputSchemaFlattened == other.InputSchemaFlattened ||
+                InputSchemaFlattened != null &&
+                InputSchemaFlattened.Equals(other.InputSchemaFlattened)
             ) &&
             (
-                this.InputSchemaUri == other.InputSchemaUri ||
-                this.InputSchemaUri != null &&
-                this.InputSchemaUri.Equals(other.InputSchemaUri)
+                InputSchemaUri == other.InputSchemaUri ||
+                InputSchemaUri != null &&
+                InputSchemaUri.Equals(other.InputSchemaUri)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class ActionInput : IEquatable<ActionInput>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.InputSchema != null)
+            if (InputSchema != null)
             {
-                hash = hash * 59 + this.InputSchema.GetHashCode();
+                hash = hash * 59 + InputSchema.GetHashCode();
             }
 
-            if (this.InputSchemaFlattened != null)
+            if (InputSchemaFlattened != null)
             {
-                hash = hash * 59 + this.InputSchemaFlattened.GetHashCode();
+                hash = hash * 59 + InputSchemaFlattened.GetHashCode();
             }
 
-            if (this.InputSchemaUri != null)
+            if (InputSchemaUri != null)
             {
-                hash = hash * 59 + this.InputSchemaUri.GetHashCode();
+                hash = hash * 59 + InputSchemaUri.GetHashCode();
             }
 
             return hash;

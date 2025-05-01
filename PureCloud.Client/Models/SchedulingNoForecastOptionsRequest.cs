@@ -141,7 +141,7 @@ public partial class SchedulingNoForecastOptionsRequest : IEquatable<SchedulingN
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SchedulingNoForecastOptionsRequest);
+        return Equals(obj as SchedulingNoForecastOptionsRequest);
     }
 
     /// <summary>
@@ -159,14 +159,14 @@ public partial class SchedulingNoForecastOptionsRequest : IEquatable<SchedulingN
 
         return true &&
             (
-                this.ShiftLength == other.ShiftLength ||
-                this.ShiftLength != null &&
-                this.ShiftLength.Equals(other.ShiftLength)
+                ShiftLength == other.ShiftLength ||
+                ShiftLength != null &&
+                ShiftLength.Equals(other.ShiftLength)
             ) &&
             (
-                this.ShiftStart == other.ShiftStart ||
-                this.ShiftStart != null &&
-                this.ShiftStart.Equals(other.ShiftStart)
+                ShiftStart == other.ShiftStart ||
+                ShiftStart != null &&
+                ShiftStart.Equals(other.ShiftStart)
             );
     }
 
@@ -181,14 +181,14 @@ public partial class SchedulingNoForecastOptionsRequest : IEquatable<SchedulingN
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ShiftLength != null)
+            if (ShiftLength != null)
             {
-                hash = hash * 59 + this.ShiftLength.GetHashCode();
+                hash = hash * 59 + ShiftLength.GetHashCode();
             }
 
-            if (this.ShiftStart != null)
+            if (ShiftStart != null)
             {
-                hash = hash * 59 + this.ShiftStart.GetHashCode();
+                hash = hash * 59 + ShiftStart.GetHashCode();
             }
 
             return hash;

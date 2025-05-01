@@ -79,7 +79,7 @@ public partial class OutboundOnlySetting : IEquatable<OutboundOnlySetting>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundOnlySetting);
+        return Equals(obj as OutboundOnlySetting);
     }
 
     /// <summary>
@@ -97,9 +97,9 @@ public partial class OutboundOnlySetting : IEquatable<OutboundOnlySetting>
 
         return true &&
             (
-                this.Outbound == other.Outbound ||
-                this.Outbound != null &&
-                this.Outbound.Equals(other.Outbound)
+                Outbound == other.Outbound ||
+                Outbound != null &&
+                Outbound.Equals(other.Outbound)
             );
     }
 
@@ -114,9 +114,9 @@ public partial class OutboundOnlySetting : IEquatable<OutboundOnlySetting>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Outbound != null)
+            if (Outbound != null)
             {
-                hash = hash * 59 + this.Outbound.GetHashCode();
+                hash = hash * 59 + Outbound.GetHashCode();
             }
 
             return hash;

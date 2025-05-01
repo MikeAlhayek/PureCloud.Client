@@ -101,7 +101,7 @@ public partial class WorkitemWrapup : IEquatable<WorkitemWrapup>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemWrapup);
+        return Equals(obj as WorkitemWrapup);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class WorkitemWrapup : IEquatable<WorkitemWrapup>
 
         return true &&
             (
-                this.Workitem == other.Workitem ||
-                this.Workitem != null &&
-                this.Workitem.Equals(other.Workitem)
+                Workitem == other.Workitem ||
+                Workitem != null &&
+                Workitem.Equals(other.Workitem)
             ) &&
             (
-                this.WrapupCode == other.WrapupCode ||
-                this.WrapupCode != null &&
-                this.WrapupCode.Equals(other.WrapupCode)
+                WrapupCode == other.WrapupCode ||
+                WrapupCode != null &&
+                WrapupCode.Equals(other.WrapupCode)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class WorkitemWrapup : IEquatable<WorkitemWrapup>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Workitem != null)
+            if (Workitem != null)
             {
-                hash = hash * 59 + this.Workitem.GetHashCode();
+                hash = hash * 59 + Workitem.GetHashCode();
             }
 
-            if (this.WrapupCode != null)
+            if (WrapupCode != null)
             {
-                hash = hash * 59 + this.WrapupCode.GetHashCode();
+                hash = hash * 59 + WrapupCode.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
             return hash;

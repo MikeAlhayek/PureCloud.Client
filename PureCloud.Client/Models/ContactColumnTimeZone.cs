@@ -89,7 +89,7 @@ public partial class ContactColumnTimeZone : IEquatable<ContactColumnTimeZone>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactColumnTimeZone);
+        return Equals(obj as ContactColumnTimeZone);
     }
 
     /// <summary>
@@ -107,14 +107,14 @@ public partial class ContactColumnTimeZone : IEquatable<ContactColumnTimeZone>
 
         return true &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.ColumnType == other.ColumnType ||
-                this.ColumnType != null &&
-                this.ColumnType.Equals(other.ColumnType)
+                ColumnType == other.ColumnType ||
+                ColumnType != null &&
+                ColumnType.Equals(other.ColumnType)
             );
     }
 
@@ -129,14 +129,14 @@ public partial class ContactColumnTimeZone : IEquatable<ContactColumnTimeZone>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.ColumnType != null)
+            if (ColumnType != null)
             {
-                hash = hash * 59 + this.ColumnType.GetHashCode();
+                hash = hash * 59 + ColumnType.GetHashCode();
             }
 
             return hash;

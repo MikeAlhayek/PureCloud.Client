@@ -156,7 +156,7 @@ public partial class AdminAgentWorkPlanBiddingPreference : IEquatable<AdminAgent
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdminAgentWorkPlanBiddingPreference);
+        return Equals(obj as AdminAgentWorkPlanBiddingPreference);
     }
 
     /// <summary>
@@ -174,34 +174,34 @@ public partial class AdminAgentWorkPlanBiddingPreference : IEquatable<AdminAgent
 
         return true &&
             (
-                this.Agent == other.Agent ||
-                this.Agent != null &&
-                this.Agent.Equals(other.Agent)
+                Agent == other.Agent ||
+                Agent != null &&
+                Agent.Equals(other.Agent)
             ) &&
             (
-                this.Submitted == other.Submitted ||
-                this.Submitted != null &&
-                this.Submitted.Equals(other.Submitted)
+                Submitted == other.Submitted ||
+                Submitted != null &&
+                Submitted.Equals(other.Submitted)
             ) &&
             (
-                this.AssignedWorkPlan == other.AssignedWorkPlan ||
-                this.AssignedWorkPlan != null &&
-                this.AssignedWorkPlan.Equals(other.AssignedWorkPlan)
+                AssignedWorkPlan == other.AssignedWorkPlan ||
+                AssignedWorkPlan != null &&
+                AssignedWorkPlan.Equals(other.AssignedWorkPlan)
             ) &&
             (
-                this.OverriddenWorkPlan == other.OverriddenWorkPlan ||
-                this.OverriddenWorkPlan != null &&
-                this.OverriddenWorkPlan.Equals(other.OverriddenWorkPlan)
+                OverriddenWorkPlan == other.OverriddenWorkPlan ||
+                OverriddenWorkPlan != null &&
+                OverriddenWorkPlan.Equals(other.OverriddenWorkPlan)
             ) &&
             (
-                this.OverrideReason == other.OverrideReason ||
-                this.OverrideReason != null &&
-                this.OverrideReason.Equals(other.OverrideReason)
+                OverrideReason == other.OverrideReason ||
+                OverrideReason != null &&
+                OverrideReason.Equals(other.OverrideReason)
             ) &&
             (
-                this.Priorities == other.Priorities ||
-                this.Priorities != null &&
-                this.Priorities.SequenceEqual(other.Priorities)
+                Priorities == other.Priorities ||
+                Priorities != null &&
+                Priorities.SequenceEqual(other.Priorities)
             );
     }
 
@@ -216,34 +216,34 @@ public partial class AdminAgentWorkPlanBiddingPreference : IEquatable<AdminAgent
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Agent != null)
+            if (Agent != null)
             {
-                hash = hash * 59 + this.Agent.GetHashCode();
+                hash = hash * 59 + Agent.GetHashCode();
             }
 
-            if (this.Submitted != null)
+            if (Submitted != null)
             {
-                hash = hash * 59 + this.Submitted.GetHashCode();
+                hash = hash * 59 + Submitted.GetHashCode();
             }
 
-            if (this.AssignedWorkPlan != null)
+            if (AssignedWorkPlan != null)
             {
-                hash = hash * 59 + this.AssignedWorkPlan.GetHashCode();
+                hash = hash * 59 + AssignedWorkPlan.GetHashCode();
             }
 
-            if (this.OverriddenWorkPlan != null)
+            if (OverriddenWorkPlan != null)
             {
-                hash = hash * 59 + this.OverriddenWorkPlan.GetHashCode();
+                hash = hash * 59 + OverriddenWorkPlan.GetHashCode();
             }
 
-            if (this.OverrideReason != null)
+            if (OverrideReason != null)
             {
-                hash = hash * 59 + this.OverrideReason.GetHashCode();
+                hash = hash * 59 + OverrideReason.GetHashCode();
             }
 
-            if (this.Priorities != null)
+            if (Priorities != null)
             {
-                hash = hash * 59 + this.Priorities.GetHashCode();
+                hash = hash * 59 + Priorities.GetHashCode();
             }
 
             return hash;

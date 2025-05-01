@@ -163,7 +163,7 @@ public partial class KnowledgeConversationContextResponse : IEquatable<Knowledge
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeConversationContextResponse);
+        return Equals(obj as KnowledgeConversationContextResponse);
     }
 
     /// <summary>
@@ -181,24 +181,24 @@ public partial class KnowledgeConversationContextResponse : IEquatable<Knowledge
 
         return true &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.ExternalContact == other.ExternalContact ||
-                this.ExternalContact != null &&
-                this.ExternalContact.Equals(other.ExternalContact)
+                ExternalContact == other.ExternalContact ||
+                ExternalContact != null &&
+                ExternalContact.Equals(other.ExternalContact)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             );
     }
 
@@ -213,24 +213,24 @@ public partial class KnowledgeConversationContextResponse : IEquatable<Knowledge
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.ExternalContact != null)
+            if (ExternalContact != null)
             {
-                hash = hash * 59 + this.ExternalContact.GetHashCode();
+                hash = hash * 59 + ExternalContact.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
             return hash;

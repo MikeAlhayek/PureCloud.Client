@@ -96,7 +96,7 @@ public partial class DomainOrgRoleDifference : IEquatable<DomainOrgRoleDifferenc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainOrgRoleDifference);
+        return Equals(obj as DomainOrgRoleDifference);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class DomainOrgRoleDifference : IEquatable<DomainOrgRoleDifferenc
 
         return true &&
             (
-                this.RemovedPermissionPolicies == other.RemovedPermissionPolicies ||
-                this.RemovedPermissionPolicies != null &&
-                this.RemovedPermissionPolicies.SequenceEqual(other.RemovedPermissionPolicies)
+                RemovedPermissionPolicies == other.RemovedPermissionPolicies ||
+                RemovedPermissionPolicies != null &&
+                RemovedPermissionPolicies.SequenceEqual(other.RemovedPermissionPolicies)
             ) &&
             (
-                this.AddedPermissionPolicies == other.AddedPermissionPolicies ||
-                this.AddedPermissionPolicies != null &&
-                this.AddedPermissionPolicies.SequenceEqual(other.AddedPermissionPolicies)
+                AddedPermissionPolicies == other.AddedPermissionPolicies ||
+                AddedPermissionPolicies != null &&
+                AddedPermissionPolicies.SequenceEqual(other.AddedPermissionPolicies)
             ) &&
             (
-                this.SamePermissionPolicies == other.SamePermissionPolicies ||
-                this.SamePermissionPolicies != null &&
-                this.SamePermissionPolicies.SequenceEqual(other.SamePermissionPolicies)
+                SamePermissionPolicies == other.SamePermissionPolicies ||
+                SamePermissionPolicies != null &&
+                SamePermissionPolicies.SequenceEqual(other.SamePermissionPolicies)
             ) &&
             (
-                this.UserOrgRole == other.UserOrgRole ||
-                this.UserOrgRole != null &&
-                this.UserOrgRole.Equals(other.UserOrgRole)
+                UserOrgRole == other.UserOrgRole ||
+                UserOrgRole != null &&
+                UserOrgRole.Equals(other.UserOrgRole)
             ) &&
             (
-                this.RoleFromDefault == other.RoleFromDefault ||
-                this.RoleFromDefault != null &&
-                this.RoleFromDefault.Equals(other.RoleFromDefault)
+                RoleFromDefault == other.RoleFromDefault ||
+                RoleFromDefault != null &&
+                RoleFromDefault.Equals(other.RoleFromDefault)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class DomainOrgRoleDifference : IEquatable<DomainOrgRoleDifferenc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RemovedPermissionPolicies != null)
+            if (RemovedPermissionPolicies != null)
             {
-                hash = hash * 59 + this.RemovedPermissionPolicies.GetHashCode();
+                hash = hash * 59 + RemovedPermissionPolicies.GetHashCode();
             }
 
-            if (this.AddedPermissionPolicies != null)
+            if (AddedPermissionPolicies != null)
             {
-                hash = hash * 59 + this.AddedPermissionPolicies.GetHashCode();
+                hash = hash * 59 + AddedPermissionPolicies.GetHashCode();
             }
 
-            if (this.SamePermissionPolicies != null)
+            if (SamePermissionPolicies != null)
             {
-                hash = hash * 59 + this.SamePermissionPolicies.GetHashCode();
+                hash = hash * 59 + SamePermissionPolicies.GetHashCode();
             }
 
-            if (this.UserOrgRole != null)
+            if (UserOrgRole != null)
             {
-                hash = hash * 59 + this.UserOrgRole.GetHashCode();
+                hash = hash * 59 + UserOrgRole.GetHashCode();
             }
 
-            if (this.RoleFromDefault != null)
+            if (RoleFromDefault != null)
             {
-                hash = hash * 59 + this.RoleFromDefault.GetHashCode();
+                hash = hash * 59 + RoleFromDefault.GetHashCode();
             }
 
             return hash;

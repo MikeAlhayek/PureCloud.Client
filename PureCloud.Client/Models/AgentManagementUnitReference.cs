@@ -76,7 +76,7 @@ public partial class AgentManagementUnitReference : IEquatable<AgentManagementUn
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentManagementUnitReference);
+        return Equals(obj as AgentManagementUnitReference);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class AgentManagementUnitReference : IEquatable<AgentManagementUn
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.ManagementUnit == other.ManagementUnit ||
-                this.ManagementUnit != null &&
-                this.ManagementUnit.Equals(other.ManagementUnit)
+                ManagementUnit == other.ManagementUnit ||
+                ManagementUnit != null &&
+                ManagementUnit.Equals(other.ManagementUnit)
             ) &&
             (
-                this.BusinessUnit == other.BusinessUnit ||
-                this.BusinessUnit != null &&
-                this.BusinessUnit.Equals(other.BusinessUnit)
+                BusinessUnit == other.BusinessUnit ||
+                BusinessUnit != null &&
+                BusinessUnit.Equals(other.BusinessUnit)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class AgentManagementUnitReference : IEquatable<AgentManagementUn
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.ManagementUnit != null)
+            if (ManagementUnit != null)
             {
-                hash = hash * 59 + this.ManagementUnit.GetHashCode();
+                hash = hash * 59 + ManagementUnit.GetHashCode();
             }
 
-            if (this.BusinessUnit != null)
+            if (BusinessUnit != null)
             {
-                hash = hash * 59 + this.BusinessUnit.GetHashCode();
+                hash = hash * 59 + BusinessUnit.GetHashCode();
             }
 
             return hash;

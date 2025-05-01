@@ -217,7 +217,7 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyWebEventsNotificationWebMessage);
+        return Equals(obj as JourneyWebEventsNotificationWebMessage);
     }
 
     /// <summary>
@@ -235,84 +235,84 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
 
         return true &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             ) &&
             (
-                this.TotalEventCount == other.TotalEventCount ||
-                this.TotalEventCount != null &&
-                this.TotalEventCount.Equals(other.TotalEventCount)
+                TotalEventCount == other.TotalEventCount ||
+                TotalEventCount != null &&
+                TotalEventCount.Equals(other.TotalEventCount)
             ) &&
             (
-                this.TotalPageviewCount == other.TotalPageviewCount ||
-                this.TotalPageviewCount != null &&
-                this.TotalPageviewCount.Equals(other.TotalPageviewCount)
+                TotalPageviewCount == other.TotalPageviewCount ||
+                TotalPageviewCount != null &&
+                TotalPageviewCount.Equals(other.TotalPageviewCount)
             ) &&
             (
-                this.UserAgentString == other.UserAgentString ||
-                this.UserAgentString != null &&
-                this.UserAgentString.Equals(other.UserAgentString)
+                UserAgentString == other.UserAgentString ||
+                UserAgentString != null &&
+                UserAgentString.Equals(other.UserAgentString)
             ) &&
             (
-                this.IpAddress == other.IpAddress ||
-                this.IpAddress != null &&
-                this.IpAddress.Equals(other.IpAddress)
+                IpAddress == other.IpAddress ||
+                IpAddress != null &&
+                IpAddress.Equals(other.IpAddress)
             ) &&
             (
-                this.IpOrganization == other.IpOrganization ||
-                this.IpOrganization != null &&
-                this.IpOrganization.Equals(other.IpOrganization)
+                IpOrganization == other.IpOrganization ||
+                IpOrganization != null &&
+                IpOrganization.Equals(other.IpOrganization)
             ) &&
             (
-                this.SearchQuery == other.SearchQuery ||
-                this.SearchQuery != null &&
-                this.SearchQuery.Equals(other.SearchQuery)
+                SearchQuery == other.SearchQuery ||
+                SearchQuery != null &&
+                SearchQuery.Equals(other.SearchQuery)
             ) &&
             (
-                this.Authenticated == other.Authenticated ||
-                this.Authenticated != null &&
-                this.Authenticated.Equals(other.Authenticated)
+                Authenticated == other.Authenticated ||
+                Authenticated != null &&
+                Authenticated.Equals(other.Authenticated)
             ) &&
             (
-                this.Browser == other.Browser ||
-                this.Browser != null &&
-                this.Browser.Equals(other.Browser)
+                Browser == other.Browser ||
+                Browser != null &&
+                Browser.Equals(other.Browser)
             ) &&
             (
-                this.Device == other.Device ||
-                this.Device != null &&
-                this.Device.Equals(other.Device)
+                Device == other.Device ||
+                Device != null &&
+                Device.Equals(other.Device)
             ) &&
             (
-                this.Geolocation == other.Geolocation ||
-                this.Geolocation != null &&
-                this.Geolocation.Equals(other.Geolocation)
+                Geolocation == other.Geolocation ||
+                Geolocation != null &&
+                Geolocation.Equals(other.Geolocation)
             ) &&
             (
-                this.MktCampaign == other.MktCampaign ||
-                this.MktCampaign != null &&
-                this.MktCampaign.Equals(other.MktCampaign)
+                MktCampaign == other.MktCampaign ||
+                MktCampaign != null &&
+                MktCampaign.Equals(other.MktCampaign)
             ) &&
             (
-                this.Page == other.Page ||
-                this.Page != null &&
-                this.Page.Equals(other.Page)
+                Page == other.Page ||
+                Page != null &&
+                Page.Equals(other.Page)
             ) &&
             (
-                this.Referrer == other.Referrer ||
-                this.Referrer != null &&
-                this.Referrer.Equals(other.Referrer)
+                Referrer == other.Referrer ||
+                Referrer != null &&
+                Referrer.Equals(other.Referrer)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.Traits == other.Traits ||
-                this.Traits != null &&
-                this.Traits.SequenceEqual(other.Traits)
+                Traits == other.Traits ||
+                Traits != null &&
+                Traits.SequenceEqual(other.Traits)
             );
     }
 
@@ -327,84 +327,84 @@ public partial class JourneyWebEventsNotificationWebMessage : IEquatable<Journey
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
-            if (this.TotalEventCount != null)
+            if (TotalEventCount != null)
             {
-                hash = hash * 59 + this.TotalEventCount.GetHashCode();
+                hash = hash * 59 + TotalEventCount.GetHashCode();
             }
 
-            if (this.TotalPageviewCount != null)
+            if (TotalPageviewCount != null)
             {
-                hash = hash * 59 + this.TotalPageviewCount.GetHashCode();
+                hash = hash * 59 + TotalPageviewCount.GetHashCode();
             }
 
-            if (this.UserAgentString != null)
+            if (UserAgentString != null)
             {
-                hash = hash * 59 + this.UserAgentString.GetHashCode();
+                hash = hash * 59 + UserAgentString.GetHashCode();
             }
 
-            if (this.IpAddress != null)
+            if (IpAddress != null)
             {
-                hash = hash * 59 + this.IpAddress.GetHashCode();
+                hash = hash * 59 + IpAddress.GetHashCode();
             }
 
-            if (this.IpOrganization != null)
+            if (IpOrganization != null)
             {
-                hash = hash * 59 + this.IpOrganization.GetHashCode();
+                hash = hash * 59 + IpOrganization.GetHashCode();
             }
 
-            if (this.SearchQuery != null)
+            if (SearchQuery != null)
             {
-                hash = hash * 59 + this.SearchQuery.GetHashCode();
+                hash = hash * 59 + SearchQuery.GetHashCode();
             }
 
-            if (this.Authenticated != null)
+            if (Authenticated != null)
             {
-                hash = hash * 59 + this.Authenticated.GetHashCode();
+                hash = hash * 59 + Authenticated.GetHashCode();
             }
 
-            if (this.Browser != null)
+            if (Browser != null)
             {
-                hash = hash * 59 + this.Browser.GetHashCode();
+                hash = hash * 59 + Browser.GetHashCode();
             }
 
-            if (this.Device != null)
+            if (Device != null)
             {
-                hash = hash * 59 + this.Device.GetHashCode();
+                hash = hash * 59 + Device.GetHashCode();
             }
 
-            if (this.Geolocation != null)
+            if (Geolocation != null)
             {
-                hash = hash * 59 + this.Geolocation.GetHashCode();
+                hash = hash * 59 + Geolocation.GetHashCode();
             }
 
-            if (this.MktCampaign != null)
+            if (MktCampaign != null)
             {
-                hash = hash * 59 + this.MktCampaign.GetHashCode();
+                hash = hash * 59 + MktCampaign.GetHashCode();
             }
 
-            if (this.Page != null)
+            if (Page != null)
             {
-                hash = hash * 59 + this.Page.GetHashCode();
+                hash = hash * 59 + Page.GetHashCode();
             }
 
-            if (this.Referrer != null)
+            if (Referrer != null)
             {
-                hash = hash * 59 + this.Referrer.GetHashCode();
+                hash = hash * 59 + Referrer.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.Traits != null)
+            if (Traits != null)
             {
-                hash = hash * 59 + this.Traits.GetHashCode();
+                hash = hash * 59 + Traits.GetHashCode();
             }
 
             return hash;

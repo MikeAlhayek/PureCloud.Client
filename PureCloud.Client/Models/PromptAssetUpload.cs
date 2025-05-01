@@ -61,7 +61,7 @@ public partial class PromptAssetUpload : IEquatable<PromptAssetUpload>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PromptAssetUpload);
+        return Equals(obj as PromptAssetUpload);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class PromptAssetUpload : IEquatable<PromptAssetUpload>
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Headers == other.Headers ||
-                this.Headers != null &&
-                this.Headers.SequenceEqual(other.Headers)
+                Headers == other.Headers ||
+                Headers != null &&
+                Headers.SequenceEqual(other.Headers)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class PromptAssetUpload : IEquatable<PromptAssetUpload>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Headers != null)
+            if (Headers != null)
             {
-                hash = hash * 59 + this.Headers.GetHashCode();
+                hash = hash * 59 + Headers.GetHashCode();
             }
 
             return hash;

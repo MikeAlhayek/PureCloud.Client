@@ -95,7 +95,7 @@ public partial class TwitterDataIngestionRuleRequest : IEquatable<TwitterDataIng
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TwitterDataIngestionRuleRequest);
+        return Equals(obj as TwitterDataIngestionRuleRequest);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class TwitterDataIngestionRuleRequest : IEquatable<TwitterDataIng
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.SearchTerms == other.SearchTerms ||
-                this.SearchTerms != null &&
-                this.SearchTerms.Equals(other.SearchTerms)
+                SearchTerms == other.SearchTerms ||
+                SearchTerms != null &&
+                SearchTerms.Equals(other.SearchTerms)
             ) &&
             (
-                this.Countries == other.Countries ||
-                this.Countries != null &&
-                this.Countries.SequenceEqual(other.Countries)
+                Countries == other.Countries ||
+                Countries != null &&
+                Countries.SequenceEqual(other.Countries)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class TwitterDataIngestionRuleRequest : IEquatable<TwitterDataIng
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.SearchTerms != null)
+            if (SearchTerms != null)
             {
-                hash = hash * 59 + this.SearchTerms.GetHashCode();
+                hash = hash * 59 + SearchTerms.GetHashCode();
             }
 
-            if (this.Countries != null)
+            if (Countries != null)
             {
-                hash = hash * 59 + this.Countries.GetHashCode();
+                hash = hash * 59 + Countries.GetHashCode();
             }
 
             return hash;

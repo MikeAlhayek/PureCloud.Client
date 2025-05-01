@@ -208,7 +208,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerAttemptLimitsConfigChangeAttemptLimits);
+        return Equals(obj as DialerAttemptLimitsConfigChangeAttemptLimits);
     }
 
     /// <summary>
@@ -226,64 +226,64 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
 
         return true &&
             (
-                this.MaxAttemptsPerContact == other.MaxAttemptsPerContact ||
-                this.MaxAttemptsPerContact != null &&
-                this.MaxAttemptsPerContact.Equals(other.MaxAttemptsPerContact)
+                MaxAttemptsPerContact == other.MaxAttemptsPerContact ||
+                MaxAttemptsPerContact != null &&
+                MaxAttemptsPerContact.Equals(other.MaxAttemptsPerContact)
             ) &&
             (
-                this.MaxAttemptsPerNumber == other.MaxAttemptsPerNumber ||
-                this.MaxAttemptsPerNumber != null &&
-                this.MaxAttemptsPerNumber.Equals(other.MaxAttemptsPerNumber)
+                MaxAttemptsPerNumber == other.MaxAttemptsPerNumber ||
+                MaxAttemptsPerNumber != null &&
+                MaxAttemptsPerNumber.Equals(other.MaxAttemptsPerNumber)
             ) &&
             (
-                this.TimeZoneId == other.TimeZoneId ||
-                this.TimeZoneId != null &&
-                this.TimeZoneId.Equals(other.TimeZoneId)
+                TimeZoneId == other.TimeZoneId ||
+                TimeZoneId != null &&
+                TimeZoneId.Equals(other.TimeZoneId)
             ) &&
             (
-                this.ResetPeriod == other.ResetPeriod ||
-                this.ResetPeriod != null &&
-                this.ResetPeriod.Equals(other.ResetPeriod)
+                ResetPeriod == other.ResetPeriod ||
+                ResetPeriod != null &&
+                ResetPeriod.Equals(other.ResetPeriod)
             ) &&
             (
-                this.RecallEntries == other.RecallEntries ||
-                this.RecallEntries != null &&
-                this.RecallEntries.SequenceEqual(other.RecallEntries)
+                RecallEntries == other.RecallEntries ||
+                RecallEntries != null &&
+                RecallEntries.SequenceEqual(other.RecallEntries)
             ) &&
             (
-                this.BreadthFirstRecalls == other.BreadthFirstRecalls ||
-                this.BreadthFirstRecalls != null &&
-                this.BreadthFirstRecalls.Equals(other.BreadthFirstRecalls)
+                BreadthFirstRecalls == other.BreadthFirstRecalls ||
+                BreadthFirstRecalls != null &&
+                BreadthFirstRecalls.Equals(other.BreadthFirstRecalls)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -298,64 +298,64 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MaxAttemptsPerContact != null)
+            if (MaxAttemptsPerContact != null)
             {
-                hash = hash * 59 + this.MaxAttemptsPerContact.GetHashCode();
+                hash = hash * 59 + MaxAttemptsPerContact.GetHashCode();
             }
 
-            if (this.MaxAttemptsPerNumber != null)
+            if (MaxAttemptsPerNumber != null)
             {
-                hash = hash * 59 + this.MaxAttemptsPerNumber.GetHashCode();
+                hash = hash * 59 + MaxAttemptsPerNumber.GetHashCode();
             }
 
-            if (this.TimeZoneId != null)
+            if (TimeZoneId != null)
             {
-                hash = hash * 59 + this.TimeZoneId.GetHashCode();
+                hash = hash * 59 + TimeZoneId.GetHashCode();
             }
 
-            if (this.ResetPeriod != null)
+            if (ResetPeriod != null)
             {
-                hash = hash * 59 + this.ResetPeriod.GetHashCode();
+                hash = hash * 59 + ResetPeriod.GetHashCode();
             }
 
-            if (this.RecallEntries != null)
+            if (RecallEntries != null)
             {
-                hash = hash * 59 + this.RecallEntries.GetHashCode();
+                hash = hash * 59 + RecallEntries.GetHashCode();
             }
 
-            if (this.BreadthFirstRecalls != null)
+            if (BreadthFirstRecalls != null)
             {
-                hash = hash * 59 + this.BreadthFirstRecalls.GetHashCode();
+                hash = hash * 59 + BreadthFirstRecalls.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

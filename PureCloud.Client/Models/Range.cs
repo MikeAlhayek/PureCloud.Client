@@ -115,7 +115,7 @@ public partial class Range : IEquatable<Range>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Range);
+        return Equals(obj as Range);
     }
 
     /// <summary>
@@ -133,19 +133,19 @@ public partial class Range : IEquatable<Range>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.End == other.End ||
-                this.End != null &&
-                this.End.Equals(other.End)
+                End == other.End ||
+                End != null &&
+                End.Equals(other.End)
             ) &&
             (
-                this.NumberOfOccurrences == other.NumberOfOccurrences ||
-                this.NumberOfOccurrences != null &&
-                this.NumberOfOccurrences.Equals(other.NumberOfOccurrences)
+                NumberOfOccurrences == other.NumberOfOccurrences ||
+                NumberOfOccurrences != null &&
+                NumberOfOccurrences.Equals(other.NumberOfOccurrences)
             );
     }
 
@@ -160,19 +160,19 @@ public partial class Range : IEquatable<Range>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.End != null)
+            if (End != null)
             {
-                hash = hash * 59 + this.End.GetHashCode();
+                hash = hash * 59 + End.GetHashCode();
             }
 
-            if (this.NumberOfOccurrences != null)
+            if (NumberOfOccurrences != null)
             {
-                hash = hash * 59 + this.NumberOfOccurrences.GetHashCode();
+                hash = hash * 59 + NumberOfOccurrences.GetHashCode();
             }
 
             return hash;

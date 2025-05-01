@@ -195,7 +195,7 @@ public partial class CreateRecognition : IEquatable<CreateRecognition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateRecognition);
+        return Equals(obj as CreateRecognition);
     }
 
     /// <summary>
@@ -213,34 +213,34 @@ public partial class CreateRecognition : IEquatable<CreateRecognition>
 
         return true &&
             (
-                this.RecipientId == other.RecipientId ||
-                this.RecipientId != null &&
-                this.RecipientId.Equals(other.RecipientId)
+                RecipientId == other.RecipientId ||
+                RecipientId != null &&
+                RecipientId.Equals(other.RecipientId)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Note == other.Note ||
-                this.Note != null &&
-                this.Note.Equals(other.Note)
+                Note == other.Note ||
+                Note != null &&
+                Note.Equals(other.Note)
             ) &&
             (
-                this.ContextType == other.ContextType ||
-                this.ContextType != null &&
-                this.ContextType.Equals(other.ContextType)
+                ContextType == other.ContextType ||
+                ContextType != null &&
+                ContextType.Equals(other.ContextType)
             ) &&
             (
-                this.ContextId == other.ContextId ||
-                this.ContextId != null &&
-                this.ContextId.Equals(other.ContextId)
+                ContextId == other.ContextId ||
+                ContextId != null &&
+                ContextId.Equals(other.ContextId)
             );
     }
 
@@ -255,34 +255,34 @@ public partial class CreateRecognition : IEquatable<CreateRecognition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RecipientId != null)
+            if (RecipientId != null)
             {
-                hash = hash * 59 + this.RecipientId.GetHashCode();
+                hash = hash * 59 + RecipientId.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Note != null)
+            if (Note != null)
             {
-                hash = hash * 59 + this.Note.GetHashCode();
+                hash = hash * 59 + Note.GetHashCode();
             }
 
-            if (this.ContextType != null)
+            if (ContextType != null)
             {
-                hash = hash * 59 + this.ContextType.GetHashCode();
+                hash = hash * 59 + ContextType.GetHashCode();
             }
 
-            if (this.ContextId != null)
+            if (ContextId != null)
             {
-                hash = hash * 59 + this.ContextId.GetHashCode();
+                hash = hash * 59 + ContextId.GetHashCode();
             }
 
             return hash;

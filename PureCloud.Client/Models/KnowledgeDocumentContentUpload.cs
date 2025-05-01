@@ -209,7 +209,7 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentContentUpload);
+        return Equals(obj as KnowledgeDocumentContentUpload);
     }
 
     /// <summary>
@@ -227,54 +227,54 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Headers == other.Headers ||
-                this.Headers != null &&
-                this.Headers.SequenceEqual(other.Headers)
+                Headers == other.Headers ||
+                Headers != null &&
+                Headers.SequenceEqual(other.Headers)
             ) &&
             (
-                this.Document == other.Document ||
-                this.Document != null &&
-                this.Document.Equals(other.Document)
+                Document == other.Document ||
+                Document != null &&
+                Document.Equals(other.Document)
             ) &&
             (
-                this.ErrorMessage == other.ErrorMessage ||
-                this.ErrorMessage != null &&
-                this.ErrorMessage.Equals(other.ErrorMessage)
+                ErrorMessage == other.ErrorMessage ||
+                ErrorMessage != null &&
+                ErrorMessage.Equals(other.ErrorMessage)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -289,54 +289,54 @@ public partial class KnowledgeDocumentContentUpload : IEquatable<KnowledgeDocume
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Headers != null)
+            if (Headers != null)
             {
-                hash = hash * 59 + this.Headers.GetHashCode();
+                hash = hash * 59 + Headers.GetHashCode();
             }
 
-            if (this.Document != null)
+            if (Document != null)
             {
-                hash = hash * 59 + this.Document.GetHashCode();
+                hash = hash * 59 + Document.GetHashCode();
             }
 
-            if (this.ErrorMessage != null)
+            if (ErrorMessage != null)
             {
-                hash = hash * 59 + this.ErrorMessage.GetHashCode();
+                hash = hash * 59 + ErrorMessage.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

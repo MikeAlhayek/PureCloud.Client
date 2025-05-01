@@ -63,7 +63,7 @@ public partial class RecallEntry : IEquatable<RecallEntry>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecallEntry);
+        return Equals(obj as RecallEntry);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class RecallEntry : IEquatable<RecallEntry>
 
         return true &&
             (
-                this.NbrAttempts == other.NbrAttempts ||
-                this.NbrAttempts != null &&
-                this.NbrAttempts.Equals(other.NbrAttempts)
+                NbrAttempts == other.NbrAttempts ||
+                NbrAttempts != null &&
+                NbrAttempts.Equals(other.NbrAttempts)
             ) &&
             (
-                this.MinutesBetweenAttempts == other.MinutesBetweenAttempts ||
-                this.MinutesBetweenAttempts != null &&
-                this.MinutesBetweenAttempts.Equals(other.MinutesBetweenAttempts)
+                MinutesBetweenAttempts == other.MinutesBetweenAttempts ||
+                MinutesBetweenAttempts != null &&
+                MinutesBetweenAttempts.Equals(other.MinutesBetweenAttempts)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class RecallEntry : IEquatable<RecallEntry>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.NbrAttempts != null)
+            if (NbrAttempts != null)
             {
-                hash = hash * 59 + this.NbrAttempts.GetHashCode();
+                hash = hash * 59 + NbrAttempts.GetHashCode();
             }
 
-            if (this.MinutesBetweenAttempts != null)
+            if (MinutesBetweenAttempts != null)
             {
-                hash = hash * 59 + this.MinutesBetweenAttempts.GetHashCode();
+                hash = hash * 59 + MinutesBetweenAttempts.GetHashCode();
             }
 
             return hash;

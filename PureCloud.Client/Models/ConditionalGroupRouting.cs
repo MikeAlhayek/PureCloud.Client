@@ -53,7 +53,7 @@ public partial class ConditionalGroupRouting : IEquatable<ConditionalGroupRoutin
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConditionalGroupRouting);
+        return Equals(obj as ConditionalGroupRouting);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ConditionalGroupRouting : IEquatable<ConditionalGroupRoutin
 
         return true &&
             (
-                this.Rules == other.Rules ||
-                this.Rules != null &&
-                this.Rules.SequenceEqual(other.Rules)
+                Rules == other.Rules ||
+                Rules != null &&
+                Rules.SequenceEqual(other.Rules)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ConditionalGroupRouting : IEquatable<ConditionalGroupRoutin
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Rules != null)
+            if (Rules != null)
             {
-                hash = hash * 59 + this.Rules.GetHashCode();
+                hash = hash * 59 + Rules.GetHashCode();
             }
 
             return hash;

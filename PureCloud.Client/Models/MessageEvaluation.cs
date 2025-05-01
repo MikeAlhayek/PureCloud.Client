@@ -133,7 +133,7 @@ public partial class MessageEvaluation : IEquatable<MessageEvaluation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessageEvaluation);
+        return Equals(obj as MessageEvaluation);
     }
 
     /// <summary>
@@ -151,29 +151,29 @@ public partial class MessageEvaluation : IEquatable<MessageEvaluation>
 
         return true &&
             (
-                this.ContactColumn == other.ContactColumn ||
-                this.ContactColumn != null &&
-                this.ContactColumn.Equals(other.ContactColumn)
+                ContactColumn == other.ContactColumn ||
+                ContactColumn != null &&
+                ContactColumn.Equals(other.ContactColumn)
             ) &&
             (
-                this.ContactAddress == other.ContactAddress ||
-                this.ContactAddress != null &&
-                this.ContactAddress.Equals(other.ContactAddress)
+                ContactAddress == other.ContactAddress ||
+                ContactAddress != null &&
+                ContactAddress.Equals(other.ContactAddress)
             ) &&
             (
-                this.MessageType == other.MessageType ||
-                this.MessageType != null &&
-                this.MessageType.Equals(other.MessageType)
+                MessageType == other.MessageType ||
+                MessageType != null &&
+                MessageType.Equals(other.MessageType)
             ) &&
             (
-                this.WrapupCodeId == other.WrapupCodeId ||
-                this.WrapupCodeId != null &&
-                this.WrapupCodeId.Equals(other.WrapupCodeId)
+                WrapupCodeId == other.WrapupCodeId ||
+                WrapupCodeId != null &&
+                WrapupCodeId.Equals(other.WrapupCodeId)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             );
     }
 
@@ -188,29 +188,29 @@ public partial class MessageEvaluation : IEquatable<MessageEvaluation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactColumn != null)
+            if (ContactColumn != null)
             {
-                hash = hash * 59 + this.ContactColumn.GetHashCode();
+                hash = hash * 59 + ContactColumn.GetHashCode();
             }
 
-            if (this.ContactAddress != null)
+            if (ContactAddress != null)
             {
-                hash = hash * 59 + this.ContactAddress.GetHashCode();
+                hash = hash * 59 + ContactAddress.GetHashCode();
             }
 
-            if (this.MessageType != null)
+            if (MessageType != null)
             {
-                hash = hash * 59 + this.MessageType.GetHashCode();
+                hash = hash * 59 + MessageType.GetHashCode();
             }
 
-            if (this.WrapupCodeId != null)
+            if (WrapupCodeId != null)
             {
-                hash = hash * 59 + this.WrapupCodeId.GetHashCode();
+                hash = hash * 59 + WrapupCodeId.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
             return hash;

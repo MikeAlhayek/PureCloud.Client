@@ -83,7 +83,7 @@ public partial class QueryTimeOffLimitValuesRequest : IEquatable<QueryTimeOffLim
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueryTimeOffLimitValuesRequest);
+        return Equals(obj as QueryTimeOffLimitValuesRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class QueryTimeOffLimitValuesRequest : IEquatable<QueryTimeOffLim
 
         return true &&
             (
-                this.TimeOffLimitId == other.TimeOffLimitId ||
-                this.TimeOffLimitId != null &&
-                this.TimeOffLimitId.Equals(other.TimeOffLimitId)
+                TimeOffLimitId == other.TimeOffLimitId ||
+                TimeOffLimitId != null &&
+                TimeOffLimitId.Equals(other.TimeOffLimitId)
             ) &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.DateRanges == other.DateRanges ||
-                this.DateRanges != null &&
-                this.DateRanges.SequenceEqual(other.DateRanges)
+                DateRanges == other.DateRanges ||
+                DateRanges != null &&
+                DateRanges.SequenceEqual(other.DateRanges)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class QueryTimeOffLimitValuesRequest : IEquatable<QueryTimeOffLim
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeOffLimitId != null)
+            if (TimeOffLimitId != null)
             {
-                hash = hash * 59 + this.TimeOffLimitId.GetHashCode();
+                hash = hash * 59 + TimeOffLimitId.GetHashCode();
             }
 
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.DateRanges != null)
+            if (DateRanges != null)
             {
-                hash = hash * 59 + this.DateRanges.GetHashCode();
+                hash = hash * 59 + DateRanges.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class SelectedColumns : IEquatable<SelectedColumns>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SelectedColumns);
+        return Equals(obj as SelectedColumns);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class SelectedColumns : IEquatable<SelectedColumns>
 
         return true &&
             (
-                this.ColumnOrder == other.ColumnOrder ||
-                this.ColumnOrder != null &&
-                this.ColumnOrder.Equals(other.ColumnOrder)
+                ColumnOrder == other.ColumnOrder ||
+                ColumnOrder != null &&
+                ColumnOrder.Equals(other.ColumnOrder)
             ) &&
             (
-                this.ColumnName == other.ColumnName ||
-                this.ColumnName != null &&
-                this.ColumnName.Equals(other.ColumnName)
+                ColumnName == other.ColumnName ||
+                ColumnName != null &&
+                ColumnName.Equals(other.ColumnName)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class SelectedColumns : IEquatable<SelectedColumns>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ColumnOrder != null)
+            if (ColumnOrder != null)
             {
-                hash = hash * 59 + this.ColumnOrder.GetHashCode();
+                hash = hash * 59 + ColumnOrder.GetHashCode();
             }
 
-            if (this.ColumnName != null)
+            if (ColumnName != null)
             {
-                hash = hash * 59 + this.ColumnName.GetHashCode();
+                hash = hash * 59 + ColumnName.GetHashCode();
             }
 
             return hash;

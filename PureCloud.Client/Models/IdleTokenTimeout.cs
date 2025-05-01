@@ -65,7 +65,7 @@ public partial class IdleTokenTimeout : IEquatable<IdleTokenTimeout>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IdleTokenTimeout);
+        return Equals(obj as IdleTokenTimeout);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class IdleTokenTimeout : IEquatable<IdleTokenTimeout>
 
         return true &&
             (
-                this.IdleTokenTimeoutSeconds == other.IdleTokenTimeoutSeconds ||
-                this.IdleTokenTimeoutSeconds != null &&
-                this.IdleTokenTimeoutSeconds.Equals(other.IdleTokenTimeoutSeconds)
+                IdleTokenTimeoutSeconds == other.IdleTokenTimeoutSeconds ||
+                IdleTokenTimeoutSeconds != null &&
+                IdleTokenTimeoutSeconds.Equals(other.IdleTokenTimeoutSeconds)
             ) &&
             (
-                this.EnableIdleTokenTimeout == other.EnableIdleTokenTimeout ||
-                this.EnableIdleTokenTimeout != null &&
-                this.EnableIdleTokenTimeout.Equals(other.EnableIdleTokenTimeout)
+                EnableIdleTokenTimeout == other.EnableIdleTokenTimeout ||
+                EnableIdleTokenTimeout != null &&
+                EnableIdleTokenTimeout.Equals(other.EnableIdleTokenTimeout)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class IdleTokenTimeout : IEquatable<IdleTokenTimeout>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IdleTokenTimeoutSeconds != null)
+            if (IdleTokenTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.IdleTokenTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + IdleTokenTimeoutSeconds.GetHashCode();
             }
 
-            if (this.EnableIdleTokenTimeout != null)
+            if (EnableIdleTokenTimeout != null)
             {
-                hash = hash * 59 + this.EnableIdleTokenTimeout.GetHashCode();
+                hash = hash * 59 + EnableIdleTokenTimeout.GetHashCode();
             }
 
             return hash;

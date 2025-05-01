@@ -100,7 +100,7 @@ public partial class RoutingConversationAttributesRequest : IEquatable<RoutingCo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoutingConversationAttributesRequest);
+        return Equals(obj as RoutingConversationAttributesRequest);
     }
 
     /// <summary>
@@ -118,29 +118,29 @@ public partial class RoutingConversationAttributesRequest : IEquatable<RoutingCo
 
         return true &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.SkillIds == other.SkillIds ||
-                this.SkillIds != null &&
-                this.SkillIds.SequenceEqual(other.SkillIds)
+                SkillIds == other.SkillIds ||
+                SkillIds != null &&
+                SkillIds.SequenceEqual(other.SkillIds)
             ) &&
             (
-                this.LanguageId == other.LanguageId ||
-                this.LanguageId != null &&
-                this.LanguageId.Equals(other.LanguageId)
+                LanguageId == other.LanguageId ||
+                LanguageId != null &&
+                LanguageId.Equals(other.LanguageId)
             ) &&
             (
-                this.LabelId == other.LabelId ||
-                this.LabelId != null &&
-                this.LabelId.Equals(other.LabelId)
+                LabelId == other.LabelId ||
+                LabelId != null &&
+                LabelId.Equals(other.LabelId)
             ) &&
             (
-                this.RequestScoredAgents == other.RequestScoredAgents ||
-                this.RequestScoredAgents != null &&
-                this.RequestScoredAgents.SequenceEqual(other.RequestScoredAgents)
+                RequestScoredAgents == other.RequestScoredAgents ||
+                RequestScoredAgents != null &&
+                RequestScoredAgents.SequenceEqual(other.RequestScoredAgents)
             );
     }
 
@@ -155,29 +155,29 @@ public partial class RoutingConversationAttributesRequest : IEquatable<RoutingCo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.SkillIds != null)
+            if (SkillIds != null)
             {
-                hash = hash * 59 + this.SkillIds.GetHashCode();
+                hash = hash * 59 + SkillIds.GetHashCode();
             }
 
-            if (this.LanguageId != null)
+            if (LanguageId != null)
             {
-                hash = hash * 59 + this.LanguageId.GetHashCode();
+                hash = hash * 59 + LanguageId.GetHashCode();
             }
 
-            if (this.LabelId != null)
+            if (LabelId != null)
             {
-                hash = hash * 59 + this.LabelId.GetHashCode();
+                hash = hash * 59 + LabelId.GetHashCode();
             }
 
-            if (this.RequestScoredAgents != null)
+            if (RequestScoredAgents != null)
             {
-                hash = hash * 59 + this.RequestScoredAgents.GetHashCode();
+                hash = hash * 59 + RequestScoredAgents.GetHashCode();
             }
 
             return hash;

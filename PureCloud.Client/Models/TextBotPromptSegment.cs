@@ -127,7 +127,7 @@ public partial class TextBotPromptSegment : IEquatable<TextBotPromptSegment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotPromptSegment);
+        return Equals(obj as TextBotPromptSegment);
     }
 
     /// <summary>
@@ -145,24 +145,24 @@ public partial class TextBotPromptSegment : IEquatable<TextBotPromptSegment>
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Format == other.Format ||
-                this.Format != null &&
-                this.Format.Equals(other.Format)
+                Format == other.Format ||
+                Format != null &&
+                Format.Equals(other.Format)
             ) &&
             (
-                this.Content == other.Content ||
-                this.Content != null &&
-                this.Content.SequenceEqual(other.Content)
+                Content == other.Content ||
+                Content != null &&
+                Content.SequenceEqual(other.Content)
             );
     }
 
@@ -177,24 +177,24 @@ public partial class TextBotPromptSegment : IEquatable<TextBotPromptSegment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Format != null)
+            if (Format != null)
             {
-                hash = hash * 59 + this.Format.GetHashCode();
+                hash = hash * 59 + Format.GetHashCode();
             }
 
-            if (this.Content != null)
+            if (Content != null)
             {
-                hash = hash * 59 + this.Content.GetHashCode();
+                hash = hash * 59 + Content.GetHashCode();
             }
 
             return hash;

@@ -121,7 +121,7 @@ public partial class ConversationProfile : IEquatable<ConversationProfile>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationProfile);
+        return Equals(obj as ConversationProfile);
     }
 
     /// <summary>
@@ -139,14 +139,14 @@ public partial class ConversationProfile : IEquatable<ConversationProfile>
 
         return true &&
             (
-                this.LanguageCode == other.LanguageCode ||
-                this.LanguageCode != null &&
-                this.LanguageCode.Equals(other.LanguageCode)
+                LanguageCode == other.LanguageCode ||
+                LanguageCode != null &&
+                LanguageCode.Equals(other.LanguageCode)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             );
     }
 
@@ -161,14 +161,14 @@ public partial class ConversationProfile : IEquatable<ConversationProfile>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LanguageCode != null)
+            if (LanguageCode != null)
             {
-                hash = hash * 59 + this.LanguageCode.GetHashCode();
+                hash = hash * 59 + LanguageCode.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
             return hash;

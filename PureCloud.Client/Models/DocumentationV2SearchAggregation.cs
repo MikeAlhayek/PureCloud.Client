@@ -177,7 +177,7 @@ public partial class DocumentationV2SearchAggregation : IEquatable<Documentation
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentationV2SearchAggregation);
+        return Equals(obj as DocumentationV2SearchAggregation);
     }
 
     /// <summary>
@@ -195,34 +195,34 @@ public partial class DocumentationV2SearchAggregation : IEquatable<Documentation
 
         return true &&
             (
-                this.Field == other.Field ||
-                this.Field != null &&
-                this.Field.Equals(other.Field)
+                Field == other.Field ||
+                Field != null &&
+                Field.Equals(other.Field)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Size == other.Size ||
-                this.Size != null &&
-                this.Size.Equals(other.Size)
+                Size == other.Size ||
+                Size != null &&
+                Size.Equals(other.Size)
             ) &&
             (
-                this.Order == other.Order ||
-                this.Order != null &&
-                this.Order.SequenceEqual(other.Order)
+                Order == other.Order ||
+                Order != null &&
+                Order.SequenceEqual(other.Order)
             );
     }
 
@@ -237,34 +237,34 @@ public partial class DocumentationV2SearchAggregation : IEquatable<Documentation
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Field != null)
+            if (Field != null)
             {
-                hash = hash * 59 + this.Field.GetHashCode();
+                hash = hash * 59 + Field.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Size != null)
+            if (Size != null)
             {
-                hash = hash * 59 + this.Size.GetHashCode();
+                hash = hash * 59 + Size.GetHashCode();
             }
 
-            if (this.Order != null)
+            if (Order != null)
             {
-                hash = hash * 59 + this.Order.GetHashCode();
+                hash = hash * 59 + Order.GetHashCode();
             }
 
             return hash;

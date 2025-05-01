@@ -455,12 +455,12 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
     /// <returns></returns>
     public ProcessAutomationApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -474,17 +474,17 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -494,7 +494,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -520,7 +520,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -532,7 +532,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -577,7 +577,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -586,7 +586,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -599,7 +599,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Path params
         if (triggerId != null)
         {
-            localVarPathParams.Add("triggerId", this.Configuration.ApiClient.ParameterToString(triggerId));
+            localVarPathParams.Add("triggerId", Configuration.ApiClient.ParameterToString(triggerId));
         }
 
         // Query params
@@ -615,11 +615,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -693,7 +693,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -702,7 +702,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -715,7 +715,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Path params
         if (triggerId != null)
         {
-            localVarPathParams.Add("triggerId", this.Configuration.ApiClient.ParameterToString(triggerId));
+            localVarPathParams.Add("triggerId", Configuration.ApiClient.ParameterToString(triggerId));
         }
 
         // Query params
@@ -731,11 +731,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -810,7 +810,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -819,7 +819,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -832,7 +832,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Path params
         if (triggerId != null)
         {
-            localVarPathParams.Add("triggerId", this.Configuration.ApiClient.ParameterToString(triggerId));
+            localVarPathParams.Add("triggerId", Configuration.ApiClient.ParameterToString(triggerId));
         }
 
         // Query params
@@ -848,11 +848,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -878,7 +878,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<Trigger>(localVarStatusCode,
             localVarHeaders,
-            (Trigger)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
+            (Trigger)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -927,7 +927,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -936,7 +936,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -949,7 +949,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Path params
         if (triggerId != null)
         {
-            localVarPathParams.Add("triggerId", this.Configuration.ApiClient.ParameterToString(triggerId));
+            localVarPathParams.Add("triggerId", Configuration.ApiClient.ParameterToString(triggerId));
         }
 
         // Query params
@@ -965,11 +965,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -995,7 +995,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<Trigger>(localVarStatusCode,
             localVarHeaders,
-            (Trigger)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
+            (Trigger)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1049,7 +1049,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1058,7 +1058,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1073,32 +1073,32 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (topicName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("topicName", this.Configuration.ApiClient.ParameterToString(topicName)));
+            localVarQueryParams.Add(new Tuple<string, string>("topicName", Configuration.ApiClient.ParameterToString(topicName)));
         }
 
         if (enabled != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("enabled", this.Configuration.ApiClient.ParameterToString(enabled)));
+            localVarQueryParams.Add(new Tuple<string, string>("enabled", Configuration.ApiClient.ParameterToString(enabled)));
         }
 
         if (hasDelayBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hasDelayBy", this.Configuration.ApiClient.ParameterToString(hasDelayBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("hasDelayBy", Configuration.ApiClient.ParameterToString(hasDelayBy)));
         }
 
         // Header params
@@ -1112,11 +1112,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1142,7 +1142,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<TriggerEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TriggerEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TriggerEntityListing)),
+            (TriggerEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TriggerEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1196,7 +1196,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1205,7 +1205,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1220,32 +1220,32 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (topicName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("topicName", this.Configuration.ApiClient.ParameterToString(topicName)));
+            localVarQueryParams.Add(new Tuple<string, string>("topicName", Configuration.ApiClient.ParameterToString(topicName)));
         }
 
         if (enabled != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("enabled", this.Configuration.ApiClient.ParameterToString(enabled)));
+            localVarQueryParams.Add(new Tuple<string, string>("enabled", Configuration.ApiClient.ParameterToString(enabled)));
         }
 
         if (hasDelayBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hasDelayBy", this.Configuration.ApiClient.ParameterToString(hasDelayBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("hasDelayBy", Configuration.ApiClient.ParameterToString(hasDelayBy)));
         }
 
         // Header params
@@ -1259,11 +1259,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1289,7 +1289,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<TriggerEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TriggerEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TriggerEntityListing)),
+            (TriggerEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TriggerEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1337,7 +1337,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1346,7 +1346,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1361,17 +1361,17 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -1385,11 +1385,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1415,7 +1415,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<TopicCursorEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TopicCursorEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicCursorEntityListing)),
+            (TopicCursorEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicCursorEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1463,7 +1463,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1472,7 +1472,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1487,17 +1487,17 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -1511,11 +1511,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1541,7 +1541,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<TopicCursorEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TopicCursorEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicCursorEntityListing)),
+            (TopicCursorEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicCursorEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1593,7 +1593,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1602,7 +1602,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1615,7 +1615,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Path params
         if (triggerId != null)
         {
-            localVarPathParams.Add("triggerId", this.Configuration.ApiClient.ParameterToString(triggerId));
+            localVarPathParams.Add("triggerId", Configuration.ApiClient.ParameterToString(triggerId));
         }
 
         // Query params
@@ -1627,7 +1627,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1640,11 +1640,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1670,7 +1670,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<TestModeResults>(localVarStatusCode,
             localVarHeaders,
-            (TestModeResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestModeResults)),
+            (TestModeResults)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestModeResults)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1722,7 +1722,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1731,7 +1731,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1744,7 +1744,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Path params
         if (triggerId != null)
         {
-            localVarPathParams.Add("triggerId", this.Configuration.ApiClient.ParameterToString(triggerId));
+            localVarPathParams.Add("triggerId", Configuration.ApiClient.ParameterToString(triggerId));
         }
 
         // Query params
@@ -1756,7 +1756,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1769,11 +1769,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1799,7 +1799,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<TestModeResults>(localVarStatusCode,
             localVarHeaders,
-            (TestModeResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestModeResults)),
+            (TestModeResults)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestModeResults)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1849,7 +1849,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1858,7 +1858,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1879,7 +1879,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1892,11 +1892,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1922,7 +1922,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<Trigger>(localVarStatusCode,
             localVarHeaders,
-            (Trigger)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
+            (Trigger)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1972,7 +1972,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1981,7 +1981,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2002,7 +2002,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2015,11 +2015,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2045,7 +2045,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<Trigger>(localVarStatusCode,
             localVarHeaders,
-            (Trigger)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
+            (Trigger)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2097,7 +2097,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2106,7 +2106,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2119,7 +2119,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Path params
         if (topicName != null)
         {
-            localVarPathParams.Add("topicName", this.Configuration.ApiClient.ParameterToString(topicName));
+            localVarPathParams.Add("topicName", Configuration.ApiClient.ParameterToString(topicName));
         }
 
         // Query params
@@ -2131,7 +2131,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2144,11 +2144,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2174,7 +2174,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<TestModeEventResults>(localVarStatusCode,
             localVarHeaders,
-            (TestModeEventResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestModeEventResults)),
+            (TestModeEventResults)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestModeEventResults)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2226,7 +2226,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2235,7 +2235,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2248,7 +2248,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Path params
         if (topicName != null)
         {
-            localVarPathParams.Add("topicName", this.Configuration.ApiClient.ParameterToString(topicName));
+            localVarPathParams.Add("topicName", Configuration.ApiClient.ParameterToString(topicName));
         }
 
         // Query params
@@ -2260,7 +2260,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2273,11 +2273,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2303,7 +2303,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<TestModeEventResults>(localVarStatusCode,
             localVarHeaders,
-            (TestModeEventResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestModeEventResults)),
+            (TestModeEventResults)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestModeEventResults)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2360,7 +2360,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2369,7 +2369,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2382,7 +2382,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Path params
         if (triggerId != null)
         {
-            localVarPathParams.Add("triggerId", this.Configuration.ApiClient.ParameterToString(triggerId));
+            localVarPathParams.Add("triggerId", Configuration.ApiClient.ParameterToString(triggerId));
         }
 
         // Query params
@@ -2394,7 +2394,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2407,11 +2407,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2437,7 +2437,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<Trigger>(localVarStatusCode,
             localVarHeaders,
-            (Trigger)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
+            (Trigger)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2495,7 +2495,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2504,7 +2504,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2517,7 +2517,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Path params
         if (triggerId != null)
         {
-            localVarPathParams.Add("triggerId", this.Configuration.ApiClient.ParameterToString(triggerId));
+            localVarPathParams.Add("triggerId", Configuration.ApiClient.ParameterToString(triggerId));
         }
 
         // Query params
@@ -2529,7 +2529,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2542,11 +2542,11 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2572,7 +2572,7 @@ public partial class ProcessAutomationApi : IProcessAutomationApi
 
         return new ApiResponse<Trigger>(localVarStatusCode,
             localVarHeaders,
-            (Trigger)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
+            (Trigger)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trigger)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

@@ -71,7 +71,7 @@ public partial class OpenInboundMessagingChannel : IEquatable<OpenInboundMessagi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenInboundMessagingChannel);
+        return Equals(obj as OpenInboundMessagingChannel);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class OpenInboundMessagingChannel : IEquatable<OpenInboundMessagi
 
         return true &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.Time == other.Time ||
-                this.Time != null &&
-                this.Time.Equals(other.Time)
+                Time == other.Time ||
+                Time != null &&
+                Time.Equals(other.Time)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class OpenInboundMessagingChannel : IEquatable<OpenInboundMessagi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.Time != null)
+            if (Time != null)
             {
-                hash = hash * 59 + this.Time.GetHashCode();
+                hash = hash * 59 + Time.GetHashCode();
             }
 
             return hash;

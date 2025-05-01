@@ -143,7 +143,7 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateTriggerRequest);
+        return Equals(obj as CreateTriggerRequest);
     }
 
     /// <summary>
@@ -161,44 +161,44 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
 
         return true &&
             (
-                this.Target == other.Target ||
-                this.Target != null &&
-                this.Target.Equals(other.Target)
+                Target == other.Target ||
+                Target != null &&
+                Target.Equals(other.Target)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.MatchCriteria == other.MatchCriteria ||
-                this.MatchCriteria != null &&
-                this.MatchCriteria.SequenceEqual(other.MatchCriteria)
+                MatchCriteria == other.MatchCriteria ||
+                MatchCriteria != null &&
+                MatchCriteria.SequenceEqual(other.MatchCriteria)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.TopicName == other.TopicName ||
-                this.TopicName != null &&
-                this.TopicName.Equals(other.TopicName)
+                TopicName == other.TopicName ||
+                TopicName != null &&
+                TopicName.Equals(other.TopicName)
             ) &&
             (
-                this.EventTTLSeconds == other.EventTTLSeconds ||
-                this.EventTTLSeconds != null &&
-                this.EventTTLSeconds.Equals(other.EventTTLSeconds)
+                EventTTLSeconds == other.EventTTLSeconds ||
+                EventTTLSeconds != null &&
+                EventTTLSeconds.Equals(other.EventTTLSeconds)
             ) &&
             (
-                this.DelayBySeconds == other.DelayBySeconds ||
-                this.DelayBySeconds != null &&
-                this.DelayBySeconds.Equals(other.DelayBySeconds)
+                DelayBySeconds == other.DelayBySeconds ||
+                DelayBySeconds != null &&
+                DelayBySeconds.Equals(other.DelayBySeconds)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             );
     }
 
@@ -213,44 +213,44 @@ public partial class CreateTriggerRequest : IEquatable<CreateTriggerRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Target != null)
+            if (Target != null)
             {
-                hash = hash * 59 + this.Target.GetHashCode();
+                hash = hash * 59 + Target.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.MatchCriteria != null)
+            if (MatchCriteria != null)
             {
-                hash = hash * 59 + this.MatchCriteria.GetHashCode();
+                hash = hash * 59 + MatchCriteria.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.TopicName != null)
+            if (TopicName != null)
             {
-                hash = hash * 59 + this.TopicName.GetHashCode();
+                hash = hash * 59 + TopicName.GetHashCode();
             }
 
-            if (this.EventTTLSeconds != null)
+            if (EventTTLSeconds != null)
             {
-                hash = hash * 59 + this.EventTTLSeconds.GetHashCode();
+                hash = hash * 59 + EventTTLSeconds.GetHashCode();
             }
 
-            if (this.DelayBySeconds != null)
+            if (DelayBySeconds != null)
             {
-                hash = hash * 59 + this.DelayBySeconds.GetHashCode();
+                hash = hash * 59 + DelayBySeconds.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
             return hash;

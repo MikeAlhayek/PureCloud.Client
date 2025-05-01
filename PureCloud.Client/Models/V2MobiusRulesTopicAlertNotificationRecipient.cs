@@ -74,7 +74,7 @@ public partial class V2MobiusRulesTopicAlertNotificationRecipient : IEquatable<V
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2MobiusRulesTopicAlertNotificationRecipient);
+        return Equals(obj as V2MobiusRulesTopicAlertNotificationRecipient);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class V2MobiusRulesTopicAlertNotificationRecipient : IEquatable<V
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.ContactAddress == other.ContactAddress ||
-                this.ContactAddress != null &&
-                this.ContactAddress.Equals(other.ContactAddress)
+                ContactAddress == other.ContactAddress ||
+                ContactAddress != null &&
+                ContactAddress.Equals(other.ContactAddress)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class V2MobiusRulesTopicAlertNotificationRecipient : IEquatable<V
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.ContactAddress != null)
+            if (ContactAddress != null)
             {
-                hash = hash * 59 + this.ContactAddress.GetHashCode();
+                hash = hash * 59 + ContactAddress.GetHashCode();
             }
 
             return hash;

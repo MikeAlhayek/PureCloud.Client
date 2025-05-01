@@ -91,7 +91,7 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimV2SchemaDefinition);
+        return Equals(obj as ScimV2SchemaDefinition);
     }
 
     /// <summary>
@@ -109,29 +109,29 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.Meta == other.Meta ||
-                this.Meta != null &&
-                this.Meta.Equals(other.Meta)
+                Meta == other.Meta ||
+                Meta != null &&
+                Meta.Equals(other.Meta)
             );
     }
 
@@ -146,29 +146,29 @@ public partial class ScimV2SchemaDefinition : IEquatable<ScimV2SchemaDefinition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.Meta != null)
+            if (Meta != null)
             {
-                hash = hash * 59 + this.Meta.GetHashCode();
+                hash = hash * 59 + Meta.GetHashCode();
             }
 
             return hash;

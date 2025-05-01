@@ -95,7 +95,7 @@ public partial class EdgeAutoUpdateConfig : IEquatable<EdgeAutoUpdateConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeAutoUpdateConfig);
+        return Equals(obj as EdgeAutoUpdateConfig);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class EdgeAutoUpdateConfig : IEquatable<EdgeAutoUpdateConfig>
 
         return true &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.Rrule == other.Rrule ||
-                this.Rrule != null &&
-                this.Rrule.Equals(other.Rrule)
+                Rrule == other.Rrule ||
+                Rrule != null &&
+                Rrule.Equals(other.Rrule)
             ) &&
             (
-                this.Start == other.Start ||
-                this.Start != null &&
-                this.Start.Equals(other.Start)
+                Start == other.Start ||
+                Start != null &&
+                Start.Equals(other.Start)
             ) &&
             (
-                this.End == other.End ||
-                this.End != null &&
-                this.End.Equals(other.End)
+                End == other.End ||
+                End != null &&
+                End.Equals(other.End)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class EdgeAutoUpdateConfig : IEquatable<EdgeAutoUpdateConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.Rrule != null)
+            if (Rrule != null)
             {
-                hash = hash * 59 + this.Rrule.GetHashCode();
+                hash = hash * 59 + Rrule.GetHashCode();
             }
 
-            if (this.Start != null)
+            if (Start != null)
             {
-                hash = hash * 59 + this.Start.GetHashCode();
+                hash = hash * 59 + Start.GetHashCode();
             }
 
-            if (this.End != null)
+            if (End != null)
             {
-                hash = hash * 59 + this.End.GetHashCode();
+                hash = hash * 59 + End.GetHashCode();
             }
 
             return hash;

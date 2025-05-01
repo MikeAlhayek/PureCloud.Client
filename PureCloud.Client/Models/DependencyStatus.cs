@@ -202,7 +202,7 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DependencyStatus);
+        return Equals(obj as DependencyStatus);
     }
 
     /// <summary>
@@ -220,54 +220,54 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Client == other.Client ||
-                this.Client != null &&
-                this.Client.Equals(other.Client)
+                Client == other.Client ||
+                Client != null &&
+                Client.Equals(other.Client)
             ) &&
             (
-                this.BuildId == other.BuildId ||
-                this.BuildId != null &&
-                this.BuildId.Equals(other.BuildId)
+                BuildId == other.BuildId ||
+                BuildId != null &&
+                BuildId.Equals(other.BuildId)
             ) &&
             (
-                this.DateStarted == other.DateStarted ||
-                this.DateStarted != null &&
-                this.DateStarted.Equals(other.DateStarted)
+                DateStarted == other.DateStarted ||
+                DateStarted != null &&
+                DateStarted.Equals(other.DateStarted)
             ) &&
             (
-                this.DateCompleted == other.DateCompleted ||
-                this.DateCompleted != null &&
-                this.DateCompleted.Equals(other.DateCompleted)
+                DateCompleted == other.DateCompleted ||
+                DateCompleted != null &&
+                DateCompleted.Equals(other.DateCompleted)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.FailedObjects == other.FailedObjects ||
-                this.FailedObjects != null &&
-                this.FailedObjects.SequenceEqual(other.FailedObjects)
+                FailedObjects == other.FailedObjects ||
+                FailedObjects != null &&
+                FailedObjects.SequenceEqual(other.FailedObjects)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -282,54 +282,54 @@ public partial class DependencyStatus : IEquatable<DependencyStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Client != null)
+            if (Client != null)
             {
-                hash = hash * 59 + this.Client.GetHashCode();
+                hash = hash * 59 + Client.GetHashCode();
             }
 
-            if (this.BuildId != null)
+            if (BuildId != null)
             {
-                hash = hash * 59 + this.BuildId.GetHashCode();
+                hash = hash * 59 + BuildId.GetHashCode();
             }
 
-            if (this.DateStarted != null)
+            if (DateStarted != null)
             {
-                hash = hash * 59 + this.DateStarted.GetHashCode();
+                hash = hash * 59 + DateStarted.GetHashCode();
             }
 
-            if (this.DateCompleted != null)
+            if (DateCompleted != null)
             {
-                hash = hash * 59 + this.DateCompleted.GetHashCode();
+                hash = hash * 59 + DateCompleted.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.FailedObjects != null)
+            if (FailedObjects != null)
             {
-                hash = hash * 59 + this.FailedObjects.GetHashCode();
+                hash = hash * 59 + FailedObjects.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

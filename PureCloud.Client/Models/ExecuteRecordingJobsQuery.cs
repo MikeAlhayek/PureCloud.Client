@@ -79,7 +79,7 @@ public partial class ExecuteRecordingJobsQuery : IEquatable<ExecuteRecordingJobs
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExecuteRecordingJobsQuery);
+        return Equals(obj as ExecuteRecordingJobsQuery);
     }
 
     /// <summary>
@@ -97,9 +97,9 @@ public partial class ExecuteRecordingJobsQuery : IEquatable<ExecuteRecordingJobs
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             );
     }
 
@@ -114,9 +114,9 @@ public partial class ExecuteRecordingJobsQuery : IEquatable<ExecuteRecordingJobs
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
             return hash;

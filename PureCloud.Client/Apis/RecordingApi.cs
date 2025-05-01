@@ -3091,12 +3091,12 @@ public partial class RecordingApi : IRecordingApi
     /// <returns></returns>
     public RecordingApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -3110,17 +3110,17 @@ public partial class RecordingApi : IRecordingApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -3130,7 +3130,7 @@ public partial class RecordingApi : IRecordingApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -3156,7 +3156,7 @@ public partial class RecordingApi : IRecordingApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -3168,7 +3168,7 @@ public partial class RecordingApi : IRecordingApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -3227,7 +3227,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3236,7 +3236,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3249,17 +3249,17 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         if (annotationId != null)
         {
-            localVarPathParams.Add("annotationId", this.Configuration.ApiClient.ParameterToString(annotationId));
+            localVarPathParams.Add("annotationId", Configuration.ApiClient.ParameterToString(annotationId));
         }
 
         // Query params
@@ -3275,11 +3275,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3369,7 +3369,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3378,7 +3378,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3391,17 +3391,17 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         if (annotationId != null)
         {
-            localVarPathParams.Add("annotationId", this.Configuration.ApiClient.ParameterToString(annotationId));
+            localVarPathParams.Add("annotationId", Configuration.ApiClient.ParameterToString(annotationId));
         }
 
         // Query params
@@ -3417,11 +3417,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3496,7 +3496,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3505,7 +3505,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3518,7 +3518,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (orphanId != null)
         {
-            localVarPathParams.Add("orphanId", this.Configuration.ApiClient.ParameterToString(orphanId));
+            localVarPathParams.Add("orphanId", Configuration.ApiClient.ParameterToString(orphanId));
         }
 
         // Query params
@@ -3534,11 +3534,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3564,7 +3564,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<OrphanRecording>(localVarStatusCode,
             localVarHeaders,
-            (OrphanRecording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecording)),
+            (OrphanRecording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3613,7 +3613,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3622,7 +3622,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3635,7 +3635,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (orphanId != null)
         {
-            localVarPathParams.Add("orphanId", this.Configuration.ApiClient.ParameterToString(orphanId));
+            localVarPathParams.Add("orphanId", Configuration.ApiClient.ParameterToString(orphanId));
         }
 
         // Query params
@@ -3651,11 +3651,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3681,7 +3681,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<OrphanRecording>(localVarStatusCode,
             localVarHeaders,
-            (OrphanRecording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecording)),
+            (OrphanRecording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3729,7 +3729,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3738,7 +3738,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3753,7 +3753,7 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (ids != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(ids)));
+            localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(ids)));
         }
 
         // Header params
@@ -3767,11 +3767,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3845,7 +3845,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3854,7 +3854,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3869,7 +3869,7 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (ids != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(ids)));
+            localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(ids)));
         }
 
         // Header params
@@ -3883,11 +3883,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3961,7 +3961,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3970,7 +3970,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3983,7 +3983,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -3999,11 +3999,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4077,7 +4077,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4086,7 +4086,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4099,7 +4099,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -4115,11 +4115,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4193,7 +4193,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4202,7 +4202,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4215,7 +4215,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -4231,11 +4231,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4309,7 +4309,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4318,7 +4318,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4331,7 +4331,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -4347,11 +4347,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4425,7 +4425,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4434,7 +4434,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4449,7 +4449,7 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (ids != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(ids)));
+            localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(ids)));
         }
 
         // Header params
@@ -4463,11 +4463,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4541,7 +4541,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4550,7 +4550,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4565,7 +4565,7 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (ids != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(ids)));
+            localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(ids)));
         }
 
         // Header params
@@ -4579,11 +4579,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4657,7 +4657,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4666,7 +4666,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4679,7 +4679,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -4695,11 +4695,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4773,7 +4773,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4782,7 +4782,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4795,7 +4795,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -4811,11 +4811,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4913,7 +4913,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4922,7 +4922,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4935,53 +4935,53 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         // Query params
         if (formatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("formatId", this.Configuration.ApiClient.ParameterToString(formatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("formatId", Configuration.ApiClient.ParameterToString(formatId)));
         }
 
         if (emailFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("emailFormatId", this.Configuration.ApiClient.ParameterToString(emailFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("emailFormatId", Configuration.ApiClient.ParameterToString(emailFormatId)));
         }
 
         if (chatFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("chatFormatId", this.Configuration.ApiClient.ParameterToString(chatFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("chatFormatId", Configuration.ApiClient.ParameterToString(chatFormatId)));
         }
 
         if (messageFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("messageFormatId", this.Configuration.ApiClient.ParameterToString(messageFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("messageFormatId", Configuration.ApiClient.ParameterToString(messageFormatId)));
         }
 
         if (download != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("download", this.Configuration.ApiClient.ParameterToString(download)));
+            localVarQueryParams.Add(new Tuple<string, string>("download", Configuration.ApiClient.ParameterToString(download)));
         }
 
         if (fileName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("fileName", this.Configuration.ApiClient.ParameterToString(fileName)));
+            localVarQueryParams.Add(new Tuple<string, string>("fileName", Configuration.ApiClient.ParameterToString(fileName)));
         }
 
         if (locale != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("locale", this.Configuration.ApiClient.ParameterToString(locale)));
+            localVarQueryParams.Add(new Tuple<string, string>("locale", Configuration.ApiClient.ParameterToString(locale)));
         }
 
         if (mediaFormats != null)
         {
-            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", this.Configuration.ApiClient.ParameterToString(obj))); });
+            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4995,11 +4995,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5025,7 +5025,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Recording>(localVarStatusCode,
             localVarHeaders,
-            (Recording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
+            (Recording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5098,7 +5098,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5107,7 +5107,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5120,53 +5120,53 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         // Query params
         if (formatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("formatId", this.Configuration.ApiClient.ParameterToString(formatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("formatId", Configuration.ApiClient.ParameterToString(formatId)));
         }
 
         if (emailFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("emailFormatId", this.Configuration.ApiClient.ParameterToString(emailFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("emailFormatId", Configuration.ApiClient.ParameterToString(emailFormatId)));
         }
 
         if (chatFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("chatFormatId", this.Configuration.ApiClient.ParameterToString(chatFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("chatFormatId", Configuration.ApiClient.ParameterToString(chatFormatId)));
         }
 
         if (messageFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("messageFormatId", this.Configuration.ApiClient.ParameterToString(messageFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("messageFormatId", Configuration.ApiClient.ParameterToString(messageFormatId)));
         }
 
         if (download != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("download", this.Configuration.ApiClient.ParameterToString(download)));
+            localVarQueryParams.Add(new Tuple<string, string>("download", Configuration.ApiClient.ParameterToString(download)));
         }
 
         if (fileName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("fileName", this.Configuration.ApiClient.ParameterToString(fileName)));
+            localVarQueryParams.Add(new Tuple<string, string>("fileName", Configuration.ApiClient.ParameterToString(fileName)));
         }
 
         if (locale != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("locale", this.Configuration.ApiClient.ParameterToString(locale)));
+            localVarQueryParams.Add(new Tuple<string, string>("locale", Configuration.ApiClient.ParameterToString(locale)));
         }
 
         if (mediaFormats != null)
         {
-            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", this.Configuration.ApiClient.ParameterToString(obj))); });
+            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -5180,11 +5180,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5210,7 +5210,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Recording>(localVarStatusCode,
             localVarHeaders,
-            (Recording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
+            (Recording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5273,7 +5273,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5282,7 +5282,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5295,17 +5295,17 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         if (annotationId != null)
         {
-            localVarPathParams.Add("annotationId", this.Configuration.ApiClient.ParameterToString(annotationId));
+            localVarPathParams.Add("annotationId", Configuration.ApiClient.ParameterToString(annotationId));
         }
 
         // Query params
@@ -5321,11 +5321,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5351,7 +5351,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Annotation>(localVarStatusCode,
             localVarHeaders,
-            (Annotation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
+            (Annotation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5416,7 +5416,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5425,7 +5425,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5438,17 +5438,17 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         if (annotationId != null)
         {
-            localVarPathParams.Add("annotationId", this.Configuration.ApiClient.ParameterToString(annotationId));
+            localVarPathParams.Add("annotationId", Configuration.ApiClient.ParameterToString(annotationId));
         }
 
         // Query params
@@ -5464,11 +5464,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5494,7 +5494,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Annotation>(localVarStatusCode,
             localVarHeaders,
-            (Annotation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
+            (Annotation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5550,7 +5550,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5559,7 +5559,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5572,12 +5572,12 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         // Query params
@@ -5593,11 +5593,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5623,7 +5623,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<List<Annotation>>(localVarStatusCode,
             localVarHeaders,
-            (List<Annotation>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Annotation>)),
+            (List<Annotation>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Annotation>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5680,7 +5680,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5689,7 +5689,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5702,12 +5702,12 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         // Query params
@@ -5723,11 +5723,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5753,7 +5753,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<List<Annotation>>(localVarStatusCode,
             localVarHeaders,
-            (List<Annotation>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Annotation>)),
+            (List<Annotation>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Annotation>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5802,7 +5802,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5811,7 +5811,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5824,7 +5824,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -5840,11 +5840,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5870,7 +5870,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<List<RecordingMetadata>>(localVarStatusCode,
             localVarHeaders,
-            (List<RecordingMetadata>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<RecordingMetadata>)),
+            (List<RecordingMetadata>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<RecordingMetadata>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5919,7 +5919,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5928,7 +5928,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5941,7 +5941,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -5957,11 +5957,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5987,7 +5987,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<List<RecordingMetadata>>(localVarStatusCode,
             localVarHeaders,
-            (List<RecordingMetadata>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<RecordingMetadata>)),
+            (List<RecordingMetadata>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<RecordingMetadata>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6043,7 +6043,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6052,7 +6052,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6065,12 +6065,12 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         // Query params
@@ -6086,11 +6086,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6116,7 +6116,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingMetadata>(localVarStatusCode,
             localVarHeaders,
-            (RecordingMetadata)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingMetadata)),
+            (RecordingMetadata)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingMetadata)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6173,7 +6173,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6182,7 +6182,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6195,12 +6195,12 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         // Query params
@@ -6216,11 +6216,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6246,7 +6246,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingMetadata>(localVarStatusCode,
             localVarHeaders,
-            (RecordingMetadata)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingMetadata)),
+            (RecordingMetadata)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingMetadata)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6305,7 +6305,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6314,7 +6314,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6327,33 +6327,33 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
         if (maxWaitMs != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("maxWaitMs", this.Configuration.ApiClient.ParameterToString(maxWaitMs)));
+            localVarQueryParams.Add(new Tuple<string, string>("maxWaitMs", Configuration.ApiClient.ParameterToString(maxWaitMs)));
         }
 
         if (formatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("formatId", this.Configuration.ApiClient.ParameterToString(formatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("formatId", Configuration.ApiClient.ParameterToString(formatId)));
         }
 
         if (mediaFormats != null)
         {
-            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", this.Configuration.ApiClient.ParameterToString(obj))); });
+            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (locale != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("locale", this.Configuration.ApiClient.ParameterToString(locale)));
+            localVarQueryParams.Add(new Tuple<string, string>("locale", Configuration.ApiClient.ParameterToString(locale)));
         }
 
         if (includePauseAnnotationsForScreenRecordings != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includePauseAnnotationsForScreenRecordings", this.Configuration.ApiClient.ParameterToString(includePauseAnnotationsForScreenRecordings)));
+            localVarQueryParams.Add(new Tuple<string, string>("includePauseAnnotationsForScreenRecordings", Configuration.ApiClient.ParameterToString(includePauseAnnotationsForScreenRecordings)));
         }
 
         // Header params
@@ -6367,11 +6367,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6397,7 +6397,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<List<Recording>>(localVarStatusCode,
             localVarHeaders,
-            (List<Recording>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Recording>)),
+            (List<Recording>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Recording>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6456,7 +6456,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6465,7 +6465,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6478,33 +6478,33 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
         if (maxWaitMs != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("maxWaitMs", this.Configuration.ApiClient.ParameterToString(maxWaitMs)));
+            localVarQueryParams.Add(new Tuple<string, string>("maxWaitMs", Configuration.ApiClient.ParameterToString(maxWaitMs)));
         }
 
         if (formatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("formatId", this.Configuration.ApiClient.ParameterToString(formatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("formatId", Configuration.ApiClient.ParameterToString(formatId)));
         }
 
         if (mediaFormats != null)
         {
-            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", this.Configuration.ApiClient.ParameterToString(obj))); });
+            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (locale != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("locale", this.Configuration.ApiClient.ParameterToString(locale)));
+            localVarQueryParams.Add(new Tuple<string, string>("locale", Configuration.ApiClient.ParameterToString(locale)));
         }
 
         if (includePauseAnnotationsForScreenRecordings != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includePauseAnnotationsForScreenRecordings", this.Configuration.ApiClient.ParameterToString(includePauseAnnotationsForScreenRecordings)));
+            localVarQueryParams.Add(new Tuple<string, string>("includePauseAnnotationsForScreenRecordings", Configuration.ApiClient.ParameterToString(includePauseAnnotationsForScreenRecordings)));
         }
 
         // Header params
@@ -6518,11 +6518,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6548,7 +6548,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<List<Recording>>(localVarStatusCode,
             localVarHeaders,
-            (List<Recording>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Recording>)),
+            (List<Recording>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Recording>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6597,7 +6597,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6606,7 +6606,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6619,7 +6619,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (orphanId != null)
         {
-            localVarPathParams.Add("orphanId", this.Configuration.ApiClient.ParameterToString(orphanId));
+            localVarPathParams.Add("orphanId", Configuration.ApiClient.ParameterToString(orphanId));
         }
 
         // Query params
@@ -6635,11 +6635,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6665,7 +6665,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<OrphanRecording>(localVarStatusCode,
             localVarHeaders,
-            (OrphanRecording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecording)),
+            (OrphanRecording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6714,7 +6714,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6723,7 +6723,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6736,7 +6736,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (orphanId != null)
         {
-            localVarPathParams.Add("orphanId", this.Configuration.ApiClient.ParameterToString(orphanId));
+            localVarPathParams.Add("orphanId", Configuration.ApiClient.ParameterToString(orphanId));
         }
 
         // Query params
@@ -6752,11 +6752,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6782,7 +6782,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<OrphanRecording>(localVarStatusCode,
             localVarHeaders,
-            (OrphanRecording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecording)),
+            (OrphanRecording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6847,7 +6847,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6856,7 +6856,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6869,48 +6869,48 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (orphanId != null)
         {
-            localVarPathParams.Add("orphanId", this.Configuration.ApiClient.ParameterToString(orphanId));
+            localVarPathParams.Add("orphanId", Configuration.ApiClient.ParameterToString(orphanId));
         }
 
         // Query params
         if (formatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("formatId", this.Configuration.ApiClient.ParameterToString(formatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("formatId", Configuration.ApiClient.ParameterToString(formatId)));
         }
 
         if (emailFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("emailFormatId", this.Configuration.ApiClient.ParameterToString(emailFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("emailFormatId", Configuration.ApiClient.ParameterToString(emailFormatId)));
         }
 
         if (chatFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("chatFormatId", this.Configuration.ApiClient.ParameterToString(chatFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("chatFormatId", Configuration.ApiClient.ParameterToString(chatFormatId)));
         }
 
         if (messageFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("messageFormatId", this.Configuration.ApiClient.ParameterToString(messageFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("messageFormatId", Configuration.ApiClient.ParameterToString(messageFormatId)));
         }
 
         if (download != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("download", this.Configuration.ApiClient.ParameterToString(download)));
+            localVarQueryParams.Add(new Tuple<string, string>("download", Configuration.ApiClient.ParameterToString(download)));
         }
 
         if (fileName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("fileName", this.Configuration.ApiClient.ParameterToString(fileName)));
+            localVarQueryParams.Add(new Tuple<string, string>("fileName", Configuration.ApiClient.ParameterToString(fileName)));
         }
 
         if (locale != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("locale", this.Configuration.ApiClient.ParameterToString(locale)));
+            localVarQueryParams.Add(new Tuple<string, string>("locale", Configuration.ApiClient.ParameterToString(locale)));
         }
 
         if (mediaFormats != null)
         {
-            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", this.Configuration.ApiClient.ParameterToString(obj))); });
+            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -6924,11 +6924,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6954,7 +6954,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Recording>(localVarStatusCode,
             localVarHeaders,
-            (Recording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
+            (Recording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7019,7 +7019,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7028,7 +7028,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7041,48 +7041,48 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (orphanId != null)
         {
-            localVarPathParams.Add("orphanId", this.Configuration.ApiClient.ParameterToString(orphanId));
+            localVarPathParams.Add("orphanId", Configuration.ApiClient.ParameterToString(orphanId));
         }
 
         // Query params
         if (formatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("formatId", this.Configuration.ApiClient.ParameterToString(formatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("formatId", Configuration.ApiClient.ParameterToString(formatId)));
         }
 
         if (emailFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("emailFormatId", this.Configuration.ApiClient.ParameterToString(emailFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("emailFormatId", Configuration.ApiClient.ParameterToString(emailFormatId)));
         }
 
         if (chatFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("chatFormatId", this.Configuration.ApiClient.ParameterToString(chatFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("chatFormatId", Configuration.ApiClient.ParameterToString(chatFormatId)));
         }
 
         if (messageFormatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("messageFormatId", this.Configuration.ApiClient.ParameterToString(messageFormatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("messageFormatId", Configuration.ApiClient.ParameterToString(messageFormatId)));
         }
 
         if (download != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("download", this.Configuration.ApiClient.ParameterToString(download)));
+            localVarQueryParams.Add(new Tuple<string, string>("download", Configuration.ApiClient.ParameterToString(download)));
         }
 
         if (fileName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("fileName", this.Configuration.ApiClient.ParameterToString(fileName)));
+            localVarQueryParams.Add(new Tuple<string, string>("fileName", Configuration.ApiClient.ParameterToString(fileName)));
         }
 
         if (locale != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("locale", this.Configuration.ApiClient.ParameterToString(locale)));
+            localVarQueryParams.Add(new Tuple<string, string>("locale", Configuration.ApiClient.ParameterToString(locale)));
         }
 
         if (mediaFormats != null)
         {
-            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", this.Configuration.ApiClient.ParameterToString(obj))); });
+            mediaFormats.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("mediaFormats", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -7096,11 +7096,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7126,7 +7126,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Recording>(localVarStatusCode,
             localVarHeaders,
-            (Recording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
+            (Recording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7184,7 +7184,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7193,7 +7193,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7208,42 +7208,42 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (previousPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("previousPage", this.Configuration.ApiClient.ParameterToString(previousPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("previousPage", Configuration.ApiClient.ParameterToString(previousPage)));
         }
 
         if (hasConversation != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hasConversation", this.Configuration.ApiClient.ParameterToString(hasConversation)));
+            localVarQueryParams.Add(new Tuple<string, string>("hasConversation", Configuration.ApiClient.ParameterToString(hasConversation)));
         }
 
         if (media != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("media", this.Configuration.ApiClient.ParameterToString(media)));
+            localVarQueryParams.Add(new Tuple<string, string>("media", Configuration.ApiClient.ParameterToString(media)));
         }
 
         // Header params
@@ -7257,11 +7257,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7287,7 +7287,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<OrphanRecordingListing>(localVarStatusCode,
             localVarHeaders,
-            (OrphanRecordingListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecordingListing)),
+            (OrphanRecordingListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecordingListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7345,7 +7345,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7354,7 +7354,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7369,42 +7369,42 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (previousPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("previousPage", this.Configuration.ApiClient.ParameterToString(previousPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("previousPage", Configuration.ApiClient.ParameterToString(previousPage)));
         }
 
         if (hasConversation != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hasConversation", this.Configuration.ApiClient.ParameterToString(hasConversation)));
+            localVarQueryParams.Add(new Tuple<string, string>("hasConversation", Configuration.ApiClient.ParameterToString(hasConversation)));
         }
 
         if (media != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("media", this.Configuration.ApiClient.ParameterToString(media)));
+            localVarQueryParams.Add(new Tuple<string, string>("media", Configuration.ApiClient.ParameterToString(media)));
         }
 
         // Header params
@@ -7418,11 +7418,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7448,7 +7448,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<OrphanRecordingListing>(localVarStatusCode,
             localVarHeaders,
-            (OrphanRecordingListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecordingListing)),
+            (OrphanRecordingListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrphanRecordingListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7497,7 +7497,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7506,7 +7506,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7519,7 +7519,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -7535,11 +7535,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7565,7 +7565,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<BatchDownloadJobStatusResult>(localVarStatusCode,
             localVarHeaders,
-            (BatchDownloadJobStatusResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchDownloadJobStatusResult)),
+            (BatchDownloadJobStatusResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchDownloadJobStatusResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7614,7 +7614,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7623,7 +7623,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7636,7 +7636,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -7652,11 +7652,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7682,7 +7682,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<BatchDownloadJobStatusResult>(localVarStatusCode,
             localVarHeaders,
-            (BatchDownloadJobStatusResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchDownloadJobStatusResult)),
+            (BatchDownloadJobStatusResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchDownloadJobStatusResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7746,7 +7746,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7755,7 +7755,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7770,57 +7770,57 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (previousPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("previousPage", this.Configuration.ApiClient.ParameterToString(previousPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("previousPage", Configuration.ApiClient.ParameterToString(previousPage)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (enabled != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("enabled", this.Configuration.ApiClient.ParameterToString(enabled)));
+            localVarQueryParams.Add(new Tuple<string, string>("enabled", Configuration.ApiClient.ParameterToString(enabled)));
         }
 
         if (summary != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("summary", this.Configuration.ApiClient.ParameterToString(summary)));
+            localVarQueryParams.Add(new Tuple<string, string>("summary", Configuration.ApiClient.ParameterToString(summary)));
         }
 
         if (hasErrors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hasErrors", this.Configuration.ApiClient.ParameterToString(hasErrors)));
+            localVarQueryParams.Add(new Tuple<string, string>("hasErrors", Configuration.ApiClient.ParameterToString(hasErrors)));
         }
 
         if (deleteDaysThreshold != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleteDaysThreshold", this.Configuration.ApiClient.ParameterToString(deleteDaysThreshold)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleteDaysThreshold", Configuration.ApiClient.ParameterToString(deleteDaysThreshold)));
         }
 
         // Header params
@@ -7834,11 +7834,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7864,7 +7864,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<PolicyEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PolicyEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PolicyEntityListing)),
+            (PolicyEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PolicyEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7928,7 +7928,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7937,7 +7937,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7952,57 +7952,57 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (previousPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("previousPage", this.Configuration.ApiClient.ParameterToString(previousPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("previousPage", Configuration.ApiClient.ParameterToString(previousPage)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (enabled != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("enabled", this.Configuration.ApiClient.ParameterToString(enabled)));
+            localVarQueryParams.Add(new Tuple<string, string>("enabled", Configuration.ApiClient.ParameterToString(enabled)));
         }
 
         if (summary != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("summary", this.Configuration.ApiClient.ParameterToString(summary)));
+            localVarQueryParams.Add(new Tuple<string, string>("summary", Configuration.ApiClient.ParameterToString(summary)));
         }
 
         if (hasErrors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hasErrors", this.Configuration.ApiClient.ParameterToString(hasErrors)));
+            localVarQueryParams.Add(new Tuple<string, string>("hasErrors", Configuration.ApiClient.ParameterToString(hasErrors)));
         }
 
         if (deleteDaysThreshold != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleteDaysThreshold", this.Configuration.ApiClient.ParameterToString(deleteDaysThreshold)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleteDaysThreshold", Configuration.ApiClient.ParameterToString(deleteDaysThreshold)));
         }
 
         // Header params
@@ -8016,11 +8016,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8046,7 +8046,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<PolicyEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PolicyEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PolicyEntityListing)),
+            (PolicyEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PolicyEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8095,7 +8095,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8104,7 +8104,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8117,7 +8117,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -8133,11 +8133,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8163,7 +8163,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<CrossPlatformPolicy>(localVarStatusCode,
             localVarHeaders,
-            (CrossPlatformPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
+            (CrossPlatformPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8212,7 +8212,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8221,7 +8221,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8234,7 +8234,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -8250,11 +8250,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8280,7 +8280,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<CrossPlatformPolicy>(localVarStatusCode,
             localVarHeaders,
-            (CrossPlatformPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
+            (CrossPlatformPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8329,7 +8329,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8338,7 +8338,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8351,7 +8351,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -8367,11 +8367,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8397,7 +8397,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingJob>(localVarStatusCode,
             localVarHeaders,
-            (RecordingJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
+            (RecordingJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8446,7 +8446,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8455,7 +8455,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8468,7 +8468,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -8484,11 +8484,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8514,7 +8514,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingJob>(localVarStatusCode,
             localVarHeaders,
-            (RecordingJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
+            (RecordingJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8571,7 +8571,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8580,7 +8580,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8593,28 +8593,28 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (includeTotal != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeTotal", this.Configuration.ApiClient.ParameterToString(includeTotal)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeTotal", Configuration.ApiClient.ParameterToString(includeTotal)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -8628,11 +8628,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8658,7 +8658,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<FailedRecordingEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FailedRecordingEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FailedRecordingEntityListing)),
+            (FailedRecordingEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FailedRecordingEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8715,7 +8715,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8724,7 +8724,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8737,28 +8737,28 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (includeTotal != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeTotal", this.Configuration.ApiClient.ParameterToString(includeTotal)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeTotal", Configuration.ApiClient.ParameterToString(includeTotal)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -8772,11 +8772,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8802,7 +8802,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<FailedRecordingEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FailedRecordingEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FailedRecordingEntityListing)),
+            (FailedRecordingEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FailedRecordingEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8860,7 +8860,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8869,7 +8869,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8884,42 +8884,42 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (state != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            localVarQueryParams.Add(new Tuple<string, string>("state", Configuration.ApiClient.ParameterToString(state)));
         }
 
         if (showOnlyMyJobs != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("showOnlyMyJobs", this.Configuration.ApiClient.ParameterToString(showOnlyMyJobs)));
+            localVarQueryParams.Add(new Tuple<string, string>("showOnlyMyJobs", Configuration.ApiClient.ParameterToString(showOnlyMyJobs)));
         }
 
         if (jobType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("jobType", this.Configuration.ApiClient.ParameterToString(jobType)));
+            localVarQueryParams.Add(new Tuple<string, string>("jobType", Configuration.ApiClient.ParameterToString(jobType)));
         }
 
         if (includeTotal != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeTotal", this.Configuration.ApiClient.ParameterToString(includeTotal)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeTotal", Configuration.ApiClient.ParameterToString(includeTotal)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -8933,11 +8933,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8963,7 +8963,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingJobEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (RecordingJobEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJobEntityListing)),
+            (RecordingJobEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJobEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9021,7 +9021,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9030,7 +9030,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9045,42 +9045,42 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (state != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            localVarQueryParams.Add(new Tuple<string, string>("state", Configuration.ApiClient.ParameterToString(state)));
         }
 
         if (showOnlyMyJobs != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("showOnlyMyJobs", this.Configuration.ApiClient.ParameterToString(showOnlyMyJobs)));
+            localVarQueryParams.Add(new Tuple<string, string>("showOnlyMyJobs", Configuration.ApiClient.ParameterToString(showOnlyMyJobs)));
         }
 
         if (jobType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("jobType", this.Configuration.ApiClient.ParameterToString(jobType)));
+            localVarQueryParams.Add(new Tuple<string, string>("jobType", Configuration.ApiClient.ParameterToString(jobType)));
         }
 
         if (includeTotal != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeTotal", this.Configuration.ApiClient.ParameterToString(includeTotal)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeTotal", Configuration.ApiClient.ParameterToString(includeTotal)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -9094,11 +9094,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9124,7 +9124,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingJobEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (RecordingJobEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJobEntityListing)),
+            (RecordingJobEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJobEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9173,7 +9173,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9182,7 +9182,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9195,7 +9195,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (keyConfigurationId != null)
         {
-            localVarPathParams.Add("keyConfigurationId", this.Configuration.ApiClient.ParameterToString(keyConfigurationId));
+            localVarPathParams.Add("keyConfigurationId", Configuration.ApiClient.ParameterToString(keyConfigurationId));
         }
 
         // Query params
@@ -9211,11 +9211,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9241,7 +9241,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingEncryptionConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (RecordingEncryptionConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
+            (RecordingEncryptionConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9290,7 +9290,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9299,7 +9299,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9312,7 +9312,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (keyConfigurationId != null)
         {
-            localVarPathParams.Add("keyConfigurationId", this.Configuration.ApiClient.ParameterToString(keyConfigurationId));
+            localVarPathParams.Add("keyConfigurationId", Configuration.ApiClient.ParameterToString(keyConfigurationId));
         }
 
         // Query params
@@ -9328,11 +9328,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9358,7 +9358,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingEncryptionConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (RecordingEncryptionConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
+            (RecordingEncryptionConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9400,7 +9400,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9409,7 +9409,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9434,11 +9434,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9464,7 +9464,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingEncryptionConfigurationListing>(localVarStatusCode,
             localVarHeaders,
-            (RecordingEncryptionConfigurationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfigurationListing)),
+            (RecordingEncryptionConfigurationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfigurationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9506,7 +9506,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9515,7 +9515,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9540,11 +9540,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9570,7 +9570,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingEncryptionConfigurationListing>(localVarStatusCode,
             localVarHeaders,
-            (RecordingEncryptionConfigurationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfigurationListing)),
+            (RecordingEncryptionConfigurationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfigurationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9634,7 +9634,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9643,7 +9643,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9658,57 +9658,57 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (previousPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("previousPage", this.Configuration.ApiClient.ParameterToString(previousPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("previousPage", Configuration.ApiClient.ParameterToString(previousPage)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (enabled != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("enabled", this.Configuration.ApiClient.ParameterToString(enabled)));
+            localVarQueryParams.Add(new Tuple<string, string>("enabled", Configuration.ApiClient.ParameterToString(enabled)));
         }
 
         if (summary != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("summary", this.Configuration.ApiClient.ParameterToString(summary)));
+            localVarQueryParams.Add(new Tuple<string, string>("summary", Configuration.ApiClient.ParameterToString(summary)));
         }
 
         if (hasErrors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hasErrors", this.Configuration.ApiClient.ParameterToString(hasErrors)));
+            localVarQueryParams.Add(new Tuple<string, string>("hasErrors", Configuration.ApiClient.ParameterToString(hasErrors)));
         }
 
         if (deleteDaysThreshold != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleteDaysThreshold", this.Configuration.ApiClient.ParameterToString(deleteDaysThreshold)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleteDaysThreshold", Configuration.ApiClient.ParameterToString(deleteDaysThreshold)));
         }
 
         // Header params
@@ -9722,11 +9722,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9752,7 +9752,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<PolicyEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PolicyEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PolicyEntityListing)),
+            (PolicyEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PolicyEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9816,7 +9816,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9825,7 +9825,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9840,57 +9840,57 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (previousPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("previousPage", this.Configuration.ApiClient.ParameterToString(previousPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("previousPage", Configuration.ApiClient.ParameterToString(previousPage)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (enabled != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("enabled", this.Configuration.ApiClient.ParameterToString(enabled)));
+            localVarQueryParams.Add(new Tuple<string, string>("enabled", Configuration.ApiClient.ParameterToString(enabled)));
         }
 
         if (summary != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("summary", this.Configuration.ApiClient.ParameterToString(summary)));
+            localVarQueryParams.Add(new Tuple<string, string>("summary", Configuration.ApiClient.ParameterToString(summary)));
         }
 
         if (hasErrors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("hasErrors", this.Configuration.ApiClient.ParameterToString(hasErrors)));
+            localVarQueryParams.Add(new Tuple<string, string>("hasErrors", Configuration.ApiClient.ParameterToString(hasErrors)));
         }
 
         if (deleteDaysThreshold != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleteDaysThreshold", this.Configuration.ApiClient.ParameterToString(deleteDaysThreshold)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleteDaysThreshold", Configuration.ApiClient.ParameterToString(deleteDaysThreshold)));
         }
 
         // Header params
@@ -9904,11 +9904,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9934,7 +9934,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<PolicyEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PolicyEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PolicyEntityListing)),
+            (PolicyEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PolicyEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9983,7 +9983,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9992,7 +9992,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10005,7 +10005,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -10021,11 +10021,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10051,7 +10051,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Policy>(localVarStatusCode,
             localVarHeaders,
-            (Policy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
+            (Policy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10100,7 +10100,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10109,7 +10109,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10122,7 +10122,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -10138,11 +10138,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10168,7 +10168,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Policy>(localVarStatusCode,
             localVarHeaders,
-            (Policy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
+            (Policy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10214,7 +10214,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10223,7 +10223,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10238,12 +10238,12 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -10257,11 +10257,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10287,7 +10287,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<EncryptionKeyEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EncryptionKeyEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKeyEntityListing)),
+            (EncryptionKeyEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKeyEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10333,7 +10333,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10342,7 +10342,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10357,12 +10357,12 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -10376,11 +10376,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10406,7 +10406,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<EncryptionKeyEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EncryptionKeyEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKeyEntityListing)),
+            (EncryptionKeyEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKeyEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10448,7 +10448,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10457,7 +10457,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10482,11 +10482,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10512,7 +10512,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<KeyRotationSchedule>(localVarStatusCode,
             localVarHeaders,
-            (KeyRotationSchedule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KeyRotationSchedule)),
+            (KeyRotationSchedule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KeyRotationSchedule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10554,7 +10554,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10563,7 +10563,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10588,11 +10588,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10618,7 +10618,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<KeyRotationSchedule>(localVarStatusCode,
             localVarHeaders,
-            (KeyRotationSchedule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KeyRotationSchedule)),
+            (KeyRotationSchedule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KeyRotationSchedule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10662,7 +10662,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10671,7 +10671,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10686,7 +10686,7 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (createDefault != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("createDefault", this.Configuration.ApiClient.ParameterToString(createDefault)));
+            localVarQueryParams.Add(new Tuple<string, string>("createDefault", Configuration.ApiClient.ParameterToString(createDefault)));
         }
 
         // Header params
@@ -10700,11 +10700,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10730,7 +10730,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingSettings>(localVarStatusCode,
             localVarHeaders,
-            (RecordingSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingSettings)),
+            (RecordingSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10774,7 +10774,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10783,7 +10783,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10798,7 +10798,7 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (createDefault != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("createDefault", this.Configuration.ApiClient.ParameterToString(createDefault)));
+            localVarQueryParams.Add(new Tuple<string, string>("createDefault", Configuration.ApiClient.ParameterToString(createDefault)));
         }
 
         // Header params
@@ -10812,11 +10812,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10842,7 +10842,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingSettings>(localVarStatusCode,
             localVarHeaders,
-            (RecordingSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingSettings)),
+            (RecordingSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10891,7 +10891,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10900,7 +10900,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10913,7 +10913,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (reportId != null)
         {
-            localVarPathParams.Add("reportId", this.Configuration.ApiClient.ParameterToString(reportId));
+            localVarPathParams.Add("reportId", Configuration.ApiClient.ParameterToString(reportId));
         }
 
         // Query params
@@ -10929,11 +10929,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10959,7 +10959,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingUploadReport>(localVarStatusCode,
             localVarHeaders,
-            (RecordingUploadReport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingUploadReport)),
+            (RecordingUploadReport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingUploadReport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11008,7 +11008,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11017,7 +11017,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11030,7 +11030,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (reportId != null)
         {
-            localVarPathParams.Add("reportId", this.Configuration.ApiClient.ParameterToString(reportId));
+            localVarPathParams.Add("reportId", Configuration.ApiClient.ParameterToString(reportId));
         }
 
         // Query params
@@ -11046,11 +11046,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11076,7 +11076,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingUploadReport>(localVarStatusCode,
             localVarHeaders,
-            (RecordingUploadReport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingUploadReport)),
+            (RecordingUploadReport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingUploadReport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11129,7 +11129,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11138,7 +11138,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11153,17 +11153,17 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (retentionThresholdDays != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("retentionThresholdDays", this.Configuration.ApiClient.ParameterToString(retentionThresholdDays)));
+            localVarQueryParams.Add(new Tuple<string, string>("retentionThresholdDays", Configuration.ApiClient.ParameterToString(retentionThresholdDays)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -11177,11 +11177,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11207,7 +11207,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingRetentionCursorEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (RecordingRetentionCursorEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingRetentionCursorEntityListing)),
+            (RecordingRetentionCursorEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingRetentionCursorEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11260,7 +11260,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11269,7 +11269,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11284,17 +11284,17 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (retentionThresholdDays != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("retentionThresholdDays", this.Configuration.ApiClient.ParameterToString(retentionThresholdDays)));
+            localVarQueryParams.Add(new Tuple<string, string>("retentionThresholdDays", Configuration.ApiClient.ParameterToString(retentionThresholdDays)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -11308,11 +11308,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11338,7 +11338,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingRetentionCursorEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (RecordingRetentionCursorEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingRetentionCursorEntityListing)),
+            (RecordingRetentionCursorEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingRetentionCursorEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11380,7 +11380,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11389,7 +11389,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11414,11 +11414,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11444,7 +11444,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<ScreenRecordingActiveSessions>(localVarStatusCode,
             localVarHeaders,
-            (ScreenRecordingActiveSessions)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScreenRecordingActiveSessions)),
+            (ScreenRecordingActiveSessions)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScreenRecordingActiveSessions)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11486,7 +11486,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11495,7 +11495,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11520,11 +11520,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11550,7 +11550,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<ScreenRecordingActiveSessions>(localVarStatusCode,
             localVarHeaders,
-            (ScreenRecordingActiveSessions)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScreenRecordingActiveSessions)),
+            (ScreenRecordingActiveSessions)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScreenRecordingActiveSessions)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11607,7 +11607,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11616,7 +11616,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11629,7 +11629,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -11641,7 +11641,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11654,11 +11654,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11684,7 +11684,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<CrossPlatformPolicy>(localVarStatusCode,
             localVarHeaders,
-            (CrossPlatformPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
+            (CrossPlatformPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11742,7 +11742,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11751,7 +11751,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11764,7 +11764,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -11776,7 +11776,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11789,11 +11789,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11819,7 +11819,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<CrossPlatformPolicy>(localVarStatusCode,
             localVarHeaders,
-            (CrossPlatformPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
+            (CrossPlatformPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11876,7 +11876,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11885,7 +11885,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11898,7 +11898,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -11910,7 +11910,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11923,11 +11923,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11953,7 +11953,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Policy>(localVarStatusCode,
             localVarHeaders,
-            (Policy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
+            (Policy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12011,7 +12011,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12020,7 +12020,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12033,7 +12033,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -12045,7 +12045,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12058,11 +12058,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12088,7 +12088,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Policy>(localVarStatusCode,
             localVarHeaders,
-            (Policy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
+            (Policy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12152,7 +12152,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12161,7 +12161,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12174,12 +12174,12 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         // Query params
@@ -12191,7 +12191,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12204,11 +12204,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12234,7 +12234,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Annotation>(localVarStatusCode,
             localVarHeaders,
-            (Annotation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
+            (Annotation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12300,7 +12300,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12309,7 +12309,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12322,12 +12322,12 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         // Query params
@@ -12339,7 +12339,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12352,11 +12352,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12382,7 +12382,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Annotation>(localVarStatusCode,
             localVarHeaders,
-            (Annotation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
+            (Annotation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12432,7 +12432,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12441,7 +12441,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12462,7 +12462,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12475,11 +12475,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12505,7 +12505,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<BatchDownloadJobSubmissionResult>(localVarStatusCode,
             localVarHeaders,
-            (BatchDownloadJobSubmissionResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchDownloadJobSubmissionResult)),
+            (BatchDownloadJobSubmissionResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchDownloadJobSubmissionResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12555,7 +12555,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12564,7 +12564,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12585,7 +12585,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12598,11 +12598,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12628,7 +12628,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<BatchDownloadJobSubmissionResult>(localVarStatusCode,
             localVarHeaders,
-            (BatchDownloadJobSubmissionResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchDownloadJobSubmissionResult)),
+            (BatchDownloadJobSubmissionResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchDownloadJobSubmissionResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12678,7 +12678,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12687,7 +12687,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12708,7 +12708,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12721,11 +12721,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12751,7 +12751,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<CrossPlatformPolicy>(localVarStatusCode,
             localVarHeaders,
-            (CrossPlatformPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
+            (CrossPlatformPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12801,7 +12801,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12810,7 +12810,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12831,7 +12831,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12844,11 +12844,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12874,7 +12874,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<CrossPlatformPolicy>(localVarStatusCode,
             localVarHeaders,
-            (CrossPlatformPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
+            (CrossPlatformPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12924,7 +12924,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12933,7 +12933,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12954,7 +12954,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12967,11 +12967,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12997,7 +12997,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingJob>(localVarStatusCode,
             localVarHeaders,
-            (RecordingJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
+            (RecordingJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13047,7 +13047,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13056,7 +13056,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13077,7 +13077,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13090,11 +13090,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13120,7 +13120,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingJob>(localVarStatusCode,
             localVarHeaders,
-            (RecordingJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
+            (RecordingJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13170,7 +13170,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13179,7 +13179,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13200,7 +13200,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13213,11 +13213,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13243,7 +13243,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingEncryptionConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (RecordingEncryptionConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
+            (RecordingEncryptionConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13293,7 +13293,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13302,7 +13302,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13323,7 +13323,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13336,11 +13336,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13366,7 +13366,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingEncryptionConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (RecordingEncryptionConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
+            (RecordingEncryptionConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13416,7 +13416,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13425,7 +13425,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13446,7 +13446,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13459,11 +13459,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13489,7 +13489,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingEncryptionConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (RecordingEncryptionConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
+            (RecordingEncryptionConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13539,7 +13539,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13548,7 +13548,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13569,7 +13569,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13582,11 +13582,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13612,7 +13612,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingEncryptionConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (RecordingEncryptionConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
+            (RecordingEncryptionConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13662,7 +13662,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13671,7 +13671,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13692,7 +13692,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13705,11 +13705,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13735,7 +13735,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<EncryptionKey>(localVarStatusCode,
             localVarHeaders,
-            (EncryptionKey)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKey)),
+            (EncryptionKey)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKey)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13785,7 +13785,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13794,7 +13794,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13815,7 +13815,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13828,11 +13828,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13858,7 +13858,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<EncryptionKey>(localVarStatusCode,
             localVarHeaders,
-            (EncryptionKey)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKey)),
+            (EncryptionKey)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKey)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13908,7 +13908,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13917,7 +13917,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13938,7 +13938,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13951,11 +13951,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13981,7 +13981,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Policy>(localVarStatusCode,
             localVarHeaders,
-            (Policy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
+            (Policy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14031,7 +14031,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14040,7 +14040,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14061,7 +14061,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14074,11 +14074,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14104,7 +14104,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Policy>(localVarStatusCode,
             localVarHeaders,
-            (Policy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
+            (Policy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14146,7 +14146,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14155,7 +14155,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14180,11 +14180,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14210,7 +14210,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<EncryptionKey>(localVarStatusCode,
             localVarHeaders,
-            (EncryptionKey)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKey)),
+            (EncryptionKey)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKey)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14252,7 +14252,7 @@ public partial class RecordingApi : IRecordingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14261,7 +14261,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14286,11 +14286,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14316,7 +14316,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<EncryptionKey>(localVarStatusCode,
             localVarHeaders,
-            (EncryptionKey)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKey)),
+            (EncryptionKey)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EncryptionKey)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14366,7 +14366,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14375,7 +14375,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14396,7 +14396,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14409,11 +14409,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14439,7 +14439,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingUploadReport>(localVarStatusCode,
             localVarHeaders,
-            (RecordingUploadReport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingUploadReport)),
+            (RecordingUploadReport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingUploadReport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14489,7 +14489,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14498,7 +14498,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14519,7 +14519,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14532,11 +14532,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14562,7 +14562,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingUploadReport>(localVarStatusCode,
             localVarHeaders,
-            (RecordingUploadReport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingUploadReport)),
+            (RecordingUploadReport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingUploadReport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14612,7 +14612,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14621,7 +14621,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14642,7 +14642,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14655,11 +14655,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14685,7 +14685,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<List<AddressableEntityRef>>(localVarStatusCode,
             localVarHeaders,
-            (List<AddressableEntityRef>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AddressableEntityRef>)),
+            (List<AddressableEntityRef>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AddressableEntityRef>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14735,7 +14735,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14744,7 +14744,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14765,7 +14765,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14778,11 +14778,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14808,7 +14808,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<List<AddressableEntityRef>>(localVarStatusCode,
             localVarHeaders,
-            (List<AddressableEntityRef>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AddressableEntityRef>)),
+            (List<AddressableEntityRef>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AddressableEntityRef>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14857,7 +14857,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14866,7 +14866,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14887,7 +14887,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14900,11 +14900,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14979,7 +14979,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14988,7 +14988,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15009,7 +15009,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15022,11 +15022,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15101,7 +15101,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15110,7 +15110,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15131,7 +15131,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15144,11 +15144,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15223,7 +15223,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15232,7 +15232,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15253,7 +15253,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15266,11 +15266,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15362,7 +15362,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15371,7 +15371,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15384,18 +15384,18 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         // Query params
         if (clearExport != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("clearExport", this.Configuration.ApiClient.ParameterToString(clearExport)));
+            localVarQueryParams.Add(new Tuple<string, string>("clearExport", Configuration.ApiClient.ParameterToString(clearExport)));
         }
 
         // Header params
@@ -15405,7 +15405,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15418,11 +15418,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15448,7 +15448,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Recording>(localVarStatusCode,
             localVarHeaders,
-            (Recording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
+            (Recording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15516,7 +15516,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15525,7 +15525,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15538,18 +15538,18 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         // Query params
         if (clearExport != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("clearExport", this.Configuration.ApiClient.ParameterToString(clearExport)));
+            localVarQueryParams.Add(new Tuple<string, string>("clearExport", Configuration.ApiClient.ParameterToString(clearExport)));
         }
 
         // Header params
@@ -15559,7 +15559,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15572,11 +15572,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15602,7 +15602,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Recording>(localVarStatusCode,
             localVarHeaders,
-            (Recording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
+            (Recording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15673,7 +15673,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15682,7 +15682,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15695,17 +15695,17 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         if (annotationId != null)
         {
-            localVarPathParams.Add("annotationId", this.Configuration.ApiClient.ParameterToString(annotationId));
+            localVarPathParams.Add("annotationId", Configuration.ApiClient.ParameterToString(annotationId));
         }
 
         // Query params
@@ -15717,7 +15717,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15730,11 +15730,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15760,7 +15760,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Annotation>(localVarStatusCode,
             localVarHeaders,
-            (Annotation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
+            (Annotation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15834,7 +15834,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15843,7 +15843,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15856,17 +15856,17 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (recordingId != null)
         {
-            localVarPathParams.Add("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId));
+            localVarPathParams.Add("recordingId", Configuration.ApiClient.ParameterToString(recordingId));
         }
 
         if (annotationId != null)
         {
-            localVarPathParams.Add("annotationId", this.Configuration.ApiClient.ParameterToString(annotationId));
+            localVarPathParams.Add("annotationId", Configuration.ApiClient.ParameterToString(annotationId));
         }
 
         // Query params
@@ -15878,7 +15878,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15891,11 +15891,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15921,7 +15921,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Annotation>(localVarStatusCode,
             localVarHeaders,
-            (Annotation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
+            (Annotation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Annotation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15973,7 +15973,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15982,7 +15982,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15995,7 +15995,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (orphanId != null)
         {
-            localVarPathParams.Add("orphanId", this.Configuration.ApiClient.ParameterToString(orphanId));
+            localVarPathParams.Add("orphanId", Configuration.ApiClient.ParameterToString(orphanId));
         }
 
         // Query params
@@ -16007,7 +16007,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16020,11 +16020,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16050,7 +16050,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Recording>(localVarStatusCode,
             localVarHeaders,
-            (Recording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
+            (Recording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16102,7 +16102,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16111,7 +16111,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16124,7 +16124,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (orphanId != null)
         {
-            localVarPathParams.Add("orphanId", this.Configuration.ApiClient.ParameterToString(orphanId));
+            localVarPathParams.Add("orphanId", Configuration.ApiClient.ParameterToString(orphanId));
         }
 
         // Query params
@@ -16136,7 +16136,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16149,11 +16149,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16179,7 +16179,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Recording>(localVarStatusCode,
             localVarHeaders,
-            (Recording)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
+            (Recording)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Recording)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16236,7 +16236,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16245,7 +16245,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16258,7 +16258,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -16270,7 +16270,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16283,11 +16283,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16313,7 +16313,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<CrossPlatformPolicy>(localVarStatusCode,
             localVarHeaders,
-            (CrossPlatformPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
+            (CrossPlatformPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16371,7 +16371,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16380,7 +16380,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16393,7 +16393,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -16405,7 +16405,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16418,11 +16418,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16448,7 +16448,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<CrossPlatformPolicy>(localVarStatusCode,
             localVarHeaders,
-            (CrossPlatformPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
+            (CrossPlatformPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CrossPlatformPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16505,7 +16505,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16514,7 +16514,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16527,7 +16527,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -16539,7 +16539,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16552,11 +16552,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16582,7 +16582,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingJob>(localVarStatusCode,
             localVarHeaders,
-            (RecordingJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
+            (RecordingJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16640,7 +16640,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16649,7 +16649,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16662,7 +16662,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -16674,7 +16674,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16687,11 +16687,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16717,7 +16717,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingJob>(localVarStatusCode,
             localVarHeaders,
-            (RecordingJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
+            (RecordingJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16774,7 +16774,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16783,7 +16783,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16796,7 +16796,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (keyConfigurationId != null)
         {
-            localVarPathParams.Add("keyConfigurationId", this.Configuration.ApiClient.ParameterToString(keyConfigurationId));
+            localVarPathParams.Add("keyConfigurationId", Configuration.ApiClient.ParameterToString(keyConfigurationId));
         }
 
         // Query params
@@ -16808,7 +16808,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16821,11 +16821,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16851,7 +16851,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingEncryptionConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (RecordingEncryptionConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
+            (RecordingEncryptionConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16909,7 +16909,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16918,7 +16918,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16931,7 +16931,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (keyConfigurationId != null)
         {
-            localVarPathParams.Add("keyConfigurationId", this.Configuration.ApiClient.ParameterToString(keyConfigurationId));
+            localVarPathParams.Add("keyConfigurationId", Configuration.ApiClient.ParameterToString(keyConfigurationId));
         }
 
         // Query params
@@ -16943,7 +16943,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16956,11 +16956,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16986,7 +16986,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingEncryptionConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (RecordingEncryptionConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
+            (RecordingEncryptionConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingEncryptionConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17043,7 +17043,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17052,7 +17052,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17065,7 +17065,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -17077,7 +17077,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17090,11 +17090,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17120,7 +17120,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Policy>(localVarStatusCode,
             localVarHeaders,
-            (Policy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
+            (Policy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17178,7 +17178,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17187,7 +17187,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17200,7 +17200,7 @@ public partial class RecordingApi : IRecordingApi
         // Path params
         if (policyId != null)
         {
-            localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
+            localVarPathParams.Add("policyId", Configuration.ApiClient.ParameterToString(policyId));
         }
 
         // Query params
@@ -17212,7 +17212,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17225,11 +17225,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17255,7 +17255,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<Policy>(localVarStatusCode,
             localVarHeaders,
-            (Policy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
+            (Policy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Policy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17305,7 +17305,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17314,7 +17314,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17335,7 +17335,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17348,11 +17348,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17378,7 +17378,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<KeyRotationSchedule>(localVarStatusCode,
             localVarHeaders,
-            (KeyRotationSchedule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KeyRotationSchedule)),
+            (KeyRotationSchedule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KeyRotationSchedule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17428,7 +17428,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17437,7 +17437,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17458,7 +17458,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17471,11 +17471,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17501,7 +17501,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<KeyRotationSchedule>(localVarStatusCode,
             localVarHeaders,
-            (KeyRotationSchedule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KeyRotationSchedule)),
+            (KeyRotationSchedule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KeyRotationSchedule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17551,7 +17551,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17560,7 +17560,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17581,7 +17581,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17594,11 +17594,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17624,7 +17624,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingSettings>(localVarStatusCode,
             localVarHeaders,
-            (RecordingSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingSettings)),
+            (RecordingSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17674,7 +17674,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17683,7 +17683,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17704,7 +17704,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17717,11 +17717,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17747,7 +17747,7 @@ public partial class RecordingApi : IRecordingApi
 
         return new ApiResponse<RecordingSettings>(localVarStatusCode,
             localVarHeaders,
-            (RecordingSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingSettings)),
+            (RecordingSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RecordingSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17793,7 +17793,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17802,7 +17802,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17817,7 +17817,7 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (protect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("protect", this.Configuration.ApiClient.ParameterToString(protect)));
+            localVarQueryParams.Add(new Tuple<string, string>("protect", Configuration.ApiClient.ParameterToString(protect)));
         }
 
         // Header params
@@ -17827,7 +17827,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17840,11 +17840,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17916,7 +17916,7 @@ public partial class RecordingApi : IRecordingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17925,7 +17925,7 @@ public partial class RecordingApi : IRecordingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17940,7 +17940,7 @@ public partial class RecordingApi : IRecordingApi
         // Query params
         if (protect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("protect", this.Configuration.ApiClient.ParameterToString(protect)));
+            localVarQueryParams.Add(new Tuple<string, string>("protect", Configuration.ApiClient.ParameterToString(protect)));
         }
 
         // Header params
@@ -17950,7 +17950,7 @@ public partial class RecordingApi : IRecordingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17963,11 +17963,11 @@ public partial class RecordingApi : IRecordingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 

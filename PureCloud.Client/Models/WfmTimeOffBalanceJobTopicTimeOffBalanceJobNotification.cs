@@ -116,7 +116,7 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification : IE
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification);
+        return Equals(obj as WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification);
     }
 
     /// <summary>
@@ -134,24 +134,24 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification : IE
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             );
     }
 
@@ -166,24 +166,24 @@ public partial class WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification : IE
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
             return hash;

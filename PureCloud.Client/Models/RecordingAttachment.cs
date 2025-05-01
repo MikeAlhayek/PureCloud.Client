@@ -155,7 +155,7 @@ public partial class RecordingAttachment : IEquatable<RecordingAttachment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingAttachment);
+        return Equals(obj as RecordingAttachment);
     }
 
     /// <summary>
@@ -173,34 +173,34 @@ public partial class RecordingAttachment : IEquatable<RecordingAttachment>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Mime == other.Mime ||
-                this.Mime != null &&
-                this.Mime.Equals(other.Mime)
+                Mime == other.Mime ||
+                Mime != null &&
+                Mime.Equals(other.Mime)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             );
     }
 
@@ -215,34 +215,34 @@ public partial class RecordingAttachment : IEquatable<RecordingAttachment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Mime != null)
+            if (Mime != null)
             {
-                hash = hash * 59 + this.Mime.GetHashCode();
+                hash = hash * 59 + Mime.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
             return hash;

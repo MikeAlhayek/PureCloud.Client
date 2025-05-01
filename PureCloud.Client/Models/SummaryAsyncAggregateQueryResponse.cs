@@ -64,7 +64,7 @@ public partial class SummaryAsyncAggregateQueryResponse : IEquatable<SummaryAsyn
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SummaryAsyncAggregateQueryResponse);
+        return Equals(obj as SummaryAsyncAggregateQueryResponse);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class SummaryAsyncAggregateQueryResponse : IEquatable<SummaryAsyn
 
         return true &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             ) &&
             (
-                this.Cursor == other.Cursor ||
-                this.Cursor != null &&
-                this.Cursor.Equals(other.Cursor)
+                Cursor == other.Cursor ||
+                Cursor != null &&
+                Cursor.Equals(other.Cursor)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class SummaryAsyncAggregateQueryResponse : IEquatable<SummaryAsyn
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
-            if (this.Cursor != null)
+            if (Cursor != null)
             {
-                hash = hash * 59 + this.Cursor.GetHashCode();
+                hash = hash * 59 + Cursor.GetHashCode();
             }
 
             return hash;

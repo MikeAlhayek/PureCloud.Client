@@ -63,7 +63,7 @@ public partial class DialerContactId : IEquatable<DialerContactId>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerContactId);
+        return Equals(obj as DialerContactId);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class DialerContactId : IEquatable<DialerContactId>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ContactListId == other.ContactListId ||
-                this.ContactListId != null &&
-                this.ContactListId.Equals(other.ContactListId)
+                ContactListId == other.ContactListId ||
+                ContactListId != null &&
+                ContactListId.Equals(other.ContactListId)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class DialerContactId : IEquatable<DialerContactId>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ContactListId != null)
+            if (ContactListId != null)
             {
-                hash = hash * 59 + this.ContactListId.GetHashCode();
+                hash = hash * 59 + ContactListId.GetHashCode();
             }
 
             return hash;

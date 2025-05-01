@@ -52,7 +52,7 @@ public partial class BuNotificationSettingsRequest : IEquatable<BuNotificationSe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuNotificationSettingsRequest);
+        return Equals(obj as BuNotificationSettingsRequest);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class BuNotificationSettingsRequest : IEquatable<BuNotificationSe
 
         return true &&
             (
-                this.Scheduling == other.Scheduling ||
-                this.Scheduling != null &&
-                this.Scheduling.Equals(other.Scheduling)
+                Scheduling == other.Scheduling ||
+                Scheduling != null &&
+                Scheduling.Equals(other.Scheduling)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class BuNotificationSettingsRequest : IEquatable<BuNotificationSe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Scheduling != null)
+            if (Scheduling != null)
             {
-                hash = hash * 59 + this.Scheduling.GetHashCode();
+                hash = hash * 59 + Scheduling.GetHashCode();
             }
 
             return hash;

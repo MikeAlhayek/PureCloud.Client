@@ -101,7 +101,7 @@ public partial class LocationEmergencyNumber : IEquatable<LocationEmergencyNumbe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LocationEmergencyNumber);
+        return Equals(obj as LocationEmergencyNumber);
     }
 
     /// <summary>
@@ -119,19 +119,19 @@ public partial class LocationEmergencyNumber : IEquatable<LocationEmergencyNumbe
 
         return true &&
             (
-                this.E164 == other.E164 ||
-                this.E164 != null &&
-                this.E164.Equals(other.E164)
+                E164 == other.E164 ||
+                E164 != null &&
+                E164.Equals(other.E164)
             ) &&
             (
-                this.Number == other.Number ||
-                this.Number != null &&
-                this.Number.Equals(other.Number)
+                Number == other.Number ||
+                Number != null &&
+                Number.Equals(other.Number)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -146,19 +146,19 @@ public partial class LocationEmergencyNumber : IEquatable<LocationEmergencyNumbe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.E164 != null)
+            if (E164 != null)
             {
-                hash = hash * 59 + this.E164.GetHashCode();
+                hash = hash * 59 + E164.GetHashCode();
             }
 
-            if (this.Number != null)
+            if (Number != null)
             {
-                hash = hash * 59 + this.Number.GetHashCode();
+                hash = hash * 59 + Number.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

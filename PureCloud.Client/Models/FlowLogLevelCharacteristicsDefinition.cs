@@ -121,7 +121,7 @@ public partial class FlowLogLevelCharacteristicsDefinition : IEquatable<FlowLogL
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowLogLevelCharacteristicsDefinition);
+        return Equals(obj as FlowLogLevelCharacteristicsDefinition);
     }
 
     /// <summary>
@@ -139,19 +139,19 @@ public partial class FlowLogLevelCharacteristicsDefinition : IEquatable<FlowLogL
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.MinimumLevel == other.MinimumLevel ||
-                this.MinimumLevel != null &&
-                this.MinimumLevel.Equals(other.MinimumLevel)
+                MinimumLevel == other.MinimumLevel ||
+                MinimumLevel != null &&
+                MinimumLevel.Equals(other.MinimumLevel)
             ) &&
             (
-                this.DependsOn == other.DependsOn ||
-                this.DependsOn != null &&
-                this.DependsOn.Equals(other.DependsOn)
+                DependsOn == other.DependsOn ||
+                DependsOn != null &&
+                DependsOn.Equals(other.DependsOn)
             );
     }
 
@@ -166,19 +166,19 @@ public partial class FlowLogLevelCharacteristicsDefinition : IEquatable<FlowLogL
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.MinimumLevel != null)
+            if (MinimumLevel != null)
             {
-                hash = hash * 59 + this.MinimumLevel.GetHashCode();
+                hash = hash * 59 + MinimumLevel.GetHashCode();
             }
 
-            if (this.DependsOn != null)
+            if (DependsOn != null)
             {
-                hash = hash * 59 + this.DependsOn.GetHashCode();
+                hash = hash * 59 + DependsOn.GetHashCode();
             }
 
             return hash;

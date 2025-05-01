@@ -137,7 +137,7 @@ public partial class WrapupInput : IEquatable<WrapupInput>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WrapupInput);
+        return Equals(obj as WrapupInput);
     }
 
     /// <summary>
@@ -155,44 +155,44 @@ public partial class WrapupInput : IEquatable<WrapupInput>
 
         return true &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             ) &&
             (
-                this.Tags == other.Tags ||
-                this.Tags != null &&
-                this.Tags.SequenceEqual(other.Tags)
+                Tags == other.Tags ||
+                Tags != null &&
+                Tags.SequenceEqual(other.Tags)
             ) &&
             (
-                this.DurationSeconds == other.DurationSeconds ||
-                this.DurationSeconds != null &&
-                this.DurationSeconds.Equals(other.DurationSeconds)
+                DurationSeconds == other.DurationSeconds ||
+                DurationSeconds != null &&
+                DurationSeconds.Equals(other.DurationSeconds)
             ) &&
             (
-                this.EndTime == other.EndTime ||
-                this.EndTime != null &&
-                this.EndTime.Equals(other.EndTime)
+                EndTime == other.EndTime ||
+                EndTime != null &&
+                EndTime.Equals(other.EndTime)
             ) &&
             (
-                this.Provisional == other.Provisional ||
-                this.Provisional != null &&
-                this.Provisional.Equals(other.Provisional)
+                Provisional == other.Provisional ||
+                Provisional != null &&
+                Provisional.Equals(other.Provisional)
             ) &&
             (
-                this.DisableEndTimeUpdates == other.DisableEndTimeUpdates ||
-                this.DisableEndTimeUpdates != null &&
-                this.DisableEndTimeUpdates.Equals(other.DisableEndTimeUpdates)
+                DisableEndTimeUpdates == other.DisableEndTimeUpdates ||
+                DisableEndTimeUpdates != null &&
+                DisableEndTimeUpdates.Equals(other.DisableEndTimeUpdates)
             );
     }
 
@@ -207,44 +207,44 @@ public partial class WrapupInput : IEquatable<WrapupInput>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
-            if (this.Tags != null)
+            if (Tags != null)
             {
-                hash = hash * 59 + this.Tags.GetHashCode();
+                hash = hash * 59 + Tags.GetHashCode();
             }
 
-            if (this.DurationSeconds != null)
+            if (DurationSeconds != null)
             {
-                hash = hash * 59 + this.DurationSeconds.GetHashCode();
+                hash = hash * 59 + DurationSeconds.GetHashCode();
             }
 
-            if (this.EndTime != null)
+            if (EndTime != null)
             {
-                hash = hash * 59 + this.EndTime.GetHashCode();
+                hash = hash * 59 + EndTime.GetHashCode();
             }
 
-            if (this.Provisional != null)
+            if (Provisional != null)
             {
-                hash = hash * 59 + this.Provisional.GetHashCode();
+                hash = hash * 59 + Provisional.GetHashCode();
             }
 
-            if (this.DisableEndTimeUpdates != null)
+            if (DisableEndTimeUpdates != null)
             {
-                hash = hash * 59 + this.DisableEndTimeUpdates.GetHashCode();
+                hash = hash * 59 + DisableEndTimeUpdates.GetHashCode();
             }
 
             return hash;

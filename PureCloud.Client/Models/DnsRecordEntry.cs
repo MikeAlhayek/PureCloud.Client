@@ -115,7 +115,7 @@ public partial class DnsRecordEntry : IEquatable<DnsRecordEntry>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DnsRecordEntry);
+        return Equals(obj as DnsRecordEntry);
     }
 
     /// <summary>
@@ -133,19 +133,19 @@ public partial class DnsRecordEntry : IEquatable<DnsRecordEntry>
 
         return true &&
             (
-                this.Host == other.Host ||
-                this.Host != null &&
-                this.Host.Equals(other.Host)
+                Host == other.Host ||
+                Host != null &&
+                Host.Equals(other.Host)
             ) &&
             (
-                this.RecordContents == other.RecordContents ||
-                this.RecordContents != null &&
-                this.RecordContents.Equals(other.RecordContents)
+                RecordContents == other.RecordContents ||
+                RecordContents != null &&
+                RecordContents.Equals(other.RecordContents)
             ) &&
             (
-                this.VerificationStatus == other.VerificationStatus ||
-                this.VerificationStatus != null &&
-                this.VerificationStatus.Equals(other.VerificationStatus)
+                VerificationStatus == other.VerificationStatus ||
+                VerificationStatus != null &&
+                VerificationStatus.Equals(other.VerificationStatus)
             );
     }
 
@@ -160,19 +160,19 @@ public partial class DnsRecordEntry : IEquatable<DnsRecordEntry>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Host != null)
+            if (Host != null)
             {
-                hash = hash * 59 + this.Host.GetHashCode();
+                hash = hash * 59 + Host.GetHashCode();
             }
 
-            if (this.RecordContents != null)
+            if (RecordContents != null)
             {
-                hash = hash * 59 + this.RecordContents.GetHashCode();
+                hash = hash * 59 + RecordContents.GetHashCode();
             }
 
-            if (this.VerificationStatus != null)
+            if (VerificationStatus != null)
             {
-                hash = hash * 59 + this.VerificationStatus.GetHashCode();
+                hash = hash * 59 + VerificationStatus.GetHashCode();
             }
 
             return hash;

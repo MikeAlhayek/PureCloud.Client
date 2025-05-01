@@ -71,7 +71,7 @@ public partial class ChatFavorite : IEquatable<ChatFavorite>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatFavorite);
+        return Equals(obj as ChatFavorite);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ChatFavorite : IEquatable<ChatFavorite>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ExternalId == other.ExternalId ||
-                this.ExternalId != null &&
-                this.ExternalId.Equals(other.ExternalId)
+                ExternalId == other.ExternalId ||
+                ExternalId != null &&
+                ExternalId.Equals(other.ExternalId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ChatFavorite : IEquatable<ChatFavorite>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ExternalId != null)
+            if (ExternalId != null)
             {
-                hash = hash * 59 + this.ExternalId.GetHashCode();
+                hash = hash * 59 + ExternalId.GetHashCode();
             }
 
             return hash;

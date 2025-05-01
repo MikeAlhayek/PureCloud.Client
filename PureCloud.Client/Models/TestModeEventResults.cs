@@ -65,7 +65,7 @@ public partial class TestModeEventResults : IEquatable<TestModeEventResults>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TestModeEventResults);
+        return Equals(obj as TestModeEventResults);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class TestModeEventResults : IEquatable<TestModeEventResults>
 
         return true &&
             (
-                this.SchemaValidation == other.SchemaValidation ||
-                this.SchemaValidation != null &&
-                this.SchemaValidation.Equals(other.SchemaValidation)
+                SchemaValidation == other.SchemaValidation ||
+                SchemaValidation != null &&
+                SchemaValidation.Equals(other.SchemaValidation)
             ) &&
             (
-                this.TriggerMatchValidation == other.TriggerMatchValidation ||
-                this.TriggerMatchValidation != null &&
-                this.TriggerMatchValidation.Equals(other.TriggerMatchValidation)
+                TriggerMatchValidation == other.TriggerMatchValidation ||
+                TriggerMatchValidation != null &&
+                TriggerMatchValidation.Equals(other.TriggerMatchValidation)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class TestModeEventResults : IEquatable<TestModeEventResults>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SchemaValidation != null)
+            if (SchemaValidation != null)
             {
-                hash = hash * 59 + this.SchemaValidation.GetHashCode();
+                hash = hash * 59 + SchemaValidation.GetHashCode();
             }
 
-            if (this.TriggerMatchValidation != null)
+            if (TriggerMatchValidation != null)
             {
-                hash = hash * 59 + this.TriggerMatchValidation.GetHashCode();
+                hash = hash * 59 + TriggerMatchValidation.GetHashCode();
             }
 
             return hash;

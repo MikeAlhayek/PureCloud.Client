@@ -148,7 +148,7 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationScoringSet);
+        return Equals(obj as EvaluationScoringSet);
     }
 
     /// <summary>
@@ -166,49 +166,49 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
 
         return true &&
             (
-                this.TotalScore == other.TotalScore ||
-                this.TotalScore != null &&
-                this.TotalScore.Equals(other.TotalScore)
+                TotalScore == other.TotalScore ||
+                TotalScore != null &&
+                TotalScore.Equals(other.TotalScore)
             ) &&
             (
-                this.TotalCriticalScore == other.TotalCriticalScore ||
-                this.TotalCriticalScore != null &&
-                this.TotalCriticalScore.Equals(other.TotalCriticalScore)
+                TotalCriticalScore == other.TotalCriticalScore ||
+                TotalCriticalScore != null &&
+                TotalCriticalScore.Equals(other.TotalCriticalScore)
             ) &&
             (
-                this.TotalNonCriticalScore == other.TotalNonCriticalScore ||
-                this.TotalNonCriticalScore != null &&
-                this.TotalNonCriticalScore.Equals(other.TotalNonCriticalScore)
+                TotalNonCriticalScore == other.TotalNonCriticalScore ||
+                TotalNonCriticalScore != null &&
+                TotalNonCriticalScore.Equals(other.TotalNonCriticalScore)
             ) &&
             (
-                this.QuestionGroupScores == other.QuestionGroupScores ||
-                this.QuestionGroupScores != null &&
-                this.QuestionGroupScores.SequenceEqual(other.QuestionGroupScores)
+                QuestionGroupScores == other.QuestionGroupScores ||
+                QuestionGroupScores != null &&
+                QuestionGroupScores.SequenceEqual(other.QuestionGroupScores)
             ) &&
             (
-                this.AnyFailedKillQuestions == other.AnyFailedKillQuestions ||
-                this.AnyFailedKillQuestions != null &&
-                this.AnyFailedKillQuestions.Equals(other.AnyFailedKillQuestions)
+                AnyFailedKillQuestions == other.AnyFailedKillQuestions ||
+                AnyFailedKillQuestions != null &&
+                AnyFailedKillQuestions.Equals(other.AnyFailedKillQuestions)
             ) &&
             (
-                this.Comments == other.Comments ||
-                this.Comments != null &&
-                this.Comments.Equals(other.Comments)
+                Comments == other.Comments ||
+                Comments != null &&
+                Comments.Equals(other.Comments)
             ) &&
             (
-                this.PrivateComments == other.PrivateComments ||
-                this.PrivateComments != null &&
-                this.PrivateComments.Equals(other.PrivateComments)
+                PrivateComments == other.PrivateComments ||
+                PrivateComments != null &&
+                PrivateComments.Equals(other.PrivateComments)
             ) &&
             (
-                this.AgentComments == other.AgentComments ||
-                this.AgentComments != null &&
-                this.AgentComments.Equals(other.AgentComments)
+                AgentComments == other.AgentComments ||
+                AgentComments != null &&
+                AgentComments.Equals(other.AgentComments)
             ) &&
             (
-                this.TranscriptTopics == other.TranscriptTopics ||
-                this.TranscriptTopics != null &&
-                this.TranscriptTopics.SequenceEqual(other.TranscriptTopics)
+                TranscriptTopics == other.TranscriptTopics ||
+                TranscriptTopics != null &&
+                TranscriptTopics.SequenceEqual(other.TranscriptTopics)
             );
     }
 
@@ -223,49 +223,49 @@ public partial class EvaluationScoringSet : IEquatable<EvaluationScoringSet>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TotalScore != null)
+            if (TotalScore != null)
             {
-                hash = hash * 59 + this.TotalScore.GetHashCode();
+                hash = hash * 59 + TotalScore.GetHashCode();
             }
 
-            if (this.TotalCriticalScore != null)
+            if (TotalCriticalScore != null)
             {
-                hash = hash * 59 + this.TotalCriticalScore.GetHashCode();
+                hash = hash * 59 + TotalCriticalScore.GetHashCode();
             }
 
-            if (this.TotalNonCriticalScore != null)
+            if (TotalNonCriticalScore != null)
             {
-                hash = hash * 59 + this.TotalNonCriticalScore.GetHashCode();
+                hash = hash * 59 + TotalNonCriticalScore.GetHashCode();
             }
 
-            if (this.QuestionGroupScores != null)
+            if (QuestionGroupScores != null)
             {
-                hash = hash * 59 + this.QuestionGroupScores.GetHashCode();
+                hash = hash * 59 + QuestionGroupScores.GetHashCode();
             }
 
-            if (this.AnyFailedKillQuestions != null)
+            if (AnyFailedKillQuestions != null)
             {
-                hash = hash * 59 + this.AnyFailedKillQuestions.GetHashCode();
+                hash = hash * 59 + AnyFailedKillQuestions.GetHashCode();
             }
 
-            if (this.Comments != null)
+            if (Comments != null)
             {
-                hash = hash * 59 + this.Comments.GetHashCode();
+                hash = hash * 59 + Comments.GetHashCode();
             }
 
-            if (this.PrivateComments != null)
+            if (PrivateComments != null)
             {
-                hash = hash * 59 + this.PrivateComments.GetHashCode();
+                hash = hash * 59 + PrivateComments.GetHashCode();
             }
 
-            if (this.AgentComments != null)
+            if (AgentComments != null)
             {
-                hash = hash * 59 + this.AgentComments.GetHashCode();
+                hash = hash * 59 + AgentComments.GetHashCode();
             }
 
-            if (this.TranscriptTopics != null)
+            if (TranscriptTopics != null)
             {
-                hash = hash * 59 + this.TranscriptTopics.GetHashCode();
+                hash = hash * 59 + TranscriptTopics.GetHashCode();
             }
 
             return hash;

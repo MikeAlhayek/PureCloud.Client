@@ -127,7 +127,7 @@ public partial class WebChatRoutingTarget : IEquatable<WebChatRoutingTarget>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebChatRoutingTarget);
+        return Equals(obj as WebChatRoutingTarget);
     }
 
     /// <summary>
@@ -145,29 +145,29 @@ public partial class WebChatRoutingTarget : IEquatable<WebChatRoutingTarget>
 
         return true &&
             (
-                this.TargetType == other.TargetType ||
-                this.TargetType != null &&
-                this.TargetType.Equals(other.TargetType)
+                TargetType == other.TargetType ||
+                TargetType != null &&
+                TargetType.Equals(other.TargetType)
             ) &&
             (
-                this.TargetAddress == other.TargetAddress ||
-                this.TargetAddress != null &&
-                this.TargetAddress.Equals(other.TargetAddress)
+                TargetAddress == other.TargetAddress ||
+                TargetAddress != null &&
+                TargetAddress.Equals(other.TargetAddress)
             ) &&
             (
-                this.Skills == other.Skills ||
-                this.Skills != null &&
-                this.Skills.SequenceEqual(other.Skills)
+                Skills == other.Skills ||
+                Skills != null &&
+                Skills.SequenceEqual(other.Skills)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             );
     }
 
@@ -182,29 +182,29 @@ public partial class WebChatRoutingTarget : IEquatable<WebChatRoutingTarget>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TargetType != null)
+            if (TargetType != null)
             {
-                hash = hash * 59 + this.TargetType.GetHashCode();
+                hash = hash * 59 + TargetType.GetHashCode();
             }
 
-            if (this.TargetAddress != null)
+            if (TargetAddress != null)
             {
-                hash = hash * 59 + this.TargetAddress.GetHashCode();
+                hash = hash * 59 + TargetAddress.GetHashCode();
             }
 
-            if (this.Skills != null)
+            if (Skills != null)
             {
-                hash = hash * 59 + this.Skills.GetHashCode();
+                hash = hash * 59 + Skills.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
             return hash;

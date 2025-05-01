@@ -336,7 +336,7 @@ public partial class TrustGroup : IEquatable<TrustGroup>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrustGroup);
+        return Equals(obj as TrustGroup);
     }
 
     /// <summary>
@@ -354,94 +354,94 @@ public partial class TrustGroup : IEquatable<TrustGroup>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.MemberCount == other.MemberCount ||
-                this.MemberCount != null &&
-                this.MemberCount.Equals(other.MemberCount)
+                MemberCount == other.MemberCount ||
+                MemberCount != null &&
+                MemberCount.Equals(other.MemberCount)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Images == other.Images ||
-                this.Images != null &&
-                this.Images.SequenceEqual(other.Images)
+                Images == other.Images ||
+                Images != null &&
+                Images.SequenceEqual(other.Images)
             ) &&
             (
-                this.Addresses == other.Addresses ||
-                this.Addresses != null &&
-                this.Addresses.SequenceEqual(other.Addresses)
+                Addresses == other.Addresses ||
+                Addresses != null &&
+                Addresses.SequenceEqual(other.Addresses)
             ) &&
             (
-                this.RulesVisible == other.RulesVisible ||
-                this.RulesVisible != null &&
-                this.RulesVisible.Equals(other.RulesVisible)
+                RulesVisible == other.RulesVisible ||
+                RulesVisible != null &&
+                RulesVisible.Equals(other.RulesVisible)
             ) &&
             (
-                this.Visibility == other.Visibility ||
-                this.Visibility != null &&
-                this.Visibility.Equals(other.Visibility)
+                Visibility == other.Visibility ||
+                Visibility != null &&
+                Visibility.Equals(other.Visibility)
             ) &&
             (
-                this.RolesEnabled == other.RolesEnabled ||
-                this.RolesEnabled != null &&
-                this.RolesEnabled.Equals(other.RolesEnabled)
+                RolesEnabled == other.RolesEnabled ||
+                RolesEnabled != null &&
+                RolesEnabled.Equals(other.RolesEnabled)
             ) &&
             (
-                this.IncludeOwners == other.IncludeOwners ||
-                this.IncludeOwners != null &&
-                this.IncludeOwners.Equals(other.IncludeOwners)
+                IncludeOwners == other.IncludeOwners ||
+                IncludeOwners != null &&
+                IncludeOwners.Equals(other.IncludeOwners)
             ) &&
             (
-                this.CallsEnabled == other.CallsEnabled ||
-                this.CallsEnabled != null &&
-                this.CallsEnabled.Equals(other.CallsEnabled)
+                CallsEnabled == other.CallsEnabled ||
+                CallsEnabled != null &&
+                CallsEnabled.Equals(other.CallsEnabled)
             ) &&
             (
-                this.Owners == other.Owners ||
-                this.Owners != null &&
-                this.Owners.SequenceEqual(other.Owners)
+                Owners == other.Owners ||
+                Owners != null &&
+                Owners.SequenceEqual(other.Owners)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             );
     }
 
@@ -456,94 +456,94 @@ public partial class TrustGroup : IEquatable<TrustGroup>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.MemberCount != null)
+            if (MemberCount != null)
             {
-                hash = hash * 59 + this.MemberCount.GetHashCode();
+                hash = hash * 59 + MemberCount.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Images != null)
+            if (Images != null)
             {
-                hash = hash * 59 + this.Images.GetHashCode();
+                hash = hash * 59 + Images.GetHashCode();
             }
 
-            if (this.Addresses != null)
+            if (Addresses != null)
             {
-                hash = hash * 59 + this.Addresses.GetHashCode();
+                hash = hash * 59 + Addresses.GetHashCode();
             }
 
-            if (this.RulesVisible != null)
+            if (RulesVisible != null)
             {
-                hash = hash * 59 + this.RulesVisible.GetHashCode();
+                hash = hash * 59 + RulesVisible.GetHashCode();
             }
 
-            if (this.Visibility != null)
+            if (Visibility != null)
             {
-                hash = hash * 59 + this.Visibility.GetHashCode();
+                hash = hash * 59 + Visibility.GetHashCode();
             }
 
-            if (this.RolesEnabled != null)
+            if (RolesEnabled != null)
             {
-                hash = hash * 59 + this.RolesEnabled.GetHashCode();
+                hash = hash * 59 + RolesEnabled.GetHashCode();
             }
 
-            if (this.IncludeOwners != null)
+            if (IncludeOwners != null)
             {
-                hash = hash * 59 + this.IncludeOwners.GetHashCode();
+                hash = hash * 59 + IncludeOwners.GetHashCode();
             }
 
-            if (this.CallsEnabled != null)
+            if (CallsEnabled != null)
             {
-                hash = hash * 59 + this.CallsEnabled.GetHashCode();
+                hash = hash * 59 + CallsEnabled.GetHashCode();
             }
 
-            if (this.Owners != null)
+            if (Owners != null)
             {
-                hash = hash * 59 + this.Owners.GetHashCode();
+                hash = hash * 59 + Owners.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
             return hash;

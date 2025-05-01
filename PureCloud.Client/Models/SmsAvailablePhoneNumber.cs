@@ -270,7 +270,7 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SmsAvailablePhoneNumber);
+        return Equals(obj as SmsAvailablePhoneNumber);
     }
 
     /// <summary>
@@ -288,54 +288,54 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.CountryCode == other.CountryCode ||
-                this.CountryCode != null &&
-                this.CountryCode.Equals(other.CountryCode)
+                CountryCode == other.CountryCode ||
+                CountryCode != null &&
+                CountryCode.Equals(other.CountryCode)
             ) &&
             (
-                this.Region == other.Region ||
-                this.Region != null &&
-                this.Region.Equals(other.Region)
+                Region == other.Region ||
+                Region != null &&
+                Region.Equals(other.Region)
             ) &&
             (
-                this.City == other.City ||
-                this.City != null &&
-                this.City.Equals(other.City)
+                City == other.City ||
+                City != null &&
+                City.Equals(other.City)
             ) &&
             (
-                this.Capabilities == other.Capabilities ||
-                this.Capabilities != null &&
-                this.Capabilities.SequenceEqual(other.Capabilities)
+                Capabilities == other.Capabilities ||
+                Capabilities != null &&
+                Capabilities.SequenceEqual(other.Capabilities)
             ) &&
             (
-                this.PhoneNumberType == other.PhoneNumberType ||
-                this.PhoneNumberType != null &&
-                this.PhoneNumberType.Equals(other.PhoneNumberType)
+                PhoneNumberType == other.PhoneNumberType ||
+                PhoneNumberType != null &&
+                PhoneNumberType.Equals(other.PhoneNumberType)
             ) &&
             (
-                this.AddressRequirement == other.AddressRequirement ||
-                this.AddressRequirement != null &&
-                this.AddressRequirement.Equals(other.AddressRequirement)
+                AddressRequirement == other.AddressRequirement ||
+                AddressRequirement != null &&
+                AddressRequirement.Equals(other.AddressRequirement)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -350,54 +350,54 @@ public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumbe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.CountryCode != null)
+            if (CountryCode != null)
             {
-                hash = hash * 59 + this.CountryCode.GetHashCode();
+                hash = hash * 59 + CountryCode.GetHashCode();
             }
 
-            if (this.Region != null)
+            if (Region != null)
             {
-                hash = hash * 59 + this.Region.GetHashCode();
+                hash = hash * 59 + Region.GetHashCode();
             }
 
-            if (this.City != null)
+            if (City != null)
             {
-                hash = hash * 59 + this.City.GetHashCode();
+                hash = hash * 59 + City.GetHashCode();
             }
 
-            if (this.Capabilities != null)
+            if (Capabilities != null)
             {
-                hash = hash * 59 + this.Capabilities.GetHashCode();
+                hash = hash * 59 + Capabilities.GetHashCode();
             }
 
-            if (this.PhoneNumberType != null)
+            if (PhoneNumberType != null)
             {
-                hash = hash * 59 + this.PhoneNumberType.GetHashCode();
+                hash = hash * 59 + PhoneNumberType.GetHashCode();
             }
 
-            if (this.AddressRequirement != null)
+            if (AddressRequirement != null)
             {
-                hash = hash * 59 + this.AddressRequirement.GetHashCode();
+                hash = hash * 59 + AddressRequirement.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

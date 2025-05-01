@@ -77,7 +77,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo);
+        return Equals(obj as V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo : IEquat
 
         return true &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             ) &&
             (
-                this.ExecutionId == other.ExecutionId ||
-                this.ExecutionId != null &&
-                this.ExecutionId.Equals(other.ExecutionId)
+                ExecutionId == other.ExecutionId ||
+                ExecutionId != null &&
+                ExecutionId.Equals(other.ExecutionId)
             ) &&
             (
-                this.ObjectId == other.ObjectId ||
-                this.ObjectId != null &&
-                this.ObjectId.Equals(other.ObjectId)
+                ObjectId == other.ObjectId ||
+                ObjectId != null &&
+                ObjectId.Equals(other.ObjectId)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
-            if (this.ExecutionId != null)
+            if (ExecutionId != null)
             {
-                hash = hash * 59 + this.ExecutionId.GetHashCode();
+                hash = hash * 59 + ExecutionId.GetHashCode();
             }
 
-            if (this.ObjectId != null)
+            if (ObjectId != null)
             {
-                hash = hash * 59 + this.ObjectId.GetHashCode();
+                hash = hash * 59 + ObjectId.GetHashCode();
             }
 
             return hash;

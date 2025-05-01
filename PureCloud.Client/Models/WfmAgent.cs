@@ -181,7 +181,7 @@ public partial class WfmAgent : IEquatable<WfmAgent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmAgent);
+        return Equals(obj as WfmAgent);
     }
 
     /// <summary>
@@ -199,64 +199,64 @@ public partial class WfmAgent : IEquatable<WfmAgent>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.WorkPlan == other.WorkPlan ||
-                this.WorkPlan != null &&
-                this.WorkPlan.Equals(other.WorkPlan)
+                WorkPlan == other.WorkPlan ||
+                WorkPlan != null &&
+                WorkPlan.Equals(other.WorkPlan)
             ) &&
             (
-                this.WorkPlanRotation == other.WorkPlanRotation ||
-                this.WorkPlanRotation != null &&
-                this.WorkPlanRotation.Equals(other.WorkPlanRotation)
+                WorkPlanRotation == other.WorkPlanRotation ||
+                WorkPlanRotation != null &&
+                WorkPlanRotation.Equals(other.WorkPlanRotation)
             ) &&
             (
-                this.AcceptDirectShiftTrades == other.AcceptDirectShiftTrades ||
-                this.AcceptDirectShiftTrades != null &&
-                this.AcceptDirectShiftTrades.Equals(other.AcceptDirectShiftTrades)
+                AcceptDirectShiftTrades == other.AcceptDirectShiftTrades ||
+                AcceptDirectShiftTrades != null &&
+                AcceptDirectShiftTrades.Equals(other.AcceptDirectShiftTrades)
             ) &&
             (
-                this.WorkPlanOverrides == other.WorkPlanOverrides ||
-                this.WorkPlanOverrides != null &&
-                this.WorkPlanOverrides.SequenceEqual(other.WorkPlanOverrides)
+                WorkPlanOverrides == other.WorkPlanOverrides ||
+                WorkPlanOverrides != null &&
+                WorkPlanOverrides.SequenceEqual(other.WorkPlanOverrides)
             ) &&
             (
-                this.Queues == other.Queues ||
-                this.Queues != null &&
-                this.Queues.SequenceEqual(other.Queues)
+                Queues == other.Queues ||
+                Queues != null &&
+                Queues.SequenceEqual(other.Queues)
             ) &&
             (
-                this.Languages == other.Languages ||
-                this.Languages != null &&
-                this.Languages.SequenceEqual(other.Languages)
+                Languages == other.Languages ||
+                Languages != null &&
+                Languages.SequenceEqual(other.Languages)
             ) &&
             (
-                this.Skills == other.Skills ||
-                this.Skills != null &&
-                this.Skills.SequenceEqual(other.Skills)
+                Skills == other.Skills ||
+                Skills != null &&
+                Skills.SequenceEqual(other.Skills)
             ) &&
             (
-                this.Schedulable == other.Schedulable ||
-                this.Schedulable != null &&
-                this.Schedulable.Equals(other.Schedulable)
+                Schedulable == other.Schedulable ||
+                Schedulable != null &&
+                Schedulable.Equals(other.Schedulable)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -271,64 +271,64 @@ public partial class WfmAgent : IEquatable<WfmAgent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.WorkPlan != null)
+            if (WorkPlan != null)
             {
-                hash = hash * 59 + this.WorkPlan.GetHashCode();
+                hash = hash * 59 + WorkPlan.GetHashCode();
             }
 
-            if (this.WorkPlanRotation != null)
+            if (WorkPlanRotation != null)
             {
-                hash = hash * 59 + this.WorkPlanRotation.GetHashCode();
+                hash = hash * 59 + WorkPlanRotation.GetHashCode();
             }
 
-            if (this.AcceptDirectShiftTrades != null)
+            if (AcceptDirectShiftTrades != null)
             {
-                hash = hash * 59 + this.AcceptDirectShiftTrades.GetHashCode();
+                hash = hash * 59 + AcceptDirectShiftTrades.GetHashCode();
             }
 
-            if (this.WorkPlanOverrides != null)
+            if (WorkPlanOverrides != null)
             {
-                hash = hash * 59 + this.WorkPlanOverrides.GetHashCode();
+                hash = hash * 59 + WorkPlanOverrides.GetHashCode();
             }
 
-            if (this.Queues != null)
+            if (Queues != null)
             {
-                hash = hash * 59 + this.Queues.GetHashCode();
+                hash = hash * 59 + Queues.GetHashCode();
             }
 
-            if (this.Languages != null)
+            if (Languages != null)
             {
-                hash = hash * 59 + this.Languages.GetHashCode();
+                hash = hash * 59 + Languages.GetHashCode();
             }
 
-            if (this.Skills != null)
+            if (Skills != null)
             {
-                hash = hash * 59 + this.Skills.GetHashCode();
+                hash = hash * 59 + Skills.GetHashCode();
             }
 
-            if (this.Schedulable != null)
+            if (Schedulable != null)
             {
-                hash = hash * 59 + this.Schedulable.GetHashCode();
+                hash = hash * 59 + Schedulable.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

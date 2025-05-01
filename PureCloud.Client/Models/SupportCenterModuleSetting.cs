@@ -151,7 +151,7 @@ public partial class SupportCenterModuleSetting : IEquatable<SupportCenterModule
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportCenterModuleSetting);
+        return Equals(obj as SupportCenterModuleSetting);
     }
 
     /// <summary>
@@ -169,24 +169,24 @@ public partial class SupportCenterModuleSetting : IEquatable<SupportCenterModule
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.CompactCategoryModuleTemplate == other.CompactCategoryModuleTemplate ||
-                this.CompactCategoryModuleTemplate != null &&
-                this.CompactCategoryModuleTemplate.Equals(other.CompactCategoryModuleTemplate)
+                CompactCategoryModuleTemplate == other.CompactCategoryModuleTemplate ||
+                CompactCategoryModuleTemplate != null &&
+                CompactCategoryModuleTemplate.Equals(other.CompactCategoryModuleTemplate)
             ) &&
             (
-                this.DetailedCategoryModuleTemplate == other.DetailedCategoryModuleTemplate ||
-                this.DetailedCategoryModuleTemplate != null &&
-                this.DetailedCategoryModuleTemplate.Equals(other.DetailedCategoryModuleTemplate)
+                DetailedCategoryModuleTemplate == other.DetailedCategoryModuleTemplate ||
+                DetailedCategoryModuleTemplate != null &&
+                DetailedCategoryModuleTemplate.Equals(other.DetailedCategoryModuleTemplate)
             );
     }
 
@@ -201,24 +201,24 @@ public partial class SupportCenterModuleSetting : IEquatable<SupportCenterModule
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.CompactCategoryModuleTemplate != null)
+            if (CompactCategoryModuleTemplate != null)
             {
-                hash = hash * 59 + this.CompactCategoryModuleTemplate.GetHashCode();
+                hash = hash * 59 + CompactCategoryModuleTemplate.GetHashCode();
             }
 
-            if (this.DetailedCategoryModuleTemplate != null)
+            if (DetailedCategoryModuleTemplate != null)
             {
-                hash = hash * 59 + this.DetailedCategoryModuleTemplate.GetHashCode();
+                hash = hash * 59 + DetailedCategoryModuleTemplate.GetHashCode();
             }
 
             return hash;

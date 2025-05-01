@@ -171,7 +171,7 @@ public partial class Phrase : IEquatable<Phrase>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Phrase);
+        return Equals(obj as Phrase);
     }
 
     /// <summary>
@@ -189,19 +189,19 @@ public partial class Phrase : IEquatable<Phrase>
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Strictness == other.Strictness ||
-                this.Strictness != null &&
-                this.Strictness.Equals(other.Strictness)
+                Strictness == other.Strictness ||
+                Strictness != null &&
+                Strictness.Equals(other.Strictness)
             ) &&
             (
-                this.Sentiment == other.Sentiment ||
-                this.Sentiment != null &&
-                this.Sentiment.Equals(other.Sentiment)
+                Sentiment == other.Sentiment ||
+                Sentiment != null &&
+                Sentiment.Equals(other.Sentiment)
             );
     }
 
@@ -216,19 +216,19 @@ public partial class Phrase : IEquatable<Phrase>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Strictness != null)
+            if (Strictness != null)
             {
-                hash = hash * 59 + this.Strictness.GetHashCode();
+                hash = hash * 59 + Strictness.GetHashCode();
             }
 
-            if (this.Sentiment != null)
+            if (Sentiment != null)
             {
-                hash = hash * 59 + this.Sentiment.GetHashCode();
+                hash = hash * 59 + Sentiment.GetHashCode();
             }
 
             return hash;

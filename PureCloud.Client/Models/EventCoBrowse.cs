@@ -121,7 +121,7 @@ public partial class EventCoBrowse : IEquatable<EventCoBrowse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EventCoBrowse);
+        return Equals(obj as EventCoBrowse);
     }
 
     /// <summary>
@@ -139,19 +139,19 @@ public partial class EventCoBrowse : IEquatable<EventCoBrowse>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.SessionJoinToken == other.SessionJoinToken ||
-                this.SessionJoinToken != null &&
-                this.SessionJoinToken.Equals(other.SessionJoinToken)
+                SessionJoinToken == other.SessionJoinToken ||
+                SessionJoinToken != null &&
+                SessionJoinToken.Equals(other.SessionJoinToken)
             );
     }
 
@@ -166,19 +166,19 @@ public partial class EventCoBrowse : IEquatable<EventCoBrowse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.SessionJoinToken != null)
+            if (SessionJoinToken != null)
             {
-                hash = hash * 59 + this.SessionJoinToken.GetHashCode();
+                hash = hash * 59 + SessionJoinToken.GetHashCode();
             }
 
             return hash;

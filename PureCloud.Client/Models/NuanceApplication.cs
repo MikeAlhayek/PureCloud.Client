@@ -83,7 +83,7 @@ public partial class NuanceApplication : IEquatable<NuanceApplication>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NuanceApplication);
+        return Equals(obj as NuanceApplication);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class NuanceApplication : IEquatable<NuanceApplication>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Tag == other.Tag ||
-                this.Tag != null &&
-                this.Tag.Equals(other.Tag)
+                Tag == other.Tag ||
+                Tag != null &&
+                Tag.Equals(other.Tag)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class NuanceApplication : IEquatable<NuanceApplication>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Tag != null)
+            if (Tag != null)
             {
-                hash = hash * 59 + this.Tag.GetHashCode();
+                hash = hash * 59 + Tag.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
             return hash;

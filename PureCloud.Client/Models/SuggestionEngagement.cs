@@ -109,7 +109,7 @@ public partial class SuggestionEngagement : IEquatable<SuggestionEngagement>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SuggestionEngagement);
+        return Equals(obj as SuggestionEngagement);
     }
 
     /// <summary>
@@ -127,14 +127,14 @@ public partial class SuggestionEngagement : IEquatable<SuggestionEngagement>
 
         return true &&
             (
-                this.EngagementType == other.EngagementType ||
-                this.EngagementType != null &&
-                this.EngagementType.Equals(other.EngagementType)
+                EngagementType == other.EngagementType ||
+                EngagementType != null &&
+                EngagementType.Equals(other.EngagementType)
             ) &&
             (
-                this.Feedback == other.Feedback ||
-                this.Feedback != null &&
-                this.Feedback.Equals(other.Feedback)
+                Feedback == other.Feedback ||
+                Feedback != null &&
+                Feedback.Equals(other.Feedback)
             );
     }
 
@@ -149,14 +149,14 @@ public partial class SuggestionEngagement : IEquatable<SuggestionEngagement>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EngagementType != null)
+            if (EngagementType != null)
             {
-                hash = hash * 59 + this.EngagementType.GetHashCode();
+                hash = hash * 59 + EngagementType.GetHashCode();
             }
 
-            if (this.Feedback != null)
+            if (Feedback != null)
             {
-                hash = hash * 59 + this.Feedback.GetHashCode();
+                hash = hash * 59 + Feedback.GetHashCode();
             }
 
             return hash;

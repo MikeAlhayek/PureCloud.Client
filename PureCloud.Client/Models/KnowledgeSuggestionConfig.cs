@@ -115,7 +115,7 @@ public partial class KnowledgeSuggestionConfig : IEquatable<KnowledgeSuggestionC
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeSuggestionConfig);
+        return Equals(obj as KnowledgeSuggestionConfig);
     }
 
     /// <summary>
@@ -133,19 +133,19 @@ public partial class KnowledgeSuggestionConfig : IEquatable<KnowledgeSuggestionC
 
         return true &&
             (
-                this.VendorName == other.VendorName ||
-                this.VendorName != null &&
-                this.VendorName.Equals(other.VendorName)
+                VendorName == other.VendorName ||
+                VendorName != null &&
+                VendorName.Equals(other.VendorName)
             ) &&
             (
-                this.KnowledgeBase == other.KnowledgeBase ||
-                this.KnowledgeBase != null &&
-                this.KnowledgeBase.Equals(other.KnowledgeBase)
+                KnowledgeBase == other.KnowledgeBase ||
+                KnowledgeBase != null &&
+                KnowledgeBase.Equals(other.KnowledgeBase)
             ) &&
             (
-                this.KnowledgeBases == other.KnowledgeBases ||
-                this.KnowledgeBases != null &&
-                this.KnowledgeBases.SequenceEqual(other.KnowledgeBases)
+                KnowledgeBases == other.KnowledgeBases ||
+                KnowledgeBases != null &&
+                KnowledgeBases.SequenceEqual(other.KnowledgeBases)
             );
     }
 
@@ -160,19 +160,19 @@ public partial class KnowledgeSuggestionConfig : IEquatable<KnowledgeSuggestionC
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.VendorName != null)
+            if (VendorName != null)
             {
-                hash = hash * 59 + this.VendorName.GetHashCode();
+                hash = hash * 59 + VendorName.GetHashCode();
             }
 
-            if (this.KnowledgeBase != null)
+            if (KnowledgeBase != null)
             {
-                hash = hash * 59 + this.KnowledgeBase.GetHashCode();
+                hash = hash * 59 + KnowledgeBase.GetHashCode();
             }
 
-            if (this.KnowledgeBases != null)
+            if (KnowledgeBases != null)
             {
-                hash = hash * 59 + this.KnowledgeBases.GetHashCode();
+                hash = hash * 59 + KnowledgeBases.GetHashCode();
             }
 
             return hash;

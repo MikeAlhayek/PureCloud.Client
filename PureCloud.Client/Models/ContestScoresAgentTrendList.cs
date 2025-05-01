@@ -64,7 +64,7 @@ public partial class ContestScoresAgentTrendList : IEquatable<ContestScoresAgent
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestScoresAgentTrendList);
+        return Equals(obj as ContestScoresAgentTrendList);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class ContestScoresAgentTrendList : IEquatable<ContestScoresAgent
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class ContestScoresAgentTrendList : IEquatable<ContestScoresAgent
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
             return hash;

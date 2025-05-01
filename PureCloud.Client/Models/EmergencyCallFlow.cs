@@ -65,7 +65,7 @@ public partial class EmergencyCallFlow : IEquatable<EmergencyCallFlow>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmergencyCallFlow);
+        return Equals(obj as EmergencyCallFlow);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class EmergencyCallFlow : IEquatable<EmergencyCallFlow>
 
         return true &&
             (
-                this.EmergencyFlow == other.EmergencyFlow ||
-                this.EmergencyFlow != null &&
-                this.EmergencyFlow.Equals(other.EmergencyFlow)
+                EmergencyFlow == other.EmergencyFlow ||
+                EmergencyFlow != null &&
+                EmergencyFlow.Equals(other.EmergencyFlow)
             ) &&
             (
-                this.Ivrs == other.Ivrs ||
-                this.Ivrs != null &&
-                this.Ivrs.SequenceEqual(other.Ivrs)
+                Ivrs == other.Ivrs ||
+                Ivrs != null &&
+                Ivrs.SequenceEqual(other.Ivrs)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class EmergencyCallFlow : IEquatable<EmergencyCallFlow>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EmergencyFlow != null)
+            if (EmergencyFlow != null)
             {
-                hash = hash * 59 + this.EmergencyFlow.GetHashCode();
+                hash = hash * 59 + EmergencyFlow.GetHashCode();
             }
 
-            if (this.Ivrs != null)
+            if (Ivrs != null)
             {
-                hash = hash * 59 + this.Ivrs.GetHashCode();
+                hash = hash * 59 + Ivrs.GetHashCode();
             }
 
             return hash;

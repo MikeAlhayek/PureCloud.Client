@@ -217,7 +217,7 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeTraining);
+        return Equals(obj as KnowledgeTraining);
     }
 
     /// <summary>
@@ -235,54 +235,54 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DateTriggered == other.DateTriggered ||
-                this.DateTriggered != null &&
-                this.DateTriggered.Equals(other.DateTriggered)
+                DateTriggered == other.DateTriggered ||
+                DateTriggered != null &&
+                DateTriggered.Equals(other.DateTriggered)
             ) &&
             (
-                this.DateCompleted == other.DateCompleted ||
-                this.DateCompleted != null &&
-                this.DateCompleted.Equals(other.DateCompleted)
+                DateCompleted == other.DateCompleted ||
+                DateCompleted != null &&
+                DateCompleted.Equals(other.DateCompleted)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.LanguageCode == other.LanguageCode ||
-                this.LanguageCode != null &&
-                this.LanguageCode.Equals(other.LanguageCode)
+                LanguageCode == other.LanguageCode ||
+                LanguageCode != null &&
+                LanguageCode.Equals(other.LanguageCode)
             ) &&
             (
-                this.KnowledgeBase == other.KnowledgeBase ||
-                this.KnowledgeBase != null &&
-                this.KnowledgeBase.Equals(other.KnowledgeBase)
+                KnowledgeBase == other.KnowledgeBase ||
+                KnowledgeBase != null &&
+                KnowledgeBase.Equals(other.KnowledgeBase)
             ) &&
             (
-                this.ErrorMessage == other.ErrorMessage ||
-                this.ErrorMessage != null &&
-                this.ErrorMessage.Equals(other.ErrorMessage)
+                ErrorMessage == other.ErrorMessage ||
+                ErrorMessage != null &&
+                ErrorMessage.Equals(other.ErrorMessage)
             ) &&
             (
-                this.KnowledgeDocumentsState == other.KnowledgeDocumentsState ||
-                this.KnowledgeDocumentsState != null &&
-                this.KnowledgeDocumentsState.Equals(other.KnowledgeDocumentsState)
+                KnowledgeDocumentsState == other.KnowledgeDocumentsState ||
+                KnowledgeDocumentsState != null &&
+                KnowledgeDocumentsState.Equals(other.KnowledgeDocumentsState)
             ) &&
             (
-                this.DatePromoted == other.DatePromoted ||
-                this.DatePromoted != null &&
-                this.DatePromoted.Equals(other.DatePromoted)
+                DatePromoted == other.DatePromoted ||
+                DatePromoted != null &&
+                DatePromoted.Equals(other.DatePromoted)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -297,54 +297,54 @@ public partial class KnowledgeTraining : IEquatable<KnowledgeTraining>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DateTriggered != null)
+            if (DateTriggered != null)
             {
-                hash = hash * 59 + this.DateTriggered.GetHashCode();
+                hash = hash * 59 + DateTriggered.GetHashCode();
             }
 
-            if (this.DateCompleted != null)
+            if (DateCompleted != null)
             {
-                hash = hash * 59 + this.DateCompleted.GetHashCode();
+                hash = hash * 59 + DateCompleted.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.LanguageCode != null)
+            if (LanguageCode != null)
             {
-                hash = hash * 59 + this.LanguageCode.GetHashCode();
+                hash = hash * 59 + LanguageCode.GetHashCode();
             }
 
-            if (this.KnowledgeBase != null)
+            if (KnowledgeBase != null)
             {
-                hash = hash * 59 + this.KnowledgeBase.GetHashCode();
+                hash = hash * 59 + KnowledgeBase.GetHashCode();
             }
 
-            if (this.ErrorMessage != null)
+            if (ErrorMessage != null)
             {
-                hash = hash * 59 + this.ErrorMessage.GetHashCode();
+                hash = hash * 59 + ErrorMessage.GetHashCode();
             }
 
-            if (this.KnowledgeDocumentsState != null)
+            if (KnowledgeDocumentsState != null)
             {
-                hash = hash * 59 + this.KnowledgeDocumentsState.GetHashCode();
+                hash = hash * 59 + KnowledgeDocumentsState.GetHashCode();
             }
 
-            if (this.DatePromoted != null)
+            if (DatePromoted != null)
             {
-                hash = hash * 59 + this.DatePromoted.GetHashCode();
+                hash = hash * 59 + DatePromoted.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

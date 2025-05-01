@@ -173,7 +173,7 @@ public partial class KnowledgeDocumentFeedbackUpdateRequest : IEquatable<Knowled
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentFeedbackUpdateRequest);
+        return Equals(obj as KnowledgeDocumentFeedbackUpdateRequest);
     }
 
     /// <summary>
@@ -191,24 +191,24 @@ public partial class KnowledgeDocumentFeedbackUpdateRequest : IEquatable<Knowled
 
         return true &&
             (
-                this.Rating == other.Rating ||
-                this.Rating != null &&
-                this.Rating.Equals(other.Rating)
+                Rating == other.Rating ||
+                Rating != null &&
+                Rating.Equals(other.Rating)
             ) &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             ) &&
             (
-                this.Comment == other.Comment ||
-                this.Comment != null &&
-                this.Comment.Equals(other.Comment)
+                Comment == other.Comment ||
+                Comment != null &&
+                Comment.Equals(other.Comment)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             );
     }
 
@@ -223,24 +223,24 @@ public partial class KnowledgeDocumentFeedbackUpdateRequest : IEquatable<Knowled
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Rating != null)
+            if (Rating != null)
             {
-                hash = hash * 59 + this.Rating.GetHashCode();
+                hash = hash * 59 + Rating.GetHashCode();
             }
 
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
-            if (this.Comment != null)
+            if (Comment != null)
             {
-                hash = hash * 59 + this.Comment.GetHashCode();
+                hash = hash * 59 + Comment.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
             return hash;

@@ -180,7 +180,7 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SurveyQuestion);
+        return Equals(obj as SurveyQuestion);
     }
 
     /// <summary>
@@ -198,49 +198,49 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.HelpText == other.HelpText ||
-                this.HelpText != null &&
-                this.HelpText.Equals(other.HelpText)
+                HelpText == other.HelpText ||
+                HelpText != null &&
+                HelpText.Equals(other.HelpText)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.NaEnabled == other.NaEnabled ||
-                this.NaEnabled != null &&
-                this.NaEnabled.Equals(other.NaEnabled)
+                NaEnabled == other.NaEnabled ||
+                NaEnabled != null &&
+                NaEnabled.Equals(other.NaEnabled)
             ) &&
             (
-                this.VisibilityCondition == other.VisibilityCondition ||
-                this.VisibilityCondition != null &&
-                this.VisibilityCondition.Equals(other.VisibilityCondition)
+                VisibilityCondition == other.VisibilityCondition ||
+                VisibilityCondition != null &&
+                VisibilityCondition.Equals(other.VisibilityCondition)
             ) &&
             (
-                this.AnswerOptions == other.AnswerOptions ||
-                this.AnswerOptions != null &&
-                this.AnswerOptions.SequenceEqual(other.AnswerOptions)
+                AnswerOptions == other.AnswerOptions ||
+                AnswerOptions != null &&
+                AnswerOptions.SequenceEqual(other.AnswerOptions)
             ) &&
             (
-                this.MaxResponseCharacters == other.MaxResponseCharacters ||
-                this.MaxResponseCharacters != null &&
-                this.MaxResponseCharacters.Equals(other.MaxResponseCharacters)
+                MaxResponseCharacters == other.MaxResponseCharacters ||
+                MaxResponseCharacters != null &&
+                MaxResponseCharacters.Equals(other.MaxResponseCharacters)
             ) &&
             (
-                this.ExplanationPrompt == other.ExplanationPrompt ||
-                this.ExplanationPrompt != null &&
-                this.ExplanationPrompt.Equals(other.ExplanationPrompt)
+                ExplanationPrompt == other.ExplanationPrompt ||
+                ExplanationPrompt != null &&
+                ExplanationPrompt.Equals(other.ExplanationPrompt)
             );
     }
 
@@ -255,49 +255,49 @@ public partial class SurveyQuestion : IEquatable<SurveyQuestion>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.HelpText != null)
+            if (HelpText != null)
             {
-                hash = hash * 59 + this.HelpText.GetHashCode();
+                hash = hash * 59 + HelpText.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.NaEnabled != null)
+            if (NaEnabled != null)
             {
-                hash = hash * 59 + this.NaEnabled.GetHashCode();
+                hash = hash * 59 + NaEnabled.GetHashCode();
             }
 
-            if (this.VisibilityCondition != null)
+            if (VisibilityCondition != null)
             {
-                hash = hash * 59 + this.VisibilityCondition.GetHashCode();
+                hash = hash * 59 + VisibilityCondition.GetHashCode();
             }
 
-            if (this.AnswerOptions != null)
+            if (AnswerOptions != null)
             {
-                hash = hash * 59 + this.AnswerOptions.GetHashCode();
+                hash = hash * 59 + AnswerOptions.GetHashCode();
             }
 
-            if (this.MaxResponseCharacters != null)
+            if (MaxResponseCharacters != null)
             {
-                hash = hash * 59 + this.MaxResponseCharacters.GetHashCode();
+                hash = hash * 59 + MaxResponseCharacters.GetHashCode();
             }
 
-            if (this.ExplanationPrompt != null)
+            if (ExplanationPrompt != null)
             {
-                hash = hash * 59 + this.ExplanationPrompt.GetHashCode();
+                hash = hash * 59 + ExplanationPrompt.GetHashCode();
             }
 
             return hash;

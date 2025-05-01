@@ -163,7 +163,7 @@ public partial class DocumentListContentBlockWithHighlight : IEquatable<Document
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentListContentBlockWithHighlight);
+        return Equals(obj as DocumentListContentBlockWithHighlight);
     }
 
     /// <summary>
@@ -181,34 +181,34 @@ public partial class DocumentListContentBlockWithHighlight : IEquatable<Document
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Image == other.Image ||
-                this.Image != null &&
-                this.Image.Equals(other.Image)
+                Image == other.Image ||
+                Image != null &&
+                Image.Equals(other.Image)
             ) &&
             (
-                this.Video == other.Video ||
-                this.Video != null &&
-                this.Video.Equals(other.Video)
+                Video == other.Video ||
+                Video != null &&
+                Video.Equals(other.Video)
             ) &&
             (
-                this.List == other.List ||
-                this.List != null &&
-                this.List.Equals(other.List)
+                List == other.List ||
+                List != null &&
+                List.Equals(other.List)
             ) &&
             (
-                this.AnswerHighlight == other.AnswerHighlight ||
-                this.AnswerHighlight != null &&
-                this.AnswerHighlight.Equals(other.AnswerHighlight)
+                AnswerHighlight == other.AnswerHighlight ||
+                AnswerHighlight != null &&
+                AnswerHighlight.Equals(other.AnswerHighlight)
             );
     }
 
@@ -223,34 +223,34 @@ public partial class DocumentListContentBlockWithHighlight : IEquatable<Document
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Image != null)
+            if (Image != null)
             {
-                hash = hash * 59 + this.Image.GetHashCode();
+                hash = hash * 59 + Image.GetHashCode();
             }
 
-            if (this.Video != null)
+            if (Video != null)
             {
-                hash = hash * 59 + this.Video.GetHashCode();
+                hash = hash * 59 + Video.GetHashCode();
             }
 
-            if (this.List != null)
+            if (List != null)
             {
-                hash = hash * 59 + this.List.GetHashCode();
+                hash = hash * 59 + List.GetHashCode();
             }
 
-            if (this.AnswerHighlight != null)
+            if (AnswerHighlight != null)
             {
-                hash = hash * 59 + this.AnswerHighlight.GetHashCode();
+                hash = hash * 59 + AnswerHighlight.GetHashCode();
             }
 
             return hash;

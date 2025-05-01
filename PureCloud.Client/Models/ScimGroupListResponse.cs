@@ -93,7 +93,7 @@ public partial class ScimGroupListResponse : IEquatable<ScimGroupListResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimGroupListResponse);
+        return Equals(obj as ScimGroupListResponse);
     }
 
     /// <summary>
@@ -111,29 +111,29 @@ public partial class ScimGroupListResponse : IEquatable<ScimGroupListResponse>
 
         return true &&
             (
-                this.Schemas == other.Schemas ||
-                this.Schemas != null &&
-                this.Schemas.SequenceEqual(other.Schemas)
+                Schemas == other.Schemas ||
+                Schemas != null &&
+                Schemas.SequenceEqual(other.Schemas)
             ) &&
             (
-                this.TotalResults == other.TotalResults ||
-                this.TotalResults != null &&
-                this.TotalResults.Equals(other.TotalResults)
+                TotalResults == other.TotalResults ||
+                TotalResults != null &&
+                TotalResults.Equals(other.TotalResults)
             ) &&
             (
-                this.StartIndex == other.StartIndex ||
-                this.StartIndex != null &&
-                this.StartIndex.Equals(other.StartIndex)
+                StartIndex == other.StartIndex ||
+                StartIndex != null &&
+                StartIndex.Equals(other.StartIndex)
             ) &&
             (
-                this.ItemsPerPage == other.ItemsPerPage ||
-                this.ItemsPerPage != null &&
-                this.ItemsPerPage.Equals(other.ItemsPerPage)
+                ItemsPerPage == other.ItemsPerPage ||
+                ItemsPerPage != null &&
+                ItemsPerPage.Equals(other.ItemsPerPage)
             ) &&
             (
-                this.Resources == other.Resources ||
-                this.Resources != null &&
-                this.Resources.SequenceEqual(other.Resources)
+                Resources == other.Resources ||
+                Resources != null &&
+                Resources.SequenceEqual(other.Resources)
             );
     }
 
@@ -148,29 +148,29 @@ public partial class ScimGroupListResponse : IEquatable<ScimGroupListResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Schemas != null)
+            if (Schemas != null)
             {
-                hash = hash * 59 + this.Schemas.GetHashCode();
+                hash = hash * 59 + Schemas.GetHashCode();
             }
 
-            if (this.TotalResults != null)
+            if (TotalResults != null)
             {
-                hash = hash * 59 + this.TotalResults.GetHashCode();
+                hash = hash * 59 + TotalResults.GetHashCode();
             }
 
-            if (this.StartIndex != null)
+            if (StartIndex != null)
             {
-                hash = hash * 59 + this.StartIndex.GetHashCode();
+                hash = hash * 59 + StartIndex.GetHashCode();
             }
 
-            if (this.ItemsPerPage != null)
+            if (ItemsPerPage != null)
             {
-                hash = hash * 59 + this.ItemsPerPage.GetHashCode();
+                hash = hash * 59 + ItemsPerPage.GetHashCode();
             }
 
-            if (this.Resources != null)
+            if (Resources != null)
             {
-                hash = hash * 59 + this.Resources.GetHashCode();
+                hash = hash * 59 + Resources.GetHashCode();
             }
 
             return hash;

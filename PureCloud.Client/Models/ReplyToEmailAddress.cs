@@ -71,7 +71,7 @@ public partial class ReplyToEmailAddress : IEquatable<ReplyToEmailAddress>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReplyToEmailAddress);
+        return Equals(obj as ReplyToEmailAddress);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ReplyToEmailAddress : IEquatable<ReplyToEmailAddress>
 
         return true &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.Route == other.Route ||
-                this.Route != null &&
-                this.Route.Equals(other.Route)
+                Route == other.Route ||
+                Route != null &&
+                Route.Equals(other.Route)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ReplyToEmailAddress : IEquatable<ReplyToEmailAddress>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.Route != null)
+            if (Route != null)
             {
-                hash = hash * 59 + this.Route.GetHashCode();
+                hash = hash * 59 + Route.GetHashCode();
             }
 
             return hash;

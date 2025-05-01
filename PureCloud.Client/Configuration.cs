@@ -40,8 +40,6 @@ public class Configuration
                          bool shouldRefreshAccessToken = true,
                          int refreshTokenWaitTime = 10,
                          string userAgent = "PureCloudEnvironment SDK/dotnet",
-                         string configFilePath = null,
-                         bool autoReloadConfig = true,
                          bool useDefaultApiClient = true
                         )
     {

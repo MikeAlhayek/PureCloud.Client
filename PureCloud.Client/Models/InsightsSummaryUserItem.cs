@@ -89,7 +89,7 @@ public partial class InsightsSummaryUserItem : IEquatable<InsightsSummaryUserIte
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InsightsSummaryUserItem);
+        return Equals(obj as InsightsSummaryUserItem);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class InsightsSummaryUserItem : IEquatable<InsightsSummaryUserIte
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.MetricData == other.MetricData ||
-                this.MetricData != null &&
-                this.MetricData.SequenceEqual(other.MetricData)
+                MetricData == other.MetricData ||
+                MetricData != null &&
+                MetricData.SequenceEqual(other.MetricData)
             ) &&
             (
-                this.OverallData == other.OverallData ||
-                this.OverallData != null &&
-                this.OverallData.Equals(other.OverallData)
+                OverallData == other.OverallData ||
+                OverallData != null &&
+                OverallData.Equals(other.OverallData)
             ) &&
             (
-                this.Ranking == other.Ranking ||
-                this.Ranking != null &&
-                this.Ranking.Equals(other.Ranking)
+                Ranking == other.Ranking ||
+                Ranking != null &&
+                Ranking.Equals(other.Ranking)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class InsightsSummaryUserItem : IEquatable<InsightsSummaryUserIte
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.MetricData != null)
+            if (MetricData != null)
             {
-                hash = hash * 59 + this.MetricData.GetHashCode();
+                hash = hash * 59 + MetricData.GetHashCode();
             }
 
-            if (this.OverallData != null)
+            if (OverallData != null)
             {
-                hash = hash * 59 + this.OverallData.GetHashCode();
+                hash = hash * 59 + OverallData.GetHashCode();
             }
 
-            if (this.Ranking != null)
+            if (Ranking != null)
             {
-                hash = hash * 59 + this.Ranking.GetHashCode();
+                hash = hash * 59 + Ranking.GetHashCode();
             }
 
             return hash;

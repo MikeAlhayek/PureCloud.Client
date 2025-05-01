@@ -168,7 +168,7 @@ public partial class CampaignRuleWarning : IEquatable<CampaignRuleWarning>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignRuleWarning);
+        return Equals(obj as CampaignRuleWarning);
     }
 
     /// <summary>
@@ -186,19 +186,19 @@ public partial class CampaignRuleWarning : IEquatable<CampaignRuleWarning>
 
         return true &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Params == other.Params ||
-                this.Params != null &&
-                this.Params.Equals(other.Params)
+                Params == other.Params ||
+                Params != null &&
+                Params.Equals(other.Params)
             );
     }
 
@@ -213,19 +213,19 @@ public partial class CampaignRuleWarning : IEquatable<CampaignRuleWarning>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Params != null)
+            if (Params != null)
             {
-                hash = hash * 59 + this.Params.GetHashCode();
+                hash = hash * 59 + Params.GetHashCode();
             }
 
             return hash;

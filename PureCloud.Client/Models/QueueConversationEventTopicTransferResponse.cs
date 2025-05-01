@@ -202,7 +202,7 @@ public partial class QueueConversationEventTopicTransferResponse : IEquatable<Qu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationEventTopicTransferResponse);
+        return Equals(obj as QueueConversationEventTopicTransferResponse);
     }
 
     /// <summary>
@@ -220,39 +220,39 @@ public partial class QueueConversationEventTopicTransferResponse : IEquatable<Qu
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.DateIssued == other.DateIssued ||
-                this.DateIssued != null &&
-                this.DateIssued.Equals(other.DateIssued)
+                DateIssued == other.DateIssued ||
+                DateIssued != null &&
+                DateIssued.Equals(other.DateIssued)
             ) &&
             (
-                this.Initiator == other.Initiator ||
-                this.Initiator != null &&
-                this.Initiator.Equals(other.Initiator)
+                Initiator == other.Initiator ||
+                Initiator != null &&
+                Initiator.Equals(other.Initiator)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.Destination == other.Destination ||
-                this.Destination != null &&
-                this.Destination.Equals(other.Destination)
+                Destination == other.Destination ||
+                Destination != null &&
+                Destination.Equals(other.Destination)
             ) &&
             (
-                this.TransferType == other.TransferType ||
-                this.TransferType != null &&
-                this.TransferType.Equals(other.TransferType)
+                TransferType == other.TransferType ||
+                TransferType != null &&
+                TransferType.Equals(other.TransferType)
             );
     }
 
@@ -267,39 +267,39 @@ public partial class QueueConversationEventTopicTransferResponse : IEquatable<Qu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.DateIssued != null)
+            if (DateIssued != null)
             {
-                hash = hash * 59 + this.DateIssued.GetHashCode();
+                hash = hash * 59 + DateIssued.GetHashCode();
             }
 
-            if (this.Initiator != null)
+            if (Initiator != null)
             {
-                hash = hash * 59 + this.Initiator.GetHashCode();
+                hash = hash * 59 + Initiator.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.Destination != null)
+            if (Destination != null)
             {
-                hash = hash * 59 + this.Destination.GetHashCode();
+                hash = hash * 59 + Destination.GetHashCode();
             }
 
-            if (this.TransferType != null)
+            if (TransferType != null)
             {
-                hash = hash * 59 + this.TransferType.GetHashCode();
+                hash = hash * 59 + TransferType.GetHashCode();
             }
 
             return hash;

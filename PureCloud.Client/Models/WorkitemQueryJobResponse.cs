@@ -147,7 +147,7 @@ public partial class WorkitemQueryJobResponse : IEquatable<WorkitemQueryJobRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemQueryJobResponse);
+        return Equals(obj as WorkitemQueryJobResponse);
     }
 
     /// <summary>
@@ -165,34 +165,34 @@ public partial class WorkitemQueryJobResponse : IEquatable<WorkitemQueryJobRespo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.DateStarted == other.DateStarted ||
-                this.DateStarted != null &&
-                this.DateStarted.Equals(other.DateStarted)
+                DateStarted == other.DateStarted ||
+                DateStarted != null &&
+                DateStarted.Equals(other.DateStarted)
             ) &&
             (
-                this.DateFinished == other.DateFinished ||
-                this.DateFinished != null &&
-                this.DateFinished.Equals(other.DateFinished)
+                DateFinished == other.DateFinished ||
+                DateFinished != null &&
+                DateFinished.Equals(other.DateFinished)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -207,34 +207,34 @@ public partial class WorkitemQueryJobResponse : IEquatable<WorkitemQueryJobRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.DateStarted != null)
+            if (DateStarted != null)
             {
-                hash = hash * 59 + this.DateStarted.GetHashCode();
+                hash = hash * 59 + DateStarted.GetHashCode();
             }
 
-            if (this.DateFinished != null)
+            if (DateFinished != null)
             {
-                hash = hash * 59 + this.DateFinished.GetHashCode();
+                hash = hash * 59 + DateFinished.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

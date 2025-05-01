@@ -89,7 +89,7 @@ public partial class PreprocessingRule : IEquatable<PreprocessingRule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PreprocessingRule);
+        return Equals(obj as PreprocessingRule);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class PreprocessingRule : IEquatable<PreprocessingRule>
 
         return true &&
             (
-                this.Find == other.Find ||
-                this.Find != null &&
-                this.Find.Equals(other.Find)
+                Find == other.Find ||
+                Find != null &&
+                Find.Equals(other.Find)
             ) &&
             (
-                this.ReplaceWith == other.ReplaceWith ||
-                this.ReplaceWith != null &&
-                this.ReplaceWith.Equals(other.ReplaceWith)
+                ReplaceWith == other.ReplaceWith ||
+                ReplaceWith != null &&
+                ReplaceWith.Equals(other.ReplaceWith)
             ) &&
             (
-                this.Global == other.Global ||
-                this.Global != null &&
-                this.Global.Equals(other.Global)
+                Global == other.Global ||
+                Global != null &&
+                Global.Equals(other.Global)
             ) &&
             (
-                this.IgnoreCase == other.IgnoreCase ||
-                this.IgnoreCase != null &&
-                this.IgnoreCase.Equals(other.IgnoreCase)
+                IgnoreCase == other.IgnoreCase ||
+                IgnoreCase != null &&
+                IgnoreCase.Equals(other.IgnoreCase)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class PreprocessingRule : IEquatable<PreprocessingRule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Find != null)
+            if (Find != null)
             {
-                hash = hash * 59 + this.Find.GetHashCode();
+                hash = hash * 59 + Find.GetHashCode();
             }
 
-            if (this.ReplaceWith != null)
+            if (ReplaceWith != null)
             {
-                hash = hash * 59 + this.ReplaceWith.GetHashCode();
+                hash = hash * 59 + ReplaceWith.GetHashCode();
             }
 
-            if (this.Global != null)
+            if (Global != null)
             {
-                hash = hash * 59 + this.Global.GetHashCode();
+                hash = hash * 59 + Global.GetHashCode();
             }
 
-            if (this.IgnoreCase != null)
+            if (IgnoreCase != null)
             {
-                hash = hash * 59 + this.IgnoreCase.GetHashCode();
+                hash = hash * 59 + IgnoreCase.GetHashCode();
             }
 
             return hash;

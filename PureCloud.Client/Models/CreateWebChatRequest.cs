@@ -131,7 +131,7 @@ public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateWebChatRequest);
+        return Equals(obj as CreateWebChatRequest);
     }
 
     /// <summary>
@@ -149,39 +149,39 @@ public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
 
         return true &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.Provider == other.Provider ||
-                this.Provider != null &&
-                this.Provider.Equals(other.Provider)
+                Provider == other.Provider ||
+                Provider != null &&
+                Provider.Equals(other.Provider)
             ) &&
             (
-                this.SkillIds == other.SkillIds ||
-                this.SkillIds != null &&
-                this.SkillIds.SequenceEqual(other.SkillIds)
+                SkillIds == other.SkillIds ||
+                SkillIds != null &&
+                SkillIds.SequenceEqual(other.SkillIds)
             ) &&
             (
-                this.LanguageId == other.LanguageId ||
-                this.LanguageId != null &&
-                this.LanguageId.Equals(other.LanguageId)
+                LanguageId == other.LanguageId ||
+                LanguageId != null &&
+                LanguageId.Equals(other.LanguageId)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.CustomerName == other.CustomerName ||
-                this.CustomerName != null &&
-                this.CustomerName.Equals(other.CustomerName)
+                CustomerName == other.CustomerName ||
+                CustomerName != null &&
+                CustomerName.Equals(other.CustomerName)
             );
     }
 
@@ -196,39 +196,39 @@ public partial class CreateWebChatRequest : IEquatable<CreateWebChatRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.Provider != null)
+            if (Provider != null)
             {
-                hash = hash * 59 + this.Provider.GetHashCode();
+                hash = hash * 59 + Provider.GetHashCode();
             }
 
-            if (this.SkillIds != null)
+            if (SkillIds != null)
             {
-                hash = hash * 59 + this.SkillIds.GetHashCode();
+                hash = hash * 59 + SkillIds.GetHashCode();
             }
 
-            if (this.LanguageId != null)
+            if (LanguageId != null)
             {
-                hash = hash * 59 + this.LanguageId.GetHashCode();
+                hash = hash * 59 + LanguageId.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.CustomerName != null)
+            if (CustomerName != null)
             {
-                hash = hash * 59 + this.CustomerName.GetHashCode();
+                hash = hash * 59 + CustomerName.GetHashCode();
             }
 
             return hash;

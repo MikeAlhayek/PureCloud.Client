@@ -71,7 +71,7 @@ public partial class PagingSpec : IEquatable<PagingSpec>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PagingSpec);
+        return Equals(obj as PagingSpec);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class PagingSpec : IEquatable<PagingSpec>
 
         return true &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class PagingSpec : IEquatable<PagingSpec>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
             return hash;

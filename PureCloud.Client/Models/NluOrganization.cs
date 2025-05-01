@@ -65,7 +65,7 @@ public partial class NluOrganization : IEquatable<NluOrganization>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluOrganization);
+        return Equals(obj as NluOrganization);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class NluOrganization : IEquatable<NluOrganization>
 
         return true &&
             (
-                this.Limits == other.Limits ||
-                this.Limits != null &&
-                this.Limits.SequenceEqual(other.Limits)
+                Limits == other.Limits ||
+                Limits != null &&
+                Limits.SequenceEqual(other.Limits)
             ) &&
             (
-                this.SupportedLanguagesInfo == other.SupportedLanguagesInfo ||
-                this.SupportedLanguagesInfo != null &&
-                this.SupportedLanguagesInfo.SequenceEqual(other.SupportedLanguagesInfo)
+                SupportedLanguagesInfo == other.SupportedLanguagesInfo ||
+                SupportedLanguagesInfo != null &&
+                SupportedLanguagesInfo.SequenceEqual(other.SupportedLanguagesInfo)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class NluOrganization : IEquatable<NluOrganization>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Limits != null)
+            if (Limits != null)
             {
-                hash = hash * 59 + this.Limits.GetHashCode();
+                hash = hash * 59 + Limits.GetHashCode();
             }
 
-            if (this.SupportedLanguagesInfo != null)
+            if (SupportedLanguagesInfo != null)
             {
-                hash = hash * 59 + this.SupportedLanguagesInfo.GetHashCode();
+                hash = hash * 59 + SupportedLanguagesInfo.GetHashCode();
             }
 
             return hash;

@@ -83,7 +83,7 @@ public partial class KnowledgeParseImportResult : IEquatable<KnowledgeParseImpor
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeParseImportResult);
+        return Equals(obj as KnowledgeParseImportResult);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class KnowledgeParseImportResult : IEquatable<KnowledgeParseImpor
 
         return true &&
             (
-                this.Success == other.Success ||
-                this.Success != null &&
-                this.Success.Equals(other.Success)
+                Success == other.Success ||
+                Success != null &&
+                Success.Equals(other.Success)
             ) &&
             (
-                this.Failure == other.Failure ||
-                this.Failure != null &&
-                this.Failure.Equals(other.Failure)
+                Failure == other.Failure ||
+                Failure != null &&
+                Failure.Equals(other.Failure)
             ) &&
             (
-                this.Errors == other.Errors ||
-                this.Errors != null &&
-                this.Errors.SequenceEqual(other.Errors)
+                Errors == other.Errors ||
+                Errors != null &&
+                Errors.SequenceEqual(other.Errors)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class KnowledgeParseImportResult : IEquatable<KnowledgeParseImpor
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Success != null)
+            if (Success != null)
             {
-                hash = hash * 59 + this.Success.GetHashCode();
+                hash = hash * 59 + Success.GetHashCode();
             }
 
-            if (this.Failure != null)
+            if (Failure != null)
             {
-                hash = hash * 59 + this.Failure.GetHashCode();
+                hash = hash * 59 + Failure.GetHashCode();
             }
 
-            if (this.Errors != null)
+            if (Errors != null)
             {
-                hash = hash * 59 + this.Errors.GetHashCode();
+                hash = hash * 59 + Errors.GetHashCode();
             }
 
             return hash;

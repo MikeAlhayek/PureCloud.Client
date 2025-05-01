@@ -143,7 +143,7 @@ public partial class Action : IEquatable<Action>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Action);
+        return Equals(obj as Action);
     }
 
     /// <summary>
@@ -161,49 +161,49 @@ public partial class Action : IEquatable<Action>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             ) &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.Contract == other.Contract ||
-                this.Contract != null &&
-                this.Contract.Equals(other.Contract)
+                Contract == other.Contract ||
+                Contract != null &&
+                Contract.Equals(other.Contract)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Secure == other.Secure ||
-                this.Secure != null &&
-                this.Secure.Equals(other.Secure)
+                Secure == other.Secure ||
+                Secure != null &&
+                Secure.Equals(other.Secure)
             ) &&
             (
-                this.Config == other.Config ||
-                this.Config != null &&
-                this.Config.Equals(other.Config)
+                Config == other.Config ||
+                Config != null &&
+                Config.Equals(other.Config)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -218,49 +218,49 @@ public partial class Action : IEquatable<Action>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.Contract != null)
+            if (Contract != null)
             {
-                hash = hash * 59 + this.Contract.GetHashCode();
+                hash = hash * 59 + Contract.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Secure != null)
+            if (Secure != null)
             {
-                hash = hash * 59 + this.Secure.GetHashCode();
+                hash = hash * 59 + Secure.GetHashCode();
             }
 
-            if (this.Config != null)
+            if (Config != null)
             {
-                hash = hash * 59 + this.Config.GetHashCode();
+                hash = hash * 59 + Config.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

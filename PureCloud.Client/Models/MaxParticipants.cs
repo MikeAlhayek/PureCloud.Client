@@ -53,7 +53,7 @@ public partial class MaxParticipants : IEquatable<MaxParticipants>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MaxParticipants);
+        return Equals(obj as MaxParticipants);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class MaxParticipants : IEquatable<MaxParticipants>
 
         return true &&
             (
-                this._MaxParticipants == other._MaxParticipants ||
-                this._MaxParticipants != null &&
-                this._MaxParticipants.Equals(other._MaxParticipants)
+                _MaxParticipants == other._MaxParticipants ||
+                _MaxParticipants != null &&
+                _MaxParticipants.Equals(other._MaxParticipants)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class MaxParticipants : IEquatable<MaxParticipants>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this._MaxParticipants != null)
+            if (_MaxParticipants != null)
             {
-                hash = hash * 59 + this._MaxParticipants.GetHashCode();
+                hash = hash * 59 + _MaxParticipants.GetHashCode();
             }
 
             return hash;

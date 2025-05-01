@@ -97,7 +97,7 @@ public partial class VoicemailUserPolicy : IEquatable<VoicemailUserPolicy>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VoicemailUserPolicy);
+        return Equals(obj as VoicemailUserPolicy);
     }
 
     /// <summary>
@@ -115,29 +115,29 @@ public partial class VoicemailUserPolicy : IEquatable<VoicemailUserPolicy>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.AlertTimeoutSeconds == other.AlertTimeoutSeconds ||
-                this.AlertTimeoutSeconds != null &&
-                this.AlertTimeoutSeconds.Equals(other.AlertTimeoutSeconds)
+                AlertTimeoutSeconds == other.AlertTimeoutSeconds ||
+                AlertTimeoutSeconds != null &&
+                AlertTimeoutSeconds.Equals(other.AlertTimeoutSeconds)
             ) &&
             (
-                this.Pin == other.Pin ||
-                this.Pin != null &&
-                this.Pin.Equals(other.Pin)
+                Pin == other.Pin ||
+                Pin != null &&
+                Pin.Equals(other.Pin)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             ) &&
             (
-                this.SendEmailNotifications == other.SendEmailNotifications ||
-                this.SendEmailNotifications != null &&
-                this.SendEmailNotifications.Equals(other.SendEmailNotifications)
+                SendEmailNotifications == other.SendEmailNotifications ||
+                SendEmailNotifications != null &&
+                SendEmailNotifications.Equals(other.SendEmailNotifications)
             );
     }
 
@@ -152,29 +152,29 @@ public partial class VoicemailUserPolicy : IEquatable<VoicemailUserPolicy>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.AlertTimeoutSeconds != null)
+            if (AlertTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.AlertTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + AlertTimeoutSeconds.GetHashCode();
             }
 
-            if (this.Pin != null)
+            if (Pin != null)
             {
-                hash = hash * 59 + this.Pin.GetHashCode();
+                hash = hash * 59 + Pin.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
-            if (this.SendEmailNotifications != null)
+            if (SendEmailNotifications != null)
             {
-                hash = hash * 59 + this.SendEmailNotifications.GetHashCode();
+                hash = hash * 59 + SendEmailNotifications.GetHashCode();
             }
 
             return hash;

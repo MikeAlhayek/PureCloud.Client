@@ -109,7 +109,7 @@ public partial class ExportDetails : IEquatable<ExportDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExportDetails);
+        return Equals(obj as ExportDetails);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class ExportDetails : IEquatable<ExportDetails>
 
         return true &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             ) &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.ExportType == other.ExportType ||
-                this.ExportType != null &&
-                this.ExportType.Equals(other.ExportType)
+                ExportType == other.ExportType ||
+                ExportType != null &&
+                ExportType.Equals(other.ExportType)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class ExportDetails : IEquatable<ExportDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.ExportType != null)
+            if (ExportType != null)
             {
-                hash = hash * 59 + this.ExportType.GetHashCode();
+                hash = hash * 59 + ExportType.GetHashCode();
             }
 
             return hash;

@@ -103,7 +103,7 @@ public partial class VerificationResult : IEquatable<VerificationResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VerificationResult);
+        return Equals(obj as VerificationResult);
     }
 
     /// <summary>
@@ -121,14 +121,14 @@ public partial class VerificationResult : IEquatable<VerificationResult>
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Records == other.Records ||
-                this.Records != null &&
-                this.Records.SequenceEqual(other.Records)
+                Records == other.Records ||
+                Records != null &&
+                Records.SequenceEqual(other.Records)
             );
     }
 
@@ -143,14 +143,14 @@ public partial class VerificationResult : IEquatable<VerificationResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Records != null)
+            if (Records != null)
             {
-                hash = hash * 59 + this.Records.GetHashCode();
+                hash = hash * 59 + Records.GetHashCode();
             }
 
             return hash;

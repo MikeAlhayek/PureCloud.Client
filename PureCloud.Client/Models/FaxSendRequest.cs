@@ -194,7 +194,7 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FaxSendRequest);
+        return Equals(obj as FaxSendRequest);
     }
 
     /// <summary>
@@ -212,49 +212,49 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Addresses == other.Addresses ||
-                this.Addresses != null &&
-                this.Addresses.SequenceEqual(other.Addresses)
+                Addresses == other.Addresses ||
+                Addresses != null &&
+                Addresses.SequenceEqual(other.Addresses)
             ) &&
             (
-                this.DocumentId == other.DocumentId ||
-                this.DocumentId != null &&
-                this.DocumentId.Equals(other.DocumentId)
+                DocumentId == other.DocumentId ||
+                DocumentId != null &&
+                DocumentId.Equals(other.DocumentId)
             ) &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.Workspace == other.Workspace ||
-                this.Workspace != null &&
-                this.Workspace.Equals(other.Workspace)
+                Workspace == other.Workspace ||
+                Workspace != null &&
+                Workspace.Equals(other.Workspace)
             ) &&
             (
-                this.CoverSheet == other.CoverSheet ||
-                this.CoverSheet != null &&
-                this.CoverSheet.Equals(other.CoverSheet)
+                CoverSheet == other.CoverSheet ||
+                CoverSheet != null &&
+                CoverSheet.Equals(other.CoverSheet)
             ) &&
             (
-                this.TimeZoneOffsetMinutes == other.TimeZoneOffsetMinutes ||
-                this.TimeZoneOffsetMinutes != null &&
-                this.TimeZoneOffsetMinutes.Equals(other.TimeZoneOffsetMinutes)
+                TimeZoneOffsetMinutes == other.TimeZoneOffsetMinutes ||
+                TimeZoneOffsetMinutes != null &&
+                TimeZoneOffsetMinutes.Equals(other.TimeZoneOffsetMinutes)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -269,49 +269,49 @@ public partial class FaxSendRequest : IEquatable<FaxSendRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Addresses != null)
+            if (Addresses != null)
             {
-                hash = hash * 59 + this.Addresses.GetHashCode();
+                hash = hash * 59 + Addresses.GetHashCode();
             }
 
-            if (this.DocumentId != null)
+            if (DocumentId != null)
             {
-                hash = hash * 59 + this.DocumentId.GetHashCode();
+                hash = hash * 59 + DocumentId.GetHashCode();
             }
 
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.Workspace != null)
+            if (Workspace != null)
             {
-                hash = hash * 59 + this.Workspace.GetHashCode();
+                hash = hash * 59 + Workspace.GetHashCode();
             }
 
-            if (this.CoverSheet != null)
+            if (CoverSheet != null)
             {
-                hash = hash * 59 + this.CoverSheet.GetHashCode();
+                hash = hash * 59 + CoverSheet.GetHashCode();
             }
 
-            if (this.TimeZoneOffsetMinutes != null)
+            if (TimeZoneOffsetMinutes != null)
             {
-                hash = hash * 59 + this.TimeZoneOffsetMinutes.GetHashCode();
+                hash = hash * 59 + TimeZoneOffsetMinutes.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

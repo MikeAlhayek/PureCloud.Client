@@ -307,7 +307,7 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShiftTradeResponse);
+        return Equals(obj as ShiftTradeResponse);
     }
 
     /// <summary>
@@ -325,94 +325,94 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             ) &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.InitiatingUser == other.InitiatingUser ||
-                this.InitiatingUser != null &&
-                this.InitiatingUser.Equals(other.InitiatingUser)
+                InitiatingUser == other.InitiatingUser ||
+                InitiatingUser != null &&
+                InitiatingUser.Equals(other.InitiatingUser)
             ) &&
             (
-                this.InitiatingShiftId == other.InitiatingShiftId ||
-                this.InitiatingShiftId != null &&
-                this.InitiatingShiftId.Equals(other.InitiatingShiftId)
+                InitiatingShiftId == other.InitiatingShiftId ||
+                InitiatingShiftId != null &&
+                InitiatingShiftId.Equals(other.InitiatingShiftId)
             ) &&
             (
-                this.InitiatingShiftStart == other.InitiatingShiftStart ||
-                this.InitiatingShiftStart != null &&
-                this.InitiatingShiftStart.Equals(other.InitiatingShiftStart)
+                InitiatingShiftStart == other.InitiatingShiftStart ||
+                InitiatingShiftStart != null &&
+                InitiatingShiftStart.Equals(other.InitiatingShiftStart)
             ) &&
             (
-                this.InitiatingShiftEnd == other.InitiatingShiftEnd ||
-                this.InitiatingShiftEnd != null &&
-                this.InitiatingShiftEnd.Equals(other.InitiatingShiftEnd)
+                InitiatingShiftEnd == other.InitiatingShiftEnd ||
+                InitiatingShiftEnd != null &&
+                InitiatingShiftEnd.Equals(other.InitiatingShiftEnd)
             ) &&
             (
-                this.ReceivingUser == other.ReceivingUser ||
-                this.ReceivingUser != null &&
-                this.ReceivingUser.Equals(other.ReceivingUser)
+                ReceivingUser == other.ReceivingUser ||
+                ReceivingUser != null &&
+                ReceivingUser.Equals(other.ReceivingUser)
             ) &&
             (
-                this.ReceivingShiftId == other.ReceivingShiftId ||
-                this.ReceivingShiftId != null &&
-                this.ReceivingShiftId.Equals(other.ReceivingShiftId)
+                ReceivingShiftId == other.ReceivingShiftId ||
+                ReceivingShiftId != null &&
+                ReceivingShiftId.Equals(other.ReceivingShiftId)
             ) &&
             (
-                this.ReceivingShiftStart == other.ReceivingShiftStart ||
-                this.ReceivingShiftStart != null &&
-                this.ReceivingShiftStart.Equals(other.ReceivingShiftStart)
+                ReceivingShiftStart == other.ReceivingShiftStart ||
+                ReceivingShiftStart != null &&
+                ReceivingShiftStart.Equals(other.ReceivingShiftStart)
             ) &&
             (
-                this.ReceivingShiftEnd == other.ReceivingShiftEnd ||
-                this.ReceivingShiftEnd != null &&
-                this.ReceivingShiftEnd.Equals(other.ReceivingShiftEnd)
+                ReceivingShiftEnd == other.ReceivingShiftEnd ||
+                ReceivingShiftEnd != null &&
+                ReceivingShiftEnd.Equals(other.ReceivingShiftEnd)
             ) &&
             (
-                this.Expiration == other.Expiration ||
-                this.Expiration != null &&
-                this.Expiration.Equals(other.Expiration)
+                Expiration == other.Expiration ||
+                Expiration != null &&
+                Expiration.Equals(other.Expiration)
             ) &&
             (
-                this.OneSided == other.OneSided ||
-                this.OneSided != null &&
-                this.OneSided.Equals(other.OneSided)
+                OneSided == other.OneSided ||
+                OneSided != null &&
+                OneSided.Equals(other.OneSided)
             ) &&
             (
-                this.AcceptableIntervals == other.AcceptableIntervals ||
-                this.AcceptableIntervals != null &&
-                this.AcceptableIntervals.SequenceEqual(other.AcceptableIntervals)
+                AcceptableIntervals == other.AcceptableIntervals ||
+                AcceptableIntervals != null &&
+                AcceptableIntervals.SequenceEqual(other.AcceptableIntervals)
             ) &&
             (
-                this.ReviewedBy == other.ReviewedBy ||
-                this.ReviewedBy != null &&
-                this.ReviewedBy.Equals(other.ReviewedBy)
+                ReviewedBy == other.ReviewedBy ||
+                ReviewedBy != null &&
+                ReviewedBy.Equals(other.ReviewedBy)
             ) &&
             (
-                this.ReviewedDate == other.ReviewedDate ||
-                this.ReviewedDate != null &&
-                this.ReviewedDate.Equals(other.ReviewedDate)
+                ReviewedDate == other.ReviewedDate ||
+                ReviewedDate != null &&
+                ReviewedDate.Equals(other.ReviewedDate)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -427,94 +427,94 @@ public partial class ShiftTradeResponse : IEquatable<ShiftTradeResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.InitiatingUser != null)
+            if (InitiatingUser != null)
             {
-                hash = hash * 59 + this.InitiatingUser.GetHashCode();
+                hash = hash * 59 + InitiatingUser.GetHashCode();
             }
 
-            if (this.InitiatingShiftId != null)
+            if (InitiatingShiftId != null)
             {
-                hash = hash * 59 + this.InitiatingShiftId.GetHashCode();
+                hash = hash * 59 + InitiatingShiftId.GetHashCode();
             }
 
-            if (this.InitiatingShiftStart != null)
+            if (InitiatingShiftStart != null)
             {
-                hash = hash * 59 + this.InitiatingShiftStart.GetHashCode();
+                hash = hash * 59 + InitiatingShiftStart.GetHashCode();
             }
 
-            if (this.InitiatingShiftEnd != null)
+            if (InitiatingShiftEnd != null)
             {
-                hash = hash * 59 + this.InitiatingShiftEnd.GetHashCode();
+                hash = hash * 59 + InitiatingShiftEnd.GetHashCode();
             }
 
-            if (this.ReceivingUser != null)
+            if (ReceivingUser != null)
             {
-                hash = hash * 59 + this.ReceivingUser.GetHashCode();
+                hash = hash * 59 + ReceivingUser.GetHashCode();
             }
 
-            if (this.ReceivingShiftId != null)
+            if (ReceivingShiftId != null)
             {
-                hash = hash * 59 + this.ReceivingShiftId.GetHashCode();
+                hash = hash * 59 + ReceivingShiftId.GetHashCode();
             }
 
-            if (this.ReceivingShiftStart != null)
+            if (ReceivingShiftStart != null)
             {
-                hash = hash * 59 + this.ReceivingShiftStart.GetHashCode();
+                hash = hash * 59 + ReceivingShiftStart.GetHashCode();
             }
 
-            if (this.ReceivingShiftEnd != null)
+            if (ReceivingShiftEnd != null)
             {
-                hash = hash * 59 + this.ReceivingShiftEnd.GetHashCode();
+                hash = hash * 59 + ReceivingShiftEnd.GetHashCode();
             }
 
-            if (this.Expiration != null)
+            if (Expiration != null)
             {
-                hash = hash * 59 + this.Expiration.GetHashCode();
+                hash = hash * 59 + Expiration.GetHashCode();
             }
 
-            if (this.OneSided != null)
+            if (OneSided != null)
             {
-                hash = hash * 59 + this.OneSided.GetHashCode();
+                hash = hash * 59 + OneSided.GetHashCode();
             }
 
-            if (this.AcceptableIntervals != null)
+            if (AcceptableIntervals != null)
             {
-                hash = hash * 59 + this.AcceptableIntervals.GetHashCode();
+                hash = hash * 59 + AcceptableIntervals.GetHashCode();
             }
 
-            if (this.ReviewedBy != null)
+            if (ReviewedBy != null)
             {
-                hash = hash * 59 + this.ReviewedBy.GetHashCode();
+                hash = hash * 59 + ReviewedBy.GetHashCode();
             }
 
-            if (this.ReviewedDate != null)
+            if (ReviewedDate != null)
             {
-                hash = hash * 59 + this.ReviewedDate.GetHashCode();
+                hash = hash * 59 + ReviewedDate.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

@@ -145,7 +145,7 @@ public partial class JourneyPattern : IEquatable<JourneyPattern>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyPattern);
+        return Equals(obj as JourneyPattern);
     }
 
     /// <summary>
@@ -163,29 +163,29 @@ public partial class JourneyPattern : IEquatable<JourneyPattern>
 
         return true &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.SequenceEqual(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.SequenceEqual(other.Criteria)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.StreamType == other.StreamType ||
-                this.StreamType != null &&
-                this.StreamType.Equals(other.StreamType)
+                StreamType == other.StreamType ||
+                StreamType != null &&
+                StreamType.Equals(other.StreamType)
             ) &&
             (
-                this.SessionType == other.SessionType ||
-                this.SessionType != null &&
-                this.SessionType.Equals(other.SessionType)
+                SessionType == other.SessionType ||
+                SessionType != null &&
+                SessionType.Equals(other.SessionType)
             ) &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             );
     }
 
@@ -200,29 +200,29 @@ public partial class JourneyPattern : IEquatable<JourneyPattern>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.StreamType != null)
+            if (StreamType != null)
             {
-                hash = hash * 59 + this.StreamType.GetHashCode();
+                hash = hash * 59 + StreamType.GetHashCode();
             }
 
-            if (this.SessionType != null)
+            if (SessionType != null)
             {
-                hash = hash * 59 + this.SessionType.GetHashCode();
+                hash = hash * 59 + SessionType.GetHashCode();
             }
 
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
             return hash;

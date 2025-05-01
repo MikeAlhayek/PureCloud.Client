@@ -59,7 +59,7 @@ public partial class RequestContextPattern : IEquatable<RequestContextPattern>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RequestContextPattern);
+        return Equals(obj as RequestContextPattern);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class RequestContextPattern : IEquatable<RequestContextPattern>
 
         return true &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.SequenceEqual(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.SequenceEqual(other.Criteria)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class RequestContextPattern : IEquatable<RequestContextPattern>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
             return hash;

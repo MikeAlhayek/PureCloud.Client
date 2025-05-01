@@ -375,7 +375,7 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PostTextRequest);
+        return Equals(obj as PostTextRequest);
     }
 
     /// <summary>
@@ -393,74 +393,74 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
 
         return true &&
             (
-                this.BotId == other.BotId ||
-                this.BotId != null &&
-                this.BotId.Equals(other.BotId)
+                BotId == other.BotId ||
+                BotId != null &&
+                BotId.Equals(other.BotId)
             ) &&
             (
-                this.BotAlias == other.BotAlias ||
-                this.BotAlias != null &&
-                this.BotAlias.Equals(other.BotAlias)
+                BotAlias == other.BotAlias ||
+                BotAlias != null &&
+                BotAlias.Equals(other.BotAlias)
             ) &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             ) &&
             (
-                this.BotSessionId == other.BotSessionId ||
-                this.BotSessionId != null &&
-                this.BotSessionId.Equals(other.BotSessionId)
+                BotSessionId == other.BotSessionId ||
+                BotSessionId != null &&
+                BotSessionId.Equals(other.BotSessionId)
             ) &&
             (
-                this.PostTextMessage == other.PostTextMessage ||
-                this.PostTextMessage != null &&
-                this.PostTextMessage.Equals(other.PostTextMessage)
+                PostTextMessage == other.PostTextMessage ||
+                PostTextMessage != null &&
+                PostTextMessage.Equals(other.PostTextMessage)
             ) &&
             (
-                this.LanguageCode == other.LanguageCode ||
-                this.LanguageCode != null &&
-                this.LanguageCode.Equals(other.LanguageCode)
+                LanguageCode == other.LanguageCode ||
+                LanguageCode != null &&
+                LanguageCode.Equals(other.LanguageCode)
             ) &&
             (
-                this.BotSessionTimeoutMinutes == other.BotSessionTimeoutMinutes ||
-                this.BotSessionTimeoutMinutes != null &&
-                this.BotSessionTimeoutMinutes.Equals(other.BotSessionTimeoutMinutes)
+                BotSessionTimeoutMinutes == other.BotSessionTimeoutMinutes ||
+                BotSessionTimeoutMinutes != null &&
+                BotSessionTimeoutMinutes.Equals(other.BotSessionTimeoutMinutes)
             ) &&
             (
-                this.BotChannels == other.BotChannels ||
-                this.BotChannels != null &&
-                this.BotChannels.SequenceEqual(other.BotChannels)
+                BotChannels == other.BotChannels ||
+                BotChannels != null &&
+                BotChannels.SequenceEqual(other.BotChannels)
             ) &&
             (
-                this.BotCorrelationId == other.BotCorrelationId ||
-                this.BotCorrelationId != null &&
-                this.BotCorrelationId.Equals(other.BotCorrelationId)
+                BotCorrelationId == other.BotCorrelationId ||
+                BotCorrelationId != null &&
+                BotCorrelationId.Equals(other.BotCorrelationId)
             ) &&
             (
-                this.MessagingPlatformType == other.MessagingPlatformType ||
-                this.MessagingPlatformType != null &&
-                this.MessagingPlatformType.Equals(other.MessagingPlatformType)
+                MessagingPlatformType == other.MessagingPlatformType ||
+                MessagingPlatformType != null &&
+                MessagingPlatformType.Equals(other.MessagingPlatformType)
             ) &&
             (
-                this.AmazonLexRequest == other.AmazonLexRequest ||
-                this.AmazonLexRequest != null &&
-                this.AmazonLexRequest.Equals(other.AmazonLexRequest)
+                AmazonLexRequest == other.AmazonLexRequest ||
+                AmazonLexRequest != null &&
+                AmazonLexRequest.Equals(other.AmazonLexRequest)
             ) &&
             (
-                this.GoogleDialogflow == other.GoogleDialogflow ||
-                this.GoogleDialogflow != null &&
-                this.GoogleDialogflow.Equals(other.GoogleDialogflow)
+                GoogleDialogflow == other.GoogleDialogflow ||
+                GoogleDialogflow != null &&
+                GoogleDialogflow.Equals(other.GoogleDialogflow)
             ) &&
             (
-                this.GenesysBotConnector == other.GenesysBotConnector ||
-                this.GenesysBotConnector != null &&
-                this.GenesysBotConnector.Equals(other.GenesysBotConnector)
+                GenesysBotConnector == other.GenesysBotConnector ||
+                GenesysBotConnector != null &&
+                GenesysBotConnector.Equals(other.GenesysBotConnector)
             ) &&
             (
-                this.NuanceMixDlg == other.NuanceMixDlg ||
-                this.NuanceMixDlg != null &&
-                this.NuanceMixDlg.Equals(other.NuanceMixDlg)
+                NuanceMixDlg == other.NuanceMixDlg ||
+                NuanceMixDlg != null &&
+                NuanceMixDlg.Equals(other.NuanceMixDlg)
             );
     }
 
@@ -475,74 +475,74 @@ public partial class PostTextRequest : IEquatable<PostTextRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BotId != null)
+            if (BotId != null)
             {
-                hash = hash * 59 + this.BotId.GetHashCode();
+                hash = hash * 59 + BotId.GetHashCode();
             }
 
-            if (this.BotAlias != null)
+            if (BotAlias != null)
             {
-                hash = hash * 59 + this.BotAlias.GetHashCode();
+                hash = hash * 59 + BotAlias.GetHashCode();
             }
 
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
-            if (this.BotSessionId != null)
+            if (BotSessionId != null)
             {
-                hash = hash * 59 + this.BotSessionId.GetHashCode();
+                hash = hash * 59 + BotSessionId.GetHashCode();
             }
 
-            if (this.PostTextMessage != null)
+            if (PostTextMessage != null)
             {
-                hash = hash * 59 + this.PostTextMessage.GetHashCode();
+                hash = hash * 59 + PostTextMessage.GetHashCode();
             }
 
-            if (this.LanguageCode != null)
+            if (LanguageCode != null)
             {
-                hash = hash * 59 + this.LanguageCode.GetHashCode();
+                hash = hash * 59 + LanguageCode.GetHashCode();
             }
 
-            if (this.BotSessionTimeoutMinutes != null)
+            if (BotSessionTimeoutMinutes != null)
             {
-                hash = hash * 59 + this.BotSessionTimeoutMinutes.GetHashCode();
+                hash = hash * 59 + BotSessionTimeoutMinutes.GetHashCode();
             }
 
-            if (this.BotChannels != null)
+            if (BotChannels != null)
             {
-                hash = hash * 59 + this.BotChannels.GetHashCode();
+                hash = hash * 59 + BotChannels.GetHashCode();
             }
 
-            if (this.BotCorrelationId != null)
+            if (BotCorrelationId != null)
             {
-                hash = hash * 59 + this.BotCorrelationId.GetHashCode();
+                hash = hash * 59 + BotCorrelationId.GetHashCode();
             }
 
-            if (this.MessagingPlatformType != null)
+            if (MessagingPlatformType != null)
             {
-                hash = hash * 59 + this.MessagingPlatformType.GetHashCode();
+                hash = hash * 59 + MessagingPlatformType.GetHashCode();
             }
 
-            if (this.AmazonLexRequest != null)
+            if (AmazonLexRequest != null)
             {
-                hash = hash * 59 + this.AmazonLexRequest.GetHashCode();
+                hash = hash * 59 + AmazonLexRequest.GetHashCode();
             }
 
-            if (this.GoogleDialogflow != null)
+            if (GoogleDialogflow != null)
             {
-                hash = hash * 59 + this.GoogleDialogflow.GetHashCode();
+                hash = hash * 59 + GoogleDialogflow.GetHashCode();
             }
 
-            if (this.GenesysBotConnector != null)
+            if (GenesysBotConnector != null)
             {
-                hash = hash * 59 + this.GenesysBotConnector.GetHashCode();
+                hash = hash * 59 + GenesysBotConnector.GetHashCode();
             }
 
-            if (this.NuanceMixDlg != null)
+            if (NuanceMixDlg != null)
             {
-                hash = hash * 59 + this.NuanceMixDlg.GetHashCode();
+                hash = hash * 59 + NuanceMixDlg.GetHashCode();
             }
 
             return hash;

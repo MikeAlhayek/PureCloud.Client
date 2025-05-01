@@ -121,7 +121,7 @@ public partial class LastAttemptByColumnConditionSettings : IEquatable<LastAttem
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LastAttemptByColumnConditionSettings);
+        return Equals(obj as LastAttemptByColumnConditionSettings);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class LastAttemptByColumnConditionSettings : IEquatable<LastAttem
 
         return true &&
             (
-                this.EmailColumnName == other.EmailColumnName ||
-                this.EmailColumnName != null &&
-                this.EmailColumnName.Equals(other.EmailColumnName)
+                EmailColumnName == other.EmailColumnName ||
+                EmailColumnName != null &&
+                EmailColumnName.Equals(other.EmailColumnName)
             ) &&
             (
-                this.SmsColumnName == other.SmsColumnName ||
-                this.SmsColumnName != null &&
-                this.SmsColumnName.Equals(other.SmsColumnName)
+                SmsColumnName == other.SmsColumnName ||
+                SmsColumnName != null &&
+                SmsColumnName.Equals(other.SmsColumnName)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class LastAttemptByColumnConditionSettings : IEquatable<LastAttem
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EmailColumnName != null)
+            if (EmailColumnName != null)
             {
-                hash = hash * 59 + this.EmailColumnName.GetHashCode();
+                hash = hash * 59 + EmailColumnName.GetHashCode();
             }
 
-            if (this.SmsColumnName != null)
+            if (SmsColumnName != null)
             {
-                hash = hash * 59 + this.SmsColumnName.GetHashCode();
+                hash = hash * 59 + SmsColumnName.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

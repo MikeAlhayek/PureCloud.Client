@@ -86,7 +86,7 @@ public partial class VmPairingInfo : IEquatable<VmPairingInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VmPairingInfo);
+        return Equals(obj as VmPairingInfo);
     }
 
     /// <summary>
@@ -104,24 +104,24 @@ public partial class VmPairingInfo : IEquatable<VmPairingInfo>
 
         return true &&
             (
-                this.MetaData == other.MetaData ||
-                this.MetaData != null &&
-                this.MetaData.Equals(other.MetaData)
+                MetaData == other.MetaData ||
+                MetaData != null &&
+                MetaData.Equals(other.MetaData)
             ) &&
             (
-                this.EdgeId == other.EdgeId ||
-                this.EdgeId != null &&
-                this.EdgeId.Equals(other.EdgeId)
+                EdgeId == other.EdgeId ||
+                EdgeId != null &&
+                EdgeId.Equals(other.EdgeId)
             ) &&
             (
-                this.AuthToken == other.AuthToken ||
-                this.AuthToken != null &&
-                this.AuthToken.Equals(other.AuthToken)
+                AuthToken == other.AuthToken ||
+                AuthToken != null &&
+                AuthToken.Equals(other.AuthToken)
             ) &&
             (
-                this.OrgId == other.OrgId ||
-                this.OrgId != null &&
-                this.OrgId.Equals(other.OrgId)
+                OrgId == other.OrgId ||
+                OrgId != null &&
+                OrgId.Equals(other.OrgId)
             );
     }
 
@@ -136,24 +136,24 @@ public partial class VmPairingInfo : IEquatable<VmPairingInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MetaData != null)
+            if (MetaData != null)
             {
-                hash = hash * 59 + this.MetaData.GetHashCode();
+                hash = hash * 59 + MetaData.GetHashCode();
             }
 
-            if (this.EdgeId != null)
+            if (EdgeId != null)
             {
-                hash = hash * 59 + this.EdgeId.GetHashCode();
+                hash = hash * 59 + EdgeId.GetHashCode();
             }
 
-            if (this.AuthToken != null)
+            if (AuthToken != null)
             {
-                hash = hash * 59 + this.AuthToken.GetHashCode();
+                hash = hash * 59 + AuthToken.GetHashCode();
             }
 
-            if (this.OrgId != null)
+            if (OrgId != null)
             {
-                hash = hash * 59 + this.OrgId.GetHashCode();
+                hash = hash * 59 + OrgId.GetHashCode();
             }
 
             return hash;

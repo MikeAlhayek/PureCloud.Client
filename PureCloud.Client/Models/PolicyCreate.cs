@@ -183,7 +183,7 @@ public partial class PolicyCreate : IEquatable<PolicyCreate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PolicyCreate);
+        return Equals(obj as PolicyCreate);
     }
 
     /// <summary>
@@ -201,64 +201,64 @@ public partial class PolicyCreate : IEquatable<PolicyCreate>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             ) &&
             (
-                this.Order == other.Order ||
-                this.Order != null &&
-                this.Order.Equals(other.Order)
+                Order == other.Order ||
+                Order != null &&
+                Order.Equals(other.Order)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.MediaPolicies == other.MediaPolicies ||
-                this.MediaPolicies != null &&
-                this.MediaPolicies.Equals(other.MediaPolicies)
+                MediaPolicies == other.MediaPolicies ||
+                MediaPolicies != null &&
+                MediaPolicies.Equals(other.MediaPolicies)
             ) &&
             (
-                this.Conditions == other.Conditions ||
-                this.Conditions != null &&
-                this.Conditions.Equals(other.Conditions)
+                Conditions == other.Conditions ||
+                Conditions != null &&
+                Conditions.Equals(other.Conditions)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.Equals(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.Equals(other.Actions)
             ) &&
             (
-                this.PolicyErrors == other.PolicyErrors ||
-                this.PolicyErrors != null &&
-                this.PolicyErrors.Equals(other.PolicyErrors)
+                PolicyErrors == other.PolicyErrors ||
+                PolicyErrors != null &&
+                PolicyErrors.Equals(other.PolicyErrors)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -273,64 +273,64 @@ public partial class PolicyCreate : IEquatable<PolicyCreate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
-            if (this.Order != null)
+            if (Order != null)
             {
-                hash = hash * 59 + this.Order.GetHashCode();
+                hash = hash * 59 + Order.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.MediaPolicies != null)
+            if (MediaPolicies != null)
             {
-                hash = hash * 59 + this.MediaPolicies.GetHashCode();
+                hash = hash * 59 + MediaPolicies.GetHashCode();
             }
 
-            if (this.Conditions != null)
+            if (Conditions != null)
             {
-                hash = hash * 59 + this.Conditions.GetHashCode();
+                hash = hash * 59 + Conditions.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
-            if (this.PolicyErrors != null)
+            if (PolicyErrors != null)
             {
-                hash = hash * 59 + this.PolicyErrors.GetHashCode();
+                hash = hash * 59 + PolicyErrors.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

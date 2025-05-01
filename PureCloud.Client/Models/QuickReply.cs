@@ -121,7 +121,7 @@ public partial class QuickReply : IEquatable<QuickReply>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QuickReply);
+        return Equals(obj as QuickReply);
     }
 
     /// <summary>
@@ -139,29 +139,29 @@ public partial class QuickReply : IEquatable<QuickReply>
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Payload == other.Payload ||
-                this.Payload != null &&
-                this.Payload.Equals(other.Payload)
+                Payload == other.Payload ||
+                Payload != null &&
+                Payload.Equals(other.Payload)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.IsSelected == other.IsSelected ||
-                this.IsSelected != null &&
-                this.IsSelected.Equals(other.IsSelected)
+                IsSelected == other.IsSelected ||
+                IsSelected != null &&
+                IsSelected.Equals(other.IsSelected)
             );
     }
 
@@ -176,29 +176,29 @@ public partial class QuickReply : IEquatable<QuickReply>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Payload != null)
+            if (Payload != null)
             {
-                hash = hash * 59 + this.Payload.GetHashCode();
+                hash = hash * 59 + Payload.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.IsSelected != null)
+            if (IsSelected != null)
             {
-                hash = hash * 59 + this.IsSelected.GetHashCode();
+                hash = hash * 59 + IsSelected.GetHashCode();
             }
 
             return hash;

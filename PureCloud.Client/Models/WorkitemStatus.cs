@@ -212,7 +212,7 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemStatus);
+        return Equals(obj as WorkitemStatus);
     }
 
     /// <summary>
@@ -230,59 +230,59 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.DestinationStatuses == other.DestinationStatuses ||
-                this.DestinationStatuses != null &&
-                this.DestinationStatuses.SequenceEqual(other.DestinationStatuses)
+                DestinationStatuses == other.DestinationStatuses ||
+                DestinationStatuses != null &&
+                DestinationStatuses.SequenceEqual(other.DestinationStatuses)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DefaultDestinationStatus == other.DefaultDestinationStatus ||
-                this.DefaultDestinationStatus != null &&
-                this.DefaultDestinationStatus.Equals(other.DefaultDestinationStatus)
+                DefaultDestinationStatus == other.DefaultDestinationStatus ||
+                DefaultDestinationStatus != null &&
+                DefaultDestinationStatus.Equals(other.DefaultDestinationStatus)
             ) &&
             (
-                this.StatusTransitionDelaySeconds == other.StatusTransitionDelaySeconds ||
-                this.StatusTransitionDelaySeconds != null &&
-                this.StatusTransitionDelaySeconds.Equals(other.StatusTransitionDelaySeconds)
+                StatusTransitionDelaySeconds == other.StatusTransitionDelaySeconds ||
+                StatusTransitionDelaySeconds != null &&
+                StatusTransitionDelaySeconds.Equals(other.StatusTransitionDelaySeconds)
             ) &&
             (
-                this.StatusTransitionTime == other.StatusTransitionTime ||
-                this.StatusTransitionTime != null &&
-                this.StatusTransitionTime.Equals(other.StatusTransitionTime)
+                StatusTransitionTime == other.StatusTransitionTime ||
+                StatusTransitionTime != null &&
+                StatusTransitionTime.Equals(other.StatusTransitionTime)
             ) &&
             (
-                this.Worktype == other.Worktype ||
-                this.Worktype != null &&
-                this.Worktype.Equals(other.Worktype)
+                Worktype == other.Worktype ||
+                Worktype != null &&
+                Worktype.Equals(other.Worktype)
             ) &&
             (
-                this.AutoTerminateWorkitem == other.AutoTerminateWorkitem ||
-                this.AutoTerminateWorkitem != null &&
-                this.AutoTerminateWorkitem.Equals(other.AutoTerminateWorkitem)
+                AutoTerminateWorkitem == other.AutoTerminateWorkitem ||
+                AutoTerminateWorkitem != null &&
+                AutoTerminateWorkitem.Equals(other.AutoTerminateWorkitem)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -297,59 +297,59 @@ public partial class WorkitemStatus : IEquatable<WorkitemStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.DestinationStatuses != null)
+            if (DestinationStatuses != null)
             {
-                hash = hash * 59 + this.DestinationStatuses.GetHashCode();
+                hash = hash * 59 + DestinationStatuses.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DefaultDestinationStatus != null)
+            if (DefaultDestinationStatus != null)
             {
-                hash = hash * 59 + this.DefaultDestinationStatus.GetHashCode();
+                hash = hash * 59 + DefaultDestinationStatus.GetHashCode();
             }
 
-            if (this.StatusTransitionDelaySeconds != null)
+            if (StatusTransitionDelaySeconds != null)
             {
-                hash = hash * 59 + this.StatusTransitionDelaySeconds.GetHashCode();
+                hash = hash * 59 + StatusTransitionDelaySeconds.GetHashCode();
             }
 
-            if (this.StatusTransitionTime != null)
+            if (StatusTransitionTime != null)
             {
-                hash = hash * 59 + this.StatusTransitionTime.GetHashCode();
+                hash = hash * 59 + StatusTransitionTime.GetHashCode();
             }
 
-            if (this.Worktype != null)
+            if (Worktype != null)
             {
-                hash = hash * 59 + this.Worktype.GetHashCode();
+                hash = hash * 59 + Worktype.GetHashCode();
             }
 
-            if (this.AutoTerminateWorkitem != null)
+            if (AutoTerminateWorkitem != null)
             {
-                hash = hash * 59 + this.AutoTerminateWorkitem.GetHashCode();
+                hash = hash * 59 + AutoTerminateWorkitem.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

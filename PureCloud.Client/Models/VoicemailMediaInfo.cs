@@ -84,7 +84,7 @@ public partial class VoicemailMediaInfo : IEquatable<VoicemailMediaInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VoicemailMediaInfo);
+        return Equals(obj as VoicemailMediaInfo);
     }
 
     /// <summary>
@@ -102,24 +102,24 @@ public partial class VoicemailMediaInfo : IEquatable<VoicemailMediaInfo>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.MediaFileUri == other.MediaFileUri ||
-                this.MediaFileUri != null &&
-                this.MediaFileUri.Equals(other.MediaFileUri)
+                MediaFileUri == other.MediaFileUri ||
+                MediaFileUri != null &&
+                MediaFileUri.Equals(other.MediaFileUri)
             ) &&
             (
-                this.MediaImageUri == other.MediaImageUri ||
-                this.MediaImageUri != null &&
-                this.MediaImageUri.Equals(other.MediaImageUri)
+                MediaImageUri == other.MediaImageUri ||
+                MediaImageUri != null &&
+                MediaImageUri.Equals(other.MediaImageUri)
             ) &&
             (
-                this.WaveformData == other.WaveformData ||
-                this.WaveformData != null &&
-                this.WaveformData.SequenceEqual(other.WaveformData)
+                WaveformData == other.WaveformData ||
+                WaveformData != null &&
+                WaveformData.SequenceEqual(other.WaveformData)
             );
     }
 
@@ -134,24 +134,24 @@ public partial class VoicemailMediaInfo : IEquatable<VoicemailMediaInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.MediaFileUri != null)
+            if (MediaFileUri != null)
             {
-                hash = hash * 59 + this.MediaFileUri.GetHashCode();
+                hash = hash * 59 + MediaFileUri.GetHashCode();
             }
 
-            if (this.MediaImageUri != null)
+            if (MediaImageUri != null)
             {
-                hash = hash * 59 + this.MediaImageUri.GetHashCode();
+                hash = hash * 59 + MediaImageUri.GetHashCode();
             }
 
-            if (this.WaveformData != null)
+            if (WaveformData != null)
             {
-                hash = hash * 59 + this.WaveformData.GetHashCode();
+                hash = hash * 59 + WaveformData.GetHashCode();
             }
 
             return hash;

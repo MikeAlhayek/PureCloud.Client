@@ -65,7 +65,7 @@ public partial class OperatorPosition : IEquatable<OperatorPosition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OperatorPosition);
+        return Equals(obj as OperatorPosition);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class OperatorPosition : IEquatable<OperatorPosition>
 
         return true &&
             (
-                this.VoiceSecondsPosition == other.VoiceSecondsPosition ||
-                this.VoiceSecondsPosition != null &&
-                this.VoiceSecondsPosition.Equals(other.VoiceSecondsPosition)
+                VoiceSecondsPosition == other.VoiceSecondsPosition ||
+                VoiceSecondsPosition != null &&
+                VoiceSecondsPosition.Equals(other.VoiceSecondsPosition)
             ) &&
             (
-                this.DigitalWordsPosition == other.DigitalWordsPosition ||
-                this.DigitalWordsPosition != null &&
-                this.DigitalWordsPosition.Equals(other.DigitalWordsPosition)
+                DigitalWordsPosition == other.DigitalWordsPosition ||
+                DigitalWordsPosition != null &&
+                DigitalWordsPosition.Equals(other.DigitalWordsPosition)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class OperatorPosition : IEquatable<OperatorPosition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.VoiceSecondsPosition != null)
+            if (VoiceSecondsPosition != null)
             {
-                hash = hash * 59 + this.VoiceSecondsPosition.GetHashCode();
+                hash = hash * 59 + VoiceSecondsPosition.GetHashCode();
             }
 
-            if (this.DigitalWordsPosition != null)
+            if (DigitalWordsPosition != null)
             {
-                hash = hash * 59 + this.DigitalWordsPosition.GetHashCode();
+                hash = hash * 59 + DigitalWordsPosition.GetHashCode();
             }
 
             return hash;

@@ -94,7 +94,7 @@ public partial class TranscriptionTopicTranscriptionRequestStatus : IEquatable<T
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptionTopicTranscriptionRequestStatus);
+        return Equals(obj as TranscriptionTopicTranscriptionRequestStatus);
     }
 
     /// <summary>
@@ -112,14 +112,14 @@ public partial class TranscriptionTopicTranscriptionRequestStatus : IEquatable<T
 
         return true &&
             (
-                this.OffsetMs == other.OffsetMs ||
-                this.OffsetMs != null &&
-                this.OffsetMs.Equals(other.OffsetMs)
+                OffsetMs == other.OffsetMs ||
+                OffsetMs != null &&
+                OffsetMs.Equals(other.OffsetMs)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             );
     }
 
@@ -134,14 +134,14 @@ public partial class TranscriptionTopicTranscriptionRequestStatus : IEquatable<T
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OffsetMs != null)
+            if (OffsetMs != null)
             {
-                hash = hash * 59 + this.OffsetMs.GetHashCode();
+                hash = hash * 59 + OffsetMs.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
             return hash;

@@ -70,7 +70,7 @@ public partial class AgentQueryAdherenceExplanationsRequest : IEquatable<AgentQu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentQueryAdherenceExplanationsRequest);
+        return Equals(obj as AgentQueryAdherenceExplanationsRequest);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class AgentQueryAdherenceExplanationsRequest : IEquatable<AgentQu
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class AgentQueryAdherenceExplanationsRequest : IEquatable<AgentQu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
             return hash;

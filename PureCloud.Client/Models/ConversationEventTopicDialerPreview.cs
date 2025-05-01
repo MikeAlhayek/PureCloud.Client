@@ -100,7 +100,7 @@ public partial class ConversationEventTopicDialerPreview : IEquatable<Conversati
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationEventTopicDialerPreview);
+        return Equals(obj as ConversationEventTopicDialerPreview);
     }
 
     /// <summary>
@@ -118,29 +118,29 @@ public partial class ConversationEventTopicDialerPreview : IEquatable<Conversati
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ContactId == other.ContactId ||
-                this.ContactId != null &&
-                this.ContactId.Equals(other.ContactId)
+                ContactId == other.ContactId ||
+                ContactId != null &&
+                ContactId.Equals(other.ContactId)
             ) &&
             (
-                this.ContactListId == other.ContactListId ||
-                this.ContactListId != null &&
-                this.ContactListId.Equals(other.ContactListId)
+                ContactListId == other.ContactListId ||
+                ContactListId != null &&
+                ContactListId.Equals(other.ContactListId)
             ) &&
             (
-                this.CampaignId == other.CampaignId ||
-                this.CampaignId != null &&
-                this.CampaignId.Equals(other.CampaignId)
+                CampaignId == other.CampaignId ||
+                CampaignId != null &&
+                CampaignId.Equals(other.CampaignId)
             ) &&
             (
-                this.PhoneNumberColumns == other.PhoneNumberColumns ||
-                this.PhoneNumberColumns != null &&
-                this.PhoneNumberColumns.SequenceEqual(other.PhoneNumberColumns)
+                PhoneNumberColumns == other.PhoneNumberColumns ||
+                PhoneNumberColumns != null &&
+                PhoneNumberColumns.SequenceEqual(other.PhoneNumberColumns)
             );
     }
 
@@ -155,29 +155,29 @@ public partial class ConversationEventTopicDialerPreview : IEquatable<Conversati
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ContactId != null)
+            if (ContactId != null)
             {
-                hash = hash * 59 + this.ContactId.GetHashCode();
+                hash = hash * 59 + ContactId.GetHashCode();
             }
 
-            if (this.ContactListId != null)
+            if (ContactListId != null)
             {
-                hash = hash * 59 + this.ContactListId.GetHashCode();
+                hash = hash * 59 + ContactListId.GetHashCode();
             }
 
-            if (this.CampaignId != null)
+            if (CampaignId != null)
             {
-                hash = hash * 59 + this.CampaignId.GetHashCode();
+                hash = hash * 59 + CampaignId.GetHashCode();
             }
 
-            if (this.PhoneNumberColumns != null)
+            if (PhoneNumberColumns != null)
             {
-                hash = hash * 59 + this.PhoneNumberColumns.GetHashCode();
+                hash = hash * 59 + PhoneNumberColumns.GetHashCode();
             }
 
             return hash;

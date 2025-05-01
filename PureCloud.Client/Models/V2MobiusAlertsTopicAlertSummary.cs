@@ -127,7 +127,7 @@ public partial class V2MobiusAlertsTopicAlertSummary : IEquatable<V2MobiusAlerts
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2MobiusAlertsTopicAlertSummary);
+        return Equals(obj as V2MobiusAlertsTopicAlertSummary);
     }
 
     /// <summary>
@@ -145,29 +145,29 @@ public partial class V2MobiusAlertsTopicAlertSummary : IEquatable<V2MobiusAlerts
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.MetricType == other.MetricType ||
-                this.MetricType != null &&
-                this.MetricType.Equals(other.MetricType)
+                MetricType == other.MetricType ||
+                MetricType != null &&
+                MetricType.Equals(other.MetricType)
             ) &&
             (
-                this.IsTeamMemberRuleSummary == other.IsTeamMemberRuleSummary ||
-                this.IsTeamMemberRuleSummary != null &&
-                this.IsTeamMemberRuleSummary.Equals(other.IsTeamMemberRuleSummary)
+                IsTeamMemberRuleSummary == other.IsTeamMemberRuleSummary ||
+                IsTeamMemberRuleSummary != null &&
+                IsTeamMemberRuleSummary.Equals(other.IsTeamMemberRuleSummary)
             ) &&
             (
-                this.TeamMemberRuleSummary == other.TeamMemberRuleSummary ||
-                this.TeamMemberRuleSummary != null &&
-                this.TeamMemberRuleSummary.Equals(other.TeamMemberRuleSummary)
+                TeamMemberRuleSummary == other.TeamMemberRuleSummary ||
+                TeamMemberRuleSummary != null &&
+                TeamMemberRuleSummary.Equals(other.TeamMemberRuleSummary)
             );
     }
 
@@ -182,29 +182,29 @@ public partial class V2MobiusAlertsTopicAlertSummary : IEquatable<V2MobiusAlerts
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.MetricType != null)
+            if (MetricType != null)
             {
-                hash = hash * 59 + this.MetricType.GetHashCode();
+                hash = hash * 59 + MetricType.GetHashCode();
             }
 
-            if (this.IsTeamMemberRuleSummary != null)
+            if (IsTeamMemberRuleSummary != null)
             {
-                hash = hash * 59 + this.IsTeamMemberRuleSummary.GetHashCode();
+                hash = hash * 59 + IsTeamMemberRuleSummary.GetHashCode();
             }
 
-            if (this.TeamMemberRuleSummary != null)
+            if (TeamMemberRuleSummary != null)
             {
-                hash = hash * 59 + this.TeamMemberRuleSummary.GetHashCode();
+                hash = hash * 59 + TeamMemberRuleSummary.GetHashCode();
             }
 
             return hash;

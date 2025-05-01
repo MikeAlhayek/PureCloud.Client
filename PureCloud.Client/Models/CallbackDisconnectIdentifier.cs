@@ -71,7 +71,7 @@ public partial class CallbackDisconnectIdentifier : IEquatable<CallbackDisconnec
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallbackDisconnectIdentifier);
+        return Equals(obj as CallbackDisconnectIdentifier);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class CallbackDisconnectIdentifier : IEquatable<CallbackDisconnec
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.CallbackId == other.CallbackId ||
-                this.CallbackId != null &&
-                this.CallbackId.Equals(other.CallbackId)
+                CallbackId == other.CallbackId ||
+                CallbackId != null &&
+                CallbackId.Equals(other.CallbackId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class CallbackDisconnectIdentifier : IEquatable<CallbackDisconnec
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.CallbackId != null)
+            if (CallbackId != null)
             {
-                hash = hash * 59 + this.CallbackId.GetHashCode();
+                hash = hash * 59 + CallbackId.GetHashCode();
             }
 
             return hash;

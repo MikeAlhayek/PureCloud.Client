@@ -71,7 +71,7 @@ public partial class ServiceGoalTemplateImpactOverride : IEquatable<ServiceGoalT
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ServiceGoalTemplateImpactOverride);
+        return Equals(obj as ServiceGoalTemplateImpactOverride);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ServiceGoalTemplateImpactOverride : IEquatable<ServiceGoalT
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Impact == other.Impact ||
-                this.Impact != null &&
-                this.Impact.Equals(other.Impact)
+                Impact == other.Impact ||
+                Impact != null &&
+                Impact.Equals(other.Impact)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ServiceGoalTemplateImpactOverride : IEquatable<ServiceGoalT
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Impact != null)
+            if (Impact != null)
             {
-                hash = hash * 59 + this.Impact.GetHashCode();
+                hash = hash * 59 + Impact.GetHashCode();
             }
 
             return hash;

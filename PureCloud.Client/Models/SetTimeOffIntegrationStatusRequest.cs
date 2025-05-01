@@ -97,7 +97,7 @@ public partial class SetTimeOffIntegrationStatusRequest : IEquatable<SetTimeOffI
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SetTimeOffIntegrationStatusRequest);
+        return Equals(obj as SetTimeOffIntegrationStatusRequest);
     }
 
     /// <summary>
@@ -115,9 +115,9 @@ public partial class SetTimeOffIntegrationStatusRequest : IEquatable<SetTimeOffI
 
         return true &&
             (
-                this.IntegrationStatus == other.IntegrationStatus ||
-                this.IntegrationStatus != null &&
-                this.IntegrationStatus.Equals(other.IntegrationStatus)
+                IntegrationStatus == other.IntegrationStatus ||
+                IntegrationStatus != null &&
+                IntegrationStatus.Equals(other.IntegrationStatus)
             );
     }
 
@@ -132,9 +132,9 @@ public partial class SetTimeOffIntegrationStatusRequest : IEquatable<SetTimeOffI
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IntegrationStatus != null)
+            if (IntegrationStatus != null)
             {
-                hash = hash * 59 + this.IntegrationStatus.GetHashCode();
+                hash = hash * 59 + IntegrationStatus.GetHashCode();
             }
 
             return hash;

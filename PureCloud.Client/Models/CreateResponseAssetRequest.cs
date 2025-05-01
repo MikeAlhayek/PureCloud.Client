@@ -83,7 +83,7 @@ public partial class CreateResponseAssetRequest : IEquatable<CreateResponseAsset
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateResponseAssetRequest);
+        return Equals(obj as CreateResponseAssetRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class CreateResponseAssetRequest : IEquatable<CreateResponseAsset
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DivisionId == other.DivisionId ||
-                this.DivisionId != null &&
-                this.DivisionId.Equals(other.DivisionId)
+                DivisionId == other.DivisionId ||
+                DivisionId != null &&
+                DivisionId.Equals(other.DivisionId)
             ) &&
             (
-                this.ContentMd5 == other.ContentMd5 ||
-                this.ContentMd5 != null &&
-                this.ContentMd5.Equals(other.ContentMd5)
+                ContentMd5 == other.ContentMd5 ||
+                ContentMd5 != null &&
+                ContentMd5.Equals(other.ContentMd5)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class CreateResponseAssetRequest : IEquatable<CreateResponseAsset
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DivisionId != null)
+            if (DivisionId != null)
             {
-                hash = hash * 59 + this.DivisionId.GetHashCode();
+                hash = hash * 59 + DivisionId.GetHashCode();
             }
 
-            if (this.ContentMd5 != null)
+            if (ContentMd5 != null)
             {
-                hash = hash * 59 + this.ContentMd5.GetHashCode();
+                hash = hash * 59 + ContentMd5.GetHashCode();
             }
 
             return hash;

@@ -101,7 +101,7 @@ public partial class ShiftTradeActivityPreviewResponse : IEquatable<ShiftTradeAc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShiftTradeActivityPreviewResponse);
+        return Equals(obj as ShiftTradeActivityPreviewResponse);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class ShiftTradeActivityPreviewResponse : IEquatable<ShiftTradeAc
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.LengthMinutes == other.LengthMinutes ||
-                this.LengthMinutes != null &&
-                this.LengthMinutes.Equals(other.LengthMinutes)
+                LengthMinutes == other.LengthMinutes ||
+                LengthMinutes != null &&
+                LengthMinutes.Equals(other.LengthMinutes)
             ) &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.CountsAsPaidTime == other.CountsAsPaidTime ||
-                this.CountsAsPaidTime != null &&
-                this.CountsAsPaidTime.Equals(other.CountsAsPaidTime)
+                CountsAsPaidTime == other.CountsAsPaidTime ||
+                CountsAsPaidTime != null &&
+                CountsAsPaidTime.Equals(other.CountsAsPaidTime)
             ) &&
             (
-                this.PayableMinutes == other.PayableMinutes ||
-                this.PayableMinutes != null &&
-                this.PayableMinutes.Equals(other.PayableMinutes)
+                PayableMinutes == other.PayableMinutes ||
+                PayableMinutes != null &&
+                PayableMinutes.Equals(other.PayableMinutes)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class ShiftTradeActivityPreviewResponse : IEquatable<ShiftTradeAc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.LengthMinutes != null)
+            if (LengthMinutes != null)
             {
-                hash = hash * 59 + this.LengthMinutes.GetHashCode();
+                hash = hash * 59 + LengthMinutes.GetHashCode();
             }
 
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.CountsAsPaidTime != null)
+            if (CountsAsPaidTime != null)
             {
-                hash = hash * 59 + this.CountsAsPaidTime.GetHashCode();
+                hash = hash * 59 + CountsAsPaidTime.GetHashCode();
             }
 
-            if (this.PayableMinutes != null)
+            if (PayableMinutes != null)
             {
-                hash = hash * 59 + this.PayableMinutes.GetHashCode();
+                hash = hash * 59 + PayableMinutes.GetHashCode();
             }
 
             return hash;

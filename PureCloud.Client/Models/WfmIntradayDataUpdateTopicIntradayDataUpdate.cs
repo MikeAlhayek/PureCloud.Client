@@ -118,7 +118,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<W
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmIntradayDataUpdateTopicIntradayDataUpdate);
+        return Equals(obj as WfmIntradayDataUpdateTopicIntradayDataUpdate);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<W
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.IntervalLengthMinutes == other.IntervalLengthMinutes ||
-                this.IntervalLengthMinutes != null &&
-                this.IntervalLengthMinutes.Equals(other.IntervalLengthMinutes)
+                IntervalLengthMinutes == other.IntervalLengthMinutes ||
+                IntervalLengthMinutes != null &&
+                IntervalLengthMinutes.Equals(other.IntervalLengthMinutes)
             ) &&
             (
-                this.NumberOfIntervals == other.NumberOfIntervals ||
-                this.NumberOfIntervals != null &&
-                this.NumberOfIntervals.Equals(other.NumberOfIntervals)
+                NumberOfIntervals == other.NumberOfIntervals ||
+                NumberOfIntervals != null &&
+                NumberOfIntervals.Equals(other.NumberOfIntervals)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.QueueIds == other.QueueIds ||
-                this.QueueIds != null &&
-                this.QueueIds.SequenceEqual(other.QueueIds)
+                QueueIds == other.QueueIds ||
+                QueueIds != null &&
+                QueueIds.SequenceEqual(other.QueueIds)
             ) &&
             (
-                this.IntradayDataGroupings == other.IntradayDataGroupings ||
-                this.IntradayDataGroupings != null &&
-                this.IntradayDataGroupings.SequenceEqual(other.IntradayDataGroupings)
+                IntradayDataGroupings == other.IntradayDataGroupings ||
+                IntradayDataGroupings != null &&
+                IntradayDataGroupings.SequenceEqual(other.IntradayDataGroupings)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataUpdate : IEquatable<W
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.IntervalLengthMinutes != null)
+            if (IntervalLengthMinutes != null)
             {
-                hash = hash * 59 + this.IntervalLengthMinutes.GetHashCode();
+                hash = hash * 59 + IntervalLengthMinutes.GetHashCode();
             }
 
-            if (this.NumberOfIntervals != null)
+            if (NumberOfIntervals != null)
             {
-                hash = hash * 59 + this.NumberOfIntervals.GetHashCode();
+                hash = hash * 59 + NumberOfIntervals.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.QueueIds != null)
+            if (QueueIds != null)
             {
-                hash = hash * 59 + this.QueueIds.GetHashCode();
+                hash = hash * 59 + QueueIds.GetHashCode();
             }
 
-            if (this.IntradayDataGroupings != null)
+            if (IntradayDataGroupings != null)
             {
-                hash = hash * 59 + this.IntradayDataGroupings.GetHashCode();
+                hash = hash * 59 + IntradayDataGroupings.GetHashCode();
             }
 
             return hash;

@@ -74,7 +74,7 @@ public partial class NamespaceDocs : IEquatable<NamespaceDocs>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NamespaceDocs);
+        return Equals(obj as NamespaceDocs);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class NamespaceDocs : IEquatable<NamespaceDocs>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.FriendlyName == other.FriendlyName ||
-                this.FriendlyName != null &&
-                this.FriendlyName.Equals(other.FriendlyName)
+                FriendlyName == other.FriendlyName ||
+                FriendlyName != null &&
+                FriendlyName.Equals(other.FriendlyName)
             ) &&
             (
-                this.Limits == other.Limits ||
-                this.Limits != null &&
-                this.Limits.SequenceEqual(other.Limits)
+                Limits == other.Limits ||
+                Limits != null &&
+                Limits.SequenceEqual(other.Limits)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class NamespaceDocs : IEquatable<NamespaceDocs>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.FriendlyName != null)
+            if (FriendlyName != null)
             {
-                hash = hash * 59 + this.FriendlyName.GetHashCode();
+                hash = hash * 59 + FriendlyName.GetHashCode();
             }
 
-            if (this.Limits != null)
+            if (Limits != null)
             {
-                hash = hash * 59 + this.Limits.GetHashCode();
+                hash = hash * 59 + Limits.GetHashCode();
             }
 
             return hash;

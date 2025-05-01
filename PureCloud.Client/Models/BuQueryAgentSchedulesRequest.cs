@@ -82,7 +82,7 @@ public partial class BuQueryAgentSchedulesRequest : IEquatable<BuQueryAgentSched
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuQueryAgentSchedulesRequest);
+        return Equals(obj as BuQueryAgentSchedulesRequest);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class BuQueryAgentSchedulesRequest : IEquatable<BuQueryAgentSched
 
         return true &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             ) &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.TeamIds == other.TeamIds ||
-                this.TeamIds != null &&
-                this.TeamIds.SequenceEqual(other.TeamIds)
+                TeamIds == other.TeamIds ||
+                TeamIds != null &&
+                TeamIds.SequenceEqual(other.TeamIds)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class BuQueryAgentSchedulesRequest : IEquatable<BuQueryAgentSched
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.TeamIds != null)
+            if (TeamIds != null)
             {
-                hash = hash * 59 + this.TeamIds.GetHashCode();
+                hash = hash * 59 + TeamIds.GetHashCode();
             }
 
             return hash;

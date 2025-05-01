@@ -213,7 +213,7 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactImportJobResponse);
+        return Equals(obj as ContactImportJobResponse);
     }
 
     /// <summary>
@@ -231,44 +231,44 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.StatusDetails == other.StatusDetails ||
-                this.StatusDetails != null &&
-                this.StatusDetails.Equals(other.StatusDetails)
+                StatusDetails == other.StatusDetails ||
+                StatusDetails != null &&
+                StatusDetails.Equals(other.StatusDetails)
             ) &&
             (
-                this.ExecutionStep == other.ExecutionStep ||
-                this.ExecutionStep != null &&
-                this.ExecutionStep.Equals(other.ExecutionStep)
+                ExecutionStep == other.ExecutionStep ||
+                ExecutionStep != null &&
+                ExecutionStep.Equals(other.ExecutionStep)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.Settings == other.Settings ||
-                this.Settings != null &&
-                this.Settings.Equals(other.Settings)
+                Settings == other.Settings ||
+                Settings != null &&
+                Settings.Equals(other.Settings)
             );
     }
 
@@ -283,44 +283,44 @@ public partial class ContactImportJobResponse : IEquatable<ContactImportJobRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.StatusDetails != null)
+            if (StatusDetails != null)
             {
-                hash = hash * 59 + this.StatusDetails.GetHashCode();
+                hash = hash * 59 + StatusDetails.GetHashCode();
             }
 
-            if (this.ExecutionStep != null)
+            if (ExecutionStep != null)
             {
-                hash = hash * 59 + this.ExecutionStep.GetHashCode();
+                hash = hash * 59 + ExecutionStep.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.Settings != null)
+            if (Settings != null)
             {
-                hash = hash * 59 + this.Settings.GetHashCode();
+                hash = hash * 59 + Settings.GetHashCode();
             }
 
             return hash;

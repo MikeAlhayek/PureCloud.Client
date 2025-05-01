@@ -239,7 +239,7 @@ public partial class RecordingJob : IEquatable<RecordingJob>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingJob);
+        return Equals(obj as RecordingJob);
     }
 
     /// <summary>
@@ -257,74 +257,74 @@ public partial class RecordingJob : IEquatable<RecordingJob>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.RecordingJobsQuery == other.RecordingJobsQuery ||
-                this.RecordingJobsQuery != null &&
-                this.RecordingJobsQuery.Equals(other.RecordingJobsQuery)
+                RecordingJobsQuery == other.RecordingJobsQuery ||
+                RecordingJobsQuery != null &&
+                RecordingJobsQuery.Equals(other.RecordingJobsQuery)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.TotalConversations == other.TotalConversations ||
-                this.TotalConversations != null &&
-                this.TotalConversations.Equals(other.TotalConversations)
+                TotalConversations == other.TotalConversations ||
+                TotalConversations != null &&
+                TotalConversations.Equals(other.TotalConversations)
             ) &&
             (
-                this.TotalRecordings == other.TotalRecordings ||
-                this.TotalRecordings != null &&
-                this.TotalRecordings.Equals(other.TotalRecordings)
+                TotalRecordings == other.TotalRecordings ||
+                TotalRecordings != null &&
+                TotalRecordings.Equals(other.TotalRecordings)
             ) &&
             (
-                this.TotalSkippedRecordings == other.TotalSkippedRecordings ||
-                this.TotalSkippedRecordings != null &&
-                this.TotalSkippedRecordings.Equals(other.TotalSkippedRecordings)
+                TotalSkippedRecordings == other.TotalSkippedRecordings ||
+                TotalSkippedRecordings != null &&
+                TotalSkippedRecordings.Equals(other.TotalSkippedRecordings)
             ) &&
             (
-                this.TotalFailedRecordings == other.TotalFailedRecordings ||
-                this.TotalFailedRecordings != null &&
-                this.TotalFailedRecordings.Equals(other.TotalFailedRecordings)
+                TotalFailedRecordings == other.TotalFailedRecordings ||
+                TotalFailedRecordings != null &&
+                TotalFailedRecordings.Equals(other.TotalFailedRecordings)
             ) &&
             (
-                this.TotalProcessedRecordings == other.TotalProcessedRecordings ||
-                this.TotalProcessedRecordings != null &&
-                this.TotalProcessedRecordings.Equals(other.TotalProcessedRecordings)
+                TotalProcessedRecordings == other.TotalProcessedRecordings ||
+                TotalProcessedRecordings != null &&
+                TotalProcessedRecordings.Equals(other.TotalProcessedRecordings)
             ) &&
             (
-                this.PercentProgress == other.PercentProgress ||
-                this.PercentProgress != null &&
-                this.PercentProgress.Equals(other.PercentProgress)
+                PercentProgress == other.PercentProgress ||
+                PercentProgress != null &&
+                PercentProgress.Equals(other.PercentProgress)
             ) &&
             (
-                this.ErrorMessage == other.ErrorMessage ||
-                this.ErrorMessage != null &&
-                this.ErrorMessage.Equals(other.ErrorMessage)
+                ErrorMessage == other.ErrorMessage ||
+                ErrorMessage != null &&
+                ErrorMessage.Equals(other.ErrorMessage)
             ) &&
             (
-                this.FailedRecordings == other.FailedRecordings ||
-                this.FailedRecordings != null &&
-                this.FailedRecordings.Equals(other.FailedRecordings)
+                FailedRecordings == other.FailedRecordings ||
+                FailedRecordings != null &&
+                FailedRecordings.Equals(other.FailedRecordings)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             );
     }
 
@@ -339,74 +339,74 @@ public partial class RecordingJob : IEquatable<RecordingJob>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.RecordingJobsQuery != null)
+            if (RecordingJobsQuery != null)
             {
-                hash = hash * 59 + this.RecordingJobsQuery.GetHashCode();
+                hash = hash * 59 + RecordingJobsQuery.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.TotalConversations != null)
+            if (TotalConversations != null)
             {
-                hash = hash * 59 + this.TotalConversations.GetHashCode();
+                hash = hash * 59 + TotalConversations.GetHashCode();
             }
 
-            if (this.TotalRecordings != null)
+            if (TotalRecordings != null)
             {
-                hash = hash * 59 + this.TotalRecordings.GetHashCode();
+                hash = hash * 59 + TotalRecordings.GetHashCode();
             }
 
-            if (this.TotalSkippedRecordings != null)
+            if (TotalSkippedRecordings != null)
             {
-                hash = hash * 59 + this.TotalSkippedRecordings.GetHashCode();
+                hash = hash * 59 + TotalSkippedRecordings.GetHashCode();
             }
 
-            if (this.TotalFailedRecordings != null)
+            if (TotalFailedRecordings != null)
             {
-                hash = hash * 59 + this.TotalFailedRecordings.GetHashCode();
+                hash = hash * 59 + TotalFailedRecordings.GetHashCode();
             }
 
-            if (this.TotalProcessedRecordings != null)
+            if (TotalProcessedRecordings != null)
             {
-                hash = hash * 59 + this.TotalProcessedRecordings.GetHashCode();
+                hash = hash * 59 + TotalProcessedRecordings.GetHashCode();
             }
 
-            if (this.PercentProgress != null)
+            if (PercentProgress != null)
             {
-                hash = hash * 59 + this.PercentProgress.GetHashCode();
+                hash = hash * 59 + PercentProgress.GetHashCode();
             }
 
-            if (this.ErrorMessage != null)
+            if (ErrorMessage != null)
             {
-                hash = hash * 59 + this.ErrorMessage.GetHashCode();
+                hash = hash * 59 + ErrorMessage.GetHashCode();
             }
 
-            if (this.FailedRecordings != null)
+            if (FailedRecordings != null)
             {
-                hash = hash * 59 + this.FailedRecordings.GetHashCode();
+                hash = hash * 59 + FailedRecordings.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
             return hash;

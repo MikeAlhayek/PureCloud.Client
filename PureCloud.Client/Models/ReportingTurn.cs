@@ -305,7 +305,7 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingTurn);
+        return Equals(obj as ReportingTurn);
     }
 
     /// <summary>
@@ -323,64 +323,64 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
 
         return true &&
             (
-                this.UserInput == other.UserInput ||
-                this.UserInput != null &&
-                this.UserInput.Equals(other.UserInput)
+                UserInput == other.UserInput ||
+                UserInput != null &&
+                UserInput.Equals(other.UserInput)
             ) &&
             (
-                this.BotPrompts == other.BotPrompts ||
-                this.BotPrompts != null &&
-                this.BotPrompts.SequenceEqual(other.BotPrompts)
+                BotPrompts == other.BotPrompts ||
+                BotPrompts != null &&
+                BotPrompts.SequenceEqual(other.BotPrompts)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.AskAction == other.AskAction ||
-                this.AskAction != null &&
-                this.AskAction.Equals(other.AskAction)
+                AskAction == other.AskAction ||
+                AskAction != null &&
+                AskAction.Equals(other.AskAction)
             ) &&
             (
-                this.Intent == other.Intent ||
-                this.Intent != null &&
-                this.Intent.Equals(other.Intent)
+                Intent == other.Intent ||
+                Intent != null &&
+                Intent.Equals(other.Intent)
             ) &&
             (
-                this.Knowledge == other.Knowledge ||
-                this.Knowledge != null &&
-                this.Knowledge.Equals(other.Knowledge)
+                Knowledge == other.Knowledge ||
+                Knowledge != null &&
+                Knowledge.Equals(other.Knowledge)
             ) &&
             (
-                this.KnowledgeBaseEvents == other.KnowledgeBaseEvents ||
-                this.KnowledgeBaseEvents != null &&
-                this.KnowledgeBaseEvents.Equals(other.KnowledgeBaseEvents)
+                KnowledgeBaseEvents == other.KnowledgeBaseEvents ||
+                KnowledgeBaseEvents != null &&
+                KnowledgeBaseEvents.Equals(other.KnowledgeBaseEvents)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateCompleted == other.DateCompleted ||
-                this.DateCompleted != null &&
-                this.DateCompleted.Equals(other.DateCompleted)
+                DateCompleted == other.DateCompleted ||
+                DateCompleted != null &&
+                DateCompleted.Equals(other.DateCompleted)
             ) &&
             (
-                this.AskActionResult == other.AskActionResult ||
-                this.AskActionResult != null &&
-                this.AskActionResult.Equals(other.AskActionResult)
+                AskActionResult == other.AskActionResult ||
+                AskActionResult != null &&
+                AskActionResult.Equals(other.AskActionResult)
             ) &&
             (
-                this.SessionEndDetails == other.SessionEndDetails ||
-                this.SessionEndDetails != null &&
-                this.SessionEndDetails.Equals(other.SessionEndDetails)
+                SessionEndDetails == other.SessionEndDetails ||
+                SessionEndDetails != null &&
+                SessionEndDetails.Equals(other.SessionEndDetails)
             ) &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             );
     }
 
@@ -395,64 +395,64 @@ public partial class ReportingTurn : IEquatable<ReportingTurn>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserInput != null)
+            if (UserInput != null)
             {
-                hash = hash * 59 + this.UserInput.GetHashCode();
+                hash = hash * 59 + UserInput.GetHashCode();
             }
 
-            if (this.BotPrompts != null)
+            if (BotPrompts != null)
             {
-                hash = hash * 59 + this.BotPrompts.GetHashCode();
+                hash = hash * 59 + BotPrompts.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.AskAction != null)
+            if (AskAction != null)
             {
-                hash = hash * 59 + this.AskAction.GetHashCode();
+                hash = hash * 59 + AskAction.GetHashCode();
             }
 
-            if (this.Intent != null)
+            if (Intent != null)
             {
-                hash = hash * 59 + this.Intent.GetHashCode();
+                hash = hash * 59 + Intent.GetHashCode();
             }
 
-            if (this.Knowledge != null)
+            if (Knowledge != null)
             {
-                hash = hash * 59 + this.Knowledge.GetHashCode();
+                hash = hash * 59 + Knowledge.GetHashCode();
             }
 
-            if (this.KnowledgeBaseEvents != null)
+            if (KnowledgeBaseEvents != null)
             {
-                hash = hash * 59 + this.KnowledgeBaseEvents.GetHashCode();
+                hash = hash * 59 + KnowledgeBaseEvents.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateCompleted != null)
+            if (DateCompleted != null)
             {
-                hash = hash * 59 + this.DateCompleted.GetHashCode();
+                hash = hash * 59 + DateCompleted.GetHashCode();
             }
 
-            if (this.AskActionResult != null)
+            if (AskActionResult != null)
             {
-                hash = hash * 59 + this.AskActionResult.GetHashCode();
+                hash = hash * 59 + AskActionResult.GetHashCode();
             }
 
-            if (this.SessionEndDetails != null)
+            if (SessionEndDetails != null)
             {
-                hash = hash * 59 + this.SessionEndDetails.GetHashCode();
+                hash = hash * 59 + SessionEndDetails.GetHashCode();
             }
 
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
             return hash;

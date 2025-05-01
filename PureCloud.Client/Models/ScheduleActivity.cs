@@ -169,7 +169,7 @@ public partial class ScheduleActivity : IEquatable<ScheduleActivity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScheduleActivity);
+        return Equals(obj as ScheduleActivity);
     }
 
     /// <summary>
@@ -187,44 +187,44 @@ public partial class ScheduleActivity : IEquatable<ScheduleActivity>
 
         return true &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.LengthMinutes == other.LengthMinutes ||
-                this.LengthMinutes != null &&
-                this.LengthMinutes.Equals(other.LengthMinutes)
+                LengthMinutes == other.LengthMinutes ||
+                LengthMinutes != null &&
+                LengthMinutes.Equals(other.LengthMinutes)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.Paid == other.Paid ||
-                this.Paid != null &&
-                this.Paid.Equals(other.Paid)
+                Paid == other.Paid ||
+                Paid != null &&
+                Paid.Equals(other.Paid)
             ) &&
             (
-                this.TimeOffRequestId == other.TimeOffRequestId ||
-                this.TimeOffRequestId != null &&
-                this.TimeOffRequestId.Equals(other.TimeOffRequestId)
+                TimeOffRequestId == other.TimeOffRequestId ||
+                TimeOffRequestId != null &&
+                TimeOffRequestId.Equals(other.TimeOffRequestId)
             ) &&
             (
-                this.ExternalActivityId == other.ExternalActivityId ||
-                this.ExternalActivityId != null &&
-                this.ExternalActivityId.Equals(other.ExternalActivityId)
+                ExternalActivityId == other.ExternalActivityId ||
+                ExternalActivityId != null &&
+                ExternalActivityId.Equals(other.ExternalActivityId)
             ) &&
             (
-                this.ExternalActivityType == other.ExternalActivityType ||
-                this.ExternalActivityType != null &&
-                this.ExternalActivityType.Equals(other.ExternalActivityType)
+                ExternalActivityType == other.ExternalActivityType ||
+                ExternalActivityType != null &&
+                ExternalActivityType.Equals(other.ExternalActivityType)
             );
     }
 
@@ -239,44 +239,44 @@ public partial class ScheduleActivity : IEquatable<ScheduleActivity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.LengthMinutes != null)
+            if (LengthMinutes != null)
             {
-                hash = hash * 59 + this.LengthMinutes.GetHashCode();
+                hash = hash * 59 + LengthMinutes.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.Paid != null)
+            if (Paid != null)
             {
-                hash = hash * 59 + this.Paid.GetHashCode();
+                hash = hash * 59 + Paid.GetHashCode();
             }
 
-            if (this.TimeOffRequestId != null)
+            if (TimeOffRequestId != null)
             {
-                hash = hash * 59 + this.TimeOffRequestId.GetHashCode();
+                hash = hash * 59 + TimeOffRequestId.GetHashCode();
             }
 
-            if (this.ExternalActivityId != null)
+            if (ExternalActivityId != null)
             {
-                hash = hash * 59 + this.ExternalActivityId.GetHashCode();
+                hash = hash * 59 + ExternalActivityId.GetHashCode();
             }
 
-            if (this.ExternalActivityType != null)
+            if (ExternalActivityType != null)
             {
-                hash = hash * 59 + this.ExternalActivityType.GetHashCode();
+                hash = hash * 59 + ExternalActivityType.GetHashCode();
             }
 
             return hash;

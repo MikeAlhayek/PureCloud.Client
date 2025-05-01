@@ -137,7 +137,7 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ParticipantMetrics);
+        return Equals(obj as ParticipantMetrics);
     }
 
     /// <summary>
@@ -155,44 +155,44 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
 
         return true &&
             (
-                this.AgentDurationPercentage == other.AgentDurationPercentage ||
-                this.AgentDurationPercentage != null &&
-                this.AgentDurationPercentage.Equals(other.AgentDurationPercentage)
+                AgentDurationPercentage == other.AgentDurationPercentage ||
+                AgentDurationPercentage != null &&
+                AgentDurationPercentage.Equals(other.AgentDurationPercentage)
             ) &&
             (
-                this.CustomerDurationPercentage == other.CustomerDurationPercentage ||
-                this.CustomerDurationPercentage != null &&
-                this.CustomerDurationPercentage.Equals(other.CustomerDurationPercentage)
+                CustomerDurationPercentage == other.CustomerDurationPercentage ||
+                CustomerDurationPercentage != null &&
+                CustomerDurationPercentage.Equals(other.CustomerDurationPercentage)
             ) &&
             (
-                this.SilenceDurationPercentage == other.SilenceDurationPercentage ||
-                this.SilenceDurationPercentage != null &&
-                this.SilenceDurationPercentage.Equals(other.SilenceDurationPercentage)
+                SilenceDurationPercentage == other.SilenceDurationPercentage ||
+                SilenceDurationPercentage != null &&
+                SilenceDurationPercentage.Equals(other.SilenceDurationPercentage)
             ) &&
             (
-                this.IvrDurationPercentage == other.IvrDurationPercentage ||
-                this.IvrDurationPercentage != null &&
-                this.IvrDurationPercentage.Equals(other.IvrDurationPercentage)
+                IvrDurationPercentage == other.IvrDurationPercentage ||
+                IvrDurationPercentage != null &&
+                IvrDurationPercentage.Equals(other.IvrDurationPercentage)
             ) &&
             (
-                this.AcdDurationPercentage == other.AcdDurationPercentage ||
-                this.AcdDurationPercentage != null &&
-                this.AcdDurationPercentage.Equals(other.AcdDurationPercentage)
+                AcdDurationPercentage == other.AcdDurationPercentage ||
+                AcdDurationPercentage != null &&
+                AcdDurationPercentage.Equals(other.AcdDurationPercentage)
             ) &&
             (
-                this.OvertalkDurationPercentage == other.OvertalkDurationPercentage ||
-                this.OvertalkDurationPercentage != null &&
-                this.OvertalkDurationPercentage.Equals(other.OvertalkDurationPercentage)
+                OvertalkDurationPercentage == other.OvertalkDurationPercentage ||
+                OvertalkDurationPercentage != null &&
+                OvertalkDurationPercentage.Equals(other.OvertalkDurationPercentage)
             ) &&
             (
-                this.OtherDurationPercentage == other.OtherDurationPercentage ||
-                this.OtherDurationPercentage != null &&
-                this.OtherDurationPercentage.Equals(other.OtherDurationPercentage)
+                OtherDurationPercentage == other.OtherDurationPercentage ||
+                OtherDurationPercentage != null &&
+                OtherDurationPercentage.Equals(other.OtherDurationPercentage)
             ) &&
             (
-                this.OvertalkCount == other.OvertalkCount ||
-                this.OvertalkCount != null &&
-                this.OvertalkCount.Equals(other.OvertalkCount)
+                OvertalkCount == other.OvertalkCount ||
+                OvertalkCount != null &&
+                OvertalkCount.Equals(other.OvertalkCount)
             );
     }
 
@@ -207,44 +207,44 @@ public partial class ParticipantMetrics : IEquatable<ParticipantMetrics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentDurationPercentage != null)
+            if (AgentDurationPercentage != null)
             {
-                hash = hash * 59 + this.AgentDurationPercentage.GetHashCode();
+                hash = hash * 59 + AgentDurationPercentage.GetHashCode();
             }
 
-            if (this.CustomerDurationPercentage != null)
+            if (CustomerDurationPercentage != null)
             {
-                hash = hash * 59 + this.CustomerDurationPercentage.GetHashCode();
+                hash = hash * 59 + CustomerDurationPercentage.GetHashCode();
             }
 
-            if (this.SilenceDurationPercentage != null)
+            if (SilenceDurationPercentage != null)
             {
-                hash = hash * 59 + this.SilenceDurationPercentage.GetHashCode();
+                hash = hash * 59 + SilenceDurationPercentage.GetHashCode();
             }
 
-            if (this.IvrDurationPercentage != null)
+            if (IvrDurationPercentage != null)
             {
-                hash = hash * 59 + this.IvrDurationPercentage.GetHashCode();
+                hash = hash * 59 + IvrDurationPercentage.GetHashCode();
             }
 
-            if (this.AcdDurationPercentage != null)
+            if (AcdDurationPercentage != null)
             {
-                hash = hash * 59 + this.AcdDurationPercentage.GetHashCode();
+                hash = hash * 59 + AcdDurationPercentage.GetHashCode();
             }
 
-            if (this.OvertalkDurationPercentage != null)
+            if (OvertalkDurationPercentage != null)
             {
-                hash = hash * 59 + this.OvertalkDurationPercentage.GetHashCode();
+                hash = hash * 59 + OvertalkDurationPercentage.GetHashCode();
             }
 
-            if (this.OtherDurationPercentage != null)
+            if (OtherDurationPercentage != null)
             {
-                hash = hash * 59 + this.OtherDurationPercentage.GetHashCode();
+                hash = hash * 59 + OtherDurationPercentage.GetHashCode();
             }
 
-            if (this.OvertalkCount != null)
+            if (OvertalkCount != null)
             {
-                hash = hash * 59 + this.OvertalkCount.GetHashCode();
+                hash = hash * 59 + OvertalkCount.GetHashCode();
             }
 
             return hash;

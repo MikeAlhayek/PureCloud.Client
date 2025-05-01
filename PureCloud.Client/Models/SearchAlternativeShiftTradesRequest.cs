@@ -65,7 +65,7 @@ public partial class SearchAlternativeShiftTradesRequest : IEquatable<SearchAlte
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SearchAlternativeShiftTradesRequest);
+        return Equals(obj as SearchAlternativeShiftTradesRequest);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class SearchAlternativeShiftTradesRequest : IEquatable<SearchAlte
 
         return true &&
             (
-                this.ManagementUnitIds == other.ManagementUnitIds ||
-                this.ManagementUnitIds != null &&
-                this.ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
+                ManagementUnitIds == other.ManagementUnitIds ||
+                ManagementUnitIds != null &&
+                ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
             ) &&
             (
-                this.AgentIds == other.AgentIds ||
-                this.AgentIds != null &&
-                this.AgentIds.SequenceEqual(other.AgentIds)
+                AgentIds == other.AgentIds ||
+                AgentIds != null &&
+                AgentIds.SequenceEqual(other.AgentIds)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class SearchAlternativeShiftTradesRequest : IEquatable<SearchAlte
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnitIds != null)
+            if (ManagementUnitIds != null)
             {
-                hash = hash * 59 + this.ManagementUnitIds.GetHashCode();
+                hash = hash * 59 + ManagementUnitIds.GetHashCode();
             }
 
-            if (this.AgentIds != null)
+            if (AgentIds != null)
             {
-                hash = hash * 59 + this.AgentIds.GetHashCode();
+                hash = hash * 59 + AgentIds.GetHashCode();
             }
 
             return hash;

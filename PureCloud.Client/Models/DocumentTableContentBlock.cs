@@ -187,7 +187,7 @@ public partial class DocumentTableContentBlock : IEquatable<DocumentTableContent
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentTableContentBlock);
+        return Equals(obj as DocumentTableContentBlock);
     }
 
     /// <summary>
@@ -205,39 +205,39 @@ public partial class DocumentTableContentBlock : IEquatable<DocumentTableContent
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Image == other.Image ||
-                this.Image != null &&
-                this.Image.Equals(other.Image)
+                Image == other.Image ||
+                Image != null &&
+                Image.Equals(other.Image)
             ) &&
             (
-                this.Video == other.Video ||
-                this.Video != null &&
-                this.Video.Equals(other.Video)
+                Video == other.Video ||
+                Video != null &&
+                Video.Equals(other.Video)
             ) &&
             (
-                this.Paragraph == other.Paragraph ||
-                this.Paragraph != null &&
-                this.Paragraph.Equals(other.Paragraph)
+                Paragraph == other.Paragraph ||
+                Paragraph != null &&
+                Paragraph.Equals(other.Paragraph)
             ) &&
             (
-                this.List == other.List ||
-                this.List != null &&
-                this.List.Equals(other.List)
+                List == other.List ||
+                List != null &&
+                List.Equals(other.List)
             ) &&
             (
-                this.Table == other.Table ||
-                this.Table != null &&
-                this.Table.Equals(other.Table)
+                Table == other.Table ||
+                Table != null &&
+                Table.Equals(other.Table)
             );
     }
 
@@ -252,39 +252,39 @@ public partial class DocumentTableContentBlock : IEquatable<DocumentTableContent
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Image != null)
+            if (Image != null)
             {
-                hash = hash * 59 + this.Image.GetHashCode();
+                hash = hash * 59 + Image.GetHashCode();
             }
 
-            if (this.Video != null)
+            if (Video != null)
             {
-                hash = hash * 59 + this.Video.GetHashCode();
+                hash = hash * 59 + Video.GetHashCode();
             }
 
-            if (this.Paragraph != null)
+            if (Paragraph != null)
             {
-                hash = hash * 59 + this.Paragraph.GetHashCode();
+                hash = hash * 59 + Paragraph.GetHashCode();
             }
 
-            if (this.List != null)
+            if (List != null)
             {
-                hash = hash * 59 + this.List.GetHashCode();
+                hash = hash * 59 + List.GetHashCode();
             }
 
-            if (this.Table != null)
+            if (Table != null)
             {
-                hash = hash * 59 + this.Table.GetHashCode();
+                hash = hash * 59 + Table.GetHashCode();
             }
 
             return hash;

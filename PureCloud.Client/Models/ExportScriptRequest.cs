@@ -65,7 +65,7 @@ public partial class ExportScriptRequest : IEquatable<ExportScriptRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExportScriptRequest);
+        return Equals(obj as ExportScriptRequest);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ExportScriptRequest : IEquatable<ExportScriptRequest>
 
         return true &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.VersionId == other.VersionId ||
-                this.VersionId != null &&
-                this.VersionId.Equals(other.VersionId)
+                VersionId == other.VersionId ||
+                VersionId != null &&
+                VersionId.Equals(other.VersionId)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ExportScriptRequest : IEquatable<ExportScriptRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.VersionId != null)
+            if (VersionId != null)
             {
-                hash = hash * 59 + this.VersionId.GetHashCode();
+                hash = hash * 59 + VersionId.GetHashCode();
             }
 
             return hash;

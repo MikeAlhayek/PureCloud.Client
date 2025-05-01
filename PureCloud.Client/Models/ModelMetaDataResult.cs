@@ -65,7 +65,7 @@ public partial class ModelMetaDataResult : IEquatable<ModelMetaDataResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ModelMetaDataResult);
+        return Equals(obj as ModelMetaDataResult);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ModelMetaDataResult : IEquatable<ModelMetaDataResult>
 
         return true &&
             (
-                this.SessionInfo == other.SessionInfo ||
-                this.SessionInfo != null &&
-                this.SessionInfo.Equals(other.SessionInfo)
+                SessionInfo == other.SessionInfo ||
+                SessionInfo != null &&
+                SessionInfo.Equals(other.SessionInfo)
             ) &&
             (
-                this.PlanningGroups == other.PlanningGroups ||
-                this.PlanningGroups != null &&
-                this.PlanningGroups.SequenceEqual(other.PlanningGroups)
+                PlanningGroups == other.PlanningGroups ||
+                PlanningGroups != null &&
+                PlanningGroups.SequenceEqual(other.PlanningGroups)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ModelMetaDataResult : IEquatable<ModelMetaDataResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SessionInfo != null)
+            if (SessionInfo != null)
             {
-                hash = hash * 59 + this.SessionInfo.GetHashCode();
+                hash = hash * 59 + SessionInfo.GetHashCode();
             }
 
-            if (this.PlanningGroups != null)
+            if (PlanningGroups != null)
             {
-                hash = hash * 59 + this.PlanningGroups.GetHashCode();
+                hash = hash * 59 + PlanningGroups.GetHashCode();
             }
 
             return hash;

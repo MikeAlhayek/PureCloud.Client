@@ -91,7 +91,7 @@ public partial class UserRoutingSkillPost : IEquatable<UserRoutingSkillPost>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserRoutingSkillPost);
+        return Equals(obj as UserRoutingSkillPost);
     }
 
     /// <summary>
@@ -109,24 +109,24 @@ public partial class UserRoutingSkillPost : IEquatable<UserRoutingSkillPost>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Proficiency == other.Proficiency ||
-                this.Proficiency != null &&
-                this.Proficiency.Equals(other.Proficiency)
+                Proficiency == other.Proficiency ||
+                Proficiency != null &&
+                Proficiency.Equals(other.Proficiency)
             ) &&
             (
-                this.SkillUri == other.SkillUri ||
-                this.SkillUri != null &&
-                this.SkillUri.Equals(other.SkillUri)
+                SkillUri == other.SkillUri ||
+                SkillUri != null &&
+                SkillUri.Equals(other.SkillUri)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -141,24 +141,24 @@ public partial class UserRoutingSkillPost : IEquatable<UserRoutingSkillPost>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Proficiency != null)
+            if (Proficiency != null)
             {
-                hash = hash * 59 + this.Proficiency.GetHashCode();
+                hash = hash * 59 + Proficiency.GetHashCode();
             }
 
-            if (this.SkillUri != null)
+            if (SkillUri != null)
             {
-                hash = hash * 59 + this.SkillUri.GetHashCode();
+                hash = hash * 59 + SkillUri.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

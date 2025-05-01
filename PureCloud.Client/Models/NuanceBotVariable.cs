@@ -119,7 +119,7 @@ public partial class NuanceBotVariable : IEquatable<NuanceBotVariable>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NuanceBotVariable);
+        return Equals(obj as NuanceBotVariable);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class NuanceBotVariable : IEquatable<NuanceBotVariable>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Reserved == other.Reserved ||
-                this.Reserved != null &&
-                this.Reserved.Equals(other.Reserved)
+                Reserved == other.Reserved ||
+                Reserved != null &&
+                Reserved.Equals(other.Reserved)
             ) &&
             (
-                this.SimpleVariableInfo == other.SimpleVariableInfo ||
-                this.SimpleVariableInfo != null &&
-                this.SimpleVariableInfo.Equals(other.SimpleVariableInfo)
+                SimpleVariableInfo == other.SimpleVariableInfo ||
+                SimpleVariableInfo != null &&
+                SimpleVariableInfo.Equals(other.SimpleVariableInfo)
             ) &&
             (
-                this.ComplexGenericVariableInfo == other.ComplexGenericVariableInfo ||
-                this.ComplexGenericVariableInfo != null &&
-                this.ComplexGenericVariableInfo.Equals(other.ComplexGenericVariableInfo)
+                ComplexGenericVariableInfo == other.ComplexGenericVariableInfo ||
+                ComplexGenericVariableInfo != null &&
+                ComplexGenericVariableInfo.Equals(other.ComplexGenericVariableInfo)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class NuanceBotVariable : IEquatable<NuanceBotVariable>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Reserved != null)
+            if (Reserved != null)
             {
-                hash = hash * 59 + this.Reserved.GetHashCode();
+                hash = hash * 59 + Reserved.GetHashCode();
             }
 
-            if (this.SimpleVariableInfo != null)
+            if (SimpleVariableInfo != null)
             {
-                hash = hash * 59 + this.SimpleVariableInfo.GetHashCode();
+                hash = hash * 59 + SimpleVariableInfo.GetHashCode();
             }
 
-            if (this.ComplexGenericVariableInfo != null)
+            if (ComplexGenericVariableInfo != null)
             {
-                hash = hash * 59 + this.ComplexGenericVariableInfo.GetHashCode();
+                hash = hash * 59 + ComplexGenericVariableInfo.GetHashCode();
             }
 
             return hash;

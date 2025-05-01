@@ -76,7 +76,7 @@ public partial class ActionConfig : IEquatable<ActionConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionConfig);
+        return Equals(obj as ActionConfig);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class ActionConfig : IEquatable<ActionConfig>
 
         return true &&
             (
-                this.TimeoutSeconds == other.TimeoutSeconds ||
-                this.TimeoutSeconds != null &&
-                this.TimeoutSeconds.Equals(other.TimeoutSeconds)
+                TimeoutSeconds == other.TimeoutSeconds ||
+                TimeoutSeconds != null &&
+                TimeoutSeconds.Equals(other.TimeoutSeconds)
             ) &&
             (
-                this.Request == other.Request ||
-                this.Request != null &&
-                this.Request.Equals(other.Request)
+                Request == other.Request ||
+                Request != null &&
+                Request.Equals(other.Request)
             ) &&
             (
-                this.Response == other.Response ||
-                this.Response != null &&
-                this.Response.Equals(other.Response)
+                Response == other.Response ||
+                Response != null &&
+                Response.Equals(other.Response)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class ActionConfig : IEquatable<ActionConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeoutSeconds != null)
+            if (TimeoutSeconds != null)
             {
-                hash = hash * 59 + this.TimeoutSeconds.GetHashCode();
+                hash = hash * 59 + TimeoutSeconds.GetHashCode();
             }
 
-            if (this.Request != null)
+            if (Request != null)
             {
-                hash = hash * 59 + this.Request.GetHashCode();
+                hash = hash * 59 + Request.GetHashCode();
             }
 
-            if (this.Response != null)
+            if (Response != null)
             {
-                hash = hash * 59 + this.Response.GetHashCode();
+                hash = hash * 59 + Response.GetHashCode();
             }
 
             return hash;

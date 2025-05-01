@@ -183,7 +183,7 @@ public partial class HealthInfo : IEquatable<HealthInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HealthInfo);
+        return Equals(obj as HealthInfo);
     }
 
     /// <summary>
@@ -201,34 +201,34 @@ public partial class HealthInfo : IEquatable<HealthInfo>
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             ) &&
             (
-                this.OverallScore == other.OverallScore ||
-                this.OverallScore != null &&
-                this.OverallScore.Equals(other.OverallScore)
+                OverallScore == other.OverallScore ||
+                OverallScore != null &&
+                OverallScore.Equals(other.OverallScore)
             ) &&
             (
-                this.IssueCount == other.IssueCount ||
-                this.IssueCount != null &&
-                this.IssueCount.Equals(other.IssueCount)
+                IssueCount == other.IssueCount ||
+                IssueCount != null &&
+                IssueCount.Equals(other.IssueCount)
             ) &&
             (
-                this.StaticValidationResults == other.StaticValidationResults ||
-                this.StaticValidationResults != null &&
-                this.StaticValidationResults.SequenceEqual(other.StaticValidationResults)
+                StaticValidationResults == other.StaticValidationResults ||
+                StaticValidationResults != null &&
+                StaticValidationResults.SequenceEqual(other.StaticValidationResults)
             ) &&
             (
-                this.Utterances == other.Utterances ||
-                this.Utterances != null &&
-                this.Utterances.SequenceEqual(other.Utterances)
+                Utterances == other.Utterances ||
+                Utterances != null &&
+                Utterances.SequenceEqual(other.Utterances)
             );
     }
 
@@ -243,34 +243,34 @@ public partial class HealthInfo : IEquatable<HealthInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
-            if (this.OverallScore != null)
+            if (OverallScore != null)
             {
-                hash = hash * 59 + this.OverallScore.GetHashCode();
+                hash = hash * 59 + OverallScore.GetHashCode();
             }
 
-            if (this.IssueCount != null)
+            if (IssueCount != null)
             {
-                hash = hash * 59 + this.IssueCount.GetHashCode();
+                hash = hash * 59 + IssueCount.GetHashCode();
             }
 
-            if (this.StaticValidationResults != null)
+            if (StaticValidationResults != null)
             {
-                hash = hash * 59 + this.StaticValidationResults.GetHashCode();
+                hash = hash * 59 + StaticValidationResults.GetHashCode();
             }
 
-            if (this.Utterances != null)
+            if (Utterances != null)
             {
-                hash = hash * 59 + this.Utterances.GetHashCode();
+                hash = hash * 59 + Utterances.GetHashCode();
             }
 
             return hash;

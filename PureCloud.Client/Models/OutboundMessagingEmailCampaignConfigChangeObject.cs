@@ -41,7 +41,7 @@ public partial class OutboundMessagingEmailCampaignConfigChangeObject : IEquatab
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingEmailCampaignConfigChangeObject);
+        return Equals(obj as OutboundMessagingEmailCampaignConfigChangeObject);
     }
 
     /// <summary>

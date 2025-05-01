@@ -101,7 +101,7 @@ public partial class QueueMediaSettings : IEquatable<QueueMediaSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueMediaSettings);
+        return Equals(obj as QueueMediaSettings);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class QueueMediaSettings : IEquatable<QueueMediaSettings>
 
         return true &&
             (
-                this.Call == other.Call ||
-                this.Call != null &&
-                this.Call.Equals(other.Call)
+                Call == other.Call ||
+                Call != null &&
+                Call.Equals(other.Call)
             ) &&
             (
-                this.Callback == other.Callback ||
-                this.Callback != null &&
-                this.Callback.Equals(other.Callback)
+                Callback == other.Callback ||
+                Callback != null &&
+                Callback.Equals(other.Callback)
             ) &&
             (
-                this.Chat == other.Chat ||
-                this.Chat != null &&
-                this.Chat.Equals(other.Chat)
+                Chat == other.Chat ||
+                Chat != null &&
+                Chat.Equals(other.Chat)
             ) &&
             (
-                this.Email == other.Email ||
-                this.Email != null &&
-                this.Email.Equals(other.Email)
+                Email == other.Email ||
+                Email != null &&
+                Email.Equals(other.Email)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class QueueMediaSettings : IEquatable<QueueMediaSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Call != null)
+            if (Call != null)
             {
-                hash = hash * 59 + this.Call.GetHashCode();
+                hash = hash * 59 + Call.GetHashCode();
             }
 
-            if (this.Callback != null)
+            if (Callback != null)
             {
-                hash = hash * 59 + this.Callback.GetHashCode();
+                hash = hash * 59 + Callback.GetHashCode();
             }
 
-            if (this.Chat != null)
+            if (Chat != null)
             {
-                hash = hash * 59 + this.Chat.GetHashCode();
+                hash = hash * 59 + Chat.GetHashCode();
             }
 
-            if (this.Email != null)
+            if (Email != null)
             {
-                hash = hash * 59 + this.Email.GetHashCode();
+                hash = hash * 59 + Email.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
             return hash;

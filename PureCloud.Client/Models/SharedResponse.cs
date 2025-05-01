@@ -96,7 +96,7 @@ public partial class SharedResponse : IEquatable<SharedResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SharedResponse);
+        return Equals(obj as SharedResponse);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class SharedResponse : IEquatable<SharedResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DownloadUri == other.DownloadUri ||
-                this.DownloadUri != null &&
-                this.DownloadUri.Equals(other.DownloadUri)
+                DownloadUri == other.DownloadUri ||
+                DownloadUri != null &&
+                DownloadUri.Equals(other.DownloadUri)
             ) &&
             (
-                this.ViewUri == other.ViewUri ||
-                this.ViewUri != null &&
-                this.ViewUri.Equals(other.ViewUri)
+                ViewUri == other.ViewUri ||
+                ViewUri != null &&
+                ViewUri.Equals(other.ViewUri)
             ) &&
             (
-                this.Document == other.Document ||
-                this.Document != null &&
-                this.Document.Equals(other.Document)
+                Document == other.Document ||
+                Document != null &&
+                Document.Equals(other.Document)
             ) &&
             (
-                this.Share == other.Share ||
-                this.Share != null &&
-                this.Share.Equals(other.Share)
+                Share == other.Share ||
+                Share != null &&
+                Share.Equals(other.Share)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class SharedResponse : IEquatable<SharedResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DownloadUri != null)
+            if (DownloadUri != null)
             {
-                hash = hash * 59 + this.DownloadUri.GetHashCode();
+                hash = hash * 59 + DownloadUri.GetHashCode();
             }
 
-            if (this.ViewUri != null)
+            if (ViewUri != null)
             {
-                hash = hash * 59 + this.ViewUri.GetHashCode();
+                hash = hash * 59 + ViewUri.GetHashCode();
             }
 
-            if (this.Document != null)
+            if (Document != null)
             {
-                hash = hash * 59 + this.Document.GetHashCode();
+                hash = hash * 59 + Document.GetHashCode();
             }
 
-            if (this.Share != null)
+            if (Share != null)
             {
-                hash = hash * 59 + this.Share.GetHashCode();
+                hash = hash * 59 + Share.GetHashCode();
             }
 
             return hash;

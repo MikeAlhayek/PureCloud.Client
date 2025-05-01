@@ -226,7 +226,7 @@ public partial class AlternativeShiftJobResponse : IEquatable<AlternativeShiftJo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftJobResponse);
+        return Equals(obj as AlternativeShiftJobResponse);
     }
 
     /// <summary>
@@ -244,49 +244,49 @@ public partial class AlternativeShiftJobResponse : IEquatable<AlternativeShiftJo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.ViewOffersResults == other.ViewOffersResults ||
-                this.ViewOffersResults != null &&
-                this.ViewOffersResults.Equals(other.ViewOffersResults)
+                ViewOffersResults == other.ViewOffersResults ||
+                ViewOffersResults != null &&
+                ViewOffersResults.Equals(other.ViewOffersResults)
             ) &&
             (
-                this.ViewTradesResults == other.ViewTradesResults ||
-                this.ViewTradesResults != null &&
-                this.ViewTradesResults.Equals(other.ViewTradesResults)
+                ViewTradesResults == other.ViewTradesResults ||
+                ViewTradesResults != null &&
+                ViewTradesResults.Equals(other.ViewTradesResults)
             ) &&
             (
-                this.BulkUpdateTradesResults == other.BulkUpdateTradesResults ||
-                this.BulkUpdateTradesResults != null &&
-                this.BulkUpdateTradesResults.Equals(other.BulkUpdateTradesResults)
+                BulkUpdateTradesResults == other.BulkUpdateTradesResults ||
+                BulkUpdateTradesResults != null &&
+                BulkUpdateTradesResults.Equals(other.BulkUpdateTradesResults)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -301,49 +301,49 @@ public partial class AlternativeShiftJobResponse : IEquatable<AlternativeShiftJo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.ViewOffersResults != null)
+            if (ViewOffersResults != null)
             {
-                hash = hash * 59 + this.ViewOffersResults.GetHashCode();
+                hash = hash * 59 + ViewOffersResults.GetHashCode();
             }
 
-            if (this.ViewTradesResults != null)
+            if (ViewTradesResults != null)
             {
-                hash = hash * 59 + this.ViewTradesResults.GetHashCode();
+                hash = hash * 59 + ViewTradesResults.GetHashCode();
             }
 
-            if (this.BulkUpdateTradesResults != null)
+            if (BulkUpdateTradesResults != null)
             {
-                hash = hash * 59 + this.BulkUpdateTradesResults.GetHashCode();
+                hash = hash * 59 + BulkUpdateTradesResults.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -63,7 +63,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicMessage : IEquatable<V
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2WebMessagingUndeliveredMessageTopicMessage);
+        return Equals(obj as V2WebMessagingUndeliveredMessageTopicMessage);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class V2WebMessagingUndeliveredMessageTopicMessage : IEquatable<V
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.EventTimeMs == other.EventTimeMs ||
-                this.EventTimeMs != null &&
-                this.EventTimeMs.Equals(other.EventTimeMs)
+                EventTimeMs == other.EventTimeMs ||
+                EventTimeMs != null &&
+                EventTimeMs.Equals(other.EventTimeMs)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class V2WebMessagingUndeliveredMessageTopicMessage : IEquatable<V
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.EventTimeMs != null)
+            if (EventTimeMs != null)
             {
-                hash = hash * 59 + this.EventTimeMs.GetHashCode();
+                hash = hash * 59 + EventTimeMs.GetHashCode();
             }
 
             return hash;

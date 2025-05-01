@@ -85,7 +85,7 @@ public partial class JourneySessionEventsNotificationNetworkConnectivity : IEqua
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneySessionEventsNotificationNetworkConnectivity);
+        return Equals(obj as JourneySessionEventsNotificationNetworkConnectivity);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class JourneySessionEventsNotificationNetworkConnectivity : IEqua
 
         return true &&
             (
-                this.Carrier == other.Carrier ||
-                this.Carrier != null &&
-                this.Carrier.Equals(other.Carrier)
+                Carrier == other.Carrier ||
+                Carrier != null &&
+                Carrier.Equals(other.Carrier)
             ) &&
             (
-                this.BluetoothEnabled == other.BluetoothEnabled ||
-                this.BluetoothEnabled != null &&
-                this.BluetoothEnabled.Equals(other.BluetoothEnabled)
+                BluetoothEnabled == other.BluetoothEnabled ||
+                BluetoothEnabled != null &&
+                BluetoothEnabled.Equals(other.BluetoothEnabled)
             ) &&
             (
-                this.CellularEnabled == other.CellularEnabled ||
-                this.CellularEnabled != null &&
-                this.CellularEnabled.Equals(other.CellularEnabled)
+                CellularEnabled == other.CellularEnabled ||
+                CellularEnabled != null &&
+                CellularEnabled.Equals(other.CellularEnabled)
             ) &&
             (
-                this.WifiEnabled == other.WifiEnabled ||
-                this.WifiEnabled != null &&
-                this.WifiEnabled.Equals(other.WifiEnabled)
+                WifiEnabled == other.WifiEnabled ||
+                WifiEnabled != null &&
+                WifiEnabled.Equals(other.WifiEnabled)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class JourneySessionEventsNotificationNetworkConnectivity : IEqua
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Carrier != null)
+            if (Carrier != null)
             {
-                hash = hash * 59 + this.Carrier.GetHashCode();
+                hash = hash * 59 + Carrier.GetHashCode();
             }
 
-            if (this.BluetoothEnabled != null)
+            if (BluetoothEnabled != null)
             {
-                hash = hash * 59 + this.BluetoothEnabled.GetHashCode();
+                hash = hash * 59 + BluetoothEnabled.GetHashCode();
             }
 
-            if (this.CellularEnabled != null)
+            if (CellularEnabled != null)
             {
-                hash = hash * 59 + this.CellularEnabled.GetHashCode();
+                hash = hash * 59 + CellularEnabled.GetHashCode();
             }
 
-            if (this.WifiEnabled != null)
+            if (WifiEnabled != null)
             {
-                hash = hash * 59 + this.WifiEnabled.GetHashCode();
+                hash = hash * 59 + WifiEnabled.GetHashCode();
             }
 
             return hash;

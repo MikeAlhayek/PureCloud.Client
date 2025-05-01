@@ -288,7 +288,7 @@ public partial class Response : IEquatable<Response>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Response);
+        return Equals(obj as Response);
     }
 
     /// <summary>
@@ -306,79 +306,79 @@ public partial class Response : IEquatable<Response>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Libraries == other.Libraries ||
-                this.Libraries != null &&
-                this.Libraries.SequenceEqual(other.Libraries)
+                Libraries == other.Libraries ||
+                Libraries != null &&
+                Libraries.SequenceEqual(other.Libraries)
             ) &&
             (
-                this.Texts == other.Texts ||
-                this.Texts != null &&
-                this.Texts.SequenceEqual(other.Texts)
+                Texts == other.Texts ||
+                Texts != null &&
+                Texts.SequenceEqual(other.Texts)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.InteractionType == other.InteractionType ||
-                this.InteractionType != null &&
-                this.InteractionType.Equals(other.InteractionType)
+                InteractionType == other.InteractionType ||
+                InteractionType != null &&
+                InteractionType.Equals(other.InteractionType)
             ) &&
             (
-                this.Substitutions == other.Substitutions ||
-                this.Substitutions != null &&
-                this.Substitutions.SequenceEqual(other.Substitutions)
+                Substitutions == other.Substitutions ||
+                Substitutions != null &&
+                Substitutions.SequenceEqual(other.Substitutions)
             ) &&
             (
-                this.SubstitutionsSchema == other.SubstitutionsSchema ||
-                this.SubstitutionsSchema != null &&
-                this.SubstitutionsSchema.Equals(other.SubstitutionsSchema)
+                SubstitutionsSchema == other.SubstitutionsSchema ||
+                SubstitutionsSchema != null &&
+                SubstitutionsSchema.Equals(other.SubstitutionsSchema)
             ) &&
             (
-                this.ResponseType == other.ResponseType ||
-                this.ResponseType != null &&
-                this.ResponseType.Equals(other.ResponseType)
+                ResponseType == other.ResponseType ||
+                ResponseType != null &&
+                ResponseType.Equals(other.ResponseType)
             ) &&
             (
-                this.MessagingTemplate == other.MessagingTemplate ||
-                this.MessagingTemplate != null &&
-                this.MessagingTemplate.Equals(other.MessagingTemplate)
+                MessagingTemplate == other.MessagingTemplate ||
+                MessagingTemplate != null &&
+                MessagingTemplate.Equals(other.MessagingTemplate)
             ) &&
             (
-                this.Assets == other.Assets ||
-                this.Assets != null &&
-                this.Assets.SequenceEqual(other.Assets)
+                Assets == other.Assets ||
+                Assets != null &&
+                Assets.SequenceEqual(other.Assets)
             ) &&
             (
-                this.Footer == other.Footer ||
-                this.Footer != null &&
-                this.Footer.Equals(other.Footer)
+                Footer == other.Footer ||
+                Footer != null &&
+                Footer.Equals(other.Footer)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -393,79 +393,79 @@ public partial class Response : IEquatable<Response>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Libraries != null)
+            if (Libraries != null)
             {
-                hash = hash * 59 + this.Libraries.GetHashCode();
+                hash = hash * 59 + Libraries.GetHashCode();
             }
 
-            if (this.Texts != null)
+            if (Texts != null)
             {
-                hash = hash * 59 + this.Texts.GetHashCode();
+                hash = hash * 59 + Texts.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.InteractionType != null)
+            if (InteractionType != null)
             {
-                hash = hash * 59 + this.InteractionType.GetHashCode();
+                hash = hash * 59 + InteractionType.GetHashCode();
             }
 
-            if (this.Substitutions != null)
+            if (Substitutions != null)
             {
-                hash = hash * 59 + this.Substitutions.GetHashCode();
+                hash = hash * 59 + Substitutions.GetHashCode();
             }
 
-            if (this.SubstitutionsSchema != null)
+            if (SubstitutionsSchema != null)
             {
-                hash = hash * 59 + this.SubstitutionsSchema.GetHashCode();
+                hash = hash * 59 + SubstitutionsSchema.GetHashCode();
             }
 
-            if (this.ResponseType != null)
+            if (ResponseType != null)
             {
-                hash = hash * 59 + this.ResponseType.GetHashCode();
+                hash = hash * 59 + ResponseType.GetHashCode();
             }
 
-            if (this.MessagingTemplate != null)
+            if (MessagingTemplate != null)
             {
-                hash = hash * 59 + this.MessagingTemplate.GetHashCode();
+                hash = hash * 59 + MessagingTemplate.GetHashCode();
             }
 
-            if (this.Assets != null)
+            if (Assets != null)
             {
-                hash = hash * 59 + this.Assets.GetHashCode();
+                hash = hash * 59 + Assets.GetHashCode();
             }
 
-            if (this.Footer != null)
+            if (Footer != null)
             {
-                hash = hash * 59 + this.Footer.GetHashCode();
+                hash = hash * 59 + Footer.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

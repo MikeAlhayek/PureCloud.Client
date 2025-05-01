@@ -53,7 +53,7 @@ public partial class EmailSettings : IEquatable<EmailSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailSettings);
+        return Equals(obj as EmailSettings);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class EmailSettings : IEquatable<EmailSettings>
 
         return true &&
             (
-                this.MultipleRouteDestinationsOnInboundEmailEnabled == other.MultipleRouteDestinationsOnInboundEmailEnabled ||
-                this.MultipleRouteDestinationsOnInboundEmailEnabled != null &&
-                this.MultipleRouteDestinationsOnInboundEmailEnabled.Equals(other.MultipleRouteDestinationsOnInboundEmailEnabled)
+                MultipleRouteDestinationsOnInboundEmailEnabled == other.MultipleRouteDestinationsOnInboundEmailEnabled ||
+                MultipleRouteDestinationsOnInboundEmailEnabled != null &&
+                MultipleRouteDestinationsOnInboundEmailEnabled.Equals(other.MultipleRouteDestinationsOnInboundEmailEnabled)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class EmailSettings : IEquatable<EmailSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MultipleRouteDestinationsOnInboundEmailEnabled != null)
+            if (MultipleRouteDestinationsOnInboundEmailEnabled != null)
             {
-                hash = hash * 59 + this.MultipleRouteDestinationsOnInboundEmailEnabled.GetHashCode();
+                hash = hash * 59 + MultipleRouteDestinationsOnInboundEmailEnabled.GetHashCode();
             }
 
             return hash;

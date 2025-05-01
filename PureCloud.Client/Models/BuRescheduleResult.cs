@@ -101,7 +101,7 @@ public partial class BuRescheduleResult : IEquatable<BuRescheduleResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuRescheduleResult);
+        return Equals(obj as BuRescheduleResult);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class BuRescheduleResult : IEquatable<BuRescheduleResult>
 
         return true &&
             (
-                this.GenerationResults == other.GenerationResults ||
-                this.GenerationResults != null &&
-                this.GenerationResults.Equals(other.GenerationResults)
+                GenerationResults == other.GenerationResults ||
+                GenerationResults != null &&
+                GenerationResults.Equals(other.GenerationResults)
             ) &&
             (
-                this.GenerationResultsDownloadUrl == other.GenerationResultsDownloadUrl ||
-                this.GenerationResultsDownloadUrl != null &&
-                this.GenerationResultsDownloadUrl.Equals(other.GenerationResultsDownloadUrl)
+                GenerationResultsDownloadUrl == other.GenerationResultsDownloadUrl ||
+                GenerationResultsDownloadUrl != null &&
+                GenerationResultsDownloadUrl.Equals(other.GenerationResultsDownloadUrl)
             ) &&
             (
-                this.HeadcountForecast == other.HeadcountForecast ||
-                this.HeadcountForecast != null &&
-                this.HeadcountForecast.Equals(other.HeadcountForecast)
+                HeadcountForecast == other.HeadcountForecast ||
+                HeadcountForecast != null &&
+                HeadcountForecast.Equals(other.HeadcountForecast)
             ) &&
             (
-                this.HeadcountForecastDownloadUrl == other.HeadcountForecastDownloadUrl ||
-                this.HeadcountForecastDownloadUrl != null &&
-                this.HeadcountForecastDownloadUrl.Equals(other.HeadcountForecastDownloadUrl)
+                HeadcountForecastDownloadUrl == other.HeadcountForecastDownloadUrl ||
+                HeadcountForecastDownloadUrl != null &&
+                HeadcountForecastDownloadUrl.Equals(other.HeadcountForecastDownloadUrl)
             ) &&
             (
-                this.AgentSchedules == other.AgentSchedules ||
-                this.AgentSchedules != null &&
-                this.AgentSchedules.SequenceEqual(other.AgentSchedules)
+                AgentSchedules == other.AgentSchedules ||
+                AgentSchedules != null &&
+                AgentSchedules.SequenceEqual(other.AgentSchedules)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class BuRescheduleResult : IEquatable<BuRescheduleResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.GenerationResults != null)
+            if (GenerationResults != null)
             {
-                hash = hash * 59 + this.GenerationResults.GetHashCode();
+                hash = hash * 59 + GenerationResults.GetHashCode();
             }
 
-            if (this.GenerationResultsDownloadUrl != null)
+            if (GenerationResultsDownloadUrl != null)
             {
-                hash = hash * 59 + this.GenerationResultsDownloadUrl.GetHashCode();
+                hash = hash * 59 + GenerationResultsDownloadUrl.GetHashCode();
             }
 
-            if (this.HeadcountForecast != null)
+            if (HeadcountForecast != null)
             {
-                hash = hash * 59 + this.HeadcountForecast.GetHashCode();
+                hash = hash * 59 + HeadcountForecast.GetHashCode();
             }
 
-            if (this.HeadcountForecastDownloadUrl != null)
+            if (HeadcountForecastDownloadUrl != null)
             {
-                hash = hash * 59 + this.HeadcountForecastDownloadUrl.GetHashCode();
+                hash = hash * 59 + HeadcountForecastDownloadUrl.GetHashCode();
             }
 
-            if (this.AgentSchedules != null)
+            if (AgentSchedules != null)
             {
-                hash = hash * 59 + this.AgentSchedules.GetHashCode();
+                hash = hash * 59 + AgentSchedules.GetHashCode();
             }
 
             return hash;

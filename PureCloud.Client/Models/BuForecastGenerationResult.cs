@@ -52,7 +52,7 @@ public partial class BuForecastGenerationResult : IEquatable<BuForecastGeneratio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuForecastGenerationResult);
+        return Equals(obj as BuForecastGenerationResult);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class BuForecastGenerationResult : IEquatable<BuForecastGeneratio
 
         return true &&
             (
-                this.PlanningGroupResults == other.PlanningGroupResults ||
-                this.PlanningGroupResults != null &&
-                this.PlanningGroupResults.SequenceEqual(other.PlanningGroupResults)
+                PlanningGroupResults == other.PlanningGroupResults ||
+                PlanningGroupResults != null &&
+                PlanningGroupResults.SequenceEqual(other.PlanningGroupResults)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class BuForecastGenerationResult : IEquatable<BuForecastGeneratio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PlanningGroupResults != null)
+            if (PlanningGroupResults != null)
             {
-                hash = hash * 59 + this.PlanningGroupResults.GetHashCode();
+                hash = hash * 59 + PlanningGroupResults.GetHashCode();
             }
 
             return hash;

@@ -109,7 +109,7 @@ public partial class DevelopmentActivityAggregateQueryRequestPredicate : IEquata
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DevelopmentActivityAggregateQueryRequestPredicate);
+        return Equals(obj as DevelopmentActivityAggregateQueryRequestPredicate);
     }
 
     /// <summary>
@@ -127,14 +127,14 @@ public partial class DevelopmentActivityAggregateQueryRequestPredicate : IEquata
 
         return true &&
             (
-                this.Dimension == other.Dimension ||
-                this.Dimension != null &&
-                this.Dimension.Equals(other.Dimension)
+                Dimension == other.Dimension ||
+                Dimension != null &&
+                Dimension.Equals(other.Dimension)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -149,14 +149,14 @@ public partial class DevelopmentActivityAggregateQueryRequestPredicate : IEquata
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Dimension != null)
+            if (Dimension != null)
             {
-                hash = hash * 59 + this.Dimension.GetHashCode();
+                hash = hash * 59 + Dimension.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

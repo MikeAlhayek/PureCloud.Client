@@ -6131,12 +6131,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
     /// <returns></returns>
     public ExternalContactsApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -6150,17 +6150,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -6170,7 +6170,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -6196,7 +6196,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -6208,7 +6208,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -6254,7 +6254,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6263,7 +6263,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6276,7 +6276,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -6292,11 +6292,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6322,7 +6322,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6371,7 +6371,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6380,7 +6380,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6393,7 +6393,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -6409,11 +6409,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6439,7 +6439,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6495,7 +6495,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6504,7 +6504,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6517,12 +6517,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
@@ -6538,11 +6538,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6568,7 +6568,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6625,7 +6625,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6634,7 +6634,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6647,12 +6647,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
@@ -6668,11 +6668,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6698,7 +6698,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6746,7 +6746,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6755,7 +6755,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6768,7 +6768,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -6784,11 +6784,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6862,7 +6862,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6871,7 +6871,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6884,7 +6884,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -6900,11 +6900,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6979,7 +6979,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6988,7 +6988,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7001,7 +7001,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalSourceId != null)
         {
-            localVarPathParams.Add("externalSourceId", this.Configuration.ApiClient.ParameterToString(externalSourceId));
+            localVarPathParams.Add("externalSourceId", Configuration.ApiClient.ParameterToString(externalSourceId));
         }
 
         // Query params
@@ -7017,11 +7017,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7047,7 +7047,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7096,7 +7096,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7105,7 +7105,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7118,7 +7118,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalSourceId != null)
         {
-            localVarPathParams.Add("externalSourceId", this.Configuration.ApiClient.ParameterToString(externalSourceId));
+            localVarPathParams.Add("externalSourceId", Configuration.ApiClient.ParameterToString(externalSourceId));
         }
 
         // Query params
@@ -7134,11 +7134,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7164,7 +7164,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7212,7 +7212,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7221,7 +7221,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7234,7 +7234,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -7250,11 +7250,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7328,7 +7328,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7337,7 +7337,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7350,7 +7350,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -7366,11 +7366,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7444,7 +7444,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7453,7 +7453,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7466,7 +7466,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -7482,11 +7482,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7560,7 +7560,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7569,7 +7569,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7582,7 +7582,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -7598,11 +7598,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7677,7 +7677,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7686,7 +7686,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7699,7 +7699,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -7715,11 +7715,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7745,7 +7745,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7794,7 +7794,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7803,7 +7803,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7816,7 +7816,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -7832,11 +7832,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7862,7 +7862,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7918,7 +7918,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7927,7 +7927,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7940,12 +7940,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
@@ -7961,11 +7961,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7991,7 +7991,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8048,7 +8048,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8057,7 +8057,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8070,12 +8070,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
@@ -8091,11 +8091,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8121,7 +8121,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8169,7 +8169,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8178,7 +8178,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8191,7 +8191,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -8207,11 +8207,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8285,7 +8285,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8294,7 +8294,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8307,7 +8307,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -8323,11 +8323,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8402,7 +8402,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8411,7 +8411,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8424,7 +8424,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (relationshipId != null)
         {
-            localVarPathParams.Add("relationshipId", this.Configuration.ApiClient.ParameterToString(relationshipId));
+            localVarPathParams.Add("relationshipId", Configuration.ApiClient.ParameterToString(relationshipId));
         }
 
         // Query params
@@ -8440,11 +8440,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8470,7 +8470,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8519,7 +8519,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8528,7 +8528,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8541,7 +8541,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (relationshipId != null)
         {
-            localVarPathParams.Add("relationshipId", this.Configuration.ApiClient.ParameterToString(relationshipId));
+            localVarPathParams.Add("relationshipId", Configuration.ApiClient.ParameterToString(relationshipId));
         }
 
         // Query params
@@ -8557,11 +8557,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8587,7 +8587,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8638,7 +8638,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8647,7 +8647,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8660,13 +8660,13 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -8680,11 +8680,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8710,7 +8710,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8761,7 +8761,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8770,7 +8770,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8783,13 +8783,13 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -8803,11 +8803,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8833,7 +8833,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8882,7 +8882,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8891,7 +8891,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8904,7 +8904,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -8920,11 +8920,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8950,7 +8950,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactIdentifierListing>(localVarStatusCode,
             localVarHeaders,
-            (ContactIdentifierListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactIdentifierListing)),
+            (ContactIdentifierListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactIdentifierListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8999,7 +8999,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9008,7 +9008,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9021,7 +9021,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -9037,11 +9037,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9067,7 +9067,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactIdentifierListing>(localVarStatusCode,
             localVarHeaders,
-            (ContactIdentifierListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactIdentifierListing)),
+            (ContactIdentifierListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactIdentifierListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9122,7 +9122,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9131,7 +9131,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9144,23 +9144,23 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (includeMerged != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeMerged", this.Configuration.ApiClient.ParameterToString(includeMerged)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeMerged", Configuration.ApiClient.ParameterToString(includeMerged)));
         }
 
         // Header params
@@ -9174,11 +9174,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9204,7 +9204,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<SessionListing>(localVarStatusCode,
             localVarHeaders,
-            (SessionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SessionListing)),
+            (SessionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SessionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9259,7 +9259,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9268,7 +9268,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9281,23 +9281,23 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (includeMerged != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeMerged", this.Configuration.ApiClient.ParameterToString(includeMerged)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeMerged", Configuration.ApiClient.ParameterToString(includeMerged)));
         }
 
         // Header params
@@ -9311,11 +9311,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9341,7 +9341,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<SessionListing>(localVarStatusCode,
             localVarHeaders,
-            (SessionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SessionListing)),
+            (SessionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SessionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9399,7 +9399,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9408,7 +9408,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9421,18 +9421,18 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -9446,11 +9446,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9476,7 +9476,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9535,7 +9535,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9544,7 +9544,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9557,18 +9557,18 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -9582,11 +9582,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9612,7 +9612,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9669,7 +9669,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9678,7 +9678,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9691,28 +9691,28 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -9726,11 +9726,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9756,7 +9756,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<NoteListing>(localVarStatusCode,
             localVarHeaders,
-            (NoteListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NoteListing)),
+            (NoteListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NoteListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9813,7 +9813,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9822,7 +9822,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9835,28 +9835,28 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -9870,11 +9870,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9900,7 +9900,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<NoteListing>(localVarStatusCode,
             localVarHeaders,
-            (NoteListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NoteListing)),
+            (NoteListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NoteListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9951,7 +9951,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9960,7 +9960,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9973,13 +9973,13 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -9993,11 +9993,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10023,7 +10023,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10074,7 +10074,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10083,7 +10083,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10096,13 +10096,13 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -10116,11 +10116,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10146,7 +10146,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10200,7 +10200,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10209,7 +10209,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10224,32 +10224,32 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (q != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q", this.Configuration.ApiClient.ParameterToString(q)));
+            localVarQueryParams.Add(new Tuple<string, string>("q", Configuration.ApiClient.ParameterToString(q)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (divisionIds != null)
         {
-            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -10263,11 +10263,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10293,7 +10293,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactListing>(localVarStatusCode,
             localVarHeaders,
-            (ContactListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactListing)),
+            (ContactListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10347,7 +10347,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10356,7 +10356,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10371,32 +10371,32 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (q != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q", this.Configuration.ApiClient.ParameterToString(q)));
+            localVarQueryParams.Add(new Tuple<string, string>("q", Configuration.ApiClient.ParameterToString(q)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (divisionIds != null)
         {
-            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -10410,11 +10410,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10440,7 +10440,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactListing>(localVarStatusCode,
             localVarHeaders,
-            (ContactListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactListing)),
+            (ContactListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10489,7 +10489,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10498,7 +10498,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10511,7 +10511,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (exportId != null)
         {
-            localVarPathParams.Add("exportId", this.Configuration.ApiClient.ParameterToString(exportId));
+            localVarPathParams.Add("exportId", Configuration.ApiClient.ParameterToString(exportId));
         }
 
         // Query params
@@ -10527,11 +10527,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10557,7 +10557,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactsExport>(localVarStatusCode,
             localVarHeaders,
-            (ContactsExport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactsExport)),
+            (ContactsExport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactsExport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10606,7 +10606,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10615,7 +10615,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10628,7 +10628,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (exportId != null)
         {
-            localVarPathParams.Add("exportId", this.Configuration.ApiClient.ParameterToString(exportId));
+            localVarPathParams.Add("exportId", Configuration.ApiClient.ParameterToString(exportId));
         }
 
         // Query params
@@ -10644,11 +10644,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10674,7 +10674,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactsExport>(localVarStatusCode,
             localVarHeaders,
-            (ContactsExport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactsExport)),
+            (ContactsExport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactsExport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10722,7 +10722,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10731,7 +10731,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10746,17 +10746,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (divisionIds != null)
         {
-            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -10770,11 +10770,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10800,7 +10800,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExportListing>(localVarStatusCode,
             localVarHeaders,
-            (ExportListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportListing)),
+            (ExportListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10848,7 +10848,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10857,7 +10857,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10872,17 +10872,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (divisionIds != null)
         {
-            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -10896,11 +10896,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10926,7 +10926,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExportListing>(localVarStatusCode,
             localVarHeaders,
-            (ExportListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportListing)),
+            (ExportListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10975,7 +10975,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10984,7 +10984,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10997,7 +10997,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -11013,11 +11013,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11043,7 +11043,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11092,7 +11092,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11101,7 +11101,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11114,7 +11114,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -11130,11 +11130,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11160,7 +11160,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11216,7 +11216,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11225,7 +11225,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11238,12 +11238,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
@@ -11259,11 +11259,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11289,7 +11289,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11346,7 +11346,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11355,7 +11355,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11368,12 +11368,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
@@ -11389,11 +11389,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11419,7 +11419,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11468,7 +11468,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11477,7 +11477,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11490,7 +11490,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -11506,11 +11506,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11536,7 +11536,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11585,7 +11585,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11594,7 +11594,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11607,7 +11607,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -11623,11 +11623,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11653,7 +11653,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11695,7 +11695,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11704,7 +11704,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11729,11 +11729,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11759,7 +11759,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchemaListing>(localVarStatusCode,
             localVarHeaders,
-            (DataSchemaListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
+            (DataSchemaListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11801,7 +11801,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11810,7 +11810,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11835,11 +11835,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11865,7 +11865,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchemaListing>(localVarStatusCode,
             localVarHeaders,
-            (DataSchemaListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
+            (DataSchemaListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11914,7 +11914,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11923,7 +11923,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11936,7 +11936,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (coreTypeName != null)
         {
-            localVarPathParams.Add("coreTypeName", this.Configuration.ApiClient.ParameterToString(coreTypeName));
+            localVarPathParams.Add("coreTypeName", Configuration.ApiClient.ParameterToString(coreTypeName));
         }
 
         // Query params
@@ -11952,11 +11952,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11982,7 +11982,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12031,7 +12031,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12040,7 +12040,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12053,7 +12053,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (coreTypeName != null)
         {
-            localVarPathParams.Add("coreTypeName", this.Configuration.ApiClient.ParameterToString(coreTypeName));
+            localVarPathParams.Add("coreTypeName", Configuration.ApiClient.ParameterToString(coreTypeName));
         }
 
         // Query params
@@ -12069,11 +12069,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12099,7 +12099,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12141,7 +12141,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12150,7 +12150,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12175,11 +12175,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12205,7 +12205,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12247,7 +12247,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12256,7 +12256,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12281,11 +12281,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12311,7 +12311,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12353,7 +12353,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12362,7 +12362,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12387,11 +12387,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12417,7 +12417,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<SchemaQuantityLimits>(localVarStatusCode,
             localVarHeaders,
-            (SchemaQuantityLimits)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
+            (SchemaQuantityLimits)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12459,7 +12459,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12468,7 +12468,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12493,11 +12493,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12523,7 +12523,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<SchemaQuantityLimits>(localVarStatusCode,
             localVarHeaders,
-            (SchemaQuantityLimits)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
+            (SchemaQuantityLimits)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12572,7 +12572,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12581,7 +12581,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12594,7 +12594,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalSourceId != null)
         {
-            localVarPathParams.Add("externalSourceId", this.Configuration.ApiClient.ParameterToString(externalSourceId));
+            localVarPathParams.Add("externalSourceId", Configuration.ApiClient.ParameterToString(externalSourceId));
         }
 
         // Query params
@@ -12610,11 +12610,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12640,7 +12640,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalSource>(localVarStatusCode,
             localVarHeaders,
-            (ExternalSource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
+            (ExternalSource)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12689,7 +12689,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12698,7 +12698,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12711,7 +12711,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalSourceId != null)
         {
-            localVarPathParams.Add("externalSourceId", this.Configuration.ApiClient.ParameterToString(externalSourceId));
+            localVarPathParams.Add("externalSourceId", Configuration.ApiClient.ParameterToString(externalSourceId));
         }
 
         // Query params
@@ -12727,11 +12727,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12757,7 +12757,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalSource>(localVarStatusCode,
             localVarHeaders,
-            (ExternalSource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
+            (ExternalSource)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12807,7 +12807,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12816,7 +12816,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12831,22 +12831,22 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (active != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("active", this.Configuration.ApiClient.ParameterToString(active)));
+            localVarQueryParams.Add(new Tuple<string, string>("active", Configuration.ApiClient.ParameterToString(active)));
         }
 
         // Header params
@@ -12860,11 +12860,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12890,7 +12890,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorExternalSourceListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorExternalSourceListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorExternalSourceListing)),
+            (CursorExternalSourceListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorExternalSourceListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12940,7 +12940,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12949,7 +12949,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12964,22 +12964,22 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (active != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("active", this.Configuration.ApiClient.ParameterToString(active)));
+            localVarQueryParams.Add(new Tuple<string, string>("active", Configuration.ApiClient.ParameterToString(active)));
         }
 
         // Header params
@@ -12993,11 +12993,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13023,7 +13023,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorExternalSourceListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorExternalSourceListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorExternalSourceListing)),
+            (CursorExternalSourceListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorExternalSourceListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13072,7 +13072,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13081,7 +13081,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13094,7 +13094,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -13110,11 +13110,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13140,7 +13140,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvSettings>(localVarStatusCode,
             localVarHeaders,
-            (CsvSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
+            (CsvSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13189,7 +13189,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13198,7 +13198,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13211,7 +13211,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -13227,11 +13227,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13257,7 +13257,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvSettings>(localVarStatusCode,
             localVarHeaders,
-            (CsvSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
+            (CsvSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13305,7 +13305,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13314,7 +13314,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13329,17 +13329,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (externalSettingsId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("externalSettingsId", this.Configuration.ApiClient.ParameterToString(externalSettingsId)));
+            localVarQueryParams.Add(new Tuple<string, string>("externalSettingsId", Configuration.ApiClient.ParameterToString(externalSettingsId)));
         }
 
         // Header params
@@ -13353,11 +13353,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13383,7 +13383,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Listing>(localVarStatusCode,
             localVarHeaders,
-            (Listing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Listing)),
+            (Listing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Listing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13431,7 +13431,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13440,7 +13440,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13455,17 +13455,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (externalSettingsId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("externalSettingsId", this.Configuration.ApiClient.ParameterToString(externalSettingsId)));
+            localVarQueryParams.Add(new Tuple<string, string>("externalSettingsId", Configuration.ApiClient.ParameterToString(externalSettingsId)));
         }
 
         // Header params
@@ -13479,11 +13479,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13509,7 +13509,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Listing>(localVarStatusCode,
             localVarHeaders,
-            (Listing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Listing)),
+            (Listing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Listing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13558,7 +13558,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13567,7 +13567,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13580,7 +13580,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (uploadId != null)
         {
-            localVarPathParams.Add("uploadId", this.Configuration.ApiClient.ParameterToString(uploadId));
+            localVarPathParams.Add("uploadId", Configuration.ApiClient.ParameterToString(uploadId));
         }
 
         // Query params
@@ -13596,11 +13596,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13626,7 +13626,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvUploadDetailsResponse>(localVarStatusCode,
             localVarHeaders,
-            (CsvUploadDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadDetailsResponse)),
+            (CsvUploadDetailsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadDetailsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13675,7 +13675,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13684,7 +13684,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13697,7 +13697,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (uploadId != null)
         {
-            localVarPathParams.Add("uploadId", this.Configuration.ApiClient.ParameterToString(uploadId));
+            localVarPathParams.Add("uploadId", Configuration.ApiClient.ParameterToString(uploadId));
         }
 
         // Query params
@@ -13713,11 +13713,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13743,7 +13743,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvUploadDetailsResponse>(localVarStatusCode,
             localVarHeaders,
-            (CsvUploadDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadDetailsResponse)),
+            (CsvUploadDetailsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadDetailsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13792,7 +13792,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13801,7 +13801,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13814,7 +13814,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (uploadId != null)
         {
-            localVarPathParams.Add("uploadId", this.Configuration.ApiClient.ParameterToString(uploadId));
+            localVarPathParams.Add("uploadId", Configuration.ApiClient.ParameterToString(uploadId));
         }
 
         // Query params
@@ -13830,11 +13830,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13860,7 +13860,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvUploadPreviewResponse>(localVarStatusCode,
             localVarHeaders,
-            (CsvUploadPreviewResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadPreviewResponse)),
+            (CsvUploadPreviewResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadPreviewResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13909,7 +13909,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13918,7 +13918,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13931,7 +13931,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (uploadId != null)
         {
-            localVarPathParams.Add("uploadId", this.Configuration.ApiClient.ParameterToString(uploadId));
+            localVarPathParams.Add("uploadId", Configuration.ApiClient.ParameterToString(uploadId));
         }
 
         // Query params
@@ -13947,11 +13947,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13977,7 +13977,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvUploadPreviewResponse>(localVarStatusCode,
             localVarHeaders,
-            (CsvUploadPreviewResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadPreviewResponse)),
+            (CsvUploadPreviewResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadPreviewResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14028,7 +14028,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14037,7 +14037,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14050,13 +14050,13 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -14070,11 +14070,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14100,7 +14100,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobResponse)),
+            (ContactImportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14151,7 +14151,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14160,7 +14160,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14173,13 +14173,13 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -14193,11 +14193,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14223,7 +14223,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobResponse)),
+            (ContactImportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14275,7 +14275,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14284,7 +14284,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14299,27 +14299,27 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (jobStatus != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("jobStatus", this.Configuration.ApiClient.ParameterToString(jobStatus)));
+            localVarQueryParams.Add(new Tuple<string, string>("jobStatus", Configuration.ApiClient.ParameterToString(jobStatus)));
         }
 
         // Header params
@@ -14333,11 +14333,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14363,7 +14363,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportJobEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportJobEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobEntityListing)),
+            (ContactImportJobEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14415,7 +14415,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14424,7 +14424,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14439,27 +14439,27 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (jobStatus != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("jobStatus", this.Configuration.ApiClient.ParameterToString(jobStatus)));
+            localVarQueryParams.Add(new Tuple<string, string>("jobStatus", Configuration.ApiClient.ParameterToString(jobStatus)));
         }
 
         // Header params
@@ -14473,11 +14473,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14503,7 +14503,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportJobEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportJobEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobEntityListing)),
+            (ContactImportJobEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14552,7 +14552,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14561,7 +14561,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14574,7 +14574,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -14590,11 +14590,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14620,7 +14620,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportSettings>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
+            (ContactImportSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14669,7 +14669,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14678,7 +14678,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14691,7 +14691,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -14707,11 +14707,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14737,7 +14737,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportSettings>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
+            (ContactImportSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14787,7 +14787,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14796,7 +14796,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14811,22 +14811,22 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -14840,11 +14840,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14870,7 +14870,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportSettingsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportSettingsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettingsEntityListing)),
+            (ContactImportSettingsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettingsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14920,7 +14920,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14929,7 +14929,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14944,22 +14944,22 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -14973,11 +14973,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15003,7 +15003,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportSettingsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportSettingsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettingsEntityListing)),
+            (ContactImportSettingsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettingsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15056,7 +15056,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15065,7 +15065,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15078,18 +15078,18 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includeTrustors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeTrustors", this.Configuration.ApiClient.ParameterToString(includeTrustors)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeTrustors", Configuration.ApiClient.ParameterToString(includeTrustors)));
         }
 
         // Header params
@@ -15103,11 +15103,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15133,7 +15133,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganization>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
+            (ExternalOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15186,7 +15186,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15195,7 +15195,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15208,18 +15208,18 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includeTrustors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeTrustors", this.Configuration.ApiClient.ParameterToString(includeTrustors)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeTrustors", Configuration.ApiClient.ParameterToString(includeTrustors)));
         }
 
         // Header params
@@ -15233,11 +15233,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15263,7 +15263,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganization>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
+            (ExternalOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15322,7 +15322,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15331,7 +15331,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15344,33 +15344,33 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (q != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q", this.Configuration.ApiClient.ParameterToString(q)));
+            localVarQueryParams.Add(new Tuple<string, string>("q", Configuration.ApiClient.ParameterToString(q)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15384,11 +15384,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15414,7 +15414,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactListing>(localVarStatusCode,
             localVarHeaders,
-            (ContactListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactListing)),
+            (ContactListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15473,7 +15473,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15482,7 +15482,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15495,33 +15495,33 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (q != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q", this.Configuration.ApiClient.ParameterToString(q)));
+            localVarQueryParams.Add(new Tuple<string, string>("q", Configuration.ApiClient.ParameterToString(q)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15535,11 +15535,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15565,7 +15565,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactListing>(localVarStatusCode,
             localVarHeaders,
-            (ContactListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactListing)),
+            (ContactListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15616,7 +15616,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15625,7 +15625,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15638,7 +15638,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -15654,11 +15654,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15684,7 +15684,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganizationIdentifierListing>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganizationIdentifierListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationIdentifierListing)),
+            (ExternalOrganizationIdentifierListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationIdentifierListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15735,7 +15735,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15744,7 +15744,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15757,7 +15757,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -15773,11 +15773,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15803,7 +15803,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganizationIdentifierListing>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganizationIdentifierListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationIdentifierListing)),
+            (ExternalOrganizationIdentifierListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationIdentifierListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15861,7 +15861,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15870,7 +15870,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15883,18 +15883,18 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15908,11 +15908,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15938,7 +15938,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15997,7 +15997,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16006,7 +16006,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16019,18 +16019,18 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -16044,11 +16044,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16074,7 +16074,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16131,7 +16131,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16140,7 +16140,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16153,28 +16153,28 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -16188,11 +16188,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16218,7 +16218,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<NoteListing>(localVarStatusCode,
             localVarHeaders,
-            (NoteListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NoteListing)),
+            (NoteListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NoteListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16275,7 +16275,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16284,7 +16284,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16297,28 +16297,28 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -16332,11 +16332,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16362,7 +16362,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<NoteListing>(localVarStatusCode,
             localVarHeaders,
-            (NoteListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NoteListing)),
+            (NoteListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NoteListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16419,7 +16419,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16428,7 +16428,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16441,28 +16441,28 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -16476,11 +16476,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16506,7 +16506,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<RelationshipListing>(localVarStatusCode,
             localVarHeaders,
-            (RelationshipListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RelationshipListing)),
+            (RelationshipListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RelationshipListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16563,7 +16563,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16572,7 +16572,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16585,28 +16585,28 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -16620,11 +16620,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16650,7 +16650,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<RelationshipListing>(localVarStatusCode,
             localVarHeaders,
-            (RelationshipListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RelationshipListing)),
+            (RelationshipListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RelationshipListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16708,7 +16708,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16717,7 +16717,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16732,42 +16732,42 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (q != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q", this.Configuration.ApiClient.ParameterToString(q)));
+            localVarQueryParams.Add(new Tuple<string, string>("q", Configuration.ApiClient.ParameterToString(q)));
         }
 
         if (trustorId != null)
         {
-            trustorId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("trustorId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            trustorId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("trustorId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includeTrustors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeTrustors", this.Configuration.ApiClient.ParameterToString(includeTrustors)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeTrustors", Configuration.ApiClient.ParameterToString(includeTrustors)));
         }
 
         if (divisionIds != null)
         {
-            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -16781,11 +16781,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16811,7 +16811,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganizationListing>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganizationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationListing)),
+            (ExternalOrganizationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16869,7 +16869,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16878,7 +16878,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16893,42 +16893,42 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (q != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q", this.Configuration.ApiClient.ParameterToString(q)));
+            localVarQueryParams.Add(new Tuple<string, string>("q", Configuration.ApiClient.ParameterToString(q)));
         }
 
         if (trustorId != null)
         {
-            trustorId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("trustorId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            trustorId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("trustorId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includeTrustors != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeTrustors", this.Configuration.ApiClient.ParameterToString(includeTrustors)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeTrustors", Configuration.ApiClient.ParameterToString(includeTrustors)));
         }
 
         if (divisionIds != null)
         {
-            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -16942,11 +16942,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16972,7 +16972,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganizationListing>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganizationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationListing)),
+            (ExternalOrganizationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17021,7 +17021,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17030,7 +17030,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17043,7 +17043,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -17059,11 +17059,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17089,7 +17089,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17138,7 +17138,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17147,7 +17147,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17160,7 +17160,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -17176,11 +17176,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17206,7 +17206,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17262,7 +17262,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17271,7 +17271,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17284,12 +17284,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
@@ -17305,11 +17305,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17335,7 +17335,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17392,7 +17392,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17401,7 +17401,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17414,12 +17414,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
@@ -17435,11 +17435,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17465,7 +17465,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17514,7 +17514,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17523,7 +17523,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17536,7 +17536,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -17552,11 +17552,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17582,7 +17582,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17631,7 +17631,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17640,7 +17640,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17653,7 +17653,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -17669,11 +17669,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17699,7 +17699,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17741,7 +17741,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17750,7 +17750,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17775,11 +17775,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17805,7 +17805,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchemaListing>(localVarStatusCode,
             localVarHeaders,
-            (DataSchemaListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
+            (DataSchemaListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17847,7 +17847,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17856,7 +17856,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17881,11 +17881,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17911,7 +17911,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchemaListing>(localVarStatusCode,
             localVarHeaders,
-            (DataSchemaListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
+            (DataSchemaListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17960,7 +17960,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17969,7 +17969,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17982,7 +17982,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (coreTypeName != null)
         {
-            localVarPathParams.Add("coreTypeName", this.Configuration.ApiClient.ParameterToString(coreTypeName));
+            localVarPathParams.Add("coreTypeName", Configuration.ApiClient.ParameterToString(coreTypeName));
         }
 
         // Query params
@@ -17998,11 +17998,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18028,7 +18028,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18077,7 +18077,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18086,7 +18086,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18099,7 +18099,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (coreTypeName != null)
         {
-            localVarPathParams.Add("coreTypeName", this.Configuration.ApiClient.ParameterToString(coreTypeName));
+            localVarPathParams.Add("coreTypeName", Configuration.ApiClient.ParameterToString(coreTypeName));
         }
 
         // Query params
@@ -18115,11 +18115,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18145,7 +18145,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18187,7 +18187,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18196,7 +18196,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18221,11 +18221,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18251,7 +18251,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18293,7 +18293,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18302,7 +18302,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18327,11 +18327,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18357,7 +18357,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18399,7 +18399,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18408,7 +18408,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18433,11 +18433,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18463,7 +18463,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<SchemaQuantityLimits>(localVarStatusCode,
             localVarHeaders,
-            (SchemaQuantityLimits)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
+            (SchemaQuantityLimits)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18505,7 +18505,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18514,7 +18514,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18539,11 +18539,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18569,7 +18569,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<SchemaQuantityLimits>(localVarStatusCode,
             localVarHeaders,
-            (SchemaQuantityLimits)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
+            (SchemaQuantityLimits)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18620,7 +18620,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18629,7 +18629,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18642,13 +18642,13 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (relationshipId != null)
         {
-            localVarPathParams.Add("relationshipId", this.Configuration.ApiClient.ParameterToString(relationshipId));
+            localVarPathParams.Add("relationshipId", Configuration.ApiClient.ParameterToString(relationshipId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -18662,11 +18662,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18692,7 +18692,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Relationship>(localVarStatusCode,
             localVarHeaders,
-            (Relationship)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
+            (Relationship)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18743,7 +18743,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18752,7 +18752,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18765,13 +18765,13 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (relationshipId != null)
         {
-            localVarPathParams.Add("relationshipId", this.Configuration.ApiClient.ParameterToString(relationshipId));
+            localVarPathParams.Add("relationshipId", Configuration.ApiClient.ParameterToString(relationshipId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -18785,11 +18785,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18815,7 +18815,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Relationship>(localVarStatusCode,
             localVarHeaders,
-            (Relationship)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
+            (Relationship)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18868,7 +18868,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18877,7 +18877,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18892,17 +18892,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (lookupVal != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lookupVal", this.Configuration.ApiClient.ParameterToString(lookupVal)));
+            localVarQueryParams.Add(new Tuple<string, string>("lookupVal", Configuration.ApiClient.ParameterToString(lookupVal)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -18916,11 +18916,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18946,7 +18946,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ReverseWhitepagesLookupResult>(localVarStatusCode,
             localVarHeaders,
-            (ReverseWhitepagesLookupResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReverseWhitepagesLookupResult)),
+            (ReverseWhitepagesLookupResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReverseWhitepagesLookupResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18999,7 +18999,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19008,7 +19008,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19023,17 +19023,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (lookupVal != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lookupVal", this.Configuration.ApiClient.ParameterToString(lookupVal)));
+            localVarQueryParams.Add(new Tuple<string, string>("lookupVal", Configuration.ApiClient.ParameterToString(lookupVal)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -19047,11 +19047,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19077,7 +19077,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ReverseWhitepagesLookupResult>(localVarStatusCode,
             localVarHeaders,
-            (ReverseWhitepagesLookupResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReverseWhitepagesLookupResult)),
+            (ReverseWhitepagesLookupResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReverseWhitepagesLookupResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19125,7 +19125,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19134,7 +19134,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19149,17 +19149,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -19173,11 +19173,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19203,7 +19203,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorContactListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorContactListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorContactListing)),
+            (CursorContactListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorContactListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19251,7 +19251,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19260,7 +19260,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19275,17 +19275,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -19299,11 +19299,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19329,7 +19329,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorContactListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorContactListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorContactListing)),
+            (CursorContactListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorContactListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19377,7 +19377,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19386,7 +19386,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19401,12 +19401,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -19420,11 +19420,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19450,7 +19450,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorContactListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorContactListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorContactListing)),
+            (CursorContactListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorContactListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19498,7 +19498,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19507,7 +19507,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19522,12 +19522,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -19541,11 +19541,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19571,7 +19571,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorContactListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorContactListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorContactListing)),
+            (CursorContactListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorContactListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19619,7 +19619,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19628,7 +19628,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19643,17 +19643,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -19667,11 +19667,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19697,7 +19697,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorNoteListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorNoteListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorNoteListing)),
+            (CursorNoteListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorNoteListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19745,7 +19745,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19754,7 +19754,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19769,17 +19769,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -19793,11 +19793,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19823,7 +19823,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorNoteListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorNoteListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorNoteListing)),
+            (CursorNoteListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorNoteListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19871,7 +19871,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19880,7 +19880,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19895,12 +19895,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -19914,11 +19914,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19944,7 +19944,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorNoteListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorNoteListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorNoteListing)),
+            (CursorNoteListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorNoteListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19992,7 +19992,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20001,7 +20001,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20016,12 +20016,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -20035,11 +20035,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20065,7 +20065,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorNoteListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorNoteListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorNoteListing)),
+            (CursorNoteListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorNoteListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20113,7 +20113,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20122,7 +20122,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20137,17 +20137,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -20161,11 +20161,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20191,7 +20191,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorOrganizationListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorOrganizationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorOrganizationListing)),
+            (CursorOrganizationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorOrganizationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20239,7 +20239,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20248,7 +20248,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20263,17 +20263,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -20287,11 +20287,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20317,7 +20317,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorOrganizationListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorOrganizationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorOrganizationListing)),
+            (CursorOrganizationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorOrganizationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20365,7 +20365,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20374,7 +20374,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20389,12 +20389,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -20408,11 +20408,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20438,7 +20438,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorOrganizationListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorOrganizationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorOrganizationListing)),
+            (CursorOrganizationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorOrganizationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20486,7 +20486,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20495,7 +20495,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20510,12 +20510,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -20529,11 +20529,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20559,7 +20559,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorOrganizationListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorOrganizationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorOrganizationListing)),
+            (CursorOrganizationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorOrganizationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20607,7 +20607,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20616,7 +20616,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20631,17 +20631,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -20655,11 +20655,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20685,7 +20685,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorRelationshipListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorRelationshipListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorRelationshipListing)),
+            (CursorRelationshipListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorRelationshipListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20733,7 +20733,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20742,7 +20742,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20757,17 +20757,17 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         if (divisionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(divisionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(divisionId)));
         }
 
         // Header params
@@ -20781,11 +20781,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20811,7 +20811,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorRelationshipListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorRelationshipListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorRelationshipListing)),
+            (CursorRelationshipListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorRelationshipListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20859,7 +20859,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20868,7 +20868,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20883,12 +20883,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -20902,11 +20902,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20932,7 +20932,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorRelationshipListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorRelationshipListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorRelationshipListing)),
+            (CursorRelationshipListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorRelationshipListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20980,7 +20980,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20989,7 +20989,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21004,12 +21004,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (cursor != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("cursor", this.Configuration.ApiClient.ParameterToString(cursor)));
+            localVarQueryParams.Add(new Tuple<string, string>("cursor", Configuration.ApiClient.ParameterToString(cursor)));
         }
 
         // Header params
@@ -21023,11 +21023,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21053,7 +21053,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CursorRelationshipListing>(localVarStatusCode,
             localVarHeaders,
-            (CursorRelationshipListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorRelationshipListing)),
+            (CursorRelationshipListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CursorRelationshipListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21110,7 +21110,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21119,7 +21119,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21132,7 +21132,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -21144,7 +21144,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21157,11 +21157,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21187,7 +21187,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactIdentifier>(localVarStatusCode,
             localVarHeaders,
-            (ContactIdentifier)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactIdentifier)),
+            (ContactIdentifier)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactIdentifier)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21245,7 +21245,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21254,7 +21254,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21267,7 +21267,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -21279,7 +21279,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21292,11 +21292,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21322,7 +21322,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactIdentifier>(localVarStatusCode,
             localVarHeaders,
-            (ContactIdentifier)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactIdentifier)),
+            (ContactIdentifier)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactIdentifier)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21381,7 +21381,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21390,7 +21390,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21403,7 +21403,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -21415,7 +21415,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21428,11 +21428,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21458,7 +21458,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganizationIdentifier>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganizationIdentifier)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationIdentifier)),
+            (ExternalOrganizationIdentifier)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationIdentifier)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21518,7 +21518,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21527,7 +21527,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21540,7 +21540,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -21552,7 +21552,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21565,11 +21565,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21595,7 +21595,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganizationIdentifier>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganizationIdentifier)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationIdentifier)),
+            (ExternalOrganizationIdentifier)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationIdentifier)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21645,7 +21645,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21654,7 +21654,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21675,7 +21675,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21688,11 +21688,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21718,7 +21718,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchContactsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchContactsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
+            (BulkFetchContactsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21768,7 +21768,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21777,7 +21777,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21798,7 +21798,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21811,11 +21811,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21841,7 +21841,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchContactsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchContactsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
+            (BulkFetchContactsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21891,7 +21891,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21900,7 +21900,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21921,7 +21921,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21934,11 +21934,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21964,7 +21964,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkContactsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkContactsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsResponse)),
+            (BulkContactsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22014,7 +22014,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22023,7 +22023,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22044,7 +22044,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22057,11 +22057,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22087,7 +22087,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkContactsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkContactsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsResponse)),
+            (BulkContactsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22139,7 +22139,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22148,7 +22148,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22169,7 +22169,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22182,11 +22182,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22212,7 +22212,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchContactsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchContactsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
+            (BulkFetchContactsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22264,7 +22264,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22273,7 +22273,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22294,7 +22294,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22307,11 +22307,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22337,7 +22337,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchContactsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchContactsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
+            (BulkFetchContactsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22391,7 +22391,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22400,7 +22400,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22415,7 +22415,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (dryRun != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dryRun", this.Configuration.ApiClient.ParameterToString(dryRun)));
+            localVarQueryParams.Add(new Tuple<string, string>("dryRun", Configuration.ApiClient.ParameterToString(dryRun)));
         }
 
         // Header params
@@ -22425,7 +22425,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22438,11 +22438,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22468,7 +22468,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkContactsEnrichResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkContactsEnrichResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsEnrichResponse)),
+            (BulkContactsEnrichResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsEnrichResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22522,7 +22522,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22531,7 +22531,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22546,7 +22546,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (dryRun != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dryRun", this.Configuration.ApiClient.ParameterToString(dryRun)));
+            localVarQueryParams.Add(new Tuple<string, string>("dryRun", Configuration.ApiClient.ParameterToString(dryRun)));
         }
 
         // Header params
@@ -22556,7 +22556,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22569,11 +22569,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22599,7 +22599,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkContactsEnrichResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkContactsEnrichResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsEnrichResponse)),
+            (BulkContactsEnrichResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsEnrichResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22649,7 +22649,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22658,7 +22658,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22679,7 +22679,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22692,11 +22692,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22722,7 +22722,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkDeleteResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkDeleteResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
+            (BulkDeleteResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22772,7 +22772,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22781,7 +22781,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22802,7 +22802,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22815,11 +22815,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22845,7 +22845,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkDeleteResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkDeleteResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
+            (BulkDeleteResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22895,7 +22895,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22904,7 +22904,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22925,7 +22925,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22938,11 +22938,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22968,7 +22968,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchContactsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchContactsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
+            (BulkFetchContactsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23018,7 +23018,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23027,7 +23027,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23048,7 +23048,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23061,11 +23061,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23091,7 +23091,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchContactsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchContactsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
+            (BulkFetchContactsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchContactsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23141,7 +23141,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23150,7 +23150,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23171,7 +23171,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23184,11 +23184,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23214,7 +23214,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkContactsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkContactsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsResponse)),
+            (BulkContactsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23264,7 +23264,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23273,7 +23273,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23294,7 +23294,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23307,11 +23307,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23337,7 +23337,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkContactsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkContactsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsResponse)),
+            (BulkContactsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkContactsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23387,7 +23387,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23396,7 +23396,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23417,7 +23417,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23430,11 +23430,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23460,7 +23460,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchNotesResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchNotesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchNotesResponse)),
+            (BulkFetchNotesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchNotesResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23510,7 +23510,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23519,7 +23519,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23540,7 +23540,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23553,11 +23553,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23583,7 +23583,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchNotesResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchNotesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchNotesResponse)),
+            (BulkFetchNotesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchNotesResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23633,7 +23633,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23642,7 +23642,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23663,7 +23663,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23676,11 +23676,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23706,7 +23706,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkNotesResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkNotesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkNotesResponse)),
+            (BulkNotesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkNotesResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23756,7 +23756,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23765,7 +23765,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23786,7 +23786,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23799,11 +23799,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23829,7 +23829,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkNotesResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkNotesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkNotesResponse)),
+            (BulkNotesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkNotesResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23879,7 +23879,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23888,7 +23888,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23909,7 +23909,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23922,11 +23922,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23952,7 +23952,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkDeleteResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkDeleteResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
+            (BulkDeleteResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24002,7 +24002,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24011,7 +24011,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24032,7 +24032,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24045,11 +24045,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24075,7 +24075,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkDeleteResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkDeleteResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
+            (BulkDeleteResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24125,7 +24125,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24134,7 +24134,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24155,7 +24155,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24168,11 +24168,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24198,7 +24198,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkNotesResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkNotesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkNotesResponse)),
+            (BulkNotesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkNotesResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24248,7 +24248,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24257,7 +24257,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24278,7 +24278,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24291,11 +24291,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24321,7 +24321,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkNotesResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkNotesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkNotesResponse)),
+            (BulkNotesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkNotesResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24371,7 +24371,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24380,7 +24380,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24401,7 +24401,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24414,11 +24414,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24444,7 +24444,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchOrganizationsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchOrganizationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchOrganizationsResponse)),
+            (BulkFetchOrganizationsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchOrganizationsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24494,7 +24494,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24503,7 +24503,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24524,7 +24524,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24537,11 +24537,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24567,7 +24567,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchOrganizationsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchOrganizationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchOrganizationsResponse)),
+            (BulkFetchOrganizationsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchOrganizationsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24617,7 +24617,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24626,7 +24626,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24647,7 +24647,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24660,11 +24660,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24690,7 +24690,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkOrganizationsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkOrganizationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsResponse)),
+            (BulkOrganizationsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24740,7 +24740,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24749,7 +24749,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24770,7 +24770,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24783,11 +24783,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24813,7 +24813,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkOrganizationsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkOrganizationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsResponse)),
+            (BulkOrganizationsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24865,7 +24865,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24874,7 +24874,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24895,7 +24895,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24908,11 +24908,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24938,7 +24938,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchOrganizationsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchOrganizationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchOrganizationsResponse)),
+            (BulkFetchOrganizationsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchOrganizationsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24990,7 +24990,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24999,7 +24999,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25020,7 +25020,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25033,11 +25033,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25063,7 +25063,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchOrganizationsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchOrganizationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchOrganizationsResponse)),
+            (BulkFetchOrganizationsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchOrganizationsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25117,7 +25117,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25126,7 +25126,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25141,7 +25141,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (dryRun != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dryRun", this.Configuration.ApiClient.ParameterToString(dryRun)));
+            localVarQueryParams.Add(new Tuple<string, string>("dryRun", Configuration.ApiClient.ParameterToString(dryRun)));
         }
 
         // Header params
@@ -25151,7 +25151,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25164,11 +25164,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25194,7 +25194,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkOrganizationsEnrichResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkOrganizationsEnrichResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsEnrichResponse)),
+            (BulkOrganizationsEnrichResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsEnrichResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25248,7 +25248,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25257,7 +25257,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25272,7 +25272,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (dryRun != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dryRun", this.Configuration.ApiClient.ParameterToString(dryRun)));
+            localVarQueryParams.Add(new Tuple<string, string>("dryRun", Configuration.ApiClient.ParameterToString(dryRun)));
         }
 
         // Header params
@@ -25282,7 +25282,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25295,11 +25295,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25325,7 +25325,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkOrganizationsEnrichResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkOrganizationsEnrichResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsEnrichResponse)),
+            (BulkOrganizationsEnrichResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsEnrichResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25375,7 +25375,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25384,7 +25384,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25405,7 +25405,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25418,11 +25418,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25448,7 +25448,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkDeleteResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkDeleteResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
+            (BulkDeleteResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25498,7 +25498,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25507,7 +25507,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25528,7 +25528,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25541,11 +25541,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25571,7 +25571,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkDeleteResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkDeleteResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
+            (BulkDeleteResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25621,7 +25621,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25630,7 +25630,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25651,7 +25651,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25664,11 +25664,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25694,7 +25694,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkOrganizationsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkOrganizationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsResponse)),
+            (BulkOrganizationsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25744,7 +25744,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25753,7 +25753,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25774,7 +25774,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25787,11 +25787,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25817,7 +25817,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkOrganizationsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkOrganizationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsResponse)),
+            (BulkOrganizationsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkOrganizationsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25867,7 +25867,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25876,7 +25876,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25897,7 +25897,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25910,11 +25910,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25940,7 +25940,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchRelationshipsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchRelationshipsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchRelationshipsResponse)),
+            (BulkFetchRelationshipsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchRelationshipsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25990,7 +25990,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25999,7 +25999,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26020,7 +26020,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26033,11 +26033,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26063,7 +26063,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkFetchRelationshipsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkFetchRelationshipsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchRelationshipsResponse)),
+            (BulkFetchRelationshipsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkFetchRelationshipsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26113,7 +26113,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26122,7 +26122,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26143,7 +26143,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26156,11 +26156,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26186,7 +26186,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkRelationshipsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkRelationshipsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkRelationshipsResponse)),
+            (BulkRelationshipsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkRelationshipsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26236,7 +26236,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26245,7 +26245,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26266,7 +26266,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26279,11 +26279,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26309,7 +26309,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkRelationshipsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkRelationshipsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkRelationshipsResponse)),
+            (BulkRelationshipsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkRelationshipsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26359,7 +26359,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26368,7 +26368,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26389,7 +26389,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26402,11 +26402,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26432,7 +26432,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkDeleteResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkDeleteResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
+            (BulkDeleteResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26482,7 +26482,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26491,7 +26491,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26512,7 +26512,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26525,11 +26525,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26555,7 +26555,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkDeleteResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkDeleteResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
+            (BulkDeleteResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkDeleteResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26605,7 +26605,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26614,7 +26614,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26635,7 +26635,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26648,11 +26648,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26678,7 +26678,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkRelationshipsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkRelationshipsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkRelationshipsResponse)),
+            (BulkRelationshipsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkRelationshipsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26728,7 +26728,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26737,7 +26737,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26758,7 +26758,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26771,11 +26771,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26801,7 +26801,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<BulkRelationshipsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkRelationshipsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkRelationshipsResponse)),
+            (BulkRelationshipsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkRelationshipsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26858,7 +26858,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26867,7 +26867,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26880,7 +26880,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -26892,7 +26892,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26905,11 +26905,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26935,7 +26935,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26993,7 +26993,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27002,7 +27002,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27015,7 +27015,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -27027,7 +27027,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27040,11 +27040,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27070,7 +27070,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27119,7 +27119,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27128,7 +27128,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27141,7 +27141,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -27157,11 +27157,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27187,7 +27187,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27236,7 +27236,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27245,7 +27245,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27258,7 +27258,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -27274,11 +27274,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27304,7 +27304,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27354,7 +27354,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27363,7 +27363,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27384,7 +27384,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27397,11 +27397,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27427,7 +27427,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27477,7 +27477,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27486,7 +27486,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27507,7 +27507,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27520,11 +27520,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27550,7 +27550,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27604,7 +27604,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27613,7 +27613,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27628,7 +27628,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (dryRun != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dryRun", this.Configuration.ApiClient.ParameterToString(dryRun)));
+            localVarQueryParams.Add(new Tuple<string, string>("dryRun", Configuration.ApiClient.ParameterToString(dryRun)));
         }
 
         // Header params
@@ -27638,7 +27638,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27651,11 +27651,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27681,7 +27681,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27735,7 +27735,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27744,7 +27744,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27759,7 +27759,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (dryRun != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dryRun", this.Configuration.ApiClient.ParameterToString(dryRun)));
+            localVarQueryParams.Add(new Tuple<string, string>("dryRun", Configuration.ApiClient.ParameterToString(dryRun)));
         }
 
         // Header params
@@ -27769,7 +27769,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27782,11 +27782,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27812,7 +27812,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27862,7 +27862,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27871,7 +27871,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27892,7 +27892,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27905,11 +27905,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27935,7 +27935,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactsExport>(localVarStatusCode,
             localVarHeaders,
-            (ContactsExport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactsExport)),
+            (ContactsExport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactsExport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27985,7 +27985,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27994,7 +27994,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28015,7 +28015,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28028,11 +28028,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28058,7 +28058,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactsExport>(localVarStatusCode,
             localVarHeaders,
-            (ContactsExport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactsExport)),
+            (ContactsExport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactsExport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28110,7 +28110,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28119,7 +28119,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28140,7 +28140,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28153,11 +28153,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28183,7 +28183,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28235,7 +28235,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28244,7 +28244,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28265,7 +28265,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28278,11 +28278,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28308,7 +28308,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28358,7 +28358,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28367,7 +28367,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28388,7 +28388,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28401,11 +28401,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28431,7 +28431,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28481,7 +28481,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28490,7 +28490,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28511,7 +28511,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28524,11 +28524,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28554,7 +28554,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28604,7 +28604,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28613,7 +28613,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28634,7 +28634,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28647,11 +28647,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28677,7 +28677,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalSource>(localVarStatusCode,
             localVarHeaders,
-            (ExternalSource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
+            (ExternalSource)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28727,7 +28727,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28736,7 +28736,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28757,7 +28757,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28770,11 +28770,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28800,7 +28800,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalSource>(localVarStatusCode,
             localVarHeaders,
-            (ExternalSource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
+            (ExternalSource)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28852,7 +28852,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28861,7 +28861,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28876,7 +28876,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -28886,7 +28886,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (identifier != null && identifier.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
         }
         else
         {
@@ -28899,11 +28899,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28929,7 +28929,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28981,7 +28981,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28990,7 +28990,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29005,7 +29005,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -29015,7 +29015,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (identifier != null && identifier.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
         }
         else
         {
@@ -29028,11 +29028,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29058,7 +29058,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29112,7 +29112,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29121,7 +29121,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29136,7 +29136,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -29146,7 +29146,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (identifier != null && identifier.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
         }
         else
         {
@@ -29159,11 +29159,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29189,7 +29189,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29243,7 +29243,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29252,7 +29252,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29267,7 +29267,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -29277,7 +29277,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (identifier != null && identifier.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
         }
         else
         {
@@ -29290,11 +29290,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29320,7 +29320,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29374,7 +29374,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29383,7 +29383,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29398,7 +29398,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -29408,7 +29408,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (identifier != null && identifier.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
         }
         else
         {
@@ -29421,11 +29421,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29451,7 +29451,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganization>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
+            (ExternalOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29505,7 +29505,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29514,7 +29514,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29529,7 +29529,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -29539,7 +29539,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (identifier != null && identifier.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(identifier); // http body (model) parameter
         }
         else
         {
@@ -29552,11 +29552,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29582,7 +29582,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganization>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
+            (ExternalOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29632,7 +29632,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29641,7 +29641,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29662,7 +29662,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29675,11 +29675,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29705,7 +29705,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (CsvJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvJobResponse)),
+            (CsvJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29755,7 +29755,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29764,7 +29764,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29785,7 +29785,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29798,11 +29798,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29828,7 +29828,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (CsvJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvJobResponse)),
+            (CsvJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29878,7 +29878,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29887,7 +29887,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29908,7 +29908,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29921,11 +29921,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29951,7 +29951,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvSettings>(localVarStatusCode,
             localVarHeaders,
-            (CsvSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
+            (CsvSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30001,7 +30001,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30010,7 +30010,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30031,7 +30031,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30044,11 +30044,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30074,7 +30074,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvSettings>(localVarStatusCode,
             localVarHeaders,
-            (CsvSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
+            (CsvSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30124,7 +30124,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30133,7 +30133,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30154,7 +30154,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30167,11 +30167,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30197,7 +30197,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvUploadResponse>(localVarStatusCode,
             localVarHeaders,
-            (CsvUploadResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadResponse)),
+            (CsvUploadResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30247,7 +30247,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30256,7 +30256,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30277,7 +30277,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30290,11 +30290,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30320,7 +30320,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvUploadResponse>(localVarStatusCode,
             localVarHeaders,
-            (CsvUploadResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadResponse)),
+            (CsvUploadResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvUploadResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30370,7 +30370,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30379,7 +30379,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30400,7 +30400,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30413,11 +30413,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30443,7 +30443,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobResponse)),
+            (ContactImportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30493,7 +30493,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30502,7 +30502,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30523,7 +30523,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30536,11 +30536,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30566,7 +30566,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobResponse)),
+            (ContactImportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30616,7 +30616,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30625,7 +30625,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30646,7 +30646,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30659,11 +30659,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30689,7 +30689,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportSettings>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
+            (ContactImportSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30739,7 +30739,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30748,7 +30748,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30769,7 +30769,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30782,11 +30782,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30812,7 +30812,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportSettings>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
+            (ContactImportSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30862,7 +30862,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30871,7 +30871,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30892,7 +30892,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30905,11 +30905,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30935,7 +30935,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30985,7 +30985,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30994,7 +30994,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31015,7 +31015,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31028,11 +31028,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31058,7 +31058,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31115,7 +31115,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31124,7 +31124,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31137,7 +31137,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -31149,7 +31149,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31162,11 +31162,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31192,7 +31192,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31250,7 +31250,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31259,7 +31259,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31272,7 +31272,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -31284,7 +31284,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31297,11 +31297,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31327,7 +31327,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31377,7 +31377,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31386,7 +31386,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31407,7 +31407,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31420,11 +31420,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31450,7 +31450,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganization>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
+            (ExternalOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31500,7 +31500,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31509,7 +31509,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31530,7 +31530,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31543,11 +31543,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31573,7 +31573,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganization>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
+            (ExternalOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31627,7 +31627,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31636,7 +31636,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31651,7 +31651,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (dryRun != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dryRun", this.Configuration.ApiClient.ParameterToString(dryRun)));
+            localVarQueryParams.Add(new Tuple<string, string>("dryRun", Configuration.ApiClient.ParameterToString(dryRun)));
         }
 
         // Header params
@@ -31661,7 +31661,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31674,11 +31674,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31704,7 +31704,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganization>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
+            (ExternalOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31758,7 +31758,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31767,7 +31767,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31782,7 +31782,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Query params
         if (dryRun != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dryRun", this.Configuration.ApiClient.ParameterToString(dryRun)));
+            localVarQueryParams.Add(new Tuple<string, string>("dryRun", Configuration.ApiClient.ParameterToString(dryRun)));
         }
 
         // Header params
@@ -31792,7 +31792,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31805,11 +31805,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31835,7 +31835,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganization>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
+            (ExternalOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31885,7 +31885,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31894,7 +31894,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31915,7 +31915,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31928,11 +31928,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31958,7 +31958,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32008,7 +32008,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32017,7 +32017,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32038,7 +32038,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32051,11 +32051,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32081,7 +32081,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32131,7 +32131,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32140,7 +32140,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32161,7 +32161,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32174,11 +32174,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32204,7 +32204,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Relationship>(localVarStatusCode,
             localVarHeaders,
-            (Relationship)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
+            (Relationship)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32254,7 +32254,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32263,7 +32263,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32284,7 +32284,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32297,11 +32297,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32327,7 +32327,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Relationship>(localVarStatusCode,
             localVarHeaders,
-            (Relationship)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
+            (Relationship)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32384,7 +32384,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32393,7 +32393,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32406,7 +32406,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -32418,7 +32418,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32431,11 +32431,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32461,7 +32461,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32519,7 +32519,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32528,7 +32528,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32541,7 +32541,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         // Query params
@@ -32553,7 +32553,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32566,11 +32566,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32596,7 +32596,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalContact>(localVarStatusCode,
             localVarHeaders,
-            (ExternalContact)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
+            (ExternalContact)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalContact)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32660,7 +32660,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32669,7 +32669,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32682,12 +32682,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
@@ -32699,7 +32699,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32712,11 +32712,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32742,7 +32742,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32808,7 +32808,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32817,7 +32817,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32830,12 +32830,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (contactId != null)
         {
-            localVarPathParams.Add("contactId", this.Configuration.ApiClient.ParameterToString(contactId));
+            localVarPathParams.Add("contactId", Configuration.ApiClient.ParameterToString(contactId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
@@ -32847,7 +32847,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32860,11 +32860,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32890,7 +32890,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32947,7 +32947,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32956,7 +32956,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32969,7 +32969,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -32981,7 +32981,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32994,11 +32994,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33024,7 +33024,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33082,7 +33082,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33091,7 +33091,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33104,7 +33104,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -33116,7 +33116,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33129,11 +33129,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33159,7 +33159,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33215,7 +33215,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33224,7 +33224,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33237,7 +33237,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -33249,7 +33249,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33262,11 +33262,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33349,7 +33349,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33358,7 +33358,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33371,7 +33371,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -33383,7 +33383,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33396,11 +33396,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33483,7 +33483,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33492,7 +33492,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33505,7 +33505,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalSourceId != null)
         {
-            localVarPathParams.Add("externalSourceId", this.Configuration.ApiClient.ParameterToString(externalSourceId));
+            localVarPathParams.Add("externalSourceId", Configuration.ApiClient.ParameterToString(externalSourceId));
         }
 
         // Query params
@@ -33517,7 +33517,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33530,11 +33530,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33560,7 +33560,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalSource>(localVarStatusCode,
             localVarHeaders,
-            (ExternalSource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
+            (ExternalSource)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33618,7 +33618,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33627,7 +33627,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33640,7 +33640,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalSourceId != null)
         {
-            localVarPathParams.Add("externalSourceId", this.Configuration.ApiClient.ParameterToString(externalSourceId));
+            localVarPathParams.Add("externalSourceId", Configuration.ApiClient.ParameterToString(externalSourceId));
         }
 
         // Query params
@@ -33652,7 +33652,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33665,11 +33665,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33695,7 +33695,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalSource>(localVarStatusCode,
             localVarHeaders,
-            (ExternalSource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
+            (ExternalSource)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalSource)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33752,7 +33752,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33761,7 +33761,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33774,7 +33774,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -33786,7 +33786,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33799,11 +33799,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33829,7 +33829,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvSettings>(localVarStatusCode,
             localVarHeaders,
-            (CsvSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
+            (CsvSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33887,7 +33887,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33896,7 +33896,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33909,7 +33909,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -33921,7 +33921,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33934,11 +33934,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33964,7 +33964,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<CsvSettings>(localVarStatusCode,
             localVarHeaders,
-            (CsvSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
+            (CsvSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CsvSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34021,7 +34021,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34030,7 +34030,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34043,7 +34043,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -34055,7 +34055,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34068,11 +34068,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34098,7 +34098,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportJobStatusUpdateResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportJobStatusUpdateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobStatusUpdateResponse)),
+            (ContactImportJobStatusUpdateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobStatusUpdateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34156,7 +34156,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34165,7 +34165,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34178,7 +34178,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -34190,7 +34190,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34203,11 +34203,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34233,7 +34233,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportJobStatusUpdateResponse>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportJobStatusUpdateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobStatusUpdateResponse)),
+            (ContactImportJobStatusUpdateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportJobStatusUpdateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34290,7 +34290,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34299,7 +34299,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34312,7 +34312,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -34324,7 +34324,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34337,11 +34337,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34367,7 +34367,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportSettings>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
+            (ContactImportSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34425,7 +34425,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34434,7 +34434,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34447,7 +34447,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (settingsId != null)
         {
-            localVarPathParams.Add("settingsId", this.Configuration.ApiClient.ParameterToString(settingsId));
+            localVarPathParams.Add("settingsId", Configuration.ApiClient.ParameterToString(settingsId));
         }
 
         // Query params
@@ -34459,7 +34459,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34472,11 +34472,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34502,7 +34502,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ContactImportSettings>(localVarStatusCode,
             localVarHeaders,
-            (ContactImportSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
+            (ContactImportSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactImportSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34559,7 +34559,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34568,7 +34568,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34581,7 +34581,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -34593,7 +34593,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34606,11 +34606,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34636,7 +34636,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganization>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
+            (ExternalOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34694,7 +34694,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34703,7 +34703,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34716,7 +34716,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         // Query params
@@ -34728,7 +34728,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34741,11 +34741,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34771,7 +34771,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganization>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
+            (ExternalOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34835,7 +34835,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34844,7 +34844,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34857,12 +34857,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
@@ -34874,7 +34874,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34887,11 +34887,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34917,7 +34917,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34983,7 +34983,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34992,7 +34992,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35005,12 +35005,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         if (noteId != null)
         {
-            localVarPathParams.Add("noteId", this.Configuration.ApiClient.ParameterToString(noteId));
+            localVarPathParams.Add("noteId", Configuration.ApiClient.ParameterToString(noteId));
         }
 
         // Query params
@@ -35022,7 +35022,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35035,11 +35035,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35065,7 +35065,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Note>(localVarStatusCode,
             localVarHeaders,
-            (Note)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
+            (Note)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Note)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35121,7 +35121,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35130,7 +35130,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35143,12 +35143,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         if (trustorId != null)
         {
-            localVarPathParams.Add("trustorId", this.Configuration.ApiClient.ParameterToString(trustorId));
+            localVarPathParams.Add("trustorId", Configuration.ApiClient.ParameterToString(trustorId));
         }
 
         // Query params
@@ -35164,11 +35164,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35194,7 +35194,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganizationTrustorLink>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganizationTrustorLink)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationTrustorLink)),
+            (ExternalOrganizationTrustorLink)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationTrustorLink)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35251,7 +35251,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35260,7 +35260,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35273,12 +35273,12 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (externalOrganizationId != null)
         {
-            localVarPathParams.Add("externalOrganizationId", this.Configuration.ApiClient.ParameterToString(externalOrganizationId));
+            localVarPathParams.Add("externalOrganizationId", Configuration.ApiClient.ParameterToString(externalOrganizationId));
         }
 
         if (trustorId != null)
         {
-            localVarPathParams.Add("trustorId", this.Configuration.ApiClient.ParameterToString(trustorId));
+            localVarPathParams.Add("trustorId", Configuration.ApiClient.ParameterToString(trustorId));
         }
 
         // Query params
@@ -35294,11 +35294,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35324,7 +35324,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<ExternalOrganizationTrustorLink>(localVarStatusCode,
             localVarHeaders,
-            (ExternalOrganizationTrustorLink)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationTrustorLink)),
+            (ExternalOrganizationTrustorLink)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExternalOrganizationTrustorLink)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35381,7 +35381,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35390,7 +35390,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35403,7 +35403,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -35415,7 +35415,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35428,11 +35428,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35458,7 +35458,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35516,7 +35516,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35525,7 +35525,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35538,7 +35538,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -35550,7 +35550,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35563,11 +35563,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35593,7 +35593,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35650,7 +35650,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35659,7 +35659,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35672,7 +35672,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (relationshipId != null)
         {
-            localVarPathParams.Add("relationshipId", this.Configuration.ApiClient.ParameterToString(relationshipId));
+            localVarPathParams.Add("relationshipId", Configuration.ApiClient.ParameterToString(relationshipId));
         }
 
         // Query params
@@ -35684,7 +35684,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35697,11 +35697,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35727,7 +35727,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Relationship>(localVarStatusCode,
             localVarHeaders,
-            (Relationship)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
+            (Relationship)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35785,7 +35785,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35794,7 +35794,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35807,7 +35807,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Path params
         if (relationshipId != null)
         {
-            localVarPathParams.Add("relationshipId", this.Configuration.ApiClient.ParameterToString(relationshipId));
+            localVarPathParams.Add("relationshipId", Configuration.ApiClient.ParameterToString(relationshipId));
         }
 
         // Query params
@@ -35819,7 +35819,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35832,11 +35832,11 @@ public partial class ExternalContactsApi : IExternalContactsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35862,7 +35862,7 @@ public partial class ExternalContactsApi : IExternalContactsApi
 
         return new ApiResponse<Relationship>(localVarStatusCode,
             localVarHeaders,
-            (Relationship)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
+            (Relationship)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Relationship)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

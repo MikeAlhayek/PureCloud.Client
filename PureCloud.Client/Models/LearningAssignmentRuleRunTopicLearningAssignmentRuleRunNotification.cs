@@ -63,7 +63,7 @@ public partial class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNoti
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification);
+        return Equals(obj as LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNoti
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.Total == other.Total ||
-                this.Total != null &&
-                this.Total.Equals(other.Total)
+                Total == other.Total ||
+                Total != null &&
+                Total.Equals(other.Total)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNoti
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.Total != null)
+            if (Total != null)
             {
-                hash = hash * 59 + this.Total.GetHashCode();
+                hash = hash * 59 + Total.GetHashCode();
             }
 
             return hash;

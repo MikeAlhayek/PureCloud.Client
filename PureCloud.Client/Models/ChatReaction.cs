@@ -71,7 +71,7 @@ public partial class ChatReaction : IEquatable<ChatReaction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatReaction);
+        return Equals(obj as ChatReaction);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ChatReaction : IEquatable<ChatReaction>
 
         return true &&
             (
-                this.Emoji == other.Emoji ||
-                this.Emoji != null &&
-                this.Emoji.Equals(other.Emoji)
+                Emoji == other.Emoji ||
+                Emoji != null &&
+                Emoji.Equals(other.Emoji)
             ) &&
             (
-                this.Users == other.Users ||
-                this.Users != null &&
-                this.Users.SequenceEqual(other.Users)
+                Users == other.Users ||
+                Users != null &&
+                Users.SequenceEqual(other.Users)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ChatReaction : IEquatable<ChatReaction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Emoji != null)
+            if (Emoji != null)
             {
-                hash = hash * 59 + this.Emoji.GetHashCode();
+                hash = hash * 59 + Emoji.GetHashCode();
             }
 
-            if (this.Users != null)
+            if (Users != null)
             {
-                hash = hash * 59 + this.Users.GetHashCode();
+                hash = hash * 59 + Users.GetHashCode();
             }
 
             return hash;

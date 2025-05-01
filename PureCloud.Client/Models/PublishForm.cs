@@ -71,7 +71,7 @@ public partial class PublishForm : IEquatable<PublishForm>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PublishForm);
+        return Equals(obj as PublishForm);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class PublishForm : IEquatable<PublishForm>
 
         return true &&
             (
-                this.Published == other.Published ||
-                this.Published != null &&
-                this.Published.Equals(other.Published)
+                Published == other.Published ||
+                Published != null &&
+                Published.Equals(other.Published)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class PublishForm : IEquatable<PublishForm>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Published != null)
+            if (Published != null)
             {
-                hash = hash * 59 + this.Published.GetHashCode();
+                hash = hash * 59 + Published.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
             return hash;

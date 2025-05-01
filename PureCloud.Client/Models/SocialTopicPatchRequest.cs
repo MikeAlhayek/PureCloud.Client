@@ -77,7 +77,7 @@ public partial class SocialTopicPatchRequest : IEquatable<SocialTopicPatchReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SocialTopicPatchRequest);
+        return Equals(obj as SocialTopicPatchRequest);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class SocialTopicPatchRequest : IEquatable<SocialTopicPatchReques
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DivisionId == other.DivisionId ||
-                this.DivisionId != null &&
-                this.DivisionId.Equals(other.DivisionId)
+                DivisionId == other.DivisionId ||
+                DivisionId != null &&
+                DivisionId.Equals(other.DivisionId)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class SocialTopicPatchRequest : IEquatable<SocialTopicPatchReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DivisionId != null)
+            if (DivisionId != null)
             {
-                hash = hash * 59 + this.DivisionId.GetHashCode();
+                hash = hash * 59 + DivisionId.GetHashCode();
             }
 
             return hash;

@@ -471,7 +471,7 @@ public partial class Document : IEquatable<Document>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Document);
+        return Equals(obj as Document);
     }
 
     /// <summary>
@@ -489,159 +489,159 @@ public partial class Document : IEquatable<Document>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ChangeNumber == other.ChangeNumber ||
-                this.ChangeNumber != null &&
-                this.ChangeNumber.Equals(other.ChangeNumber)
+                ChangeNumber == other.ChangeNumber ||
+                ChangeNumber != null &&
+                ChangeNumber.Equals(other.ChangeNumber)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.DateUploaded == other.DateUploaded ||
-                this.DateUploaded != null &&
-                this.DateUploaded.Equals(other.DateUploaded)
+                DateUploaded == other.DateUploaded ||
+                DateUploaded != null &&
+                DateUploaded.Equals(other.DateUploaded)
             ) &&
             (
-                this.ContentUri == other.ContentUri ||
-                this.ContentUri != null &&
-                this.ContentUri.Equals(other.ContentUri)
+                ContentUri == other.ContentUri ||
+                ContentUri != null &&
+                ContentUri.Equals(other.ContentUri)
             ) &&
             (
-                this.Workspace == other.Workspace ||
-                this.Workspace != null &&
-                this.Workspace.Equals(other.Workspace)
+                Workspace == other.Workspace ||
+                Workspace != null &&
+                Workspace.Equals(other.Workspace)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.UploadedBy == other.UploadedBy ||
-                this.UploadedBy != null &&
-                this.UploadedBy.Equals(other.UploadedBy)
+                UploadedBy == other.UploadedBy ||
+                UploadedBy != null &&
+                UploadedBy.Equals(other.UploadedBy)
             ) &&
             (
-                this.SharingUri == other.SharingUri ||
-                this.SharingUri != null &&
-                this.SharingUri.Equals(other.SharingUri)
+                SharingUri == other.SharingUri ||
+                SharingUri != null &&
+                SharingUri.Equals(other.SharingUri)
             ) &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.ContentLength == other.ContentLength ||
-                this.ContentLength != null &&
-                this.ContentLength.Equals(other.ContentLength)
+                ContentLength == other.ContentLength ||
+                ContentLength != null &&
+                ContentLength.Equals(other.ContentLength)
             ) &&
             (
-                this.SystemType == other.SystemType ||
-                this.SystemType != null &&
-                this.SystemType.Equals(other.SystemType)
+                SystemType == other.SystemType ||
+                SystemType != null &&
+                SystemType.Equals(other.SystemType)
             ) &&
             (
-                this.Filename == other.Filename ||
-                this.Filename != null &&
-                this.Filename.Equals(other.Filename)
+                Filename == other.Filename ||
+                Filename != null &&
+                Filename.Equals(other.Filename)
             ) &&
             (
-                this.PageCount == other.PageCount ||
-                this.PageCount != null &&
-                this.PageCount.Equals(other.PageCount)
+                PageCount == other.PageCount ||
+                PageCount != null &&
+                PageCount.Equals(other.PageCount)
             ) &&
             (
-                this.Read == other.Read ||
-                this.Read != null &&
-                this.Read.Equals(other.Read)
+                Read == other.Read ||
+                Read != null &&
+                Read.Equals(other.Read)
             ) &&
             (
-                this.CallerAddress == other.CallerAddress ||
-                this.CallerAddress != null &&
-                this.CallerAddress.Equals(other.CallerAddress)
+                CallerAddress == other.CallerAddress ||
+                CallerAddress != null &&
+                CallerAddress.Equals(other.CallerAddress)
             ) &&
             (
-                this.ReceiverAddress == other.ReceiverAddress ||
-                this.ReceiverAddress != null &&
-                this.ReceiverAddress.Equals(other.ReceiverAddress)
+                ReceiverAddress == other.ReceiverAddress ||
+                ReceiverAddress != null &&
+                ReceiverAddress.Equals(other.ReceiverAddress)
             ) &&
             (
-                this.Tags == other.Tags ||
-                this.Tags != null &&
-                this.Tags.SequenceEqual(other.Tags)
+                Tags == other.Tags ||
+                Tags != null &&
+                Tags.SequenceEqual(other.Tags)
             ) &&
             (
-                this.TagValues == other.TagValues ||
-                this.TagValues != null &&
-                this.TagValues.SequenceEqual(other.TagValues)
+                TagValues == other.TagValues ||
+                TagValues != null &&
+                TagValues.SequenceEqual(other.TagValues)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.Thumbnails == other.Thumbnails ||
-                this.Thumbnails != null &&
-                this.Thumbnails.SequenceEqual(other.Thumbnails)
+                Thumbnails == other.Thumbnails ||
+                Thumbnails != null &&
+                Thumbnails.SequenceEqual(other.Thumbnails)
             ) &&
             (
-                this.UploadStatus == other.UploadStatus ||
-                this.UploadStatus != null &&
-                this.UploadStatus.Equals(other.UploadStatus)
+                UploadStatus == other.UploadStatus ||
+                UploadStatus != null &&
+                UploadStatus.Equals(other.UploadStatus)
             ) &&
             (
-                this.UploadDestinationUri == other.UploadDestinationUri ||
-                this.UploadDestinationUri != null &&
-                this.UploadDestinationUri.Equals(other.UploadDestinationUri)
+                UploadDestinationUri == other.UploadDestinationUri ||
+                UploadDestinationUri != null &&
+                UploadDestinationUri.Equals(other.UploadDestinationUri)
             ) &&
             (
-                this.UploadMethod == other.UploadMethod ||
-                this.UploadMethod != null &&
-                this.UploadMethod.Equals(other.UploadMethod)
+                UploadMethod == other.UploadMethod ||
+                UploadMethod != null &&
+                UploadMethod.Equals(other.UploadMethod)
             ) &&
             (
-                this.LockInfo == other.LockInfo ||
-                this.LockInfo != null &&
-                this.LockInfo.Equals(other.LockInfo)
+                LockInfo == other.LockInfo ||
+                LockInfo != null &&
+                LockInfo.Equals(other.LockInfo)
             ) &&
             (
-                this.Acl == other.Acl ||
-                this.Acl != null &&
-                this.Acl.SequenceEqual(other.Acl)
+                Acl == other.Acl ||
+                Acl != null &&
+                Acl.SequenceEqual(other.Acl)
             ) &&
             (
-                this.SharingStatus == other.SharingStatus ||
-                this.SharingStatus != null &&
-                this.SharingStatus.Equals(other.SharingStatus)
+                SharingStatus == other.SharingStatus ||
+                SharingStatus != null &&
+                SharingStatus.Equals(other.SharingStatus)
             ) &&
             (
-                this.DownloadSharingUri == other.DownloadSharingUri ||
-                this.DownloadSharingUri != null &&
-                this.DownloadSharingUri.Equals(other.DownloadSharingUri)
+                DownloadSharingUri == other.DownloadSharingUri ||
+                DownloadSharingUri != null &&
+                DownloadSharingUri.Equals(other.DownloadSharingUri)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -656,159 +656,159 @@ public partial class Document : IEquatable<Document>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ChangeNumber != null)
+            if (ChangeNumber != null)
             {
-                hash = hash * 59 + this.ChangeNumber.GetHashCode();
+                hash = hash * 59 + ChangeNumber.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.DateUploaded != null)
+            if (DateUploaded != null)
             {
-                hash = hash * 59 + this.DateUploaded.GetHashCode();
+                hash = hash * 59 + DateUploaded.GetHashCode();
             }
 
-            if (this.ContentUri != null)
+            if (ContentUri != null)
             {
-                hash = hash * 59 + this.ContentUri.GetHashCode();
+                hash = hash * 59 + ContentUri.GetHashCode();
             }
 
-            if (this.Workspace != null)
+            if (Workspace != null)
             {
-                hash = hash * 59 + this.Workspace.GetHashCode();
+                hash = hash * 59 + Workspace.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.UploadedBy != null)
+            if (UploadedBy != null)
             {
-                hash = hash * 59 + this.UploadedBy.GetHashCode();
+                hash = hash * 59 + UploadedBy.GetHashCode();
             }
 
-            if (this.SharingUri != null)
+            if (SharingUri != null)
             {
-                hash = hash * 59 + this.SharingUri.GetHashCode();
+                hash = hash * 59 + SharingUri.GetHashCode();
             }
 
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.ContentLength != null)
+            if (ContentLength != null)
             {
-                hash = hash * 59 + this.ContentLength.GetHashCode();
+                hash = hash * 59 + ContentLength.GetHashCode();
             }
 
-            if (this.SystemType != null)
+            if (SystemType != null)
             {
-                hash = hash * 59 + this.SystemType.GetHashCode();
+                hash = hash * 59 + SystemType.GetHashCode();
             }
 
-            if (this.Filename != null)
+            if (Filename != null)
             {
-                hash = hash * 59 + this.Filename.GetHashCode();
+                hash = hash * 59 + Filename.GetHashCode();
             }
 
-            if (this.PageCount != null)
+            if (PageCount != null)
             {
-                hash = hash * 59 + this.PageCount.GetHashCode();
+                hash = hash * 59 + PageCount.GetHashCode();
             }
 
-            if (this.Read != null)
+            if (Read != null)
             {
-                hash = hash * 59 + this.Read.GetHashCode();
+                hash = hash * 59 + Read.GetHashCode();
             }
 
-            if (this.CallerAddress != null)
+            if (CallerAddress != null)
             {
-                hash = hash * 59 + this.CallerAddress.GetHashCode();
+                hash = hash * 59 + CallerAddress.GetHashCode();
             }
 
-            if (this.ReceiverAddress != null)
+            if (ReceiverAddress != null)
             {
-                hash = hash * 59 + this.ReceiverAddress.GetHashCode();
+                hash = hash * 59 + ReceiverAddress.GetHashCode();
             }
 
-            if (this.Tags != null)
+            if (Tags != null)
             {
-                hash = hash * 59 + this.Tags.GetHashCode();
+                hash = hash * 59 + Tags.GetHashCode();
             }
 
-            if (this.TagValues != null)
+            if (TagValues != null)
             {
-                hash = hash * 59 + this.TagValues.GetHashCode();
+                hash = hash * 59 + TagValues.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.Thumbnails != null)
+            if (Thumbnails != null)
             {
-                hash = hash * 59 + this.Thumbnails.GetHashCode();
+                hash = hash * 59 + Thumbnails.GetHashCode();
             }
 
-            if (this.UploadStatus != null)
+            if (UploadStatus != null)
             {
-                hash = hash * 59 + this.UploadStatus.GetHashCode();
+                hash = hash * 59 + UploadStatus.GetHashCode();
             }
 
-            if (this.UploadDestinationUri != null)
+            if (UploadDestinationUri != null)
             {
-                hash = hash * 59 + this.UploadDestinationUri.GetHashCode();
+                hash = hash * 59 + UploadDestinationUri.GetHashCode();
             }
 
-            if (this.UploadMethod != null)
+            if (UploadMethod != null)
             {
-                hash = hash * 59 + this.UploadMethod.GetHashCode();
+                hash = hash * 59 + UploadMethod.GetHashCode();
             }
 
-            if (this.LockInfo != null)
+            if (LockInfo != null)
             {
-                hash = hash * 59 + this.LockInfo.GetHashCode();
+                hash = hash * 59 + LockInfo.GetHashCode();
             }
 
-            if (this.Acl != null)
+            if (Acl != null)
             {
-                hash = hash * 59 + this.Acl.GetHashCode();
+                hash = hash * 59 + Acl.GetHashCode();
             }
 
-            if (this.SharingStatus != null)
+            if (SharingStatus != null)
             {
-                hash = hash * 59 + this.SharingStatus.GetHashCode();
+                hash = hash * 59 + SharingStatus.GetHashCode();
             }
 
-            if (this.DownloadSharingUri != null)
+            if (DownloadSharingUri != null)
             {
-                hash = hash * 59 + this.DownloadSharingUri.GetHashCode();
+                hash = hash * 59 + DownloadSharingUri.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -127,7 +127,7 @@ public partial class KnowledgeExportJobRequest : IEquatable<KnowledgeExportJobRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeExportJobRequest);
+        return Equals(obj as KnowledgeExportJobRequest);
     }
 
     /// <summary>
@@ -145,24 +145,24 @@ public partial class KnowledgeExportJobRequest : IEquatable<KnowledgeExportJobRe
 
         return true &&
             (
-                this.ExportFilter == other.ExportFilter ||
-                this.ExportFilter != null &&
-                this.ExportFilter.Equals(other.ExportFilter)
+                ExportFilter == other.ExportFilter ||
+                ExportFilter != null &&
+                ExportFilter.Equals(other.ExportFilter)
             ) &&
             (
-                this.FileType == other.FileType ||
-                this.FileType != null &&
-                this.FileType.Equals(other.FileType)
+                FileType == other.FileType ||
+                FileType != null &&
+                FileType.Equals(other.FileType)
             ) &&
             (
-                this.SourceId == other.SourceId ||
-                this.SourceId != null &&
-                this.SourceId.Equals(other.SourceId)
+                SourceId == other.SourceId ||
+                SourceId != null &&
+                SourceId.Equals(other.SourceId)
             ) &&
             (
-                this.JsonFileVersion == other.JsonFileVersion ||
-                this.JsonFileVersion != null &&
-                this.JsonFileVersion.Equals(other.JsonFileVersion)
+                JsonFileVersion == other.JsonFileVersion ||
+                JsonFileVersion != null &&
+                JsonFileVersion.Equals(other.JsonFileVersion)
             );
     }
 
@@ -177,24 +177,24 @@ public partial class KnowledgeExportJobRequest : IEquatable<KnowledgeExportJobRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExportFilter != null)
+            if (ExportFilter != null)
             {
-                hash = hash * 59 + this.ExportFilter.GetHashCode();
+                hash = hash * 59 + ExportFilter.GetHashCode();
             }
 
-            if (this.FileType != null)
+            if (FileType != null)
             {
-                hash = hash * 59 + this.FileType.GetHashCode();
+                hash = hash * 59 + FileType.GetHashCode();
             }
 
-            if (this.SourceId != null)
+            if (SourceId != null)
             {
-                hash = hash * 59 + this.SourceId.GetHashCode();
+                hash = hash * 59 + SourceId.GetHashCode();
             }
 
-            if (this.JsonFileVersion != null)
+            if (JsonFileVersion != null)
             {
-                hash = hash * 59 + this.JsonFileVersion.GetHashCode();
+                hash = hash * 59 + JsonFileVersion.GetHashCode();
             }
 
             return hash;

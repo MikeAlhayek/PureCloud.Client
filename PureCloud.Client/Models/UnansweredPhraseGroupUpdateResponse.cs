@@ -65,7 +65,7 @@ public partial class UnansweredPhraseGroupUpdateResponse : IEquatable<Unanswered
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UnansweredPhraseGroupUpdateResponse);
+        return Equals(obj as UnansweredPhraseGroupUpdateResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class UnansweredPhraseGroupUpdateResponse : IEquatable<Unanswered
 
         return true &&
             (
-                this.PhraseAssociations == other.PhraseAssociations ||
-                this.PhraseAssociations != null &&
-                this.PhraseAssociations.SequenceEqual(other.PhraseAssociations)
+                PhraseAssociations == other.PhraseAssociations ||
+                PhraseAssociations != null &&
+                PhraseAssociations.SequenceEqual(other.PhraseAssociations)
             ) &&
             (
-                this.Group == other.Group ||
-                this.Group != null &&
-                this.Group.Equals(other.Group)
+                Group == other.Group ||
+                Group != null &&
+                Group.Equals(other.Group)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class UnansweredPhraseGroupUpdateResponse : IEquatable<Unanswered
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PhraseAssociations != null)
+            if (PhraseAssociations != null)
             {
-                hash = hash * 59 + this.PhraseAssociations.GetHashCode();
+                hash = hash * 59 + PhraseAssociations.GetHashCode();
             }
 
-            if (this.Group != null)
+            if (Group != null)
             {
-                hash = hash * 59 + this.Group.GetHashCode();
+                hash = hash * 59 + Group.GetHashCode();
             }
 
             return hash;

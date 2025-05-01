@@ -87,7 +87,7 @@ public partial class OutboundMessagingEmailCampaignConfigChangeSmsConfig : IEqua
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingEmailCampaignConfigChangeSmsConfig);
+        return Equals(obj as OutboundMessagingEmailCampaignConfigChangeSmsConfig);
     }
 
     /// <summary>
@@ -105,24 +105,24 @@ public partial class OutboundMessagingEmailCampaignConfigChangeSmsConfig : IEqua
 
         return true &&
             (
-                this.MessageColumn == other.MessageColumn ||
-                this.MessageColumn != null &&
-                this.MessageColumn.Equals(other.MessageColumn)
+                MessageColumn == other.MessageColumn ||
+                MessageColumn != null &&
+                MessageColumn.Equals(other.MessageColumn)
             ) &&
             (
-                this.PhoneColumn == other.PhoneColumn ||
-                this.PhoneColumn != null &&
-                this.PhoneColumn.Equals(other.PhoneColumn)
+                PhoneColumn == other.PhoneColumn ||
+                PhoneColumn != null &&
+                PhoneColumn.Equals(other.PhoneColumn)
             ) &&
             (
-                this.SenderSmsPhoneNumber == other.SenderSmsPhoneNumber ||
-                this.SenderSmsPhoneNumber != null &&
-                this.SenderSmsPhoneNumber.Equals(other.SenderSmsPhoneNumber)
+                SenderSmsPhoneNumber == other.SenderSmsPhoneNumber ||
+                SenderSmsPhoneNumber != null &&
+                SenderSmsPhoneNumber.Equals(other.SenderSmsPhoneNumber)
             ) &&
             (
-                this.ContentTemplate == other.ContentTemplate ||
-                this.ContentTemplate != null &&
-                this.ContentTemplate.Equals(other.ContentTemplate)
+                ContentTemplate == other.ContentTemplate ||
+                ContentTemplate != null &&
+                ContentTemplate.Equals(other.ContentTemplate)
             );
     }
 
@@ -137,24 +137,24 @@ public partial class OutboundMessagingEmailCampaignConfigChangeSmsConfig : IEqua
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MessageColumn != null)
+            if (MessageColumn != null)
             {
-                hash = hash * 59 + this.MessageColumn.GetHashCode();
+                hash = hash * 59 + MessageColumn.GetHashCode();
             }
 
-            if (this.PhoneColumn != null)
+            if (PhoneColumn != null)
             {
-                hash = hash * 59 + this.PhoneColumn.GetHashCode();
+                hash = hash * 59 + PhoneColumn.GetHashCode();
             }
 
-            if (this.SenderSmsPhoneNumber != null)
+            if (SenderSmsPhoneNumber != null)
             {
-                hash = hash * 59 + this.SenderSmsPhoneNumber.GetHashCode();
+                hash = hash * 59 + SenderSmsPhoneNumber.GetHashCode();
             }
 
-            if (this.ContentTemplate != null)
+            if (ContentTemplate != null)
             {
-                hash = hash * 59 + this.ContentTemplate.GetHashCode();
+                hash = hash * 59 + ContentTemplate.GetHashCode();
             }
 
             return hash;

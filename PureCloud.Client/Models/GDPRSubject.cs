@@ -151,7 +151,7 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GDPRSubject);
+        return Equals(obj as GDPRSubject);
     }
 
     /// <summary>
@@ -169,54 +169,54 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.ExternalContactId == other.ExternalContactId ||
-                this.ExternalContactId != null &&
-                this.ExternalContactId.Equals(other.ExternalContactId)
+                ExternalContactId == other.ExternalContactId ||
+                ExternalContactId != null &&
+                ExternalContactId.Equals(other.ExternalContactId)
             ) &&
             (
-                this.DialerContactId == other.DialerContactId ||
-                this.DialerContactId != null &&
-                this.DialerContactId.Equals(other.DialerContactId)
+                DialerContactId == other.DialerContactId ||
+                DialerContactId != null &&
+                DialerContactId.Equals(other.DialerContactId)
             ) &&
             (
-                this.JourneyCustomer == other.JourneyCustomer ||
-                this.JourneyCustomer != null &&
-                this.JourneyCustomer.Equals(other.JourneyCustomer)
+                JourneyCustomer == other.JourneyCustomer ||
+                JourneyCustomer != null &&
+                JourneyCustomer.Equals(other.JourneyCustomer)
             ) &&
             (
-                this.SocialHandle == other.SocialHandle ||
-                this.SocialHandle != null &&
-                this.SocialHandle.Equals(other.SocialHandle)
+                SocialHandle == other.SocialHandle ||
+                SocialHandle != null &&
+                SocialHandle.Equals(other.SocialHandle)
             ) &&
             (
-                this.ExternalId == other.ExternalId ||
-                this.ExternalId != null &&
-                this.ExternalId.Equals(other.ExternalId)
+                ExternalId == other.ExternalId ||
+                ExternalId != null &&
+                ExternalId.Equals(other.ExternalId)
             ) &&
             (
-                this.Addresses == other.Addresses ||
-                this.Addresses != null &&
-                this.Addresses.SequenceEqual(other.Addresses)
+                Addresses == other.Addresses ||
+                Addresses != null &&
+                Addresses.SequenceEqual(other.Addresses)
             ) &&
             (
-                this.PhoneNumbers == other.PhoneNumbers ||
-                this.PhoneNumbers != null &&
-                this.PhoneNumbers.SequenceEqual(other.PhoneNumbers)
+                PhoneNumbers == other.PhoneNumbers ||
+                PhoneNumbers != null &&
+                PhoneNumbers.SequenceEqual(other.PhoneNumbers)
             ) &&
             (
-                this.EmailAddresses == other.EmailAddresses ||
-                this.EmailAddresses != null &&
-                this.EmailAddresses.SequenceEqual(other.EmailAddresses)
+                EmailAddresses == other.EmailAddresses ||
+                EmailAddresses != null &&
+                EmailAddresses.SequenceEqual(other.EmailAddresses)
             );
     }
 
@@ -231,54 +231,54 @@ public partial class GDPRSubject : IEquatable<GDPRSubject>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.ExternalContactId != null)
+            if (ExternalContactId != null)
             {
-                hash = hash * 59 + this.ExternalContactId.GetHashCode();
+                hash = hash * 59 + ExternalContactId.GetHashCode();
             }
 
-            if (this.DialerContactId != null)
+            if (DialerContactId != null)
             {
-                hash = hash * 59 + this.DialerContactId.GetHashCode();
+                hash = hash * 59 + DialerContactId.GetHashCode();
             }
 
-            if (this.JourneyCustomer != null)
+            if (JourneyCustomer != null)
             {
-                hash = hash * 59 + this.JourneyCustomer.GetHashCode();
+                hash = hash * 59 + JourneyCustomer.GetHashCode();
             }
 
-            if (this.SocialHandle != null)
+            if (SocialHandle != null)
             {
-                hash = hash * 59 + this.SocialHandle.GetHashCode();
+                hash = hash * 59 + SocialHandle.GetHashCode();
             }
 
-            if (this.ExternalId != null)
+            if (ExternalId != null)
             {
-                hash = hash * 59 + this.ExternalId.GetHashCode();
+                hash = hash * 59 + ExternalId.GetHashCode();
             }
 
-            if (this.Addresses != null)
+            if (Addresses != null)
             {
-                hash = hash * 59 + this.Addresses.GetHashCode();
+                hash = hash * 59 + Addresses.GetHashCode();
             }
 
-            if (this.PhoneNumbers != null)
+            if (PhoneNumbers != null)
             {
-                hash = hash * 59 + this.PhoneNumbers.GetHashCode();
+                hash = hash * 59 + PhoneNumbers.GetHashCode();
             }
 
-            if (this.EmailAddresses != null)
+            if (EmailAddresses != null)
             {
-                hash = hash * 59 + this.EmailAddresses.GetHashCode();
+                hash = hash * 59 + EmailAddresses.GetHashCode();
             }
 
             return hash;

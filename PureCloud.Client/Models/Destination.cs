@@ -89,7 +89,7 @@ public partial class Destination : IEquatable<Destination>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Destination);
+        return Equals(obj as Destination);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class Destination : IEquatable<Destination>
 
         return true &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class Destination : IEquatable<Destination>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
             return hash;

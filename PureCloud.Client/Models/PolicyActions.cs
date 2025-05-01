@@ -177,7 +177,7 @@ public partial class PolicyActions : IEquatable<PolicyActions>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PolicyActions);
+        return Equals(obj as PolicyActions);
     }
 
     /// <summary>
@@ -195,64 +195,64 @@ public partial class PolicyActions : IEquatable<PolicyActions>
 
         return true &&
             (
-                this.RetainRecording == other.RetainRecording ||
-                this.RetainRecording != null &&
-                this.RetainRecording.Equals(other.RetainRecording)
+                RetainRecording == other.RetainRecording ||
+                RetainRecording != null &&
+                RetainRecording.Equals(other.RetainRecording)
             ) &&
             (
-                this.DeleteRecording == other.DeleteRecording ||
-                this.DeleteRecording != null &&
-                this.DeleteRecording.Equals(other.DeleteRecording)
+                DeleteRecording == other.DeleteRecording ||
+                DeleteRecording != null &&
+                DeleteRecording.Equals(other.DeleteRecording)
             ) &&
             (
-                this.AlwaysDelete == other.AlwaysDelete ||
-                this.AlwaysDelete != null &&
-                this.AlwaysDelete.Equals(other.AlwaysDelete)
+                AlwaysDelete == other.AlwaysDelete ||
+                AlwaysDelete != null &&
+                AlwaysDelete.Equals(other.AlwaysDelete)
             ) &&
             (
-                this.AssignEvaluations == other.AssignEvaluations ||
-                this.AssignEvaluations != null &&
-                this.AssignEvaluations.SequenceEqual(other.AssignEvaluations)
+                AssignEvaluations == other.AssignEvaluations ||
+                AssignEvaluations != null &&
+                AssignEvaluations.SequenceEqual(other.AssignEvaluations)
             ) &&
             (
-                this.AssignMeteredEvaluations == other.AssignMeteredEvaluations ||
-                this.AssignMeteredEvaluations != null &&
-                this.AssignMeteredEvaluations.SequenceEqual(other.AssignMeteredEvaluations)
+                AssignMeteredEvaluations == other.AssignMeteredEvaluations ||
+                AssignMeteredEvaluations != null &&
+                AssignMeteredEvaluations.SequenceEqual(other.AssignMeteredEvaluations)
             ) &&
             (
-                this.AssignMeteredAssignmentByAgent == other.AssignMeteredAssignmentByAgent ||
-                this.AssignMeteredAssignmentByAgent != null &&
-                this.AssignMeteredAssignmentByAgent.SequenceEqual(other.AssignMeteredAssignmentByAgent)
+                AssignMeteredAssignmentByAgent == other.AssignMeteredAssignmentByAgent ||
+                AssignMeteredAssignmentByAgent != null &&
+                AssignMeteredAssignmentByAgent.SequenceEqual(other.AssignMeteredAssignmentByAgent)
             ) &&
             (
-                this.AssignCalibrations == other.AssignCalibrations ||
-                this.AssignCalibrations != null &&
-                this.AssignCalibrations.SequenceEqual(other.AssignCalibrations)
+                AssignCalibrations == other.AssignCalibrations ||
+                AssignCalibrations != null &&
+                AssignCalibrations.SequenceEqual(other.AssignCalibrations)
             ) &&
             (
-                this.AssignSurveys == other.AssignSurveys ||
-                this.AssignSurveys != null &&
-                this.AssignSurveys.SequenceEqual(other.AssignSurveys)
+                AssignSurveys == other.AssignSurveys ||
+                AssignSurveys != null &&
+                AssignSurveys.SequenceEqual(other.AssignSurveys)
             ) &&
             (
-                this.RetentionDuration == other.RetentionDuration ||
-                this.RetentionDuration != null &&
-                this.RetentionDuration.Equals(other.RetentionDuration)
+                RetentionDuration == other.RetentionDuration ||
+                RetentionDuration != null &&
+                RetentionDuration.Equals(other.RetentionDuration)
             ) &&
             (
-                this.InitiateScreenRecording == other.InitiateScreenRecording ||
-                this.InitiateScreenRecording != null &&
-                this.InitiateScreenRecording.Equals(other.InitiateScreenRecording)
+                InitiateScreenRecording == other.InitiateScreenRecording ||
+                InitiateScreenRecording != null &&
+                InitiateScreenRecording.Equals(other.InitiateScreenRecording)
             ) &&
             (
-                this.MediaTranscriptions == other.MediaTranscriptions ||
-                this.MediaTranscriptions != null &&
-                this.MediaTranscriptions.SequenceEqual(other.MediaTranscriptions)
+                MediaTranscriptions == other.MediaTranscriptions ||
+                MediaTranscriptions != null &&
+                MediaTranscriptions.SequenceEqual(other.MediaTranscriptions)
             ) &&
             (
-                this.IntegrationExport == other.IntegrationExport ||
-                this.IntegrationExport != null &&
-                this.IntegrationExport.Equals(other.IntegrationExport)
+                IntegrationExport == other.IntegrationExport ||
+                IntegrationExport != null &&
+                IntegrationExport.Equals(other.IntegrationExport)
             );
     }
 
@@ -267,64 +267,64 @@ public partial class PolicyActions : IEquatable<PolicyActions>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RetainRecording != null)
+            if (RetainRecording != null)
             {
-                hash = hash * 59 + this.RetainRecording.GetHashCode();
+                hash = hash * 59 + RetainRecording.GetHashCode();
             }
 
-            if (this.DeleteRecording != null)
+            if (DeleteRecording != null)
             {
-                hash = hash * 59 + this.DeleteRecording.GetHashCode();
+                hash = hash * 59 + DeleteRecording.GetHashCode();
             }
 
-            if (this.AlwaysDelete != null)
+            if (AlwaysDelete != null)
             {
-                hash = hash * 59 + this.AlwaysDelete.GetHashCode();
+                hash = hash * 59 + AlwaysDelete.GetHashCode();
             }
 
-            if (this.AssignEvaluations != null)
+            if (AssignEvaluations != null)
             {
-                hash = hash * 59 + this.AssignEvaluations.GetHashCode();
+                hash = hash * 59 + AssignEvaluations.GetHashCode();
             }
 
-            if (this.AssignMeteredEvaluations != null)
+            if (AssignMeteredEvaluations != null)
             {
-                hash = hash * 59 + this.AssignMeteredEvaluations.GetHashCode();
+                hash = hash * 59 + AssignMeteredEvaluations.GetHashCode();
             }
 
-            if (this.AssignMeteredAssignmentByAgent != null)
+            if (AssignMeteredAssignmentByAgent != null)
             {
-                hash = hash * 59 + this.AssignMeteredAssignmentByAgent.GetHashCode();
+                hash = hash * 59 + AssignMeteredAssignmentByAgent.GetHashCode();
             }
 
-            if (this.AssignCalibrations != null)
+            if (AssignCalibrations != null)
             {
-                hash = hash * 59 + this.AssignCalibrations.GetHashCode();
+                hash = hash * 59 + AssignCalibrations.GetHashCode();
             }
 
-            if (this.AssignSurveys != null)
+            if (AssignSurveys != null)
             {
-                hash = hash * 59 + this.AssignSurveys.GetHashCode();
+                hash = hash * 59 + AssignSurveys.GetHashCode();
             }
 
-            if (this.RetentionDuration != null)
+            if (RetentionDuration != null)
             {
-                hash = hash * 59 + this.RetentionDuration.GetHashCode();
+                hash = hash * 59 + RetentionDuration.GetHashCode();
             }
 
-            if (this.InitiateScreenRecording != null)
+            if (InitiateScreenRecording != null)
             {
-                hash = hash * 59 + this.InitiateScreenRecording.GetHashCode();
+                hash = hash * 59 + InitiateScreenRecording.GetHashCode();
             }
 
-            if (this.MediaTranscriptions != null)
+            if (MediaTranscriptions != null)
             {
-                hash = hash * 59 + this.MediaTranscriptions.GetHashCode();
+                hash = hash * 59 + MediaTranscriptions.GetHashCode();
             }
 
-            if (this.IntegrationExport != null)
+            if (IntegrationExport != null)
             {
-                hash = hash * 59 + this.IntegrationExport.GetHashCode();
+                hash = hash * 59 + IntegrationExport.GetHashCode();
             }
 
             return hash;

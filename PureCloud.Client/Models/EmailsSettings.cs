@@ -52,7 +52,7 @@ public partial class EmailsSettings : IEquatable<EmailsSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailsSettings);
+        return Equals(obj as EmailsSettings);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class EmailsSettings : IEquatable<EmailsSettings>
 
         return true &&
             (
-                this.SendingSizeLimit == other.SendingSizeLimit ||
-                this.SendingSizeLimit != null &&
-                this.SendingSizeLimit.Equals(other.SendingSizeLimit)
+                SendingSizeLimit == other.SendingSizeLimit ||
+                SendingSizeLimit != null &&
+                SendingSizeLimit.Equals(other.SendingSizeLimit)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class EmailsSettings : IEquatable<EmailsSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SendingSizeLimit != null)
+            if (SendingSizeLimit != null)
             {
-                hash = hash * 59 + this.SendingSizeLimit.GetHashCode();
+                hash = hash * 59 + SendingSizeLimit.GetHashCode();
             }
 
             return hash;

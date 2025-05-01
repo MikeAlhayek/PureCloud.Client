@@ -284,7 +284,7 @@ public partial class Endpoint : IEquatable<Endpoint>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Endpoint);
+        return Equals(obj as Endpoint);
     }
 
     /// <summary>
@@ -302,99 +302,99 @@ public partial class Endpoint : IEquatable<Endpoint>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.ModifiedByApp == other.ModifiedByApp ||
-                this.ModifiedByApp != null &&
-                this.ModifiedByApp.Equals(other.ModifiedByApp)
+                ModifiedByApp == other.ModifiedByApp ||
+                ModifiedByApp != null &&
+                ModifiedByApp.Equals(other.ModifiedByApp)
             ) &&
             (
-                this.CreatedByApp == other.CreatedByApp ||
-                this.CreatedByApp != null &&
-                this.CreatedByApp.Equals(other.CreatedByApp)
+                CreatedByApp == other.CreatedByApp ||
+                CreatedByApp != null &&
+                CreatedByApp.Equals(other.CreatedByApp)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.SequenceEqual(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.SequenceEqual(other.Properties)
             ) &&
             (
-                this.Schema == other.Schema ||
-                this.Schema != null &&
-                this.Schema.Equals(other.Schema)
+                Schema == other.Schema ||
+                Schema != null &&
+                Schema.Equals(other.Schema)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Site == other.Site ||
-                this.Site != null &&
-                this.Site.Equals(other.Site)
+                Site == other.Site ||
+                Site != null &&
+                Site.Equals(other.Site)
             ) &&
             (
-                this.Dids == other.Dids ||
-                this.Dids != null &&
-                this.Dids.SequenceEqual(other.Dids)
+                Dids == other.Dids ||
+                Dids != null &&
+                Dids.SequenceEqual(other.Dids)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -409,99 +409,99 @@ public partial class Endpoint : IEquatable<Endpoint>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.ModifiedByApp != null)
+            if (ModifiedByApp != null)
             {
-                hash = hash * 59 + this.ModifiedByApp.GetHashCode();
+                hash = hash * 59 + ModifiedByApp.GetHashCode();
             }
 
-            if (this.CreatedByApp != null)
+            if (CreatedByApp != null)
             {
-                hash = hash * 59 + this.CreatedByApp.GetHashCode();
+                hash = hash * 59 + CreatedByApp.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
-            if (this.Schema != null)
+            if (Schema != null)
             {
-                hash = hash * 59 + this.Schema.GetHashCode();
+                hash = hash * 59 + Schema.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Site != null)
+            if (Site != null)
             {
-                hash = hash * 59 + this.Site.GetHashCode();
+                hash = hash * 59 + Site.GetHashCode();
             }
 
-            if (this.Dids != null)
+            if (Dids != null)
             {
-                hash = hash * 59 + this.Dids.GetHashCode();
+                hash = hash * 59 + Dids.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

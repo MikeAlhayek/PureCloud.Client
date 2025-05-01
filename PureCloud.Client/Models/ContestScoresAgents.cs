@@ -89,7 +89,7 @@ public partial class ContestScoresAgents : IEquatable<ContestScoresAgents>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestScoresAgents);
+        return Equals(obj as ContestScoresAgents);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ContestScoresAgents : IEquatable<ContestScoresAgents>
 
         return true &&
             (
-                this.ContestScore == other.ContestScore ||
-                this.ContestScore != null &&
-                this.ContestScore.Equals(other.ContestScore)
+                ContestScore == other.ContestScore ||
+                ContestScore != null &&
+                ContestScore.Equals(other.ContestScore)
             ) &&
             (
-                this.MetricScores == other.MetricScores ||
-                this.MetricScores != null &&
-                this.MetricScores.SequenceEqual(other.MetricScores)
+                MetricScores == other.MetricScores ||
+                MetricScores != null &&
+                MetricScores.SequenceEqual(other.MetricScores)
             ) &&
             (
-                this.Disqualified == other.Disqualified ||
-                this.Disqualified != null &&
-                this.Disqualified.Equals(other.Disqualified)
+                Disqualified == other.Disqualified ||
+                Disqualified != null &&
+                Disqualified.Equals(other.Disqualified)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ContestScoresAgents : IEquatable<ContestScoresAgents>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContestScore != null)
+            if (ContestScore != null)
             {
-                hash = hash * 59 + this.ContestScore.GetHashCode();
+                hash = hash * 59 + ContestScore.GetHashCode();
             }
 
-            if (this.MetricScores != null)
+            if (MetricScores != null)
             {
-                hash = hash * 59 + this.MetricScores.GetHashCode();
+                hash = hash * 59 + MetricScores.GetHashCode();
             }
 
-            if (this.Disqualified != null)
+            if (Disqualified != null)
             {
-                hash = hash * 59 + this.Disqualified.GetHashCode();
+                hash = hash * 59 + Disqualified.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
             return hash;

@@ -112,7 +112,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayMetric : IEquatable<WfmIn
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmIntradayDataUpdateTopicIntradayMetric);
+        return Equals(obj as WfmIntradayDataUpdateTopicIntradayMetric);
     }
 
     /// <summary>
@@ -130,14 +130,14 @@ public partial class WfmIntradayDataUpdateTopicIntradayMetric : IEquatable<WfmIn
 
         return true &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -152,14 +152,14 @@ public partial class WfmIntradayDataUpdateTopicIntradayMetric : IEquatable<WfmIn
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

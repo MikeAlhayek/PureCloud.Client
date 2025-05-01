@@ -63,7 +63,7 @@ public partial class QueryFacetInfo : IEquatable<QueryFacetInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueryFacetInfo);
+        return Equals(obj as QueryFacetInfo);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class QueryFacetInfo : IEquatable<QueryFacetInfo>
 
         return true &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.Facets == other.Facets ||
-                this.Facets != null &&
-                this.Facets.SequenceEqual(other.Facets)
+                Facets == other.Facets ||
+                Facets != null &&
+                Facets.SequenceEqual(other.Facets)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class QueryFacetInfo : IEquatable<QueryFacetInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.Facets != null)
+            if (Facets != null)
             {
-                hash = hash * 59 + this.Facets.GetHashCode();
+                hash = hash * 59 + Facets.GetHashCode();
             }
 
             return hash;

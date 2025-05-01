@@ -101,7 +101,7 @@ public partial class QueueConversationCobrowseEventTopicWrapup : IEquatable<Queu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationCobrowseEventTopicWrapup);
+        return Equals(obj as QueueConversationCobrowseEventTopicWrapup);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class QueueConversationCobrowseEventTopicWrapup : IEquatable<Queu
 
         return true &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             ) &&
             (
-                this.Tags == other.Tags ||
-                this.Tags != null &&
-                this.Tags.SequenceEqual(other.Tags)
+                Tags == other.Tags ||
+                Tags != null &&
+                Tags.SequenceEqual(other.Tags)
             ) &&
             (
-                this.DurationSeconds == other.DurationSeconds ||
-                this.DurationSeconds != null &&
-                this.DurationSeconds.Equals(other.DurationSeconds)
+                DurationSeconds == other.DurationSeconds ||
+                DurationSeconds != null &&
+                DurationSeconds.Equals(other.DurationSeconds)
             ) &&
             (
-                this.EndTime == other.EndTime ||
-                this.EndTime != null &&
-                this.EndTime.Equals(other.EndTime)
+                EndTime == other.EndTime ||
+                EndTime != null &&
+                EndTime.Equals(other.EndTime)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class QueueConversationCobrowseEventTopicWrapup : IEquatable<Queu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
-            if (this.Tags != null)
+            if (Tags != null)
             {
-                hash = hash * 59 + this.Tags.GetHashCode();
+                hash = hash * 59 + Tags.GetHashCode();
             }
 
-            if (this.DurationSeconds != null)
+            if (DurationSeconds != null)
             {
-                hash = hash * 59 + this.DurationSeconds.GetHashCode();
+                hash = hash * 59 + DurationSeconds.GetHashCode();
             }
 
-            if (this.EndTime != null)
+            if (EndTime != null)
             {
-                hash = hash * 59 + this.EndTime.GetHashCode();
+                hash = hash * 59 + EndTime.GetHashCode();
             }
 
             return hash;

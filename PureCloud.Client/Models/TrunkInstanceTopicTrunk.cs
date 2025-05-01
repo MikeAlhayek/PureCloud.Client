@@ -96,7 +96,7 @@ public partial class TrunkInstanceTopicTrunk : IEquatable<TrunkInstanceTopicTrun
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkInstanceTopicTrunk);
+        return Equals(obj as TrunkInstanceTopicTrunk);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class TrunkInstanceTopicTrunk : IEquatable<TrunkInstanceTopicTrun
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ConnectedStatus == other.ConnectedStatus ||
-                this.ConnectedStatus != null &&
-                this.ConnectedStatus.Equals(other.ConnectedStatus)
+                ConnectedStatus == other.ConnectedStatus ||
+                ConnectedStatus != null &&
+                ConnectedStatus.Equals(other.ConnectedStatus)
             ) &&
             (
-                this.OptionsStatus == other.OptionsStatus ||
-                this.OptionsStatus != null &&
-                this.OptionsStatus.SequenceEqual(other.OptionsStatus)
+                OptionsStatus == other.OptionsStatus ||
+                OptionsStatus != null &&
+                OptionsStatus.SequenceEqual(other.OptionsStatus)
             ) &&
             (
-                this.RegistersStatus == other.RegistersStatus ||
-                this.RegistersStatus != null &&
-                this.RegistersStatus.SequenceEqual(other.RegistersStatus)
+                RegistersStatus == other.RegistersStatus ||
+                RegistersStatus != null &&
+                RegistersStatus.SequenceEqual(other.RegistersStatus)
             ) &&
             (
-                this.IpStatus == other.IpStatus ||
-                this.IpStatus != null &&
-                this.IpStatus.Equals(other.IpStatus)
+                IpStatus == other.IpStatus ||
+                IpStatus != null &&
+                IpStatus.Equals(other.IpStatus)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class TrunkInstanceTopicTrunk : IEquatable<TrunkInstanceTopicTrun
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ConnectedStatus != null)
+            if (ConnectedStatus != null)
             {
-                hash = hash * 59 + this.ConnectedStatus.GetHashCode();
+                hash = hash * 59 + ConnectedStatus.GetHashCode();
             }
 
-            if (this.OptionsStatus != null)
+            if (OptionsStatus != null)
             {
-                hash = hash * 59 + this.OptionsStatus.GetHashCode();
+                hash = hash * 59 + OptionsStatus.GetHashCode();
             }
 
-            if (this.RegistersStatus != null)
+            if (RegistersStatus != null)
             {
-                hash = hash * 59 + this.RegistersStatus.GetHashCode();
+                hash = hash * 59 + RegistersStatus.GetHashCode();
             }
 
-            if (this.IpStatus != null)
+            if (IpStatus != null)
             {
-                hash = hash * 59 + this.IpStatus.GetHashCode();
+                hash = hash * 59 + IpStatus.GetHashCode();
             }
 
             return hash;

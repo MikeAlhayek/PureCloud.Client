@@ -71,7 +71,7 @@ public partial class SuggestionScript : IEquatable<SuggestionScript>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SuggestionScript);
+        return Equals(obj as SuggestionScript);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class SuggestionScript : IEquatable<SuggestionScript>
 
         return true &&
             (
-                this.Script == other.Script ||
-                this.Script != null &&
-                this.Script.Equals(other.Script)
+                Script == other.Script ||
+                Script != null &&
+                Script.Equals(other.Script)
             ) &&
             (
-                this.Page == other.Page ||
-                this.Page != null &&
-                this.Page.Equals(other.Page)
+                Page == other.Page ||
+                Page != null &&
+                Page.Equals(other.Page)
             ) &&
             (
-                this.Data == other.Data ||
-                this.Data != null &&
-                this.Data.SequenceEqual(other.Data)
+                Data == other.Data ||
+                Data != null &&
+                Data.SequenceEqual(other.Data)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class SuggestionScript : IEquatable<SuggestionScript>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Script != null)
+            if (Script != null)
             {
-                hash = hash * 59 + this.Script.GetHashCode();
+                hash = hash * 59 + Script.GetHashCode();
             }
 
-            if (this.Page != null)
+            if (Page != null)
             {
-                hash = hash * 59 + this.Page.GetHashCode();
+                hash = hash * 59 + Page.GetHashCode();
             }
 
-            if (this.Data != null)
+            if (Data != null)
             {
-                hash = hash * 59 + this.Data.GetHashCode();
+                hash = hash * 59 + Data.GetHashCode();
             }
 
             return hash;

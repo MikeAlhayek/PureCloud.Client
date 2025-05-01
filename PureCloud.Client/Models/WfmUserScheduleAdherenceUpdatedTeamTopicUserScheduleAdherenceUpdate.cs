@@ -365,7 +365,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdheren
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate);
+        return Equals(obj as WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate);
     }
 
     /// <summary>
@@ -383,104 +383,104 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdheren
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             ) &&
             (
-                this.Team == other.Team ||
-                this.Team != null &&
-                this.Team.Equals(other.Team)
+                Team == other.Team ||
+                Team != null &&
+                Team.Equals(other.Team)
             ) &&
             (
-                this.ScheduledActivityCategory == other.ScheduledActivityCategory ||
-                this.ScheduledActivityCategory != null &&
-                this.ScheduledActivityCategory.Equals(other.ScheduledActivityCategory)
+                ScheduledActivityCategory == other.ScheduledActivityCategory ||
+                ScheduledActivityCategory != null &&
+                ScheduledActivityCategory.Equals(other.ScheduledActivityCategory)
             ) &&
             (
-                this.ScheduledActivityCode == other.ScheduledActivityCode ||
-                this.ScheduledActivityCode != null &&
-                this.ScheduledActivityCode.Equals(other.ScheduledActivityCode)
+                ScheduledActivityCode == other.ScheduledActivityCode ||
+                ScheduledActivityCode != null &&
+                ScheduledActivityCode.Equals(other.ScheduledActivityCode)
             ) &&
             (
-                this.SystemPresence == other.SystemPresence ||
-                this.SystemPresence != null &&
-                this.SystemPresence.Equals(other.SystemPresence)
+                SystemPresence == other.SystemPresence ||
+                SystemPresence != null &&
+                SystemPresence.Equals(other.SystemPresence)
             ) &&
             (
-                this.OrganizationSecondaryPresenceId == other.OrganizationSecondaryPresenceId ||
-                this.OrganizationSecondaryPresenceId != null &&
-                this.OrganizationSecondaryPresenceId.Equals(other.OrganizationSecondaryPresenceId)
+                OrganizationSecondaryPresenceId == other.OrganizationSecondaryPresenceId ||
+                OrganizationSecondaryPresenceId != null &&
+                OrganizationSecondaryPresenceId.Equals(other.OrganizationSecondaryPresenceId)
             ) &&
             (
-                this.RoutingStatus == other.RoutingStatus ||
-                this.RoutingStatus != null &&
-                this.RoutingStatus.Equals(other.RoutingStatus)
+                RoutingStatus == other.RoutingStatus ||
+                RoutingStatus != null &&
+                RoutingStatus.Equals(other.RoutingStatus)
             ) &&
             (
-                this.ActualActivityCategory == other.ActualActivityCategory ||
-                this.ActualActivityCategory != null &&
-                this.ActualActivityCategory.Equals(other.ActualActivityCategory)
+                ActualActivityCategory == other.ActualActivityCategory ||
+                ActualActivityCategory != null &&
+                ActualActivityCategory.Equals(other.ActualActivityCategory)
             ) &&
             (
-                this.IsOutOfOffice == other.IsOutOfOffice ||
-                this.IsOutOfOffice != null &&
-                this.IsOutOfOffice.Equals(other.IsOutOfOffice)
+                IsOutOfOffice == other.IsOutOfOffice ||
+                IsOutOfOffice != null &&
+                IsOutOfOffice.Equals(other.IsOutOfOffice)
             ) &&
             (
-                this.AdherenceState == other.AdherenceState ||
-                this.AdherenceState != null &&
-                this.AdherenceState.Equals(other.AdherenceState)
+                AdherenceState == other.AdherenceState ||
+                AdherenceState != null &&
+                AdherenceState.Equals(other.AdherenceState)
             ) &&
             (
-                this.Impact == other.Impact ||
-                this.Impact != null &&
-                this.Impact.Equals(other.Impact)
+                Impact == other.Impact ||
+                Impact != null &&
+                Impact.Equals(other.Impact)
             ) &&
             (
-                this.AdherenceExplanation == other.AdherenceExplanation ||
-                this.AdherenceExplanation != null &&
-                this.AdherenceExplanation.Equals(other.AdherenceExplanation)
+                AdherenceExplanation == other.AdherenceExplanation ||
+                AdherenceExplanation != null &&
+                AdherenceExplanation.Equals(other.AdherenceExplanation)
             ) &&
             (
-                this.AdherenceChangeTime == other.AdherenceChangeTime ||
-                this.AdherenceChangeTime != null &&
-                this.AdherenceChangeTime.Equals(other.AdherenceChangeTime)
+                AdherenceChangeTime == other.AdherenceChangeTime ||
+                AdherenceChangeTime != null &&
+                AdherenceChangeTime.Equals(other.AdherenceChangeTime)
             ) &&
             (
-                this.PresenceUpdateTime == other.PresenceUpdateTime ||
-                this.PresenceUpdateTime != null &&
-                this.PresenceUpdateTime.Equals(other.PresenceUpdateTime)
+                PresenceUpdateTime == other.PresenceUpdateTime ||
+                PresenceUpdateTime != null &&
+                PresenceUpdateTime.Equals(other.PresenceUpdateTime)
             ) &&
             (
-                this.ActiveQueues == other.ActiveQueues ||
-                this.ActiveQueues != null &&
-                this.ActiveQueues.SequenceEqual(other.ActiveQueues)
+                ActiveQueues == other.ActiveQueues ||
+                ActiveQueues != null &&
+                ActiveQueues.SequenceEqual(other.ActiveQueues)
             ) &&
             (
-                this.ActiveQueuesModifiedTime == other.ActiveQueuesModifiedTime ||
-                this.ActiveQueuesModifiedTime != null &&
-                this.ActiveQueuesModifiedTime.Equals(other.ActiveQueuesModifiedTime)
+                ActiveQueuesModifiedTime == other.ActiveQueuesModifiedTime ||
+                ActiveQueuesModifiedTime != null &&
+                ActiveQueuesModifiedTime.Equals(other.ActiveQueuesModifiedTime)
             ) &&
             (
-                this.RemovedFromManagementUnit == other.RemovedFromManagementUnit ||
-                this.RemovedFromManagementUnit != null &&
-                this.RemovedFromManagementUnit.Equals(other.RemovedFromManagementUnit)
+                RemovedFromManagementUnit == other.RemovedFromManagementUnit ||
+                RemovedFromManagementUnit != null &&
+                RemovedFromManagementUnit.Equals(other.RemovedFromManagementUnit)
             ) &&
             (
-                this.SuppressOnTimeReminder == other.SuppressOnTimeReminder ||
-                this.SuppressOnTimeReminder != null &&
-                this.SuppressOnTimeReminder.Equals(other.SuppressOnTimeReminder)
+                SuppressOnTimeReminder == other.SuppressOnTimeReminder ||
+                SuppressOnTimeReminder != null &&
+                SuppressOnTimeReminder.Equals(other.SuppressOnTimeReminder)
             ) &&
             (
-                this.NextActivityReminders == other.NextActivityReminders ||
-                this.NextActivityReminders != null &&
-                this.NextActivityReminders.SequenceEqual(other.NextActivityReminders)
+                NextActivityReminders == other.NextActivityReminders ||
+                NextActivityReminders != null &&
+                NextActivityReminders.SequenceEqual(other.NextActivityReminders)
             );
     }
 
@@ -495,104 +495,104 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdheren
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
-            if (this.Team != null)
+            if (Team != null)
             {
-                hash = hash * 59 + this.Team.GetHashCode();
+                hash = hash * 59 + Team.GetHashCode();
             }
 
-            if (this.ScheduledActivityCategory != null)
+            if (ScheduledActivityCategory != null)
             {
-                hash = hash * 59 + this.ScheduledActivityCategory.GetHashCode();
+                hash = hash * 59 + ScheduledActivityCategory.GetHashCode();
             }
 
-            if (this.ScheduledActivityCode != null)
+            if (ScheduledActivityCode != null)
             {
-                hash = hash * 59 + this.ScheduledActivityCode.GetHashCode();
+                hash = hash * 59 + ScheduledActivityCode.GetHashCode();
             }
 
-            if (this.SystemPresence != null)
+            if (SystemPresence != null)
             {
-                hash = hash * 59 + this.SystemPresence.GetHashCode();
+                hash = hash * 59 + SystemPresence.GetHashCode();
             }
 
-            if (this.OrganizationSecondaryPresenceId != null)
+            if (OrganizationSecondaryPresenceId != null)
             {
-                hash = hash * 59 + this.OrganizationSecondaryPresenceId.GetHashCode();
+                hash = hash * 59 + OrganizationSecondaryPresenceId.GetHashCode();
             }
 
-            if (this.RoutingStatus != null)
+            if (RoutingStatus != null)
             {
-                hash = hash * 59 + this.RoutingStatus.GetHashCode();
+                hash = hash * 59 + RoutingStatus.GetHashCode();
             }
 
-            if (this.ActualActivityCategory != null)
+            if (ActualActivityCategory != null)
             {
-                hash = hash * 59 + this.ActualActivityCategory.GetHashCode();
+                hash = hash * 59 + ActualActivityCategory.GetHashCode();
             }
 
-            if (this.IsOutOfOffice != null)
+            if (IsOutOfOffice != null)
             {
-                hash = hash * 59 + this.IsOutOfOffice.GetHashCode();
+                hash = hash * 59 + IsOutOfOffice.GetHashCode();
             }
 
-            if (this.AdherenceState != null)
+            if (AdherenceState != null)
             {
-                hash = hash * 59 + this.AdherenceState.GetHashCode();
+                hash = hash * 59 + AdherenceState.GetHashCode();
             }
 
-            if (this.Impact != null)
+            if (Impact != null)
             {
-                hash = hash * 59 + this.Impact.GetHashCode();
+                hash = hash * 59 + Impact.GetHashCode();
             }
 
-            if (this.AdherenceExplanation != null)
+            if (AdherenceExplanation != null)
             {
-                hash = hash * 59 + this.AdherenceExplanation.GetHashCode();
+                hash = hash * 59 + AdherenceExplanation.GetHashCode();
             }
 
-            if (this.AdherenceChangeTime != null)
+            if (AdherenceChangeTime != null)
             {
-                hash = hash * 59 + this.AdherenceChangeTime.GetHashCode();
+                hash = hash * 59 + AdherenceChangeTime.GetHashCode();
             }
 
-            if (this.PresenceUpdateTime != null)
+            if (PresenceUpdateTime != null)
             {
-                hash = hash * 59 + this.PresenceUpdateTime.GetHashCode();
+                hash = hash * 59 + PresenceUpdateTime.GetHashCode();
             }
 
-            if (this.ActiveQueues != null)
+            if (ActiveQueues != null)
             {
-                hash = hash * 59 + this.ActiveQueues.GetHashCode();
+                hash = hash * 59 + ActiveQueues.GetHashCode();
             }
 
-            if (this.ActiveQueuesModifiedTime != null)
+            if (ActiveQueuesModifiedTime != null)
             {
-                hash = hash * 59 + this.ActiveQueuesModifiedTime.GetHashCode();
+                hash = hash * 59 + ActiveQueuesModifiedTime.GetHashCode();
             }
 
-            if (this.RemovedFromManagementUnit != null)
+            if (RemovedFromManagementUnit != null)
             {
-                hash = hash * 59 + this.RemovedFromManagementUnit.GetHashCode();
+                hash = hash * 59 + RemovedFromManagementUnit.GetHashCode();
             }
 
-            if (this.SuppressOnTimeReminder != null)
+            if (SuppressOnTimeReminder != null)
             {
-                hash = hash * 59 + this.SuppressOnTimeReminder.GetHashCode();
+                hash = hash * 59 + SuppressOnTimeReminder.GetHashCode();
             }
 
-            if (this.NextActivityReminders != null)
+            if (NextActivityReminders != null)
             {
-                hash = hash * 59 + this.NextActivityReminders.GetHashCode();
+                hash = hash * 59 + NextActivityReminders.GetHashCode();
             }
 
             return hash;

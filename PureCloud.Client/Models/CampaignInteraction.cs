@@ -344,7 +344,7 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignInteraction);
+        return Equals(obj as CampaignInteraction);
     }
 
     /// <summary>
@@ -362,109 +362,109 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Campaign == other.Campaign ||
-                this.Campaign != null &&
-                this.Campaign.Equals(other.Campaign)
+                Campaign == other.Campaign ||
+                Campaign != null &&
+                Campaign.Equals(other.Campaign)
             ) &&
             (
-                this.Agent == other.Agent ||
-                this.Agent != null &&
-                this.Agent.Equals(other.Agent)
+                Agent == other.Agent ||
+                Agent != null &&
+                Agent.Equals(other.Agent)
             ) &&
             (
-                this.Contact == other.Contact ||
-                this.Contact != null &&
-                this.Contact.Equals(other.Contact)
+                Contact == other.Contact ||
+                Contact != null &&
+                Contact.Equals(other.Contact)
             ) &&
             (
-                this.DestinationAddress == other.DestinationAddress ||
-                this.DestinationAddress != null &&
-                this.DestinationAddress.Equals(other.DestinationAddress)
+                DestinationAddress == other.DestinationAddress ||
+                DestinationAddress != null &&
+                DestinationAddress.Equals(other.DestinationAddress)
             ) &&
             (
-                this.ActivePreviewCall == other.ActivePreviewCall ||
-                this.ActivePreviewCall != null &&
-                this.ActivePreviewCall.Equals(other.ActivePreviewCall)
+                ActivePreviewCall == other.ActivePreviewCall ||
+                ActivePreviewCall != null &&
+                ActivePreviewCall.Equals(other.ActivePreviewCall)
             ) &&
             (
-                this.LastActivePreviewWrapupTime == other.LastActivePreviewWrapupTime ||
-                this.LastActivePreviewWrapupTime != null &&
-                this.LastActivePreviewWrapupTime.Equals(other.LastActivePreviewWrapupTime)
+                LastActivePreviewWrapupTime == other.LastActivePreviewWrapupTime ||
+                LastActivePreviewWrapupTime != null &&
+                LastActivePreviewWrapupTime.Equals(other.LastActivePreviewWrapupTime)
             ) &&
             (
-                this.CreationTime == other.CreationTime ||
-                this.CreationTime != null &&
-                this.CreationTime.Equals(other.CreationTime)
+                CreationTime == other.CreationTime ||
+                CreationTime != null &&
+                CreationTime.Equals(other.CreationTime)
             ) &&
             (
-                this.CallPlacedTime == other.CallPlacedTime ||
-                this.CallPlacedTime != null &&
-                this.CallPlacedTime.Equals(other.CallPlacedTime)
+                CallPlacedTime == other.CallPlacedTime ||
+                CallPlacedTime != null &&
+                CallPlacedTime.Equals(other.CallPlacedTime)
             ) &&
             (
-                this.CallRoutedTime == other.CallRoutedTime ||
-                this.CallRoutedTime != null &&
-                this.CallRoutedTime.Equals(other.CallRoutedTime)
+                CallRoutedTime == other.CallRoutedTime ||
+                CallRoutedTime != null &&
+                CallRoutedTime.Equals(other.CallRoutedTime)
             ) &&
             (
-                this.PreviewConnectedTime == other.PreviewConnectedTime ||
-                this.PreviewConnectedTime != null &&
-                this.PreviewConnectedTime.Equals(other.PreviewConnectedTime)
+                PreviewConnectedTime == other.PreviewConnectedTime ||
+                PreviewConnectedTime != null &&
+                PreviewConnectedTime.Equals(other.PreviewConnectedTime)
             ) &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.Script == other.Script ||
-                this.Script != null &&
-                this.Script.Equals(other.Script)
+                Script == other.Script ||
+                Script != null &&
+                Script.Equals(other.Script)
             ) &&
             (
-                this.Disposition == other.Disposition ||
-                this.Disposition != null &&
-                this.Disposition.Equals(other.Disposition)
+                Disposition == other.Disposition ||
+                Disposition != null &&
+                Disposition.Equals(other.Disposition)
             ) &&
             (
-                this.CallerName == other.CallerName ||
-                this.CallerName != null &&
-                this.CallerName.Equals(other.CallerName)
+                CallerName == other.CallerName ||
+                CallerName != null &&
+                CallerName.Equals(other.CallerName)
             ) &&
             (
-                this.CallerAddress == other.CallerAddress ||
-                this.CallerAddress != null &&
-                this.CallerAddress.Equals(other.CallerAddress)
+                CallerAddress == other.CallerAddress ||
+                CallerAddress != null &&
+                CallerAddress.Equals(other.CallerAddress)
             ) &&
             (
-                this.PreviewPopDeliveredTime == other.PreviewPopDeliveredTime ||
-                this.PreviewPopDeliveredTime != null &&
-                this.PreviewPopDeliveredTime.Equals(other.PreviewPopDeliveredTime)
+                PreviewPopDeliveredTime == other.PreviewPopDeliveredTime ||
+                PreviewPopDeliveredTime != null &&
+                PreviewPopDeliveredTime.Equals(other.PreviewPopDeliveredTime)
             ) &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.DialerSystemParticipantId == other.DialerSystemParticipantId ||
-                this.DialerSystemParticipantId != null &&
-                this.DialerSystemParticipantId.Equals(other.DialerSystemParticipantId)
+                DialerSystemParticipantId == other.DialerSystemParticipantId ||
+                DialerSystemParticipantId != null &&
+                DialerSystemParticipantId.Equals(other.DialerSystemParticipantId)
             ) &&
             (
-                this.DialingMode == other.DialingMode ||
-                this.DialingMode != null &&
-                this.DialingMode.Equals(other.DialingMode)
+                DialingMode == other.DialingMode ||
+                DialingMode != null &&
+                DialingMode.Equals(other.DialingMode)
             ) &&
             (
-                this.Skills == other.Skills ||
-                this.Skills != null &&
-                this.Skills.SequenceEqual(other.Skills)
+                Skills == other.Skills ||
+                Skills != null &&
+                Skills.SequenceEqual(other.Skills)
             );
     }
 
@@ -479,109 +479,109 @@ public partial class CampaignInteraction : IEquatable<CampaignInteraction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Campaign != null)
+            if (Campaign != null)
             {
-                hash = hash * 59 + this.Campaign.GetHashCode();
+                hash = hash * 59 + Campaign.GetHashCode();
             }
 
-            if (this.Agent != null)
+            if (Agent != null)
             {
-                hash = hash * 59 + this.Agent.GetHashCode();
+                hash = hash * 59 + Agent.GetHashCode();
             }
 
-            if (this.Contact != null)
+            if (Contact != null)
             {
-                hash = hash * 59 + this.Contact.GetHashCode();
+                hash = hash * 59 + Contact.GetHashCode();
             }
 
-            if (this.DestinationAddress != null)
+            if (DestinationAddress != null)
             {
-                hash = hash * 59 + this.DestinationAddress.GetHashCode();
+                hash = hash * 59 + DestinationAddress.GetHashCode();
             }
 
-            if (this.ActivePreviewCall != null)
+            if (ActivePreviewCall != null)
             {
-                hash = hash * 59 + this.ActivePreviewCall.GetHashCode();
+                hash = hash * 59 + ActivePreviewCall.GetHashCode();
             }
 
-            if (this.LastActivePreviewWrapupTime != null)
+            if (LastActivePreviewWrapupTime != null)
             {
-                hash = hash * 59 + this.LastActivePreviewWrapupTime.GetHashCode();
+                hash = hash * 59 + LastActivePreviewWrapupTime.GetHashCode();
             }
 
-            if (this.CreationTime != null)
+            if (CreationTime != null)
             {
-                hash = hash * 59 + this.CreationTime.GetHashCode();
+                hash = hash * 59 + CreationTime.GetHashCode();
             }
 
-            if (this.CallPlacedTime != null)
+            if (CallPlacedTime != null)
             {
-                hash = hash * 59 + this.CallPlacedTime.GetHashCode();
+                hash = hash * 59 + CallPlacedTime.GetHashCode();
             }
 
-            if (this.CallRoutedTime != null)
+            if (CallRoutedTime != null)
             {
-                hash = hash * 59 + this.CallRoutedTime.GetHashCode();
+                hash = hash * 59 + CallRoutedTime.GetHashCode();
             }
 
-            if (this.PreviewConnectedTime != null)
+            if (PreviewConnectedTime != null)
             {
-                hash = hash * 59 + this.PreviewConnectedTime.GetHashCode();
+                hash = hash * 59 + PreviewConnectedTime.GetHashCode();
             }
 
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.Script != null)
+            if (Script != null)
             {
-                hash = hash * 59 + this.Script.GetHashCode();
+                hash = hash * 59 + Script.GetHashCode();
             }
 
-            if (this.Disposition != null)
+            if (Disposition != null)
             {
-                hash = hash * 59 + this.Disposition.GetHashCode();
+                hash = hash * 59 + Disposition.GetHashCode();
             }
 
-            if (this.CallerName != null)
+            if (CallerName != null)
             {
-                hash = hash * 59 + this.CallerName.GetHashCode();
+                hash = hash * 59 + CallerName.GetHashCode();
             }
 
-            if (this.CallerAddress != null)
+            if (CallerAddress != null)
             {
-                hash = hash * 59 + this.CallerAddress.GetHashCode();
+                hash = hash * 59 + CallerAddress.GetHashCode();
             }
 
-            if (this.PreviewPopDeliveredTime != null)
+            if (PreviewPopDeliveredTime != null)
             {
-                hash = hash * 59 + this.PreviewPopDeliveredTime.GetHashCode();
+                hash = hash * 59 + PreviewPopDeliveredTime.GetHashCode();
             }
 
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.DialerSystemParticipantId != null)
+            if (DialerSystemParticipantId != null)
             {
-                hash = hash * 59 + this.DialerSystemParticipantId.GetHashCode();
+                hash = hash * 59 + DialerSystemParticipantId.GetHashCode();
             }
 
-            if (this.DialingMode != null)
+            if (DialingMode != null)
             {
-                hash = hash * 59 + this.DialingMode.GetHashCode();
+                hash = hash * 59 + DialingMode.GetHashCode();
             }
 
-            if (this.Skills != null)
+            if (Skills != null)
             {
-                hash = hash * 59 + this.Skills.GetHashCode();
+                hash = hash * 59 + Skills.GetHashCode();
             }
 
             return hash;

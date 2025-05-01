@@ -145,7 +145,7 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SentimentFeedback);
+        return Equals(obj as SentimentFeedback);
     }
 
     /// <summary>
@@ -163,34 +163,34 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Phrase == other.Phrase ||
-                this.Phrase != null &&
-                this.Phrase.Equals(other.Phrase)
+                Phrase == other.Phrase ||
+                Phrase != null &&
+                Phrase.Equals(other.Phrase)
             ) &&
             (
-                this.Dialect == other.Dialect ||
-                this.Dialect != null &&
-                this.Dialect.Equals(other.Dialect)
+                Dialect == other.Dialect ||
+                Dialect != null &&
+                Dialect.Equals(other.Dialect)
             ) &&
             (
-                this.FeedbackValue == other.FeedbackValue ||
-                this.FeedbackValue != null &&
-                this.FeedbackValue.Equals(other.FeedbackValue)
+                FeedbackValue == other.FeedbackValue ||
+                FeedbackValue != null &&
+                FeedbackValue.Equals(other.FeedbackValue)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             );
     }
 
@@ -205,34 +205,34 @@ public partial class SentimentFeedback : IEquatable<SentimentFeedback>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Phrase != null)
+            if (Phrase != null)
             {
-                hash = hash * 59 + this.Phrase.GetHashCode();
+                hash = hash * 59 + Phrase.GetHashCode();
             }
 
-            if (this.Dialect != null)
+            if (Dialect != null)
             {
-                hash = hash * 59 + this.Dialect.GetHashCode();
+                hash = hash * 59 + Dialect.GetHashCode();
             }
 
-            if (this.FeedbackValue != null)
+            if (FeedbackValue != null)
             {
-                hash = hash * 59 + this.FeedbackValue.GetHashCode();
+                hash = hash * 59 + FeedbackValue.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
             return hash;

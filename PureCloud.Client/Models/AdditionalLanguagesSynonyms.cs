@@ -50,7 +50,7 @@ public partial class AdditionalLanguagesSynonyms : IEquatable<AdditionalLanguage
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdditionalLanguagesSynonyms);
+        return Equals(obj as AdditionalLanguagesSynonyms);
     }
 
     /// <summary>
@@ -68,9 +68,9 @@ public partial class AdditionalLanguagesSynonyms : IEquatable<AdditionalLanguage
 
         return true &&
             (
-                this.Synonyms == other.Synonyms ||
-                this.Synonyms != null &&
-                this.Synonyms.SequenceEqual(other.Synonyms)
+                Synonyms == other.Synonyms ||
+                Synonyms != null &&
+                Synonyms.SequenceEqual(other.Synonyms)
             );
     }
 
@@ -85,9 +85,9 @@ public partial class AdditionalLanguagesSynonyms : IEquatable<AdditionalLanguage
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Synonyms != null)
+            if (Synonyms != null)
             {
-                hash = hash * 59 + this.Synonyms.GetHashCode();
+                hash = hash * 59 + Synonyms.GetHashCode();
             }
 
             return hash;

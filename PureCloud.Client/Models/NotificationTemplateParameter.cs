@@ -71,7 +71,7 @@ public partial class NotificationTemplateParameter : IEquatable<NotificationTemp
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NotificationTemplateParameter);
+        return Equals(obj as NotificationTemplateParameter);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class NotificationTemplateParameter : IEquatable<NotificationTemp
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class NotificationTemplateParameter : IEquatable<NotificationTemp
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
             return hash;

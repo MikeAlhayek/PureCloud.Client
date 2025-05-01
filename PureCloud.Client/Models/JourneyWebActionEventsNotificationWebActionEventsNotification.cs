@@ -176,7 +176,7 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyWebActionEventsNotificationWebActionEventsNotification);
+        return Equals(obj as JourneyWebActionEventsNotificationWebActionEventsNotification);
     }
 
     /// <summary>
@@ -194,54 +194,54 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.CorrelationId == other.CorrelationId ||
-                this.CorrelationId != null &&
-                this.CorrelationId.Equals(other.CorrelationId)
+                CorrelationId == other.CorrelationId ||
+                CorrelationId != null &&
+                CorrelationId.Equals(other.CorrelationId)
             ) &&
             (
-                this.ExternalContact == other.ExternalContact ||
-                this.ExternalContact != null &&
-                this.ExternalContact.Equals(other.ExternalContact)
+                ExternalContact == other.ExternalContact ||
+                ExternalContact != null &&
+                ExternalContact.Equals(other.ExternalContact)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             ) &&
             (
-                this.CustomerId == other.CustomerId ||
-                this.CustomerId != null &&
-                this.CustomerId.Equals(other.CustomerId)
+                CustomerId == other.CustomerId ||
+                CustomerId != null &&
+                CustomerId.Equals(other.CustomerId)
             ) &&
             (
-                this.CustomerIdType == other.CustomerIdType ||
-                this.CustomerIdType != null &&
-                this.CustomerIdType.Equals(other.CustomerIdType)
+                CustomerIdType == other.CustomerIdType ||
+                CustomerIdType != null &&
+                CustomerIdType.Equals(other.CustomerIdType)
             ) &&
             (
-                this.Session == other.Session ||
-                this.Session != null &&
-                this.Session.Equals(other.Session)
+                Session == other.Session ||
+                Session != null &&
+                Session.Equals(other.Session)
             ) &&
             (
-                this.EventType == other.EventType ||
-                this.EventType != null &&
-                this.EventType.Equals(other.EventType)
+                EventType == other.EventType ||
+                EventType != null &&
+                EventType.Equals(other.EventType)
             ) &&
             (
-                this.WebActionEvent == other.WebActionEvent ||
-                this.WebActionEvent != null &&
-                this.WebActionEvent.Equals(other.WebActionEvent)
+                WebActionEvent == other.WebActionEvent ||
+                WebActionEvent != null &&
+                WebActionEvent.Equals(other.WebActionEvent)
             ) &&
             (
-                this.BlockedWebActionOfferEvent == other.BlockedWebActionOfferEvent ||
-                this.BlockedWebActionOfferEvent != null &&
-                this.BlockedWebActionOfferEvent.Equals(other.BlockedWebActionOfferEvent)
+                BlockedWebActionOfferEvent == other.BlockedWebActionOfferEvent ||
+                BlockedWebActionOfferEvent != null &&
+                BlockedWebActionOfferEvent.Equals(other.BlockedWebActionOfferEvent)
             );
     }
 
@@ -256,54 +256,54 @@ public partial class JourneyWebActionEventsNotificationWebActionEventsNotificati
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.CorrelationId != null)
+            if (CorrelationId != null)
             {
-                hash = hash * 59 + this.CorrelationId.GetHashCode();
+                hash = hash * 59 + CorrelationId.GetHashCode();
             }
 
-            if (this.ExternalContact != null)
+            if (ExternalContact != null)
             {
-                hash = hash * 59 + this.ExternalContact.GetHashCode();
+                hash = hash * 59 + ExternalContact.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
-            if (this.CustomerId != null)
+            if (CustomerId != null)
             {
-                hash = hash * 59 + this.CustomerId.GetHashCode();
+                hash = hash * 59 + CustomerId.GetHashCode();
             }
 
-            if (this.CustomerIdType != null)
+            if (CustomerIdType != null)
             {
-                hash = hash * 59 + this.CustomerIdType.GetHashCode();
+                hash = hash * 59 + CustomerIdType.GetHashCode();
             }
 
-            if (this.Session != null)
+            if (Session != null)
             {
-                hash = hash * 59 + this.Session.GetHashCode();
+                hash = hash * 59 + Session.GetHashCode();
             }
 
-            if (this.EventType != null)
+            if (EventType != null)
             {
-                hash = hash * 59 + this.EventType.GetHashCode();
+                hash = hash * 59 + EventType.GetHashCode();
             }
 
-            if (this.WebActionEvent != null)
+            if (WebActionEvent != null)
             {
-                hash = hash * 59 + this.WebActionEvent.GetHashCode();
+                hash = hash * 59 + WebActionEvent.GetHashCode();
             }
 
-            if (this.BlockedWebActionOfferEvent != null)
+            if (BlockedWebActionOfferEvent != null)
             {
-                hash = hash * 59 + this.BlockedWebActionOfferEvent.GetHashCode();
+                hash = hash * 59 + BlockedWebActionOfferEvent.GetHashCode();
             }
 
             return hash;

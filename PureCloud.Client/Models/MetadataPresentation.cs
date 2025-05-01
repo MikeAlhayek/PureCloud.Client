@@ -61,7 +61,7 @@ public partial class MetadataPresentation : IEquatable<MetadataPresentation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MetadataPresentation);
+        return Equals(obj as MetadataPresentation);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class MetadataPresentation : IEquatable<MetadataPresentation>
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Schema == other.Schema ||
-                this.Schema != null &&
-                this.Schema.Equals(other.Schema)
+                Schema == other.Schema ||
+                Schema != null &&
+                Schema.Equals(other.Schema)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class MetadataPresentation : IEquatable<MetadataPresentation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Schema != null)
+            if (Schema != null)
             {
-                hash = hash * 59 + this.Schema.GetHashCode();
+                hash = hash * 59 + Schema.GetHashCode();
             }
 
             return hash;

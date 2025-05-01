@@ -485,7 +485,7 @@ public partial class ReportingTurnAction : IEquatable<ReportingTurnAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingTurnAction);
+        return Equals(obj as ReportingTurnAction);
     }
 
     /// <summary>
@@ -503,24 +503,24 @@ public partial class ReportingTurnAction : IEquatable<ReportingTurnAction>
 
         return true &&
             (
-                this.ActionId == other.ActionId ||
-                this.ActionId != null &&
-                this.ActionId.Equals(other.ActionId)
+                ActionId == other.ActionId ||
+                ActionId != null &&
+                ActionId.Equals(other.ActionId)
             ) &&
             (
-                this.ActionName == other.ActionName ||
-                this.ActionName != null &&
-                this.ActionName.Equals(other.ActionName)
+                ActionName == other.ActionName ||
+                ActionName != null &&
+                ActionName.Equals(other.ActionName)
             ) &&
             (
-                this.ActionNumber == other.ActionNumber ||
-                this.ActionNumber != null &&
-                this.ActionNumber.Equals(other.ActionNumber)
+                ActionNumber == other.ActionNumber ||
+                ActionNumber != null &&
+                ActionNumber.Equals(other.ActionNumber)
             ) &&
             (
-                this.ActionType == other.ActionType ||
-                this.ActionType != null &&
-                this.ActionType.Equals(other.ActionType)
+                ActionType == other.ActionType ||
+                ActionType != null &&
+                ActionType.Equals(other.ActionType)
             );
     }
 
@@ -535,24 +535,24 @@ public partial class ReportingTurnAction : IEquatable<ReportingTurnAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActionId != null)
+            if (ActionId != null)
             {
-                hash = hash * 59 + this.ActionId.GetHashCode();
+                hash = hash * 59 + ActionId.GetHashCode();
             }
 
-            if (this.ActionName != null)
+            if (ActionName != null)
             {
-                hash = hash * 59 + this.ActionName.GetHashCode();
+                hash = hash * 59 + ActionName.GetHashCode();
             }
 
-            if (this.ActionNumber != null)
+            if (ActionNumber != null)
             {
-                hash = hash * 59 + this.ActionNumber.GetHashCode();
+                hash = hash * 59 + ActionNumber.GetHashCode();
             }
 
-            if (this.ActionType != null)
+            if (ActionType != null)
             {
-                hash = hash * 59 + this.ActionType.GetHashCode();
+                hash = hash * 59 + ActionType.GetHashCode();
             }
 
             return hash;

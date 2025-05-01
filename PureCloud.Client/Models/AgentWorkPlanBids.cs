@@ -90,7 +90,7 @@ public partial class AgentWorkPlanBids : IEquatable<AgentWorkPlanBids>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentWorkPlanBids);
+        return Equals(obj as AgentWorkPlanBids);
     }
 
     /// <summary>
@@ -108,24 +108,24 @@ public partial class AgentWorkPlanBids : IEquatable<AgentWorkPlanBids>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.BusinessUnit == other.BusinessUnit ||
-                this.BusinessUnit != null &&
-                this.BusinessUnit.Equals(other.BusinessUnit)
+                BusinessUnit == other.BusinessUnit ||
+                BusinessUnit != null &&
+                BusinessUnit.Equals(other.BusinessUnit)
             ) &&
             (
-                this._AgentWorkPlanBids == other._AgentWorkPlanBids ||
-                this._AgentWorkPlanBids != null &&
-                this._AgentWorkPlanBids.SequenceEqual(other._AgentWorkPlanBids)
+                _AgentWorkPlanBids == other._AgentWorkPlanBids ||
+                _AgentWorkPlanBids != null &&
+                _AgentWorkPlanBids.SequenceEqual(other._AgentWorkPlanBids)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -140,24 +140,24 @@ public partial class AgentWorkPlanBids : IEquatable<AgentWorkPlanBids>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.BusinessUnit != null)
+            if (BusinessUnit != null)
             {
-                hash = hash * 59 + this.BusinessUnit.GetHashCode();
+                hash = hash * 59 + BusinessUnit.GetHashCode();
             }
 
-            if (this._AgentWorkPlanBids != null)
+            if (_AgentWorkPlanBids != null)
             {
-                hash = hash * 59 + this._AgentWorkPlanBids.GetHashCode();
+                hash = hash * 59 + _AgentWorkPlanBids.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

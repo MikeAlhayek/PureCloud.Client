@@ -71,7 +71,7 @@ public partial class TwitterDataHistoricalTweetRequest : IEquatable<TwitterDataH
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TwitterDataHistoricalTweetRequest);
+        return Equals(obj as TwitterDataHistoricalTweetRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class TwitterDataHistoricalTweetRequest : IEquatable<TwitterDataH
 
         return true &&
             (
-                this.SearchTerms == other.SearchTerms ||
-                this.SearchTerms != null &&
-                this.SearchTerms.Equals(other.SearchTerms)
+                SearchTerms == other.SearchTerms ||
+                SearchTerms != null &&
+                SearchTerms.Equals(other.SearchTerms)
             ) &&
             (
-                this.Countries == other.Countries ||
-                this.Countries != null &&
-                this.Countries.SequenceEqual(other.Countries)
+                Countries == other.Countries ||
+                Countries != null &&
+                Countries.SequenceEqual(other.Countries)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class TwitterDataHistoricalTweetRequest : IEquatable<TwitterDataH
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SearchTerms != null)
+            if (SearchTerms != null)
             {
-                hash = hash * 59 + this.SearchTerms.GetHashCode();
+                hash = hash * 59 + SearchTerms.GetHashCode();
             }
 
-            if (this.Countries != null)
+            if (Countries != null)
             {
-                hash = hash * 59 + this.Countries.GetHashCode();
+                hash = hash * 59 + Countries.GetHashCode();
             }
 
             return hash;

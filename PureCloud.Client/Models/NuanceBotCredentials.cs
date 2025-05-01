@@ -95,7 +95,7 @@ public partial class NuanceBotCredentials : IEquatable<NuanceBotCredentials>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NuanceBotCredentials);
+        return Equals(obj as NuanceBotCredentials);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class NuanceBotCredentials : IEquatable<NuanceBotCredentials>
 
         return true &&
             (
-                this.AppId == other.AppId ||
-                this.AppId != null &&
-                this.AppId.Equals(other.AppId)
+                AppId == other.AppId ||
+                AppId != null &&
+                AppId.Equals(other.AppId)
             ) &&
             (
-                this.ClientId == other.ClientId ||
-                this.ClientId != null &&
-                this.ClientId.Equals(other.ClientId)
+                ClientId == other.ClientId ||
+                ClientId != null &&
+                ClientId.Equals(other.ClientId)
             ) &&
             (
-                this.ClientSecret == other.ClientSecret ||
-                this.ClientSecret != null &&
-                this.ClientSecret.Equals(other.ClientSecret)
+                ClientSecret == other.ClientSecret ||
+                ClientSecret != null &&
+                ClientSecret.Equals(other.ClientSecret)
             ) &&
             (
-                this.ClientSecretProvided == other.ClientSecretProvided ||
-                this.ClientSecretProvided != null &&
-                this.ClientSecretProvided.Equals(other.ClientSecretProvided)
+                ClientSecretProvided == other.ClientSecretProvided ||
+                ClientSecretProvided != null &&
+                ClientSecretProvided.Equals(other.ClientSecretProvided)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class NuanceBotCredentials : IEquatable<NuanceBotCredentials>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AppId != null)
+            if (AppId != null)
             {
-                hash = hash * 59 + this.AppId.GetHashCode();
+                hash = hash * 59 + AppId.GetHashCode();
             }
 
-            if (this.ClientId != null)
+            if (ClientId != null)
             {
-                hash = hash * 59 + this.ClientId.GetHashCode();
+                hash = hash * 59 + ClientId.GetHashCode();
             }
 
-            if (this.ClientSecret != null)
+            if (ClientSecret != null)
             {
-                hash = hash * 59 + this.ClientSecret.GetHashCode();
+                hash = hash * 59 + ClientSecret.GetHashCode();
             }
 
-            if (this.ClientSecretProvided != null)
+            if (ClientSecretProvided != null)
             {
-                hash = hash * 59 + this.ClientSecretProvided.GetHashCode();
+                hash = hash * 59 + ClientSecretProvided.GetHashCode();
             }
 
             return hash;

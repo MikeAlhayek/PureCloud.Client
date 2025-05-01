@@ -71,7 +71,7 @@ public partial class UpdateMuAgentRequest : IEquatable<UpdateMuAgentRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateMuAgentRequest);
+        return Equals(obj as UpdateMuAgentRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class UpdateMuAgentRequest : IEquatable<UpdateMuAgentRequest>
 
         return true &&
             (
-                this.Schedulable == other.Schedulable ||
-                this.Schedulable != null &&
-                this.Schedulable.Equals(other.Schedulable)
+                Schedulable == other.Schedulable ||
+                Schedulable != null &&
+                Schedulable.Equals(other.Schedulable)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class UpdateMuAgentRequest : IEquatable<UpdateMuAgentRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Schedulable != null)
+            if (Schedulable != null)
             {
-                hash = hash * 59 + this.Schedulable.GetHashCode();
+                hash = hash * 59 + Schedulable.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
             return hash;

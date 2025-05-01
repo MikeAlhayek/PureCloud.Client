@@ -94,7 +94,7 @@ public partial class CreateShareRequestMember : IEquatable<CreateShareRequestMem
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateShareRequestMember);
+        return Equals(obj as CreateShareRequestMember);
     }
 
     /// <summary>
@@ -112,14 +112,14 @@ public partial class CreateShareRequestMember : IEquatable<CreateShareRequestMem
 
         return true &&
             (
-                this.MemberType == other.MemberType ||
-                this.MemberType != null &&
-                this.MemberType.Equals(other.MemberType)
+                MemberType == other.MemberType ||
+                MemberType != null &&
+                MemberType.Equals(other.MemberType)
             ) &&
             (
-                this.Member == other.Member ||
-                this.Member != null &&
-                this.Member.Equals(other.Member)
+                Member == other.Member ||
+                Member != null &&
+                Member.Equals(other.Member)
             );
     }
 
@@ -134,14 +134,14 @@ public partial class CreateShareRequestMember : IEquatable<CreateShareRequestMem
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MemberType != null)
+            if (MemberType != null)
             {
-                hash = hash * 59 + this.MemberType.GetHashCode();
+                hash = hash * 59 + MemberType.GetHashCode();
             }
 
-            if (this.Member != null)
+            if (Member != null)
             {
-                hash = hash * 59 + this.Member.GetHashCode();
+                hash = hash * 59 + Member.GetHashCode();
             }
 
             return hash;

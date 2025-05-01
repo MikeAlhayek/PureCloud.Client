@@ -83,7 +83,7 @@ public partial class WebEventBrowser : IEquatable<WebEventBrowser>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebEventBrowser);
+        return Equals(obj as WebEventBrowser);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class WebEventBrowser : IEquatable<WebEventBrowser>
 
         return true &&
             (
-                this.Family == other.Family ||
-                this.Family != null &&
-                this.Family.Equals(other.Family)
+                Family == other.Family ||
+                Family != null &&
+                Family.Equals(other.Family)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Lang == other.Lang ||
-                this.Lang != null &&
-                this.Lang.Equals(other.Lang)
+                Lang == other.Lang ||
+                Lang != null &&
+                Lang.Equals(other.Lang)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class WebEventBrowser : IEquatable<WebEventBrowser>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Family != null)
+            if (Family != null)
             {
-                hash = hash * 59 + this.Family.GetHashCode();
+                hash = hash * 59 + Family.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Lang != null)
+            if (Lang != null)
             {
-                hash = hash * 59 + this.Lang.GetHashCode();
+                hash = hash * 59 + Lang.GetHashCode();
             }
 
             return hash;

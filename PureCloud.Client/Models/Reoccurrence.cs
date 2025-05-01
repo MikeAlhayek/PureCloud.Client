@@ -140,7 +140,7 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Reoccurrence);
+        return Equals(obj as Reoccurrence);
     }
 
     /// <summary>
@@ -158,44 +158,44 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Start == other.Start ||
-                this.Start != null &&
-                this.Start.Equals(other.Start)
+                Start == other.Start ||
+                Start != null &&
+                Start.Equals(other.Start)
             ) &&
             (
-                this.End == other.End ||
-                this.End != null &&
-                this.End.Equals(other.End)
+                End == other.End ||
+                End != null &&
+                End.Equals(other.End)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.Pattern == other.Pattern ||
-                this.Pattern != null &&
-                this.Pattern.Equals(other.Pattern)
+                Pattern == other.Pattern ||
+                Pattern != null &&
+                Pattern.Equals(other.Pattern)
             ) &&
             (
-                this.Range == other.Range ||
-                this.Range != null &&
-                this.Range.Equals(other.Range)
+                Range == other.Range ||
+                Range != null &&
+                Range.Equals(other.Range)
             ) &&
             (
-                this.Alterations == other.Alterations ||
-                this.Alterations != null &&
-                this.Alterations.SequenceEqual(other.Alterations)
+                Alterations == other.Alterations ||
+                Alterations != null &&
+                Alterations.SequenceEqual(other.Alterations)
             ) &&
             (
-                this.NextOccurrenceDetails == other.NextOccurrenceDetails ||
-                this.NextOccurrenceDetails != null &&
-                this.NextOccurrenceDetails.Equals(other.NextOccurrenceDetails)
+                NextOccurrenceDetails == other.NextOccurrenceDetails ||
+                NextOccurrenceDetails != null &&
+                NextOccurrenceDetails.Equals(other.NextOccurrenceDetails)
             );
     }
 
@@ -210,44 +210,44 @@ public partial class Reoccurrence : IEquatable<Reoccurrence>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Start != null)
+            if (Start != null)
             {
-                hash = hash * 59 + this.Start.GetHashCode();
+                hash = hash * 59 + Start.GetHashCode();
             }
 
-            if (this.End != null)
+            if (End != null)
             {
-                hash = hash * 59 + this.End.GetHashCode();
+                hash = hash * 59 + End.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.Pattern != null)
+            if (Pattern != null)
             {
-                hash = hash * 59 + this.Pattern.GetHashCode();
+                hash = hash * 59 + Pattern.GetHashCode();
             }
 
-            if (this.Range != null)
+            if (Range != null)
             {
-                hash = hash * 59 + this.Range.GetHashCode();
+                hash = hash * 59 + Range.GetHashCode();
             }
 
-            if (this.Alterations != null)
+            if (Alterations != null)
             {
-                hash = hash * 59 + this.Alterations.GetHashCode();
+                hash = hash * 59 + Alterations.GetHashCode();
             }
 
-            if (this.NextOccurrenceDetails != null)
+            if (NextOccurrenceDetails != null)
             {
-                hash = hash * 59 + this.NextOccurrenceDetails.GetHashCode();
+                hash = hash * 59 + NextOccurrenceDetails.GetHashCode();
             }
 
             return hash;

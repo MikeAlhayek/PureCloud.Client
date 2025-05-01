@@ -131,7 +131,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MetricValueTrendAverage);
+        return Equals(obj as MetricValueTrendAverage);
     }
 
     /// <summary>
@@ -149,49 +149,49 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
 
         return true &&
             (
-                this.DateStartWorkday == other.DateStartWorkday ||
-                this.DateStartWorkday != null &&
-                this.DateStartWorkday.Equals(other.DateStartWorkday)
+                DateStartWorkday == other.DateStartWorkday ||
+                DateStartWorkday != null &&
+                DateStartWorkday.Equals(other.DateStartWorkday)
             ) &&
             (
-                this.DateEndWorkday == other.DateEndWorkday ||
-                this.DateEndWorkday != null &&
-                this.DateEndWorkday.Equals(other.DateEndWorkday)
+                DateEndWorkday == other.DateEndWorkday ||
+                DateEndWorkday != null &&
+                DateEndWorkday.Equals(other.DateEndWorkday)
             ) &&
             (
-                this.DateReferenceWorkday == other.DateReferenceWorkday ||
-                this.DateReferenceWorkday != null &&
-                this.DateReferenceWorkday.Equals(other.DateReferenceWorkday)
+                DateReferenceWorkday == other.DateReferenceWorkday ||
+                DateReferenceWorkday != null &&
+                DateReferenceWorkday.Equals(other.DateReferenceWorkday)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Timezone == other.Timezone ||
-                this.Timezone != null &&
-                this.Timezone.Equals(other.Timezone)
+                Timezone == other.Timezone ||
+                Timezone != null &&
+                Timezone.Equals(other.Timezone)
             ) &&
             (
-                this.Result == other.Result ||
-                this.Result != null &&
-                this.Result.Equals(other.Result)
+                Result == other.Result ||
+                Result != null &&
+                Result.Equals(other.Result)
             ) &&
             (
-                this.PerformanceProfile == other.PerformanceProfile ||
-                this.PerformanceProfile != null &&
-                this.PerformanceProfile.Equals(other.PerformanceProfile)
+                PerformanceProfile == other.PerformanceProfile ||
+                PerformanceProfile != null &&
+                PerformanceProfile.Equals(other.PerformanceProfile)
             ) &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             );
     }
 
@@ -206,49 +206,49 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateStartWorkday != null)
+            if (DateStartWorkday != null)
             {
-                hash = hash * 59 + this.DateStartWorkday.GetHashCode();
+                hash = hash * 59 + DateStartWorkday.GetHashCode();
             }
 
-            if (this.DateEndWorkday != null)
+            if (DateEndWorkday != null)
             {
-                hash = hash * 59 + this.DateEndWorkday.GetHashCode();
+                hash = hash * 59 + DateEndWorkday.GetHashCode();
             }
 
-            if (this.DateReferenceWorkday != null)
+            if (DateReferenceWorkday != null)
             {
-                hash = hash * 59 + this.DateReferenceWorkday.GetHashCode();
+                hash = hash * 59 + DateReferenceWorkday.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Timezone != null)
+            if (Timezone != null)
             {
-                hash = hash * 59 + this.Timezone.GetHashCode();
+                hash = hash * 59 + Timezone.GetHashCode();
             }
 
-            if (this.Result != null)
+            if (Result != null)
             {
-                hash = hash * 59 + this.Result.GetHashCode();
+                hash = hash * 59 + Result.GetHashCode();
             }
 
-            if (this.PerformanceProfile != null)
+            if (PerformanceProfile != null)
             {
-                hash = hash * 59 + this.PerformanceProfile.GetHashCode();
+                hash = hash * 59 + PerformanceProfile.GetHashCode();
             }
 
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
             return hash;

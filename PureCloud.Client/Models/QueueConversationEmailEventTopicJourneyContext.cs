@@ -74,7 +74,7 @@ public partial class QueueConversationEmailEventTopicJourneyContext : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationEmailEventTopicJourneyContext);
+        return Equals(obj as QueueConversationEmailEventTopicJourneyContext);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class QueueConversationEmailEventTopicJourneyContext : IEquatable
 
         return true &&
             (
-                this.Customer == other.Customer ||
-                this.Customer != null &&
-                this.Customer.Equals(other.Customer)
+                Customer == other.Customer ||
+                Customer != null &&
+                Customer.Equals(other.Customer)
             ) &&
             (
-                this.CustomerSession == other.CustomerSession ||
-                this.CustomerSession != null &&
-                this.CustomerSession.Equals(other.CustomerSession)
+                CustomerSession == other.CustomerSession ||
+                CustomerSession != null &&
+                CustomerSession.Equals(other.CustomerSession)
             ) &&
             (
-                this.TriggeringAction == other.TriggeringAction ||
-                this.TriggeringAction != null &&
-                this.TriggeringAction.Equals(other.TriggeringAction)
+                TriggeringAction == other.TriggeringAction ||
+                TriggeringAction != null &&
+                TriggeringAction.Equals(other.TriggeringAction)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class QueueConversationEmailEventTopicJourneyContext : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Customer != null)
+            if (Customer != null)
             {
-                hash = hash * 59 + this.Customer.GetHashCode();
+                hash = hash * 59 + Customer.GetHashCode();
             }
 
-            if (this.CustomerSession != null)
+            if (CustomerSession != null)
             {
-                hash = hash * 59 + this.CustomerSession.GetHashCode();
+                hash = hash * 59 + CustomerSession.GetHashCode();
             }
 
-            if (this.TriggeringAction != null)
+            if (TriggeringAction != null)
             {
-                hash = hash * 59 + this.TriggeringAction.GetHashCode();
+                hash = hash * 59 + TriggeringAction.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class FlowDiagnosticInfo : IEquatable<FlowDiagnosticInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowDiagnosticInfo);
+        return Equals(obj as FlowDiagnosticInfo);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class FlowDiagnosticInfo : IEquatable<FlowDiagnosticInfo>
 
         return true &&
             (
-                this.LastActionId == other.LastActionId ||
-                this.LastActionId != null &&
-                this.LastActionId.Equals(other.LastActionId)
+                LastActionId == other.LastActionId ||
+                LastActionId != null &&
+                LastActionId.Equals(other.LastActionId)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class FlowDiagnosticInfo : IEquatable<FlowDiagnosticInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LastActionId != null)
+            if (LastActionId != null)
             {
-                hash = hash * 59 + this.LastActionId.GetHashCode();
+                hash = hash * 59 + LastActionId.GetHashCode();
             }
 
             return hash;

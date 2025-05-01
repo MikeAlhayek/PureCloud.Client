@@ -89,7 +89,7 @@ public partial class QualityAuditQueryExecutionResultsResponse : IEquatable<Qual
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QualityAuditQueryExecutionResultsResponse);
+        return Equals(obj as QualityAuditQueryExecutionResultsResponse);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class QualityAuditQueryExecutionResultsResponse : IEquatable<Qual
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.Cursor == other.Cursor ||
-                this.Cursor != null &&
-                this.Cursor.Equals(other.Cursor)
+                Cursor == other.Cursor ||
+                Cursor != null &&
+                Cursor.Equals(other.Cursor)
             ) &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class QualityAuditQueryExecutionResultsResponse : IEquatable<Qual
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.Cursor != null)
+            if (Cursor != null)
             {
-                hash = hash * 59 + this.Cursor.GetHashCode();
+                hash = hash * 59 + Cursor.GetHashCode();
             }
 
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
             return hash;

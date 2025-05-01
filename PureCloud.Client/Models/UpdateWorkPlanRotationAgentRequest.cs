@@ -95,7 +95,7 @@ public partial class UpdateWorkPlanRotationAgentRequest : IEquatable<UpdateWorkP
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateWorkPlanRotationAgentRequest);
+        return Equals(obj as UpdateWorkPlanRotationAgentRequest);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class UpdateWorkPlanRotationAgentRequest : IEquatable<UpdateWorkP
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.DateRange == other.DateRange ||
-                this.DateRange != null &&
-                this.DateRange.Equals(other.DateRange)
+                DateRange == other.DateRange ||
+                DateRange != null &&
+                DateRange.Equals(other.DateRange)
             ) &&
             (
-                this.Position == other.Position ||
-                this.Position != null &&
-                this.Position.Equals(other.Position)
+                Position == other.Position ||
+                Position != null &&
+                Position.Equals(other.Position)
             ) &&
             (
-                this.Delete == other.Delete ||
-                this.Delete != null &&
-                this.Delete.Equals(other.Delete)
+                Delete == other.Delete ||
+                Delete != null &&
+                Delete.Equals(other.Delete)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class UpdateWorkPlanRotationAgentRequest : IEquatable<UpdateWorkP
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.DateRange != null)
+            if (DateRange != null)
             {
-                hash = hash * 59 + this.DateRange.GetHashCode();
+                hash = hash * 59 + DateRange.GetHashCode();
             }
 
-            if (this.Position != null)
+            if (Position != null)
             {
-                hash = hash * 59 + this.Position.GetHashCode();
+                hash = hash * 59 + Position.GetHashCode();
             }
 
-            if (this.Delete != null)
+            if (Delete != null)
             {
-                hash = hash * 59 + this.Delete.GetHashCode();
+                hash = hash * 59 + Delete.GetHashCode();
             }
 
             return hash;

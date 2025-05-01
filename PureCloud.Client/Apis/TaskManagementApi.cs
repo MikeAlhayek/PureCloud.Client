@@ -4003,12 +4003,12 @@ public partial class TaskManagementApi : ITaskManagementApi
     /// <returns></returns>
     public TaskManagementApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -4022,17 +4022,17 @@ public partial class TaskManagementApi : ITaskManagementApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -4042,7 +4042,7 @@ public partial class TaskManagementApi : ITaskManagementApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -4068,7 +4068,7 @@ public partial class TaskManagementApi : ITaskManagementApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -4080,7 +4080,7 @@ public partial class TaskManagementApi : ITaskManagementApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -4125,7 +4125,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4134,7 +4134,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4147,7 +4147,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         // Query params
@@ -4163,11 +4163,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4241,7 +4241,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4250,7 +4250,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4263,7 +4263,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         // Query params
@@ -4279,11 +4279,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4357,7 +4357,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4366,7 +4366,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4379,7 +4379,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -4395,11 +4395,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4473,7 +4473,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4482,7 +4482,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4495,7 +4495,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -4511,11 +4511,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4589,7 +4589,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4598,7 +4598,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4611,7 +4611,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -4627,11 +4627,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4705,7 +4705,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4714,7 +4714,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4727,7 +4727,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -4743,11 +4743,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4821,7 +4821,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4830,7 +4830,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4843,7 +4843,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -4859,11 +4859,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4937,7 +4937,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4946,7 +4946,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4959,7 +4959,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -4975,11 +4975,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5053,7 +5053,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5062,7 +5062,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5075,7 +5075,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -5091,11 +5091,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5169,7 +5169,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5178,7 +5178,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5191,7 +5191,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -5207,11 +5207,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5285,7 +5285,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5294,7 +5294,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5307,7 +5307,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -5323,11 +5323,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5401,7 +5401,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5410,7 +5410,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5423,7 +5423,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -5439,11 +5439,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5524,7 +5524,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5533,7 +5533,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5546,12 +5546,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -5567,11 +5567,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5653,7 +5653,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5662,7 +5662,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5675,12 +5675,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -5696,11 +5696,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5781,7 +5781,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5790,7 +5790,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5803,12 +5803,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -5824,11 +5824,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5910,7 +5910,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5919,7 +5919,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5932,12 +5932,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -5953,11 +5953,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6038,7 +6038,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6047,7 +6047,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6060,12 +6060,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -6081,11 +6081,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6167,7 +6167,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6176,7 +6176,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6189,12 +6189,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -6210,11 +6210,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6295,7 +6295,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6304,7 +6304,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6317,12 +6317,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (statusId != null)
         {
-            localVarPathParams.Add("statusId", this.Configuration.ApiClient.ParameterToString(statusId));
+            localVarPathParams.Add("statusId", Configuration.ApiClient.ParameterToString(statusId));
         }
 
         // Query params
@@ -6338,11 +6338,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6424,7 +6424,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6433,7 +6433,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6446,12 +6446,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (statusId != null)
         {
-            localVarPathParams.Add("statusId", this.Configuration.ApiClient.ParameterToString(statusId));
+            localVarPathParams.Add("statusId", Configuration.ApiClient.ParameterToString(statusId));
         }
 
         // Query params
@@ -6467,11 +6467,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6546,7 +6546,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6555,7 +6555,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6568,7 +6568,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         // Query params
@@ -6584,11 +6584,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6614,7 +6614,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workbin>(localVarStatusCode,
             localVarHeaders,
-            (Workbin)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
+            (Workbin)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6663,7 +6663,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6672,7 +6672,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6685,7 +6685,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         // Query params
@@ -6701,11 +6701,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6731,7 +6731,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workbin>(localVarStatusCode,
             localVarHeaders,
-            (Workbin)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
+            (Workbin)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6788,7 +6788,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6797,7 +6797,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6810,23 +6810,23 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -6840,11 +6840,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6870,7 +6870,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkbinChangeListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkbinChangeListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinChangeListing)),
+            (WorkbinChangeListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinChangeListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6927,7 +6927,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6936,7 +6936,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6949,23 +6949,23 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -6979,11 +6979,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7009,7 +7009,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkbinChangeListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkbinChangeListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinChangeListing)),
+            (WorkbinChangeListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinChangeListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7067,7 +7067,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7076,7 +7076,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7089,12 +7089,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         if (entityVersion != null)
         {
-            localVarPathParams.Add("entityVersion", this.Configuration.ApiClient.ParameterToString(entityVersion));
+            localVarPathParams.Add("entityVersion", Configuration.ApiClient.ParameterToString(entityVersion));
         }
 
         // Query params
@@ -7110,11 +7110,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7140,7 +7140,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkbinVersion>(localVarStatusCode,
             localVarHeaders,
-            (WorkbinVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinVersion)),
+            (WorkbinVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7199,7 +7199,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7208,7 +7208,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7221,12 +7221,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         if (entityVersion != null)
         {
-            localVarPathParams.Add("entityVersion", this.Configuration.ApiClient.ParameterToString(entityVersion));
+            localVarPathParams.Add("entityVersion", Configuration.ApiClient.ParameterToString(entityVersion));
         }
 
         // Query params
@@ -7242,11 +7242,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7272,7 +7272,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkbinVersion>(localVarStatusCode,
             localVarHeaders,
-            (WorkbinVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinVersion)),
+            (WorkbinVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7329,7 +7329,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7338,7 +7338,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7351,23 +7351,23 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -7381,11 +7381,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7411,7 +7411,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkbinVersionListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkbinVersionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinVersionListing)),
+            (WorkbinVersionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinVersionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7468,7 +7468,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7477,7 +7477,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7490,23 +7490,23 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -7520,11 +7520,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7550,7 +7550,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkbinVersionListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkbinVersionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinVersionListing)),
+            (WorkbinVersionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinVersionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7601,7 +7601,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7610,7 +7610,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7623,13 +7623,13 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
         if (expands != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(expands)));
+            localVarQueryParams.Add(new Tuple<string, string>("expands", Configuration.ApiClient.ParameterToString(expands)));
         }
 
         // Header params
@@ -7643,11 +7643,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7673,7 +7673,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7724,7 +7724,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7733,7 +7733,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7746,13 +7746,13 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
         if (expands != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(expands)));
+            localVarQueryParams.Add(new Tuple<string, string>("expands", Configuration.ApiClient.ParameterToString(expands)));
         }
 
         // Header params
@@ -7766,11 +7766,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7796,7 +7796,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7853,7 +7853,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7862,7 +7862,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7875,23 +7875,23 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -7905,11 +7905,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7935,7 +7935,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemChangeListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemChangeListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemChangeListing)),
+            (WorkitemChangeListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemChangeListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7992,7 +7992,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8001,7 +8001,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8014,23 +8014,23 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -8044,11 +8044,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8074,7 +8074,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemChangeListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemChangeListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemChangeListing)),
+            (WorkitemChangeListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemChangeListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8138,7 +8138,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8147,7 +8147,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8160,33 +8160,33 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (expands != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(expands)));
+            localVarQueryParams.Add(new Tuple<string, string>("expands", Configuration.ApiClient.ParameterToString(expands)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -8200,11 +8200,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8230,7 +8230,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemWrapup>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemWrapup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
+            (WorkitemWrapup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8295,7 +8295,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8304,7 +8304,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8317,33 +8317,33 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (expands != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(expands)));
+            localVarQueryParams.Add(new Tuple<string, string>("expands", Configuration.ApiClient.ParameterToString(expands)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -8357,11 +8357,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8387,7 +8387,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemWrapup>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemWrapup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
+            (WorkitemWrapup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8445,7 +8445,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8454,7 +8454,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8467,12 +8467,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         if (entityVersion != null)
         {
-            localVarPathParams.Add("entityVersion", this.Configuration.ApiClient.ParameterToString(entityVersion));
+            localVarPathParams.Add("entityVersion", Configuration.ApiClient.ParameterToString(entityVersion));
         }
 
         // Query params
@@ -8488,11 +8488,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8518,7 +8518,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemVersion>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemVersion)),
+            (WorkitemVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8577,7 +8577,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8586,7 +8586,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8599,12 +8599,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         if (entityVersion != null)
         {
-            localVarPathParams.Add("entityVersion", this.Configuration.ApiClient.ParameterToString(entityVersion));
+            localVarPathParams.Add("entityVersion", Configuration.ApiClient.ParameterToString(entityVersion));
         }
 
         // Query params
@@ -8620,11 +8620,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8650,7 +8650,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemVersion>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemVersion)),
+            (WorkitemVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8707,7 +8707,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8716,7 +8716,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8729,23 +8729,23 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -8759,11 +8759,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8789,7 +8789,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemVersionListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemVersionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemVersionListing)),
+            (WorkitemVersionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemVersionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8846,7 +8846,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8855,7 +8855,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8868,23 +8868,23 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -8898,11 +8898,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8928,7 +8928,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemVersionListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemVersionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemVersionListing)),
+            (WorkitemVersionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemVersionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8985,7 +8985,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8994,7 +8994,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9007,28 +9007,28 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
         if (expands != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(expands)));
+            localVarQueryParams.Add(new Tuple<string, string>("expands", Configuration.ApiClient.ParameterToString(expands)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -9042,11 +9042,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9072,7 +9072,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemWrapupEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemWrapupEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapupEntityListing)),
+            (WorkitemWrapupEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapupEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9129,7 +9129,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9138,7 +9138,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9151,28 +9151,28 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
         if (expands != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(expands)));
+            localVarQueryParams.Add(new Tuple<string, string>("expands", Configuration.ApiClient.ParameterToString(expands)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -9186,11 +9186,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9216,7 +9216,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemWrapupEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemWrapupEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapupEntityListing)),
+            (WorkitemWrapupEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapupEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9265,7 +9265,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9274,7 +9274,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9287,7 +9287,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -9303,11 +9303,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9333,7 +9333,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9382,7 +9382,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9391,7 +9391,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9404,7 +9404,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -9420,11 +9420,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9450,7 +9450,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9499,7 +9499,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9508,7 +9508,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9521,7 +9521,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -9537,11 +9537,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9567,7 +9567,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJobAddResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkJobAddResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobAddResponse)),
+            (BulkJobAddResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobAddResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9616,7 +9616,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9625,7 +9625,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9638,7 +9638,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -9654,11 +9654,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9684,7 +9684,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJobAddResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkJobAddResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobAddResponse)),
+            (BulkJobAddResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobAddResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9734,7 +9734,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9743,7 +9743,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9758,22 +9758,22 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (action != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("action", this.Configuration.ApiClient.ParameterToString(action)));
+            localVarQueryParams.Add(new Tuple<string, string>("action", Configuration.ApiClient.ParameterToString(action)));
         }
 
         // Header params
@@ -9787,11 +9787,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9817,7 +9817,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJobsListing>(localVarStatusCode,
             localVarHeaders,
-            (BulkJobsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobsListing)),
+            (BulkJobsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9867,7 +9867,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9876,7 +9876,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9891,22 +9891,22 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (action != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("action", this.Configuration.ApiClient.ParameterToString(action)));
+            localVarQueryParams.Add(new Tuple<string, string>("action", Configuration.ApiClient.ParameterToString(action)));
         }
 
         // Header params
@@ -9920,11 +9920,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9950,7 +9950,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJobsListing>(localVarStatusCode,
             localVarHeaders,
-            (BulkJobsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobsListing)),
+            (BulkJobsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9999,7 +9999,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10008,7 +10008,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10021,7 +10021,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -10037,11 +10037,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10067,7 +10067,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10116,7 +10116,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10125,7 +10125,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10138,7 +10138,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -10154,11 +10154,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10184,7 +10184,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10233,7 +10233,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10242,7 +10242,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10255,7 +10255,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -10271,11 +10271,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10301,7 +10301,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJobTerminateResultsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkJobTerminateResultsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobTerminateResultsResponse)),
+            (BulkJobTerminateResultsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobTerminateResultsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10350,7 +10350,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10359,7 +10359,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10372,7 +10372,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -10388,11 +10388,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10418,7 +10418,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJobTerminateResultsResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkJobTerminateResultsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobTerminateResultsResponse)),
+            (BulkJobTerminateResultsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJobTerminateResultsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10467,7 +10467,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10476,7 +10476,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10489,7 +10489,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -10505,11 +10505,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10535,7 +10535,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemQueryJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemQueryJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemQueryJobResponse)),
+            (WorkitemQueryJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemQueryJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10584,7 +10584,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10593,7 +10593,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10606,7 +10606,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -10622,11 +10622,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10652,7 +10652,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemQueryJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemQueryJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemQueryJobResponse)),
+            (WorkitemQueryJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemQueryJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10701,7 +10701,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10710,7 +10710,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10723,7 +10723,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -10739,11 +10739,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10769,7 +10769,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemPagedEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemPagedEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemPagedEntityListing)),
+            (WorkitemPagedEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemPagedEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10818,7 +10818,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10827,7 +10827,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10840,7 +10840,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -10856,11 +10856,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10886,7 +10886,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemPagedEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemPagedEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemPagedEntityListing)),
+            (WorkitemPagedEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemPagedEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10935,7 +10935,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10944,7 +10944,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10957,7 +10957,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -10973,11 +10973,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11003,7 +11003,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11052,7 +11052,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11061,7 +11061,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11074,7 +11074,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -11090,11 +11090,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11120,7 +11120,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11176,7 +11176,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11185,7 +11185,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11198,12 +11198,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
@@ -11219,11 +11219,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11249,7 +11249,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11306,7 +11306,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11315,7 +11315,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11328,12 +11328,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
@@ -11349,11 +11349,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11379,7 +11379,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11428,7 +11428,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11437,7 +11437,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11450,7 +11450,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -11466,11 +11466,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11496,7 +11496,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11545,7 +11545,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11554,7 +11554,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11567,7 +11567,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -11583,11 +11583,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11613,7 +11613,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11655,7 +11655,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11664,7 +11664,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11689,11 +11689,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11719,7 +11719,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchemaListing>(localVarStatusCode,
             localVarHeaders,
-            (DataSchemaListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
+            (DataSchemaListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11761,7 +11761,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11770,7 +11770,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11795,11 +11795,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11825,7 +11825,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchemaListing>(localVarStatusCode,
             localVarHeaders,
-            (DataSchemaListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
+            (DataSchemaListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11874,7 +11874,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11883,7 +11883,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11896,7 +11896,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (coreTypeName != null)
         {
-            localVarPathParams.Add("coreTypeName", this.Configuration.ApiClient.ParameterToString(coreTypeName));
+            localVarPathParams.Add("coreTypeName", Configuration.ApiClient.ParameterToString(coreTypeName));
         }
 
         // Query params
@@ -11912,11 +11912,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11942,7 +11942,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11991,7 +11991,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12000,7 +12000,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12013,7 +12013,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (coreTypeName != null)
         {
-            localVarPathParams.Add("coreTypeName", this.Configuration.ApiClient.ParameterToString(coreTypeName));
+            localVarPathParams.Add("coreTypeName", Configuration.ApiClient.ParameterToString(coreTypeName));
         }
 
         // Query params
@@ -12029,11 +12029,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12059,7 +12059,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12101,7 +12101,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12110,7 +12110,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12135,11 +12135,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12165,7 +12165,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12207,7 +12207,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12216,7 +12216,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12241,11 +12241,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12271,7 +12271,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Coretype>(localVarStatusCode,
             localVarHeaders,
-            (Coretype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+            (Coretype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12313,7 +12313,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12322,7 +12322,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12347,11 +12347,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12377,7 +12377,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<SchemaQuantityLimits>(localVarStatusCode,
             localVarHeaders,
-            (SchemaQuantityLimits)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
+            (SchemaQuantityLimits)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12419,7 +12419,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12428,7 +12428,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12453,11 +12453,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12483,7 +12483,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<SchemaQuantityLimits>(localVarStatusCode,
             localVarHeaders,
-            (SchemaQuantityLimits)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
+            (SchemaQuantityLimits)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SchemaQuantityLimits)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12534,7 +12534,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12543,7 +12543,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12556,13 +12556,13 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (expands != null)
         {
-            expands.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expands.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expands", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -12576,11 +12576,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12606,7 +12606,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Worktype>(localVarStatusCode,
             localVarHeaders,
-            (Worktype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
+            (Worktype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12657,7 +12657,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12666,7 +12666,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12679,13 +12679,13 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (expands != null)
         {
-            expands.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expands.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expands", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -12699,11 +12699,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12729,7 +12729,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Worktype>(localVarStatusCode,
             localVarHeaders,
-            (Worktype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
+            (Worktype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12785,7 +12785,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12794,7 +12794,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12807,12 +12807,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -12828,11 +12828,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12858,7 +12858,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemDateBasedRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemDateBasedRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
+            (WorkitemDateBasedRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12915,7 +12915,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12924,7 +12924,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12937,12 +12937,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -12958,11 +12958,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12988,7 +12988,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemDateBasedRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemDateBasedRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
+            (WorkitemDateBasedRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13041,7 +13041,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13050,7 +13050,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13063,18 +13063,18 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -13088,11 +13088,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13118,7 +13118,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemDateBasedRuleListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemDateBasedRuleListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRuleListing)),
+            (WorkitemDateBasedRuleListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRuleListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13171,7 +13171,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13180,7 +13180,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13193,18 +13193,18 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -13218,11 +13218,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13248,7 +13248,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemDateBasedRuleListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemDateBasedRuleListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRuleListing)),
+            (WorkitemDateBasedRuleListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRuleListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13304,7 +13304,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13313,7 +13313,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13326,12 +13326,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -13347,11 +13347,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13377,7 +13377,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnAttributeChangeRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnAttributeChangeRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
+            (WorkitemOnAttributeChangeRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13434,7 +13434,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13443,7 +13443,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13456,12 +13456,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -13477,11 +13477,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13507,7 +13507,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnAttributeChangeRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnAttributeChangeRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
+            (WorkitemOnAttributeChangeRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13560,7 +13560,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13569,7 +13569,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13582,18 +13582,18 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -13607,11 +13607,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13637,7 +13637,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnAttributeChangeRuleListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnAttributeChangeRuleListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRuleListing)),
+            (WorkitemOnAttributeChangeRuleListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRuleListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13690,7 +13690,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13699,7 +13699,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13712,18 +13712,18 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -13737,11 +13737,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13767,7 +13767,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnAttributeChangeRuleListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnAttributeChangeRuleListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRuleListing)),
+            (WorkitemOnAttributeChangeRuleListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRuleListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13823,7 +13823,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13832,7 +13832,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13845,12 +13845,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -13866,11 +13866,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13896,7 +13896,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnCreateRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnCreateRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
+            (WorkitemOnCreateRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13953,7 +13953,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13962,7 +13962,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13975,12 +13975,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -13996,11 +13996,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14026,7 +14026,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnCreateRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnCreateRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
+            (WorkitemOnCreateRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14079,7 +14079,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14088,7 +14088,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14101,18 +14101,18 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -14126,11 +14126,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14156,7 +14156,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnCreateRuleListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnCreateRuleListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRuleListing)),
+            (WorkitemOnCreateRuleListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRuleListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14209,7 +14209,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14218,7 +14218,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14231,18 +14231,18 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -14256,11 +14256,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14286,7 +14286,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnCreateRuleListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnCreateRuleListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRuleListing)),
+            (WorkitemOnCreateRuleListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRuleListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14345,7 +14345,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14354,7 +14354,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14367,28 +14367,28 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (fields != null)
         {
-            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", this.Configuration.ApiClient.ParameterToString(obj))); });
+            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -14402,11 +14402,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14432,7 +14432,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorktypeChangeListing>(localVarStatusCode,
             localVarHeaders,
-            (WorktypeChangeListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeChangeListing)),
+            (WorktypeChangeListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeChangeListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14491,7 +14491,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14500,7 +14500,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14513,28 +14513,28 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (fields != null)
         {
-            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", this.Configuration.ApiClient.ParameterToString(obj))); });
+            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -14548,11 +14548,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14578,7 +14578,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorktypeChangeListing>(localVarStatusCode,
             localVarHeaders,
-            (WorktypeChangeListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeChangeListing)),
+            (WorktypeChangeListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeChangeListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14634,7 +14634,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14643,7 +14643,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14656,12 +14656,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (statusId != null)
         {
-            localVarPathParams.Add("statusId", this.Configuration.ApiClient.ParameterToString(statusId));
+            localVarPathParams.Add("statusId", Configuration.ApiClient.ParameterToString(statusId));
         }
 
         // Query params
@@ -14677,11 +14677,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14707,7 +14707,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemStatus>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
+            (WorkitemStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14764,7 +14764,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14773,7 +14773,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14786,12 +14786,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (statusId != null)
         {
-            localVarPathParams.Add("statusId", this.Configuration.ApiClient.ParameterToString(statusId));
+            localVarPathParams.Add("statusId", Configuration.ApiClient.ParameterToString(statusId));
         }
 
         // Query params
@@ -14807,11 +14807,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14837,7 +14837,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemStatus>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
+            (WorkitemStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14886,7 +14886,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14895,7 +14895,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14908,7 +14908,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -14924,11 +14924,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14954,7 +14954,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemStatusListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemStatusListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatusListing)),
+            (WorkitemStatusListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatusListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15003,7 +15003,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15012,7 +15012,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15025,7 +15025,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -15041,11 +15041,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15071,7 +15071,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemStatusListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemStatusListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatusListing)),
+            (WorkitemStatusListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatusListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15129,7 +15129,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15138,7 +15138,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15151,12 +15151,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (entityVersion != null)
         {
-            localVarPathParams.Add("entityVersion", this.Configuration.ApiClient.ParameterToString(entityVersion));
+            localVarPathParams.Add("entityVersion", Configuration.ApiClient.ParameterToString(entityVersion));
         }
 
         // Query params
@@ -15172,11 +15172,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15202,7 +15202,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorktypeVersion>(localVarStatusCode,
             localVarHeaders,
-            (WorktypeVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeVersion)),
+            (WorktypeVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15261,7 +15261,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15270,7 +15270,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15283,12 +15283,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (entityVersion != null)
         {
-            localVarPathParams.Add("entityVersion", this.Configuration.ApiClient.ParameterToString(entityVersion));
+            localVarPathParams.Add("entityVersion", Configuration.ApiClient.ParameterToString(entityVersion));
         }
 
         // Query params
@@ -15304,11 +15304,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15334,7 +15334,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorktypeVersion>(localVarStatusCode,
             localVarHeaders,
-            (WorktypeVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeVersion)),
+            (WorktypeVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15391,7 +15391,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15400,7 +15400,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15413,23 +15413,23 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -15443,11 +15443,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15473,7 +15473,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorktypeVersionListing>(localVarStatusCode,
             localVarHeaders,
-            (WorktypeVersionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeVersionListing)),
+            (WorktypeVersionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeVersionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15530,7 +15530,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15539,7 +15539,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15552,23 +15552,23 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -15582,11 +15582,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15612,7 +15612,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorktypeVersionListing>(localVarStatusCode,
             localVarHeaders,
-            (WorktypeVersionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeVersionListing)),
+            (WorktypeVersionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeVersionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15669,7 +15669,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15678,7 +15678,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15691,7 +15691,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         // Query params
@@ -15703,7 +15703,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15716,11 +15716,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15746,7 +15746,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workbin>(localVarStatusCode,
             localVarHeaders,
-            (Workbin)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
+            (Workbin)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15804,7 +15804,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15813,7 +15813,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15826,7 +15826,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workbinId != null)
         {
-            localVarPathParams.Add("workbinId", this.Configuration.ApiClient.ParameterToString(workbinId));
+            localVarPathParams.Add("workbinId", Configuration.ApiClient.ParameterToString(workbinId));
         }
 
         // Query params
@@ -15838,7 +15838,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15851,11 +15851,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15881,7 +15881,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workbin>(localVarStatusCode,
             localVarHeaders,
-            (Workbin)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
+            (Workbin)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15938,7 +15938,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15947,7 +15947,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15960,7 +15960,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -15972,7 +15972,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15985,11 +15985,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16015,7 +16015,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16073,7 +16073,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16082,7 +16082,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16095,7 +16095,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -16107,7 +16107,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16120,11 +16120,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16150,7 +16150,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16206,7 +16206,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16215,7 +16215,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16228,7 +16228,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -16240,7 +16240,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16253,11 +16253,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16340,7 +16340,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16349,7 +16349,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16362,7 +16362,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -16374,7 +16374,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16387,11 +16387,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16481,7 +16481,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16490,7 +16490,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16503,12 +16503,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -16520,7 +16520,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16533,11 +16533,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16563,7 +16563,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemWrapup>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemWrapup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
+            (WorkitemWrapup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16629,7 +16629,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16638,7 +16638,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16651,12 +16651,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -16668,7 +16668,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16681,11 +16681,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16711,7 +16711,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemWrapup>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemWrapup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
+            (WorkitemWrapup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16768,7 +16768,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16777,7 +16777,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16790,7 +16790,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -16802,7 +16802,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16815,11 +16815,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16845,7 +16845,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemWrapup>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemWrapup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
+            (WorkitemWrapup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16903,7 +16903,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16912,7 +16912,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16925,7 +16925,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -16937,7 +16937,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16950,11 +16950,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16980,7 +16980,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemWrapup>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemWrapup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
+            (WorkitemWrapup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17037,7 +17037,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17046,7 +17046,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17059,7 +17059,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -17071,7 +17071,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17084,11 +17084,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17114,7 +17114,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17172,7 +17172,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17181,7 +17181,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17194,7 +17194,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -17206,7 +17206,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17219,11 +17219,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17249,7 +17249,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17306,7 +17306,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17315,7 +17315,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17328,7 +17328,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -17340,7 +17340,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17353,11 +17353,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17383,7 +17383,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17441,7 +17441,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17450,7 +17450,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17463,7 +17463,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (bulkJobId != null)
         {
-            localVarPathParams.Add("bulkJobId", this.Configuration.ApiClient.ParameterToString(bulkJobId));
+            localVarPathParams.Add("bulkJobId", Configuration.ApiClient.ParameterToString(bulkJobId));
         }
 
         // Query params
@@ -17475,7 +17475,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17488,11 +17488,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17518,7 +17518,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17575,7 +17575,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17584,7 +17584,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17597,7 +17597,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -17609,7 +17609,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17622,11 +17622,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17652,7 +17652,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Worktype>(localVarStatusCode,
             localVarHeaders,
-            (Worktype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
+            (Worktype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17710,7 +17710,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17719,7 +17719,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17732,7 +17732,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -17744,7 +17744,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17757,11 +17757,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17787,7 +17787,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Worktype>(localVarStatusCode,
             localVarHeaders,
-            (Worktype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
+            (Worktype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17851,7 +17851,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17860,7 +17860,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17873,12 +17873,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -17890,7 +17890,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -17903,11 +17903,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17933,7 +17933,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemDateBasedRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemDateBasedRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
+            (WorkitemDateBasedRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17999,7 +17999,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18008,7 +18008,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18021,12 +18021,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -18038,7 +18038,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -18051,11 +18051,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18081,7 +18081,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemDateBasedRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemDateBasedRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
+            (WorkitemDateBasedRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18145,7 +18145,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18154,7 +18154,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18167,12 +18167,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -18184,7 +18184,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -18197,11 +18197,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18227,7 +18227,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnAttributeChangeRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnAttributeChangeRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
+            (WorkitemOnAttributeChangeRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18293,7 +18293,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18302,7 +18302,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18315,12 +18315,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -18332,7 +18332,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -18345,11 +18345,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18375,7 +18375,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnAttributeChangeRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnAttributeChangeRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
+            (WorkitemOnAttributeChangeRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18439,7 +18439,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18448,7 +18448,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18461,12 +18461,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -18478,7 +18478,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -18491,11 +18491,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18521,7 +18521,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnCreateRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnCreateRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
+            (WorkitemOnCreateRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18587,7 +18587,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18596,7 +18596,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18609,12 +18609,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (ruleId != null)
         {
-            localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId));
+            localVarPathParams.Add("ruleId", Configuration.ApiClient.ParameterToString(ruleId));
         }
 
         // Query params
@@ -18626,7 +18626,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -18639,11 +18639,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18669,7 +18669,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnCreateRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnCreateRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
+            (WorkitemOnCreateRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18733,7 +18733,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18742,7 +18742,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18755,12 +18755,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (statusId != null)
         {
-            localVarPathParams.Add("statusId", this.Configuration.ApiClient.ParameterToString(statusId));
+            localVarPathParams.Add("statusId", Configuration.ApiClient.ParameterToString(statusId));
         }
 
         // Query params
@@ -18772,7 +18772,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -18785,11 +18785,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18815,7 +18815,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemStatus>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
+            (WorkitemStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18881,7 +18881,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18890,7 +18890,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18903,12 +18903,12 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         if (statusId != null)
         {
-            localVarPathParams.Add("statusId", this.Configuration.ApiClient.ParameterToString(statusId));
+            localVarPathParams.Add("statusId", Configuration.ApiClient.ParameterToString(statusId));
         }
 
         // Query params
@@ -18920,7 +18920,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -18933,11 +18933,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18963,7 +18963,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemStatus>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
+            (WorkitemStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19013,7 +19013,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19022,7 +19022,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19043,7 +19043,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -19056,11 +19056,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19086,7 +19086,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workbin>(localVarStatusCode,
             localVarHeaders,
-            (Workbin)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
+            (Workbin)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19136,7 +19136,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19145,7 +19145,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19166,7 +19166,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -19179,11 +19179,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19209,7 +19209,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workbin>(localVarStatusCode,
             localVarHeaders,
-            (Workbin)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
+            (Workbin)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workbin)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19259,7 +19259,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19268,7 +19268,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19289,7 +19289,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -19302,11 +19302,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19332,7 +19332,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkbinQueryEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkbinQueryEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinQueryEntityListing)),
+            (WorkbinQueryEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinQueryEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19382,7 +19382,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19391,7 +19391,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19412,7 +19412,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -19425,11 +19425,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19455,7 +19455,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkbinQueryEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkbinQueryEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinQueryEntityListing)),
+            (WorkbinQueryEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkbinQueryEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19504,7 +19504,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19513,7 +19513,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19526,7 +19526,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -19542,11 +19542,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19572,7 +19572,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19621,7 +19621,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19630,7 +19630,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19643,7 +19643,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -19659,11 +19659,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19689,7 +19689,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19738,7 +19738,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19747,7 +19747,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19760,7 +19760,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -19776,11 +19776,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19806,7 +19806,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19855,7 +19855,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19864,7 +19864,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19877,7 +19877,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -19893,11 +19893,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19923,7 +19923,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19975,7 +19975,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19984,7 +19984,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19997,7 +19997,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -20009,7 +20009,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20022,11 +20022,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20052,7 +20052,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20104,7 +20104,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20113,7 +20113,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20126,7 +20126,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (workitemId != null)
         {
-            localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
+            localVarPathParams.Add("workitemId", Configuration.ApiClient.ParameterToString(workitemId));
         }
 
         // Query params
@@ -20138,7 +20138,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20151,11 +20151,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20181,7 +20181,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20231,7 +20231,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20240,7 +20240,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20261,7 +20261,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20274,11 +20274,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20304,7 +20304,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20354,7 +20354,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20363,7 +20363,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20384,7 +20384,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20397,11 +20397,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20427,7 +20427,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Workitem>(localVarStatusCode,
             localVarHeaders,
-            (Workitem)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
+            (Workitem)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Workitem)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20477,7 +20477,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20486,7 +20486,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20507,7 +20507,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20520,11 +20520,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20550,7 +20550,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20600,7 +20600,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20609,7 +20609,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20630,7 +20630,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20643,11 +20643,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20673,7 +20673,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20723,7 +20723,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20732,7 +20732,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20753,7 +20753,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20766,11 +20766,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20796,7 +20796,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20846,7 +20846,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20855,7 +20855,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20876,7 +20876,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -20889,11 +20889,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20919,7 +20919,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<BulkJob>(localVarStatusCode,
             localVarHeaders,
-            (BulkJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
+            (BulkJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20971,7 +20971,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20980,7 +20980,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21001,7 +21001,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21014,11 +21014,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21044,7 +21044,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemPostQueryEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemPostQueryEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemPostQueryEntityListing)),
+            (WorkitemPostQueryEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemPostQueryEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21096,7 +21096,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21105,7 +21105,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21126,7 +21126,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21139,11 +21139,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21169,7 +21169,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemPostQueryEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemPostQueryEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemPostQueryEntityListing)),
+            (WorkitemPostQueryEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemPostQueryEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21219,7 +21219,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21228,7 +21228,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21249,7 +21249,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21262,11 +21262,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21292,7 +21292,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemQueryJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemQueryJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemQueryJobResponse)),
+            (WorkitemQueryJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemQueryJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21342,7 +21342,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21351,7 +21351,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21372,7 +21372,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21385,11 +21385,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21415,7 +21415,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemQueryJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemQueryJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemQueryJobResponse)),
+            (WorkitemQueryJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemQueryJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21465,7 +21465,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21474,7 +21474,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21495,7 +21495,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21508,11 +21508,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21538,7 +21538,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21588,7 +21588,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21597,7 +21597,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21618,7 +21618,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21631,11 +21631,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21661,7 +21661,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21718,7 +21718,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21727,7 +21727,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21740,7 +21740,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -21752,7 +21752,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21765,11 +21765,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21795,7 +21795,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemDateBasedRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemDateBasedRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
+            (WorkitemDateBasedRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21853,7 +21853,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21862,7 +21862,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21875,7 +21875,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -21887,7 +21887,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -21900,11 +21900,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21930,7 +21930,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemDateBasedRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemDateBasedRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
+            (WorkitemDateBasedRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemDateBasedRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21987,7 +21987,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21996,7 +21996,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22009,7 +22009,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -22021,7 +22021,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22034,11 +22034,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22064,7 +22064,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnAttributeChangeRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnAttributeChangeRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
+            (WorkitemOnAttributeChangeRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22122,7 +22122,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22131,7 +22131,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22144,7 +22144,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -22156,7 +22156,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22169,11 +22169,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22199,7 +22199,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnAttributeChangeRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnAttributeChangeRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
+            (WorkitemOnAttributeChangeRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnAttributeChangeRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22256,7 +22256,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22265,7 +22265,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22278,7 +22278,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -22290,7 +22290,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22303,11 +22303,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22333,7 +22333,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnCreateRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnCreateRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
+            (WorkitemOnCreateRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22391,7 +22391,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22400,7 +22400,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22413,7 +22413,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -22425,7 +22425,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22438,11 +22438,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22468,7 +22468,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemOnCreateRule>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemOnCreateRule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
+            (WorkitemOnCreateRule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemOnCreateRule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22525,7 +22525,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22534,7 +22534,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22547,7 +22547,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -22559,7 +22559,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22572,11 +22572,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22602,7 +22602,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemStatus>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
+            (WorkitemStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22660,7 +22660,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22669,7 +22669,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22682,7 +22682,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (worktypeId != null)
         {
-            localVarPathParams.Add("worktypeId", this.Configuration.ApiClient.ParameterToString(worktypeId));
+            localVarPathParams.Add("worktypeId", Configuration.ApiClient.ParameterToString(worktypeId));
         }
 
         // Query params
@@ -22694,7 +22694,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22707,11 +22707,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22737,7 +22737,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorkitemStatus>(localVarStatusCode,
             localVarHeaders,
-            (WorkitemStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
+            (WorkitemStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22787,7 +22787,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22796,7 +22796,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22817,7 +22817,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22830,11 +22830,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22860,7 +22860,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Worktype>(localVarStatusCode,
             localVarHeaders,
-            (Worktype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
+            (Worktype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22910,7 +22910,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22919,7 +22919,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22940,7 +22940,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22953,11 +22953,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22983,7 +22983,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<Worktype>(localVarStatusCode,
             localVarHeaders,
-            (Worktype)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
+            (Worktype)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Worktype)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23033,7 +23033,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23042,7 +23042,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23063,7 +23063,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23076,11 +23076,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23106,7 +23106,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorktypeQueryEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WorktypeQueryEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeQueryEntityListing)),
+            (WorktypeQueryEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeQueryEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23156,7 +23156,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23165,7 +23165,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23186,7 +23186,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23199,11 +23199,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23229,7 +23229,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<WorktypeQueryEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (WorktypeQueryEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeQueryEntityListing)),
+            (WorktypeQueryEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorktypeQueryEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23286,7 +23286,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23295,7 +23295,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23308,7 +23308,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -23320,7 +23320,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23333,11 +23333,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23363,7 +23363,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23421,7 +23421,7 @@ public partial class TaskManagementApi : ITaskManagementApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23430,7 +23430,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23443,7 +23443,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -23455,7 +23455,7 @@ public partial class TaskManagementApi : ITaskManagementApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23468,11 +23468,11 @@ public partial class TaskManagementApi : ITaskManagementApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23498,7 +23498,7 @@ public partial class TaskManagementApi : ITaskManagementApi
 
         return new ApiResponse<DataSchema>(localVarStatusCode,
             localVarHeaders,
-            (DataSchema)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+            (DataSchema)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

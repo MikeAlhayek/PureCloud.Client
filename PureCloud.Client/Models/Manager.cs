@@ -63,7 +63,7 @@ public partial class Manager : IEquatable<Manager>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Manager);
+        return Equals(obj as Manager);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class Manager : IEquatable<Manager>
 
         return true &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Ref == other.Ref ||
-                this.Ref != null &&
-                this.Ref.Equals(other.Ref)
+                Ref == other.Ref ||
+                Ref != null &&
+                Ref.Equals(other.Ref)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class Manager : IEquatable<Manager>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Ref != null)
+            if (Ref != null)
             {
-                hash = hash * 59 + this.Ref.GetHashCode();
+                hash = hash * 59 + Ref.GetHashCode();
             }
 
             return hash;

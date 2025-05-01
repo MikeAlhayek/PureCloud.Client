@@ -286,7 +286,7 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentTopicLearningAssignmentNotification);
+        return Equals(obj as LearningAssignmentTopicLearningAssignmentNotification);
     }
 
     /// <summary>
@@ -304,79 +304,79 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Module == other.Module ||
-                this.Module != null &&
-                this.Module.Equals(other.Module)
+                Module == other.Module ||
+                Module != null &&
+                Module.Equals(other.Module)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.DateRecommendedForCompletion == other.DateRecommendedForCompletion ||
-                this.DateRecommendedForCompletion != null &&
-                this.DateRecommendedForCompletion.Equals(other.DateRecommendedForCompletion)
+                DateRecommendedForCompletion == other.DateRecommendedForCompletion ||
+                DateRecommendedForCompletion != null &&
+                DateRecommendedForCompletion.Equals(other.DateRecommendedForCompletion)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.IsOverdue == other.IsOverdue ||
-                this.IsOverdue != null &&
-                this.IsOverdue.Equals(other.IsOverdue)
+                IsOverdue == other.IsOverdue ||
+                IsOverdue != null &&
+                IsOverdue.Equals(other.IsOverdue)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.PercentageScore == other.PercentageScore ||
-                this.PercentageScore != null &&
-                this.PercentageScore.Equals(other.PercentageScore)
+                PercentageScore == other.PercentageScore ||
+                PercentageScore != null &&
+                PercentageScore.Equals(other.PercentageScore)
             ) &&
             (
-                this.IsPassed == other.IsPassed ||
-                this.IsPassed != null &&
-                this.IsPassed.Equals(other.IsPassed)
+                IsPassed == other.IsPassed ||
+                IsPassed != null &&
+                IsPassed.Equals(other.IsPassed)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -391,79 +391,79 @@ public partial class LearningAssignmentTopicLearningAssignmentNotification : IEq
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Module != null)
+            if (Module != null)
             {
-                hash = hash * 59 + this.Module.GetHashCode();
+                hash = hash * 59 + Module.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.DateRecommendedForCompletion != null)
+            if (DateRecommendedForCompletion != null)
             {
-                hash = hash * 59 + this.DateRecommendedForCompletion.GetHashCode();
+                hash = hash * 59 + DateRecommendedForCompletion.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.IsOverdue != null)
+            if (IsOverdue != null)
             {
-                hash = hash * 59 + this.IsOverdue.GetHashCode();
+                hash = hash * 59 + IsOverdue.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.PercentageScore != null)
+            if (PercentageScore != null)
             {
-                hash = hash * 59 + this.PercentageScore.GetHashCode();
+                hash = hash * 59 + PercentageScore.GetHashCode();
             }
 
-            if (this.IsPassed != null)
+            if (IsPassed != null)
             {
-                hash = hash * 59 + this.IsPassed.GetHashCode();
+                hash = hash * 59 + IsPassed.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

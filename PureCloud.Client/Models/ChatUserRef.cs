@@ -118,7 +118,7 @@ public partial class ChatUserRef : IEquatable<ChatUserRef>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatUserRef);
+        return Equals(obj as ChatUserRef);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class ChatUserRef : IEquatable<ChatUserRef>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.Jid == other.Jid ||
-                this.Jid != null &&
-                this.Jid.Equals(other.Jid)
+                Jid == other.Jid ||
+                Jid != null &&
+                Jid.Equals(other.Jid)
             ) &&
             (
-                this.Inactive == other.Inactive ||
-                this.Inactive != null &&
-                this.Inactive.Equals(other.Inactive)
+                Inactive == other.Inactive ||
+                Inactive != null &&
+                Inactive.Equals(other.Inactive)
             ) &&
             (
-                this.Integrations == other.Integrations ||
-                this.Integrations != null &&
-                this.Integrations.SequenceEqual(other.Integrations)
+                Integrations == other.Integrations ||
+                Integrations != null &&
+                Integrations.SequenceEqual(other.Integrations)
             ) &&
             (
-                this.Presence == other.Presence ||
-                this.Presence != null &&
-                this.Presence.Equals(other.Presence)
+                Presence == other.Presence ||
+                Presence != null &&
+                Presence.Equals(other.Presence)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class ChatUserRef : IEquatable<ChatUserRef>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.Jid != null)
+            if (Jid != null)
             {
-                hash = hash * 59 + this.Jid.GetHashCode();
+                hash = hash * 59 + Jid.GetHashCode();
             }
 
-            if (this.Inactive != null)
+            if (Inactive != null)
             {
-                hash = hash * 59 + this.Inactive.GetHashCode();
+                hash = hash * 59 + Inactive.GetHashCode();
             }
 
-            if (this.Integrations != null)
+            if (Integrations != null)
             {
-                hash = hash * 59 + this.Integrations.GetHashCode();
+                hash = hash * 59 + Integrations.GetHashCode();
             }
 
-            if (this.Presence != null)
+            if (Presence != null)
             {
-                hash = hash * 59 + this.Presence.GetHashCode();
+                hash = hash * 59 + Presence.GetHashCode();
             }
 
             return hash;

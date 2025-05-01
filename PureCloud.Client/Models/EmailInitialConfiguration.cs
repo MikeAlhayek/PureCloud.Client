@@ -179,7 +179,7 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailInitialConfiguration);
+        return Equals(obj as EmailInitialConfiguration);
     }
 
     /// <summary>
@@ -197,59 +197,59 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
 
         return true &&
             (
-                this.To == other.To ||
-                this.To != null &&
-                this.To.Equals(other.To)
+                To == other.To ||
+                To != null &&
+                To.Equals(other.To)
             ) &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.Cc == other.Cc ||
-                this.Cc != null &&
-                this.Cc.SequenceEqual(other.Cc)
+                Cc == other.Cc ||
+                Cc != null &&
+                Cc.SequenceEqual(other.Cc)
             ) &&
             (
-                this.Bcc == other.Bcc ||
-                this.Bcc != null &&
-                this.Bcc.SequenceEqual(other.Bcc)
+                Bcc == other.Bcc ||
+                Bcc != null &&
+                Bcc.SequenceEqual(other.Bcc)
             ) &&
             (
-                this.Subject == other.Subject ||
-                this.Subject != null &&
-                this.Subject.Equals(other.Subject)
+                Subject == other.Subject ||
+                Subject != null &&
+                Subject.Equals(other.Subject)
             ) &&
             (
-                this.PreviousEmailId == other.PreviousEmailId ||
-                this.PreviousEmailId != null &&
-                this.PreviousEmailId.Equals(other.PreviousEmailId)
+                PreviousEmailId == other.PreviousEmailId ||
+                PreviousEmailId != null &&
+                PreviousEmailId.Equals(other.PreviousEmailId)
             ) &&
             (
-                this.Held == other.Held ||
-                this.Held != null &&
-                this.Held.Equals(other.Held)
+                Held == other.Held ||
+                Held != null &&
+                Held.Equals(other.Held)
             ) &&
             (
-                this.Alerting == other.Alerting ||
-                this.Alerting != null &&
-                this.Alerting.Equals(other.Alerting)
+                Alerting == other.Alerting ||
+                Alerting != null &&
+                Alerting.Equals(other.Alerting)
             ) &&
             (
-                this.Inbound == other.Inbound ||
-                this.Inbound != null &&
-                this.Inbound.Equals(other.Inbound)
+                Inbound == other.Inbound ||
+                Inbound != null &&
+                Inbound.Equals(other.Inbound)
             ) &&
             (
-                this.InvitedBy == other.InvitedBy ||
-                this.InvitedBy != null &&
-                this.InvitedBy.Equals(other.InvitedBy)
+                InvitedBy == other.InvitedBy ||
+                InvitedBy != null &&
+                InvitedBy.Equals(other.InvitedBy)
             ) &&
             (
-                this.AdditionalInfo == other.AdditionalInfo ||
-                this.AdditionalInfo != null &&
-                this.AdditionalInfo.SequenceEqual(other.AdditionalInfo)
+                AdditionalInfo == other.AdditionalInfo ||
+                AdditionalInfo != null &&
+                AdditionalInfo.SequenceEqual(other.AdditionalInfo)
             );
     }
 
@@ -264,59 +264,59 @@ public partial class EmailInitialConfiguration : IEquatable<EmailInitialConfigur
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.To != null)
+            if (To != null)
             {
-                hash = hash * 59 + this.To.GetHashCode();
+                hash = hash * 59 + To.GetHashCode();
             }
 
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.Cc != null)
+            if (Cc != null)
             {
-                hash = hash * 59 + this.Cc.GetHashCode();
+                hash = hash * 59 + Cc.GetHashCode();
             }
 
-            if (this.Bcc != null)
+            if (Bcc != null)
             {
-                hash = hash * 59 + this.Bcc.GetHashCode();
+                hash = hash * 59 + Bcc.GetHashCode();
             }
 
-            if (this.Subject != null)
+            if (Subject != null)
             {
-                hash = hash * 59 + this.Subject.GetHashCode();
+                hash = hash * 59 + Subject.GetHashCode();
             }
 
-            if (this.PreviousEmailId != null)
+            if (PreviousEmailId != null)
             {
-                hash = hash * 59 + this.PreviousEmailId.GetHashCode();
+                hash = hash * 59 + PreviousEmailId.GetHashCode();
             }
 
-            if (this.Held != null)
+            if (Held != null)
             {
-                hash = hash * 59 + this.Held.GetHashCode();
+                hash = hash * 59 + Held.GetHashCode();
             }
 
-            if (this.Alerting != null)
+            if (Alerting != null)
             {
-                hash = hash * 59 + this.Alerting.GetHashCode();
+                hash = hash * 59 + Alerting.GetHashCode();
             }
 
-            if (this.Inbound != null)
+            if (Inbound != null)
             {
-                hash = hash * 59 + this.Inbound.GetHashCode();
+                hash = hash * 59 + Inbound.GetHashCode();
             }
 
-            if (this.InvitedBy != null)
+            if (InvitedBy != null)
             {
-                hash = hash * 59 + this.InvitedBy.GetHashCode();
+                hash = hash * 59 + InvitedBy.GetHashCode();
             }
 
-            if (this.AdditionalInfo != null)
+            if (AdditionalInfo != null)
             {
-                hash = hash * 59 + this.AdditionalInfo.GetHashCode();
+                hash = hash * 59 + AdditionalInfo.GetHashCode();
             }
 
             return hash;

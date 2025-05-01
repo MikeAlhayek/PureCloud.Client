@@ -125,7 +125,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DigitalAction);
+        return Equals(obj as DigitalAction);
     }
 
     /// <summary>
@@ -143,39 +143,39 @@ public partial class DigitalAction : IEquatable<DigitalAction>
 
         return true &&
             (
-                this.UpdateContactColumnActionSettings == other.UpdateContactColumnActionSettings ||
-                this.UpdateContactColumnActionSettings != null &&
-                this.UpdateContactColumnActionSettings.Equals(other.UpdateContactColumnActionSettings)
+                UpdateContactColumnActionSettings == other.UpdateContactColumnActionSettings ||
+                UpdateContactColumnActionSettings != null &&
+                UpdateContactColumnActionSettings.Equals(other.UpdateContactColumnActionSettings)
             ) &&
             (
-                this.DoNotSendActionSettings == other.DoNotSendActionSettings ||
-                this.DoNotSendActionSettings != null &&
-                this.DoNotSendActionSettings.Equals(other.DoNotSendActionSettings)
+                DoNotSendActionSettings == other.DoNotSendActionSettings ||
+                DoNotSendActionSettings != null &&
+                DoNotSendActionSettings.Equals(other.DoNotSendActionSettings)
             ) &&
             (
-                this.AppendToDncActionSettings == other.AppendToDncActionSettings ||
-                this.AppendToDncActionSettings != null &&
-                this.AppendToDncActionSettings.Equals(other.AppendToDncActionSettings)
+                AppendToDncActionSettings == other.AppendToDncActionSettings ||
+                AppendToDncActionSettings != null &&
+                AppendToDncActionSettings.Equals(other.AppendToDncActionSettings)
             ) &&
             (
-                this.MarkContactUncontactableActionSettings == other.MarkContactUncontactableActionSettings ||
-                this.MarkContactUncontactableActionSettings != null &&
-                this.MarkContactUncontactableActionSettings.Equals(other.MarkContactUncontactableActionSettings)
+                MarkContactUncontactableActionSettings == other.MarkContactUncontactableActionSettings ||
+                MarkContactUncontactableActionSettings != null &&
+                MarkContactUncontactableActionSettings.Equals(other.MarkContactUncontactableActionSettings)
             ) &&
             (
-                this.MarkContactAddressUncontactableActionSettings == other.MarkContactAddressUncontactableActionSettings ||
-                this.MarkContactAddressUncontactableActionSettings != null &&
-                this.MarkContactAddressUncontactableActionSettings.Equals(other.MarkContactAddressUncontactableActionSettings)
+                MarkContactAddressUncontactableActionSettings == other.MarkContactAddressUncontactableActionSettings ||
+                MarkContactAddressUncontactableActionSettings != null &&
+                MarkContactAddressUncontactableActionSettings.Equals(other.MarkContactAddressUncontactableActionSettings)
             ) &&
             (
-                this.SetContentTemplateActionSettings == other.SetContentTemplateActionSettings ||
-                this.SetContentTemplateActionSettings != null &&
-                this.SetContentTemplateActionSettings.Equals(other.SetContentTemplateActionSettings)
+                SetContentTemplateActionSettings == other.SetContentTemplateActionSettings ||
+                SetContentTemplateActionSettings != null &&
+                SetContentTemplateActionSettings.Equals(other.SetContentTemplateActionSettings)
             ) &&
             (
-                this.SetSmsPhoneNumberActionSettings == other.SetSmsPhoneNumberActionSettings ||
-                this.SetSmsPhoneNumberActionSettings != null &&
-                this.SetSmsPhoneNumberActionSettings.Equals(other.SetSmsPhoneNumberActionSettings)
+                SetSmsPhoneNumberActionSettings == other.SetSmsPhoneNumberActionSettings ||
+                SetSmsPhoneNumberActionSettings != null &&
+                SetSmsPhoneNumberActionSettings.Equals(other.SetSmsPhoneNumberActionSettings)
             );
     }
 
@@ -190,39 +190,39 @@ public partial class DigitalAction : IEquatable<DigitalAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UpdateContactColumnActionSettings != null)
+            if (UpdateContactColumnActionSettings != null)
             {
-                hash = hash * 59 + this.UpdateContactColumnActionSettings.GetHashCode();
+                hash = hash * 59 + UpdateContactColumnActionSettings.GetHashCode();
             }
 
-            if (this.DoNotSendActionSettings != null)
+            if (DoNotSendActionSettings != null)
             {
-                hash = hash * 59 + this.DoNotSendActionSettings.GetHashCode();
+                hash = hash * 59 + DoNotSendActionSettings.GetHashCode();
             }
 
-            if (this.AppendToDncActionSettings != null)
+            if (AppendToDncActionSettings != null)
             {
-                hash = hash * 59 + this.AppendToDncActionSettings.GetHashCode();
+                hash = hash * 59 + AppendToDncActionSettings.GetHashCode();
             }
 
-            if (this.MarkContactUncontactableActionSettings != null)
+            if (MarkContactUncontactableActionSettings != null)
             {
-                hash = hash * 59 + this.MarkContactUncontactableActionSettings.GetHashCode();
+                hash = hash * 59 + MarkContactUncontactableActionSettings.GetHashCode();
             }
 
-            if (this.MarkContactAddressUncontactableActionSettings != null)
+            if (MarkContactAddressUncontactableActionSettings != null)
             {
-                hash = hash * 59 + this.MarkContactAddressUncontactableActionSettings.GetHashCode();
+                hash = hash * 59 + MarkContactAddressUncontactableActionSettings.GetHashCode();
             }
 
-            if (this.SetContentTemplateActionSettings != null)
+            if (SetContentTemplateActionSettings != null)
             {
-                hash = hash * 59 + this.SetContentTemplateActionSettings.GetHashCode();
+                hash = hash * 59 + SetContentTemplateActionSettings.GetHashCode();
             }
 
-            if (this.SetSmsPhoneNumberActionSettings != null)
+            if (SetSmsPhoneNumberActionSettings != null)
             {
-                hash = hash * 59 + this.SetSmsPhoneNumberActionSettings.GetHashCode();
+                hash = hash * 59 + SetSmsPhoneNumberActionSettings.GetHashCode();
             }
 
             return hash;

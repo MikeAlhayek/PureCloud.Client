@@ -303,7 +303,7 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationSessionSummary);
+        return Equals(obj as ConversationSessionSummary);
     }
 
     /// <summary>
@@ -321,74 +321,74 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.PredictedWrapupCodes == other.PredictedWrapupCodes ||
-                this.PredictedWrapupCodes != null &&
-                this.PredictedWrapupCodes.SequenceEqual(other.PredictedWrapupCodes)
+                PredictedWrapupCodes == other.PredictedWrapupCodes ||
+                PredictedWrapupCodes != null &&
+                PredictedWrapupCodes.SequenceEqual(other.PredictedWrapupCodes)
             ) &&
             (
-                this.EditedSummary == other.EditedSummary ||
-                this.EditedSummary != null &&
-                this.EditedSummary.Equals(other.EditedSummary)
+                EditedSummary == other.EditedSummary ||
+                EditedSummary != null &&
+                EditedSummary.Equals(other.EditedSummary)
             ) &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             ) &&
             (
-                this.Followup == other.Followup ||
-                this.Followup != null &&
-                this.Followup.Equals(other.Followup)
+                Followup == other.Followup ||
+                Followup != null &&
+                Followup.Equals(other.Followup)
             ) &&
             (
-                this.Resolution == other.Resolution ||
-                this.Resolution != null &&
-                this.Resolution.Equals(other.Resolution)
+                Resolution == other.Resolution ||
+                Resolution != null &&
+                Resolution.Equals(other.Resolution)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.SequenceEqual(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.SequenceEqual(other.Participants)
             ) &&
             (
-                this.Communication == other.Communication ||
-                this.Communication != null &&
-                this.Communication.Equals(other.Communication)
+                Communication == other.Communication ||
+                Communication != null &&
+                Communication.Equals(other.Communication)
             );
     }
 
@@ -403,74 +403,74 @@ public partial class ConversationSessionSummary : IEquatable<ConversationSession
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.PredictedWrapupCodes != null)
+            if (PredictedWrapupCodes != null)
             {
-                hash = hash * 59 + this.PredictedWrapupCodes.GetHashCode();
+                hash = hash * 59 + PredictedWrapupCodes.GetHashCode();
             }
 
-            if (this.EditedSummary != null)
+            if (EditedSummary != null)
             {
-                hash = hash * 59 + this.EditedSummary.GetHashCode();
+                hash = hash * 59 + EditedSummary.GetHashCode();
             }
 
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
-            if (this.Followup != null)
+            if (Followup != null)
             {
-                hash = hash * 59 + this.Followup.GetHashCode();
+                hash = hash * 59 + Followup.GetHashCode();
             }
 
-            if (this.Resolution != null)
+            if (Resolution != null)
             {
-                hash = hash * 59 + this.Resolution.GetHashCode();
+                hash = hash * 59 + Resolution.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
-            if (this.Communication != null)
+            if (Communication != null)
             {
-                hash = hash * 59 + this.Communication.GetHashCode();
+                hash = hash * 59 + Communication.GetHashCode();
             }
 
             return hash;

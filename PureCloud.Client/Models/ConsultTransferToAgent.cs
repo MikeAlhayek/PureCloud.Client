@@ -133,7 +133,7 @@ public partial class ConsultTransferToAgent : IEquatable<ConsultTransferToAgent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConsultTransferToAgent);
+        return Equals(obj as ConsultTransferToAgent);
     }
 
     /// <summary>
@@ -151,24 +151,24 @@ public partial class ConsultTransferToAgent : IEquatable<ConsultTransferToAgent>
 
         return true &&
             (
-                this.SpeakTo == other.SpeakTo ||
-                this.SpeakTo != null &&
-                this.SpeakTo.Equals(other.SpeakTo)
+                SpeakTo == other.SpeakTo ||
+                SpeakTo != null &&
+                SpeakTo.Equals(other.SpeakTo)
             ) &&
             (
-                this.ConsultingUserId == other.ConsultingUserId ||
-                this.ConsultingUserId != null &&
-                this.ConsultingUserId.Equals(other.ConsultingUserId)
+                ConsultingUserId == other.ConsultingUserId ||
+                ConsultingUserId != null &&
+                ConsultingUserId.Equals(other.ConsultingUserId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.UserDisplayName == other.UserDisplayName ||
-                this.UserDisplayName != null &&
-                this.UserDisplayName.Equals(other.UserDisplayName)
+                UserDisplayName == other.UserDisplayName ||
+                UserDisplayName != null &&
+                UserDisplayName.Equals(other.UserDisplayName)
             );
     }
 
@@ -183,24 +183,24 @@ public partial class ConsultTransferToAgent : IEquatable<ConsultTransferToAgent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SpeakTo != null)
+            if (SpeakTo != null)
             {
-                hash = hash * 59 + this.SpeakTo.GetHashCode();
+                hash = hash * 59 + SpeakTo.GetHashCode();
             }
 
-            if (this.ConsultingUserId != null)
+            if (ConsultingUserId != null)
             {
-                hash = hash * 59 + this.ConsultingUserId.GetHashCode();
+                hash = hash * 59 + ConsultingUserId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.UserDisplayName != null)
+            if (UserDisplayName != null)
             {
-                hash = hash * 59 + this.UserDisplayName.GetHashCode();
+                hash = hash * 59 + UserDisplayName.GetHashCode();
             }
 
             return hash;

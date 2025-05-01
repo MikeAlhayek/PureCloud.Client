@@ -137,7 +137,7 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalShrinkageAggregateResponse);
+        return Equals(obj as HistoricalShrinkageAggregateResponse);
     }
 
     /// <summary>
@@ -155,44 +155,44 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
 
         return true &&
             (
-                this.ScheduledShrinkageSeconds == other.ScheduledShrinkageSeconds ||
-                this.ScheduledShrinkageSeconds != null &&
-                this.ScheduledShrinkageSeconds.Equals(other.ScheduledShrinkageSeconds)
+                ScheduledShrinkageSeconds == other.ScheduledShrinkageSeconds ||
+                ScheduledShrinkageSeconds != null &&
+                ScheduledShrinkageSeconds.Equals(other.ScheduledShrinkageSeconds)
             ) &&
             (
-                this.ScheduledShrinkagePercent == other.ScheduledShrinkagePercent ||
-                this.ScheduledShrinkagePercent != null &&
-                this.ScheduledShrinkagePercent.Equals(other.ScheduledShrinkagePercent)
+                ScheduledShrinkagePercent == other.ScheduledShrinkagePercent ||
+                ScheduledShrinkagePercent != null &&
+                ScheduledShrinkagePercent.Equals(other.ScheduledShrinkagePercent)
             ) &&
             (
-                this.ActualShrinkageSeconds == other.ActualShrinkageSeconds ||
-                this.ActualShrinkageSeconds != null &&
-                this.ActualShrinkageSeconds.Equals(other.ActualShrinkageSeconds)
+                ActualShrinkageSeconds == other.ActualShrinkageSeconds ||
+                ActualShrinkageSeconds != null &&
+                ActualShrinkageSeconds.Equals(other.ActualShrinkageSeconds)
             ) &&
             (
-                this.ActualShrinkagePercent == other.ActualShrinkagePercent ||
-                this.ActualShrinkagePercent != null &&
-                this.ActualShrinkagePercent.Equals(other.ActualShrinkagePercent)
+                ActualShrinkagePercent == other.ActualShrinkagePercent ||
+                ActualShrinkagePercent != null &&
+                ActualShrinkagePercent.Equals(other.ActualShrinkagePercent)
             ) &&
             (
-                this.PaidShrinkageSeconds == other.PaidShrinkageSeconds ||
-                this.PaidShrinkageSeconds != null &&
-                this.PaidShrinkageSeconds.Equals(other.PaidShrinkageSeconds)
+                PaidShrinkageSeconds == other.PaidShrinkageSeconds ||
+                PaidShrinkageSeconds != null &&
+                PaidShrinkageSeconds.Equals(other.PaidShrinkageSeconds)
             ) &&
             (
-                this.UnpaidShrinkageSeconds == other.UnpaidShrinkageSeconds ||
-                this.UnpaidShrinkageSeconds != null &&
-                this.UnpaidShrinkageSeconds.Equals(other.UnpaidShrinkageSeconds)
+                UnpaidShrinkageSeconds == other.UnpaidShrinkageSeconds ||
+                UnpaidShrinkageSeconds != null &&
+                UnpaidShrinkageSeconds.Equals(other.UnpaidShrinkageSeconds)
             ) &&
             (
-                this.PlannedShrinkageSeconds == other.PlannedShrinkageSeconds ||
-                this.PlannedShrinkageSeconds != null &&
-                this.PlannedShrinkageSeconds.Equals(other.PlannedShrinkageSeconds)
+                PlannedShrinkageSeconds == other.PlannedShrinkageSeconds ||
+                PlannedShrinkageSeconds != null &&
+                PlannedShrinkageSeconds.Equals(other.PlannedShrinkageSeconds)
             ) &&
             (
-                this.UnplannedShrinkageSeconds == other.UnplannedShrinkageSeconds ||
-                this.UnplannedShrinkageSeconds != null &&
-                this.UnplannedShrinkageSeconds.Equals(other.UnplannedShrinkageSeconds)
+                UnplannedShrinkageSeconds == other.UnplannedShrinkageSeconds ||
+                UnplannedShrinkageSeconds != null &&
+                UnplannedShrinkageSeconds.Equals(other.UnplannedShrinkageSeconds)
             );
     }
 
@@ -207,44 +207,44 @@ public partial class HistoricalShrinkageAggregateResponse : IEquatable<Historica
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ScheduledShrinkageSeconds != null)
+            if (ScheduledShrinkageSeconds != null)
             {
-                hash = hash * 59 + this.ScheduledShrinkageSeconds.GetHashCode();
+                hash = hash * 59 + ScheduledShrinkageSeconds.GetHashCode();
             }
 
-            if (this.ScheduledShrinkagePercent != null)
+            if (ScheduledShrinkagePercent != null)
             {
-                hash = hash * 59 + this.ScheduledShrinkagePercent.GetHashCode();
+                hash = hash * 59 + ScheduledShrinkagePercent.GetHashCode();
             }
 
-            if (this.ActualShrinkageSeconds != null)
+            if (ActualShrinkageSeconds != null)
             {
-                hash = hash * 59 + this.ActualShrinkageSeconds.GetHashCode();
+                hash = hash * 59 + ActualShrinkageSeconds.GetHashCode();
             }
 
-            if (this.ActualShrinkagePercent != null)
+            if (ActualShrinkagePercent != null)
             {
-                hash = hash * 59 + this.ActualShrinkagePercent.GetHashCode();
+                hash = hash * 59 + ActualShrinkagePercent.GetHashCode();
             }
 
-            if (this.PaidShrinkageSeconds != null)
+            if (PaidShrinkageSeconds != null)
             {
-                hash = hash * 59 + this.PaidShrinkageSeconds.GetHashCode();
+                hash = hash * 59 + PaidShrinkageSeconds.GetHashCode();
             }
 
-            if (this.UnpaidShrinkageSeconds != null)
+            if (UnpaidShrinkageSeconds != null)
             {
-                hash = hash * 59 + this.UnpaidShrinkageSeconds.GetHashCode();
+                hash = hash * 59 + UnpaidShrinkageSeconds.GetHashCode();
             }
 
-            if (this.PlannedShrinkageSeconds != null)
+            if (PlannedShrinkageSeconds != null)
             {
-                hash = hash * 59 + this.PlannedShrinkageSeconds.GetHashCode();
+                hash = hash * 59 + PlannedShrinkageSeconds.GetHashCode();
             }
 
-            if (this.UnplannedShrinkageSeconds != null)
+            if (UnplannedShrinkageSeconds != null)
             {
-                hash = hash * 59 + this.UnplannedShrinkageSeconds.GetHashCode();
+                hash = hash * 59 + UnplannedShrinkageSeconds.GetHashCode();
             }
 
             return hash;

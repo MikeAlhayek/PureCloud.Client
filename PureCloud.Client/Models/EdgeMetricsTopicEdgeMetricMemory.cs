@@ -74,7 +74,7 @@ public partial class EdgeMetricsTopicEdgeMetricMemory : IEquatable<EdgeMetricsTo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeMetricsTopicEdgeMetricMemory);
+        return Equals(obj as EdgeMetricsTopicEdgeMetricMemory);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class EdgeMetricsTopicEdgeMetricMemory : IEquatable<EdgeMetricsTo
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.AvailableBytes == other.AvailableBytes ||
-                this.AvailableBytes != null &&
-                this.AvailableBytes.Equals(other.AvailableBytes)
+                AvailableBytes == other.AvailableBytes ||
+                AvailableBytes != null &&
+                AvailableBytes.Equals(other.AvailableBytes)
             ) &&
             (
-                this.TotalBytes == other.TotalBytes ||
-                this.TotalBytes != null &&
-                this.TotalBytes.Equals(other.TotalBytes)
+                TotalBytes == other.TotalBytes ||
+                TotalBytes != null &&
+                TotalBytes.Equals(other.TotalBytes)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class EdgeMetricsTopicEdgeMetricMemory : IEquatable<EdgeMetricsTo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.AvailableBytes != null)
+            if (AvailableBytes != null)
             {
-                hash = hash * 59 + this.AvailableBytes.GetHashCode();
+                hash = hash * 59 + AvailableBytes.GetHashCode();
             }
 
-            if (this.TotalBytes != null)
+            if (TotalBytes != null)
             {
-                hash = hash * 59 + this.TotalBytes.GetHashCode();
+                hash = hash * 59 + TotalBytes.GetHashCode();
             }
 
             return hash;

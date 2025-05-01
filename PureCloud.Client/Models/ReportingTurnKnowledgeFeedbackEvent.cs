@@ -113,7 +113,7 @@ public partial class ReportingTurnKnowledgeFeedbackEvent : IEquatable<ReportingT
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingTurnKnowledgeFeedbackEvent);
+        return Equals(obj as ReportingTurnKnowledgeFeedbackEvent);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class ReportingTurnKnowledgeFeedbackEvent : IEquatable<ReportingT
 
         return true &&
             (
-                this.SearchId == other.SearchId ||
-                this.SearchId != null &&
-                this.SearchId.Equals(other.SearchId)
+                SearchId == other.SearchId ||
+                SearchId != null &&
+                SearchId.Equals(other.SearchId)
             ) &&
             (
-                this.KnowledgeBaseId == other.KnowledgeBaseId ||
-                this.KnowledgeBaseId != null &&
-                this.KnowledgeBaseId.Equals(other.KnowledgeBaseId)
+                KnowledgeBaseId == other.KnowledgeBaseId ||
+                KnowledgeBaseId != null &&
+                KnowledgeBaseId.Equals(other.KnowledgeBaseId)
             ) &&
             (
-                this.Documents == other.Documents ||
-                this.Documents != null &&
-                this.Documents.SequenceEqual(other.Documents)
+                Documents == other.Documents ||
+                Documents != null &&
+                Documents.SequenceEqual(other.Documents)
             ) &&
             (
-                this.FeedbackRating == other.FeedbackRating ||
-                this.FeedbackRating != null &&
-                this.FeedbackRating.Equals(other.FeedbackRating)
+                FeedbackRating == other.FeedbackRating ||
+                FeedbackRating != null &&
+                FeedbackRating.Equals(other.FeedbackRating)
             ) &&
             (
-                this.DocumentVariationId == other.DocumentVariationId ||
-                this.DocumentVariationId != null &&
-                this.DocumentVariationId.Equals(other.DocumentVariationId)
+                DocumentVariationId == other.DocumentVariationId ||
+                DocumentVariationId != null &&
+                DocumentVariationId.Equals(other.DocumentVariationId)
             ) &&
             (
-                this.DocumentVersionId == other.DocumentVersionId ||
-                this.DocumentVersionId != null &&
-                this.DocumentVersionId.Equals(other.DocumentVersionId)
+                DocumentVersionId == other.DocumentVersionId ||
+                DocumentVersionId != null &&
+                DocumentVersionId.Equals(other.DocumentVersionId)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class ReportingTurnKnowledgeFeedbackEvent : IEquatable<ReportingT
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SearchId != null)
+            if (SearchId != null)
             {
-                hash = hash * 59 + this.SearchId.GetHashCode();
+                hash = hash * 59 + SearchId.GetHashCode();
             }
 
-            if (this.KnowledgeBaseId != null)
+            if (KnowledgeBaseId != null)
             {
-                hash = hash * 59 + this.KnowledgeBaseId.GetHashCode();
+                hash = hash * 59 + KnowledgeBaseId.GetHashCode();
             }
 
-            if (this.Documents != null)
+            if (Documents != null)
             {
-                hash = hash * 59 + this.Documents.GetHashCode();
+                hash = hash * 59 + Documents.GetHashCode();
             }
 
-            if (this.FeedbackRating != null)
+            if (FeedbackRating != null)
             {
-                hash = hash * 59 + this.FeedbackRating.GetHashCode();
+                hash = hash * 59 + FeedbackRating.GetHashCode();
             }
 
-            if (this.DocumentVariationId != null)
+            if (DocumentVariationId != null)
             {
-                hash = hash * 59 + this.DocumentVariationId.GetHashCode();
+                hash = hash * 59 + DocumentVariationId.GetHashCode();
             }
 
-            if (this.DocumentVersionId != null)
+            if (DocumentVersionId != null)
             {
-                hash = hash * 59 + this.DocumentVersionId.GetHashCode();
+                hash = hash * 59 + DocumentVersionId.GetHashCode();
             }
 
             return hash;

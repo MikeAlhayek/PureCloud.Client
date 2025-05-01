@@ -240,7 +240,7 @@ public partial class LocationDefinition : IEquatable<LocationDefinition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LocationDefinition);
+        return Equals(obj as LocationDefinition);
     }
 
     /// <summary>
@@ -258,84 +258,84 @@ public partial class LocationDefinition : IEquatable<LocationDefinition>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ContactUser == other.ContactUser ||
-                this.ContactUser != null &&
-                this.ContactUser.Equals(other.ContactUser)
+                ContactUser == other.ContactUser ||
+                ContactUser != null &&
+                ContactUser.Equals(other.ContactUser)
             ) &&
             (
-                this.EmergencyNumber == other.EmergencyNumber ||
-                this.EmergencyNumber != null &&
-                this.EmergencyNumber.Equals(other.EmergencyNumber)
+                EmergencyNumber == other.EmergencyNumber ||
+                EmergencyNumber != null &&
+                EmergencyNumber.Equals(other.EmergencyNumber)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Path == other.Path ||
-                this.Path != null &&
-                this.Path.SequenceEqual(other.Path)
+                Path == other.Path ||
+                Path != null &&
+                Path.SequenceEqual(other.Path)
             ) &&
             (
-                this.ProfileImage == other.ProfileImage ||
-                this.ProfileImage != null &&
-                this.ProfileImage.SequenceEqual(other.ProfileImage)
+                ProfileImage == other.ProfileImage ||
+                ProfileImage != null &&
+                ProfileImage.SequenceEqual(other.ProfileImage)
             ) &&
             (
-                this.FloorplanImage == other.FloorplanImage ||
-                this.FloorplanImage != null &&
-                this.FloorplanImage.SequenceEqual(other.FloorplanImage)
+                FloorplanImage == other.FloorplanImage ||
+                FloorplanImage != null &&
+                FloorplanImage.SequenceEqual(other.FloorplanImage)
             ) &&
             (
-                this.AddressVerificationDetails == other.AddressVerificationDetails ||
-                this.AddressVerificationDetails != null &&
-                this.AddressVerificationDetails.Equals(other.AddressVerificationDetails)
+                AddressVerificationDetails == other.AddressVerificationDetails ||
+                AddressVerificationDetails != null &&
+                AddressVerificationDetails.Equals(other.AddressVerificationDetails)
             ) &&
             (
-                this.AddressVerified == other.AddressVerified ||
-                this.AddressVerified != null &&
-                this.AddressVerified.Equals(other.AddressVerified)
+                AddressVerified == other.AddressVerified ||
+                AddressVerified != null &&
+                AddressVerified.Equals(other.AddressVerified)
             ) &&
             (
-                this.AddressStored == other.AddressStored ||
-                this.AddressStored != null &&
-                this.AddressStored.Equals(other.AddressStored)
+                AddressStored == other.AddressStored ||
+                AddressStored != null &&
+                AddressStored.Equals(other.AddressStored)
             ) &&
             (
-                this.Images == other.Images ||
-                this.Images != null &&
-                this.Images.Equals(other.Images)
+                Images == other.Images ||
+                Images != null &&
+                Images.Equals(other.Images)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -350,84 +350,84 @@ public partial class LocationDefinition : IEquatable<LocationDefinition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ContactUser != null)
+            if (ContactUser != null)
             {
-                hash = hash * 59 + this.ContactUser.GetHashCode();
+                hash = hash * 59 + ContactUser.GetHashCode();
             }
 
-            if (this.EmergencyNumber != null)
+            if (EmergencyNumber != null)
             {
-                hash = hash * 59 + this.EmergencyNumber.GetHashCode();
+                hash = hash * 59 + EmergencyNumber.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Path != null)
+            if (Path != null)
             {
-                hash = hash * 59 + this.Path.GetHashCode();
+                hash = hash * 59 + Path.GetHashCode();
             }
 
-            if (this.ProfileImage != null)
+            if (ProfileImage != null)
             {
-                hash = hash * 59 + this.ProfileImage.GetHashCode();
+                hash = hash * 59 + ProfileImage.GetHashCode();
             }
 
-            if (this.FloorplanImage != null)
+            if (FloorplanImage != null)
             {
-                hash = hash * 59 + this.FloorplanImage.GetHashCode();
+                hash = hash * 59 + FloorplanImage.GetHashCode();
             }
 
-            if (this.AddressVerificationDetails != null)
+            if (AddressVerificationDetails != null)
             {
-                hash = hash * 59 + this.AddressVerificationDetails.GetHashCode();
+                hash = hash * 59 + AddressVerificationDetails.GetHashCode();
             }
 
-            if (this.AddressVerified != null)
+            if (AddressVerified != null)
             {
-                hash = hash * 59 + this.AddressVerified.GetHashCode();
+                hash = hash * 59 + AddressVerified.GetHashCode();
             }
 
-            if (this.AddressStored != null)
+            if (AddressStored != null)
             {
-                hash = hash * 59 + this.AddressStored.GetHashCode();
+                hash = hash * 59 + AddressStored.GetHashCode();
             }
 
-            if (this.Images != null)
+            if (Images != null)
             {
-                hash = hash * 59 + this.Images.GetHashCode();
+                hash = hash * 59 + Images.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

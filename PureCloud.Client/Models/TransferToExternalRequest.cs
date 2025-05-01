@@ -103,7 +103,7 @@ public partial class TransferToExternalRequest : IEquatable<TransferToExternalRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TransferToExternalRequest);
+        return Equals(obj as TransferToExternalRequest);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class TransferToExternalRequest : IEquatable<TransferToExternalRe
 
         return true &&
             (
-                this.TransferType == other.TransferType ||
-                this.TransferType != null &&
-                this.TransferType.Equals(other.TransferType)
+                TransferType == other.TransferType ||
+                TransferType != null &&
+                TransferType.Equals(other.TransferType)
             ) &&
             (
-                this.KeepInternalMessageAlive == other.KeepInternalMessageAlive ||
-                this.KeepInternalMessageAlive != null &&
-                this.KeepInternalMessageAlive.Equals(other.KeepInternalMessageAlive)
+                KeepInternalMessageAlive == other.KeepInternalMessageAlive ||
+                KeepInternalMessageAlive != null &&
+                KeepInternalMessageAlive.Equals(other.KeepInternalMessageAlive)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class TransferToExternalRequest : IEquatable<TransferToExternalRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TransferType != null)
+            if (TransferType != null)
             {
-                hash = hash * 59 + this.TransferType.GetHashCode();
+                hash = hash * 59 + TransferType.GetHashCode();
             }
 
-            if (this.KeepInternalMessageAlive != null)
+            if (KeepInternalMessageAlive != null)
             {
-                hash = hash * 59 + this.KeepInternalMessageAlive.GetHashCode();
+                hash = hash * 59 + KeepInternalMessageAlive.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
             return hash;

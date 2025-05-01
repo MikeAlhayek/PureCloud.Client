@@ -94,7 +94,7 @@ public partial class AgentIntegrationsResponse : IEquatable<AgentIntegrationsRes
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentIntegrationsResponse);
+        return Equals(obj as AgentIntegrationsResponse);
     }
 
     /// <summary>
@@ -112,24 +112,24 @@ public partial class AgentIntegrationsResponse : IEquatable<AgentIntegrationsRes
 
         return true &&
             (
-                this.Agent == other.Agent ||
-                this.Agent != null &&
-                this.Agent.Equals(other.Agent)
+                Agent == other.Agent ||
+                Agent != null &&
+                Agent.Equals(other.Agent)
             ) &&
             (
-                this.SelectedIntegration == other.SelectedIntegration ||
-                this.SelectedIntegration != null &&
-                this.SelectedIntegration.Equals(other.SelectedIntegration)
+                SelectedIntegration == other.SelectedIntegration ||
+                SelectedIntegration != null &&
+                SelectedIntegration.Equals(other.SelectedIntegration)
             ) &&
             (
-                this.UserSelected == other.UserSelected ||
-                this.UserSelected != null &&
-                this.UserSelected.Equals(other.UserSelected)
+                UserSelected == other.UserSelected ||
+                UserSelected != null &&
+                UserSelected.Equals(other.UserSelected)
             ) &&
             (
-                this.AssociatedIntegrations == other.AssociatedIntegrations ||
-                this.AssociatedIntegrations != null &&
-                this.AssociatedIntegrations.SequenceEqual(other.AssociatedIntegrations)
+                AssociatedIntegrations == other.AssociatedIntegrations ||
+                AssociatedIntegrations != null &&
+                AssociatedIntegrations.SequenceEqual(other.AssociatedIntegrations)
             );
     }
 
@@ -144,24 +144,24 @@ public partial class AgentIntegrationsResponse : IEquatable<AgentIntegrationsRes
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Agent != null)
+            if (Agent != null)
             {
-                hash = hash * 59 + this.Agent.GetHashCode();
+                hash = hash * 59 + Agent.GetHashCode();
             }
 
-            if (this.SelectedIntegration != null)
+            if (SelectedIntegration != null)
             {
-                hash = hash * 59 + this.SelectedIntegration.GetHashCode();
+                hash = hash * 59 + SelectedIntegration.GetHashCode();
             }
 
-            if (this.UserSelected != null)
+            if (UserSelected != null)
             {
-                hash = hash * 59 + this.UserSelected.GetHashCode();
+                hash = hash * 59 + UserSelected.GetHashCode();
             }
 
-            if (this.AssociatedIntegrations != null)
+            if (AssociatedIntegrations != null)
             {
-                hash = hash * 59 + this.AssociatedIntegrations.GetHashCode();
+                hash = hash * 59 + AssociatedIntegrations.GetHashCode();
             }
 
             return hash;

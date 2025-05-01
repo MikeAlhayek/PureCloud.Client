@@ -92,7 +92,7 @@ public partial class BotSummary : IEquatable<BotSummary>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BotSummary);
+        return Equals(obj as BotSummary);
     }
 
     /// <summary>
@@ -110,24 +110,24 @@ public partial class BotSummary : IEquatable<BotSummary>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.BotCompositeTag == other.BotCompositeTag ||
-                this.BotCompositeTag != null &&
-                this.BotCompositeTag.Equals(other.BotCompositeTag)
+                BotCompositeTag == other.BotCompositeTag ||
+                BotCompositeTag != null &&
+                BotCompositeTag.Equals(other.BotCompositeTag)
             );
     }
 
@@ -142,24 +142,24 @@ public partial class BotSummary : IEquatable<BotSummary>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.BotCompositeTag != null)
+            if (BotCompositeTag != null)
             {
-                hash = hash * 59 + this.BotCompositeTag.GetHashCode();
+                hash = hash * 59 + BotCompositeTag.GetHashCode();
             }
 
             return hash;

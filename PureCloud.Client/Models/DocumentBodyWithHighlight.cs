@@ -59,7 +59,7 @@ public partial class DocumentBodyWithHighlight : IEquatable<DocumentBodyWithHigh
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyWithHighlight);
+        return Equals(obj as DocumentBodyWithHighlight);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class DocumentBodyWithHighlight : IEquatable<DocumentBodyWithHigh
 
         return true &&
             (
-                this.Blocks == other.Blocks ||
-                this.Blocks != null &&
-                this.Blocks.SequenceEqual(other.Blocks)
+                Blocks == other.Blocks ||
+                Blocks != null &&
+                Blocks.SequenceEqual(other.Blocks)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class DocumentBodyWithHighlight : IEquatable<DocumentBodyWithHigh
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Blocks != null)
+            if (Blocks != null)
             {
-                hash = hash * 59 + this.Blocks.GetHashCode();
+                hash = hash * 59 + Blocks.GetHashCode();
             }
 
             return hash;

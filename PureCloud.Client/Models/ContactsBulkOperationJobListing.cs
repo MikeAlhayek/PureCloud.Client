@@ -74,7 +74,7 @@ public partial class ContactsBulkOperationJobListing : IEquatable<ContactsBulkOp
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactsBulkOperationJobListing);
+        return Equals(obj as ContactsBulkOperationJobListing);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class ContactsBulkOperationJobListing : IEquatable<ContactsBulkOp
 
         return true &&
             (
-                this.Total == other.Total ||
-                this.Total != null &&
-                this.Total.Equals(other.Total)
+                Total == other.Total ||
+                Total != null &&
+                Total.Equals(other.Total)
             ) &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class ContactsBulkOperationJobListing : IEquatable<ContactsBulkOp
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Total != null)
+            if (Total != null)
             {
-                hash = hash * 59 + this.Total.GetHashCode();
+                hash = hash * 59 + Total.GetHashCode();
             }
 
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

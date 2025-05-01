@@ -160,7 +160,7 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluatorActivity);
+        return Equals(obj as EvaluatorActivity);
     }
 
     /// <summary>
@@ -178,59 +178,59 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Evaluator == other.Evaluator ||
-                this.Evaluator != null &&
-                this.Evaluator.Equals(other.Evaluator)
+                Evaluator == other.Evaluator ||
+                Evaluator != null &&
+                Evaluator.Equals(other.Evaluator)
             ) &&
             (
-                this.NumEvaluationsAssigned == other.NumEvaluationsAssigned ||
-                this.NumEvaluationsAssigned != null &&
-                this.NumEvaluationsAssigned.Equals(other.NumEvaluationsAssigned)
+                NumEvaluationsAssigned == other.NumEvaluationsAssigned ||
+                NumEvaluationsAssigned != null &&
+                NumEvaluationsAssigned.Equals(other.NumEvaluationsAssigned)
             ) &&
             (
-                this.NumEvaluationsStarted == other.NumEvaluationsStarted ||
-                this.NumEvaluationsStarted != null &&
-                this.NumEvaluationsStarted.Equals(other.NumEvaluationsStarted)
+                NumEvaluationsStarted == other.NumEvaluationsStarted ||
+                NumEvaluationsStarted != null &&
+                NumEvaluationsStarted.Equals(other.NumEvaluationsStarted)
             ) &&
             (
-                this.NumEvaluationsCompleted == other.NumEvaluationsCompleted ||
-                this.NumEvaluationsCompleted != null &&
-                this.NumEvaluationsCompleted.Equals(other.NumEvaluationsCompleted)
+                NumEvaluationsCompleted == other.NumEvaluationsCompleted ||
+                NumEvaluationsCompleted != null &&
+                NumEvaluationsCompleted.Equals(other.NumEvaluationsCompleted)
             ) &&
             (
-                this.NumCalibrationsAssigned == other.NumCalibrationsAssigned ||
-                this.NumCalibrationsAssigned != null &&
-                this.NumCalibrationsAssigned.Equals(other.NumCalibrationsAssigned)
+                NumCalibrationsAssigned == other.NumCalibrationsAssigned ||
+                NumCalibrationsAssigned != null &&
+                NumCalibrationsAssigned.Equals(other.NumCalibrationsAssigned)
             ) &&
             (
-                this.NumCalibrationsStarted == other.NumCalibrationsStarted ||
-                this.NumCalibrationsStarted != null &&
-                this.NumCalibrationsStarted.Equals(other.NumCalibrationsStarted)
+                NumCalibrationsStarted == other.NumCalibrationsStarted ||
+                NumCalibrationsStarted != null &&
+                NumCalibrationsStarted.Equals(other.NumCalibrationsStarted)
             ) &&
             (
-                this.NumCalibrationsCompleted == other.NumCalibrationsCompleted ||
-                this.NumCalibrationsCompleted != null &&
-                this.NumCalibrationsCompleted.Equals(other.NumCalibrationsCompleted)
+                NumCalibrationsCompleted == other.NumCalibrationsCompleted ||
+                NumCalibrationsCompleted != null &&
+                NumCalibrationsCompleted.Equals(other.NumCalibrationsCompleted)
             ) &&
             (
-                this.NumEvaluationsWithoutViewPermission == other.NumEvaluationsWithoutViewPermission ||
-                this.NumEvaluationsWithoutViewPermission != null &&
-                this.NumEvaluationsWithoutViewPermission.Equals(other.NumEvaluationsWithoutViewPermission)
+                NumEvaluationsWithoutViewPermission == other.NumEvaluationsWithoutViewPermission ||
+                NumEvaluationsWithoutViewPermission != null &&
+                NumEvaluationsWithoutViewPermission.Equals(other.NumEvaluationsWithoutViewPermission)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -245,59 +245,59 @@ public partial class EvaluatorActivity : IEquatable<EvaluatorActivity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Evaluator != null)
+            if (Evaluator != null)
             {
-                hash = hash * 59 + this.Evaluator.GetHashCode();
+                hash = hash * 59 + Evaluator.GetHashCode();
             }
 
-            if (this.NumEvaluationsAssigned != null)
+            if (NumEvaluationsAssigned != null)
             {
-                hash = hash * 59 + this.NumEvaluationsAssigned.GetHashCode();
+                hash = hash * 59 + NumEvaluationsAssigned.GetHashCode();
             }
 
-            if (this.NumEvaluationsStarted != null)
+            if (NumEvaluationsStarted != null)
             {
-                hash = hash * 59 + this.NumEvaluationsStarted.GetHashCode();
+                hash = hash * 59 + NumEvaluationsStarted.GetHashCode();
             }
 
-            if (this.NumEvaluationsCompleted != null)
+            if (NumEvaluationsCompleted != null)
             {
-                hash = hash * 59 + this.NumEvaluationsCompleted.GetHashCode();
+                hash = hash * 59 + NumEvaluationsCompleted.GetHashCode();
             }
 
-            if (this.NumCalibrationsAssigned != null)
+            if (NumCalibrationsAssigned != null)
             {
-                hash = hash * 59 + this.NumCalibrationsAssigned.GetHashCode();
+                hash = hash * 59 + NumCalibrationsAssigned.GetHashCode();
             }
 
-            if (this.NumCalibrationsStarted != null)
+            if (NumCalibrationsStarted != null)
             {
-                hash = hash * 59 + this.NumCalibrationsStarted.GetHashCode();
+                hash = hash * 59 + NumCalibrationsStarted.GetHashCode();
             }
 
-            if (this.NumCalibrationsCompleted != null)
+            if (NumCalibrationsCompleted != null)
             {
-                hash = hash * 59 + this.NumCalibrationsCompleted.GetHashCode();
+                hash = hash * 59 + NumCalibrationsCompleted.GetHashCode();
             }
 
-            if (this.NumEvaluationsWithoutViewPermission != null)
+            if (NumEvaluationsWithoutViewPermission != null)
             {
-                hash = hash * 59 + this.NumEvaluationsWithoutViewPermission.GetHashCode();
+                hash = hash * 59 + NumEvaluationsWithoutViewPermission.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

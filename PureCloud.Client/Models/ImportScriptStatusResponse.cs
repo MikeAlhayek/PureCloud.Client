@@ -74,7 +74,7 @@ public partial class ImportScriptStatusResponse : IEquatable<ImportScriptStatusR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ImportScriptStatusResponse);
+        return Equals(obj as ImportScriptStatusResponse);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class ImportScriptStatusResponse : IEquatable<ImportScriptStatusR
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Succeeded == other.Succeeded ||
-                this.Succeeded != null &&
-                this.Succeeded.Equals(other.Succeeded)
+                Succeeded == other.Succeeded ||
+                Succeeded != null &&
+                Succeeded.Equals(other.Succeeded)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class ImportScriptStatusResponse : IEquatable<ImportScriptStatusR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Succeeded != null)
+            if (Succeeded != null)
             {
-                hash = hash * 59 + this.Succeeded.GetHashCode();
+                hash = hash * 59 + Succeeded.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
             return hash;

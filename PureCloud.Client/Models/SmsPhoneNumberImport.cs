@@ -165,7 +165,7 @@ public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SmsPhoneNumberImport);
+        return Equals(obj as SmsPhoneNumberImport);
     }
 
     /// <summary>
@@ -183,39 +183,39 @@ public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.PhoneNumberType == other.PhoneNumberType ||
-                this.PhoneNumberType != null &&
-                this.PhoneNumberType.Equals(other.PhoneNumberType)
+                PhoneNumberType == other.PhoneNumberType ||
+                PhoneNumberType != null &&
+                PhoneNumberType.Equals(other.PhoneNumberType)
             ) &&
             (
-                this.CountryCode == other.CountryCode ||
-                this.CountryCode != null &&
-                this.CountryCode.Equals(other.CountryCode)
+                CountryCode == other.CountryCode ||
+                CountryCode != null &&
+                CountryCode.Equals(other.CountryCode)
             ) &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             ) &&
             (
-                this.Compliance == other.Compliance ||
-                this.Compliance != null &&
-                this.Compliance.Equals(other.Compliance)
+                Compliance == other.Compliance ||
+                Compliance != null &&
+                Compliance.Equals(other.Compliance)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -230,39 +230,39 @@ public partial class SmsPhoneNumberImport : IEquatable<SmsPhoneNumberImport>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.PhoneNumberType != null)
+            if (PhoneNumberType != null)
             {
-                hash = hash * 59 + this.PhoneNumberType.GetHashCode();
+                hash = hash * 59 + PhoneNumberType.GetHashCode();
             }
 
-            if (this.CountryCode != null)
+            if (CountryCode != null)
             {
-                hash = hash * 59 + this.CountryCode.GetHashCode();
+                hash = hash * 59 + CountryCode.GetHashCode();
             }
 
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
-            if (this.Compliance != null)
+            if (Compliance != null)
             {
-                hash = hash * 59 + this.Compliance.GetHashCode();
+                hash = hash * 59 + Compliance.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

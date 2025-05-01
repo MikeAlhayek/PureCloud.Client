@@ -103,7 +103,7 @@ public partial class InfixOperator : IEquatable<InfixOperator>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InfixOperator);
+        return Equals(obj as InfixOperator);
     }
 
     /// <summary>
@@ -121,14 +121,14 @@ public partial class InfixOperator : IEquatable<InfixOperator>
 
         return true &&
             (
-                this.OperatorType == other.OperatorType ||
-                this.OperatorType != null &&
-                this.OperatorType.Equals(other.OperatorType)
+                OperatorType == other.OperatorType ||
+                OperatorType != null &&
+                OperatorType.Equals(other.OperatorType)
             ) &&
             (
-                this.OperatorPosition == other.OperatorPosition ||
-                this.OperatorPosition != null &&
-                this.OperatorPosition.Equals(other.OperatorPosition)
+                OperatorPosition == other.OperatorPosition ||
+                OperatorPosition != null &&
+                OperatorPosition.Equals(other.OperatorPosition)
             );
     }
 
@@ -143,14 +143,14 @@ public partial class InfixOperator : IEquatable<InfixOperator>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OperatorType != null)
+            if (OperatorType != null)
             {
-                hash = hash * 59 + this.OperatorType.GetHashCode();
+                hash = hash * 59 + OperatorType.GetHashCode();
             }
 
-            if (this.OperatorPosition != null)
+            if (OperatorPosition != null)
             {
-                hash = hash * 59 + this.OperatorPosition.GetHashCode();
+                hash = hash * 59 + OperatorPosition.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class ContentSetting : IEquatable<ContentSetting>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentSetting);
+        return Equals(obj as ContentSetting);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ContentSetting : IEquatable<ContentSetting>
 
         return true &&
             (
-                this.Story == other.Story ||
-                this.Story != null &&
-                this.Story.Equals(other.Story)
+                Story == other.Story ||
+                Story != null &&
+                Story.Equals(other.Story)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ContentSetting : IEquatable<ContentSetting>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Story != null)
+            if (Story != null)
             {
-                hash = hash * 59 + this.Story.GetHashCode();
+                hash = hash * 59 + Story.GetHashCode();
             }
 
             return hash;

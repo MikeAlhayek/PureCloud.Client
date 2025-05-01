@@ -161,7 +161,7 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WritableDialerContact);
+        return Equals(obj as WritableDialerContact);
     }
 
     /// <summary>
@@ -179,54 +179,54 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ContactListId == other.ContactListId ||
-                this.ContactListId != null &&
-                this.ContactListId.Equals(other.ContactListId)
+                ContactListId == other.ContactListId ||
+                ContactListId != null &&
+                ContactListId.Equals(other.ContactListId)
             ) &&
             (
-                this.Data == other.Data ||
-                this.Data != null &&
-                this.Data.SequenceEqual(other.Data)
+                Data == other.Data ||
+                Data != null &&
+                Data.SequenceEqual(other.Data)
             ) &&
             (
-                this.LatestSmsEvaluations == other.LatestSmsEvaluations ||
-                this.LatestSmsEvaluations != null &&
-                this.LatestSmsEvaluations.SequenceEqual(other.LatestSmsEvaluations)
+                LatestSmsEvaluations == other.LatestSmsEvaluations ||
+                LatestSmsEvaluations != null &&
+                LatestSmsEvaluations.SequenceEqual(other.LatestSmsEvaluations)
             ) &&
             (
-                this.LatestEmailEvaluations == other.LatestEmailEvaluations ||
-                this.LatestEmailEvaluations != null &&
-                this.LatestEmailEvaluations.SequenceEqual(other.LatestEmailEvaluations)
+                LatestEmailEvaluations == other.LatestEmailEvaluations ||
+                LatestEmailEvaluations != null &&
+                LatestEmailEvaluations.SequenceEqual(other.LatestEmailEvaluations)
             ) &&
             (
-                this.LatestWhatsAppEvaluations == other.LatestWhatsAppEvaluations ||
-                this.LatestWhatsAppEvaluations != null &&
-                this.LatestWhatsAppEvaluations.SequenceEqual(other.LatestWhatsAppEvaluations)
+                LatestWhatsAppEvaluations == other.LatestWhatsAppEvaluations ||
+                LatestWhatsAppEvaluations != null &&
+                LatestWhatsAppEvaluations.SequenceEqual(other.LatestWhatsAppEvaluations)
             ) &&
             (
-                this.Callable == other.Callable ||
-                this.Callable != null &&
-                this.Callable.Equals(other.Callable)
+                Callable == other.Callable ||
+                Callable != null &&
+                Callable.Equals(other.Callable)
             ) &&
             (
-                this.PhoneNumberStatus == other.PhoneNumberStatus ||
-                this.PhoneNumberStatus != null &&
-                this.PhoneNumberStatus.SequenceEqual(other.PhoneNumberStatus)
+                PhoneNumberStatus == other.PhoneNumberStatus ||
+                PhoneNumberStatus != null &&
+                PhoneNumberStatus.SequenceEqual(other.PhoneNumberStatus)
             ) &&
             (
-                this.ContactableStatus == other.ContactableStatus ||
-                this.ContactableStatus != null &&
-                this.ContactableStatus.SequenceEqual(other.ContactableStatus)
+                ContactableStatus == other.ContactableStatus ||
+                ContactableStatus != null &&
+                ContactableStatus.SequenceEqual(other.ContactableStatus)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             );
     }
 
@@ -241,54 +241,54 @@ public partial class WritableDialerContact : IEquatable<WritableDialerContact>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ContactListId != null)
+            if (ContactListId != null)
             {
-                hash = hash * 59 + this.ContactListId.GetHashCode();
+                hash = hash * 59 + ContactListId.GetHashCode();
             }
 
-            if (this.Data != null)
+            if (Data != null)
             {
-                hash = hash * 59 + this.Data.GetHashCode();
+                hash = hash * 59 + Data.GetHashCode();
             }
 
-            if (this.LatestSmsEvaluations != null)
+            if (LatestSmsEvaluations != null)
             {
-                hash = hash * 59 + this.LatestSmsEvaluations.GetHashCode();
+                hash = hash * 59 + LatestSmsEvaluations.GetHashCode();
             }
 
-            if (this.LatestEmailEvaluations != null)
+            if (LatestEmailEvaluations != null)
             {
-                hash = hash * 59 + this.LatestEmailEvaluations.GetHashCode();
+                hash = hash * 59 + LatestEmailEvaluations.GetHashCode();
             }
 
-            if (this.LatestWhatsAppEvaluations != null)
+            if (LatestWhatsAppEvaluations != null)
             {
-                hash = hash * 59 + this.LatestWhatsAppEvaluations.GetHashCode();
+                hash = hash * 59 + LatestWhatsAppEvaluations.GetHashCode();
             }
 
-            if (this.Callable != null)
+            if (Callable != null)
             {
-                hash = hash * 59 + this.Callable.GetHashCode();
+                hash = hash * 59 + Callable.GetHashCode();
             }
 
-            if (this.PhoneNumberStatus != null)
+            if (PhoneNumberStatus != null)
             {
-                hash = hash * 59 + this.PhoneNumberStatus.GetHashCode();
+                hash = hash * 59 + PhoneNumberStatus.GetHashCode();
             }
 
-            if (this.ContactableStatus != null)
+            if (ContactableStatus != null)
             {
-                hash = hash * 59 + this.ContactableStatus.GetHashCode();
+                hash = hash * 59 + ContactableStatus.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
             return hash;

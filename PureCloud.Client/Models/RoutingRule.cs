@@ -103,7 +103,7 @@ public partial class RoutingRule : IEquatable<RoutingRule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoutingRule);
+        return Equals(obj as RoutingRule);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class RoutingRule : IEquatable<RoutingRule>
 
         return true &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Threshold == other.Threshold ||
-                this.Threshold != null &&
-                this.Threshold.Equals(other.Threshold)
+                Threshold == other.Threshold ||
+                Threshold != null &&
+                Threshold.Equals(other.Threshold)
             ) &&
             (
-                this.WaitSeconds == other.WaitSeconds ||
-                this.WaitSeconds != null &&
-                this.WaitSeconds.Equals(other.WaitSeconds)
+                WaitSeconds == other.WaitSeconds ||
+                WaitSeconds != null &&
+                WaitSeconds.Equals(other.WaitSeconds)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class RoutingRule : IEquatable<RoutingRule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Threshold != null)
+            if (Threshold != null)
             {
-                hash = hash * 59 + this.Threshold.GetHashCode();
+                hash = hash * 59 + Threshold.GetHashCode();
             }
 
-            if (this.WaitSeconds != null)
+            if (WaitSeconds != null)
             {
-                hash = hash * 59 + this.WaitSeconds.GetHashCode();
+                hash = hash * 59 + WaitSeconds.GetHashCode();
             }
 
             return hash;

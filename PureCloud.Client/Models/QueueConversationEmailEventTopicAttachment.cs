@@ -101,7 +101,7 @@ public partial class QueueConversationEmailEventTopicAttachment : IEquatable<Que
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationEmailEventTopicAttachment);
+        return Equals(obj as QueueConversationEmailEventTopicAttachment);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class QueueConversationEmailEventTopicAttachment : IEquatable<Que
 
         return true &&
             (
-                this.AttachmentId == other.AttachmentId ||
-                this.AttachmentId != null &&
-                this.AttachmentId.Equals(other.AttachmentId)
+                AttachmentId == other.AttachmentId ||
+                AttachmentId != null &&
+                AttachmentId.Equals(other.AttachmentId)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ContentUri == other.ContentUri ||
-                this.ContentUri != null &&
-                this.ContentUri.Equals(other.ContentUri)
+                ContentUri == other.ContentUri ||
+                ContentUri != null &&
+                ContentUri.Equals(other.ContentUri)
             ) &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.ContentLength == other.ContentLength ||
-                this.ContentLength != null &&
-                this.ContentLength.Equals(other.ContentLength)
+                ContentLength == other.ContentLength ||
+                ContentLength != null &&
+                ContentLength.Equals(other.ContentLength)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class QueueConversationEmailEventTopicAttachment : IEquatable<Que
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AttachmentId != null)
+            if (AttachmentId != null)
             {
-                hash = hash * 59 + this.AttachmentId.GetHashCode();
+                hash = hash * 59 + AttachmentId.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ContentUri != null)
+            if (ContentUri != null)
             {
-                hash = hash * 59 + this.ContentUri.GetHashCode();
+                hash = hash * 59 + ContentUri.GetHashCode();
             }
 
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.ContentLength != null)
+            if (ContentLength != null)
             {
-                hash = hash * 59 + this.ContentLength.GetHashCode();
+                hash = hash * 59 + ContentLength.GetHashCode();
             }
 
             return hash;

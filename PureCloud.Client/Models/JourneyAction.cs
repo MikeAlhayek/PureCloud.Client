@@ -71,7 +71,7 @@ public partial class JourneyAction : IEquatable<JourneyAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyAction);
+        return Equals(obj as JourneyAction);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class JourneyAction : IEquatable<JourneyAction>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ActionMap == other.ActionMap ||
-                this.ActionMap != null &&
-                this.ActionMap.Equals(other.ActionMap)
+                ActionMap == other.ActionMap ||
+                ActionMap != null &&
+                ActionMap.Equals(other.ActionMap)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class JourneyAction : IEquatable<JourneyAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ActionMap != null)
+            if (ActionMap != null)
             {
-                hash = hash * 59 + this.ActionMap.GetHashCode();
+                hash = hash * 59 + ActionMap.GetHashCode();
             }
 
             return hash;

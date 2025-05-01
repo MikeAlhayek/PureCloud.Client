@@ -65,7 +65,7 @@ public partial class WorkitemStatusFilter : IEquatable<WorkitemStatusFilter>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemStatusFilter);
+        return Equals(obj as WorkitemStatusFilter);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class WorkitemStatusFilter : IEquatable<WorkitemStatusFilter>
 
         return true &&
             (
-                this.WorktypeId == other.WorktypeId ||
-                this.WorktypeId != null &&
-                this.WorktypeId.Equals(other.WorktypeId)
+                WorktypeId == other.WorktypeId ||
+                WorktypeId != null &&
+                WorktypeId.Equals(other.WorktypeId)
             ) &&
             (
-                this.WorkitemStatusId == other.WorkitemStatusId ||
-                this.WorkitemStatusId != null &&
-                this.WorkitemStatusId.Equals(other.WorkitemStatusId)
+                WorkitemStatusId == other.WorkitemStatusId ||
+                WorkitemStatusId != null &&
+                WorkitemStatusId.Equals(other.WorkitemStatusId)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class WorkitemStatusFilter : IEquatable<WorkitemStatusFilter>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WorktypeId != null)
+            if (WorktypeId != null)
             {
-                hash = hash * 59 + this.WorktypeId.GetHashCode();
+                hash = hash * 59 + WorktypeId.GetHashCode();
             }
 
-            if (this.WorkitemStatusId != null)
+            if (WorkitemStatusId != null)
             {
-                hash = hash * 59 + this.WorkitemStatusId.GetHashCode();
+                hash = hash * 59 + WorkitemStatusId.GetHashCode();
             }
 
             return hash;

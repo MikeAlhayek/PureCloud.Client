@@ -133,7 +133,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestCompleteData :
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2WemEngagementCelebrationUpdatesTopicContestCompleteData);
+        return Equals(obj as V2WemEngagementCelebrationUpdatesTopicContestCompleteData);
     }
 
     /// <summary>
@@ -151,29 +151,29 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestCompleteData :
 
         return true &&
             (
-                this.DateEnd == other.DateEnd ||
-                this.DateEnd != null &&
-                this.DateEnd.Equals(other.DateEnd)
+                DateEnd == other.DateEnd ||
+                DateEnd != null &&
+                DateEnd.Equals(other.DateEnd)
             ) &&
             (
-                this.Anonymization == other.Anonymization ||
-                this.Anonymization != null &&
-                this.Anonymization.Equals(other.Anonymization)
+                Anonymization == other.Anonymization ||
+                Anonymization != null &&
+                Anonymization.Equals(other.Anonymization)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.Prizes == other.Prizes ||
-                this.Prizes != null &&
-                this.Prizes.SequenceEqual(other.Prizes)
+                Prizes == other.Prizes ||
+                Prizes != null &&
+                Prizes.SequenceEqual(other.Prizes)
             ) &&
             (
-                this.Winners == other.Winners ||
-                this.Winners != null &&
-                this.Winners.SequenceEqual(other.Winners)
+                Winners == other.Winners ||
+                Winners != null &&
+                Winners.SequenceEqual(other.Winners)
             );
     }
 
@@ -188,29 +188,29 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestCompleteData :
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateEnd != null)
+            if (DateEnd != null)
             {
-                hash = hash * 59 + this.DateEnd.GetHashCode();
+                hash = hash * 59 + DateEnd.GetHashCode();
             }
 
-            if (this.Anonymization != null)
+            if (Anonymization != null)
             {
-                hash = hash * 59 + this.Anonymization.GetHashCode();
+                hash = hash * 59 + Anonymization.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.Prizes != null)
+            if (Prizes != null)
             {
-                hash = hash * 59 + this.Prizes.GetHashCode();
+                hash = hash * 59 + Prizes.GetHashCode();
             }
 
-            if (this.Winners != null)
+            if (Winners != null)
             {
-                hash = hash * 59 + this.Winners.GetHashCode();
+                hash = hash * 59 + Winners.GetHashCode();
             }
 
             return hash;

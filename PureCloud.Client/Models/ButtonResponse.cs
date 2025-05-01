@@ -153,7 +153,7 @@ public partial class ButtonResponse : IEquatable<ButtonResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ButtonResponse);
+        return Equals(obj as ButtonResponse);
     }
 
     /// <summary>
@@ -171,24 +171,24 @@ public partial class ButtonResponse : IEquatable<ButtonResponse>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Payload == other.Payload ||
-                this.Payload != null &&
-                this.Payload.Equals(other.Payload)
+                Payload == other.Payload ||
+                Payload != null &&
+                Payload.Equals(other.Payload)
             ) &&
             (
-                this.MessageType == other.MessageType ||
-                this.MessageType != null &&
-                this.MessageType.Equals(other.MessageType)
+                MessageType == other.MessageType ||
+                MessageType != null &&
+                MessageType.Equals(other.MessageType)
             );
     }
 
@@ -203,24 +203,24 @@ public partial class ButtonResponse : IEquatable<ButtonResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Payload != null)
+            if (Payload != null)
             {
-                hash = hash * 59 + this.Payload.GetHashCode();
+                hash = hash * 59 + Payload.GetHashCode();
             }
 
-            if (this.MessageType != null)
+            if (MessageType != null)
             {
-                hash = hash * 59 + this.MessageType.GetHashCode();
+                hash = hash * 59 + MessageType.GetHashCode();
             }
 
             return hash;

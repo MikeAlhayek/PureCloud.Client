@@ -91,7 +91,7 @@ public partial class ShortTermForecastReference : IEquatable<ShortTermForecastRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShortTermForecastReference);
+        return Equals(obj as ShortTermForecastReference);
     }
 
     /// <summary>
@@ -109,24 +109,24 @@ public partial class ShortTermForecastReference : IEquatable<ShortTermForecastRe
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             );
     }
 
@@ -141,24 +141,24 @@ public partial class ShortTermForecastReference : IEquatable<ShortTermForecastRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
             return hash;

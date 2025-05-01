@@ -94,7 +94,7 @@ public partial class AlternativeShiftSearchOffersRequest : IEquatable<Alternativ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftSearchOffersRequest);
+        return Equals(obj as AlternativeShiftSearchOffersRequest);
     }
 
     /// <summary>
@@ -112,24 +112,24 @@ public partial class AlternativeShiftSearchOffersRequest : IEquatable<Alternativ
 
         return true &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             ) &&
             (
-                this.QueryWeekDate == other.QueryWeekDate ||
-                this.QueryWeekDate != null &&
-                this.QueryWeekDate.Equals(other.QueryWeekDate)
+                QueryWeekDate == other.QueryWeekDate ||
+                QueryWeekDate != null &&
+                QueryWeekDate.Equals(other.QueryWeekDate)
             ) &&
             (
-                this.InitiatingShift == other.InitiatingShift ||
-                this.InitiatingShift != null &&
-                this.InitiatingShift.Equals(other.InitiatingShift)
+                InitiatingShift == other.InitiatingShift ||
+                InitiatingShift != null &&
+                InitiatingShift.Equals(other.InitiatingShift)
             ) &&
             (
-                this.AcceptableIntervals == other.AcceptableIntervals ||
-                this.AcceptableIntervals != null &&
-                this.AcceptableIntervals.SequenceEqual(other.AcceptableIntervals)
+                AcceptableIntervals == other.AcceptableIntervals ||
+                AcceptableIntervals != null &&
+                AcceptableIntervals.SequenceEqual(other.AcceptableIntervals)
             );
     }
 
@@ -144,24 +144,24 @@ public partial class AlternativeShiftSearchOffersRequest : IEquatable<Alternativ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
-            if (this.QueryWeekDate != null)
+            if (QueryWeekDate != null)
             {
-                hash = hash * 59 + this.QueryWeekDate.GetHashCode();
+                hash = hash * 59 + QueryWeekDate.GetHashCode();
             }
 
-            if (this.InitiatingShift != null)
+            if (InitiatingShift != null)
             {
-                hash = hash * 59 + this.InitiatingShift.GetHashCode();
+                hash = hash * 59 + InitiatingShift.GetHashCode();
             }
 
-            if (this.AcceptableIntervals != null)
+            if (AcceptableIntervals != null)
             {
-                hash = hash * 59 + this.AcceptableIntervals.GetHashCode();
+                hash = hash * 59 + AcceptableIntervals.GetHashCode();
             }
 
             return hash;

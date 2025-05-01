@@ -124,7 +124,7 @@ public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutb
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignOutboundLinesDistribution);
+        return Equals(obj as CampaignOutboundLinesDistribution);
     }
 
     /// <summary>
@@ -142,39 +142,39 @@ public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutb
 
         return true &&
             (
-                this.Campaign == other.Campaign ||
-                this.Campaign != null &&
-                this.Campaign.Equals(other.Campaign)
+                Campaign == other.Campaign ||
+                Campaign != null &&
+                Campaign.Equals(other.Campaign)
             ) &&
             (
-                this.MaxOutboundLineCount == other.MaxOutboundLineCount ||
-                this.MaxOutboundLineCount != null &&
-                this.MaxOutboundLineCount.Equals(other.MaxOutboundLineCount)
+                MaxOutboundLineCount == other.MaxOutboundLineCount ||
+                MaxOutboundLineCount != null &&
+                MaxOutboundLineCount.Equals(other.MaxOutboundLineCount)
             ) &&
             (
-                this.MaxLineUtilization == other.MaxLineUtilization ||
-                this.MaxLineUtilization != null &&
-                this.MaxLineUtilization.Equals(other.MaxLineUtilization)
+                MaxLineUtilization == other.MaxLineUtilization ||
+                MaxLineUtilization != null &&
+                MaxLineUtilization.Equals(other.MaxLineUtilization)
             ) &&
             (
-                this.AvailableOutboundLines == other.AvailableOutboundLines ||
-                this.AvailableOutboundLines != null &&
-                this.AvailableOutboundLines.Equals(other.AvailableOutboundLines)
+                AvailableOutboundLines == other.AvailableOutboundLines ||
+                AvailableOutboundLines != null &&
+                AvailableOutboundLines.Equals(other.AvailableOutboundLines)
             ) &&
             (
-                this.ReservedLines == other.ReservedLines ||
-                this.ReservedLines != null &&
-                this.ReservedLines.Equals(other.ReservedLines)
+                ReservedLines == other.ReservedLines ||
+                ReservedLines != null &&
+                ReservedLines.Equals(other.ReservedLines)
             ) &&
             (
-                this.CampaignsWithReservedLines == other.CampaignsWithReservedLines ||
-                this.CampaignsWithReservedLines != null &&
-                this.CampaignsWithReservedLines.SequenceEqual(other.CampaignsWithReservedLines)
+                CampaignsWithReservedLines == other.CampaignsWithReservedLines ||
+                CampaignsWithReservedLines != null &&
+                CampaignsWithReservedLines.SequenceEqual(other.CampaignsWithReservedLines)
             ) &&
             (
-                this.CampaignsWithDynamicallyAllocatedLines == other.CampaignsWithDynamicallyAllocatedLines ||
-                this.CampaignsWithDynamicallyAllocatedLines != null &&
-                this.CampaignsWithDynamicallyAllocatedLines.SequenceEqual(other.CampaignsWithDynamicallyAllocatedLines)
+                CampaignsWithDynamicallyAllocatedLines == other.CampaignsWithDynamicallyAllocatedLines ||
+                CampaignsWithDynamicallyAllocatedLines != null &&
+                CampaignsWithDynamicallyAllocatedLines.SequenceEqual(other.CampaignsWithDynamicallyAllocatedLines)
             );
     }
 
@@ -189,39 +189,39 @@ public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutb
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Campaign != null)
+            if (Campaign != null)
             {
-                hash = hash * 59 + this.Campaign.GetHashCode();
+                hash = hash * 59 + Campaign.GetHashCode();
             }
 
-            if (this.MaxOutboundLineCount != null)
+            if (MaxOutboundLineCount != null)
             {
-                hash = hash * 59 + this.MaxOutboundLineCount.GetHashCode();
+                hash = hash * 59 + MaxOutboundLineCount.GetHashCode();
             }
 
-            if (this.MaxLineUtilization != null)
+            if (MaxLineUtilization != null)
             {
-                hash = hash * 59 + this.MaxLineUtilization.GetHashCode();
+                hash = hash * 59 + MaxLineUtilization.GetHashCode();
             }
 
-            if (this.AvailableOutboundLines != null)
+            if (AvailableOutboundLines != null)
             {
-                hash = hash * 59 + this.AvailableOutboundLines.GetHashCode();
+                hash = hash * 59 + AvailableOutboundLines.GetHashCode();
             }
 
-            if (this.ReservedLines != null)
+            if (ReservedLines != null)
             {
-                hash = hash * 59 + this.ReservedLines.GetHashCode();
+                hash = hash * 59 + ReservedLines.GetHashCode();
             }
 
-            if (this.CampaignsWithReservedLines != null)
+            if (CampaignsWithReservedLines != null)
             {
-                hash = hash * 59 + this.CampaignsWithReservedLines.GetHashCode();
+                hash = hash * 59 + CampaignsWithReservedLines.GetHashCode();
             }
 
-            if (this.CampaignsWithDynamicallyAllocatedLines != null)
+            if (CampaignsWithDynamicallyAllocatedLines != null)
             {
-                hash = hash * 59 + this.CampaignsWithDynamicallyAllocatedLines.GetHashCode();
+                hash = hash * 59 + CampaignsWithDynamicallyAllocatedLines.GetHashCode();
             }
 
             return hash;

@@ -97,7 +97,7 @@ public partial class LearningAssignmentAggregateQueryRequestFilter : IEquatable<
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentAggregateQueryRequestFilter);
+        return Equals(obj as LearningAssignmentAggregateQueryRequestFilter);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class LearningAssignmentAggregateQueryRequestFilter : IEquatable<
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Clauses == other.Clauses ||
-                this.Clauses != null &&
-                this.Clauses.SequenceEqual(other.Clauses)
+                Clauses == other.Clauses ||
+                Clauses != null &&
+                Clauses.SequenceEqual(other.Clauses)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class LearningAssignmentAggregateQueryRequestFilter : IEquatable<
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Clauses != null)
+            if (Clauses != null)
             {
-                hash = hash * 59 + this.Clauses.GetHashCode();
+                hash = hash * 59 + Clauses.GetHashCode();
             }
 
             return hash;

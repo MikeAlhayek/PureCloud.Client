@@ -71,7 +71,7 @@ public partial class CustomEventAttribute : IEquatable<CustomEventAttribute>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CustomEventAttribute);
+        return Equals(obj as CustomEventAttribute);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class CustomEventAttribute : IEquatable<CustomEventAttribute>
 
         return true &&
             (
-                this.DataType == other.DataType ||
-                this.DataType != null &&
-                this.DataType.Equals(other.DataType)
+                DataType == other.DataType ||
+                DataType != null &&
+                DataType.Equals(other.DataType)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class CustomEventAttribute : IEquatable<CustomEventAttribute>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DataType != null)
+            if (DataType != null)
             {
-                hash = hash * 59 + this.DataType.GetHashCode();
+                hash = hash * 59 + DataType.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

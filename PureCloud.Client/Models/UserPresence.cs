@@ -142,7 +142,7 @@ public partial class UserPresence : IEquatable<UserPresence>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserPresence);
+        return Equals(obj as UserPresence);
     }
 
     /// <summary>
@@ -160,49 +160,49 @@ public partial class UserPresence : IEquatable<UserPresence>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.SourceId == other.SourceId ||
-                this.SourceId != null &&
-                this.SourceId.Equals(other.SourceId)
+                SourceId == other.SourceId ||
+                SourceId != null &&
+                SourceId.Equals(other.SourceId)
             ) &&
             (
-                this.Primary == other.Primary ||
-                this.Primary != null &&
-                this.Primary.Equals(other.Primary)
+                Primary == other.Primary ||
+                Primary != null &&
+                Primary.Equals(other.Primary)
             ) &&
             (
-                this.PresenceDefinition == other.PresenceDefinition ||
-                this.PresenceDefinition != null &&
-                this.PresenceDefinition.Equals(other.PresenceDefinition)
+                PresenceDefinition == other.PresenceDefinition ||
+                PresenceDefinition != null &&
+                PresenceDefinition.Equals(other.PresenceDefinition)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -217,49 +217,49 @@ public partial class UserPresence : IEquatable<UserPresence>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.SourceId != null)
+            if (SourceId != null)
             {
-                hash = hash * 59 + this.SourceId.GetHashCode();
+                hash = hash * 59 + SourceId.GetHashCode();
             }
 
-            if (this.Primary != null)
+            if (Primary != null)
             {
-                hash = hash * 59 + this.Primary.GetHashCode();
+                hash = hash * 59 + Primary.GetHashCode();
             }
 
-            if (this.PresenceDefinition != null)
+            if (PresenceDefinition != null)
             {
-                hash = hash * 59 + this.PresenceDefinition.GetHashCode();
+                hash = hash * 59 + PresenceDefinition.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

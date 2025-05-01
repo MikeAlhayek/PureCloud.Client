@@ -53,7 +53,7 @@ public partial class DynamicGroupQueryPreview : IEquatable<DynamicGroupQueryPrev
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DynamicGroupQueryPreview);
+        return Equals(obj as DynamicGroupQueryPreview);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class DynamicGroupQueryPreview : IEquatable<DynamicGroupQueryPrev
 
         return true &&
             (
-                this.UserCount == other.UserCount ||
-                this.UserCount != null &&
-                this.UserCount.Equals(other.UserCount)
+                UserCount == other.UserCount ||
+                UserCount != null &&
+                UserCount.Equals(other.UserCount)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class DynamicGroupQueryPreview : IEquatable<DynamicGroupQueryPrev
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserCount != null)
+            if (UserCount != null)
             {
-                hash = hash * 59 + this.UserCount.GetHashCode();
+                hash = hash * 59 + UserCount.GetHashCode();
             }
 
             return hash;

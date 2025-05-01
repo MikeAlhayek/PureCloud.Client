@@ -143,7 +143,7 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SuggestionContext);
+        return Equals(obj as SuggestionContext);
     }
 
     /// <summary>
@@ -161,39 +161,39 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
 
         return true &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.ExternalContact == other.ExternalContact ||
-                this.ExternalContact != null &&
-                this.ExternalContact.Equals(other.ExternalContact)
+                ExternalContact == other.ExternalContact ||
+                ExternalContact != null &&
+                ExternalContact.Equals(other.ExternalContact)
             ) &&
             (
-                this.Utterance == other.Utterance ||
-                this.Utterance != null &&
-                this.Utterance.Equals(other.Utterance)
+                Utterance == other.Utterance ||
+                Utterance != null &&
+                Utterance.Equals(other.Utterance)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.QueryStatement == other.QueryStatement ||
-                this.QueryStatement != null &&
-                this.QueryStatement.Equals(other.QueryStatement)
+                QueryStatement == other.QueryStatement ||
+                QueryStatement != null &&
+                QueryStatement.Equals(other.QueryStatement)
             );
     }
 
@@ -208,39 +208,39 @@ public partial class SuggestionContext : IEquatable<SuggestionContext>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.ExternalContact != null)
+            if (ExternalContact != null)
             {
-                hash = hash * 59 + this.ExternalContact.GetHashCode();
+                hash = hash * 59 + ExternalContact.GetHashCode();
             }
 
-            if (this.Utterance != null)
+            if (Utterance != null)
             {
-                hash = hash * 59 + this.Utterance.GetHashCode();
+                hash = hash * 59 + Utterance.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.QueryStatement != null)
+            if (QueryStatement != null)
             {
-                hash = hash * 59 + this.QueryStatement.GetHashCode();
+                hash = hash * 59 + QueryStatement.GetHashCode();
             }
 
             return hash;

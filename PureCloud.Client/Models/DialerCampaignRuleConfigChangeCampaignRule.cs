@@ -171,7 +171,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerCampaignRuleConfigChangeCampaignRule);
+        return Equals(obj as DialerCampaignRuleConfigChangeCampaignRule);
     }
 
     /// <summary>
@@ -189,59 +189,59 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
 
         return true &&
             (
-                this.CampaignRuleEntities == other.CampaignRuleEntities ||
-                this.CampaignRuleEntities != null &&
-                this.CampaignRuleEntities.Equals(other.CampaignRuleEntities)
+                CampaignRuleEntities == other.CampaignRuleEntities ||
+                CampaignRuleEntities != null &&
+                CampaignRuleEntities.Equals(other.CampaignRuleEntities)
             ) &&
             (
-                this.CampaignRuleConditions == other.CampaignRuleConditions ||
-                this.CampaignRuleConditions != null &&
-                this.CampaignRuleConditions.SequenceEqual(other.CampaignRuleConditions)
+                CampaignRuleConditions == other.CampaignRuleConditions ||
+                CampaignRuleConditions != null &&
+                CampaignRuleConditions.SequenceEqual(other.CampaignRuleConditions)
             ) &&
             (
-                this.CampaignRuleActions == other.CampaignRuleActions ||
-                this.CampaignRuleActions != null &&
-                this.CampaignRuleActions.SequenceEqual(other.CampaignRuleActions)
+                CampaignRuleActions == other.CampaignRuleActions ||
+                CampaignRuleActions != null &&
+                CampaignRuleActions.SequenceEqual(other.CampaignRuleActions)
             ) &&
             (
-                this.MatchAnyConditions == other.MatchAnyConditions ||
-                this.MatchAnyConditions != null &&
-                this.MatchAnyConditions.Equals(other.MatchAnyConditions)
+                MatchAnyConditions == other.MatchAnyConditions ||
+                MatchAnyConditions != null &&
+                MatchAnyConditions.Equals(other.MatchAnyConditions)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -256,59 +256,59 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CampaignRuleEntities != null)
+            if (CampaignRuleEntities != null)
             {
-                hash = hash * 59 + this.CampaignRuleEntities.GetHashCode();
+                hash = hash * 59 + CampaignRuleEntities.GetHashCode();
             }
 
-            if (this.CampaignRuleConditions != null)
+            if (CampaignRuleConditions != null)
             {
-                hash = hash * 59 + this.CampaignRuleConditions.GetHashCode();
+                hash = hash * 59 + CampaignRuleConditions.GetHashCode();
             }
 
-            if (this.CampaignRuleActions != null)
+            if (CampaignRuleActions != null)
             {
-                hash = hash * 59 + this.CampaignRuleActions.GetHashCode();
+                hash = hash * 59 + CampaignRuleActions.GetHashCode();
             }
 
-            if (this.MatchAnyConditions != null)
+            if (MatchAnyConditions != null)
             {
-                hash = hash * 59 + this.MatchAnyConditions.GetHashCode();
+                hash = hash * 59 + MatchAnyConditions.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

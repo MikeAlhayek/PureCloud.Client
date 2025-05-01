@@ -83,7 +83,7 @@ public partial class OutcomeProbabilityCondition : IEquatable<OutcomeProbability
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomeProbabilityCondition);
+        return Equals(obj as OutcomeProbabilityCondition);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class OutcomeProbabilityCondition : IEquatable<OutcomeProbability
 
         return true &&
             (
-                this.OutcomeId == other.OutcomeId ||
-                this.OutcomeId != null &&
-                this.OutcomeId.Equals(other.OutcomeId)
+                OutcomeId == other.OutcomeId ||
+                OutcomeId != null &&
+                OutcomeId.Equals(other.OutcomeId)
             ) &&
             (
-                this.MaximumProbability == other.MaximumProbability ||
-                this.MaximumProbability != null &&
-                this.MaximumProbability.Equals(other.MaximumProbability)
+                MaximumProbability == other.MaximumProbability ||
+                MaximumProbability != null &&
+                MaximumProbability.Equals(other.MaximumProbability)
             ) &&
             (
-                this.Probability == other.Probability ||
-                this.Probability != null &&
-                this.Probability.Equals(other.Probability)
+                Probability == other.Probability ||
+                Probability != null &&
+                Probability.Equals(other.Probability)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class OutcomeProbabilityCondition : IEquatable<OutcomeProbability
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutcomeId != null)
+            if (OutcomeId != null)
             {
-                hash = hash * 59 + this.OutcomeId.GetHashCode();
+                hash = hash * 59 + OutcomeId.GetHashCode();
             }
 
-            if (this.MaximumProbability != null)
+            if (MaximumProbability != null)
             {
-                hash = hash * 59 + this.MaximumProbability.GetHashCode();
+                hash = hash * 59 + MaximumProbability.GetHashCode();
             }
 
-            if (this.Probability != null)
+            if (Probability != null)
             {
-                hash = hash * 59 + this.Probability.GetHashCode();
+                hash = hash * 59 + Probability.GetHashCode();
             }
 
             return hash;

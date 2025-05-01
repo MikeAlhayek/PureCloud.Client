@@ -89,7 +89,7 @@ public partial class HistoricalImportOverallDeleteStatusResponse : IEquatable<Hi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalImportOverallDeleteStatusResponse);
+        return Equals(obj as HistoricalImportOverallDeleteStatusResponse);
     }
 
     /// <summary>
@@ -107,14 +107,14 @@ public partial class HistoricalImportOverallDeleteStatusResponse : IEquatable<Hi
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             );
     }
 
@@ -129,14 +129,14 @@ public partial class HistoricalImportOverallDeleteStatusResponse : IEquatable<Hi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
             return hash;

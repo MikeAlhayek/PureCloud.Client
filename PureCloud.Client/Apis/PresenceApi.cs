@@ -1383,12 +1383,12 @@ public partial class PresenceApi : IPresenceApi
     /// <returns></returns>
     public PresenceApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1402,17 +1402,17 @@ public partial class PresenceApi : IPresenceApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1422,7 +1422,7 @@ public partial class PresenceApi : IPresenceApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -1448,7 +1448,7 @@ public partial class PresenceApi : IPresenceApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -1460,7 +1460,7 @@ public partial class PresenceApi : IPresenceApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -1505,7 +1505,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1514,7 +1514,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1527,7 +1527,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (definitionId != null)
         {
-            localVarPathParams.Add("definitionId", this.Configuration.ApiClient.ParameterToString(definitionId));
+            localVarPathParams.Add("definitionId", Configuration.ApiClient.ParameterToString(definitionId));
         }
 
         // Query params
@@ -1543,11 +1543,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1621,7 +1621,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1630,7 +1630,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1643,7 +1643,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (definitionId != null)
         {
-            localVarPathParams.Add("definitionId", this.Configuration.ApiClient.ParameterToString(definitionId));
+            localVarPathParams.Add("definitionId", Configuration.ApiClient.ParameterToString(definitionId));
         }
 
         // Query params
@@ -1659,11 +1659,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1737,7 +1737,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1746,7 +1746,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1759,7 +1759,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -1775,11 +1775,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1853,7 +1853,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1862,7 +1862,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1875,7 +1875,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -1891,11 +1891,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1969,7 +1969,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1978,7 +1978,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1991,7 +1991,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (presenceId != null)
         {
-            localVarPathParams.Add("presenceId", this.Configuration.ApiClient.ParameterToString(presenceId));
+            localVarPathParams.Add("presenceId", Configuration.ApiClient.ParameterToString(presenceId));
         }
 
         // Query params
@@ -2007,11 +2007,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2085,7 +2085,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2094,7 +2094,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2107,7 +2107,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (presenceId != null)
         {
-            localVarPathParams.Add("presenceId", this.Configuration.ApiClient.ParameterToString(presenceId));
+            localVarPathParams.Add("presenceId", Configuration.ApiClient.ParameterToString(presenceId));
         }
 
         // Query params
@@ -2123,11 +2123,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2204,7 +2204,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2213,7 +2213,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2226,13 +2226,13 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (definitionId != null)
         {
-            localVarPathParams.Add("definitionId", this.Configuration.ApiClient.ParameterToString(definitionId));
+            localVarPathParams.Add("definitionId", Configuration.ApiClient.ParameterToString(definitionId));
         }
 
         // Query params
         if (localeCode != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("localeCode", this.Configuration.ApiClient.ParameterToString(localeCode)));
+            localVarQueryParams.Add(new Tuple<string, string>("localeCode", Configuration.ApiClient.ParameterToString(localeCode)));
         }
 
         // Header params
@@ -2246,11 +2246,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2276,7 +2276,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresenceDefinition>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresenceDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
+            (OrganizationPresenceDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2327,7 +2327,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2336,7 +2336,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2349,13 +2349,13 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (definitionId != null)
         {
-            localVarPathParams.Add("definitionId", this.Configuration.ApiClient.ParameterToString(definitionId));
+            localVarPathParams.Add("definitionId", Configuration.ApiClient.ParameterToString(definitionId));
         }
 
         // Query params
         if (localeCode != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("localeCode", this.Configuration.ApiClient.ParameterToString(localeCode)));
+            localVarQueryParams.Add(new Tuple<string, string>("localeCode", Configuration.ApiClient.ParameterToString(localeCode)));
         }
 
         // Header params
@@ -2369,11 +2369,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2399,7 +2399,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresenceDefinition>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresenceDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
+            (OrganizationPresenceDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2447,7 +2447,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2456,7 +2456,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2471,17 +2471,17 @@ public partial class PresenceApi : IPresenceApi
         // Query params
         if (deactivated != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deactivated", this.Configuration.ApiClient.ParameterToString(deactivated)));
+            localVarQueryParams.Add(new Tuple<string, string>("deactivated", Configuration.ApiClient.ParameterToString(deactivated)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (localeCode != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("localeCode", this.Configuration.ApiClient.ParameterToString(localeCode)));
+            localVarQueryParams.Add(new Tuple<string, string>("localeCode", Configuration.ApiClient.ParameterToString(localeCode)));
         }
 
         // Header params
@@ -2495,11 +2495,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2525,7 +2525,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresenceDefinitionEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresenceDefinitionEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinitionEntityListing)),
+            (OrganizationPresenceDefinitionEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinitionEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2573,7 +2573,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2582,7 +2582,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2597,17 +2597,17 @@ public partial class PresenceApi : IPresenceApi
         // Query params
         if (deactivated != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deactivated", this.Configuration.ApiClient.ParameterToString(deactivated)));
+            localVarQueryParams.Add(new Tuple<string, string>("deactivated", Configuration.ApiClient.ParameterToString(deactivated)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (localeCode != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("localeCode", this.Configuration.ApiClient.ParameterToString(localeCode)));
+            localVarQueryParams.Add(new Tuple<string, string>("localeCode", Configuration.ApiClient.ParameterToString(localeCode)));
         }
 
         // Header params
@@ -2621,11 +2621,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2651,7 +2651,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresenceDefinitionEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresenceDefinitionEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinitionEntityListing)),
+            (OrganizationPresenceDefinitionEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinitionEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2693,7 +2693,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2702,7 +2702,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2727,11 +2727,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2757,7 +2757,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<PresenceSettings>(localVarStatusCode,
             localVarHeaders,
-            (PresenceSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PresenceSettings)),
+            (PresenceSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PresenceSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2799,7 +2799,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2808,7 +2808,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2833,11 +2833,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2863,7 +2863,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<PresenceSettings>(localVarStatusCode,
             localVarHeaders,
-            (PresenceSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PresenceSettings)),
+            (PresenceSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PresenceSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2912,7 +2912,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2921,7 +2921,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2934,7 +2934,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -2950,11 +2950,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2980,7 +2980,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<Source>(localVarStatusCode,
             localVarHeaders,
-            (Source)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
+            (Source)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3029,7 +3029,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3038,7 +3038,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3051,7 +3051,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -3067,11 +3067,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3097,7 +3097,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<Source>(localVarStatusCode,
             localVarHeaders,
-            (Source)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
+            (Source)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3141,7 +3141,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3150,7 +3150,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3165,7 +3165,7 @@ public partial class PresenceApi : IPresenceApi
         // Query params
         if (deactivated != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deactivated", this.Configuration.ApiClient.ParameterToString(deactivated)));
+            localVarQueryParams.Add(new Tuple<string, string>("deactivated", Configuration.ApiClient.ParameterToString(deactivated)));
         }
 
         // Header params
@@ -3179,11 +3179,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3209,7 +3209,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<SourceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SourceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceEntityListing)),
+            (SourceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3253,7 +3253,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3262,7 +3262,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3277,7 +3277,7 @@ public partial class PresenceApi : IPresenceApi
         // Query params
         if (deactivated != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deactivated", this.Configuration.ApiClient.ParameterToString(deactivated)));
+            localVarQueryParams.Add(new Tuple<string, string>("deactivated", Configuration.ApiClient.ParameterToString(deactivated)));
         }
 
         // Header params
@@ -3291,11 +3291,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3321,7 +3321,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<SourceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SourceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceEntityListing)),
+            (SourceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3370,7 +3370,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3379,7 +3379,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3392,7 +3392,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -3408,11 +3408,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3438,7 +3438,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPrimarySource>(localVarStatusCode,
             localVarHeaders,
-            (UserPrimarySource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPrimarySource)),
+            (UserPrimarySource)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPrimarySource)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3487,7 +3487,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3496,7 +3496,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3509,7 +3509,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -3525,11 +3525,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3555,7 +3555,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPrimarySource>(localVarStatusCode,
             localVarHeaders,
-            (UserPrimarySource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPrimarySource)),
+            (UserPrimarySource)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPrimarySource)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3606,7 +3606,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3615,7 +3615,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3628,13 +3628,13 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (presenceId != null)
         {
-            localVarPathParams.Add("presenceId", this.Configuration.ApiClient.ParameterToString(presenceId));
+            localVarPathParams.Add("presenceId", Configuration.ApiClient.ParameterToString(presenceId));
         }
 
         // Query params
         if (localeCode != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("localeCode", this.Configuration.ApiClient.ParameterToString(localeCode)));
+            localVarQueryParams.Add(new Tuple<string, string>("localeCode", Configuration.ApiClient.ParameterToString(localeCode)));
         }
 
         // Header params
@@ -3648,11 +3648,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3678,7 +3678,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresence>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
+            (OrganizationPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3729,7 +3729,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3738,7 +3738,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3751,13 +3751,13 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (presenceId != null)
         {
-            localVarPathParams.Add("presenceId", this.Configuration.ApiClient.ParameterToString(presenceId));
+            localVarPathParams.Add("presenceId", Configuration.ApiClient.ParameterToString(presenceId));
         }
 
         // Query params
         if (localeCode != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("localeCode", this.Configuration.ApiClient.ParameterToString(localeCode)));
+            localVarQueryParams.Add(new Tuple<string, string>("localeCode", Configuration.ApiClient.ParameterToString(localeCode)));
         }
 
         // Header params
@@ -3771,11 +3771,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3801,7 +3801,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresence>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
+            (OrganizationPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3851,7 +3851,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3860,7 +3860,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3875,22 +3875,22 @@ public partial class PresenceApi : IPresenceApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         if (localeCode != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("localeCode", this.Configuration.ApiClient.ParameterToString(localeCode)));
+            localVarQueryParams.Add(new Tuple<string, string>("localeCode", Configuration.ApiClient.ParameterToString(localeCode)));
         }
 
         // Header params
@@ -3904,11 +3904,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3934,7 +3934,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresenceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresenceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceEntityListing)),
+            (OrganizationPresenceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3984,7 +3984,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3993,7 +3993,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4008,22 +4008,22 @@ public partial class PresenceApi : IPresenceApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         if (localeCode != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("localeCode", this.Configuration.ApiClient.ParameterToString(localeCode)));
+            localVarQueryParams.Add(new Tuple<string, string>("localeCode", Configuration.ApiClient.ParameterToString(localeCode)));
         }
 
         // Header params
@@ -4037,11 +4037,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4067,7 +4067,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresenceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresenceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceEntityListing)),
+            (OrganizationPresenceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4109,7 +4109,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4118,7 +4118,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4143,11 +4143,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4173,7 +4173,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<List<SystemPresence>>(localVarStatusCode,
             localVarHeaders,
-            (List<SystemPresence>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SystemPresence>)),
+            (List<SystemPresence>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SystemPresence>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4215,7 +4215,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4224,7 +4224,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4249,11 +4249,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4279,7 +4279,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<List<SystemPresence>>(localVarStatusCode,
             localVarHeaders,
-            (List<SystemPresence>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SystemPresence>)),
+            (List<SystemPresence>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SystemPresence>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4335,7 +4335,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4344,7 +4344,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4357,12 +4357,12 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -4378,11 +4378,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4408,7 +4408,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPresence>(localVarStatusCode,
             localVarHeaders,
-            (UserPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
+            (UserPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4465,7 +4465,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4474,7 +4474,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4487,12 +4487,12 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -4508,11 +4508,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4538,7 +4538,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPresence>(localVarStatusCode,
             localVarHeaders,
-            (UserPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
+            (UserPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4587,7 +4587,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4596,7 +4596,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4609,7 +4609,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -4625,11 +4625,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4655,7 +4655,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPresence>(localVarStatusCode,
             localVarHeaders,
-            (UserPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
+            (UserPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4704,7 +4704,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4713,7 +4713,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4726,7 +4726,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -4742,11 +4742,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4772,7 +4772,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPresence>(localVarStatusCode,
             localVarHeaders,
-            (UserPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
+            (UserPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4823,7 +4823,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4832,7 +4832,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4845,13 +4845,13 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4865,11 +4865,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4895,7 +4895,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<List<UcUserPresence>>(localVarStatusCode,
             localVarHeaders,
-            (List<UcUserPresence>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UcUserPresence>)),
+            (List<UcUserPresence>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UcUserPresence>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4946,7 +4946,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4955,7 +4955,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4968,13 +4968,13 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4988,11 +4988,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5018,7 +5018,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<List<UcUserPresence>>(localVarStatusCode,
             localVarHeaders,
-            (List<UcUserPresence>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UcUserPresence>)),
+            (List<UcUserPresence>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UcUserPresence>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5062,7 +5062,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5071,7 +5071,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5086,7 +5086,7 @@ public partial class PresenceApi : IPresenceApi
         // Query params
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -5100,11 +5100,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5130,7 +5130,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<List<UcUserPresence>>(localVarStatusCode,
             localVarHeaders,
-            (List<UcUserPresence>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UcUserPresence>)),
+            (List<UcUserPresence>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UcUserPresence>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5174,7 +5174,7 @@ public partial class PresenceApi : IPresenceApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5183,7 +5183,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5198,7 +5198,7 @@ public partial class PresenceApi : IPresenceApi
         // Query params
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -5212,11 +5212,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5242,7 +5242,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<List<UcUserPresence>>(localVarStatusCode,
             localVarHeaders,
-            (List<UcUserPresence>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UcUserPresence>)),
+            (List<UcUserPresence>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UcUserPresence>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5306,7 +5306,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5315,7 +5315,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5328,12 +5328,12 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -5345,7 +5345,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5358,11 +5358,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5388,7 +5388,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPresence>(localVarStatusCode,
             localVarHeaders,
-            (UserPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
+            (UserPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5454,7 +5454,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5463,7 +5463,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5476,12 +5476,12 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -5493,7 +5493,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5506,11 +5506,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5536,7 +5536,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPresence>(localVarStatusCode,
             localVarHeaders,
-            (UserPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
+            (UserPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5593,7 +5593,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5602,7 +5602,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5615,7 +5615,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -5627,7 +5627,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5640,11 +5640,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5670,7 +5670,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPresence>(localVarStatusCode,
             localVarHeaders,
-            (UserPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
+            (UserPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5728,7 +5728,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5737,7 +5737,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5750,7 +5750,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -5762,7 +5762,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5775,11 +5775,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5805,7 +5805,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPresence>(localVarStatusCode,
             localVarHeaders,
-            (UserPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
+            (UserPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5855,7 +5855,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5864,7 +5864,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5885,7 +5885,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5898,11 +5898,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5928,7 +5928,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresenceDefinition>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresenceDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
+            (OrganizationPresenceDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5978,7 +5978,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5987,7 +5987,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6008,7 +6008,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6021,11 +6021,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6051,7 +6051,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresenceDefinition>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresenceDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
+            (OrganizationPresenceDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6101,7 +6101,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6110,7 +6110,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6131,7 +6131,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6144,11 +6144,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6174,7 +6174,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<Source>(localVarStatusCode,
             localVarHeaders,
-            (Source)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
+            (Source)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6224,7 +6224,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6233,7 +6233,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6254,7 +6254,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6267,11 +6267,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6297,7 +6297,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<Source>(localVarStatusCode,
             localVarHeaders,
-            (Source)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
+            (Source)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6347,7 +6347,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6356,7 +6356,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6377,7 +6377,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6390,11 +6390,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6420,7 +6420,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresence>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
+            (OrganizationPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6470,7 +6470,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6479,7 +6479,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6500,7 +6500,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6513,11 +6513,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6543,7 +6543,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresence>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
+            (OrganizationPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6600,7 +6600,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6609,7 +6609,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6622,7 +6622,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (definitionId != null)
         {
-            localVarPathParams.Add("definitionId", this.Configuration.ApiClient.ParameterToString(definitionId));
+            localVarPathParams.Add("definitionId", Configuration.ApiClient.ParameterToString(definitionId));
         }
 
         // Query params
@@ -6634,7 +6634,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6647,11 +6647,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6677,7 +6677,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresenceDefinition>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresenceDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
+            (OrganizationPresenceDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6735,7 +6735,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6744,7 +6744,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6757,7 +6757,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (definitionId != null)
         {
-            localVarPathParams.Add("definitionId", this.Configuration.ApiClient.ParameterToString(definitionId));
+            localVarPathParams.Add("definitionId", Configuration.ApiClient.ParameterToString(definitionId));
         }
 
         // Query params
@@ -6769,7 +6769,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6782,11 +6782,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6812,7 +6812,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresenceDefinition>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresenceDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
+            (OrganizationPresenceDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresenceDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6862,7 +6862,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6871,7 +6871,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6892,7 +6892,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6905,11 +6905,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6935,7 +6935,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<PresenceSettings>(localVarStatusCode,
             localVarHeaders,
-            (PresenceSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PresenceSettings)),
+            (PresenceSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PresenceSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6985,7 +6985,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6994,7 +6994,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7015,7 +7015,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7028,11 +7028,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7058,7 +7058,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<PresenceSettings>(localVarStatusCode,
             localVarHeaders,
-            (PresenceSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PresenceSettings)),
+            (PresenceSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PresenceSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7115,7 +7115,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7124,7 +7124,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7137,7 +7137,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -7149,7 +7149,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7162,11 +7162,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7192,7 +7192,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<Source>(localVarStatusCode,
             localVarHeaders,
-            (Source)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
+            (Source)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7250,7 +7250,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7259,7 +7259,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7272,7 +7272,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -7284,7 +7284,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7297,11 +7297,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7327,7 +7327,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<Source>(localVarStatusCode,
             localVarHeaders,
-            (Source)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
+            (Source)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Source)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7384,7 +7384,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7393,7 +7393,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7406,7 +7406,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7418,7 +7418,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7431,11 +7431,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7461,7 +7461,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPrimarySource>(localVarStatusCode,
             localVarHeaders,
-            (UserPrimarySource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPrimarySource)),
+            (UserPrimarySource)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPrimarySource)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7519,7 +7519,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7528,7 +7528,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7541,7 +7541,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7553,7 +7553,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7566,11 +7566,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7596,7 +7596,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<UserPrimarySource>(localVarStatusCode,
             localVarHeaders,
-            (UserPrimarySource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPrimarySource)),
+            (UserPrimarySource)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPrimarySource)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7653,7 +7653,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7662,7 +7662,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7675,7 +7675,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (presenceId != null)
         {
-            localVarPathParams.Add("presenceId", this.Configuration.ApiClient.ParameterToString(presenceId));
+            localVarPathParams.Add("presenceId", Configuration.ApiClient.ParameterToString(presenceId));
         }
 
         // Query params
@@ -7687,7 +7687,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7700,11 +7700,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7730,7 +7730,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresence>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
+            (OrganizationPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7788,7 +7788,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7797,7 +7797,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7810,7 +7810,7 @@ public partial class PresenceApi : IPresenceApi
         // Path params
         if (presenceId != null)
         {
-            localVarPathParams.Add("presenceId", this.Configuration.ApiClient.ParameterToString(presenceId));
+            localVarPathParams.Add("presenceId", Configuration.ApiClient.ParameterToString(presenceId));
         }
 
         // Query params
@@ -7822,7 +7822,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7835,11 +7835,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7865,7 +7865,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<OrganizationPresence>(localVarStatusCode,
             localVarHeaders,
-            (OrganizationPresence)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
+            (OrganizationPresence)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationPresence)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7915,7 +7915,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7924,7 +7924,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7945,7 +7945,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7958,11 +7958,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7988,7 +7988,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<List<UserPresence>>(localVarStatusCode,
             localVarHeaders,
-            (List<UserPresence>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UserPresence>)),
+            (List<UserPresence>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UserPresence>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8038,7 +8038,7 @@ public partial class PresenceApi : IPresenceApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8047,7 +8047,7 @@ public partial class PresenceApi : IPresenceApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8068,7 +8068,7 @@ public partial class PresenceApi : IPresenceApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8081,11 +8081,11 @@ public partial class PresenceApi : IPresenceApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8111,7 +8111,7 @@ public partial class PresenceApi : IPresenceApi
 
         return new ApiResponse<List<UserPresence>>(localVarStatusCode,
             localVarHeaders,
-            (List<UserPresence>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UserPresence>)),
+            (List<UserPresence>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UserPresence>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

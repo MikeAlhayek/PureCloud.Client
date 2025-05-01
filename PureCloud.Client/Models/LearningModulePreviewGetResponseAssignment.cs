@@ -163,7 +163,7 @@ public partial class LearningModulePreviewGetResponseAssignment : IEquatable<Lea
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModulePreviewGetResponseAssignment);
+        return Equals(obj as LearningModulePreviewGetResponseAssignment);
     }
 
     /// <summary>
@@ -181,39 +181,39 @@ public partial class LearningModulePreviewGetResponseAssignment : IEquatable<Lea
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.PercentageScore == other.PercentageScore ||
-                this.PercentageScore != null &&
-                this.PercentageScore.Equals(other.PercentageScore)
+                PercentageScore == other.PercentageScore ||
+                PercentageScore != null &&
+                PercentageScore.Equals(other.PercentageScore)
             ) &&
             (
-                this.AssessmentPercentageScore == other.AssessmentPercentageScore ||
-                this.AssessmentPercentageScore != null &&
-                this.AssessmentPercentageScore.Equals(other.AssessmentPercentageScore)
+                AssessmentPercentageScore == other.AssessmentPercentageScore ||
+                AssessmentPercentageScore != null &&
+                AssessmentPercentageScore.Equals(other.AssessmentPercentageScore)
             ) &&
             (
-                this.IsPassed == other.IsPassed ||
-                this.IsPassed != null &&
-                this.IsPassed.Equals(other.IsPassed)
+                IsPassed == other.IsPassed ||
+                IsPassed != null &&
+                IsPassed.Equals(other.IsPassed)
             ) &&
             (
-                this.AssessmentCompletionPercentage == other.AssessmentCompletionPercentage ||
-                this.AssessmentCompletionPercentage != null &&
-                this.AssessmentCompletionPercentage.Equals(other.AssessmentCompletionPercentage)
+                AssessmentCompletionPercentage == other.AssessmentCompletionPercentage ||
+                AssessmentCompletionPercentage != null &&
+                AssessmentCompletionPercentage.Equals(other.AssessmentCompletionPercentage)
             ) &&
             (
-                this.CompletionPercentage == other.CompletionPercentage ||
-                this.CompletionPercentage != null &&
-                this.CompletionPercentage.Equals(other.CompletionPercentage)
+                CompletionPercentage == other.CompletionPercentage ||
+                CompletionPercentage != null &&
+                CompletionPercentage.Equals(other.CompletionPercentage)
             ) &&
             (
-                this.Steps == other.Steps ||
-                this.Steps != null &&
-                this.Steps.SequenceEqual(other.Steps)
+                Steps == other.Steps ||
+                Steps != null &&
+                Steps.SequenceEqual(other.Steps)
             );
     }
 
@@ -228,39 +228,39 @@ public partial class LearningModulePreviewGetResponseAssignment : IEquatable<Lea
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.PercentageScore != null)
+            if (PercentageScore != null)
             {
-                hash = hash * 59 + this.PercentageScore.GetHashCode();
+                hash = hash * 59 + PercentageScore.GetHashCode();
             }
 
-            if (this.AssessmentPercentageScore != null)
+            if (AssessmentPercentageScore != null)
             {
-                hash = hash * 59 + this.AssessmentPercentageScore.GetHashCode();
+                hash = hash * 59 + AssessmentPercentageScore.GetHashCode();
             }
 
-            if (this.IsPassed != null)
+            if (IsPassed != null)
             {
-                hash = hash * 59 + this.IsPassed.GetHashCode();
+                hash = hash * 59 + IsPassed.GetHashCode();
             }
 
-            if (this.AssessmentCompletionPercentage != null)
+            if (AssessmentCompletionPercentage != null)
             {
-                hash = hash * 59 + this.AssessmentCompletionPercentage.GetHashCode();
+                hash = hash * 59 + AssessmentCompletionPercentage.GetHashCode();
             }
 
-            if (this.CompletionPercentage != null)
+            if (CompletionPercentage != null)
             {
-                hash = hash * 59 + this.CompletionPercentage.GetHashCode();
+                hash = hash * 59 + CompletionPercentage.GetHashCode();
             }
 
-            if (this.Steps != null)
+            if (Steps != null)
             {
-                hash = hash * 59 + this.Steps.GetHashCode();
+                hash = hash * 59 + Steps.GetHashCode();
             }
 
             return hash;

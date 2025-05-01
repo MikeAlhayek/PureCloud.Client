@@ -151,7 +151,7 @@ public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PredictorModelBrief);
+        return Equals(obj as PredictorModelBrief);
     }
 
     /// <summary>
@@ -169,24 +169,24 @@ public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
 
         return true &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.RetrainingErrors == other.RetrainingErrors ||
-                this.RetrainingErrors != null &&
-                this.RetrainingErrors.SequenceEqual(other.RetrainingErrors)
+                RetrainingErrors == other.RetrainingErrors ||
+                RetrainingErrors != null &&
+                RetrainingErrors.SequenceEqual(other.RetrainingErrors)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             );
     }
 
@@ -201,24 +201,24 @@ public partial class PredictorModelBrief : IEquatable<PredictorModelBrief>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.RetrainingErrors != null)
+            if (RetrainingErrors != null)
             {
-                hash = hash * 59 + this.RetrainingErrors.GetHashCode();
+                hash = hash * 59 + RetrainingErrors.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
             return hash;

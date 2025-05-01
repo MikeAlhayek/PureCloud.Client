@@ -144,7 +144,7 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanRotationResponse);
+        return Equals(obj as WorkPlanRotationResponse);
     }
 
     /// <summary>
@@ -162,49 +162,49 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.DateRange == other.DateRange ||
-                this.DateRange != null &&
-                this.DateRange.Equals(other.DateRange)
+                DateRange == other.DateRange ||
+                DateRange != null &&
+                DateRange.Equals(other.DateRange)
             ) &&
             (
-                this.Pattern == other.Pattern ||
-                this.Pattern != null &&
-                this.Pattern.Equals(other.Pattern)
+                Pattern == other.Pattern ||
+                Pattern != null &&
+                Pattern.Equals(other.Pattern)
             ) &&
             (
-                this.AgentCount == other.AgentCount ||
-                this.AgentCount != null &&
-                this.AgentCount.Equals(other.AgentCount)
+                AgentCount == other.AgentCount ||
+                AgentCount != null &&
+                AgentCount.Equals(other.AgentCount)
             ) &&
             (
-                this.Agents == other.Agents ||
-                this.Agents != null &&
-                this.Agents.SequenceEqual(other.Agents)
+                Agents == other.Agents ||
+                Agents != null &&
+                Agents.SequenceEqual(other.Agents)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -219,49 +219,49 @@ public partial class WorkPlanRotationResponse : IEquatable<WorkPlanRotationRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.DateRange != null)
+            if (DateRange != null)
             {
-                hash = hash * 59 + this.DateRange.GetHashCode();
+                hash = hash * 59 + DateRange.GetHashCode();
             }
 
-            if (this.Pattern != null)
+            if (Pattern != null)
             {
-                hash = hash * 59 + this.Pattern.GetHashCode();
+                hash = hash * 59 + Pattern.GetHashCode();
             }
 
-            if (this.AgentCount != null)
+            if (AgentCount != null)
             {
-                hash = hash * 59 + this.AgentCount.GetHashCode();
+                hash = hash * 59 + AgentCount.GetHashCode();
             }
 
-            if (this.Agents != null)
+            if (Agents != null)
             {
-                hash = hash * 59 + this.Agents.GetHashCode();
+                hash = hash * 59 + Agents.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

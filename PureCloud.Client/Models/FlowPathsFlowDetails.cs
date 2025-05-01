@@ -149,7 +149,7 @@ public partial class FlowPathsFlowDetails : IEquatable<FlowPathsFlowDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowPathsFlowDetails);
+        return Equals(obj as FlowPathsFlowDetails);
     }
 
     /// <summary>
@@ -167,24 +167,24 @@ public partial class FlowPathsFlowDetails : IEquatable<FlowPathsFlowDetails>
 
         return true &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             );
     }
 
@@ -199,24 +199,24 @@ public partial class FlowPathsFlowDetails : IEquatable<FlowPathsFlowDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
             return hash;

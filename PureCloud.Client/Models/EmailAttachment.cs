@@ -96,7 +96,7 @@ public partial class EmailAttachment : IEquatable<EmailAttachment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailAttachment);
+        return Equals(obj as EmailAttachment);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class EmailAttachment : IEquatable<EmailAttachment>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ContentPath == other.ContentPath ||
-                this.ContentPath != null &&
-                this.ContentPath.Equals(other.ContentPath)
+                ContentPath == other.ContentPath ||
+                ContentPath != null &&
+                ContentPath.Equals(other.ContentPath)
             ) &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.AttachmentId == other.AttachmentId ||
-                this.AttachmentId != null &&
-                this.AttachmentId.Equals(other.AttachmentId)
+                AttachmentId == other.AttachmentId ||
+                AttachmentId != null &&
+                AttachmentId.Equals(other.AttachmentId)
             ) &&
             (
-                this.ContentLength == other.ContentLength ||
-                this.ContentLength != null &&
-                this.ContentLength.Equals(other.ContentLength)
+                ContentLength == other.ContentLength ||
+                ContentLength != null &&
+                ContentLength.Equals(other.ContentLength)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class EmailAttachment : IEquatable<EmailAttachment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ContentPath != null)
+            if (ContentPath != null)
             {
-                hash = hash * 59 + this.ContentPath.GetHashCode();
+                hash = hash * 59 + ContentPath.GetHashCode();
             }
 
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.AttachmentId != null)
+            if (AttachmentId != null)
             {
-                hash = hash * 59 + this.AttachmentId.GetHashCode();
+                hash = hash * 59 + AttachmentId.GetHashCode();
             }
 
-            if (this.ContentLength != null)
+            if (ContentLength != null)
             {
-                hash = hash * 59 + this.ContentLength.GetHashCode();
+                hash = hash * 59 + ContentLength.GetHashCode();
             }
 
             return hash;

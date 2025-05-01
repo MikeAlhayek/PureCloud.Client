@@ -151,7 +151,7 @@ public partial class CommonRuleContainer : IEquatable<CommonRuleContainer>, IPag
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CommonRuleContainer);
+        return Equals(obj as CommonRuleContainer);
     }
 
     /// <summary>
@@ -169,54 +169,54 @@ public partial class CommonRuleContainer : IEquatable<CommonRuleContainer>, IPag
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.Total == other.Total ||
-                this.Total != null &&
-                this.Total.Equals(other.Total)
+                Total == other.Total ||
+                Total != null &&
+                Total.Equals(other.Total)
             ) &&
             (
-                this.FirstUri == other.FirstUri ||
-                this.FirstUri != null &&
-                this.FirstUri.Equals(other.FirstUri)
+                FirstUri == other.FirstUri ||
+                FirstUri != null &&
+                FirstUri.Equals(other.FirstUri)
             ) &&
             (
-                this.LastUri == other.LastUri ||
-                this.LastUri != null &&
-                this.LastUri.Equals(other.LastUri)
+                LastUri == other.LastUri ||
+                LastUri != null &&
+                LastUri.Equals(other.LastUri)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.NextUri == other.NextUri ||
-                this.NextUri != null &&
-                this.NextUri.Equals(other.NextUri)
+                NextUri == other.NextUri ||
+                NextUri != null &&
+                NextUri.Equals(other.NextUri)
             ) &&
             (
-                this.PreviousUri == other.PreviousUri ||
-                this.PreviousUri != null &&
-                this.PreviousUri.Equals(other.PreviousUri)
+                PreviousUri == other.PreviousUri ||
+                PreviousUri != null &&
+                PreviousUri.Equals(other.PreviousUri)
             ) &&
             (
-                this.PageCount == other.PageCount ||
-                this.PageCount != null &&
-                this.PageCount.Equals(other.PageCount)
+                PageCount == other.PageCount ||
+                PageCount != null &&
+                PageCount.Equals(other.PageCount)
             );
     }
 
@@ -231,54 +231,54 @@ public partial class CommonRuleContainer : IEquatable<CommonRuleContainer>, IPag
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.Total != null)
+            if (Total != null)
             {
-                hash = hash * 59 + this.Total.GetHashCode();
+                hash = hash * 59 + Total.GetHashCode();
             }
 
-            if (this.FirstUri != null)
+            if (FirstUri != null)
             {
-                hash = hash * 59 + this.FirstUri.GetHashCode();
+                hash = hash * 59 + FirstUri.GetHashCode();
             }
 
-            if (this.LastUri != null)
+            if (LastUri != null)
             {
-                hash = hash * 59 + this.LastUri.GetHashCode();
+                hash = hash * 59 + LastUri.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.NextUri != null)
+            if (NextUri != null)
             {
-                hash = hash * 59 + this.NextUri.GetHashCode();
+                hash = hash * 59 + NextUri.GetHashCode();
             }
 
-            if (this.PreviousUri != null)
+            if (PreviousUri != null)
             {
-                hash = hash * 59 + this.PreviousUri.GetHashCode();
+                hash = hash * 59 + PreviousUri.GetHashCode();
             }
 
-            if (this.PageCount != null)
+            if (PageCount != null)
             {
-                hash = hash * 59 + this.PageCount.GetHashCode();
+                hash = hash * 59 + PageCount.GetHashCode();
             }
 
             return hash;

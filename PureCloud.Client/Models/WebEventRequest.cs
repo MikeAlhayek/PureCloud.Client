@@ -191,7 +191,7 @@ public partial class WebEventRequest : IEquatable<WebEventRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebEventRequest);
+        return Equals(obj as WebEventRequest);
     }
 
     /// <summary>
@@ -209,64 +209,64 @@ public partial class WebEventRequest : IEquatable<WebEventRequest>
 
         return true &&
             (
-                this.CustomerCookieId == other.CustomerCookieId ||
-                this.CustomerCookieId != null &&
-                this.CustomerCookieId.Equals(other.CustomerCookieId)
+                CustomerCookieId == other.CustomerCookieId ||
+                CustomerCookieId != null &&
+                CustomerCookieId.Equals(other.CustomerCookieId)
             ) &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             ) &&
             (
-                this.Page == other.Page ||
-                this.Page != null &&
-                this.Page.Equals(other.Page)
+                Page == other.Page ||
+                Page != null &&
+                Page.Equals(other.Page)
             ) &&
             (
-                this.UserAgentString == other.UserAgentString ||
-                this.UserAgentString != null &&
-                this.UserAgentString.Equals(other.UserAgentString)
+                UserAgentString == other.UserAgentString ||
+                UserAgentString != null &&
+                UserAgentString.Equals(other.UserAgentString)
             ) &&
             (
-                this.Browser == other.Browser ||
-                this.Browser != null &&
-                this.Browser.Equals(other.Browser)
+                Browser == other.Browser ||
+                Browser != null &&
+                Browser.Equals(other.Browser)
             ) &&
             (
-                this.Device == other.Device ||
-                this.Device != null &&
-                this.Device.Equals(other.Device)
+                Device == other.Device ||
+                Device != null &&
+                Device.Equals(other.Device)
             ) &&
             (
-                this.SearchQuery == other.SearchQuery ||
-                this.SearchQuery != null &&
-                this.SearchQuery.Equals(other.SearchQuery)
+                SearchQuery == other.SearchQuery ||
+                SearchQuery != null &&
+                SearchQuery.Equals(other.SearchQuery)
             ) &&
             (
-                this.IpAddress == other.IpAddress ||
-                this.IpAddress != null &&
-                this.IpAddress.Equals(other.IpAddress)
+                IpAddress == other.IpAddress ||
+                IpAddress != null &&
+                IpAddress.Equals(other.IpAddress)
             ) &&
             (
-                this.ReferrerUrl == other.ReferrerUrl ||
-                this.ReferrerUrl != null &&
-                this.ReferrerUrl.Equals(other.ReferrerUrl)
+                ReferrerUrl == other.ReferrerUrl ||
+                ReferrerUrl != null &&
+                ReferrerUrl.Equals(other.ReferrerUrl)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.Traits == other.Traits ||
-                this.Traits != null &&
-                this.Traits.SequenceEqual(other.Traits)
+                Traits == other.Traits ||
+                Traits != null &&
+                Traits.SequenceEqual(other.Traits)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             );
     }
 
@@ -281,64 +281,64 @@ public partial class WebEventRequest : IEquatable<WebEventRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CustomerCookieId != null)
+            if (CustomerCookieId != null)
             {
-                hash = hash * 59 + this.CustomerCookieId.GetHashCode();
+                hash = hash * 59 + CustomerCookieId.GetHashCode();
             }
 
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
-            if (this.Page != null)
+            if (Page != null)
             {
-                hash = hash * 59 + this.Page.GetHashCode();
+                hash = hash * 59 + Page.GetHashCode();
             }
 
-            if (this.UserAgentString != null)
+            if (UserAgentString != null)
             {
-                hash = hash * 59 + this.UserAgentString.GetHashCode();
+                hash = hash * 59 + UserAgentString.GetHashCode();
             }
 
-            if (this.Browser != null)
+            if (Browser != null)
             {
-                hash = hash * 59 + this.Browser.GetHashCode();
+                hash = hash * 59 + Browser.GetHashCode();
             }
 
-            if (this.Device != null)
+            if (Device != null)
             {
-                hash = hash * 59 + this.Device.GetHashCode();
+                hash = hash * 59 + Device.GetHashCode();
             }
 
-            if (this.SearchQuery != null)
+            if (SearchQuery != null)
             {
-                hash = hash * 59 + this.SearchQuery.GetHashCode();
+                hash = hash * 59 + SearchQuery.GetHashCode();
             }
 
-            if (this.IpAddress != null)
+            if (IpAddress != null)
             {
-                hash = hash * 59 + this.IpAddress.GetHashCode();
+                hash = hash * 59 + IpAddress.GetHashCode();
             }
 
-            if (this.ReferrerUrl != null)
+            if (ReferrerUrl != null)
             {
-                hash = hash * 59 + this.ReferrerUrl.GetHashCode();
+                hash = hash * 59 + ReferrerUrl.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.Traits != null)
+            if (Traits != null)
             {
-                hash = hash * 59 + this.Traits.GetHashCode();
+                hash = hash * 59 + Traits.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
             return hash;

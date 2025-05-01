@@ -254,7 +254,7 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowSettingsResponse);
+        return Equals(obj as FlowSettingsResponse);
     }
 
     /// <summary>
@@ -272,44 +272,44 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.ModifiedByClient == other.ModifiedByClient ||
-                this.ModifiedByClient != null &&
-                this.ModifiedByClient.Equals(other.ModifiedByClient)
+                ModifiedByClient == other.ModifiedByClient ||
+                ModifiedByClient != null &&
+                ModifiedByClient.Equals(other.ModifiedByClient)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.LogLevelCharacteristics == other.LogLevelCharacteristics ||
-                this.LogLevelCharacteristics != null &&
-                this.LogLevelCharacteristics.Equals(other.LogLevelCharacteristics)
+                LogLevelCharacteristics == other.LogLevelCharacteristics ||
+                LogLevelCharacteristics != null &&
+                LogLevelCharacteristics.Equals(other.LogLevelCharacteristics)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -324,44 +324,44 @@ public partial class FlowSettingsResponse : IEquatable<FlowSettingsResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.ModifiedByClient != null)
+            if (ModifiedByClient != null)
             {
-                hash = hash * 59 + this.ModifiedByClient.GetHashCode();
+                hash = hash * 59 + ModifiedByClient.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.LogLevelCharacteristics != null)
+            if (LogLevelCharacteristics != null)
             {
-                hash = hash * 59 + this.LogLevelCharacteristics.GetHashCode();
+                hash = hash * 59 + LogLevelCharacteristics.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

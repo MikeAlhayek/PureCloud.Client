@@ -1391,12 +1391,12 @@ public partial class SearchApi : ISearchApi
     /// <returns></returns>
     public SearchApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1410,17 +1410,17 @@ public partial class SearchApi : ISearchApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1430,7 +1430,7 @@ public partial class SearchApi : ISearchApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -1456,7 +1456,7 @@ public partial class SearchApi : ISearchApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -1468,7 +1468,7 @@ public partial class SearchApi : ISearchApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -1514,7 +1514,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1523,7 +1523,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1538,7 +1538,7 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         // Header params
@@ -1549,7 +1549,7 @@ public partial class SearchApi : ISearchApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1575,7 +1575,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<GKNDocumentationSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (GKNDocumentationSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GKNDocumentationSearchResponse)),
+            (GKNDocumentationSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GKNDocumentationSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1624,7 +1624,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1633,7 +1633,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1648,7 +1648,7 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         // Header params
@@ -1659,7 +1659,7 @@ public partial class SearchApi : ISearchApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1685,7 +1685,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<GKNDocumentationSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (GKNDocumentationSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GKNDocumentationSearchResponse)),
+            (GKNDocumentationSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GKNDocumentationSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1734,7 +1734,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1743,7 +1743,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1758,7 +1758,7 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         // Header params
@@ -1769,7 +1769,7 @@ public partial class SearchApi : ISearchApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1795,7 +1795,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<DocumentationSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (DocumentationSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentationSearchResponse)),
+            (DocumentationSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentationSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1844,7 +1844,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1853,7 +1853,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1868,7 +1868,7 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         // Header params
@@ -1879,7 +1879,7 @@ public partial class SearchApi : ISearchApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1905,7 +1905,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<DocumentationSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (DocumentationSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentationSearchResponse)),
+            (DocumentationSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentationSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1956,7 +1956,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1965,7 +1965,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1980,12 +1980,12 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -1999,11 +1999,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2029,7 +2029,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<GroupsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (GroupsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupsSearchResponse)),
+            (GroupsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2080,7 +2080,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2089,7 +2089,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2104,12 +2104,12 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -2123,11 +2123,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2153,7 +2153,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<GroupsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (GroupsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupsSearchResponse)),
+            (GroupsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2204,7 +2204,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2213,7 +2213,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2228,12 +2228,12 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -2247,11 +2247,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2277,7 +2277,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<LocationsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (LocationsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LocationsSearchResponse)),
+            (LocationsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LocationsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2328,7 +2328,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2337,7 +2337,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2352,12 +2352,12 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -2371,11 +2371,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2401,7 +2401,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<LocationsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (LocationsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LocationsSearchResponse)),
+            (LocationsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LocationsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2454,7 +2454,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2463,7 +2463,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2478,17 +2478,17 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -2502,11 +2502,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2532,7 +2532,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2585,7 +2585,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2594,7 +2594,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2609,17 +2609,17 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -2633,11 +2633,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2663,7 +2663,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2716,7 +2716,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2725,7 +2725,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2740,17 +2740,17 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -2764,11 +2764,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2794,7 +2794,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2847,7 +2847,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2856,7 +2856,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2871,17 +2871,17 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -2895,11 +2895,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2925,7 +2925,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2976,7 +2976,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2985,7 +2985,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3000,12 +3000,12 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3019,11 +3019,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3049,7 +3049,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<SitesSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (SitesSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
+            (SitesSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3100,7 +3100,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3109,7 +3109,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3124,12 +3124,12 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3143,11 +3143,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3173,7 +3173,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<SitesSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (SitesSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
+            (SitesSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3226,7 +3226,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3235,7 +3235,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3250,17 +3250,17 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (integrationPresenceSource != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("integrationPresenceSource", this.Configuration.ApiClient.ParameterToString(integrationPresenceSource)));
+            localVarQueryParams.Add(new Tuple<string, string>("integrationPresenceSource", Configuration.ApiClient.ParameterToString(integrationPresenceSource)));
         }
 
         // Header params
@@ -3274,11 +3274,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3304,7 +3304,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<UsersSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (UsersSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
+            (UsersSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3357,7 +3357,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3366,7 +3366,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3381,17 +3381,17 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (integrationPresenceSource != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("integrationPresenceSource", this.Configuration.ApiClient.ParameterToString(integrationPresenceSource)));
+            localVarQueryParams.Add(new Tuple<string, string>("integrationPresenceSource", Configuration.ApiClient.ParameterToString(integrationPresenceSource)));
         }
 
         // Header params
@@ -3405,11 +3405,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3435,7 +3435,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<UsersSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (UsersSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
+            (UsersSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3486,7 +3486,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3495,7 +3495,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3510,12 +3510,12 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3529,11 +3529,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3559,7 +3559,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<VoicemailsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
+            (VoicemailsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3610,7 +3610,7 @@ public partial class SearchApi : ISearchApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3619,7 +3619,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3634,12 +3634,12 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3653,11 +3653,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3683,7 +3683,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<VoicemailsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
+            (VoicemailsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3733,7 +3733,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3742,7 +3742,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3763,7 +3763,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -3776,11 +3776,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3806,7 +3806,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>(localVarStatusCode,
             localVarHeaders,
-            (AnalyticsConversationWithoutAttributesMultiGetResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AnalyticsConversationWithoutAttributesMultiGetResponse)),
+            (AnalyticsConversationWithoutAttributesMultiGetResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AnalyticsConversationWithoutAttributesMultiGetResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3856,7 +3856,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3865,7 +3865,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3886,7 +3886,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -3899,11 +3899,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3929,7 +3929,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>(localVarStatusCode,
             localVarHeaders,
-            (AnalyticsConversationWithoutAttributesMultiGetResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AnalyticsConversationWithoutAttributesMultiGetResponse)),
+            (AnalyticsConversationWithoutAttributesMultiGetResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AnalyticsConversationWithoutAttributesMultiGetResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3979,7 +3979,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3988,7 +3988,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4009,7 +4009,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4022,11 +4022,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4052,7 +4052,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonCursorSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonCursorSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonCursorSearchResponse)),
+            (JsonCursorSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonCursorSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4102,7 +4102,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4111,7 +4111,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4132,7 +4132,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4145,11 +4145,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4175,7 +4175,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonCursorSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonCursorSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonCursorSearchResponse)),
+            (JsonCursorSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonCursorSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4227,7 +4227,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4236,7 +4236,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4257,7 +4257,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4267,7 +4267,7 @@ public partial class SearchApi : ISearchApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4293,7 +4293,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4345,7 +4345,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4354,7 +4354,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4375,7 +4375,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4385,7 +4385,7 @@ public partial class SearchApi : ISearchApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4411,7 +4411,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4461,7 +4461,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4470,7 +4470,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4491,7 +4491,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4501,7 +4501,7 @@ public partial class SearchApi : ISearchApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4527,7 +4527,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<GKNDocumentationSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (GKNDocumentationSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GKNDocumentationSearchResponse)),
+            (GKNDocumentationSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GKNDocumentationSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4577,7 +4577,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4586,7 +4586,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4607,7 +4607,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4617,7 +4617,7 @@ public partial class SearchApi : ISearchApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4643,7 +4643,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<GKNDocumentationSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (GKNDocumentationSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GKNDocumentationSearchResponse)),
+            (GKNDocumentationSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GKNDocumentationSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4693,7 +4693,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4702,7 +4702,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4723,7 +4723,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4733,7 +4733,7 @@ public partial class SearchApi : ISearchApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4759,7 +4759,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<DocumentationSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (DocumentationSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentationSearchResponse)),
+            (DocumentationSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentationSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4809,7 +4809,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4818,7 +4818,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4839,7 +4839,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4849,7 +4849,7 @@ public partial class SearchApi : ISearchApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4875,7 +4875,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<DocumentationSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (DocumentationSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentationSearchResponse)),
+            (DocumentationSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentationSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4925,7 +4925,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4934,7 +4934,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4955,7 +4955,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -4968,11 +4968,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4998,7 +4998,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<GroupsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (GroupsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupsSearchResponse)),
+            (GroupsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5048,7 +5048,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5057,7 +5057,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5078,7 +5078,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5091,11 +5091,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5121,7 +5121,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<GroupsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (GroupsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupsSearchResponse)),
+            (GroupsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5173,7 +5173,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5182,7 +5182,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5195,7 +5195,7 @@ public partial class SearchApi : ISearchApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -5207,7 +5207,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5220,11 +5220,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5250,7 +5250,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<KnowledgeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSearchResponse)),
+            (KnowledgeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5302,7 +5302,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5311,7 +5311,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5324,7 +5324,7 @@ public partial class SearchApi : ISearchApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -5336,7 +5336,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5349,11 +5349,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5379,7 +5379,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<KnowledgeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSearchResponse)),
+            (KnowledgeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5429,7 +5429,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5438,7 +5438,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5459,7 +5459,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5472,11 +5472,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5502,7 +5502,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<LocationsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (LocationsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LocationsSearchResponse)),
+            (LocationsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LocationsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5552,7 +5552,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5561,7 +5561,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5582,7 +5582,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5595,11 +5595,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5625,7 +5625,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<LocationsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (LocationsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LocationsSearchResponse)),
+            (LocationsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LocationsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5677,7 +5677,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5686,7 +5686,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5701,7 +5701,7 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -5711,7 +5711,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5724,11 +5724,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5754,7 +5754,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5806,7 +5806,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5815,7 +5815,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5830,7 +5830,7 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -5840,7 +5840,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5853,11 +5853,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5883,7 +5883,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5935,7 +5935,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5944,7 +5944,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5959,7 +5959,7 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -5969,7 +5969,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5982,11 +5982,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6012,7 +6012,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6064,7 +6064,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6073,7 +6073,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6088,7 +6088,7 @@ public partial class SearchApi : ISearchApi
         // Query params
         if (profile != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+            localVarQueryParams.Add(new Tuple<string, string>("profile", Configuration.ApiClient.ParameterToString(profile)));
         }
 
         // Header params
@@ -6098,7 +6098,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6111,11 +6111,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6141,7 +6141,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            (JsonNodeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6191,7 +6191,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6200,7 +6200,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6221,7 +6221,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6234,11 +6234,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6264,7 +6264,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonSearchResponse)),
+            (JsonSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6314,7 +6314,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6323,7 +6323,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6344,7 +6344,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6357,11 +6357,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6387,7 +6387,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<JsonSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonSearchResponse)),
+            (JsonSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6437,7 +6437,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6446,7 +6446,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6467,7 +6467,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6480,11 +6480,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6510,7 +6510,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<TeamsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (TeamsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TeamsSearchResponse)),
+            (TeamsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TeamsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6560,7 +6560,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6569,7 +6569,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6590,7 +6590,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6603,11 +6603,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6633,7 +6633,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<TeamsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (TeamsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TeamsSearchResponse)),
+            (TeamsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TeamsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6683,7 +6683,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6692,7 +6692,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6713,7 +6713,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6726,11 +6726,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6756,7 +6756,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<SitesSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (SitesSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
+            (SitesSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6806,7 +6806,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6815,7 +6815,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6836,7 +6836,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6849,11 +6849,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6879,7 +6879,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<SitesSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (SitesSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
+            (SitesSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6929,7 +6929,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6938,7 +6938,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6959,7 +6959,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6972,11 +6972,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7002,7 +7002,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<UsersSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (UsersSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
+            (UsersSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7052,7 +7052,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7061,7 +7061,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7082,7 +7082,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7095,11 +7095,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7125,7 +7125,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<UsersSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (UsersSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
+            (UsersSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7177,7 +7177,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7186,7 +7186,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7207,7 +7207,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7220,11 +7220,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7250,7 +7250,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<UsersSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (UsersSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
+            (UsersSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7302,7 +7302,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7311,7 +7311,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7332,7 +7332,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7345,11 +7345,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7375,7 +7375,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<UsersSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (UsersSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
+            (UsersSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7427,7 +7427,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7436,7 +7436,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7457,7 +7457,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7470,11 +7470,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7500,7 +7500,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<UsersSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (UsersSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
+            (UsersSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7552,7 +7552,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7561,7 +7561,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7582,7 +7582,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7595,11 +7595,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7625,7 +7625,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<UsersSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (UsersSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
+            (UsersSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7675,7 +7675,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7684,7 +7684,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7705,7 +7705,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7718,11 +7718,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7748,7 +7748,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<UsersSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (UsersSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
+            (UsersSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7798,7 +7798,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7807,7 +7807,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7828,7 +7828,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7841,11 +7841,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7871,7 +7871,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<UsersSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (UsersSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
+            (UsersSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7921,7 +7921,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7930,7 +7930,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7951,7 +7951,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7964,11 +7964,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7994,7 +7994,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<VoicemailsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
+            (VoicemailsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8044,7 +8044,7 @@ public partial class SearchApi : ISearchApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8053,7 +8053,7 @@ public partial class SearchApi : ISearchApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8074,7 +8074,7 @@ public partial class SearchApi : ISearchApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8087,11 +8087,11 @@ public partial class SearchApi : ISearchApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8117,7 +8117,7 @@ public partial class SearchApi : ISearchApi
 
         return new ApiResponse<VoicemailsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
+            (VoicemailsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

@@ -71,7 +71,7 @@ public partial class ValidationServiceRequest : IEquatable<ValidationServiceRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValidationServiceRequest);
+        return Equals(obj as ValidationServiceRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ValidationServiceRequest : IEquatable<ValidationServiceRequ
 
         return true &&
             (
-                this.DateImportEnded == other.DateImportEnded ||
-                this.DateImportEnded != null &&
-                this.DateImportEnded.Equals(other.DateImportEnded)
+                DateImportEnded == other.DateImportEnded ||
+                DateImportEnded != null &&
+                DateImportEnded.Equals(other.DateImportEnded)
             ) &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ValidationServiceRequest : IEquatable<ValidationServiceRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateImportEnded != null)
+            if (DateImportEnded != null)
             {
-                hash = hash * 59 + this.DateImportEnded.GetHashCode();
+                hash = hash * 59 + DateImportEnded.GetHashCode();
             }
 
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
             return hash;

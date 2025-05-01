@@ -97,7 +97,7 @@ public partial class MetadataResultEntity : IEquatable<MetadataResultEntity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MetadataResultEntity);
+        return Equals(obj as MetadataResultEntity);
     }
 
     /// <summary>
@@ -115,19 +115,19 @@ public partial class MetadataResultEntity : IEquatable<MetadataResultEntity>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Visibility == other.Visibility ||
-                this.Visibility != null &&
-                this.Visibility.Equals(other.Visibility)
+                Visibility == other.Visibility ||
+                Visibility != null &&
+                Visibility.Equals(other.Visibility)
             );
     }
 
@@ -142,19 +142,19 @@ public partial class MetadataResultEntity : IEquatable<MetadataResultEntity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Visibility != null)
+            if (Visibility != null)
             {
-                hash = hash * 59 + this.Visibility.GetHashCode();
+                hash = hash * 59 + Visibility.GetHashCode();
             }
 
             return hash;

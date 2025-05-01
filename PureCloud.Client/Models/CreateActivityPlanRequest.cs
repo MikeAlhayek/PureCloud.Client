@@ -341,7 +341,7 @@ public partial class CreateActivityPlanRequest : IEquatable<CreateActivityPlanRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateActivityPlanRequest);
+        return Equals(obj as CreateActivityPlanRequest);
     }
 
     /// <summary>
@@ -359,94 +359,94 @@ public partial class CreateActivityPlanRequest : IEquatable<CreateActivityPlanRe
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ManagementUnitIds == other.ManagementUnitIds ||
-                this.ManagementUnitIds != null &&
-                this.ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
+                ManagementUnitIds == other.ManagementUnitIds ||
+                ManagementUnitIds != null &&
+                ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.LengthMinutes == other.LengthMinutes ||
-                this.LengthMinutes != null &&
-                this.LengthMinutes.Equals(other.LengthMinutes)
+                LengthMinutes == other.LengthMinutes ||
+                LengthMinutes != null &&
+                LengthMinutes.Equals(other.LengthMinutes)
             ) &&
             (
-                this.InitialSchedulePeriod == other.InitialSchedulePeriod ||
-                this.InitialSchedulePeriod != null &&
-                this.InitialSchedulePeriod.Equals(other.InitialSchedulePeriod)
+                InitialSchedulePeriod == other.InitialSchedulePeriod ||
+                InitialSchedulePeriod != null &&
+                InitialSchedulePeriod.Equals(other.InitialSchedulePeriod)
             ) &&
             (
-                this.GroupSettings == other.GroupSettings ||
-                this.GroupSettings != null &&
-                this.GroupSettings.Equals(other.GroupSettings)
+                GroupSettings == other.GroupSettings ||
+                GroupSettings != null &&
+                GroupSettings.Equals(other.GroupSettings)
             ) &&
             (
-                this.RecurrenceSettings == other.RecurrenceSettings ||
-                this.RecurrenceSettings != null &&
-                this.RecurrenceSettings.Equals(other.RecurrenceSettings)
+                RecurrenceSettings == other.RecurrenceSettings ||
+                RecurrenceSettings != null &&
+                RecurrenceSettings.Equals(other.RecurrenceSettings)
             ) &&
             (
-                this.AttendeesSearchRule == other.AttendeesSearchRule ||
-                this.AttendeesSearchRule != null &&
-                this.AttendeesSearchRule.Equals(other.AttendeesSearchRule)
+                AttendeesSearchRule == other.AttendeesSearchRule ||
+                AttendeesSearchRule != null &&
+                AttendeesSearchRule.Equals(other.AttendeesSearchRule)
             ) &&
             (
-                this.Facilitated == other.Facilitated ||
-                this.Facilitated != null &&
-                this.Facilitated.Equals(other.Facilitated)
+                Facilitated == other.Facilitated ||
+                Facilitated != null &&
+                Facilitated.Equals(other.Facilitated)
             ) &&
             (
-                this.FacilitatorsSearchRule == other.FacilitatorsSearchRule ||
-                this.FacilitatorsSearchRule != null &&
-                this.FacilitatorsSearchRule.Equals(other.FacilitatorsSearchRule)
+                FacilitatorsSearchRule == other.FacilitatorsSearchRule ||
+                FacilitatorsSearchRule != null &&
+                FacilitatorsSearchRule.Equals(other.FacilitatorsSearchRule)
             ) &&
             (
-                this.TransitionTimeMinutes == other.TransitionTimeMinutes ||
-                this.TransitionTimeMinutes != null &&
-                this.TransitionTimeMinutes.Equals(other.TransitionTimeMinutes)
+                TransitionTimeMinutes == other.TransitionTimeMinutes ||
+                TransitionTimeMinutes != null &&
+                TransitionTimeMinutes.Equals(other.TransitionTimeMinutes)
             ) &&
             (
-                this.ServiceGoalImpactOverrides == other.ServiceGoalImpactOverrides ||
-                this.ServiceGoalImpactOverrides != null &&
-                this.ServiceGoalImpactOverrides.Equals(other.ServiceGoalImpactOverrides)
+                ServiceGoalImpactOverrides == other.ServiceGoalImpactOverrides ||
+                ServiceGoalImpactOverrides != null &&
+                ServiceGoalImpactOverrides.Equals(other.ServiceGoalImpactOverrides)
             ) &&
             (
-                this.OptimizationObjective == other.OptimizationObjective ||
-                this.OptimizationObjective != null &&
-                this.OptimizationObjective.Equals(other.OptimizationObjective)
+                OptimizationObjective == other.OptimizationObjective ||
+                OptimizationObjective != null &&
+                OptimizationObjective.Equals(other.OptimizationObjective)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.CountsAsPaidTime == other.CountsAsPaidTime ||
-                this.CountsAsPaidTime != null &&
-                this.CountsAsPaidTime.Equals(other.CountsAsPaidTime)
+                CountsAsPaidTime == other.CountsAsPaidTime ||
+                CountsAsPaidTime != null &&
+                CountsAsPaidTime.Equals(other.CountsAsPaidTime)
             ) &&
             (
-                this.FixedAvailability == other.FixedAvailability ||
-                this.FixedAvailability != null &&
-                this.FixedAvailability.SequenceEqual(other.FixedAvailability)
+                FixedAvailability == other.FixedAvailability ||
+                FixedAvailability != null &&
+                FixedAvailability.SequenceEqual(other.FixedAvailability)
             );
     }
 
@@ -461,94 +461,94 @@ public partial class CreateActivityPlanRequest : IEquatable<CreateActivityPlanRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ManagementUnitIds != null)
+            if (ManagementUnitIds != null)
             {
-                hash = hash * 59 + this.ManagementUnitIds.GetHashCode();
+                hash = hash * 59 + ManagementUnitIds.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.LengthMinutes != null)
+            if (LengthMinutes != null)
             {
-                hash = hash * 59 + this.LengthMinutes.GetHashCode();
+                hash = hash * 59 + LengthMinutes.GetHashCode();
             }
 
-            if (this.InitialSchedulePeriod != null)
+            if (InitialSchedulePeriod != null)
             {
-                hash = hash * 59 + this.InitialSchedulePeriod.GetHashCode();
+                hash = hash * 59 + InitialSchedulePeriod.GetHashCode();
             }
 
-            if (this.GroupSettings != null)
+            if (GroupSettings != null)
             {
-                hash = hash * 59 + this.GroupSettings.GetHashCode();
+                hash = hash * 59 + GroupSettings.GetHashCode();
             }
 
-            if (this.RecurrenceSettings != null)
+            if (RecurrenceSettings != null)
             {
-                hash = hash * 59 + this.RecurrenceSettings.GetHashCode();
+                hash = hash * 59 + RecurrenceSettings.GetHashCode();
             }
 
-            if (this.AttendeesSearchRule != null)
+            if (AttendeesSearchRule != null)
             {
-                hash = hash * 59 + this.AttendeesSearchRule.GetHashCode();
+                hash = hash * 59 + AttendeesSearchRule.GetHashCode();
             }
 
-            if (this.Facilitated != null)
+            if (Facilitated != null)
             {
-                hash = hash * 59 + this.Facilitated.GetHashCode();
+                hash = hash * 59 + Facilitated.GetHashCode();
             }
 
-            if (this.FacilitatorsSearchRule != null)
+            if (FacilitatorsSearchRule != null)
             {
-                hash = hash * 59 + this.FacilitatorsSearchRule.GetHashCode();
+                hash = hash * 59 + FacilitatorsSearchRule.GetHashCode();
             }
 
-            if (this.TransitionTimeMinutes != null)
+            if (TransitionTimeMinutes != null)
             {
-                hash = hash * 59 + this.TransitionTimeMinutes.GetHashCode();
+                hash = hash * 59 + TransitionTimeMinutes.GetHashCode();
             }
 
-            if (this.ServiceGoalImpactOverrides != null)
+            if (ServiceGoalImpactOverrides != null)
             {
-                hash = hash * 59 + this.ServiceGoalImpactOverrides.GetHashCode();
+                hash = hash * 59 + ServiceGoalImpactOverrides.GetHashCode();
             }
 
-            if (this.OptimizationObjective != null)
+            if (OptimizationObjective != null)
             {
-                hash = hash * 59 + this.OptimizationObjective.GetHashCode();
+                hash = hash * 59 + OptimizationObjective.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.CountsAsPaidTime != null)
+            if (CountsAsPaidTime != null)
             {
-                hash = hash * 59 + this.CountsAsPaidTime.GetHashCode();
+                hash = hash * 59 + CountsAsPaidTime.GetHashCode();
             }
 
-            if (this.FixedAvailability != null)
+            if (FixedAvailability != null)
             {
-                hash = hash * 59 + this.FixedAvailability.GetHashCode();
+                hash = hash * 59 + FixedAvailability.GetHashCode();
             }
 
             return hash;

@@ -119,7 +119,7 @@ public partial class UploadUrlRequest : IEquatable<UploadUrlRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UploadUrlRequest);
+        return Equals(obj as UploadUrlRequest);
     }
 
     /// <summary>
@@ -137,29 +137,29 @@ public partial class UploadUrlRequest : IEquatable<UploadUrlRequest>
 
         return true &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.ContentMd5 == other.ContentMd5 ||
-                this.ContentMd5 != null &&
-                this.ContentMd5.Equals(other.ContentMd5)
+                ContentMd5 == other.ContentMd5 ||
+                ContentMd5 != null &&
+                ContentMd5.Equals(other.ContentMd5)
             ) &&
             (
-                this.SignedUrlTimeoutSeconds == other.SignedUrlTimeoutSeconds ||
-                this.SignedUrlTimeoutSeconds != null &&
-                this.SignedUrlTimeoutSeconds.Equals(other.SignedUrlTimeoutSeconds)
+                SignedUrlTimeoutSeconds == other.SignedUrlTimeoutSeconds ||
+                SignedUrlTimeoutSeconds != null &&
+                SignedUrlTimeoutSeconds.Equals(other.SignedUrlTimeoutSeconds)
             ) &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.ServerSideEncryption == other.ServerSideEncryption ||
-                this.ServerSideEncryption != null &&
-                this.ServerSideEncryption.Equals(other.ServerSideEncryption)
+                ServerSideEncryption == other.ServerSideEncryption ||
+                ServerSideEncryption != null &&
+                ServerSideEncryption.Equals(other.ServerSideEncryption)
             );
     }
 
@@ -174,29 +174,29 @@ public partial class UploadUrlRequest : IEquatable<UploadUrlRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.ContentMd5 != null)
+            if (ContentMd5 != null)
             {
-                hash = hash * 59 + this.ContentMd5.GetHashCode();
+                hash = hash * 59 + ContentMd5.GetHashCode();
             }
 
-            if (this.SignedUrlTimeoutSeconds != null)
+            if (SignedUrlTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.SignedUrlTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + SignedUrlTimeoutSeconds.GetHashCode();
             }
 
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.ServerSideEncryption != null)
+            if (ServerSideEncryption != null)
             {
-                hash = hash * 59 + this.ServerSideEncryption.GetHashCode();
+                hash = hash * 59 + ServerSideEncryption.GetHashCode();
             }
 
             return hash;

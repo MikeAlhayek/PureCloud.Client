@@ -65,7 +65,7 @@ public partial class OutlierInfo : IEquatable<OutlierInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutlierInfo);
+        return Equals(obj as OutlierInfo);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class OutlierInfo : IEquatable<OutlierInfo>
 
         return true &&
             (
-                this.Outlier == other.Outlier ||
-                this.Outlier != null &&
-                this.Outlier.Equals(other.Outlier)
+                Outlier == other.Outlier ||
+                Outlier != null &&
+                Outlier.Equals(other.Outlier)
             ) &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class OutlierInfo : IEquatable<OutlierInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Outlier != null)
+            if (Outlier != null)
             {
-                hash = hash * 59 + this.Outlier.GetHashCode();
+                hash = hash * 59 + Outlier.GetHashCode();
             }
 
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
             return hash;

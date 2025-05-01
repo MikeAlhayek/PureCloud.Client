@@ -106,7 +106,7 @@ public partial class PauseCriteria : IEquatable<PauseCriteria>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PauseCriteria);
+        return Equals(obj as PauseCriteria);
     }
 
     /// <summary>
@@ -124,14 +124,14 @@ public partial class PauseCriteria : IEquatable<PauseCriteria>
 
         return true &&
             (
-                this.UrlFragment == other.UrlFragment ||
-                this.UrlFragment != null &&
-                this.UrlFragment.Equals(other.UrlFragment)
+                UrlFragment == other.UrlFragment ||
+                UrlFragment != null &&
+                UrlFragment.Equals(other.UrlFragment)
             ) &&
             (
-                this.Condition == other.Condition ||
-                this.Condition != null &&
-                this.Condition.Equals(other.Condition)
+                Condition == other.Condition ||
+                Condition != null &&
+                Condition.Equals(other.Condition)
             );
     }
 
@@ -146,14 +146,14 @@ public partial class PauseCriteria : IEquatable<PauseCriteria>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UrlFragment != null)
+            if (UrlFragment != null)
             {
-                hash = hash * 59 + this.UrlFragment.GetHashCode();
+                hash = hash * 59 + UrlFragment.GetHashCode();
             }
 
-            if (this.Condition != null)
+            if (Condition != null)
             {
-                hash = hash * 59 + this.Condition.GetHashCode();
+                hash = hash * 59 + Condition.GetHashCode();
             }
 
             return hash;

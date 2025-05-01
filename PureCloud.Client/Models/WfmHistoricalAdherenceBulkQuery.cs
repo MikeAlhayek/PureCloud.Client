@@ -71,7 +71,7 @@ public partial class WfmHistoricalAdherenceBulkQuery : IEquatable<WfmHistoricalA
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalAdherenceBulkQuery);
+        return Equals(obj as WfmHistoricalAdherenceBulkQuery);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class WfmHistoricalAdherenceBulkQuery : IEquatable<WfmHistoricalA
 
         return true &&
             (
-                this.Items == other.Items ||
-                this.Items != null &&
-                this.Items.SequenceEqual(other.Items)
+                Items == other.Items ||
+                Items != null &&
+                Items.SequenceEqual(other.Items)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class WfmHistoricalAdherenceBulkQuery : IEquatable<WfmHistoricalA
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Items != null)
+            if (Items != null)
             {
-                hash = hash * 59 + this.Items.GetHashCode();
+                hash = hash * 59 + Items.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
             return hash;

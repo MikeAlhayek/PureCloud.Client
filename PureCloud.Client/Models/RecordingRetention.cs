@@ -155,7 +155,7 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingRetention);
+        return Equals(obj as RecordingRetention);
     }
 
     /// <summary>
@@ -173,44 +173,44 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.RecordingId == other.RecordingId ||
-                this.RecordingId != null &&
-                this.RecordingId.Equals(other.RecordingId)
+                RecordingId == other.RecordingId ||
+                RecordingId != null &&
+                RecordingId.Equals(other.RecordingId)
             ) &&
             (
-                this.ArchiveDate == other.ArchiveDate ||
-                this.ArchiveDate != null &&
-                this.ArchiveDate.Equals(other.ArchiveDate)
+                ArchiveDate == other.ArchiveDate ||
+                ArchiveDate != null &&
+                ArchiveDate.Equals(other.ArchiveDate)
             ) &&
             (
-                this.ArchiveMedium == other.ArchiveMedium ||
-                this.ArchiveMedium != null &&
-                this.ArchiveMedium.Equals(other.ArchiveMedium)
+                ArchiveMedium == other.ArchiveMedium ||
+                ArchiveMedium != null &&
+                ArchiveMedium.Equals(other.ArchiveMedium)
             ) &&
             (
-                this.DeleteDate == other.DeleteDate ||
-                this.DeleteDate != null &&
-                this.DeleteDate.Equals(other.DeleteDate)
+                DeleteDate == other.DeleteDate ||
+                DeleteDate != null &&
+                DeleteDate.Equals(other.DeleteDate)
             ) &&
             (
-                this.ExportDate == other.ExportDate ||
-                this.ExportDate != null &&
-                this.ExportDate.Equals(other.ExportDate)
+                ExportDate == other.ExportDate ||
+                ExportDate != null &&
+                ExportDate.Equals(other.ExportDate)
             ) &&
             (
-                this.ExportedDate == other.ExportedDate ||
-                this.ExportedDate != null &&
-                this.ExportedDate.Equals(other.ExportedDate)
+                ExportedDate == other.ExportedDate ||
+                ExportedDate != null &&
+                ExportedDate.Equals(other.ExportedDate)
             ) &&
             (
-                this.CreationTime == other.CreationTime ||
-                this.CreationTime != null &&
-                this.CreationTime.Equals(other.CreationTime)
+                CreationTime == other.CreationTime ||
+                CreationTime != null &&
+                CreationTime.Equals(other.CreationTime)
             );
     }
 
@@ -225,44 +225,44 @@ public partial class RecordingRetention : IEquatable<RecordingRetention>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.RecordingId != null)
+            if (RecordingId != null)
             {
-                hash = hash * 59 + this.RecordingId.GetHashCode();
+                hash = hash * 59 + RecordingId.GetHashCode();
             }
 
-            if (this.ArchiveDate != null)
+            if (ArchiveDate != null)
             {
-                hash = hash * 59 + this.ArchiveDate.GetHashCode();
+                hash = hash * 59 + ArchiveDate.GetHashCode();
             }
 
-            if (this.ArchiveMedium != null)
+            if (ArchiveMedium != null)
             {
-                hash = hash * 59 + this.ArchiveMedium.GetHashCode();
+                hash = hash * 59 + ArchiveMedium.GetHashCode();
             }
 
-            if (this.DeleteDate != null)
+            if (DeleteDate != null)
             {
-                hash = hash * 59 + this.DeleteDate.GetHashCode();
+                hash = hash * 59 + DeleteDate.GetHashCode();
             }
 
-            if (this.ExportDate != null)
+            if (ExportDate != null)
             {
-                hash = hash * 59 + this.ExportDate.GetHashCode();
+                hash = hash * 59 + ExportDate.GetHashCode();
             }
 
-            if (this.ExportedDate != null)
+            if (ExportedDate != null)
             {
-                hash = hash * 59 + this.ExportedDate.GetHashCode();
+                hash = hash * 59 + ExportedDate.GetHashCode();
             }
 
-            if (this.CreationTime != null)
+            if (CreationTime != null)
             {
-                hash = hash * 59 + this.CreationTime.GetHashCode();
+                hash = hash * 59 + CreationTime.GetHashCode();
             }
 
             return hash;

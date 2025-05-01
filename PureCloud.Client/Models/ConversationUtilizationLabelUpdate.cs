@@ -53,7 +53,7 @@ public partial class ConversationUtilizationLabelUpdate : IEquatable<Conversatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationUtilizationLabelUpdate);
+        return Equals(obj as ConversationUtilizationLabelUpdate);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ConversationUtilizationLabelUpdate : IEquatable<Conversatio
 
         return true &&
             (
-                this.UtilizationLabelId == other.UtilizationLabelId ||
-                this.UtilizationLabelId != null &&
-                this.UtilizationLabelId.Equals(other.UtilizationLabelId)
+                UtilizationLabelId == other.UtilizationLabelId ||
+                UtilizationLabelId != null &&
+                UtilizationLabelId.Equals(other.UtilizationLabelId)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ConversationUtilizationLabelUpdate : IEquatable<Conversatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UtilizationLabelId != null)
+            if (UtilizationLabelId != null)
             {
-                hash = hash * 59 + this.UtilizationLabelId.GetHashCode();
+                hash = hash * 59 + UtilizationLabelId.GetHashCode();
             }
 
             return hash;

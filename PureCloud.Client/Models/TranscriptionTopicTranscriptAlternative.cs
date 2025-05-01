@@ -118,7 +118,7 @@ public partial class TranscriptionTopicTranscriptAlternative : IEquatable<Transc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptionTopicTranscriptAlternative);
+        return Equals(obj as TranscriptionTopicTranscriptAlternative);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class TranscriptionTopicTranscriptAlternative : IEquatable<Transc
 
         return true &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             ) &&
             (
-                this.OffsetMs == other.OffsetMs ||
-                this.OffsetMs != null &&
-                this.OffsetMs.Equals(other.OffsetMs)
+                OffsetMs == other.OffsetMs ||
+                OffsetMs != null &&
+                OffsetMs.Equals(other.OffsetMs)
             ) &&
             (
-                this.DurationMs == other.DurationMs ||
-                this.DurationMs != null &&
-                this.DurationMs.Equals(other.DurationMs)
+                DurationMs == other.DurationMs ||
+                DurationMs != null &&
+                DurationMs.Equals(other.DurationMs)
             ) &&
             (
-                this.Transcript == other.Transcript ||
-                this.Transcript != null &&
-                this.Transcript.Equals(other.Transcript)
+                Transcript == other.Transcript ||
+                Transcript != null &&
+                Transcript.Equals(other.Transcript)
             ) &&
             (
-                this.Words == other.Words ||
-                this.Words != null &&
-                this.Words.SequenceEqual(other.Words)
+                Words == other.Words ||
+                Words != null &&
+                Words.SequenceEqual(other.Words)
             ) &&
             (
-                this.DecoratedTranscript == other.DecoratedTranscript ||
-                this.DecoratedTranscript != null &&
-                this.DecoratedTranscript.Equals(other.DecoratedTranscript)
+                DecoratedTranscript == other.DecoratedTranscript ||
+                DecoratedTranscript != null &&
+                DecoratedTranscript.Equals(other.DecoratedTranscript)
             ) &&
             (
-                this.DecoratedWords == other.DecoratedWords ||
-                this.DecoratedWords != null &&
-                this.DecoratedWords.SequenceEqual(other.DecoratedWords)
+                DecoratedWords == other.DecoratedWords ||
+                DecoratedWords != null &&
+                DecoratedWords.SequenceEqual(other.DecoratedWords)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class TranscriptionTopicTranscriptAlternative : IEquatable<Transc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
-            if (this.OffsetMs != null)
+            if (OffsetMs != null)
             {
-                hash = hash * 59 + this.OffsetMs.GetHashCode();
+                hash = hash * 59 + OffsetMs.GetHashCode();
             }
 
-            if (this.DurationMs != null)
+            if (DurationMs != null)
             {
-                hash = hash * 59 + this.DurationMs.GetHashCode();
+                hash = hash * 59 + DurationMs.GetHashCode();
             }
 
-            if (this.Transcript != null)
+            if (Transcript != null)
             {
-                hash = hash * 59 + this.Transcript.GetHashCode();
+                hash = hash * 59 + Transcript.GetHashCode();
             }
 
-            if (this.Words != null)
+            if (Words != null)
             {
-                hash = hash * 59 + this.Words.GetHashCode();
+                hash = hash * 59 + Words.GetHashCode();
             }
 
-            if (this.DecoratedTranscript != null)
+            if (DecoratedTranscript != null)
             {
-                hash = hash * 59 + this.DecoratedTranscript.GetHashCode();
+                hash = hash * 59 + DecoratedTranscript.GetHashCode();
             }
 
-            if (this.DecoratedWords != null)
+            if (DecoratedWords != null)
             {
-                hash = hash * 59 + this.DecoratedWords.GetHashCode();
+                hash = hash * 59 + DecoratedWords.GetHashCode();
             }
 
             return hash;

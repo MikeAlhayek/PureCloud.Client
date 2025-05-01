@@ -6109,7 +6109,7 @@ public partial class ViewFilter : IEquatable<ViewFilter>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ViewFilter);
+        return Equals(obj as ViewFilter);
     }
 
     /// <summary>
@@ -6127,1134 +6127,1134 @@ public partial class ViewFilter : IEquatable<ViewFilter>
 
         return true &&
             (
-                this.MediaTypes == other.MediaTypes ||
-                this.MediaTypes != null &&
-                this.MediaTypes.SequenceEqual(other.MediaTypes)
+                MediaTypes == other.MediaTypes ||
+                MediaTypes != null &&
+                MediaTypes.SequenceEqual(other.MediaTypes)
             ) &&
             (
-                this.QueueIds == other.QueueIds ||
-                this.QueueIds != null &&
-                this.QueueIds.SequenceEqual(other.QueueIds)
+                QueueIds == other.QueueIds ||
+                QueueIds != null &&
+                QueueIds.SequenceEqual(other.QueueIds)
             ) &&
             (
-                this.SkillIds == other.SkillIds ||
-                this.SkillIds != null &&
-                this.SkillIds.SequenceEqual(other.SkillIds)
+                SkillIds == other.SkillIds ||
+                SkillIds != null &&
+                SkillIds.SequenceEqual(other.SkillIds)
             ) &&
             (
-                this.AssignedSkillIds == other.AssignedSkillIds ||
-                this.AssignedSkillIds != null &&
-                this.AssignedSkillIds.SequenceEqual(other.AssignedSkillIds)
+                AssignedSkillIds == other.AssignedSkillIds ||
+                AssignedSkillIds != null &&
+                AssignedSkillIds.SequenceEqual(other.AssignedSkillIds)
             ) &&
             (
-                this.SkillGroups == other.SkillGroups ||
-                this.SkillGroups != null &&
-                this.SkillGroups.SequenceEqual(other.SkillGroups)
+                SkillGroups == other.SkillGroups ||
+                SkillGroups != null &&
+                SkillGroups.SequenceEqual(other.SkillGroups)
             ) &&
             (
-                this.LanguageIds == other.LanguageIds ||
-                this.LanguageIds != null &&
-                this.LanguageIds.SequenceEqual(other.LanguageIds)
+                LanguageIds == other.LanguageIds ||
+                LanguageIds != null &&
+                LanguageIds.SequenceEqual(other.LanguageIds)
             ) &&
             (
-                this.AssignedLanguageIds == other.AssignedLanguageIds ||
-                this.AssignedLanguageIds != null &&
-                this.AssignedLanguageIds.SequenceEqual(other.AssignedLanguageIds)
+                AssignedLanguageIds == other.AssignedLanguageIds ||
+                AssignedLanguageIds != null &&
+                AssignedLanguageIds.SequenceEqual(other.AssignedLanguageIds)
             ) &&
             (
-                this.LanguageGroups == other.LanguageGroups ||
-                this.LanguageGroups != null &&
-                this.LanguageGroups.SequenceEqual(other.LanguageGroups)
+                LanguageGroups == other.LanguageGroups ||
+                LanguageGroups != null &&
+                LanguageGroups.SequenceEqual(other.LanguageGroups)
             ) &&
             (
-                this.Directions == other.Directions ||
-                this.Directions != null &&
-                this.Directions.SequenceEqual(other.Directions)
+                Directions == other.Directions ||
+                Directions != null &&
+                Directions.SequenceEqual(other.Directions)
             ) &&
             (
-                this.OriginatingDirections == other.OriginatingDirections ||
-                this.OriginatingDirections != null &&
-                this.OriginatingDirections.SequenceEqual(other.OriginatingDirections)
+                OriginatingDirections == other.OriginatingDirections ||
+                OriginatingDirections != null &&
+                OriginatingDirections.SequenceEqual(other.OriginatingDirections)
             ) &&
             (
-                this.WrapUpCodes == other.WrapUpCodes ||
-                this.WrapUpCodes != null &&
-                this.WrapUpCodes.SequenceEqual(other.WrapUpCodes)
+                WrapUpCodes == other.WrapUpCodes ||
+                WrapUpCodes != null &&
+                WrapUpCodes.SequenceEqual(other.WrapUpCodes)
             ) &&
             (
-                this.DnisList == other.DnisList ||
-                this.DnisList != null &&
-                this.DnisList.SequenceEqual(other.DnisList)
+                DnisList == other.DnisList ||
+                DnisList != null &&
+                DnisList.SequenceEqual(other.DnisList)
             ) &&
             (
-                this.SessionDnisList == other.SessionDnisList ||
-                this.SessionDnisList != null &&
-                this.SessionDnisList.SequenceEqual(other.SessionDnisList)
+                SessionDnisList == other.SessionDnisList ||
+                SessionDnisList != null &&
+                SessionDnisList.SequenceEqual(other.SessionDnisList)
             ) &&
             (
-                this.FilterQueuesByUserIds == other.FilterQueuesByUserIds ||
-                this.FilterQueuesByUserIds != null &&
-                this.FilterQueuesByUserIds.SequenceEqual(other.FilterQueuesByUserIds)
+                FilterQueuesByUserIds == other.FilterQueuesByUserIds ||
+                FilterQueuesByUserIds != null &&
+                FilterQueuesByUserIds.SequenceEqual(other.FilterQueuesByUserIds)
             ) &&
             (
-                this.FilterUsersByQueueIds == other.FilterUsersByQueueIds ||
-                this.FilterUsersByQueueIds != null &&
-                this.FilterUsersByQueueIds.SequenceEqual(other.FilterUsersByQueueIds)
+                FilterUsersByQueueIds == other.FilterUsersByQueueIds ||
+                FilterUsersByQueueIds != null &&
+                FilterUsersByQueueIds.SequenceEqual(other.FilterUsersByQueueIds)
             ) &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.ManagementUnitIds == other.ManagementUnitIds ||
-                this.ManagementUnitIds != null &&
-                this.ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
+                ManagementUnitIds == other.ManagementUnitIds ||
+                ManagementUnitIds != null &&
+                ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
             ) &&
             (
-                this.AddressTos == other.AddressTos ||
-                this.AddressTos != null &&
-                this.AddressTos.SequenceEqual(other.AddressTos)
+                AddressTos == other.AddressTos ||
+                AddressTos != null &&
+                AddressTos.SequenceEqual(other.AddressTos)
             ) &&
             (
-                this.AddressFroms == other.AddressFroms ||
-                this.AddressFroms != null &&
-                this.AddressFroms.SequenceEqual(other.AddressFroms)
+                AddressFroms == other.AddressFroms ||
+                AddressFroms != null &&
+                AddressFroms.SequenceEqual(other.AddressFroms)
             ) &&
             (
-                this.OutboundCampaignIds == other.OutboundCampaignIds ||
-                this.OutboundCampaignIds != null &&
-                this.OutboundCampaignIds.SequenceEqual(other.OutboundCampaignIds)
+                OutboundCampaignIds == other.OutboundCampaignIds ||
+                OutboundCampaignIds != null &&
+                OutboundCampaignIds.SequenceEqual(other.OutboundCampaignIds)
             ) &&
             (
-                this.OutboundContactListIds == other.OutboundContactListIds ||
-                this.OutboundContactListIds != null &&
-                this.OutboundContactListIds.SequenceEqual(other.OutboundContactListIds)
+                OutboundContactListIds == other.OutboundContactListIds ||
+                OutboundContactListIds != null &&
+                OutboundContactListIds.SequenceEqual(other.OutboundContactListIds)
             ) &&
             (
-                this.ContactIds == other.ContactIds ||
-                this.ContactIds != null &&
-                this.ContactIds.SequenceEqual(other.ContactIds)
+                ContactIds == other.ContactIds ||
+                ContactIds != null &&
+                ContactIds.SequenceEqual(other.ContactIds)
             ) &&
             (
-                this.ExternalContactIds == other.ExternalContactIds ||
-                this.ExternalContactIds != null &&
-                this.ExternalContactIds.SequenceEqual(other.ExternalContactIds)
+                ExternalContactIds == other.ExternalContactIds ||
+                ExternalContactIds != null &&
+                ExternalContactIds.SequenceEqual(other.ExternalContactIds)
             ) &&
             (
-                this.ExternalOrgIds == other.ExternalOrgIds ||
-                this.ExternalOrgIds != null &&
-                this.ExternalOrgIds.SequenceEqual(other.ExternalOrgIds)
+                ExternalOrgIds == other.ExternalOrgIds ||
+                ExternalOrgIds != null &&
+                ExternalOrgIds.SequenceEqual(other.ExternalOrgIds)
             ) &&
             (
-                this.AniList == other.AniList ||
-                this.AniList != null &&
-                this.AniList.SequenceEqual(other.AniList)
+                AniList == other.AniList ||
+                AniList != null &&
+                AniList.SequenceEqual(other.AniList)
             ) &&
             (
-                this.DurationsMilliseconds == other.DurationsMilliseconds ||
-                this.DurationsMilliseconds != null &&
-                this.DurationsMilliseconds.SequenceEqual(other.DurationsMilliseconds)
+                DurationsMilliseconds == other.DurationsMilliseconds ||
+                DurationsMilliseconds != null &&
+                DurationsMilliseconds.SequenceEqual(other.DurationsMilliseconds)
             ) &&
             (
-                this.AcdDurationsMilliseconds == other.AcdDurationsMilliseconds ||
-                this.AcdDurationsMilliseconds != null &&
-                this.AcdDurationsMilliseconds.SequenceEqual(other.AcdDurationsMilliseconds)
+                AcdDurationsMilliseconds == other.AcdDurationsMilliseconds ||
+                AcdDurationsMilliseconds != null &&
+                AcdDurationsMilliseconds.SequenceEqual(other.AcdDurationsMilliseconds)
             ) &&
             (
-                this.TalkDurationsMilliseconds == other.TalkDurationsMilliseconds ||
-                this.TalkDurationsMilliseconds != null &&
-                this.TalkDurationsMilliseconds.SequenceEqual(other.TalkDurationsMilliseconds)
+                TalkDurationsMilliseconds == other.TalkDurationsMilliseconds ||
+                TalkDurationsMilliseconds != null &&
+                TalkDurationsMilliseconds.SequenceEqual(other.TalkDurationsMilliseconds)
             ) &&
             (
-                this.AcwDurationsMilliseconds == other.AcwDurationsMilliseconds ||
-                this.AcwDurationsMilliseconds != null &&
-                this.AcwDurationsMilliseconds.SequenceEqual(other.AcwDurationsMilliseconds)
+                AcwDurationsMilliseconds == other.AcwDurationsMilliseconds ||
+                AcwDurationsMilliseconds != null &&
+                AcwDurationsMilliseconds.SequenceEqual(other.AcwDurationsMilliseconds)
             ) &&
             (
-                this.HandleDurationsMilliseconds == other.HandleDurationsMilliseconds ||
-                this.HandleDurationsMilliseconds != null &&
-                this.HandleDurationsMilliseconds.SequenceEqual(other.HandleDurationsMilliseconds)
+                HandleDurationsMilliseconds == other.HandleDurationsMilliseconds ||
+                HandleDurationsMilliseconds != null &&
+                HandleDurationsMilliseconds.SequenceEqual(other.HandleDurationsMilliseconds)
             ) &&
             (
-                this.HoldDurationsMilliseconds == other.HoldDurationsMilliseconds ||
-                this.HoldDurationsMilliseconds != null &&
-                this.HoldDurationsMilliseconds.SequenceEqual(other.HoldDurationsMilliseconds)
+                HoldDurationsMilliseconds == other.HoldDurationsMilliseconds ||
+                HoldDurationsMilliseconds != null &&
+                HoldDurationsMilliseconds.SequenceEqual(other.HoldDurationsMilliseconds)
             ) &&
             (
-                this.AbandonDurationsMilliseconds == other.AbandonDurationsMilliseconds ||
-                this.AbandonDurationsMilliseconds != null &&
-                this.AbandonDurationsMilliseconds.SequenceEqual(other.AbandonDurationsMilliseconds)
+                AbandonDurationsMilliseconds == other.AbandonDurationsMilliseconds ||
+                AbandonDurationsMilliseconds != null &&
+                AbandonDurationsMilliseconds.SequenceEqual(other.AbandonDurationsMilliseconds)
             ) &&
             (
-                this.EvaluationScore == other.EvaluationScore ||
-                this.EvaluationScore != null &&
-                this.EvaluationScore.Equals(other.EvaluationScore)
+                EvaluationScore == other.EvaluationScore ||
+                EvaluationScore != null &&
+                EvaluationScore.Equals(other.EvaluationScore)
             ) &&
             (
-                this.EvaluationCriticalScore == other.EvaluationCriticalScore ||
-                this.EvaluationCriticalScore != null &&
-                this.EvaluationCriticalScore.Equals(other.EvaluationCriticalScore)
+                EvaluationCriticalScore == other.EvaluationCriticalScore ||
+                EvaluationCriticalScore != null &&
+                EvaluationCriticalScore.Equals(other.EvaluationCriticalScore)
             ) &&
             (
-                this.EvaluationFormIds == other.EvaluationFormIds ||
-                this.EvaluationFormIds != null &&
-                this.EvaluationFormIds.SequenceEqual(other.EvaluationFormIds)
+                EvaluationFormIds == other.EvaluationFormIds ||
+                EvaluationFormIds != null &&
+                EvaluationFormIds.SequenceEqual(other.EvaluationFormIds)
             ) &&
             (
-                this.EvaluatedAgentIds == other.EvaluatedAgentIds ||
-                this.EvaluatedAgentIds != null &&
-                this.EvaluatedAgentIds.SequenceEqual(other.EvaluatedAgentIds)
+                EvaluatedAgentIds == other.EvaluatedAgentIds ||
+                EvaluatedAgentIds != null &&
+                EvaluatedAgentIds.SequenceEqual(other.EvaluatedAgentIds)
             ) &&
             (
-                this.EvaluatorIds == other.EvaluatorIds ||
-                this.EvaluatorIds != null &&
-                this.EvaluatorIds.SequenceEqual(other.EvaluatorIds)
+                EvaluatorIds == other.EvaluatorIds ||
+                EvaluatorIds != null &&
+                EvaluatorIds.SequenceEqual(other.EvaluatorIds)
             ) &&
             (
-                this.Transferred == other.Transferred ||
-                this.Transferred != null &&
-                this.Transferred.Equals(other.Transferred)
+                Transferred == other.Transferred ||
+                Transferred != null &&
+                Transferred.Equals(other.Transferred)
             ) &&
             (
-                this.Abandoned == other.Abandoned ||
-                this.Abandoned != null &&
-                this.Abandoned.Equals(other.Abandoned)
+                Abandoned == other.Abandoned ||
+                Abandoned != null &&
+                Abandoned.Equals(other.Abandoned)
             ) &&
             (
-                this.Answered == other.Answered ||
-                this.Answered != null &&
-                this.Answered.Equals(other.Answered)
+                Answered == other.Answered ||
+                Answered != null &&
+                Answered.Equals(other.Answered)
             ) &&
             (
-                this.MessageTypes == other.MessageTypes ||
-                this.MessageTypes != null &&
-                this.MessageTypes.SequenceEqual(other.MessageTypes)
+                MessageTypes == other.MessageTypes ||
+                MessageTypes != null &&
+                MessageTypes.SequenceEqual(other.MessageTypes)
             ) &&
             (
-                this.DivisionIds == other.DivisionIds ||
-                this.DivisionIds != null &&
-                this.DivisionIds.SequenceEqual(other.DivisionIds)
+                DivisionIds == other.DivisionIds ||
+                DivisionIds != null &&
+                DivisionIds.SequenceEqual(other.DivisionIds)
             ) &&
             (
-                this.SurveyFormIds == other.SurveyFormIds ||
-                this.SurveyFormIds != null &&
-                this.SurveyFormIds.SequenceEqual(other.SurveyFormIds)
+                SurveyFormIds == other.SurveyFormIds ||
+                SurveyFormIds != null &&
+                SurveyFormIds.SequenceEqual(other.SurveyFormIds)
             ) &&
             (
-                this.SurveyTotalScore == other.SurveyTotalScore ||
-                this.SurveyTotalScore != null &&
-                this.SurveyTotalScore.Equals(other.SurveyTotalScore)
+                SurveyTotalScore == other.SurveyTotalScore ||
+                SurveyTotalScore != null &&
+                SurveyTotalScore.Equals(other.SurveyTotalScore)
             ) &&
             (
-                this.SurveyNpsScore == other.SurveyNpsScore ||
-                this.SurveyNpsScore != null &&
-                this.SurveyNpsScore.Equals(other.SurveyNpsScore)
+                SurveyNpsScore == other.SurveyNpsScore ||
+                SurveyNpsScore != null &&
+                SurveyNpsScore.Equals(other.SurveyNpsScore)
             ) &&
             (
-                this.Mos == other.Mos ||
-                this.Mos != null &&
-                this.Mos.Equals(other.Mos)
+                Mos == other.Mos ||
+                Mos != null &&
+                Mos.Equals(other.Mos)
             ) &&
             (
-                this.SurveyQuestionGroupScore == other.SurveyQuestionGroupScore ||
-                this.SurveyQuestionGroupScore != null &&
-                this.SurveyQuestionGroupScore.Equals(other.SurveyQuestionGroupScore)
+                SurveyQuestionGroupScore == other.SurveyQuestionGroupScore ||
+                SurveyQuestionGroupScore != null &&
+                SurveyQuestionGroupScore.Equals(other.SurveyQuestionGroupScore)
             ) &&
             (
-                this.SurveyPromoterScore == other.SurveyPromoterScore ||
-                this.SurveyPromoterScore != null &&
-                this.SurveyPromoterScore.Equals(other.SurveyPromoterScore)
+                SurveyPromoterScore == other.SurveyPromoterScore ||
+                SurveyPromoterScore != null &&
+                SurveyPromoterScore.Equals(other.SurveyPromoterScore)
             ) &&
             (
-                this.SurveyFormContextIds == other.SurveyFormContextIds ||
-                this.SurveyFormContextIds != null &&
-                this.SurveyFormContextIds.SequenceEqual(other.SurveyFormContextIds)
+                SurveyFormContextIds == other.SurveyFormContextIds ||
+                SurveyFormContextIds != null &&
+                SurveyFormContextIds.SequenceEqual(other.SurveyFormContextIds)
             ) &&
             (
-                this.ConversationIds == other.ConversationIds ||
-                this.ConversationIds != null &&
-                this.ConversationIds.SequenceEqual(other.ConversationIds)
+                ConversationIds == other.ConversationIds ||
+                ConversationIds != null &&
+                ConversationIds.SequenceEqual(other.ConversationIds)
             ) &&
             (
-                this.SipCallIds == other.SipCallIds ||
-                this.SipCallIds != null &&
-                this.SipCallIds.SequenceEqual(other.SipCallIds)
+                SipCallIds == other.SipCallIds ||
+                SipCallIds != null &&
+                SipCallIds.SequenceEqual(other.SipCallIds)
             ) &&
             (
-                this.IsEnded == other.IsEnded ||
-                this.IsEnded != null &&
-                this.IsEnded.Equals(other.IsEnded)
+                IsEnded == other.IsEnded ||
+                IsEnded != null &&
+                IsEnded.Equals(other.IsEnded)
             ) &&
             (
-                this.IsSurveyed == other.IsSurveyed ||
-                this.IsSurveyed != null &&
-                this.IsSurveyed.Equals(other.IsSurveyed)
+                IsSurveyed == other.IsSurveyed ||
+                IsSurveyed != null &&
+                IsSurveyed.Equals(other.IsSurveyed)
             ) &&
             (
-                this.SurveyScores == other.SurveyScores ||
-                this.SurveyScores != null &&
-                this.SurveyScores.SequenceEqual(other.SurveyScores)
+                SurveyScores == other.SurveyScores ||
+                SurveyScores != null &&
+                SurveyScores.SequenceEqual(other.SurveyScores)
             ) &&
             (
-                this.PromoterScores == other.PromoterScores ||
-                this.PromoterScores != null &&
-                this.PromoterScores.SequenceEqual(other.PromoterScores)
+                PromoterScores == other.PromoterScores ||
+                PromoterScores != null &&
+                PromoterScores.SequenceEqual(other.PromoterScores)
             ) &&
             (
-                this.IsCampaign == other.IsCampaign ||
-                this.IsCampaign != null &&
-                this.IsCampaign.Equals(other.IsCampaign)
+                IsCampaign == other.IsCampaign ||
+                IsCampaign != null &&
+                IsCampaign.Equals(other.IsCampaign)
             ) &&
             (
-                this.SurveyStatuses == other.SurveyStatuses ||
-                this.SurveyStatuses != null &&
-                this.SurveyStatuses.SequenceEqual(other.SurveyStatuses)
+                SurveyStatuses == other.SurveyStatuses ||
+                SurveyStatuses != null &&
+                SurveyStatuses.SequenceEqual(other.SurveyStatuses)
             ) &&
             (
-                this.ConversationProperties == other.ConversationProperties ||
-                this.ConversationProperties != null &&
-                this.ConversationProperties.Equals(other.ConversationProperties)
+                ConversationProperties == other.ConversationProperties ||
+                ConversationProperties != null &&
+                ConversationProperties.Equals(other.ConversationProperties)
             ) &&
             (
-                this.IsBlindTransferred == other.IsBlindTransferred ||
-                this.IsBlindTransferred != null &&
-                this.IsBlindTransferred.Equals(other.IsBlindTransferred)
+                IsBlindTransferred == other.IsBlindTransferred ||
+                IsBlindTransferred != null &&
+                IsBlindTransferred.Equals(other.IsBlindTransferred)
             ) &&
             (
-                this.IsConsulted == other.IsConsulted ||
-                this.IsConsulted != null &&
-                this.IsConsulted.Equals(other.IsConsulted)
+                IsConsulted == other.IsConsulted ||
+                IsConsulted != null &&
+                IsConsulted.Equals(other.IsConsulted)
             ) &&
             (
-                this.IsConsultTransferred == other.IsConsultTransferred ||
-                this.IsConsultTransferred != null &&
-                this.IsConsultTransferred.Equals(other.IsConsultTransferred)
+                IsConsultTransferred == other.IsConsultTransferred ||
+                IsConsultTransferred != null &&
+                IsConsultTransferred.Equals(other.IsConsultTransferred)
             ) &&
             (
-                this.RemoteParticipants == other.RemoteParticipants ||
-                this.RemoteParticipants != null &&
-                this.RemoteParticipants.SequenceEqual(other.RemoteParticipants)
+                RemoteParticipants == other.RemoteParticipants ||
+                RemoteParticipants != null &&
+                RemoteParticipants.SequenceEqual(other.RemoteParticipants)
             ) &&
             (
-                this.FlowIds == other.FlowIds ||
-                this.FlowIds != null &&
-                this.FlowIds.SequenceEqual(other.FlowIds)
+                FlowIds == other.FlowIds ||
+                FlowIds != null &&
+                FlowIds.SequenceEqual(other.FlowIds)
             ) &&
             (
-                this.FlowOutcomeIds == other.FlowOutcomeIds ||
-                this.FlowOutcomeIds != null &&
-                this.FlowOutcomeIds.SequenceEqual(other.FlowOutcomeIds)
+                FlowOutcomeIds == other.FlowOutcomeIds ||
+                FlowOutcomeIds != null &&
+                FlowOutcomeIds.SequenceEqual(other.FlowOutcomeIds)
             ) &&
             (
-                this.FlowOutcomeValues == other.FlowOutcomeValues ||
-                this.FlowOutcomeValues != null &&
-                this.FlowOutcomeValues.SequenceEqual(other.FlowOutcomeValues)
+                FlowOutcomeValues == other.FlowOutcomeValues ||
+                FlowOutcomeValues != null &&
+                FlowOutcomeValues.SequenceEqual(other.FlowOutcomeValues)
             ) &&
             (
-                this.FlowDestinationTypes == other.FlowDestinationTypes ||
-                this.FlowDestinationTypes != null &&
-                this.FlowDestinationTypes.SequenceEqual(other.FlowDestinationTypes)
+                FlowDestinationTypes == other.FlowDestinationTypes ||
+                FlowDestinationTypes != null &&
+                FlowDestinationTypes.SequenceEqual(other.FlowDestinationTypes)
             ) &&
             (
-                this.FlowDisconnectReasons == other.FlowDisconnectReasons ||
-                this.FlowDisconnectReasons != null &&
-                this.FlowDisconnectReasons.SequenceEqual(other.FlowDisconnectReasons)
+                FlowDisconnectReasons == other.FlowDisconnectReasons ||
+                FlowDisconnectReasons != null &&
+                FlowDisconnectReasons.SequenceEqual(other.FlowDisconnectReasons)
             ) &&
             (
-                this.FlowTypes == other.FlowTypes ||
-                this.FlowTypes != null &&
-                this.FlowTypes.SequenceEqual(other.FlowTypes)
+                FlowTypes == other.FlowTypes ||
+                FlowTypes != null &&
+                FlowTypes.SequenceEqual(other.FlowTypes)
             ) &&
             (
-                this.FlowEntryTypes == other.FlowEntryTypes ||
-                this.FlowEntryTypes != null &&
-                this.FlowEntryTypes.SequenceEqual(other.FlowEntryTypes)
+                FlowEntryTypes == other.FlowEntryTypes ||
+                FlowEntryTypes != null &&
+                FlowEntryTypes.SequenceEqual(other.FlowEntryTypes)
             ) &&
             (
-                this.FlowEntryReasons == other.FlowEntryReasons ||
-                this.FlowEntryReasons != null &&
-                this.FlowEntryReasons.SequenceEqual(other.FlowEntryReasons)
+                FlowEntryReasons == other.FlowEntryReasons ||
+                FlowEntryReasons != null &&
+                FlowEntryReasons.SequenceEqual(other.FlowEntryReasons)
             ) &&
             (
-                this.FlowVersions == other.FlowVersions ||
-                this.FlowVersions != null &&
-                this.FlowVersions.SequenceEqual(other.FlowVersions)
+                FlowVersions == other.FlowVersions ||
+                FlowVersions != null &&
+                FlowVersions.SequenceEqual(other.FlowVersions)
             ) &&
             (
-                this.GroupIds == other.GroupIds ||
-                this.GroupIds != null &&
-                this.GroupIds.SequenceEqual(other.GroupIds)
+                GroupIds == other.GroupIds ||
+                GroupIds != null &&
+                GroupIds.SequenceEqual(other.GroupIds)
             ) &&
             (
-                this.HasJourneyCustomerId == other.HasJourneyCustomerId ||
-                this.HasJourneyCustomerId != null &&
-                this.HasJourneyCustomerId.Equals(other.HasJourneyCustomerId)
+                HasJourneyCustomerId == other.HasJourneyCustomerId ||
+                HasJourneyCustomerId != null &&
+                HasJourneyCustomerId.Equals(other.HasJourneyCustomerId)
             ) &&
             (
-                this.HasJourneyActionMapId == other.HasJourneyActionMapId ||
-                this.HasJourneyActionMapId != null &&
-                this.HasJourneyActionMapId.Equals(other.HasJourneyActionMapId)
+                HasJourneyActionMapId == other.HasJourneyActionMapId ||
+                HasJourneyActionMapId != null &&
+                HasJourneyActionMapId.Equals(other.HasJourneyActionMapId)
             ) &&
             (
-                this.HasJourneyVisitId == other.HasJourneyVisitId ||
-                this.HasJourneyVisitId != null &&
-                this.HasJourneyVisitId.Equals(other.HasJourneyVisitId)
+                HasJourneyVisitId == other.HasJourneyVisitId ||
+                HasJourneyVisitId != null &&
+                HasJourneyVisitId.Equals(other.HasJourneyVisitId)
             ) &&
             (
-                this.HasMedia == other.HasMedia ||
-                this.HasMedia != null &&
-                this.HasMedia.Equals(other.HasMedia)
+                HasMedia == other.HasMedia ||
+                HasMedia != null &&
+                HasMedia.Equals(other.HasMedia)
             ) &&
             (
-                this.RoleIds == other.RoleIds ||
-                this.RoleIds != null &&
-                this.RoleIds.SequenceEqual(other.RoleIds)
+                RoleIds == other.RoleIds ||
+                RoleIds != null &&
+                RoleIds.SequenceEqual(other.RoleIds)
             ) &&
             (
-                this.ReportsTos == other.ReportsTos ||
-                this.ReportsTos != null &&
-                this.ReportsTos.SequenceEqual(other.ReportsTos)
+                ReportsTos == other.ReportsTos ||
+                ReportsTos != null &&
+                ReportsTos.SequenceEqual(other.ReportsTos)
             ) &&
             (
-                this.LocationIds == other.LocationIds ||
-                this.LocationIds != null &&
-                this.LocationIds.SequenceEqual(other.LocationIds)
+                LocationIds == other.LocationIds ||
+                LocationIds != null &&
+                LocationIds.SequenceEqual(other.LocationIds)
             ) &&
             (
-                this.FlowOutTypes == other.FlowOutTypes ||
-                this.FlowOutTypes != null &&
-                this.FlowOutTypes.SequenceEqual(other.FlowOutTypes)
+                FlowOutTypes == other.FlowOutTypes ||
+                FlowOutTypes != null &&
+                FlowOutTypes.SequenceEqual(other.FlowOutTypes)
             ) &&
             (
-                this.ProviderList == other.ProviderList ||
-                this.ProviderList != null &&
-                this.ProviderList.SequenceEqual(other.ProviderList)
+                ProviderList == other.ProviderList ||
+                ProviderList != null &&
+                ProviderList.SequenceEqual(other.ProviderList)
             ) &&
             (
-                this.CallbackNumberList == other.CallbackNumberList ||
-                this.CallbackNumberList != null &&
-                this.CallbackNumberList.SequenceEqual(other.CallbackNumberList)
+                CallbackNumberList == other.CallbackNumberList ||
+                CallbackNumberList != null &&
+                CallbackNumberList.SequenceEqual(other.CallbackNumberList)
             ) &&
             (
-                this.CallbackInterval == other.CallbackInterval ||
-                this.CallbackInterval != null &&
-                this.CallbackInterval.Equals(other.CallbackInterval)
+                CallbackInterval == other.CallbackInterval ||
+                CallbackInterval != null &&
+                CallbackInterval.Equals(other.CallbackInterval)
             ) &&
             (
-                this.UsedRoutingTypes == other.UsedRoutingTypes ||
-                this.UsedRoutingTypes != null &&
-                this.UsedRoutingTypes.SequenceEqual(other.UsedRoutingTypes)
+                UsedRoutingTypes == other.UsedRoutingTypes ||
+                UsedRoutingTypes != null &&
+                UsedRoutingTypes.SequenceEqual(other.UsedRoutingTypes)
             ) &&
             (
-                this.RequestedRoutingTypes == other.RequestedRoutingTypes ||
-                this.RequestedRoutingTypes != null &&
-                this.RequestedRoutingTypes.SequenceEqual(other.RequestedRoutingTypes)
+                RequestedRoutingTypes == other.RequestedRoutingTypes ||
+                RequestedRoutingTypes != null &&
+                RequestedRoutingTypes.SequenceEqual(other.RequestedRoutingTypes)
             ) &&
             (
-                this.HasAgentAssistId == other.HasAgentAssistId ||
-                this.HasAgentAssistId != null &&
-                this.HasAgentAssistId.Equals(other.HasAgentAssistId)
+                HasAgentAssistId == other.HasAgentAssistId ||
+                HasAgentAssistId != null &&
+                HasAgentAssistId.Equals(other.HasAgentAssistId)
             ) &&
             (
-                this.Transcripts == other.Transcripts ||
-                this.Transcripts != null &&
-                this.Transcripts.SequenceEqual(other.Transcripts)
+                Transcripts == other.Transcripts ||
+                Transcripts != null &&
+                Transcripts.SequenceEqual(other.Transcripts)
             ) &&
             (
-                this.TranscriptLanguages == other.TranscriptLanguages ||
-                this.TranscriptLanguages != null &&
-                this.TranscriptLanguages.SequenceEqual(other.TranscriptLanguages)
+                TranscriptLanguages == other.TranscriptLanguages ||
+                TranscriptLanguages != null &&
+                TranscriptLanguages.SequenceEqual(other.TranscriptLanguages)
             ) &&
             (
-                this.ParticipantPurposes == other.ParticipantPurposes ||
-                this.ParticipantPurposes != null &&
-                this.ParticipantPurposes.SequenceEqual(other.ParticipantPurposes)
+                ParticipantPurposes == other.ParticipantPurposes ||
+                ParticipantPurposes != null &&
+                ParticipantPurposes.SequenceEqual(other.ParticipantPurposes)
             ) &&
             (
-                this.ShowFirstQueue == other.ShowFirstQueue ||
-                this.ShowFirstQueue != null &&
-                this.ShowFirstQueue.Equals(other.ShowFirstQueue)
+                ShowFirstQueue == other.ShowFirstQueue ||
+                ShowFirstQueue != null &&
+                ShowFirstQueue.Equals(other.ShowFirstQueue)
             ) &&
             (
-                this.TeamIds == other.TeamIds ||
-                this.TeamIds != null &&
-                this.TeamIds.SequenceEqual(other.TeamIds)
+                TeamIds == other.TeamIds ||
+                TeamIds != null &&
+                TeamIds.SequenceEqual(other.TeamIds)
             ) &&
             (
-                this.FilterUsersByTeamIds == other.FilterUsersByTeamIds ||
-                this.FilterUsersByTeamIds != null &&
-                this.FilterUsersByTeamIds.SequenceEqual(other.FilterUsersByTeamIds)
+                FilterUsersByTeamIds == other.FilterUsersByTeamIds ||
+                FilterUsersByTeamIds != null &&
+                FilterUsersByTeamIds.SequenceEqual(other.FilterUsersByTeamIds)
             ) &&
             (
-                this.JourneyActionMapIds == other.JourneyActionMapIds ||
-                this.JourneyActionMapIds != null &&
-                this.JourneyActionMapIds.SequenceEqual(other.JourneyActionMapIds)
+                JourneyActionMapIds == other.JourneyActionMapIds ||
+                JourneyActionMapIds != null &&
+                JourneyActionMapIds.SequenceEqual(other.JourneyActionMapIds)
             ) &&
             (
-                this.JourneyOutcomeIds == other.JourneyOutcomeIds ||
-                this.JourneyOutcomeIds != null &&
-                this.JourneyOutcomeIds.SequenceEqual(other.JourneyOutcomeIds)
+                JourneyOutcomeIds == other.JourneyOutcomeIds ||
+                JourneyOutcomeIds != null &&
+                JourneyOutcomeIds.SequenceEqual(other.JourneyOutcomeIds)
             ) &&
             (
-                this.JourneySegmentIds == other.JourneySegmentIds ||
-                this.JourneySegmentIds != null &&
-                this.JourneySegmentIds.SequenceEqual(other.JourneySegmentIds)
+                JourneySegmentIds == other.JourneySegmentIds ||
+                JourneySegmentIds != null &&
+                JourneySegmentIds.SequenceEqual(other.JourneySegmentIds)
             ) &&
             (
-                this.JourneyActionMapTypes == other.JourneyActionMapTypes ||
-                this.JourneyActionMapTypes != null &&
-                this.JourneyActionMapTypes.SequenceEqual(other.JourneyActionMapTypes)
+                JourneyActionMapTypes == other.JourneyActionMapTypes ||
+                JourneyActionMapTypes != null &&
+                JourneyActionMapTypes.SequenceEqual(other.JourneyActionMapTypes)
             ) &&
             (
-                this.DevelopmentRoleList == other.DevelopmentRoleList ||
-                this.DevelopmentRoleList != null &&
-                this.DevelopmentRoleList.SequenceEqual(other.DevelopmentRoleList)
+                DevelopmentRoleList == other.DevelopmentRoleList ||
+                DevelopmentRoleList != null &&
+                DevelopmentRoleList.SequenceEqual(other.DevelopmentRoleList)
             ) &&
             (
-                this.DevelopmentTypeList == other.DevelopmentTypeList ||
-                this.DevelopmentTypeList != null &&
-                this.DevelopmentTypeList.SequenceEqual(other.DevelopmentTypeList)
+                DevelopmentTypeList == other.DevelopmentTypeList ||
+                DevelopmentTypeList != null &&
+                DevelopmentTypeList.SequenceEqual(other.DevelopmentTypeList)
             ) &&
             (
-                this.DevelopmentStatusList == other.DevelopmentStatusList ||
-                this.DevelopmentStatusList != null &&
-                this.DevelopmentStatusList.SequenceEqual(other.DevelopmentStatusList)
+                DevelopmentStatusList == other.DevelopmentStatusList ||
+                DevelopmentStatusList != null &&
+                DevelopmentStatusList.SequenceEqual(other.DevelopmentStatusList)
             ) &&
             (
-                this.DevelopmentModuleIds == other.DevelopmentModuleIds ||
-                this.DevelopmentModuleIds != null &&
-                this.DevelopmentModuleIds.SequenceEqual(other.DevelopmentModuleIds)
+                DevelopmentModuleIds == other.DevelopmentModuleIds ||
+                DevelopmentModuleIds != null &&
+                DevelopmentModuleIds.SequenceEqual(other.DevelopmentModuleIds)
             ) &&
             (
-                this.DevelopmentActivityOverdue == other.DevelopmentActivityOverdue ||
-                this.DevelopmentActivityOverdue != null &&
-                this.DevelopmentActivityOverdue.Equals(other.DevelopmentActivityOverdue)
+                DevelopmentActivityOverdue == other.DevelopmentActivityOverdue ||
+                DevelopmentActivityOverdue != null &&
+                DevelopmentActivityOverdue.Equals(other.DevelopmentActivityOverdue)
             ) &&
             (
-                this.CustomerSentimentScore == other.CustomerSentimentScore ||
-                this.CustomerSentimentScore != null &&
-                this.CustomerSentimentScore.Equals(other.CustomerSentimentScore)
+                CustomerSentimentScore == other.CustomerSentimentScore ||
+                CustomerSentimentScore != null &&
+                CustomerSentimentScore.Equals(other.CustomerSentimentScore)
             ) &&
             (
-                this.CustomerSentimentTrend == other.CustomerSentimentTrend ||
-                this.CustomerSentimentTrend != null &&
-                this.CustomerSentimentTrend.Equals(other.CustomerSentimentTrend)
+                CustomerSentimentTrend == other.CustomerSentimentTrend ||
+                CustomerSentimentTrend != null &&
+                CustomerSentimentTrend.Equals(other.CustomerSentimentTrend)
             ) &&
             (
-                this.FlowTransferTargets == other.FlowTransferTargets ||
-                this.FlowTransferTargets != null &&
-                this.FlowTransferTargets.SequenceEqual(other.FlowTransferTargets)
+                FlowTransferTargets == other.FlowTransferTargets ||
+                FlowTransferTargets != null &&
+                FlowTransferTargets.SequenceEqual(other.FlowTransferTargets)
             ) &&
             (
-                this.DevelopmentName == other.DevelopmentName ||
-                this.DevelopmentName != null &&
-                this.DevelopmentName.Equals(other.DevelopmentName)
+                DevelopmentName == other.DevelopmentName ||
+                DevelopmentName != null &&
+                DevelopmentName.Equals(other.DevelopmentName)
             ) &&
             (
-                this.TopicIds == other.TopicIds ||
-                this.TopicIds != null &&
-                this.TopicIds.SequenceEqual(other.TopicIds)
+                TopicIds == other.TopicIds ||
+                TopicIds != null &&
+                TopicIds.SequenceEqual(other.TopicIds)
             ) &&
             (
-                this.ExternalTags == other.ExternalTags ||
-                this.ExternalTags != null &&
-                this.ExternalTags.SequenceEqual(other.ExternalTags)
+                ExternalTags == other.ExternalTags ||
+                ExternalTags != null &&
+                ExternalTags.SequenceEqual(other.ExternalTags)
             ) &&
             (
-                this.IsNotResponding == other.IsNotResponding ||
-                this.IsNotResponding != null &&
-                this.IsNotResponding.Equals(other.IsNotResponding)
+                IsNotResponding == other.IsNotResponding ||
+                IsNotResponding != null &&
+                IsNotResponding.Equals(other.IsNotResponding)
             ) &&
             (
-                this.IsAuthenticated == other.IsAuthenticated ||
-                this.IsAuthenticated != null &&
-                this.IsAuthenticated.Equals(other.IsAuthenticated)
+                IsAuthenticated == other.IsAuthenticated ||
+                IsAuthenticated != null &&
+                IsAuthenticated.Equals(other.IsAuthenticated)
             ) &&
             (
-                this.BotIds == other.BotIds ||
-                this.BotIds != null &&
-                this.BotIds.SequenceEqual(other.BotIds)
+                BotIds == other.BotIds ||
+                BotIds != null &&
+                BotIds.SequenceEqual(other.BotIds)
             ) &&
             (
-                this.BotVersions == other.BotVersions ||
-                this.BotVersions != null &&
-                this.BotVersions.SequenceEqual(other.BotVersions)
+                BotVersions == other.BotVersions ||
+                BotVersions != null &&
+                BotVersions.SequenceEqual(other.BotVersions)
             ) &&
             (
-                this.BotMessageTypes == other.BotMessageTypes ||
-                this.BotMessageTypes != null &&
-                this.BotMessageTypes.SequenceEqual(other.BotMessageTypes)
+                BotMessageTypes == other.BotMessageTypes ||
+                BotMessageTypes != null &&
+                BotMessageTypes.SequenceEqual(other.BotMessageTypes)
             ) &&
             (
-                this.BotProviderList == other.BotProviderList ||
-                this.BotProviderList != null &&
-                this.BotProviderList.SequenceEqual(other.BotProviderList)
+                BotProviderList == other.BotProviderList ||
+                BotProviderList != null &&
+                BotProviderList.SequenceEqual(other.BotProviderList)
             ) &&
             (
-                this.BotProductList == other.BotProductList ||
-                this.BotProductList != null &&
-                this.BotProductList.SequenceEqual(other.BotProductList)
+                BotProductList == other.BotProductList ||
+                BotProductList != null &&
+                BotProductList.SequenceEqual(other.BotProductList)
             ) &&
             (
-                this.BotRecognitionFailureReasonList == other.BotRecognitionFailureReasonList ||
-                this.BotRecognitionFailureReasonList != null &&
-                this.BotRecognitionFailureReasonList.SequenceEqual(other.BotRecognitionFailureReasonList)
+                BotRecognitionFailureReasonList == other.BotRecognitionFailureReasonList ||
+                BotRecognitionFailureReasonList != null &&
+                BotRecognitionFailureReasonList.SequenceEqual(other.BotRecognitionFailureReasonList)
             ) &&
             (
-                this.BotIntentList == other.BotIntentList ||
-                this.BotIntentList != null &&
-                this.BotIntentList.SequenceEqual(other.BotIntentList)
+                BotIntentList == other.BotIntentList ||
+                BotIntentList != null &&
+                BotIntentList.SequenceEqual(other.BotIntentList)
             ) &&
             (
-                this.BotFinalIntentList == other.BotFinalIntentList ||
-                this.BotFinalIntentList != null &&
-                this.BotFinalIntentList.SequenceEqual(other.BotFinalIntentList)
+                BotFinalIntentList == other.BotFinalIntentList ||
+                BotFinalIntentList != null &&
+                BotFinalIntentList.SequenceEqual(other.BotFinalIntentList)
             ) &&
             (
-                this.BotSlotList == other.BotSlotList ||
-                this.BotSlotList != null &&
-                this.BotSlotList.SequenceEqual(other.BotSlotList)
+                BotSlotList == other.BotSlotList ||
+                BotSlotList != null &&
+                BotSlotList.SequenceEqual(other.BotSlotList)
             ) &&
             (
-                this.BotResultList == other.BotResultList ||
-                this.BotResultList != null &&
-                this.BotResultList.SequenceEqual(other.BotResultList)
+                BotResultList == other.BotResultList ||
+                BotResultList != null &&
+                BotResultList.SequenceEqual(other.BotResultList)
             ) &&
             (
-                this.BlockedReasons == other.BlockedReasons ||
-                this.BlockedReasons != null &&
-                this.BlockedReasons.SequenceEqual(other.BlockedReasons)
+                BlockedReasons == other.BlockedReasons ||
+                BlockedReasons != null &&
+                BlockedReasons.SequenceEqual(other.BlockedReasons)
             ) &&
             (
-                this.IsRecorded == other.IsRecorded ||
-                this.IsRecorded != null &&
-                this.IsRecorded.Equals(other.IsRecorded)
+                IsRecorded == other.IsRecorded ||
+                IsRecorded != null &&
+                IsRecorded.Equals(other.IsRecorded)
             ) &&
             (
-                this.HasEvaluation == other.HasEvaluation ||
-                this.HasEvaluation != null &&
-                this.HasEvaluation.Equals(other.HasEvaluation)
+                HasEvaluation == other.HasEvaluation ||
+                HasEvaluation != null &&
+                HasEvaluation.Equals(other.HasEvaluation)
             ) &&
             (
-                this.HasScoredEvaluation == other.HasScoredEvaluation ||
-                this.HasScoredEvaluation != null &&
-                this.HasScoredEvaluation.Equals(other.HasScoredEvaluation)
+                HasScoredEvaluation == other.HasScoredEvaluation ||
+                HasScoredEvaluation != null &&
+                HasScoredEvaluation.Equals(other.HasScoredEvaluation)
             ) &&
             (
-                this.EmailDeliveryStatusList == other.EmailDeliveryStatusList ||
-                this.EmailDeliveryStatusList != null &&
-                this.EmailDeliveryStatusList.SequenceEqual(other.EmailDeliveryStatusList)
+                EmailDeliveryStatusList == other.EmailDeliveryStatusList ||
+                EmailDeliveryStatusList != null &&
+                EmailDeliveryStatusList.SequenceEqual(other.EmailDeliveryStatusList)
             ) &&
             (
-                this.IsAgentOwnedCallback == other.IsAgentOwnedCallback ||
-                this.IsAgentOwnedCallback != null &&
-                this.IsAgentOwnedCallback.Equals(other.IsAgentOwnedCallback)
+                IsAgentOwnedCallback == other.IsAgentOwnedCallback ||
+                IsAgentOwnedCallback != null &&
+                IsAgentOwnedCallback.Equals(other.IsAgentOwnedCallback)
             ) &&
             (
-                this.AgentCallbackOwnerIds == other.AgentCallbackOwnerIds ||
-                this.AgentCallbackOwnerIds != null &&
-                this.AgentCallbackOwnerIds.SequenceEqual(other.AgentCallbackOwnerIds)
+                AgentCallbackOwnerIds == other.AgentCallbackOwnerIds ||
+                AgentCallbackOwnerIds != null &&
+                AgentCallbackOwnerIds.SequenceEqual(other.AgentCallbackOwnerIds)
             ) &&
             (
-                this.TranscriptTopics == other.TranscriptTopics ||
-                this.TranscriptTopics != null &&
-                this.TranscriptTopics.SequenceEqual(other.TranscriptTopics)
+                TranscriptTopics == other.TranscriptTopics ||
+                TranscriptTopics != null &&
+                TranscriptTopics.SequenceEqual(other.TranscriptTopics)
             ) &&
             (
-                this.JourneyFrequencyCapReasons == other.JourneyFrequencyCapReasons ||
-                this.JourneyFrequencyCapReasons != null &&
-                this.JourneyFrequencyCapReasons.SequenceEqual(other.JourneyFrequencyCapReasons)
+                JourneyFrequencyCapReasons == other.JourneyFrequencyCapReasons ||
+                JourneyFrequencyCapReasons != null &&
+                JourneyFrequencyCapReasons.SequenceEqual(other.JourneyFrequencyCapReasons)
             ) &&
             (
-                this.JourneyBlockingActionMapIds == other.JourneyBlockingActionMapIds ||
-                this.JourneyBlockingActionMapIds != null &&
-                this.JourneyBlockingActionMapIds.SequenceEqual(other.JourneyBlockingActionMapIds)
+                JourneyBlockingActionMapIds == other.JourneyBlockingActionMapIds ||
+                JourneyBlockingActionMapIds != null &&
+                JourneyBlockingActionMapIds.SequenceEqual(other.JourneyBlockingActionMapIds)
             ) &&
             (
-                this.JourneyActionTargetIds == other.JourneyActionTargetIds ||
-                this.JourneyActionTargetIds != null &&
-                this.JourneyActionTargetIds.SequenceEqual(other.JourneyActionTargetIds)
+                JourneyActionTargetIds == other.JourneyActionTargetIds ||
+                JourneyActionTargetIds != null &&
+                JourneyActionTargetIds.SequenceEqual(other.JourneyActionTargetIds)
             ) &&
             (
-                this.JourneyBlockingScheduleGroupIds == other.JourneyBlockingScheduleGroupIds ||
-                this.JourneyBlockingScheduleGroupIds != null &&
-                this.JourneyBlockingScheduleGroupIds.SequenceEqual(other.JourneyBlockingScheduleGroupIds)
+                JourneyBlockingScheduleGroupIds == other.JourneyBlockingScheduleGroupIds ||
+                JourneyBlockingScheduleGroupIds != null &&
+                JourneyBlockingScheduleGroupIds.SequenceEqual(other.JourneyBlockingScheduleGroupIds)
             ) &&
             (
-                this.JourneyBlockingEmergencyScheduleGroupIds == other.JourneyBlockingEmergencyScheduleGroupIds ||
-                this.JourneyBlockingEmergencyScheduleGroupIds != null &&
-                this.JourneyBlockingEmergencyScheduleGroupIds.SequenceEqual(other.JourneyBlockingEmergencyScheduleGroupIds)
+                JourneyBlockingEmergencyScheduleGroupIds == other.JourneyBlockingEmergencyScheduleGroupIds ||
+                JourneyBlockingEmergencyScheduleGroupIds != null &&
+                JourneyBlockingEmergencyScheduleGroupIds.SequenceEqual(other.JourneyBlockingEmergencyScheduleGroupIds)
             ) &&
             (
-                this.JourneyUrlEqualConditions == other.JourneyUrlEqualConditions ||
-                this.JourneyUrlEqualConditions != null &&
-                this.JourneyUrlEqualConditions.SequenceEqual(other.JourneyUrlEqualConditions)
+                JourneyUrlEqualConditions == other.JourneyUrlEqualConditions ||
+                JourneyUrlEqualConditions != null &&
+                JourneyUrlEqualConditions.SequenceEqual(other.JourneyUrlEqualConditions)
             ) &&
             (
-                this.JourneyUrlNotEqualConditions == other.JourneyUrlNotEqualConditions ||
-                this.JourneyUrlNotEqualConditions != null &&
-                this.JourneyUrlNotEqualConditions.SequenceEqual(other.JourneyUrlNotEqualConditions)
+                JourneyUrlNotEqualConditions == other.JourneyUrlNotEqualConditions ||
+                JourneyUrlNotEqualConditions != null &&
+                JourneyUrlNotEqualConditions.SequenceEqual(other.JourneyUrlNotEqualConditions)
             ) &&
             (
-                this.JourneyUrlStartsWithConditions == other.JourneyUrlStartsWithConditions ||
-                this.JourneyUrlStartsWithConditions != null &&
-                this.JourneyUrlStartsWithConditions.SequenceEqual(other.JourneyUrlStartsWithConditions)
+                JourneyUrlStartsWithConditions == other.JourneyUrlStartsWithConditions ||
+                JourneyUrlStartsWithConditions != null &&
+                JourneyUrlStartsWithConditions.SequenceEqual(other.JourneyUrlStartsWithConditions)
             ) &&
             (
-                this.JourneyUrlEndsWithConditions == other.JourneyUrlEndsWithConditions ||
-                this.JourneyUrlEndsWithConditions != null &&
-                this.JourneyUrlEndsWithConditions.SequenceEqual(other.JourneyUrlEndsWithConditions)
+                JourneyUrlEndsWithConditions == other.JourneyUrlEndsWithConditions ||
+                JourneyUrlEndsWithConditions != null &&
+                JourneyUrlEndsWithConditions.SequenceEqual(other.JourneyUrlEndsWithConditions)
             ) &&
             (
-                this.JourneyUrlContainsAnyConditions == other.JourneyUrlContainsAnyConditions ||
-                this.JourneyUrlContainsAnyConditions != null &&
-                this.JourneyUrlContainsAnyConditions.SequenceEqual(other.JourneyUrlContainsAnyConditions)
+                JourneyUrlContainsAnyConditions == other.JourneyUrlContainsAnyConditions ||
+                JourneyUrlContainsAnyConditions != null &&
+                JourneyUrlContainsAnyConditions.SequenceEqual(other.JourneyUrlContainsAnyConditions)
             ) &&
             (
-                this.JourneyUrlNotContainsAnyConditions == other.JourneyUrlNotContainsAnyConditions ||
-                this.JourneyUrlNotContainsAnyConditions != null &&
-                this.JourneyUrlNotContainsAnyConditions.SequenceEqual(other.JourneyUrlNotContainsAnyConditions)
+                JourneyUrlNotContainsAnyConditions == other.JourneyUrlNotContainsAnyConditions ||
+                JourneyUrlNotContainsAnyConditions != null &&
+                JourneyUrlNotContainsAnyConditions.SequenceEqual(other.JourneyUrlNotContainsAnyConditions)
             ) &&
             (
-                this.JourneyUrlContainsAllConditions == other.JourneyUrlContainsAllConditions ||
-                this.JourneyUrlContainsAllConditions != null &&
-                this.JourneyUrlContainsAllConditions.SequenceEqual(other.JourneyUrlContainsAllConditions)
+                JourneyUrlContainsAllConditions == other.JourneyUrlContainsAllConditions ||
+                JourneyUrlContainsAllConditions != null &&
+                JourneyUrlContainsAllConditions.SequenceEqual(other.JourneyUrlContainsAllConditions)
             ) &&
             (
-                this.JourneyUrlNotContainsAllConditions == other.JourneyUrlNotContainsAllConditions ||
-                this.JourneyUrlNotContainsAllConditions != null &&
-                this.JourneyUrlNotContainsAllConditions.SequenceEqual(other.JourneyUrlNotContainsAllConditions)
+                JourneyUrlNotContainsAllConditions == other.JourneyUrlNotContainsAllConditions ||
+                JourneyUrlNotContainsAllConditions != null &&
+                JourneyUrlNotContainsAllConditions.SequenceEqual(other.JourneyUrlNotContainsAllConditions)
             ) &&
             (
-                this.FlowMilestoneIds == other.FlowMilestoneIds ||
-                this.FlowMilestoneIds != null &&
-                this.FlowMilestoneIds.SequenceEqual(other.FlowMilestoneIds)
+                FlowMilestoneIds == other.FlowMilestoneIds ||
+                FlowMilestoneIds != null &&
+                FlowMilestoneIds.SequenceEqual(other.FlowMilestoneIds)
             ) &&
             (
-                this.IsAssessmentPassed == other.IsAssessmentPassed ||
-                this.IsAssessmentPassed != null &&
-                this.IsAssessmentPassed.Equals(other.IsAssessmentPassed)
+                IsAssessmentPassed == other.IsAssessmentPassed ||
+                IsAssessmentPassed != null &&
+                IsAssessmentPassed.Equals(other.IsAssessmentPassed)
             ) &&
             (
-                this.ConversationInitiators == other.ConversationInitiators ||
-                this.ConversationInitiators != null &&
-                this.ConversationInitiators.SequenceEqual(other.ConversationInitiators)
+                ConversationInitiators == other.ConversationInitiators ||
+                ConversationInitiators != null &&
+                ConversationInitiators.SequenceEqual(other.ConversationInitiators)
             ) &&
             (
-                this.HasCustomerParticipated == other.HasCustomerParticipated ||
-                this.HasCustomerParticipated != null &&
-                this.HasCustomerParticipated.Equals(other.HasCustomerParticipated)
+                HasCustomerParticipated == other.HasCustomerParticipated ||
+                HasCustomerParticipated != null &&
+                HasCustomerParticipated.Equals(other.HasCustomerParticipated)
             ) &&
             (
-                this.IsAcdInteraction == other.IsAcdInteraction ||
-                this.IsAcdInteraction != null &&
-                this.IsAcdInteraction.Equals(other.IsAcdInteraction)
+                IsAcdInteraction == other.IsAcdInteraction ||
+                IsAcdInteraction != null &&
+                IsAcdInteraction.Equals(other.IsAcdInteraction)
             ) &&
             (
-                this.HasFax == other.HasFax ||
-                this.HasFax != null &&
-                this.HasFax.Equals(other.HasFax)
+                HasFax == other.HasFax ||
+                HasFax != null &&
+                HasFax.Equals(other.HasFax)
             ) &&
             (
-                this.DataActionIds == other.DataActionIds ||
-                this.DataActionIds != null &&
-                this.DataActionIds.SequenceEqual(other.DataActionIds)
+                DataActionIds == other.DataActionIds ||
+                DataActionIds != null &&
+                DataActionIds.SequenceEqual(other.DataActionIds)
             ) &&
             (
-                this.ActionCategoryName == other.ActionCategoryName ||
-                this.ActionCategoryName != null &&
-                this.ActionCategoryName.Equals(other.ActionCategoryName)
+                ActionCategoryName == other.ActionCategoryName ||
+                ActionCategoryName != null &&
+                ActionCategoryName.Equals(other.ActionCategoryName)
             ) &&
             (
-                this.IntegrationIds == other.IntegrationIds ||
-                this.IntegrationIds != null &&
-                this.IntegrationIds.SequenceEqual(other.IntegrationIds)
+                IntegrationIds == other.IntegrationIds ||
+                IntegrationIds != null &&
+                IntegrationIds.SequenceEqual(other.IntegrationIds)
             ) &&
             (
-                this.ResponseStatuses == other.ResponseStatuses ||
-                this.ResponseStatuses != null &&
-                this.ResponseStatuses.SequenceEqual(other.ResponseStatuses)
+                ResponseStatuses == other.ResponseStatuses ||
+                ResponseStatuses != null &&
+                ResponseStatuses.SequenceEqual(other.ResponseStatuses)
             ) &&
             (
-                this.AvailableDashboard == other.AvailableDashboard ||
-                this.AvailableDashboard != null &&
-                this.AvailableDashboard.Equals(other.AvailableDashboard)
+                AvailableDashboard == other.AvailableDashboard ||
+                AvailableDashboard != null &&
+                AvailableDashboard.Equals(other.AvailableDashboard)
             ) &&
             (
-                this.FavouriteDashboard == other.FavouriteDashboard ||
-                this.FavouriteDashboard != null &&
-                this.FavouriteDashboard.Equals(other.FavouriteDashboard)
+                FavouriteDashboard == other.FavouriteDashboard ||
+                FavouriteDashboard != null &&
+                FavouriteDashboard.Equals(other.FavouriteDashboard)
             ) &&
             (
-                this.MyDashboard == other.MyDashboard ||
-                this.MyDashboard != null &&
-                this.MyDashboard.Equals(other.MyDashboard)
+                MyDashboard == other.MyDashboard ||
+                MyDashboard != null &&
+                MyDashboard.Equals(other.MyDashboard)
             ) &&
             (
-                this.StationErrors == other.StationErrors ||
-                this.StationErrors != null &&
-                this.StationErrors.SequenceEqual(other.StationErrors)
+                StationErrors == other.StationErrors ||
+                StationErrors != null &&
+                StationErrors.SequenceEqual(other.StationErrors)
             ) &&
             (
-                this.CanonicalContactIds == other.CanonicalContactIds ||
-                this.CanonicalContactIds != null &&
-                this.CanonicalContactIds.SequenceEqual(other.CanonicalContactIds)
+                CanonicalContactIds == other.CanonicalContactIds ||
+                CanonicalContactIds != null &&
+                CanonicalContactIds.SequenceEqual(other.CanonicalContactIds)
             ) &&
             (
-                this.AlertRuleIds == other.AlertRuleIds ||
-                this.AlertRuleIds != null &&
-                this.AlertRuleIds.SequenceEqual(other.AlertRuleIds)
+                AlertRuleIds == other.AlertRuleIds ||
+                AlertRuleIds != null &&
+                AlertRuleIds.SequenceEqual(other.AlertRuleIds)
             ) &&
             (
-                this.EvaluationFormContextIds == other.EvaluationFormContextIds ||
-                this.EvaluationFormContextIds != null &&
-                this.EvaluationFormContextIds.SequenceEqual(other.EvaluationFormContextIds)
+                EvaluationFormContextIds == other.EvaluationFormContextIds ||
+                EvaluationFormContextIds != null &&
+                EvaluationFormContextIds.SequenceEqual(other.EvaluationFormContextIds)
             ) &&
             (
-                this.EvaluationStatuses == other.EvaluationStatuses ||
-                this.EvaluationStatuses != null &&
-                this.EvaluationStatuses.SequenceEqual(other.EvaluationStatuses)
+                EvaluationStatuses == other.EvaluationStatuses ||
+                EvaluationStatuses != null &&
+                EvaluationStatuses.SequenceEqual(other.EvaluationStatuses)
             ) &&
             (
-                this.WorkbinIds == other.WorkbinIds ||
-                this.WorkbinIds != null &&
-                this.WorkbinIds.SequenceEqual(other.WorkbinIds)
+                WorkbinIds == other.WorkbinIds ||
+                WorkbinIds != null &&
+                WorkbinIds.SequenceEqual(other.WorkbinIds)
             ) &&
             (
-                this.WorktypeIds == other.WorktypeIds ||
-                this.WorktypeIds != null &&
-                this.WorktypeIds.SequenceEqual(other.WorktypeIds)
+                WorktypeIds == other.WorktypeIds ||
+                WorktypeIds != null &&
+                WorktypeIds.SequenceEqual(other.WorktypeIds)
             ) &&
             (
-                this.WorkitemIds == other.WorkitemIds ||
-                this.WorkitemIds != null &&
-                this.WorkitemIds.SequenceEqual(other.WorkitemIds)
+                WorkitemIds == other.WorkitemIds ||
+                WorkitemIds != null &&
+                WorkitemIds.SequenceEqual(other.WorkitemIds)
             ) &&
             (
-                this.WorkitemAssigneeIds == other.WorkitemAssigneeIds ||
-                this.WorkitemAssigneeIds != null &&
-                this.WorkitemAssigneeIds.SequenceEqual(other.WorkitemAssigneeIds)
+                WorkitemAssigneeIds == other.WorkitemAssigneeIds ||
+                WorkitemAssigneeIds != null &&
+                WorkitemAssigneeIds.SequenceEqual(other.WorkitemAssigneeIds)
             ) &&
             (
-                this.WorkitemStatuses == other.WorkitemStatuses ||
-                this.WorkitemStatuses != null &&
-                this.WorkitemStatuses.SequenceEqual(other.WorkitemStatuses)
+                WorkitemStatuses == other.WorkitemStatuses ||
+                WorkitemStatuses != null &&
+                WorkitemStatuses.SequenceEqual(other.WorkitemStatuses)
             ) &&
             (
-                this.IsAnalyzedForSensitiveData == other.IsAnalyzedForSensitiveData ||
-                this.IsAnalyzedForSensitiveData != null &&
-                this.IsAnalyzedForSensitiveData.Equals(other.IsAnalyzedForSensitiveData)
+                IsAnalyzedForSensitiveData == other.IsAnalyzedForSensitiveData ||
+                IsAnalyzedForSensitiveData != null &&
+                IsAnalyzedForSensitiveData.Equals(other.IsAnalyzedForSensitiveData)
             ) &&
             (
-                this.HasSensitiveData == other.HasSensitiveData ||
-                this.HasSensitiveData != null &&
-                this.HasSensitiveData.Equals(other.HasSensitiveData)
+                HasSensitiveData == other.HasSensitiveData ||
+                HasSensitiveData != null &&
+                HasSensitiveData.Equals(other.HasSensitiveData)
             ) &&
             (
-                this.HasPciData == other.HasPciData ||
-                this.HasPciData != null &&
-                this.HasPciData.Equals(other.HasPciData)
+                HasPciData == other.HasPciData ||
+                HasPciData != null &&
+                HasPciData.Equals(other.HasPciData)
             ) &&
             (
-                this.HasPiiData == other.HasPiiData ||
-                this.HasPiiData != null &&
-                this.HasPiiData.Equals(other.HasPiiData)
+                HasPiiData == other.HasPiiData ||
+                HasPiiData != null &&
+                HasPiiData.Equals(other.HasPiiData)
             ) &&
             (
-                this.SubPath == other.SubPath ||
-                this.SubPath != null &&
-                this.SubPath.Equals(other.SubPath)
+                SubPath == other.SubPath ||
+                SubPath != null &&
+                SubPath.Equals(other.SubPath)
             ) &&
             (
-                this.UserState == other.UserState ||
-                this.UserState != null &&
-                this.UserState.Equals(other.UserState)
+                UserState == other.UserState ||
+                UserState != null &&
+                UserState.Equals(other.UserState)
             ) &&
             (
-                this.IsClearedByCustomer == other.IsClearedByCustomer ||
-                this.IsClearedByCustomer != null &&
-                this.IsClearedByCustomer.Equals(other.IsClearedByCustomer)
+                IsClearedByCustomer == other.IsClearedByCustomer ||
+                IsClearedByCustomer != null &&
+                IsClearedByCustomer.Equals(other.IsClearedByCustomer)
             ) &&
             (
-                this.EvaluationAssigneeIds == other.EvaluationAssigneeIds ||
-                this.EvaluationAssigneeIds != null &&
-                this.EvaluationAssigneeIds.SequenceEqual(other.EvaluationAssigneeIds)
+                EvaluationAssigneeIds == other.EvaluationAssigneeIds ||
+                EvaluationAssigneeIds != null &&
+                EvaluationAssigneeIds.SequenceEqual(other.EvaluationAssigneeIds)
             ) &&
             (
-                this.EvaluationAssigned == other.EvaluationAssigned ||
-                this.EvaluationAssigned != null &&
-                this.EvaluationAssigned.Equals(other.EvaluationAssigned)
+                EvaluationAssigned == other.EvaluationAssigned ||
+                EvaluationAssigned != null &&
+                EvaluationAssigned.Equals(other.EvaluationAssigned)
             ) &&
             (
-                this.AssistantIds == other.AssistantIds ||
-                this.AssistantIds != null &&
-                this.AssistantIds.SequenceEqual(other.AssistantIds)
+                AssistantIds == other.AssistantIds ||
+                AssistantIds != null &&
+                AssistantIds.SequenceEqual(other.AssistantIds)
             ) &&
             (
-                this.KnowledgeBaseIds == other.KnowledgeBaseIds ||
-                this.KnowledgeBaseIds != null &&
-                this.KnowledgeBaseIds.SequenceEqual(other.KnowledgeBaseIds)
+                KnowledgeBaseIds == other.KnowledgeBaseIds ||
+                KnowledgeBaseIds != null &&
+                KnowledgeBaseIds.SequenceEqual(other.KnowledgeBaseIds)
             ) &&
             (
-                this.IsParked == other.IsParked ||
-                this.IsParked != null &&
-                this.IsParked.Equals(other.IsParked)
+                IsParked == other.IsParked ||
+                IsParked != null &&
+                IsParked.Equals(other.IsParked)
             ) &&
             (
-                this.AgentEmpathyScore == other.AgentEmpathyScore ||
-                this.AgentEmpathyScore != null &&
-                this.AgentEmpathyScore.Equals(other.AgentEmpathyScore)
+                AgentEmpathyScore == other.AgentEmpathyScore ||
+                AgentEmpathyScore != null &&
+                AgentEmpathyScore.Equals(other.AgentEmpathyScore)
             ) &&
             (
-                this.SurveyTypes == other.SurveyTypes ||
-                this.SurveyTypes != null &&
-                this.SurveyTypes.SequenceEqual(other.SurveyTypes)
+                SurveyTypes == other.SurveyTypes ||
+                SurveyTypes != null &&
+                SurveyTypes.SequenceEqual(other.SurveyTypes)
             ) &&
             (
-                this.SurveyResponseStatuses == other.SurveyResponseStatuses ||
-                this.SurveyResponseStatuses != null &&
-                this.SurveyResponseStatuses.SequenceEqual(other.SurveyResponseStatuses)
+                SurveyResponseStatuses == other.SurveyResponseStatuses ||
+                SurveyResponseStatuses != null &&
+                SurveyResponseStatuses.SequenceEqual(other.SurveyResponseStatuses)
             ) &&
             (
-                this.BotFlowTypes == other.BotFlowTypes ||
-                this.BotFlowTypes != null &&
-                this.BotFlowTypes.SequenceEqual(other.BotFlowTypes)
+                BotFlowTypes == other.BotFlowTypes ||
+                BotFlowTypes != null &&
+                BotFlowTypes.SequenceEqual(other.BotFlowTypes)
             ) &&
             (
-                this.AgentTalkDurationMilliseconds == other.AgentTalkDurationMilliseconds ||
-                this.AgentTalkDurationMilliseconds != null &&
-                this.AgentTalkDurationMilliseconds.SequenceEqual(other.AgentTalkDurationMilliseconds)
+                AgentTalkDurationMilliseconds == other.AgentTalkDurationMilliseconds ||
+                AgentTalkDurationMilliseconds != null &&
+                AgentTalkDurationMilliseconds.SequenceEqual(other.AgentTalkDurationMilliseconds)
             ) &&
             (
-                this.CustomerTalkDurationMilliseconds == other.CustomerTalkDurationMilliseconds ||
-                this.CustomerTalkDurationMilliseconds != null &&
-                this.CustomerTalkDurationMilliseconds.SequenceEqual(other.CustomerTalkDurationMilliseconds)
+                CustomerTalkDurationMilliseconds == other.CustomerTalkDurationMilliseconds ||
+                CustomerTalkDurationMilliseconds != null &&
+                CustomerTalkDurationMilliseconds.SequenceEqual(other.CustomerTalkDurationMilliseconds)
             ) &&
             (
-                this.OvertalkDurationMilliseconds == other.OvertalkDurationMilliseconds ||
-                this.OvertalkDurationMilliseconds != null &&
-                this.OvertalkDurationMilliseconds.SequenceEqual(other.OvertalkDurationMilliseconds)
+                OvertalkDurationMilliseconds == other.OvertalkDurationMilliseconds ||
+                OvertalkDurationMilliseconds != null &&
+                OvertalkDurationMilliseconds.SequenceEqual(other.OvertalkDurationMilliseconds)
             ) &&
             (
-                this.SilenceDurationMilliseconds == other.SilenceDurationMilliseconds ||
-                this.SilenceDurationMilliseconds != null &&
-                this.SilenceDurationMilliseconds.SequenceEqual(other.SilenceDurationMilliseconds)
+                SilenceDurationMilliseconds == other.SilenceDurationMilliseconds ||
+                SilenceDurationMilliseconds != null &&
+                SilenceDurationMilliseconds.SequenceEqual(other.SilenceDurationMilliseconds)
             ) &&
             (
-                this.AcdDurationMilliseconds == other.AcdDurationMilliseconds ||
-                this.AcdDurationMilliseconds != null &&
-                this.AcdDurationMilliseconds.SequenceEqual(other.AcdDurationMilliseconds)
+                AcdDurationMilliseconds == other.AcdDurationMilliseconds ||
+                AcdDurationMilliseconds != null &&
+                AcdDurationMilliseconds.SequenceEqual(other.AcdDurationMilliseconds)
             ) &&
             (
-                this.IvrDurationMilliseconds == other.IvrDurationMilliseconds ||
-                this.IvrDurationMilliseconds != null &&
-                this.IvrDurationMilliseconds.SequenceEqual(other.IvrDurationMilliseconds)
+                IvrDurationMilliseconds == other.IvrDurationMilliseconds ||
+                IvrDurationMilliseconds != null &&
+                IvrDurationMilliseconds.SequenceEqual(other.IvrDurationMilliseconds)
             ) &&
             (
-                this.OtherDurationMilliseconds == other.OtherDurationMilliseconds ||
-                this.OtherDurationMilliseconds != null &&
-                this.OtherDurationMilliseconds.SequenceEqual(other.OtherDurationMilliseconds)
+                OtherDurationMilliseconds == other.OtherDurationMilliseconds ||
+                OtherDurationMilliseconds != null &&
+                OtherDurationMilliseconds.SequenceEqual(other.OtherDurationMilliseconds)
             ) &&
             (
-                this.AgentTalkPercentage == other.AgentTalkPercentage ||
-                this.AgentTalkPercentage != null &&
-                this.AgentTalkPercentage.Equals(other.AgentTalkPercentage)
+                AgentTalkPercentage == other.AgentTalkPercentage ||
+                AgentTalkPercentage != null &&
+                AgentTalkPercentage.Equals(other.AgentTalkPercentage)
             ) &&
             (
-                this.CustomerTalkPercentage == other.CustomerTalkPercentage ||
-                this.CustomerTalkPercentage != null &&
-                this.CustomerTalkPercentage.Equals(other.CustomerTalkPercentage)
+                CustomerTalkPercentage == other.CustomerTalkPercentage ||
+                CustomerTalkPercentage != null &&
+                CustomerTalkPercentage.Equals(other.CustomerTalkPercentage)
             ) &&
             (
-                this.OvertalkPercentage == other.OvertalkPercentage ||
-                this.OvertalkPercentage != null &&
-                this.OvertalkPercentage.Equals(other.OvertalkPercentage)
+                OvertalkPercentage == other.OvertalkPercentage ||
+                OvertalkPercentage != null &&
+                OvertalkPercentage.Equals(other.OvertalkPercentage)
             ) &&
             (
-                this.SilencePercentage == other.SilencePercentage ||
-                this.SilencePercentage != null &&
-                this.SilencePercentage.Equals(other.SilencePercentage)
+                SilencePercentage == other.SilencePercentage ||
+                SilencePercentage != null &&
+                SilencePercentage.Equals(other.SilencePercentage)
             ) &&
             (
-                this.AcdPercentage == other.AcdPercentage ||
-                this.AcdPercentage != null &&
-                this.AcdPercentage.Equals(other.AcdPercentage)
+                AcdPercentage == other.AcdPercentage ||
+                AcdPercentage != null &&
+                AcdPercentage.Equals(other.AcdPercentage)
             ) &&
             (
-                this.IvrPercentage == other.IvrPercentage ||
-                this.IvrPercentage != null &&
-                this.IvrPercentage.Equals(other.IvrPercentage)
+                IvrPercentage == other.IvrPercentage ||
+                IvrPercentage != null &&
+                IvrPercentage.Equals(other.IvrPercentage)
             ) &&
             (
-                this.OtherPercentage == other.OtherPercentage ||
-                this.OtherPercentage != null &&
-                this.OtherPercentage.Equals(other.OtherPercentage)
+                OtherPercentage == other.OtherPercentage ||
+                OtherPercentage != null &&
+                OtherPercentage.Equals(other.OtherPercentage)
             ) &&
             (
-                this.OvertalkInstances == other.OvertalkInstances ||
-                this.OvertalkInstances != null &&
-                this.OvertalkInstances.Equals(other.OvertalkInstances)
+                OvertalkInstances == other.OvertalkInstances ||
+                OvertalkInstances != null &&
+                OvertalkInstances.Equals(other.OvertalkInstances)
             ) &&
             (
-                this.IsScreenRecorded == other.IsScreenRecorded ||
-                this.IsScreenRecorded != null &&
-                this.IsScreenRecorded.Equals(other.IsScreenRecorded)
+                IsScreenRecorded == other.IsScreenRecorded ||
+                IsScreenRecorded != null &&
+                IsScreenRecorded.Equals(other.IsScreenRecorded)
             ) &&
             (
-                this.ScreenMonitorUserIds == other.ScreenMonitorUserIds ||
-                this.ScreenMonitorUserIds != null &&
-                this.ScreenMonitorUserIds.SequenceEqual(other.ScreenMonitorUserIds)
+                ScreenMonitorUserIds == other.ScreenMonitorUserIds ||
+                ScreenMonitorUserIds != null &&
+                ScreenMonitorUserIds.SequenceEqual(other.ScreenMonitorUserIds)
             ) &&
             (
-                this.DashboardState == other.DashboardState ||
-                this.DashboardState != null &&
-                this.DashboardState.Equals(other.DashboardState)
+                DashboardState == other.DashboardState ||
+                DashboardState != null &&
+                DashboardState.Equals(other.DashboardState)
             ) &&
             (
-                this.DashboardType == other.DashboardType ||
-                this.DashboardType != null &&
-                this.DashboardType.Equals(other.DashboardType)
+                DashboardType == other.DashboardType ||
+                DashboardType != null &&
+                DashboardType.Equals(other.DashboardType)
             ) &&
             (
-                this.DashboardAccessFilter == other.DashboardAccessFilter ||
-                this.DashboardAccessFilter != null &&
-                this.DashboardAccessFilter.Equals(other.DashboardAccessFilter)
+                DashboardAccessFilter == other.DashboardAccessFilter ||
+                DashboardAccessFilter != null &&
+                DashboardAccessFilter.Equals(other.DashboardAccessFilter)
             ) &&
             (
-                this.TranscriptDurationMilliseconds == other.TranscriptDurationMilliseconds ||
-                this.TranscriptDurationMilliseconds != null &&
-                this.TranscriptDurationMilliseconds.SequenceEqual(other.TranscriptDurationMilliseconds)
+                TranscriptDurationMilliseconds == other.TranscriptDurationMilliseconds ||
+                TranscriptDurationMilliseconds != null &&
+                TranscriptDurationMilliseconds.SequenceEqual(other.TranscriptDurationMilliseconds)
             ) &&
             (
-                this.WorkitemsStatuses == other.WorkitemsStatuses ||
-                this.WorkitemsStatuses != null &&
-                this.WorkitemsStatuses.SequenceEqual(other.WorkitemsStatuses)
+                WorkitemsStatuses == other.WorkitemsStatuses ||
+                WorkitemsStatuses != null &&
+                WorkitemsStatuses.SequenceEqual(other.WorkitemsStatuses)
             ) &&
             (
-                this.SocialCountries == other.SocialCountries ||
-                this.SocialCountries != null &&
-                this.SocialCountries.SequenceEqual(other.SocialCountries)
+                SocialCountries == other.SocialCountries ||
+                SocialCountries != null &&
+                SocialCountries.SequenceEqual(other.SocialCountries)
             ) &&
             (
-                this.SocialLanguages == other.SocialLanguages ||
-                this.SocialLanguages != null &&
-                this.SocialLanguages.SequenceEqual(other.SocialLanguages)
+                SocialLanguages == other.SocialLanguages ||
+                SocialLanguages != null &&
+                SocialLanguages.SequenceEqual(other.SocialLanguages)
             ) &&
             (
-                this.SocialChannels == other.SocialChannels ||
-                this.SocialChannels != null &&
-                this.SocialChannels.SequenceEqual(other.SocialChannels)
+                SocialChannels == other.SocialChannels ||
+                SocialChannels != null &&
+                SocialChannels.SequenceEqual(other.SocialChannels)
             ) &&
             (
-                this.SocialSentimentCategory == other.SocialSentimentCategory ||
-                this.SocialSentimentCategory != null &&
-                this.SocialSentimentCategory.SequenceEqual(other.SocialSentimentCategory)
+                SocialSentimentCategory == other.SocialSentimentCategory ||
+                SocialSentimentCategory != null &&
+                SocialSentimentCategory.SequenceEqual(other.SocialSentimentCategory)
             ) &&
             (
-                this.SocialTopicIds == other.SocialTopicIds ||
-                this.SocialTopicIds != null &&
-                this.SocialTopicIds.SequenceEqual(other.SocialTopicIds)
+                SocialTopicIds == other.SocialTopicIds ||
+                SocialTopicIds != null &&
+                SocialTopicIds.SequenceEqual(other.SocialTopicIds)
             ) &&
             (
-                this.SocialIngestionRuleIds == other.SocialIngestionRuleIds ||
-                this.SocialIngestionRuleIds != null &&
-                this.SocialIngestionRuleIds.SequenceEqual(other.SocialIngestionRuleIds)
+                SocialIngestionRuleIds == other.SocialIngestionRuleIds ||
+                SocialIngestionRuleIds != null &&
+                SocialIngestionRuleIds.SequenceEqual(other.SocialIngestionRuleIds)
             ) &&
             (
-                this.SocialConversationCreated == other.SocialConversationCreated ||
-                this.SocialConversationCreated != null &&
-                this.SocialConversationCreated.Equals(other.SocialConversationCreated)
+                SocialConversationCreated == other.SocialConversationCreated ||
+                SocialConversationCreated != null &&
+                SocialConversationCreated.Equals(other.SocialConversationCreated)
             ) &&
             (
-                this.SocialContentType == other.SocialContentType ||
-                this.SocialContentType != null &&
-                this.SocialContentType.SequenceEqual(other.SocialContentType)
+                SocialContentType == other.SocialContentType ||
+                SocialContentType != null &&
+                SocialContentType.SequenceEqual(other.SocialContentType)
             ) &&
             (
-                this.SocialKeywords == other.SocialKeywords ||
-                this.SocialKeywords != null &&
-                this.SocialKeywords.SequenceEqual(other.SocialKeywords)
+                SocialKeywords == other.SocialKeywords ||
+                SocialKeywords != null &&
+                SocialKeywords.SequenceEqual(other.SocialKeywords)
             ) &&
             (
-                this.SocialPostEscalated == other.SocialPostEscalated ||
-                this.SocialPostEscalated != null &&
-                this.SocialPostEscalated.Equals(other.SocialPostEscalated)
+                SocialPostEscalated == other.SocialPostEscalated ||
+                SocialPostEscalated != null &&
+                SocialPostEscalated.Equals(other.SocialPostEscalated)
             ) &&
             (
-                this.SocialClassifications == other.SocialClassifications ||
-                this.SocialClassifications != null &&
-                this.SocialClassifications.SequenceEqual(other.SocialClassifications)
+                SocialClassifications == other.SocialClassifications ||
+                SocialClassifications != null &&
+                SocialClassifications.SequenceEqual(other.SocialClassifications)
             ) &&
             (
-                this.FilterUsersByManagerIds == other.FilterUsersByManagerIds ||
-                this.FilterUsersByManagerIds != null &&
-                this.FilterUsersByManagerIds.SequenceEqual(other.FilterUsersByManagerIds)
+                FilterUsersByManagerIds == other.FilterUsersByManagerIds ||
+                FilterUsersByManagerIds != null &&
+                FilterUsersByManagerIds.SequenceEqual(other.FilterUsersByManagerIds)
             ) &&
             (
-                this.SlideshowIds == other.SlideshowIds ||
-                this.SlideshowIds != null &&
-                this.SlideshowIds.SequenceEqual(other.SlideshowIds)
+                SlideshowIds == other.SlideshowIds ||
+                SlideshowIds != null &&
+                SlideshowIds.SequenceEqual(other.SlideshowIds)
             ) &&
             (
-                this.Conferenced == other.Conferenced ||
-                this.Conferenced != null &&
-                this.Conferenced.Equals(other.Conferenced)
+                Conferenced == other.Conferenced ||
+                Conferenced != null &&
+                Conferenced.Equals(other.Conferenced)
             ) &&
             (
-                this.Video == other.Video ||
-                this.Video != null &&
-                this.Video.Equals(other.Video)
+                Video == other.Video ||
+                Video != null &&
+                Video.Equals(other.Video)
             ) &&
             (
-                this.LinkedInteraction == other.LinkedInteraction ||
-                this.LinkedInteraction != null &&
-                this.LinkedInteraction.Equals(other.LinkedInteraction)
+                LinkedInteraction == other.LinkedInteraction ||
+                LinkedInteraction != null &&
+                LinkedInteraction.Equals(other.LinkedInteraction)
             ) &&
             (
-                this.RecommendationSources == other.RecommendationSources ||
-                this.RecommendationSources != null &&
-                this.RecommendationSources.SequenceEqual(other.RecommendationSources)
+                RecommendationSources == other.RecommendationSources ||
+                RecommendationSources != null &&
+                RecommendationSources.SequenceEqual(other.RecommendationSources)
             ) &&
             (
-                this.EvaluationRole == other.EvaluationRole ||
-                this.EvaluationRole != null &&
-                this.EvaluationRole.Equals(other.EvaluationRole)
+                EvaluationRole == other.EvaluationRole ||
+                EvaluationRole != null &&
+                EvaluationRole.Equals(other.EvaluationRole)
             ) &&
             (
-                this.ComparisonQueueIds == other.ComparisonQueueIds ||
-                this.ComparisonQueueIds != null &&
-                this.ComparisonQueueIds.SequenceEqual(other.ComparisonQueueIds)
+                ComparisonQueueIds == other.ComparisonQueueIds ||
+                ComparisonQueueIds != null &&
+                ComparisonQueueIds.SequenceEqual(other.ComparisonQueueIds)
             ) &&
             (
-                this.ViewMetrics == other.ViewMetrics ||
-                this.ViewMetrics != null &&
-                this.ViewMetrics.SequenceEqual(other.ViewMetrics)
+                ViewMetrics == other.ViewMetrics ||
+                ViewMetrics != null &&
+                ViewMetrics.SequenceEqual(other.ViewMetrics)
             ) &&
             (
-                this.TimelineCategories == other.TimelineCategories ||
-                this.TimelineCategories != null &&
-                this.TimelineCategories.SequenceEqual(other.TimelineCategories)
+                TimelineCategories == other.TimelineCategories ||
+                TimelineCategories != null &&
+                TimelineCategories.SequenceEqual(other.TimelineCategories)
             ) &&
             (
-                this.Acw == other.Acw ||
-                this.Acw != null &&
-                this.Acw.Equals(other.Acw)
+                Acw == other.Acw ||
+                Acw != null &&
+                Acw.Equals(other.Acw)
             ) &&
             (
-                this.SegmentTypes == other.SegmentTypes ||
-                this.SegmentTypes != null &&
-                this.SegmentTypes.SequenceEqual(other.SegmentTypes)
+                SegmentTypes == other.SegmentTypes ||
+                SegmentTypes != null &&
+                SegmentTypes.SequenceEqual(other.SegmentTypes)
             ) &&
             (
-                this.ProgramIds == other.ProgramIds ||
-                this.ProgramIds != null &&
-                this.ProgramIds.SequenceEqual(other.ProgramIds)
+                ProgramIds == other.ProgramIds ||
+                ProgramIds != null &&
+                ProgramIds.SequenceEqual(other.ProgramIds)
             ) &&
             (
-                this.CategoryIds == other.CategoryIds ||
-                this.CategoryIds != null &&
-                this.CategoryIds.SequenceEqual(other.CategoryIds)
+                CategoryIds == other.CategoryIds ||
+                CategoryIds != null &&
+                CategoryIds.SequenceEqual(other.CategoryIds)
             );
     }
 
@@ -7269,1134 +7269,1134 @@ public partial class ViewFilter : IEquatable<ViewFilter>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MediaTypes != null)
+            if (MediaTypes != null)
             {
-                hash = hash * 59 + this.MediaTypes.GetHashCode();
+                hash = hash * 59 + MediaTypes.GetHashCode();
             }
 
-            if (this.QueueIds != null)
+            if (QueueIds != null)
             {
-                hash = hash * 59 + this.QueueIds.GetHashCode();
+                hash = hash * 59 + QueueIds.GetHashCode();
             }
 
-            if (this.SkillIds != null)
+            if (SkillIds != null)
             {
-                hash = hash * 59 + this.SkillIds.GetHashCode();
+                hash = hash * 59 + SkillIds.GetHashCode();
             }
 
-            if (this.AssignedSkillIds != null)
+            if (AssignedSkillIds != null)
             {
-                hash = hash * 59 + this.AssignedSkillIds.GetHashCode();
+                hash = hash * 59 + AssignedSkillIds.GetHashCode();
             }
 
-            if (this.SkillGroups != null)
+            if (SkillGroups != null)
             {
-                hash = hash * 59 + this.SkillGroups.GetHashCode();
+                hash = hash * 59 + SkillGroups.GetHashCode();
             }
 
-            if (this.LanguageIds != null)
+            if (LanguageIds != null)
             {
-                hash = hash * 59 + this.LanguageIds.GetHashCode();
+                hash = hash * 59 + LanguageIds.GetHashCode();
             }
 
-            if (this.AssignedLanguageIds != null)
+            if (AssignedLanguageIds != null)
             {
-                hash = hash * 59 + this.AssignedLanguageIds.GetHashCode();
+                hash = hash * 59 + AssignedLanguageIds.GetHashCode();
             }
 
-            if (this.LanguageGroups != null)
+            if (LanguageGroups != null)
             {
-                hash = hash * 59 + this.LanguageGroups.GetHashCode();
+                hash = hash * 59 + LanguageGroups.GetHashCode();
             }
 
-            if (this.Directions != null)
+            if (Directions != null)
             {
-                hash = hash * 59 + this.Directions.GetHashCode();
+                hash = hash * 59 + Directions.GetHashCode();
             }
 
-            if (this.OriginatingDirections != null)
+            if (OriginatingDirections != null)
             {
-                hash = hash * 59 + this.OriginatingDirections.GetHashCode();
+                hash = hash * 59 + OriginatingDirections.GetHashCode();
             }
 
-            if (this.WrapUpCodes != null)
+            if (WrapUpCodes != null)
             {
-                hash = hash * 59 + this.WrapUpCodes.GetHashCode();
+                hash = hash * 59 + WrapUpCodes.GetHashCode();
             }
 
-            if (this.DnisList != null)
+            if (DnisList != null)
             {
-                hash = hash * 59 + this.DnisList.GetHashCode();
+                hash = hash * 59 + DnisList.GetHashCode();
             }
 
-            if (this.SessionDnisList != null)
+            if (SessionDnisList != null)
             {
-                hash = hash * 59 + this.SessionDnisList.GetHashCode();
+                hash = hash * 59 + SessionDnisList.GetHashCode();
             }
 
-            if (this.FilterQueuesByUserIds != null)
+            if (FilterQueuesByUserIds != null)
             {
-                hash = hash * 59 + this.FilterQueuesByUserIds.GetHashCode();
+                hash = hash * 59 + FilterQueuesByUserIds.GetHashCode();
             }
 
-            if (this.FilterUsersByQueueIds != null)
+            if (FilterUsersByQueueIds != null)
             {
-                hash = hash * 59 + this.FilterUsersByQueueIds.GetHashCode();
+                hash = hash * 59 + FilterUsersByQueueIds.GetHashCode();
             }
 
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.ManagementUnitIds != null)
+            if (ManagementUnitIds != null)
             {
-                hash = hash * 59 + this.ManagementUnitIds.GetHashCode();
+                hash = hash * 59 + ManagementUnitIds.GetHashCode();
             }
 
-            if (this.AddressTos != null)
+            if (AddressTos != null)
             {
-                hash = hash * 59 + this.AddressTos.GetHashCode();
+                hash = hash * 59 + AddressTos.GetHashCode();
             }
 
-            if (this.AddressFroms != null)
+            if (AddressFroms != null)
             {
-                hash = hash * 59 + this.AddressFroms.GetHashCode();
+                hash = hash * 59 + AddressFroms.GetHashCode();
             }
 
-            if (this.OutboundCampaignIds != null)
+            if (OutboundCampaignIds != null)
             {
-                hash = hash * 59 + this.OutboundCampaignIds.GetHashCode();
+                hash = hash * 59 + OutboundCampaignIds.GetHashCode();
             }
 
-            if (this.OutboundContactListIds != null)
+            if (OutboundContactListIds != null)
             {
-                hash = hash * 59 + this.OutboundContactListIds.GetHashCode();
+                hash = hash * 59 + OutboundContactListIds.GetHashCode();
             }
 
-            if (this.ContactIds != null)
+            if (ContactIds != null)
             {
-                hash = hash * 59 + this.ContactIds.GetHashCode();
+                hash = hash * 59 + ContactIds.GetHashCode();
             }
 
-            if (this.ExternalContactIds != null)
+            if (ExternalContactIds != null)
             {
-                hash = hash * 59 + this.ExternalContactIds.GetHashCode();
+                hash = hash * 59 + ExternalContactIds.GetHashCode();
             }
 
-            if (this.ExternalOrgIds != null)
+            if (ExternalOrgIds != null)
             {
-                hash = hash * 59 + this.ExternalOrgIds.GetHashCode();
+                hash = hash * 59 + ExternalOrgIds.GetHashCode();
             }
 
-            if (this.AniList != null)
+            if (AniList != null)
             {
-                hash = hash * 59 + this.AniList.GetHashCode();
+                hash = hash * 59 + AniList.GetHashCode();
             }
 
-            if (this.DurationsMilliseconds != null)
+            if (DurationsMilliseconds != null)
             {
-                hash = hash * 59 + this.DurationsMilliseconds.GetHashCode();
+                hash = hash * 59 + DurationsMilliseconds.GetHashCode();
             }
 
-            if (this.AcdDurationsMilliseconds != null)
+            if (AcdDurationsMilliseconds != null)
             {
-                hash = hash * 59 + this.AcdDurationsMilliseconds.GetHashCode();
+                hash = hash * 59 + AcdDurationsMilliseconds.GetHashCode();
             }
 
-            if (this.TalkDurationsMilliseconds != null)
+            if (TalkDurationsMilliseconds != null)
             {
-                hash = hash * 59 + this.TalkDurationsMilliseconds.GetHashCode();
+                hash = hash * 59 + TalkDurationsMilliseconds.GetHashCode();
             }
 
-            if (this.AcwDurationsMilliseconds != null)
+            if (AcwDurationsMilliseconds != null)
             {
-                hash = hash * 59 + this.AcwDurationsMilliseconds.GetHashCode();
+                hash = hash * 59 + AcwDurationsMilliseconds.GetHashCode();
             }
 
-            if (this.HandleDurationsMilliseconds != null)
+            if (HandleDurationsMilliseconds != null)
             {
-                hash = hash * 59 + this.HandleDurationsMilliseconds.GetHashCode();
+                hash = hash * 59 + HandleDurationsMilliseconds.GetHashCode();
             }
 
-            if (this.HoldDurationsMilliseconds != null)
+            if (HoldDurationsMilliseconds != null)
             {
-                hash = hash * 59 + this.HoldDurationsMilliseconds.GetHashCode();
+                hash = hash * 59 + HoldDurationsMilliseconds.GetHashCode();
             }
 
-            if (this.AbandonDurationsMilliseconds != null)
+            if (AbandonDurationsMilliseconds != null)
             {
-                hash = hash * 59 + this.AbandonDurationsMilliseconds.GetHashCode();
+                hash = hash * 59 + AbandonDurationsMilliseconds.GetHashCode();
             }
 
-            if (this.EvaluationScore != null)
+            if (EvaluationScore != null)
             {
-                hash = hash * 59 + this.EvaluationScore.GetHashCode();
+                hash = hash * 59 + EvaluationScore.GetHashCode();
             }
 
-            if (this.EvaluationCriticalScore != null)
+            if (EvaluationCriticalScore != null)
             {
-                hash = hash * 59 + this.EvaluationCriticalScore.GetHashCode();
+                hash = hash * 59 + EvaluationCriticalScore.GetHashCode();
             }
 
-            if (this.EvaluationFormIds != null)
+            if (EvaluationFormIds != null)
             {
-                hash = hash * 59 + this.EvaluationFormIds.GetHashCode();
+                hash = hash * 59 + EvaluationFormIds.GetHashCode();
             }
 
-            if (this.EvaluatedAgentIds != null)
+            if (EvaluatedAgentIds != null)
             {
-                hash = hash * 59 + this.EvaluatedAgentIds.GetHashCode();
+                hash = hash * 59 + EvaluatedAgentIds.GetHashCode();
             }
 
-            if (this.EvaluatorIds != null)
+            if (EvaluatorIds != null)
             {
-                hash = hash * 59 + this.EvaluatorIds.GetHashCode();
+                hash = hash * 59 + EvaluatorIds.GetHashCode();
             }
 
-            if (this.Transferred != null)
+            if (Transferred != null)
             {
-                hash = hash * 59 + this.Transferred.GetHashCode();
+                hash = hash * 59 + Transferred.GetHashCode();
             }
 
-            if (this.Abandoned != null)
+            if (Abandoned != null)
             {
-                hash = hash * 59 + this.Abandoned.GetHashCode();
+                hash = hash * 59 + Abandoned.GetHashCode();
             }
 
-            if (this.Answered != null)
+            if (Answered != null)
             {
-                hash = hash * 59 + this.Answered.GetHashCode();
+                hash = hash * 59 + Answered.GetHashCode();
             }
 
-            if (this.MessageTypes != null)
+            if (MessageTypes != null)
             {
-                hash = hash * 59 + this.MessageTypes.GetHashCode();
+                hash = hash * 59 + MessageTypes.GetHashCode();
             }
 
-            if (this.DivisionIds != null)
+            if (DivisionIds != null)
             {
-                hash = hash * 59 + this.DivisionIds.GetHashCode();
+                hash = hash * 59 + DivisionIds.GetHashCode();
             }
 
-            if (this.SurveyFormIds != null)
+            if (SurveyFormIds != null)
             {
-                hash = hash * 59 + this.SurveyFormIds.GetHashCode();
+                hash = hash * 59 + SurveyFormIds.GetHashCode();
             }
 
-            if (this.SurveyTotalScore != null)
+            if (SurveyTotalScore != null)
             {
-                hash = hash * 59 + this.SurveyTotalScore.GetHashCode();
+                hash = hash * 59 + SurveyTotalScore.GetHashCode();
             }
 
-            if (this.SurveyNpsScore != null)
+            if (SurveyNpsScore != null)
             {
-                hash = hash * 59 + this.SurveyNpsScore.GetHashCode();
+                hash = hash * 59 + SurveyNpsScore.GetHashCode();
             }
 
-            if (this.Mos != null)
+            if (Mos != null)
             {
-                hash = hash * 59 + this.Mos.GetHashCode();
+                hash = hash * 59 + Mos.GetHashCode();
             }
 
-            if (this.SurveyQuestionGroupScore != null)
+            if (SurveyQuestionGroupScore != null)
             {
-                hash = hash * 59 + this.SurveyQuestionGroupScore.GetHashCode();
+                hash = hash * 59 + SurveyQuestionGroupScore.GetHashCode();
             }
 
-            if (this.SurveyPromoterScore != null)
+            if (SurveyPromoterScore != null)
             {
-                hash = hash * 59 + this.SurveyPromoterScore.GetHashCode();
+                hash = hash * 59 + SurveyPromoterScore.GetHashCode();
             }
 
-            if (this.SurveyFormContextIds != null)
+            if (SurveyFormContextIds != null)
             {
-                hash = hash * 59 + this.SurveyFormContextIds.GetHashCode();
+                hash = hash * 59 + SurveyFormContextIds.GetHashCode();
             }
 
-            if (this.ConversationIds != null)
+            if (ConversationIds != null)
             {
-                hash = hash * 59 + this.ConversationIds.GetHashCode();
+                hash = hash * 59 + ConversationIds.GetHashCode();
             }
 
-            if (this.SipCallIds != null)
+            if (SipCallIds != null)
             {
-                hash = hash * 59 + this.SipCallIds.GetHashCode();
+                hash = hash * 59 + SipCallIds.GetHashCode();
             }
 
-            if (this.IsEnded != null)
+            if (IsEnded != null)
             {
-                hash = hash * 59 + this.IsEnded.GetHashCode();
+                hash = hash * 59 + IsEnded.GetHashCode();
             }
 
-            if (this.IsSurveyed != null)
+            if (IsSurveyed != null)
             {
-                hash = hash * 59 + this.IsSurveyed.GetHashCode();
+                hash = hash * 59 + IsSurveyed.GetHashCode();
             }
 
-            if (this.SurveyScores != null)
+            if (SurveyScores != null)
             {
-                hash = hash * 59 + this.SurveyScores.GetHashCode();
+                hash = hash * 59 + SurveyScores.GetHashCode();
             }
 
-            if (this.PromoterScores != null)
+            if (PromoterScores != null)
             {
-                hash = hash * 59 + this.PromoterScores.GetHashCode();
+                hash = hash * 59 + PromoterScores.GetHashCode();
             }
 
-            if (this.IsCampaign != null)
+            if (IsCampaign != null)
             {
-                hash = hash * 59 + this.IsCampaign.GetHashCode();
+                hash = hash * 59 + IsCampaign.GetHashCode();
             }
 
-            if (this.SurveyStatuses != null)
+            if (SurveyStatuses != null)
             {
-                hash = hash * 59 + this.SurveyStatuses.GetHashCode();
+                hash = hash * 59 + SurveyStatuses.GetHashCode();
             }
 
-            if (this.ConversationProperties != null)
+            if (ConversationProperties != null)
             {
-                hash = hash * 59 + this.ConversationProperties.GetHashCode();
+                hash = hash * 59 + ConversationProperties.GetHashCode();
             }
 
-            if (this.IsBlindTransferred != null)
+            if (IsBlindTransferred != null)
             {
-                hash = hash * 59 + this.IsBlindTransferred.GetHashCode();
+                hash = hash * 59 + IsBlindTransferred.GetHashCode();
             }
 
-            if (this.IsConsulted != null)
+            if (IsConsulted != null)
             {
-                hash = hash * 59 + this.IsConsulted.GetHashCode();
+                hash = hash * 59 + IsConsulted.GetHashCode();
             }
 
-            if (this.IsConsultTransferred != null)
+            if (IsConsultTransferred != null)
             {
-                hash = hash * 59 + this.IsConsultTransferred.GetHashCode();
+                hash = hash * 59 + IsConsultTransferred.GetHashCode();
             }
 
-            if (this.RemoteParticipants != null)
+            if (RemoteParticipants != null)
             {
-                hash = hash * 59 + this.RemoteParticipants.GetHashCode();
+                hash = hash * 59 + RemoteParticipants.GetHashCode();
             }
 
-            if (this.FlowIds != null)
+            if (FlowIds != null)
             {
-                hash = hash * 59 + this.FlowIds.GetHashCode();
+                hash = hash * 59 + FlowIds.GetHashCode();
             }
 
-            if (this.FlowOutcomeIds != null)
+            if (FlowOutcomeIds != null)
             {
-                hash = hash * 59 + this.FlowOutcomeIds.GetHashCode();
+                hash = hash * 59 + FlowOutcomeIds.GetHashCode();
             }
 
-            if (this.FlowOutcomeValues != null)
+            if (FlowOutcomeValues != null)
             {
-                hash = hash * 59 + this.FlowOutcomeValues.GetHashCode();
+                hash = hash * 59 + FlowOutcomeValues.GetHashCode();
             }
 
-            if (this.FlowDestinationTypes != null)
+            if (FlowDestinationTypes != null)
             {
-                hash = hash * 59 + this.FlowDestinationTypes.GetHashCode();
+                hash = hash * 59 + FlowDestinationTypes.GetHashCode();
             }
 
-            if (this.FlowDisconnectReasons != null)
+            if (FlowDisconnectReasons != null)
             {
-                hash = hash * 59 + this.FlowDisconnectReasons.GetHashCode();
+                hash = hash * 59 + FlowDisconnectReasons.GetHashCode();
             }
 
-            if (this.FlowTypes != null)
+            if (FlowTypes != null)
             {
-                hash = hash * 59 + this.FlowTypes.GetHashCode();
+                hash = hash * 59 + FlowTypes.GetHashCode();
             }
 
-            if (this.FlowEntryTypes != null)
+            if (FlowEntryTypes != null)
             {
-                hash = hash * 59 + this.FlowEntryTypes.GetHashCode();
+                hash = hash * 59 + FlowEntryTypes.GetHashCode();
             }
 
-            if (this.FlowEntryReasons != null)
+            if (FlowEntryReasons != null)
             {
-                hash = hash * 59 + this.FlowEntryReasons.GetHashCode();
+                hash = hash * 59 + FlowEntryReasons.GetHashCode();
             }
 
-            if (this.FlowVersions != null)
+            if (FlowVersions != null)
             {
-                hash = hash * 59 + this.FlowVersions.GetHashCode();
+                hash = hash * 59 + FlowVersions.GetHashCode();
             }
 
-            if (this.GroupIds != null)
+            if (GroupIds != null)
             {
-                hash = hash * 59 + this.GroupIds.GetHashCode();
+                hash = hash * 59 + GroupIds.GetHashCode();
             }
 
-            if (this.HasJourneyCustomerId != null)
+            if (HasJourneyCustomerId != null)
             {
-                hash = hash * 59 + this.HasJourneyCustomerId.GetHashCode();
+                hash = hash * 59 + HasJourneyCustomerId.GetHashCode();
             }
 
-            if (this.HasJourneyActionMapId != null)
+            if (HasJourneyActionMapId != null)
             {
-                hash = hash * 59 + this.HasJourneyActionMapId.GetHashCode();
+                hash = hash * 59 + HasJourneyActionMapId.GetHashCode();
             }
 
-            if (this.HasJourneyVisitId != null)
+            if (HasJourneyVisitId != null)
             {
-                hash = hash * 59 + this.HasJourneyVisitId.GetHashCode();
+                hash = hash * 59 + HasJourneyVisitId.GetHashCode();
             }
 
-            if (this.HasMedia != null)
+            if (HasMedia != null)
             {
-                hash = hash * 59 + this.HasMedia.GetHashCode();
+                hash = hash * 59 + HasMedia.GetHashCode();
             }
 
-            if (this.RoleIds != null)
+            if (RoleIds != null)
             {
-                hash = hash * 59 + this.RoleIds.GetHashCode();
+                hash = hash * 59 + RoleIds.GetHashCode();
             }
 
-            if (this.ReportsTos != null)
+            if (ReportsTos != null)
             {
-                hash = hash * 59 + this.ReportsTos.GetHashCode();
+                hash = hash * 59 + ReportsTos.GetHashCode();
             }
 
-            if (this.LocationIds != null)
+            if (LocationIds != null)
             {
-                hash = hash * 59 + this.LocationIds.GetHashCode();
+                hash = hash * 59 + LocationIds.GetHashCode();
             }
 
-            if (this.FlowOutTypes != null)
+            if (FlowOutTypes != null)
             {
-                hash = hash * 59 + this.FlowOutTypes.GetHashCode();
+                hash = hash * 59 + FlowOutTypes.GetHashCode();
             }
 
-            if (this.ProviderList != null)
+            if (ProviderList != null)
             {
-                hash = hash * 59 + this.ProviderList.GetHashCode();
+                hash = hash * 59 + ProviderList.GetHashCode();
             }
 
-            if (this.CallbackNumberList != null)
+            if (CallbackNumberList != null)
             {
-                hash = hash * 59 + this.CallbackNumberList.GetHashCode();
+                hash = hash * 59 + CallbackNumberList.GetHashCode();
             }
 
-            if (this.CallbackInterval != null)
+            if (CallbackInterval != null)
             {
-                hash = hash * 59 + this.CallbackInterval.GetHashCode();
+                hash = hash * 59 + CallbackInterval.GetHashCode();
             }
 
-            if (this.UsedRoutingTypes != null)
+            if (UsedRoutingTypes != null)
             {
-                hash = hash * 59 + this.UsedRoutingTypes.GetHashCode();
+                hash = hash * 59 + UsedRoutingTypes.GetHashCode();
             }
 
-            if (this.RequestedRoutingTypes != null)
+            if (RequestedRoutingTypes != null)
             {
-                hash = hash * 59 + this.RequestedRoutingTypes.GetHashCode();
+                hash = hash * 59 + RequestedRoutingTypes.GetHashCode();
             }
 
-            if (this.HasAgentAssistId != null)
+            if (HasAgentAssistId != null)
             {
-                hash = hash * 59 + this.HasAgentAssistId.GetHashCode();
+                hash = hash * 59 + HasAgentAssistId.GetHashCode();
             }
 
-            if (this.Transcripts != null)
+            if (Transcripts != null)
             {
-                hash = hash * 59 + this.Transcripts.GetHashCode();
+                hash = hash * 59 + Transcripts.GetHashCode();
             }
 
-            if (this.TranscriptLanguages != null)
+            if (TranscriptLanguages != null)
             {
-                hash = hash * 59 + this.TranscriptLanguages.GetHashCode();
+                hash = hash * 59 + TranscriptLanguages.GetHashCode();
             }
 
-            if (this.ParticipantPurposes != null)
+            if (ParticipantPurposes != null)
             {
-                hash = hash * 59 + this.ParticipantPurposes.GetHashCode();
+                hash = hash * 59 + ParticipantPurposes.GetHashCode();
             }
 
-            if (this.ShowFirstQueue != null)
+            if (ShowFirstQueue != null)
             {
-                hash = hash * 59 + this.ShowFirstQueue.GetHashCode();
+                hash = hash * 59 + ShowFirstQueue.GetHashCode();
             }
 
-            if (this.TeamIds != null)
+            if (TeamIds != null)
             {
-                hash = hash * 59 + this.TeamIds.GetHashCode();
+                hash = hash * 59 + TeamIds.GetHashCode();
             }
 
-            if (this.FilterUsersByTeamIds != null)
+            if (FilterUsersByTeamIds != null)
             {
-                hash = hash * 59 + this.FilterUsersByTeamIds.GetHashCode();
+                hash = hash * 59 + FilterUsersByTeamIds.GetHashCode();
             }
 
-            if (this.JourneyActionMapIds != null)
+            if (JourneyActionMapIds != null)
             {
-                hash = hash * 59 + this.JourneyActionMapIds.GetHashCode();
+                hash = hash * 59 + JourneyActionMapIds.GetHashCode();
             }
 
-            if (this.JourneyOutcomeIds != null)
+            if (JourneyOutcomeIds != null)
             {
-                hash = hash * 59 + this.JourneyOutcomeIds.GetHashCode();
+                hash = hash * 59 + JourneyOutcomeIds.GetHashCode();
             }
 
-            if (this.JourneySegmentIds != null)
+            if (JourneySegmentIds != null)
             {
-                hash = hash * 59 + this.JourneySegmentIds.GetHashCode();
+                hash = hash * 59 + JourneySegmentIds.GetHashCode();
             }
 
-            if (this.JourneyActionMapTypes != null)
+            if (JourneyActionMapTypes != null)
             {
-                hash = hash * 59 + this.JourneyActionMapTypes.GetHashCode();
+                hash = hash * 59 + JourneyActionMapTypes.GetHashCode();
             }
 
-            if (this.DevelopmentRoleList != null)
+            if (DevelopmentRoleList != null)
             {
-                hash = hash * 59 + this.DevelopmentRoleList.GetHashCode();
+                hash = hash * 59 + DevelopmentRoleList.GetHashCode();
             }
 
-            if (this.DevelopmentTypeList != null)
+            if (DevelopmentTypeList != null)
             {
-                hash = hash * 59 + this.DevelopmentTypeList.GetHashCode();
+                hash = hash * 59 + DevelopmentTypeList.GetHashCode();
             }
 
-            if (this.DevelopmentStatusList != null)
+            if (DevelopmentStatusList != null)
             {
-                hash = hash * 59 + this.DevelopmentStatusList.GetHashCode();
+                hash = hash * 59 + DevelopmentStatusList.GetHashCode();
             }
 
-            if (this.DevelopmentModuleIds != null)
+            if (DevelopmentModuleIds != null)
             {
-                hash = hash * 59 + this.DevelopmentModuleIds.GetHashCode();
+                hash = hash * 59 + DevelopmentModuleIds.GetHashCode();
             }
 
-            if (this.DevelopmentActivityOverdue != null)
+            if (DevelopmentActivityOverdue != null)
             {
-                hash = hash * 59 + this.DevelopmentActivityOverdue.GetHashCode();
+                hash = hash * 59 + DevelopmentActivityOverdue.GetHashCode();
             }
 
-            if (this.CustomerSentimentScore != null)
+            if (CustomerSentimentScore != null)
             {
-                hash = hash * 59 + this.CustomerSentimentScore.GetHashCode();
+                hash = hash * 59 + CustomerSentimentScore.GetHashCode();
             }
 
-            if (this.CustomerSentimentTrend != null)
+            if (CustomerSentimentTrend != null)
             {
-                hash = hash * 59 + this.CustomerSentimentTrend.GetHashCode();
+                hash = hash * 59 + CustomerSentimentTrend.GetHashCode();
             }
 
-            if (this.FlowTransferTargets != null)
+            if (FlowTransferTargets != null)
             {
-                hash = hash * 59 + this.FlowTransferTargets.GetHashCode();
+                hash = hash * 59 + FlowTransferTargets.GetHashCode();
             }
 
-            if (this.DevelopmentName != null)
+            if (DevelopmentName != null)
             {
-                hash = hash * 59 + this.DevelopmentName.GetHashCode();
+                hash = hash * 59 + DevelopmentName.GetHashCode();
             }
 
-            if (this.TopicIds != null)
+            if (TopicIds != null)
             {
-                hash = hash * 59 + this.TopicIds.GetHashCode();
+                hash = hash * 59 + TopicIds.GetHashCode();
             }
 
-            if (this.ExternalTags != null)
+            if (ExternalTags != null)
             {
-                hash = hash * 59 + this.ExternalTags.GetHashCode();
+                hash = hash * 59 + ExternalTags.GetHashCode();
             }
 
-            if (this.IsNotResponding != null)
+            if (IsNotResponding != null)
             {
-                hash = hash * 59 + this.IsNotResponding.GetHashCode();
+                hash = hash * 59 + IsNotResponding.GetHashCode();
             }
 
-            if (this.IsAuthenticated != null)
+            if (IsAuthenticated != null)
             {
-                hash = hash * 59 + this.IsAuthenticated.GetHashCode();
+                hash = hash * 59 + IsAuthenticated.GetHashCode();
             }
 
-            if (this.BotIds != null)
+            if (BotIds != null)
             {
-                hash = hash * 59 + this.BotIds.GetHashCode();
+                hash = hash * 59 + BotIds.GetHashCode();
             }
 
-            if (this.BotVersions != null)
+            if (BotVersions != null)
             {
-                hash = hash * 59 + this.BotVersions.GetHashCode();
+                hash = hash * 59 + BotVersions.GetHashCode();
             }
 
-            if (this.BotMessageTypes != null)
+            if (BotMessageTypes != null)
             {
-                hash = hash * 59 + this.BotMessageTypes.GetHashCode();
+                hash = hash * 59 + BotMessageTypes.GetHashCode();
             }
 
-            if (this.BotProviderList != null)
+            if (BotProviderList != null)
             {
-                hash = hash * 59 + this.BotProviderList.GetHashCode();
+                hash = hash * 59 + BotProviderList.GetHashCode();
             }
 
-            if (this.BotProductList != null)
+            if (BotProductList != null)
             {
-                hash = hash * 59 + this.BotProductList.GetHashCode();
+                hash = hash * 59 + BotProductList.GetHashCode();
             }
 
-            if (this.BotRecognitionFailureReasonList != null)
+            if (BotRecognitionFailureReasonList != null)
             {
-                hash = hash * 59 + this.BotRecognitionFailureReasonList.GetHashCode();
+                hash = hash * 59 + BotRecognitionFailureReasonList.GetHashCode();
             }
 
-            if (this.BotIntentList != null)
+            if (BotIntentList != null)
             {
-                hash = hash * 59 + this.BotIntentList.GetHashCode();
+                hash = hash * 59 + BotIntentList.GetHashCode();
             }
 
-            if (this.BotFinalIntentList != null)
+            if (BotFinalIntentList != null)
             {
-                hash = hash * 59 + this.BotFinalIntentList.GetHashCode();
+                hash = hash * 59 + BotFinalIntentList.GetHashCode();
             }
 
-            if (this.BotSlotList != null)
+            if (BotSlotList != null)
             {
-                hash = hash * 59 + this.BotSlotList.GetHashCode();
+                hash = hash * 59 + BotSlotList.GetHashCode();
             }
 
-            if (this.BotResultList != null)
+            if (BotResultList != null)
             {
-                hash = hash * 59 + this.BotResultList.GetHashCode();
+                hash = hash * 59 + BotResultList.GetHashCode();
             }
 
-            if (this.BlockedReasons != null)
+            if (BlockedReasons != null)
             {
-                hash = hash * 59 + this.BlockedReasons.GetHashCode();
+                hash = hash * 59 + BlockedReasons.GetHashCode();
             }
 
-            if (this.IsRecorded != null)
+            if (IsRecorded != null)
             {
-                hash = hash * 59 + this.IsRecorded.GetHashCode();
+                hash = hash * 59 + IsRecorded.GetHashCode();
             }
 
-            if (this.HasEvaluation != null)
+            if (HasEvaluation != null)
             {
-                hash = hash * 59 + this.HasEvaluation.GetHashCode();
+                hash = hash * 59 + HasEvaluation.GetHashCode();
             }
 
-            if (this.HasScoredEvaluation != null)
+            if (HasScoredEvaluation != null)
             {
-                hash = hash * 59 + this.HasScoredEvaluation.GetHashCode();
+                hash = hash * 59 + HasScoredEvaluation.GetHashCode();
             }
 
-            if (this.EmailDeliveryStatusList != null)
+            if (EmailDeliveryStatusList != null)
             {
-                hash = hash * 59 + this.EmailDeliveryStatusList.GetHashCode();
+                hash = hash * 59 + EmailDeliveryStatusList.GetHashCode();
             }
 
-            if (this.IsAgentOwnedCallback != null)
+            if (IsAgentOwnedCallback != null)
             {
-                hash = hash * 59 + this.IsAgentOwnedCallback.GetHashCode();
+                hash = hash * 59 + IsAgentOwnedCallback.GetHashCode();
             }
 
-            if (this.AgentCallbackOwnerIds != null)
+            if (AgentCallbackOwnerIds != null)
             {
-                hash = hash * 59 + this.AgentCallbackOwnerIds.GetHashCode();
+                hash = hash * 59 + AgentCallbackOwnerIds.GetHashCode();
             }
 
-            if (this.TranscriptTopics != null)
+            if (TranscriptTopics != null)
             {
-                hash = hash * 59 + this.TranscriptTopics.GetHashCode();
+                hash = hash * 59 + TranscriptTopics.GetHashCode();
             }
 
-            if (this.JourneyFrequencyCapReasons != null)
+            if (JourneyFrequencyCapReasons != null)
             {
-                hash = hash * 59 + this.JourneyFrequencyCapReasons.GetHashCode();
+                hash = hash * 59 + JourneyFrequencyCapReasons.GetHashCode();
             }
 
-            if (this.JourneyBlockingActionMapIds != null)
+            if (JourneyBlockingActionMapIds != null)
             {
-                hash = hash * 59 + this.JourneyBlockingActionMapIds.GetHashCode();
+                hash = hash * 59 + JourneyBlockingActionMapIds.GetHashCode();
             }
 
-            if (this.JourneyActionTargetIds != null)
+            if (JourneyActionTargetIds != null)
             {
-                hash = hash * 59 + this.JourneyActionTargetIds.GetHashCode();
+                hash = hash * 59 + JourneyActionTargetIds.GetHashCode();
             }
 
-            if (this.JourneyBlockingScheduleGroupIds != null)
+            if (JourneyBlockingScheduleGroupIds != null)
             {
-                hash = hash * 59 + this.JourneyBlockingScheduleGroupIds.GetHashCode();
+                hash = hash * 59 + JourneyBlockingScheduleGroupIds.GetHashCode();
             }
 
-            if (this.JourneyBlockingEmergencyScheduleGroupIds != null)
+            if (JourneyBlockingEmergencyScheduleGroupIds != null)
             {
-                hash = hash * 59 + this.JourneyBlockingEmergencyScheduleGroupIds.GetHashCode();
+                hash = hash * 59 + JourneyBlockingEmergencyScheduleGroupIds.GetHashCode();
             }
 
-            if (this.JourneyUrlEqualConditions != null)
+            if (JourneyUrlEqualConditions != null)
             {
-                hash = hash * 59 + this.JourneyUrlEqualConditions.GetHashCode();
+                hash = hash * 59 + JourneyUrlEqualConditions.GetHashCode();
             }
 
-            if (this.JourneyUrlNotEqualConditions != null)
+            if (JourneyUrlNotEqualConditions != null)
             {
-                hash = hash * 59 + this.JourneyUrlNotEqualConditions.GetHashCode();
+                hash = hash * 59 + JourneyUrlNotEqualConditions.GetHashCode();
             }
 
-            if (this.JourneyUrlStartsWithConditions != null)
+            if (JourneyUrlStartsWithConditions != null)
             {
-                hash = hash * 59 + this.JourneyUrlStartsWithConditions.GetHashCode();
+                hash = hash * 59 + JourneyUrlStartsWithConditions.GetHashCode();
             }
 
-            if (this.JourneyUrlEndsWithConditions != null)
+            if (JourneyUrlEndsWithConditions != null)
             {
-                hash = hash * 59 + this.JourneyUrlEndsWithConditions.GetHashCode();
+                hash = hash * 59 + JourneyUrlEndsWithConditions.GetHashCode();
             }
 
-            if (this.JourneyUrlContainsAnyConditions != null)
+            if (JourneyUrlContainsAnyConditions != null)
             {
-                hash = hash * 59 + this.JourneyUrlContainsAnyConditions.GetHashCode();
+                hash = hash * 59 + JourneyUrlContainsAnyConditions.GetHashCode();
             }
 
-            if (this.JourneyUrlNotContainsAnyConditions != null)
+            if (JourneyUrlNotContainsAnyConditions != null)
             {
-                hash = hash * 59 + this.JourneyUrlNotContainsAnyConditions.GetHashCode();
+                hash = hash * 59 + JourneyUrlNotContainsAnyConditions.GetHashCode();
             }
 
-            if (this.JourneyUrlContainsAllConditions != null)
+            if (JourneyUrlContainsAllConditions != null)
             {
-                hash = hash * 59 + this.JourneyUrlContainsAllConditions.GetHashCode();
+                hash = hash * 59 + JourneyUrlContainsAllConditions.GetHashCode();
             }
 
-            if (this.JourneyUrlNotContainsAllConditions != null)
+            if (JourneyUrlNotContainsAllConditions != null)
             {
-                hash = hash * 59 + this.JourneyUrlNotContainsAllConditions.GetHashCode();
+                hash = hash * 59 + JourneyUrlNotContainsAllConditions.GetHashCode();
             }
 
-            if (this.FlowMilestoneIds != null)
+            if (FlowMilestoneIds != null)
             {
-                hash = hash * 59 + this.FlowMilestoneIds.GetHashCode();
+                hash = hash * 59 + FlowMilestoneIds.GetHashCode();
             }
 
-            if (this.IsAssessmentPassed != null)
+            if (IsAssessmentPassed != null)
             {
-                hash = hash * 59 + this.IsAssessmentPassed.GetHashCode();
+                hash = hash * 59 + IsAssessmentPassed.GetHashCode();
             }
 
-            if (this.ConversationInitiators != null)
+            if (ConversationInitiators != null)
             {
-                hash = hash * 59 + this.ConversationInitiators.GetHashCode();
+                hash = hash * 59 + ConversationInitiators.GetHashCode();
             }
 
-            if (this.HasCustomerParticipated != null)
+            if (HasCustomerParticipated != null)
             {
-                hash = hash * 59 + this.HasCustomerParticipated.GetHashCode();
+                hash = hash * 59 + HasCustomerParticipated.GetHashCode();
             }
 
-            if (this.IsAcdInteraction != null)
+            if (IsAcdInteraction != null)
             {
-                hash = hash * 59 + this.IsAcdInteraction.GetHashCode();
+                hash = hash * 59 + IsAcdInteraction.GetHashCode();
             }
 
-            if (this.HasFax != null)
+            if (HasFax != null)
             {
-                hash = hash * 59 + this.HasFax.GetHashCode();
+                hash = hash * 59 + HasFax.GetHashCode();
             }
 
-            if (this.DataActionIds != null)
+            if (DataActionIds != null)
             {
-                hash = hash * 59 + this.DataActionIds.GetHashCode();
+                hash = hash * 59 + DataActionIds.GetHashCode();
             }
 
-            if (this.ActionCategoryName != null)
+            if (ActionCategoryName != null)
             {
-                hash = hash * 59 + this.ActionCategoryName.GetHashCode();
+                hash = hash * 59 + ActionCategoryName.GetHashCode();
             }
 
-            if (this.IntegrationIds != null)
+            if (IntegrationIds != null)
             {
-                hash = hash * 59 + this.IntegrationIds.GetHashCode();
+                hash = hash * 59 + IntegrationIds.GetHashCode();
             }
 
-            if (this.ResponseStatuses != null)
+            if (ResponseStatuses != null)
             {
-                hash = hash * 59 + this.ResponseStatuses.GetHashCode();
+                hash = hash * 59 + ResponseStatuses.GetHashCode();
             }
 
-            if (this.AvailableDashboard != null)
+            if (AvailableDashboard != null)
             {
-                hash = hash * 59 + this.AvailableDashboard.GetHashCode();
+                hash = hash * 59 + AvailableDashboard.GetHashCode();
             }
 
-            if (this.FavouriteDashboard != null)
+            if (FavouriteDashboard != null)
             {
-                hash = hash * 59 + this.FavouriteDashboard.GetHashCode();
+                hash = hash * 59 + FavouriteDashboard.GetHashCode();
             }
 
-            if (this.MyDashboard != null)
+            if (MyDashboard != null)
             {
-                hash = hash * 59 + this.MyDashboard.GetHashCode();
+                hash = hash * 59 + MyDashboard.GetHashCode();
             }
 
-            if (this.StationErrors != null)
+            if (StationErrors != null)
             {
-                hash = hash * 59 + this.StationErrors.GetHashCode();
+                hash = hash * 59 + StationErrors.GetHashCode();
             }
 
-            if (this.CanonicalContactIds != null)
+            if (CanonicalContactIds != null)
             {
-                hash = hash * 59 + this.CanonicalContactIds.GetHashCode();
+                hash = hash * 59 + CanonicalContactIds.GetHashCode();
             }
 
-            if (this.AlertRuleIds != null)
+            if (AlertRuleIds != null)
             {
-                hash = hash * 59 + this.AlertRuleIds.GetHashCode();
+                hash = hash * 59 + AlertRuleIds.GetHashCode();
             }
 
-            if (this.EvaluationFormContextIds != null)
+            if (EvaluationFormContextIds != null)
             {
-                hash = hash * 59 + this.EvaluationFormContextIds.GetHashCode();
+                hash = hash * 59 + EvaluationFormContextIds.GetHashCode();
             }
 
-            if (this.EvaluationStatuses != null)
+            if (EvaluationStatuses != null)
             {
-                hash = hash * 59 + this.EvaluationStatuses.GetHashCode();
+                hash = hash * 59 + EvaluationStatuses.GetHashCode();
             }
 
-            if (this.WorkbinIds != null)
+            if (WorkbinIds != null)
             {
-                hash = hash * 59 + this.WorkbinIds.GetHashCode();
+                hash = hash * 59 + WorkbinIds.GetHashCode();
             }
 
-            if (this.WorktypeIds != null)
+            if (WorktypeIds != null)
             {
-                hash = hash * 59 + this.WorktypeIds.GetHashCode();
+                hash = hash * 59 + WorktypeIds.GetHashCode();
             }
 
-            if (this.WorkitemIds != null)
+            if (WorkitemIds != null)
             {
-                hash = hash * 59 + this.WorkitemIds.GetHashCode();
+                hash = hash * 59 + WorkitemIds.GetHashCode();
             }
 
-            if (this.WorkitemAssigneeIds != null)
+            if (WorkitemAssigneeIds != null)
             {
-                hash = hash * 59 + this.WorkitemAssigneeIds.GetHashCode();
+                hash = hash * 59 + WorkitemAssigneeIds.GetHashCode();
             }
 
-            if (this.WorkitemStatuses != null)
+            if (WorkitemStatuses != null)
             {
-                hash = hash * 59 + this.WorkitemStatuses.GetHashCode();
+                hash = hash * 59 + WorkitemStatuses.GetHashCode();
             }
 
-            if (this.IsAnalyzedForSensitiveData != null)
+            if (IsAnalyzedForSensitiveData != null)
             {
-                hash = hash * 59 + this.IsAnalyzedForSensitiveData.GetHashCode();
+                hash = hash * 59 + IsAnalyzedForSensitiveData.GetHashCode();
             }
 
-            if (this.HasSensitiveData != null)
+            if (HasSensitiveData != null)
             {
-                hash = hash * 59 + this.HasSensitiveData.GetHashCode();
+                hash = hash * 59 + HasSensitiveData.GetHashCode();
             }
 
-            if (this.HasPciData != null)
+            if (HasPciData != null)
             {
-                hash = hash * 59 + this.HasPciData.GetHashCode();
+                hash = hash * 59 + HasPciData.GetHashCode();
             }
 
-            if (this.HasPiiData != null)
+            if (HasPiiData != null)
             {
-                hash = hash * 59 + this.HasPiiData.GetHashCode();
+                hash = hash * 59 + HasPiiData.GetHashCode();
             }
 
-            if (this.SubPath != null)
+            if (SubPath != null)
             {
-                hash = hash * 59 + this.SubPath.GetHashCode();
+                hash = hash * 59 + SubPath.GetHashCode();
             }
 
-            if (this.UserState != null)
+            if (UserState != null)
             {
-                hash = hash * 59 + this.UserState.GetHashCode();
+                hash = hash * 59 + UserState.GetHashCode();
             }
 
-            if (this.IsClearedByCustomer != null)
+            if (IsClearedByCustomer != null)
             {
-                hash = hash * 59 + this.IsClearedByCustomer.GetHashCode();
+                hash = hash * 59 + IsClearedByCustomer.GetHashCode();
             }
 
-            if (this.EvaluationAssigneeIds != null)
+            if (EvaluationAssigneeIds != null)
             {
-                hash = hash * 59 + this.EvaluationAssigneeIds.GetHashCode();
+                hash = hash * 59 + EvaluationAssigneeIds.GetHashCode();
             }
 
-            if (this.EvaluationAssigned != null)
+            if (EvaluationAssigned != null)
             {
-                hash = hash * 59 + this.EvaluationAssigned.GetHashCode();
+                hash = hash * 59 + EvaluationAssigned.GetHashCode();
             }
 
-            if (this.AssistantIds != null)
+            if (AssistantIds != null)
             {
-                hash = hash * 59 + this.AssistantIds.GetHashCode();
+                hash = hash * 59 + AssistantIds.GetHashCode();
             }
 
-            if (this.KnowledgeBaseIds != null)
+            if (KnowledgeBaseIds != null)
             {
-                hash = hash * 59 + this.KnowledgeBaseIds.GetHashCode();
+                hash = hash * 59 + KnowledgeBaseIds.GetHashCode();
             }
 
-            if (this.IsParked != null)
+            if (IsParked != null)
             {
-                hash = hash * 59 + this.IsParked.GetHashCode();
+                hash = hash * 59 + IsParked.GetHashCode();
             }
 
-            if (this.AgentEmpathyScore != null)
+            if (AgentEmpathyScore != null)
             {
-                hash = hash * 59 + this.AgentEmpathyScore.GetHashCode();
+                hash = hash * 59 + AgentEmpathyScore.GetHashCode();
             }
 
-            if (this.SurveyTypes != null)
+            if (SurveyTypes != null)
             {
-                hash = hash * 59 + this.SurveyTypes.GetHashCode();
+                hash = hash * 59 + SurveyTypes.GetHashCode();
             }
 
-            if (this.SurveyResponseStatuses != null)
+            if (SurveyResponseStatuses != null)
             {
-                hash = hash * 59 + this.SurveyResponseStatuses.GetHashCode();
+                hash = hash * 59 + SurveyResponseStatuses.GetHashCode();
             }
 
-            if (this.BotFlowTypes != null)
+            if (BotFlowTypes != null)
             {
-                hash = hash * 59 + this.BotFlowTypes.GetHashCode();
+                hash = hash * 59 + BotFlowTypes.GetHashCode();
             }
 
-            if (this.AgentTalkDurationMilliseconds != null)
+            if (AgentTalkDurationMilliseconds != null)
             {
-                hash = hash * 59 + this.AgentTalkDurationMilliseconds.GetHashCode();
+                hash = hash * 59 + AgentTalkDurationMilliseconds.GetHashCode();
             }
 
-            if (this.CustomerTalkDurationMilliseconds != null)
+            if (CustomerTalkDurationMilliseconds != null)
             {
-                hash = hash * 59 + this.CustomerTalkDurationMilliseconds.GetHashCode();
+                hash = hash * 59 + CustomerTalkDurationMilliseconds.GetHashCode();
             }
 
-            if (this.OvertalkDurationMilliseconds != null)
+            if (OvertalkDurationMilliseconds != null)
             {
-                hash = hash * 59 + this.OvertalkDurationMilliseconds.GetHashCode();
+                hash = hash * 59 + OvertalkDurationMilliseconds.GetHashCode();
             }
 
-            if (this.SilenceDurationMilliseconds != null)
+            if (SilenceDurationMilliseconds != null)
             {
-                hash = hash * 59 + this.SilenceDurationMilliseconds.GetHashCode();
+                hash = hash * 59 + SilenceDurationMilliseconds.GetHashCode();
             }
 
-            if (this.AcdDurationMilliseconds != null)
+            if (AcdDurationMilliseconds != null)
             {
-                hash = hash * 59 + this.AcdDurationMilliseconds.GetHashCode();
+                hash = hash * 59 + AcdDurationMilliseconds.GetHashCode();
             }
 
-            if (this.IvrDurationMilliseconds != null)
+            if (IvrDurationMilliseconds != null)
             {
-                hash = hash * 59 + this.IvrDurationMilliseconds.GetHashCode();
+                hash = hash * 59 + IvrDurationMilliseconds.GetHashCode();
             }
 
-            if (this.OtherDurationMilliseconds != null)
+            if (OtherDurationMilliseconds != null)
             {
-                hash = hash * 59 + this.OtherDurationMilliseconds.GetHashCode();
+                hash = hash * 59 + OtherDurationMilliseconds.GetHashCode();
             }
 
-            if (this.AgentTalkPercentage != null)
+            if (AgentTalkPercentage != null)
             {
-                hash = hash * 59 + this.AgentTalkPercentage.GetHashCode();
+                hash = hash * 59 + AgentTalkPercentage.GetHashCode();
             }
 
-            if (this.CustomerTalkPercentage != null)
+            if (CustomerTalkPercentage != null)
             {
-                hash = hash * 59 + this.CustomerTalkPercentage.GetHashCode();
+                hash = hash * 59 + CustomerTalkPercentage.GetHashCode();
             }
 
-            if (this.OvertalkPercentage != null)
+            if (OvertalkPercentage != null)
             {
-                hash = hash * 59 + this.OvertalkPercentage.GetHashCode();
+                hash = hash * 59 + OvertalkPercentage.GetHashCode();
             }
 
-            if (this.SilencePercentage != null)
+            if (SilencePercentage != null)
             {
-                hash = hash * 59 + this.SilencePercentage.GetHashCode();
+                hash = hash * 59 + SilencePercentage.GetHashCode();
             }
 
-            if (this.AcdPercentage != null)
+            if (AcdPercentage != null)
             {
-                hash = hash * 59 + this.AcdPercentage.GetHashCode();
+                hash = hash * 59 + AcdPercentage.GetHashCode();
             }
 
-            if (this.IvrPercentage != null)
+            if (IvrPercentage != null)
             {
-                hash = hash * 59 + this.IvrPercentage.GetHashCode();
+                hash = hash * 59 + IvrPercentage.GetHashCode();
             }
 
-            if (this.OtherPercentage != null)
+            if (OtherPercentage != null)
             {
-                hash = hash * 59 + this.OtherPercentage.GetHashCode();
+                hash = hash * 59 + OtherPercentage.GetHashCode();
             }
 
-            if (this.OvertalkInstances != null)
+            if (OvertalkInstances != null)
             {
-                hash = hash * 59 + this.OvertalkInstances.GetHashCode();
+                hash = hash * 59 + OvertalkInstances.GetHashCode();
             }
 
-            if (this.IsScreenRecorded != null)
+            if (IsScreenRecorded != null)
             {
-                hash = hash * 59 + this.IsScreenRecorded.GetHashCode();
+                hash = hash * 59 + IsScreenRecorded.GetHashCode();
             }
 
-            if (this.ScreenMonitorUserIds != null)
+            if (ScreenMonitorUserIds != null)
             {
-                hash = hash * 59 + this.ScreenMonitorUserIds.GetHashCode();
+                hash = hash * 59 + ScreenMonitorUserIds.GetHashCode();
             }
 
-            if (this.DashboardState != null)
+            if (DashboardState != null)
             {
-                hash = hash * 59 + this.DashboardState.GetHashCode();
+                hash = hash * 59 + DashboardState.GetHashCode();
             }
 
-            if (this.DashboardType != null)
+            if (DashboardType != null)
             {
-                hash = hash * 59 + this.DashboardType.GetHashCode();
+                hash = hash * 59 + DashboardType.GetHashCode();
             }
 
-            if (this.DashboardAccessFilter != null)
+            if (DashboardAccessFilter != null)
             {
-                hash = hash * 59 + this.DashboardAccessFilter.GetHashCode();
+                hash = hash * 59 + DashboardAccessFilter.GetHashCode();
             }
 
-            if (this.TranscriptDurationMilliseconds != null)
+            if (TranscriptDurationMilliseconds != null)
             {
-                hash = hash * 59 + this.TranscriptDurationMilliseconds.GetHashCode();
+                hash = hash * 59 + TranscriptDurationMilliseconds.GetHashCode();
             }
 
-            if (this.WorkitemsStatuses != null)
+            if (WorkitemsStatuses != null)
             {
-                hash = hash * 59 + this.WorkitemsStatuses.GetHashCode();
+                hash = hash * 59 + WorkitemsStatuses.GetHashCode();
             }
 
-            if (this.SocialCountries != null)
+            if (SocialCountries != null)
             {
-                hash = hash * 59 + this.SocialCountries.GetHashCode();
+                hash = hash * 59 + SocialCountries.GetHashCode();
             }
 
-            if (this.SocialLanguages != null)
+            if (SocialLanguages != null)
             {
-                hash = hash * 59 + this.SocialLanguages.GetHashCode();
+                hash = hash * 59 + SocialLanguages.GetHashCode();
             }
 
-            if (this.SocialChannels != null)
+            if (SocialChannels != null)
             {
-                hash = hash * 59 + this.SocialChannels.GetHashCode();
+                hash = hash * 59 + SocialChannels.GetHashCode();
             }
 
-            if (this.SocialSentimentCategory != null)
+            if (SocialSentimentCategory != null)
             {
-                hash = hash * 59 + this.SocialSentimentCategory.GetHashCode();
+                hash = hash * 59 + SocialSentimentCategory.GetHashCode();
             }
 
-            if (this.SocialTopicIds != null)
+            if (SocialTopicIds != null)
             {
-                hash = hash * 59 + this.SocialTopicIds.GetHashCode();
+                hash = hash * 59 + SocialTopicIds.GetHashCode();
             }
 
-            if (this.SocialIngestionRuleIds != null)
+            if (SocialIngestionRuleIds != null)
             {
-                hash = hash * 59 + this.SocialIngestionRuleIds.GetHashCode();
+                hash = hash * 59 + SocialIngestionRuleIds.GetHashCode();
             }
 
-            if (this.SocialConversationCreated != null)
+            if (SocialConversationCreated != null)
             {
-                hash = hash * 59 + this.SocialConversationCreated.GetHashCode();
+                hash = hash * 59 + SocialConversationCreated.GetHashCode();
             }
 
-            if (this.SocialContentType != null)
+            if (SocialContentType != null)
             {
-                hash = hash * 59 + this.SocialContentType.GetHashCode();
+                hash = hash * 59 + SocialContentType.GetHashCode();
             }
 
-            if (this.SocialKeywords != null)
+            if (SocialKeywords != null)
             {
-                hash = hash * 59 + this.SocialKeywords.GetHashCode();
+                hash = hash * 59 + SocialKeywords.GetHashCode();
             }
 
-            if (this.SocialPostEscalated != null)
+            if (SocialPostEscalated != null)
             {
-                hash = hash * 59 + this.SocialPostEscalated.GetHashCode();
+                hash = hash * 59 + SocialPostEscalated.GetHashCode();
             }
 
-            if (this.SocialClassifications != null)
+            if (SocialClassifications != null)
             {
-                hash = hash * 59 + this.SocialClassifications.GetHashCode();
+                hash = hash * 59 + SocialClassifications.GetHashCode();
             }
 
-            if (this.FilterUsersByManagerIds != null)
+            if (FilterUsersByManagerIds != null)
             {
-                hash = hash * 59 + this.FilterUsersByManagerIds.GetHashCode();
+                hash = hash * 59 + FilterUsersByManagerIds.GetHashCode();
             }
 
-            if (this.SlideshowIds != null)
+            if (SlideshowIds != null)
             {
-                hash = hash * 59 + this.SlideshowIds.GetHashCode();
+                hash = hash * 59 + SlideshowIds.GetHashCode();
             }
 
-            if (this.Conferenced != null)
+            if (Conferenced != null)
             {
-                hash = hash * 59 + this.Conferenced.GetHashCode();
+                hash = hash * 59 + Conferenced.GetHashCode();
             }
 
-            if (this.Video != null)
+            if (Video != null)
             {
-                hash = hash * 59 + this.Video.GetHashCode();
+                hash = hash * 59 + Video.GetHashCode();
             }
 
-            if (this.LinkedInteraction != null)
+            if (LinkedInteraction != null)
             {
-                hash = hash * 59 + this.LinkedInteraction.GetHashCode();
+                hash = hash * 59 + LinkedInteraction.GetHashCode();
             }
 
-            if (this.RecommendationSources != null)
+            if (RecommendationSources != null)
             {
-                hash = hash * 59 + this.RecommendationSources.GetHashCode();
+                hash = hash * 59 + RecommendationSources.GetHashCode();
             }
 
-            if (this.EvaluationRole != null)
+            if (EvaluationRole != null)
             {
-                hash = hash * 59 + this.EvaluationRole.GetHashCode();
+                hash = hash * 59 + EvaluationRole.GetHashCode();
             }
 
-            if (this.ComparisonQueueIds != null)
+            if (ComparisonQueueIds != null)
             {
-                hash = hash * 59 + this.ComparisonQueueIds.GetHashCode();
+                hash = hash * 59 + ComparisonQueueIds.GetHashCode();
             }
 
-            if (this.ViewMetrics != null)
+            if (ViewMetrics != null)
             {
-                hash = hash * 59 + this.ViewMetrics.GetHashCode();
+                hash = hash * 59 + ViewMetrics.GetHashCode();
             }
 
-            if (this.TimelineCategories != null)
+            if (TimelineCategories != null)
             {
-                hash = hash * 59 + this.TimelineCategories.GetHashCode();
+                hash = hash * 59 + TimelineCategories.GetHashCode();
             }
 
-            if (this.Acw != null)
+            if (Acw != null)
             {
-                hash = hash * 59 + this.Acw.GetHashCode();
+                hash = hash * 59 + Acw.GetHashCode();
             }
 
-            if (this.SegmentTypes != null)
+            if (SegmentTypes != null)
             {
-                hash = hash * 59 + this.SegmentTypes.GetHashCode();
+                hash = hash * 59 + SegmentTypes.GetHashCode();
             }
 
-            if (this.ProgramIds != null)
+            if (ProgramIds != null)
             {
-                hash = hash * 59 + this.ProgramIds.GetHashCode();
+                hash = hash * 59 + ProgramIds.GetHashCode();
             }
 
-            if (this.CategoryIds != null)
+            if (CategoryIds != null)
             {
-                hash = hash * 59 + this.CategoryIds.GetHashCode();
+                hash = hash * 59 + CategoryIds.GetHashCode();
             }
 
             return hash;

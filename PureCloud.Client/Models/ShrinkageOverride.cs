@@ -71,7 +71,7 @@ public partial class ShrinkageOverride : IEquatable<ShrinkageOverride>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShrinkageOverride);
+        return Equals(obj as ShrinkageOverride);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ShrinkageOverride : IEquatable<ShrinkageOverride>
 
         return true &&
             (
-                this.IntervalIndex == other.IntervalIndex ||
-                this.IntervalIndex != null &&
-                this.IntervalIndex.Equals(other.IntervalIndex)
+                IntervalIndex == other.IntervalIndex ||
+                IntervalIndex != null &&
+                IntervalIndex.Equals(other.IntervalIndex)
             ) &&
             (
-                this.ShrinkagePercent == other.ShrinkagePercent ||
-                this.ShrinkagePercent != null &&
-                this.ShrinkagePercent.Equals(other.ShrinkagePercent)
+                ShrinkagePercent == other.ShrinkagePercent ||
+                ShrinkagePercent != null &&
+                ShrinkagePercent.Equals(other.ShrinkagePercent)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ShrinkageOverride : IEquatable<ShrinkageOverride>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IntervalIndex != null)
+            if (IntervalIndex != null)
             {
-                hash = hash * 59 + this.IntervalIndex.GetHashCode();
+                hash = hash * 59 + IntervalIndex.GetHashCode();
             }
 
-            if (this.ShrinkagePercent != null)
+            if (ShrinkagePercent != null)
             {
-                hash = hash * 59 + this.ShrinkagePercent.GetHashCode();
+                hash = hash * 59 + ShrinkagePercent.GetHashCode();
             }
 
             return hash;

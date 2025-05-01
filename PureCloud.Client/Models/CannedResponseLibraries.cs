@@ -97,7 +97,7 @@ public partial class CannedResponseLibraries : IEquatable<CannedResponseLibrarie
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CannedResponseLibraries);
+        return Equals(obj as CannedResponseLibraries);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class CannedResponseLibraries : IEquatable<CannedResponseLibrarie
 
         return true &&
             (
-                this.LibraryIds == other.LibraryIds ||
-                this.LibraryIds != null &&
-                this.LibraryIds.SequenceEqual(other.LibraryIds)
+                LibraryIds == other.LibraryIds ||
+                LibraryIds != null &&
+                LibraryIds.SequenceEqual(other.LibraryIds)
             ) &&
             (
-                this.Mode == other.Mode ||
-                this.Mode != null &&
-                this.Mode.Equals(other.Mode)
+                Mode == other.Mode ||
+                Mode != null &&
+                Mode.Equals(other.Mode)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class CannedResponseLibraries : IEquatable<CannedResponseLibrarie
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LibraryIds != null)
+            if (LibraryIds != null)
             {
-                hash = hash * 59 + this.LibraryIds.GetHashCode();
+                hash = hash * 59 + LibraryIds.GetHashCode();
             }
 
-            if (this.Mode != null)
+            if (Mode != null)
             {
-                hash = hash * 59 + this.Mode.GetHashCode();
+                hash = hash * 59 + Mode.GetHashCode();
             }
 
             return hash;

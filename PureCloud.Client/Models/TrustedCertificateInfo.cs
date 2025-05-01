@@ -77,7 +77,7 @@ public partial class TrustedCertificateInfo : IEquatable<TrustedCertificateInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrustedCertificateInfo);
+        return Equals(obj as TrustedCertificateInfo);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class TrustedCertificateInfo : IEquatable<TrustedCertificateInfo>
 
         return true &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.SerialNumber == other.SerialNumber ||
-                this.SerialNumber != null &&
-                this.SerialNumber.Equals(other.SerialNumber)
+                SerialNumber == other.SerialNumber ||
+                SerialNumber != null &&
+                SerialNumber.Equals(other.SerialNumber)
             ) &&
             (
-                this.Signature == other.Signature ||
-                this.Signature != null &&
-                this.Signature.Equals(other.Signature)
+                Signature == other.Signature ||
+                Signature != null &&
+                Signature.Equals(other.Signature)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class TrustedCertificateInfo : IEquatable<TrustedCertificateInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.SerialNumber != null)
+            if (SerialNumber != null)
             {
-                hash = hash * 59 + this.SerialNumber.GetHashCode();
+                hash = hash * 59 + SerialNumber.GetHashCode();
             }
 
-            if (this.Signature != null)
+            if (Signature != null)
             {
-                hash = hash * 59 + this.Signature.GetHashCode();
+                hash = hash * 59 + Signature.GetHashCode();
             }
 
             return hash;

@@ -153,7 +153,7 @@ public partial class RequestMapping : IEquatable<RequestMapping>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RequestMapping);
+        return Equals(obj as RequestMapping);
     }
 
     /// <summary>
@@ -171,24 +171,24 @@ public partial class RequestMapping : IEquatable<RequestMapping>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.AttributeType == other.AttributeType ||
-                this.AttributeType != null &&
-                this.AttributeType.Equals(other.AttributeType)
+                AttributeType == other.AttributeType ||
+                AttributeType != null &&
+                AttributeType.Equals(other.AttributeType)
             ) &&
             (
-                this.MappingType == other.MappingType ||
-                this.MappingType != null &&
-                this.MappingType.Equals(other.MappingType)
+                MappingType == other.MappingType ||
+                MappingType != null &&
+                MappingType.Equals(other.MappingType)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -203,24 +203,24 @@ public partial class RequestMapping : IEquatable<RequestMapping>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.AttributeType != null)
+            if (AttributeType != null)
             {
-                hash = hash * 59 + this.AttributeType.GetHashCode();
+                hash = hash * 59 + AttributeType.GetHashCode();
             }
 
-            if (this.MappingType != null)
+            if (MappingType != null)
             {
-                hash = hash * 59 + this.MappingType.GetHashCode();
+                hash = hash * 59 + MappingType.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

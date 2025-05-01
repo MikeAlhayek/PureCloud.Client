@@ -59,7 +59,7 @@ public partial class ComplianceResponse : IEquatable<ComplianceResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ComplianceResponse);
+        return Equals(obj as ComplianceResponse);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ComplianceResponse : IEquatable<ComplianceResponse>
 
         return true &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ComplianceResponse : IEquatable<ComplianceResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
             return hash;

@@ -63,7 +63,7 @@ public partial class CalendarUrlResponse : IEquatable<CalendarUrlResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CalendarUrlResponse);
+        return Equals(obj as CalendarUrlResponse);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class CalendarUrlResponse : IEquatable<CalendarUrlResponse>
 
         return true &&
             (
-                this.CalendarUrl == other.CalendarUrl ||
-                this.CalendarUrl != null &&
-                this.CalendarUrl.Equals(other.CalendarUrl)
+                CalendarUrl == other.CalendarUrl ||
+                CalendarUrl != null &&
+                CalendarUrl.Equals(other.CalendarUrl)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class CalendarUrlResponse : IEquatable<CalendarUrlResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CalendarUrl != null)
+            if (CalendarUrl != null)
             {
-                hash = hash * 59 + this.CalendarUrl.GetHashCode();
+                hash = hash * 59 + CalendarUrl.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

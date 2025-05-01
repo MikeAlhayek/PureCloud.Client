@@ -135,7 +135,7 @@ public partial class Function : IEquatable<Function>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Function);
+        return Equals(obj as Function);
     }
 
     /// <summary>
@@ -153,44 +153,44 @@ public partial class Function : IEquatable<Function>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.ZipId == other.ZipId ||
-                this.ZipId != null &&
-                this.ZipId.Equals(other.ZipId)
+                ZipId == other.ZipId ||
+                ZipId != null &&
+                ZipId.Equals(other.ZipId)
             ) &&
             (
-                this.Handler == other.Handler ||
-                this.Handler != null &&
-                this.Handler.Equals(other.Handler)
+                Handler == other.Handler ||
+                Handler != null &&
+                Handler.Equals(other.Handler)
             ) &&
             (
-                this.Runtime == other.Runtime ||
-                this.Runtime != null &&
-                this.Runtime.Equals(other.Runtime)
+                Runtime == other.Runtime ||
+                Runtime != null &&
+                Runtime.Equals(other.Runtime)
             ) &&
             (
-                this.TimeoutSeconds == other.TimeoutSeconds ||
-                this.TimeoutSeconds != null &&
-                this.TimeoutSeconds.Equals(other.TimeoutSeconds)
+                TimeoutSeconds == other.TimeoutSeconds ||
+                TimeoutSeconds != null &&
+                TimeoutSeconds.Equals(other.TimeoutSeconds)
             );
     }
 
@@ -205,44 +205,44 @@ public partial class Function : IEquatable<Function>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.ZipId != null)
+            if (ZipId != null)
             {
-                hash = hash * 59 + this.ZipId.GetHashCode();
+                hash = hash * 59 + ZipId.GetHashCode();
             }
 
-            if (this.Handler != null)
+            if (Handler != null)
             {
-                hash = hash * 59 + this.Handler.GetHashCode();
+                hash = hash * 59 + Handler.GetHashCode();
             }
 
-            if (this.Runtime != null)
+            if (Runtime != null)
             {
-                hash = hash * 59 + this.Runtime.GetHashCode();
+                hash = hash * 59 + Runtime.GetHashCode();
             }
 
-            if (this.TimeoutSeconds != null)
+            if (TimeoutSeconds != null)
             {
-                hash = hash * 59 + this.TimeoutSeconds.GetHashCode();
+                hash = hash * 59 + TimeoutSeconds.GetHashCode();
             }
 
             return hash;

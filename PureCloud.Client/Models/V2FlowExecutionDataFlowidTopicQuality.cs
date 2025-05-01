@@ -65,7 +65,7 @@ public partial class V2FlowExecutionDataFlowidTopicQuality : IEquatable<V2FlowEx
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2FlowExecutionDataFlowidTopicQuality);
+        return Equals(obj as V2FlowExecutionDataFlowidTopicQuality);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class V2FlowExecutionDataFlowidTopicQuality : IEquatable<V2FlowEx
 
         return true &&
             (
-                this.PolicyId == other.PolicyId ||
-                this.PolicyId != null &&
-                this.PolicyId.Equals(other.PolicyId)
+                PolicyId == other.PolicyId ||
+                PolicyId != null &&
+                PolicyId.Equals(other.PolicyId)
             ) &&
             (
-                this.PolicyName == other.PolicyName ||
-                this.PolicyName != null &&
-                this.PolicyName.Equals(other.PolicyName)
+                PolicyName == other.PolicyName ||
+                PolicyName != null &&
+                PolicyName.Equals(other.PolicyName)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class V2FlowExecutionDataFlowidTopicQuality : IEquatable<V2FlowEx
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PolicyId != null)
+            if (PolicyId != null)
             {
-                hash = hash * 59 + this.PolicyId.GetHashCode();
+                hash = hash * 59 + PolicyId.GetHashCode();
             }
 
-            if (this.PolicyName != null)
+            if (PolicyName != null)
             {
-                hash = hash * 59 + this.PolicyName.GetHashCode();
+                hash = hash * 59 + PolicyName.GetHashCode();
             }
 
             return hash;

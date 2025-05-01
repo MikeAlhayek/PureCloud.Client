@@ -63,7 +63,7 @@ public partial class ExternalContactsContactChangedTopicExternalId : IEquatable<
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsContactChangedTopicExternalId);
+        return Equals(obj as ExternalContactsContactChangedTopicExternalId);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class ExternalContactsContactChangedTopicExternalId : IEquatable<
 
         return true &&
             (
-                this.ExternalSource == other.ExternalSource ||
-                this.ExternalSource != null &&
-                this.ExternalSource.Equals(other.ExternalSource)
+                ExternalSource == other.ExternalSource ||
+                ExternalSource != null &&
+                ExternalSource.Equals(other.ExternalSource)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class ExternalContactsContactChangedTopicExternalId : IEquatable<
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExternalSource != null)
+            if (ExternalSource != null)
             {
-                hash = hash * 59 + this.ExternalSource.GetHashCode();
+                hash = hash * 59 + ExternalSource.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

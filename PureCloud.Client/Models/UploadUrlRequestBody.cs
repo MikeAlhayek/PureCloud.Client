@@ -59,7 +59,7 @@ public partial class UploadUrlRequestBody : IEquatable<UploadUrlRequestBody>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UploadUrlRequestBody);
+        return Equals(obj as UploadUrlRequestBody);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class UploadUrlRequestBody : IEquatable<UploadUrlRequestBody>
 
         return true &&
             (
-                this.ContentLengthBytes == other.ContentLengthBytes ||
-                this.ContentLengthBytes != null &&
-                this.ContentLengthBytes.Equals(other.ContentLengthBytes)
+                ContentLengthBytes == other.ContentLengthBytes ||
+                ContentLengthBytes != null &&
+                ContentLengthBytes.Equals(other.ContentLengthBytes)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class UploadUrlRequestBody : IEquatable<UploadUrlRequestBody>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContentLengthBytes != null)
+            if (ContentLengthBytes != null)
             {
-                hash = hash * 59 + this.ContentLengthBytes.GetHashCode();
+                hash = hash * 59 + ContentLengthBytes.GetHashCode();
             }
 
             return hash;

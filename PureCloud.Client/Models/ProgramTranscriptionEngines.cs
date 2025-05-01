@@ -109,7 +109,7 @@ public partial class ProgramTranscriptionEngines : IEquatable<ProgramTranscripti
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ProgramTranscriptionEngines);
+        return Equals(obj as ProgramTranscriptionEngines);
     }
 
     /// <summary>
@@ -127,34 +127,34 @@ public partial class ProgramTranscriptionEngines : IEquatable<ProgramTranscripti
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Program == other.Program ||
-                this.Program != null &&
-                this.Program.Equals(other.Program)
+                Program == other.Program ||
+                Program != null &&
+                Program.Equals(other.Program)
             ) &&
             (
-                this.TranscriptionEngines == other.TranscriptionEngines ||
-                this.TranscriptionEngines != null &&
-                this.TranscriptionEngines.SequenceEqual(other.TranscriptionEngines)
+                TranscriptionEngines == other.TranscriptionEngines ||
+                TranscriptionEngines != null &&
+                TranscriptionEngines.SequenceEqual(other.TranscriptionEngines)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -169,34 +169,34 @@ public partial class ProgramTranscriptionEngines : IEquatable<ProgramTranscripti
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Program != null)
+            if (Program != null)
             {
-                hash = hash * 59 + this.Program.GetHashCode();
+                hash = hash * 59 + Program.GetHashCode();
             }
 
-            if (this.TranscriptionEngines != null)
+            if (TranscriptionEngines != null)
             {
-                hash = hash * 59 + this.TranscriptionEngines.GetHashCode();
+                hash = hash * 59 + TranscriptionEngines.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

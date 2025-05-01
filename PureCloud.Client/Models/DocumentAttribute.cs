@@ -58,7 +58,7 @@ public partial class DocumentAttribute : IEquatable<DocumentAttribute>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentAttribute);
+        return Equals(obj as DocumentAttribute);
     }
 
     /// <summary>
@@ -76,14 +76,14 @@ public partial class DocumentAttribute : IEquatable<DocumentAttribute>
 
         return true &&
             (
-                this.Attribute == other.Attribute ||
-                this.Attribute != null &&
-                this.Attribute.Equals(other.Attribute)
+                Attribute == other.Attribute ||
+                Attribute != null &&
+                Attribute.Equals(other.Attribute)
             ) &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             );
     }
 
@@ -98,14 +98,14 @@ public partial class DocumentAttribute : IEquatable<DocumentAttribute>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Attribute != null)
+            if (Attribute != null)
             {
-                hash = hash * 59 + this.Attribute.GetHashCode();
+                hash = hash * 59 + Attribute.GetHashCode();
             }
 
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
             return hash;

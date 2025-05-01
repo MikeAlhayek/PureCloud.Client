@@ -133,7 +133,7 @@ public partial class PresentedKnowledgeDocument : IEquatable<PresentedKnowledgeD
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PresentedKnowledgeDocument);
+        return Equals(obj as PresentedKnowledgeDocument);
     }
 
     /// <summary>
@@ -151,24 +151,24 @@ public partial class PresentedKnowledgeDocument : IEquatable<PresentedKnowledgeD
 
         return true &&
             (
-                this.DocumentId == other.DocumentId ||
-                this.DocumentId != null &&
-                this.DocumentId.Equals(other.DocumentId)
+                DocumentId == other.DocumentId ||
+                DocumentId != null &&
+                DocumentId.Equals(other.DocumentId)
             ) &&
             (
-                this.DocumentVariationId == other.DocumentVariationId ||
-                this.DocumentVariationId != null &&
-                this.DocumentVariationId.Equals(other.DocumentVariationId)
+                DocumentVariationId == other.DocumentVariationId ||
+                DocumentVariationId != null &&
+                DocumentVariationId.Equals(other.DocumentVariationId)
             ) &&
             (
-                this.DocumentVersionId == other.DocumentVersionId ||
-                this.DocumentVersionId != null &&
-                this.DocumentVersionId.Equals(other.DocumentVersionId)
+                DocumentVersionId == other.DocumentVersionId ||
+                DocumentVersionId != null &&
+                DocumentVersionId.Equals(other.DocumentVersionId)
             ) &&
             (
-                this.SurfacingMethod == other.SurfacingMethod ||
-                this.SurfacingMethod != null &&
-                this.SurfacingMethod.Equals(other.SurfacingMethod)
+                SurfacingMethod == other.SurfacingMethod ||
+                SurfacingMethod != null &&
+                SurfacingMethod.Equals(other.SurfacingMethod)
             );
     }
 
@@ -183,24 +183,24 @@ public partial class PresentedKnowledgeDocument : IEquatable<PresentedKnowledgeD
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DocumentId != null)
+            if (DocumentId != null)
             {
-                hash = hash * 59 + this.DocumentId.GetHashCode();
+                hash = hash * 59 + DocumentId.GetHashCode();
             }
 
-            if (this.DocumentVariationId != null)
+            if (DocumentVariationId != null)
             {
-                hash = hash * 59 + this.DocumentVariationId.GetHashCode();
+                hash = hash * 59 + DocumentVariationId.GetHashCode();
             }
 
-            if (this.DocumentVersionId != null)
+            if (DocumentVersionId != null)
             {
-                hash = hash * 59 + this.DocumentVersionId.GetHashCode();
+                hash = hash * 59 + DocumentVersionId.GetHashCode();
             }
 
-            if (this.SurfacingMethod != null)
+            if (SurfacingMethod != null)
             {
-                hash = hash * 59 + this.SurfacingMethod.GetHashCode();
+                hash = hash * 59 + SurfacingMethod.GetHashCode();
             }
 
             return hash;

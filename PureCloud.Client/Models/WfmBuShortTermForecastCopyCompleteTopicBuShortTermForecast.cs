@@ -221,7 +221,7 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast);
+        return Equals(obj as WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast);
     }
 
     /// <summary>
@@ -239,69 +239,69 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             ) &&
             (
-                this.CreationMethod == other.CreationMethod ||
-                this.CreationMethod != null &&
-                this.CreationMethod.Equals(other.CreationMethod)
+                CreationMethod == other.CreationMethod ||
+                CreationMethod != null &&
+                CreationMethod.Equals(other.CreationMethod)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Legacy == other.Legacy ||
-                this.Legacy != null &&
-                this.Legacy.Equals(other.Legacy)
+                Legacy == other.Legacy ||
+                Legacy != null &&
+                Legacy.Equals(other.Legacy)
             ) &&
             (
-                this.ReferenceStartDate == other.ReferenceStartDate ||
-                this.ReferenceStartDate != null &&
-                this.ReferenceStartDate.Equals(other.ReferenceStartDate)
+                ReferenceStartDate == other.ReferenceStartDate ||
+                ReferenceStartDate != null &&
+                ReferenceStartDate.Equals(other.ReferenceStartDate)
             ) &&
             (
-                this.SourceDays == other.SourceDays ||
-                this.SourceDays != null &&
-                this.SourceDays.SequenceEqual(other.SourceDays)
+                SourceDays == other.SourceDays ||
+                SourceDays != null &&
+                SourceDays.SequenceEqual(other.SourceDays)
             ) &&
             (
-                this.Modifications == other.Modifications ||
-                this.Modifications != null &&
-                this.Modifications.SequenceEqual(other.Modifications)
+                Modifications == other.Modifications ||
+                Modifications != null &&
+                Modifications.SequenceEqual(other.Modifications)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.PlanningGroupsVersion == other.PlanningGroupsVersion ||
-                this.PlanningGroupsVersion != null &&
-                this.PlanningGroupsVersion.Equals(other.PlanningGroupsVersion)
+                PlanningGroupsVersion == other.PlanningGroupsVersion ||
+                PlanningGroupsVersion != null &&
+                PlanningGroupsVersion.Equals(other.PlanningGroupsVersion)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.CanUseForScheduling == other.CanUseForScheduling ||
-                this.CanUseForScheduling != null &&
-                this.CanUseForScheduling.Equals(other.CanUseForScheduling)
+                CanUseForScheduling == other.CanUseForScheduling ||
+                CanUseForScheduling != null &&
+                CanUseForScheduling.Equals(other.CanUseForScheduling)
             );
     }
 
@@ -316,69 +316,69 @@ public partial class WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast 
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
-            if (this.CreationMethod != null)
+            if (CreationMethod != null)
             {
-                hash = hash * 59 + this.CreationMethod.GetHashCode();
+                hash = hash * 59 + CreationMethod.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Legacy != null)
+            if (Legacy != null)
             {
-                hash = hash * 59 + this.Legacy.GetHashCode();
+                hash = hash * 59 + Legacy.GetHashCode();
             }
 
-            if (this.ReferenceStartDate != null)
+            if (ReferenceStartDate != null)
             {
-                hash = hash * 59 + this.ReferenceStartDate.GetHashCode();
+                hash = hash * 59 + ReferenceStartDate.GetHashCode();
             }
 
-            if (this.SourceDays != null)
+            if (SourceDays != null)
             {
-                hash = hash * 59 + this.SourceDays.GetHashCode();
+                hash = hash * 59 + SourceDays.GetHashCode();
             }
 
-            if (this.Modifications != null)
+            if (Modifications != null)
             {
-                hash = hash * 59 + this.Modifications.GetHashCode();
+                hash = hash * 59 + Modifications.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.PlanningGroupsVersion != null)
+            if (PlanningGroupsVersion != null)
             {
-                hash = hash * 59 + this.PlanningGroupsVersion.GetHashCode();
+                hash = hash * 59 + PlanningGroupsVersion.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.CanUseForScheduling != null)
+            if (CanUseForScheduling != null)
             {
-                hash = hash * 59 + this.CanUseForScheduling.GetHashCode();
+                hash = hash * 59 + CanUseForScheduling.GetHashCode();
             }
 
             return hash;

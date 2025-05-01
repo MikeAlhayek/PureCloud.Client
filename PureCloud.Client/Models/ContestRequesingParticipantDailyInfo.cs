@@ -65,7 +65,7 @@ public partial class ContestRequesingParticipantDailyInfo : IEquatable<ContestRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestRequesingParticipantDailyInfo);
+        return Equals(obj as ContestRequesingParticipantDailyInfo);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ContestRequesingParticipantDailyInfo : IEquatable<ContestRe
 
         return true &&
             (
-                this.DateWorkday == other.DateWorkday ||
-                this.DateWorkday != null &&
-                this.DateWorkday.Equals(other.DateWorkday)
+                DateWorkday == other.DateWorkday ||
+                DateWorkday != null &&
+                DateWorkday.Equals(other.DateWorkday)
             ) &&
             (
-                this.ContestScore == other.ContestScore ||
-                this.ContestScore != null &&
-                this.ContestScore.Equals(other.ContestScore)
+                ContestScore == other.ContestScore ||
+                ContestScore != null &&
+                ContestScore.Equals(other.ContestScore)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ContestRequesingParticipantDailyInfo : IEquatable<ContestRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateWorkday != null)
+            if (DateWorkday != null)
             {
-                hash = hash * 59 + this.DateWorkday.GetHashCode();
+                hash = hash * 59 + DateWorkday.GetHashCode();
             }
 
-            if (this.ContestScore != null)
+            if (ContestScore != null)
             {
-                hash = hash * 59 + this.ContestScore.GetHashCode();
+                hash = hash * 59 + ContestScore.GetHashCode();
             }
 
             return hash;

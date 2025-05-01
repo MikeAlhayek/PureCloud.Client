@@ -135,7 +135,7 @@ public partial class MinerTopic : IEquatable<MinerTopic>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MinerTopic);
+        return Equals(obj as MinerTopic);
     }
 
     /// <summary>
@@ -153,49 +153,49 @@ public partial class MinerTopic : IEquatable<MinerTopic>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Miner == other.Miner ||
-                this.Miner != null &&
-                this.Miner.Equals(other.Miner)
+                Miner == other.Miner ||
+                Miner != null &&
+                Miner.Equals(other.Miner)
             ) &&
             (
-                this.ConversationCount == other.ConversationCount ||
-                this.ConversationCount != null &&
-                this.ConversationCount.Equals(other.ConversationCount)
+                ConversationCount == other.ConversationCount ||
+                ConversationCount != null &&
+                ConversationCount.Equals(other.ConversationCount)
             ) &&
             (
-                this.ConversationPercent == other.ConversationPercent ||
-                this.ConversationPercent != null &&
-                this.ConversationPercent.Equals(other.ConversationPercent)
+                ConversationPercent == other.ConversationPercent ||
+                ConversationPercent != null &&
+                ConversationPercent.Equals(other.ConversationPercent)
             ) &&
             (
-                this.UtteranceCount == other.UtteranceCount ||
-                this.UtteranceCount != null &&
-                this.UtteranceCount.Equals(other.UtteranceCount)
+                UtteranceCount == other.UtteranceCount ||
+                UtteranceCount != null &&
+                UtteranceCount.Equals(other.UtteranceCount)
             ) &&
             (
-                this.PhraseCount == other.PhraseCount ||
-                this.PhraseCount != null &&
-                this.PhraseCount.Equals(other.PhraseCount)
+                PhraseCount == other.PhraseCount ||
+                PhraseCount != null &&
+                PhraseCount.Equals(other.PhraseCount)
             ) &&
             (
-                this.Phrases == other.Phrases ||
-                this.Phrases != null &&
-                this.Phrases.SequenceEqual(other.Phrases)
+                Phrases == other.Phrases ||
+                Phrases != null &&
+                Phrases.SequenceEqual(other.Phrases)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -210,49 +210,49 @@ public partial class MinerTopic : IEquatable<MinerTopic>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Miner != null)
+            if (Miner != null)
             {
-                hash = hash * 59 + this.Miner.GetHashCode();
+                hash = hash * 59 + Miner.GetHashCode();
             }
 
-            if (this.ConversationCount != null)
+            if (ConversationCount != null)
             {
-                hash = hash * 59 + this.ConversationCount.GetHashCode();
+                hash = hash * 59 + ConversationCount.GetHashCode();
             }
 
-            if (this.ConversationPercent != null)
+            if (ConversationPercent != null)
             {
-                hash = hash * 59 + this.ConversationPercent.GetHashCode();
+                hash = hash * 59 + ConversationPercent.GetHashCode();
             }
 
-            if (this.UtteranceCount != null)
+            if (UtteranceCount != null)
             {
-                hash = hash * 59 + this.UtteranceCount.GetHashCode();
+                hash = hash * 59 + UtteranceCount.GetHashCode();
             }
 
-            if (this.PhraseCount != null)
+            if (PhraseCount != null)
             {
-                hash = hash * 59 + this.PhraseCount.GetHashCode();
+                hash = hash * 59 + PhraseCount.GetHashCode();
             }
 
-            if (this.Phrases != null)
+            if (Phrases != null)
             {
-                hash = hash * 59 + this.Phrases.GetHashCode();
+                hash = hash * 59 + Phrases.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class ConversationNotificationTemplateBody : IEquatable<Conversat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationNotificationTemplateBody);
+        return Equals(obj as ConversationNotificationTemplateBody);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ConversationNotificationTemplateBody : IEquatable<Conversat
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Parameters == other.Parameters ||
-                this.Parameters != null &&
-                this.Parameters.SequenceEqual(other.Parameters)
+                Parameters == other.Parameters ||
+                Parameters != null &&
+                Parameters.SequenceEqual(other.Parameters)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ConversationNotificationTemplateBody : IEquatable<Conversat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Parameters != null)
+            if (Parameters != null)
             {
-                hash = hash * 59 + this.Parameters.GetHashCode();
+                hash = hash * 59 + Parameters.GetHashCode();
             }
 
             return hash;

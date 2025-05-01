@@ -238,7 +238,7 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VoicemailGroupPolicy);
+        return Equals(obj as VoicemailGroupPolicy);
     }
 
     /// <summary>
@@ -256,74 +256,74 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Group == other.Group ||
-                this.Group != null &&
-                this.Group.Equals(other.Group)
+                Group == other.Group ||
+                Group != null &&
+                Group.Equals(other.Group)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.SendEmailNotifications == other.SendEmailNotifications ||
-                this.SendEmailNotifications != null &&
-                this.SendEmailNotifications.Equals(other.SendEmailNotifications)
+                SendEmailNotifications == other.SendEmailNotifications ||
+                SendEmailNotifications != null &&
+                SendEmailNotifications.Equals(other.SendEmailNotifications)
             ) &&
             (
-                this.DisableEmailPii == other.DisableEmailPii ||
-                this.DisableEmailPii != null &&
-                this.DisableEmailPii.Equals(other.DisableEmailPii)
+                DisableEmailPii == other.DisableEmailPii ||
+                DisableEmailPii != null &&
+                DisableEmailPii.Equals(other.DisableEmailPii)
             ) &&
             (
-                this.IncludeEmailTranscriptions == other.IncludeEmailTranscriptions ||
-                this.IncludeEmailTranscriptions != null &&
-                this.IncludeEmailTranscriptions.Equals(other.IncludeEmailTranscriptions)
+                IncludeEmailTranscriptions == other.IncludeEmailTranscriptions ||
+                IncludeEmailTranscriptions != null &&
+                IncludeEmailTranscriptions.Equals(other.IncludeEmailTranscriptions)
             ) &&
             (
-                this.LanguagePreference == other.LanguagePreference ||
-                this.LanguagePreference != null &&
-                this.LanguagePreference.Equals(other.LanguagePreference)
+                LanguagePreference == other.LanguagePreference ||
+                LanguagePreference != null &&
+                LanguagePreference.Equals(other.LanguagePreference)
             ) &&
             (
-                this.EmailPolicy == other.EmailPolicy ||
-                this.EmailPolicy != null &&
-                this.EmailPolicy.Equals(other.EmailPolicy)
+                EmailPolicy == other.EmailPolicy ||
+                EmailPolicy != null &&
+                EmailPolicy.Equals(other.EmailPolicy)
             ) &&
             (
-                this.RotateCallsSecs == other.RotateCallsSecs ||
-                this.RotateCallsSecs != null &&
-                this.RotateCallsSecs.Equals(other.RotateCallsSecs)
+                RotateCallsSecs == other.RotateCallsSecs ||
+                RotateCallsSecs != null &&
+                RotateCallsSecs.Equals(other.RotateCallsSecs)
             ) &&
             (
-                this.StopRingingAfterRotations == other.StopRingingAfterRotations ||
-                this.StopRingingAfterRotations != null &&
-                this.StopRingingAfterRotations.Equals(other.StopRingingAfterRotations)
+                StopRingingAfterRotations == other.StopRingingAfterRotations ||
+                StopRingingAfterRotations != null &&
+                StopRingingAfterRotations.Equals(other.StopRingingAfterRotations)
             ) &&
             (
-                this.OverflowGroupId == other.OverflowGroupId ||
-                this.OverflowGroupId != null &&
-                this.OverflowGroupId.Equals(other.OverflowGroupId)
+                OverflowGroupId == other.OverflowGroupId ||
+                OverflowGroupId != null &&
+                OverflowGroupId.Equals(other.OverflowGroupId)
             ) &&
             (
-                this.GroupAlertType == other.GroupAlertType ||
-                this.GroupAlertType != null &&
-                this.GroupAlertType.Equals(other.GroupAlertType)
+                GroupAlertType == other.GroupAlertType ||
+                GroupAlertType != null &&
+                GroupAlertType.Equals(other.GroupAlertType)
             ) &&
             (
-                this.InteractiveResponsePromptId == other.InteractiveResponsePromptId ||
-                this.InteractiveResponsePromptId != null &&
-                this.InteractiveResponsePromptId.Equals(other.InteractiveResponsePromptId)
+                InteractiveResponsePromptId == other.InteractiveResponsePromptId ||
+                InteractiveResponsePromptId != null &&
+                InteractiveResponsePromptId.Equals(other.InteractiveResponsePromptId)
             ) &&
             (
-                this.InteractiveResponseRequired == other.InteractiveResponseRequired ||
-                this.InteractiveResponseRequired != null &&
-                this.InteractiveResponseRequired.Equals(other.InteractiveResponseRequired)
+                InteractiveResponseRequired == other.InteractiveResponseRequired ||
+                InteractiveResponseRequired != null &&
+                InteractiveResponseRequired.Equals(other.InteractiveResponseRequired)
             );
     }
 
@@ -338,74 +338,74 @@ public partial class VoicemailGroupPolicy : IEquatable<VoicemailGroupPolicy>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Group != null)
+            if (Group != null)
             {
-                hash = hash * 59 + this.Group.GetHashCode();
+                hash = hash * 59 + Group.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.SendEmailNotifications != null)
+            if (SendEmailNotifications != null)
             {
-                hash = hash * 59 + this.SendEmailNotifications.GetHashCode();
+                hash = hash * 59 + SendEmailNotifications.GetHashCode();
             }
 
-            if (this.DisableEmailPii != null)
+            if (DisableEmailPii != null)
             {
-                hash = hash * 59 + this.DisableEmailPii.GetHashCode();
+                hash = hash * 59 + DisableEmailPii.GetHashCode();
             }
 
-            if (this.IncludeEmailTranscriptions != null)
+            if (IncludeEmailTranscriptions != null)
             {
-                hash = hash * 59 + this.IncludeEmailTranscriptions.GetHashCode();
+                hash = hash * 59 + IncludeEmailTranscriptions.GetHashCode();
             }
 
-            if (this.LanguagePreference != null)
+            if (LanguagePreference != null)
             {
-                hash = hash * 59 + this.LanguagePreference.GetHashCode();
+                hash = hash * 59 + LanguagePreference.GetHashCode();
             }
 
-            if (this.EmailPolicy != null)
+            if (EmailPolicy != null)
             {
-                hash = hash * 59 + this.EmailPolicy.GetHashCode();
+                hash = hash * 59 + EmailPolicy.GetHashCode();
             }
 
-            if (this.RotateCallsSecs != null)
+            if (RotateCallsSecs != null)
             {
-                hash = hash * 59 + this.RotateCallsSecs.GetHashCode();
+                hash = hash * 59 + RotateCallsSecs.GetHashCode();
             }
 
-            if (this.StopRingingAfterRotations != null)
+            if (StopRingingAfterRotations != null)
             {
-                hash = hash * 59 + this.StopRingingAfterRotations.GetHashCode();
+                hash = hash * 59 + StopRingingAfterRotations.GetHashCode();
             }
 
-            if (this.OverflowGroupId != null)
+            if (OverflowGroupId != null)
             {
-                hash = hash * 59 + this.OverflowGroupId.GetHashCode();
+                hash = hash * 59 + OverflowGroupId.GetHashCode();
             }
 
-            if (this.GroupAlertType != null)
+            if (GroupAlertType != null)
             {
-                hash = hash * 59 + this.GroupAlertType.GetHashCode();
+                hash = hash * 59 + GroupAlertType.GetHashCode();
             }
 
-            if (this.InteractiveResponsePromptId != null)
+            if (InteractiveResponsePromptId != null)
             {
-                hash = hash * 59 + this.InteractiveResponsePromptId.GetHashCode();
+                hash = hash * 59 + InteractiveResponsePromptId.GetHashCode();
             }
 
-            if (this.InteractiveResponseRequired != null)
+            if (InteractiveResponseRequired != null)
             {
-                hash = hash * 59 + this.InteractiveResponseRequired.GetHashCode();
+                hash = hash * 59 + InteractiveResponseRequired.GetHashCode();
             }
 
             return hash;

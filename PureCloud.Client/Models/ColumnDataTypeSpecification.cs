@@ -133,7 +133,7 @@ public partial class ColumnDataTypeSpecification : IEquatable<ColumnDataTypeSpec
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ColumnDataTypeSpecification);
+        return Equals(obj as ColumnDataTypeSpecification);
     }
 
     /// <summary>
@@ -151,29 +151,29 @@ public partial class ColumnDataTypeSpecification : IEquatable<ColumnDataTypeSpec
 
         return true &&
             (
-                this.ColumnName == other.ColumnName ||
-                this.ColumnName != null &&
-                this.ColumnName.Equals(other.ColumnName)
+                ColumnName == other.ColumnName ||
+                ColumnName != null &&
+                ColumnName.Equals(other.ColumnName)
             ) &&
             (
-                this.ColumnDataType == other.ColumnDataType ||
-                this.ColumnDataType != null &&
-                this.ColumnDataType.Equals(other.ColumnDataType)
+                ColumnDataType == other.ColumnDataType ||
+                ColumnDataType != null &&
+                ColumnDataType.Equals(other.ColumnDataType)
             ) &&
             (
-                this.Min == other.Min ||
-                this.Min != null &&
-                this.Min.Equals(other.Min)
+                Min == other.Min ||
+                Min != null &&
+                Min.Equals(other.Min)
             ) &&
             (
-                this.Max == other.Max ||
-                this.Max != null &&
-                this.Max.Equals(other.Max)
+                Max == other.Max ||
+                Max != null &&
+                Max.Equals(other.Max)
             ) &&
             (
-                this.MaxLength == other.MaxLength ||
-                this.MaxLength != null &&
-                this.MaxLength.Equals(other.MaxLength)
+                MaxLength == other.MaxLength ||
+                MaxLength != null &&
+                MaxLength.Equals(other.MaxLength)
             );
     }
 
@@ -188,29 +188,29 @@ public partial class ColumnDataTypeSpecification : IEquatable<ColumnDataTypeSpec
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ColumnName != null)
+            if (ColumnName != null)
             {
-                hash = hash * 59 + this.ColumnName.GetHashCode();
+                hash = hash * 59 + ColumnName.GetHashCode();
             }
 
-            if (this.ColumnDataType != null)
+            if (ColumnDataType != null)
             {
-                hash = hash * 59 + this.ColumnDataType.GetHashCode();
+                hash = hash * 59 + ColumnDataType.GetHashCode();
             }
 
-            if (this.Min != null)
+            if (Min != null)
             {
-                hash = hash * 59 + this.Min.GetHashCode();
+                hash = hash * 59 + Min.GetHashCode();
             }
 
-            if (this.Max != null)
+            if (Max != null)
             {
-                hash = hash * 59 + this.Max.GetHashCode();
+                hash = hash * 59 + Max.GetHashCode();
             }
 
-            if (this.MaxLength != null)
+            if (MaxLength != null)
             {
-                hash = hash * 59 + this.MaxLength.GetHashCode();
+                hash = hash * 59 + MaxLength.GetHashCode();
             }
 
             return hash;

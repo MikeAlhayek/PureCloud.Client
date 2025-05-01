@@ -151,7 +151,7 @@ public partial class DocumentBodyImageProperties : IEquatable<DocumentBodyImageP
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyImageProperties);
+        return Equals(obj as DocumentBodyImageProperties);
     }
 
     /// <summary>
@@ -169,34 +169,34 @@ public partial class DocumentBodyImageProperties : IEquatable<DocumentBodyImageP
 
         return true &&
             (
-                this.BackgroundColor == other.BackgroundColor ||
-                this.BackgroundColor != null &&
-                this.BackgroundColor.Equals(other.BackgroundColor)
+                BackgroundColor == other.BackgroundColor ||
+                BackgroundColor != null &&
+                BackgroundColor.Equals(other.BackgroundColor)
             ) &&
             (
-                this.Align == other.Align ||
-                this.Align != null &&
-                this.Align.Equals(other.Align)
+                Align == other.Align ||
+                Align != null &&
+                Align.Equals(other.Align)
             ) &&
             (
-                this.Indentation == other.Indentation ||
-                this.Indentation != null &&
-                this.Indentation.Equals(other.Indentation)
+                Indentation == other.Indentation ||
+                Indentation != null &&
+                Indentation.Equals(other.Indentation)
             ) &&
             (
-                this.Width == other.Width ||
-                this.Width != null &&
-                this.Width.Equals(other.Width)
+                Width == other.Width ||
+                Width != null &&
+                Width.Equals(other.Width)
             ) &&
             (
-                this.WidthWithUnit == other.WidthWithUnit ||
-                this.WidthWithUnit != null &&
-                this.WidthWithUnit.Equals(other.WidthWithUnit)
+                WidthWithUnit == other.WidthWithUnit ||
+                WidthWithUnit != null &&
+                WidthWithUnit.Equals(other.WidthWithUnit)
             ) &&
             (
-                this.AltText == other.AltText ||
-                this.AltText != null &&
-                this.AltText.Equals(other.AltText)
+                AltText == other.AltText ||
+                AltText != null &&
+                AltText.Equals(other.AltText)
             );
     }
 
@@ -211,34 +211,34 @@ public partial class DocumentBodyImageProperties : IEquatable<DocumentBodyImageP
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BackgroundColor != null)
+            if (BackgroundColor != null)
             {
-                hash = hash * 59 + this.BackgroundColor.GetHashCode();
+                hash = hash * 59 + BackgroundColor.GetHashCode();
             }
 
-            if (this.Align != null)
+            if (Align != null)
             {
-                hash = hash * 59 + this.Align.GetHashCode();
+                hash = hash * 59 + Align.GetHashCode();
             }
 
-            if (this.Indentation != null)
+            if (Indentation != null)
             {
-                hash = hash * 59 + this.Indentation.GetHashCode();
+                hash = hash * 59 + Indentation.GetHashCode();
             }
 
-            if (this.Width != null)
+            if (Width != null)
             {
-                hash = hash * 59 + this.Width.GetHashCode();
+                hash = hash * 59 + Width.GetHashCode();
             }
 
-            if (this.WidthWithUnit != null)
+            if (WidthWithUnit != null)
             {
-                hash = hash * 59 + this.WidthWithUnit.GetHashCode();
+                hash = hash * 59 + WidthWithUnit.GetHashCode();
             }
 
-            if (this.AltText != null)
+            if (AltText != null)
             {
-                hash = hash * 59 + this.AltText.GetHashCode();
+                hash = hash * 59 + AltText.GetHashCode();
             }
 
             return hash;

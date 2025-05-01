@@ -107,7 +107,7 @@ public partial class WfmHistoricalAdherenceQueryForUsers : IEquatable<WfmHistori
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalAdherenceQueryForUsers);
+        return Equals(obj as WfmHistoricalAdherenceQueryForUsers);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class WfmHistoricalAdherenceQueryForUsers : IEquatable<WfmHistori
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.IncludeExceptions == other.IncludeExceptions ||
-                this.IncludeExceptions != null &&
-                this.IncludeExceptions.Equals(other.IncludeExceptions)
+                IncludeExceptions == other.IncludeExceptions ||
+                IncludeExceptions != null &&
+                IncludeExceptions.Equals(other.IncludeExceptions)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class WfmHistoricalAdherenceQueryForUsers : IEquatable<WfmHistori
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.IncludeExceptions != null)
+            if (IncludeExceptions != null)
             {
-                hash = hash * 59 + this.IncludeExceptions.GetHashCode();
+                hash = hash * 59 + IncludeExceptions.GetHashCode();
             }
 
             return hash;

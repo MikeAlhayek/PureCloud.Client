@@ -101,7 +101,7 @@ public partial class ScheduleGenerationResult : IEquatable<ScheduleGenerationRes
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScheduleGenerationResult);
+        return Equals(obj as ScheduleGenerationResult);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class ScheduleGenerationResult : IEquatable<ScheduleGenerationRes
 
         return true &&
             (
-                this.Failed == other.Failed ||
-                this.Failed != null &&
-                this.Failed.Equals(other.Failed)
+                Failed == other.Failed ||
+                Failed != null &&
+                Failed.Equals(other.Failed)
             ) &&
             (
-                this.RunId == other.RunId ||
-                this.RunId != null &&
-                this.RunId.Equals(other.RunId)
+                RunId == other.RunId ||
+                RunId != null &&
+                RunId.Equals(other.RunId)
             ) &&
             (
-                this.MessageCount == other.MessageCount ||
-                this.MessageCount != null &&
-                this.MessageCount.Equals(other.MessageCount)
+                MessageCount == other.MessageCount ||
+                MessageCount != null &&
+                MessageCount.Equals(other.MessageCount)
             ) &&
             (
-                this.Messages == other.Messages ||
-                this.Messages != null &&
-                this.Messages.SequenceEqual(other.Messages)
+                Messages == other.Messages ||
+                Messages != null &&
+                Messages.SequenceEqual(other.Messages)
             ) &&
             (
-                this.MessageSeverities == other.MessageSeverities ||
-                this.MessageSeverities != null &&
-                this.MessageSeverities.SequenceEqual(other.MessageSeverities)
+                MessageSeverities == other.MessageSeverities ||
+                MessageSeverities != null &&
+                MessageSeverities.SequenceEqual(other.MessageSeverities)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class ScheduleGenerationResult : IEquatable<ScheduleGenerationRes
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Failed != null)
+            if (Failed != null)
             {
-                hash = hash * 59 + this.Failed.GetHashCode();
+                hash = hash * 59 + Failed.GetHashCode();
             }
 
-            if (this.RunId != null)
+            if (RunId != null)
             {
-                hash = hash * 59 + this.RunId.GetHashCode();
+                hash = hash * 59 + RunId.GetHashCode();
             }
 
-            if (this.MessageCount != null)
+            if (MessageCount != null)
             {
-                hash = hash * 59 + this.MessageCount.GetHashCode();
+                hash = hash * 59 + MessageCount.GetHashCode();
             }
 
-            if (this.Messages != null)
+            if (Messages != null)
             {
-                hash = hash * 59 + this.Messages.GetHashCode();
+                hash = hash * 59 + Messages.GetHashCode();
             }
 
-            if (this.MessageSeverities != null)
+            if (MessageSeverities != null)
             {
-                hash = hash * 59 + this.MessageSeverities.GetHashCode();
+                hash = hash * 59 + MessageSeverities.GetHashCode();
             }
 
             return hash;

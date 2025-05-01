@@ -52,7 +52,7 @@ public partial class AsyncQueryResponse : IEquatable<AsyncQueryResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AsyncQueryResponse);
+        return Equals(obj as AsyncQueryResponse);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class AsyncQueryResponse : IEquatable<AsyncQueryResponse>
 
         return true &&
             (
-                this.JobId == other.JobId ||
-                this.JobId != null &&
-                this.JobId.Equals(other.JobId)
+                JobId == other.JobId ||
+                JobId != null &&
+                JobId.Equals(other.JobId)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class AsyncQueryResponse : IEquatable<AsyncQueryResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.JobId != null)
+            if (JobId != null)
             {
-                hash = hash * 59 + this.JobId.GetHashCode();
+                hash = hash * 59 + JobId.GetHashCode();
             }
 
             return hash;

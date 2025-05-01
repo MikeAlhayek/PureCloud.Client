@@ -118,7 +118,7 @@ public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTop
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserTokensTopicTokenNotification);
+        return Equals(obj as UserTokensTopicTokenNotification);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTop
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.IpAddress == other.IpAddress ||
-                this.IpAddress != null &&
-                this.IpAddress.Equals(other.IpAddress)
+                IpAddress == other.IpAddress ||
+                IpAddress != null &&
+                IpAddress.Equals(other.IpAddress)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.TokenExpirationDate == other.TokenExpirationDate ||
-                this.TokenExpirationDate != null &&
-                this.TokenExpirationDate.Equals(other.TokenExpirationDate)
+                TokenExpirationDate == other.TokenExpirationDate ||
+                TokenExpirationDate != null &&
+                TokenExpirationDate.Equals(other.TokenExpirationDate)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.ClientId == other.ClientId ||
-                this.ClientId != null &&
-                this.ClientId.Equals(other.ClientId)
+                ClientId == other.ClientId ||
+                ClientId != null &&
+                ClientId.Equals(other.ClientId)
             ) &&
             (
-                this.TokenHash == other.TokenHash ||
-                this.TokenHash != null &&
-                this.TokenHash.Equals(other.TokenHash)
+                TokenHash == other.TokenHash ||
+                TokenHash != null &&
+                TokenHash.Equals(other.TokenHash)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class UserTokensTopicTokenNotification : IEquatable<UserTokensTop
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.IpAddress != null)
+            if (IpAddress != null)
             {
-                hash = hash * 59 + this.IpAddress.GetHashCode();
+                hash = hash * 59 + IpAddress.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.TokenExpirationDate != null)
+            if (TokenExpirationDate != null)
             {
-                hash = hash * 59 + this.TokenExpirationDate.GetHashCode();
+                hash = hash * 59 + TokenExpirationDate.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.ClientId != null)
+            if (ClientId != null)
             {
-                hash = hash * 59 + this.ClientId.GetHashCode();
+                hash = hash * 59 + ClientId.GetHashCode();
             }
 
-            if (this.TokenHash != null)
+            if (TokenHash != null)
             {
-                hash = hash * 59 + this.TokenHash.GetHashCode();
+                hash = hash * 59 + TokenHash.GetHashCode();
             }
 
             return hash;

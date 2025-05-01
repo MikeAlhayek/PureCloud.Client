@@ -314,7 +314,7 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowExecutionDataQueryResult);
+        return Equals(obj as FlowExecutionDataQueryResult);
     }
 
     /// <summary>
@@ -332,69 +332,69 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.StartDateTime == other.StartDateTime ||
-                this.StartDateTime != null &&
-                this.StartDateTime.Equals(other.StartDateTime)
+                StartDateTime == other.StartDateTime ||
+                StartDateTime != null &&
+                StartDateTime.Equals(other.StartDateTime)
             ) &&
             (
-                this.EndDateTime == other.EndDateTime ||
-                this.EndDateTime != null &&
-                this.EndDateTime.Equals(other.EndDateTime)
+                EndDateTime == other.EndDateTime ||
+                EndDateTime != null &&
+                EndDateTime.Equals(other.EndDateTime)
             ) &&
             (
-                this.FlowId == other.FlowId ||
-                this.FlowId != null &&
-                this.FlowId.Equals(other.FlowId)
+                FlowId == other.FlowId ||
+                FlowId != null &&
+                FlowId.Equals(other.FlowId)
             ) &&
             (
-                this.FlowVersion == other.FlowVersion ||
-                this.FlowVersion != null &&
-                this.FlowVersion.Equals(other.FlowVersion)
+                FlowVersion == other.FlowVersion ||
+                FlowVersion != null &&
+                FlowVersion.Equals(other.FlowVersion)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.WorkitemId == other.WorkitemId ||
-                this.WorkitemId != null &&
-                this.WorkitemId.Equals(other.WorkitemId)
+                WorkitemId == other.WorkitemId ||
+                WorkitemId != null &&
+                WorkitemId.Equals(other.WorkitemId)
             ) &&
             (
-                this.FlowType == other.FlowType ||
-                this.FlowType != null &&
-                this.FlowType.Equals(other.FlowType)
+                FlowType == other.FlowType ||
+                FlowType != null &&
+                FlowType.Equals(other.FlowType)
             ) &&
             (
-                this.FlowErrorReason == other.FlowErrorReason ||
-                this.FlowErrorReason != null &&
-                this.FlowErrorReason.Equals(other.FlowErrorReason)
+                FlowErrorReason == other.FlowErrorReason ||
+                FlowErrorReason != null &&
+                FlowErrorReason.Equals(other.FlowErrorReason)
             ) &&
             (
-                this.FlowWarningReason == other.FlowWarningReason ||
-                this.FlowWarningReason != null &&
-                this.FlowWarningReason.Equals(other.FlowWarningReason)
+                FlowWarningReason == other.FlowWarningReason ||
+                FlowWarningReason != null &&
+                FlowWarningReason.Equals(other.FlowWarningReason)
             ) &&
             (
-                this.FlowName == other.FlowName ||
-                this.FlowName != null &&
-                this.FlowName.Equals(other.FlowName)
+                FlowName == other.FlowName ||
+                FlowName != null &&
+                FlowName.Equals(other.FlowName)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -409,69 +409,69 @@ public partial class FlowExecutionDataQueryResult : IEquatable<FlowExecutionData
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.StartDateTime != null)
+            if (StartDateTime != null)
             {
-                hash = hash * 59 + this.StartDateTime.GetHashCode();
+                hash = hash * 59 + StartDateTime.GetHashCode();
             }
 
-            if (this.EndDateTime != null)
+            if (EndDateTime != null)
             {
-                hash = hash * 59 + this.EndDateTime.GetHashCode();
+                hash = hash * 59 + EndDateTime.GetHashCode();
             }
 
-            if (this.FlowId != null)
+            if (FlowId != null)
             {
-                hash = hash * 59 + this.FlowId.GetHashCode();
+                hash = hash * 59 + FlowId.GetHashCode();
             }
 
-            if (this.FlowVersion != null)
+            if (FlowVersion != null)
             {
-                hash = hash * 59 + this.FlowVersion.GetHashCode();
+                hash = hash * 59 + FlowVersion.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.WorkitemId != null)
+            if (WorkitemId != null)
             {
-                hash = hash * 59 + this.WorkitemId.GetHashCode();
+                hash = hash * 59 + WorkitemId.GetHashCode();
             }
 
-            if (this.FlowType != null)
+            if (FlowType != null)
             {
-                hash = hash * 59 + this.FlowType.GetHashCode();
+                hash = hash * 59 + FlowType.GetHashCode();
             }
 
-            if (this.FlowErrorReason != null)
+            if (FlowErrorReason != null)
             {
-                hash = hash * 59 + this.FlowErrorReason.GetHashCode();
+                hash = hash * 59 + FlowErrorReason.GetHashCode();
             }
 
-            if (this.FlowWarningReason != null)
+            if (FlowWarningReason != null)
             {
-                hash = hash * 59 + this.FlowWarningReason.GetHashCode();
+                hash = hash * 59 + FlowWarningReason.GetHashCode();
             }
 
-            if (this.FlowName != null)
+            if (FlowName != null)
             {
-                hash = hash * 59 + this.FlowName.GetHashCode();
+                hash = hash * 59 + FlowName.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

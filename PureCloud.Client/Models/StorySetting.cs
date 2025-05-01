@@ -65,7 +65,7 @@ public partial class StorySetting : IEquatable<StorySetting>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as StorySetting);
+        return Equals(obj as StorySetting);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class StorySetting : IEquatable<StorySetting>
 
         return true &&
             (
-                this.Mention == other.Mention ||
-                this.Mention != null &&
-                this.Mention.Equals(other.Mention)
+                Mention == other.Mention ||
+                Mention != null &&
+                Mention.Equals(other.Mention)
             ) &&
             (
-                this.Reply == other.Reply ||
-                this.Reply != null &&
-                this.Reply.Equals(other.Reply)
+                Reply == other.Reply ||
+                Reply != null &&
+                Reply.Equals(other.Reply)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class StorySetting : IEquatable<StorySetting>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Mention != null)
+            if (Mention != null)
             {
-                hash = hash * 59 + this.Mention.GetHashCode();
+                hash = hash * 59 + Mention.GetHashCode();
             }
 
-            if (this.Reply != null)
+            if (Reply != null)
             {
-                hash = hash * 59 + this.Reply.GetHashCode();
+                hash = hash * 59 + Reply.GetHashCode();
             }
 
             return hash;

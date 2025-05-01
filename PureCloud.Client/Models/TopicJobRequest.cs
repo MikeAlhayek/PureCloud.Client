@@ -59,7 +59,7 @@ public partial class TopicJobRequest : IEquatable<TopicJobRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TopicJobRequest);
+        return Equals(obj as TopicJobRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class TopicJobRequest : IEquatable<TopicJobRequest>
 
         return true &&
             (
-                this.TopicIds == other.TopicIds ||
-                this.TopicIds != null &&
-                this.TopicIds.SequenceEqual(other.TopicIds)
+                TopicIds == other.TopicIds ||
+                TopicIds != null &&
+                TopicIds.SequenceEqual(other.TopicIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class TopicJobRequest : IEquatable<TopicJobRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TopicIds != null)
+            if (TopicIds != null)
             {
-                hash = hash * 59 + this.TopicIds.GetHashCode();
+                hash = hash * 59 + TopicIds.GetHashCode();
             }
 
             return hash;

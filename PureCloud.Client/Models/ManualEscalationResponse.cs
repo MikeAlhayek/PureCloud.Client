@@ -139,7 +139,7 @@ public partial class ManualEscalationResponse : IEquatable<ManualEscalationRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ManualEscalationResponse);
+        return Equals(obj as ManualEscalationResponse);
     }
 
     /// <summary>
@@ -157,24 +157,24 @@ public partial class ManualEscalationResponse : IEquatable<ManualEscalationRespo
 
         return true &&
             (
-                this.SocialMediaNormalizedMessageId == other.SocialMediaNormalizedMessageId ||
-                this.SocialMediaNormalizedMessageId != null &&
-                this.SocialMediaNormalizedMessageId.Equals(other.SocialMediaNormalizedMessageId)
+                SocialMediaNormalizedMessageId == other.SocialMediaNormalizedMessageId ||
+                SocialMediaNormalizedMessageId != null &&
+                SocialMediaNormalizedMessageId.Equals(other.SocialMediaNormalizedMessageId)
             ) &&
             (
-                this.ConversationNormalizedMessageId == other.ConversationNormalizedMessageId ||
-                this.ConversationNormalizedMessageId != null &&
-                this.ConversationNormalizedMessageId.Equals(other.ConversationNormalizedMessageId)
+                ConversationNormalizedMessageId == other.ConversationNormalizedMessageId ||
+                ConversationNormalizedMessageId != null &&
+                ConversationNormalizedMessageId.Equals(other.ConversationNormalizedMessageId)
             ) &&
             (
-                this.EscalationTarget == other.EscalationTarget ||
-                this.EscalationTarget != null &&
-                this.EscalationTarget.Equals(other.EscalationTarget)
+                EscalationTarget == other.EscalationTarget ||
+                EscalationTarget != null &&
+                EscalationTarget.Equals(other.EscalationTarget)
             ) &&
             (
-                this.EscalationStatus == other.EscalationStatus ||
-                this.EscalationStatus != null &&
-                this.EscalationStatus.Equals(other.EscalationStatus)
+                EscalationStatus == other.EscalationStatus ||
+                EscalationStatus != null &&
+                EscalationStatus.Equals(other.EscalationStatus)
             );
     }
 
@@ -189,24 +189,24 @@ public partial class ManualEscalationResponse : IEquatable<ManualEscalationRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SocialMediaNormalizedMessageId != null)
+            if (SocialMediaNormalizedMessageId != null)
             {
-                hash = hash * 59 + this.SocialMediaNormalizedMessageId.GetHashCode();
+                hash = hash * 59 + SocialMediaNormalizedMessageId.GetHashCode();
             }
 
-            if (this.ConversationNormalizedMessageId != null)
+            if (ConversationNormalizedMessageId != null)
             {
-                hash = hash * 59 + this.ConversationNormalizedMessageId.GetHashCode();
+                hash = hash * 59 + ConversationNormalizedMessageId.GetHashCode();
             }
 
-            if (this.EscalationTarget != null)
+            if (EscalationTarget != null)
             {
-                hash = hash * 59 + this.EscalationTarget.GetHashCode();
+                hash = hash * 59 + EscalationTarget.GetHashCode();
             }
 
-            if (this.EscalationStatus != null)
+            if (EscalationStatus != null)
             {
-                hash = hash * 59 + this.EscalationStatus.GetHashCode();
+                hash = hash * 59 + EscalationStatus.GetHashCode();
             }
 
             return hash;

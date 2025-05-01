@@ -129,7 +129,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmIntradayDataUpdateTopicIntradayHistoricalQueueData);
+        return Equals(obj as WfmIntradayDataUpdateTopicIntradayHistoricalQueueData);
     }
 
     /// <summary>
@@ -147,44 +147,44 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
 
         return true &&
             (
-                this.Offered == other.Offered ||
-                this.Offered != null &&
-                this.Offered.Equals(other.Offered)
+                Offered == other.Offered ||
+                Offered != null &&
+                Offered.Equals(other.Offered)
             ) &&
             (
-                this.Completed == other.Completed ||
-                this.Completed != null &&
-                this.Completed.Equals(other.Completed)
+                Completed == other.Completed ||
+                Completed != null &&
+                Completed.Equals(other.Completed)
             ) &&
             (
-                this.Answered == other.Answered ||
-                this.Answered != null &&
-                this.Answered.Equals(other.Answered)
+                Answered == other.Answered ||
+                Answered != null &&
+                Answered.Equals(other.Answered)
             ) &&
             (
-                this.Abandoned == other.Abandoned ||
-                this.Abandoned != null &&
-                this.Abandoned.Equals(other.Abandoned)
+                Abandoned == other.Abandoned ||
+                Abandoned != null &&
+                Abandoned.Equals(other.Abandoned)
             ) &&
             (
-                this.AverageTalkTimeSeconds == other.AverageTalkTimeSeconds ||
-                this.AverageTalkTimeSeconds != null &&
-                this.AverageTalkTimeSeconds.Equals(other.AverageTalkTimeSeconds)
+                AverageTalkTimeSeconds == other.AverageTalkTimeSeconds ||
+                AverageTalkTimeSeconds != null &&
+                AverageTalkTimeSeconds.Equals(other.AverageTalkTimeSeconds)
             ) &&
             (
-                this.AverageAfterCallWorkSeconds == other.AverageAfterCallWorkSeconds ||
-                this.AverageAfterCallWorkSeconds != null &&
-                this.AverageAfterCallWorkSeconds.Equals(other.AverageAfterCallWorkSeconds)
+                AverageAfterCallWorkSeconds == other.AverageAfterCallWorkSeconds ||
+                AverageAfterCallWorkSeconds != null &&
+                AverageAfterCallWorkSeconds.Equals(other.AverageAfterCallWorkSeconds)
             ) &&
             (
-                this.ServiceLevelPercent == other.ServiceLevelPercent ||
-                this.ServiceLevelPercent != null &&
-                this.ServiceLevelPercent.Equals(other.ServiceLevelPercent)
+                ServiceLevelPercent == other.ServiceLevelPercent ||
+                ServiceLevelPercent != null &&
+                ServiceLevelPercent.Equals(other.ServiceLevelPercent)
             ) &&
             (
-                this.AverageSpeedOfAnswerSeconds == other.AverageSpeedOfAnswerSeconds ||
-                this.AverageSpeedOfAnswerSeconds != null &&
-                this.AverageSpeedOfAnswerSeconds.Equals(other.AverageSpeedOfAnswerSeconds)
+                AverageSpeedOfAnswerSeconds == other.AverageSpeedOfAnswerSeconds ||
+                AverageSpeedOfAnswerSeconds != null &&
+                AverageSpeedOfAnswerSeconds.Equals(other.AverageSpeedOfAnswerSeconds)
             );
     }
 
@@ -199,44 +199,44 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData : IEq
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Offered != null)
+            if (Offered != null)
             {
-                hash = hash * 59 + this.Offered.GetHashCode();
+                hash = hash * 59 + Offered.GetHashCode();
             }
 
-            if (this.Completed != null)
+            if (Completed != null)
             {
-                hash = hash * 59 + this.Completed.GetHashCode();
+                hash = hash * 59 + Completed.GetHashCode();
             }
 
-            if (this.Answered != null)
+            if (Answered != null)
             {
-                hash = hash * 59 + this.Answered.GetHashCode();
+                hash = hash * 59 + Answered.GetHashCode();
             }
 
-            if (this.Abandoned != null)
+            if (Abandoned != null)
             {
-                hash = hash * 59 + this.Abandoned.GetHashCode();
+                hash = hash * 59 + Abandoned.GetHashCode();
             }
 
-            if (this.AverageTalkTimeSeconds != null)
+            if (AverageTalkTimeSeconds != null)
             {
-                hash = hash * 59 + this.AverageTalkTimeSeconds.GetHashCode();
+                hash = hash * 59 + AverageTalkTimeSeconds.GetHashCode();
             }
 
-            if (this.AverageAfterCallWorkSeconds != null)
+            if (AverageAfterCallWorkSeconds != null)
             {
-                hash = hash * 59 + this.AverageAfterCallWorkSeconds.GetHashCode();
+                hash = hash * 59 + AverageAfterCallWorkSeconds.GetHashCode();
             }
 
-            if (this.ServiceLevelPercent != null)
+            if (ServiceLevelPercent != null)
             {
-                hash = hash * 59 + this.ServiceLevelPercent.GetHashCode();
+                hash = hash * 59 + ServiceLevelPercent.GetHashCode();
             }
 
-            if (this.AverageSpeedOfAnswerSeconds != null)
+            if (AverageSpeedOfAnswerSeconds != null)
             {
-                hash = hash * 59 + this.AverageSpeedOfAnswerSeconds.GetHashCode();
+                hash = hash * 59 + AverageSpeedOfAnswerSeconds.GetHashCode();
             }
 
             return hash;

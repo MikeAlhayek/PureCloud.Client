@@ -77,7 +77,7 @@ public partial class PatchContentOfferStyleProperties : IEquatable<PatchContentO
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchContentOfferStyleProperties);
+        return Equals(obj as PatchContentOfferStyleProperties);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class PatchContentOfferStyleProperties : IEquatable<PatchContentO
 
         return true &&
             (
-                this.Padding == other.Padding ||
-                this.Padding != null &&
-                this.Padding.Equals(other.Padding)
+                Padding == other.Padding ||
+                Padding != null &&
+                Padding.Equals(other.Padding)
             ) &&
             (
-                this.Color == other.Color ||
-                this.Color != null &&
-                this.Color.Equals(other.Color)
+                Color == other.Color ||
+                Color != null &&
+                Color.Equals(other.Color)
             ) &&
             (
-                this.BackgroundColor == other.BackgroundColor ||
-                this.BackgroundColor != null &&
-                this.BackgroundColor.Equals(other.BackgroundColor)
+                BackgroundColor == other.BackgroundColor ||
+                BackgroundColor != null &&
+                BackgroundColor.Equals(other.BackgroundColor)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class PatchContentOfferStyleProperties : IEquatable<PatchContentO
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Padding != null)
+            if (Padding != null)
             {
-                hash = hash * 59 + this.Padding.GetHashCode();
+                hash = hash * 59 + Padding.GetHashCode();
             }
 
-            if (this.Color != null)
+            if (Color != null)
             {
-                hash = hash * 59 + this.Color.GetHashCode();
+                hash = hash * 59 + Color.GetHashCode();
             }
 
-            if (this.BackgroundColor != null)
+            if (BackgroundColor != null)
             {
-                hash = hash * 59 + this.BackgroundColor.GetHashCode();
+                hash = hash * 59 + BackgroundColor.GetHashCode();
             }
 
             return hash;

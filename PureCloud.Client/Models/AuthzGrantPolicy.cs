@@ -84,7 +84,7 @@ public partial class AuthzGrantPolicy : IEquatable<AuthzGrantPolicy>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuthzGrantPolicy);
+        return Equals(obj as AuthzGrantPolicy);
     }
 
     /// <summary>
@@ -102,24 +102,24 @@ public partial class AuthzGrantPolicy : IEquatable<AuthzGrantPolicy>
 
         return true &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.SequenceEqual(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.SequenceEqual(other.Actions)
             ) &&
             (
-                this.Condition == other.Condition ||
-                this.Condition != null &&
-                this.Condition.Equals(other.Condition)
+                Condition == other.Condition ||
+                Condition != null &&
+                Condition.Equals(other.Condition)
             ) &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.EntityName == other.EntityName ||
-                this.EntityName != null &&
-                this.EntityName.Equals(other.EntityName)
+                EntityName == other.EntityName ||
+                EntityName != null &&
+                EntityName.Equals(other.EntityName)
             );
     }
 
@@ -134,24 +134,24 @@ public partial class AuthzGrantPolicy : IEquatable<AuthzGrantPolicy>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
-            if (this.Condition != null)
+            if (Condition != null)
             {
-                hash = hash * 59 + this.Condition.GetHashCode();
+                hash = hash * 59 + Condition.GetHashCode();
             }
 
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.EntityName != null)
+            if (EntityName != null)
             {
-                hash = hash * 59 + this.EntityName.GetHashCode();
+                hash = hash * 59 + EntityName.GetHashCode();
             }
 
             return hash;

@@ -107,7 +107,7 @@ public partial class CoachingSlotsRequest : IEquatable<CoachingSlotsRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CoachingSlotsRequest);
+        return Equals(obj as CoachingSlotsRequest);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class CoachingSlotsRequest : IEquatable<CoachingSlotsRequest>
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.AttendeeIds == other.AttendeeIds ||
-                this.AttendeeIds != null &&
-                this.AttendeeIds.SequenceEqual(other.AttendeeIds)
+                AttendeeIds == other.AttendeeIds ||
+                AttendeeIds != null &&
+                AttendeeIds.SequenceEqual(other.AttendeeIds)
             ) &&
             (
-                this.FacilitatorIds == other.FacilitatorIds ||
-                this.FacilitatorIds != null &&
-                this.FacilitatorIds.SequenceEqual(other.FacilitatorIds)
+                FacilitatorIds == other.FacilitatorIds ||
+                FacilitatorIds != null &&
+                FacilitatorIds.SequenceEqual(other.FacilitatorIds)
             ) &&
             (
-                this.InterruptibleAppointmentIds == other.InterruptibleAppointmentIds ||
-                this.InterruptibleAppointmentIds != null &&
-                this.InterruptibleAppointmentIds.SequenceEqual(other.InterruptibleAppointmentIds)
+                InterruptibleAppointmentIds == other.InterruptibleAppointmentIds ||
+                InterruptibleAppointmentIds != null &&
+                InterruptibleAppointmentIds.SequenceEqual(other.InterruptibleAppointmentIds)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class CoachingSlotsRequest : IEquatable<CoachingSlotsRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.AttendeeIds != null)
+            if (AttendeeIds != null)
             {
-                hash = hash * 59 + this.AttendeeIds.GetHashCode();
+                hash = hash * 59 + AttendeeIds.GetHashCode();
             }
 
-            if (this.FacilitatorIds != null)
+            if (FacilitatorIds != null)
             {
-                hash = hash * 59 + this.FacilitatorIds.GetHashCode();
+                hash = hash * 59 + FacilitatorIds.GetHashCode();
             }
 
-            if (this.InterruptibleAppointmentIds != null)
+            if (InterruptibleAppointmentIds != null)
             {
-                hash = hash * 59 + this.InterruptibleAppointmentIds.GetHashCode();
+                hash = hash * 59 + InterruptibleAppointmentIds.GetHashCode();
             }
 
             return hash;

@@ -101,7 +101,7 @@ public partial class Card : IEquatable<Card>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Card);
+        return Equals(obj as Card);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class Card : IEquatable<Card>
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.DefaultAction == other.DefaultAction ||
-                this.DefaultAction != null &&
-                this.DefaultAction.Equals(other.DefaultAction)
+                DefaultAction == other.DefaultAction ||
+                DefaultAction != null &&
+                DefaultAction.Equals(other.DefaultAction)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.SequenceEqual(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.SequenceEqual(other.Actions)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class Card : IEquatable<Card>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.DefaultAction != null)
+            if (DefaultAction != null)
             {
-                hash = hash * 59 + this.DefaultAction.GetHashCode();
+                hash = hash * 59 + DefaultAction.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
             return hash;

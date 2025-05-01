@@ -119,7 +119,7 @@ public partial class JourneyViewElement : IEquatable<JourneyViewElement>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewElement);
+        return Equals(obj as JourneyViewElement);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class JourneyViewElement : IEquatable<JourneyViewElement>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.Equals(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.Equals(other.Attributes)
             ) &&
             (
-                this.DisplayAttributes == other.DisplayAttributes ||
-                this.DisplayAttributes != null &&
-                this.DisplayAttributes.Equals(other.DisplayAttributes)
+                DisplayAttributes == other.DisplayAttributes ||
+                DisplayAttributes != null &&
+                DisplayAttributes.Equals(other.DisplayAttributes)
             ) &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             ) &&
             (
-                this.FollowedBy == other.FollowedBy ||
-                this.FollowedBy != null &&
-                this.FollowedBy.SequenceEqual(other.FollowedBy)
+                FollowedBy == other.FollowedBy ||
+                FollowedBy != null &&
+                FollowedBy.SequenceEqual(other.FollowedBy)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class JourneyViewElement : IEquatable<JourneyViewElement>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.DisplayAttributes != null)
+            if (DisplayAttributes != null)
             {
-                hash = hash * 59 + this.DisplayAttributes.GetHashCode();
+                hash = hash * 59 + DisplayAttributes.GetHashCode();
             }
 
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
-            if (this.FollowedBy != null)
+            if (FollowedBy != null)
             {
-                hash = hash * 59 + this.FollowedBy.GetHashCode();
+                hash = hash * 59 + FollowedBy.GetHashCode();
             }
 
             return hash;

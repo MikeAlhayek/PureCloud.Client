@@ -181,7 +181,7 @@ public partial class ChatPresence : IEquatable<ChatPresence>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatPresence);
+        return Equals(obj as ChatPresence);
     }
 
     /// <summary>
@@ -199,34 +199,34 @@ public partial class ChatPresence : IEquatable<ChatPresence>
 
         return true &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.OrganizationPresence == other.OrganizationPresence ||
-                this.OrganizationPresence != null &&
-                this.OrganizationPresence.Equals(other.OrganizationPresence)
+                OrganizationPresence == other.OrganizationPresence ||
+                OrganizationPresence != null &&
+                OrganizationPresence.Equals(other.OrganizationPresence)
             ) &&
             (
-                this.SystemPresence == other.SystemPresence ||
-                this.SystemPresence != null &&
-                this.SystemPresence.Equals(other.SystemPresence)
+                SystemPresence == other.SystemPresence ||
+                SystemPresence != null &&
+                SystemPresence.Equals(other.SystemPresence)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.OutOfOffice == other.OutOfOffice ||
-                this.OutOfOffice != null &&
-                this.OutOfOffice.Equals(other.OutOfOffice)
+                OutOfOffice == other.OutOfOffice ||
+                OutOfOffice != null &&
+                OutOfOffice.Equals(other.OutOfOffice)
             );
     }
 
@@ -241,34 +241,34 @@ public partial class ChatPresence : IEquatable<ChatPresence>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.OrganizationPresence != null)
+            if (OrganizationPresence != null)
             {
-                hash = hash * 59 + this.OrganizationPresence.GetHashCode();
+                hash = hash * 59 + OrganizationPresence.GetHashCode();
             }
 
-            if (this.SystemPresence != null)
+            if (SystemPresence != null)
             {
-                hash = hash * 59 + this.SystemPresence.GetHashCode();
+                hash = hash * 59 + SystemPresence.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.OutOfOffice != null)
+            if (OutOfOffice != null)
             {
-                hash = hash * 59 + this.OutOfOffice.GetHashCode();
+                hash = hash * 59 + OutOfOffice.GetHashCode();
             }
 
             return hash;

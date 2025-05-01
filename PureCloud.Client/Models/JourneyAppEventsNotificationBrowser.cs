@@ -151,7 +151,7 @@ public partial class JourneyAppEventsNotificationBrowser : IEquatable<JourneyApp
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyAppEventsNotificationBrowser);
+        return Equals(obj as JourneyAppEventsNotificationBrowser);
     }
 
     /// <summary>
@@ -169,54 +169,54 @@ public partial class JourneyAppEventsNotificationBrowser : IEquatable<JourneyApp
 
         return true &&
             (
-                this.Family == other.Family ||
-                this.Family != null &&
-                this.Family.Equals(other.Family)
+                Family == other.Family ||
+                Family != null &&
+                Family.Equals(other.Family)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Lang == other.Lang ||
-                this.Lang != null &&
-                this.Lang.Equals(other.Lang)
+                Lang == other.Lang ||
+                Lang != null &&
+                Lang.Equals(other.Lang)
             ) &&
             (
-                this.Fingerprint == other.Fingerprint ||
-                this.Fingerprint != null &&
-                this.Fingerprint.Equals(other.Fingerprint)
+                Fingerprint == other.Fingerprint ||
+                Fingerprint != null &&
+                Fingerprint.Equals(other.Fingerprint)
             ) &&
             (
-                this.ViewHeight == other.ViewHeight ||
-                this.ViewHeight != null &&
-                this.ViewHeight.Equals(other.ViewHeight)
+                ViewHeight == other.ViewHeight ||
+                ViewHeight != null &&
+                ViewHeight.Equals(other.ViewHeight)
             ) &&
             (
-                this.ViewWidth == other.ViewWidth ||
-                this.ViewWidth != null &&
-                this.ViewWidth.Equals(other.ViewWidth)
+                ViewWidth == other.ViewWidth ||
+                ViewWidth != null &&
+                ViewWidth.Equals(other.ViewWidth)
             ) &&
             (
-                this.FeaturesFlash == other.FeaturesFlash ||
-                this.FeaturesFlash != null &&
-                this.FeaturesFlash.Equals(other.FeaturesFlash)
+                FeaturesFlash == other.FeaturesFlash ||
+                FeaturesFlash != null &&
+                FeaturesFlash.Equals(other.FeaturesFlash)
             ) &&
             (
-                this.FeaturesJava == other.FeaturesJava ||
-                this.FeaturesJava != null &&
-                this.FeaturesJava.Equals(other.FeaturesJava)
+                FeaturesJava == other.FeaturesJava ||
+                FeaturesJava != null &&
+                FeaturesJava.Equals(other.FeaturesJava)
             ) &&
             (
-                this.FeaturesPdf == other.FeaturesPdf ||
-                this.FeaturesPdf != null &&
-                this.FeaturesPdf.Equals(other.FeaturesPdf)
+                FeaturesPdf == other.FeaturesPdf ||
+                FeaturesPdf != null &&
+                FeaturesPdf.Equals(other.FeaturesPdf)
             ) &&
             (
-                this.FeaturesWebrtc == other.FeaturesWebrtc ||
-                this.FeaturesWebrtc != null &&
-                this.FeaturesWebrtc.Equals(other.FeaturesWebrtc)
+                FeaturesWebrtc == other.FeaturesWebrtc ||
+                FeaturesWebrtc != null &&
+                FeaturesWebrtc.Equals(other.FeaturesWebrtc)
             );
     }
 
@@ -231,54 +231,54 @@ public partial class JourneyAppEventsNotificationBrowser : IEquatable<JourneyApp
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Family != null)
+            if (Family != null)
             {
-                hash = hash * 59 + this.Family.GetHashCode();
+                hash = hash * 59 + Family.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Lang != null)
+            if (Lang != null)
             {
-                hash = hash * 59 + this.Lang.GetHashCode();
+                hash = hash * 59 + Lang.GetHashCode();
             }
 
-            if (this.Fingerprint != null)
+            if (Fingerprint != null)
             {
-                hash = hash * 59 + this.Fingerprint.GetHashCode();
+                hash = hash * 59 + Fingerprint.GetHashCode();
             }
 
-            if (this.ViewHeight != null)
+            if (ViewHeight != null)
             {
-                hash = hash * 59 + this.ViewHeight.GetHashCode();
+                hash = hash * 59 + ViewHeight.GetHashCode();
             }
 
-            if (this.ViewWidth != null)
+            if (ViewWidth != null)
             {
-                hash = hash * 59 + this.ViewWidth.GetHashCode();
+                hash = hash * 59 + ViewWidth.GetHashCode();
             }
 
-            if (this.FeaturesFlash != null)
+            if (FeaturesFlash != null)
             {
-                hash = hash * 59 + this.FeaturesFlash.GetHashCode();
+                hash = hash * 59 + FeaturesFlash.GetHashCode();
             }
 
-            if (this.FeaturesJava != null)
+            if (FeaturesJava != null)
             {
-                hash = hash * 59 + this.FeaturesJava.GetHashCode();
+                hash = hash * 59 + FeaturesJava.GetHashCode();
             }
 
-            if (this.FeaturesPdf != null)
+            if (FeaturesPdf != null)
             {
-                hash = hash * 59 + this.FeaturesPdf.GetHashCode();
+                hash = hash * 59 + FeaturesPdf.GetHashCode();
             }
 
-            if (this.FeaturesWebrtc != null)
+            if (FeaturesWebrtc != null)
             {
-                hash = hash * 59 + this.FeaturesWebrtc.GetHashCode();
+                hash = hash * 59 + FeaturesWebrtc.GetHashCode();
             }
 
             return hash;

@@ -83,7 +83,7 @@ public partial class TextBotFlowLocation : IEquatable<TextBotFlowLocation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotFlowLocation);
+        return Equals(obj as TextBotFlowLocation);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class TextBotFlowLocation : IEquatable<TextBotFlowLocation>
 
         return true &&
             (
-                this.ActionName == other.ActionName ||
-                this.ActionName != null &&
-                this.ActionName.Equals(other.ActionName)
+                ActionName == other.ActionName ||
+                ActionName != null &&
+                ActionName.Equals(other.ActionName)
             ) &&
             (
-                this.ActionNumber == other.ActionNumber ||
-                this.ActionNumber != null &&
-                this.ActionNumber.Equals(other.ActionNumber)
+                ActionNumber == other.ActionNumber ||
+                ActionNumber != null &&
+                ActionNumber.Equals(other.ActionNumber)
             ) &&
             (
-                this.SequenceName == other.SequenceName ||
-                this.SequenceName != null &&
-                this.SequenceName.Equals(other.SequenceName)
+                SequenceName == other.SequenceName ||
+                SequenceName != null &&
+                SequenceName.Equals(other.SequenceName)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class TextBotFlowLocation : IEquatable<TextBotFlowLocation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActionName != null)
+            if (ActionName != null)
             {
-                hash = hash * 59 + this.ActionName.GetHashCode();
+                hash = hash * 59 + ActionName.GetHashCode();
             }
 
-            if (this.ActionNumber != null)
+            if (ActionNumber != null)
             {
-                hash = hash * 59 + this.ActionNumber.GetHashCode();
+                hash = hash * 59 + ActionNumber.GetHashCode();
             }
 
-            if (this.SequenceName != null)
+            if (SequenceName != null)
             {
-                hash = hash * 59 + this.SequenceName.GetHashCode();
+                hash = hash * 59 + SequenceName.GetHashCode();
             }
 
             return hash;

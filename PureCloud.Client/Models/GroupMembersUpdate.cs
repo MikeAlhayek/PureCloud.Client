@@ -71,7 +71,7 @@ public partial class GroupMembersUpdate : IEquatable<GroupMembersUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GroupMembersUpdate);
+        return Equals(obj as GroupMembersUpdate);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class GroupMembersUpdate : IEquatable<GroupMembersUpdate>
 
         return true &&
             (
-                this.MemberIds == other.MemberIds ||
-                this.MemberIds != null &&
-                this.MemberIds.SequenceEqual(other.MemberIds)
+                MemberIds == other.MemberIds ||
+                MemberIds != null &&
+                MemberIds.SequenceEqual(other.MemberIds)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class GroupMembersUpdate : IEquatable<GroupMembersUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MemberIds != null)
+            if (MemberIds != null)
             {
-                hash = hash * 59 + this.MemberIds.GetHashCode();
+                hash = hash * 59 + MemberIds.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

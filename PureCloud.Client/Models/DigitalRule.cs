@@ -143,7 +143,7 @@ public partial class DigitalRule : IEquatable<DigitalRule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DigitalRule);
+        return Equals(obj as DigitalRule);
     }
 
     /// <summary>
@@ -161,34 +161,34 @@ public partial class DigitalRule : IEquatable<DigitalRule>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Order == other.Order ||
-                this.Order != null &&
-                this.Order.Equals(other.Order)
+                Order == other.Order ||
+                Order != null &&
+                Order.Equals(other.Order)
             ) &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.Conditions == other.Conditions ||
-                this.Conditions != null &&
-                this.Conditions.SequenceEqual(other.Conditions)
+                Conditions == other.Conditions ||
+                Conditions != null &&
+                Conditions.SequenceEqual(other.Conditions)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.SequenceEqual(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.SequenceEqual(other.Actions)
             );
     }
 
@@ -203,34 +203,34 @@ public partial class DigitalRule : IEquatable<DigitalRule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Order != null)
+            if (Order != null)
             {
-                hash = hash * 59 + this.Order.GetHashCode();
+                hash = hash * 59 + Order.GetHashCode();
             }
 
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.Conditions != null)
+            if (Conditions != null)
             {
-                hash = hash * 59 + this.Conditions.GetHashCode();
+                hash = hash * 59 + Conditions.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
             return hash;

@@ -41,7 +41,7 @@ public partial class PolicyCondition : IEquatable<PolicyCondition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PolicyCondition);
+        return Equals(obj as PolicyCondition);
     }
 
     /// <summary>

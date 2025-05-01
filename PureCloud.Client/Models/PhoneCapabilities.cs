@@ -184,7 +184,7 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PhoneCapabilities);
+        return Equals(obj as PhoneCapabilities);
     }
 
     /// <summary>
@@ -202,49 +202,49 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
 
         return true &&
             (
-                this.Provisions == other.Provisions ||
-                this.Provisions != null &&
-                this.Provisions.Equals(other.Provisions)
+                Provisions == other.Provisions ||
+                Provisions != null &&
+                Provisions.Equals(other.Provisions)
             ) &&
             (
-                this.Registers == other.Registers ||
-                this.Registers != null &&
-                this.Registers.Equals(other.Registers)
+                Registers == other.Registers ||
+                Registers != null &&
+                Registers.Equals(other.Registers)
             ) &&
             (
-                this.DualRegisters == other.DualRegisters ||
-                this.DualRegisters != null &&
-                this.DualRegisters.Equals(other.DualRegisters)
+                DualRegisters == other.DualRegisters ||
+                DualRegisters != null &&
+                DualRegisters.Equals(other.DualRegisters)
             ) &&
             (
-                this.HardwareIdType == other.HardwareIdType ||
-                this.HardwareIdType != null &&
-                this.HardwareIdType.Equals(other.HardwareIdType)
+                HardwareIdType == other.HardwareIdType ||
+                HardwareIdType != null &&
+                HardwareIdType.Equals(other.HardwareIdType)
             ) &&
             (
-                this.AllowReboot == other.AllowReboot ||
-                this.AllowReboot != null &&
-                this.AllowReboot.Equals(other.AllowReboot)
+                AllowReboot == other.AllowReboot ||
+                AllowReboot != null &&
+                AllowReboot.Equals(other.AllowReboot)
             ) &&
             (
-                this.NoRebalance == other.NoRebalance ||
-                this.NoRebalance != null &&
-                this.NoRebalance.Equals(other.NoRebalance)
+                NoRebalance == other.NoRebalance ||
+                NoRebalance != null &&
+                NoRebalance.Equals(other.NoRebalance)
             ) &&
             (
-                this.NoCloudProvisioning == other.NoCloudProvisioning ||
-                this.NoCloudProvisioning != null &&
-                this.NoCloudProvisioning.Equals(other.NoCloudProvisioning)
+                NoCloudProvisioning == other.NoCloudProvisioning ||
+                NoCloudProvisioning != null &&
+                NoCloudProvisioning.Equals(other.NoCloudProvisioning)
             ) &&
             (
-                this.MediaCodecs == other.MediaCodecs ||
-                this.MediaCodecs != null &&
-                this.MediaCodecs.SequenceEqual(other.MediaCodecs)
+                MediaCodecs == other.MediaCodecs ||
+                MediaCodecs != null &&
+                MediaCodecs.SequenceEqual(other.MediaCodecs)
             ) &&
             (
-                this.Cdm == other.Cdm ||
-                this.Cdm != null &&
-                this.Cdm.Equals(other.Cdm)
+                Cdm == other.Cdm ||
+                Cdm != null &&
+                Cdm.Equals(other.Cdm)
             );
     }
 
@@ -259,49 +259,49 @@ public partial class PhoneCapabilities : IEquatable<PhoneCapabilities>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Provisions != null)
+            if (Provisions != null)
             {
-                hash = hash * 59 + this.Provisions.GetHashCode();
+                hash = hash * 59 + Provisions.GetHashCode();
             }
 
-            if (this.Registers != null)
+            if (Registers != null)
             {
-                hash = hash * 59 + this.Registers.GetHashCode();
+                hash = hash * 59 + Registers.GetHashCode();
             }
 
-            if (this.DualRegisters != null)
+            if (DualRegisters != null)
             {
-                hash = hash * 59 + this.DualRegisters.GetHashCode();
+                hash = hash * 59 + DualRegisters.GetHashCode();
             }
 
-            if (this.HardwareIdType != null)
+            if (HardwareIdType != null)
             {
-                hash = hash * 59 + this.HardwareIdType.GetHashCode();
+                hash = hash * 59 + HardwareIdType.GetHashCode();
             }
 
-            if (this.AllowReboot != null)
+            if (AllowReboot != null)
             {
-                hash = hash * 59 + this.AllowReboot.GetHashCode();
+                hash = hash * 59 + AllowReboot.GetHashCode();
             }
 
-            if (this.NoRebalance != null)
+            if (NoRebalance != null)
             {
-                hash = hash * 59 + this.NoRebalance.GetHashCode();
+                hash = hash * 59 + NoRebalance.GetHashCode();
             }
 
-            if (this.NoCloudProvisioning != null)
+            if (NoCloudProvisioning != null)
             {
-                hash = hash * 59 + this.NoCloudProvisioning.GetHashCode();
+                hash = hash * 59 + NoCloudProvisioning.GetHashCode();
             }
 
-            if (this.MediaCodecs != null)
+            if (MediaCodecs != null)
             {
-                hash = hash * 59 + this.MediaCodecs.GetHashCode();
+                hash = hash * 59 + MediaCodecs.GetHashCode();
             }
 
-            if (this.Cdm != null)
+            if (Cdm != null)
             {
-                hash = hash * 59 + this.Cdm.GetHashCode();
+                hash = hash * 59 + Cdm.GetHashCode();
             }
 
             return hash;

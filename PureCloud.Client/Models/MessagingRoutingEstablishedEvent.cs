@@ -167,7 +167,7 @@ public partial class MessagingRoutingEstablishedEvent : IEquatable<MessagingRout
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessagingRoutingEstablishedEvent);
+        return Equals(obj as MessagingRoutingEstablishedEvent);
     }
 
     /// <summary>
@@ -185,54 +185,54 @@ public partial class MessagingRoutingEstablishedEvent : IEquatable<MessagingRout
 
         return true &&
             (
-                this.EventId == other.EventId ||
-                this.EventId != null &&
-                this.EventId.Equals(other.EventId)
+                EventId == other.EventId ||
+                EventId != null &&
+                EventId.Equals(other.EventId)
             ) &&
             (
-                this.EventDateTime == other.EventDateTime ||
-                this.EventDateTime != null &&
-                this.EventDateTime.Equals(other.EventDateTime)
+                EventDateTime == other.EventDateTime ||
+                EventDateTime != null &&
+                EventDateTime.Equals(other.EventDateTime)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.CommunicationId == other.CommunicationId ||
-                this.CommunicationId != null &&
-                this.CommunicationId.Equals(other.CommunicationId)
+                CommunicationId == other.CommunicationId ||
+                CommunicationId != null &&
+                CommunicationId.Equals(other.CommunicationId)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.SkillIds == other.SkillIds ||
-                this.SkillIds != null &&
-                this.SkillIds.SequenceEqual(other.SkillIds)
+                SkillIds == other.SkillIds ||
+                SkillIds != null &&
+                SkillIds.SequenceEqual(other.SkillIds)
             ) &&
             (
-                this.LanguageId == other.LanguageId ||
-                this.LanguageId != null &&
-                this.LanguageId.Equals(other.LanguageId)
+                LanguageId == other.LanguageId ||
+                LanguageId != null &&
+                LanguageId.Equals(other.LanguageId)
             ) &&
             (
-                this.Label == other.Label ||
-                this.Label != null &&
-                this.Label.Equals(other.Label)
+                Label == other.Label ||
+                Label != null &&
+                Label.Equals(other.Label)
             ) &&
             (
-                this.InitialConfiguration == other.InitialConfiguration ||
-                this.InitialConfiguration != null &&
-                this.InitialConfiguration.Equals(other.InitialConfiguration)
+                InitialConfiguration == other.InitialConfiguration ||
+                InitialConfiguration != null &&
+                InitialConfiguration.Equals(other.InitialConfiguration)
             ) &&
             (
-                this.SourceConfiguration == other.SourceConfiguration ||
-                this.SourceConfiguration != null &&
-                this.SourceConfiguration.Equals(other.SourceConfiguration)
+                SourceConfiguration == other.SourceConfiguration ||
+                SourceConfiguration != null &&
+                SourceConfiguration.Equals(other.SourceConfiguration)
             );
     }
 
@@ -247,54 +247,54 @@ public partial class MessagingRoutingEstablishedEvent : IEquatable<MessagingRout
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventId != null)
+            if (EventId != null)
             {
-                hash = hash * 59 + this.EventId.GetHashCode();
+                hash = hash * 59 + EventId.GetHashCode();
             }
 
-            if (this.EventDateTime != null)
+            if (EventDateTime != null)
             {
-                hash = hash * 59 + this.EventDateTime.GetHashCode();
+                hash = hash * 59 + EventDateTime.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.CommunicationId != null)
+            if (CommunicationId != null)
             {
-                hash = hash * 59 + this.CommunicationId.GetHashCode();
+                hash = hash * 59 + CommunicationId.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.SkillIds != null)
+            if (SkillIds != null)
             {
-                hash = hash * 59 + this.SkillIds.GetHashCode();
+                hash = hash * 59 + SkillIds.GetHashCode();
             }
 
-            if (this.LanguageId != null)
+            if (LanguageId != null)
             {
-                hash = hash * 59 + this.LanguageId.GetHashCode();
+                hash = hash * 59 + LanguageId.GetHashCode();
             }
 
-            if (this.Label != null)
+            if (Label != null)
             {
-                hash = hash * 59 + this.Label.GetHashCode();
+                hash = hash * 59 + Label.GetHashCode();
             }
 
-            if (this.InitialConfiguration != null)
+            if (InitialConfiguration != null)
             {
-                hash = hash * 59 + this.InitialConfiguration.GetHashCode();
+                hash = hash * 59 + InitialConfiguration.GetHashCode();
             }
 
-            if (this.SourceConfiguration != null)
+            if (SourceConfiguration != null)
             {
-                hash = hash * 59 + this.SourceConfiguration.GetHashCode();
+                hash = hash * 59 + SourceConfiguration.GetHashCode();
             }
 
             return hash;

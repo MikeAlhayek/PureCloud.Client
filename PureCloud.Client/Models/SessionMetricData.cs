@@ -89,7 +89,7 @@ public partial class SessionMetricData : IEquatable<SessionMetricData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SessionMetricData);
+        return Equals(obj as SessionMetricData);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class SessionMetricData : IEquatable<SessionMetricData>
 
         return true &&
             (
-                this.Model == other.Model ||
-                this.Model != null &&
-                this.Model.Equals(other.Model)
+                Model == other.Model ||
+                Model != null &&
+                Model.Equals(other.Model)
             ) &&
             (
-                this.Computed == other.Computed ||
-                this.Computed != null &&
-                this.Computed.Equals(other.Computed)
+                Computed == other.Computed ||
+                Computed != null &&
+                Computed.Equals(other.Computed)
             ) &&
             (
-                this.Historical == other.Historical ||
-                this.Historical != null &&
-                this.Historical.Equals(other.Historical)
+                Historical == other.Historical ||
+                Historical != null &&
+                Historical.Equals(other.Historical)
             ) &&
             (
-                this.ModelMetaData == other.ModelMetaData ||
-                this.ModelMetaData != null &&
-                this.ModelMetaData.Equals(other.ModelMetaData)
+                ModelMetaData == other.ModelMetaData ||
+                ModelMetaData != null &&
+                ModelMetaData.Equals(other.ModelMetaData)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class SessionMetricData : IEquatable<SessionMetricData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Model != null)
+            if (Model != null)
             {
-                hash = hash * 59 + this.Model.GetHashCode();
+                hash = hash * 59 + Model.GetHashCode();
             }
 
-            if (this.Computed != null)
+            if (Computed != null)
             {
-                hash = hash * 59 + this.Computed.GetHashCode();
+                hash = hash * 59 + Computed.GetHashCode();
             }
 
-            if (this.Historical != null)
+            if (Historical != null)
             {
-                hash = hash * 59 + this.Historical.GetHashCode();
+                hash = hash * 59 + Historical.GetHashCode();
             }
 
-            if (this.ModelMetaData != null)
+            if (ModelMetaData != null)
             {
-                hash = hash * 59 + this.ModelMetaData.GetHashCode();
+                hash = hash * 59 + ModelMetaData.GetHashCode();
             }
 
             return hash;

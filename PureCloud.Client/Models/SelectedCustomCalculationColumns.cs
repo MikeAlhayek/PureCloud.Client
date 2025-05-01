@@ -77,7 +77,7 @@ public partial class SelectedCustomCalculationColumns : IEquatable<SelectedCusto
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SelectedCustomCalculationColumns);
+        return Equals(obj as SelectedCustomCalculationColumns);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class SelectedCustomCalculationColumns : IEquatable<SelectedCusto
 
         return true &&
             (
-                this.CustomCalculation == other.CustomCalculation ||
-                this.CustomCalculation != null &&
-                this.CustomCalculation.Equals(other.CustomCalculation)
+                CustomCalculation == other.CustomCalculation ||
+                CustomCalculation != null &&
+                CustomCalculation.Equals(other.CustomCalculation)
             ) &&
             (
-                this.Restricted == other.Restricted ||
-                this.Restricted != null &&
-                this.Restricted.Equals(other.Restricted)
+                Restricted == other.Restricted ||
+                Restricted != null &&
+                Restricted.Equals(other.Restricted)
             ) &&
             (
-                this.SoftDeleted == other.SoftDeleted ||
-                this.SoftDeleted != null &&
-                this.SoftDeleted.Equals(other.SoftDeleted)
+                SoftDeleted == other.SoftDeleted ||
+                SoftDeleted != null &&
+                SoftDeleted.Equals(other.SoftDeleted)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class SelectedCustomCalculationColumns : IEquatable<SelectedCusto
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CustomCalculation != null)
+            if (CustomCalculation != null)
             {
-                hash = hash * 59 + this.CustomCalculation.GetHashCode();
+                hash = hash * 59 + CustomCalculation.GetHashCode();
             }
 
-            if (this.Restricted != null)
+            if (Restricted != null)
             {
-                hash = hash * 59 + this.Restricted.GetHashCode();
+                hash = hash * 59 + Restricted.GetHashCode();
             }
 
-            if (this.SoftDeleted != null)
+            if (SoftDeleted != null)
             {
-                hash = hash * 59 + this.SoftDeleted.GetHashCode();
+                hash = hash * 59 + SoftDeleted.GetHashCode();
             }
 
             return hash;

@@ -59,7 +59,7 @@ public partial class ConsultTransferResponse : IEquatable<ConsultTransferRespons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConsultTransferResponse);
+        return Equals(obj as ConsultTransferResponse);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ConsultTransferResponse : IEquatable<ConsultTransferRespons
 
         return true &&
             (
-                this.DestinationParticipantId == other.DestinationParticipantId ||
-                this.DestinationParticipantId != null &&
-                this.DestinationParticipantId.Equals(other.DestinationParticipantId)
+                DestinationParticipantId == other.DestinationParticipantId ||
+                DestinationParticipantId != null &&
+                DestinationParticipantId.Equals(other.DestinationParticipantId)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ConsultTransferResponse : IEquatable<ConsultTransferRespons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DestinationParticipantId != null)
+            if (DestinationParticipantId != null)
             {
-                hash = hash * 59 + this.DestinationParticipantId.GetHashCode();
+                hash = hash * 59 + DestinationParticipantId.GetHashCode();
             }
 
             return hash;

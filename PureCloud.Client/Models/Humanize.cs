@@ -65,7 +65,7 @@ public partial class Humanize : IEquatable<Humanize>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Humanize);
+        return Equals(obj as Humanize);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class Humanize : IEquatable<Humanize>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Bot == other.Bot ||
-                this.Bot != null &&
-                this.Bot.Equals(other.Bot)
+                Bot == other.Bot ||
+                Bot != null &&
+                Bot.Equals(other.Bot)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class Humanize : IEquatable<Humanize>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Bot != null)
+            if (Bot != null)
             {
-                hash = hash * 59 + this.Bot.GetHashCode();
+                hash = hash * 59 + Bot.GetHashCode();
             }
 
             return hash;

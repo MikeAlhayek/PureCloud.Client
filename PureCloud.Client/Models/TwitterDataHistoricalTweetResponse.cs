@@ -77,7 +77,7 @@ public partial class TwitterDataHistoricalTweetResponse : IEquatable<TwitterData
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TwitterDataHistoricalTweetResponse);
+        return Equals(obj as TwitterDataHistoricalTweetResponse);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class TwitterDataHistoricalTweetResponse : IEquatable<TwitterData
 
         return true &&
             (
-                this.MatchingTweets == other.MatchingTweets ||
-                this.MatchingTweets != null &&
-                this.MatchingTweets.Equals(other.MatchingTweets)
+                MatchingTweets == other.MatchingTweets ||
+                MatchingTweets != null &&
+                MatchingTweets.Equals(other.MatchingTweets)
             ) &&
             (
-                this.PreviousNumberOfDays == other.PreviousNumberOfDays ||
-                this.PreviousNumberOfDays != null &&
-                this.PreviousNumberOfDays.Equals(other.PreviousNumberOfDays)
+                PreviousNumberOfDays == other.PreviousNumberOfDays ||
+                PreviousNumberOfDays != null &&
+                PreviousNumberOfDays.Equals(other.PreviousNumberOfDays)
             ) &&
             (
-                this.UsageStatistics == other.UsageStatistics ||
-                this.UsageStatistics != null &&
-                this.UsageStatistics.Equals(other.UsageStatistics)
+                UsageStatistics == other.UsageStatistics ||
+                UsageStatistics != null &&
+                UsageStatistics.Equals(other.UsageStatistics)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class TwitterDataHistoricalTweetResponse : IEquatable<TwitterData
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MatchingTweets != null)
+            if (MatchingTweets != null)
             {
-                hash = hash * 59 + this.MatchingTweets.GetHashCode();
+                hash = hash * 59 + MatchingTweets.GetHashCode();
             }
 
-            if (this.PreviousNumberOfDays != null)
+            if (PreviousNumberOfDays != null)
             {
-                hash = hash * 59 + this.PreviousNumberOfDays.GetHashCode();
+                hash = hash * 59 + PreviousNumberOfDays.GetHashCode();
             }
 
-            if (this.UsageStatistics != null)
+            if (UsageStatistics != null)
             {
-                hash = hash * 59 + this.UsageStatistics.GetHashCode();
+                hash = hash * 59 + UsageStatistics.GetHashCode();
             }
 
             return hash;

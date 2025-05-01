@@ -79,7 +79,7 @@ public partial class WorkflowTargetSettings : IEquatable<WorkflowTargetSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkflowTargetSettings);
+        return Equals(obj as WorkflowTargetSettings);
     }
 
     /// <summary>
@@ -97,9 +97,9 @@ public partial class WorkflowTargetSettings : IEquatable<WorkflowTargetSettings>
 
         return true &&
             (
-                this.DataFormat == other.DataFormat ||
-                this.DataFormat != null &&
-                this.DataFormat.Equals(other.DataFormat)
+                DataFormat == other.DataFormat ||
+                DataFormat != null &&
+                DataFormat.Equals(other.DataFormat)
             );
     }
 
@@ -114,9 +114,9 @@ public partial class WorkflowTargetSettings : IEquatable<WorkflowTargetSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DataFormat != null)
+            if (DataFormat != null)
             {
-                hash = hash * 59 + this.DataFormat.GetHashCode();
+                hash = hash * 59 + DataFormat.GetHashCode();
             }
 
             return hash;

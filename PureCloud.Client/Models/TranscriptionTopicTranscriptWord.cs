@@ -96,7 +96,7 @@ public partial class TranscriptionTopicTranscriptWord : IEquatable<Transcription
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptionTopicTranscriptWord);
+        return Equals(obj as TranscriptionTopicTranscriptWord);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class TranscriptionTopicTranscriptWord : IEquatable<Transcription
 
         return true &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             ) &&
             (
-                this.StartTimeMs == other.StartTimeMs ||
-                this.StartTimeMs != null &&
-                this.StartTimeMs.Equals(other.StartTimeMs)
+                StartTimeMs == other.StartTimeMs ||
+                StartTimeMs != null &&
+                StartTimeMs.Equals(other.StartTimeMs)
             ) &&
             (
-                this.OffsetMs == other.OffsetMs ||
-                this.OffsetMs != null &&
-                this.OffsetMs.Equals(other.OffsetMs)
+                OffsetMs == other.OffsetMs ||
+                OffsetMs != null &&
+                OffsetMs.Equals(other.OffsetMs)
             ) &&
             (
-                this.DurationMs == other.DurationMs ||
-                this.DurationMs != null &&
-                this.DurationMs.Equals(other.DurationMs)
+                DurationMs == other.DurationMs ||
+                DurationMs != null &&
+                DurationMs.Equals(other.DurationMs)
             ) &&
             (
-                this.Word == other.Word ||
-                this.Word != null &&
-                this.Word.Equals(other.Word)
+                Word == other.Word ||
+                Word != null &&
+                Word.Equals(other.Word)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class TranscriptionTopicTranscriptWord : IEquatable<Transcription
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
-            if (this.StartTimeMs != null)
+            if (StartTimeMs != null)
             {
-                hash = hash * 59 + this.StartTimeMs.GetHashCode();
+                hash = hash * 59 + StartTimeMs.GetHashCode();
             }
 
-            if (this.OffsetMs != null)
+            if (OffsetMs != null)
             {
-                hash = hash * 59 + this.OffsetMs.GetHashCode();
+                hash = hash * 59 + OffsetMs.GetHashCode();
             }
 
-            if (this.DurationMs != null)
+            if (DurationMs != null)
             {
-                hash = hash * 59 + this.DurationMs.GetHashCode();
+                hash = hash * 59 + DurationMs.GetHashCode();
             }
 
-            if (this.Word != null)
+            if (Word != null)
             {
-                hash = hash * 59 + this.Word.GetHashCode();
+                hash = hash * 59 + Word.GetHashCode();
             }
 
             return hash;

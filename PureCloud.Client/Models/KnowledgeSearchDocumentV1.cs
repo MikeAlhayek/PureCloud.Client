@@ -506,7 +506,7 @@ public partial class KnowledgeSearchDocumentV1 : IEquatable<KnowledgeSearchDocum
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeSearchDocumentV1);
+        return Equals(obj as KnowledgeSearchDocumentV1);
     }
 
     /// <summary>
@@ -524,69 +524,69 @@ public partial class KnowledgeSearchDocumentV1 : IEquatable<KnowledgeSearchDocum
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.LanguageCode == other.LanguageCode ||
-                this.LanguageCode != null &&
-                this.LanguageCode.Equals(other.LanguageCode)
+                LanguageCode == other.LanguageCode ||
+                LanguageCode != null &&
+                LanguageCode.Equals(other.LanguageCode)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Faq == other.Faq ||
-                this.Faq != null &&
-                this.Faq.Equals(other.Faq)
+                Faq == other.Faq ||
+                Faq != null &&
+                Faq.Equals(other.Faq)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Categories == other.Categories ||
-                this.Categories != null &&
-                this.Categories.SequenceEqual(other.Categories)
+                Categories == other.Categories ||
+                Categories != null &&
+                Categories.SequenceEqual(other.Categories)
             ) &&
             (
-                this.KnowledgeBase == other.KnowledgeBase ||
-                this.KnowledgeBase != null &&
-                this.KnowledgeBase.Equals(other.KnowledgeBase)
+                KnowledgeBase == other.KnowledgeBase ||
+                KnowledgeBase != null &&
+                KnowledgeBase.Equals(other.KnowledgeBase)
             ) &&
             (
-                this.ExternalUrl == other.ExternalUrl ||
-                this.ExternalUrl != null &&
-                this.ExternalUrl.Equals(other.ExternalUrl)
+                ExternalUrl == other.ExternalUrl ||
+                ExternalUrl != null &&
+                ExternalUrl.Equals(other.ExternalUrl)
             ) &&
             (
-                this.Article == other.Article ||
-                this.Article != null &&
-                this.Article.Equals(other.Article)
+                Article == other.Article ||
+                Article != null &&
+                Article.Equals(other.Article)
             ) &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -601,69 +601,69 @@ public partial class KnowledgeSearchDocumentV1 : IEquatable<KnowledgeSearchDocum
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.LanguageCode != null)
+            if (LanguageCode != null)
             {
-                hash = hash * 59 + this.LanguageCode.GetHashCode();
+                hash = hash * 59 + LanguageCode.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Faq != null)
+            if (Faq != null)
             {
-                hash = hash * 59 + this.Faq.GetHashCode();
+                hash = hash * 59 + Faq.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Categories != null)
+            if (Categories != null)
             {
-                hash = hash * 59 + this.Categories.GetHashCode();
+                hash = hash * 59 + Categories.GetHashCode();
             }
 
-            if (this.KnowledgeBase != null)
+            if (KnowledgeBase != null)
             {
-                hash = hash * 59 + this.KnowledgeBase.GetHashCode();
+                hash = hash * 59 + KnowledgeBase.GetHashCode();
             }
 
-            if (this.ExternalUrl != null)
+            if (ExternalUrl != null)
             {
-                hash = hash * 59 + this.ExternalUrl.GetHashCode();
+                hash = hash * 59 + ExternalUrl.GetHashCode();
             }
 
-            if (this.Article != null)
+            if (Article != null)
             {
-                hash = hash * 59 + this.Article.GetHashCode();
+                hash = hash * 59 + Article.GetHashCode();
             }
 
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

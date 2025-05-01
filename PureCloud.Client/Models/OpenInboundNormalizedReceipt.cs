@@ -151,7 +151,7 @@ public partial class OpenInboundNormalizedReceipt : IEquatable<OpenInboundNormal
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenInboundNormalizedReceipt);
+        return Equals(obj as OpenInboundNormalizedReceipt);
     }
 
     /// <summary>
@@ -169,29 +169,29 @@ public partial class OpenInboundNormalizedReceipt : IEquatable<OpenInboundNormal
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Channel == other.Channel ||
-                this.Channel != null &&
-                this.Channel.Equals(other.Channel)
+                Channel == other.Channel ||
+                Channel != null &&
+                Channel.Equals(other.Channel)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Reasons == other.Reasons ||
-                this.Reasons != null &&
-                this.Reasons.SequenceEqual(other.Reasons)
+                Reasons == other.Reasons ||
+                Reasons != null &&
+                Reasons.SequenceEqual(other.Reasons)
             ) &&
             (
-                this.IsFinalReceipt == other.IsFinalReceipt ||
-                this.IsFinalReceipt != null &&
-                this.IsFinalReceipt.Equals(other.IsFinalReceipt)
+                IsFinalReceipt == other.IsFinalReceipt ||
+                IsFinalReceipt != null &&
+                IsFinalReceipt.Equals(other.IsFinalReceipt)
             );
     }
 
@@ -206,29 +206,29 @@ public partial class OpenInboundNormalizedReceipt : IEquatable<OpenInboundNormal
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Channel != null)
+            if (Channel != null)
             {
-                hash = hash * 59 + this.Channel.GetHashCode();
+                hash = hash * 59 + Channel.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Reasons != null)
+            if (Reasons != null)
             {
-                hash = hash * 59 + this.Reasons.GetHashCode();
+                hash = hash * 59 + Reasons.GetHashCode();
             }
 
-            if (this.IsFinalReceipt != null)
+            if (IsFinalReceipt != null)
             {
-                hash = hash * 59 + this.IsFinalReceipt.GetHashCode();
+                hash = hash * 59 + IsFinalReceipt.GetHashCode();
             }
 
             return hash;

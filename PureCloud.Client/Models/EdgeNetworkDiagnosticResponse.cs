@@ -65,7 +65,7 @@ public partial class EdgeNetworkDiagnosticResponse : IEquatable<EdgeNetworkDiagn
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeNetworkDiagnosticResponse);
+        return Equals(obj as EdgeNetworkDiagnosticResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class EdgeNetworkDiagnosticResponse : IEquatable<EdgeNetworkDiagn
 
         return true &&
             (
-                this.CommandCorrelationId == other.CommandCorrelationId ||
-                this.CommandCorrelationId != null &&
-                this.CommandCorrelationId.Equals(other.CommandCorrelationId)
+                CommandCorrelationId == other.CommandCorrelationId ||
+                CommandCorrelationId != null &&
+                CommandCorrelationId.Equals(other.CommandCorrelationId)
             ) &&
             (
-                this.Diagnostics == other.Diagnostics ||
-                this.Diagnostics != null &&
-                this.Diagnostics.Equals(other.Diagnostics)
+                Diagnostics == other.Diagnostics ||
+                Diagnostics != null &&
+                Diagnostics.Equals(other.Diagnostics)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class EdgeNetworkDiagnosticResponse : IEquatable<EdgeNetworkDiagn
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CommandCorrelationId != null)
+            if (CommandCorrelationId != null)
             {
-                hash = hash * 59 + this.CommandCorrelationId.GetHashCode();
+                hash = hash * 59 + CommandCorrelationId.GetHashCode();
             }
 
-            if (this.Diagnostics != null)
+            if (Diagnostics != null)
             {
-                hash = hash * 59 + this.Diagnostics.GetHashCode();
+                hash = hash * 59 + Diagnostics.GetHashCode();
             }
 
             return hash;

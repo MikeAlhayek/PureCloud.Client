@@ -155,7 +155,7 @@ public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrga
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalOrganizationEnrichRequest);
+        return Equals(obj as ExternalOrganizationEnrichRequest);
     }
 
     /// <summary>
@@ -173,39 +173,39 @@ public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrga
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.MatchingIdentifiers == other.MatchingIdentifiers ||
-                this.MatchingIdentifiers != null &&
-                this.MatchingIdentifiers.SequenceEqual(other.MatchingIdentifiers)
+                MatchingIdentifiers == other.MatchingIdentifiers ||
+                MatchingIdentifiers != null &&
+                MatchingIdentifiers.SequenceEqual(other.MatchingIdentifiers)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.ExternalOrganization == other.ExternalOrganization ||
-                this.ExternalOrganization != null &&
-                this.ExternalOrganization.Equals(other.ExternalOrganization)
+                ExternalOrganization == other.ExternalOrganization ||
+                ExternalOrganization != null &&
+                ExternalOrganization.Equals(other.ExternalOrganization)
             ) &&
             (
-                this.FieldRules == other.FieldRules ||
-                this.FieldRules != null &&
-                this.FieldRules.Equals(other.FieldRules)
+                FieldRules == other.FieldRules ||
+                FieldRules != null &&
+                FieldRules.Equals(other.FieldRules)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -220,39 +220,39 @@ public partial class ExternalOrganizationEnrichRequest : IEquatable<ExternalOrga
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.MatchingIdentifiers != null)
+            if (MatchingIdentifiers != null)
             {
-                hash = hash * 59 + this.MatchingIdentifiers.GetHashCode();
+                hash = hash * 59 + MatchingIdentifiers.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.ExternalOrganization != null)
+            if (ExternalOrganization != null)
             {
-                hash = hash * 59 + this.ExternalOrganization.GetHashCode();
+                hash = hash * 59 + ExternalOrganization.GetHashCode();
             }
 
-            if (this.FieldRules != null)
+            if (FieldRules != null)
             {
-                hash = hash * 59 + this.FieldRules.GetHashCode();
+                hash = hash * 59 + FieldRules.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

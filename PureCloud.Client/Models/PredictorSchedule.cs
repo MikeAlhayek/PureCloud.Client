@@ -95,7 +95,7 @@ public partial class PredictorSchedule : IEquatable<PredictorSchedule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PredictorSchedule);
+        return Equals(obj as PredictorSchedule);
     }
 
     /// <summary>
@@ -113,14 +113,14 @@ public partial class PredictorSchedule : IEquatable<PredictorSchedule>
 
         return true &&
             (
-                this.ScheduleType == other.ScheduleType ||
-                this.ScheduleType != null &&
-                this.ScheduleType.Equals(other.ScheduleType)
+                ScheduleType == other.ScheduleType ||
+                ScheduleType != null &&
+                ScheduleType.Equals(other.ScheduleType)
             ) &&
             (
-                this.DateStarted == other.DateStarted ||
-                this.DateStarted != null &&
-                this.DateStarted.Equals(other.DateStarted)
+                DateStarted == other.DateStarted ||
+                DateStarted != null &&
+                DateStarted.Equals(other.DateStarted)
             );
     }
 
@@ -135,14 +135,14 @@ public partial class PredictorSchedule : IEquatable<PredictorSchedule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ScheduleType != null)
+            if (ScheduleType != null)
             {
-                hash = hash * 59 + this.ScheduleType.GetHashCode();
+                hash = hash * 59 + ScheduleType.GetHashCode();
             }
 
-            if (this.DateStarted != null)
+            if (DateStarted != null)
             {
-                hash = hash * 59 + this.DateStarted.GetHashCode();
+                hash = hash * 59 + DateStarted.GetHashCode();
             }
 
             return hash;

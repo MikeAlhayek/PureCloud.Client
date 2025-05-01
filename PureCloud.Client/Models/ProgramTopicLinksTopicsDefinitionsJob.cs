@@ -105,7 +105,7 @@ public partial class ProgramTopicLinksTopicsDefinitionsJob : IEquatable<ProgramT
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ProgramTopicLinksTopicsDefinitionsJob);
+        return Equals(obj as ProgramTopicLinksTopicsDefinitionsJob);
     }
 
     /// <summary>
@@ -123,19 +123,19 @@ public partial class ProgramTopicLinksTopicsDefinitionsJob : IEquatable<ProgramT
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.TestTopicPhraseResults == other.TestTopicPhraseResults ||
-                this.TestTopicPhraseResults != null &&
-                this.TestTopicPhraseResults.SequenceEqual(other.TestTopicPhraseResults)
+                TestTopicPhraseResults == other.TestTopicPhraseResults ||
+                TestTopicPhraseResults != null &&
+                TestTopicPhraseResults.SequenceEqual(other.TestTopicPhraseResults)
             );
     }
 
@@ -150,19 +150,19 @@ public partial class ProgramTopicLinksTopicsDefinitionsJob : IEquatable<ProgramT
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.TestTopicPhraseResults != null)
+            if (TestTopicPhraseResults != null)
             {
-                hash = hash * 59 + this.TestTopicPhraseResults.GetHashCode();
+                hash = hash * 59 + TestTopicPhraseResults.GetHashCode();
             }
 
             return hash;

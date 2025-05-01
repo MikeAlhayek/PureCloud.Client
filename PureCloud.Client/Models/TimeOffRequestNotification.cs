@@ -151,7 +151,7 @@ public partial class TimeOffRequestNotification : IEquatable<TimeOffRequestNotif
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeOffRequestNotification);
+        return Equals(obj as TimeOffRequestNotification);
     }
 
     /// <summary>
@@ -169,34 +169,34 @@ public partial class TimeOffRequestNotification : IEquatable<TimeOffRequestNotif
 
         return true &&
             (
-                this.TimeOffRequestId == other.TimeOffRequestId ||
-                this.TimeOffRequestId != null &&
-                this.TimeOffRequestId.Equals(other.TimeOffRequestId)
+                TimeOffRequestId == other.TimeOffRequestId ||
+                TimeOffRequestId != null &&
+                TimeOffRequestId.Equals(other.TimeOffRequestId)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.IsFullDayRequest == other.IsFullDayRequest ||
-                this.IsFullDayRequest != null &&
-                this.IsFullDayRequest.Equals(other.IsFullDayRequest)
+                IsFullDayRequest == other.IsFullDayRequest ||
+                IsFullDayRequest != null &&
+                IsFullDayRequest.Equals(other.IsFullDayRequest)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.PartialDayStartDateTimes == other.PartialDayStartDateTimes ||
-                this.PartialDayStartDateTimes != null &&
-                this.PartialDayStartDateTimes.SequenceEqual(other.PartialDayStartDateTimes)
+                PartialDayStartDateTimes == other.PartialDayStartDateTimes ||
+                PartialDayStartDateTimes != null &&
+                PartialDayStartDateTimes.SequenceEqual(other.PartialDayStartDateTimes)
             ) &&
             (
-                this.FullDayManagementUnitDates == other.FullDayManagementUnitDates ||
-                this.FullDayManagementUnitDates != null &&
-                this.FullDayManagementUnitDates.SequenceEqual(other.FullDayManagementUnitDates)
+                FullDayManagementUnitDates == other.FullDayManagementUnitDates ||
+                FullDayManagementUnitDates != null &&
+                FullDayManagementUnitDates.SequenceEqual(other.FullDayManagementUnitDates)
             );
     }
 
@@ -211,34 +211,34 @@ public partial class TimeOffRequestNotification : IEquatable<TimeOffRequestNotif
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeOffRequestId != null)
+            if (TimeOffRequestId != null)
             {
-                hash = hash * 59 + this.TimeOffRequestId.GetHashCode();
+                hash = hash * 59 + TimeOffRequestId.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.IsFullDayRequest != null)
+            if (IsFullDayRequest != null)
             {
-                hash = hash * 59 + this.IsFullDayRequest.GetHashCode();
+                hash = hash * 59 + IsFullDayRequest.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.PartialDayStartDateTimes != null)
+            if (PartialDayStartDateTimes != null)
             {
-                hash = hash * 59 + this.PartialDayStartDateTimes.GetHashCode();
+                hash = hash * 59 + PartialDayStartDateTimes.GetHashCode();
             }
 
-            if (this.FullDayManagementUnitDates != null)
+            if (FullDayManagementUnitDates != null)
             {
-                hash = hash * 59 + this.FullDayManagementUnitDates.GetHashCode();
+                hash = hash * 59 + FullDayManagementUnitDates.GetHashCode();
             }
 
             return hash;

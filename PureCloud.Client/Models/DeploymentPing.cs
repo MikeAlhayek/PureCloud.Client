@@ -65,7 +65,7 @@ public partial class DeploymentPing : IEquatable<DeploymentPing>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DeploymentPing);
+        return Equals(obj as DeploymentPing);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class DeploymentPing : IEquatable<DeploymentPing>
 
         return true &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.SequenceEqual(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.SequenceEqual(other.Actions)
             ) &&
             (
-                this.PollIntervalMilliseconds == other.PollIntervalMilliseconds ||
-                this.PollIntervalMilliseconds != null &&
-                this.PollIntervalMilliseconds.Equals(other.PollIntervalMilliseconds)
+                PollIntervalMilliseconds == other.PollIntervalMilliseconds ||
+                PollIntervalMilliseconds != null &&
+                PollIntervalMilliseconds.Equals(other.PollIntervalMilliseconds)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class DeploymentPing : IEquatable<DeploymentPing>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
-            if (this.PollIntervalMilliseconds != null)
+            if (PollIntervalMilliseconds != null)
             {
-                hash = hash * 59 + this.PollIntervalMilliseconds.GetHashCode();
+                hash = hash * 59 + PollIntervalMilliseconds.GetHashCode();
             }
 
             return hash;

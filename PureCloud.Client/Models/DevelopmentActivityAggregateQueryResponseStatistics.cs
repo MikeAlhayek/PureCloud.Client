@@ -89,7 +89,7 @@ public partial class DevelopmentActivityAggregateQueryResponseStatistics : IEqua
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DevelopmentActivityAggregateQueryResponseStatistics);
+        return Equals(obj as DevelopmentActivityAggregateQueryResponseStatistics);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class DevelopmentActivityAggregateQueryResponseStatistics : IEqua
 
         return true &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.Min == other.Min ||
-                this.Min != null &&
-                this.Min.Equals(other.Min)
+                Min == other.Min ||
+                Min != null &&
+                Min.Equals(other.Min)
             ) &&
             (
-                this.Max == other.Max ||
-                this.Max != null &&
-                this.Max.Equals(other.Max)
+                Max == other.Max ||
+                Max != null &&
+                Max.Equals(other.Max)
             ) &&
             (
-                this.Sum == other.Sum ||
-                this.Sum != null &&
-                this.Sum.Equals(other.Sum)
+                Sum == other.Sum ||
+                Sum != null &&
+                Sum.Equals(other.Sum)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class DevelopmentActivityAggregateQueryResponseStatistics : IEqua
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.Min != null)
+            if (Min != null)
             {
-                hash = hash * 59 + this.Min.GetHashCode();
+                hash = hash * 59 + Min.GetHashCode();
             }
 
-            if (this.Max != null)
+            if (Max != null)
             {
-                hash = hash * 59 + this.Max.GetHashCode();
+                hash = hash * 59 + Max.GetHashCode();
             }
 
-            if (this.Sum != null)
+            if (Sum != null)
             {
-                hash = hash * 59 + this.Sum.GetHashCode();
+                hash = hash * 59 + Sum.GetHashCode();
             }
 
             return hash;

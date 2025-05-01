@@ -53,7 +53,7 @@ public partial class MediaTypes : IEquatable<MediaTypes>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaTypes);
+        return Equals(obj as MediaTypes);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class MediaTypes : IEquatable<MediaTypes>
 
         return true &&
             (
-                this.Allow == other.Allow ||
-                this.Allow != null &&
-                this.Allow.Equals(other.Allow)
+                Allow == other.Allow ||
+                Allow != null &&
+                Allow.Equals(other.Allow)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class MediaTypes : IEquatable<MediaTypes>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Allow != null)
+            if (Allow != null)
             {
-                hash = hash * 59 + this.Allow.GetHashCode();
+                hash = hash * 59 + Allow.GetHashCode();
             }
 
             return hash;

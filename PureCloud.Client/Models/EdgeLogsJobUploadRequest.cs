@@ -59,7 +59,7 @@ public partial class EdgeLogsJobUploadRequest : IEquatable<EdgeLogsJobUploadRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeLogsJobUploadRequest);
+        return Equals(obj as EdgeLogsJobUploadRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class EdgeLogsJobUploadRequest : IEquatable<EdgeLogsJobUploadRequ
 
         return true &&
             (
-                this.FileIds == other.FileIds ||
-                this.FileIds != null &&
-                this.FileIds.SequenceEqual(other.FileIds)
+                FileIds == other.FileIds ||
+                FileIds != null &&
+                FileIds.SequenceEqual(other.FileIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class EdgeLogsJobUploadRequest : IEquatable<EdgeLogsJobUploadRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FileIds != null)
+            if (FileIds != null)
             {
-                hash = hash * 59 + this.FileIds.GetHashCode();
+                hash = hash * 59 + FileIds.GetHashCode();
             }
 
             return hash;

@@ -64,7 +64,7 @@ public partial class AudioState : IEquatable<AudioState>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AudioState);
+        return Equals(obj as AudioState);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class AudioState : IEquatable<AudioState>
 
         return true &&
             (
-                this.CanHear == other.CanHear ||
-                this.CanHear != null &&
-                this.CanHear.Equals(other.CanHear)
+                CanHear == other.CanHear ||
+                CanHear != null &&
+                CanHear.Equals(other.CanHear)
             ) &&
             (
-                this.CanSpeak == other.CanSpeak ||
-                this.CanSpeak != null &&
-                this.CanSpeak.Equals(other.CanSpeak)
+                CanSpeak == other.CanSpeak ||
+                CanSpeak != null &&
+                CanSpeak.Equals(other.CanSpeak)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class AudioState : IEquatable<AudioState>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CanHear != null)
+            if (CanHear != null)
             {
-                hash = hash * 59 + this.CanHear.GetHashCode();
+                hash = hash * 59 + CanHear.GetHashCode();
             }
 
-            if (this.CanSpeak != null)
+            if (CanSpeak != null)
             {
-                hash = hash * 59 + this.CanSpeak.GetHashCode();
+                hash = hash * 59 + CanSpeak.GetHashCode();
             }
 
             return hash;

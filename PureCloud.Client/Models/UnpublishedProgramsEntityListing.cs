@@ -96,7 +96,7 @@ public partial class UnpublishedProgramsEntityListing : IEquatable<UnpublishedPr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UnpublishedProgramsEntityListing);
+        return Equals(obj as UnpublishedProgramsEntityListing);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class UnpublishedProgramsEntityListing : IEquatable<UnpublishedPr
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.PageCount == other.PageCount ||
-                this.PageCount != null &&
-                this.PageCount.Equals(other.PageCount)
+                PageCount == other.PageCount ||
+                PageCount != null &&
+                PageCount.Equals(other.PageCount)
             ) &&
             (
-                this.NextUri == other.NextUri ||
-                this.NextUri != null &&
-                this.NextUri.Equals(other.NextUri)
+                NextUri == other.NextUri ||
+                NextUri != null &&
+                NextUri.Equals(other.NextUri)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class UnpublishedProgramsEntityListing : IEquatable<UnpublishedPr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.PageCount != null)
+            if (PageCount != null)
             {
-                hash = hash * 59 + this.PageCount.GetHashCode();
+                hash = hash * 59 + PageCount.GetHashCode();
             }
 
-            if (this.NextUri != null)
+            if (NextUri != null)
             {
-                hash = hash * 59 + this.NextUri.GetHashCode();
+                hash = hash * 59 + NextUri.GetHashCode();
             }
 
             return hash;

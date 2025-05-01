@@ -309,7 +309,7 @@ public partial class WebMessagingMessage : IEquatable<WebMessagingMessage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebMessagingMessage);
+        return Equals(obj as WebMessagingMessage);
     }
 
     /// <summary>
@@ -327,59 +327,59 @@ public partial class WebMessagingMessage : IEquatable<WebMessagingMessage>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Channel == other.Channel ||
-                this.Channel != null &&
-                this.Channel.Equals(other.Channel)
+                Channel == other.Channel ||
+                Channel != null &&
+                Channel.Equals(other.Channel)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Content == other.Content ||
-                this.Content != null &&
-                this.Content.SequenceEqual(other.Content)
+                Content == other.Content ||
+                Content != null &&
+                Content.SequenceEqual(other.Content)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Reasons == other.Reasons ||
-                this.Reasons != null &&
-                this.Reasons.SequenceEqual(other.Reasons)
+                Reasons == other.Reasons ||
+                Reasons != null &&
+                Reasons.SequenceEqual(other.Reasons)
             ) &&
             (
-                this.Events == other.Events ||
-                this.Events != null &&
-                this.Events.SequenceEqual(other.Events)
+                Events == other.Events ||
+                Events != null &&
+                Events.SequenceEqual(other.Events)
             ) &&
             (
-                this.Direction == other.Direction ||
-                this.Direction != null &&
-                this.Direction.Equals(other.Direction)
+                Direction == other.Direction ||
+                Direction != null &&
+                Direction.Equals(other.Direction)
             ) &&
             (
-                this.OriginatingEntity == other.OriginatingEntity ||
-                this.OriginatingEntity != null &&
-                this.OriginatingEntity.Equals(other.OriginatingEntity)
+                OriginatingEntity == other.OriginatingEntity ||
+                OriginatingEntity != null &&
+                OriginatingEntity.Equals(other.OriginatingEntity)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.SequenceEqual(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.SequenceEqual(other.Metadata)
             );
     }
 
@@ -394,59 +394,59 @@ public partial class WebMessagingMessage : IEquatable<WebMessagingMessage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Channel != null)
+            if (Channel != null)
             {
-                hash = hash * 59 + this.Channel.GetHashCode();
+                hash = hash * 59 + Channel.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Content != null)
+            if (Content != null)
             {
-                hash = hash * 59 + this.Content.GetHashCode();
+                hash = hash * 59 + Content.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Reasons != null)
+            if (Reasons != null)
             {
-                hash = hash * 59 + this.Reasons.GetHashCode();
+                hash = hash * 59 + Reasons.GetHashCode();
             }
 
-            if (this.Events != null)
+            if (Events != null)
             {
-                hash = hash * 59 + this.Events.GetHashCode();
+                hash = hash * 59 + Events.GetHashCode();
             }
 
-            if (this.Direction != null)
+            if (Direction != null)
             {
-                hash = hash * 59 + this.Direction.GetHashCode();
+                hash = hash * 59 + Direction.GetHashCode();
             }
 
-            if (this.OriginatingEntity != null)
+            if (OriginatingEntity != null)
             {
-                hash = hash * 59 + this.OriginatingEntity.GetHashCode();
+                hash = hash * 59 + OriginatingEntity.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

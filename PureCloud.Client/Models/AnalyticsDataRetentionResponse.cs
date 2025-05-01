@@ -76,7 +76,7 @@ public partial class AnalyticsDataRetentionResponse : IEquatable<AnalyticsDataRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsDataRetentionResponse);
+        return Equals(obj as AnalyticsDataRetentionResponse);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class AnalyticsDataRetentionResponse : IEquatable<AnalyticsDataRe
 
         return true &&
             (
-                this.RetentionDays == other.RetentionDays ||
-                this.RetentionDays != null &&
-                this.RetentionDays.Equals(other.RetentionDays)
+                RetentionDays == other.RetentionDays ||
+                RetentionDays != null &&
+                RetentionDays.Equals(other.RetentionDays)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class AnalyticsDataRetentionResponse : IEquatable<AnalyticsDataRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RetentionDays != null)
+            if (RetentionDays != null)
             {
-                hash = hash * 59 + this.RetentionDays.GetHashCode();
+                hash = hash * 59 + RetentionDays.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
             return hash;

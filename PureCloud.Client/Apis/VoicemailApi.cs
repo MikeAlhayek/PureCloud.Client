@@ -1371,12 +1371,12 @@ public partial class VoicemailApi : IVoicemailApi
     /// <returns></returns>
     public VoicemailApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1390,17 +1390,17 @@ public partial class VoicemailApi : IVoicemailApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1410,7 +1410,7 @@ public partial class VoicemailApi : IVoicemailApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -1436,7 +1436,7 @@ public partial class VoicemailApi : IVoicemailApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -1448,7 +1448,7 @@ public partial class VoicemailApi : IVoicemailApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -1493,7 +1493,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1502,7 +1502,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1515,7 +1515,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -1531,11 +1531,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1609,7 +1609,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1618,7 +1618,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1631,7 +1631,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -1647,11 +1647,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1718,7 +1718,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1727,7 +1727,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1752,11 +1752,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1823,7 +1823,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1832,7 +1832,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1857,11 +1857,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1936,7 +1936,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1945,7 +1945,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1958,7 +1958,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -1974,11 +1974,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2004,7 +2004,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMailboxInfo>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMailboxInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
+            (VoicemailMailboxInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2053,7 +2053,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2062,7 +2062,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2075,7 +2075,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -2091,11 +2091,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2121,7 +2121,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMailboxInfo>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMailboxInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
+            (VoicemailMailboxInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2174,7 +2174,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2183,7 +2183,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2196,18 +2196,18 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -2221,11 +2221,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2251,7 +2251,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
+            (VoicemailMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2304,7 +2304,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2313,7 +2313,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2326,18 +2326,18 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -2351,11 +2351,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2381,7 +2381,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
+            (VoicemailMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2430,7 +2430,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2439,7 +2439,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2452,7 +2452,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -2468,11 +2468,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2498,7 +2498,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailGroupPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailGroupPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailGroupPolicy)),
+            (VoicemailGroupPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailGroupPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2547,7 +2547,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2556,7 +2556,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2569,7 +2569,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -2585,11 +2585,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2615,7 +2615,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailGroupPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailGroupPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailGroupPolicy)),
+            (VoicemailGroupPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailGroupPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2657,7 +2657,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2666,7 +2666,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2691,11 +2691,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2721,7 +2721,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMailboxInfo>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMailboxInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
+            (VoicemailMailboxInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2763,7 +2763,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2772,7 +2772,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2797,11 +2797,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2827,7 +2827,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMailboxInfo>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMailboxInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
+            (VoicemailMailboxInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2869,7 +2869,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2878,7 +2878,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2903,11 +2903,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2933,7 +2933,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMailboxInfo>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMailboxInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
+            (VoicemailMailboxInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2975,7 +2975,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2984,7 +2984,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3009,11 +3009,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3039,7 +3039,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMailboxInfo>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMailboxInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
+            (VoicemailMailboxInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3085,7 +3085,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3094,7 +3094,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3109,12 +3109,12 @@ public partial class VoicemailApi : IVoicemailApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -3128,11 +3128,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3158,7 +3158,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
+            (VoicemailMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3204,7 +3204,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3213,7 +3213,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3228,12 +3228,12 @@ public partial class VoicemailApi : IVoicemailApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -3247,11 +3247,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3277,7 +3277,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
+            (VoicemailMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3319,7 +3319,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3328,7 +3328,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3353,11 +3353,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3383,7 +3383,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailUserPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailUserPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
+            (VoicemailUserPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3425,7 +3425,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3434,7 +3434,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3459,11 +3459,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3489,7 +3489,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailUserPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailUserPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
+            (VoicemailUserPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3540,7 +3540,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3549,7 +3549,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3562,13 +3562,13 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3582,11 +3582,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3612,7 +3612,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessage>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
+            (VoicemailMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3663,7 +3663,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3672,7 +3672,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3685,13 +3685,13 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3705,11 +3705,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3735,7 +3735,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessage>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
+            (VoicemailMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3786,7 +3786,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3795,7 +3795,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3808,13 +3808,13 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
         if (formatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("formatId", this.Configuration.ApiClient.ParameterToString(formatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("formatId", Configuration.ApiClient.ParameterToString(formatId)));
         }
 
         // Header params
@@ -3828,11 +3828,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3858,7 +3858,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMediaInfo>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMediaInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMediaInfo)),
+            (VoicemailMediaInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMediaInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3909,7 +3909,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3918,7 +3918,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3931,13 +3931,13 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
         if (formatId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("formatId", this.Configuration.ApiClient.ParameterToString(formatId)));
+            localVarQueryParams.Add(new Tuple<string, string>("formatId", Configuration.ApiClient.ParameterToString(formatId)));
         }
 
         // Header params
@@ -3951,11 +3951,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3981,7 +3981,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMediaInfo>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMediaInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMediaInfo)),
+            (VoicemailMediaInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMediaInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4027,7 +4027,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4036,7 +4036,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4051,12 +4051,12 @@ public partial class VoicemailApi : IVoicemailApi
         // Query params
         if (ids != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(ids)));
+            localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(ids)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4070,11 +4070,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4100,7 +4100,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
+            (VoicemailMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4146,7 +4146,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4155,7 +4155,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4170,12 +4170,12 @@ public partial class VoicemailApi : IVoicemailApi
         // Query params
         if (ids != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(ids)));
+            localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(ids)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4189,11 +4189,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4219,7 +4219,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
+            (VoicemailMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4261,7 +4261,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4270,7 +4270,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4295,11 +4295,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4325,7 +4325,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailOrganizationPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailOrganizationPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailOrganizationPolicy)),
+            (VoicemailOrganizationPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailOrganizationPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4367,7 +4367,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4376,7 +4376,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4401,11 +4401,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4431,7 +4431,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailOrganizationPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailOrganizationPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailOrganizationPolicy)),
+            (VoicemailOrganizationPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailOrganizationPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4484,7 +4484,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4493,7 +4493,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4506,18 +4506,18 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (queueId != null)
         {
-            localVarPathParams.Add("queueId", this.Configuration.ApiClient.ParameterToString(queueId));
+            localVarPathParams.Add("queueId", Configuration.ApiClient.ParameterToString(queueId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -4531,11 +4531,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4561,7 +4561,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
+            (VoicemailMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4614,7 +4614,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4623,7 +4623,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4636,18 +4636,18 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (queueId != null)
         {
-            localVarPathParams.Add("queueId", this.Configuration.ApiClient.ParameterToString(queueId));
+            localVarPathParams.Add("queueId", Configuration.ApiClient.ParameterToString(queueId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -4661,11 +4661,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4691,7 +4691,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
+            (VoicemailMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4742,7 +4742,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4751,7 +4751,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4766,12 +4766,12 @@ public partial class VoicemailApi : IVoicemailApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4785,11 +4785,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4815,7 +4815,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
+            (VoicemailsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4866,7 +4866,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4875,7 +4875,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4890,12 +4890,12 @@ public partial class VoicemailApi : IVoicemailApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4909,11 +4909,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4939,7 +4939,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
+            (VoicemailsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4988,7 +4988,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4997,7 +4997,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5010,7 +5010,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -5026,11 +5026,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5056,7 +5056,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMailboxInfo>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMailboxInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
+            (VoicemailMailboxInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5105,7 +5105,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5114,7 +5114,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5127,7 +5127,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -5143,11 +5143,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5173,7 +5173,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMailboxInfo>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMailboxInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
+            (VoicemailMailboxInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMailboxInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5226,7 +5226,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5235,7 +5235,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5248,18 +5248,18 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -5273,11 +5273,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5303,7 +5303,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
+            (VoicemailMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5356,7 +5356,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5365,7 +5365,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5378,18 +5378,18 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -5403,11 +5403,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5433,7 +5433,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
+            (VoicemailMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5482,7 +5482,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5491,7 +5491,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5504,7 +5504,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -5520,11 +5520,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5550,7 +5550,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailUserPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailUserPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
+            (VoicemailUserPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5599,7 +5599,7 @@ public partial class VoicemailApi : IVoicemailApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5608,7 +5608,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5621,7 +5621,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -5637,11 +5637,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5667,7 +5667,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailUserPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailUserPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
+            (VoicemailUserPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5724,7 +5724,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5733,7 +5733,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5746,7 +5746,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -5758,7 +5758,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5771,11 +5771,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5801,7 +5801,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailGroupPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailGroupPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailGroupPolicy)),
+            (VoicemailGroupPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailGroupPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5859,7 +5859,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5868,7 +5868,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5881,7 +5881,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -5893,7 +5893,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -5906,11 +5906,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5936,7 +5936,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailGroupPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailGroupPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailGroupPolicy)),
+            (VoicemailGroupPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailGroupPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5986,7 +5986,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5995,7 +5995,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6016,7 +6016,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6029,11 +6029,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6059,7 +6059,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailUserPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailUserPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
+            (VoicemailUserPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6109,7 +6109,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6118,7 +6118,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6139,7 +6139,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6152,11 +6152,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6182,7 +6182,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailUserPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailUserPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
+            (VoicemailUserPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6239,7 +6239,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6248,7 +6248,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6261,7 +6261,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -6273,7 +6273,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6286,11 +6286,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6316,7 +6316,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessage>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
+            (VoicemailMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6374,7 +6374,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6383,7 +6383,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6396,7 +6396,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -6408,7 +6408,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6421,11 +6421,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6451,7 +6451,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessage>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
+            (VoicemailMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6508,7 +6508,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6517,7 +6517,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6530,7 +6530,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -6542,7 +6542,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6555,11 +6555,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6585,7 +6585,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailUserPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailUserPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
+            (VoicemailUserPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6643,7 +6643,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6652,7 +6652,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6665,7 +6665,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -6677,7 +6677,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6690,11 +6690,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6720,7 +6720,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailUserPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailUserPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
+            (VoicemailUserPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6765,7 +6765,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6774,7 +6774,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6795,7 +6795,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6808,11 +6808,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6838,7 +6838,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessage>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
+            (VoicemailMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6883,7 +6883,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6892,7 +6892,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6913,7 +6913,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6926,11 +6926,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6956,7 +6956,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessage>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
+            (VoicemailMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7006,7 +7006,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7015,7 +7015,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7036,7 +7036,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7049,11 +7049,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7079,7 +7079,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
+            (VoicemailsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7129,7 +7129,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7138,7 +7138,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7159,7 +7159,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7172,11 +7172,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7202,7 +7202,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailsSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailsSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
+            (VoicemailsSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailsSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7259,7 +7259,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7268,7 +7268,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7281,7 +7281,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -7293,7 +7293,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7306,11 +7306,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7336,7 +7336,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessage>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
+            (VoicemailMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7394,7 +7394,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7403,7 +7403,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7416,7 +7416,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -7428,7 +7428,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7441,11 +7441,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7471,7 +7471,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailMessage>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailMessage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
+            (VoicemailMessage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailMessage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7521,7 +7521,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7530,7 +7530,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7551,7 +7551,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7564,11 +7564,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7594,7 +7594,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailOrganizationPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailOrganizationPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailOrganizationPolicy)),
+            (VoicemailOrganizationPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailOrganizationPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7644,7 +7644,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7653,7 +7653,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7674,7 +7674,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7687,11 +7687,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7717,7 +7717,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailOrganizationPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailOrganizationPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailOrganizationPolicy)),
+            (VoicemailOrganizationPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailOrganizationPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7774,7 +7774,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7783,7 +7783,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7796,7 +7796,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7808,7 +7808,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7821,11 +7821,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7851,7 +7851,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailUserPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailUserPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
+            (VoicemailUserPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7909,7 +7909,7 @@ public partial class VoicemailApi : IVoicemailApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7918,7 +7918,7 @@ public partial class VoicemailApi : IVoicemailApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7931,7 +7931,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7943,7 +7943,7 @@ public partial class VoicemailApi : IVoicemailApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7956,11 +7956,11 @@ public partial class VoicemailApi : IVoicemailApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7986,7 +7986,7 @@ public partial class VoicemailApi : IVoicemailApi
 
         return new ApiResponse<VoicemailUserPolicy>(localVarStatusCode,
             localVarHeaders,
-            (VoicemailUserPolicy)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
+            (VoicemailUserPolicy)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VoicemailUserPolicy)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

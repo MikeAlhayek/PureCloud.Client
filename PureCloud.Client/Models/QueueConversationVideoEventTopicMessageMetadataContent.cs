@@ -65,7 +65,7 @@ public partial class QueueConversationVideoEventTopicMessageMetadataContent : IE
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationVideoEventTopicMessageMetadataContent);
+        return Equals(obj as QueueConversationVideoEventTopicMessageMetadataContent);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class QueueConversationVideoEventTopicMessageMetadataContent : IE
 
         return true &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.SubType == other.SubType ||
-                this.SubType != null &&
-                this.SubType.Equals(other.SubType)
+                SubType == other.SubType ||
+                SubType != null &&
+                SubType.Equals(other.SubType)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class QueueConversationVideoEventTopicMessageMetadataContent : IE
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.SubType != null)
+            if (SubType != null)
             {
-                hash = hash * 59 + this.SubType.GetHashCode();
+                hash = hash * 59 + SubType.GetHashCode();
             }
 
             return hash;

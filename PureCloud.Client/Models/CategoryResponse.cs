@@ -161,7 +161,7 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CategoryResponse);
+        return Equals(obj as CategoryResponse);
     }
 
     /// <summary>
@@ -179,54 +179,54 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.ExternalId == other.ExternalId ||
-                this.ExternalId != null &&
-                this.ExternalId.Equals(other.ExternalId)
+                ExternalId == other.ExternalId ||
+                ExternalId != null &&
+                ExternalId.Equals(other.ExternalId)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ParentCategory == other.ParentCategory ||
-                this.ParentCategory != null &&
-                this.ParentCategory.Equals(other.ParentCategory)
+                ParentCategory == other.ParentCategory ||
+                ParentCategory != null &&
+                ParentCategory.Equals(other.ParentCategory)
             ) &&
             (
-                this.DocumentCount == other.DocumentCount ||
-                this.DocumentCount != null &&
-                this.DocumentCount.Equals(other.DocumentCount)
+                DocumentCount == other.DocumentCount ||
+                DocumentCount != null &&
+                DocumentCount.Equals(other.DocumentCount)
             ) &&
             (
-                this.KnowledgeBase == other.KnowledgeBase ||
-                this.KnowledgeBase != null &&
-                this.KnowledgeBase.Equals(other.KnowledgeBase)
+                KnowledgeBase == other.KnowledgeBase ||
+                KnowledgeBase != null &&
+                KnowledgeBase.Equals(other.KnowledgeBase)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -241,54 +241,54 @@ public partial class CategoryResponse : IEquatable<CategoryResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.ExternalId != null)
+            if (ExternalId != null)
             {
-                hash = hash * 59 + this.ExternalId.GetHashCode();
+                hash = hash * 59 + ExternalId.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ParentCategory != null)
+            if (ParentCategory != null)
             {
-                hash = hash * 59 + this.ParentCategory.GetHashCode();
+                hash = hash * 59 + ParentCategory.GetHashCode();
             }
 
-            if (this.DocumentCount != null)
+            if (DocumentCount != null)
             {
-                hash = hash * 59 + this.DocumentCount.GetHashCode();
+                hash = hash * 59 + DocumentCount.GetHashCode();
             }
 
-            if (this.KnowledgeBase != null)
+            if (KnowledgeBase != null)
             {
-                hash = hash * 59 + this.KnowledgeBase.GetHashCode();
+                hash = hash * 59 + KnowledgeBase.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

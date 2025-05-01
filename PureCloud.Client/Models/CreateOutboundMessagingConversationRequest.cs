@@ -151,7 +151,7 @@ public partial class CreateOutboundMessagingConversationRequest : IEquatable<Cre
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateOutboundMessagingConversationRequest);
+        return Equals(obj as CreateOutboundMessagingConversationRequest);
     }
 
     /// <summary>
@@ -169,34 +169,34 @@ public partial class CreateOutboundMessagingConversationRequest : IEquatable<Cre
 
         return true &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.ToAddress == other.ToAddress ||
-                this.ToAddress != null &&
-                this.ToAddress.Equals(other.ToAddress)
+                ToAddress == other.ToAddress ||
+                ToAddress != null &&
+                ToAddress.Equals(other.ToAddress)
             ) &&
             (
-                this.ToAddressMessengerType == other.ToAddressMessengerType ||
-                this.ToAddressMessengerType != null &&
-                this.ToAddressMessengerType.Equals(other.ToAddressMessengerType)
+                ToAddressMessengerType == other.ToAddressMessengerType ||
+                ToAddressMessengerType != null &&
+                ToAddressMessengerType.Equals(other.ToAddressMessengerType)
             ) &&
             (
-                this.UseExistingConversation == other.UseExistingConversation ||
-                this.UseExistingConversation != null &&
-                this.UseExistingConversation.Equals(other.UseExistingConversation)
+                UseExistingConversation == other.UseExistingConversation ||
+                UseExistingConversation != null &&
+                UseExistingConversation.Equals(other.UseExistingConversation)
             ) &&
             (
-                this.ExternalContactId == other.ExternalContactId ||
-                this.ExternalContactId != null &&
-                this.ExternalContactId.Equals(other.ExternalContactId)
+                ExternalContactId == other.ExternalContactId ||
+                ExternalContactId != null &&
+                ExternalContactId.Equals(other.ExternalContactId)
             ) &&
             (
-                this.UseUserFromAddress == other.UseUserFromAddress ||
-                this.UseUserFromAddress != null &&
-                this.UseUserFromAddress.Equals(other.UseUserFromAddress)
+                UseUserFromAddress == other.UseUserFromAddress ||
+                UseUserFromAddress != null &&
+                UseUserFromAddress.Equals(other.UseUserFromAddress)
             );
     }
 
@@ -211,34 +211,34 @@ public partial class CreateOutboundMessagingConversationRequest : IEquatable<Cre
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.ToAddress != null)
+            if (ToAddress != null)
             {
-                hash = hash * 59 + this.ToAddress.GetHashCode();
+                hash = hash * 59 + ToAddress.GetHashCode();
             }
 
-            if (this.ToAddressMessengerType != null)
+            if (ToAddressMessengerType != null)
             {
-                hash = hash * 59 + this.ToAddressMessengerType.GetHashCode();
+                hash = hash * 59 + ToAddressMessengerType.GetHashCode();
             }
 
-            if (this.UseExistingConversation != null)
+            if (UseExistingConversation != null)
             {
-                hash = hash * 59 + this.UseExistingConversation.GetHashCode();
+                hash = hash * 59 + UseExistingConversation.GetHashCode();
             }
 
-            if (this.ExternalContactId != null)
+            if (ExternalContactId != null)
             {
-                hash = hash * 59 + this.ExternalContactId.GetHashCode();
+                hash = hash * 59 + ExternalContactId.GetHashCode();
             }
 
-            if (this.UseUserFromAddress != null)
+            if (UseUserFromAddress != null)
             {
-                hash = hash * 59 + this.UseUserFromAddress.GetHashCode();
+                hash = hash * 59 + UseUserFromAddress.GetHashCode();
             }
 
             return hash;

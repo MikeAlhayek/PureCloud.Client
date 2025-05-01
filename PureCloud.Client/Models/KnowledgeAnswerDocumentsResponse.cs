@@ -65,7 +65,7 @@ public partial class KnowledgeAnswerDocumentsResponse : IEquatable<KnowledgeAnsw
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeAnswerDocumentsResponse);
+        return Equals(obj as KnowledgeAnswerDocumentsResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class KnowledgeAnswerDocumentsResponse : IEquatable<KnowledgeAnsw
 
         return true &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             ) &&
             (
-                this.AnswerGeneration == other.AnswerGeneration ||
-                this.AnswerGeneration != null &&
-                this.AnswerGeneration.Equals(other.AnswerGeneration)
+                AnswerGeneration == other.AnswerGeneration ||
+                AnswerGeneration != null &&
+                AnswerGeneration.Equals(other.AnswerGeneration)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class KnowledgeAnswerDocumentsResponse : IEquatable<KnowledgeAnsw
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
-            if (this.AnswerGeneration != null)
+            if (AnswerGeneration != null)
             {
-                hash = hash * 59 + this.AnswerGeneration.GetHashCode();
+                hash = hash * 59 + AnswerGeneration.GetHashCode();
             }
 
             return hash;

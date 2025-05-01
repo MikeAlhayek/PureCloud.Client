@@ -263,7 +263,7 @@ public partial class ListedTopic : IEquatable<ListedTopic>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ListedTopic);
+        return Equals(obj as ListedTopic);
     }
 
     /// <summary>
@@ -281,69 +281,69 @@ public partial class ListedTopic : IEquatable<ListedTopic>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Published == other.Published ||
-                this.Published != null &&
-                this.Published.Equals(other.Published)
+                Published == other.Published ||
+                Published != null &&
+                Published.Equals(other.Published)
             ) &&
             (
-                this.Strictness == other.Strictness ||
-                this.Strictness != null &&
-                this.Strictness.Equals(other.Strictness)
+                Strictness == other.Strictness ||
+                Strictness != null &&
+                Strictness.Equals(other.Strictness)
             ) &&
             (
-                this.ProgramsCount == other.ProgramsCount ||
-                this.ProgramsCount != null &&
-                this.ProgramsCount.Equals(other.ProgramsCount)
+                ProgramsCount == other.ProgramsCount ||
+                ProgramsCount != null &&
+                ProgramsCount.Equals(other.ProgramsCount)
             ) &&
             (
-                this.Tags == other.Tags ||
-                this.Tags != null &&
-                this.Tags.SequenceEqual(other.Tags)
+                Tags == other.Tags ||
+                Tags != null &&
+                Tags.SequenceEqual(other.Tags)
             ) &&
             (
-                this.Dialect == other.Dialect ||
-                this.Dialect != null &&
-                this.Dialect.Equals(other.Dialect)
+                Dialect == other.Dialect ||
+                Dialect != null &&
+                Dialect.Equals(other.Dialect)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.Equals(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.Equals(other.Participants)
             ) &&
             (
-                this.PhrasesCount == other.PhrasesCount ||
-                this.PhrasesCount != null &&
-                this.PhrasesCount.Equals(other.PhrasesCount)
+                PhrasesCount == other.PhrasesCount ||
+                PhrasesCount != null &&
+                PhrasesCount.Equals(other.PhrasesCount)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -358,69 +358,69 @@ public partial class ListedTopic : IEquatable<ListedTopic>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Published != null)
+            if (Published != null)
             {
-                hash = hash * 59 + this.Published.GetHashCode();
+                hash = hash * 59 + Published.GetHashCode();
             }
 
-            if (this.Strictness != null)
+            if (Strictness != null)
             {
-                hash = hash * 59 + this.Strictness.GetHashCode();
+                hash = hash * 59 + Strictness.GetHashCode();
             }
 
-            if (this.ProgramsCount != null)
+            if (ProgramsCount != null)
             {
-                hash = hash * 59 + this.ProgramsCount.GetHashCode();
+                hash = hash * 59 + ProgramsCount.GetHashCode();
             }
 
-            if (this.Tags != null)
+            if (Tags != null)
             {
-                hash = hash * 59 + this.Tags.GetHashCode();
+                hash = hash * 59 + Tags.GetHashCode();
             }
 
-            if (this.Dialect != null)
+            if (Dialect != null)
             {
-                hash = hash * 59 + this.Dialect.GetHashCode();
+                hash = hash * 59 + Dialect.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
-            if (this.PhrasesCount != null)
+            if (PhrasesCount != null)
             {
-                hash = hash * 59 + this.PhrasesCount.GetHashCode();
+                hash = hash * 59 + PhrasesCount.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

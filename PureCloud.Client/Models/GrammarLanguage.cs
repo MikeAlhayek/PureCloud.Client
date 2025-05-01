@@ -128,7 +128,7 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GrammarLanguage);
+        return Equals(obj as GrammarLanguage);
     }
 
     /// <summary>
@@ -146,44 +146,44 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.GrammarId == other.GrammarId ||
-                this.GrammarId != null &&
-                this.GrammarId.Equals(other.GrammarId)
+                GrammarId == other.GrammarId ||
+                GrammarId != null &&
+                GrammarId.Equals(other.GrammarId)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.VoiceFileUrl == other.VoiceFileUrl ||
-                this.VoiceFileUrl != null &&
-                this.VoiceFileUrl.Equals(other.VoiceFileUrl)
+                VoiceFileUrl == other.VoiceFileUrl ||
+                VoiceFileUrl != null &&
+                VoiceFileUrl.Equals(other.VoiceFileUrl)
             ) &&
             (
-                this.DtmfFileUrl == other.DtmfFileUrl ||
-                this.DtmfFileUrl != null &&
-                this.DtmfFileUrl.Equals(other.DtmfFileUrl)
+                DtmfFileUrl == other.DtmfFileUrl ||
+                DtmfFileUrl != null &&
+                DtmfFileUrl.Equals(other.DtmfFileUrl)
             ) &&
             (
-                this.VoiceFileMetadata == other.VoiceFileMetadata ||
-                this.VoiceFileMetadata != null &&
-                this.VoiceFileMetadata.Equals(other.VoiceFileMetadata)
+                VoiceFileMetadata == other.VoiceFileMetadata ||
+                VoiceFileMetadata != null &&
+                VoiceFileMetadata.Equals(other.VoiceFileMetadata)
             ) &&
             (
-                this.DtmfFileMetadata == other.DtmfFileMetadata ||
-                this.DtmfFileMetadata != null &&
-                this.DtmfFileMetadata.Equals(other.DtmfFileMetadata)
+                DtmfFileMetadata == other.DtmfFileMetadata ||
+                DtmfFileMetadata != null &&
+                DtmfFileMetadata.Equals(other.DtmfFileMetadata)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -198,44 +198,44 @@ public partial class GrammarLanguage : IEquatable<GrammarLanguage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.GrammarId != null)
+            if (GrammarId != null)
             {
-                hash = hash * 59 + this.GrammarId.GetHashCode();
+                hash = hash * 59 + GrammarId.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.VoiceFileUrl != null)
+            if (VoiceFileUrl != null)
             {
-                hash = hash * 59 + this.VoiceFileUrl.GetHashCode();
+                hash = hash * 59 + VoiceFileUrl.GetHashCode();
             }
 
-            if (this.DtmfFileUrl != null)
+            if (DtmfFileUrl != null)
             {
-                hash = hash * 59 + this.DtmfFileUrl.GetHashCode();
+                hash = hash * 59 + DtmfFileUrl.GetHashCode();
             }
 
-            if (this.VoiceFileMetadata != null)
+            if (VoiceFileMetadata != null)
             {
-                hash = hash * 59 + this.VoiceFileMetadata.GetHashCode();
+                hash = hash * 59 + VoiceFileMetadata.GetHashCode();
             }
 
-            if (this.DtmfFileMetadata != null)
+            if (DtmfFileMetadata != null)
             {
-                hash = hash * 59 + this.DtmfFileMetadata.GetHashCode();
+                hash = hash * 59 + DtmfFileMetadata.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

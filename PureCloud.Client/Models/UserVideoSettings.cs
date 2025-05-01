@@ -65,7 +65,7 @@ public partial class UserVideoSettings : IEquatable<UserVideoSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserVideoSettings);
+        return Equals(obj as UserVideoSettings);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class UserVideoSettings : IEquatable<UserVideoSettings>
 
         return true &&
             (
-                this.AllowCamera == other.AllowCamera ||
-                this.AllowCamera != null &&
-                this.AllowCamera.Equals(other.AllowCamera)
+                AllowCamera == other.AllowCamera ||
+                AllowCamera != null &&
+                AllowCamera.Equals(other.AllowCamera)
             ) &&
             (
-                this.AllowScreenShare == other.AllowScreenShare ||
-                this.AllowScreenShare != null &&
-                this.AllowScreenShare.Equals(other.AllowScreenShare)
+                AllowScreenShare == other.AllowScreenShare ||
+                AllowScreenShare != null &&
+                AllowScreenShare.Equals(other.AllowScreenShare)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class UserVideoSettings : IEquatable<UserVideoSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AllowCamera != null)
+            if (AllowCamera != null)
             {
-                hash = hash * 59 + this.AllowCamera.GetHashCode();
+                hash = hash * 59 + AllowCamera.GetHashCode();
             }
 
-            if (this.AllowScreenShare != null)
+            if (AllowScreenShare != null)
             {
-                hash = hash * 59 + this.AllowScreenShare.GetHashCode();
+                hash = hash * 59 + AllowScreenShare.GetHashCode();
             }
 
             return hash;

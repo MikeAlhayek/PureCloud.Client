@@ -278,7 +278,7 @@ public partial class InboundRoute : IEquatable<InboundRoute>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InboundRoute);
+        return Equals(obj as InboundRoute);
     }
 
     /// <summary>
@@ -296,89 +296,89 @@ public partial class InboundRoute : IEquatable<InboundRoute>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Pattern == other.Pattern ||
-                this.Pattern != null &&
-                this.Pattern.Equals(other.Pattern)
+                Pattern == other.Pattern ||
+                Pattern != null &&
+                Pattern.Equals(other.Pattern)
             ) &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.Skills == other.Skills ||
-                this.Skills != null &&
-                this.Skills.SequenceEqual(other.Skills)
+                Skills == other.Skills ||
+                Skills != null &&
+                Skills.SequenceEqual(other.Skills)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.FromName == other.FromName ||
-                this.FromName != null &&
-                this.FromName.Equals(other.FromName)
+                FromName == other.FromName ||
+                FromName != null &&
+                FromName.Equals(other.FromName)
             ) &&
             (
-                this.FromEmail == other.FromEmail ||
-                this.FromEmail != null &&
-                this.FromEmail.Equals(other.FromEmail)
+                FromEmail == other.FromEmail ||
+                FromEmail != null &&
+                FromEmail.Equals(other.FromEmail)
             ) &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             ) &&
             (
-                this.ReplyEmailAddress == other.ReplyEmailAddress ||
-                this.ReplyEmailAddress != null &&
-                this.ReplyEmailAddress.Equals(other.ReplyEmailAddress)
+                ReplyEmailAddress == other.ReplyEmailAddress ||
+                ReplyEmailAddress != null &&
+                ReplyEmailAddress.Equals(other.ReplyEmailAddress)
             ) &&
             (
-                this.AutoBcc == other.AutoBcc ||
-                this.AutoBcc != null &&
-                this.AutoBcc.SequenceEqual(other.AutoBcc)
+                AutoBcc == other.AutoBcc ||
+                AutoBcc != null &&
+                AutoBcc.SequenceEqual(other.AutoBcc)
             ) &&
             (
-                this.SpamFlow == other.SpamFlow ||
-                this.SpamFlow != null &&
-                this.SpamFlow.Equals(other.SpamFlow)
+                SpamFlow == other.SpamFlow ||
+                SpamFlow != null &&
+                SpamFlow.Equals(other.SpamFlow)
             ) &&
             (
-                this.Signature == other.Signature ||
-                this.Signature != null &&
-                this.Signature.Equals(other.Signature)
+                Signature == other.Signature ||
+                Signature != null &&
+                Signature.Equals(other.Signature)
             ) &&
             (
-                this.HistoryInclusion == other.HistoryInclusion ||
-                this.HistoryInclusion != null &&
-                this.HistoryInclusion.Equals(other.HistoryInclusion)
+                HistoryInclusion == other.HistoryInclusion ||
+                HistoryInclusion != null &&
+                HistoryInclusion.Equals(other.HistoryInclusion)
             ) &&
             (
-                this.AllowMultipleActions == other.AllowMultipleActions ||
-                this.AllowMultipleActions != null &&
-                this.AllowMultipleActions.Equals(other.AllowMultipleActions)
+                AllowMultipleActions == other.AllowMultipleActions ||
+                AllowMultipleActions != null &&
+                AllowMultipleActions.Equals(other.AllowMultipleActions)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -393,89 +393,89 @@ public partial class InboundRoute : IEquatable<InboundRoute>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Pattern != null)
+            if (Pattern != null)
             {
-                hash = hash * 59 + this.Pattern.GetHashCode();
+                hash = hash * 59 + Pattern.GetHashCode();
             }
 
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.Skills != null)
+            if (Skills != null)
             {
-                hash = hash * 59 + this.Skills.GetHashCode();
+                hash = hash * 59 + Skills.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.FromName != null)
+            if (FromName != null)
             {
-                hash = hash * 59 + this.FromName.GetHashCode();
+                hash = hash * 59 + FromName.GetHashCode();
             }
 
-            if (this.FromEmail != null)
+            if (FromEmail != null)
             {
-                hash = hash * 59 + this.FromEmail.GetHashCode();
+                hash = hash * 59 + FromEmail.GetHashCode();
             }
 
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
-            if (this.ReplyEmailAddress != null)
+            if (ReplyEmailAddress != null)
             {
-                hash = hash * 59 + this.ReplyEmailAddress.GetHashCode();
+                hash = hash * 59 + ReplyEmailAddress.GetHashCode();
             }
 
-            if (this.AutoBcc != null)
+            if (AutoBcc != null)
             {
-                hash = hash * 59 + this.AutoBcc.GetHashCode();
+                hash = hash * 59 + AutoBcc.GetHashCode();
             }
 
-            if (this.SpamFlow != null)
+            if (SpamFlow != null)
             {
-                hash = hash * 59 + this.SpamFlow.GetHashCode();
+                hash = hash * 59 + SpamFlow.GetHashCode();
             }
 
-            if (this.Signature != null)
+            if (Signature != null)
             {
-                hash = hash * 59 + this.Signature.GetHashCode();
+                hash = hash * 59 + Signature.GetHashCode();
             }
 
-            if (this.HistoryInclusion != null)
+            if (HistoryInclusion != null)
             {
-                hash = hash * 59 + this.HistoryInclusion.GetHashCode();
+                hash = hash * 59 + HistoryInclusion.GetHashCode();
             }
 
-            if (this.AllowMultipleActions != null)
+            if (AllowMultipleActions != null)
             {
-                hash = hash * 59 + this.AllowMultipleActions.GetHashCode();
+                hash = hash * 59 + AllowMultipleActions.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -51,7 +51,7 @@ public partial class AlternativeShiftTradeListing : IEquatable<AlternativeShiftT
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftTradeListing);
+        return Equals(obj as AlternativeShiftTradeListing);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class AlternativeShiftTradeListing : IEquatable<AlternativeShiftT
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class AlternativeShiftTradeListing : IEquatable<AlternativeShiftT
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
             return hash;

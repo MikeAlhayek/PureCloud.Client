@@ -59,7 +59,7 @@ public partial class ContactImportJobRequest : IEquatable<ContactImportJobReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactImportJobRequest);
+        return Equals(obj as ContactImportJobRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ContactImportJobRequest : IEquatable<ContactImportJobReques
 
         return true &&
             (
-                this.SettingsId == other.SettingsId ||
-                this.SettingsId != null &&
-                this.SettingsId.Equals(other.SettingsId)
+                SettingsId == other.SettingsId ||
+                SettingsId != null &&
+                SettingsId.Equals(other.SettingsId)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ContactImportJobRequest : IEquatable<ContactImportJobReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SettingsId != null)
+            if (SettingsId != null)
             {
-                hash = hash * 59 + this.SettingsId.GetHashCode();
+                hash = hash * 59 + SettingsId.GetHashCode();
             }
 
             return hash;

@@ -96,7 +96,7 @@ public partial class PresenceEventUserPresence : IEquatable<PresenceEventUserPre
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PresenceEventUserPresence);
+        return Equals(obj as PresenceEventUserPresence);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class PresenceEventUserPresence : IEquatable<PresenceEventUserPre
 
         return true &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.PresenceDefinition == other.PresenceDefinition ||
-                this.PresenceDefinition != null &&
-                this.PresenceDefinition.Equals(other.PresenceDefinition)
+                PresenceDefinition == other.PresenceDefinition ||
+                PresenceDefinition != null &&
+                PresenceDefinition.Equals(other.PresenceDefinition)
             ) &&
             (
-                this.Primary == other.Primary ||
-                this.Primary != null &&
-                this.Primary.Equals(other.Primary)
+                Primary == other.Primary ||
+                Primary != null &&
+                Primary.Equals(other.Primary)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class PresenceEventUserPresence : IEquatable<PresenceEventUserPre
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.PresenceDefinition != null)
+            if (PresenceDefinition != null)
             {
-                hash = hash * 59 + this.PresenceDefinition.GetHashCode();
+                hash = hash * 59 + PresenceDefinition.GetHashCode();
             }
 
-            if (this.Primary != null)
+            if (Primary != null)
             {
-                hash = hash * 59 + this.Primary.GetHashCode();
+                hash = hash * 59 + Primary.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
             return hash;

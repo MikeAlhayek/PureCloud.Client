@@ -79,7 +79,7 @@ public partial class OpenEvent : IEquatable<OpenEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenEvent);
+        return Equals(obj as OpenEvent);
     }
 
     /// <summary>
@@ -97,9 +97,9 @@ public partial class OpenEvent : IEquatable<OpenEvent>
 
         return true &&
             (
-                this.EventType == other.EventType ||
-                this.EventType != null &&
-                this.EventType.Equals(other.EventType)
+                EventType == other.EventType ||
+                EventType != null &&
+                EventType.Equals(other.EventType)
             );
     }
 
@@ -114,9 +114,9 @@ public partial class OpenEvent : IEquatable<OpenEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventType != null)
+            if (EventType != null)
             {
-                hash = hash * 59 + this.EventType.GetHashCode();
+                hash = hash * 59 + EventType.GetHashCode();
             }
 
             return hash;

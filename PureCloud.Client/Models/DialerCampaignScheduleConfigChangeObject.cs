@@ -41,7 +41,7 @@ public partial class DialerCampaignScheduleConfigChangeObject : IEquatable<Diale
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerCampaignScheduleConfigChangeObject);
+        return Equals(obj as DialerCampaignScheduleConfigChangeObject);
     }
 
     /// <summary>

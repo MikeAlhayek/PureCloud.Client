@@ -96,7 +96,7 @@ public partial class OutOfOfficeEventOutOfOffice : IEquatable<OutOfOfficeEventOu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutOfOfficeEventOutOfOffice);
+        return Equals(obj as OutOfOfficeEventOutOfOffice);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class OutOfOfficeEventOutOfOffice : IEquatable<OutOfOfficeEventOu
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Active == other.Active ||
-                this.Active != null &&
-                this.Active.Equals(other.Active)
+                Active == other.Active ||
+                Active != null &&
+                Active.Equals(other.Active)
             ) &&
             (
-                this.Indefinite == other.Indefinite ||
-                this.Indefinite != null &&
-                this.Indefinite.Equals(other.Indefinite)
+                Indefinite == other.Indefinite ||
+                Indefinite != null &&
+                Indefinite.Equals(other.Indefinite)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class OutOfOfficeEventOutOfOffice : IEquatable<OutOfOfficeEventOu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Active != null)
+            if (Active != null)
             {
-                hash = hash * 59 + this.Active.GetHashCode();
+                hash = hash * 59 + Active.GetHashCode();
             }
 
-            if (this.Indefinite != null)
+            if (Indefinite != null)
             {
-                hash = hash * 59 + this.Indefinite.GetHashCode();
+                hash = hash * 59 + Indefinite.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
             return hash;

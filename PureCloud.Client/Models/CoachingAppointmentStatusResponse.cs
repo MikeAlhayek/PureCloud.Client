@@ -119,7 +119,7 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CoachingAppointmentStatusResponse);
+        return Equals(obj as CoachingAppointmentStatusResponse);
     }
 
     /// <summary>
@@ -137,24 +137,24 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
 
         return true &&
             (
-                this.Appointment == other.Appointment ||
-                this.Appointment != null &&
-                this.Appointment.Equals(other.Appointment)
+                Appointment == other.Appointment ||
+                Appointment != null &&
+                Appointment.Equals(other.Appointment)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             );
     }
 
@@ -169,24 +169,24 @@ public partial class CoachingAppointmentStatusResponse : IEquatable<CoachingAppo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Appointment != null)
+            if (Appointment != null)
             {
-                hash = hash * 59 + this.Appointment.GetHashCode();
+                hash = hash * 59 + Appointment.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
             return hash;

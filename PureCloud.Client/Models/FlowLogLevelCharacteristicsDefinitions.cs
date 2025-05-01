@@ -61,7 +61,7 @@ public partial class FlowLogLevelCharacteristicsDefinitions : IEquatable<FlowLog
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowLogLevelCharacteristicsDefinitions);
+        return Equals(obj as FlowLogLevelCharacteristicsDefinitions);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class FlowLogLevelCharacteristicsDefinitions : IEquatable<FlowLog
 
         return true &&
             (
-                this.LogLevels == other.LogLevels ||
-                this.LogLevels != null &&
-                this.LogLevels.SequenceEqual(other.LogLevels)
+                LogLevels == other.LogLevels ||
+                LogLevels != null &&
+                LogLevels.SequenceEqual(other.LogLevels)
             ) &&
             (
-                this.Characteristics == other.Characteristics ||
-                this.Characteristics != null &&
-                this.Characteristics.SequenceEqual(other.Characteristics)
+                Characteristics == other.Characteristics ||
+                Characteristics != null &&
+                Characteristics.SequenceEqual(other.Characteristics)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class FlowLogLevelCharacteristicsDefinitions : IEquatable<FlowLog
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LogLevels != null)
+            if (LogLevels != null)
             {
-                hash = hash * 59 + this.LogLevels.GetHashCode();
+                hash = hash * 59 + LogLevels.GetHashCode();
             }
 
-            if (this.Characteristics != null)
+            if (Characteristics != null)
             {
-                hash = hash * 59 + this.Characteristics.GetHashCode();
+                hash = hash * 59 + Characteristics.GetHashCode();
             }
 
             return hash;

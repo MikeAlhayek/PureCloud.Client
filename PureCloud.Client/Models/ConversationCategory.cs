@@ -133,7 +133,7 @@ public partial class ConversationCategory : IEquatable<ConversationCategory>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationCategory);
+        return Equals(obj as ConversationCategory);
     }
 
     /// <summary>
@@ -151,29 +151,29 @@ public partial class ConversationCategory : IEquatable<ConversationCategory>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.InteractionType == other.InteractionType ||
-                this.InteractionType != null &&
-                this.InteractionType.Equals(other.InteractionType)
+                InteractionType == other.InteractionType ||
+                InteractionType != null &&
+                InteractionType.Equals(other.InteractionType)
             ) &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.Equals(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.Equals(other.Criteria)
             );
     }
 
@@ -188,29 +188,29 @@ public partial class ConversationCategory : IEquatable<ConversationCategory>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.InteractionType != null)
+            if (InteractionType != null)
             {
-                hash = hash * 59 + this.InteractionType.GetHashCode();
+                hash = hash * 59 + InteractionType.GetHashCode();
             }
 
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
             return hash;

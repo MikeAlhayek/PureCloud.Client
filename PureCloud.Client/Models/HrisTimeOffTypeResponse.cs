@@ -83,7 +83,7 @@ public partial class HrisTimeOffTypeResponse : IEquatable<HrisTimeOffTypeRespons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HrisTimeOffTypeResponse);
+        return Equals(obj as HrisTimeOffTypeResponse);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class HrisTimeOffTypeResponse : IEquatable<HrisTimeOffTypeRespons
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.SecondaryId == other.SecondaryId ||
-                this.SecondaryId != null &&
-                this.SecondaryId.Equals(other.SecondaryId)
+                SecondaryId == other.SecondaryId ||
+                SecondaryId != null &&
+                SecondaryId.Equals(other.SecondaryId)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class HrisTimeOffTypeResponse : IEquatable<HrisTimeOffTypeRespons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.SecondaryId != null)
+            if (SecondaryId != null)
             {
-                hash = hash * 59 + this.SecondaryId.GetHashCode();
+                hash = hash * 59 + SecondaryId.GetHashCode();
             }
 
             return hash;

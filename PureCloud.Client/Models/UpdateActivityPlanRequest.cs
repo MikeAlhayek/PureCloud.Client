@@ -213,7 +213,7 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateActivityPlanRequest);
+        return Equals(obj as UpdateActivityPlanRequest);
     }
 
     /// <summary>
@@ -231,54 +231,54 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.GroupSettings == other.GroupSettings ||
-                this.GroupSettings != null &&
-                this.GroupSettings.Equals(other.GroupSettings)
+                GroupSettings == other.GroupSettings ||
+                GroupSettings != null &&
+                GroupSettings.Equals(other.GroupSettings)
             ) &&
             (
-                this.AttendeesSearchRule == other.AttendeesSearchRule ||
-                this.AttendeesSearchRule != null &&
-                this.AttendeesSearchRule.Equals(other.AttendeesSearchRule)
+                AttendeesSearchRule == other.AttendeesSearchRule ||
+                AttendeesSearchRule != null &&
+                AttendeesSearchRule.Equals(other.AttendeesSearchRule)
             ) &&
             (
-                this.FacilitatorsSearchRule == other.FacilitatorsSearchRule ||
-                this.FacilitatorsSearchRule != null &&
-                this.FacilitatorsSearchRule.Equals(other.FacilitatorsSearchRule)
+                FacilitatorsSearchRule == other.FacilitatorsSearchRule ||
+                FacilitatorsSearchRule != null &&
+                FacilitatorsSearchRule.Equals(other.FacilitatorsSearchRule)
             ) &&
             (
-                this.TransitionTimeMinutes == other.TransitionTimeMinutes ||
-                this.TransitionTimeMinutes != null &&
-                this.TransitionTimeMinutes.Equals(other.TransitionTimeMinutes)
+                TransitionTimeMinutes == other.TransitionTimeMinutes ||
+                TransitionTimeMinutes != null &&
+                TransitionTimeMinutes.Equals(other.TransitionTimeMinutes)
             ) &&
             (
-                this.ServiceGoalImpactOverrides == other.ServiceGoalImpactOverrides ||
-                this.ServiceGoalImpactOverrides != null &&
-                this.ServiceGoalImpactOverrides.Equals(other.ServiceGoalImpactOverrides)
+                ServiceGoalImpactOverrides == other.ServiceGoalImpactOverrides ||
+                ServiceGoalImpactOverrides != null &&
+                ServiceGoalImpactOverrides.Equals(other.ServiceGoalImpactOverrides)
             ) &&
             (
-                this.OptimizationObjective == other.OptimizationObjective ||
-                this.OptimizationObjective != null &&
-                this.OptimizationObjective.Equals(other.OptimizationObjective)
+                OptimizationObjective == other.OptimizationObjective ||
+                OptimizationObjective != null &&
+                OptimizationObjective.Equals(other.OptimizationObjective)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.FixedAvailability == other.FixedAvailability ||
-                this.FixedAvailability != null &&
-                this.FixedAvailability.Equals(other.FixedAvailability)
+                FixedAvailability == other.FixedAvailability ||
+                FixedAvailability != null &&
+                FixedAvailability.Equals(other.FixedAvailability)
             );
     }
 
@@ -293,54 +293,54 @@ public partial class UpdateActivityPlanRequest : IEquatable<UpdateActivityPlanRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.GroupSettings != null)
+            if (GroupSettings != null)
             {
-                hash = hash * 59 + this.GroupSettings.GetHashCode();
+                hash = hash * 59 + GroupSettings.GetHashCode();
             }
 
-            if (this.AttendeesSearchRule != null)
+            if (AttendeesSearchRule != null)
             {
-                hash = hash * 59 + this.AttendeesSearchRule.GetHashCode();
+                hash = hash * 59 + AttendeesSearchRule.GetHashCode();
             }
 
-            if (this.FacilitatorsSearchRule != null)
+            if (FacilitatorsSearchRule != null)
             {
-                hash = hash * 59 + this.FacilitatorsSearchRule.GetHashCode();
+                hash = hash * 59 + FacilitatorsSearchRule.GetHashCode();
             }
 
-            if (this.TransitionTimeMinutes != null)
+            if (TransitionTimeMinutes != null)
             {
-                hash = hash * 59 + this.TransitionTimeMinutes.GetHashCode();
+                hash = hash * 59 + TransitionTimeMinutes.GetHashCode();
             }
 
-            if (this.ServiceGoalImpactOverrides != null)
+            if (ServiceGoalImpactOverrides != null)
             {
-                hash = hash * 59 + this.ServiceGoalImpactOverrides.GetHashCode();
+                hash = hash * 59 + ServiceGoalImpactOverrides.GetHashCode();
             }
 
-            if (this.OptimizationObjective != null)
+            if (OptimizationObjective != null)
             {
-                hash = hash * 59 + this.OptimizationObjective.GetHashCode();
+                hash = hash * 59 + OptimizationObjective.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.FixedAvailability != null)
+            if (FixedAvailability != null)
             {
-                hash = hash * 59 + this.FixedAvailability.GetHashCode();
+                hash = hash * 59 + FixedAvailability.GetHashCode();
             }
 
             return hash;

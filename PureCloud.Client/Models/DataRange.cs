@@ -61,7 +61,7 @@ public partial class DataRange : IEquatable<DataRange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DataRange);
+        return Equals(obj as DataRange);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class DataRange : IEquatable<DataRange>
 
         return true &&
             (
-                this.DateMin == other.DateMin ||
-                this.DateMin != null &&
-                this.DateMin.Equals(other.DateMin)
+                DateMin == other.DateMin ||
+                DateMin != null &&
+                DateMin.Equals(other.DateMin)
             ) &&
             (
-                this.DateMax == other.DateMax ||
-                this.DateMax != null &&
-                this.DateMax.Equals(other.DateMax)
+                DateMax == other.DateMax ||
+                DateMax != null &&
+                DateMax.Equals(other.DateMax)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class DataRange : IEquatable<DataRange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateMin != null)
+            if (DateMin != null)
             {
-                hash = hash * 59 + this.DateMin.GetHashCode();
+                hash = hash * 59 + DateMin.GetHashCode();
             }
 
-            if (this.DateMax != null)
+            if (DateMax != null)
             {
-                hash = hash * 59 + this.DateMax.GetHashCode();
+                hash = hash * 59 + DateMax.GetHashCode();
             }
 
             return hash;

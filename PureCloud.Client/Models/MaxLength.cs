@@ -71,7 +71,7 @@ public partial class MaxLength : IEquatable<MaxLength>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MaxLength);
+        return Equals(obj as MaxLength);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class MaxLength : IEquatable<MaxLength>
 
         return true &&
             (
-                this.Min == other.Min ||
-                this.Min != null &&
-                this.Min.Equals(other.Min)
+                Min == other.Min ||
+                Min != null &&
+                Min.Equals(other.Min)
             ) &&
             (
-                this.Max == other.Max ||
-                this.Max != null &&
-                this.Max.Equals(other.Max)
+                Max == other.Max ||
+                Max != null &&
+                Max.Equals(other.Max)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class MaxLength : IEquatable<MaxLength>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Min != null)
+            if (Min != null)
             {
-                hash = hash * 59 + this.Min.GetHashCode();
+                hash = hash * 59 + Min.GetHashCode();
             }
 
-            if (this.Max != null)
+            if (Max != null)
             {
-                hash = hash * 59 + this.Max.GetHashCode();
+                hash = hash * 59 + Max.GetHashCode();
             }
 
             return hash;

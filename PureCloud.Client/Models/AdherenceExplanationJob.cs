@@ -214,7 +214,7 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdherenceExplanationJob);
+        return Equals(obj as AdherenceExplanationJob);
     }
 
     /// <summary>
@@ -232,49 +232,49 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.AdherenceExplanation == other.AdherenceExplanation ||
-                this.AdherenceExplanation != null &&
-                this.AdherenceExplanation.Equals(other.AdherenceExplanation)
+                AdherenceExplanation == other.AdherenceExplanation ||
+                AdherenceExplanation != null &&
+                AdherenceExplanation.Equals(other.AdherenceExplanation)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.AgentQueryResponseTemplate == other.AgentQueryResponseTemplate ||
-                this.AgentQueryResponseTemplate != null &&
-                this.AgentQueryResponseTemplate.Equals(other.AgentQueryResponseTemplate)
+                AgentQueryResponseTemplate == other.AgentQueryResponseTemplate ||
+                AgentQueryResponseTemplate != null &&
+                AgentQueryResponseTemplate.Equals(other.AgentQueryResponseTemplate)
             ) &&
             (
-                this.BuQueryResponseTemplate == other.BuQueryResponseTemplate ||
-                this.BuQueryResponseTemplate != null &&
-                this.BuQueryResponseTemplate.Equals(other.BuQueryResponseTemplate)
+                BuQueryResponseTemplate == other.BuQueryResponseTemplate ||
+                BuQueryResponseTemplate != null &&
+                BuQueryResponseTemplate.Equals(other.BuQueryResponseTemplate)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -289,49 +289,49 @@ public partial class AdherenceExplanationJob : IEquatable<AdherenceExplanationJo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.AdherenceExplanation != null)
+            if (AdherenceExplanation != null)
             {
-                hash = hash * 59 + this.AdherenceExplanation.GetHashCode();
+                hash = hash * 59 + AdherenceExplanation.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.AgentQueryResponseTemplate != null)
+            if (AgentQueryResponseTemplate != null)
             {
-                hash = hash * 59 + this.AgentQueryResponseTemplate.GetHashCode();
+                hash = hash * 59 + AgentQueryResponseTemplate.GetHashCode();
             }
 
-            if (this.BuQueryResponseTemplate != null)
+            if (BuQueryResponseTemplate != null)
             {
-                hash = hash * 59 + this.BuQueryResponseTemplate.GetHashCode();
+                hash = hash * 59 + BuQueryResponseTemplate.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

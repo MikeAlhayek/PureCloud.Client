@@ -151,7 +151,7 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebChatDeployment);
+        return Equals(obj as WebChatDeployment);
     }
 
     /// <summary>
@@ -169,54 +169,54 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.AuthenticationRequired == other.AuthenticationRequired ||
-                this.AuthenticationRequired != null &&
-                this.AuthenticationRequired.Equals(other.AuthenticationRequired)
+                AuthenticationRequired == other.AuthenticationRequired ||
+                AuthenticationRequired != null &&
+                AuthenticationRequired.Equals(other.AuthenticationRequired)
             ) &&
             (
-                this.AuthenticationUrl == other.AuthenticationUrl ||
-                this.AuthenticationUrl != null &&
-                this.AuthenticationUrl.Equals(other.AuthenticationUrl)
+                AuthenticationUrl == other.AuthenticationUrl ||
+                AuthenticationUrl != null &&
+                AuthenticationUrl.Equals(other.AuthenticationUrl)
             ) &&
             (
-                this.Disabled == other.Disabled ||
-                this.Disabled != null &&
-                this.Disabled.Equals(other.Disabled)
+                Disabled == other.Disabled ||
+                Disabled != null &&
+                Disabled.Equals(other.Disabled)
             ) &&
             (
-                this.WebChatConfig == other.WebChatConfig ||
-                this.WebChatConfig != null &&
-                this.WebChatConfig.Equals(other.WebChatConfig)
+                WebChatConfig == other.WebChatConfig ||
+                WebChatConfig != null &&
+                WebChatConfig.Equals(other.WebChatConfig)
             ) &&
             (
-                this.AllowedDomains == other.AllowedDomains ||
-                this.AllowedDomains != null &&
-                this.AllowedDomains.SequenceEqual(other.AllowedDomains)
+                AllowedDomains == other.AllowedDomains ||
+                AllowedDomains != null &&
+                AllowedDomains.SequenceEqual(other.AllowedDomains)
             ) &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -231,54 +231,54 @@ public partial class WebChatDeployment : IEquatable<WebChatDeployment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.AuthenticationRequired != null)
+            if (AuthenticationRequired != null)
             {
-                hash = hash * 59 + this.AuthenticationRequired.GetHashCode();
+                hash = hash * 59 + AuthenticationRequired.GetHashCode();
             }
 
-            if (this.AuthenticationUrl != null)
+            if (AuthenticationUrl != null)
             {
-                hash = hash * 59 + this.AuthenticationUrl.GetHashCode();
+                hash = hash * 59 + AuthenticationUrl.GetHashCode();
             }
 
-            if (this.Disabled != null)
+            if (Disabled != null)
             {
-                hash = hash * 59 + this.Disabled.GetHashCode();
+                hash = hash * 59 + Disabled.GetHashCode();
             }
 
-            if (this.WebChatConfig != null)
+            if (WebChatConfig != null)
             {
-                hash = hash * 59 + this.WebChatConfig.GetHashCode();
+                hash = hash * 59 + WebChatConfig.GetHashCode();
             }
 
-            if (this.AllowedDomains != null)
+            if (AllowedDomains != null)
             {
-                hash = hash * 59 + this.AllowedDomains.GetHashCode();
+                hash = hash * 59 + AllowedDomains.GetHashCode();
             }
 
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

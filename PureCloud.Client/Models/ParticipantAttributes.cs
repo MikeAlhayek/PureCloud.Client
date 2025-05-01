@@ -53,7 +53,7 @@ public partial class ParticipantAttributes : IEquatable<ParticipantAttributes>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ParticipantAttributes);
+        return Equals(obj as ParticipantAttributes);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ParticipantAttributes : IEquatable<ParticipantAttributes>
 
         return true &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ParticipantAttributes : IEquatable<ParticipantAttributes>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
             return hash;

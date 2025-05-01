@@ -59,7 +59,7 @@ public partial class RoomParticipant : IEquatable<RoomParticipant>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoomParticipant);
+        return Equals(obj as RoomParticipant);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class RoomParticipant : IEquatable<RoomParticipant>
 
         return true &&
             (
-                this.ParticipantJid == other.ParticipantJid ||
-                this.ParticipantJid != null &&
-                this.ParticipantJid.Equals(other.ParticipantJid)
+                ParticipantJid == other.ParticipantJid ||
+                ParticipantJid != null &&
+                ParticipantJid.Equals(other.ParticipantJid)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class RoomParticipant : IEquatable<RoomParticipant>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ParticipantJid != null)
+            if (ParticipantJid != null)
             {
-                hash = hash * 59 + this.ParticipantJid.GetHashCode();
+                hash = hash * 59 + ParticipantJid.GetHashCode();
             }
 
             return hash;

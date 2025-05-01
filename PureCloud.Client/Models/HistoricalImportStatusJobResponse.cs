@@ -73,7 +73,7 @@ public partial class HistoricalImportStatusJobResponse : IEquatable<HistoricalIm
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalImportStatusJobResponse);
+        return Equals(obj as HistoricalImportStatusJobResponse);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class HistoricalImportStatusJobResponse : IEquatable<HistoricalIm
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ImportStatusResult == other.ImportStatusResult ||
-                this.ImportStatusResult != null &&
-                this.ImportStatusResult.Equals(other.ImportStatusResult)
+                ImportStatusResult == other.ImportStatusResult ||
+                ImportStatusResult != null &&
+                ImportStatusResult.Equals(other.ImportStatusResult)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class HistoricalImportStatusJobResponse : IEquatable<HistoricalIm
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ImportStatusResult != null)
+            if (ImportStatusResult != null)
             {
-                hash = hash * 59 + this.ImportStatusResult.GetHashCode();
+                hash = hash * 59 + ImportStatusResult.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

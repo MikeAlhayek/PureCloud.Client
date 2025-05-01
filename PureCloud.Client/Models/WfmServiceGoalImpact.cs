@@ -71,7 +71,7 @@ public partial class WfmServiceGoalImpact : IEquatable<WfmServiceGoalImpact>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmServiceGoalImpact);
+        return Equals(obj as WfmServiceGoalImpact);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class WfmServiceGoalImpact : IEquatable<WfmServiceGoalImpact>
 
         return true &&
             (
-                this.IncreaseByPercent == other.IncreaseByPercent ||
-                this.IncreaseByPercent != null &&
-                this.IncreaseByPercent.Equals(other.IncreaseByPercent)
+                IncreaseByPercent == other.IncreaseByPercent ||
+                IncreaseByPercent != null &&
+                IncreaseByPercent.Equals(other.IncreaseByPercent)
             ) &&
             (
-                this.DecreaseByPercent == other.DecreaseByPercent ||
-                this.DecreaseByPercent != null &&
-                this.DecreaseByPercent.Equals(other.DecreaseByPercent)
+                DecreaseByPercent == other.DecreaseByPercent ||
+                DecreaseByPercent != null &&
+                DecreaseByPercent.Equals(other.DecreaseByPercent)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class WfmServiceGoalImpact : IEquatable<WfmServiceGoalImpact>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IncreaseByPercent != null)
+            if (IncreaseByPercent != null)
             {
-                hash = hash * 59 + this.IncreaseByPercent.GetHashCode();
+                hash = hash * 59 + IncreaseByPercent.GetHashCode();
             }
 
-            if (this.DecreaseByPercent != null)
+            if (DecreaseByPercent != null)
             {
-                hash = hash * 59 + this.DecreaseByPercent.GetHashCode();
+                hash = hash * 59 + DecreaseByPercent.GetHashCode();
             }
 
             return hash;

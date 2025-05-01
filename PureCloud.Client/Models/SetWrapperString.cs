@@ -52,7 +52,7 @@ public partial class SetWrapperString : IEquatable<SetWrapperString>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SetWrapperString);
+        return Equals(obj as SetWrapperString);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class SetWrapperString : IEquatable<SetWrapperString>
 
         return true &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class SetWrapperString : IEquatable<SetWrapperString>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
             return hash;

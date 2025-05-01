@@ -373,7 +373,7 @@ public partial class KnowledgeBaseCreateRequest : IEquatable<KnowledgeBaseCreate
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeBaseCreateRequest);
+        return Equals(obj as KnowledgeBaseCreateRequest);
     }
 
     /// <summary>
@@ -391,19 +391,19 @@ public partial class KnowledgeBaseCreateRequest : IEquatable<KnowledgeBaseCreate
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.CoreLanguage == other.CoreLanguage ||
-                this.CoreLanguage != null &&
-                this.CoreLanguage.Equals(other.CoreLanguage)
+                CoreLanguage == other.CoreLanguage ||
+                CoreLanguage != null &&
+                CoreLanguage.Equals(other.CoreLanguage)
             );
     }
 
@@ -418,19 +418,19 @@ public partial class KnowledgeBaseCreateRequest : IEquatable<KnowledgeBaseCreate
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.CoreLanguage != null)
+            if (CoreLanguage != null)
             {
-                hash = hash * 59 + this.CoreLanguage.GetHashCode();
+                hash = hash * 59 + CoreLanguage.GetHashCode();
             }
 
             return hash;

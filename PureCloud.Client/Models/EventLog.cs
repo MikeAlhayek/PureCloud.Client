@@ -302,7 +302,7 @@ public partial class EventLog : IEquatable<EventLog>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EventLog);
+        return Equals(obj as EventLog);
     }
 
     /// <summary>
@@ -320,54 +320,54 @@ public partial class EventLog : IEquatable<EventLog>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ErrorEntity == other.ErrorEntity ||
-                this.ErrorEntity != null &&
-                this.ErrorEntity.Equals(other.ErrorEntity)
+                ErrorEntity == other.ErrorEntity ||
+                ErrorEntity != null &&
+                ErrorEntity.Equals(other.ErrorEntity)
             ) &&
             (
-                this.RelatedEntity == other.RelatedEntity ||
-                this.RelatedEntity != null &&
-                this.RelatedEntity.Equals(other.RelatedEntity)
+                RelatedEntity == other.RelatedEntity ||
+                RelatedEntity != null &&
+                RelatedEntity.Equals(other.RelatedEntity)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             ) &&
             (
-                this.Level == other.Level ||
-                this.Level != null &&
-                this.Level.Equals(other.Level)
+                Level == other.Level ||
+                Level != null &&
+                Level.Equals(other.Level)
             ) &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.CorrelationId == other.CorrelationId ||
-                this.CorrelationId != null &&
-                this.CorrelationId.Equals(other.CorrelationId)
+                CorrelationId == other.CorrelationId ||
+                CorrelationId != null &&
+                CorrelationId.Equals(other.CorrelationId)
             ) &&
             (
-                this.EventMessage == other.EventMessage ||
-                this.EventMessage != null &&
-                this.EventMessage.Equals(other.EventMessage)
+                EventMessage == other.EventMessage ||
+                EventMessage != null &&
+                EventMessage.Equals(other.EventMessage)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -382,54 +382,54 @@ public partial class EventLog : IEquatable<EventLog>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ErrorEntity != null)
+            if (ErrorEntity != null)
             {
-                hash = hash * 59 + this.ErrorEntity.GetHashCode();
+                hash = hash * 59 + ErrorEntity.GetHashCode();
             }
 
-            if (this.RelatedEntity != null)
+            if (RelatedEntity != null)
             {
-                hash = hash * 59 + this.RelatedEntity.GetHashCode();
+                hash = hash * 59 + RelatedEntity.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
-            if (this.Level != null)
+            if (Level != null)
             {
-                hash = hash * 59 + this.Level.GetHashCode();
+                hash = hash * 59 + Level.GetHashCode();
             }
 
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.CorrelationId != null)
+            if (CorrelationId != null)
             {
-                hash = hash * 59 + this.CorrelationId.GetHashCode();
+                hash = hash * 59 + CorrelationId.GetHashCode();
             }
 
-            if (this.EventMessage != null)
+            if (EventMessage != null)
             {
-                hash = hash * 59 + this.EventMessage.GetHashCode();
+                hash = hash * 59 + EventMessage.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

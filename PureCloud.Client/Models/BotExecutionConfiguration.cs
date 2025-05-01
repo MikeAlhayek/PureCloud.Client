@@ -82,7 +82,7 @@ public partial class BotExecutionConfiguration : IEquatable<BotExecutionConfigur
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BotExecutionConfiguration);
+        return Equals(obj as BotExecutionConfiguration);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class BotExecutionConfiguration : IEquatable<BotExecutionConfigur
 
         return true &&
             (
-                this.BotId == other.BotId ||
-                this.BotId != null &&
-                this.BotId.Equals(other.BotId)
+                BotId == other.BotId ||
+                BotId != null &&
+                BotId.Equals(other.BotId)
             ) &&
             (
-                this.ExecutionHost == other.ExecutionHost ||
-                this.ExecutionHost != null &&
-                this.ExecutionHost.Equals(other.ExecutionHost)
+                ExecutionHost == other.ExecutionHost ||
+                ExecutionHost != null &&
+                ExecutionHost.Equals(other.ExecutionHost)
             ) &&
             (
-                this.BotCredentials == other.BotCredentials ||
-                this.BotCredentials != null &&
-                this.BotCredentials.Equals(other.BotCredentials)
+                BotCredentials == other.BotCredentials ||
+                BotCredentials != null &&
+                BotCredentials.Equals(other.BotCredentials)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class BotExecutionConfiguration : IEquatable<BotExecutionConfigur
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BotId != null)
+            if (BotId != null)
             {
-                hash = hash * 59 + this.BotId.GetHashCode();
+                hash = hash * 59 + BotId.GetHashCode();
             }
 
-            if (this.ExecutionHost != null)
+            if (ExecutionHost != null)
             {
-                hash = hash * 59 + this.ExecutionHost.GetHashCode();
+                hash = hash * 59 + ExecutionHost.GetHashCode();
             }
 
-            if (this.BotCredentials != null)
+            if (BotCredentials != null)
             {
-                hash = hash * 59 + this.BotCredentials.GetHashCode();
+                hash = hash * 59 + BotCredentials.GetHashCode();
             }
 
             return hash;

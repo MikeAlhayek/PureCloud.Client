@@ -63,7 +63,7 @@ public partial class ExternalContactsRelationshipChangedTopicTicker : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsRelationshipChangedTopicTicker);
+        return Equals(obj as ExternalContactsRelationshipChangedTopicTicker);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class ExternalContactsRelationshipChangedTopicTicker : IEquatable
 
         return true &&
             (
-                this.Symbol == other.Symbol ||
-                this.Symbol != null &&
-                this.Symbol.Equals(other.Symbol)
+                Symbol == other.Symbol ||
+                Symbol != null &&
+                Symbol.Equals(other.Symbol)
             ) &&
             (
-                this.Exchange == other.Exchange ||
-                this.Exchange != null &&
-                this.Exchange.Equals(other.Exchange)
+                Exchange == other.Exchange ||
+                Exchange != null &&
+                Exchange.Equals(other.Exchange)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class ExternalContactsRelationshipChangedTopicTicker : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Symbol != null)
+            if (Symbol != null)
             {
-                hash = hash * 59 + this.Symbol.GetHashCode();
+                hash = hash * 59 + Symbol.GetHashCode();
             }
 
-            if (this.Exchange != null)
+            if (Exchange != null)
             {
-                hash = hash * 59 + this.Exchange.GetHashCode();
+                hash = hash * 59 + Exchange.GetHashCode();
             }
 
             return hash;

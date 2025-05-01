@@ -151,7 +151,7 @@ public partial class JourneyWebEventsNotificationPage : IEquatable<JourneyWebEve
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyWebEventsNotificationPage);
+        return Equals(obj as JourneyWebEventsNotificationPage);
     }
 
     /// <summary>
@@ -169,54 +169,54 @@ public partial class JourneyWebEventsNotificationPage : IEquatable<JourneyWebEve
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.Fragment == other.Fragment ||
-                this.Fragment != null &&
-                this.Fragment.Equals(other.Fragment)
+                Fragment == other.Fragment ||
+                Fragment != null &&
+                Fragment.Equals(other.Fragment)
             ) &&
             (
-                this.Hostname == other.Hostname ||
-                this.Hostname != null &&
-                this.Hostname.Equals(other.Hostname)
+                Hostname == other.Hostname ||
+                Hostname != null &&
+                Hostname.Equals(other.Hostname)
             ) &&
             (
-                this.Keywords == other.Keywords ||
-                this.Keywords != null &&
-                this.Keywords.Equals(other.Keywords)
+                Keywords == other.Keywords ||
+                Keywords != null &&
+                Keywords.Equals(other.Keywords)
             ) &&
             (
-                this.Lang == other.Lang ||
-                this.Lang != null &&
-                this.Lang.Equals(other.Lang)
+                Lang == other.Lang ||
+                Lang != null &&
+                Lang.Equals(other.Lang)
             ) &&
             (
-                this.Pathname == other.Pathname ||
-                this.Pathname != null &&
-                this.Pathname.Equals(other.Pathname)
+                Pathname == other.Pathname ||
+                Pathname != null &&
+                Pathname.Equals(other.Pathname)
             ) &&
             (
-                this.QueryString == other.QueryString ||
-                this.QueryString != null &&
-                this.QueryString.Equals(other.QueryString)
+                QueryString == other.QueryString ||
+                QueryString != null &&
+                QueryString.Equals(other.QueryString)
             ) &&
             (
-                this.Breadcrumb == other.Breadcrumb ||
-                this.Breadcrumb != null &&
-                this.Breadcrumb.SequenceEqual(other.Breadcrumb)
+                Breadcrumb == other.Breadcrumb ||
+                Breadcrumb != null &&
+                Breadcrumb.SequenceEqual(other.Breadcrumb)
             );
     }
 
@@ -231,54 +231,54 @@ public partial class JourneyWebEventsNotificationPage : IEquatable<JourneyWebEve
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.Fragment != null)
+            if (Fragment != null)
             {
-                hash = hash * 59 + this.Fragment.GetHashCode();
+                hash = hash * 59 + Fragment.GetHashCode();
             }
 
-            if (this.Hostname != null)
+            if (Hostname != null)
             {
-                hash = hash * 59 + this.Hostname.GetHashCode();
+                hash = hash * 59 + Hostname.GetHashCode();
             }
 
-            if (this.Keywords != null)
+            if (Keywords != null)
             {
-                hash = hash * 59 + this.Keywords.GetHashCode();
+                hash = hash * 59 + Keywords.GetHashCode();
             }
 
-            if (this.Lang != null)
+            if (Lang != null)
             {
-                hash = hash * 59 + this.Lang.GetHashCode();
+                hash = hash * 59 + Lang.GetHashCode();
             }
 
-            if (this.Pathname != null)
+            if (Pathname != null)
             {
-                hash = hash * 59 + this.Pathname.GetHashCode();
+                hash = hash * 59 + Pathname.GetHashCode();
             }
 
-            if (this.QueryString != null)
+            if (QueryString != null)
             {
-                hash = hash * 59 + this.QueryString.GetHashCode();
+                hash = hash * 59 + QueryString.GetHashCode();
             }
 
-            if (this.Breadcrumb != null)
+            if (Breadcrumb != null)
             {
-                hash = hash * 59 + this.Breadcrumb.GetHashCode();
+                hash = hash * 59 + Breadcrumb.GetHashCode();
             }
 
             return hash;

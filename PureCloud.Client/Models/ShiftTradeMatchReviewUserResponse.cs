@@ -101,7 +101,7 @@ public partial class ShiftTradeMatchReviewUserResponse : IEquatable<ShiftTradeMa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShiftTradeMatchReviewUserResponse);
+        return Equals(obj as ShiftTradeMatchReviewUserResponse);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class ShiftTradeMatchReviewUserResponse : IEquatable<ShiftTradeMa
 
         return true &&
             (
-                this.WeeklyMinimumPaidMinutes == other.WeeklyMinimumPaidMinutes ||
-                this.WeeklyMinimumPaidMinutes != null &&
-                this.WeeklyMinimumPaidMinutes.Equals(other.WeeklyMinimumPaidMinutes)
+                WeeklyMinimumPaidMinutes == other.WeeklyMinimumPaidMinutes ||
+                WeeklyMinimumPaidMinutes != null &&
+                WeeklyMinimumPaidMinutes.Equals(other.WeeklyMinimumPaidMinutes)
             ) &&
             (
-                this.WeeklyMaximumPaidMinutes == other.WeeklyMaximumPaidMinutes ||
-                this.WeeklyMaximumPaidMinutes != null &&
-                this.WeeklyMaximumPaidMinutes.Equals(other.WeeklyMaximumPaidMinutes)
+                WeeklyMaximumPaidMinutes == other.WeeklyMaximumPaidMinutes ||
+                WeeklyMaximumPaidMinutes != null &&
+                WeeklyMaximumPaidMinutes.Equals(other.WeeklyMaximumPaidMinutes)
             ) &&
             (
-                this.PreTradeSchedulePaidMinutes == other.PreTradeSchedulePaidMinutes ||
-                this.PreTradeSchedulePaidMinutes != null &&
-                this.PreTradeSchedulePaidMinutes.Equals(other.PreTradeSchedulePaidMinutes)
+                PreTradeSchedulePaidMinutes == other.PreTradeSchedulePaidMinutes ||
+                PreTradeSchedulePaidMinutes != null &&
+                PreTradeSchedulePaidMinutes.Equals(other.PreTradeSchedulePaidMinutes)
             ) &&
             (
-                this.PostTradeSchedulePaidMinutes == other.PostTradeSchedulePaidMinutes ||
-                this.PostTradeSchedulePaidMinutes != null &&
-                this.PostTradeSchedulePaidMinutes.Equals(other.PostTradeSchedulePaidMinutes)
+                PostTradeSchedulePaidMinutes == other.PostTradeSchedulePaidMinutes ||
+                PostTradeSchedulePaidMinutes != null &&
+                PostTradeSchedulePaidMinutes.Equals(other.PostTradeSchedulePaidMinutes)
             ) &&
             (
-                this.PostTradeNewShift == other.PostTradeNewShift ||
-                this.PostTradeNewShift != null &&
-                this.PostTradeNewShift.Equals(other.PostTradeNewShift)
+                PostTradeNewShift == other.PostTradeNewShift ||
+                PostTradeNewShift != null &&
+                PostTradeNewShift.Equals(other.PostTradeNewShift)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class ShiftTradeMatchReviewUserResponse : IEquatable<ShiftTradeMa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WeeklyMinimumPaidMinutes != null)
+            if (WeeklyMinimumPaidMinutes != null)
             {
-                hash = hash * 59 + this.WeeklyMinimumPaidMinutes.GetHashCode();
+                hash = hash * 59 + WeeklyMinimumPaidMinutes.GetHashCode();
             }
 
-            if (this.WeeklyMaximumPaidMinutes != null)
+            if (WeeklyMaximumPaidMinutes != null)
             {
-                hash = hash * 59 + this.WeeklyMaximumPaidMinutes.GetHashCode();
+                hash = hash * 59 + WeeklyMaximumPaidMinutes.GetHashCode();
             }
 
-            if (this.PreTradeSchedulePaidMinutes != null)
+            if (PreTradeSchedulePaidMinutes != null)
             {
-                hash = hash * 59 + this.PreTradeSchedulePaidMinutes.GetHashCode();
+                hash = hash * 59 + PreTradeSchedulePaidMinutes.GetHashCode();
             }
 
-            if (this.PostTradeSchedulePaidMinutes != null)
+            if (PostTradeSchedulePaidMinutes != null)
             {
-                hash = hash * 59 + this.PostTradeSchedulePaidMinutes.GetHashCode();
+                hash = hash * 59 + PostTradeSchedulePaidMinutes.GetHashCode();
             }
 
-            if (this.PostTradeNewShift != null)
+            if (PostTradeNewShift != null)
             {
-                hash = hash * 59 + this.PostTradeNewShift.GetHashCode();
+                hash = hash * 59 + PostTradeNewShift.GetHashCode();
             }
 
             return hash;

@@ -187,7 +187,7 @@ public partial class UserDevice : IEquatable<UserDevice>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserDevice);
+        return Equals(obj as UserDevice);
     }
 
     /// <summary>
@@ -205,54 +205,54 @@ public partial class UserDevice : IEquatable<UserDevice>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DeviceToken == other.DeviceToken ||
-                this.DeviceToken != null &&
-                this.DeviceToken.Equals(other.DeviceToken)
+                DeviceToken == other.DeviceToken ||
+                DeviceToken != null &&
+                DeviceToken.Equals(other.DeviceToken)
             ) &&
             (
-                this.NotificationId == other.NotificationId ||
-                this.NotificationId != null &&
-                this.NotificationId.Equals(other.NotificationId)
+                NotificationId == other.NotificationId ||
+                NotificationId != null &&
+                NotificationId.Equals(other.NotificationId)
             ) &&
             (
-                this.Make == other.Make ||
-                this.Make != null &&
-                this.Make.Equals(other.Make)
+                Make == other.Make ||
+                Make != null &&
+                Make.Equals(other.Make)
             ) &&
             (
-                this.Model == other.Model ||
-                this.Model != null &&
-                this.Model.Equals(other.Model)
+                Model == other.Model ||
+                Model != null &&
+                Model.Equals(other.Model)
             ) &&
             (
-                this.AcceptNotifications == other.AcceptNotifications ||
-                this.AcceptNotifications != null &&
-                this.AcceptNotifications.Equals(other.AcceptNotifications)
+                AcceptNotifications == other.AcceptNotifications ||
+                AcceptNotifications != null &&
+                AcceptNotifications.Equals(other.AcceptNotifications)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.SessionHash == other.SessionHash ||
-                this.SessionHash != null &&
-                this.SessionHash.Equals(other.SessionHash)
+                SessionHash == other.SessionHash ||
+                SessionHash != null &&
+                SessionHash.Equals(other.SessionHash)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -267,54 +267,54 @@ public partial class UserDevice : IEquatable<UserDevice>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DeviceToken != null)
+            if (DeviceToken != null)
             {
-                hash = hash * 59 + this.DeviceToken.GetHashCode();
+                hash = hash * 59 + DeviceToken.GetHashCode();
             }
 
-            if (this.NotificationId != null)
+            if (NotificationId != null)
             {
-                hash = hash * 59 + this.NotificationId.GetHashCode();
+                hash = hash * 59 + NotificationId.GetHashCode();
             }
 
-            if (this.Make != null)
+            if (Make != null)
             {
-                hash = hash * 59 + this.Make.GetHashCode();
+                hash = hash * 59 + Make.GetHashCode();
             }
 
-            if (this.Model != null)
+            if (Model != null)
             {
-                hash = hash * 59 + this.Model.GetHashCode();
+                hash = hash * 59 + Model.GetHashCode();
             }
 
-            if (this.AcceptNotifications != null)
+            if (AcceptNotifications != null)
             {
-                hash = hash * 59 + this.AcceptNotifications.GetHashCode();
+                hash = hash * 59 + AcceptNotifications.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.SessionHash != null)
+            if (SessionHash != null)
             {
-                hash = hash * 59 + this.SessionHash.GetHashCode();
+                hash = hash * 59 + SessionHash.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

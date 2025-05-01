@@ -248,7 +248,7 @@ public partial class Annotation : IEquatable<Annotation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Annotation);
+        return Equals(obj as Annotation);
     }
 
     /// <summary>
@@ -266,79 +266,79 @@ public partial class Annotation : IEquatable<Annotation>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Location == other.Location ||
-                this.Location != null &&
-                this.Location.Equals(other.Location)
+                Location == other.Location ||
+                Location != null &&
+                Location.Equals(other.Location)
             ) &&
             (
-                this.DurationMs == other.DurationMs ||
-                this.DurationMs != null &&
-                this.DurationMs.Equals(other.DurationMs)
+                DurationMs == other.DurationMs ||
+                DurationMs != null &&
+                DurationMs.Equals(other.DurationMs)
             ) &&
             (
-                this.AbsoluteLocation == other.AbsoluteLocation ||
-                this.AbsoluteLocation != null &&
-                this.AbsoluteLocation.Equals(other.AbsoluteLocation)
+                AbsoluteLocation == other.AbsoluteLocation ||
+                AbsoluteLocation != null &&
+                AbsoluteLocation.Equals(other.AbsoluteLocation)
             ) &&
             (
-                this.AbsoluteDurationMs == other.AbsoluteDurationMs ||
-                this.AbsoluteDurationMs != null &&
-                this.AbsoluteDurationMs.Equals(other.AbsoluteDurationMs)
+                AbsoluteDurationMs == other.AbsoluteDurationMs ||
+                AbsoluteDurationMs != null &&
+                AbsoluteDurationMs.Equals(other.AbsoluteDurationMs)
             ) &&
             (
-                this.RecordingLocation == other.RecordingLocation ||
-                this.RecordingLocation != null &&
-                this.RecordingLocation.Equals(other.RecordingLocation)
+                RecordingLocation == other.RecordingLocation ||
+                RecordingLocation != null &&
+                RecordingLocation.Equals(other.RecordingLocation)
             ) &&
             (
-                this.RecordingDurationMs == other.RecordingDurationMs ||
-                this.RecordingDurationMs != null &&
-                this.RecordingDurationMs.Equals(other.RecordingDurationMs)
+                RecordingDurationMs == other.RecordingDurationMs ||
+                RecordingDurationMs != null &&
+                RecordingDurationMs.Equals(other.RecordingDurationMs)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             ) &&
             (
-                this.Annotations == other.Annotations ||
-                this.Annotations != null &&
-                this.Annotations.SequenceEqual(other.Annotations)
+                Annotations == other.Annotations ||
+                Annotations != null &&
+                Annotations.SequenceEqual(other.Annotations)
             ) &&
             (
-                this.RealtimeLocation == other.RealtimeLocation ||
-                this.RealtimeLocation != null &&
-                this.RealtimeLocation.Equals(other.RealtimeLocation)
+                RealtimeLocation == other.RealtimeLocation ||
+                RealtimeLocation != null &&
+                RealtimeLocation.Equals(other.RealtimeLocation)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -353,79 +353,79 @@ public partial class Annotation : IEquatable<Annotation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Location != null)
+            if (Location != null)
             {
-                hash = hash * 59 + this.Location.GetHashCode();
+                hash = hash * 59 + Location.GetHashCode();
             }
 
-            if (this.DurationMs != null)
+            if (DurationMs != null)
             {
-                hash = hash * 59 + this.DurationMs.GetHashCode();
+                hash = hash * 59 + DurationMs.GetHashCode();
             }
 
-            if (this.AbsoluteLocation != null)
+            if (AbsoluteLocation != null)
             {
-                hash = hash * 59 + this.AbsoluteLocation.GetHashCode();
+                hash = hash * 59 + AbsoluteLocation.GetHashCode();
             }
 
-            if (this.AbsoluteDurationMs != null)
+            if (AbsoluteDurationMs != null)
             {
-                hash = hash * 59 + this.AbsoluteDurationMs.GetHashCode();
+                hash = hash * 59 + AbsoluteDurationMs.GetHashCode();
             }
 
-            if (this.RecordingLocation != null)
+            if (RecordingLocation != null)
             {
-                hash = hash * 59 + this.RecordingLocation.GetHashCode();
+                hash = hash * 59 + RecordingLocation.GetHashCode();
             }
 
-            if (this.RecordingDurationMs != null)
+            if (RecordingDurationMs != null)
             {
-                hash = hash * 59 + this.RecordingDurationMs.GetHashCode();
+                hash = hash * 59 + RecordingDurationMs.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
-            if (this.Annotations != null)
+            if (Annotations != null)
             {
-                hash = hash * 59 + this.Annotations.GetHashCode();
+                hash = hash * 59 + Annotations.GetHashCode();
             }
 
-            if (this.RealtimeLocation != null)
+            if (RealtimeLocation != null)
             {
-                hash = hash * 59 + this.RealtimeLocation.GetHashCode();
+                hash = hash * 59 + RealtimeLocation.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

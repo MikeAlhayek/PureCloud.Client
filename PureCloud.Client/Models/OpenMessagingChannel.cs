@@ -179,7 +179,7 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenMessagingChannel);
+        return Equals(obj as OpenMessagingChannel);
     }
 
     /// <summary>
@@ -197,44 +197,44 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Platform == other.Platform ||
-                this.Platform != null &&
-                this.Platform.Equals(other.Platform)
+                Platform == other.Platform ||
+                Platform != null &&
+                Platform.Equals(other.Platform)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.MessageId == other.MessageId ||
-                this.MessageId != null &&
-                this.MessageId.Equals(other.MessageId)
+                MessageId == other.MessageId ||
+                MessageId != null &&
+                MessageId.Equals(other.MessageId)
             ) &&
             (
-                this.To == other.To ||
-                this.To != null &&
-                this.To.Equals(other.To)
+                To == other.To ||
+                To != null &&
+                To.Equals(other.To)
             ) &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.Time == other.Time ||
-                this.Time != null &&
-                this.Time.Equals(other.Time)
+                Time == other.Time ||
+                Time != null &&
+                Time.Equals(other.Time)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -249,44 +249,44 @@ public partial class OpenMessagingChannel : IEquatable<OpenMessagingChannel>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Platform != null)
+            if (Platform != null)
             {
-                hash = hash * 59 + this.Platform.GetHashCode();
+                hash = hash * 59 + Platform.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.MessageId != null)
+            if (MessageId != null)
             {
-                hash = hash * 59 + this.MessageId.GetHashCode();
+                hash = hash * 59 + MessageId.GetHashCode();
             }
 
-            if (this.To != null)
+            if (To != null)
             {
-                hash = hash * 59 + this.To.GetHashCode();
+                hash = hash * 59 + To.GetHashCode();
             }
 
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.Time != null)
+            if (Time != null)
             {
-                hash = hash * 59 + this.Time.GetHashCode();
+                hash = hash * 59 + Time.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

@@ -112,7 +112,7 @@ public partial class MediaStatistics : IEquatable<MediaStatistics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaStatistics);
+        return Equals(obj as MediaStatistics);
     }
 
     /// <summary>
@@ -130,34 +130,34 @@ public partial class MediaStatistics : IEquatable<MediaStatistics>
 
         return true &&
             (
-                this.CommunicationId == other.CommunicationId ||
-                this.CommunicationId != null &&
-                this.CommunicationId.Equals(other.CommunicationId)
+                CommunicationId == other.CommunicationId ||
+                CommunicationId != null &&
+                CommunicationId.Equals(other.CommunicationId)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.CreationMilliseconds == other.CreationMilliseconds ||
-                this.CreationMilliseconds != null &&
-                this.CreationMilliseconds.Equals(other.CreationMilliseconds)
+                CreationMilliseconds == other.CreationMilliseconds ||
+                CreationMilliseconds != null &&
+                CreationMilliseconds.Equals(other.CreationMilliseconds)
             ) &&
             (
-                this.PreferredRegion == other.PreferredRegion ||
-                this.PreferredRegion != null &&
-                this.PreferredRegion.Equals(other.PreferredRegion)
+                PreferredRegion == other.PreferredRegion ||
+                PreferredRegion != null &&
+                PreferredRegion.Equals(other.PreferredRegion)
             ) &&
             (
-                this.EffectiveRegion == other.EffectiveRegion ||
-                this.EffectiveRegion != null &&
-                this.EffectiveRegion.Equals(other.EffectiveRegion)
+                EffectiveRegion == other.EffectiveRegion ||
+                EffectiveRegion != null &&
+                EffectiveRegion.Equals(other.EffectiveRegion)
             ) &&
             (
-                this._MediaStatistics == other._MediaStatistics ||
-                this._MediaStatistics != null &&
-                this._MediaStatistics.SequenceEqual(other._MediaStatistics)
+                _MediaStatistics == other._MediaStatistics ||
+                _MediaStatistics != null &&
+                _MediaStatistics.SequenceEqual(other._MediaStatistics)
             );
     }
 
@@ -172,34 +172,34 @@ public partial class MediaStatistics : IEquatable<MediaStatistics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CommunicationId != null)
+            if (CommunicationId != null)
             {
-                hash = hash * 59 + this.CommunicationId.GetHashCode();
+                hash = hash * 59 + CommunicationId.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.CreationMilliseconds != null)
+            if (CreationMilliseconds != null)
             {
-                hash = hash * 59 + this.CreationMilliseconds.GetHashCode();
+                hash = hash * 59 + CreationMilliseconds.GetHashCode();
             }
 
-            if (this.PreferredRegion != null)
+            if (PreferredRegion != null)
             {
-                hash = hash * 59 + this.PreferredRegion.GetHashCode();
+                hash = hash * 59 + PreferredRegion.GetHashCode();
             }
 
-            if (this.EffectiveRegion != null)
+            if (EffectiveRegion != null)
             {
-                hash = hash * 59 + this.EffectiveRegion.GetHashCode();
+                hash = hash * 59 + EffectiveRegion.GetHashCode();
             }
 
-            if (this._MediaStatistics != null)
+            if (_MediaStatistics != null)
             {
-                hash = hash * 59 + this._MediaStatistics.GetHashCode();
+                hash = hash * 59 + _MediaStatistics.GetHashCode();
             }
 
             return hash;

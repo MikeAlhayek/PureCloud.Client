@@ -52,7 +52,7 @@ public partial class SignedData : IEquatable<SignedData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SignedData);
+        return Equals(obj as SignedData);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class SignedData : IEquatable<SignedData>
 
         return true &&
             (
-                this.Jwt == other.Jwt ||
-                this.Jwt != null &&
-                this.Jwt.Equals(other.Jwt)
+                Jwt == other.Jwt ||
+                Jwt != null &&
+                Jwt.Equals(other.Jwt)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class SignedData : IEquatable<SignedData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Jwt != null)
+            if (Jwt != null)
             {
-                hash = hash * 59 + this.Jwt.GetHashCode();
+                hash = hash * 59 + Jwt.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class WebMessagingOfferProperties : IEquatable<WebMessagingOfferP
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebMessagingOfferProperties);
+        return Equals(obj as WebMessagingOfferProperties);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class WebMessagingOfferProperties : IEquatable<WebMessagingOfferP
 
         return true &&
             (
-                this.OfferText == other.OfferText ||
-                this.OfferText != null &&
-                this.OfferText.Equals(other.OfferText)
+                OfferText == other.OfferText ||
+                OfferText != null &&
+                OfferText.Equals(other.OfferText)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class WebMessagingOfferProperties : IEquatable<WebMessagingOfferP
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OfferText != null)
+            if (OfferText != null)
             {
-                hash = hash * 59 + this.OfferText.GetHashCode();
+                hash = hash * 59 + OfferText.GetHashCode();
             }
 
             return hash;

@@ -289,7 +289,7 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CoachingAppointmentResponse);
+        return Equals(obj as CoachingAppointmentResponse);
     }
 
     /// <summary>
@@ -307,109 +307,109 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Facilitator == other.Facilitator ||
-                this.Facilitator != null &&
-                this.Facilitator.Equals(other.Facilitator)
+                Facilitator == other.Facilitator ||
+                Facilitator != null &&
+                Facilitator.Equals(other.Facilitator)
             ) &&
             (
-                this.Attendees == other.Attendees ||
-                this.Attendees != null &&
-                this.Attendees.SequenceEqual(other.Attendees)
+                Attendees == other.Attendees ||
+                Attendees != null &&
+                Attendees.SequenceEqual(other.Attendees)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Conversations == other.Conversations ||
-                this.Conversations != null &&
-                this.Conversations.SequenceEqual(other.Conversations)
+                Conversations == other.Conversations ||
+                Conversations != null &&
+                Conversations.SequenceEqual(other.Conversations)
             ) &&
             (
-                this.Documents == other.Documents ||
-                this.Documents != null &&
-                this.Documents.SequenceEqual(other.Documents)
+                Documents == other.Documents ||
+                Documents != null &&
+                Documents.SequenceEqual(other.Documents)
             ) &&
             (
-                this.IsOverdue == other.IsOverdue ||
-                this.IsOverdue != null &&
-                this.IsOverdue.Equals(other.IsOverdue)
+                IsOverdue == other.IsOverdue ||
+                IsOverdue != null &&
+                IsOverdue.Equals(other.IsOverdue)
             ) &&
             (
-                this.WfmSchedule == other.WfmSchedule ||
-                this.WfmSchedule != null &&
-                this.WfmSchedule.Equals(other.WfmSchedule)
+                WfmSchedule == other.WfmSchedule ||
+                WfmSchedule != null &&
+                WfmSchedule.Equals(other.WfmSchedule)
             ) &&
             (
-                this.DateCompleted == other.DateCompleted ||
-                this.DateCompleted != null &&
-                this.DateCompleted.Equals(other.DateCompleted)
+                DateCompleted == other.DateCompleted ||
+                DateCompleted != null &&
+                DateCompleted.Equals(other.DateCompleted)
             ) &&
             (
-                this.ExternalLinks == other.ExternalLinks ||
-                this.ExternalLinks != null &&
-                this.ExternalLinks.SequenceEqual(other.ExternalLinks)
+                ExternalLinks == other.ExternalLinks ||
+                ExternalLinks != null &&
+                ExternalLinks.SequenceEqual(other.ExternalLinks)
             ) &&
             (
-                this.Location == other.Location ||
-                this.Location != null &&
-                this.Location.Equals(other.Location)
+                Location == other.Location ||
+                Location != null &&
+                Location.Equals(other.Location)
             ) &&
             (
-                this.ShareInsightsData == other.ShareInsightsData ||
-                this.ShareInsightsData != null &&
-                this.ShareInsightsData.Equals(other.ShareInsightsData)
+                ShareInsightsData == other.ShareInsightsData ||
+                ShareInsightsData != null &&
+                ShareInsightsData.Equals(other.ShareInsightsData)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -424,109 +424,109 @@ public partial class CoachingAppointmentResponse : IEquatable<CoachingAppointmen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Facilitator != null)
+            if (Facilitator != null)
             {
-                hash = hash * 59 + this.Facilitator.GetHashCode();
+                hash = hash * 59 + Facilitator.GetHashCode();
             }
 
-            if (this.Attendees != null)
+            if (Attendees != null)
             {
-                hash = hash * 59 + this.Attendees.GetHashCode();
+                hash = hash * 59 + Attendees.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Conversations != null)
+            if (Conversations != null)
             {
-                hash = hash * 59 + this.Conversations.GetHashCode();
+                hash = hash * 59 + Conversations.GetHashCode();
             }
 
-            if (this.Documents != null)
+            if (Documents != null)
             {
-                hash = hash * 59 + this.Documents.GetHashCode();
+                hash = hash * 59 + Documents.GetHashCode();
             }
 
-            if (this.IsOverdue != null)
+            if (IsOverdue != null)
             {
-                hash = hash * 59 + this.IsOverdue.GetHashCode();
+                hash = hash * 59 + IsOverdue.GetHashCode();
             }
 
-            if (this.WfmSchedule != null)
+            if (WfmSchedule != null)
             {
-                hash = hash * 59 + this.WfmSchedule.GetHashCode();
+                hash = hash * 59 + WfmSchedule.GetHashCode();
             }
 
-            if (this.DateCompleted != null)
+            if (DateCompleted != null)
             {
-                hash = hash * 59 + this.DateCompleted.GetHashCode();
+                hash = hash * 59 + DateCompleted.GetHashCode();
             }
 
-            if (this.ExternalLinks != null)
+            if (ExternalLinks != null)
             {
-                hash = hash * 59 + this.ExternalLinks.GetHashCode();
+                hash = hash * 59 + ExternalLinks.GetHashCode();
             }
 
-            if (this.Location != null)
+            if (Location != null)
             {
-                hash = hash * 59 + this.Location.GetHashCode();
+                hash = hash * 59 + Location.GetHashCode();
             }
 
-            if (this.ShareInsightsData != null)
+            if (ShareInsightsData != null)
             {
-                hash = hash * 59 + this.ShareInsightsData.GetHashCode();
+                hash = hash * 59 + ShareInsightsData.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

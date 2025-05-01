@@ -109,7 +109,7 @@ public partial class CopilotCondition : IEquatable<CopilotCondition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CopilotCondition);
+        return Equals(obj as CopilotCondition);
     }
 
     /// <summary>
@@ -127,14 +127,14 @@ public partial class CopilotCondition : IEquatable<CopilotCondition>
 
         return true &&
             (
-                this.ConditionType == other.ConditionType ||
-                this.ConditionType != null &&
-                this.ConditionType.Equals(other.ConditionType)
+                ConditionType == other.ConditionType ||
+                ConditionType != null &&
+                ConditionType.Equals(other.ConditionType)
             ) &&
             (
-                this.ConditionValues == other.ConditionValues ||
-                this.ConditionValues != null &&
-                this.ConditionValues.SequenceEqual(other.ConditionValues)
+                ConditionValues == other.ConditionValues ||
+                ConditionValues != null &&
+                ConditionValues.SequenceEqual(other.ConditionValues)
             );
     }
 
@@ -149,14 +149,14 @@ public partial class CopilotCondition : IEquatable<CopilotCondition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConditionType != null)
+            if (ConditionType != null)
             {
-                hash = hash * 59 + this.ConditionType.GetHashCode();
+                hash = hash * 59 + ConditionType.GetHashCode();
             }
 
-            if (this.ConditionValues != null)
+            if (ConditionValues != null)
             {
-                hash = hash * 59 + this.ConditionValues.GetHashCode();
+                hash = hash * 59 + ConditionValues.GetHashCode();
             }
 
             return hash;

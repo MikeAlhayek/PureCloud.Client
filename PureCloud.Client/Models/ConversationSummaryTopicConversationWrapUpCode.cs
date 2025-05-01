@@ -85,7 +85,7 @@ public partial class ConversationSummaryTopicConversationWrapUpCode : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationSummaryTopicConversationWrapUpCode);
+        return Equals(obj as ConversationSummaryTopicConversationWrapUpCode);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class ConversationSummaryTopicConversationWrapUpCode : IEquatable
 
         return true &&
             (
-                this.WrapUpCodeId == other.WrapUpCodeId ||
-                this.WrapUpCodeId != null &&
-                this.WrapUpCodeId.Equals(other.WrapUpCodeId)
+                WrapUpCodeId == other.WrapUpCodeId ||
+                WrapUpCodeId != null &&
+                WrapUpCodeId.Equals(other.WrapUpCodeId)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class ConversationSummaryTopicConversationWrapUpCode : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WrapUpCodeId != null)
+            if (WrapUpCodeId != null)
             {
-                hash = hash * 59 + this.WrapUpCodeId.GetHashCode();
+                hash = hash * 59 + WrapUpCodeId.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
             return hash;

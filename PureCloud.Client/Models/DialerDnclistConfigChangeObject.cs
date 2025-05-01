@@ -41,7 +41,7 @@ public partial class DialerDnclistConfigChangeObject : IEquatable<DialerDnclistC
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerDnclistConfigChangeObject);
+        return Equals(obj as DialerDnclistConfigChangeObject);
     }
 
     /// <summary>

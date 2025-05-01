@@ -193,7 +193,7 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EscalationRuleRequest);
+        return Equals(obj as EscalationRuleRequest);
     }
 
     /// <summary>
@@ -211,54 +211,54 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.MatchCriteria == other.MatchCriteria ||
-                this.MatchCriteria != null &&
-                this.MatchCriteria.Equals(other.MatchCriteria)
+                MatchCriteria == other.MatchCriteria ||
+                MatchCriteria != null &&
+                MatchCriteria.Equals(other.MatchCriteria)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.DivisionId == other.DivisionId ||
-                this.DivisionId != null &&
-                this.DivisionId.Equals(other.DivisionId)
+                DivisionId == other.DivisionId ||
+                DivisionId != null &&
+                DivisionId.Equals(other.DivisionId)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.OpenEscalation == other.OpenEscalation ||
-                this.OpenEscalation != null &&
-                this.OpenEscalation.Equals(other.OpenEscalation)
+                OpenEscalation == other.OpenEscalation ||
+                OpenEscalation != null &&
+                OpenEscalation.Equals(other.OpenEscalation)
             ) &&
             (
-                this.FacebookEscalation == other.FacebookEscalation ||
-                this.FacebookEscalation != null &&
-                this.FacebookEscalation.Equals(other.FacebookEscalation)
+                FacebookEscalation == other.FacebookEscalation ||
+                FacebookEscalation != null &&
+                FacebookEscalation.Equals(other.FacebookEscalation)
             ) &&
             (
-                this.InstagramEscalation == other.InstagramEscalation ||
-                this.InstagramEscalation != null &&
-                this.InstagramEscalation.Equals(other.InstagramEscalation)
+                InstagramEscalation == other.InstagramEscalation ||
+                InstagramEscalation != null &&
+                InstagramEscalation.Equals(other.InstagramEscalation)
             ) &&
             (
-                this.TwitterEscalation == other.TwitterEscalation ||
-                this.TwitterEscalation != null &&
-                this.TwitterEscalation.Equals(other.TwitterEscalation)
+                TwitterEscalation == other.TwitterEscalation ||
+                TwitterEscalation != null &&
+                TwitterEscalation.Equals(other.TwitterEscalation)
             );
     }
 
@@ -273,54 +273,54 @@ public partial class EscalationRuleRequest : IEquatable<EscalationRuleRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.MatchCriteria != null)
+            if (MatchCriteria != null)
             {
-                hash = hash * 59 + this.MatchCriteria.GetHashCode();
+                hash = hash * 59 + MatchCriteria.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.DivisionId != null)
+            if (DivisionId != null)
             {
-                hash = hash * 59 + this.DivisionId.GetHashCode();
+                hash = hash * 59 + DivisionId.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.OpenEscalation != null)
+            if (OpenEscalation != null)
             {
-                hash = hash * 59 + this.OpenEscalation.GetHashCode();
+                hash = hash * 59 + OpenEscalation.GetHashCode();
             }
 
-            if (this.FacebookEscalation != null)
+            if (FacebookEscalation != null)
             {
-                hash = hash * 59 + this.FacebookEscalation.GetHashCode();
+                hash = hash * 59 + FacebookEscalation.GetHashCode();
             }
 
-            if (this.InstagramEscalation != null)
+            if (InstagramEscalation != null)
             {
-                hash = hash * 59 + this.InstagramEscalation.GetHashCode();
+                hash = hash * 59 + InstagramEscalation.GetHashCode();
             }
 
-            if (this.TwitterEscalation != null)
+            if (TwitterEscalation != null)
             {
-                hash = hash * 59 + this.TwitterEscalation.GetHashCode();
+                hash = hash * 59 + TwitterEscalation.GetHashCode();
             }
 
             return hash;

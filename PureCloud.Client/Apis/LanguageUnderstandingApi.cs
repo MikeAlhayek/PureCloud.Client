@@ -1851,12 +1851,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
     /// <returns></returns>
     public LanguageUnderstandingApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1870,17 +1870,17 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1890,7 +1890,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -1916,7 +1916,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -1928,7 +1928,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -1973,7 +1973,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1982,7 +1982,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1995,7 +1995,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
@@ -2011,11 +2011,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2089,7 +2089,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2098,7 +2098,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2111,7 +2111,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
@@ -2127,11 +2127,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2212,7 +2212,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2221,7 +2221,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2234,12 +2234,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (feedbackId != null)
         {
-            localVarPathParams.Add("feedbackId", this.Configuration.ApiClient.ParameterToString(feedbackId));
+            localVarPathParams.Add("feedbackId", Configuration.ApiClient.ParameterToString(feedbackId));
         }
 
         // Query params
@@ -2255,11 +2255,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2341,7 +2341,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2350,7 +2350,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2363,12 +2363,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (feedbackId != null)
         {
-            localVarPathParams.Add("feedbackId", this.Configuration.ApiClient.ParameterToString(feedbackId));
+            localVarPathParams.Add("feedbackId", Configuration.ApiClient.ParameterToString(feedbackId));
         }
 
         // Query params
@@ -2384,11 +2384,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2469,7 +2469,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2478,7 +2478,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2491,12 +2491,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -2512,11 +2512,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2598,7 +2598,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2607,7 +2607,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2620,12 +2620,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -2641,11 +2641,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2719,7 +2719,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2728,7 +2728,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2741,7 +2741,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -2757,11 +2757,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2835,7 +2835,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2844,7 +2844,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2857,7 +2857,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -2873,11 +2873,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2958,7 +2958,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2967,7 +2967,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2980,12 +2980,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (draftId != null)
         {
-            localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId));
+            localVarPathParams.Add("draftId", Configuration.ApiClient.ParameterToString(draftId));
         }
 
         // Query params
@@ -3001,11 +3001,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3087,7 +3087,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3096,7 +3096,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3109,12 +3109,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (draftId != null)
         {
-            localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId));
+            localVarPathParams.Add("draftId", Configuration.ApiClient.ParameterToString(draftId));
         }
 
         // Query params
@@ -3130,11 +3130,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3209,7 +3209,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3218,7 +3218,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3231,7 +3231,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
@@ -3247,11 +3247,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3277,7 +3277,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomain>(localVarStatusCode,
             localVarHeaders,
-            (NluDomain)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
+            (NluDomain)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3326,7 +3326,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3335,7 +3335,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3348,7 +3348,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
@@ -3364,11 +3364,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3394,7 +3394,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomain>(localVarStatusCode,
             localVarHeaders,
-            (NluDomain)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
+            (NluDomain)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3467,7 +3467,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3476,7 +3476,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3489,68 +3489,68 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
         if (intentName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("intentName", this.Configuration.ApiClient.ParameterToString(intentName)));
+            localVarQueryParams.Add(new Tuple<string, string>("intentName", Configuration.ApiClient.ParameterToString(intentName)));
         }
 
         if (assessment != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("assessment", this.Configuration.ApiClient.ParameterToString(assessment)));
+            localVarQueryParams.Add(new Tuple<string, string>("assessment", Configuration.ApiClient.ParameterToString(assessment)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         if (language != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
+            localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(language)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (enableCursorPagination != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("enableCursorPagination", this.Configuration.ApiClient.ParameterToString(enableCursorPagination)));
+            localVarQueryParams.Add(new Tuple<string, string>("enableCursorPagination", Configuration.ApiClient.ParameterToString(enableCursorPagination)));
         }
 
         if (includeTrainingUtterances != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeTrainingUtterances", this.Configuration.ApiClient.ParameterToString(includeTrainingUtterances)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeTrainingUtterances", Configuration.ApiClient.ParameterToString(includeTrainingUtterances)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (fields != null)
         {
-            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", this.Configuration.ApiClient.ParameterToString(obj))); });
+            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3564,11 +3564,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3594,7 +3594,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluFeedbackListing>(localVarStatusCode,
             localVarHeaders,
-            (NluFeedbackListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackListing)),
+            (NluFeedbackListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3667,7 +3667,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3676,7 +3676,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3689,68 +3689,68 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
         if (intentName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("intentName", this.Configuration.ApiClient.ParameterToString(intentName)));
+            localVarQueryParams.Add(new Tuple<string, string>("intentName", Configuration.ApiClient.ParameterToString(intentName)));
         }
 
         if (assessment != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("assessment", this.Configuration.ApiClient.ParameterToString(assessment)));
+            localVarQueryParams.Add(new Tuple<string, string>("assessment", Configuration.ApiClient.ParameterToString(assessment)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         if (includeDeleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", Configuration.ApiClient.ParameterToString(includeDeleted)));
         }
 
         if (language != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
+            localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(language)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (enableCursorPagination != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("enableCursorPagination", this.Configuration.ApiClient.ParameterToString(enableCursorPagination)));
+            localVarQueryParams.Add(new Tuple<string, string>("enableCursorPagination", Configuration.ApiClient.ParameterToString(enableCursorPagination)));
         }
 
         if (includeTrainingUtterances != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeTrainingUtterances", this.Configuration.ApiClient.ParameterToString(includeTrainingUtterances)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeTrainingUtterances", Configuration.ApiClient.ParameterToString(includeTrainingUtterances)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (fields != null)
         {
-            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", this.Configuration.ApiClient.ParameterToString(obj))); });
+            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3764,11 +3764,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3794,7 +3794,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluFeedbackListing>(localVarStatusCode,
             localVarHeaders,
-            (NluFeedbackListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackListing)),
+            (NluFeedbackListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3852,7 +3852,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3861,7 +3861,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3874,18 +3874,18 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (feedbackId != null)
         {
-            localVarPathParams.Add("feedbackId", this.Configuration.ApiClient.ParameterToString(feedbackId));
+            localVarPathParams.Add("feedbackId", Configuration.ApiClient.ParameterToString(feedbackId));
         }
 
         // Query params
         if (fields != null)
         {
-            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", this.Configuration.ApiClient.ParameterToString(obj))); });
+            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -3899,11 +3899,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3929,7 +3929,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluFeedbackResponse>(localVarStatusCode,
             localVarHeaders,
-            (NluFeedbackResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackResponse)),
+            (NluFeedbackResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3988,7 +3988,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3997,7 +3997,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4010,18 +4010,18 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (feedbackId != null)
         {
-            localVarPathParams.Add("feedbackId", this.Configuration.ApiClient.ParameterToString(feedbackId));
+            localVarPathParams.Add("feedbackId", Configuration.ApiClient.ParameterToString(feedbackId));
         }
 
         // Query params
         if (fields != null)
         {
-            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", this.Configuration.ApiClient.ParameterToString(obj))); });
+            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4035,11 +4035,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4065,7 +4065,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluFeedbackResponse>(localVarStatusCode,
             localVarHeaders,
-            (NluFeedbackResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackResponse)),
+            (NluFeedbackResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4123,7 +4123,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4132,7 +4132,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4145,18 +4145,18 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
         if (includeUtterances != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", this.Configuration.ApiClient.ParameterToString(includeUtterances)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", Configuration.ApiClient.ParameterToString(includeUtterances)));
         }
 
         // Header params
@@ -4170,11 +4170,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4200,7 +4200,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersion>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
+            (NluDomainVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4259,7 +4259,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4268,7 +4268,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4281,18 +4281,18 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
         if (includeUtterances != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", this.Configuration.ApiClient.ParameterToString(includeUtterances)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", Configuration.ApiClient.ParameterToString(includeUtterances)));
         }
 
         // Header params
@@ -4306,11 +4306,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4336,7 +4336,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersion>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
+            (NluDomainVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4392,7 +4392,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4401,7 +4401,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4414,12 +4414,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -4435,11 +4435,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4465,7 +4465,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersionQualityReport>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersionQualityReport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionQualityReport)),
+            (NluDomainVersionQualityReport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionQualityReport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4522,7 +4522,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4531,7 +4531,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4544,12 +4544,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -4565,11 +4565,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4595,7 +4595,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersionQualityReport>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersionQualityReport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionQualityReport)),
+            (NluDomainVersionQualityReport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionQualityReport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4650,7 +4650,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4659,7 +4659,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4672,23 +4672,23 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
         if (includeUtterances != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", this.Configuration.ApiClient.ParameterToString(includeUtterances)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", Configuration.ApiClient.ParameterToString(includeUtterances)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -4702,11 +4702,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4732,7 +4732,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersionListing>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionListing)),
+            (NluDomainVersionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4787,7 +4787,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4796,7 +4796,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4809,23 +4809,23 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
         if (includeUtterances != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", this.Configuration.ApiClient.ParameterToString(includeUtterances)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", Configuration.ApiClient.ParameterToString(includeUtterances)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -4839,11 +4839,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4869,7 +4869,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersionListing>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionListing)),
+            (NluDomainVersionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4915,7 +4915,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4924,7 +4924,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4939,12 +4939,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -4958,11 +4958,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4988,7 +4988,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainListing>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainListing)),
+            (NluDomainListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5034,7 +5034,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5043,7 +5043,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5058,12 +5058,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -5077,11 +5077,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5107,7 +5107,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainListing>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainListing)),
+            (NluDomainListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5156,7 +5156,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5165,7 +5165,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5178,7 +5178,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -5194,11 +5194,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5224,7 +5224,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Miner>(localVarStatusCode,
             localVarHeaders,
-            (Miner)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
+            (Miner)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5273,7 +5273,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5282,7 +5282,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5295,7 +5295,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -5311,11 +5311,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5341,7 +5341,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Miner>(localVarStatusCode,
             localVarHeaders,
-            (Miner)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
+            (Miner)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5401,7 +5401,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5410,7 +5410,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5423,23 +5423,23 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (draftId != null)
         {
-            localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId));
+            localVarPathParams.Add("draftId", Configuration.ApiClient.ParameterToString(draftId));
         }
 
         // Query params
         if (draftIntentId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("draftIntentId", this.Configuration.ApiClient.ParameterToString(draftIntentId)));
+            localVarQueryParams.Add(new Tuple<string, string>("draftIntentId", Configuration.ApiClient.ParameterToString(draftIntentId)));
         }
 
         if (draftTopicId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("draftTopicId", this.Configuration.ApiClient.ParameterToString(draftTopicId)));
+            localVarQueryParams.Add(new Tuple<string, string>("draftTopicId", Configuration.ApiClient.ParameterToString(draftTopicId)));
         }
 
         // Header params
@@ -5453,11 +5453,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5483,7 +5483,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Draft>(localVarStatusCode,
             localVarHeaders,
-            (Draft)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
+            (Draft)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5544,7 +5544,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5553,7 +5553,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5566,23 +5566,23 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (draftId != null)
         {
-            localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId));
+            localVarPathParams.Add("draftId", Configuration.ApiClient.ParameterToString(draftId));
         }
 
         // Query params
         if (draftIntentId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("draftIntentId", this.Configuration.ApiClient.ParameterToString(draftIntentId)));
+            localVarQueryParams.Add(new Tuple<string, string>("draftIntentId", Configuration.ApiClient.ParameterToString(draftIntentId)));
         }
 
         if (draftTopicId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("draftTopicId", this.Configuration.ApiClient.ParameterToString(draftTopicId)));
+            localVarQueryParams.Add(new Tuple<string, string>("draftTopicId", Configuration.ApiClient.ParameterToString(draftTopicId)));
         }
 
         // Header params
@@ -5596,11 +5596,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5626,7 +5626,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Draft>(localVarStatusCode,
             localVarHeaders,
-            (Draft)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
+            (Draft)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5675,7 +5675,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5684,7 +5684,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5697,7 +5697,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -5713,11 +5713,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5743,7 +5743,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<DraftListing>(localVarStatusCode,
             localVarHeaders,
-            (DraftListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DraftListing)),
+            (DraftListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DraftListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5792,7 +5792,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5801,7 +5801,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5814,7 +5814,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -5830,11 +5830,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5860,7 +5860,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<DraftListing>(localVarStatusCode,
             localVarHeaders,
-            (DraftListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DraftListing)),
+            (DraftListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DraftListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5918,7 +5918,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5927,7 +5927,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5940,18 +5940,18 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (intentId != null)
         {
-            localVarPathParams.Add("intentId", this.Configuration.ApiClient.ParameterToString(intentId));
+            localVarPathParams.Add("intentId", Configuration.ApiClient.ParameterToString(intentId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -5965,11 +5965,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5995,7 +5995,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinerIntent>(localVarStatusCode,
             localVarHeaders,
-            (MinerIntent)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerIntent)),
+            (MinerIntent)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerIntent)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6054,7 +6054,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6063,7 +6063,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6076,18 +6076,18 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (intentId != null)
         {
-            localVarPathParams.Add("intentId", this.Configuration.ApiClient.ParameterToString(intentId));
+            localVarPathParams.Add("intentId", Configuration.ApiClient.ParameterToString(intentId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -6101,11 +6101,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6131,7 +6131,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinerIntent>(localVarStatusCode,
             localVarHeaders,
-            (MinerIntent)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerIntent)),
+            (MinerIntent)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerIntent)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6182,7 +6182,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6191,7 +6191,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6204,13 +6204,13 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -6224,11 +6224,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6254,7 +6254,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinedIntentsListing>(localVarStatusCode,
             localVarHeaders,
-            (MinedIntentsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinedIntentsListing)),
+            (MinedIntentsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinedIntentsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6305,7 +6305,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6314,7 +6314,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6327,13 +6327,13 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -6347,11 +6347,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6377,7 +6377,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinedIntentsListing>(localVarStatusCode,
             localVarHeaders,
-            (MinedIntentsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinedIntentsListing)),
+            (MinedIntentsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinedIntentsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6435,7 +6435,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6444,7 +6444,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6457,18 +6457,18 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -6482,11 +6482,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6512,7 +6512,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinerTopic>(localVarStatusCode,
             localVarHeaders,
-            (MinerTopic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopic)),
+            (MinerTopic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6571,7 +6571,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6580,7 +6580,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6593,18 +6593,18 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -6618,11 +6618,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6648,7 +6648,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinerTopic>(localVarStatusCode,
             localVarHeaders,
-            (MinerTopic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopic)),
+            (MinerTopic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6711,7 +6711,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6720,7 +6720,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6733,17 +6733,17 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (phraseId != null)
         {
-            localVarPathParams.Add("phraseId", this.Configuration.ApiClient.ParameterToString(phraseId));
+            localVarPathParams.Add("phraseId", Configuration.ApiClient.ParameterToString(phraseId));
         }
 
         // Query params
@@ -6759,11 +6759,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6789,7 +6789,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinerTopicPhrase>(localVarStatusCode,
             localVarHeaders,
-            (MinerTopicPhrase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopicPhrase)),
+            (MinerTopicPhrase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopicPhrase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6854,7 +6854,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6863,7 +6863,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6876,17 +6876,17 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         if (phraseId != null)
         {
-            localVarPathParams.Add("phraseId", this.Configuration.ApiClient.ParameterToString(phraseId));
+            localVarPathParams.Add("phraseId", Configuration.ApiClient.ParameterToString(phraseId));
         }
 
         // Query params
@@ -6902,11 +6902,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6932,7 +6932,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinerTopicPhrase>(localVarStatusCode,
             localVarHeaders,
-            (MinerTopicPhrase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopicPhrase)),
+            (MinerTopicPhrase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopicPhrase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6981,7 +6981,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6990,7 +6990,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7003,7 +7003,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -7019,11 +7019,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7049,7 +7049,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinerTopicsListing>(localVarStatusCode,
             localVarHeaders,
-            (MinerTopicsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopicsListing)),
+            (MinerTopicsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopicsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7098,7 +7098,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7107,7 +7107,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7120,7 +7120,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -7136,11 +7136,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7166,7 +7166,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinerTopicsListing>(localVarStatusCode,
             localVarHeaders,
-            (MinerTopicsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopicsListing)),
+            (MinerTopicsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerTopicsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7210,7 +7210,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7219,7 +7219,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7234,7 +7234,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Query params
         if (minerType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("minerType", this.Configuration.ApiClient.ParameterToString(minerType)));
+            localVarQueryParams.Add(new Tuple<string, string>("minerType", Configuration.ApiClient.ParameterToString(minerType)));
         }
 
         // Header params
@@ -7248,11 +7248,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7278,7 +7278,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinerListing>(localVarStatusCode,
             localVarHeaders,
-            (MinerListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerListing)),
+            (MinerListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7322,7 +7322,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7331,7 +7331,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7346,7 +7346,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Query params
         if (minerType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("minerType", this.Configuration.ApiClient.ParameterToString(minerType)));
+            localVarQueryParams.Add(new Tuple<string, string>("minerType", Configuration.ApiClient.ParameterToString(minerType)));
         }
 
         // Header params
@@ -7360,11 +7360,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7390,7 +7390,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<MinerListing>(localVarStatusCode,
             localVarHeaders,
-            (MinerListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerListing)),
+            (MinerListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinerListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7432,7 +7432,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7441,7 +7441,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7466,11 +7466,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7496,7 +7496,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluOrganization>(localVarStatusCode,
             localVarHeaders,
-            (NluOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluOrganization)),
+            (NluOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7538,7 +7538,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7547,7 +7547,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7572,11 +7572,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7602,7 +7602,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluOrganization>(localVarStatusCode,
             localVarHeaders,
-            (NluOrganization)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluOrganization)),
+            (NluOrganization)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluOrganization)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7659,7 +7659,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7668,7 +7668,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7681,7 +7681,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
@@ -7693,7 +7693,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7706,11 +7706,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7736,7 +7736,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomain>(localVarStatusCode,
             localVarHeaders,
-            (NluDomain)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
+            (NluDomain)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7794,7 +7794,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7803,7 +7803,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7816,7 +7816,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
@@ -7828,7 +7828,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7841,11 +7841,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7871,7 +7871,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomain>(localVarStatusCode,
             localVarHeaders,
-            (NluDomain)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
+            (NluDomain)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7930,7 +7930,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7939,7 +7939,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7952,12 +7952,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (draftId != null)
         {
-            localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId));
+            localVarPathParams.Add("draftId", Configuration.ApiClient.ParameterToString(draftId));
         }
 
         // Query params
@@ -7969,7 +7969,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7982,11 +7982,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8012,7 +8012,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Draft>(localVarStatusCode,
             localVarHeaders,
-            (Draft)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
+            (Draft)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8072,7 +8072,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8081,7 +8081,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8094,12 +8094,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         if (draftId != null)
         {
-            localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId));
+            localVarPathParams.Add("draftId", Configuration.ApiClient.ParameterToString(draftId));
         }
 
         // Query params
@@ -8111,7 +8111,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8124,11 +8124,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8154,7 +8154,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Draft>(localVarStatusCode,
             localVarHeaders,
-            (Draft)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
+            (Draft)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8211,7 +8211,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8220,7 +8220,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8233,7 +8233,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
@@ -8245,7 +8245,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8258,11 +8258,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8288,7 +8288,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluFeedbackResponse>(localVarStatusCode,
             localVarHeaders,
-            (NluFeedbackResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackResponse)),
+            (NluFeedbackResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8346,7 +8346,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8355,7 +8355,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8368,7 +8368,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
@@ -8380,7 +8380,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8393,11 +8393,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8423,7 +8423,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluFeedbackResponse>(localVarStatusCode,
             localVarHeaders,
-            (NluFeedbackResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackResponse)),
+            (NluFeedbackResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluFeedbackResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8487,7 +8487,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8496,7 +8496,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8509,12 +8509,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -8526,7 +8526,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8539,11 +8539,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8569,7 +8569,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDetectionResponse>(localVarStatusCode,
             localVarHeaders,
-            (NluDetectionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDetectionResponse)),
+            (NluDetectionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDetectionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8635,7 +8635,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8644,7 +8644,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8657,12 +8657,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -8674,7 +8674,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8687,11 +8687,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8717,7 +8717,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDetectionResponse>(localVarStatusCode,
             localVarHeaders,
-            (NluDetectionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDetectionResponse)),
+            (NluDetectionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDetectionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8773,7 +8773,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8782,7 +8782,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8795,12 +8795,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -8816,11 +8816,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8846,7 +8846,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersion>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
+            (NluDomainVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8903,7 +8903,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8912,7 +8912,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8925,12 +8925,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -8946,11 +8946,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8976,7 +8976,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersion>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
+            (NluDomainVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9032,7 +9032,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9041,7 +9041,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9054,12 +9054,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -9075,11 +9075,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9105,7 +9105,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersionTrainingResponse>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersionTrainingResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionTrainingResponse)),
+            (NluDomainVersionTrainingResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionTrainingResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9162,7 +9162,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9171,7 +9171,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9184,12 +9184,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -9205,11 +9205,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9235,7 +9235,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersionTrainingResponse>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersionTrainingResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionTrainingResponse)),
+            (NluDomainVersionTrainingResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersionTrainingResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9294,7 +9294,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9303,7 +9303,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9316,13 +9316,13 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
         if (includeUtterances != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", this.Configuration.ApiClient.ParameterToString(includeUtterances)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", Configuration.ApiClient.ParameterToString(includeUtterances)));
         }
 
         // Header params
@@ -9332,7 +9332,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9345,11 +9345,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9375,7 +9375,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersion>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
+            (NluDomainVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9435,7 +9435,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9444,7 +9444,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9457,13 +9457,13 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         // Query params
         if (includeUtterances != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", this.Configuration.ApiClient.ParameterToString(includeUtterances)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeUtterances", Configuration.ApiClient.ParameterToString(includeUtterances)));
         }
 
         // Header params
@@ -9473,7 +9473,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9486,11 +9486,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9516,7 +9516,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersion>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
+            (NluDomainVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9566,7 +9566,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9575,7 +9575,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9596,7 +9596,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9609,11 +9609,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9639,7 +9639,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomain>(localVarStatusCode,
             localVarHeaders,
-            (NluDomain)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
+            (NluDomain)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9689,7 +9689,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9698,7 +9698,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9719,7 +9719,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9732,11 +9732,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9762,7 +9762,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomain>(localVarStatusCode,
             localVarHeaders,
-            (NluDomain)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
+            (NluDomain)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomain)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9819,7 +9819,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9828,7 +9828,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9841,7 +9841,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -9853,7 +9853,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9866,11 +9866,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9896,7 +9896,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Draft>(localVarStatusCode,
             localVarHeaders,
-            (Draft)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
+            (Draft)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9954,7 +9954,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9963,7 +9963,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9976,7 +9976,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -9988,7 +9988,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10001,11 +10001,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10031,7 +10031,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Draft>(localVarStatusCode,
             localVarHeaders,
-            (Draft)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
+            (Draft)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Draft)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10083,7 +10083,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10092,7 +10092,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10105,7 +10105,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -10117,7 +10117,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10130,11 +10130,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10160,7 +10160,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Miner>(localVarStatusCode,
             localVarHeaders,
-            (Miner)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
+            (Miner)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10212,7 +10212,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10221,7 +10221,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10234,7 +10234,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (minerId != null)
         {
-            localVarPathParams.Add("minerId", this.Configuration.ApiClient.ParameterToString(minerId));
+            localVarPathParams.Add("minerId", Configuration.ApiClient.ParameterToString(minerId));
         }
 
         // Query params
@@ -10246,7 +10246,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10259,11 +10259,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10289,7 +10289,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Miner>(localVarStatusCode,
             localVarHeaders,
-            (Miner)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
+            (Miner)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10339,7 +10339,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10348,7 +10348,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10369,7 +10369,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10382,11 +10382,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10412,7 +10412,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Miner>(localVarStatusCode,
             localVarHeaders,
-            (Miner)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
+            (Miner)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10462,7 +10462,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10471,7 +10471,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10492,7 +10492,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10505,11 +10505,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10535,7 +10535,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<Miner>(localVarStatusCode,
             localVarHeaders,
-            (Miner)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
+            (Miner)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Miner)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10599,7 +10599,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10608,7 +10608,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10621,12 +10621,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -10638,7 +10638,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10651,11 +10651,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10681,7 +10681,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersion>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
+            (NluDomainVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10747,7 +10747,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10756,7 +10756,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10769,12 +10769,12 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Path params
         if (domainId != null)
         {
-            localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+            localVarPathParams.Add("domainId", Configuration.ApiClient.ParameterToString(domainId));
         }
 
         if (domainVersionId != null)
         {
-            localVarPathParams.Add("domainVersionId", this.Configuration.ApiClient.ParameterToString(domainVersionId));
+            localVarPathParams.Add("domainVersionId", Configuration.ApiClient.ParameterToString(domainVersionId));
         }
 
         // Query params
@@ -10786,7 +10786,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -10799,11 +10799,11 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10829,7 +10829,7 @@ public partial class LanguageUnderstandingApi : ILanguageUnderstandingApi
 
         return new ApiResponse<NluDomainVersion>(localVarStatusCode,
             localVarHeaders,
-            (NluDomainVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
+            (NluDomainVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NluDomainVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

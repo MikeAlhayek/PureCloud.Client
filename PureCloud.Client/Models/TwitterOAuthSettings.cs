@@ -65,7 +65,7 @@ public partial class TwitterOAuthSettings : IEquatable<TwitterOAuthSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TwitterOAuthSettings);
+        return Equals(obj as TwitterOAuthSettings);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class TwitterOAuthSettings : IEquatable<TwitterOAuthSettings>
 
         return true &&
             (
-                this.ClientId == other.ClientId ||
-                this.ClientId != null &&
-                this.ClientId.Equals(other.ClientId)
+                ClientId == other.ClientId ||
+                ClientId != null &&
+                ClientId.Equals(other.ClientId)
             ) &&
             (
-                this.Scopes == other.Scopes ||
-                this.Scopes != null &&
-                this.Scopes.SequenceEqual(other.Scopes)
+                Scopes == other.Scopes ||
+                Scopes != null &&
+                Scopes.SequenceEqual(other.Scopes)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class TwitterOAuthSettings : IEquatable<TwitterOAuthSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ClientId != null)
+            if (ClientId != null)
             {
-                hash = hash * 59 + this.ClientId.GetHashCode();
+                hash = hash * 59 + ClientId.GetHashCode();
             }
 
-            if (this.Scopes != null)
+            if (Scopes != null)
             {
-                hash = hash * 59 + this.Scopes.GetHashCode();
+                hash = hash * 59 + Scopes.GetHashCode();
             }
 
             return hash;

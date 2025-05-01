@@ -132,7 +132,7 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptTopic);
+        return Equals(obj as TranscriptTopic);
     }
 
     /// <summary>
@@ -150,49 +150,49 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.TopicPhrase == other.TopicPhrase ||
-                this.TopicPhrase != null &&
-                this.TopicPhrase.Equals(other.TopicPhrase)
+                TopicPhrase == other.TopicPhrase ||
+                TopicPhrase != null &&
+                TopicPhrase.Equals(other.TopicPhrase)
             ) &&
             (
-                this.TranscriptPhrase == other.TranscriptPhrase ||
-                this.TranscriptPhrase != null &&
-                this.TranscriptPhrase.Equals(other.TranscriptPhrase)
+                TranscriptPhrase == other.TranscriptPhrase ||
+                TranscriptPhrase != null &&
+                TranscriptPhrase.Equals(other.TranscriptPhrase)
             ) &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             ) &&
             (
-                this.StartTimeMilliseconds == other.StartTimeMilliseconds ||
-                this.StartTimeMilliseconds != null &&
-                this.StartTimeMilliseconds.Equals(other.StartTimeMilliseconds)
+                StartTimeMilliseconds == other.StartTimeMilliseconds ||
+                StartTimeMilliseconds != null &&
+                StartTimeMilliseconds.Equals(other.StartTimeMilliseconds)
             ) &&
             (
-                this.Duration == other.Duration ||
-                this.Duration != null &&
-                this.Duration.Equals(other.Duration)
+                Duration == other.Duration ||
+                Duration != null &&
+                Duration.Equals(other.Duration)
             ) &&
             (
-                this.Offset == other.Offset ||
-                this.Offset != null &&
-                this.Offset.Equals(other.Offset)
+                Offset == other.Offset ||
+                Offset != null &&
+                Offset.Equals(other.Offset)
             ) &&
             (
-                this.RecordingLocation == other.RecordingLocation ||
-                this.RecordingLocation != null &&
-                this.RecordingLocation.Equals(other.RecordingLocation)
+                RecordingLocation == other.RecordingLocation ||
+                RecordingLocation != null &&
+                RecordingLocation.Equals(other.RecordingLocation)
             );
     }
 
@@ -207,49 +207,49 @@ public partial class TranscriptTopic : IEquatable<TranscriptTopic>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.TopicPhrase != null)
+            if (TopicPhrase != null)
             {
-                hash = hash * 59 + this.TopicPhrase.GetHashCode();
+                hash = hash * 59 + TopicPhrase.GetHashCode();
             }
 
-            if (this.TranscriptPhrase != null)
+            if (TranscriptPhrase != null)
             {
-                hash = hash * 59 + this.TranscriptPhrase.GetHashCode();
+                hash = hash * 59 + TranscriptPhrase.GetHashCode();
             }
 
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
-            if (this.StartTimeMilliseconds != null)
+            if (StartTimeMilliseconds != null)
             {
-                hash = hash * 59 + this.StartTimeMilliseconds.GetHashCode();
+                hash = hash * 59 + StartTimeMilliseconds.GetHashCode();
             }
 
-            if (this.Duration != null)
+            if (Duration != null)
             {
-                hash = hash * 59 + this.Duration.GetHashCode();
+                hash = hash * 59 + Duration.GetHashCode();
             }
 
-            if (this.Offset != null)
+            if (Offset != null)
             {
-                hash = hash * 59 + this.Offset.GetHashCode();
+                hash = hash * 59 + Offset.GetHashCode();
             }
 
-            if (this.RecordingLocation != null)
+            if (RecordingLocation != null)
             {
-                hash = hash * 59 + this.RecordingLocation.GetHashCode();
+                hash = hash * 59 + RecordingLocation.GetHashCode();
             }
 
             return hash;

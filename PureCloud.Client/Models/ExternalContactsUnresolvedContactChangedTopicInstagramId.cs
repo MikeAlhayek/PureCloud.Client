@@ -74,7 +74,7 @@ public partial class ExternalContactsUnresolvedContactChangedTopicInstagramId : 
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsUnresolvedContactChangedTopicInstagramId);
+        return Equals(obj as ExternalContactsUnresolvedContactChangedTopicInstagramId);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class ExternalContactsUnresolvedContactChangedTopicInstagramId : 
 
         return true &&
             (
-                this.Ids == other.Ids ||
-                this.Ids != null &&
-                this.Ids.SequenceEqual(other.Ids)
+                Ids == other.Ids ||
+                Ids != null &&
+                Ids.SequenceEqual(other.Ids)
             ) &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.Handle == other.Handle ||
-                this.Handle != null &&
-                this.Handle.Equals(other.Handle)
+                Handle == other.Handle ||
+                Handle != null &&
+                Handle.Equals(other.Handle)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class ExternalContactsUnresolvedContactChangedTopicInstagramId : 
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Ids != null)
+            if (Ids != null)
             {
-                hash = hash * 59 + this.Ids.GetHashCode();
+                hash = hash * 59 + Ids.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.Handle != null)
+            if (Handle != null)
             {
-                hash = hash * 59 + this.Handle.GetHashCode();
+                hash = hash * 59 + Handle.GetHashCode();
             }
 
             return hash;

@@ -62,7 +62,7 @@ public partial class ActivityCodesReference : IEquatable<ActivityCodesReference>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActivityCodesReference);
+        return Equals(obj as ActivityCodesReference);
     }
 
     /// <summary>
@@ -80,14 +80,14 @@ public partial class ActivityCodesReference : IEquatable<ActivityCodesReference>
 
         return true &&
             (
-                this.Ids == other.Ids ||
-                this.Ids != null &&
-                this.Ids.SequenceEqual(other.Ids)
+                Ids == other.Ids ||
+                Ids != null &&
+                Ids.SequenceEqual(other.Ids)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -102,14 +102,14 @@ public partial class ActivityCodesReference : IEquatable<ActivityCodesReference>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Ids != null)
+            if (Ids != null)
             {
-                hash = hash * 59 + this.Ids.GetHashCode();
+                hash = hash * 59 + Ids.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

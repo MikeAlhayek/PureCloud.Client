@@ -454,7 +454,7 @@ public partial class KlaxonInteractionStatsRulesTopicInteractionStatRule : IEqua
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KlaxonInteractionStatsRulesTopicInteractionStatRule);
+        return Equals(obj as KlaxonInteractionStatsRulesTopicInteractionStatRule);
     }
 
     /// <summary>
@@ -472,74 +472,74 @@ public partial class KlaxonInteractionStatsRulesTopicInteractionStatRule : IEqua
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Dimension == other.Dimension ||
-                this.Dimension != null &&
-                this.Dimension.Equals(other.Dimension)
+                Dimension == other.Dimension ||
+                Dimension != null &&
+                Dimension.Equals(other.Dimension)
             ) &&
             (
-                this.DimensionValue == other.DimensionValue ||
-                this.DimensionValue != null &&
-                this.DimensionValue.Equals(other.DimensionValue)
+                DimensionValue == other.DimensionValue ||
+                DimensionValue != null &&
+                DimensionValue.Equals(other.DimensionValue)
             ) &&
             (
-                this.DimensionValueName == other.DimensionValueName ||
-                this.DimensionValueName != null &&
-                this.DimensionValueName.Equals(other.DimensionValueName)
+                DimensionValueName == other.DimensionValueName ||
+                DimensionValueName != null &&
+                DimensionValueName.Equals(other.DimensionValueName)
             ) &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.NumericRange == other.NumericRange ||
-                this.NumericRange != null &&
-                this.NumericRange.Equals(other.NumericRange)
+                NumericRange == other.NumericRange ||
+                NumericRange != null &&
+                NumericRange.Equals(other.NumericRange)
             ) &&
             (
-                this.Statistic == other.Statistic ||
-                this.Statistic != null &&
-                this.Statistic.Equals(other.Statistic)
+                Statistic == other.Statistic ||
+                Statistic != null &&
+                Statistic.Equals(other.Statistic)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.InAlarm == other.InAlarm ||
-                this.InAlarm != null &&
-                this.InAlarm.Equals(other.InAlarm)
+                InAlarm == other.InAlarm ||
+                InAlarm != null &&
+                InAlarm.Equals(other.InAlarm)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.NotificationUsers == other.NotificationUsers ||
-                this.NotificationUsers != null &&
-                this.NotificationUsers.SequenceEqual(other.NotificationUsers)
+                NotificationUsers == other.NotificationUsers ||
+                NotificationUsers != null &&
+                NotificationUsers.SequenceEqual(other.NotificationUsers)
             ) &&
             (
-                this.AlertTypes == other.AlertTypes ||
-                this.AlertTypes != null &&
-                this.AlertTypes.SequenceEqual(other.AlertTypes)
+                AlertTypes == other.AlertTypes ||
+                AlertTypes != null &&
+                AlertTypes.SequenceEqual(other.AlertTypes)
             );
     }
 
@@ -554,74 +554,74 @@ public partial class KlaxonInteractionStatsRulesTopicInteractionStatRule : IEqua
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Dimension != null)
+            if (Dimension != null)
             {
-                hash = hash * 59 + this.Dimension.GetHashCode();
+                hash = hash * 59 + Dimension.GetHashCode();
             }
 
-            if (this.DimensionValue != null)
+            if (DimensionValue != null)
             {
-                hash = hash * 59 + this.DimensionValue.GetHashCode();
+                hash = hash * 59 + DimensionValue.GetHashCode();
             }
 
-            if (this.DimensionValueName != null)
+            if (DimensionValueName != null)
             {
-                hash = hash * 59 + this.DimensionValueName.GetHashCode();
+                hash = hash * 59 + DimensionValueName.GetHashCode();
             }
 
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.NumericRange != null)
+            if (NumericRange != null)
             {
-                hash = hash * 59 + this.NumericRange.GetHashCode();
+                hash = hash * 59 + NumericRange.GetHashCode();
             }
 
-            if (this.Statistic != null)
+            if (Statistic != null)
             {
-                hash = hash * 59 + this.Statistic.GetHashCode();
+                hash = hash * 59 + Statistic.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.InAlarm != null)
+            if (InAlarm != null)
             {
-                hash = hash * 59 + this.InAlarm.GetHashCode();
+                hash = hash * 59 + InAlarm.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.NotificationUsers != null)
+            if (NotificationUsers != null)
             {
-                hash = hash * 59 + this.NotificationUsers.GetHashCode();
+                hash = hash * 59 + NotificationUsers.GetHashCode();
             }
 
-            if (this.AlertTypes != null)
+            if (AlertTypes != null)
             {
-                hash = hash * 59 + this.AlertTypes.GetHashCode();
+                hash = hash * 59 + AlertTypes.GetHashCode();
             }
 
             return hash;

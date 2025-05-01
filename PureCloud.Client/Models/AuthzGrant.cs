@@ -85,7 +85,7 @@ public partial class AuthzGrant : IEquatable<AuthzGrant>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuthzGrant);
+        return Equals(obj as AuthzGrant);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class AuthzGrant : IEquatable<AuthzGrant>
 
         return true &&
             (
-                this.SubjectId == other.SubjectId ||
-                this.SubjectId != null &&
-                this.SubjectId.Equals(other.SubjectId)
+                SubjectId == other.SubjectId ||
+                SubjectId != null &&
+                SubjectId.Equals(other.SubjectId)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Role == other.Role ||
-                this.Role != null &&
-                this.Role.Equals(other.Role)
+                Role == other.Role ||
+                Role != null &&
+                Role.Equals(other.Role)
             ) &&
             (
-                this.GrantMadeAt == other.GrantMadeAt ||
-                this.GrantMadeAt != null &&
-                this.GrantMadeAt.Equals(other.GrantMadeAt)
+                GrantMadeAt == other.GrantMadeAt ||
+                GrantMadeAt != null &&
+                GrantMadeAt.Equals(other.GrantMadeAt)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class AuthzGrant : IEquatable<AuthzGrant>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SubjectId != null)
+            if (SubjectId != null)
             {
-                hash = hash * 59 + this.SubjectId.GetHashCode();
+                hash = hash * 59 + SubjectId.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Role != null)
+            if (Role != null)
             {
-                hash = hash * 59 + this.Role.GetHashCode();
+                hash = hash * 59 + Role.GetHashCode();
             }
 
-            if (this.GrantMadeAt != null)
+            if (GrantMadeAt != null)
             {
-                hash = hash * 59 + this.GrantMadeAt.GetHashCode();
+                hash = hash * 59 + GrantMadeAt.GetHashCode();
             }
 
             return hash;

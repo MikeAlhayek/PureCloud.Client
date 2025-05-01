@@ -52,7 +52,7 @@ public partial class LearningAssignmentEntity : IEquatable<LearningAssignmentEnt
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentEntity);
+        return Equals(obj as LearningAssignmentEntity);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class LearningAssignmentEntity : IEquatable<LearningAssignmentEnt
 
         return true &&
             (
-                this.AssignmentId == other.AssignmentId ||
-                this.AssignmentId != null &&
-                this.AssignmentId.Equals(other.AssignmentId)
+                AssignmentId == other.AssignmentId ||
+                AssignmentId != null &&
+                AssignmentId.Equals(other.AssignmentId)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class LearningAssignmentEntity : IEquatable<LearningAssignmentEnt
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AssignmentId != null)
+            if (AssignmentId != null)
             {
-                hash = hash * 59 + this.AssignmentId.GetHashCode();
+                hash = hash * 59 + AssignmentId.GetHashCode();
             }
 
             return hash;

@@ -285,7 +285,7 @@ public partial class FlowActivityQuery : IEquatable<FlowActivityQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowActivityQuery);
+        return Equals(obj as FlowActivityQuery);
     }
 
     /// <summary>
@@ -303,24 +303,24 @@ public partial class FlowActivityQuery : IEquatable<FlowActivityQuery>
 
         return true &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.GroupBy == other.GroupBy ||
-                this.GroupBy != null &&
-                this.GroupBy.SequenceEqual(other.GroupBy)
+                GroupBy == other.GroupBy ||
+                GroupBy != null &&
+                GroupBy.SequenceEqual(other.GroupBy)
             ) &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             ) &&
             (
-                this.Order == other.Order ||
-                this.Order != null &&
-                this.Order.Equals(other.Order)
+                Order == other.Order ||
+                Order != null &&
+                Order.Equals(other.Order)
             );
     }
 
@@ -335,24 +335,24 @@ public partial class FlowActivityQuery : IEquatable<FlowActivityQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.GroupBy != null)
+            if (GroupBy != null)
             {
-                hash = hash * 59 + this.GroupBy.GetHashCode();
+                hash = hash * 59 + GroupBy.GetHashCode();
             }
 
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
-            if (this.Order != null)
+            if (Order != null)
             {
-                hash = hash * 59 + this.Order.GetHashCode();
+                hash = hash * 59 + Order.GetHashCode();
             }
 
             return hash;

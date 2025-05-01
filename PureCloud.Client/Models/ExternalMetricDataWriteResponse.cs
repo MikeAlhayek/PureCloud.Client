@@ -65,7 +65,7 @@ public partial class ExternalMetricDataWriteResponse : IEquatable<ExternalMetric
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalMetricDataWriteResponse);
+        return Equals(obj as ExternalMetricDataWriteResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ExternalMetricDataWriteResponse : IEquatable<ExternalMetric
 
         return true &&
             (
-                this.ProcessedEntities == other.ProcessedEntities ||
-                this.ProcessedEntities != null &&
-                this.ProcessedEntities.SequenceEqual(other.ProcessedEntities)
+                ProcessedEntities == other.ProcessedEntities ||
+                ProcessedEntities != null &&
+                ProcessedEntities.SequenceEqual(other.ProcessedEntities)
             ) &&
             (
-                this.UnprocessedEntities == other.UnprocessedEntities ||
-                this.UnprocessedEntities != null &&
-                this.UnprocessedEntities.SequenceEqual(other.UnprocessedEntities)
+                UnprocessedEntities == other.UnprocessedEntities ||
+                UnprocessedEntities != null &&
+                UnprocessedEntities.SequenceEqual(other.UnprocessedEntities)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ExternalMetricDataWriteResponse : IEquatable<ExternalMetric
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ProcessedEntities != null)
+            if (ProcessedEntities != null)
             {
-                hash = hash * 59 + this.ProcessedEntities.GetHashCode();
+                hash = hash * 59 + ProcessedEntities.GetHashCode();
             }
 
-            if (this.UnprocessedEntities != null)
+            if (UnprocessedEntities != null)
             {
-                hash = hash * 59 + this.UnprocessedEntities.GetHashCode();
+                hash = hash * 59 + UnprocessedEntities.GetHashCode();
             }
 
             return hash;

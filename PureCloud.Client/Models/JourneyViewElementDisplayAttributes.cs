@@ -83,7 +83,7 @@ public partial class JourneyViewElementDisplayAttributes : IEquatable<JourneyVie
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewElementDisplayAttributes);
+        return Equals(obj as JourneyViewElementDisplayAttributes);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class JourneyViewElementDisplayAttributes : IEquatable<JourneyVie
 
         return true &&
             (
-                this.X == other.X ||
-                this.X != null &&
-                this.X.Equals(other.X)
+                X == other.X ||
+                X != null &&
+                X.Equals(other.X)
             ) &&
             (
-                this.Y == other.Y ||
-                this.Y != null &&
-                this.Y.Equals(other.Y)
+                Y == other.Y ||
+                Y != null &&
+                Y.Equals(other.Y)
             ) &&
             (
-                this.Col == other.Col ||
-                this.Col != null &&
-                this.Col.Equals(other.Col)
+                Col == other.Col ||
+                Col != null &&
+                Col.Equals(other.Col)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class JourneyViewElementDisplayAttributes : IEquatable<JourneyVie
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.X != null)
+            if (X != null)
             {
-                hash = hash * 59 + this.X.GetHashCode();
+                hash = hash * 59 + X.GetHashCode();
             }
 
-            if (this.Y != null)
+            if (Y != null)
             {
-                hash = hash * 59 + this.Y.GetHashCode();
+                hash = hash * 59 + Y.GetHashCode();
             }
 
-            if (this.Col != null)
+            if (Col != null)
             {
-                hash = hash * 59 + this.Col.GetHashCode();
+                hash = hash * 59 + Col.GetHashCode();
             }
 
             return hash;

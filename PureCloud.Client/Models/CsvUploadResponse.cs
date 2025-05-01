@@ -83,7 +83,7 @@ public partial class CsvUploadResponse : IEquatable<CsvUploadResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CsvUploadResponse);
+        return Equals(obj as CsvUploadResponse);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class CsvUploadResponse : IEquatable<CsvUploadResponse>
 
         return true &&
             (
-                this.UploadId == other.UploadId ||
-                this.UploadId != null &&
-                this.UploadId.Equals(other.UploadId)
+                UploadId == other.UploadId ||
+                UploadId != null &&
+                UploadId.Equals(other.UploadId)
             ) &&
             (
-                this.UploadUrl == other.UploadUrl ||
-                this.UploadUrl != null &&
-                this.UploadUrl.Equals(other.UploadUrl)
+                UploadUrl == other.UploadUrl ||
+                UploadUrl != null &&
+                UploadUrl.Equals(other.UploadUrl)
             ) &&
             (
-                this.UploadHeaders == other.UploadHeaders ||
-                this.UploadHeaders != null &&
-                this.UploadHeaders.SequenceEqual(other.UploadHeaders)
+                UploadHeaders == other.UploadHeaders ||
+                UploadHeaders != null &&
+                UploadHeaders.SequenceEqual(other.UploadHeaders)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class CsvUploadResponse : IEquatable<CsvUploadResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadId != null)
+            if (UploadId != null)
             {
-                hash = hash * 59 + this.UploadId.GetHashCode();
+                hash = hash * 59 + UploadId.GetHashCode();
             }
 
-            if (this.UploadUrl != null)
+            if (UploadUrl != null)
             {
-                hash = hash * 59 + this.UploadUrl.GetHashCode();
+                hash = hash * 59 + UploadUrl.GetHashCode();
             }
 
-            if (this.UploadHeaders != null)
+            if (UploadHeaders != null)
             {
-                hash = hash * 59 + this.UploadHeaders.GetHashCode();
+                hash = hash * 59 + UploadHeaders.GetHashCode();
             }
 
             return hash;

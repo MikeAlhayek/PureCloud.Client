@@ -53,7 +53,7 @@ public partial class LocaleFlowVersionInfo : IEquatable<LocaleFlowVersionInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LocaleFlowVersionInfo);
+        return Equals(obj as LocaleFlowVersionInfo);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class LocaleFlowVersionInfo : IEquatable<LocaleFlowVersionInfo>
 
         return true &&
             (
-                this.NluVersion == other.NluVersion ||
-                this.NluVersion != null &&
-                this.NluVersion.Equals(other.NluVersion)
+                NluVersion == other.NluVersion ||
+                NluVersion != null &&
+                NluVersion.Equals(other.NluVersion)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class LocaleFlowVersionInfo : IEquatable<LocaleFlowVersionInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.NluVersion != null)
+            if (NluVersion != null)
             {
-                hash = hash * 59 + this.NluVersion.GetHashCode();
+                hash = hash * 59 + NluVersion.GetHashCode();
             }
 
             return hash;

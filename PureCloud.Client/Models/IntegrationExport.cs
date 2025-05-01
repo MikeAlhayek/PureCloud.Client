@@ -71,7 +71,7 @@ public partial class IntegrationExport : IEquatable<IntegrationExport>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IntegrationExport);
+        return Equals(obj as IntegrationExport);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class IntegrationExport : IEquatable<IntegrationExport>
 
         return true &&
             (
-                this.Integration == other.Integration ||
-                this.Integration != null &&
-                this.Integration.Equals(other.Integration)
+                Integration == other.Integration ||
+                Integration != null &&
+                Integration.Equals(other.Integration)
             ) &&
             (
-                this.ShouldExportScreenRecordings == other.ShouldExportScreenRecordings ||
-                this.ShouldExportScreenRecordings != null &&
-                this.ShouldExportScreenRecordings.Equals(other.ShouldExportScreenRecordings)
+                ShouldExportScreenRecordings == other.ShouldExportScreenRecordings ||
+                ShouldExportScreenRecordings != null &&
+                ShouldExportScreenRecordings.Equals(other.ShouldExportScreenRecordings)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class IntegrationExport : IEquatable<IntegrationExport>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Integration != null)
+            if (Integration != null)
             {
-                hash = hash * 59 + this.Integration.GetHashCode();
+                hash = hash * 59 + Integration.GetHashCode();
             }
 
-            if (this.ShouldExportScreenRecordings != null)
+            if (ShouldExportScreenRecordings != null)
             {
-                hash = hash * 59 + this.ShouldExportScreenRecordings.GetHashCode();
+                hash = hash * 59 + ShouldExportScreenRecordings.GetHashCode();
             }
 
             return hash;

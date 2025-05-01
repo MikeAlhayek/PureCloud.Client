@@ -107,7 +107,7 @@ public partial class LexV2Slot : IEquatable<LexV2Slot>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LexV2Slot);
+        return Equals(obj as LexV2Slot);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class LexV2Slot : IEquatable<LexV2Slot>
 
         return true &&
             (
-                this.SlotName == other.SlotName ||
-                this.SlotName != null &&
-                this.SlotName.Equals(other.SlotName)
+                SlotName == other.SlotName ||
+                SlotName != null &&
+                SlotName.Equals(other.SlotName)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.SlotId == other.SlotId ||
-                this.SlotId != null &&
-                this.SlotId.Equals(other.SlotId)
+                SlotId == other.SlotId ||
+                SlotId != null &&
+                SlotId.Equals(other.SlotId)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.SlotTypeId == other.SlotTypeId ||
-                this.SlotTypeId != null &&
-                this.SlotTypeId.Equals(other.SlotTypeId)
+                SlotTypeId == other.SlotTypeId ||
+                SlotTypeId != null &&
+                SlotTypeId.Equals(other.SlotTypeId)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class LexV2Slot : IEquatable<LexV2Slot>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SlotName != null)
+            if (SlotName != null)
             {
-                hash = hash * 59 + this.SlotName.GetHashCode();
+                hash = hash * 59 + SlotName.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.SlotId != null)
+            if (SlotId != null)
             {
-                hash = hash * 59 + this.SlotId.GetHashCode();
+                hash = hash * 59 + SlotId.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.SlotTypeId != null)
+            if (SlotTypeId != null)
             {
-                hash = hash * 59 + this.SlotTypeId.GetHashCode();
+                hash = hash * 59 + SlotTypeId.GetHashCode();
             }
 
             return hash;

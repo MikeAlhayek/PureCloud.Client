@@ -103,7 +103,7 @@ public partial class ContactsExportFieldListFilter : IEquatable<ContactsExportFi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactsExportFieldListFilter);
+        return Equals(obj as ContactsExportFieldListFilter);
     }
 
     /// <summary>
@@ -121,14 +121,14 @@ public partial class ContactsExportFieldListFilter : IEquatable<ContactsExportFi
 
         return true &&
             (
-                this.Field == other.Field ||
-                this.Field != null &&
-                this.Field.Equals(other.Field)
+                Field == other.Field ||
+                Field != null &&
+                Field.Equals(other.Field)
             ) &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             );
     }
 
@@ -143,14 +143,14 @@ public partial class ContactsExportFieldListFilter : IEquatable<ContactsExportFi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Field != null)
+            if (Field != null)
             {
-                hash = hash * 59 + this.Field.GetHashCode();
+                hash = hash * 59 + Field.GetHashCode();
             }
 
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
             return hash;

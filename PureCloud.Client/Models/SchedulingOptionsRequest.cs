@@ -109,7 +109,7 @@ public partial class SchedulingOptionsRequest : IEquatable<SchedulingOptionsRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SchedulingOptionsRequest);
+        return Equals(obj as SchedulingOptionsRequest);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class SchedulingOptionsRequest : IEquatable<SchedulingOptionsRequ
 
         return true &&
             (
-                this.NoForecastOptions == other.NoForecastOptions ||
-                this.NoForecastOptions != null &&
-                this.NoForecastOptions.Equals(other.NoForecastOptions)
+                NoForecastOptions == other.NoForecastOptions ||
+                NoForecastOptions != null &&
+                NoForecastOptions.Equals(other.NoForecastOptions)
             ) &&
             (
-                this.ActivitySmoothingType == other.ActivitySmoothingType ||
-                this.ActivitySmoothingType != null &&
-                this.ActivitySmoothingType.Equals(other.ActivitySmoothingType)
+                ActivitySmoothingType == other.ActivitySmoothingType ||
+                ActivitySmoothingType != null &&
+                ActivitySmoothingType.Equals(other.ActivitySmoothingType)
             ) &&
             (
-                this.InduceScheduleVariability == other.InduceScheduleVariability ||
-                this.InduceScheduleVariability != null &&
-                this.InduceScheduleVariability.Equals(other.InduceScheduleVariability)
+                InduceScheduleVariability == other.InduceScheduleVariability ||
+                InduceScheduleVariability != null &&
+                InduceScheduleVariability.Equals(other.InduceScheduleVariability)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class SchedulingOptionsRequest : IEquatable<SchedulingOptionsRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.NoForecastOptions != null)
+            if (NoForecastOptions != null)
             {
-                hash = hash * 59 + this.NoForecastOptions.GetHashCode();
+                hash = hash * 59 + NoForecastOptions.GetHashCode();
             }
 
-            if (this.ActivitySmoothingType != null)
+            if (ActivitySmoothingType != null)
             {
-                hash = hash * 59 + this.ActivitySmoothingType.GetHashCode();
+                hash = hash * 59 + ActivitySmoothingType.GetHashCode();
             }
 
-            if (this.InduceScheduleVariability != null)
+            if (InduceScheduleVariability != null)
             {
-                hash = hash * 59 + this.InduceScheduleVariability.GetHashCode();
+                hash = hash * 59 + InduceScheduleVariability.GetHashCode();
             }
 
             return hash;

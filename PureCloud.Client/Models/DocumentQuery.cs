@@ -97,7 +97,7 @@ public partial class DocumentQuery : IEquatable<DocumentQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentQuery);
+        return Equals(obj as DocumentQuery);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class DocumentQuery : IEquatable<DocumentQuery>
 
         return true &&
             (
-                this.Clauses == other.Clauses ||
-                this.Clauses != null &&
-                this.Clauses.SequenceEqual(other.Clauses)
+                Clauses == other.Clauses ||
+                Clauses != null &&
+                Clauses.SequenceEqual(other.Clauses)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class DocumentQuery : IEquatable<DocumentQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Clauses != null)
+            if (Clauses != null)
             {
-                hash = hash * 59 + this.Clauses.GetHashCode();
+                hash = hash * 59 + Clauses.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
             return hash;

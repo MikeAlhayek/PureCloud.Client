@@ -73,7 +73,7 @@ public partial class AggregateMetricData : IEquatable<AggregateMetricData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AggregateMetricData);
+        return Equals(obj as AggregateMetricData);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class AggregateMetricData : IEquatable<AggregateMetricData>
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Qualifier == other.Qualifier ||
-                this.Qualifier != null &&
-                this.Qualifier.Equals(other.Qualifier)
+                Qualifier == other.Qualifier ||
+                Qualifier != null &&
+                Qualifier.Equals(other.Qualifier)
             ) &&
             (
-                this.Stats == other.Stats ||
-                this.Stats != null &&
-                this.Stats.Equals(other.Stats)
+                Stats == other.Stats ||
+                Stats != null &&
+                Stats.Equals(other.Stats)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class AggregateMetricData : IEquatable<AggregateMetricData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Qualifier != null)
+            if (Qualifier != null)
             {
-                hash = hash * 59 + this.Qualifier.GetHashCode();
+                hash = hash * 59 + Qualifier.GetHashCode();
             }
 
-            if (this.Stats != null)
+            if (Stats != null)
             {
-                hash = hash * 59 + this.Stats.GetHashCode();
+                hash = hash * 59 + Stats.GetHashCode();
             }
 
             return hash;

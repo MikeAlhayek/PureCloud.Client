@@ -77,7 +77,7 @@ public partial class ValidateWorkPlanResponse : IEquatable<ValidateWorkPlanRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValidateWorkPlanResponse);
+        return Equals(obj as ValidateWorkPlanResponse);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ValidateWorkPlanResponse : IEquatable<ValidateWorkPlanRespo
 
         return true &&
             (
-                this.WorkPlan == other.WorkPlan ||
-                this.WorkPlan != null &&
-                this.WorkPlan.Equals(other.WorkPlan)
+                WorkPlan == other.WorkPlan ||
+                WorkPlan != null &&
+                WorkPlan.Equals(other.WorkPlan)
             ) &&
             (
-                this.Valid == other.Valid ||
-                this.Valid != null &&
-                this.Valid.Equals(other.Valid)
+                Valid == other.Valid ||
+                Valid != null &&
+                Valid.Equals(other.Valid)
             ) &&
             (
-                this.Messages == other.Messages ||
-                this.Messages != null &&
-                this.Messages.Equals(other.Messages)
+                Messages == other.Messages ||
+                Messages != null &&
+                Messages.Equals(other.Messages)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ValidateWorkPlanResponse : IEquatable<ValidateWorkPlanRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WorkPlan != null)
+            if (WorkPlan != null)
             {
-                hash = hash * 59 + this.WorkPlan.GetHashCode();
+                hash = hash * 59 + WorkPlan.GetHashCode();
             }
 
-            if (this.Valid != null)
+            if (Valid != null)
             {
-                hash = hash * 59 + this.Valid.GetHashCode();
+                hash = hash * 59 + Valid.GetHashCode();
             }
 
-            if (this.Messages != null)
+            if (Messages != null)
             {
-                hash = hash * 59 + this.Messages.GetHashCode();
+                hash = hash * 59 + Messages.GetHashCode();
             }
 
             return hash;

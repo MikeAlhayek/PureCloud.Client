@@ -95,7 +95,7 @@ public partial class ProgramRequest : IEquatable<ProgramRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ProgramRequest);
+        return Equals(obj as ProgramRequest);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class ProgramRequest : IEquatable<ProgramRequest>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.TopicIds == other.TopicIds ||
-                this.TopicIds != null &&
-                this.TopicIds.SequenceEqual(other.TopicIds)
+                TopicIds == other.TopicIds ||
+                TopicIds != null &&
+                TopicIds.SequenceEqual(other.TopicIds)
             ) &&
             (
-                this.Tags == other.Tags ||
-                this.Tags != null &&
-                this.Tags.SequenceEqual(other.Tags)
+                Tags == other.Tags ||
+                Tags != null &&
+                Tags.SequenceEqual(other.Tags)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class ProgramRequest : IEquatable<ProgramRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.TopicIds != null)
+            if (TopicIds != null)
             {
-                hash = hash * 59 + this.TopicIds.GetHashCode();
+                hash = hash * 59 + TopicIds.GetHashCode();
             }
 
-            if (this.Tags != null)
+            if (Tags != null)
             {
-                hash = hash * 59 + this.Tags.GetHashCode();
+                hash = hash * 59 + Tags.GetHashCode();
             }
 
             return hash;

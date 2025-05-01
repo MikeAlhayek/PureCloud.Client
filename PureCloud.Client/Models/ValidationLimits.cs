@@ -107,7 +107,7 @@ public partial class ValidationLimits : IEquatable<ValidationLimits>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValidationLimits);
+        return Equals(obj as ValidationLimits);
     }
 
     /// <summary>
@@ -125,34 +125,34 @@ public partial class ValidationLimits : IEquatable<ValidationLimits>
 
         return true &&
             (
-                this.MinLength == other.MinLength ||
-                this.MinLength != null &&
-                this.MinLength.Equals(other.MinLength)
+                MinLength == other.MinLength ||
+                MinLength != null &&
+                MinLength.Equals(other.MinLength)
             ) &&
             (
-                this.MaxLength == other.MaxLength ||
-                this.MaxLength != null &&
-                this.MaxLength.Equals(other.MaxLength)
+                MaxLength == other.MaxLength ||
+                MaxLength != null &&
+                MaxLength.Equals(other.MaxLength)
             ) &&
             (
-                this.MinItems == other.MinItems ||
-                this.MinItems != null &&
-                this.MinItems.Equals(other.MinItems)
+                MinItems == other.MinItems ||
+                MinItems != null &&
+                MinItems.Equals(other.MinItems)
             ) &&
             (
-                this.MaxItems == other.MaxItems ||
-                this.MaxItems != null &&
-                this.MaxItems.Equals(other.MaxItems)
+                MaxItems == other.MaxItems ||
+                MaxItems != null &&
+                MaxItems.Equals(other.MaxItems)
             ) &&
             (
-                this.Minimum == other.Minimum ||
-                this.Minimum != null &&
-                this.Minimum.Equals(other.Minimum)
+                Minimum == other.Minimum ||
+                Minimum != null &&
+                Minimum.Equals(other.Minimum)
             ) &&
             (
-                this.Maximum == other.Maximum ||
-                this.Maximum != null &&
-                this.Maximum.Equals(other.Maximum)
+                Maximum == other.Maximum ||
+                Maximum != null &&
+                Maximum.Equals(other.Maximum)
             );
     }
 
@@ -167,34 +167,34 @@ public partial class ValidationLimits : IEquatable<ValidationLimits>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MinLength != null)
+            if (MinLength != null)
             {
-                hash = hash * 59 + this.MinLength.GetHashCode();
+                hash = hash * 59 + MinLength.GetHashCode();
             }
 
-            if (this.MaxLength != null)
+            if (MaxLength != null)
             {
-                hash = hash * 59 + this.MaxLength.GetHashCode();
+                hash = hash * 59 + MaxLength.GetHashCode();
             }
 
-            if (this.MinItems != null)
+            if (MinItems != null)
             {
-                hash = hash * 59 + this.MinItems.GetHashCode();
+                hash = hash * 59 + MinItems.GetHashCode();
             }
 
-            if (this.MaxItems != null)
+            if (MaxItems != null)
             {
-                hash = hash * 59 + this.MaxItems.GetHashCode();
+                hash = hash * 59 + MaxItems.GetHashCode();
             }
 
-            if (this.Minimum != null)
+            if (Minimum != null)
             {
-                hash = hash * 59 + this.Minimum.GetHashCode();
+                hash = hash * 59 + Minimum.GetHashCode();
             }
 
-            if (this.Maximum != null)
+            if (Maximum != null)
             {
-                hash = hash * 59 + this.Maximum.GetHashCode();
+                hash = hash * 59 + Maximum.GetHashCode();
             }
 
             return hash;

@@ -111,7 +111,7 @@ public partial class UsageItem : IEquatable<UsageItem>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UsageItem);
+        return Equals(obj as UsageItem);
     }
 
     /// <summary>
@@ -129,19 +129,19 @@ public partial class UsageItem : IEquatable<UsageItem>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.TotalDocumentByteCount == other.TotalDocumentByteCount ||
-                this.TotalDocumentByteCount != null &&
-                this.TotalDocumentByteCount.Equals(other.TotalDocumentByteCount)
+                TotalDocumentByteCount == other.TotalDocumentByteCount ||
+                TotalDocumentByteCount != null &&
+                TotalDocumentByteCount.Equals(other.TotalDocumentByteCount)
             ) &&
             (
-                this.TotalDocumentCount == other.TotalDocumentCount ||
-                this.TotalDocumentCount != null &&
-                this.TotalDocumentCount.Equals(other.TotalDocumentCount)
+                TotalDocumentCount == other.TotalDocumentCount ||
+                TotalDocumentCount != null &&
+                TotalDocumentCount.Equals(other.TotalDocumentCount)
             );
     }
 
@@ -156,19 +156,19 @@ public partial class UsageItem : IEquatable<UsageItem>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.TotalDocumentByteCount != null)
+            if (TotalDocumentByteCount != null)
             {
-                hash = hash * 59 + this.TotalDocumentByteCount.GetHashCode();
+                hash = hash * 59 + TotalDocumentByteCount.GetHashCode();
             }
 
-            if (this.TotalDocumentCount != null)
+            if (TotalDocumentCount != null)
             {
-                hash = hash * 59 + this.TotalDocumentCount.GetHashCode();
+                hash = hash * 59 + TotalDocumentCount.GetHashCode();
             }
 
             return hash;

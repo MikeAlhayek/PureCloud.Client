@@ -169,7 +169,7 @@ public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnRespons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotFlowTurnResponse);
+        return Equals(obj as TextBotFlowTurnResponse);
     }
 
     /// <summary>
@@ -187,39 +187,39 @@ public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnRespons
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.PreviousTurn == other.PreviousTurn ||
-                this.PreviousTurn != null &&
-                this.PreviousTurn.Equals(other.PreviousTurn)
+                PreviousTurn == other.PreviousTurn ||
+                PreviousTurn != null &&
+                PreviousTurn.Equals(other.PreviousTurn)
             ) &&
             (
-                this.Prompts == other.Prompts ||
-                this.Prompts != null &&
-                this.Prompts.Equals(other.Prompts)
+                Prompts == other.Prompts ||
+                Prompts != null &&
+                Prompts.Equals(other.Prompts)
             ) &&
             (
-                this.NextActionType == other.NextActionType ||
-                this.NextActionType != null &&
-                this.NextActionType.Equals(other.NextActionType)
+                NextActionType == other.NextActionType ||
+                NextActionType != null &&
+                NextActionType.Equals(other.NextActionType)
             ) &&
             (
-                this.NextActionDisconnect == other.NextActionDisconnect ||
-                this.NextActionDisconnect != null &&
-                this.NextActionDisconnect.Equals(other.NextActionDisconnect)
+                NextActionDisconnect == other.NextActionDisconnect ||
+                NextActionDisconnect != null &&
+                NextActionDisconnect.Equals(other.NextActionDisconnect)
             ) &&
             (
-                this.NextActionWaitForInput == other.NextActionWaitForInput ||
-                this.NextActionWaitForInput != null &&
-                this.NextActionWaitForInput.Equals(other.NextActionWaitForInput)
+                NextActionWaitForInput == other.NextActionWaitForInput ||
+                NextActionWaitForInput != null &&
+                NextActionWaitForInput.Equals(other.NextActionWaitForInput)
             ) &&
             (
-                this.NextActionExit == other.NextActionExit ||
-                this.NextActionExit != null &&
-                this.NextActionExit.Equals(other.NextActionExit)
+                NextActionExit == other.NextActionExit ||
+                NextActionExit != null &&
+                NextActionExit.Equals(other.NextActionExit)
             );
     }
 
@@ -234,39 +234,39 @@ public partial class TextBotFlowTurnResponse : IEquatable<TextBotFlowTurnRespons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.PreviousTurn != null)
+            if (PreviousTurn != null)
             {
-                hash = hash * 59 + this.PreviousTurn.GetHashCode();
+                hash = hash * 59 + PreviousTurn.GetHashCode();
             }
 
-            if (this.Prompts != null)
+            if (Prompts != null)
             {
-                hash = hash * 59 + this.Prompts.GetHashCode();
+                hash = hash * 59 + Prompts.GetHashCode();
             }
 
-            if (this.NextActionType != null)
+            if (NextActionType != null)
             {
-                hash = hash * 59 + this.NextActionType.GetHashCode();
+                hash = hash * 59 + NextActionType.GetHashCode();
             }
 
-            if (this.NextActionDisconnect != null)
+            if (NextActionDisconnect != null)
             {
-                hash = hash * 59 + this.NextActionDisconnect.GetHashCode();
+                hash = hash * 59 + NextActionDisconnect.GetHashCode();
             }
 
-            if (this.NextActionWaitForInput != null)
+            if (NextActionWaitForInput != null)
             {
-                hash = hash * 59 + this.NextActionWaitForInput.GetHashCode();
+                hash = hash * 59 + NextActionWaitForInput.GetHashCode();
             }
 
-            if (this.NextActionExit != null)
+            if (NextActionExit != null)
             {
-                hash = hash * 59 + this.NextActionExit.GetHashCode();
+                hash = hash * 59 + NextActionExit.GetHashCode();
             }
 
             return hash;

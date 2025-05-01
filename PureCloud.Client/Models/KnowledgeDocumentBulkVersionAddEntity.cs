@@ -77,7 +77,7 @@ public partial class KnowledgeDocumentBulkVersionAddEntity : IEquatable<Knowledg
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentBulkVersionAddEntity);
+        return Equals(obj as KnowledgeDocumentBulkVersionAddEntity);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class KnowledgeDocumentBulkVersionAddEntity : IEquatable<Knowledg
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.RestoreFromVersionId == other.RestoreFromVersionId ||
-                this.RestoreFromVersionId != null &&
-                this.RestoreFromVersionId.Equals(other.RestoreFromVersionId)
+                RestoreFromVersionId == other.RestoreFromVersionId ||
+                RestoreFromVersionId != null &&
+                RestoreFromVersionId.Equals(other.RestoreFromVersionId)
             ) &&
             (
-                this.RestorePrevious == other.RestorePrevious ||
-                this.RestorePrevious != null &&
-                this.RestorePrevious.Equals(other.RestorePrevious)
+                RestorePrevious == other.RestorePrevious ||
+                RestorePrevious != null &&
+                RestorePrevious.Equals(other.RestorePrevious)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class KnowledgeDocumentBulkVersionAddEntity : IEquatable<Knowledg
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.RestoreFromVersionId != null)
+            if (RestoreFromVersionId != null)
             {
-                hash = hash * 59 + this.RestoreFromVersionId.GetHashCode();
+                hash = hash * 59 + RestoreFromVersionId.GetHashCode();
             }
 
-            if (this.RestorePrevious != null)
+            if (RestorePrevious != null)
             {
-                hash = hash * 59 + this.RestorePrevious.GetHashCode();
+                hash = hash * 59 + RestorePrevious.GetHashCode();
             }
 
             return hash;

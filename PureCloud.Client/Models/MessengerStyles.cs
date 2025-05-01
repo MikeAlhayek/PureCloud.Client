@@ -53,7 +53,7 @@ public partial class MessengerStyles : IEquatable<MessengerStyles>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessengerStyles);
+        return Equals(obj as MessengerStyles);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class MessengerStyles : IEquatable<MessengerStyles>
 
         return true &&
             (
-                this.PrimaryColor == other.PrimaryColor ||
-                this.PrimaryColor != null &&
-                this.PrimaryColor.Equals(other.PrimaryColor)
+                PrimaryColor == other.PrimaryColor ||
+                PrimaryColor != null &&
+                PrimaryColor.Equals(other.PrimaryColor)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class MessengerStyles : IEquatable<MessengerStyles>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PrimaryColor != null)
+            if (PrimaryColor != null)
             {
-                hash = hash * 59 + this.PrimaryColor.GetHashCode();
+                hash = hash * 59 + PrimaryColor.GetHashCode();
             }
 
             return hash;

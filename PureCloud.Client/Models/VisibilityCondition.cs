@@ -89,7 +89,7 @@ public partial class VisibilityCondition : IEquatable<VisibilityCondition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VisibilityCondition);
+        return Equals(obj as VisibilityCondition);
     }
 
     /// <summary>
@@ -107,14 +107,14 @@ public partial class VisibilityCondition : IEquatable<VisibilityCondition>
 
         return true &&
             (
-                this.CombiningOperation == other.CombiningOperation ||
-                this.CombiningOperation != null &&
-                this.CombiningOperation.Equals(other.CombiningOperation)
+                CombiningOperation == other.CombiningOperation ||
+                CombiningOperation != null &&
+                CombiningOperation.Equals(other.CombiningOperation)
             ) &&
             (
-                this.Predicates == other.Predicates ||
-                this.Predicates != null &&
-                this.Predicates.SequenceEqual(other.Predicates)
+                Predicates == other.Predicates ||
+                Predicates != null &&
+                Predicates.SequenceEqual(other.Predicates)
             );
     }
 
@@ -129,14 +129,14 @@ public partial class VisibilityCondition : IEquatable<VisibilityCondition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CombiningOperation != null)
+            if (CombiningOperation != null)
             {
-                hash = hash * 59 + this.CombiningOperation.GetHashCode();
+                hash = hash * 59 + CombiningOperation.GetHashCode();
             }
 
-            if (this.Predicates != null)
+            if (Predicates != null)
             {
-                hash = hash * 59 + this.Predicates.GetHashCode();
+                hash = hash * 59 + Predicates.GetHashCode();
             }
 
             return hash;

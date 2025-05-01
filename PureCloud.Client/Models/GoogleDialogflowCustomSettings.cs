@@ -89,7 +89,7 @@ public partial class GoogleDialogflowCustomSettings : IEquatable<GoogleDialogflo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GoogleDialogflowCustomSettings);
+        return Equals(obj as GoogleDialogflowCustomSettings);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class GoogleDialogflowCustomSettings : IEquatable<GoogleDialogflo
 
         return true &&
             (
-                this.Environment == other.Environment ||
-                this.Environment != null &&
-                this.Environment.Equals(other.Environment)
+                Environment == other.Environment ||
+                Environment != null &&
+                Environment.Equals(other.Environment)
             ) &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             ) &&
             (
-                this.WebhookQueryParameters == other.WebhookQueryParameters ||
-                this.WebhookQueryParameters != null &&
-                this.WebhookQueryParameters.SequenceEqual(other.WebhookQueryParameters)
+                WebhookQueryParameters == other.WebhookQueryParameters ||
+                WebhookQueryParameters != null &&
+                WebhookQueryParameters.SequenceEqual(other.WebhookQueryParameters)
             ) &&
             (
-                this.EventInputParameters == other.EventInputParameters ||
-                this.EventInputParameters != null &&
-                this.EventInputParameters.SequenceEqual(other.EventInputParameters)
+                EventInputParameters == other.EventInputParameters ||
+                EventInputParameters != null &&
+                EventInputParameters.SequenceEqual(other.EventInputParameters)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class GoogleDialogflowCustomSettings : IEquatable<GoogleDialogflo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Environment != null)
+            if (Environment != null)
             {
-                hash = hash * 59 + this.Environment.GetHashCode();
+                hash = hash * 59 + Environment.GetHashCode();
             }
 
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
-            if (this.WebhookQueryParameters != null)
+            if (WebhookQueryParameters != null)
             {
-                hash = hash * 59 + this.WebhookQueryParameters.GetHashCode();
+                hash = hash * 59 + WebhookQueryParameters.GetHashCode();
             }
 
-            if (this.EventInputParameters != null)
+            if (EventInputParameters != null)
             {
-                hash = hash * 59 + this.EventInputParameters.GetHashCode();
+                hash = hash * 59 + EventInputParameters.GetHashCode();
             }
 
             return hash;

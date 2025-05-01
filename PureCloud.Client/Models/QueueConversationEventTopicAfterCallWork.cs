@@ -121,7 +121,7 @@ public partial class QueueConversationEventTopicAfterCallWork : IEquatable<Queue
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationEventTopicAfterCallWork);
+        return Equals(obj as QueueConversationEventTopicAfterCallWork);
     }
 
     /// <summary>
@@ -139,19 +139,19 @@ public partial class QueueConversationEventTopicAfterCallWork : IEquatable<Queue
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             ) &&
             (
-                this.EndTime == other.EndTime ||
-                this.EndTime != null &&
-                this.EndTime.Equals(other.EndTime)
+                EndTime == other.EndTime ||
+                EndTime != null &&
+                EndTime.Equals(other.EndTime)
             );
     }
 
@@ -166,19 +166,19 @@ public partial class QueueConversationEventTopicAfterCallWork : IEquatable<Queue
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
-            if (this.EndTime != null)
+            if (EndTime != null)
             {
-                hash = hash * 59 + this.EndTime.GetHashCode();
+                hash = hash * 59 + EndTime.GetHashCode();
             }
 
             return hash;

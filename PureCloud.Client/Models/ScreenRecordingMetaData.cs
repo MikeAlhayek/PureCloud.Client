@@ -118,7 +118,7 @@ public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaDat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScreenRecordingMetaData);
+        return Equals(obj as ScreenRecordingMetaData);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaDat
 
         return true &&
             (
-                this.TrackId == other.TrackId ||
-                this.TrackId != null &&
-                this.TrackId.Equals(other.TrackId)
+                TrackId == other.TrackId ||
+                TrackId != null &&
+                TrackId.Equals(other.TrackId)
             ) &&
             (
-                this.MediaId == other.MediaId ||
-                this.MediaId != null &&
-                this.MediaId.Equals(other.MediaId)
+                MediaId == other.MediaId ||
+                MediaId != null &&
+                MediaId.Equals(other.MediaId)
             ) &&
             (
-                this.ScreenId == other.ScreenId ||
-                this.ScreenId != null &&
-                this.ScreenId.Equals(other.ScreenId)
+                ScreenId == other.ScreenId ||
+                ScreenId != null &&
+                ScreenId.Equals(other.ScreenId)
             ) &&
             (
-                this.OriginX == other.OriginX ||
-                this.OriginX != null &&
-                this.OriginX.Equals(other.OriginX)
+                OriginX == other.OriginX ||
+                OriginX != null &&
+                OriginX.Equals(other.OriginX)
             ) &&
             (
-                this.OriginY == other.OriginY ||
-                this.OriginY != null &&
-                this.OriginY.Equals(other.OriginY)
+                OriginY == other.OriginY ||
+                OriginY != null &&
+                OriginY.Equals(other.OriginY)
             ) &&
             (
-                this.Primary == other.Primary ||
-                this.Primary != null &&
-                this.Primary.Equals(other.Primary)
+                Primary == other.Primary ||
+                Primary != null &&
+                Primary.Equals(other.Primary)
             ) &&
             (
-                this.Main == other.Main ||
-                this.Main != null &&
-                this.Main.Equals(other.Main)
+                Main == other.Main ||
+                Main != null &&
+                Main.Equals(other.Main)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class ScreenRecordingMetaData : IEquatable<ScreenRecordingMetaDat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TrackId != null)
+            if (TrackId != null)
             {
-                hash = hash * 59 + this.TrackId.GetHashCode();
+                hash = hash * 59 + TrackId.GetHashCode();
             }
 
-            if (this.MediaId != null)
+            if (MediaId != null)
             {
-                hash = hash * 59 + this.MediaId.GetHashCode();
+                hash = hash * 59 + MediaId.GetHashCode();
             }
 
-            if (this.ScreenId != null)
+            if (ScreenId != null)
             {
-                hash = hash * 59 + this.ScreenId.GetHashCode();
+                hash = hash * 59 + ScreenId.GetHashCode();
             }
 
-            if (this.OriginX != null)
+            if (OriginX != null)
             {
-                hash = hash * 59 + this.OriginX.GetHashCode();
+                hash = hash * 59 + OriginX.GetHashCode();
             }
 
-            if (this.OriginY != null)
+            if (OriginY != null)
             {
-                hash = hash * 59 + this.OriginY.GetHashCode();
+                hash = hash * 59 + OriginY.GetHashCode();
             }
 
-            if (this.Primary != null)
+            if (Primary != null)
             {
-                hash = hash * 59 + this.Primary.GetHashCode();
+                hash = hash * 59 + Primary.GetHashCode();
             }
 
-            if (this.Main != null)
+            if (Main != null)
             {
-                hash = hash * 59 + this.Main.GetHashCode();
+                hash = hash * 59 + Main.GetHashCode();
             }
 
             return hash;

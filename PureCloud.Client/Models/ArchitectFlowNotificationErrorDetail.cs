@@ -84,7 +84,7 @@ public partial class ArchitectFlowNotificationErrorDetail : IEquatable<Architect
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArchitectFlowNotificationErrorDetail);
+        return Equals(obj as ArchitectFlowNotificationErrorDetail);
     }
 
     /// <summary>
@@ -102,24 +102,24 @@ public partial class ArchitectFlowNotificationErrorDetail : IEquatable<Architect
 
         return true &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.EntityId == other.EntityId ||
-                this.EntityId != null &&
-                this.EntityId.Equals(other.EntityId)
+                EntityId == other.EntityId ||
+                EntityId != null &&
+                EntityId.Equals(other.EntityId)
             ) &&
             (
-                this.EntityName == other.EntityName ||
-                this.EntityName != null &&
-                this.EntityName.Equals(other.EntityName)
+                EntityName == other.EntityName ||
+                EntityName != null &&
+                EntityName.Equals(other.EntityName)
             ) &&
             (
-                this.FieldName == other.FieldName ||
-                this.FieldName != null &&
-                this.FieldName.Equals(other.FieldName)
+                FieldName == other.FieldName ||
+                FieldName != null &&
+                FieldName.Equals(other.FieldName)
             );
     }
 
@@ -134,24 +134,24 @@ public partial class ArchitectFlowNotificationErrorDetail : IEquatable<Architect
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.EntityId != null)
+            if (EntityId != null)
             {
-                hash = hash * 59 + this.EntityId.GetHashCode();
+                hash = hash * 59 + EntityId.GetHashCode();
             }
 
-            if (this.EntityName != null)
+            if (EntityName != null)
             {
-                hash = hash * 59 + this.EntityName.GetHashCode();
+                hash = hash * 59 + EntityName.GetHashCode();
             }
 
-            if (this.FieldName != null)
+            if (FieldName != null)
             {
-                hash = hash * 59 + this.FieldName.GetHashCode();
+                hash = hash * 59 + FieldName.GetHashCode();
             }
 
             return hash;

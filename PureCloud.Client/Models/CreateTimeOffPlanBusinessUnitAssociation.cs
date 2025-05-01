@@ -65,7 +65,7 @@ public partial class CreateTimeOffPlanBusinessUnitAssociation : IEquatable<Creat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateTimeOffPlanBusinessUnitAssociation);
+        return Equals(obj as CreateTimeOffPlanBusinessUnitAssociation);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class CreateTimeOffPlanBusinessUnitAssociation : IEquatable<Creat
 
         return true &&
             (
-                this.ManagementUnitIds == other.ManagementUnitIds ||
-                this.ManagementUnitIds != null &&
-                this.ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
+                ManagementUnitIds == other.ManagementUnitIds ||
+                ManagementUnitIds != null &&
+                ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
             ) &&
             (
-                this.StaffingGroupIds == other.StaffingGroupIds ||
-                this.StaffingGroupIds != null &&
-                this.StaffingGroupIds.SequenceEqual(other.StaffingGroupIds)
+                StaffingGroupIds == other.StaffingGroupIds ||
+                StaffingGroupIds != null &&
+                StaffingGroupIds.SequenceEqual(other.StaffingGroupIds)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class CreateTimeOffPlanBusinessUnitAssociation : IEquatable<Creat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnitIds != null)
+            if (ManagementUnitIds != null)
             {
-                hash = hash * 59 + this.ManagementUnitIds.GetHashCode();
+                hash = hash * 59 + ManagementUnitIds.GetHashCode();
             }
 
-            if (this.StaffingGroupIds != null)
+            if (StaffingGroupIds != null)
             {
-                hash = hash * 59 + this.StaffingGroupIds.GetHashCode();
+                hash = hash * 59 + StaffingGroupIds.GetHashCode();
             }
 
             return hash;

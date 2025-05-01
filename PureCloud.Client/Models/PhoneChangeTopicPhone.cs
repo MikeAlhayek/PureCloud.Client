@@ -85,7 +85,7 @@ public partial class PhoneChangeTopicPhone : IEquatable<PhoneChangeTopicPhone>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PhoneChangeTopicPhone);
+        return Equals(obj as PhoneChangeTopicPhone);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class PhoneChangeTopicPhone : IEquatable<PhoneChangeTopicPhone>
 
         return true &&
             (
-                this.UserAgentInfo == other.UserAgentInfo ||
-                this.UserAgentInfo != null &&
-                this.UserAgentInfo.Equals(other.UserAgentInfo)
+                UserAgentInfo == other.UserAgentInfo ||
+                UserAgentInfo != null &&
+                UserAgentInfo.Equals(other.UserAgentInfo)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.SecondaryStatus == other.SecondaryStatus ||
-                this.SecondaryStatus != null &&
-                this.SecondaryStatus.Equals(other.SecondaryStatus)
+                SecondaryStatus == other.SecondaryStatus ||
+                SecondaryStatus != null &&
+                SecondaryStatus.Equals(other.SecondaryStatus)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class PhoneChangeTopicPhone : IEquatable<PhoneChangeTopicPhone>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserAgentInfo != null)
+            if (UserAgentInfo != null)
             {
-                hash = hash * 59 + this.UserAgentInfo.GetHashCode();
+                hash = hash * 59 + UserAgentInfo.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.SecondaryStatus != null)
+            if (SecondaryStatus != null)
             {
-                hash = hash * 59 + this.SecondaryStatus.GetHashCode();
+                hash = hash * 59 + SecondaryStatus.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class MuRescheduleResultWrapper : IEquatable<MuRescheduleResultWr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MuRescheduleResultWrapper);
+        return Equals(obj as MuRescheduleResultWrapper);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class MuRescheduleResultWrapper : IEquatable<MuRescheduleResultWr
 
         return true &&
             (
-                this.AgentSchedules == other.AgentSchedules ||
-                this.AgentSchedules != null &&
-                this.AgentSchedules.SequenceEqual(other.AgentSchedules)
+                AgentSchedules == other.AgentSchedules ||
+                AgentSchedules != null &&
+                AgentSchedules.SequenceEqual(other.AgentSchedules)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class MuRescheduleResultWrapper : IEquatable<MuRescheduleResultWr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentSchedules != null)
+            if (AgentSchedules != null)
             {
-                hash = hash * 59 + this.AgentSchedules.GetHashCode();
+                hash = hash * 59 + AgentSchedules.GetHashCode();
             }
 
             return hash;

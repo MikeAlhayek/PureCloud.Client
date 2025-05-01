@@ -113,7 +113,7 @@ public partial class Settings : IEquatable<Settings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Settings);
+        return Equals(obj as Settings);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class Settings : IEquatable<Settings>
 
         return true &&
             (
-                this.CommunicationBasedACW == other.CommunicationBasedACW ||
-                this.CommunicationBasedACW != null &&
-                this.CommunicationBasedACW.Equals(other.CommunicationBasedACW)
+                CommunicationBasedACW == other.CommunicationBasedACW ||
+                CommunicationBasedACW != null &&
+                CommunicationBasedACW.Equals(other.CommunicationBasedACW)
             ) &&
             (
-                this.IncludeNonAgentConversationSummary == other.IncludeNonAgentConversationSummary ||
-                this.IncludeNonAgentConversationSummary != null &&
-                this.IncludeNonAgentConversationSummary.Equals(other.IncludeNonAgentConversationSummary)
+                IncludeNonAgentConversationSummary == other.IncludeNonAgentConversationSummary ||
+                IncludeNonAgentConversationSummary != null &&
+                IncludeNonAgentConversationSummary.Equals(other.IncludeNonAgentConversationSummary)
             ) &&
             (
-                this.AllowCallbackQueueSelection == other.AllowCallbackQueueSelection ||
-                this.AllowCallbackQueueSelection != null &&
-                this.AllowCallbackQueueSelection.Equals(other.AllowCallbackQueueSelection)
+                AllowCallbackQueueSelection == other.AllowCallbackQueueSelection ||
+                AllowCallbackQueueSelection != null &&
+                AllowCallbackQueueSelection.Equals(other.AllowCallbackQueueSelection)
             ) &&
             (
-                this.CallbacksInheritRoutingFromInboundCall == other.CallbacksInheritRoutingFromInboundCall ||
-                this.CallbacksInheritRoutingFromInboundCall != null &&
-                this.CallbacksInheritRoutingFromInboundCall.Equals(other.CallbacksInheritRoutingFromInboundCall)
+                CallbacksInheritRoutingFromInboundCall == other.CallbacksInheritRoutingFromInboundCall ||
+                CallbacksInheritRoutingFromInboundCall != null &&
+                CallbacksInheritRoutingFromInboundCall.Equals(other.CallbacksInheritRoutingFromInboundCall)
             ) &&
             (
-                this.CompleteAcwWhenAgentTransitionsOffline == other.CompleteAcwWhenAgentTransitionsOffline ||
-                this.CompleteAcwWhenAgentTransitionsOffline != null &&
-                this.CompleteAcwWhenAgentTransitionsOffline.Equals(other.CompleteAcwWhenAgentTransitionsOffline)
+                CompleteAcwWhenAgentTransitionsOffline == other.CompleteAcwWhenAgentTransitionsOffline ||
+                CompleteAcwWhenAgentTransitionsOffline != null &&
+                CompleteAcwWhenAgentTransitionsOffline.Equals(other.CompleteAcwWhenAgentTransitionsOffline)
             ) &&
             (
-                this.TotalActiveCallback == other.TotalActiveCallback ||
-                this.TotalActiveCallback != null &&
-                this.TotalActiveCallback.Equals(other.TotalActiveCallback)
+                TotalActiveCallback == other.TotalActiveCallback ||
+                TotalActiveCallback != null &&
+                TotalActiveCallback.Equals(other.TotalActiveCallback)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class Settings : IEquatable<Settings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CommunicationBasedACW != null)
+            if (CommunicationBasedACW != null)
             {
-                hash = hash * 59 + this.CommunicationBasedACW.GetHashCode();
+                hash = hash * 59 + CommunicationBasedACW.GetHashCode();
             }
 
-            if (this.IncludeNonAgentConversationSummary != null)
+            if (IncludeNonAgentConversationSummary != null)
             {
-                hash = hash * 59 + this.IncludeNonAgentConversationSummary.GetHashCode();
+                hash = hash * 59 + IncludeNonAgentConversationSummary.GetHashCode();
             }
 
-            if (this.AllowCallbackQueueSelection != null)
+            if (AllowCallbackQueueSelection != null)
             {
-                hash = hash * 59 + this.AllowCallbackQueueSelection.GetHashCode();
+                hash = hash * 59 + AllowCallbackQueueSelection.GetHashCode();
             }
 
-            if (this.CallbacksInheritRoutingFromInboundCall != null)
+            if (CallbacksInheritRoutingFromInboundCall != null)
             {
-                hash = hash * 59 + this.CallbacksInheritRoutingFromInboundCall.GetHashCode();
+                hash = hash * 59 + CallbacksInheritRoutingFromInboundCall.GetHashCode();
             }
 
-            if (this.CompleteAcwWhenAgentTransitionsOffline != null)
+            if (CompleteAcwWhenAgentTransitionsOffline != null)
             {
-                hash = hash * 59 + this.CompleteAcwWhenAgentTransitionsOffline.GetHashCode();
+                hash = hash * 59 + CompleteAcwWhenAgentTransitionsOffline.GetHashCode();
             }
 
-            if (this.TotalActiveCallback != null)
+            if (TotalActiveCallback != null)
             {
-                hash = hash * 59 + this.TotalActiveCallback.GetHashCode();
+                hash = hash * 59 + TotalActiveCallback.GetHashCode();
             }
 
             return hash;

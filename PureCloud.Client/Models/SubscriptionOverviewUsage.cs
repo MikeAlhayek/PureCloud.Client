@@ -191,7 +191,7 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SubscriptionOverviewUsage);
+        return Equals(obj as SubscriptionOverviewUsage);
     }
 
     /// <summary>
@@ -209,64 +209,64 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.PartNumber == other.PartNumber ||
-                this.PartNumber != null &&
-                this.PartNumber.Equals(other.PartNumber)
+                PartNumber == other.PartNumber ||
+                PartNumber != null &&
+                PartNumber.Equals(other.PartNumber)
             ) &&
             (
-                this.Grouping == other.Grouping ||
-                this.Grouping != null &&
-                this.Grouping.Equals(other.Grouping)
+                Grouping == other.Grouping ||
+                Grouping != null &&
+                Grouping.Equals(other.Grouping)
             ) &&
             (
-                this.UnitOfMeasureType == other.UnitOfMeasureType ||
-                this.UnitOfMeasureType != null &&
-                this.UnitOfMeasureType.Equals(other.UnitOfMeasureType)
+                UnitOfMeasureType == other.UnitOfMeasureType ||
+                UnitOfMeasureType != null &&
+                UnitOfMeasureType.Equals(other.UnitOfMeasureType)
             ) &&
             (
-                this.UsageQuantity == other.UsageQuantity ||
-                this.UsageQuantity != null &&
-                this.UsageQuantity.Equals(other.UsageQuantity)
+                UsageQuantity == other.UsageQuantity ||
+                UsageQuantity != null &&
+                UsageQuantity.Equals(other.UsageQuantity)
             ) &&
             (
-                this.OveragePrice == other.OveragePrice ||
-                this.OveragePrice != null &&
-                this.OveragePrice.Equals(other.OveragePrice)
+                OveragePrice == other.OveragePrice ||
+                OveragePrice != null &&
+                OveragePrice.Equals(other.OveragePrice)
             ) &&
             (
-                this.PrepayQuantity == other.PrepayQuantity ||
-                this.PrepayQuantity != null &&
-                this.PrepayQuantity.Equals(other.PrepayQuantity)
+                PrepayQuantity == other.PrepayQuantity ||
+                PrepayQuantity != null &&
+                PrepayQuantity.Equals(other.PrepayQuantity)
             ) &&
             (
-                this.PrepayPrice == other.PrepayPrice ||
-                this.PrepayPrice != null &&
-                this.PrepayPrice.Equals(other.PrepayPrice)
+                PrepayPrice == other.PrepayPrice ||
+                PrepayPrice != null &&
+                PrepayPrice.Equals(other.PrepayPrice)
             ) &&
             (
-                this.UsageNotes == other.UsageNotes ||
-                this.UsageNotes != null &&
-                this.UsageNotes.Equals(other.UsageNotes)
+                UsageNotes == other.UsageNotes ||
+                UsageNotes != null &&
+                UsageNotes.Equals(other.UsageNotes)
             ) &&
             (
-                this.IsCancellable == other.IsCancellable ||
-                this.IsCancellable != null &&
-                this.IsCancellable.Equals(other.IsCancellable)
+                IsCancellable == other.IsCancellable ||
+                IsCancellable != null &&
+                IsCancellable.Equals(other.IsCancellable)
             ) &&
             (
-                this.BundleQuantity == other.BundleQuantity ||
-                this.BundleQuantity != null &&
-                this.BundleQuantity.Equals(other.BundleQuantity)
+                BundleQuantity == other.BundleQuantity ||
+                BundleQuantity != null &&
+                BundleQuantity.Equals(other.BundleQuantity)
             ) &&
             (
-                this.IsThirdParty == other.IsThirdParty ||
-                this.IsThirdParty != null &&
-                this.IsThirdParty.Equals(other.IsThirdParty)
+                IsThirdParty == other.IsThirdParty ||
+                IsThirdParty != null &&
+                IsThirdParty.Equals(other.IsThirdParty)
             );
     }
 
@@ -281,64 +281,64 @@ public partial class SubscriptionOverviewUsage : IEquatable<SubscriptionOverview
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.PartNumber != null)
+            if (PartNumber != null)
             {
-                hash = hash * 59 + this.PartNumber.GetHashCode();
+                hash = hash * 59 + PartNumber.GetHashCode();
             }
 
-            if (this.Grouping != null)
+            if (Grouping != null)
             {
-                hash = hash * 59 + this.Grouping.GetHashCode();
+                hash = hash * 59 + Grouping.GetHashCode();
             }
 
-            if (this.UnitOfMeasureType != null)
+            if (UnitOfMeasureType != null)
             {
-                hash = hash * 59 + this.UnitOfMeasureType.GetHashCode();
+                hash = hash * 59 + UnitOfMeasureType.GetHashCode();
             }
 
-            if (this.UsageQuantity != null)
+            if (UsageQuantity != null)
             {
-                hash = hash * 59 + this.UsageQuantity.GetHashCode();
+                hash = hash * 59 + UsageQuantity.GetHashCode();
             }
 
-            if (this.OveragePrice != null)
+            if (OveragePrice != null)
             {
-                hash = hash * 59 + this.OveragePrice.GetHashCode();
+                hash = hash * 59 + OveragePrice.GetHashCode();
             }
 
-            if (this.PrepayQuantity != null)
+            if (PrepayQuantity != null)
             {
-                hash = hash * 59 + this.PrepayQuantity.GetHashCode();
+                hash = hash * 59 + PrepayQuantity.GetHashCode();
             }
 
-            if (this.PrepayPrice != null)
+            if (PrepayPrice != null)
             {
-                hash = hash * 59 + this.PrepayPrice.GetHashCode();
+                hash = hash * 59 + PrepayPrice.GetHashCode();
             }
 
-            if (this.UsageNotes != null)
+            if (UsageNotes != null)
             {
-                hash = hash * 59 + this.UsageNotes.GetHashCode();
+                hash = hash * 59 + UsageNotes.GetHashCode();
             }
 
-            if (this.IsCancellable != null)
+            if (IsCancellable != null)
             {
-                hash = hash * 59 + this.IsCancellable.GetHashCode();
+                hash = hash * 59 + IsCancellable.GetHashCode();
             }
 
-            if (this.BundleQuantity != null)
+            if (BundleQuantity != null)
             {
-                hash = hash * 59 + this.BundleQuantity.GetHashCode();
+                hash = hash * 59 + BundleQuantity.GetHashCode();
             }
 
-            if (this.IsThirdParty != null)
+            if (IsThirdParty != null)
             {
-                hash = hash * 59 + this.IsThirdParty.GetHashCode();
+                hash = hash * 59 + IsThirdParty.GetHashCode();
             }
 
             return hash;

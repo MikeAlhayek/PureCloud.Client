@@ -183,7 +183,7 @@ public partial class MessagingRecipient : IEquatable<MessagingRecipient>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessagingRecipient);
+        return Equals(obj as MessagingRecipient);
     }
 
     /// <summary>
@@ -201,49 +201,49 @@ public partial class MessagingRecipient : IEquatable<MessagingRecipient>
 
         return true &&
             (
-                this.Nickname == other.Nickname ||
-                this.Nickname != null &&
-                this.Nickname.Equals(other.Nickname)
+                Nickname == other.Nickname ||
+                Nickname != null &&
+                Nickname.Equals(other.Nickname)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.IdType == other.IdType ||
-                this.IdType != null &&
-                this.IdType.Equals(other.IdType)
+                IdType == other.IdType ||
+                IdType != null &&
+                IdType.Equals(other.IdType)
             ) &&
             (
-                this.Image == other.Image ||
-                this.Image != null &&
-                this.Image.Equals(other.Image)
+                Image == other.Image ||
+                Image != null &&
+                Image.Equals(other.Image)
             ) &&
             (
-                this.FirstName == other.FirstName ||
-                this.FirstName != null &&
-                this.FirstName.Equals(other.FirstName)
+                FirstName == other.FirstName ||
+                FirstName != null &&
+                FirstName.Equals(other.FirstName)
             ) &&
             (
-                this.LastName == other.LastName ||
-                this.LastName != null &&
-                this.LastName.Equals(other.LastName)
+                LastName == other.LastName ||
+                LastName != null &&
+                LastName.Equals(other.LastName)
             ) &&
             (
-                this.Email == other.Email ||
-                this.Email != null &&
-                this.Email.Equals(other.Email)
+                Email == other.Email ||
+                Email != null &&
+                Email.Equals(other.Email)
             ) &&
             (
-                this.ExternalContactId == other.ExternalContactId ||
-                this.ExternalContactId != null &&
-                this.ExternalContactId.Equals(other.ExternalContactId)
+                ExternalContactId == other.ExternalContactId ||
+                ExternalContactId != null &&
+                ExternalContactId.Equals(other.ExternalContactId)
             ) &&
             (
-                this.AdditionalIds == other.AdditionalIds ||
-                this.AdditionalIds != null &&
-                this.AdditionalIds.SequenceEqual(other.AdditionalIds)
+                AdditionalIds == other.AdditionalIds ||
+                AdditionalIds != null &&
+                AdditionalIds.SequenceEqual(other.AdditionalIds)
             );
     }
 
@@ -258,49 +258,49 @@ public partial class MessagingRecipient : IEquatable<MessagingRecipient>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Nickname != null)
+            if (Nickname != null)
             {
-                hash = hash * 59 + this.Nickname.GetHashCode();
+                hash = hash * 59 + Nickname.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.IdType != null)
+            if (IdType != null)
             {
-                hash = hash * 59 + this.IdType.GetHashCode();
+                hash = hash * 59 + IdType.GetHashCode();
             }
 
-            if (this.Image != null)
+            if (Image != null)
             {
-                hash = hash * 59 + this.Image.GetHashCode();
+                hash = hash * 59 + Image.GetHashCode();
             }
 
-            if (this.FirstName != null)
+            if (FirstName != null)
             {
-                hash = hash * 59 + this.FirstName.GetHashCode();
+                hash = hash * 59 + FirstName.GetHashCode();
             }
 
-            if (this.LastName != null)
+            if (LastName != null)
             {
-                hash = hash * 59 + this.LastName.GetHashCode();
+                hash = hash * 59 + LastName.GetHashCode();
             }
 
-            if (this.Email != null)
+            if (Email != null)
             {
-                hash = hash * 59 + this.Email.GetHashCode();
+                hash = hash * 59 + Email.GetHashCode();
             }
 
-            if (this.ExternalContactId != null)
+            if (ExternalContactId != null)
             {
-                hash = hash * 59 + this.ExternalContactId.GetHashCode();
+                hash = hash * 59 + ExternalContactId.GetHashCode();
             }
 
-            if (this.AdditionalIds != null)
+            if (AdditionalIds != null)
             {
-                hash = hash * 59 + this.AdditionalIds.GetHashCode();
+                hash = hash * 59 + AdditionalIds.GetHashCode();
             }
 
             return hash;

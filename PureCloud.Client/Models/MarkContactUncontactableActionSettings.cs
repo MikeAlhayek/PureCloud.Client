@@ -97,7 +97,7 @@ public partial class MarkContactUncontactableActionSettings : IEquatable<MarkCon
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MarkContactUncontactableActionSettings);
+        return Equals(obj as MarkContactUncontactableActionSettings);
     }
 
     /// <summary>
@@ -115,9 +115,9 @@ public partial class MarkContactUncontactableActionSettings : IEquatable<MarkCon
 
         return true &&
             (
-                this.MediaTypes == other.MediaTypes ||
-                this.MediaTypes != null &&
-                this.MediaTypes.SequenceEqual(other.MediaTypes)
+                MediaTypes == other.MediaTypes ||
+                MediaTypes != null &&
+                MediaTypes.SequenceEqual(other.MediaTypes)
             );
     }
 
@@ -132,9 +132,9 @@ public partial class MarkContactUncontactableActionSettings : IEquatable<MarkCon
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MediaTypes != null)
+            if (MediaTypes != null)
             {
-                hash = hash * 59 + this.MediaTypes.GetHashCode();
+                hash = hash * 59 + MediaTypes.GetHashCode();
             }
 
             return hash;

@@ -218,7 +218,7 @@ public partial class Contact : IEquatable<Contact>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Contact);
+        return Equals(obj as Contact);
     }
 
     /// <summary>
@@ -236,39 +236,39 @@ public partial class Contact : IEquatable<Contact>
 
         return true &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.Display == other.Display ||
-                this.Display != null &&
-                this.Display.Equals(other.Display)
+                Display == other.Display ||
+                Display != null &&
+                Display.Equals(other.Display)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Extension == other.Extension ||
-                this.Extension != null &&
-                this.Extension.Equals(other.Extension)
+                Extension == other.Extension ||
+                Extension != null &&
+                Extension.Equals(other.Extension)
             ) &&
             (
-                this.CountryCode == other.CountryCode ||
-                this.CountryCode != null &&
-                this.CountryCode.Equals(other.CountryCode)
+                CountryCode == other.CountryCode ||
+                CountryCode != null &&
+                CountryCode.Equals(other.CountryCode)
             ) &&
             (
-                this.Integration == other.Integration ||
-                this.Integration != null &&
-                this.Integration.Equals(other.Integration)
+                Integration == other.Integration ||
+                Integration != null &&
+                Integration.Equals(other.Integration)
             );
     }
 
@@ -283,39 +283,39 @@ public partial class Contact : IEquatable<Contact>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.Display != null)
+            if (Display != null)
             {
-                hash = hash * 59 + this.Display.GetHashCode();
+                hash = hash * 59 + Display.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Extension != null)
+            if (Extension != null)
             {
-                hash = hash * 59 + this.Extension.GetHashCode();
+                hash = hash * 59 + Extension.GetHashCode();
             }
 
-            if (this.CountryCode != null)
+            if (CountryCode != null)
             {
-                hash = hash * 59 + this.CountryCode.GetHashCode();
+                hash = hash * 59 + CountryCode.GetHashCode();
             }
 
-            if (this.Integration != null)
+            if (Integration != null)
             {
-                hash = hash * 59 + this.Integration.GetHashCode();
+                hash = hash * 59 + Integration.GetHashCode();
             }
 
             return hash;

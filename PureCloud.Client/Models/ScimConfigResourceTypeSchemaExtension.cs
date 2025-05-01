@@ -61,7 +61,7 @@ public partial class ScimConfigResourceTypeSchemaExtension : IEquatable<ScimConf
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimConfigResourceTypeSchemaExtension);
+        return Equals(obj as ScimConfigResourceTypeSchemaExtension);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class ScimConfigResourceTypeSchemaExtension : IEquatable<ScimConf
 
         return true &&
             (
-                this.Schema == other.Schema ||
-                this.Schema != null &&
-                this.Schema.Equals(other.Schema)
+                Schema == other.Schema ||
+                Schema != null &&
+                Schema.Equals(other.Schema)
             ) &&
             (
-                this.Required == other.Required ||
-                this.Required != null &&
-                this.Required.Equals(other.Required)
+                Required == other.Required ||
+                Required != null &&
+                Required.Equals(other.Required)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class ScimConfigResourceTypeSchemaExtension : IEquatable<ScimConf
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Schema != null)
+            if (Schema != null)
             {
-                hash = hash * 59 + this.Schema.GetHashCode();
+                hash = hash * 59 + Schema.GetHashCode();
             }
 
-            if (this.Required != null)
+            if (Required != null)
             {
-                hash = hash * 59 + this.Required.GetHashCode();
+                hash = hash * 59 + Required.GetHashCode();
             }
 
             return hash;

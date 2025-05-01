@@ -91,7 +91,7 @@ public partial class ContentText : IEquatable<ContentText>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentText);
+        return Equals(obj as ContentText);
     }
 
     /// <summary>
@@ -109,14 +109,14 @@ public partial class ContentText : IEquatable<ContentText>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Body == other.Body ||
-                this.Body != null &&
-                this.Body.Equals(other.Body)
+                Body == other.Body ||
+                Body != null &&
+                Body.Equals(other.Body)
             );
     }
 
@@ -131,14 +131,14 @@ public partial class ContentText : IEquatable<ContentText>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Body != null)
+            if (Body != null)
             {
-                hash = hash * 59 + this.Body.GetHashCode();
+                hash = hash * 59 + Body.GetHashCode();
             }
 
             return hash;

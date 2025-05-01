@@ -295,7 +295,7 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FileSpecificationTemplate);
+        return Equals(obj as FileSpecificationTemplate);
     }
 
     /// <summary>
@@ -313,79 +313,79 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Format == other.Format ||
-                this.Format != null &&
-                this.Format.Equals(other.Format)
+                Format == other.Format ||
+                Format != null &&
+                Format.Equals(other.Format)
             ) &&
             (
-                this.NumberOfHeadingLinesSkipped == other.NumberOfHeadingLinesSkipped ||
-                this.NumberOfHeadingLinesSkipped != null &&
-                this.NumberOfHeadingLinesSkipped.Equals(other.NumberOfHeadingLinesSkipped)
+                NumberOfHeadingLinesSkipped == other.NumberOfHeadingLinesSkipped ||
+                NumberOfHeadingLinesSkipped != null &&
+                NumberOfHeadingLinesSkipped.Equals(other.NumberOfHeadingLinesSkipped)
             ) &&
             (
-                this.NumberOfTrailingLinesSkipped == other.NumberOfTrailingLinesSkipped ||
-                this.NumberOfTrailingLinesSkipped != null &&
-                this.NumberOfTrailingLinesSkipped.Equals(other.NumberOfTrailingLinesSkipped)
+                NumberOfTrailingLinesSkipped == other.NumberOfTrailingLinesSkipped ||
+                NumberOfTrailingLinesSkipped != null &&
+                NumberOfTrailingLinesSkipped.Equals(other.NumberOfTrailingLinesSkipped)
             ) &&
             (
-                this.Header == other.Header ||
-                this.Header != null &&
-                this.Header.Equals(other.Header)
+                Header == other.Header ||
+                Header != null &&
+                Header.Equals(other.Header)
             ) &&
             (
-                this.Delimiter == other.Delimiter ||
-                this.Delimiter != null &&
-                this.Delimiter.Equals(other.Delimiter)
+                Delimiter == other.Delimiter ||
+                Delimiter != null &&
+                Delimiter.Equals(other.Delimiter)
             ) &&
             (
-                this.DelimiterValue == other.DelimiterValue ||
-                this.DelimiterValue != null &&
-                this.DelimiterValue.Equals(other.DelimiterValue)
+                DelimiterValue == other.DelimiterValue ||
+                DelimiterValue != null &&
+                DelimiterValue.Equals(other.DelimiterValue)
             ) &&
             (
-                this.ColumnInformation == other.ColumnInformation ||
-                this.ColumnInformation != null &&
-                this.ColumnInformation.SequenceEqual(other.ColumnInformation)
+                ColumnInformation == other.ColumnInformation ||
+                ColumnInformation != null &&
+                ColumnInformation.SequenceEqual(other.ColumnInformation)
             ) &&
             (
-                this.PreprocessingRules == other.PreprocessingRules ||
-                this.PreprocessingRules != null &&
-                this.PreprocessingRules.SequenceEqual(other.PreprocessingRules)
+                PreprocessingRules == other.PreprocessingRules ||
+                PreprocessingRules != null &&
+                PreprocessingRules.SequenceEqual(other.PreprocessingRules)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -400,79 +400,79 @@ public partial class FileSpecificationTemplate : IEquatable<FileSpecificationTem
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Format != null)
+            if (Format != null)
             {
-                hash = hash * 59 + this.Format.GetHashCode();
+                hash = hash * 59 + Format.GetHashCode();
             }
 
-            if (this.NumberOfHeadingLinesSkipped != null)
+            if (NumberOfHeadingLinesSkipped != null)
             {
-                hash = hash * 59 + this.NumberOfHeadingLinesSkipped.GetHashCode();
+                hash = hash * 59 + NumberOfHeadingLinesSkipped.GetHashCode();
             }
 
-            if (this.NumberOfTrailingLinesSkipped != null)
+            if (NumberOfTrailingLinesSkipped != null)
             {
-                hash = hash * 59 + this.NumberOfTrailingLinesSkipped.GetHashCode();
+                hash = hash * 59 + NumberOfTrailingLinesSkipped.GetHashCode();
             }
 
-            if (this.Header != null)
+            if (Header != null)
             {
-                hash = hash * 59 + this.Header.GetHashCode();
+                hash = hash * 59 + Header.GetHashCode();
             }
 
-            if (this.Delimiter != null)
+            if (Delimiter != null)
             {
-                hash = hash * 59 + this.Delimiter.GetHashCode();
+                hash = hash * 59 + Delimiter.GetHashCode();
             }
 
-            if (this.DelimiterValue != null)
+            if (DelimiterValue != null)
             {
-                hash = hash * 59 + this.DelimiterValue.GetHashCode();
+                hash = hash * 59 + DelimiterValue.GetHashCode();
             }
 
-            if (this.ColumnInformation != null)
+            if (ColumnInformation != null)
             {
-                hash = hash * 59 + this.ColumnInformation.GetHashCode();
+                hash = hash * 59 + ColumnInformation.GetHashCode();
             }
 
-            if (this.PreprocessingRules != null)
+            if (PreprocessingRules != null)
             {
-                hash = hash * 59 + this.PreprocessingRules.GetHashCode();
+                hash = hash * 59 + PreprocessingRules.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

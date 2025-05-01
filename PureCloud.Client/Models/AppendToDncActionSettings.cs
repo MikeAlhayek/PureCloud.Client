@@ -106,7 +106,7 @@ public partial class AppendToDncActionSettings : IEquatable<AppendToDncActionSet
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AppendToDncActionSettings);
+        return Equals(obj as AppendToDncActionSettings);
     }
 
     /// <summary>
@@ -124,19 +124,19 @@ public partial class AppendToDncActionSettings : IEquatable<AppendToDncActionSet
 
         return true &&
             (
-                this.Expire == other.Expire ||
-                this.Expire != null &&
-                this.Expire.Equals(other.Expire)
+                Expire == other.Expire ||
+                Expire != null &&
+                Expire.Equals(other.Expire)
             ) &&
             (
-                this.ExpirationDuration == other.ExpirationDuration ||
-                this.ExpirationDuration != null &&
-                this.ExpirationDuration.Equals(other.ExpirationDuration)
+                ExpirationDuration == other.ExpirationDuration ||
+                ExpirationDuration != null &&
+                ExpirationDuration.Equals(other.ExpirationDuration)
             ) &&
             (
-                this.ListType == other.ListType ||
-                this.ListType != null &&
-                this.ListType.Equals(other.ListType)
+                ListType == other.ListType ||
+                ListType != null &&
+                ListType.Equals(other.ListType)
             );
     }
 
@@ -151,19 +151,19 @@ public partial class AppendToDncActionSettings : IEquatable<AppendToDncActionSet
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Expire != null)
+            if (Expire != null)
             {
-                hash = hash * 59 + this.Expire.GetHashCode();
+                hash = hash * 59 + Expire.GetHashCode();
             }
 
-            if (this.ExpirationDuration != null)
+            if (ExpirationDuration != null)
             {
-                hash = hash * 59 + this.ExpirationDuration.GetHashCode();
+                hash = hash * 59 + ExpirationDuration.GetHashCode();
             }
 
-            if (this.ListType != null)
+            if (ListType != null)
             {
-                hash = hash * 59 + this.ListType.GetHashCode();
+                hash = hash * 59 + ListType.GetHashCode();
             }
 
             return hash;

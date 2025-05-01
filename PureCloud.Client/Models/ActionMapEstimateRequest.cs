@@ -64,7 +64,7 @@ public partial class ActionMapEstimateRequest : IEquatable<ActionMapEstimateRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionMapEstimateRequest);
+        return Equals(obj as ActionMapEstimateRequest);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class ActionMapEstimateRequest : IEquatable<ActionMapEstimateRequ
 
         return true &&
             (
-                this.SegmentIds == other.SegmentIds ||
-                this.SegmentIds != null &&
-                this.SegmentIds.SequenceEqual(other.SegmentIds)
+                SegmentIds == other.SegmentIds ||
+                SegmentIds != null &&
+                SegmentIds.SequenceEqual(other.SegmentIds)
             ) &&
             (
-                this.OutcomeCriteria == other.OutcomeCriteria ||
-                this.OutcomeCriteria != null &&
-                this.OutcomeCriteria.Equals(other.OutcomeCriteria)
+                OutcomeCriteria == other.OutcomeCriteria ||
+                OutcomeCriteria != null &&
+                OutcomeCriteria.Equals(other.OutcomeCriteria)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class ActionMapEstimateRequest : IEquatable<ActionMapEstimateRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SegmentIds != null)
+            if (SegmentIds != null)
             {
-                hash = hash * 59 + this.SegmentIds.GetHashCode();
+                hash = hash * 59 + SegmentIds.GetHashCode();
             }
 
-            if (this.OutcomeCriteria != null)
+            if (OutcomeCriteria != null)
             {
-                hash = hash * 59 + this.OutcomeCriteria.GetHashCode();
+                hash = hash * 59 + OutcomeCriteria.GetHashCode();
             }
 
             return hash;

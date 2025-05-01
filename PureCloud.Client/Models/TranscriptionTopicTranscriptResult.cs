@@ -210,7 +210,7 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptionTopicTranscriptResult);
+        return Equals(obj as TranscriptionTopicTranscriptResult);
     }
 
     /// <summary>
@@ -228,64 +228,64 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
 
         return true &&
             (
-                this.UtteranceId == other.UtteranceId ||
-                this.UtteranceId != null &&
-                this.UtteranceId.Equals(other.UtteranceId)
+                UtteranceId == other.UtteranceId ||
+                UtteranceId != null &&
+                UtteranceId.Equals(other.UtteranceId)
             ) &&
             (
-                this.IsFinal == other.IsFinal ||
-                this.IsFinal != null &&
-                this.IsFinal.Equals(other.IsFinal)
+                IsFinal == other.IsFinal ||
+                IsFinal != null &&
+                IsFinal.Equals(other.IsFinal)
             ) &&
             (
-                this.Channel == other.Channel ||
-                this.Channel != null &&
-                this.Channel.Equals(other.Channel)
+                Channel == other.Channel ||
+                Channel != null &&
+                Channel.Equals(other.Channel)
             ) &&
             (
-                this.Alternatives == other.Alternatives ||
-                this.Alternatives != null &&
-                this.Alternatives.SequenceEqual(other.Alternatives)
+                Alternatives == other.Alternatives ||
+                Alternatives != null &&
+                Alternatives.SequenceEqual(other.Alternatives)
             ) &&
             (
-                this.AgentAssistantId == other.AgentAssistantId ||
-                this.AgentAssistantId != null &&
-                this.AgentAssistantId.Equals(other.AgentAssistantId)
+                AgentAssistantId == other.AgentAssistantId ||
+                AgentAssistantId != null &&
+                AgentAssistantId.Equals(other.AgentAssistantId)
             ) &&
             (
-                this.EngineProvider == other.EngineProvider ||
-                this.EngineProvider != null &&
-                this.EngineProvider.Equals(other.EngineProvider)
+                EngineProvider == other.EngineProvider ||
+                EngineProvider != null &&
+                EngineProvider.Equals(other.EngineProvider)
             ) &&
             (
-                this.EngineId == other.EngineId ||
-                this.EngineId != null &&
-                this.EngineId.Equals(other.EngineId)
+                EngineId == other.EngineId ||
+                EngineId != null &&
+                EngineId.Equals(other.EngineId)
             ) &&
             (
-                this.EngineName == other.EngineName ||
-                this.EngineName != null &&
-                this.EngineName.Equals(other.EngineName)
+                EngineName == other.EngineName ||
+                EngineName != null &&
+                EngineName.Equals(other.EngineName)
             ) &&
             (
-                this.Dialect == other.Dialect ||
-                this.Dialect != null &&
-                this.Dialect.Equals(other.Dialect)
+                Dialect == other.Dialect ||
+                Dialect != null &&
+                Dialect.Equals(other.Dialect)
             ) &&
             (
-                this.SpeechTextAnalyticsProgramId == other.SpeechTextAnalyticsProgramId ||
-                this.SpeechTextAnalyticsProgramId != null &&
-                this.SpeechTextAnalyticsProgramId.Equals(other.SpeechTextAnalyticsProgramId)
+                SpeechTextAnalyticsProgramId == other.SpeechTextAnalyticsProgramId ||
+                SpeechTextAnalyticsProgramId != null &&
+                SpeechTextAnalyticsProgramId.Equals(other.SpeechTextAnalyticsProgramId)
             ) &&
             (
-                this.AgentAssistEnabled == other.AgentAssistEnabled ||
-                this.AgentAssistEnabled != null &&
-                this.AgentAssistEnabled.Equals(other.AgentAssistEnabled)
+                AgentAssistEnabled == other.AgentAssistEnabled ||
+                AgentAssistEnabled != null &&
+                AgentAssistEnabled.Equals(other.AgentAssistEnabled)
             ) &&
             (
-                this.VoiceTranscriptionEnabled == other.VoiceTranscriptionEnabled ||
-                this.VoiceTranscriptionEnabled != null &&
-                this.VoiceTranscriptionEnabled.Equals(other.VoiceTranscriptionEnabled)
+                VoiceTranscriptionEnabled == other.VoiceTranscriptionEnabled ||
+                VoiceTranscriptionEnabled != null &&
+                VoiceTranscriptionEnabled.Equals(other.VoiceTranscriptionEnabled)
             );
     }
 
@@ -300,64 +300,64 @@ public partial class TranscriptionTopicTranscriptResult : IEquatable<Transcripti
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UtteranceId != null)
+            if (UtteranceId != null)
             {
-                hash = hash * 59 + this.UtteranceId.GetHashCode();
+                hash = hash * 59 + UtteranceId.GetHashCode();
             }
 
-            if (this.IsFinal != null)
+            if (IsFinal != null)
             {
-                hash = hash * 59 + this.IsFinal.GetHashCode();
+                hash = hash * 59 + IsFinal.GetHashCode();
             }
 
-            if (this.Channel != null)
+            if (Channel != null)
             {
-                hash = hash * 59 + this.Channel.GetHashCode();
+                hash = hash * 59 + Channel.GetHashCode();
             }
 
-            if (this.Alternatives != null)
+            if (Alternatives != null)
             {
-                hash = hash * 59 + this.Alternatives.GetHashCode();
+                hash = hash * 59 + Alternatives.GetHashCode();
             }
 
-            if (this.AgentAssistantId != null)
+            if (AgentAssistantId != null)
             {
-                hash = hash * 59 + this.AgentAssistantId.GetHashCode();
+                hash = hash * 59 + AgentAssistantId.GetHashCode();
             }
 
-            if (this.EngineProvider != null)
+            if (EngineProvider != null)
             {
-                hash = hash * 59 + this.EngineProvider.GetHashCode();
+                hash = hash * 59 + EngineProvider.GetHashCode();
             }
 
-            if (this.EngineId != null)
+            if (EngineId != null)
             {
-                hash = hash * 59 + this.EngineId.GetHashCode();
+                hash = hash * 59 + EngineId.GetHashCode();
             }
 
-            if (this.EngineName != null)
+            if (EngineName != null)
             {
-                hash = hash * 59 + this.EngineName.GetHashCode();
+                hash = hash * 59 + EngineName.GetHashCode();
             }
 
-            if (this.Dialect != null)
+            if (Dialect != null)
             {
-                hash = hash * 59 + this.Dialect.GetHashCode();
+                hash = hash * 59 + Dialect.GetHashCode();
             }
 
-            if (this.SpeechTextAnalyticsProgramId != null)
+            if (SpeechTextAnalyticsProgramId != null)
             {
-                hash = hash * 59 + this.SpeechTextAnalyticsProgramId.GetHashCode();
+                hash = hash * 59 + SpeechTextAnalyticsProgramId.GetHashCode();
             }
 
-            if (this.AgentAssistEnabled != null)
+            if (AgentAssistEnabled != null)
             {
-                hash = hash * 59 + this.AgentAssistEnabled.GetHashCode();
+                hash = hash * 59 + AgentAssistEnabled.GetHashCode();
             }
 
-            if (this.VoiceTranscriptionEnabled != null)
+            if (VoiceTranscriptionEnabled != null)
             {
-                hash = hash * 59 + this.VoiceTranscriptionEnabled.GetHashCode();
+                hash = hash * 59 + VoiceTranscriptionEnabled.GetHashCode();
             }
 
             return hash;

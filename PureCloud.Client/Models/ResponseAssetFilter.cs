@@ -169,7 +169,7 @@ public partial class ResponseAssetFilter : IEquatable<ResponseAssetFilter>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ResponseAssetFilter);
+        return Equals(obj as ResponseAssetFilter);
     }
 
     /// <summary>
@@ -187,34 +187,34 @@ public partial class ResponseAssetFilter : IEquatable<ResponseAssetFilter>
 
         return true &&
             (
-                this.EndValue == other.EndValue ||
-                this.EndValue != null &&
-                this.EndValue.Equals(other.EndValue)
+                EndValue == other.EndValue ||
+                EndValue != null &&
+                EndValue.Equals(other.EndValue)
             ) &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             ) &&
             (
-                this.StartValue == other.StartValue ||
-                this.StartValue != null &&
-                this.StartValue.Equals(other.StartValue)
+                StartValue == other.StartValue ||
+                StartValue != null &&
+                StartValue.Equals(other.StartValue)
             ) &&
             (
-                this.Fields == other.Fields ||
-                this.Fields != null &&
-                this.Fields.SequenceEqual(other.Fields)
+                Fields == other.Fields ||
+                Fields != null &&
+                Fields.SequenceEqual(other.Fields)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -229,34 +229,34 @@ public partial class ResponseAssetFilter : IEquatable<ResponseAssetFilter>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EndValue != null)
+            if (EndValue != null)
             {
-                hash = hash * 59 + this.EndValue.GetHashCode();
+                hash = hash * 59 + EndValue.GetHashCode();
             }
 
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
-            if (this.StartValue != null)
+            if (StartValue != null)
             {
-                hash = hash * 59 + this.StartValue.GetHashCode();
+                hash = hash * 59 + StartValue.GetHashCode();
             }
 
-            if (this.Fields != null)
+            if (Fields != null)
             {
-                hash = hash * 59 + this.Fields.GetHashCode();
+                hash = hash * 59 + Fields.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

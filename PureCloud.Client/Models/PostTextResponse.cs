@@ -199,7 +199,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PostTextResponse);
+        return Equals(obj as PostTextResponse);
     }
 
     /// <summary>
@@ -217,54 +217,54 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
 
         return true &&
             (
-                this.BotState == other.BotState ||
-                this.BotState != null &&
-                this.BotState.Equals(other.BotState)
+                BotState == other.BotState ||
+                BotState != null &&
+                BotState.Equals(other.BotState)
             ) &&
             (
-                this.ReplyMessages == other.ReplyMessages ||
-                this.ReplyMessages != null &&
-                this.ReplyMessages.SequenceEqual(other.ReplyMessages)
+                ReplyMessages == other.ReplyMessages ||
+                ReplyMessages != null &&
+                ReplyMessages.SequenceEqual(other.ReplyMessages)
             ) &&
             (
-                this.IntentName == other.IntentName ||
-                this.IntentName != null &&
-                this.IntentName.Equals(other.IntentName)
+                IntentName == other.IntentName ||
+                IntentName != null &&
+                IntentName.Equals(other.IntentName)
             ) &&
             (
-                this.Slots == other.Slots ||
-                this.Slots != null &&
-                this.Slots.SequenceEqual(other.Slots)
+                Slots == other.Slots ||
+                Slots != null &&
+                Slots.SequenceEqual(other.Slots)
             ) &&
             (
-                this.BotCorrelationId == other.BotCorrelationId ||
-                this.BotCorrelationId != null &&
-                this.BotCorrelationId.Equals(other.BotCorrelationId)
+                BotCorrelationId == other.BotCorrelationId ||
+                BotCorrelationId != null &&
+                BotCorrelationId.Equals(other.BotCorrelationId)
             ) &&
             (
-                this.AmazonLex == other.AmazonLex ||
-                this.AmazonLex != null &&
-                this.AmazonLex.SequenceEqual(other.AmazonLex)
+                AmazonLex == other.AmazonLex ||
+                AmazonLex != null &&
+                AmazonLex.SequenceEqual(other.AmazonLex)
             ) &&
             (
-                this.GoogleDialogFlow == other.GoogleDialogFlow ||
-                this.GoogleDialogFlow != null &&
-                this.GoogleDialogFlow.SequenceEqual(other.GoogleDialogFlow)
+                GoogleDialogFlow == other.GoogleDialogFlow ||
+                GoogleDialogFlow != null &&
+                GoogleDialogFlow.SequenceEqual(other.GoogleDialogFlow)
             ) &&
             (
-                this.GenesysDialogEngine == other.GenesysDialogEngine ||
-                this.GenesysDialogEngine != null &&
-                this.GenesysDialogEngine.SequenceEqual(other.GenesysDialogEngine)
+                GenesysDialogEngine == other.GenesysDialogEngine ||
+                GenesysDialogEngine != null &&
+                GenesysDialogEngine.SequenceEqual(other.GenesysDialogEngine)
             ) &&
             (
-                this.GenesysBotConnector == other.GenesysBotConnector ||
-                this.GenesysBotConnector != null &&
-                this.GenesysBotConnector.SequenceEqual(other.GenesysBotConnector)
+                GenesysBotConnector == other.GenesysBotConnector ||
+                GenesysBotConnector != null &&
+                GenesysBotConnector.SequenceEqual(other.GenesysBotConnector)
             ) &&
             (
-                this.NuanceMixDlg == other.NuanceMixDlg ||
-                this.NuanceMixDlg != null &&
-                this.NuanceMixDlg.SequenceEqual(other.NuanceMixDlg)
+                NuanceMixDlg == other.NuanceMixDlg ||
+                NuanceMixDlg != null &&
+                NuanceMixDlg.SequenceEqual(other.NuanceMixDlg)
             );
     }
 
@@ -279,54 +279,54 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BotState != null)
+            if (BotState != null)
             {
-                hash = hash * 59 + this.BotState.GetHashCode();
+                hash = hash * 59 + BotState.GetHashCode();
             }
 
-            if (this.ReplyMessages != null)
+            if (ReplyMessages != null)
             {
-                hash = hash * 59 + this.ReplyMessages.GetHashCode();
+                hash = hash * 59 + ReplyMessages.GetHashCode();
             }
 
-            if (this.IntentName != null)
+            if (IntentName != null)
             {
-                hash = hash * 59 + this.IntentName.GetHashCode();
+                hash = hash * 59 + IntentName.GetHashCode();
             }
 
-            if (this.Slots != null)
+            if (Slots != null)
             {
-                hash = hash * 59 + this.Slots.GetHashCode();
+                hash = hash * 59 + Slots.GetHashCode();
             }
 
-            if (this.BotCorrelationId != null)
+            if (BotCorrelationId != null)
             {
-                hash = hash * 59 + this.BotCorrelationId.GetHashCode();
+                hash = hash * 59 + BotCorrelationId.GetHashCode();
             }
 
-            if (this.AmazonLex != null)
+            if (AmazonLex != null)
             {
-                hash = hash * 59 + this.AmazonLex.GetHashCode();
+                hash = hash * 59 + AmazonLex.GetHashCode();
             }
 
-            if (this.GoogleDialogFlow != null)
+            if (GoogleDialogFlow != null)
             {
-                hash = hash * 59 + this.GoogleDialogFlow.GetHashCode();
+                hash = hash * 59 + GoogleDialogFlow.GetHashCode();
             }
 
-            if (this.GenesysDialogEngine != null)
+            if (GenesysDialogEngine != null)
             {
-                hash = hash * 59 + this.GenesysDialogEngine.GetHashCode();
+                hash = hash * 59 + GenesysDialogEngine.GetHashCode();
             }
 
-            if (this.GenesysBotConnector != null)
+            if (GenesysBotConnector != null)
             {
-                hash = hash * 59 + this.GenesysBotConnector.GetHashCode();
+                hash = hash * 59 + GenesysBotConnector.GetHashCode();
             }
 
-            if (this.NuanceMixDlg != null)
+            if (NuanceMixDlg != null)
             {
-                hash = hash * 59 + this.NuanceMixDlg.GetHashCode();
+                hash = hash * 59 + NuanceMixDlg.GetHashCode();
             }
 
             return hash;

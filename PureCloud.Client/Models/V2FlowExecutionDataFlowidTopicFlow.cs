@@ -65,7 +65,7 @@ public partial class V2FlowExecutionDataFlowidTopicFlow : IEquatable<V2FlowExecu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2FlowExecutionDataFlowidTopicFlow);
+        return Equals(obj as V2FlowExecutionDataFlowidTopicFlow);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class V2FlowExecutionDataFlowidTopicFlow : IEquatable<V2FlowExecu
 
         return true &&
             (
-                this.FlowExecutionId == other.FlowExecutionId ||
-                this.FlowExecutionId != null &&
-                this.FlowExecutionId.Equals(other.FlowExecutionId)
+                FlowExecutionId == other.FlowExecutionId ||
+                FlowExecutionId != null &&
+                FlowExecutionId.Equals(other.FlowExecutionId)
             ) &&
             (
-                this.ObjectExecutionId == other.ObjectExecutionId ||
-                this.ObjectExecutionId != null &&
-                this.ObjectExecutionId.Equals(other.ObjectExecutionId)
+                ObjectExecutionId == other.ObjectExecutionId ||
+                ObjectExecutionId != null &&
+                ObjectExecutionId.Equals(other.ObjectExecutionId)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class V2FlowExecutionDataFlowidTopicFlow : IEquatable<V2FlowExecu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FlowExecutionId != null)
+            if (FlowExecutionId != null)
             {
-                hash = hash * 59 + this.FlowExecutionId.GetHashCode();
+                hash = hash * 59 + FlowExecutionId.GetHashCode();
             }
 
-            if (this.ObjectExecutionId != null)
+            if (ObjectExecutionId != null)
             {
-                hash = hash * 59 + this.ObjectExecutionId.GetHashCode();
+                hash = hash * 59 + ObjectExecutionId.GetHashCode();
             }
 
             return hash;

@@ -70,7 +70,7 @@ public partial class OutcomeAttributionListing : IEquatable<OutcomeAttributionLi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomeAttributionListing);
+        return Equals(obj as OutcomeAttributionListing);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class OutcomeAttributionListing : IEquatable<OutcomeAttributionLi
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.PercentFailedThreshold == other.PercentFailedThreshold ||
-                this.PercentFailedThreshold != null &&
-                this.PercentFailedThreshold.Equals(other.PercentFailedThreshold)
+                PercentFailedThreshold == other.PercentFailedThreshold ||
+                PercentFailedThreshold != null &&
+                PercentFailedThreshold.Equals(other.PercentFailedThreshold)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class OutcomeAttributionListing : IEquatable<OutcomeAttributionLi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.PercentFailedThreshold != null)
+            if (PercentFailedThreshold != null)
             {
-                hash = hash * 59 + this.PercentFailedThreshold.GetHashCode();
+                hash = hash * 59 + PercentFailedThreshold.GetHashCode();
             }
 
             return hash;

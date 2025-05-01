@@ -83,7 +83,7 @@ public partial class QMAuditQueryRequest : IEquatable<QMAuditQueryRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QMAuditQueryRequest);
+        return Equals(obj as QMAuditQueryRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class QMAuditQueryRequest : IEquatable<QMAuditQueryRequest>
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.Filters == other.Filters ||
-                this.Filters != null &&
-                this.Filters.SequenceEqual(other.Filters)
+                Filters == other.Filters ||
+                Filters != null &&
+                Filters.SequenceEqual(other.Filters)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.SequenceEqual(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.SequenceEqual(other.Sort)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class QMAuditQueryRequest : IEquatable<QMAuditQueryRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.Filters != null)
+            if (Filters != null)
             {
-                hash = hash * 59 + this.Filters.GetHashCode();
+                hash = hash * 59 + Filters.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
             return hash;

@@ -63,7 +63,7 @@ public partial class ExternalContactsUnresolvedContactChangedTopicWhatsAppId : I
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsUnresolvedContactChangedTopicWhatsAppId);
+        return Equals(obj as ExternalContactsUnresolvedContactChangedTopicWhatsAppId);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class ExternalContactsUnresolvedContactChangedTopicWhatsAppId : I
 
         return true &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class ExternalContactsUnresolvedContactChangedTopicWhatsAppId : I
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
             return hash;

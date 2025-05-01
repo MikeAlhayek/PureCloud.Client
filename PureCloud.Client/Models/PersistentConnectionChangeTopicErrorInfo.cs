@@ -96,7 +96,7 @@ public partial class PersistentConnectionChangeTopicErrorInfo : IEquatable<Persi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PersistentConnectionChangeTopicErrorInfo);
+        return Equals(obj as PersistentConnectionChangeTopicErrorInfo);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class PersistentConnectionChangeTopicErrorInfo : IEquatable<Persi
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.UserMessage == other.UserMessage ||
-                this.UserMessage != null &&
-                this.UserMessage.Equals(other.UserMessage)
+                UserMessage == other.UserMessage ||
+                UserMessage != null &&
+                UserMessage.Equals(other.UserMessage)
             ) &&
             (
-                this.UserParams == other.UserParams ||
-                this.UserParams != null &&
-                this.UserParams.SequenceEqual(other.UserParams)
+                UserParams == other.UserParams ||
+                UserParams != null &&
+                UserParams.SequenceEqual(other.UserParams)
             ) &&
             (
-                this.NestedErrorDetails == other.NestedErrorDetails ||
-                this.NestedErrorDetails != null &&
-                this.NestedErrorDetails.SequenceEqual(other.NestedErrorDetails)
+                NestedErrorDetails == other.NestedErrorDetails ||
+                NestedErrorDetails != null &&
+                NestedErrorDetails.SequenceEqual(other.NestedErrorDetails)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class PersistentConnectionChangeTopicErrorInfo : IEquatable<Persi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.UserMessage != null)
+            if (UserMessage != null)
             {
-                hash = hash * 59 + this.UserMessage.GetHashCode();
+                hash = hash * 59 + UserMessage.GetHashCode();
             }
 
-            if (this.UserParams != null)
+            if (UserParams != null)
             {
-                hash = hash * 59 + this.UserParams.GetHashCode();
+                hash = hash * 59 + UserParams.GetHashCode();
             }
 
-            if (this.NestedErrorDetails != null)
+            if (NestedErrorDetails != null)
             {
-                hash = hash * 59 + this.NestedErrorDetails.GetHashCode();
+                hash = hash * 59 + NestedErrorDetails.GetHashCode();
             }
 
             return hash;

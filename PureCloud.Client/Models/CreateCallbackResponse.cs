@@ -71,7 +71,7 @@ public partial class CreateCallbackResponse : IEquatable<CreateCallbackResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateCallbackResponse);
+        return Equals(obj as CreateCallbackResponse);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class CreateCallbackResponse : IEquatable<CreateCallbackResponse>
 
         return true &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.CallbackIdentifiers == other.CallbackIdentifiers ||
-                this.CallbackIdentifiers != null &&
-                this.CallbackIdentifiers.SequenceEqual(other.CallbackIdentifiers)
+                CallbackIdentifiers == other.CallbackIdentifiers ||
+                CallbackIdentifiers != null &&
+                CallbackIdentifiers.SequenceEqual(other.CallbackIdentifiers)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class CreateCallbackResponse : IEquatable<CreateCallbackResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.CallbackIdentifiers != null)
+            if (CallbackIdentifiers != null)
             {
-                hash = hash * 59 + this.CallbackIdentifiers.GetHashCode();
+                hash = hash * 59 + CallbackIdentifiers.GetHashCode();
             }
 
             return hash;

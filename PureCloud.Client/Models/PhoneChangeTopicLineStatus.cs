@@ -96,7 +96,7 @@ public partial class PhoneChangeTopicLineStatus : IEquatable<PhoneChangeTopicLin
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PhoneChangeTopicLineStatus);
+        return Equals(obj as PhoneChangeTopicLineStatus);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class PhoneChangeTopicLineStatus : IEquatable<PhoneChangeTopicLin
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Reachable == other.Reachable ||
-                this.Reachable != null &&
-                this.Reachable.Equals(other.Reachable)
+                Reachable == other.Reachable ||
+                Reachable != null &&
+                Reachable.Equals(other.Reachable)
             ) &&
             (
-                this.AddressOfRecord == other.AddressOfRecord ||
-                this.AddressOfRecord != null &&
-                this.AddressOfRecord.Equals(other.AddressOfRecord)
+                AddressOfRecord == other.AddressOfRecord ||
+                AddressOfRecord != null &&
+                AddressOfRecord.Equals(other.AddressOfRecord)
             ) &&
             (
-                this.ContactAddresses == other.ContactAddresses ||
-                this.ContactAddresses != null &&
-                this.ContactAddresses.SequenceEqual(other.ContactAddresses)
+                ContactAddresses == other.ContactAddresses ||
+                ContactAddresses != null &&
+                ContactAddresses.SequenceEqual(other.ContactAddresses)
             ) &&
             (
-                this.ReachableStateTime == other.ReachableStateTime ||
-                this.ReachableStateTime != null &&
-                this.ReachableStateTime.Equals(other.ReachableStateTime)
+                ReachableStateTime == other.ReachableStateTime ||
+                ReachableStateTime != null &&
+                ReachableStateTime.Equals(other.ReachableStateTime)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class PhoneChangeTopicLineStatus : IEquatable<PhoneChangeTopicLin
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Reachable != null)
+            if (Reachable != null)
             {
-                hash = hash * 59 + this.Reachable.GetHashCode();
+                hash = hash * 59 + Reachable.GetHashCode();
             }
 
-            if (this.AddressOfRecord != null)
+            if (AddressOfRecord != null)
             {
-                hash = hash * 59 + this.AddressOfRecord.GetHashCode();
+                hash = hash * 59 + AddressOfRecord.GetHashCode();
             }
 
-            if (this.ContactAddresses != null)
+            if (ContactAddresses != null)
             {
-                hash = hash * 59 + this.ContactAddresses.GetHashCode();
+                hash = hash * 59 + ContactAddresses.GetHashCode();
             }
 
-            if (this.ReachableStateTime != null)
+            if (ReachableStateTime != null)
             {
-                hash = hash * 59 + this.ReachableStateTime.GetHashCode();
+                hash = hash * 59 + ReachableStateTime.GetHashCode();
             }
 
             return hash;

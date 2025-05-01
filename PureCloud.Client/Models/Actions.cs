@@ -51,7 +51,7 @@ public partial class Actions : IEquatable<Actions>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Actions);
+        return Equals(obj as Actions);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class Actions : IEquatable<Actions>
 
         return true &&
             (
-                this.SkillsToRemove == other.SkillsToRemove ||
-                this.SkillsToRemove != null &&
-                this.SkillsToRemove.SequenceEqual(other.SkillsToRemove)
+                SkillsToRemove == other.SkillsToRemove ||
+                SkillsToRemove != null &&
+                SkillsToRemove.SequenceEqual(other.SkillsToRemove)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class Actions : IEquatable<Actions>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SkillsToRemove != null)
+            if (SkillsToRemove != null)
             {
-                hash = hash * 59 + this.SkillsToRemove.GetHashCode();
+                hash = hash * 59 + SkillsToRemove.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class V2FlowExecutionDataFlowidTopicWorkitem : IEquatable<V2FlowE
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2FlowExecutionDataFlowidTopicWorkitem);
+        return Equals(obj as V2FlowExecutionDataFlowidTopicWorkitem);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class V2FlowExecutionDataFlowidTopicWorkitem : IEquatable<V2FlowE
 
         return true &&
             (
-                this.WorkitemId == other.WorkitemId ||
-                this.WorkitemId != null &&
-                this.WorkitemId.Equals(other.WorkitemId)
+                WorkitemId == other.WorkitemId ||
+                WorkitemId != null &&
+                WorkitemId.Equals(other.WorkitemId)
             ) &&
             (
-                this.WorkitemName == other.WorkitemName ||
-                this.WorkitemName != null &&
-                this.WorkitemName.Equals(other.WorkitemName)
+                WorkitemName == other.WorkitemName ||
+                WorkitemName != null &&
+                WorkitemName.Equals(other.WorkitemName)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class V2FlowExecutionDataFlowidTopicWorkitem : IEquatable<V2FlowE
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WorkitemId != null)
+            if (WorkitemId != null)
             {
-                hash = hash * 59 + this.WorkitemId.GetHashCode();
+                hash = hash * 59 + WorkitemId.GetHashCode();
             }
 
-            if (this.WorkitemName != null)
+            if (WorkitemName != null)
             {
-                hash = hash * 59 + this.WorkitemName.GetHashCode();
+                hash = hash * 59 + WorkitemName.GetHashCode();
             }
 
             return hash;

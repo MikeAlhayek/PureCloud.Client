@@ -107,7 +107,7 @@ public partial class KnowledgeDocumentSuggestionRequest : IEquatable<KnowledgeDo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentSuggestionRequest);
+        return Equals(obj as KnowledgeDocumentSuggestionRequest);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class KnowledgeDocumentSuggestionRequest : IEquatable<KnowledgeDo
 
         return true &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.Equals(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.Equals(other.Query)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.IncludeDraftDocuments == other.IncludeDraftDocuments ||
-                this.IncludeDraftDocuments != null &&
-                this.IncludeDraftDocuments.Equals(other.IncludeDraftDocuments)
+                IncludeDraftDocuments == other.IncludeDraftDocuments ||
+                IncludeDraftDocuments != null &&
+                IncludeDraftDocuments.Equals(other.IncludeDraftDocuments)
             ) &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class KnowledgeDocumentSuggestionRequest : IEquatable<KnowledgeDo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.IncludeDraftDocuments != null)
+            if (IncludeDraftDocuments != null)
             {
-                hash = hash * 59 + this.IncludeDraftDocuments.GetHashCode();
+                hash = hash * 59 + IncludeDraftDocuments.GetHashCode();
             }
 
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
             return hash;

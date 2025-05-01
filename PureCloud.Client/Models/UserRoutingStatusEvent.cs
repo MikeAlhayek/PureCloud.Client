@@ -151,7 +151,7 @@ public partial class UserRoutingStatusEvent : IEquatable<UserRoutingStatusEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserRoutingStatusEvent);
+        return Equals(obj as UserRoutingStatusEvent);
     }
 
     /// <summary>
@@ -169,29 +169,29 @@ public partial class UserRoutingStatusEvent : IEquatable<UserRoutingStatusEvent>
 
         return true &&
             (
-                this.EventId == other.EventId ||
-                this.EventId != null &&
-                this.EventId.Equals(other.EventId)
+                EventId == other.EventId ||
+                EventId != null &&
+                EventId.Equals(other.EventId)
             ) &&
             (
-                this.EventDateTime == other.EventDateTime ||
-                this.EventDateTime != null &&
-                this.EventDateTime.Equals(other.EventDateTime)
+                EventDateTime == other.EventDateTime ||
+                EventDateTime != null &&
+                EventDateTime.Equals(other.EventDateTime)
             ) &&
             (
-                this.AgentId == other.AgentId ||
-                this.AgentId != null &&
-                this.AgentId.Equals(other.AgentId)
+                AgentId == other.AgentId ||
+                AgentId != null &&
+                AgentId.Equals(other.AgentId)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.SourceId == other.SourceId ||
-                this.SourceId != null &&
-                this.SourceId.Equals(other.SourceId)
+                SourceId == other.SourceId ||
+                SourceId != null &&
+                SourceId.Equals(other.SourceId)
             );
     }
 
@@ -206,29 +206,29 @@ public partial class UserRoutingStatusEvent : IEquatable<UserRoutingStatusEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventId != null)
+            if (EventId != null)
             {
-                hash = hash * 59 + this.EventId.GetHashCode();
+                hash = hash * 59 + EventId.GetHashCode();
             }
 
-            if (this.EventDateTime != null)
+            if (EventDateTime != null)
             {
-                hash = hash * 59 + this.EventDateTime.GetHashCode();
+                hash = hash * 59 + EventDateTime.GetHashCode();
             }
 
-            if (this.AgentId != null)
+            if (AgentId != null)
             {
-                hash = hash * 59 + this.AgentId.GetHashCode();
+                hash = hash * 59 + AgentId.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.SourceId != null)
+            if (SourceId != null)
             {
-                hash = hash * 59 + this.SourceId.GetHashCode();
+                hash = hash * 59 + SourceId.GetHashCode();
             }
 
             return hash;

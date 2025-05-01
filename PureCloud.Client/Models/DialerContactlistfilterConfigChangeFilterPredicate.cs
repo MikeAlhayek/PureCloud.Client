@@ -235,7 +235,7 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerContactlistfilterConfigChangeFilterPredicate);
+        return Equals(obj as DialerContactlistfilterConfigChangeFilterPredicate);
     }
 
     /// <summary>
@@ -253,39 +253,39 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
 
         return true &&
             (
-                this.Column == other.Column ||
-                this.Column != null &&
-                this.Column.Equals(other.Column)
+                Column == other.Column ||
+                Column != null &&
+                Column.Equals(other.Column)
             ) &&
             (
-                this.ColumnType == other.ColumnType ||
-                this.ColumnType != null &&
-                this.ColumnType.Equals(other.ColumnType)
+                ColumnType == other.ColumnType ||
+                ColumnType != null &&
+                ColumnType.Equals(other.ColumnType)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Range == other.Range ||
-                this.Range != null &&
-                this.Range.Equals(other.Range)
+                Range == other.Range ||
+                Range != null &&
+                Range.Equals(other.Range)
             ) &&
             (
-                this.Inverted == other.Inverted ||
-                this.Inverted != null &&
-                this.Inverted.Equals(other.Inverted)
+                Inverted == other.Inverted ||
+                Inverted != null &&
+                Inverted.Equals(other.Inverted)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -300,39 +300,39 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Column != null)
+            if (Column != null)
             {
-                hash = hash * 59 + this.Column.GetHashCode();
+                hash = hash * 59 + Column.GetHashCode();
             }
 
-            if (this.ColumnType != null)
+            if (ColumnType != null)
             {
-                hash = hash * 59 + this.ColumnType.GetHashCode();
+                hash = hash * 59 + ColumnType.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Range != null)
+            if (Range != null)
             {
-                hash = hash * 59 + this.Range.GetHashCode();
+                hash = hash * 59 + Range.GetHashCode();
             }
 
-            if (this.Inverted != null)
+            if (Inverted != null)
             {
-                hash = hash * 59 + this.Inverted.GetHashCode();
+                hash = hash * 59 + Inverted.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

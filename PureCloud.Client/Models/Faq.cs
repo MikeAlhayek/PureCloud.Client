@@ -101,7 +101,7 @@ public partial class Faq : IEquatable<Faq>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Faq);
+        return Equals(obj as Faq);
     }
 
     /// <summary>
@@ -119,34 +119,34 @@ public partial class Faq : IEquatable<Faq>
 
         return true &&
             (
-                this.Question == other.Question ||
-                this.Question != null &&
-                this.Question.Equals(other.Question)
+                Question == other.Question ||
+                Question != null &&
+                Question.Equals(other.Question)
             ) &&
             (
-                this.Answer == other.Answer ||
-                this.Answer != null &&
-                this.Answer.Equals(other.Answer)
+                Answer == other.Answer ||
+                Answer != null &&
+                Answer.Equals(other.Answer)
             ) &&
             (
-                this.SourceUri == other.SourceUri ||
-                this.SourceUri != null &&
-                this.SourceUri.Equals(other.SourceUri)
+                SourceUri == other.SourceUri ||
+                SourceUri != null &&
+                SourceUri.Equals(other.SourceUri)
             ) &&
             (
-                this.DocumentUrl == other.DocumentUrl ||
-                this.DocumentUrl != null &&
-                this.DocumentUrl.Equals(other.DocumentUrl)
+                DocumentUrl == other.DocumentUrl ||
+                DocumentUrl != null &&
+                DocumentUrl.Equals(other.DocumentUrl)
             ) &&
             (
-                this.DocumentDisplayName == other.DocumentDisplayName ||
-                this.DocumentDisplayName != null &&
-                this.DocumentDisplayName.Equals(other.DocumentDisplayName)
+                DocumentDisplayName == other.DocumentDisplayName ||
+                DocumentDisplayName != null &&
+                DocumentDisplayName.Equals(other.DocumentDisplayName)
             ) &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             );
     }
 
@@ -161,34 +161,34 @@ public partial class Faq : IEquatable<Faq>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Question != null)
+            if (Question != null)
             {
-                hash = hash * 59 + this.Question.GetHashCode();
+                hash = hash * 59 + Question.GetHashCode();
             }
 
-            if (this.Answer != null)
+            if (Answer != null)
             {
-                hash = hash * 59 + this.Answer.GetHashCode();
+                hash = hash * 59 + Answer.GetHashCode();
             }
 
-            if (this.SourceUri != null)
+            if (SourceUri != null)
             {
-                hash = hash * 59 + this.SourceUri.GetHashCode();
+                hash = hash * 59 + SourceUri.GetHashCode();
             }
 
-            if (this.DocumentUrl != null)
+            if (DocumentUrl != null)
             {
-                hash = hash * 59 + this.DocumentUrl.GetHashCode();
+                hash = hash * 59 + DocumentUrl.GetHashCode();
             }
 
-            if (this.DocumentDisplayName != null)
+            if (DocumentDisplayName != null)
             {
-                hash = hash * 59 + this.DocumentDisplayName.GetHashCode();
+                hash = hash * 59 + DocumentDisplayName.GetHashCode();
             }
 
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
             return hash;

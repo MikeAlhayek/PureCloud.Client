@@ -82,7 +82,7 @@ public partial class ExpansionCriterium : IEquatable<ExpansionCriterium>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExpansionCriterium);
+        return Equals(obj as ExpansionCriterium);
     }
 
     /// <summary>
@@ -100,14 +100,14 @@ public partial class ExpansionCriterium : IEquatable<ExpansionCriterium>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Threshold == other.Threshold ||
-                this.Threshold != null &&
-                this.Threshold.Equals(other.Threshold)
+                Threshold == other.Threshold ||
+                Threshold != null &&
+                Threshold.Equals(other.Threshold)
             );
     }
 
@@ -122,14 +122,14 @@ public partial class ExpansionCriterium : IEquatable<ExpansionCriterium>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Threshold != null)
+            if (Threshold != null)
             {
-                hash = hash * 59 + this.Threshold.GetHashCode();
+                hash = hash * 59 + Threshold.GetHashCode();
             }
 
             return hash;

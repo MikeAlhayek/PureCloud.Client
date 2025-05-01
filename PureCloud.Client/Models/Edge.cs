@@ -786,7 +786,7 @@ public partial class Edge : IEquatable<Edge>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Edge);
+        return Equals(obj as Edge);
     }
 
     /// <summary>
@@ -804,219 +804,219 @@ public partial class Edge : IEquatable<Edge>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.ModifiedByApp == other.ModifiedByApp ||
-                this.ModifiedByApp != null &&
-                this.ModifiedByApp.Equals(other.ModifiedByApp)
+                ModifiedByApp == other.ModifiedByApp ||
+                ModifiedByApp != null &&
+                ModifiedByApp.Equals(other.ModifiedByApp)
             ) &&
             (
-                this.CreatedByApp == other.CreatedByApp ||
-                this.CreatedByApp != null &&
-                this.CreatedByApp.Equals(other.CreatedByApp)
+                CreatedByApp == other.CreatedByApp ||
+                CreatedByApp != null &&
+                CreatedByApp.Equals(other.CreatedByApp)
             ) &&
             (
-                this.Interfaces == other.Interfaces ||
-                this.Interfaces != null &&
-                this.Interfaces.SequenceEqual(other.Interfaces)
+                Interfaces == other.Interfaces ||
+                Interfaces != null &&
+                Interfaces.SequenceEqual(other.Interfaces)
             ) &&
             (
-                this.Make == other.Make ||
-                this.Make != null &&
-                this.Make.Equals(other.Make)
+                Make == other.Make ||
+                Make != null &&
+                Make.Equals(other.Make)
             ) &&
             (
-                this.Model == other.Model ||
-                this.Model != null &&
-                this.Model.Equals(other.Model)
+                Model == other.Model ||
+                Model != null &&
+                Model.Equals(other.Model)
             ) &&
             (
-                this.ApiVersion == other.ApiVersion ||
-                this.ApiVersion != null &&
-                this.ApiVersion.Equals(other.ApiVersion)
+                ApiVersion == other.ApiVersion ||
+                ApiVersion != null &&
+                ApiVersion.Equals(other.ApiVersion)
             ) &&
             (
-                this.SoftwareVersion == other.SoftwareVersion ||
-                this.SoftwareVersion != null &&
-                this.SoftwareVersion.Equals(other.SoftwareVersion)
+                SoftwareVersion == other.SoftwareVersion ||
+                SoftwareVersion != null &&
+                SoftwareVersion.Equals(other.SoftwareVersion)
             ) &&
             (
-                this.SoftwareVersionTimestamp == other.SoftwareVersionTimestamp ||
-                this.SoftwareVersionTimestamp != null &&
-                this.SoftwareVersionTimestamp.Equals(other.SoftwareVersionTimestamp)
+                SoftwareVersionTimestamp == other.SoftwareVersionTimestamp ||
+                SoftwareVersionTimestamp != null &&
+                SoftwareVersionTimestamp.Equals(other.SoftwareVersionTimestamp)
             ) &&
             (
-                this.SoftwareVersionPlatform == other.SoftwareVersionPlatform ||
-                this.SoftwareVersionPlatform != null &&
-                this.SoftwareVersionPlatform.Equals(other.SoftwareVersionPlatform)
+                SoftwareVersionPlatform == other.SoftwareVersionPlatform ||
+                SoftwareVersionPlatform != null &&
+                SoftwareVersionPlatform.Equals(other.SoftwareVersionPlatform)
             ) &&
             (
-                this.SoftwareVersionConfiguration == other.SoftwareVersionConfiguration ||
-                this.SoftwareVersionConfiguration != null &&
-                this.SoftwareVersionConfiguration.Equals(other.SoftwareVersionConfiguration)
+                SoftwareVersionConfiguration == other.SoftwareVersionConfiguration ||
+                SoftwareVersionConfiguration != null &&
+                SoftwareVersionConfiguration.Equals(other.SoftwareVersionConfiguration)
             ) &&
             (
-                this.FullSoftwareVersion == other.FullSoftwareVersion ||
-                this.FullSoftwareVersion != null &&
-                this.FullSoftwareVersion.Equals(other.FullSoftwareVersion)
+                FullSoftwareVersion == other.FullSoftwareVersion ||
+                FullSoftwareVersion != null &&
+                FullSoftwareVersion.Equals(other.FullSoftwareVersion)
             ) &&
             (
-                this.PairingId == other.PairingId ||
-                this.PairingId != null &&
-                this.PairingId.Equals(other.PairingId)
+                PairingId == other.PairingId ||
+                PairingId != null &&
+                PairingId.Equals(other.PairingId)
             ) &&
             (
-                this.Fingerprint == other.Fingerprint ||
-                this.Fingerprint != null &&
-                this.Fingerprint.Equals(other.Fingerprint)
+                Fingerprint == other.Fingerprint ||
+                Fingerprint != null &&
+                Fingerprint.Equals(other.Fingerprint)
             ) &&
             (
-                this.FingerprintHint == other.FingerprintHint ||
-                this.FingerprintHint != null &&
-                this.FingerprintHint.Equals(other.FingerprintHint)
+                FingerprintHint == other.FingerprintHint ||
+                FingerprintHint != null &&
+                FingerprintHint.Equals(other.FingerprintHint)
             ) &&
             (
-                this.CurrentVersion == other.CurrentVersion ||
-                this.CurrentVersion != null &&
-                this.CurrentVersion.Equals(other.CurrentVersion)
+                CurrentVersion == other.CurrentVersion ||
+                CurrentVersion != null &&
+                CurrentVersion.Equals(other.CurrentVersion)
             ) &&
             (
-                this.StagedVersion == other.StagedVersion ||
-                this.StagedVersion != null &&
-                this.StagedVersion.Equals(other.StagedVersion)
+                StagedVersion == other.StagedVersion ||
+                StagedVersion != null &&
+                StagedVersion.Equals(other.StagedVersion)
             ) &&
             (
-                this.Patch == other.Patch ||
-                this.Patch != null &&
-                this.Patch.Equals(other.Patch)
+                Patch == other.Patch ||
+                Patch != null &&
+                Patch.Equals(other.Patch)
             ) &&
             (
-                this.StatusCode == other.StatusCode ||
-                this.StatusCode != null &&
-                this.StatusCode.Equals(other.StatusCode)
+                StatusCode == other.StatusCode ||
+                StatusCode != null &&
+                StatusCode.Equals(other.StatusCode)
             ) &&
             (
-                this.EdgeGroup == other.EdgeGroup ||
-                this.EdgeGroup != null &&
-                this.EdgeGroup.Equals(other.EdgeGroup)
+                EdgeGroup == other.EdgeGroup ||
+                EdgeGroup != null &&
+                EdgeGroup.Equals(other.EdgeGroup)
             ) &&
             (
-                this.Site == other.Site ||
-                this.Site != null &&
-                this.Site.Equals(other.Site)
+                Site == other.Site ||
+                Site != null &&
+                Site.Equals(other.Site)
             ) &&
             (
-                this.SoftwareStatus == other.SoftwareStatus ||
-                this.SoftwareStatus != null &&
-                this.SoftwareStatus.Equals(other.SoftwareStatus)
+                SoftwareStatus == other.SoftwareStatus ||
+                SoftwareStatus != null &&
+                SoftwareStatus.Equals(other.SoftwareStatus)
             ) &&
             (
-                this.OnlineStatus == other.OnlineStatus ||
-                this.OnlineStatus != null &&
-                this.OnlineStatus.Equals(other.OnlineStatus)
+                OnlineStatus == other.OnlineStatus ||
+                OnlineStatus != null &&
+                OnlineStatus.Equals(other.OnlineStatus)
             ) &&
             (
-                this.SerialNumber == other.SerialNumber ||
-                this.SerialNumber != null &&
-                this.SerialNumber.Equals(other.SerialNumber)
+                SerialNumber == other.SerialNumber ||
+                SerialNumber != null &&
+                SerialNumber.Equals(other.SerialNumber)
             ) &&
             (
-                this.PhysicalEdge == other.PhysicalEdge ||
-                this.PhysicalEdge != null &&
-                this.PhysicalEdge.Equals(other.PhysicalEdge)
+                PhysicalEdge == other.PhysicalEdge ||
+                PhysicalEdge != null &&
+                PhysicalEdge.Equals(other.PhysicalEdge)
             ) &&
             (
-                this.Managed == other.Managed ||
-                this.Managed != null &&
-                this.Managed.Equals(other.Managed)
+                Managed == other.Managed ||
+                Managed != null &&
+                Managed.Equals(other.Managed)
             ) &&
             (
-                this.EdgeDeploymentType == other.EdgeDeploymentType ||
-                this.EdgeDeploymentType != null &&
-                this.EdgeDeploymentType.Equals(other.EdgeDeploymentType)
+                EdgeDeploymentType == other.EdgeDeploymentType ||
+                EdgeDeploymentType != null &&
+                EdgeDeploymentType.Equals(other.EdgeDeploymentType)
             ) &&
             (
-                this.CertType == other.CertType ||
-                this.CertType != null &&
-                this.CertType.Equals(other.CertType)
+                CertType == other.CertType ||
+                CertType != null &&
+                CertType.Equals(other.CertType)
             ) &&
             (
-                this.CallDrainingState == other.CallDrainingState ||
-                this.CallDrainingState != null &&
-                this.CallDrainingState.Equals(other.CallDrainingState)
+                CallDrainingState == other.CallDrainingState ||
+                CallDrainingState != null &&
+                CallDrainingState.Equals(other.CallDrainingState)
             ) &&
             (
-                this.ConversationCount == other.ConversationCount ||
-                this.ConversationCount != null &&
-                this.ConversationCount.Equals(other.ConversationCount)
+                ConversationCount == other.ConversationCount ||
+                ConversationCount != null &&
+                ConversationCount.Equals(other.ConversationCount)
             ) &&
             (
-                this.Proxy == other.Proxy ||
-                this.Proxy != null &&
-                this.Proxy.Equals(other.Proxy)
+                Proxy == other.Proxy ||
+                Proxy != null &&
+                Proxy.Equals(other.Proxy)
             ) &&
             (
-                this.OfflineConfigCalled == other.OfflineConfigCalled ||
-                this.OfflineConfigCalled != null &&
-                this.OfflineConfigCalled.Equals(other.OfflineConfigCalled)
+                OfflineConfigCalled == other.OfflineConfigCalled ||
+                OfflineConfigCalled != null &&
+                OfflineConfigCalled.Equals(other.OfflineConfigCalled)
             ) &&
             (
-                this.OsName == other.OsName ||
-                this.OsName != null &&
-                this.OsName.Equals(other.OsName)
+                OsName == other.OsName ||
+                OsName != null &&
+                OsName.Equals(other.OsName)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -1031,219 +1031,219 @@ public partial class Edge : IEquatable<Edge>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.ModifiedByApp != null)
+            if (ModifiedByApp != null)
             {
-                hash = hash * 59 + this.ModifiedByApp.GetHashCode();
+                hash = hash * 59 + ModifiedByApp.GetHashCode();
             }
 
-            if (this.CreatedByApp != null)
+            if (CreatedByApp != null)
             {
-                hash = hash * 59 + this.CreatedByApp.GetHashCode();
+                hash = hash * 59 + CreatedByApp.GetHashCode();
             }
 
-            if (this.Interfaces != null)
+            if (Interfaces != null)
             {
-                hash = hash * 59 + this.Interfaces.GetHashCode();
+                hash = hash * 59 + Interfaces.GetHashCode();
             }
 
-            if (this.Make != null)
+            if (Make != null)
             {
-                hash = hash * 59 + this.Make.GetHashCode();
+                hash = hash * 59 + Make.GetHashCode();
             }
 
-            if (this.Model != null)
+            if (Model != null)
             {
-                hash = hash * 59 + this.Model.GetHashCode();
+                hash = hash * 59 + Model.GetHashCode();
             }
 
-            if (this.ApiVersion != null)
+            if (ApiVersion != null)
             {
-                hash = hash * 59 + this.ApiVersion.GetHashCode();
+                hash = hash * 59 + ApiVersion.GetHashCode();
             }
 
-            if (this.SoftwareVersion != null)
+            if (SoftwareVersion != null)
             {
-                hash = hash * 59 + this.SoftwareVersion.GetHashCode();
+                hash = hash * 59 + SoftwareVersion.GetHashCode();
             }
 
-            if (this.SoftwareVersionTimestamp != null)
+            if (SoftwareVersionTimestamp != null)
             {
-                hash = hash * 59 + this.SoftwareVersionTimestamp.GetHashCode();
+                hash = hash * 59 + SoftwareVersionTimestamp.GetHashCode();
             }
 
-            if (this.SoftwareVersionPlatform != null)
+            if (SoftwareVersionPlatform != null)
             {
-                hash = hash * 59 + this.SoftwareVersionPlatform.GetHashCode();
+                hash = hash * 59 + SoftwareVersionPlatform.GetHashCode();
             }
 
-            if (this.SoftwareVersionConfiguration != null)
+            if (SoftwareVersionConfiguration != null)
             {
-                hash = hash * 59 + this.SoftwareVersionConfiguration.GetHashCode();
+                hash = hash * 59 + SoftwareVersionConfiguration.GetHashCode();
             }
 
-            if (this.FullSoftwareVersion != null)
+            if (FullSoftwareVersion != null)
             {
-                hash = hash * 59 + this.FullSoftwareVersion.GetHashCode();
+                hash = hash * 59 + FullSoftwareVersion.GetHashCode();
             }
 
-            if (this.PairingId != null)
+            if (PairingId != null)
             {
-                hash = hash * 59 + this.PairingId.GetHashCode();
+                hash = hash * 59 + PairingId.GetHashCode();
             }
 
-            if (this.Fingerprint != null)
+            if (Fingerprint != null)
             {
-                hash = hash * 59 + this.Fingerprint.GetHashCode();
+                hash = hash * 59 + Fingerprint.GetHashCode();
             }
 
-            if (this.FingerprintHint != null)
+            if (FingerprintHint != null)
             {
-                hash = hash * 59 + this.FingerprintHint.GetHashCode();
+                hash = hash * 59 + FingerprintHint.GetHashCode();
             }
 
-            if (this.CurrentVersion != null)
+            if (CurrentVersion != null)
             {
-                hash = hash * 59 + this.CurrentVersion.GetHashCode();
+                hash = hash * 59 + CurrentVersion.GetHashCode();
             }
 
-            if (this.StagedVersion != null)
+            if (StagedVersion != null)
             {
-                hash = hash * 59 + this.StagedVersion.GetHashCode();
+                hash = hash * 59 + StagedVersion.GetHashCode();
             }
 
-            if (this.Patch != null)
+            if (Patch != null)
             {
-                hash = hash * 59 + this.Patch.GetHashCode();
+                hash = hash * 59 + Patch.GetHashCode();
             }
 
-            if (this.StatusCode != null)
+            if (StatusCode != null)
             {
-                hash = hash * 59 + this.StatusCode.GetHashCode();
+                hash = hash * 59 + StatusCode.GetHashCode();
             }
 
-            if (this.EdgeGroup != null)
+            if (EdgeGroup != null)
             {
-                hash = hash * 59 + this.EdgeGroup.GetHashCode();
+                hash = hash * 59 + EdgeGroup.GetHashCode();
             }
 
-            if (this.Site != null)
+            if (Site != null)
             {
-                hash = hash * 59 + this.Site.GetHashCode();
+                hash = hash * 59 + Site.GetHashCode();
             }
 
-            if (this.SoftwareStatus != null)
+            if (SoftwareStatus != null)
             {
-                hash = hash * 59 + this.SoftwareStatus.GetHashCode();
+                hash = hash * 59 + SoftwareStatus.GetHashCode();
             }
 
-            if (this.OnlineStatus != null)
+            if (OnlineStatus != null)
             {
-                hash = hash * 59 + this.OnlineStatus.GetHashCode();
+                hash = hash * 59 + OnlineStatus.GetHashCode();
             }
 
-            if (this.SerialNumber != null)
+            if (SerialNumber != null)
             {
-                hash = hash * 59 + this.SerialNumber.GetHashCode();
+                hash = hash * 59 + SerialNumber.GetHashCode();
             }
 
-            if (this.PhysicalEdge != null)
+            if (PhysicalEdge != null)
             {
-                hash = hash * 59 + this.PhysicalEdge.GetHashCode();
+                hash = hash * 59 + PhysicalEdge.GetHashCode();
             }
 
-            if (this.Managed != null)
+            if (Managed != null)
             {
-                hash = hash * 59 + this.Managed.GetHashCode();
+                hash = hash * 59 + Managed.GetHashCode();
             }
 
-            if (this.EdgeDeploymentType != null)
+            if (EdgeDeploymentType != null)
             {
-                hash = hash * 59 + this.EdgeDeploymentType.GetHashCode();
+                hash = hash * 59 + EdgeDeploymentType.GetHashCode();
             }
 
-            if (this.CertType != null)
+            if (CertType != null)
             {
-                hash = hash * 59 + this.CertType.GetHashCode();
+                hash = hash * 59 + CertType.GetHashCode();
             }
 
-            if (this.CallDrainingState != null)
+            if (CallDrainingState != null)
             {
-                hash = hash * 59 + this.CallDrainingState.GetHashCode();
+                hash = hash * 59 + CallDrainingState.GetHashCode();
             }
 
-            if (this.ConversationCount != null)
+            if (ConversationCount != null)
             {
-                hash = hash * 59 + this.ConversationCount.GetHashCode();
+                hash = hash * 59 + ConversationCount.GetHashCode();
             }
 
-            if (this.Proxy != null)
+            if (Proxy != null)
             {
-                hash = hash * 59 + this.Proxy.GetHashCode();
+                hash = hash * 59 + Proxy.GetHashCode();
             }
 
-            if (this.OfflineConfigCalled != null)
+            if (OfflineConfigCalled != null)
             {
-                hash = hash * 59 + this.OfflineConfigCalled.GetHashCode();
+                hash = hash * 59 + OfflineConfigCalled.GetHashCode();
             }
 
-            if (this.OsName != null)
+            if (OsName != null)
             {
-                hash = hash * 59 + this.OsName.GetHashCode();
+                hash = hash * 59 + OsName.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

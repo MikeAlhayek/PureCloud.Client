@@ -65,7 +65,7 @@ public partial class ContactsExportQueryConditions : IEquatable<ContactsExportQu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactsExportQueryConditions);
+        return Equals(obj as ContactsExportQueryConditions);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ContactsExportQueryConditions : IEquatable<ContactsExportQu
 
         return true &&
             (
-                this.Filters == other.Filters ||
-                this.Filters != null &&
-                this.Filters.Equals(other.Filters)
+                Filters == other.Filters ||
+                Filters != null &&
+                Filters.Equals(other.Filters)
             ) &&
             (
-                this.Limit == other.Limit ||
-                this.Limit != null &&
-                this.Limit.Equals(other.Limit)
+                Limit == other.Limit ||
+                Limit != null &&
+                Limit.Equals(other.Limit)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ContactsExportQueryConditions : IEquatable<ContactsExportQu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Filters != null)
+            if (Filters != null)
             {
-                hash = hash * 59 + this.Filters.GetHashCode();
+                hash = hash * 59 + Filters.GetHashCode();
             }
 
-            if (this.Limit != null)
+            if (Limit != null)
             {
-                hash = hash * 59 + this.Limit.GetHashCode();
+                hash = hash * 59 + Limit.GetHashCode();
             }
 
             return hash;

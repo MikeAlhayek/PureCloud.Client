@@ -221,7 +221,7 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateCallRequest);
+        return Equals(obj as CreateCallRequest);
     }
 
     /// <summary>
@@ -239,79 +239,79 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
 
         return true &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.CallerId == other.CallerId ||
-                this.CallerId != null &&
-                this.CallerId.Equals(other.CallerId)
+                CallerId == other.CallerId ||
+                CallerId != null &&
+                CallerId.Equals(other.CallerId)
             ) &&
             (
-                this.CallerIdName == other.CallerIdName ||
-                this.CallerIdName != null &&
-                this.CallerIdName.Equals(other.CallerIdName)
+                CallerIdName == other.CallerIdName ||
+                CallerIdName != null &&
+                CallerIdName.Equals(other.CallerIdName)
             ) &&
             (
-                this.CallFromQueueId == other.CallFromQueueId ||
-                this.CallFromQueueId != null &&
-                this.CallFromQueueId.Equals(other.CallFromQueueId)
+                CallFromQueueId == other.CallFromQueueId ||
+                CallFromQueueId != null &&
+                CallFromQueueId.Equals(other.CallFromQueueId)
             ) &&
             (
-                this.CallQueueId == other.CallQueueId ||
-                this.CallQueueId != null &&
-                this.CallQueueId.Equals(other.CallQueueId)
+                CallQueueId == other.CallQueueId ||
+                CallQueueId != null &&
+                CallQueueId.Equals(other.CallQueueId)
             ) &&
             (
-                this.CallUserId == other.CallUserId ||
-                this.CallUserId != null &&
-                this.CallUserId.Equals(other.CallUserId)
+                CallUserId == other.CallUserId ||
+                CallUserId != null &&
+                CallUserId.Equals(other.CallUserId)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.LanguageId == other.LanguageId ||
-                this.LanguageId != null &&
-                this.LanguageId.Equals(other.LanguageId)
+                LanguageId == other.LanguageId ||
+                LanguageId != null &&
+                LanguageId.Equals(other.LanguageId)
             ) &&
             (
-                this.RoutingSkillsIds == other.RoutingSkillsIds ||
-                this.RoutingSkillsIds != null &&
-                this.RoutingSkillsIds.SequenceEqual(other.RoutingSkillsIds)
+                RoutingSkillsIds == other.RoutingSkillsIds ||
+                RoutingSkillsIds != null &&
+                RoutingSkillsIds.SequenceEqual(other.RoutingSkillsIds)
             ) &&
             (
-                this.ConversationIds == other.ConversationIds ||
-                this.ConversationIds != null &&
-                this.ConversationIds.SequenceEqual(other.ConversationIds)
+                ConversationIds == other.ConversationIds ||
+                ConversationIds != null &&
+                ConversationIds.SequenceEqual(other.ConversationIds)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.SequenceEqual(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.SequenceEqual(other.Participants)
             ) &&
             (
-                this.UuiData == other.UuiData ||
-                this.UuiData != null &&
-                this.UuiData.Equals(other.UuiData)
+                UuiData == other.UuiData ||
+                UuiData != null &&
+                UuiData.Equals(other.UuiData)
             ) &&
             (
-                this.ExternalContactId == other.ExternalContactId ||
-                this.ExternalContactId != null &&
-                this.ExternalContactId.Equals(other.ExternalContactId)
+                ExternalContactId == other.ExternalContactId ||
+                ExternalContactId != null &&
+                ExternalContactId.Equals(other.ExternalContactId)
             ) &&
             (
-                this.Label == other.Label ||
-                this.Label != null &&
-                this.Label.Equals(other.Label)
+                Label == other.Label ||
+                Label != null &&
+                Label.Equals(other.Label)
             );
     }
 
@@ -326,79 +326,79 @@ public partial class CreateCallRequest : IEquatable<CreateCallRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.CallerId != null)
+            if (CallerId != null)
             {
-                hash = hash * 59 + this.CallerId.GetHashCode();
+                hash = hash * 59 + CallerId.GetHashCode();
             }
 
-            if (this.CallerIdName != null)
+            if (CallerIdName != null)
             {
-                hash = hash * 59 + this.CallerIdName.GetHashCode();
+                hash = hash * 59 + CallerIdName.GetHashCode();
             }
 
-            if (this.CallFromQueueId != null)
+            if (CallFromQueueId != null)
             {
-                hash = hash * 59 + this.CallFromQueueId.GetHashCode();
+                hash = hash * 59 + CallFromQueueId.GetHashCode();
             }
 
-            if (this.CallQueueId != null)
+            if (CallQueueId != null)
             {
-                hash = hash * 59 + this.CallQueueId.GetHashCode();
+                hash = hash * 59 + CallQueueId.GetHashCode();
             }
 
-            if (this.CallUserId != null)
+            if (CallUserId != null)
             {
-                hash = hash * 59 + this.CallUserId.GetHashCode();
+                hash = hash * 59 + CallUserId.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.LanguageId != null)
+            if (LanguageId != null)
             {
-                hash = hash * 59 + this.LanguageId.GetHashCode();
+                hash = hash * 59 + LanguageId.GetHashCode();
             }
 
-            if (this.RoutingSkillsIds != null)
+            if (RoutingSkillsIds != null)
             {
-                hash = hash * 59 + this.RoutingSkillsIds.GetHashCode();
+                hash = hash * 59 + RoutingSkillsIds.GetHashCode();
             }
 
-            if (this.ConversationIds != null)
+            if (ConversationIds != null)
             {
-                hash = hash * 59 + this.ConversationIds.GetHashCode();
+                hash = hash * 59 + ConversationIds.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
-            if (this.UuiData != null)
+            if (UuiData != null)
             {
-                hash = hash * 59 + this.UuiData.GetHashCode();
+                hash = hash * 59 + UuiData.GetHashCode();
             }
 
-            if (this.ExternalContactId != null)
+            if (ExternalContactId != null)
             {
-                hash = hash * 59 + this.ExternalContactId.GetHashCode();
+                hash = hash * 59 + ExternalContactId.GetHashCode();
             }
 
-            if (this.Label != null)
+            if (Label != null)
             {
-                hash = hash * 59 + this.Label.GetHashCode();
+                hash = hash * 59 + Label.GetHashCode();
             }
 
             return hash;

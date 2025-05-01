@@ -112,7 +112,7 @@ public partial class BuCurrentAgentScheduleSearchResponse : IEquatable<BuCurrent
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuCurrentAgentScheduleSearchResponse);
+        return Equals(obj as BuCurrentAgentScheduleSearchResponse);
     }
 
     /// <summary>
@@ -130,34 +130,34 @@ public partial class BuCurrentAgentScheduleSearchResponse : IEquatable<BuCurrent
 
         return true &&
             (
-                this.AgentSchedules == other.AgentSchedules ||
-                this.AgentSchedules != null &&
-                this.AgentSchedules.SequenceEqual(other.AgentSchedules)
+                AgentSchedules == other.AgentSchedules ||
+                AgentSchedules != null &&
+                AgentSchedules.SequenceEqual(other.AgentSchedules)
             ) &&
             (
-                this.BusinessUnitTimeZone == other.BusinessUnitTimeZone ||
-                this.BusinessUnitTimeZone != null &&
-                this.BusinessUnitTimeZone.Equals(other.BusinessUnitTimeZone)
+                BusinessUnitTimeZone == other.BusinessUnitTimeZone ||
+                BusinessUnitTimeZone != null &&
+                BusinessUnitTimeZone.Equals(other.BusinessUnitTimeZone)
             ) &&
             (
-                this.PublishedSchedules == other.PublishedSchedules ||
-                this.PublishedSchedules != null &&
-                this.PublishedSchedules.SequenceEqual(other.PublishedSchedules)
+                PublishedSchedules == other.PublishedSchedules ||
+                PublishedSchedules != null &&
+                PublishedSchedules.SequenceEqual(other.PublishedSchedules)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.Updates == other.Updates ||
-                this.Updates != null &&
-                this.Updates.SequenceEqual(other.Updates)
+                Updates == other.Updates ||
+                Updates != null &&
+                Updates.SequenceEqual(other.Updates)
             );
     }
 
@@ -172,34 +172,34 @@ public partial class BuCurrentAgentScheduleSearchResponse : IEquatable<BuCurrent
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentSchedules != null)
+            if (AgentSchedules != null)
             {
-                hash = hash * 59 + this.AgentSchedules.GetHashCode();
+                hash = hash * 59 + AgentSchedules.GetHashCode();
             }
 
-            if (this.BusinessUnitTimeZone != null)
+            if (BusinessUnitTimeZone != null)
             {
-                hash = hash * 59 + this.BusinessUnitTimeZone.GetHashCode();
+                hash = hash * 59 + BusinessUnitTimeZone.GetHashCode();
             }
 
-            if (this.PublishedSchedules != null)
+            if (PublishedSchedules != null)
             {
-                hash = hash * 59 + this.PublishedSchedules.GetHashCode();
+                hash = hash * 59 + PublishedSchedules.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.Updates != null)
+            if (Updates != null)
             {
-                hash = hash * 59 + this.Updates.GetHashCode();
+                hash = hash * 59 + Updates.GetHashCode();
             }
 
             return hash;

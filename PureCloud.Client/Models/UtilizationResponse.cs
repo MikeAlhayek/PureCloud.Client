@@ -65,7 +65,7 @@ public partial class UtilizationResponse : IEquatable<UtilizationResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UtilizationResponse);
+        return Equals(obj as UtilizationResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class UtilizationResponse : IEquatable<UtilizationResponse>
 
         return true &&
             (
-                this.Utilization == other.Utilization ||
-                this.Utilization != null &&
-                this.Utilization.SequenceEqual(other.Utilization)
+                Utilization == other.Utilization ||
+                Utilization != null &&
+                Utilization.SequenceEqual(other.Utilization)
             ) &&
             (
-                this.LabelUtilizations == other.LabelUtilizations ||
-                this.LabelUtilizations != null &&
-                this.LabelUtilizations.SequenceEqual(other.LabelUtilizations)
+                LabelUtilizations == other.LabelUtilizations ||
+                LabelUtilizations != null &&
+                LabelUtilizations.SequenceEqual(other.LabelUtilizations)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class UtilizationResponse : IEquatable<UtilizationResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Utilization != null)
+            if (Utilization != null)
             {
-                hash = hash * 59 + this.Utilization.GetHashCode();
+                hash = hash * 59 + Utilization.GetHashCode();
             }
 
-            if (this.LabelUtilizations != null)
+            if (LabelUtilizations != null)
             {
-                hash = hash * 59 + this.LabelUtilizations.GetHashCode();
+                hash = hash * 59 + LabelUtilizations.GetHashCode();
             }
 
             return hash;

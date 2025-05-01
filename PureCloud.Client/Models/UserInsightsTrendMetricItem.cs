@@ -65,7 +65,7 @@ public partial class UserInsightsTrendMetricItem : IEquatable<UserInsightsTrendM
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserInsightsTrendMetricItem);
+        return Equals(obj as UserInsightsTrendMetricItem);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class UserInsightsTrendMetricItem : IEquatable<UserInsightsTrendM
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Trends == other.Trends ||
-                this.Trends != null &&
-                this.Trends.Equals(other.Trends)
+                Trends == other.Trends ||
+                Trends != null &&
+                Trends.Equals(other.Trends)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class UserInsightsTrendMetricItem : IEquatable<UserInsightsTrendM
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Trends != null)
+            if (Trends != null)
             {
-                hash = hash * 59 + this.Trends.GetHashCode();
+                hash = hash * 59 + Trends.GetHashCode();
             }
 
             return hash;

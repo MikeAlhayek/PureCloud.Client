@@ -95,7 +95,7 @@ public partial class UserListScheduleRequestBody : IEquatable<UserListScheduleRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserListScheduleRequestBody);
+        return Equals(obj as UserListScheduleRequestBody);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class UserListScheduleRequestBody : IEquatable<UserListScheduleRe
 
         return true &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.LoadFullWeeks == other.LoadFullWeeks ||
-                this.LoadFullWeeks != null &&
-                this.LoadFullWeeks.Equals(other.LoadFullWeeks)
+                LoadFullWeeks == other.LoadFullWeeks ||
+                LoadFullWeeks != null &&
+                LoadFullWeeks.Equals(other.LoadFullWeeks)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class UserListScheduleRequestBody : IEquatable<UserListScheduleRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.LoadFullWeeks != null)
+            if (LoadFullWeeks != null)
             {
-                hash = hash * 59 + this.LoadFullWeeks.GetHashCode();
+                hash = hash * 59 + LoadFullWeeks.GetHashCode();
             }
 
             return hash;

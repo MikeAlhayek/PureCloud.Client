@@ -70,7 +70,7 @@ public partial class AgentWorkPlanBiddingPreference : IEquatable<AgentWorkPlanBi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentWorkPlanBiddingPreference);
+        return Equals(obj as AgentWorkPlanBiddingPreference);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class AgentWorkPlanBiddingPreference : IEquatable<AgentWorkPlanBi
 
         return true &&
             (
-                this.WorkPlan == other.WorkPlan ||
-                this.WorkPlan != null &&
-                this.WorkPlan.Equals(other.WorkPlan)
+                WorkPlan == other.WorkPlan ||
+                WorkPlan != null &&
+                WorkPlan.Equals(other.WorkPlan)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class AgentWorkPlanBiddingPreference : IEquatable<AgentWorkPlanBi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WorkPlan != null)
+            if (WorkPlan != null)
             {
-                hash = hash * 59 + this.WorkPlan.GetHashCode();
+                hash = hash * 59 + WorkPlan.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
             return hash;

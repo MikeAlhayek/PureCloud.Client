@@ -88,7 +88,7 @@ public partial class BuAgentScheduleHistoryChange : IEquatable<BuAgentScheduleHi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuAgentScheduleHistoryChange);
+        return Equals(obj as BuAgentScheduleHistoryChange);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class BuAgentScheduleHistoryChange : IEquatable<BuAgentScheduleHi
 
         return true &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.Shifts == other.Shifts ||
-                this.Shifts != null &&
-                this.Shifts.SequenceEqual(other.Shifts)
+                Shifts == other.Shifts ||
+                Shifts != null &&
+                Shifts.SequenceEqual(other.Shifts)
             ) &&
             (
-                this.FullDayTimeOffMarkers == other.FullDayTimeOffMarkers ||
-                this.FullDayTimeOffMarkers != null &&
-                this.FullDayTimeOffMarkers.SequenceEqual(other.FullDayTimeOffMarkers)
+                FullDayTimeOffMarkers == other.FullDayTimeOffMarkers ||
+                FullDayTimeOffMarkers != null &&
+                FullDayTimeOffMarkers.SequenceEqual(other.FullDayTimeOffMarkers)
             ) &&
             (
-                this.Deletes == other.Deletes ||
-                this.Deletes != null &&
-                this.Deletes.Equals(other.Deletes)
+                Deletes == other.Deletes ||
+                Deletes != null &&
+                Deletes.Equals(other.Deletes)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class BuAgentScheduleHistoryChange : IEquatable<BuAgentScheduleHi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.Shifts != null)
+            if (Shifts != null)
             {
-                hash = hash * 59 + this.Shifts.GetHashCode();
+                hash = hash * 59 + Shifts.GetHashCode();
             }
 
-            if (this.FullDayTimeOffMarkers != null)
+            if (FullDayTimeOffMarkers != null)
             {
-                hash = hash * 59 + this.FullDayTimeOffMarkers.GetHashCode();
+                hash = hash * 59 + FullDayTimeOffMarkers.GetHashCode();
             }
 
-            if (this.Deletes != null)
+            if (Deletes != null)
             {
-                hash = hash * 59 + this.Deletes.GetHashCode();
+                hash = hash * 59 + Deletes.GetHashCode();
             }
 
             return hash;

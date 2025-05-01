@@ -65,7 +65,7 @@ public partial class OccurrenceDetails : IEquatable<OccurrenceDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OccurrenceDetails);
+        return Equals(obj as OccurrenceDetails);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class OccurrenceDetails : IEquatable<OccurrenceDetails>
 
         return true &&
             (
-                this.DateOfNextOccurrence == other.DateOfNextOccurrence ||
-                this.DateOfNextOccurrence != null &&
-                this.DateOfNextOccurrence.Equals(other.DateOfNextOccurrence)
+                DateOfNextOccurrence == other.DateOfNextOccurrence ||
+                DateOfNextOccurrence != null &&
+                DateOfNextOccurrence.Equals(other.DateOfNextOccurrence)
             ) &&
             (
-                this.NumberOfOccurrences == other.NumberOfOccurrences ||
-                this.NumberOfOccurrences != null &&
-                this.NumberOfOccurrences.Equals(other.NumberOfOccurrences)
+                NumberOfOccurrences == other.NumberOfOccurrences ||
+                NumberOfOccurrences != null &&
+                NumberOfOccurrences.Equals(other.NumberOfOccurrences)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class OccurrenceDetails : IEquatable<OccurrenceDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateOfNextOccurrence != null)
+            if (DateOfNextOccurrence != null)
             {
-                hash = hash * 59 + this.DateOfNextOccurrence.GetHashCode();
+                hash = hash * 59 + DateOfNextOccurrence.GetHashCode();
             }
 
-            if (this.NumberOfOccurrences != null)
+            if (NumberOfOccurrences != null)
             {
-                hash = hash * 59 + this.NumberOfOccurrences.GetHashCode();
+                hash = hash * 59 + NumberOfOccurrences.GetHashCode();
             }
 
             return hash;

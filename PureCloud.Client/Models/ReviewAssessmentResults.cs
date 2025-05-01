@@ -65,7 +65,7 @@ public partial class ReviewAssessmentResults : IEquatable<ReviewAssessmentResult
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReviewAssessmentResults);
+        return Equals(obj as ReviewAssessmentResults);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ReviewAssessmentResults : IEquatable<ReviewAssessmentResult
 
         return true &&
             (
-                this.ByAssignees == other.ByAssignees ||
-                this.ByAssignees != null &&
-                this.ByAssignees.Equals(other.ByAssignees)
+                ByAssignees == other.ByAssignees ||
+                ByAssignees != null &&
+                ByAssignees.Equals(other.ByAssignees)
             ) &&
             (
-                this.ByViewers == other.ByViewers ||
-                this.ByViewers != null &&
-                this.ByViewers.Equals(other.ByViewers)
+                ByViewers == other.ByViewers ||
+                ByViewers != null &&
+                ByViewers.Equals(other.ByViewers)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ReviewAssessmentResults : IEquatable<ReviewAssessmentResult
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ByAssignees != null)
+            if (ByAssignees != null)
             {
-                hash = hash * 59 + this.ByAssignees.GetHashCode();
+                hash = hash * 59 + ByAssignees.GetHashCode();
             }
 
-            if (this.ByViewers != null)
+            if (ByViewers != null)
             {
-                hash = hash * 59 + this.ByViewers.GetHashCode();
+                hash = hash * 59 + ByViewers.GetHashCode();
             }
 
             return hash;

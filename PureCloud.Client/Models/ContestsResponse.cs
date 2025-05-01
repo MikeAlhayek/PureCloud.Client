@@ -451,7 +451,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestsResponse);
+        return Equals(obj as ContestsResponse);
     }
 
     /// <summary>
@@ -469,129 +469,129 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.DateEnd == other.DateEnd ||
-                this.DateEnd != null &&
-                this.DateEnd.Equals(other.DateEnd)
+                DateEnd == other.DateEnd ||
+                DateEnd != null &&
+                DateEnd.Equals(other.DateEnd)
             ) &&
             (
-                this.WinningCriteria == other.WinningCriteria ||
-                this.WinningCriteria != null &&
-                this.WinningCriteria.Equals(other.WinningCriteria)
+                WinningCriteria == other.WinningCriteria ||
+                WinningCriteria != null &&
+                WinningCriteria.Equals(other.WinningCriteria)
             ) &&
             (
-                this.DateAnnounced == other.DateAnnounced ||
-                this.DateAnnounced != null &&
-                this.DateAnnounced.Equals(other.DateAnnounced)
+                DateAnnounced == other.DateAnnounced ||
+                DateAnnounced != null &&
+                DateAnnounced.Equals(other.DateAnnounced)
             ) &&
             (
-                this.AnnouncementTimezone == other.AnnouncementTimezone ||
-                this.AnnouncementTimezone != null &&
-                this.AnnouncementTimezone.Equals(other.AnnouncementTimezone)
+                AnnouncementTimezone == other.AnnouncementTimezone ||
+                AnnouncementTimezone != null &&
+                AnnouncementTimezone.Equals(other.AnnouncementTimezone)
             ) &&
             (
-                this.Anonymization == other.Anonymization ||
-                this.Anonymization != null &&
-                this.Anonymization.Equals(other.Anonymization)
+                Anonymization == other.Anonymization ||
+                Anonymization != null &&
+                Anonymization.Equals(other.Anonymization)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.Prizes == other.Prizes ||
-                this.Prizes != null &&
-                this.Prizes.SequenceEqual(other.Prizes)
+                Prizes == other.Prizes ||
+                Prizes != null &&
+                Prizes.SequenceEqual(other.Prizes)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.Profile == other.Profile ||
-                this.Profile != null &&
-                this.Profile.Equals(other.Profile)
+                Profile == other.Profile ||
+                Profile != null &&
+                Profile.Equals(other.Profile)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.SequenceEqual(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.SequenceEqual(other.Participants)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ParticipantCount == other.ParticipantCount ||
-                this.ParticipantCount != null &&
-                this.ParticipantCount.Equals(other.ParticipantCount)
+                ParticipantCount == other.ParticipantCount ||
+                ParticipantCount != null &&
+                ParticipantCount.Equals(other.ParticipantCount)
             ) &&
             (
-                this.DateFinalized == other.DateFinalized ||
-                this.DateFinalized != null &&
-                this.DateFinalized.Equals(other.DateFinalized)
+                DateFinalized == other.DateFinalized ||
+                DateFinalized != null &&
+                DateFinalized.Equals(other.DateFinalized)
             ) &&
             (
-                this.DateCancelled == other.DateCancelled ||
-                this.DateCancelled != null &&
-                this.DateCancelled.Equals(other.DateCancelled)
+                DateCancelled == other.DateCancelled ||
+                DateCancelled != null &&
+                DateCancelled.Equals(other.DateCancelled)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.DateScoresModified == other.DateScoresModified ||
-                this.DateScoresModified != null &&
-                this.DateScoresModified.Equals(other.DateScoresModified)
+                DateScoresModified == other.DateScoresModified ||
+                DateScoresModified != null &&
+                DateScoresModified.Equals(other.DateScoresModified)
             ) &&
             (
-                this.Winners == other.Winners ||
-                this.Winners != null &&
-                this.Winners.SequenceEqual(other.Winners)
+                Winners == other.Winners ||
+                Winners != null &&
+                Winners.SequenceEqual(other.Winners)
             ) &&
             (
-                this.DisqualifiedAgents == other.DisqualifiedAgents ||
-                this.DisqualifiedAgents != null &&
-                this.DisqualifiedAgents.SequenceEqual(other.DisqualifiedAgents)
+                DisqualifiedAgents == other.DisqualifiedAgents ||
+                DisqualifiedAgents != null &&
+                DisqualifiedAgents.SequenceEqual(other.DisqualifiedAgents)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -606,129 +606,129 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.DateEnd != null)
+            if (DateEnd != null)
             {
-                hash = hash * 59 + this.DateEnd.GetHashCode();
+                hash = hash * 59 + DateEnd.GetHashCode();
             }
 
-            if (this.WinningCriteria != null)
+            if (WinningCriteria != null)
             {
-                hash = hash * 59 + this.WinningCriteria.GetHashCode();
+                hash = hash * 59 + WinningCriteria.GetHashCode();
             }
 
-            if (this.DateAnnounced != null)
+            if (DateAnnounced != null)
             {
-                hash = hash * 59 + this.DateAnnounced.GetHashCode();
+                hash = hash * 59 + DateAnnounced.GetHashCode();
             }
 
-            if (this.AnnouncementTimezone != null)
+            if (AnnouncementTimezone != null)
             {
-                hash = hash * 59 + this.AnnouncementTimezone.GetHashCode();
+                hash = hash * 59 + AnnouncementTimezone.GetHashCode();
             }
 
-            if (this.Anonymization != null)
+            if (Anonymization != null)
             {
-                hash = hash * 59 + this.Anonymization.GetHashCode();
+                hash = hash * 59 + Anonymization.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.Prizes != null)
+            if (Prizes != null)
             {
-                hash = hash * 59 + this.Prizes.GetHashCode();
+                hash = hash * 59 + Prizes.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.Profile != null)
+            if (Profile != null)
             {
-                hash = hash * 59 + this.Profile.GetHashCode();
+                hash = hash * 59 + Profile.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ParticipantCount != null)
+            if (ParticipantCount != null)
             {
-                hash = hash * 59 + this.ParticipantCount.GetHashCode();
+                hash = hash * 59 + ParticipantCount.GetHashCode();
             }
 
-            if (this.DateFinalized != null)
+            if (DateFinalized != null)
             {
-                hash = hash * 59 + this.DateFinalized.GetHashCode();
+                hash = hash * 59 + DateFinalized.GetHashCode();
             }
 
-            if (this.DateCancelled != null)
+            if (DateCancelled != null)
             {
-                hash = hash * 59 + this.DateCancelled.GetHashCode();
+                hash = hash * 59 + DateCancelled.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.DateScoresModified != null)
+            if (DateScoresModified != null)
             {
-                hash = hash * 59 + this.DateScoresModified.GetHashCode();
+                hash = hash * 59 + DateScoresModified.GetHashCode();
             }
 
-            if (this.Winners != null)
+            if (Winners != null)
             {
-                hash = hash * 59 + this.Winners.GetHashCode();
+                hash = hash * 59 + Winners.GetHashCode();
             }
 
-            if (this.DisqualifiedAgents != null)
+            if (DisqualifiedAgents != null)
             {
-                hash = hash * 59 + this.DisqualifiedAgents.GetHashCode();
+                hash = hash * 59 + DisqualifiedAgents.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

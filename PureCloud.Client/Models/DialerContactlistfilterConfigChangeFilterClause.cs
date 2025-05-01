@@ -102,7 +102,7 @@ public partial class DialerContactlistfilterConfigChangeFilterClause : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerContactlistfilterConfigChangeFilterClause);
+        return Equals(obj as DialerContactlistfilterConfigChangeFilterClause);
     }
 
     /// <summary>
@@ -120,19 +120,19 @@ public partial class DialerContactlistfilterConfigChangeFilterClause : IEquatabl
 
         return true &&
             (
-                this.FilterType == other.FilterType ||
-                this.FilterType != null &&
-                this.FilterType.Equals(other.FilterType)
+                FilterType == other.FilterType ||
+                FilterType != null &&
+                FilterType.Equals(other.FilterType)
             ) &&
             (
-                this.Predicates == other.Predicates ||
-                this.Predicates != null &&
-                this.Predicates.SequenceEqual(other.Predicates)
+                Predicates == other.Predicates ||
+                Predicates != null &&
+                Predicates.SequenceEqual(other.Predicates)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -147,19 +147,19 @@ public partial class DialerContactlistfilterConfigChangeFilterClause : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FilterType != null)
+            if (FilterType != null)
             {
-                hash = hash * 59 + this.FilterType.GetHashCode();
+                hash = hash * 59 + FilterType.GetHashCode();
             }
 
-            if (this.Predicates != null)
+            if (Predicates != null)
             {
-                hash = hash * 59 + this.Predicates.GetHashCode();
+                hash = hash * 59 + Predicates.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

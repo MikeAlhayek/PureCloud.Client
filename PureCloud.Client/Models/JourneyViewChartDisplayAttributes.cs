@@ -121,7 +121,7 @@ public partial class JourneyViewChartDisplayAttributes : IEquatable<JourneyViewC
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewChartDisplayAttributes);
+        return Equals(obj as JourneyViewChartDisplayAttributes);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class JourneyViewChartDisplayAttributes : IEquatable<JourneyViewC
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.GroupByTitle == other.GroupByTitle ||
-                this.GroupByTitle != null &&
-                this.GroupByTitle.Equals(other.GroupByTitle)
+                GroupByTitle == other.GroupByTitle ||
+                GroupByTitle != null &&
+                GroupByTitle.Equals(other.GroupByTitle)
             ) &&
             (
-                this.MetricsTitle == other.MetricsTitle ||
-                this.MetricsTitle != null &&
-                this.MetricsTitle.Equals(other.MetricsTitle)
+                MetricsTitle == other.MetricsTitle ||
+                MetricsTitle != null &&
+                MetricsTitle.Equals(other.MetricsTitle)
             ) &&
             (
-                this.ShowLegend == other.ShowLegend ||
-                this.ShowLegend != null &&
-                this.ShowLegend.Equals(other.ShowLegend)
+                ShowLegend == other.ShowLegend ||
+                ShowLegend != null &&
+                ShowLegend.Equals(other.ShowLegend)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class JourneyViewChartDisplayAttributes : IEquatable<JourneyViewC
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.GroupByTitle != null)
+            if (GroupByTitle != null)
             {
-                hash = hash * 59 + this.GroupByTitle.GetHashCode();
+                hash = hash * 59 + GroupByTitle.GetHashCode();
             }
 
-            if (this.MetricsTitle != null)
+            if (MetricsTitle != null)
             {
-                hash = hash * 59 + this.MetricsTitle.GetHashCode();
+                hash = hash * 59 + MetricsTitle.GetHashCode();
             }
 
-            if (this.ShowLegend != null)
+            if (ShowLegend != null)
             {
-                hash = hash * 59 + this.ShowLegend.GetHashCode();
+                hash = hash * 59 + ShowLegend.GetHashCode();
             }
 
             return hash;

@@ -150,7 +150,7 @@ public partial class AsyncQueryStatus : IEquatable<AsyncQueryStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AsyncQueryStatus);
+        return Equals(obj as AsyncQueryStatus);
     }
 
     /// <summary>
@@ -168,29 +168,29 @@ public partial class AsyncQueryStatus : IEquatable<AsyncQueryStatus>
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.ErrorMessage == other.ErrorMessage ||
-                this.ErrorMessage != null &&
-                this.ErrorMessage.Equals(other.ErrorMessage)
+                ErrorMessage == other.ErrorMessage ||
+                ErrorMessage != null &&
+                ErrorMessage.Equals(other.ErrorMessage)
             ) &&
             (
-                this.ExpirationDate == other.ExpirationDate ||
-                this.ExpirationDate != null &&
-                this.ExpirationDate.Equals(other.ExpirationDate)
+                ExpirationDate == other.ExpirationDate ||
+                ExpirationDate != null &&
+                ExpirationDate.Equals(other.ExpirationDate)
             ) &&
             (
-                this.SubmissionDate == other.SubmissionDate ||
-                this.SubmissionDate != null &&
-                this.SubmissionDate.Equals(other.SubmissionDate)
+                SubmissionDate == other.SubmissionDate ||
+                SubmissionDate != null &&
+                SubmissionDate.Equals(other.SubmissionDate)
             ) &&
             (
-                this.CompletionDate == other.CompletionDate ||
-                this.CompletionDate != null &&
-                this.CompletionDate.Equals(other.CompletionDate)
+                CompletionDate == other.CompletionDate ||
+                CompletionDate != null &&
+                CompletionDate.Equals(other.CompletionDate)
             );
     }
 
@@ -205,29 +205,29 @@ public partial class AsyncQueryStatus : IEquatable<AsyncQueryStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.ErrorMessage != null)
+            if (ErrorMessage != null)
             {
-                hash = hash * 59 + this.ErrorMessage.GetHashCode();
+                hash = hash * 59 + ErrorMessage.GetHashCode();
             }
 
-            if (this.ExpirationDate != null)
+            if (ExpirationDate != null)
             {
-                hash = hash * 59 + this.ExpirationDate.GetHashCode();
+                hash = hash * 59 + ExpirationDate.GetHashCode();
             }
 
-            if (this.SubmissionDate != null)
+            if (SubmissionDate != null)
             {
-                hash = hash * 59 + this.SubmissionDate.GetHashCode();
+                hash = hash * 59 + SubmissionDate.GetHashCode();
             }
 
-            if (this.CompletionDate != null)
+            if (CompletionDate != null)
             {
-                hash = hash * 59 + this.CompletionDate.GetHashCode();
+                hash = hash * 59 + CompletionDate.GetHashCode();
             }
 
             return hash;

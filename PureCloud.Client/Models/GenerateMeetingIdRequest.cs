@@ -83,7 +83,7 @@ public partial class GenerateMeetingIdRequest : IEquatable<GenerateMeetingIdRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GenerateMeetingIdRequest);
+        return Equals(obj as GenerateMeetingIdRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class GenerateMeetingIdRequest : IEquatable<GenerateMeetingIdRequ
 
         return true &&
             (
-                this.ConferenceId == other.ConferenceId ||
-                this.ConferenceId != null &&
-                this.ConferenceId.Equals(other.ConferenceId)
+                ConferenceId == other.ConferenceId ||
+                ConferenceId != null &&
+                ConferenceId.Equals(other.ConferenceId)
             ) &&
             (
-                this.Ephemeral == other.Ephemeral ||
-                this.Ephemeral != null &&
-                this.Ephemeral.Equals(other.Ephemeral)
+                Ephemeral == other.Ephemeral ||
+                Ephemeral != null &&
+                Ephemeral.Equals(other.Ephemeral)
             ) &&
             (
-                this.ExpireTimeDays == other.ExpireTimeDays ||
-                this.ExpireTimeDays != null &&
-                this.ExpireTimeDays.Equals(other.ExpireTimeDays)
+                ExpireTimeDays == other.ExpireTimeDays ||
+                ExpireTimeDays != null &&
+                ExpireTimeDays.Equals(other.ExpireTimeDays)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class GenerateMeetingIdRequest : IEquatable<GenerateMeetingIdRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConferenceId != null)
+            if (ConferenceId != null)
             {
-                hash = hash * 59 + this.ConferenceId.GetHashCode();
+                hash = hash * 59 + ConferenceId.GetHashCode();
             }
 
-            if (this.Ephemeral != null)
+            if (Ephemeral != null)
             {
-                hash = hash * 59 + this.Ephemeral.GetHashCode();
+                hash = hash * 59 + Ephemeral.GetHashCode();
             }
 
-            if (this.ExpireTimeDays != null)
+            if (ExpireTimeDays != null)
             {
-                hash = hash * 59 + this.ExpireTimeDays.GetHashCode();
+                hash = hash * 59 + ExpireTimeDays.GetHashCode();
             }
 
             return hash;

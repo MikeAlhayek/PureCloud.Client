@@ -145,7 +145,7 @@ public partial class HistoricalShrinkageActivityCategoryResponse : IEquatable<Hi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalShrinkageActivityCategoryResponse);
+        return Equals(obj as HistoricalShrinkageActivityCategoryResponse);
     }
 
     /// <summary>
@@ -163,19 +163,19 @@ public partial class HistoricalShrinkageActivityCategoryResponse : IEquatable<Hi
 
         return true &&
             (
-                this.ActivityCategory == other.ActivityCategory ||
-                this.ActivityCategory != null &&
-                this.ActivityCategory.Equals(other.ActivityCategory)
+                ActivityCategory == other.ActivityCategory ||
+                ActivityCategory != null &&
+                ActivityCategory.Equals(other.ActivityCategory)
             ) &&
             (
-                this.ShrinkageForActivityCategory == other.ShrinkageForActivityCategory ||
-                this.ShrinkageForActivityCategory != null &&
-                this.ShrinkageForActivityCategory.Equals(other.ShrinkageForActivityCategory)
+                ShrinkageForActivityCategory == other.ShrinkageForActivityCategory ||
+                ShrinkageForActivityCategory != null &&
+                ShrinkageForActivityCategory.Equals(other.ShrinkageForActivityCategory)
             ) &&
             (
-                this.ShrinkageForActivityCodes == other.ShrinkageForActivityCodes ||
-                this.ShrinkageForActivityCodes != null &&
-                this.ShrinkageForActivityCodes.SequenceEqual(other.ShrinkageForActivityCodes)
+                ShrinkageForActivityCodes == other.ShrinkageForActivityCodes ||
+                ShrinkageForActivityCodes != null &&
+                ShrinkageForActivityCodes.SequenceEqual(other.ShrinkageForActivityCodes)
             );
     }
 
@@ -190,19 +190,19 @@ public partial class HistoricalShrinkageActivityCategoryResponse : IEquatable<Hi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityCategory != null)
+            if (ActivityCategory != null)
             {
-                hash = hash * 59 + this.ActivityCategory.GetHashCode();
+                hash = hash * 59 + ActivityCategory.GetHashCode();
             }
 
-            if (this.ShrinkageForActivityCategory != null)
+            if (ShrinkageForActivityCategory != null)
             {
-                hash = hash * 59 + this.ShrinkageForActivityCategory.GetHashCode();
+                hash = hash * 59 + ShrinkageForActivityCategory.GetHashCode();
             }
 
-            if (this.ShrinkageForActivityCodes != null)
+            if (ShrinkageForActivityCodes != null)
             {
-                hash = hash * 59 + this.ShrinkageForActivityCodes.GetHashCode();
+                hash = hash * 59 + ShrinkageForActivityCodes.GetHashCode();
             }
 
             return hash;

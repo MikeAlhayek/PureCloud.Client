@@ -325,7 +325,7 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShiftTradeSettings);
+        return Equals(obj as ShiftTradeSettings);
     }
 
     /// <summary>
@@ -343,69 +343,69 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.AutoReview == other.AutoReview ||
-                this.AutoReview != null &&
-                this.AutoReview.Equals(other.AutoReview)
+                AutoReview == other.AutoReview ||
+                AutoReview != null &&
+                AutoReview.Equals(other.AutoReview)
             ) &&
             (
-                this.AllowDirectTrades == other.AllowDirectTrades ||
-                this.AllowDirectTrades != null &&
-                this.AllowDirectTrades.Equals(other.AllowDirectTrades)
+                AllowDirectTrades == other.AllowDirectTrades ||
+                AllowDirectTrades != null &&
+                AllowDirectTrades.Equals(other.AllowDirectTrades)
             ) &&
             (
-                this.MinHoursInFuture == other.MinHoursInFuture ||
-                this.MinHoursInFuture != null &&
-                this.MinHoursInFuture.Equals(other.MinHoursInFuture)
+                MinHoursInFuture == other.MinHoursInFuture ||
+                MinHoursInFuture != null &&
+                MinHoursInFuture.Equals(other.MinHoursInFuture)
             ) &&
             (
-                this.UnequalPaid == other.UnequalPaid ||
-                this.UnequalPaid != null &&
-                this.UnequalPaid.Equals(other.UnequalPaid)
+                UnequalPaid == other.UnequalPaid ||
+                UnequalPaid != null &&
+                UnequalPaid.Equals(other.UnequalPaid)
             ) &&
             (
-                this.OneSided == other.OneSided ||
-                this.OneSided != null &&
-                this.OneSided.Equals(other.OneSided)
+                OneSided == other.OneSided ||
+                OneSided != null &&
+                OneSided.Equals(other.OneSided)
             ) &&
             (
-                this.WeeklyMinPaidViolations == other.WeeklyMinPaidViolations ||
-                this.WeeklyMinPaidViolations != null &&
-                this.WeeklyMinPaidViolations.Equals(other.WeeklyMinPaidViolations)
+                WeeklyMinPaidViolations == other.WeeklyMinPaidViolations ||
+                WeeklyMinPaidViolations != null &&
+                WeeklyMinPaidViolations.Equals(other.WeeklyMinPaidViolations)
             ) &&
             (
-                this.WeeklyMaxPaidViolations == other.WeeklyMaxPaidViolations ||
-                this.WeeklyMaxPaidViolations != null &&
-                this.WeeklyMaxPaidViolations.Equals(other.WeeklyMaxPaidViolations)
+                WeeklyMaxPaidViolations == other.WeeklyMaxPaidViolations ||
+                WeeklyMaxPaidViolations != null &&
+                WeeklyMaxPaidViolations.Equals(other.WeeklyMaxPaidViolations)
             ) &&
             (
-                this.RequiresMatchingQueues == other.RequiresMatchingQueues ||
-                this.RequiresMatchingQueues != null &&
-                this.RequiresMatchingQueues.Equals(other.RequiresMatchingQueues)
+                RequiresMatchingQueues == other.RequiresMatchingQueues ||
+                RequiresMatchingQueues != null &&
+                RequiresMatchingQueues.Equals(other.RequiresMatchingQueues)
             ) &&
             (
-                this.RequiresMatchingLanguages == other.RequiresMatchingLanguages ||
-                this.RequiresMatchingLanguages != null &&
-                this.RequiresMatchingLanguages.Equals(other.RequiresMatchingLanguages)
+                RequiresMatchingLanguages == other.RequiresMatchingLanguages ||
+                RequiresMatchingLanguages != null &&
+                RequiresMatchingLanguages.Equals(other.RequiresMatchingLanguages)
             ) &&
             (
-                this.RequiresMatchingSkills == other.RequiresMatchingSkills ||
-                this.RequiresMatchingSkills != null &&
-                this.RequiresMatchingSkills.Equals(other.RequiresMatchingSkills)
+                RequiresMatchingSkills == other.RequiresMatchingSkills ||
+                RequiresMatchingSkills != null &&
+                RequiresMatchingSkills.Equals(other.RequiresMatchingSkills)
             ) &&
             (
-                this.RequiresMatchingPlanningGroups == other.RequiresMatchingPlanningGroups ||
-                this.RequiresMatchingPlanningGroups != null &&
-                this.RequiresMatchingPlanningGroups.Equals(other.RequiresMatchingPlanningGroups)
+                RequiresMatchingPlanningGroups == other.RequiresMatchingPlanningGroups ||
+                RequiresMatchingPlanningGroups != null &&
+                RequiresMatchingPlanningGroups.Equals(other.RequiresMatchingPlanningGroups)
             ) &&
             (
-                this.ActivityCategoryRules == other.ActivityCategoryRules ||
-                this.ActivityCategoryRules != null &&
-                this.ActivityCategoryRules.SequenceEqual(other.ActivityCategoryRules)
+                ActivityCategoryRules == other.ActivityCategoryRules ||
+                ActivityCategoryRules != null &&
+                ActivityCategoryRules.SequenceEqual(other.ActivityCategoryRules)
             );
     }
 
@@ -420,69 +420,69 @@ public partial class ShiftTradeSettings : IEquatable<ShiftTradeSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.AutoReview != null)
+            if (AutoReview != null)
             {
-                hash = hash * 59 + this.AutoReview.GetHashCode();
+                hash = hash * 59 + AutoReview.GetHashCode();
             }
 
-            if (this.AllowDirectTrades != null)
+            if (AllowDirectTrades != null)
             {
-                hash = hash * 59 + this.AllowDirectTrades.GetHashCode();
+                hash = hash * 59 + AllowDirectTrades.GetHashCode();
             }
 
-            if (this.MinHoursInFuture != null)
+            if (MinHoursInFuture != null)
             {
-                hash = hash * 59 + this.MinHoursInFuture.GetHashCode();
+                hash = hash * 59 + MinHoursInFuture.GetHashCode();
             }
 
-            if (this.UnequalPaid != null)
+            if (UnequalPaid != null)
             {
-                hash = hash * 59 + this.UnequalPaid.GetHashCode();
+                hash = hash * 59 + UnequalPaid.GetHashCode();
             }
 
-            if (this.OneSided != null)
+            if (OneSided != null)
             {
-                hash = hash * 59 + this.OneSided.GetHashCode();
+                hash = hash * 59 + OneSided.GetHashCode();
             }
 
-            if (this.WeeklyMinPaidViolations != null)
+            if (WeeklyMinPaidViolations != null)
             {
-                hash = hash * 59 + this.WeeklyMinPaidViolations.GetHashCode();
+                hash = hash * 59 + WeeklyMinPaidViolations.GetHashCode();
             }
 
-            if (this.WeeklyMaxPaidViolations != null)
+            if (WeeklyMaxPaidViolations != null)
             {
-                hash = hash * 59 + this.WeeklyMaxPaidViolations.GetHashCode();
+                hash = hash * 59 + WeeklyMaxPaidViolations.GetHashCode();
             }
 
-            if (this.RequiresMatchingQueues != null)
+            if (RequiresMatchingQueues != null)
             {
-                hash = hash * 59 + this.RequiresMatchingQueues.GetHashCode();
+                hash = hash * 59 + RequiresMatchingQueues.GetHashCode();
             }
 
-            if (this.RequiresMatchingLanguages != null)
+            if (RequiresMatchingLanguages != null)
             {
-                hash = hash * 59 + this.RequiresMatchingLanguages.GetHashCode();
+                hash = hash * 59 + RequiresMatchingLanguages.GetHashCode();
             }
 
-            if (this.RequiresMatchingSkills != null)
+            if (RequiresMatchingSkills != null)
             {
-                hash = hash * 59 + this.RequiresMatchingSkills.GetHashCode();
+                hash = hash * 59 + RequiresMatchingSkills.GetHashCode();
             }
 
-            if (this.RequiresMatchingPlanningGroups != null)
+            if (RequiresMatchingPlanningGroups != null)
             {
-                hash = hash * 59 + this.RequiresMatchingPlanningGroups.GetHashCode();
+                hash = hash * 59 + RequiresMatchingPlanningGroups.GetHashCode();
             }
 
-            if (this.ActivityCategoryRules != null)
+            if (ActivityCategoryRules != null)
             {
-                hash = hash * 59 + this.ActivityCategoryRules.GetHashCode();
+                hash = hash * 59 + ActivityCategoryRules.GetHashCode();
             }
 
             return hash;

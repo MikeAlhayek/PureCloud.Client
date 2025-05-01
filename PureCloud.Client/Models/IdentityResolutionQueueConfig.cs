@@ -52,7 +52,7 @@ public partial class IdentityResolutionQueueConfig : IEquatable<IdentityResoluti
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IdentityResolutionQueueConfig);
+        return Equals(obj as IdentityResolutionQueueConfig);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class IdentityResolutionQueueConfig : IEquatable<IdentityResoluti
 
         return true &&
             (
-                this.CallOnBehalfOfQueue == other.CallOnBehalfOfQueue ||
-                this.CallOnBehalfOfQueue != null &&
-                this.CallOnBehalfOfQueue.Equals(other.CallOnBehalfOfQueue)
+                CallOnBehalfOfQueue == other.CallOnBehalfOfQueue ||
+                CallOnBehalfOfQueue != null &&
+                CallOnBehalfOfQueue.Equals(other.CallOnBehalfOfQueue)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class IdentityResolutionQueueConfig : IEquatable<IdentityResoluti
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CallOnBehalfOfQueue != null)
+            if (CallOnBehalfOfQueue != null)
             {
-                hash = hash * 59 + this.CallOnBehalfOfQueue.GetHashCode();
+                hash = hash * 59 + CallOnBehalfOfQueue.GetHashCode();
             }
 
             return hash;

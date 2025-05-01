@@ -65,7 +65,7 @@ public partial class QuarterHourly : IEquatable<QuarterHourly>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QuarterHourly);
+        return Equals(obj as QuarterHourly);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class QuarterHourly : IEquatable<QuarterHourly>
 
         return true &&
             (
-                this.DownloadUrls == other.DownloadUrls ||
-                this.DownloadUrls != null &&
-                this.DownloadUrls.SequenceEqual(other.DownloadUrls)
+                DownloadUrls == other.DownloadUrls ||
+                DownloadUrls != null &&
+                DownloadUrls.SequenceEqual(other.DownloadUrls)
             ) &&
             (
-                this.DownloadResult == other.DownloadResult ||
-                this.DownloadResult != null &&
-                this.DownloadResult.SequenceEqual(other.DownloadResult)
+                DownloadResult == other.DownloadResult ||
+                DownloadResult != null &&
+                DownloadResult.SequenceEqual(other.DownloadResult)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class QuarterHourly : IEquatable<QuarterHourly>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DownloadUrls != null)
+            if (DownloadUrls != null)
             {
-                hash = hash * 59 + this.DownloadUrls.GetHashCode();
+                hash = hash * 59 + DownloadUrls.GetHashCode();
             }
 
-            if (this.DownloadResult != null)
+            if (DownloadResult != null)
             {
-                hash = hash * 59 + this.DownloadResult.GetHashCode();
+                hash = hash * 59 + DownloadResult.GetHashCode();
             }
 
             return hash;

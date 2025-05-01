@@ -89,7 +89,7 @@ public partial class GroupSettings : IEquatable<GroupSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GroupSettings);
+        return Equals(obj as GroupSettings);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class GroupSettings : IEquatable<GroupSettings>
 
         return true &&
             (
-                this.MinimumGroupSize == other.MinimumGroupSize ||
-                this.MinimumGroupSize != null &&
-                this.MinimumGroupSize.Equals(other.MinimumGroupSize)
+                MinimumGroupSize == other.MinimumGroupSize ||
+                MinimumGroupSize != null &&
+                MinimumGroupSize.Equals(other.MinimumGroupSize)
             ) &&
             (
-                this.MaximumGroupSize == other.MaximumGroupSize ||
-                this.MaximumGroupSize != null &&
-                this.MaximumGroupSize.Equals(other.MaximumGroupSize)
+                MaximumGroupSize == other.MaximumGroupSize ||
+                MaximumGroupSize != null &&
+                MaximumGroupSize.Equals(other.MaximumGroupSize)
             ) &&
             (
-                this.MaximumTotalSessions == other.MaximumTotalSessions ||
-                this.MaximumTotalSessions != null &&
-                this.MaximumTotalSessions.Equals(other.MaximumTotalSessions)
+                MaximumTotalSessions == other.MaximumTotalSessions ||
+                MaximumTotalSessions != null &&
+                MaximumTotalSessions.Equals(other.MaximumTotalSessions)
             ) &&
             (
-                this.MaximumConcurrentSessions == other.MaximumConcurrentSessions ||
-                this.MaximumConcurrentSessions != null &&
-                this.MaximumConcurrentSessions.Equals(other.MaximumConcurrentSessions)
+                MaximumConcurrentSessions == other.MaximumConcurrentSessions ||
+                MaximumConcurrentSessions != null &&
+                MaximumConcurrentSessions.Equals(other.MaximumConcurrentSessions)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class GroupSettings : IEquatable<GroupSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MinimumGroupSize != null)
+            if (MinimumGroupSize != null)
             {
-                hash = hash * 59 + this.MinimumGroupSize.GetHashCode();
+                hash = hash * 59 + MinimumGroupSize.GetHashCode();
             }
 
-            if (this.MaximumGroupSize != null)
+            if (MaximumGroupSize != null)
             {
-                hash = hash * 59 + this.MaximumGroupSize.GetHashCode();
+                hash = hash * 59 + MaximumGroupSize.GetHashCode();
             }
 
-            if (this.MaximumTotalSessions != null)
+            if (MaximumTotalSessions != null)
             {
-                hash = hash * 59 + this.MaximumTotalSessions.GetHashCode();
+                hash = hash * 59 + MaximumTotalSessions.GetHashCode();
             }
 
-            if (this.MaximumConcurrentSessions != null)
+            if (MaximumConcurrentSessions != null)
             {
-                hash = hash * 59 + this.MaximumConcurrentSessions.GetHashCode();
+                hash = hash * 59 + MaximumConcurrentSessions.GetHashCode();
             }
 
             return hash;

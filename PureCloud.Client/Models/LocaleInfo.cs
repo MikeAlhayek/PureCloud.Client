@@ -109,7 +109,7 @@ public partial class LocaleInfo : IEquatable<LocaleInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LocaleInfo);
+        return Equals(obj as LocaleInfo);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class LocaleInfo : IEquatable<LocaleInfo>
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             ) &&
             (
-                this.FlowVersionInfo == other.FlowVersionInfo ||
-                this.FlowVersionInfo != null &&
-                this.FlowVersionInfo.Equals(other.FlowVersionInfo)
+                FlowVersionInfo == other.FlowVersionInfo ||
+                FlowVersionInfo != null &&
+                FlowVersionInfo.Equals(other.FlowVersionInfo)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class LocaleInfo : IEquatable<LocaleInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
-            if (this.FlowVersionInfo != null)
+            if (FlowVersionInfo != null)
             {
-                hash = hash * 59 + this.FlowVersionInfo.GetHashCode();
+                hash = hash * 59 + FlowVersionInfo.GetHashCode();
             }
 
             return hash;

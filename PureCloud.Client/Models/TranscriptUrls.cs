@@ -77,7 +77,7 @@ public partial class TranscriptUrls : IEquatable<TranscriptUrls>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptUrls);
+        return Equals(obj as TranscriptUrls);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class TranscriptUrls : IEquatable<TranscriptUrls>
 
         return true &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.CommunicationId == other.CommunicationId ||
-                this.CommunicationId != null &&
-                this.CommunicationId.Equals(other.CommunicationId)
+                CommunicationId == other.CommunicationId ||
+                CommunicationId != null &&
+                CommunicationId.Equals(other.CommunicationId)
             ) &&
             (
-                this.Urls == other.Urls ||
-                this.Urls != null &&
-                this.Urls.SequenceEqual(other.Urls)
+                Urls == other.Urls ||
+                Urls != null &&
+                Urls.SequenceEqual(other.Urls)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class TranscriptUrls : IEquatable<TranscriptUrls>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.CommunicationId != null)
+            if (CommunicationId != null)
             {
-                hash = hash * 59 + this.CommunicationId.GetHashCode();
+                hash = hash * 59 + CommunicationId.GetHashCode();
             }
 
-            if (this.Urls != null)
+            if (Urls != null)
             {
-                hash = hash * 59 + this.Urls.GetHashCode();
+                hash = hash * 59 + Urls.GetHashCode();
             }
 
             return hash;

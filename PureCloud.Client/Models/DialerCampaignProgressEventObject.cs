@@ -41,7 +41,7 @@ public partial class DialerCampaignProgressEventObject : IEquatable<DialerCampai
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerCampaignProgressEventObject);
+        return Equals(obj as DialerCampaignProgressEventObject);
     }
 
     /// <summary>

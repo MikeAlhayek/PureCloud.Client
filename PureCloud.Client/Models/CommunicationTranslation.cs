@@ -71,7 +71,7 @@ public partial class CommunicationTranslation : IEquatable<CommunicationTranslat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CommunicationTranslation);
+        return Equals(obj as CommunicationTranslation);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class CommunicationTranslation : IEquatable<CommunicationTranslat
 
         return true &&
             (
-                this.CommunicationId == other.CommunicationId ||
-                this.CommunicationId != null &&
-                this.CommunicationId.Equals(other.CommunicationId)
+                CommunicationId == other.CommunicationId ||
+                CommunicationId != null &&
+                CommunicationId.Equals(other.CommunicationId)
             ) &&
             (
-                this.Transcripts == other.Transcripts ||
-                this.Transcripts != null &&
-                this.Transcripts.SequenceEqual(other.Transcripts)
+                Transcripts == other.Transcripts ||
+                Transcripts != null &&
+                Transcripts.SequenceEqual(other.Transcripts)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class CommunicationTranslation : IEquatable<CommunicationTranslat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CommunicationId != null)
+            if (CommunicationId != null)
             {
-                hash = hash * 59 + this.CommunicationId.GetHashCode();
+                hash = hash * 59 + CommunicationId.GetHashCode();
             }
 
-            if (this.Transcripts != null)
+            if (Transcripts != null)
             {
-                hash = hash * 59 + this.Transcripts.GetHashCode();
+                hash = hash * 59 + Transcripts.GetHashCode();
             }
 
             return hash;

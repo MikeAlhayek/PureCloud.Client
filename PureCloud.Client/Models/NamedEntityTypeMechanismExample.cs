@@ -71,7 +71,7 @@ public partial class NamedEntityTypeMechanismExample : IEquatable<NamedEntityTyp
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NamedEntityTypeMechanismExample);
+        return Equals(obj as NamedEntityTypeMechanismExample);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class NamedEntityTypeMechanismExample : IEquatable<NamedEntityTyp
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.ResolvedValue == other.ResolvedValue ||
-                this.ResolvedValue != null &&
-                this.ResolvedValue.Equals(other.ResolvedValue)
+                ResolvedValue == other.ResolvedValue ||
+                ResolvedValue != null &&
+                ResolvedValue.Equals(other.ResolvedValue)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class NamedEntityTypeMechanismExample : IEquatable<NamedEntityTyp
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.ResolvedValue != null)
+            if (ResolvedValue != null)
             {
-                hash = hash * 59 + this.ResolvedValue.GetHashCode();
+                hash = hash * 59 + ResolvedValue.GetHashCode();
             }
 
             return hash;

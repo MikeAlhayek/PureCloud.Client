@@ -223,7 +223,7 @@ public partial class FlowActivityResponse : IEquatable<FlowActivityResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowActivityResponse);
+        return Equals(obj as FlowActivityResponse);
     }
 
     /// <summary>
@@ -241,14 +241,14 @@ public partial class FlowActivityResponse : IEquatable<FlowActivityResponse>
 
         return true &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             ) &&
             (
-                this.EntityIdDimension == other.EntityIdDimension ||
-                this.EntityIdDimension != null &&
-                this.EntityIdDimension.Equals(other.EntityIdDimension)
+                EntityIdDimension == other.EntityIdDimension ||
+                EntityIdDimension != null &&
+                EntityIdDimension.Equals(other.EntityIdDimension)
             );
     }
 
@@ -263,14 +263,14 @@ public partial class FlowActivityResponse : IEquatable<FlowActivityResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
-            if (this.EntityIdDimension != null)
+            if (EntityIdDimension != null)
             {
-                hash = hash * 59 + this.EntityIdDimension.GetHashCode();
+                hash = hash * 59 + EntityIdDimension.GetHashCode();
             }
 
             return hash;

@@ -171,7 +171,7 @@ public partial class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CollaborateChatAdhocMessageEventTopicCollaborateChatMessage);
+        return Equals(obj as CollaborateChatAdhocMessageEventTopicCollaborateChatMessage);
     }
 
     /// <summary>
@@ -189,49 +189,49 @@ public partial class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage
 
         return true &&
             (
-                this.MessageId == other.MessageId ||
-                this.MessageId != null &&
-                this.MessageId.Equals(other.MessageId)
+                MessageId == other.MessageId ||
+                MessageId != null &&
+                MessageId.Equals(other.MessageId)
             ) &&
             (
-                this.Created == other.Created ||
-                this.Created != null &&
-                this.Created.Equals(other.Created)
+                Created == other.Created ||
+                Created != null &&
+                Created.Equals(other.Created)
             ) &&
             (
-                this.ActionType == other.ActionType ||
-                this.ActionType != null &&
-                this.ActionType.Equals(other.ActionType)
+                ActionType == other.ActionType ||
+                ActionType != null &&
+                ActionType.Equals(other.ActionType)
             ) &&
             (
-                this.Body == other.Body ||
-                this.Body != null &&
-                this.Body.Equals(other.Body)
+                Body == other.Body ||
+                Body != null &&
+                Body.Equals(other.Body)
             ) &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.To == other.To ||
-                this.To != null &&
-                this.To.Equals(other.To)
+                To == other.To ||
+                To != null &&
+                To.Equals(other.To)
             ) &&
             (
-                this.Mentions == other.Mentions ||
-                this.Mentions != null &&
-                this.Mentions.SequenceEqual(other.Mentions)
+                Mentions == other.Mentions ||
+                Mentions != null &&
+                Mentions.SequenceEqual(other.Mentions)
             ) &&
             (
-                this.NotifyAll == other.NotifyAll ||
-                this.NotifyAll != null &&
-                this.NotifyAll.Equals(other.NotifyAll)
+                NotifyAll == other.NotifyAll ||
+                NotifyAll != null &&
+                NotifyAll.Equals(other.NotifyAll)
             ) &&
             (
-                this.Reactions == other.Reactions ||
-                this.Reactions != null &&
-                this.Reactions.SequenceEqual(other.Reactions)
+                Reactions == other.Reactions ||
+                Reactions != null &&
+                Reactions.SequenceEqual(other.Reactions)
             );
     }
 
@@ -246,49 +246,49 @@ public partial class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MessageId != null)
+            if (MessageId != null)
             {
-                hash = hash * 59 + this.MessageId.GetHashCode();
+                hash = hash * 59 + MessageId.GetHashCode();
             }
 
-            if (this.Created != null)
+            if (Created != null)
             {
-                hash = hash * 59 + this.Created.GetHashCode();
+                hash = hash * 59 + Created.GetHashCode();
             }
 
-            if (this.ActionType != null)
+            if (ActionType != null)
             {
-                hash = hash * 59 + this.ActionType.GetHashCode();
+                hash = hash * 59 + ActionType.GetHashCode();
             }
 
-            if (this.Body != null)
+            if (Body != null)
             {
-                hash = hash * 59 + this.Body.GetHashCode();
+                hash = hash * 59 + Body.GetHashCode();
             }
 
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.To != null)
+            if (To != null)
             {
-                hash = hash * 59 + this.To.GetHashCode();
+                hash = hash * 59 + To.GetHashCode();
             }
 
-            if (this.Mentions != null)
+            if (Mentions != null)
             {
-                hash = hash * 59 + this.Mentions.GetHashCode();
+                hash = hash * 59 + Mentions.GetHashCode();
             }
 
-            if (this.NotifyAll != null)
+            if (NotifyAll != null)
             {
-                hash = hash * 59 + this.NotifyAll.GetHashCode();
+                hash = hash * 59 + NotifyAll.GetHashCode();
             }
 
-            if (this.Reactions != null)
+            if (Reactions != null)
             {
-                hash = hash * 59 + this.Reactions.GetHashCode();
+                hash = hash * 59 + Reactions.GetHashCode();
             }
 
             return hash;

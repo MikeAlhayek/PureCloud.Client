@@ -71,7 +71,7 @@ public partial class KnowledgeDocumentAlternative : IEquatable<KnowledgeDocument
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentAlternative);
+        return Equals(obj as KnowledgeDocumentAlternative);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class KnowledgeDocumentAlternative : IEquatable<KnowledgeDocument
 
         return true &&
             (
-                this.Phrase == other.Phrase ||
-                this.Phrase != null &&
-                this.Phrase.Equals(other.Phrase)
+                Phrase == other.Phrase ||
+                Phrase != null &&
+                Phrase.Equals(other.Phrase)
             ) &&
             (
-                this.Autocomplete == other.Autocomplete ||
-                this.Autocomplete != null &&
-                this.Autocomplete.Equals(other.Autocomplete)
+                Autocomplete == other.Autocomplete ||
+                Autocomplete != null &&
+                Autocomplete.Equals(other.Autocomplete)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class KnowledgeDocumentAlternative : IEquatable<KnowledgeDocument
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Phrase != null)
+            if (Phrase != null)
             {
-                hash = hash * 59 + this.Phrase.GetHashCode();
+                hash = hash * 59 + Phrase.GetHashCode();
             }
 
-            if (this.Autocomplete != null)
+            if (Autocomplete != null)
             {
-                hash = hash * 59 + this.Autocomplete.GetHashCode();
+                hash = hash * 59 + Autocomplete.GetHashCode();
             }
 
             return hash;

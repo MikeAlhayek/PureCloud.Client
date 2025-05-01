@@ -51,7 +51,7 @@ public partial class ScimServiceProviderConfigSimpleFeature : IEquatable<ScimSer
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimServiceProviderConfigSimpleFeature);
+        return Equals(obj as ScimServiceProviderConfigSimpleFeature);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class ScimServiceProviderConfigSimpleFeature : IEquatable<ScimSer
 
         return true &&
             (
-                this.Supported == other.Supported ||
-                this.Supported != null &&
-                this.Supported.Equals(other.Supported)
+                Supported == other.Supported ||
+                Supported != null &&
+                Supported.Equals(other.Supported)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class ScimServiceProviderConfigSimpleFeature : IEquatable<ScimSer
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Supported != null)
+            if (Supported != null)
             {
-                hash = hash * 59 + this.Supported.GetHashCode();
+                hash = hash * 59 + Supported.GetHashCode();
             }
 
             return hash;

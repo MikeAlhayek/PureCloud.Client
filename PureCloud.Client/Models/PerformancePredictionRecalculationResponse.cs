@@ -127,7 +127,7 @@ public partial class PerformancePredictionRecalculationResponse : IEquatable<Per
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PerformancePredictionRecalculationResponse);
+        return Equals(obj as PerformancePredictionRecalculationResponse);
     }
 
     /// <summary>
@@ -145,24 +145,24 @@ public partial class PerformancePredictionRecalculationResponse : IEquatable<Per
 
         return true &&
             (
-                this.OperationId == other.OperationId ||
-                this.OperationId != null &&
-                this.OperationId.Equals(other.OperationId)
+                OperationId == other.OperationId ||
+                OperationId != null &&
+                OperationId.Equals(other.OperationId)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.DownloadResult == other.DownloadResult ||
-                this.DownloadResult != null &&
-                this.DownloadResult.Equals(other.DownloadResult)
+                DownloadResult == other.DownloadResult ||
+                DownloadResult != null &&
+                DownloadResult.Equals(other.DownloadResult)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             );
     }
 
@@ -177,24 +177,24 @@ public partial class PerformancePredictionRecalculationResponse : IEquatable<Per
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OperationId != null)
+            if (OperationId != null)
             {
-                hash = hash * 59 + this.OperationId.GetHashCode();
+                hash = hash * 59 + OperationId.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.DownloadResult != null)
+            if (DownloadResult != null)
             {
-                hash = hash * 59 + this.DownloadResult.GetHashCode();
+                hash = hash * 59 + DownloadResult.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
             return hash;

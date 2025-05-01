@@ -71,7 +71,7 @@ public partial class PatchBuReschedulingOptionsManagementUnitRequest : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchBuReschedulingOptionsManagementUnitRequest);
+        return Equals(obj as PatchBuReschedulingOptionsManagementUnitRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class PatchBuReschedulingOptionsManagementUnitRequest : IEquatabl
 
         return true &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             ) &&
             (
-                this.Applied == other.Applied ||
-                this.Applied != null &&
-                this.Applied.Equals(other.Applied)
+                Applied == other.Applied ||
+                Applied != null &&
+                Applied.Equals(other.Applied)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class PatchBuReschedulingOptionsManagementUnitRequest : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
-            if (this.Applied != null)
+            if (Applied != null)
             {
-                hash = hash * 59 + this.Applied.GetHashCode();
+                hash = hash * 59 + Applied.GetHashCode();
             }
 
             return hash;

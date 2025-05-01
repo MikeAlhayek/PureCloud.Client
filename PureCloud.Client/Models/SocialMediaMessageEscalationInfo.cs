@@ -101,7 +101,7 @@ public partial class SocialMediaMessageEscalationInfo : IEquatable<SocialMediaMe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SocialMediaMessageEscalationInfo);
+        return Equals(obj as SocialMediaMessageEscalationInfo);
     }
 
     /// <summary>
@@ -119,9 +119,9 @@ public partial class SocialMediaMessageEscalationInfo : IEquatable<SocialMediaMe
 
         return true &&
             (
-                this.EscalationStatus == other.EscalationStatus ||
-                this.EscalationStatus != null &&
-                this.EscalationStatus.Equals(other.EscalationStatus)
+                EscalationStatus == other.EscalationStatus ||
+                EscalationStatus != null &&
+                EscalationStatus.Equals(other.EscalationStatus)
             );
     }
 
@@ -136,9 +136,9 @@ public partial class SocialMediaMessageEscalationInfo : IEquatable<SocialMediaMe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EscalationStatus != null)
+            if (EscalationStatus != null)
             {
-                hash = hash * 59 + this.EscalationStatus.GetHashCode();
+                hash = hash * 59 + EscalationStatus.GetHashCode();
             }
 
             return hash;

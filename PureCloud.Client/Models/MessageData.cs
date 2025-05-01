@@ -398,7 +398,7 @@ public partial class MessageData : IEquatable<MessageData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessageData);
+        return Equals(obj as MessageData);
     }
 
     /// <summary>
@@ -416,89 +416,89 @@ public partial class MessageData : IEquatable<MessageData>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ProviderMessageId == other.ProviderMessageId ||
-                this.ProviderMessageId != null &&
-                this.ProviderMessageId.Equals(other.ProviderMessageId)
+                ProviderMessageId == other.ProviderMessageId ||
+                ProviderMessageId != null &&
+                ProviderMessageId.Equals(other.ProviderMessageId)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             ) &&
             (
-                this.FromAddress == other.FromAddress ||
-                this.FromAddress != null &&
-                this.FromAddress.Equals(other.FromAddress)
+                FromAddress == other.FromAddress ||
+                FromAddress != null &&
+                FromAddress.Equals(other.FromAddress)
             ) &&
             (
-                this.ToAddress == other.ToAddress ||
-                this.ToAddress != null &&
-                this.ToAddress.Equals(other.ToAddress)
+                ToAddress == other.ToAddress ||
+                ToAddress != null &&
+                ToAddress.Equals(other.ToAddress)
             ) &&
             (
-                this.Direction == other.Direction ||
-                this.Direction != null &&
-                this.Direction.Equals(other.Direction)
+                Direction == other.Direction ||
+                Direction != null &&
+                Direction.Equals(other.Direction)
             ) &&
             (
-                this.MessengerType == other.MessengerType ||
-                this.MessengerType != null &&
-                this.MessengerType.Equals(other.MessengerType)
+                MessengerType == other.MessengerType ||
+                MessengerType != null &&
+                MessengerType.Equals(other.MessengerType)
             ) &&
             (
-                this.TextBody == other.TextBody ||
-                this.TextBody != null &&
-                this.TextBody.Equals(other.TextBody)
+                TextBody == other.TextBody ||
+                TextBody != null &&
+                TextBody.Equals(other.TextBody)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Media == other.Media ||
-                this.Media != null &&
-                this.Media.SequenceEqual(other.Media)
+                Media == other.Media ||
+                Media != null &&
+                Media.SequenceEqual(other.Media)
             ) &&
             (
-                this.Stickers == other.Stickers ||
-                this.Stickers != null &&
-                this.Stickers.SequenceEqual(other.Stickers)
+                Stickers == other.Stickers ||
+                Stickers != null &&
+                Stickers.SequenceEqual(other.Stickers)
             ) &&
             (
-                this.NormalizedMessage == other.NormalizedMessage ||
-                this.NormalizedMessage != null &&
-                this.NormalizedMessage.Equals(other.NormalizedMessage)
+                NormalizedMessage == other.NormalizedMessage ||
+                NormalizedMessage != null &&
+                NormalizedMessage.Equals(other.NormalizedMessage)
             ) &&
             (
-                this.NormalizedReceipts == other.NormalizedReceipts ||
-                this.NormalizedReceipts != null &&
-                this.NormalizedReceipts.SequenceEqual(other.NormalizedReceipts)
+                NormalizedReceipts == other.NormalizedReceipts ||
+                NormalizedReceipts != null &&
+                NormalizedReceipts.SequenceEqual(other.NormalizedReceipts)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -513,89 +513,89 @@ public partial class MessageData : IEquatable<MessageData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ProviderMessageId != null)
+            if (ProviderMessageId != null)
             {
-                hash = hash * 59 + this.ProviderMessageId.GetHashCode();
+                hash = hash * 59 + ProviderMessageId.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
-            if (this.FromAddress != null)
+            if (FromAddress != null)
             {
-                hash = hash * 59 + this.FromAddress.GetHashCode();
+                hash = hash * 59 + FromAddress.GetHashCode();
             }
 
-            if (this.ToAddress != null)
+            if (ToAddress != null)
             {
-                hash = hash * 59 + this.ToAddress.GetHashCode();
+                hash = hash * 59 + ToAddress.GetHashCode();
             }
 
-            if (this.Direction != null)
+            if (Direction != null)
             {
-                hash = hash * 59 + this.Direction.GetHashCode();
+                hash = hash * 59 + Direction.GetHashCode();
             }
 
-            if (this.MessengerType != null)
+            if (MessengerType != null)
             {
-                hash = hash * 59 + this.MessengerType.GetHashCode();
+                hash = hash * 59 + MessengerType.GetHashCode();
             }
 
-            if (this.TextBody != null)
+            if (TextBody != null)
             {
-                hash = hash * 59 + this.TextBody.GetHashCode();
+                hash = hash * 59 + TextBody.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Media != null)
+            if (Media != null)
             {
-                hash = hash * 59 + this.Media.GetHashCode();
+                hash = hash * 59 + Media.GetHashCode();
             }
 
-            if (this.Stickers != null)
+            if (Stickers != null)
             {
-                hash = hash * 59 + this.Stickers.GetHashCode();
+                hash = hash * 59 + Stickers.GetHashCode();
             }
 
-            if (this.NormalizedMessage != null)
+            if (NormalizedMessage != null)
             {
-                hash = hash * 59 + this.NormalizedMessage.GetHashCode();
+                hash = hash * 59 + NormalizedMessage.GetHashCode();
             }
 
-            if (this.NormalizedReceipts != null)
+            if (NormalizedReceipts != null)
             {
-                hash = hash * 59 + this.NormalizedReceipts.GetHashCode();
+                hash = hash * 59 + NormalizedReceipts.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

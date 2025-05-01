@@ -251,7 +251,7 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RateLimitAggregationQuery);
+        return Equals(obj as RateLimitAggregationQuery);
     }
 
     /// <summary>
@@ -269,49 +269,49 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             ) &&
             (
-                this.GroupBy == other.GroupBy ||
-                this.GroupBy != null &&
-                this.GroupBy.SequenceEqual(other.GroupBy)
+                GroupBy == other.GroupBy ||
+                GroupBy != null &&
+                GroupBy.SequenceEqual(other.GroupBy)
             ) &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.FlattenMultivaluedDimensions == other.FlattenMultivaluedDimensions ||
-                this.FlattenMultivaluedDimensions != null &&
-                this.FlattenMultivaluedDimensions.Equals(other.FlattenMultivaluedDimensions)
+                FlattenMultivaluedDimensions == other.FlattenMultivaluedDimensions ||
+                FlattenMultivaluedDimensions != null &&
+                FlattenMultivaluedDimensions.Equals(other.FlattenMultivaluedDimensions)
             ) &&
             (
-                this.Views == other.Views ||
-                this.Views != null &&
-                this.Views.SequenceEqual(other.Views)
+                Views == other.Views ||
+                Views != null &&
+                Views.SequenceEqual(other.Views)
             ) &&
             (
-                this.AlternateTimeDimension == other.AlternateTimeDimension ||
-                this.AlternateTimeDimension != null &&
-                this.AlternateTimeDimension.Equals(other.AlternateTimeDimension)
+                AlternateTimeDimension == other.AlternateTimeDimension ||
+                AlternateTimeDimension != null &&
+                AlternateTimeDimension.Equals(other.AlternateTimeDimension)
             );
     }
 
@@ -326,49 +326,49 @@ public partial class RateLimitAggregationQuery : IEquatable<RateLimitAggregation
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
-            if (this.GroupBy != null)
+            if (GroupBy != null)
             {
-                hash = hash * 59 + this.GroupBy.GetHashCode();
+                hash = hash * 59 + GroupBy.GetHashCode();
             }
 
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.FlattenMultivaluedDimensions != null)
+            if (FlattenMultivaluedDimensions != null)
             {
-                hash = hash * 59 + this.FlattenMultivaluedDimensions.GetHashCode();
+                hash = hash * 59 + FlattenMultivaluedDimensions.GetHashCode();
             }
 
-            if (this.Views != null)
+            if (Views != null)
             {
-                hash = hash * 59 + this.Views.GetHashCode();
+                hash = hash * 59 + Views.GetHashCode();
             }
 
-            if (this.AlternateTimeDimension != null)
+            if (AlternateTimeDimension != null)
             {
-                hash = hash * 59 + this.AlternateTimeDimension.GetHashCode();
+                hash = hash * 59 + AlternateTimeDimension.GetHashCode();
             }
 
             return hash;

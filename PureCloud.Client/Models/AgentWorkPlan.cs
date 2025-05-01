@@ -161,7 +161,7 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentWorkPlan);
+        return Equals(obj as AgentWorkPlan);
     }
 
     /// <summary>
@@ -179,54 +179,54 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ConstrainWeeklyPaidTime == other.ConstrainWeeklyPaidTime ||
-                this.ConstrainWeeklyPaidTime != null &&
-                this.ConstrainWeeklyPaidTime.Equals(other.ConstrainWeeklyPaidTime)
+                ConstrainWeeklyPaidTime == other.ConstrainWeeklyPaidTime ||
+                ConstrainWeeklyPaidTime != null &&
+                ConstrainWeeklyPaidTime.Equals(other.ConstrainWeeklyPaidTime)
             ) &&
             (
-                this.FlexibleWeeklyPaidTime == other.FlexibleWeeklyPaidTime ||
-                this.FlexibleWeeklyPaidTime != null &&
-                this.FlexibleWeeklyPaidTime.Equals(other.FlexibleWeeklyPaidTime)
+                FlexibleWeeklyPaidTime == other.FlexibleWeeklyPaidTime ||
+                FlexibleWeeklyPaidTime != null &&
+                FlexibleWeeklyPaidTime.Equals(other.FlexibleWeeklyPaidTime)
             ) &&
             (
-                this.WeeklyExactPaidMinutes == other.WeeklyExactPaidMinutes ||
-                this.WeeklyExactPaidMinutes != null &&
-                this.WeeklyExactPaidMinutes.Equals(other.WeeklyExactPaidMinutes)
+                WeeklyExactPaidMinutes == other.WeeklyExactPaidMinutes ||
+                WeeklyExactPaidMinutes != null &&
+                WeeklyExactPaidMinutes.Equals(other.WeeklyExactPaidMinutes)
             ) &&
             (
-                this.WeeklyMinimumPaidMinutes == other.WeeklyMinimumPaidMinutes ||
-                this.WeeklyMinimumPaidMinutes != null &&
-                this.WeeklyMinimumPaidMinutes.Equals(other.WeeklyMinimumPaidMinutes)
+                WeeklyMinimumPaidMinutes == other.WeeklyMinimumPaidMinutes ||
+                WeeklyMinimumPaidMinutes != null &&
+                WeeklyMinimumPaidMinutes.Equals(other.WeeklyMinimumPaidMinutes)
             ) &&
             (
-                this.WeeklyMaximumPaidMinutes == other.WeeklyMaximumPaidMinutes ||
-                this.WeeklyMaximumPaidMinutes != null &&
-                this.WeeklyMaximumPaidMinutes.Equals(other.WeeklyMaximumPaidMinutes)
+                WeeklyMaximumPaidMinutes == other.WeeklyMaximumPaidMinutes ||
+                WeeklyMaximumPaidMinutes != null &&
+                WeeklyMaximumPaidMinutes.Equals(other.WeeklyMaximumPaidMinutes)
             ) &&
             (
-                this.OptionalDays == other.OptionalDays ||
-                this.OptionalDays != null &&
-                this.OptionalDays.Equals(other.OptionalDays)
+                OptionalDays == other.OptionalDays ||
+                OptionalDays != null &&
+                OptionalDays.Equals(other.OptionalDays)
             ) &&
             (
-                this.Shifts == other.Shifts ||
-                this.Shifts != null &&
-                this.Shifts.SequenceEqual(other.Shifts)
+                Shifts == other.Shifts ||
+                Shifts != null &&
+                Shifts.SequenceEqual(other.Shifts)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -241,54 +241,54 @@ public partial class AgentWorkPlan : IEquatable<AgentWorkPlan>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ConstrainWeeklyPaidTime != null)
+            if (ConstrainWeeklyPaidTime != null)
             {
-                hash = hash * 59 + this.ConstrainWeeklyPaidTime.GetHashCode();
+                hash = hash * 59 + ConstrainWeeklyPaidTime.GetHashCode();
             }
 
-            if (this.FlexibleWeeklyPaidTime != null)
+            if (FlexibleWeeklyPaidTime != null)
             {
-                hash = hash * 59 + this.FlexibleWeeklyPaidTime.GetHashCode();
+                hash = hash * 59 + FlexibleWeeklyPaidTime.GetHashCode();
             }
 
-            if (this.WeeklyExactPaidMinutes != null)
+            if (WeeklyExactPaidMinutes != null)
             {
-                hash = hash * 59 + this.WeeklyExactPaidMinutes.GetHashCode();
+                hash = hash * 59 + WeeklyExactPaidMinutes.GetHashCode();
             }
 
-            if (this.WeeklyMinimumPaidMinutes != null)
+            if (WeeklyMinimumPaidMinutes != null)
             {
-                hash = hash * 59 + this.WeeklyMinimumPaidMinutes.GetHashCode();
+                hash = hash * 59 + WeeklyMinimumPaidMinutes.GetHashCode();
             }
 
-            if (this.WeeklyMaximumPaidMinutes != null)
+            if (WeeklyMaximumPaidMinutes != null)
             {
-                hash = hash * 59 + this.WeeklyMaximumPaidMinutes.GetHashCode();
+                hash = hash * 59 + WeeklyMaximumPaidMinutes.GetHashCode();
             }
 
-            if (this.OptionalDays != null)
+            if (OptionalDays != null)
             {
-                hash = hash * 59 + this.OptionalDays.GetHashCode();
+                hash = hash * 59 + OptionalDays.GetHashCode();
             }
 
-            if (this.Shifts != null)
+            if (Shifts != null)
             {
-                hash = hash * 59 + this.Shifts.GetHashCode();
+                hash = hash * 59 + Shifts.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

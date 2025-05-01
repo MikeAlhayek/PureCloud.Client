@@ -109,7 +109,7 @@ public partial class MinerIntent : IEquatable<MinerIntent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MinerIntent);
+        return Equals(obj as MinerIntent);
     }
 
     /// <summary>
@@ -127,34 +127,34 @@ public partial class MinerIntent : IEquatable<MinerIntent>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Miner == other.Miner ||
-                this.Miner != null &&
-                this.Miner.Equals(other.Miner)
+                Miner == other.Miner ||
+                Miner != null &&
+                Miner.Equals(other.Miner)
             ) &&
             (
-                this.Utterances == other.Utterances ||
-                this.Utterances != null &&
-                this.Utterances.SequenceEqual(other.Utterances)
+                Utterances == other.Utterances ||
+                Utterances != null &&
+                Utterances.SequenceEqual(other.Utterances)
             ) &&
             (
-                this.AnalyticVolumePercent == other.AnalyticVolumePercent ||
-                this.AnalyticVolumePercent != null &&
-                this.AnalyticVolumePercent.Equals(other.AnalyticVolumePercent)
+                AnalyticVolumePercent == other.AnalyticVolumePercent ||
+                AnalyticVolumePercent != null &&
+                AnalyticVolumePercent.Equals(other.AnalyticVolumePercent)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -169,34 +169,34 @@ public partial class MinerIntent : IEquatable<MinerIntent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Miner != null)
+            if (Miner != null)
             {
-                hash = hash * 59 + this.Miner.GetHashCode();
+                hash = hash * 59 + Miner.GetHashCode();
             }
 
-            if (this.Utterances != null)
+            if (Utterances != null)
             {
-                hash = hash * 59 + this.Utterances.GetHashCode();
+                hash = hash * 59 + Utterances.GetHashCode();
             }
 
-            if (this.AnalyticVolumePercent != null)
+            if (AnalyticVolumePercent != null)
             {
-                hash = hash * 59 + this.AnalyticVolumePercent.GetHashCode();
+                hash = hash * 59 + AnalyticVolumePercent.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

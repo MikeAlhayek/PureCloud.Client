@@ -170,7 +170,7 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AssessmentFormQuestionGroup);
+        return Equals(obj as AssessmentFormQuestionGroup);
     }
 
     /// <summary>
@@ -188,59 +188,59 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.DefaultAnswersToHighest == other.DefaultAnswersToHighest ||
-                this.DefaultAnswersToHighest != null &&
-                this.DefaultAnswersToHighest.Equals(other.DefaultAnswersToHighest)
+                DefaultAnswersToHighest == other.DefaultAnswersToHighest ||
+                DefaultAnswersToHighest != null &&
+                DefaultAnswersToHighest.Equals(other.DefaultAnswersToHighest)
             ) &&
             (
-                this.DefaultAnswersToNA == other.DefaultAnswersToNA ||
-                this.DefaultAnswersToNA != null &&
-                this.DefaultAnswersToNA.Equals(other.DefaultAnswersToNA)
+                DefaultAnswersToNA == other.DefaultAnswersToNA ||
+                DefaultAnswersToNA != null &&
+                DefaultAnswersToNA.Equals(other.DefaultAnswersToNA)
             ) &&
             (
-                this.NaEnabled == other.NaEnabled ||
-                this.NaEnabled != null &&
-                this.NaEnabled.Equals(other.NaEnabled)
+                NaEnabled == other.NaEnabled ||
+                NaEnabled != null &&
+                NaEnabled.Equals(other.NaEnabled)
             ) &&
             (
-                this.Weight == other.Weight ||
-                this.Weight != null &&
-                this.Weight.Equals(other.Weight)
+                Weight == other.Weight ||
+                Weight != null &&
+                Weight.Equals(other.Weight)
             ) &&
             (
-                this.ManualWeight == other.ManualWeight ||
-                this.ManualWeight != null &&
-                this.ManualWeight.Equals(other.ManualWeight)
+                ManualWeight == other.ManualWeight ||
+                ManualWeight != null &&
+                ManualWeight.Equals(other.ManualWeight)
             ) &&
             (
-                this.Questions == other.Questions ||
-                this.Questions != null &&
-                this.Questions.SequenceEqual(other.Questions)
+                Questions == other.Questions ||
+                Questions != null &&
+                Questions.SequenceEqual(other.Questions)
             ) &&
             (
-                this.VisibilityCondition == other.VisibilityCondition ||
-                this.VisibilityCondition != null &&
-                this.VisibilityCondition.Equals(other.VisibilityCondition)
+                VisibilityCondition == other.VisibilityCondition ||
+                VisibilityCondition != null &&
+                VisibilityCondition.Equals(other.VisibilityCondition)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -255,59 +255,59 @@ public partial class AssessmentFormQuestionGroup : IEquatable<AssessmentFormQues
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.DefaultAnswersToHighest != null)
+            if (DefaultAnswersToHighest != null)
             {
-                hash = hash * 59 + this.DefaultAnswersToHighest.GetHashCode();
+                hash = hash * 59 + DefaultAnswersToHighest.GetHashCode();
             }
 
-            if (this.DefaultAnswersToNA != null)
+            if (DefaultAnswersToNA != null)
             {
-                hash = hash * 59 + this.DefaultAnswersToNA.GetHashCode();
+                hash = hash * 59 + DefaultAnswersToNA.GetHashCode();
             }
 
-            if (this.NaEnabled != null)
+            if (NaEnabled != null)
             {
-                hash = hash * 59 + this.NaEnabled.GetHashCode();
+                hash = hash * 59 + NaEnabled.GetHashCode();
             }
 
-            if (this.Weight != null)
+            if (Weight != null)
             {
-                hash = hash * 59 + this.Weight.GetHashCode();
+                hash = hash * 59 + Weight.GetHashCode();
             }
 
-            if (this.ManualWeight != null)
+            if (ManualWeight != null)
             {
-                hash = hash * 59 + this.ManualWeight.GetHashCode();
+                hash = hash * 59 + ManualWeight.GetHashCode();
             }
 
-            if (this.Questions != null)
+            if (Questions != null)
             {
-                hash = hash * 59 + this.Questions.GetHashCode();
+                hash = hash * 59 + Questions.GetHashCode();
             }
 
-            if (this.VisibilityCondition != null)
+            if (VisibilityCondition != null)
             {
-                hash = hash * 59 + this.VisibilityCondition.GetHashCode();
+                hash = hash * 59 + VisibilityCondition.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

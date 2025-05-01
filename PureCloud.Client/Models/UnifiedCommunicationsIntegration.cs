@@ -215,7 +215,7 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UnifiedCommunicationsIntegration);
+        return Equals(obj as UnifiedCommunicationsIntegration);
     }
 
     /// <summary>
@@ -233,74 +233,74 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.UcIntegrationKey == other.UcIntegrationKey ||
-                this.UcIntegrationKey != null &&
-                this.UcIntegrationKey.Equals(other.UcIntegrationKey)
+                UcIntegrationKey == other.UcIntegrationKey ||
+                UcIntegrationKey != null &&
+                UcIntegrationKey.Equals(other.UcIntegrationKey)
             ) &&
             (
-                this.IntegrationPresenceSource == other.IntegrationPresenceSource ||
-                this.IntegrationPresenceSource != null &&
-                this.IntegrationPresenceSource.Equals(other.IntegrationPresenceSource)
+                IntegrationPresenceSource == other.IntegrationPresenceSource ||
+                IntegrationPresenceSource != null &&
+                IntegrationPresenceSource.Equals(other.IntegrationPresenceSource)
             ) &&
             (
-                this.PbxPermission == other.PbxPermission ||
-                this.PbxPermission != null &&
-                this.PbxPermission.Equals(other.PbxPermission)
+                PbxPermission == other.PbxPermission ||
+                PbxPermission != null &&
+                PbxPermission.Equals(other.PbxPermission)
             ) &&
             (
-                this.Icon == other.Icon ||
-                this.Icon != null &&
-                this.Icon.Equals(other.Icon)
+                Icon == other.Icon ||
+                Icon != null &&
+                Icon.Equals(other.Icon)
             ) &&
             (
-                this.BadgeIcons == other.BadgeIcons ||
-                this.BadgeIcons != null &&
-                this.BadgeIcons.SequenceEqual(other.BadgeIcons)
+                BadgeIcons == other.BadgeIcons ||
+                BadgeIcons != null &&
+                BadgeIcons.SequenceEqual(other.BadgeIcons)
             ) &&
             (
-                this.I10n == other.I10n ||
-                this.I10n != null &&
-                this.I10n.SequenceEqual(other.I10n)
+                I10n == other.I10n ||
+                I10n != null &&
+                I10n.SequenceEqual(other.I10n)
             ) &&
             (
-                this.PolledPresence == other.PolledPresence ||
-                this.PolledPresence != null &&
-                this.PolledPresence.Equals(other.PolledPresence)
+                PolledPresence == other.PolledPresence ||
+                PolledPresence != null &&
+                PolledPresence.Equals(other.PolledPresence)
             ) &&
             (
-                this.PollIntervalSec == other.PollIntervalSec ||
-                this.PollIntervalSec != null &&
-                this.PollIntervalSec.Equals(other.PollIntervalSec)
+                PollIntervalSec == other.PollIntervalSec ||
+                PollIntervalSec != null &&
+                PollIntervalSec.Equals(other.PollIntervalSec)
             ) &&
             (
-                this.IncludeBadge == other.IncludeBadge ||
-                this.IncludeBadge != null &&
-                this.IncludeBadge.Equals(other.IncludeBadge)
+                IncludeBadge == other.IncludeBadge ||
+                IncludeBadge != null &&
+                IncludeBadge.Equals(other.IncludeBadge)
             ) &&
             (
-                this.UserPermissions == other.UserPermissions ||
-                this.UserPermissions != null &&
-                this.UserPermissions.SequenceEqual(other.UserPermissions)
+                UserPermissions == other.UserPermissions ||
+                UserPermissions != null &&
+                UserPermissions.SequenceEqual(other.UserPermissions)
             ) &&
             (
-                this.OauthScopes == other.OauthScopes ||
-                this.OauthScopes != null &&
-                this.OauthScopes.SequenceEqual(other.OauthScopes)
+                OauthScopes == other.OauthScopes ||
+                OauthScopes != null &&
+                OauthScopes.SequenceEqual(other.OauthScopes)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -315,74 +315,74 @@ public partial class UnifiedCommunicationsIntegration : IEquatable<UnifiedCommun
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.UcIntegrationKey != null)
+            if (UcIntegrationKey != null)
             {
-                hash = hash * 59 + this.UcIntegrationKey.GetHashCode();
+                hash = hash * 59 + UcIntegrationKey.GetHashCode();
             }
 
-            if (this.IntegrationPresenceSource != null)
+            if (IntegrationPresenceSource != null)
             {
-                hash = hash * 59 + this.IntegrationPresenceSource.GetHashCode();
+                hash = hash * 59 + IntegrationPresenceSource.GetHashCode();
             }
 
-            if (this.PbxPermission != null)
+            if (PbxPermission != null)
             {
-                hash = hash * 59 + this.PbxPermission.GetHashCode();
+                hash = hash * 59 + PbxPermission.GetHashCode();
             }
 
-            if (this.Icon != null)
+            if (Icon != null)
             {
-                hash = hash * 59 + this.Icon.GetHashCode();
+                hash = hash * 59 + Icon.GetHashCode();
             }
 
-            if (this.BadgeIcons != null)
+            if (BadgeIcons != null)
             {
-                hash = hash * 59 + this.BadgeIcons.GetHashCode();
+                hash = hash * 59 + BadgeIcons.GetHashCode();
             }
 
-            if (this.I10n != null)
+            if (I10n != null)
             {
-                hash = hash * 59 + this.I10n.GetHashCode();
+                hash = hash * 59 + I10n.GetHashCode();
             }
 
-            if (this.PolledPresence != null)
+            if (PolledPresence != null)
             {
-                hash = hash * 59 + this.PolledPresence.GetHashCode();
+                hash = hash * 59 + PolledPresence.GetHashCode();
             }
 
-            if (this.PollIntervalSec != null)
+            if (PollIntervalSec != null)
             {
-                hash = hash * 59 + this.PollIntervalSec.GetHashCode();
+                hash = hash * 59 + PollIntervalSec.GetHashCode();
             }
 
-            if (this.IncludeBadge != null)
+            if (IncludeBadge != null)
             {
-                hash = hash * 59 + this.IncludeBadge.GetHashCode();
+                hash = hash * 59 + IncludeBadge.GetHashCode();
             }
 
-            if (this.UserPermissions != null)
+            if (UserPermissions != null)
             {
-                hash = hash * 59 + this.UserPermissions.GetHashCode();
+                hash = hash * 59 + UserPermissions.GetHashCode();
             }
 
-            if (this.OauthScopes != null)
+            if (OauthScopes != null)
             {
-                hash = hash * 59 + this.OauthScopes.GetHashCode();
+                hash = hash * 59 + OauthScopes.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

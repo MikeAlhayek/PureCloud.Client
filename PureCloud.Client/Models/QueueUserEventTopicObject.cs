@@ -41,7 +41,7 @@ public partial class QueueUserEventTopicObject : IEquatable<QueueUserEventTopicO
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueUserEventTopicObject);
+        return Equals(obj as QueueUserEventTopicObject);
     }
 
     /// <summary>

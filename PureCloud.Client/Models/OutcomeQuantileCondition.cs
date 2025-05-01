@@ -83,7 +83,7 @@ public partial class OutcomeQuantileCondition : IEquatable<OutcomeQuantileCondit
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomeQuantileCondition);
+        return Equals(obj as OutcomeQuantileCondition);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class OutcomeQuantileCondition : IEquatable<OutcomeQuantileCondit
 
         return true &&
             (
-                this.OutcomeId == other.OutcomeId ||
-                this.OutcomeId != null &&
-                this.OutcomeId.Equals(other.OutcomeId)
+                OutcomeId == other.OutcomeId ||
+                OutcomeId != null &&
+                OutcomeId.Equals(other.OutcomeId)
             ) &&
             (
-                this.MaxQuantileThreshold == other.MaxQuantileThreshold ||
-                this.MaxQuantileThreshold != null &&
-                this.MaxQuantileThreshold.Equals(other.MaxQuantileThreshold)
+                MaxQuantileThreshold == other.MaxQuantileThreshold ||
+                MaxQuantileThreshold != null &&
+                MaxQuantileThreshold.Equals(other.MaxQuantileThreshold)
             ) &&
             (
-                this.FallbackQuantileThreshold == other.FallbackQuantileThreshold ||
-                this.FallbackQuantileThreshold != null &&
-                this.FallbackQuantileThreshold.Equals(other.FallbackQuantileThreshold)
+                FallbackQuantileThreshold == other.FallbackQuantileThreshold ||
+                FallbackQuantileThreshold != null &&
+                FallbackQuantileThreshold.Equals(other.FallbackQuantileThreshold)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class OutcomeQuantileCondition : IEquatable<OutcomeQuantileCondit
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutcomeId != null)
+            if (OutcomeId != null)
             {
-                hash = hash * 59 + this.OutcomeId.GetHashCode();
+                hash = hash * 59 + OutcomeId.GetHashCode();
             }
 
-            if (this.MaxQuantileThreshold != null)
+            if (MaxQuantileThreshold != null)
             {
-                hash = hash * 59 + this.MaxQuantileThreshold.GetHashCode();
+                hash = hash * 59 + MaxQuantileThreshold.GetHashCode();
             }
 
-            if (this.FallbackQuantileThreshold != null)
+            if (FallbackQuantileThreshold != null)
             {
-                hash = hash * 59 + this.FallbackQuantileThreshold.GetHashCode();
+                hash = hash * 59 + FallbackQuantileThreshold.GetHashCode();
             }
 
             return hash;

@@ -168,7 +168,7 @@ public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryEx
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuditQueryExecutionStatusResponse);
+        return Equals(obj as AuditQueryExecutionStatusResponse);
     }
 
     /// <summary>
@@ -186,39 +186,39 @@ public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryEx
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.ServiceName == other.ServiceName ||
-                this.ServiceName != null &&
-                this.ServiceName.Equals(other.ServiceName)
+                ServiceName == other.ServiceName ||
+                ServiceName != null &&
+                ServiceName.Equals(other.ServiceName)
             ) &&
             (
-                this.Filters == other.Filters ||
-                this.Filters != null &&
-                this.Filters.SequenceEqual(other.Filters)
+                Filters == other.Filters ||
+                Filters != null &&
+                Filters.SequenceEqual(other.Filters)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.SequenceEqual(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.SequenceEqual(other.Sort)
             );
     }
 
@@ -233,39 +233,39 @@ public partial class AuditQueryExecutionStatusResponse : IEquatable<AuditQueryEx
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.ServiceName != null)
+            if (ServiceName != null)
             {
-                hash = hash * 59 + this.ServiceName.GetHashCode();
+                hash = hash * 59 + ServiceName.GetHashCode();
             }
 
-            if (this.Filters != null)
+            if (Filters != null)
             {
-                hash = hash * 59 + this.Filters.GetHashCode();
+                hash = hash * 59 + Filters.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
             return hash;

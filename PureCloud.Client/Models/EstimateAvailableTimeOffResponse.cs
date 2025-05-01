@@ -107,7 +107,7 @@ public partial class EstimateAvailableTimeOffResponse : IEquatable<EstimateAvail
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EstimateAvailableTimeOffResponse);
+        return Equals(obj as EstimateAvailableTimeOffResponse);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class EstimateAvailableTimeOffResponse : IEquatable<EstimateAvail
 
         return true &&
             (
-                this.FullDayDates == other.FullDayDates ||
-                this.FullDayDates != null &&
-                this.FullDayDates.SequenceEqual(other.FullDayDates)
+                FullDayDates == other.FullDayDates ||
+                FullDayDates != null &&
+                FullDayDates.SequenceEqual(other.FullDayDates)
             ) &&
             (
-                this.PartialDayDates == other.PartialDayDates ||
-                this.PartialDayDates != null &&
-                this.PartialDayDates.SequenceEqual(other.PartialDayDates)
+                PartialDayDates == other.PartialDayDates ||
+                PartialDayDates != null &&
+                PartialDayDates.SequenceEqual(other.PartialDayDates)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.Paid == other.Paid ||
-                this.Paid != null &&
-                this.Paid.Equals(other.Paid)
+                Paid == other.Paid ||
+                Paid != null &&
+                Paid.Equals(other.Paid)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class EstimateAvailableTimeOffResponse : IEquatable<EstimateAvail
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FullDayDates != null)
+            if (FullDayDates != null)
             {
-                hash = hash * 59 + this.FullDayDates.GetHashCode();
+                hash = hash * 59 + FullDayDates.GetHashCode();
             }
 
-            if (this.PartialDayDates != null)
+            if (PartialDayDates != null)
             {
-                hash = hash * 59 + this.PartialDayDates.GetHashCode();
+                hash = hash * 59 + PartialDayDates.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.Paid != null)
+            if (Paid != null)
             {
-                hash = hash * 59 + this.Paid.GetHashCode();
+                hash = hash * 59 + Paid.GetHashCode();
             }
 
             return hash;

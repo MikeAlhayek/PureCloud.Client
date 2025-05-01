@@ -71,7 +71,7 @@ public partial class NluConfig : IEquatable<NluConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluConfig);
+        return Equals(obj as NluConfig);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class NluConfig : IEquatable<NluConfig>
 
         return true &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.IntentConfidenceThreshold == other.IntentConfidenceThreshold ||
-                this.IntentConfidenceThreshold != null &&
-                this.IntentConfidenceThreshold.Equals(other.IntentConfidenceThreshold)
+                IntentConfidenceThreshold == other.IntentConfidenceThreshold ||
+                IntentConfidenceThreshold != null &&
+                IntentConfidenceThreshold.Equals(other.IntentConfidenceThreshold)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class NluConfig : IEquatable<NluConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.IntentConfidenceThreshold != null)
+            if (IntentConfidenceThreshold != null)
             {
-                hash = hash * 59 + this.IntentConfidenceThreshold.GetHashCode();
+                hash = hash * 59 + IntentConfidenceThreshold.GetHashCode();
             }
 
             return hash;

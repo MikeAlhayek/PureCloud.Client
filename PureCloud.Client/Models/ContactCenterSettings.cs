@@ -53,7 +53,7 @@ public partial class ContactCenterSettings : IEquatable<ContactCenterSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactCenterSettings);
+        return Equals(obj as ContactCenterSettings);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ContactCenterSettings : IEquatable<ContactCenterSettings>
 
         return true &&
             (
-                this.RemoveSkillsFromBlindTransfer == other.RemoveSkillsFromBlindTransfer ||
-                this.RemoveSkillsFromBlindTransfer != null &&
-                this.RemoveSkillsFromBlindTransfer.Equals(other.RemoveSkillsFromBlindTransfer)
+                RemoveSkillsFromBlindTransfer == other.RemoveSkillsFromBlindTransfer ||
+                RemoveSkillsFromBlindTransfer != null &&
+                RemoveSkillsFromBlindTransfer.Equals(other.RemoveSkillsFromBlindTransfer)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ContactCenterSettings : IEquatable<ContactCenterSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RemoveSkillsFromBlindTransfer != null)
+            if (RemoveSkillsFromBlindTransfer != null)
             {
-                hash = hash * 59 + this.RemoveSkillsFromBlindTransfer.GetHashCode();
+                hash = hash * 59 + RemoveSkillsFromBlindTransfer.GetHashCode();
             }
 
             return hash;

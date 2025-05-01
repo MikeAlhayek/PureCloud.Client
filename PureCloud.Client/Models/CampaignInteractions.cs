@@ -107,7 +107,7 @@ public partial class CampaignInteractions : IEquatable<CampaignInteractions>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignInteractions);
+        return Equals(obj as CampaignInteractions);
     }
 
     /// <summary>
@@ -125,34 +125,34 @@ public partial class CampaignInteractions : IEquatable<CampaignInteractions>
 
         return true &&
             (
-                this.Campaign == other.Campaign ||
-                this.Campaign != null &&
-                this.Campaign.Equals(other.Campaign)
+                Campaign == other.Campaign ||
+                Campaign != null &&
+                Campaign.Equals(other.Campaign)
             ) &&
             (
-                this.PendingInteractions == other.PendingInteractions ||
-                this.PendingInteractions != null &&
-                this.PendingInteractions.SequenceEqual(other.PendingInteractions)
+                PendingInteractions == other.PendingInteractions ||
+                PendingInteractions != null &&
+                PendingInteractions.SequenceEqual(other.PendingInteractions)
             ) &&
             (
-                this.ProceedingInteractions == other.ProceedingInteractions ||
-                this.ProceedingInteractions != null &&
-                this.ProceedingInteractions.SequenceEqual(other.ProceedingInteractions)
+                ProceedingInteractions == other.ProceedingInteractions ||
+                ProceedingInteractions != null &&
+                ProceedingInteractions.SequenceEqual(other.ProceedingInteractions)
             ) &&
             (
-                this.PreviewingInteractions == other.PreviewingInteractions ||
-                this.PreviewingInteractions != null &&
-                this.PreviewingInteractions.SequenceEqual(other.PreviewingInteractions)
+                PreviewingInteractions == other.PreviewingInteractions ||
+                PreviewingInteractions != null &&
+                PreviewingInteractions.SequenceEqual(other.PreviewingInteractions)
             ) &&
             (
-                this.InteractingInteractions == other.InteractingInteractions ||
-                this.InteractingInteractions != null &&
-                this.InteractingInteractions.SequenceEqual(other.InteractingInteractions)
+                InteractingInteractions == other.InteractingInteractions ||
+                InteractingInteractions != null &&
+                InteractingInteractions.SequenceEqual(other.InteractingInteractions)
             ) &&
             (
-                this.ScheduledInteractions == other.ScheduledInteractions ||
-                this.ScheduledInteractions != null &&
-                this.ScheduledInteractions.SequenceEqual(other.ScheduledInteractions)
+                ScheduledInteractions == other.ScheduledInteractions ||
+                ScheduledInteractions != null &&
+                ScheduledInteractions.SequenceEqual(other.ScheduledInteractions)
             );
     }
 
@@ -167,34 +167,34 @@ public partial class CampaignInteractions : IEquatable<CampaignInteractions>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Campaign != null)
+            if (Campaign != null)
             {
-                hash = hash * 59 + this.Campaign.GetHashCode();
+                hash = hash * 59 + Campaign.GetHashCode();
             }
 
-            if (this.PendingInteractions != null)
+            if (PendingInteractions != null)
             {
-                hash = hash * 59 + this.PendingInteractions.GetHashCode();
+                hash = hash * 59 + PendingInteractions.GetHashCode();
             }
 
-            if (this.ProceedingInteractions != null)
+            if (ProceedingInteractions != null)
             {
-                hash = hash * 59 + this.ProceedingInteractions.GetHashCode();
+                hash = hash * 59 + ProceedingInteractions.GetHashCode();
             }
 
-            if (this.PreviewingInteractions != null)
+            if (PreviewingInteractions != null)
             {
-                hash = hash * 59 + this.PreviewingInteractions.GetHashCode();
+                hash = hash * 59 + PreviewingInteractions.GetHashCode();
             }
 
-            if (this.InteractingInteractions != null)
+            if (InteractingInteractions != null)
             {
-                hash = hash * 59 + this.InteractingInteractions.GetHashCode();
+                hash = hash * 59 + InteractingInteractions.GetHashCode();
             }
 
-            if (this.ScheduledInteractions != null)
+            if (ScheduledInteractions != null)
             {
-                hash = hash * 59 + this.ScheduledInteractions.GetHashCode();
+                hash = hash * 59 + ScheduledInteractions.GetHashCode();
             }
 
             return hash;

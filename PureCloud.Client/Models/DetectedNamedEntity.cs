@@ -81,7 +81,7 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DetectedNamedEntity);
+        return Equals(obj as DetectedNamedEntity);
     }
 
     /// <summary>
@@ -99,24 +99,24 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.EntityType == other.EntityType ||
-                this.EntityType != null &&
-                this.EntityType.Equals(other.EntityType)
+                EntityType == other.EntityType ||
+                EntityType != null &&
+                EntityType.Equals(other.EntityType)
             ) &&
             (
-                this.Probability == other.Probability ||
-                this.Probability != null &&
-                this.Probability.Equals(other.Probability)
+                Probability == other.Probability ||
+                Probability != null &&
+                Probability.Equals(other.Probability)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -131,24 +131,24 @@ public partial class DetectedNamedEntity : IEquatable<DetectedNamedEntity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.EntityType != null)
+            if (EntityType != null)
             {
-                hash = hash * 59 + this.EntityType.GetHashCode();
+                hash = hash * 59 + EntityType.GetHashCode();
             }
 
-            if (this.Probability != null)
+            if (Probability != null)
             {
-                hash = hash * 59 + this.Probability.GetHashCode();
+                hash = hash * 59 + Probability.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

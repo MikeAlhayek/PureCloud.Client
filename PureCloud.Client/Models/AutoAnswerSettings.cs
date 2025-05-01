@@ -58,7 +58,7 @@ public partial class AutoAnswerSettings : IEquatable<AutoAnswerSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AutoAnswerSettings);
+        return Equals(obj as AutoAnswerSettings);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class AutoAnswerSettings : IEquatable<AutoAnswerSettings>
 
         return true &&
             (
-                this.Settings == other.Settings ||
-                this.Settings != null &&
-                this.Settings.SequenceEqual(other.Settings)
+                Settings == other.Settings ||
+                Settings != null &&
+                Settings.SequenceEqual(other.Settings)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class AutoAnswerSettings : IEquatable<AutoAnswerSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Settings != null)
+            if (Settings != null)
             {
-                hash = hash * 59 + this.Settings.GetHashCode();
+                hash = hash * 59 + Settings.GetHashCode();
             }
 
             return hash;

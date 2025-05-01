@@ -76,7 +76,7 @@ public partial class AutoStatusTransitionDetail : IEquatable<AutoStatusTransitio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AutoStatusTransitionDetail);
+        return Equals(obj as AutoStatusTransitionDetail);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class AutoStatusTransitionDetail : IEquatable<AutoStatusTransitio
 
         return true &&
             (
-                this.NextStatus == other.NextStatus ||
-                this.NextStatus != null &&
-                this.NextStatus.Equals(other.NextStatus)
+                NextStatus == other.NextStatus ||
+                NextStatus != null &&
+                NextStatus.Equals(other.NextStatus)
             ) &&
             (
-                this.DateOfTransition == other.DateOfTransition ||
-                this.DateOfTransition != null &&
-                this.DateOfTransition.Equals(other.DateOfTransition)
+                DateOfTransition == other.DateOfTransition ||
+                DateOfTransition != null &&
+                DateOfTransition.Equals(other.DateOfTransition)
             ) &&
             (
-                this.ErrorDetails == other.ErrorDetails ||
-                this.ErrorDetails != null &&
-                this.ErrorDetails.Equals(other.ErrorDetails)
+                ErrorDetails == other.ErrorDetails ||
+                ErrorDetails != null &&
+                ErrorDetails.Equals(other.ErrorDetails)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class AutoStatusTransitionDetail : IEquatable<AutoStatusTransitio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.NextStatus != null)
+            if (NextStatus != null)
             {
-                hash = hash * 59 + this.NextStatus.GetHashCode();
+                hash = hash * 59 + NextStatus.GetHashCode();
             }
 
-            if (this.DateOfTransition != null)
+            if (DateOfTransition != null)
             {
-                hash = hash * 59 + this.DateOfTransition.GetHashCode();
+                hash = hash * 59 + DateOfTransition.GetHashCode();
             }
 
-            if (this.ErrorDetails != null)
+            if (ErrorDetails != null)
             {
-                hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                hash = hash * 59 + ErrorDetails.GetHashCode();
             }
 
             return hash;

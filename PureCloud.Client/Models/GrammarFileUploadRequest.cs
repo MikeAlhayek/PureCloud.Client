@@ -77,7 +77,7 @@ public partial class GrammarFileUploadRequest : IEquatable<GrammarFileUploadRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GrammarFileUploadRequest);
+        return Equals(obj as GrammarFileUploadRequest);
     }
 
     /// <summary>
@@ -95,9 +95,9 @@ public partial class GrammarFileUploadRequest : IEquatable<GrammarFileUploadRequ
 
         return true &&
             (
-                this.FileType == other.FileType ||
-                this.FileType != null &&
-                this.FileType.Equals(other.FileType)
+                FileType == other.FileType ||
+                FileType != null &&
+                FileType.Equals(other.FileType)
             );
     }
 
@@ -112,9 +112,9 @@ public partial class GrammarFileUploadRequest : IEquatable<GrammarFileUploadRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FileType != null)
+            if (FileType != null)
             {
-                hash = hash * 59 + this.FileType.GetHashCode();
+                hash = hash * 59 + FileType.GetHashCode();
             }
 
             return hash;

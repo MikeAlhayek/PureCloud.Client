@@ -121,7 +121,7 @@ public partial class ConversationEventVideo : IEquatable<ConversationEventVideo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationEventVideo);
+        return Equals(obj as ConversationEventVideo);
     }
 
     /// <summary>
@@ -139,19 +139,19 @@ public partial class ConversationEventVideo : IEquatable<ConversationEventVideo>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.OfferingId == other.OfferingId ||
-                this.OfferingId != null &&
-                this.OfferingId.Equals(other.OfferingId)
+                OfferingId == other.OfferingId ||
+                OfferingId != null &&
+                OfferingId.Equals(other.OfferingId)
             ) &&
             (
-                this.Jwt == other.Jwt ||
-                this.Jwt != null &&
-                this.Jwt.Equals(other.Jwt)
+                Jwt == other.Jwt ||
+                Jwt != null &&
+                Jwt.Equals(other.Jwt)
             );
     }
 
@@ -166,19 +166,19 @@ public partial class ConversationEventVideo : IEquatable<ConversationEventVideo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.OfferingId != null)
+            if (OfferingId != null)
             {
-                hash = hash * 59 + this.OfferingId.GetHashCode();
+                hash = hash * 59 + OfferingId.GetHashCode();
             }
 
-            if (this.Jwt != null)
+            if (Jwt != null)
             {
-                hash = hash * 59 + this.Jwt.GetHashCode();
+                hash = hash * 59 + Jwt.GetHashCode();
             }
 
             return hash;

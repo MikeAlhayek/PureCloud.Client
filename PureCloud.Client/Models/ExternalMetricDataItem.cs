@@ -157,7 +157,7 @@ public partial class ExternalMetricDataItem : IEquatable<ExternalMetricDataItem>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalMetricDataItem);
+        return Equals(obj as ExternalMetricDataItem);
     }
 
     /// <summary>
@@ -175,39 +175,39 @@ public partial class ExternalMetricDataItem : IEquatable<ExternalMetricDataItem>
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.UserEmail == other.UserEmail ||
-                this.UserEmail != null &&
-                this.UserEmail.Equals(other.UserEmail)
+                UserEmail == other.UserEmail ||
+                UserEmail != null &&
+                UserEmail.Equals(other.UserEmail)
             ) &&
             (
-                this.MetricId == other.MetricId ||
-                this.MetricId != null &&
-                this.MetricId.Equals(other.MetricId)
+                MetricId == other.MetricId ||
+                MetricId != null &&
+                MetricId.Equals(other.MetricId)
             ) &&
             (
-                this.DateOccurred == other.DateOccurred ||
-                this.DateOccurred != null &&
-                this.DateOccurred.Equals(other.DateOccurred)
+                DateOccurred == other.DateOccurred ||
+                DateOccurred != null &&
+                DateOccurred.Equals(other.DateOccurred)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -222,39 +222,39 @@ public partial class ExternalMetricDataItem : IEquatable<ExternalMetricDataItem>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.UserEmail != null)
+            if (UserEmail != null)
             {
-                hash = hash * 59 + this.UserEmail.GetHashCode();
+                hash = hash * 59 + UserEmail.GetHashCode();
             }
 
-            if (this.MetricId != null)
+            if (MetricId != null)
             {
-                hash = hash * 59 + this.MetricId.GetHashCode();
+                hash = hash * 59 + MetricId.GetHashCode();
             }
 
-            if (this.DateOccurred != null)
+            if (DateOccurred != null)
             {
-                hash = hash * 59 + this.DateOccurred.GetHashCode();
+                hash = hash * 59 + DateOccurred.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

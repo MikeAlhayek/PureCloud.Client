@@ -59,7 +59,7 @@ public partial class ScreenRecordingUserAuthenticatedInfo : IEquatable<ScreenRec
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScreenRecordingUserAuthenticatedInfo);
+        return Equals(obj as ScreenRecordingUserAuthenticatedInfo);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ScreenRecordingUserAuthenticatedInfo : IEquatable<ScreenRec
 
         return true &&
             (
-                this.BackgroundAssistantId == other.BackgroundAssistantId ||
-                this.BackgroundAssistantId != null &&
-                this.BackgroundAssistantId.Equals(other.BackgroundAssistantId)
+                BackgroundAssistantId == other.BackgroundAssistantId ||
+                BackgroundAssistantId != null &&
+                BackgroundAssistantId.Equals(other.BackgroundAssistantId)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ScreenRecordingUserAuthenticatedInfo : IEquatable<ScreenRec
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BackgroundAssistantId != null)
+            if (BackgroundAssistantId != null)
             {
-                hash = hash * 59 + this.BackgroundAssistantId.GetHashCode();
+                hash = hash * 59 + BackgroundAssistantId.GetHashCode();
             }
 
             return hash;

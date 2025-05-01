@@ -118,7 +118,7 @@ public partial class QueueConversationCobrowseEventTopicCobrowseConversation : I
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationCobrowseEventTopicCobrowseConversation);
+        return Equals(obj as QueueConversationCobrowseEventTopicCobrowseConversation);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class QueueConversationCobrowseEventTopicCobrowseConversation : I
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.SequenceEqual(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.SequenceEqual(other.Participants)
             ) &&
             (
-                this.OtherMediaUris == other.OtherMediaUris ||
-                this.OtherMediaUris != null &&
-                this.OtherMediaUris.SequenceEqual(other.OtherMediaUris)
+                OtherMediaUris == other.OtherMediaUris ||
+                OtherMediaUris != null &&
+                OtherMediaUris.SequenceEqual(other.OtherMediaUris)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.UtilizationLabelId == other.UtilizationLabelId ||
-                this.UtilizationLabelId != null &&
-                this.UtilizationLabelId.Equals(other.UtilizationLabelId)
+                UtilizationLabelId == other.UtilizationLabelId ||
+                UtilizationLabelId != null &&
+                UtilizationLabelId.Equals(other.UtilizationLabelId)
             ) &&
             (
-                this.Divisions == other.Divisions ||
-                this.Divisions != null &&
-                this.Divisions.SequenceEqual(other.Divisions)
+                Divisions == other.Divisions ||
+                Divisions != null &&
+                Divisions.SequenceEqual(other.Divisions)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class QueueConversationCobrowseEventTopicCobrowseConversation : I
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
-            if (this.OtherMediaUris != null)
+            if (OtherMediaUris != null)
             {
-                hash = hash * 59 + this.OtherMediaUris.GetHashCode();
+                hash = hash * 59 + OtherMediaUris.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.UtilizationLabelId != null)
+            if (UtilizationLabelId != null)
             {
-                hash = hash * 59 + this.UtilizationLabelId.GetHashCode();
+                hash = hash * 59 + UtilizationLabelId.GetHashCode();
             }
 
-            if (this.Divisions != null)
+            if (Divisions != null)
             {
-                hash = hash * 59 + this.Divisions.GetHashCode();
+                hash = hash * 59 + Divisions.GetHashCode();
             }
 
             return hash;

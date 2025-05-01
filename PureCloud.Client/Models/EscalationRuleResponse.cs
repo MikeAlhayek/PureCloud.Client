@@ -239,7 +239,7 @@ public partial class EscalationRuleResponse : IEquatable<EscalationRuleResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EscalationRuleResponse);
+        return Equals(obj as EscalationRuleResponse);
     }
 
     /// <summary>
@@ -257,74 +257,74 @@ public partial class EscalationRuleResponse : IEquatable<EscalationRuleResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.MatchCriteria == other.MatchCriteria ||
-                this.MatchCriteria != null &&
-                this.MatchCriteria.Equals(other.MatchCriteria)
+                MatchCriteria == other.MatchCriteria ||
+                MatchCriteria != null &&
+                MatchCriteria.Equals(other.MatchCriteria)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.DivisionId == other.DivisionId ||
-                this.DivisionId != null &&
-                this.DivisionId.Equals(other.DivisionId)
+                DivisionId == other.DivisionId ||
+                DivisionId != null &&
+                DivisionId.Equals(other.DivisionId)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.OpenEscalation == other.OpenEscalation ||
-                this.OpenEscalation != null &&
-                this.OpenEscalation.Equals(other.OpenEscalation)
+                OpenEscalation == other.OpenEscalation ||
+                OpenEscalation != null &&
+                OpenEscalation.Equals(other.OpenEscalation)
             ) &&
             (
-                this.FacebookEscalation == other.FacebookEscalation ||
-                this.FacebookEscalation != null &&
-                this.FacebookEscalation.Equals(other.FacebookEscalation)
+                FacebookEscalation == other.FacebookEscalation ||
+                FacebookEscalation != null &&
+                FacebookEscalation.Equals(other.FacebookEscalation)
             ) &&
             (
-                this.InstagramEscalation == other.InstagramEscalation ||
-                this.InstagramEscalation != null &&
-                this.InstagramEscalation.Equals(other.InstagramEscalation)
+                InstagramEscalation == other.InstagramEscalation ||
+                InstagramEscalation != null &&
+                InstagramEscalation.Equals(other.InstagramEscalation)
             ) &&
             (
-                this.TwitterEscalation == other.TwitterEscalation ||
-                this.TwitterEscalation != null &&
-                this.TwitterEscalation.Equals(other.TwitterEscalation)
+                TwitterEscalation == other.TwitterEscalation ||
+                TwitterEscalation != null &&
+                TwitterEscalation.Equals(other.TwitterEscalation)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -339,74 +339,74 @@ public partial class EscalationRuleResponse : IEquatable<EscalationRuleResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.MatchCriteria != null)
+            if (MatchCriteria != null)
             {
-                hash = hash * 59 + this.MatchCriteria.GetHashCode();
+                hash = hash * 59 + MatchCriteria.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.DivisionId != null)
+            if (DivisionId != null)
             {
-                hash = hash * 59 + this.DivisionId.GetHashCode();
+                hash = hash * 59 + DivisionId.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.OpenEscalation != null)
+            if (OpenEscalation != null)
             {
-                hash = hash * 59 + this.OpenEscalation.GetHashCode();
+                hash = hash * 59 + OpenEscalation.GetHashCode();
             }
 
-            if (this.FacebookEscalation != null)
+            if (FacebookEscalation != null)
             {
-                hash = hash * 59 + this.FacebookEscalation.GetHashCode();
+                hash = hash * 59 + FacebookEscalation.GetHashCode();
             }
 
-            if (this.InstagramEscalation != null)
+            if (InstagramEscalation != null)
             {
-                hash = hash * 59 + this.InstagramEscalation.GetHashCode();
+                hash = hash * 59 + InstagramEscalation.GetHashCode();
             }
 
-            if (this.TwitterEscalation != null)
+            if (TwitterEscalation != null)
             {
-                hash = hash * 59 + this.TwitterEscalation.GetHashCode();
+                hash = hash * 59 + TwitterEscalation.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

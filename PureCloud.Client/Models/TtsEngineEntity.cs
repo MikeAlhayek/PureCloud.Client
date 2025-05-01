@@ -138,7 +138,7 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TtsEngineEntity);
+        return Equals(obj as TtsEngineEntity);
     }
 
     /// <summary>
@@ -156,44 +156,44 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Languages == other.Languages ||
-                this.Languages != null &&
-                this.Languages.SequenceEqual(other.Languages)
+                Languages == other.Languages ||
+                Languages != null &&
+                Languages.SequenceEqual(other.Languages)
             ) &&
             (
-                this.OutputFormats == other.OutputFormats ||
-                this.OutputFormats != null &&
-                this.OutputFormats.SequenceEqual(other.OutputFormats)
+                OutputFormats == other.OutputFormats ||
+                OutputFormats != null &&
+                OutputFormats.SequenceEqual(other.OutputFormats)
             ) &&
             (
-                this.Voices == other.Voices ||
-                this.Voices != null &&
-                this.Voices.SequenceEqual(other.Voices)
+                Voices == other.Voices ||
+                Voices != null &&
+                Voices.SequenceEqual(other.Voices)
             ) &&
             (
-                this.IsDefault == other.IsDefault ||
-                this.IsDefault != null &&
-                this.IsDefault.Equals(other.IsDefault)
+                IsDefault == other.IsDefault ||
+                IsDefault != null &&
+                IsDefault.Equals(other.IsDefault)
             ) &&
             (
-                this.IsSecure == other.IsSecure ||
-                this.IsSecure != null &&
-                this.IsSecure.Equals(other.IsSecure)
+                IsSecure == other.IsSecure ||
+                IsSecure != null &&
+                IsSecure.Equals(other.IsSecure)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -208,44 +208,44 @@ public partial class TtsEngineEntity : IEquatable<TtsEngineEntity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Languages != null)
+            if (Languages != null)
             {
-                hash = hash * 59 + this.Languages.GetHashCode();
+                hash = hash * 59 + Languages.GetHashCode();
             }
 
-            if (this.OutputFormats != null)
+            if (OutputFormats != null)
             {
-                hash = hash * 59 + this.OutputFormats.GetHashCode();
+                hash = hash * 59 + OutputFormats.GetHashCode();
             }
 
-            if (this.Voices != null)
+            if (Voices != null)
             {
-                hash = hash * 59 + this.Voices.GetHashCode();
+                hash = hash * 59 + Voices.GetHashCode();
             }
 
-            if (this.IsDefault != null)
+            if (IsDefault != null)
             {
-                hash = hash * 59 + this.IsDefault.GetHashCode();
+                hash = hash * 59 + IsDefault.GetHashCode();
             }
 
-            if (this.IsSecure != null)
+            if (IsSecure != null)
             {
-                hash = hash * 59 + this.IsSecure.GetHashCode();
+                hash = hash * 59 + IsSecure.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

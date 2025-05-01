@@ -52,7 +52,7 @@ public partial class UserStationChangeTopicUserStations : IEquatable<UserStation
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserStationChangeTopicUserStations);
+        return Equals(obj as UserStationChangeTopicUserStations);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class UserStationChangeTopicUserStations : IEquatable<UserStation
 
         return true &&
             (
-                this.AssociatedStation == other.AssociatedStation ||
-                this.AssociatedStation != null &&
-                this.AssociatedStation.Equals(other.AssociatedStation)
+                AssociatedStation == other.AssociatedStation ||
+                AssociatedStation != null &&
+                AssociatedStation.Equals(other.AssociatedStation)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class UserStationChangeTopicUserStations : IEquatable<UserStation
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AssociatedStation != null)
+            if (AssociatedStation != null)
             {
-                hash = hash * 59 + this.AssociatedStation.GetHashCode();
+                hash = hash * 59 + AssociatedStation.GetHashCode();
             }
 
             return hash;

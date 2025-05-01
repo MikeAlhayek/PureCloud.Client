@@ -648,7 +648,7 @@ public partial class HomerRecord : IEquatable<HomerRecord>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HomerRecord);
+        return Equals(obj as HomerRecord);
     }
 
     /// <summary>
@@ -666,259 +666,259 @@ public partial class HomerRecord : IEquatable<HomerRecord>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Date == other.Date ||
-                this.Date != null &&
-                this.Date.Equals(other.Date)
+                Date == other.Date ||
+                Date != null &&
+                Date.Equals(other.Date)
             ) &&
             (
-                this.MilliTs == other.MilliTs ||
-                this.MilliTs != null &&
-                this.MilliTs.Equals(other.MilliTs)
+                MilliTs == other.MilliTs ||
+                MilliTs != null &&
+                MilliTs.Equals(other.MilliTs)
             ) &&
             (
-                this.MicroTs == other.MicroTs ||
-                this.MicroTs != null &&
-                this.MicroTs.Equals(other.MicroTs)
+                MicroTs == other.MicroTs ||
+                MicroTs != null &&
+                MicroTs.Equals(other.MicroTs)
             ) &&
             (
-                this.Method == other.Method ||
-                this.Method != null &&
-                this.Method.Equals(other.Method)
+                Method == other.Method ||
+                Method != null &&
+                Method.Equals(other.Method)
             ) &&
             (
-                this.ReplyReason == other.ReplyReason ||
-                this.ReplyReason != null &&
-                this.ReplyReason.Equals(other.ReplyReason)
+                ReplyReason == other.ReplyReason ||
+                ReplyReason != null &&
+                ReplyReason.Equals(other.ReplyReason)
             ) &&
             (
-                this.Ruri == other.Ruri ||
-                this.Ruri != null &&
-                this.Ruri.Equals(other.Ruri)
+                Ruri == other.Ruri ||
+                Ruri != null &&
+                Ruri.Equals(other.Ruri)
             ) &&
             (
-                this.RuriUser == other.RuriUser ||
-                this.RuriUser != null &&
-                this.RuriUser.Equals(other.RuriUser)
+                RuriUser == other.RuriUser ||
+                RuriUser != null &&
+                RuriUser.Equals(other.RuriUser)
             ) &&
             (
-                this.RuriDomain == other.RuriDomain ||
-                this.RuriDomain != null &&
-                this.RuriDomain.Equals(other.RuriDomain)
+                RuriDomain == other.RuriDomain ||
+                RuriDomain != null &&
+                RuriDomain.Equals(other.RuriDomain)
             ) &&
             (
-                this.FromUser == other.FromUser ||
-                this.FromUser != null &&
-                this.FromUser.Equals(other.FromUser)
+                FromUser == other.FromUser ||
+                FromUser != null &&
+                FromUser.Equals(other.FromUser)
             ) &&
             (
-                this.FromDomain == other.FromDomain ||
-                this.FromDomain != null &&
-                this.FromDomain.Equals(other.FromDomain)
+                FromDomain == other.FromDomain ||
+                FromDomain != null &&
+                FromDomain.Equals(other.FromDomain)
             ) &&
             (
-                this.FromTag == other.FromTag ||
-                this.FromTag != null &&
-                this.FromTag.Equals(other.FromTag)
+                FromTag == other.FromTag ||
+                FromTag != null &&
+                FromTag.Equals(other.FromTag)
             ) &&
             (
-                this.ToUser == other.ToUser ||
-                this.ToUser != null &&
-                this.ToUser.Equals(other.ToUser)
+                ToUser == other.ToUser ||
+                ToUser != null &&
+                ToUser.Equals(other.ToUser)
             ) &&
             (
-                this.ToDomain == other.ToDomain ||
-                this.ToDomain != null &&
-                this.ToDomain.Equals(other.ToDomain)
+                ToDomain == other.ToDomain ||
+                ToDomain != null &&
+                ToDomain.Equals(other.ToDomain)
             ) &&
             (
-                this.ToTag == other.ToTag ||
-                this.ToTag != null &&
-                this.ToTag.Equals(other.ToTag)
+                ToTag == other.ToTag ||
+                ToTag != null &&
+                ToTag.Equals(other.ToTag)
             ) &&
             (
-                this.PidUser == other.PidUser ||
-                this.PidUser != null &&
-                this.PidUser.Equals(other.PidUser)
+                PidUser == other.PidUser ||
+                PidUser != null &&
+                PidUser.Equals(other.PidUser)
             ) &&
             (
-                this.ContactUser == other.ContactUser ||
-                this.ContactUser != null &&
-                this.ContactUser.Equals(other.ContactUser)
+                ContactUser == other.ContactUser ||
+                ContactUser != null &&
+                ContactUser.Equals(other.ContactUser)
             ) &&
             (
-                this.AuthUser == other.AuthUser ||
-                this.AuthUser != null &&
-                this.AuthUser.Equals(other.AuthUser)
+                AuthUser == other.AuthUser ||
+                AuthUser != null &&
+                AuthUser.Equals(other.AuthUser)
             ) &&
             (
-                this.Callid == other.Callid ||
-                this.Callid != null &&
-                this.Callid.Equals(other.Callid)
+                Callid == other.Callid ||
+                Callid != null &&
+                Callid.Equals(other.Callid)
             ) &&
             (
-                this.CallidAleg == other.CallidAleg ||
-                this.CallidAleg != null &&
-                this.CallidAleg.Equals(other.CallidAleg)
+                CallidAleg == other.CallidAleg ||
+                CallidAleg != null &&
+                CallidAleg.Equals(other.CallidAleg)
             ) &&
             (
-                this.Via1 == other.Via1 ||
-                this.Via1 != null &&
-                this.Via1.Equals(other.Via1)
+                Via1 == other.Via1 ||
+                Via1 != null &&
+                Via1.Equals(other.Via1)
             ) &&
             (
-                this.Via1Branch == other.Via1Branch ||
-                this.Via1Branch != null &&
-                this.Via1Branch.Equals(other.Via1Branch)
+                Via1Branch == other.Via1Branch ||
+                Via1Branch != null &&
+                Via1Branch.Equals(other.Via1Branch)
             ) &&
             (
-                this.Cseq == other.Cseq ||
-                this.Cseq != null &&
-                this.Cseq.Equals(other.Cseq)
+                Cseq == other.Cseq ||
+                Cseq != null &&
+                Cseq.Equals(other.Cseq)
             ) &&
             (
-                this.Diversion == other.Diversion ||
-                this.Diversion != null &&
-                this.Diversion.Equals(other.Diversion)
+                Diversion == other.Diversion ||
+                Diversion != null &&
+                Diversion.Equals(other.Diversion)
             ) &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             ) &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.Auth == other.Auth ||
-                this.Auth != null &&
-                this.Auth.Equals(other.Auth)
+                Auth == other.Auth ||
+                Auth != null &&
+                Auth.Equals(other.Auth)
             ) &&
             (
-                this.UserAgent == other.UserAgent ||
-                this.UserAgent != null &&
-                this.UserAgent.Equals(other.UserAgent)
+                UserAgent == other.UserAgent ||
+                UserAgent != null &&
+                UserAgent.Equals(other.UserAgent)
             ) &&
             (
-                this.SourceIp == other.SourceIp ||
-                this.SourceIp != null &&
-                this.SourceIp.Equals(other.SourceIp)
+                SourceIp == other.SourceIp ||
+                SourceIp != null &&
+                SourceIp.Equals(other.SourceIp)
             ) &&
             (
-                this.SourcePort == other.SourcePort ||
-                this.SourcePort != null &&
-                this.SourcePort.Equals(other.SourcePort)
+                SourcePort == other.SourcePort ||
+                SourcePort != null &&
+                SourcePort.Equals(other.SourcePort)
             ) &&
             (
-                this.DestinationIp == other.DestinationIp ||
-                this.DestinationIp != null &&
-                this.DestinationIp.Equals(other.DestinationIp)
+                DestinationIp == other.DestinationIp ||
+                DestinationIp != null &&
+                DestinationIp.Equals(other.DestinationIp)
             ) &&
             (
-                this.DestinationPort == other.DestinationPort ||
-                this.DestinationPort != null &&
-                this.DestinationPort.Equals(other.DestinationPort)
+                DestinationPort == other.DestinationPort ||
+                DestinationPort != null &&
+                DestinationPort.Equals(other.DestinationPort)
             ) &&
             (
-                this.ContactIp == other.ContactIp ||
-                this.ContactIp != null &&
-                this.ContactIp.Equals(other.ContactIp)
+                ContactIp == other.ContactIp ||
+                ContactIp != null &&
+                ContactIp.Equals(other.ContactIp)
             ) &&
             (
-                this.ContactPort == other.ContactPort ||
-                this.ContactPort != null &&
-                this.ContactPort.Equals(other.ContactPort)
+                ContactPort == other.ContactPort ||
+                ContactPort != null &&
+                ContactPort.Equals(other.ContactPort)
             ) &&
             (
-                this.OriginatorIp == other.OriginatorIp ||
-                this.OriginatorIp != null &&
-                this.OriginatorIp.Equals(other.OriginatorIp)
+                OriginatorIp == other.OriginatorIp ||
+                OriginatorIp != null &&
+                OriginatorIp.Equals(other.OriginatorIp)
             ) &&
             (
-                this.OriginatorPort == other.OriginatorPort ||
-                this.OriginatorPort != null &&
-                this.OriginatorPort.Equals(other.OriginatorPort)
+                OriginatorPort == other.OriginatorPort ||
+                OriginatorPort != null &&
+                OriginatorPort.Equals(other.OriginatorPort)
             ) &&
             (
-                this.CorrelationId == other.CorrelationId ||
-                this.CorrelationId != null &&
-                this.CorrelationId.Equals(other.CorrelationId)
+                CorrelationId == other.CorrelationId ||
+                CorrelationId != null &&
+                CorrelationId.Equals(other.CorrelationId)
             ) &&
             (
-                this.Proto == other.Proto ||
-                this.Proto != null &&
-                this.Proto.Equals(other.Proto)
+                Proto == other.Proto ||
+                Proto != null &&
+                Proto.Equals(other.Proto)
             ) &&
             (
-                this.Family == other.Family ||
-                this.Family != null &&
-                this.Family.Equals(other.Family)
+                Family == other.Family ||
+                Family != null &&
+                Family.Equals(other.Family)
             ) &&
             (
-                this.RtpStat == other.RtpStat ||
-                this.RtpStat != null &&
-                this.RtpStat.Equals(other.RtpStat)
+                RtpStat == other.RtpStat ||
+                RtpStat != null &&
+                RtpStat.Equals(other.RtpStat)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Node == other.Node ||
-                this.Node != null &&
-                this.Node.Equals(other.Node)
+                Node == other.Node ||
+                Node != null &&
+                Node.Equals(other.Node)
             ) &&
             (
-                this.Trans == other.Trans ||
-                this.Trans != null &&
-                this.Trans.Equals(other.Trans)
+                Trans == other.Trans ||
+                Trans != null &&
+                Trans.Equals(other.Trans)
             ) &&
             (
-                this.Dbnode == other.Dbnode ||
-                this.Dbnode != null &&
-                this.Dbnode.Equals(other.Dbnode)
+                Dbnode == other.Dbnode ||
+                Dbnode != null &&
+                Dbnode.Equals(other.Dbnode)
             ) &&
             (
-                this.Msg == other.Msg ||
-                this.Msg != null &&
-                this.Msg.Equals(other.Msg)
+                Msg == other.Msg ||
+                Msg != null &&
+                Msg.Equals(other.Msg)
             ) &&
             (
-                this.SourceAlias == other.SourceAlias ||
-                this.SourceAlias != null &&
-                this.SourceAlias.Equals(other.SourceAlias)
+                SourceAlias == other.SourceAlias ||
+                SourceAlias != null &&
+                SourceAlias.Equals(other.SourceAlias)
             ) &&
             (
-                this.DestinationAlias == other.DestinationAlias ||
-                this.DestinationAlias != null &&
-                this.DestinationAlias.Equals(other.DestinationAlias)
+                DestinationAlias == other.DestinationAlias ||
+                DestinationAlias != null &&
+                DestinationAlias.Equals(other.DestinationAlias)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.ParticipantId == other.ParticipantId ||
-                this.ParticipantId != null &&
-                this.ParticipantId.Equals(other.ParticipantId)
+                ParticipantId == other.ParticipantId ||
+                ParticipantId != null &&
+                ParticipantId.Equals(other.ParticipantId)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -933,259 +933,259 @@ public partial class HomerRecord : IEquatable<HomerRecord>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Date != null)
+            if (Date != null)
             {
-                hash = hash * 59 + this.Date.GetHashCode();
+                hash = hash * 59 + Date.GetHashCode();
             }
 
-            if (this.MilliTs != null)
+            if (MilliTs != null)
             {
-                hash = hash * 59 + this.MilliTs.GetHashCode();
+                hash = hash * 59 + MilliTs.GetHashCode();
             }
 
-            if (this.MicroTs != null)
+            if (MicroTs != null)
             {
-                hash = hash * 59 + this.MicroTs.GetHashCode();
+                hash = hash * 59 + MicroTs.GetHashCode();
             }
 
-            if (this.Method != null)
+            if (Method != null)
             {
-                hash = hash * 59 + this.Method.GetHashCode();
+                hash = hash * 59 + Method.GetHashCode();
             }
 
-            if (this.ReplyReason != null)
+            if (ReplyReason != null)
             {
-                hash = hash * 59 + this.ReplyReason.GetHashCode();
+                hash = hash * 59 + ReplyReason.GetHashCode();
             }
 
-            if (this.Ruri != null)
+            if (Ruri != null)
             {
-                hash = hash * 59 + this.Ruri.GetHashCode();
+                hash = hash * 59 + Ruri.GetHashCode();
             }
 
-            if (this.RuriUser != null)
+            if (RuriUser != null)
             {
-                hash = hash * 59 + this.RuriUser.GetHashCode();
+                hash = hash * 59 + RuriUser.GetHashCode();
             }
 
-            if (this.RuriDomain != null)
+            if (RuriDomain != null)
             {
-                hash = hash * 59 + this.RuriDomain.GetHashCode();
+                hash = hash * 59 + RuriDomain.GetHashCode();
             }
 
-            if (this.FromUser != null)
+            if (FromUser != null)
             {
-                hash = hash * 59 + this.FromUser.GetHashCode();
+                hash = hash * 59 + FromUser.GetHashCode();
             }
 
-            if (this.FromDomain != null)
+            if (FromDomain != null)
             {
-                hash = hash * 59 + this.FromDomain.GetHashCode();
+                hash = hash * 59 + FromDomain.GetHashCode();
             }
 
-            if (this.FromTag != null)
+            if (FromTag != null)
             {
-                hash = hash * 59 + this.FromTag.GetHashCode();
+                hash = hash * 59 + FromTag.GetHashCode();
             }
 
-            if (this.ToUser != null)
+            if (ToUser != null)
             {
-                hash = hash * 59 + this.ToUser.GetHashCode();
+                hash = hash * 59 + ToUser.GetHashCode();
             }
 
-            if (this.ToDomain != null)
+            if (ToDomain != null)
             {
-                hash = hash * 59 + this.ToDomain.GetHashCode();
+                hash = hash * 59 + ToDomain.GetHashCode();
             }
 
-            if (this.ToTag != null)
+            if (ToTag != null)
             {
-                hash = hash * 59 + this.ToTag.GetHashCode();
+                hash = hash * 59 + ToTag.GetHashCode();
             }
 
-            if (this.PidUser != null)
+            if (PidUser != null)
             {
-                hash = hash * 59 + this.PidUser.GetHashCode();
+                hash = hash * 59 + PidUser.GetHashCode();
             }
 
-            if (this.ContactUser != null)
+            if (ContactUser != null)
             {
-                hash = hash * 59 + this.ContactUser.GetHashCode();
+                hash = hash * 59 + ContactUser.GetHashCode();
             }
 
-            if (this.AuthUser != null)
+            if (AuthUser != null)
             {
-                hash = hash * 59 + this.AuthUser.GetHashCode();
+                hash = hash * 59 + AuthUser.GetHashCode();
             }
 
-            if (this.Callid != null)
+            if (Callid != null)
             {
-                hash = hash * 59 + this.Callid.GetHashCode();
+                hash = hash * 59 + Callid.GetHashCode();
             }
 
-            if (this.CallidAleg != null)
+            if (CallidAleg != null)
             {
-                hash = hash * 59 + this.CallidAleg.GetHashCode();
+                hash = hash * 59 + CallidAleg.GetHashCode();
             }
 
-            if (this.Via1 != null)
+            if (Via1 != null)
             {
-                hash = hash * 59 + this.Via1.GetHashCode();
+                hash = hash * 59 + Via1.GetHashCode();
             }
 
-            if (this.Via1Branch != null)
+            if (Via1Branch != null)
             {
-                hash = hash * 59 + this.Via1Branch.GetHashCode();
+                hash = hash * 59 + Via1Branch.GetHashCode();
             }
 
-            if (this.Cseq != null)
+            if (Cseq != null)
             {
-                hash = hash * 59 + this.Cseq.GetHashCode();
+                hash = hash * 59 + Cseq.GetHashCode();
             }
 
-            if (this.Diversion != null)
+            if (Diversion != null)
             {
-                hash = hash * 59 + this.Diversion.GetHashCode();
+                hash = hash * 59 + Diversion.GetHashCode();
             }
 
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.Auth != null)
+            if (Auth != null)
             {
-                hash = hash * 59 + this.Auth.GetHashCode();
+                hash = hash * 59 + Auth.GetHashCode();
             }
 
-            if (this.UserAgent != null)
+            if (UserAgent != null)
             {
-                hash = hash * 59 + this.UserAgent.GetHashCode();
+                hash = hash * 59 + UserAgent.GetHashCode();
             }
 
-            if (this.SourceIp != null)
+            if (SourceIp != null)
             {
-                hash = hash * 59 + this.SourceIp.GetHashCode();
+                hash = hash * 59 + SourceIp.GetHashCode();
             }
 
-            if (this.SourcePort != null)
+            if (SourcePort != null)
             {
-                hash = hash * 59 + this.SourcePort.GetHashCode();
+                hash = hash * 59 + SourcePort.GetHashCode();
             }
 
-            if (this.DestinationIp != null)
+            if (DestinationIp != null)
             {
-                hash = hash * 59 + this.DestinationIp.GetHashCode();
+                hash = hash * 59 + DestinationIp.GetHashCode();
             }
 
-            if (this.DestinationPort != null)
+            if (DestinationPort != null)
             {
-                hash = hash * 59 + this.DestinationPort.GetHashCode();
+                hash = hash * 59 + DestinationPort.GetHashCode();
             }
 
-            if (this.ContactIp != null)
+            if (ContactIp != null)
             {
-                hash = hash * 59 + this.ContactIp.GetHashCode();
+                hash = hash * 59 + ContactIp.GetHashCode();
             }
 
-            if (this.ContactPort != null)
+            if (ContactPort != null)
             {
-                hash = hash * 59 + this.ContactPort.GetHashCode();
+                hash = hash * 59 + ContactPort.GetHashCode();
             }
 
-            if (this.OriginatorIp != null)
+            if (OriginatorIp != null)
             {
-                hash = hash * 59 + this.OriginatorIp.GetHashCode();
+                hash = hash * 59 + OriginatorIp.GetHashCode();
             }
 
-            if (this.OriginatorPort != null)
+            if (OriginatorPort != null)
             {
-                hash = hash * 59 + this.OriginatorPort.GetHashCode();
+                hash = hash * 59 + OriginatorPort.GetHashCode();
             }
 
-            if (this.CorrelationId != null)
+            if (CorrelationId != null)
             {
-                hash = hash * 59 + this.CorrelationId.GetHashCode();
+                hash = hash * 59 + CorrelationId.GetHashCode();
             }
 
-            if (this.Proto != null)
+            if (Proto != null)
             {
-                hash = hash * 59 + this.Proto.GetHashCode();
+                hash = hash * 59 + Proto.GetHashCode();
             }
 
-            if (this.Family != null)
+            if (Family != null)
             {
-                hash = hash * 59 + this.Family.GetHashCode();
+                hash = hash * 59 + Family.GetHashCode();
             }
 
-            if (this.RtpStat != null)
+            if (RtpStat != null)
             {
-                hash = hash * 59 + this.RtpStat.GetHashCode();
+                hash = hash * 59 + RtpStat.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Node != null)
+            if (Node != null)
             {
-                hash = hash * 59 + this.Node.GetHashCode();
+                hash = hash * 59 + Node.GetHashCode();
             }
 
-            if (this.Trans != null)
+            if (Trans != null)
             {
-                hash = hash * 59 + this.Trans.GetHashCode();
+                hash = hash * 59 + Trans.GetHashCode();
             }
 
-            if (this.Dbnode != null)
+            if (Dbnode != null)
             {
-                hash = hash * 59 + this.Dbnode.GetHashCode();
+                hash = hash * 59 + Dbnode.GetHashCode();
             }
 
-            if (this.Msg != null)
+            if (Msg != null)
             {
-                hash = hash * 59 + this.Msg.GetHashCode();
+                hash = hash * 59 + Msg.GetHashCode();
             }
 
-            if (this.SourceAlias != null)
+            if (SourceAlias != null)
             {
-                hash = hash * 59 + this.SourceAlias.GetHashCode();
+                hash = hash * 59 + SourceAlias.GetHashCode();
             }
 
-            if (this.DestinationAlias != null)
+            if (DestinationAlias != null)
             {
-                hash = hash * 59 + this.DestinationAlias.GetHashCode();
+                hash = hash * 59 + DestinationAlias.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.ParticipantId != null)
+            if (ParticipantId != null)
             {
-                hash = hash * 59 + this.ParticipantId.GetHashCode();
+                hash = hash * 59 + ParticipantId.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

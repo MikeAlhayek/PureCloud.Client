@@ -105,7 +105,7 @@ public partial class SupportedDialectsTranscriptionEngine : IEquatable<Supported
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportedDialectsTranscriptionEngine);
+        return Equals(obj as SupportedDialectsTranscriptionEngine);
     }
 
     /// <summary>
@@ -123,19 +123,19 @@ public partial class SupportedDialectsTranscriptionEngine : IEquatable<Supported
 
         return true &&
             (
-                this.Engine == other.Engine ||
-                this.Engine != null &&
-                this.Engine.Equals(other.Engine)
+                Engine == other.Engine ||
+                Engine != null &&
+                Engine.Equals(other.Engine)
             ) &&
             (
-                this.Dialects == other.Dialects ||
-                this.Dialects != null &&
-                this.Dialects.SequenceEqual(other.Dialects)
+                Dialects == other.Dialects ||
+                Dialects != null &&
+                Dialects.SequenceEqual(other.Dialects)
             ) &&
             (
-                this.EngineIntegration == other.EngineIntegration ||
-                this.EngineIntegration != null &&
-                this.EngineIntegration.Equals(other.EngineIntegration)
+                EngineIntegration == other.EngineIntegration ||
+                EngineIntegration != null &&
+                EngineIntegration.Equals(other.EngineIntegration)
             );
     }
 
@@ -150,19 +150,19 @@ public partial class SupportedDialectsTranscriptionEngine : IEquatable<Supported
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Engine != null)
+            if (Engine != null)
             {
-                hash = hash * 59 + this.Engine.GetHashCode();
+                hash = hash * 59 + Engine.GetHashCode();
             }
 
-            if (this.Dialects != null)
+            if (Dialects != null)
             {
-                hash = hash * 59 + this.Dialects.GetHashCode();
+                hash = hash * 59 + Dialects.GetHashCode();
             }
 
-            if (this.EngineIntegration != null)
+            if (EngineIntegration != null)
             {
-                hash = hash * 59 + this.EngineIntegration.GetHashCode();
+                hash = hash * 59 + EngineIntegration.GetHashCode();
             }
 
             return hash;

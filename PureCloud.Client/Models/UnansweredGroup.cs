@@ -109,7 +109,7 @@ public partial class UnansweredGroup : IEquatable<UnansweredGroup>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UnansweredGroup);
+        return Equals(obj as UnansweredGroup);
     }
 
     /// <summary>
@@ -127,34 +127,34 @@ public partial class UnansweredGroup : IEquatable<UnansweredGroup>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Label == other.Label ||
-                this.Label != null &&
-                this.Label.Equals(other.Label)
+                Label == other.Label ||
+                Label != null &&
+                Label.Equals(other.Label)
             ) &&
             (
-                this.PhraseGroups == other.PhraseGroups ||
-                this.PhraseGroups != null &&
-                this.PhraseGroups.SequenceEqual(other.PhraseGroups)
+                PhraseGroups == other.PhraseGroups ||
+                PhraseGroups != null &&
+                PhraseGroups.SequenceEqual(other.PhraseGroups)
             ) &&
             (
-                this.SuggestedDocuments == other.SuggestedDocuments ||
-                this.SuggestedDocuments != null &&
-                this.SuggestedDocuments.SequenceEqual(other.SuggestedDocuments)
+                SuggestedDocuments == other.SuggestedDocuments ||
+                SuggestedDocuments != null &&
+                SuggestedDocuments.SequenceEqual(other.SuggestedDocuments)
             ) &&
             (
-                this.Statistics == other.Statistics ||
-                this.Statistics != null &&
-                this.Statistics.Equals(other.Statistics)
+                Statistics == other.Statistics ||
+                Statistics != null &&
+                Statistics.Equals(other.Statistics)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -169,34 +169,34 @@ public partial class UnansweredGroup : IEquatable<UnansweredGroup>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Label != null)
+            if (Label != null)
             {
-                hash = hash * 59 + this.Label.GetHashCode();
+                hash = hash * 59 + Label.GetHashCode();
             }
 
-            if (this.PhraseGroups != null)
+            if (PhraseGroups != null)
             {
-                hash = hash * 59 + this.PhraseGroups.GetHashCode();
+                hash = hash * 59 + PhraseGroups.GetHashCode();
             }
 
-            if (this.SuggestedDocuments != null)
+            if (SuggestedDocuments != null)
             {
-                hash = hash * 59 + this.SuggestedDocuments.GetHashCode();
+                hash = hash * 59 + SuggestedDocuments.GetHashCode();
             }
 
-            if (this.Statistics != null)
+            if (Statistics != null)
             {
-                hash = hash * 59 + this.Statistics.GetHashCode();
+                hash = hash * 59 + Statistics.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

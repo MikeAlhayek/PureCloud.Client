@@ -178,7 +178,7 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmUserNotificationTopicShiftTradeNotification);
+        return Equals(obj as WfmUserNotificationTopicShiftTradeNotification);
     }
 
     /// <summary>
@@ -196,44 +196,44 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
 
         return true &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             ) &&
             (
-                this.TradeId == other.TradeId ||
-                this.TradeId != null &&
-                this.TradeId.Equals(other.TradeId)
+                TradeId == other.TradeId ||
+                TradeId != null &&
+                TradeId.Equals(other.TradeId)
             ) &&
             (
-                this.OneSided == other.OneSided ||
-                this.OneSided != null &&
-                this.OneSided.Equals(other.OneSided)
+                OneSided == other.OneSided ||
+                OneSided != null &&
+                OneSided.Equals(other.OneSided)
             ) &&
             (
-                this.NewState == other.NewState ||
-                this.NewState != null &&
-                this.NewState.Equals(other.NewState)
+                NewState == other.NewState ||
+                NewState != null &&
+                NewState.Equals(other.NewState)
             ) &&
             (
-                this.InitiatingUser == other.InitiatingUser ||
-                this.InitiatingUser != null &&
-                this.InitiatingUser.Equals(other.InitiatingUser)
+                InitiatingUser == other.InitiatingUser ||
+                InitiatingUser != null &&
+                InitiatingUser.Equals(other.InitiatingUser)
             ) &&
             (
-                this.InitiatingShiftDate == other.InitiatingShiftDate ||
-                this.InitiatingShiftDate != null &&
-                this.InitiatingShiftDate.Equals(other.InitiatingShiftDate)
+                InitiatingShiftDate == other.InitiatingShiftDate ||
+                InitiatingShiftDate != null &&
+                InitiatingShiftDate.Equals(other.InitiatingShiftDate)
             ) &&
             (
-                this.ReceivingUser == other.ReceivingUser ||
-                this.ReceivingUser != null &&
-                this.ReceivingUser.Equals(other.ReceivingUser)
+                ReceivingUser == other.ReceivingUser ||
+                ReceivingUser != null &&
+                ReceivingUser.Equals(other.ReceivingUser)
             ) &&
             (
-                this.ReceivingShiftDate == other.ReceivingShiftDate ||
-                this.ReceivingShiftDate != null &&
-                this.ReceivingShiftDate.Equals(other.ReceivingShiftDate)
+                ReceivingShiftDate == other.ReceivingShiftDate ||
+                ReceivingShiftDate != null &&
+                ReceivingShiftDate.Equals(other.ReceivingShiftDate)
             );
     }
 
@@ -248,44 +248,44 @@ public partial class WfmUserNotificationTopicShiftTradeNotification : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
-            if (this.TradeId != null)
+            if (TradeId != null)
             {
-                hash = hash * 59 + this.TradeId.GetHashCode();
+                hash = hash * 59 + TradeId.GetHashCode();
             }
 
-            if (this.OneSided != null)
+            if (OneSided != null)
             {
-                hash = hash * 59 + this.OneSided.GetHashCode();
+                hash = hash * 59 + OneSided.GetHashCode();
             }
 
-            if (this.NewState != null)
+            if (NewState != null)
             {
-                hash = hash * 59 + this.NewState.GetHashCode();
+                hash = hash * 59 + NewState.GetHashCode();
             }
 
-            if (this.InitiatingUser != null)
+            if (InitiatingUser != null)
             {
-                hash = hash * 59 + this.InitiatingUser.GetHashCode();
+                hash = hash * 59 + InitiatingUser.GetHashCode();
             }
 
-            if (this.InitiatingShiftDate != null)
+            if (InitiatingShiftDate != null)
             {
-                hash = hash * 59 + this.InitiatingShiftDate.GetHashCode();
+                hash = hash * 59 + InitiatingShiftDate.GetHashCode();
             }
 
-            if (this.ReceivingUser != null)
+            if (ReceivingUser != null)
             {
-                hash = hash * 59 + this.ReceivingUser.GetHashCode();
+                hash = hash * 59 + ReceivingUser.GetHashCode();
             }
 
-            if (this.ReceivingShiftDate != null)
+            if (ReceivingShiftDate != null)
             {
-                hash = hash * 59 + this.ReceivingShiftDate.GetHashCode();
+                hash = hash * 59 + ReceivingShiftDate.GetHashCode();
             }
 
             return hash;

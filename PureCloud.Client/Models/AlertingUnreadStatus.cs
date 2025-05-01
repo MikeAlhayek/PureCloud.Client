@@ -58,7 +58,7 @@ public partial class AlertingUnreadStatus : IEquatable<AlertingUnreadStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlertingUnreadStatus);
+        return Equals(obj as AlertingUnreadStatus);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class AlertingUnreadStatus : IEquatable<AlertingUnreadStatus>
 
         return true &&
             (
-                this.Unread == other.Unread ||
-                this.Unread != null &&
-                this.Unread.Equals(other.Unread)
+                Unread == other.Unread ||
+                Unread != null &&
+                Unread.Equals(other.Unread)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class AlertingUnreadStatus : IEquatable<AlertingUnreadStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Unread != null)
+            if (Unread != null)
             {
-                hash = hash * 59 + this.Unread.GetHashCode();
+                hash = hash * 59 + Unread.GetHashCode();
             }
 
             return hash;

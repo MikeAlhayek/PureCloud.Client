@@ -95,7 +95,7 @@ public partial class UpdatePlanningGroupRequest : IEquatable<UpdatePlanningGroup
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdatePlanningGroupRequest);
+        return Equals(obj as UpdatePlanningGroupRequest);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class UpdatePlanningGroupRequest : IEquatable<UpdatePlanningGroup
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.RoutePaths == other.RoutePaths ||
-                this.RoutePaths != null &&
-                this.RoutePaths.Equals(other.RoutePaths)
+                RoutePaths == other.RoutePaths ||
+                RoutePaths != null &&
+                RoutePaths.Equals(other.RoutePaths)
             ) &&
             (
-                this.ServiceGoalTemplateId == other.ServiceGoalTemplateId ||
-                this.ServiceGoalTemplateId != null &&
-                this.ServiceGoalTemplateId.Equals(other.ServiceGoalTemplateId)
+                ServiceGoalTemplateId == other.ServiceGoalTemplateId ||
+                ServiceGoalTemplateId != null &&
+                ServiceGoalTemplateId.Equals(other.ServiceGoalTemplateId)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class UpdatePlanningGroupRequest : IEquatable<UpdatePlanningGroup
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.RoutePaths != null)
+            if (RoutePaths != null)
             {
-                hash = hash * 59 + this.RoutePaths.GetHashCode();
+                hash = hash * 59 + RoutePaths.GetHashCode();
             }
 
-            if (this.ServiceGoalTemplateId != null)
+            if (ServiceGoalTemplateId != null)
             {
-                hash = hash * 59 + this.ServiceGoalTemplateId.GetHashCode();
+                hash = hash * 59 + ServiceGoalTemplateId.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

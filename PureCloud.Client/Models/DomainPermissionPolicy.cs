@@ -129,7 +129,7 @@ public partial class DomainPermissionPolicy : IEquatable<DomainPermissionPolicy>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainPermissionPolicy);
+        return Equals(obj as DomainPermissionPolicy);
     }
 
     /// <summary>
@@ -147,44 +147,44 @@ public partial class DomainPermissionPolicy : IEquatable<DomainPermissionPolicy>
 
         return true &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.EntityName == other.EntityName ||
-                this.EntityName != null &&
-                this.EntityName.Equals(other.EntityName)
+                EntityName == other.EntityName ||
+                EntityName != null &&
+                EntityName.Equals(other.EntityName)
             ) &&
             (
-                this.PolicyName == other.PolicyName ||
-                this.PolicyName != null &&
-                this.PolicyName.Equals(other.PolicyName)
+                PolicyName == other.PolicyName ||
+                PolicyName != null &&
+                PolicyName.Equals(other.PolicyName)
             ) &&
             (
-                this.PolicyDescription == other.PolicyDescription ||
-                this.PolicyDescription != null &&
-                this.PolicyDescription.Equals(other.PolicyDescription)
+                PolicyDescription == other.PolicyDescription ||
+                PolicyDescription != null &&
+                PolicyDescription.Equals(other.PolicyDescription)
             ) &&
             (
-                this.ActionSet == other.ActionSet ||
-                this.ActionSet != null &&
-                this.ActionSet.SequenceEqual(other.ActionSet)
+                ActionSet == other.ActionSet ||
+                ActionSet != null &&
+                ActionSet.SequenceEqual(other.ActionSet)
             ) &&
             (
-                this.NamedResources == other.NamedResources ||
-                this.NamedResources != null &&
-                this.NamedResources.SequenceEqual(other.NamedResources)
+                NamedResources == other.NamedResources ||
+                NamedResources != null &&
+                NamedResources.SequenceEqual(other.NamedResources)
             ) &&
             (
-                this.AllowConditions == other.AllowConditions ||
-                this.AllowConditions != null &&
-                this.AllowConditions.Equals(other.AllowConditions)
+                AllowConditions == other.AllowConditions ||
+                AllowConditions != null &&
+                AllowConditions.Equals(other.AllowConditions)
             ) &&
             (
-                this.ResourceConditionNode == other.ResourceConditionNode ||
-                this.ResourceConditionNode != null &&
-                this.ResourceConditionNode.Equals(other.ResourceConditionNode)
+                ResourceConditionNode == other.ResourceConditionNode ||
+                ResourceConditionNode != null &&
+                ResourceConditionNode.Equals(other.ResourceConditionNode)
             );
     }
 
@@ -199,44 +199,44 @@ public partial class DomainPermissionPolicy : IEquatable<DomainPermissionPolicy>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.EntityName != null)
+            if (EntityName != null)
             {
-                hash = hash * 59 + this.EntityName.GetHashCode();
+                hash = hash * 59 + EntityName.GetHashCode();
             }
 
-            if (this.PolicyName != null)
+            if (PolicyName != null)
             {
-                hash = hash * 59 + this.PolicyName.GetHashCode();
+                hash = hash * 59 + PolicyName.GetHashCode();
             }
 
-            if (this.PolicyDescription != null)
+            if (PolicyDescription != null)
             {
-                hash = hash * 59 + this.PolicyDescription.GetHashCode();
+                hash = hash * 59 + PolicyDescription.GetHashCode();
             }
 
-            if (this.ActionSet != null)
+            if (ActionSet != null)
             {
-                hash = hash * 59 + this.ActionSet.GetHashCode();
+                hash = hash * 59 + ActionSet.GetHashCode();
             }
 
-            if (this.NamedResources != null)
+            if (NamedResources != null)
             {
-                hash = hash * 59 + this.NamedResources.GetHashCode();
+                hash = hash * 59 + NamedResources.GetHashCode();
             }
 
-            if (this.AllowConditions != null)
+            if (AllowConditions != null)
             {
-                hash = hash * 59 + this.AllowConditions.GetHashCode();
+                hash = hash * 59 + AllowConditions.GetHashCode();
             }
 
-            if (this.ResourceConditionNode != null)
+            if (ResourceConditionNode != null)
             {
-                hash = hash * 59 + this.ResourceConditionNode.GetHashCode();
+                hash = hash * 59 + ResourceConditionNode.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class CsvUploadRequest : IEquatable<CsvUploadRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CsvUploadRequest);
+        return Equals(obj as CsvUploadRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class CsvUploadRequest : IEquatable<CsvUploadRequest>
 
         return true &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.FileSize == other.FileSize ||
-                this.FileSize != null &&
-                this.FileSize.Equals(other.FileSize)
+                FileSize == other.FileSize ||
+                FileSize != null &&
+                FileSize.Equals(other.FileSize)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class CsvUploadRequest : IEquatable<CsvUploadRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.FileSize != null)
+            if (FileSize != null)
             {
-                hash = hash * 59 + this.FileSize.GetHashCode();
+                hash = hash * 59 + FileSize.GetHashCode();
             }
 
             return hash;

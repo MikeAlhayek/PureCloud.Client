@@ -71,7 +71,7 @@ public partial class MaskingRuleValidateResponse : IEquatable<MaskingRuleValidat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MaskingRuleValidateResponse);
+        return Equals(obj as MaskingRuleValidateResponse);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class MaskingRuleValidateResponse : IEquatable<MaskingRuleValidat
 
         return true &&
             (
-                this.Valid == other.Valid ||
-                this.Valid != null &&
-                this.Valid.Equals(other.Valid)
+                Valid == other.Valid ||
+                Valid != null &&
+                Valid.Equals(other.Valid)
             ) &&
             (
-                this.ValidationMessage == other.ValidationMessage ||
-                this.ValidationMessage != null &&
-                this.ValidationMessage.Equals(other.ValidationMessage)
+                ValidationMessage == other.ValidationMessage ||
+                ValidationMessage != null &&
+                ValidationMessage.Equals(other.ValidationMessage)
             ) &&
             (
-                this.MaskedText == other.MaskedText ||
-                this.MaskedText != null &&
-                this.MaskedText.Equals(other.MaskedText)
+                MaskedText == other.MaskedText ||
+                MaskedText != null &&
+                MaskedText.Equals(other.MaskedText)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class MaskingRuleValidateResponse : IEquatable<MaskingRuleValidat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Valid != null)
+            if (Valid != null)
             {
-                hash = hash * 59 + this.Valid.GetHashCode();
+                hash = hash * 59 + Valid.GetHashCode();
             }
 
-            if (this.ValidationMessage != null)
+            if (ValidationMessage != null)
             {
-                hash = hash * 59 + this.ValidationMessage.GetHashCode();
+                hash = hash * 59 + ValidationMessage.GetHashCode();
             }
 
-            if (this.MaskedText != null)
+            if (MaskedText != null)
             {
-                hash = hash * 59 + this.MaskedText.GetHashCode();
+                hash = hash * 59 + MaskedText.GetHashCode();
             }
 
             return hash;

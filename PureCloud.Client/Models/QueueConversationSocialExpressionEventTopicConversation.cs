@@ -151,7 +151,7 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationSocialExpressionEventTopicConversation);
+        return Equals(obj as QueueConversationSocialExpressionEventTopicConversation);
     }
 
     /// <summary>
@@ -169,54 +169,54 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.MaxParticipants == other.MaxParticipants ||
-                this.MaxParticipants != null &&
-                this.MaxParticipants.Equals(other.MaxParticipants)
+                MaxParticipants == other.MaxParticipants ||
+                MaxParticipants != null &&
+                MaxParticipants.Equals(other.MaxParticipants)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.SequenceEqual(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.SequenceEqual(other.Participants)
             ) &&
             (
-                this.RecentTransfers == other.RecentTransfers ||
-                this.RecentTransfers != null &&
-                this.RecentTransfers.SequenceEqual(other.RecentTransfers)
+                RecentTransfers == other.RecentTransfers ||
+                RecentTransfers != null &&
+                RecentTransfers.SequenceEqual(other.RecentTransfers)
             ) &&
             (
-                this.RecordingState == other.RecordingState ||
-                this.RecordingState != null &&
-                this.RecordingState.Equals(other.RecordingState)
+                RecordingState == other.RecordingState ||
+                RecordingState != null &&
+                RecordingState.Equals(other.RecordingState)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.ExternalTag == other.ExternalTag ||
-                this.ExternalTag != null &&
-                this.ExternalTag.Equals(other.ExternalTag)
+                ExternalTag == other.ExternalTag ||
+                ExternalTag != null &&
+                ExternalTag.Equals(other.ExternalTag)
             ) &&
             (
-                this.UtilizationLabelId == other.UtilizationLabelId ||
-                this.UtilizationLabelId != null &&
-                this.UtilizationLabelId.Equals(other.UtilizationLabelId)
+                UtilizationLabelId == other.UtilizationLabelId ||
+                UtilizationLabelId != null &&
+                UtilizationLabelId.Equals(other.UtilizationLabelId)
             ) &&
             (
-                this.SecurePause == other.SecurePause ||
-                this.SecurePause != null &&
-                this.SecurePause.Equals(other.SecurePause)
+                SecurePause == other.SecurePause ||
+                SecurePause != null &&
+                SecurePause.Equals(other.SecurePause)
             ) &&
             (
-                this.Divisions == other.Divisions ||
-                this.Divisions != null &&
-                this.Divisions.SequenceEqual(other.Divisions)
+                Divisions == other.Divisions ||
+                Divisions != null &&
+                Divisions.SequenceEqual(other.Divisions)
             );
     }
 
@@ -231,54 +231,54 @@ public partial class QueueConversationSocialExpressionEventTopicConversation : I
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.MaxParticipants != null)
+            if (MaxParticipants != null)
             {
-                hash = hash * 59 + this.MaxParticipants.GetHashCode();
+                hash = hash * 59 + MaxParticipants.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
-            if (this.RecentTransfers != null)
+            if (RecentTransfers != null)
             {
-                hash = hash * 59 + this.RecentTransfers.GetHashCode();
+                hash = hash * 59 + RecentTransfers.GetHashCode();
             }
 
-            if (this.RecordingState != null)
+            if (RecordingState != null)
             {
-                hash = hash * 59 + this.RecordingState.GetHashCode();
+                hash = hash * 59 + RecordingState.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.ExternalTag != null)
+            if (ExternalTag != null)
             {
-                hash = hash * 59 + this.ExternalTag.GetHashCode();
+                hash = hash * 59 + ExternalTag.GetHashCode();
             }
 
-            if (this.UtilizationLabelId != null)
+            if (UtilizationLabelId != null)
             {
-                hash = hash * 59 + this.UtilizationLabelId.GetHashCode();
+                hash = hash * 59 + UtilizationLabelId.GetHashCode();
             }
 
-            if (this.SecurePause != null)
+            if (SecurePause != null)
             {
-                hash = hash * 59 + this.SecurePause.GetHashCode();
+                hash = hash * 59 + SecurePause.GetHashCode();
             }
 
-            if (this.Divisions != null)
+            if (Divisions != null)
             {
-                hash = hash * 59 + this.Divisions.GetHashCode();
+                hash = hash * 59 + Divisions.GetHashCode();
             }
 
             return hash;

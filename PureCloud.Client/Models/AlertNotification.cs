@@ -120,7 +120,7 @@ public partial class AlertNotification : IEquatable<AlertNotification>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlertNotification);
+        return Equals(obj as AlertNotification);
     }
 
     /// <summary>
@@ -138,19 +138,19 @@ public partial class AlertNotification : IEquatable<AlertNotification>
 
         return true &&
             (
-                this.Recipient == other.Recipient ||
-                this.Recipient != null &&
-                this.Recipient.Equals(other.Recipient)
+                Recipient == other.Recipient ||
+                Recipient != null &&
+                Recipient.Equals(other.Recipient)
             ) &&
             (
-                this.NotificationTypes == other.NotificationTypes ||
-                this.NotificationTypes != null &&
-                this.NotificationTypes.SequenceEqual(other.NotificationTypes)
+                NotificationTypes == other.NotificationTypes ||
+                NotificationTypes != null &&
+                NotificationTypes.SequenceEqual(other.NotificationTypes)
             ) &&
             (
-                this.Locale == other.Locale ||
-                this.Locale != null &&
-                this.Locale.Equals(other.Locale)
+                Locale == other.Locale ||
+                Locale != null &&
+                Locale.Equals(other.Locale)
             );
     }
 
@@ -165,19 +165,19 @@ public partial class AlertNotification : IEquatable<AlertNotification>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Recipient != null)
+            if (Recipient != null)
             {
-                hash = hash * 59 + this.Recipient.GetHashCode();
+                hash = hash * 59 + Recipient.GetHashCode();
             }
 
-            if (this.NotificationTypes != null)
+            if (NotificationTypes != null)
             {
-                hash = hash * 59 + this.NotificationTypes.GetHashCode();
+                hash = hash * 59 + NotificationTypes.GetHashCode();
             }
 
-            if (this.Locale != null)
+            if (Locale != null)
             {
-                hash = hash * 59 + this.Locale.GetHashCode();
+                hash = hash * 59 + Locale.GetHashCode();
             }
 
             return hash;

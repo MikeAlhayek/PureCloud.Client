@@ -2291,7 +2291,7 @@ public partial class Widget : IEquatable<Widget>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Widget);
+        return Equals(obj as Widget);
     }
 
     /// <summary>
@@ -2309,149 +2309,149 @@ public partial class Widget : IEquatable<Widget>
 
         return true &&
             (
-                this.Row == other.Row ||
-                this.Row != null &&
-                this.Row.Equals(other.Row)
+                Row == other.Row ||
+                Row != null &&
+                Row.Equals(other.Row)
             ) &&
             (
-                this.Column == other.Column ||
-                this.Column != null &&
-                this.Column.Equals(other.Column)
+                Column == other.Column ||
+                Column != null &&
+                Column.Equals(other.Column)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.DisplayText == other.DisplayText ||
-                this.DisplayText != null &&
-                this.DisplayText.Equals(other.DisplayText)
+                DisplayText == other.DisplayText ||
+                DisplayText != null &&
+                DisplayText.Equals(other.DisplayText)
             ) &&
             (
-                this.DisplayTextColor == other.DisplayTextColor ||
-                this.DisplayTextColor != null &&
-                this.DisplayTextColor.Equals(other.DisplayTextColor)
+                DisplayTextColor == other.DisplayTextColor ||
+                DisplayTextColor != null &&
+                DisplayTextColor.Equals(other.DisplayTextColor)
             ) &&
             (
-                this.WebContentUrl == other.WebContentUrl ||
-                this.WebContentUrl != null &&
-                this.WebContentUrl.Equals(other.WebContentUrl)
+                WebContentUrl == other.WebContentUrl ||
+                WebContentUrl != null &&
+                WebContentUrl.Equals(other.WebContentUrl)
             ) &&
             (
-                this.SplitFilters == other.SplitFilters ||
-                this.SplitFilters != null &&
-                this.SplitFilters.Equals(other.SplitFilters)
+                SplitFilters == other.SplitFilters ||
+                SplitFilters != null &&
+                SplitFilters.Equals(other.SplitFilters)
             ) &&
             (
-                this.SplitByMediaType == other.SplitByMediaType ||
-                this.SplitByMediaType != null &&
-                this.SplitByMediaType.Equals(other.SplitByMediaType)
+                SplitByMediaType == other.SplitByMediaType ||
+                SplitByMediaType != null &&
+                SplitByMediaType.Equals(other.SplitByMediaType)
             ) &&
             (
-                this.ShowLongest == other.ShowLongest ||
-                this.ShowLongest != null &&
-                this.ShowLongest.Equals(other.ShowLongest)
+                ShowLongest == other.ShowLongest ||
+                ShowLongest != null &&
+                ShowLongest.Equals(other.ShowLongest)
             ) &&
             (
-                this.DisplayAsTable == other.DisplayAsTable ||
-                this.DisplayAsTable != null &&
-                this.DisplayAsTable.Equals(other.DisplayAsTable)
+                DisplayAsTable == other.DisplayAsTable ||
+                DisplayAsTable != null &&
+                DisplayAsTable.Equals(other.DisplayAsTable)
             ) &&
             (
-                this.ShowDuration == other.ShowDuration ||
-                this.ShowDuration != null &&
-                this.ShowDuration.Equals(other.ShowDuration)
+                ShowDuration == other.ShowDuration ||
+                ShowDuration != null &&
+                ShowDuration.Equals(other.ShowDuration)
             ) &&
             (
-                this.SortOrder == other.SortOrder ||
-                this.SortOrder != null &&
-                this.SortOrder.Equals(other.SortOrder)
+                SortOrder == other.SortOrder ||
+                SortOrder != null &&
+                SortOrder.Equals(other.SortOrder)
             ) &&
             (
-                this.SortKey == other.SortKey ||
-                this.SortKey != null &&
-                this.SortKey.Equals(other.SortKey)
+                SortKey == other.SortKey ||
+                SortKey != null &&
+                SortKey.Equals(other.SortKey)
             ) &&
             (
-                this.EntityLimit == other.EntityLimit ||
-                this.EntityLimit != null &&
-                this.EntityLimit.Equals(other.EntityLimit)
+                EntityLimit == other.EntityLimit ||
+                EntityLimit != null &&
+                EntityLimit.Equals(other.EntityLimit)
             ) &&
             (
-                this.DisplayAggregates == other.DisplayAggregates ||
-                this.DisplayAggregates != null &&
-                this.DisplayAggregates.Equals(other.DisplayAggregates)
+                DisplayAggregates == other.DisplayAggregates ||
+                DisplayAggregates != null &&
+                DisplayAggregates.Equals(other.DisplayAggregates)
             ) &&
             (
-                this.IsFullWidth == other.IsFullWidth ||
-                this.IsFullWidth != null &&
-                this.IsFullWidth.Equals(other.IsFullWidth)
+                IsFullWidth == other.IsFullWidth ||
+                IsFullWidth != null &&
+                IsFullWidth.Equals(other.IsFullWidth)
             ) &&
             (
-                this.ShowPercentageChange == other.ShowPercentageChange ||
-                this.ShowPercentageChange != null &&
-                this.ShowPercentageChange.Equals(other.ShowPercentageChange)
+                ShowPercentageChange == other.ShowPercentageChange ||
+                ShowPercentageChange != null &&
+                ShowPercentageChange.Equals(other.ShowPercentageChange)
             ) &&
             (
-                this.ShowProfilePicture == other.ShowProfilePicture ||
-                this.ShowProfilePicture != null &&
-                this.ShowProfilePicture.Equals(other.ShowProfilePicture)
+                ShowProfilePicture == other.ShowProfilePicture ||
+                ShowProfilePicture != null &&
+                ShowProfilePicture.Equals(other.ShowProfilePicture)
             ) &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             ) &&
             (
-                this.Periods == other.Periods ||
-                this.Periods != null &&
-                this.Periods.SequenceEqual(other.Periods)
+                Periods == other.Periods ||
+                Periods != null &&
+                Periods.SequenceEqual(other.Periods)
             ) &&
             (
-                this.MediaTypes == other.MediaTypes ||
-                this.MediaTypes != null &&
-                this.MediaTypes.SequenceEqual(other.MediaTypes)
+                MediaTypes == other.MediaTypes ||
+                MediaTypes != null &&
+                MediaTypes.SequenceEqual(other.MediaTypes)
             ) &&
             (
-                this.Warnings == other.Warnings ||
-                this.Warnings != null &&
-                this.Warnings.SequenceEqual(other.Warnings)
+                Warnings == other.Warnings ||
+                Warnings != null &&
+                Warnings.SequenceEqual(other.Warnings)
             ) &&
             (
-                this.ShowTimeInStatus == other.ShowTimeInStatus ||
-                this.ShowTimeInStatus != null &&
-                this.ShowTimeInStatus.Equals(other.ShowTimeInStatus)
+                ShowTimeInStatus == other.ShowTimeInStatus ||
+                ShowTimeInStatus != null &&
+                ShowTimeInStatus.Equals(other.ShowTimeInStatus)
             ) &&
             (
-                this.ShowOfflineAgents == other.ShowOfflineAgents ||
-                this.ShowOfflineAgents != null &&
-                this.ShowOfflineAgents.Equals(other.ShowOfflineAgents)
+                ShowOfflineAgents == other.ShowOfflineAgents ||
+                ShowOfflineAgents != null &&
+                ShowOfflineAgents.Equals(other.ShowOfflineAgents)
             ) &&
             (
-                this.SelectedStatuses == other.SelectedStatuses ||
-                this.SelectedStatuses != null &&
-                this.SelectedStatuses.SequenceEqual(other.SelectedStatuses)
+                SelectedStatuses == other.SelectedStatuses ||
+                SelectedStatuses != null &&
+                SelectedStatuses.SequenceEqual(other.SelectedStatuses)
             ) &&
             (
-                this.SelectedSegmentTypes == other.SelectedSegmentTypes ||
-                this.SelectedSegmentTypes != null &&
-                this.SelectedSegmentTypes.SequenceEqual(other.SelectedSegmentTypes)
+                SelectedSegmentTypes == other.SelectedSegmentTypes ||
+                SelectedSegmentTypes != null &&
+                SelectedSegmentTypes.SequenceEqual(other.SelectedSegmentTypes)
             ) &&
             (
-                this.AgentInteractionSortOrder == other.AgentInteractionSortOrder ||
-                this.AgentInteractionSortOrder != null &&
-                this.AgentInteractionSortOrder.Equals(other.AgentInteractionSortOrder)
+                AgentInteractionSortOrder == other.AgentInteractionSortOrder ||
+                AgentInteractionSortOrder != null &&
+                AgentInteractionSortOrder.Equals(other.AgentInteractionSortOrder)
             );
     }
 
@@ -2466,149 +2466,149 @@ public partial class Widget : IEquatable<Widget>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Row != null)
+            if (Row != null)
             {
-                hash = hash * 59 + this.Row.GetHashCode();
+                hash = hash * 59 + Row.GetHashCode();
             }
 
-            if (this.Column != null)
+            if (Column != null)
             {
-                hash = hash * 59 + this.Column.GetHashCode();
+                hash = hash * 59 + Column.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.DisplayText != null)
+            if (DisplayText != null)
             {
-                hash = hash * 59 + this.DisplayText.GetHashCode();
+                hash = hash * 59 + DisplayText.GetHashCode();
             }
 
-            if (this.DisplayTextColor != null)
+            if (DisplayTextColor != null)
             {
-                hash = hash * 59 + this.DisplayTextColor.GetHashCode();
+                hash = hash * 59 + DisplayTextColor.GetHashCode();
             }
 
-            if (this.WebContentUrl != null)
+            if (WebContentUrl != null)
             {
-                hash = hash * 59 + this.WebContentUrl.GetHashCode();
+                hash = hash * 59 + WebContentUrl.GetHashCode();
             }
 
-            if (this.SplitFilters != null)
+            if (SplitFilters != null)
             {
-                hash = hash * 59 + this.SplitFilters.GetHashCode();
+                hash = hash * 59 + SplitFilters.GetHashCode();
             }
 
-            if (this.SplitByMediaType != null)
+            if (SplitByMediaType != null)
             {
-                hash = hash * 59 + this.SplitByMediaType.GetHashCode();
+                hash = hash * 59 + SplitByMediaType.GetHashCode();
             }
 
-            if (this.ShowLongest != null)
+            if (ShowLongest != null)
             {
-                hash = hash * 59 + this.ShowLongest.GetHashCode();
+                hash = hash * 59 + ShowLongest.GetHashCode();
             }
 
-            if (this.DisplayAsTable != null)
+            if (DisplayAsTable != null)
             {
-                hash = hash * 59 + this.DisplayAsTable.GetHashCode();
+                hash = hash * 59 + DisplayAsTable.GetHashCode();
             }
 
-            if (this.ShowDuration != null)
+            if (ShowDuration != null)
             {
-                hash = hash * 59 + this.ShowDuration.GetHashCode();
+                hash = hash * 59 + ShowDuration.GetHashCode();
             }
 
-            if (this.SortOrder != null)
+            if (SortOrder != null)
             {
-                hash = hash * 59 + this.SortOrder.GetHashCode();
+                hash = hash * 59 + SortOrder.GetHashCode();
             }
 
-            if (this.SortKey != null)
+            if (SortKey != null)
             {
-                hash = hash * 59 + this.SortKey.GetHashCode();
+                hash = hash * 59 + SortKey.GetHashCode();
             }
 
-            if (this.EntityLimit != null)
+            if (EntityLimit != null)
             {
-                hash = hash * 59 + this.EntityLimit.GetHashCode();
+                hash = hash * 59 + EntityLimit.GetHashCode();
             }
 
-            if (this.DisplayAggregates != null)
+            if (DisplayAggregates != null)
             {
-                hash = hash * 59 + this.DisplayAggregates.GetHashCode();
+                hash = hash * 59 + DisplayAggregates.GetHashCode();
             }
 
-            if (this.IsFullWidth != null)
+            if (IsFullWidth != null)
             {
-                hash = hash * 59 + this.IsFullWidth.GetHashCode();
+                hash = hash * 59 + IsFullWidth.GetHashCode();
             }
 
-            if (this.ShowPercentageChange != null)
+            if (ShowPercentageChange != null)
             {
-                hash = hash * 59 + this.ShowPercentageChange.GetHashCode();
+                hash = hash * 59 + ShowPercentageChange.GetHashCode();
             }
 
-            if (this.ShowProfilePicture != null)
+            if (ShowProfilePicture != null)
             {
-                hash = hash * 59 + this.ShowProfilePicture.GetHashCode();
+                hash = hash * 59 + ShowProfilePicture.GetHashCode();
             }
 
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
-            if (this.Periods != null)
+            if (Periods != null)
             {
-                hash = hash * 59 + this.Periods.GetHashCode();
+                hash = hash * 59 + Periods.GetHashCode();
             }
 
-            if (this.MediaTypes != null)
+            if (MediaTypes != null)
             {
-                hash = hash * 59 + this.MediaTypes.GetHashCode();
+                hash = hash * 59 + MediaTypes.GetHashCode();
             }
 
-            if (this.Warnings != null)
+            if (Warnings != null)
             {
-                hash = hash * 59 + this.Warnings.GetHashCode();
+                hash = hash * 59 + Warnings.GetHashCode();
             }
 
-            if (this.ShowTimeInStatus != null)
+            if (ShowTimeInStatus != null)
             {
-                hash = hash * 59 + this.ShowTimeInStatus.GetHashCode();
+                hash = hash * 59 + ShowTimeInStatus.GetHashCode();
             }
 
-            if (this.ShowOfflineAgents != null)
+            if (ShowOfflineAgents != null)
             {
-                hash = hash * 59 + this.ShowOfflineAgents.GetHashCode();
+                hash = hash * 59 + ShowOfflineAgents.GetHashCode();
             }
 
-            if (this.SelectedStatuses != null)
+            if (SelectedStatuses != null)
             {
-                hash = hash * 59 + this.SelectedStatuses.GetHashCode();
+                hash = hash * 59 + SelectedStatuses.GetHashCode();
             }
 
-            if (this.SelectedSegmentTypes != null)
+            if (SelectedSegmentTypes != null)
             {
-                hash = hash * 59 + this.SelectedSegmentTypes.GetHashCode();
+                hash = hash * 59 + SelectedSegmentTypes.GetHashCode();
             }
 
-            if (this.AgentInteractionSortOrder != null)
+            if (AgentInteractionSortOrder != null)
             {
-                hash = hash * 59 + this.AgentInteractionSortOrder.GetHashCode();
+                hash = hash * 59 + AgentInteractionSortOrder.GetHashCode();
             }
 
             return hash;

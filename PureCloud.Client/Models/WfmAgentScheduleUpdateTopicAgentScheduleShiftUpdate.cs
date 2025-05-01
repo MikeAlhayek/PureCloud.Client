@@ -94,7 +94,7 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate : IEqua
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate);
+        return Equals(obj as WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate);
     }
 
     /// <summary>
@@ -112,14 +112,14 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate : IEqua
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ShiftStartDates == other.ShiftStartDates ||
-                this.ShiftStartDates != null &&
-                this.ShiftStartDates.SequenceEqual(other.ShiftStartDates)
+                ShiftStartDates == other.ShiftStartDates ||
+                ShiftStartDates != null &&
+                ShiftStartDates.SequenceEqual(other.ShiftStartDates)
             );
     }
 
@@ -134,14 +134,14 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate : IEqua
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ShiftStartDates != null)
+            if (ShiftStartDates != null)
             {
-                hash = hash * 59 + this.ShiftStartDates.GetHashCode();
+                hash = hash * 59 + ShiftStartDates.GetHashCode();
             }
 
             return hash;

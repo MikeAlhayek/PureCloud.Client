@@ -137,7 +137,7 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2FlowExecutionDataFlowidTopicExecution);
+        return Equals(obj as V2FlowExecutionDataFlowidTopicExecution);
     }
 
     /// <summary>
@@ -155,44 +155,44 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
 
         return true &&
             (
-                this.ObjectType == other.ObjectType ||
-                this.ObjectType != null &&
-                this.ObjectType.Equals(other.ObjectType)
+                ObjectType == other.ObjectType ||
+                ObjectType != null &&
+                ObjectType.Equals(other.ObjectType)
             ) &&
             (
-                this.ObjectId == other.ObjectId ||
-                this.ObjectId != null &&
-                this.ObjectId.Equals(other.ObjectId)
+                ObjectId == other.ObjectId ||
+                ObjectId != null &&
+                ObjectId.Equals(other.ObjectId)
             ) &&
             (
-                this.OutputPathId == other.OutputPathId ||
-                this.OutputPathId != null &&
-                this.OutputPathId.Equals(other.OutputPathId)
+                OutputPathId == other.OutputPathId ||
+                OutputPathId != null &&
+                OutputPathId.Equals(other.OutputPathId)
             ) &&
             (
-                this.ExecutionId == other.ExecutionId ||
-                this.ExecutionId != null &&
-                this.ExecutionId.Equals(other.ExecutionId)
+                ExecutionId == other.ExecutionId ||
+                ExecutionId != null &&
+                ExecutionId.Equals(other.ExecutionId)
             ) &&
             (
-                this.StartDateTime == other.StartDateTime ||
-                this.StartDateTime != null &&
-                this.StartDateTime.Equals(other.StartDateTime)
+                StartDateTime == other.StartDateTime ||
+                StartDateTime != null &&
+                StartDateTime.Equals(other.StartDateTime)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.Warning == other.Warning ||
-                this.Warning != null &&
-                this.Warning.Equals(other.Warning)
+                Warning == other.Warning ||
+                Warning != null &&
+                Warning.Equals(other.Warning)
             ) &&
             (
-                this.LanguageTag == other.LanguageTag ||
-                this.LanguageTag != null &&
-                this.LanguageTag.Equals(other.LanguageTag)
+                LanguageTag == other.LanguageTag ||
+                LanguageTag != null &&
+                LanguageTag.Equals(other.LanguageTag)
             );
     }
 
@@ -207,44 +207,44 @@ public partial class V2FlowExecutionDataFlowidTopicExecution : IEquatable<V2Flow
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ObjectType != null)
+            if (ObjectType != null)
             {
-                hash = hash * 59 + this.ObjectType.GetHashCode();
+                hash = hash * 59 + ObjectType.GetHashCode();
             }
 
-            if (this.ObjectId != null)
+            if (ObjectId != null)
             {
-                hash = hash * 59 + this.ObjectId.GetHashCode();
+                hash = hash * 59 + ObjectId.GetHashCode();
             }
 
-            if (this.OutputPathId != null)
+            if (OutputPathId != null)
             {
-                hash = hash * 59 + this.OutputPathId.GetHashCode();
+                hash = hash * 59 + OutputPathId.GetHashCode();
             }
 
-            if (this.ExecutionId != null)
+            if (ExecutionId != null)
             {
-                hash = hash * 59 + this.ExecutionId.GetHashCode();
+                hash = hash * 59 + ExecutionId.GetHashCode();
             }
 
-            if (this.StartDateTime != null)
+            if (StartDateTime != null)
             {
-                hash = hash * 59 + this.StartDateTime.GetHashCode();
+                hash = hash * 59 + StartDateTime.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.Warning != null)
+            if (Warning != null)
             {
-                hash = hash * 59 + this.Warning.GetHashCode();
+                hash = hash * 59 + Warning.GetHashCode();
             }
 
-            if (this.LanguageTag != null)
+            if (LanguageTag != null)
             {
-                hash = hash * 59 + this.LanguageTag.GetHashCode();
+                hash = hash * 59 + LanguageTag.GetHashCode();
             }
 
             return hash;

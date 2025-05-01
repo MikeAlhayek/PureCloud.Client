@@ -199,7 +199,7 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationQuestion);
+        return Equals(obj as EvaluationQuestion);
     }
 
     /// <summary>
@@ -217,59 +217,59 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ContextId == other.ContextId ||
-                this.ContextId != null &&
-                this.ContextId.Equals(other.ContextId)
+                ContextId == other.ContextId ||
+                ContextId != null &&
+                ContextId.Equals(other.ContextId)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.HelpText == other.HelpText ||
-                this.HelpText != null &&
-                this.HelpText.Equals(other.HelpText)
+                HelpText == other.HelpText ||
+                HelpText != null &&
+                HelpText.Equals(other.HelpText)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.NaEnabled == other.NaEnabled ||
-                this.NaEnabled != null &&
-                this.NaEnabled.Equals(other.NaEnabled)
+                NaEnabled == other.NaEnabled ||
+                NaEnabled != null &&
+                NaEnabled.Equals(other.NaEnabled)
             ) &&
             (
-                this.CommentsRequired == other.CommentsRequired ||
-                this.CommentsRequired != null &&
-                this.CommentsRequired.Equals(other.CommentsRequired)
+                CommentsRequired == other.CommentsRequired ||
+                CommentsRequired != null &&
+                CommentsRequired.Equals(other.CommentsRequired)
             ) &&
             (
-                this.VisibilityCondition == other.VisibilityCondition ||
-                this.VisibilityCondition != null &&
-                this.VisibilityCondition.Equals(other.VisibilityCondition)
+                VisibilityCondition == other.VisibilityCondition ||
+                VisibilityCondition != null &&
+                VisibilityCondition.Equals(other.VisibilityCondition)
             ) &&
             (
-                this.AnswerOptions == other.AnswerOptions ||
-                this.AnswerOptions != null &&
-                this.AnswerOptions.SequenceEqual(other.AnswerOptions)
+                AnswerOptions == other.AnswerOptions ||
+                AnswerOptions != null &&
+                AnswerOptions.SequenceEqual(other.AnswerOptions)
             ) &&
             (
-                this.IsKill == other.IsKill ||
-                this.IsKill != null &&
-                this.IsKill.Equals(other.IsKill)
+                IsKill == other.IsKill ||
+                IsKill != null &&
+                IsKill.Equals(other.IsKill)
             ) &&
             (
-                this.IsCritical == other.IsCritical ||
-                this.IsCritical != null &&
-                this.IsCritical.Equals(other.IsCritical)
+                IsCritical == other.IsCritical ||
+                IsCritical != null &&
+                IsCritical.Equals(other.IsCritical)
             );
     }
 
@@ -284,59 +284,59 @@ public partial class EvaluationQuestion : IEquatable<EvaluationQuestion>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ContextId != null)
+            if (ContextId != null)
             {
-                hash = hash * 59 + this.ContextId.GetHashCode();
+                hash = hash * 59 + ContextId.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.HelpText != null)
+            if (HelpText != null)
             {
-                hash = hash * 59 + this.HelpText.GetHashCode();
+                hash = hash * 59 + HelpText.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.NaEnabled != null)
+            if (NaEnabled != null)
             {
-                hash = hash * 59 + this.NaEnabled.GetHashCode();
+                hash = hash * 59 + NaEnabled.GetHashCode();
             }
 
-            if (this.CommentsRequired != null)
+            if (CommentsRequired != null)
             {
-                hash = hash * 59 + this.CommentsRequired.GetHashCode();
+                hash = hash * 59 + CommentsRequired.GetHashCode();
             }
 
-            if (this.VisibilityCondition != null)
+            if (VisibilityCondition != null)
             {
-                hash = hash * 59 + this.VisibilityCondition.GetHashCode();
+                hash = hash * 59 + VisibilityCondition.GetHashCode();
             }
 
-            if (this.AnswerOptions != null)
+            if (AnswerOptions != null)
             {
-                hash = hash * 59 + this.AnswerOptions.GetHashCode();
+                hash = hash * 59 + AnswerOptions.GetHashCode();
             }
 
-            if (this.IsKill != null)
+            if (IsKill != null)
             {
-                hash = hash * 59 + this.IsKill.GetHashCode();
+                hash = hash * 59 + IsKill.GetHashCode();
             }
 
-            if (this.IsCritical != null)
+            if (IsCritical != null)
             {
-                hash = hash * 59 + this.IsCritical.GetHashCode();
+                hash = hash * 59 + IsCritical.GetHashCode();
             }
 
             return hash;

@@ -104,7 +104,7 @@ public partial class ContestMetrics : IEquatable<ContestMetrics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestMetrics);
+        return Equals(obj as ContestMetrics);
     }
 
     /// <summary>
@@ -122,29 +122,29 @@ public partial class ContestMetrics : IEquatable<ContestMetrics>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Weight == other.Weight ||
-                this.Weight != null &&
-                this.Weight.Equals(other.Weight)
+                Weight == other.Weight ||
+                Weight != null &&
+                Weight.Equals(other.Weight)
             ) &&
             (
-                this.MinimumQualifier == other.MinimumQualifier ||
-                this.MinimumQualifier != null &&
-                this.MinimumQualifier.Equals(other.MinimumQualifier)
+                MinimumQualifier == other.MinimumQualifier ||
+                MinimumQualifier != null &&
+                MinimumQualifier.Equals(other.MinimumQualifier)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -159,29 +159,29 @@ public partial class ContestMetrics : IEquatable<ContestMetrics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Weight != null)
+            if (Weight != null)
             {
-                hash = hash * 59 + this.Weight.GetHashCode();
+                hash = hash * 59 + Weight.GetHashCode();
             }
 
-            if (this.MinimumQualifier != null)
+            if (MinimumQualifier != null)
             {
-                hash = hash * 59 + this.MinimumQualifier.GetHashCode();
+                hash = hash * 59 + MinimumQualifier.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

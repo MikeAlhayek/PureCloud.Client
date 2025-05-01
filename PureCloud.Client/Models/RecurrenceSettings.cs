@@ -83,7 +83,7 @@ public partial class RecurrenceSettings : IEquatable<RecurrenceSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecurrenceSettings);
+        return Equals(obj as RecurrenceSettings);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class RecurrenceSettings : IEquatable<RecurrenceSettings>
 
         return true &&
             (
-                this.RecurrencePeriod == other.RecurrencePeriod ||
-                this.RecurrencePeriod != null &&
-                this.RecurrencePeriod.Equals(other.RecurrencePeriod)
+                RecurrencePeriod == other.RecurrencePeriod ||
+                RecurrencePeriod != null &&
+                RecurrencePeriod.Equals(other.RecurrencePeriod)
             ) &&
             (
-                this.MinimumTimeBetweenOccurrences == other.MinimumTimeBetweenOccurrences ||
-                this.MinimumTimeBetweenOccurrences != null &&
-                this.MinimumTimeBetweenOccurrences.Equals(other.MinimumTimeBetweenOccurrences)
+                MinimumTimeBetweenOccurrences == other.MinimumTimeBetweenOccurrences ||
+                MinimumTimeBetweenOccurrences != null &&
+                MinimumTimeBetweenOccurrences.Equals(other.MinimumTimeBetweenOccurrences)
             ) &&
             (
-                this.EndAfter == other.EndAfter ||
-                this.EndAfter != null &&
-                this.EndAfter.Equals(other.EndAfter)
+                EndAfter == other.EndAfter ||
+                EndAfter != null &&
+                EndAfter.Equals(other.EndAfter)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class RecurrenceSettings : IEquatable<RecurrenceSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RecurrencePeriod != null)
+            if (RecurrencePeriod != null)
             {
-                hash = hash * 59 + this.RecurrencePeriod.GetHashCode();
+                hash = hash * 59 + RecurrencePeriod.GetHashCode();
             }
 
-            if (this.MinimumTimeBetweenOccurrences != null)
+            if (MinimumTimeBetweenOccurrences != null)
             {
-                hash = hash * 59 + this.MinimumTimeBetweenOccurrences.GetHashCode();
+                hash = hash * 59 + MinimumTimeBetweenOccurrences.GetHashCode();
             }
 
-            if (this.EndAfter != null)
+            if (EndAfter != null)
             {
-                hash = hash * 59 + this.EndAfter.GetHashCode();
+                hash = hash * 59 + EndAfter.GetHashCode();
             }
 
             return hash;

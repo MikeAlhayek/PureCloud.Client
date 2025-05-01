@@ -71,7 +71,7 @@ public partial class CreateUtilizationLabelRequest : IEquatable<CreateUtilizatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateUtilizationLabelRequest);
+        return Equals(obj as CreateUtilizationLabelRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class CreateUtilizationLabelRequest : IEquatable<CreateUtilizatio
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Utilization == other.Utilization ||
-                this.Utilization != null &&
-                this.Utilization.Equals(other.Utilization)
+                Utilization == other.Utilization ||
+                Utilization != null &&
+                Utilization.Equals(other.Utilization)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class CreateUtilizationLabelRequest : IEquatable<CreateUtilizatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Utilization != null)
+            if (Utilization != null)
             {
-                hash = hash * 59 + this.Utilization.GetHashCode();
+                hash = hash * 59 + Utilization.GetHashCode();
             }
 
             return hash;

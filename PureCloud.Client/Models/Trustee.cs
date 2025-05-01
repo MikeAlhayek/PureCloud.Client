@@ -157,7 +157,7 @@ public partial class Trustee : IEquatable<Trustee>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Trustee);
+        return Equals(obj as Trustee);
     }
 
     /// <summary>
@@ -175,54 +175,54 @@ public partial class Trustee : IEquatable<Trustee>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.UsesDefaultRole == other.UsesDefaultRole ||
-                this.UsesDefaultRole != null &&
-                this.UsesDefaultRole.Equals(other.UsesDefaultRole)
+                UsesDefaultRole == other.UsesDefaultRole ||
+                UsesDefaultRole != null &&
+                UsesDefaultRole.Equals(other.UsesDefaultRole)
             ) &&
             (
-                this.HasFullAccess == other.HasFullAccess ||
-                this.HasFullAccess != null &&
-                this.HasFullAccess.Equals(other.HasFullAccess)
+                HasFullAccess == other.HasFullAccess ||
+                HasFullAccess != null &&
+                HasFullAccess.Equals(other.HasFullAccess)
             ) &&
             (
-                this.IsTrustedUser == other.IsTrustedUser ||
-                this.IsTrustedUser != null &&
-                this.IsTrustedUser.Equals(other.IsTrustedUser)
+                IsTrustedUser == other.IsTrustedUser ||
+                IsTrustedUser != null &&
+                IsTrustedUser.Equals(other.IsTrustedUser)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateExpired == other.DateExpired ||
-                this.DateExpired != null &&
-                this.DateExpired.Equals(other.DateExpired)
+                DateExpired == other.DateExpired ||
+                DateExpired != null &&
+                DateExpired.Equals(other.DateExpired)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.Organization == other.Organization ||
-                this.Organization != null &&
-                this.Organization.Equals(other.Organization)
+                Organization == other.Organization ||
+                Organization != null &&
+                Organization.Equals(other.Organization)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -237,54 +237,54 @@ public partial class Trustee : IEquatable<Trustee>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.UsesDefaultRole != null)
+            if (UsesDefaultRole != null)
             {
-                hash = hash * 59 + this.UsesDefaultRole.GetHashCode();
+                hash = hash * 59 + UsesDefaultRole.GetHashCode();
             }
 
-            if (this.HasFullAccess != null)
+            if (HasFullAccess != null)
             {
-                hash = hash * 59 + this.HasFullAccess.GetHashCode();
+                hash = hash * 59 + HasFullAccess.GetHashCode();
             }
 
-            if (this.IsTrustedUser != null)
+            if (IsTrustedUser != null)
             {
-                hash = hash * 59 + this.IsTrustedUser.GetHashCode();
+                hash = hash * 59 + IsTrustedUser.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateExpired != null)
+            if (DateExpired != null)
             {
-                hash = hash * 59 + this.DateExpired.GetHashCode();
+                hash = hash * 59 + DateExpired.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.Organization != null)
+            if (Organization != null)
             {
-                hash = hash * 59 + this.Organization.GetHashCode();
+                hash = hash * 59 + Organization.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

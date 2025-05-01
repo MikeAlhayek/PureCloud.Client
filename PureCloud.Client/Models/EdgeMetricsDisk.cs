@@ -77,7 +77,7 @@ public partial class EdgeMetricsDisk : IEquatable<EdgeMetricsDisk>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeMetricsDisk);
+        return Equals(obj as EdgeMetricsDisk);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class EdgeMetricsDisk : IEquatable<EdgeMetricsDisk>
 
         return true &&
             (
-                this.AvailableBytes == other.AvailableBytes ||
-                this.AvailableBytes != null &&
-                this.AvailableBytes.Equals(other.AvailableBytes)
+                AvailableBytes == other.AvailableBytes ||
+                AvailableBytes != null &&
+                AvailableBytes.Equals(other.AvailableBytes)
             ) &&
             (
-                this.PartitionName == other.PartitionName ||
-                this.PartitionName != null &&
-                this.PartitionName.Equals(other.PartitionName)
+                PartitionName == other.PartitionName ||
+                PartitionName != null &&
+                PartitionName.Equals(other.PartitionName)
             ) &&
             (
-                this.TotalBytes == other.TotalBytes ||
-                this.TotalBytes != null &&
-                this.TotalBytes.Equals(other.TotalBytes)
+                TotalBytes == other.TotalBytes ||
+                TotalBytes != null &&
+                TotalBytes.Equals(other.TotalBytes)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class EdgeMetricsDisk : IEquatable<EdgeMetricsDisk>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AvailableBytes != null)
+            if (AvailableBytes != null)
             {
-                hash = hash * 59 + this.AvailableBytes.GetHashCode();
+                hash = hash * 59 + AvailableBytes.GetHashCode();
             }
 
-            if (this.PartitionName != null)
+            if (PartitionName != null)
             {
-                hash = hash * 59 + this.PartitionName.GetHashCode();
+                hash = hash * 59 + PartitionName.GetHashCode();
             }
 
-            if (this.TotalBytes != null)
+            if (TotalBytes != null)
             {
-                hash = hash * 59 + this.TotalBytes.GetHashCode();
+                hash = hash * 59 + TotalBytes.GetHashCode();
             }
 
             return hash;

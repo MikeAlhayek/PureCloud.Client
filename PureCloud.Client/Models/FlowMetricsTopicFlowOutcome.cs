@@ -77,7 +77,7 @@ public partial class FlowMetricsTopicFlowOutcome : IEquatable<FlowMetricsTopicFl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowMetricsTopicFlowOutcome);
+        return Equals(obj as FlowMetricsTopicFlowOutcome);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class FlowMetricsTopicFlowOutcome : IEquatable<FlowMetricsTopicFl
 
         return true &&
             (
-                this.FlowOutcome == other.FlowOutcome ||
-                this.FlowOutcome != null &&
-                this.FlowOutcome.Equals(other.FlowOutcome)
+                FlowOutcome == other.FlowOutcome ||
+                FlowOutcome != null &&
+                FlowOutcome.Equals(other.FlowOutcome)
             ) &&
             (
-                this.FlowOutcomeId == other.FlowOutcomeId ||
-                this.FlowOutcomeId != null &&
-                this.FlowOutcomeId.Equals(other.FlowOutcomeId)
+                FlowOutcomeId == other.FlowOutcomeId ||
+                FlowOutcomeId != null &&
+                FlowOutcomeId.Equals(other.FlowOutcomeId)
             ) &&
             (
-                this.FlowOutcomeValue == other.FlowOutcomeValue ||
-                this.FlowOutcomeValue != null &&
-                this.FlowOutcomeValue.Equals(other.FlowOutcomeValue)
+                FlowOutcomeValue == other.FlowOutcomeValue ||
+                FlowOutcomeValue != null &&
+                FlowOutcomeValue.Equals(other.FlowOutcomeValue)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class FlowMetricsTopicFlowOutcome : IEquatable<FlowMetricsTopicFl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FlowOutcome != null)
+            if (FlowOutcome != null)
             {
-                hash = hash * 59 + this.FlowOutcome.GetHashCode();
+                hash = hash * 59 + FlowOutcome.GetHashCode();
             }
 
-            if (this.FlowOutcomeId != null)
+            if (FlowOutcomeId != null)
             {
-                hash = hash * 59 + this.FlowOutcomeId.GetHashCode();
+                hash = hash * 59 + FlowOutcomeId.GetHashCode();
             }
 
-            if (this.FlowOutcomeValue != null)
+            if (FlowOutcomeValue != null)
             {
-                hash = hash * 59 + this.FlowOutcomeValue.GetHashCode();
+                hash = hash * 59 + FlowOutcomeValue.GetHashCode();
             }
 
             return hash;

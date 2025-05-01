@@ -151,7 +151,7 @@ public partial class TextBotFlowTurnRequest : IEquatable<TextBotFlowTurnRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotFlowTurnRequest);
+        return Equals(obj as TextBotFlowTurnRequest);
     }
 
     /// <summary>
@@ -169,24 +169,24 @@ public partial class TextBotFlowTurnRequest : IEquatable<TextBotFlowTurnRequest>
 
         return true &&
             (
-                this.PreviousTurn == other.PreviousTurn ||
-                this.PreviousTurn != null &&
-                this.PreviousTurn.Equals(other.PreviousTurn)
+                PreviousTurn == other.PreviousTurn ||
+                PreviousTurn != null &&
+                PreviousTurn.Equals(other.PreviousTurn)
             ) &&
             (
-                this.InputEventType == other.InputEventType ||
-                this.InputEventType != null &&
-                this.InputEventType.Equals(other.InputEventType)
+                InputEventType == other.InputEventType ||
+                InputEventType != null &&
+                InputEventType.Equals(other.InputEventType)
             ) &&
             (
-                this.InputEventUserInput == other.InputEventUserInput ||
-                this.InputEventUserInput != null &&
-                this.InputEventUserInput.Equals(other.InputEventUserInput)
+                InputEventUserInput == other.InputEventUserInput ||
+                InputEventUserInput != null &&
+                InputEventUserInput.Equals(other.InputEventUserInput)
             ) &&
             (
-                this.InputEventError == other.InputEventError ||
-                this.InputEventError != null &&
-                this.InputEventError.Equals(other.InputEventError)
+                InputEventError == other.InputEventError ||
+                InputEventError != null &&
+                InputEventError.Equals(other.InputEventError)
             );
     }
 
@@ -201,24 +201,24 @@ public partial class TextBotFlowTurnRequest : IEquatable<TextBotFlowTurnRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PreviousTurn != null)
+            if (PreviousTurn != null)
             {
-                hash = hash * 59 + this.PreviousTurn.GetHashCode();
+                hash = hash * 59 + PreviousTurn.GetHashCode();
             }
 
-            if (this.InputEventType != null)
+            if (InputEventType != null)
             {
-                hash = hash * 59 + this.InputEventType.GetHashCode();
+                hash = hash * 59 + InputEventType.GetHashCode();
             }
 
-            if (this.InputEventUserInput != null)
+            if (InputEventUserInput != null)
             {
-                hash = hash * 59 + this.InputEventUserInput.GetHashCode();
+                hash = hash * 59 + InputEventUserInput.GetHashCode();
             }
 
-            if (this.InputEventError != null)
+            if (InputEventError != null)
             {
-                hash = hash * 59 + this.InputEventError.GetHashCode();
+                hash = hash * 59 + InputEventError.GetHashCode();
             }
 
             return hash;

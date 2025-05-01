@@ -64,7 +64,7 @@ public partial class AutomaticTimeZoneMappingSettings : IEquatable<AutomaticTime
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AutomaticTimeZoneMappingSettings);
+        return Equals(obj as AutomaticTimeZoneMappingSettings);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class AutomaticTimeZoneMappingSettings : IEquatable<AutomaticTime
 
         return true &&
             (
-                this.CallableWindows == other.CallableWindows ||
-                this.CallableWindows != null &&
-                this.CallableWindows.SequenceEqual(other.CallableWindows)
+                CallableWindows == other.CallableWindows ||
+                CallableWindows != null &&
+                CallableWindows.SequenceEqual(other.CallableWindows)
             ) &&
             (
-                this.SupportedCountries == other.SupportedCountries ||
-                this.SupportedCountries != null &&
-                this.SupportedCountries.SequenceEqual(other.SupportedCountries)
+                SupportedCountries == other.SupportedCountries ||
+                SupportedCountries != null &&
+                SupportedCountries.SequenceEqual(other.SupportedCountries)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class AutomaticTimeZoneMappingSettings : IEquatable<AutomaticTime
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CallableWindows != null)
+            if (CallableWindows != null)
             {
-                hash = hash * 59 + this.CallableWindows.GetHashCode();
+                hash = hash * 59 + CallableWindows.GetHashCode();
             }
 
-            if (this.SupportedCountries != null)
+            if (SupportedCountries != null)
             {
-                hash = hash * 59 + this.SupportedCountries.GetHashCode();
+                hash = hash * 59 + SupportedCountries.GetHashCode();
             }
 
             return hash;

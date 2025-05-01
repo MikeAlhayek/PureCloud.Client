@@ -127,7 +127,7 @@ public partial class SplittingInformation : IEquatable<SplittingInformation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SplittingInformation);
+        return Equals(obj as SplittingInformation);
     }
 
     /// <summary>
@@ -145,24 +145,24 @@ public partial class SplittingInformation : IEquatable<SplittingInformation>
 
         return true &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.Equals(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.Equals(other.Criteria)
             ) &&
             (
-                this.CriteriaValue == other.CriteriaValue ||
-                this.CriteriaValue != null &&
-                this.CriteriaValue.Equals(other.CriteriaValue)
+                CriteriaValue == other.CriteriaValue ||
+                CriteriaValue != null &&
+                CriteriaValue.Equals(other.CriteriaValue)
             ) &&
             (
-                this.CreateRemainderContactList == other.CreateRemainderContactList ||
-                this.CreateRemainderContactList != null &&
-                this.CreateRemainderContactList.Equals(other.CreateRemainderContactList)
+                CreateRemainderContactList == other.CreateRemainderContactList ||
+                CreateRemainderContactList != null &&
+                CreateRemainderContactList.Equals(other.CreateRemainderContactList)
             ) &&
             (
-                this.UseWaterfallRule == other.UseWaterfallRule ||
-                this.UseWaterfallRule != null &&
-                this.UseWaterfallRule.Equals(other.UseWaterfallRule)
+                UseWaterfallRule == other.UseWaterfallRule ||
+                UseWaterfallRule != null &&
+                UseWaterfallRule.Equals(other.UseWaterfallRule)
             );
     }
 
@@ -177,24 +177,24 @@ public partial class SplittingInformation : IEquatable<SplittingInformation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
-            if (this.CriteriaValue != null)
+            if (CriteriaValue != null)
             {
-                hash = hash * 59 + this.CriteriaValue.GetHashCode();
+                hash = hash * 59 + CriteriaValue.GetHashCode();
             }
 
-            if (this.CreateRemainderContactList != null)
+            if (CreateRemainderContactList != null)
             {
-                hash = hash * 59 + this.CreateRemainderContactList.GetHashCode();
+                hash = hash * 59 + CreateRemainderContactList.GetHashCode();
             }
 
-            if (this.UseWaterfallRule != null)
+            if (UseWaterfallRule != null)
             {
-                hash = hash * 59 + this.UseWaterfallRule.GetHashCode();
+                hash = hash * 59 + UseWaterfallRule.GetHashCode();
             }
 
             return hash;

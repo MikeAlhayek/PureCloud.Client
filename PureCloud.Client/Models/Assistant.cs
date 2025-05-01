@@ -200,7 +200,7 @@ public partial class Assistant : IEquatable<Assistant>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Assistant);
+        return Equals(obj as Assistant);
     }
 
     /// <summary>
@@ -218,64 +218,64 @@ public partial class Assistant : IEquatable<Assistant>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.GoogleDialogflowConfig == other.GoogleDialogflowConfig ||
-                this.GoogleDialogflowConfig != null &&
-                this.GoogleDialogflowConfig.Equals(other.GoogleDialogflowConfig)
+                GoogleDialogflowConfig == other.GoogleDialogflowConfig ||
+                GoogleDialogflowConfig != null &&
+                GoogleDialogflowConfig.Equals(other.GoogleDialogflowConfig)
             ) &&
             (
-                this.TranscriptionConfig == other.TranscriptionConfig ||
-                this.TranscriptionConfig != null &&
-                this.TranscriptionConfig.Equals(other.TranscriptionConfig)
+                TranscriptionConfig == other.TranscriptionConfig ||
+                TranscriptionConfig != null &&
+                TranscriptionConfig.Equals(other.TranscriptionConfig)
             ) &&
             (
-                this.KnowledgeSuggestionConfig == other.KnowledgeSuggestionConfig ||
-                this.KnowledgeSuggestionConfig != null &&
-                this.KnowledgeSuggestionConfig.Equals(other.KnowledgeSuggestionConfig)
+                KnowledgeSuggestionConfig == other.KnowledgeSuggestionConfig ||
+                KnowledgeSuggestionConfig != null &&
+                KnowledgeSuggestionConfig.Equals(other.KnowledgeSuggestionConfig)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Copilot == other.Copilot ||
-                this.Copilot != null &&
-                this.Copilot.Equals(other.Copilot)
+                Copilot == other.Copilot ||
+                Copilot != null &&
+                Copilot.Equals(other.Copilot)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -290,64 +290,64 @@ public partial class Assistant : IEquatable<Assistant>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.GoogleDialogflowConfig != null)
+            if (GoogleDialogflowConfig != null)
             {
-                hash = hash * 59 + this.GoogleDialogflowConfig.GetHashCode();
+                hash = hash * 59 + GoogleDialogflowConfig.GetHashCode();
             }
 
-            if (this.TranscriptionConfig != null)
+            if (TranscriptionConfig != null)
             {
-                hash = hash * 59 + this.TranscriptionConfig.GetHashCode();
+                hash = hash * 59 + TranscriptionConfig.GetHashCode();
             }
 
-            if (this.KnowledgeSuggestionConfig != null)
+            if (KnowledgeSuggestionConfig != null)
             {
-                hash = hash * 59 + this.KnowledgeSuggestionConfig.GetHashCode();
+                hash = hash * 59 + KnowledgeSuggestionConfig.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Copilot != null)
+            if (Copilot != null)
             {
-                hash = hash * 59 + this.Copilot.GetHashCode();
+                hash = hash * 59 + Copilot.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

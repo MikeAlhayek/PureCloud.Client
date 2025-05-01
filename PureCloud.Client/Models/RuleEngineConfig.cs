@@ -71,7 +71,7 @@ public partial class RuleEngineConfig : IEquatable<RuleEngineConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RuleEngineConfig);
+        return Equals(obj as RuleEngineConfig);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class RuleEngineConfig : IEquatable<RuleEngineConfig>
 
         return true &&
             (
-                this.Rules == other.Rules ||
-                this.Rules != null &&
-                this.Rules.SequenceEqual(other.Rules)
+                Rules == other.Rules ||
+                Rules != null &&
+                Rules.SequenceEqual(other.Rules)
             ) &&
             (
-                this.Fallback == other.Fallback ||
-                this.Fallback != null &&
-                this.Fallback.Equals(other.Fallback)
+                Fallback == other.Fallback ||
+                Fallback != null &&
+                Fallback.Equals(other.Fallback)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class RuleEngineConfig : IEquatable<RuleEngineConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Rules != null)
+            if (Rules != null)
             {
-                hash = hash * 59 + this.Rules.GetHashCode();
+                hash = hash * 59 + Rules.GetHashCode();
             }
 
-            if (this.Fallback != null)
+            if (Fallback != null)
             {
-                hash = hash * 59 + this.Fallback.GetHashCode();
+                hash = hash * 59 + Fallback.GetHashCode();
             }
 
             return hash;

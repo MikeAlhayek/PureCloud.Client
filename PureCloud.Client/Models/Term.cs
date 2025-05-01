@@ -103,7 +103,7 @@ public partial class Term : IEquatable<Term>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Term);
+        return Equals(obj as Term);
     }
 
     /// <summary>
@@ -121,14 +121,14 @@ public partial class Term : IEquatable<Term>
 
         return true &&
             (
-                this.Word == other.Word ||
-                this.Word != null &&
-                this.Word.Equals(other.Word)
+                Word == other.Word ||
+                Word != null &&
+                Word.Equals(other.Word)
             ) &&
             (
-                this.ParticipantType == other.ParticipantType ||
-                this.ParticipantType != null &&
-                this.ParticipantType.Equals(other.ParticipantType)
+                ParticipantType == other.ParticipantType ||
+                ParticipantType != null &&
+                ParticipantType.Equals(other.ParticipantType)
             );
     }
 
@@ -143,14 +143,14 @@ public partial class Term : IEquatable<Term>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Word != null)
+            if (Word != null)
             {
-                hash = hash * 59 + this.Word.GetHashCode();
+                hash = hash * 59 + Word.GetHashCode();
             }
 
-            if (this.ParticipantType != null)
+            if (ParticipantType != null)
             {
-                hash = hash * 59 + this.ParticipantType.GetHashCode();
+                hash = hash * 59 + ParticipantType.GetHashCode();
             }
 
             return hash;

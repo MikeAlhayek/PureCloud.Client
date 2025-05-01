@@ -76,7 +76,7 @@ public partial class DialerCampaignConfigChangeRestErrorDetail : IEquatable<Dial
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerCampaignConfigChangeRestErrorDetail);
+        return Equals(obj as DialerCampaignConfigChangeRestErrorDetail);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class DialerCampaignConfigChangeRestErrorDetail : IEquatable<Dial
 
         return true &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.Details == other.Details ||
-                this.Details != null &&
-                this.Details.Equals(other.Details)
+                Details == other.Details ||
+                Details != null &&
+                Details.Equals(other.Details)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class DialerCampaignConfigChangeRestErrorDetail : IEquatable<Dial
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.Details != null)
+            if (Details != null)
             {
-                hash = hash * 59 + this.Details.GetHashCode();
+                hash = hash * 59 + Details.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

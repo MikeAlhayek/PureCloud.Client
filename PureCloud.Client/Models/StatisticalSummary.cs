@@ -184,7 +184,7 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as StatisticalSummary);
+        return Equals(obj as StatisticalSummary);
     }
 
     /// <summary>
@@ -202,69 +202,69 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
 
         return true &&
             (
-                this.Max == other.Max ||
-                this.Max != null &&
-                this.Max.Equals(other.Max)
+                Max == other.Max ||
+                Max != null &&
+                Max.Equals(other.Max)
             ) &&
             (
-                this.Min == other.Min ||
-                this.Min != null &&
-                this.Min.Equals(other.Min)
+                Min == other.Min ||
+                Min != null &&
+                Min.Equals(other.Min)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.CountNegative == other.CountNegative ||
-                this.CountNegative != null &&
-                this.CountNegative.Equals(other.CountNegative)
+                CountNegative == other.CountNegative ||
+                CountNegative != null &&
+                CountNegative.Equals(other.CountNegative)
             ) &&
             (
-                this.CountPositive == other.CountPositive ||
-                this.CountPositive != null &&
-                this.CountPositive.Equals(other.CountPositive)
+                CountPositive == other.CountPositive ||
+                CountPositive != null &&
+                CountPositive.Equals(other.CountPositive)
             ) &&
             (
-                this.Sum == other.Sum ||
-                this.Sum != null &&
-                this.Sum.Equals(other.Sum)
+                Sum == other.Sum ||
+                Sum != null &&
+                Sum.Equals(other.Sum)
             ) &&
             (
-                this.Current == other.Current ||
-                this.Current != null &&
-                this.Current.Equals(other.Current)
+                Current == other.Current ||
+                Current != null &&
+                Current.Equals(other.Current)
             ) &&
             (
-                this.Ratio == other.Ratio ||
-                this.Ratio != null &&
-                this.Ratio.Equals(other.Ratio)
+                Ratio == other.Ratio ||
+                Ratio != null &&
+                Ratio.Equals(other.Ratio)
             ) &&
             (
-                this.Numerator == other.Numerator ||
-                this.Numerator != null &&
-                this.Numerator.Equals(other.Numerator)
+                Numerator == other.Numerator ||
+                Numerator != null &&
+                Numerator.Equals(other.Numerator)
             ) &&
             (
-                this.Denominator == other.Denominator ||
-                this.Denominator != null &&
-                this.Denominator.Equals(other.Denominator)
+                Denominator == other.Denominator ||
+                Denominator != null &&
+                Denominator.Equals(other.Denominator)
             ) &&
             (
-                this.Target == other.Target ||
-                this.Target != null &&
-                this.Target.Equals(other.Target)
+                Target == other.Target ||
+                Target != null &&
+                Target.Equals(other.Target)
             ) &&
             (
-                this.P95 == other.P95 ||
-                this.P95 != null &&
-                this.P95.Equals(other.P95)
+                P95 == other.P95 ||
+                P95 != null &&
+                P95.Equals(other.P95)
             ) &&
             (
-                this.P99 == other.P99 ||
-                this.P99 != null &&
-                this.P99.Equals(other.P99)
+                P99 == other.P99 ||
+                P99 != null &&
+                P99.Equals(other.P99)
             );
     }
 
@@ -279,69 +279,69 @@ public partial class StatisticalSummary : IEquatable<StatisticalSummary>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Max != null)
+            if (Max != null)
             {
-                hash = hash * 59 + this.Max.GetHashCode();
+                hash = hash * 59 + Max.GetHashCode();
             }
 
-            if (this.Min != null)
+            if (Min != null)
             {
-                hash = hash * 59 + this.Min.GetHashCode();
+                hash = hash * 59 + Min.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.CountNegative != null)
+            if (CountNegative != null)
             {
-                hash = hash * 59 + this.CountNegative.GetHashCode();
+                hash = hash * 59 + CountNegative.GetHashCode();
             }
 
-            if (this.CountPositive != null)
+            if (CountPositive != null)
             {
-                hash = hash * 59 + this.CountPositive.GetHashCode();
+                hash = hash * 59 + CountPositive.GetHashCode();
             }
 
-            if (this.Sum != null)
+            if (Sum != null)
             {
-                hash = hash * 59 + this.Sum.GetHashCode();
+                hash = hash * 59 + Sum.GetHashCode();
             }
 
-            if (this.Current != null)
+            if (Current != null)
             {
-                hash = hash * 59 + this.Current.GetHashCode();
+                hash = hash * 59 + Current.GetHashCode();
             }
 
-            if (this.Ratio != null)
+            if (Ratio != null)
             {
-                hash = hash * 59 + this.Ratio.GetHashCode();
+                hash = hash * 59 + Ratio.GetHashCode();
             }
 
-            if (this.Numerator != null)
+            if (Numerator != null)
             {
-                hash = hash * 59 + this.Numerator.GetHashCode();
+                hash = hash * 59 + Numerator.GetHashCode();
             }
 
-            if (this.Denominator != null)
+            if (Denominator != null)
             {
-                hash = hash * 59 + this.Denominator.GetHashCode();
+                hash = hash * 59 + Denominator.GetHashCode();
             }
 
-            if (this.Target != null)
+            if (Target != null)
             {
-                hash = hash * 59 + this.Target.GetHashCode();
+                hash = hash * 59 + Target.GetHashCode();
             }
 
-            if (this.P95 != null)
+            if (P95 != null)
             {
-                hash = hash * 59 + this.P95.GetHashCode();
+                hash = hash * 59 + P95.GetHashCode();
             }
 
-            if (this.P99 != null)
+            if (P99 != null)
             {
-                hash = hash * 59 + this.P99.GetHashCode();
+                hash = hash * 59 + P99.GetHashCode();
             }
 
             return hash;

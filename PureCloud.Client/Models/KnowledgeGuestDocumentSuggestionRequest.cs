@@ -83,7 +83,7 @@ public partial class KnowledgeGuestDocumentSuggestionRequest : IEquatable<Knowle
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeGuestDocumentSuggestionRequest);
+        return Equals(obj as KnowledgeGuestDocumentSuggestionRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class KnowledgeGuestDocumentSuggestionRequest : IEquatable<Knowle
 
         return true &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.Equals(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.Equals(other.Query)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.IncludeDraftDocuments == other.IncludeDraftDocuments ||
-                this.IncludeDraftDocuments != null &&
-                this.IncludeDraftDocuments.Equals(other.IncludeDraftDocuments)
+                IncludeDraftDocuments == other.IncludeDraftDocuments ||
+                IncludeDraftDocuments != null &&
+                IncludeDraftDocuments.Equals(other.IncludeDraftDocuments)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class KnowledgeGuestDocumentSuggestionRequest : IEquatable<Knowle
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.IncludeDraftDocuments != null)
+            if (IncludeDraftDocuments != null)
             {
-                hash = hash * 59 + this.IncludeDraftDocuments.GetHashCode();
+                hash = hash * 59 + IncludeDraftDocuments.GetHashCode();
             }
 
             return hash;

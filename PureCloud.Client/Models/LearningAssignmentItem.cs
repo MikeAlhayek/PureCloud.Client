@@ -71,7 +71,7 @@ public partial class LearningAssignmentItem : IEquatable<LearningAssignmentItem>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentItem);
+        return Equals(obj as LearningAssignmentItem);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class LearningAssignmentItem : IEquatable<LearningAssignmentItem>
 
         return true &&
             (
-                this.ModuleId == other.ModuleId ||
-                this.ModuleId != null &&
-                this.ModuleId.Equals(other.ModuleId)
+                ModuleId == other.ModuleId ||
+                ModuleId != null &&
+                ModuleId.Equals(other.ModuleId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class LearningAssignmentItem : IEquatable<LearningAssignmentItem>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ModuleId != null)
+            if (ModuleId != null)
             {
-                hash = hash * 59 + this.ModuleId.GetHashCode();
+                hash = hash * 59 + ModuleId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
             return hash;

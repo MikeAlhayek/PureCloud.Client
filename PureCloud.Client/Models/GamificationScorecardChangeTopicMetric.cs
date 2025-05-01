@@ -52,7 +52,7 @@ public partial class GamificationScorecardChangeTopicMetric : IEquatable<Gamific
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GamificationScorecardChangeTopicMetric);
+        return Equals(obj as GamificationScorecardChangeTopicMetric);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class GamificationScorecardChangeTopicMetric : IEquatable<Gamific
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class GamificationScorecardChangeTopicMetric : IEquatable<Gamific
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
             return hash;

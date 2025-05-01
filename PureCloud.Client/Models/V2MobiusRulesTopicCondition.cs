@@ -122,7 +122,7 @@ public partial class V2MobiusRulesTopicCondition : IEquatable<V2MobiusRulesTopic
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2MobiusRulesTopicCondition);
+        return Equals(obj as V2MobiusRulesTopicCondition);
     }
 
     /// <summary>
@@ -140,24 +140,24 @@ public partial class V2MobiusRulesTopicCondition : IEquatable<V2MobiusRulesTopic
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Clauses == other.Clauses ||
-                this.Clauses != null &&
-                this.Clauses.SequenceEqual(other.Clauses)
+                Clauses == other.Clauses ||
+                Clauses != null &&
+                Clauses.SequenceEqual(other.Clauses)
             ) &&
             (
-                this.Predicates == other.Predicates ||
-                this.Predicates != null &&
-                this.Predicates.SequenceEqual(other.Predicates)
+                Predicates == other.Predicates ||
+                Predicates != null &&
+                Predicates.SequenceEqual(other.Predicates)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -172,24 +172,24 @@ public partial class V2MobiusRulesTopicCondition : IEquatable<V2MobiusRulesTopic
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Clauses != null)
+            if (Clauses != null)
             {
-                hash = hash * 59 + this.Clauses.GetHashCode();
+                hash = hash * 59 + Clauses.GetHashCode();
             }
 
-            if (this.Predicates != null)
+            if (Predicates != null)
             {
-                hash = hash * 59 + this.Predicates.GetHashCode();
+                hash = hash * 59 + Predicates.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

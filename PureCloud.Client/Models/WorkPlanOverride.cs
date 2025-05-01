@@ -83,7 +83,7 @@ public partial class WorkPlanOverride : IEquatable<WorkPlanOverride>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanOverride);
+        return Equals(obj as WorkPlanOverride);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class WorkPlanOverride : IEquatable<WorkPlanOverride>
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             ) &&
             (
-                this.WorkPlan == other.WorkPlan ||
-                this.WorkPlan != null &&
-                this.WorkPlan.Equals(other.WorkPlan)
+                WorkPlan == other.WorkPlan ||
+                WorkPlan != null &&
+                WorkPlan.Equals(other.WorkPlan)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class WorkPlanOverride : IEquatable<WorkPlanOverride>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
-            if (this.WorkPlan != null)
+            if (WorkPlan != null)
             {
-                hash = hash * 59 + this.WorkPlan.GetHashCode();
+                hash = hash * 59 + WorkPlan.GetHashCode();
             }
 
             return hash;

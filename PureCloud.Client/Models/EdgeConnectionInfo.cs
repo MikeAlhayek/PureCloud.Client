@@ -113,7 +113,7 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeConnectionInfo);
+        return Equals(obj as EdgeConnectionInfo);
     }
 
     /// <summary>
@@ -131,39 +131,39 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.InterfaceName == other.InterfaceName ||
-                this.InterfaceName != null &&
-                this.InterfaceName.Equals(other.InterfaceName)
+                InterfaceName == other.InterfaceName ||
+                InterfaceName != null &&
+                InterfaceName.Equals(other.InterfaceName)
             ) &&
             (
-                this.InterfaceIpAddress == other.InterfaceIpAddress ||
-                this.InterfaceIpAddress != null &&
-                this.InterfaceIpAddress.Equals(other.InterfaceIpAddress)
+                InterfaceIpAddress == other.InterfaceIpAddress ||
+                InterfaceIpAddress != null &&
+                InterfaceIpAddress.Equals(other.InterfaceIpAddress)
             ) &&
             (
-                this.ConnectionErrors == other.ConnectionErrors ||
-                this.ConnectionErrors != null &&
-                this.ConnectionErrors.SequenceEqual(other.ConnectionErrors)
+                ConnectionErrors == other.ConnectionErrors ||
+                ConnectionErrors != null &&
+                ConnectionErrors.SequenceEqual(other.ConnectionErrors)
             ) &&
             (
-                this.Site == other.Site ||
-                this.Site != null &&
-                this.Site.Equals(other.Site)
+                Site == other.Site ||
+                Site != null &&
+                Site.Equals(other.Site)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -178,39 +178,39 @@ public partial class EdgeConnectionInfo : IEquatable<EdgeConnectionInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.InterfaceName != null)
+            if (InterfaceName != null)
             {
-                hash = hash * 59 + this.InterfaceName.GetHashCode();
+                hash = hash * 59 + InterfaceName.GetHashCode();
             }
 
-            if (this.InterfaceIpAddress != null)
+            if (InterfaceIpAddress != null)
             {
-                hash = hash * 59 + this.InterfaceIpAddress.GetHashCode();
+                hash = hash * 59 + InterfaceIpAddress.GetHashCode();
             }
 
-            if (this.ConnectionErrors != null)
+            if (ConnectionErrors != null)
             {
-                hash = hash * 59 + this.ConnectionErrors.GetHashCode();
+                hash = hash * 59 + ConnectionErrors.GetHashCode();
             }
 
-            if (this.Site != null)
+            if (Site != null)
             {
-                hash = hash * 59 + this.Site.GetHashCode();
+                hash = hash * 59 + Site.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

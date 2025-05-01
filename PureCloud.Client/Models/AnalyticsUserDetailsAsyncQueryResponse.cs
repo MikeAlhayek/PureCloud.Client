@@ -75,7 +75,7 @@ public partial class AnalyticsUserDetailsAsyncQueryResponse : IEquatable<Analyti
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsUserDetailsAsyncQueryResponse);
+        return Equals(obj as AnalyticsUserDetailsAsyncQueryResponse);
     }
 
     /// <summary>
@@ -93,19 +93,19 @@ public partial class AnalyticsUserDetailsAsyncQueryResponse : IEquatable<Analyti
 
         return true &&
             (
-                this.UserDetails == other.UserDetails ||
-                this.UserDetails != null &&
-                this.UserDetails.SequenceEqual(other.UserDetails)
+                UserDetails == other.UserDetails ||
+                UserDetails != null &&
+                UserDetails.SequenceEqual(other.UserDetails)
             ) &&
             (
-                this.Cursor == other.Cursor ||
-                this.Cursor != null &&
-                this.Cursor.Equals(other.Cursor)
+                Cursor == other.Cursor ||
+                Cursor != null &&
+                Cursor.Equals(other.Cursor)
             ) &&
             (
-                this.DataAvailabilityDate == other.DataAvailabilityDate ||
-                this.DataAvailabilityDate != null &&
-                this.DataAvailabilityDate.Equals(other.DataAvailabilityDate)
+                DataAvailabilityDate == other.DataAvailabilityDate ||
+                DataAvailabilityDate != null &&
+                DataAvailabilityDate.Equals(other.DataAvailabilityDate)
             );
     }
 
@@ -120,19 +120,19 @@ public partial class AnalyticsUserDetailsAsyncQueryResponse : IEquatable<Analyti
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserDetails != null)
+            if (UserDetails != null)
             {
-                hash = hash * 59 + this.UserDetails.GetHashCode();
+                hash = hash * 59 + UserDetails.GetHashCode();
             }
 
-            if (this.Cursor != null)
+            if (Cursor != null)
             {
-                hash = hash * 59 + this.Cursor.GetHashCode();
+                hash = hash * 59 + Cursor.GetHashCode();
             }
 
-            if (this.DataAvailabilityDate != null)
+            if (DataAvailabilityDate != null)
             {
-                hash = hash * 59 + this.DataAvailabilityDate.GetHashCode();
+                hash = hash * 59 + DataAvailabilityDate.GetHashCode();
             }
 
             return hash;

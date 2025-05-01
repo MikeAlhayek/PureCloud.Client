@@ -113,7 +113,7 @@ public partial class DirectRouting : IEquatable<DirectRouting>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DirectRouting);
+        return Equals(obj as DirectRouting);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class DirectRouting : IEquatable<DirectRouting>
 
         return true &&
             (
-                this.CallMediaSettings == other.CallMediaSettings ||
-                this.CallMediaSettings != null &&
-                this.CallMediaSettings.Equals(other.CallMediaSettings)
+                CallMediaSettings == other.CallMediaSettings ||
+                CallMediaSettings != null &&
+                CallMediaSettings.Equals(other.CallMediaSettings)
             ) &&
             (
-                this.EmailMediaSettings == other.EmailMediaSettings ||
-                this.EmailMediaSettings != null &&
-                this.EmailMediaSettings.Equals(other.EmailMediaSettings)
+                EmailMediaSettings == other.EmailMediaSettings ||
+                EmailMediaSettings != null &&
+                EmailMediaSettings.Equals(other.EmailMediaSettings)
             ) &&
             (
-                this.MessageMediaSettings == other.MessageMediaSettings ||
-                this.MessageMediaSettings != null &&
-                this.MessageMediaSettings.Equals(other.MessageMediaSettings)
+                MessageMediaSettings == other.MessageMediaSettings ||
+                MessageMediaSettings != null &&
+                MessageMediaSettings.Equals(other.MessageMediaSettings)
             ) &&
             (
-                this.BackupQueueId == other.BackupQueueId ||
-                this.BackupQueueId != null &&
-                this.BackupQueueId.Equals(other.BackupQueueId)
+                BackupQueueId == other.BackupQueueId ||
+                BackupQueueId != null &&
+                BackupQueueId.Equals(other.BackupQueueId)
             ) &&
             (
-                this.WaitForAgent == other.WaitForAgent ||
-                this.WaitForAgent != null &&
-                this.WaitForAgent.Equals(other.WaitForAgent)
+                WaitForAgent == other.WaitForAgent ||
+                WaitForAgent != null &&
+                WaitForAgent.Equals(other.WaitForAgent)
             ) &&
             (
-                this.AgentWaitSeconds == other.AgentWaitSeconds ||
-                this.AgentWaitSeconds != null &&
-                this.AgentWaitSeconds.Equals(other.AgentWaitSeconds)
+                AgentWaitSeconds == other.AgentWaitSeconds ||
+                AgentWaitSeconds != null &&
+                AgentWaitSeconds.Equals(other.AgentWaitSeconds)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class DirectRouting : IEquatable<DirectRouting>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CallMediaSettings != null)
+            if (CallMediaSettings != null)
             {
-                hash = hash * 59 + this.CallMediaSettings.GetHashCode();
+                hash = hash * 59 + CallMediaSettings.GetHashCode();
             }
 
-            if (this.EmailMediaSettings != null)
+            if (EmailMediaSettings != null)
             {
-                hash = hash * 59 + this.EmailMediaSettings.GetHashCode();
+                hash = hash * 59 + EmailMediaSettings.GetHashCode();
             }
 
-            if (this.MessageMediaSettings != null)
+            if (MessageMediaSettings != null)
             {
-                hash = hash * 59 + this.MessageMediaSettings.GetHashCode();
+                hash = hash * 59 + MessageMediaSettings.GetHashCode();
             }
 
-            if (this.BackupQueueId != null)
+            if (BackupQueueId != null)
             {
-                hash = hash * 59 + this.BackupQueueId.GetHashCode();
+                hash = hash * 59 + BackupQueueId.GetHashCode();
             }
 
-            if (this.WaitForAgent != null)
+            if (WaitForAgent != null)
             {
-                hash = hash * 59 + this.WaitForAgent.GetHashCode();
+                hash = hash * 59 + WaitForAgent.GetHashCode();
             }
 
-            if (this.AgentWaitSeconds != null)
+            if (AgentWaitSeconds != null)
             {
-                hash = hash * 59 + this.AgentWaitSeconds.GetHashCode();
+                hash = hash * 59 + AgentWaitSeconds.GetHashCode();
             }
 
             return hash;

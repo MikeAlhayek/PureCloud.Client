@@ -109,7 +109,7 @@ public partial class UnansweredPhraseGroup : IEquatable<UnansweredPhraseGroup>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UnansweredPhraseGroup);
+        return Equals(obj as UnansweredPhraseGroup);
     }
 
     /// <summary>
@@ -127,34 +127,34 @@ public partial class UnansweredPhraseGroup : IEquatable<UnansweredPhraseGroup>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Label == other.Label ||
-                this.Label != null &&
-                this.Label.Equals(other.Label)
+                Label == other.Label ||
+                Label != null &&
+                Label.Equals(other.Label)
             ) &&
             (
-                this.Phrases == other.Phrases ||
-                this.Phrases != null &&
-                this.Phrases.SequenceEqual(other.Phrases)
+                Phrases == other.Phrases ||
+                Phrases != null &&
+                Phrases.SequenceEqual(other.Phrases)
             ) &&
             (
-                this.UnlinkedPhraseHitCount == other.UnlinkedPhraseHitCount ||
-                this.UnlinkedPhraseHitCount != null &&
-                this.UnlinkedPhraseHitCount.Equals(other.UnlinkedPhraseHitCount)
+                UnlinkedPhraseHitCount == other.UnlinkedPhraseHitCount ||
+                UnlinkedPhraseHitCount != null &&
+                UnlinkedPhraseHitCount.Equals(other.UnlinkedPhraseHitCount)
             ) &&
             (
-                this.UnlinkedPhraseCount == other.UnlinkedPhraseCount ||
-                this.UnlinkedPhraseCount != null &&
-                this.UnlinkedPhraseCount.Equals(other.UnlinkedPhraseCount)
+                UnlinkedPhraseCount == other.UnlinkedPhraseCount ||
+                UnlinkedPhraseCount != null &&
+                UnlinkedPhraseCount.Equals(other.UnlinkedPhraseCount)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -169,34 +169,34 @@ public partial class UnansweredPhraseGroup : IEquatable<UnansweredPhraseGroup>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Label != null)
+            if (Label != null)
             {
-                hash = hash * 59 + this.Label.GetHashCode();
+                hash = hash * 59 + Label.GetHashCode();
             }
 
-            if (this.Phrases != null)
+            if (Phrases != null)
             {
-                hash = hash * 59 + this.Phrases.GetHashCode();
+                hash = hash * 59 + Phrases.GetHashCode();
             }
 
-            if (this.UnlinkedPhraseHitCount != null)
+            if (UnlinkedPhraseHitCount != null)
             {
-                hash = hash * 59 + this.UnlinkedPhraseHitCount.GetHashCode();
+                hash = hash * 59 + UnlinkedPhraseHitCount.GetHashCode();
             }
 
-            if (this.UnlinkedPhraseCount != null)
+            if (UnlinkedPhraseCount != null)
             {
-                hash = hash * 59 + this.UnlinkedPhraseCount.GetHashCode();
+                hash = hash * 59 + UnlinkedPhraseCount.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

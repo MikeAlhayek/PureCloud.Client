@@ -79,7 +79,7 @@ public partial class WebChatConfig : IEquatable<WebChatConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebChatConfig);
+        return Equals(obj as WebChatConfig);
     }
 
     /// <summary>
@@ -97,9 +97,9 @@ public partial class WebChatConfig : IEquatable<WebChatConfig>
 
         return true &&
             (
-                this.WebChatSkin == other.WebChatSkin ||
-                this.WebChatSkin != null &&
-                this.WebChatSkin.Equals(other.WebChatSkin)
+                WebChatSkin == other.WebChatSkin ||
+                WebChatSkin != null &&
+                WebChatSkin.Equals(other.WebChatSkin)
             );
     }
 
@@ -114,9 +114,9 @@ public partial class WebChatConfig : IEquatable<WebChatConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WebChatSkin != null)
+            if (WebChatSkin != null)
             {
-                hash = hash * 59 + this.WebChatSkin.GetHashCode();
+                hash = hash * 59 + WebChatSkin.GetHashCode();
             }
 
             return hash;

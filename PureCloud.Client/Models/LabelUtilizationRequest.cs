@@ -65,7 +65,7 @@ public partial class LabelUtilizationRequest : IEquatable<LabelUtilizationReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LabelUtilizationRequest);
+        return Equals(obj as LabelUtilizationRequest);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class LabelUtilizationRequest : IEquatable<LabelUtilizationReques
 
         return true &&
             (
-                this.MaximumCapacity == other.MaximumCapacity ||
-                this.MaximumCapacity != null &&
-                this.MaximumCapacity.Equals(other.MaximumCapacity)
+                MaximumCapacity == other.MaximumCapacity ||
+                MaximumCapacity != null &&
+                MaximumCapacity.Equals(other.MaximumCapacity)
             ) &&
             (
-                this.InterruptingLabelIds == other.InterruptingLabelIds ||
-                this.InterruptingLabelIds != null &&
-                this.InterruptingLabelIds.SequenceEqual(other.InterruptingLabelIds)
+                InterruptingLabelIds == other.InterruptingLabelIds ||
+                InterruptingLabelIds != null &&
+                InterruptingLabelIds.SequenceEqual(other.InterruptingLabelIds)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class LabelUtilizationRequest : IEquatable<LabelUtilizationReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MaximumCapacity != null)
+            if (MaximumCapacity != null)
             {
-                hash = hash * 59 + this.MaximumCapacity.GetHashCode();
+                hash = hash * 59 + MaximumCapacity.GetHashCode();
             }
 
-            if (this.InterruptingLabelIds != null)
+            if (InterruptingLabelIds != null)
             {
-                hash = hash * 59 + this.InterruptingLabelIds.GetHashCode();
+                hash = hash * 59 + InterruptingLabelIds.GetHashCode();
             }
 
             return hash;

@@ -229,7 +229,7 @@ public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdate
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BulkUpdateShiftTradeStateResultItem);
+        return Equals(obj as BulkUpdateShiftTradeStateResultItem);
     }
 
     /// <summary>
@@ -247,34 +247,34 @@ public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdate
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.ReviewedBy == other.ReviewedBy ||
-                this.ReviewedBy != null &&
-                this.ReviewedBy.Equals(other.ReviewedBy)
+                ReviewedBy == other.ReviewedBy ||
+                ReviewedBy != null &&
+                ReviewedBy.Equals(other.ReviewedBy)
             ) &&
             (
-                this.ReviewedDate == other.ReviewedDate ||
-                this.ReviewedDate != null &&
-                this.ReviewedDate.Equals(other.ReviewedDate)
+                ReviewedDate == other.ReviewedDate ||
+                ReviewedDate != null &&
+                ReviewedDate.Equals(other.ReviewedDate)
             ) &&
             (
-                this.FailureReason == other.FailureReason ||
-                this.FailureReason != null &&
-                this.FailureReason.Equals(other.FailureReason)
+                FailureReason == other.FailureReason ||
+                FailureReason != null &&
+                FailureReason.Equals(other.FailureReason)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -289,34 +289,34 @@ public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdate
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.ReviewedBy != null)
+            if (ReviewedBy != null)
             {
-                hash = hash * 59 + this.ReviewedBy.GetHashCode();
+                hash = hash * 59 + ReviewedBy.GetHashCode();
             }
 
-            if (this.ReviewedDate != null)
+            if (ReviewedDate != null)
             {
-                hash = hash * 59 + this.ReviewedDate.GetHashCode();
+                hash = hash * 59 + ReviewedDate.GetHashCode();
             }
 
-            if (this.FailureReason != null)
+            if (FailureReason != null)
             {
-                hash = hash * 59 + this.FailureReason.GetHashCode();
+                hash = hash * 59 + FailureReason.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

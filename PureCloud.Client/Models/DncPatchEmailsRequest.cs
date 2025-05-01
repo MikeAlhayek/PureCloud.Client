@@ -103,7 +103,7 @@ public partial class DncPatchEmailsRequest : IEquatable<DncPatchEmailsRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DncPatchEmailsRequest);
+        return Equals(obj as DncPatchEmailsRequest);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class DncPatchEmailsRequest : IEquatable<DncPatchEmailsRequest>
 
         return true &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.EmailAddresses == other.EmailAddresses ||
-                this.EmailAddresses != null &&
-                this.EmailAddresses.SequenceEqual(other.EmailAddresses)
+                EmailAddresses == other.EmailAddresses ||
+                EmailAddresses != null &&
+                EmailAddresses.SequenceEqual(other.EmailAddresses)
             ) &&
             (
-                this.ExpirationDateTime == other.ExpirationDateTime ||
-                this.ExpirationDateTime != null &&
-                this.ExpirationDateTime.Equals(other.ExpirationDateTime)
+                ExpirationDateTime == other.ExpirationDateTime ||
+                ExpirationDateTime != null &&
+                ExpirationDateTime.Equals(other.ExpirationDateTime)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class DncPatchEmailsRequest : IEquatable<DncPatchEmailsRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.EmailAddresses != null)
+            if (EmailAddresses != null)
             {
-                hash = hash * 59 + this.EmailAddresses.GetHashCode();
+                hash = hash * 59 + EmailAddresses.GetHashCode();
             }
 
-            if (this.ExpirationDateTime != null)
+            if (ExpirationDateTime != null)
             {
-                hash = hash * 59 + this.ExpirationDateTime.GetHashCode();
+                hash = hash * 59 + ExpirationDateTime.GetHashCode();
             }
 
             return hash;

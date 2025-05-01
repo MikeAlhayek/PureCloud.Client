@@ -119,7 +119,7 @@ public partial class ConversationContentCard : IEquatable<ConversationContentCar
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationContentCard);
+        return Equals(obj as ConversationContentCard);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class ConversationContentCard : IEquatable<ConversationContentCar
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Image == other.Image ||
-                this.Image != null &&
-                this.Image.Equals(other.Image)
+                Image == other.Image ||
+                Image != null &&
+                Image.Equals(other.Image)
             ) &&
             (
-                this.Video == other.Video ||
-                this.Video != null &&
-                this.Video.Equals(other.Video)
+                Video == other.Video ||
+                Video != null &&
+                Video.Equals(other.Video)
             ) &&
             (
-                this.DefaultAction == other.DefaultAction ||
-                this.DefaultAction != null &&
-                this.DefaultAction.Equals(other.DefaultAction)
+                DefaultAction == other.DefaultAction ||
+                DefaultAction != null &&
+                DefaultAction.Equals(other.DefaultAction)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.SequenceEqual(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.SequenceEqual(other.Actions)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class ConversationContentCard : IEquatable<ConversationContentCar
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Image != null)
+            if (Image != null)
             {
-                hash = hash * 59 + this.Image.GetHashCode();
+                hash = hash * 59 + Image.GetHashCode();
             }
 
-            if (this.Video != null)
+            if (Video != null)
             {
-                hash = hash * 59 + this.Video.GetHashCode();
+                hash = hash * 59 + Video.GetHashCode();
             }
 
-            if (this.DefaultAction != null)
+            if (DefaultAction != null)
             {
-                hash = hash * 59 + this.DefaultAction.GetHashCode();
+                hash = hash * 59 + DefaultAction.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
             return hash;

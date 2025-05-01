@@ -77,7 +77,7 @@ public partial class DataIngestionRulesMetadata : IEquatable<DataIngestionRulesM
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DataIngestionRulesMetadata);
+        return Equals(obj as DataIngestionRulesMetadata);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class DataIngestionRulesMetadata : IEquatable<DataIngestionRulesM
 
         return true &&
             (
-                this.CountByStatus == other.CountByStatus ||
-                this.CountByStatus != null &&
-                this.CountByStatus.SequenceEqual(other.CountByStatus)
+                CountByStatus == other.CountByStatus ||
+                CountByStatus != null &&
+                CountByStatus.SequenceEqual(other.CountByStatus)
             ) &&
             (
-                this.Platform == other.Platform ||
-                this.Platform != null &&
-                this.Platform.Equals(other.Platform)
+                Platform == other.Platform ||
+                Platform != null &&
+                Platform.Equals(other.Platform)
             ) &&
             (
-                this.TotalCount == other.TotalCount ||
-                this.TotalCount != null &&
-                this.TotalCount.Equals(other.TotalCount)
+                TotalCount == other.TotalCount ||
+                TotalCount != null &&
+                TotalCount.Equals(other.TotalCount)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class DataIngestionRulesMetadata : IEquatable<DataIngestionRulesM
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CountByStatus != null)
+            if (CountByStatus != null)
             {
-                hash = hash * 59 + this.CountByStatus.GetHashCode();
+                hash = hash * 59 + CountByStatus.GetHashCode();
             }
 
-            if (this.Platform != null)
+            if (Platform != null)
             {
-                hash = hash * 59 + this.Platform.GetHashCode();
+                hash = hash * 59 + Platform.GetHashCode();
             }
 
-            if (this.TotalCount != null)
+            if (TotalCount != null)
             {
-                hash = hash * 59 + this.TotalCount.GetHashCode();
+                hash = hash * 59 + TotalCount.GetHashCode();
             }
 
             return hash;

@@ -121,7 +121,7 @@ public partial class RoutingActivityQueryMetric : IEquatable<RoutingActivityQuer
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoutingActivityQueryMetric);
+        return Equals(obj as RoutingActivityQueryMetric);
     }
 
     /// <summary>
@@ -139,14 +139,14 @@ public partial class RoutingActivityQueryMetric : IEquatable<RoutingActivityQuer
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Details == other.Details ||
-                this.Details != null &&
-                this.Details.Equals(other.Details)
+                Details == other.Details ||
+                Details != null &&
+                Details.Equals(other.Details)
             );
     }
 
@@ -161,14 +161,14 @@ public partial class RoutingActivityQueryMetric : IEquatable<RoutingActivityQuer
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Details != null)
+            if (Details != null)
             {
-                hash = hash * 59 + this.Details.GetHashCode();
+                hash = hash * 59 + Details.GetHashCode();
             }
 
             return hash;

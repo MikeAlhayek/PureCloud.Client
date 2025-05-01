@@ -53,7 +53,7 @@ public partial class RequestJourney : IEquatable<RequestJourney>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RequestJourney);
+        return Equals(obj as RequestJourney);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class RequestJourney : IEquatable<RequestJourney>
 
         return true &&
             (
-                this.Patterns == other.Patterns ||
-                this.Patterns != null &&
-                this.Patterns.SequenceEqual(other.Patterns)
+                Patterns == other.Patterns ||
+                Patterns != null &&
+                Patterns.SequenceEqual(other.Patterns)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class RequestJourney : IEquatable<RequestJourney>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Patterns != null)
+            if (Patterns != null)
             {
-                hash = hash * 59 + this.Patterns.GetHashCode();
+                hash = hash * 59 + Patterns.GetHashCode();
             }
 
             return hash;

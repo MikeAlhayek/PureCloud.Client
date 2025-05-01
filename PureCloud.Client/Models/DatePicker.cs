@@ -83,7 +83,7 @@ public partial class DatePicker : IEquatable<DatePicker>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DatePicker);
+        return Equals(obj as DatePicker);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class DatePicker : IEquatable<DatePicker>
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Subtitle == other.Subtitle ||
-                this.Subtitle != null &&
-                this.Subtitle.Equals(other.Subtitle)
+                Subtitle == other.Subtitle ||
+                Subtitle != null &&
+                Subtitle.Equals(other.Subtitle)
             ) &&
             (
-                this.DatePickerAvailableDateTimes == other.DatePickerAvailableDateTimes ||
-                this.DatePickerAvailableDateTimes != null &&
-                this.DatePickerAvailableDateTimes.SequenceEqual(other.DatePickerAvailableDateTimes)
+                DatePickerAvailableDateTimes == other.DatePickerAvailableDateTimes ||
+                DatePickerAvailableDateTimes != null &&
+                DatePickerAvailableDateTimes.SequenceEqual(other.DatePickerAvailableDateTimes)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class DatePicker : IEquatable<DatePicker>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Subtitle != null)
+            if (Subtitle != null)
             {
-                hash = hash * 59 + this.Subtitle.GetHashCode();
+                hash = hash * 59 + Subtitle.GetHashCode();
             }
 
-            if (this.DatePickerAvailableDateTimes != null)
+            if (DatePickerAvailableDateTimes != null)
             {
-                hash = hash * 59 + this.DatePickerAvailableDateTimes.GetHashCode();
+                hash = hash * 59 + DatePickerAvailableDateTimes.GetHashCode();
             }
 
             return hash;

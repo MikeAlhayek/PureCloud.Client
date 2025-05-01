@@ -91,7 +91,7 @@ public partial class TextBotUserInputEvent : IEquatable<TextBotUserInputEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotUserInputEvent);
+        return Equals(obj as TextBotUserInputEvent);
     }
 
     /// <summary>
@@ -109,14 +109,14 @@ public partial class TextBotUserInputEvent : IEquatable<TextBotUserInputEvent>
 
         return true &&
             (
-                this.Mode == other.Mode ||
-                this.Mode != null &&
-                this.Mode.Equals(other.Mode)
+                Mode == other.Mode ||
+                Mode != null &&
+                Mode.Equals(other.Mode)
             ) &&
             (
-                this.Alternatives == other.Alternatives ||
-                this.Alternatives != null &&
-                this.Alternatives.SequenceEqual(other.Alternatives)
+                Alternatives == other.Alternatives ||
+                Alternatives != null &&
+                Alternatives.SequenceEqual(other.Alternatives)
             );
     }
 
@@ -131,14 +131,14 @@ public partial class TextBotUserInputEvent : IEquatable<TextBotUserInputEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Mode != null)
+            if (Mode != null)
             {
-                hash = hash * 59 + this.Mode.GetHashCode();
+                hash = hash * 59 + Mode.GetHashCode();
             }
 
-            if (this.Alternatives != null)
+            if (Alternatives != null)
             {
-                hash = hash * 59 + this.Alternatives.GetHashCode();
+                hash = hash * 59 + Alternatives.GetHashCode();
             }
 
             return hash;

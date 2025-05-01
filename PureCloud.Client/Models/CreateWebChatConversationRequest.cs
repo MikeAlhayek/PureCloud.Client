@@ -119,7 +119,7 @@ public partial class CreateWebChatConversationRequest : IEquatable<CreateWebChat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateWebChatConversationRequest);
+        return Equals(obj as CreateWebChatConversationRequest);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class CreateWebChatConversationRequest : IEquatable<CreateWebChat
 
         return true &&
             (
-                this.OrganizationId == other.OrganizationId ||
-                this.OrganizationId != null &&
-                this.OrganizationId.Equals(other.OrganizationId)
+                OrganizationId == other.OrganizationId ||
+                OrganizationId != null &&
+                OrganizationId.Equals(other.OrganizationId)
             ) &&
             (
-                this.DeploymentId == other.DeploymentId ||
-                this.DeploymentId != null &&
-                this.DeploymentId.Equals(other.DeploymentId)
+                DeploymentId == other.DeploymentId ||
+                DeploymentId != null &&
+                DeploymentId.Equals(other.DeploymentId)
             ) &&
             (
-                this.RoutingTarget == other.RoutingTarget ||
-                this.RoutingTarget != null &&
-                this.RoutingTarget.Equals(other.RoutingTarget)
+                RoutingTarget == other.RoutingTarget ||
+                RoutingTarget != null &&
+                RoutingTarget.Equals(other.RoutingTarget)
             ) &&
             (
-                this.MemberInfo == other.MemberInfo ||
-                this.MemberInfo != null &&
-                this.MemberInfo.Equals(other.MemberInfo)
+                MemberInfo == other.MemberInfo ||
+                MemberInfo != null &&
+                MemberInfo.Equals(other.MemberInfo)
             ) &&
             (
-                this.MemberAuthToken == other.MemberAuthToken ||
-                this.MemberAuthToken != null &&
-                this.MemberAuthToken.Equals(other.MemberAuthToken)
+                MemberAuthToken == other.MemberAuthToken ||
+                MemberAuthToken != null &&
+                MemberAuthToken.Equals(other.MemberAuthToken)
             ) &&
             (
-                this.JourneyContext == other.JourneyContext ||
-                this.JourneyContext != null &&
-                this.JourneyContext.Equals(other.JourneyContext)
+                JourneyContext == other.JourneyContext ||
+                JourneyContext != null &&
+                JourneyContext.Equals(other.JourneyContext)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class CreateWebChatConversationRequest : IEquatable<CreateWebChat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OrganizationId != null)
+            if (OrganizationId != null)
             {
-                hash = hash * 59 + this.OrganizationId.GetHashCode();
+                hash = hash * 59 + OrganizationId.GetHashCode();
             }
 
-            if (this.DeploymentId != null)
+            if (DeploymentId != null)
             {
-                hash = hash * 59 + this.DeploymentId.GetHashCode();
+                hash = hash * 59 + DeploymentId.GetHashCode();
             }
 
-            if (this.RoutingTarget != null)
+            if (RoutingTarget != null)
             {
-                hash = hash * 59 + this.RoutingTarget.GetHashCode();
+                hash = hash * 59 + RoutingTarget.GetHashCode();
             }
 
-            if (this.MemberInfo != null)
+            if (MemberInfo != null)
             {
-                hash = hash * 59 + this.MemberInfo.GetHashCode();
+                hash = hash * 59 + MemberInfo.GetHashCode();
             }
 
-            if (this.MemberAuthToken != null)
+            if (MemberAuthToken != null)
             {
-                hash = hash * 59 + this.MemberAuthToken.GetHashCode();
+                hash = hash * 59 + MemberAuthToken.GetHashCode();
             }
 
-            if (this.JourneyContext != null)
+            if (JourneyContext != null)
             {
-                hash = hash * 59 + this.JourneyContext.GetHashCode();
+                hash = hash * 59 + JourneyContext.GetHashCode();
             }
 
             return hash;

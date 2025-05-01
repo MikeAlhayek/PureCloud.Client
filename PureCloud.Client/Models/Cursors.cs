@@ -63,7 +63,7 @@ public partial class Cursors : IEquatable<Cursors>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Cursors);
+        return Equals(obj as Cursors);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class Cursors : IEquatable<Cursors>
 
         return true &&
             (
-                this.Before == other.Before ||
-                this.Before != null &&
-                this.Before.Equals(other.Before)
+                Before == other.Before ||
+                Before != null &&
+                Before.Equals(other.Before)
             ) &&
             (
-                this.After == other.After ||
-                this.After != null &&
-                this.After.Equals(other.After)
+                After == other.After ||
+                After != null &&
+                After.Equals(other.After)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class Cursors : IEquatable<Cursors>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Before != null)
+            if (Before != null)
             {
-                hash = hash * 59 + this.Before.GetHashCode();
+                hash = hash * 59 + Before.GetHashCode();
             }
 
-            if (this.After != null)
+            if (After != null)
             {
-                hash = hash * 59 + this.After.GetHashCode();
+                hash = hash * 59 + After.GetHashCode();
             }
 
             return hash;

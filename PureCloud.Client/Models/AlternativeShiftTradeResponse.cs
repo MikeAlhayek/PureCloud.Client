@@ -360,7 +360,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftTradeResponse);
+        return Equals(obj as AlternativeShiftTradeResponse);
     }
 
     /// <summary>
@@ -378,89 +378,89 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ShiftOfferJobId == other.ShiftOfferJobId ||
-                this.ShiftOfferJobId != null &&
-                this.ShiftOfferJobId.Equals(other.ShiftOfferJobId)
+                ShiftOfferJobId == other.ShiftOfferJobId ||
+                ShiftOfferJobId != null &&
+                ShiftOfferJobId.Equals(other.ShiftOfferJobId)
             ) &&
             (
-                this.ExistingShifts == other.ExistingShifts ||
-                this.ExistingShifts != null &&
-                this.ExistingShifts.SequenceEqual(other.ExistingShifts)
+                ExistingShifts == other.ExistingShifts ||
+                ExistingShifts != null &&
+                ExistingShifts.SequenceEqual(other.ExistingShifts)
             ) &&
             (
-                this.OfferedShifts == other.OfferedShifts ||
-                this.OfferedShifts != null &&
-                this.OfferedShifts.SequenceEqual(other.OfferedShifts)
+                OfferedShifts == other.OfferedShifts ||
+                OfferedShifts != null &&
+                OfferedShifts.SequenceEqual(other.OfferedShifts)
             ) &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             ) &&
             (
-                this.ManagementUnit == other.ManagementUnit ||
-                this.ManagementUnit != null &&
-                this.ManagementUnit.Equals(other.ManagementUnit)
+                ManagementUnit == other.ManagementUnit ||
+                ManagementUnit != null &&
+                ManagementUnit.Equals(other.ManagementUnit)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             ) &&
             (
-                this.ExpirationDate == other.ExpirationDate ||
-                this.ExpirationDate != null &&
-                this.ExpirationDate.Equals(other.ExpirationDate)
+                ExpirationDate == other.ExpirationDate ||
+                ExpirationDate != null &&
+                ExpirationDate.Equals(other.ExpirationDate)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.ProcessingStatus == other.ProcessingStatus ||
-                this.ProcessingStatus != null &&
-                this.ProcessingStatus.Equals(other.ProcessingStatus)
+                ProcessingStatus == other.ProcessingStatus ||
+                ProcessingStatus != null &&
+                ProcessingStatus.Equals(other.ProcessingStatus)
             ) &&
             (
-                this.SystemDateReviewed == other.SystemDateReviewed ||
-                this.SystemDateReviewed != null &&
-                this.SystemDateReviewed.Equals(other.SystemDateReviewed)
+                SystemDateReviewed == other.SystemDateReviewed ||
+                SystemDateReviewed != null &&
+                SystemDateReviewed.Equals(other.SystemDateReviewed)
             ) &&
             (
-                this.AdminDateReviewed == other.AdminDateReviewed ||
-                this.AdminDateReviewed != null &&
-                this.AdminDateReviewed.Equals(other.AdminDateReviewed)
+                AdminDateReviewed == other.AdminDateReviewed ||
+                AdminDateReviewed != null &&
+                AdminDateReviewed.Equals(other.AdminDateReviewed)
             ) &&
             (
-                this.AdminReviewedBy == other.AdminReviewedBy ||
-                this.AdminReviewedBy != null &&
-                this.AdminReviewedBy.Equals(other.AdminReviewedBy)
+                AdminReviewedBy == other.AdminReviewedBy ||
+                AdminReviewedBy != null &&
+                AdminReviewedBy.Equals(other.AdminReviewedBy)
             ) &&
             (
-                this.Violations == other.Violations ||
-                this.Violations != null &&
-                this.Violations.SequenceEqual(other.Violations)
+                Violations == other.Violations ||
+                Violations != null &&
+                Violations.SequenceEqual(other.Violations)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -475,89 +475,89 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ShiftOfferJobId != null)
+            if (ShiftOfferJobId != null)
             {
-                hash = hash * 59 + this.ShiftOfferJobId.GetHashCode();
+                hash = hash * 59 + ShiftOfferJobId.GetHashCode();
             }
 
-            if (this.ExistingShifts != null)
+            if (ExistingShifts != null)
             {
-                hash = hash * 59 + this.ExistingShifts.GetHashCode();
+                hash = hash * 59 + ExistingShifts.GetHashCode();
             }
 
-            if (this.OfferedShifts != null)
+            if (OfferedShifts != null)
             {
-                hash = hash * 59 + this.OfferedShifts.GetHashCode();
+                hash = hash * 59 + OfferedShifts.GetHashCode();
             }
 
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
-            if (this.ManagementUnit != null)
+            if (ManagementUnit != null)
             {
-                hash = hash * 59 + this.ManagementUnit.GetHashCode();
+                hash = hash * 59 + ManagementUnit.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
-            if (this.ExpirationDate != null)
+            if (ExpirationDate != null)
             {
-                hash = hash * 59 + this.ExpirationDate.GetHashCode();
+                hash = hash * 59 + ExpirationDate.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.ProcessingStatus != null)
+            if (ProcessingStatus != null)
             {
-                hash = hash * 59 + this.ProcessingStatus.GetHashCode();
+                hash = hash * 59 + ProcessingStatus.GetHashCode();
             }
 
-            if (this.SystemDateReviewed != null)
+            if (SystemDateReviewed != null)
             {
-                hash = hash * 59 + this.SystemDateReviewed.GetHashCode();
+                hash = hash * 59 + SystemDateReviewed.GetHashCode();
             }
 
-            if (this.AdminDateReviewed != null)
+            if (AdminDateReviewed != null)
             {
-                hash = hash * 59 + this.AdminDateReviewed.GetHashCode();
+                hash = hash * 59 + AdminDateReviewed.GetHashCode();
             }
 
-            if (this.AdminReviewedBy != null)
+            if (AdminReviewedBy != null)
             {
-                hash = hash * 59 + this.AdminReviewedBy.GetHashCode();
+                hash = hash * 59 + AdminReviewedBy.GetHashCode();
             }
 
-            if (this.Violations != null)
+            if (Violations != null)
             {
-                hash = hash * 59 + this.Violations.GetHashCode();
+                hash = hash * 59 + Violations.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

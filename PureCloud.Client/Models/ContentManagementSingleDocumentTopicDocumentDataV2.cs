@@ -195,7 +195,7 @@ public partial class ContentManagementSingleDocumentTopicDocumentDataV2 : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentManagementSingleDocumentTopicDocumentDataV2);
+        return Equals(obj as ContentManagementSingleDocumentTopicDocumentDataV2);
     }
 
     /// <summary>
@@ -213,74 +213,74 @@ public partial class ContentManagementSingleDocumentTopicDocumentDataV2 : IEquat
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Workspace == other.Workspace ||
-                this.Workspace != null &&
-                this.Workspace.Equals(other.Workspace)
+                Workspace == other.Workspace ||
+                Workspace != null &&
+                Workspace.Equals(other.Workspace)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.ContentLength == other.ContentLength ||
-                this.ContentLength != null &&
-                this.ContentLength.Equals(other.ContentLength)
+                ContentLength == other.ContentLength ||
+                ContentLength != null &&
+                ContentLength.Equals(other.ContentLength)
             ) &&
             (
-                this.Filename == other.Filename ||
-                this.Filename != null &&
-                this.Filename.Equals(other.Filename)
+                Filename == other.Filename ||
+                Filename != null &&
+                Filename.Equals(other.Filename)
             ) &&
             (
-                this.ChangeNumber == other.ChangeNumber ||
-                this.ChangeNumber != null &&
-                this.ChangeNumber.Equals(other.ChangeNumber)
+                ChangeNumber == other.ChangeNumber ||
+                ChangeNumber != null &&
+                ChangeNumber.Equals(other.ChangeNumber)
             ) &&
             (
-                this.DateUploaded == other.DateUploaded ||
-                this.DateUploaded != null &&
-                this.DateUploaded.Equals(other.DateUploaded)
+                DateUploaded == other.DateUploaded ||
+                DateUploaded != null &&
+                DateUploaded.Equals(other.DateUploaded)
             ) &&
             (
-                this.UploadedBy == other.UploadedBy ||
-                this.UploadedBy != null &&
-                this.UploadedBy.Equals(other.UploadedBy)
+                UploadedBy == other.UploadedBy ||
+                UploadedBy != null &&
+                UploadedBy.Equals(other.UploadedBy)
             ) &&
             (
-                this.LockInfo == other.LockInfo ||
-                this.LockInfo != null &&
-                this.LockInfo.Equals(other.LockInfo)
+                LockInfo == other.LockInfo ||
+                LockInfo != null &&
+                LockInfo.Equals(other.LockInfo)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -295,74 +295,74 @@ public partial class ContentManagementSingleDocumentTopicDocumentDataV2 : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Workspace != null)
+            if (Workspace != null)
             {
-                hash = hash * 59 + this.Workspace.GetHashCode();
+                hash = hash * 59 + Workspace.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.ContentLength != null)
+            if (ContentLength != null)
             {
-                hash = hash * 59 + this.ContentLength.GetHashCode();
+                hash = hash * 59 + ContentLength.GetHashCode();
             }
 
-            if (this.Filename != null)
+            if (Filename != null)
             {
-                hash = hash * 59 + this.Filename.GetHashCode();
+                hash = hash * 59 + Filename.GetHashCode();
             }
 
-            if (this.ChangeNumber != null)
+            if (ChangeNumber != null)
             {
-                hash = hash * 59 + this.ChangeNumber.GetHashCode();
+                hash = hash * 59 + ChangeNumber.GetHashCode();
             }
 
-            if (this.DateUploaded != null)
+            if (DateUploaded != null)
             {
-                hash = hash * 59 + this.DateUploaded.GetHashCode();
+                hash = hash * 59 + DateUploaded.GetHashCode();
             }
 
-            if (this.UploadedBy != null)
+            if (UploadedBy != null)
             {
-                hash = hash * 59 + this.UploadedBy.GetHashCode();
+                hash = hash * 59 + UploadedBy.GetHashCode();
             }
 
-            if (this.LockInfo != null)
+            if (LockInfo != null)
             {
-                hash = hash * 59 + this.LockInfo.GetHashCode();
+                hash = hash * 59 + LockInfo.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

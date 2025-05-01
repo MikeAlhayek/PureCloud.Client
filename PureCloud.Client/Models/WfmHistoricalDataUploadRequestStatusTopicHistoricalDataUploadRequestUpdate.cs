@@ -248,7 +248,7 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate);
+        return Equals(obj as WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate);
     }
 
     /// <summary>
@@ -266,59 +266,59 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
 
         return true &&
             (
-                this.RequestId == other.RequestId ||
-                this.RequestId != null &&
-                this.RequestId.Equals(other.RequestId)
+                RequestId == other.RequestId ||
+                RequestId != null &&
+                RequestId.Equals(other.RequestId)
             ) &&
             (
-                this.DateImportStarted == other.DateImportStarted ||
-                this.DateImportStarted != null &&
-                this.DateImportStarted.Equals(other.DateImportStarted)
+                DateImportStarted == other.DateImportStarted ||
+                DateImportStarted != null &&
+                DateImportStarted.Equals(other.DateImportStarted)
             ) &&
             (
-                this.DateImportEnded == other.DateImportEnded ||
-                this.DateImportEnded != null &&
-                this.DateImportEnded.Equals(other.DateImportEnded)
+                DateImportEnded == other.DateImportEnded ||
+                DateImportEnded != null &&
+                DateImportEnded.Equals(other.DateImportEnded)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.Active == other.Active ||
-                this.Active != null &&
-                this.Active.Equals(other.Active)
+                Active == other.Active ||
+                Active != null &&
+                Active.Equals(other.Active)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.FileSize == other.FileSize ||
-                this.FileSize != null &&
-                this.FileSize.Equals(other.FileSize)
+                FileSize == other.FileSize ||
+                FileSize != null &&
+                FileSize.Equals(other.FileSize)
             );
     }
 
@@ -333,59 +333,59 @@ public partial class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUplo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RequestId != null)
+            if (RequestId != null)
             {
-                hash = hash * 59 + this.RequestId.GetHashCode();
+                hash = hash * 59 + RequestId.GetHashCode();
             }
 
-            if (this.DateImportStarted != null)
+            if (DateImportStarted != null)
             {
-                hash = hash * 59 + this.DateImportStarted.GetHashCode();
+                hash = hash * 59 + DateImportStarted.GetHashCode();
             }
 
-            if (this.DateImportEnded != null)
+            if (DateImportEnded != null)
             {
-                hash = hash * 59 + this.DateImportEnded.GetHashCode();
+                hash = hash * 59 + DateImportEnded.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.Active != null)
+            if (Active != null)
             {
-                hash = hash * 59 + this.Active.GetHashCode();
+                hash = hash * 59 + Active.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.FileSize != null)
+            if (FileSize != null)
             {
-                hash = hash * 59 + this.FileSize.GetHashCode();
+                hash = hash * 59 + FileSize.GetHashCode();
             }
 
             return hash;

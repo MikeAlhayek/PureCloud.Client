@@ -123,7 +123,7 @@ public partial class UserBestPointsItem : IEquatable<UserBestPointsItem>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserBestPointsItem);
+        return Equals(obj as UserBestPointsItem);
     }
 
     /// <summary>
@@ -141,29 +141,29 @@ public partial class UserBestPointsItem : IEquatable<UserBestPointsItem>
 
         return true &&
             (
-                this.GranularityType == other.GranularityType ||
-                this.GranularityType != null &&
-                this.GranularityType.Equals(other.GranularityType)
+                GranularityType == other.GranularityType ||
+                GranularityType != null &&
+                GranularityType.Equals(other.GranularityType)
             ) &&
             (
-                this.Points == other.Points ||
-                this.Points != null &&
-                this.Points.Equals(other.Points)
+                Points == other.Points ||
+                Points != null &&
+                Points.Equals(other.Points)
             ) &&
             (
-                this.DateStartWorkday == other.DateStartWorkday ||
-                this.DateStartWorkday != null &&
-                this.DateStartWorkday.Equals(other.DateStartWorkday)
+                DateStartWorkday == other.DateStartWorkday ||
+                DateStartWorkday != null &&
+                DateStartWorkday.Equals(other.DateStartWorkday)
             ) &&
             (
-                this.DateEndWorkday == other.DateEndWorkday ||
-                this.DateEndWorkday != null &&
-                this.DateEndWorkday.Equals(other.DateEndWorkday)
+                DateEndWorkday == other.DateEndWorkday ||
+                DateEndWorkday != null &&
+                DateEndWorkday.Equals(other.DateEndWorkday)
             ) &&
             (
-                this.Rank == other.Rank ||
-                this.Rank != null &&
-                this.Rank.Equals(other.Rank)
+                Rank == other.Rank ||
+                Rank != null &&
+                Rank.Equals(other.Rank)
             );
     }
 
@@ -178,29 +178,29 @@ public partial class UserBestPointsItem : IEquatable<UserBestPointsItem>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.GranularityType != null)
+            if (GranularityType != null)
             {
-                hash = hash * 59 + this.GranularityType.GetHashCode();
+                hash = hash * 59 + GranularityType.GetHashCode();
             }
 
-            if (this.Points != null)
+            if (Points != null)
             {
-                hash = hash * 59 + this.Points.GetHashCode();
+                hash = hash * 59 + Points.GetHashCode();
             }
 
-            if (this.DateStartWorkday != null)
+            if (DateStartWorkday != null)
             {
-                hash = hash * 59 + this.DateStartWorkday.GetHashCode();
+                hash = hash * 59 + DateStartWorkday.GetHashCode();
             }
 
-            if (this.DateEndWorkday != null)
+            if (DateEndWorkday != null)
             {
-                hash = hash * 59 + this.DateEndWorkday.GetHashCode();
+                hash = hash * 59 + DateEndWorkday.GetHashCode();
             }
 
-            if (this.Rank != null)
+            if (Rank != null)
             {
-                hash = hash * 59 + this.Rank.GetHashCode();
+                hash = hash * 59 + Rank.GetHashCode();
             }
 
             return hash;

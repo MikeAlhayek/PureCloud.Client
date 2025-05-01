@@ -165,7 +165,7 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewJob);
+        return Equals(obj as JourneyViewJob);
     }
 
     /// <summary>
@@ -183,39 +183,39 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateCompleted == other.DateCompleted ||
-                this.DateCompleted != null &&
-                this.DateCompleted.Equals(other.DateCompleted)
+                DateCompleted == other.DateCompleted ||
+                DateCompleted != null &&
+                DateCompleted.Equals(other.DateCompleted)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.JourneyView == other.JourneyView ||
-                this.JourneyView != null &&
-                this.JourneyView.Equals(other.JourneyView)
+                JourneyView == other.JourneyView ||
+                JourneyView != null &&
+                JourneyView.Equals(other.JourneyView)
             ) &&
             (
-                this.DateCompletionEstimated == other.DateCompletionEstimated ||
-                this.DateCompletionEstimated != null &&
-                this.DateCompletionEstimated.Equals(other.DateCompletionEstimated)
+                DateCompletionEstimated == other.DateCompletionEstimated ||
+                DateCompletionEstimated != null &&
+                DateCompletionEstimated.Equals(other.DateCompletionEstimated)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -230,39 +230,39 @@ public partial class JourneyViewJob : IEquatable<JourneyViewJob>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateCompleted != null)
+            if (DateCompleted != null)
             {
-                hash = hash * 59 + this.DateCompleted.GetHashCode();
+                hash = hash * 59 + DateCompleted.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.JourneyView != null)
+            if (JourneyView != null)
             {
-                hash = hash * 59 + this.JourneyView.GetHashCode();
+                hash = hash * 59 + JourneyView.GetHashCode();
             }
 
-            if (this.DateCompletionEstimated != null)
+            if (DateCompletionEstimated != null)
             {
-                hash = hash * 59 + this.DateCompletionEstimated.GetHashCode();
+                hash = hash * 59 + DateCompletionEstimated.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

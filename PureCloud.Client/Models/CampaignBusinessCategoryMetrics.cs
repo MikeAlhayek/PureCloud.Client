@@ -77,7 +77,7 @@ public partial class CampaignBusinessCategoryMetrics : IEquatable<CampaignBusine
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignBusinessCategoryMetrics);
+        return Equals(obj as CampaignBusinessCategoryMetrics);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class CampaignBusinessCategoryMetrics : IEquatable<CampaignBusine
 
         return true &&
             (
-                this.SuccessCount == other.SuccessCount ||
-                this.SuccessCount != null &&
-                this.SuccessCount.Equals(other.SuccessCount)
+                SuccessCount == other.SuccessCount ||
+                SuccessCount != null &&
+                SuccessCount.Equals(other.SuccessCount)
             ) &&
             (
-                this.NeutralCount == other.NeutralCount ||
-                this.NeutralCount != null &&
-                this.NeutralCount.Equals(other.NeutralCount)
+                NeutralCount == other.NeutralCount ||
+                NeutralCount != null &&
+                NeutralCount.Equals(other.NeutralCount)
             ) &&
             (
-                this.FailureCount == other.FailureCount ||
-                this.FailureCount != null &&
-                this.FailureCount.Equals(other.FailureCount)
+                FailureCount == other.FailureCount ||
+                FailureCount != null &&
+                FailureCount.Equals(other.FailureCount)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class CampaignBusinessCategoryMetrics : IEquatable<CampaignBusine
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SuccessCount != null)
+            if (SuccessCount != null)
             {
-                hash = hash * 59 + this.SuccessCount.GetHashCode();
+                hash = hash * 59 + SuccessCount.GetHashCode();
             }
 
-            if (this.NeutralCount != null)
+            if (NeutralCount != null)
             {
-                hash = hash * 59 + this.NeutralCount.GetHashCode();
+                hash = hash * 59 + NeutralCount.GetHashCode();
             }
 
-            if (this.FailureCount != null)
+            if (FailureCount != null)
             {
-                hash = hash * 59 + this.FailureCount.GetHashCode();
+                hash = hash * 59 + FailureCount.GetHashCode();
             }
 
             return hash;

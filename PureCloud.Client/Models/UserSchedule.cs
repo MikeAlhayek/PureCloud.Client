@@ -105,7 +105,7 @@ public partial class UserSchedule : IEquatable<UserSchedule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserSchedule);
+        return Equals(obj as UserSchedule);
     }
 
     /// <summary>
@@ -123,29 +123,29 @@ public partial class UserSchedule : IEquatable<UserSchedule>
 
         return true &&
             (
-                this.Shifts == other.Shifts ||
-                this.Shifts != null &&
-                this.Shifts.SequenceEqual(other.Shifts)
+                Shifts == other.Shifts ||
+                Shifts != null &&
+                Shifts.SequenceEqual(other.Shifts)
             ) &&
             (
-                this.FullDayTimeOffMarkers == other.FullDayTimeOffMarkers ||
-                this.FullDayTimeOffMarkers != null &&
-                this.FullDayTimeOffMarkers.SequenceEqual(other.FullDayTimeOffMarkers)
+                FullDayTimeOffMarkers == other.FullDayTimeOffMarkers ||
+                FullDayTimeOffMarkers != null &&
+                FullDayTimeOffMarkers.SequenceEqual(other.FullDayTimeOffMarkers)
             ) &&
             (
-                this.Delete == other.Delete ||
-                this.Delete != null &&
-                this.Delete.Equals(other.Delete)
+                Delete == other.Delete ||
+                Delete != null &&
+                Delete.Equals(other.Delete)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.WorkPlanId == other.WorkPlanId ||
-                this.WorkPlanId != null &&
-                this.WorkPlanId.Equals(other.WorkPlanId)
+                WorkPlanId == other.WorkPlanId ||
+                WorkPlanId != null &&
+                WorkPlanId.Equals(other.WorkPlanId)
             );
     }
 
@@ -160,29 +160,29 @@ public partial class UserSchedule : IEquatable<UserSchedule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Shifts != null)
+            if (Shifts != null)
             {
-                hash = hash * 59 + this.Shifts.GetHashCode();
+                hash = hash * 59 + Shifts.GetHashCode();
             }
 
-            if (this.FullDayTimeOffMarkers != null)
+            if (FullDayTimeOffMarkers != null)
             {
-                hash = hash * 59 + this.FullDayTimeOffMarkers.GetHashCode();
+                hash = hash * 59 + FullDayTimeOffMarkers.GetHashCode();
             }
 
-            if (this.Delete != null)
+            if (Delete != null)
             {
-                hash = hash * 59 + this.Delete.GetHashCode();
+                hash = hash * 59 + Delete.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.WorkPlanId != null)
+            if (WorkPlanId != null)
             {
-                hash = hash * 59 + this.WorkPlanId.GetHashCode();
+                hash = hash * 59 + WorkPlanId.GetHashCode();
             }
 
             return hash;

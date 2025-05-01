@@ -127,7 +127,7 @@ public partial class CreateAlternativeShiftTradeRequest : IEquatable<CreateAlter
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateAlternativeShiftTradeRequest);
+        return Equals(obj as CreateAlternativeShiftTradeRequest);
     }
 
     /// <summary>
@@ -145,29 +145,29 @@ public partial class CreateAlternativeShiftTradeRequest : IEquatable<CreateAlter
 
         return true &&
             (
-                this.JobId == other.JobId ||
-                this.JobId != null &&
-                this.JobId.Equals(other.JobId)
+                JobId == other.JobId ||
+                JobId != null &&
+                JobId.Equals(other.JobId)
             ) &&
             (
-                this.DropShiftReferenceKeys == other.DropShiftReferenceKeys ||
-                this.DropShiftReferenceKeys != null &&
-                this.DropShiftReferenceKeys.SequenceEqual(other.DropShiftReferenceKeys)
+                DropShiftReferenceKeys == other.DropShiftReferenceKeys ||
+                DropShiftReferenceKeys != null &&
+                DropShiftReferenceKeys.SequenceEqual(other.DropShiftReferenceKeys)
             ) &&
             (
-                this.PickupShiftReferenceKeys == other.PickupShiftReferenceKeys ||
-                this.PickupShiftReferenceKeys != null &&
-                this.PickupShiftReferenceKeys.SequenceEqual(other.PickupShiftReferenceKeys)
+                PickupShiftReferenceKeys == other.PickupShiftReferenceKeys ||
+                PickupShiftReferenceKeys != null &&
+                PickupShiftReferenceKeys.SequenceEqual(other.PickupShiftReferenceKeys)
             ) &&
             (
-                this.AlternativeShiftTradeGranularity == other.AlternativeShiftTradeGranularity ||
-                this.AlternativeShiftTradeGranularity != null &&
-                this.AlternativeShiftTradeGranularity.Equals(other.AlternativeShiftTradeGranularity)
+                AlternativeShiftTradeGranularity == other.AlternativeShiftTradeGranularity ||
+                AlternativeShiftTradeGranularity != null &&
+                AlternativeShiftTradeGranularity.Equals(other.AlternativeShiftTradeGranularity)
             ) &&
             (
-                this.ExpirationDate == other.ExpirationDate ||
-                this.ExpirationDate != null &&
-                this.ExpirationDate.Equals(other.ExpirationDate)
+                ExpirationDate == other.ExpirationDate ||
+                ExpirationDate != null &&
+                ExpirationDate.Equals(other.ExpirationDate)
             );
     }
 
@@ -182,29 +182,29 @@ public partial class CreateAlternativeShiftTradeRequest : IEquatable<CreateAlter
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.JobId != null)
+            if (JobId != null)
             {
-                hash = hash * 59 + this.JobId.GetHashCode();
+                hash = hash * 59 + JobId.GetHashCode();
             }
 
-            if (this.DropShiftReferenceKeys != null)
+            if (DropShiftReferenceKeys != null)
             {
-                hash = hash * 59 + this.DropShiftReferenceKeys.GetHashCode();
+                hash = hash * 59 + DropShiftReferenceKeys.GetHashCode();
             }
 
-            if (this.PickupShiftReferenceKeys != null)
+            if (PickupShiftReferenceKeys != null)
             {
-                hash = hash * 59 + this.PickupShiftReferenceKeys.GetHashCode();
+                hash = hash * 59 + PickupShiftReferenceKeys.GetHashCode();
             }
 
-            if (this.AlternativeShiftTradeGranularity != null)
+            if (AlternativeShiftTradeGranularity != null)
             {
-                hash = hash * 59 + this.AlternativeShiftTradeGranularity.GetHashCode();
+                hash = hash * 59 + AlternativeShiftTradeGranularity.GetHashCode();
             }
 
-            if (this.ExpirationDate != null)
+            if (ExpirationDate != null)
             {
-                hash = hash * 59 + this.ExpirationDate.GetHashCode();
+                hash = hash * 59 + ExpirationDate.GetHashCode();
             }
 
             return hash;

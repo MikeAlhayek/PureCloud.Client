@@ -311,7 +311,7 @@ public partial class CallbackMediaSettings : IEquatable<CallbackMediaSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallbackMediaSettings);
+        return Equals(obj as CallbackMediaSettings);
     }
 
     /// <summary>
@@ -329,79 +329,79 @@ public partial class CallbackMediaSettings : IEquatable<CallbackMediaSettings>
 
         return true &&
             (
-                this.EnableAutoAnswer == other.EnableAutoAnswer ||
-                this.EnableAutoAnswer != null &&
-                this.EnableAutoAnswer.Equals(other.EnableAutoAnswer)
+                EnableAutoAnswer == other.EnableAutoAnswer ||
+                EnableAutoAnswer != null &&
+                EnableAutoAnswer.Equals(other.EnableAutoAnswer)
             ) &&
             (
-                this.AlertingTimeoutSeconds == other.AlertingTimeoutSeconds ||
-                this.AlertingTimeoutSeconds != null &&
-                this.AlertingTimeoutSeconds.Equals(other.AlertingTimeoutSeconds)
+                AlertingTimeoutSeconds == other.AlertingTimeoutSeconds ||
+                AlertingTimeoutSeconds != null &&
+                AlertingTimeoutSeconds.Equals(other.AlertingTimeoutSeconds)
             ) &&
             (
-                this.ServiceLevel == other.ServiceLevel ||
-                this.ServiceLevel != null &&
-                this.ServiceLevel.Equals(other.ServiceLevel)
+                ServiceLevel == other.ServiceLevel ||
+                ServiceLevel != null &&
+                ServiceLevel.Equals(other.ServiceLevel)
             ) &&
             (
-                this.AutoAnswerAlertToneSeconds == other.AutoAnswerAlertToneSeconds ||
-                this.AutoAnswerAlertToneSeconds != null &&
-                this.AutoAnswerAlertToneSeconds.Equals(other.AutoAnswerAlertToneSeconds)
+                AutoAnswerAlertToneSeconds == other.AutoAnswerAlertToneSeconds ||
+                AutoAnswerAlertToneSeconds != null &&
+                AutoAnswerAlertToneSeconds.Equals(other.AutoAnswerAlertToneSeconds)
             ) &&
             (
-                this.ManualAnswerAlertToneSeconds == other.ManualAnswerAlertToneSeconds ||
-                this.ManualAnswerAlertToneSeconds != null &&
-                this.ManualAnswerAlertToneSeconds.Equals(other.ManualAnswerAlertToneSeconds)
+                ManualAnswerAlertToneSeconds == other.ManualAnswerAlertToneSeconds ||
+                ManualAnswerAlertToneSeconds != null &&
+                ManualAnswerAlertToneSeconds.Equals(other.ManualAnswerAlertToneSeconds)
             ) &&
             (
-                this.SubTypeSettings == other.SubTypeSettings ||
-                this.SubTypeSettings != null &&
-                this.SubTypeSettings.SequenceEqual(other.SubTypeSettings)
+                SubTypeSettings == other.SubTypeSettings ||
+                SubTypeSettings != null &&
+                SubTypeSettings.SequenceEqual(other.SubTypeSettings)
             ) &&
             (
-                this.Mode == other.Mode ||
-                this.Mode != null &&
-                this.Mode.Equals(other.Mode)
+                Mode == other.Mode ||
+                Mode != null &&
+                Mode.Equals(other.Mode)
             ) &&
             (
-                this.EnableAutoDialAndEnd == other.EnableAutoDialAndEnd ||
-                this.EnableAutoDialAndEnd != null &&
-                this.EnableAutoDialAndEnd.Equals(other.EnableAutoDialAndEnd)
+                EnableAutoDialAndEnd == other.EnableAutoDialAndEnd ||
+                EnableAutoDialAndEnd != null &&
+                EnableAutoDialAndEnd.Equals(other.EnableAutoDialAndEnd)
             ) &&
             (
-                this.AutoDialDelaySeconds == other.AutoDialDelaySeconds ||
-                this.AutoDialDelaySeconds != null &&
-                this.AutoDialDelaySeconds.Equals(other.AutoDialDelaySeconds)
+                AutoDialDelaySeconds == other.AutoDialDelaySeconds ||
+                AutoDialDelaySeconds != null &&
+                AutoDialDelaySeconds.Equals(other.AutoDialDelaySeconds)
             ) &&
             (
-                this.AutoEndDelaySeconds == other.AutoEndDelaySeconds ||
-                this.AutoEndDelaySeconds != null &&
-                this.AutoEndDelaySeconds.Equals(other.AutoEndDelaySeconds)
+                AutoEndDelaySeconds == other.AutoEndDelaySeconds ||
+                AutoEndDelaySeconds != null &&
+                AutoEndDelaySeconds.Equals(other.AutoEndDelaySeconds)
             ) &&
             (
-                this.PacingModifier == other.PacingModifier ||
-                this.PacingModifier != null &&
-                this.PacingModifier.Equals(other.PacingModifier)
+                PacingModifier == other.PacingModifier ||
+                PacingModifier != null &&
+                PacingModifier.Equals(other.PacingModifier)
             ) &&
             (
-                this.LiveVoiceReactionType == other.LiveVoiceReactionType ||
-                this.LiveVoiceReactionType != null &&
-                this.LiveVoiceReactionType.Equals(other.LiveVoiceReactionType)
+                LiveVoiceReactionType == other.LiveVoiceReactionType ||
+                LiveVoiceReactionType != null &&
+                LiveVoiceReactionType.Equals(other.LiveVoiceReactionType)
             ) &&
             (
-                this.LiveVoiceFlow == other.LiveVoiceFlow ||
-                this.LiveVoiceFlow != null &&
-                this.LiveVoiceFlow.Equals(other.LiveVoiceFlow)
+                LiveVoiceFlow == other.LiveVoiceFlow ||
+                LiveVoiceFlow != null &&
+                LiveVoiceFlow.Equals(other.LiveVoiceFlow)
             ) &&
             (
-                this.AnsweringMachineReactionType == other.AnsweringMachineReactionType ||
-                this.AnsweringMachineReactionType != null &&
-                this.AnsweringMachineReactionType.Equals(other.AnsweringMachineReactionType)
+                AnsweringMachineReactionType == other.AnsweringMachineReactionType ||
+                AnsweringMachineReactionType != null &&
+                AnsweringMachineReactionType.Equals(other.AnsweringMachineReactionType)
             ) &&
             (
-                this.AnsweringMachineFlow == other.AnsweringMachineFlow ||
-                this.AnsweringMachineFlow != null &&
-                this.AnsweringMachineFlow.Equals(other.AnsweringMachineFlow)
+                AnsweringMachineFlow == other.AnsweringMachineFlow ||
+                AnsweringMachineFlow != null &&
+                AnsweringMachineFlow.Equals(other.AnsweringMachineFlow)
             );
     }
 
@@ -416,79 +416,79 @@ public partial class CallbackMediaSettings : IEquatable<CallbackMediaSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EnableAutoAnswer != null)
+            if (EnableAutoAnswer != null)
             {
-                hash = hash * 59 + this.EnableAutoAnswer.GetHashCode();
+                hash = hash * 59 + EnableAutoAnswer.GetHashCode();
             }
 
-            if (this.AlertingTimeoutSeconds != null)
+            if (AlertingTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.AlertingTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + AlertingTimeoutSeconds.GetHashCode();
             }
 
-            if (this.ServiceLevel != null)
+            if (ServiceLevel != null)
             {
-                hash = hash * 59 + this.ServiceLevel.GetHashCode();
+                hash = hash * 59 + ServiceLevel.GetHashCode();
             }
 
-            if (this.AutoAnswerAlertToneSeconds != null)
+            if (AutoAnswerAlertToneSeconds != null)
             {
-                hash = hash * 59 + this.AutoAnswerAlertToneSeconds.GetHashCode();
+                hash = hash * 59 + AutoAnswerAlertToneSeconds.GetHashCode();
             }
 
-            if (this.ManualAnswerAlertToneSeconds != null)
+            if (ManualAnswerAlertToneSeconds != null)
             {
-                hash = hash * 59 + this.ManualAnswerAlertToneSeconds.GetHashCode();
+                hash = hash * 59 + ManualAnswerAlertToneSeconds.GetHashCode();
             }
 
-            if (this.SubTypeSettings != null)
+            if (SubTypeSettings != null)
             {
-                hash = hash * 59 + this.SubTypeSettings.GetHashCode();
+                hash = hash * 59 + SubTypeSettings.GetHashCode();
             }
 
-            if (this.Mode != null)
+            if (Mode != null)
             {
-                hash = hash * 59 + this.Mode.GetHashCode();
+                hash = hash * 59 + Mode.GetHashCode();
             }
 
-            if (this.EnableAutoDialAndEnd != null)
+            if (EnableAutoDialAndEnd != null)
             {
-                hash = hash * 59 + this.EnableAutoDialAndEnd.GetHashCode();
+                hash = hash * 59 + EnableAutoDialAndEnd.GetHashCode();
             }
 
-            if (this.AutoDialDelaySeconds != null)
+            if (AutoDialDelaySeconds != null)
             {
-                hash = hash * 59 + this.AutoDialDelaySeconds.GetHashCode();
+                hash = hash * 59 + AutoDialDelaySeconds.GetHashCode();
             }
 
-            if (this.AutoEndDelaySeconds != null)
+            if (AutoEndDelaySeconds != null)
             {
-                hash = hash * 59 + this.AutoEndDelaySeconds.GetHashCode();
+                hash = hash * 59 + AutoEndDelaySeconds.GetHashCode();
             }
 
-            if (this.PacingModifier != null)
+            if (PacingModifier != null)
             {
-                hash = hash * 59 + this.PacingModifier.GetHashCode();
+                hash = hash * 59 + PacingModifier.GetHashCode();
             }
 
-            if (this.LiveVoiceReactionType != null)
+            if (LiveVoiceReactionType != null)
             {
-                hash = hash * 59 + this.LiveVoiceReactionType.GetHashCode();
+                hash = hash * 59 + LiveVoiceReactionType.GetHashCode();
             }
 
-            if (this.LiveVoiceFlow != null)
+            if (LiveVoiceFlow != null)
             {
-                hash = hash * 59 + this.LiveVoiceFlow.GetHashCode();
+                hash = hash * 59 + LiveVoiceFlow.GetHashCode();
             }
 
-            if (this.AnsweringMachineReactionType != null)
+            if (AnsweringMachineReactionType != null)
             {
-                hash = hash * 59 + this.AnsweringMachineReactionType.GetHashCode();
+                hash = hash * 59 + AnsweringMachineReactionType.GetHashCode();
             }
 
-            if (this.AnsweringMachineFlow != null)
+            if (AnsweringMachineFlow != null)
             {
-                hash = hash * 59 + this.AnsweringMachineFlow.GetHashCode();
+                hash = hash * 59 + AnsweringMachineFlow.GetHashCode();
             }
 
             return hash;

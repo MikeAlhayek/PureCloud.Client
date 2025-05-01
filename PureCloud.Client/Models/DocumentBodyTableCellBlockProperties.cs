@@ -405,7 +405,7 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyTableCellBlockProperties);
+        return Equals(obj as DocumentBodyTableCellBlockProperties);
     }
 
     /// <summary>
@@ -423,69 +423,69 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
 
         return true &&
             (
-                this.CellType == other.CellType ||
-                this.CellType != null &&
-                this.CellType.Equals(other.CellType)
+                CellType == other.CellType ||
+                CellType != null &&
+                CellType.Equals(other.CellType)
             ) &&
             (
-                this.Width == other.Width ||
-                this.Width != null &&
-                this.Width.Equals(other.Width)
+                Width == other.Width ||
+                Width != null &&
+                Width.Equals(other.Width)
             ) &&
             (
-                this.WidthWithUnit == other.WidthWithUnit ||
-                this.WidthWithUnit != null &&
-                this.WidthWithUnit.Equals(other.WidthWithUnit)
+                WidthWithUnit == other.WidthWithUnit ||
+                WidthWithUnit != null &&
+                WidthWithUnit.Equals(other.WidthWithUnit)
             ) &&
             (
-                this.Height == other.Height ||
-                this.Height != null &&
-                this.Height.Equals(other.Height)
+                Height == other.Height ||
+                Height != null &&
+                Height.Equals(other.Height)
             ) &&
             (
-                this.HorizontalAlign == other.HorizontalAlign ||
-                this.HorizontalAlign != null &&
-                this.HorizontalAlign.Equals(other.HorizontalAlign)
+                HorizontalAlign == other.HorizontalAlign ||
+                HorizontalAlign != null &&
+                HorizontalAlign.Equals(other.HorizontalAlign)
             ) &&
             (
-                this.VerticalAlign == other.VerticalAlign ||
-                this.VerticalAlign != null &&
-                this.VerticalAlign.Equals(other.VerticalAlign)
+                VerticalAlign == other.VerticalAlign ||
+                VerticalAlign != null &&
+                VerticalAlign.Equals(other.VerticalAlign)
             ) &&
             (
-                this.BorderWidth == other.BorderWidth ||
-                this.BorderWidth != null &&
-                this.BorderWidth.Equals(other.BorderWidth)
+                BorderWidth == other.BorderWidth ||
+                BorderWidth != null &&
+                BorderWidth.Equals(other.BorderWidth)
             ) &&
             (
-                this.BorderStyle == other.BorderStyle ||
-                this.BorderStyle != null &&
-                this.BorderStyle.Equals(other.BorderStyle)
+                BorderStyle == other.BorderStyle ||
+                BorderStyle != null &&
+                BorderStyle.Equals(other.BorderStyle)
             ) &&
             (
-                this.BorderColor == other.BorderColor ||
-                this.BorderColor != null &&
-                this.BorderColor.Equals(other.BorderColor)
+                BorderColor == other.BorderColor ||
+                BorderColor != null &&
+                BorderColor.Equals(other.BorderColor)
             ) &&
             (
-                this.BackgroundColor == other.BackgroundColor ||
-                this.BackgroundColor != null &&
-                this.BackgroundColor.Equals(other.BackgroundColor)
+                BackgroundColor == other.BackgroundColor ||
+                BackgroundColor != null &&
+                BackgroundColor.Equals(other.BackgroundColor)
             ) &&
             (
-                this.Scope == other.Scope ||
-                this.Scope != null &&
-                this.Scope.Equals(other.Scope)
+                Scope == other.Scope ||
+                Scope != null &&
+                Scope.Equals(other.Scope)
             ) &&
             (
-                this.ColSpan == other.ColSpan ||
-                this.ColSpan != null &&
-                this.ColSpan.Equals(other.ColSpan)
+                ColSpan == other.ColSpan ||
+                ColSpan != null &&
+                ColSpan.Equals(other.ColSpan)
             ) &&
             (
-                this.RowSpan == other.RowSpan ||
-                this.RowSpan != null &&
-                this.RowSpan.Equals(other.RowSpan)
+                RowSpan == other.RowSpan ||
+                RowSpan != null &&
+                RowSpan.Equals(other.RowSpan)
             );
     }
 
@@ -500,69 +500,69 @@ public partial class DocumentBodyTableCellBlockProperties : IEquatable<DocumentB
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CellType != null)
+            if (CellType != null)
             {
-                hash = hash * 59 + this.CellType.GetHashCode();
+                hash = hash * 59 + CellType.GetHashCode();
             }
 
-            if (this.Width != null)
+            if (Width != null)
             {
-                hash = hash * 59 + this.Width.GetHashCode();
+                hash = hash * 59 + Width.GetHashCode();
             }
 
-            if (this.WidthWithUnit != null)
+            if (WidthWithUnit != null)
             {
-                hash = hash * 59 + this.WidthWithUnit.GetHashCode();
+                hash = hash * 59 + WidthWithUnit.GetHashCode();
             }
 
-            if (this.Height != null)
+            if (Height != null)
             {
-                hash = hash * 59 + this.Height.GetHashCode();
+                hash = hash * 59 + Height.GetHashCode();
             }
 
-            if (this.HorizontalAlign != null)
+            if (HorizontalAlign != null)
             {
-                hash = hash * 59 + this.HorizontalAlign.GetHashCode();
+                hash = hash * 59 + HorizontalAlign.GetHashCode();
             }
 
-            if (this.VerticalAlign != null)
+            if (VerticalAlign != null)
             {
-                hash = hash * 59 + this.VerticalAlign.GetHashCode();
+                hash = hash * 59 + VerticalAlign.GetHashCode();
             }
 
-            if (this.BorderWidth != null)
+            if (BorderWidth != null)
             {
-                hash = hash * 59 + this.BorderWidth.GetHashCode();
+                hash = hash * 59 + BorderWidth.GetHashCode();
             }
 
-            if (this.BorderStyle != null)
+            if (BorderStyle != null)
             {
-                hash = hash * 59 + this.BorderStyle.GetHashCode();
+                hash = hash * 59 + BorderStyle.GetHashCode();
             }
 
-            if (this.BorderColor != null)
+            if (BorderColor != null)
             {
-                hash = hash * 59 + this.BorderColor.GetHashCode();
+                hash = hash * 59 + BorderColor.GetHashCode();
             }
 
-            if (this.BackgroundColor != null)
+            if (BackgroundColor != null)
             {
-                hash = hash * 59 + this.BackgroundColor.GetHashCode();
+                hash = hash * 59 + BackgroundColor.GetHashCode();
             }
 
-            if (this.Scope != null)
+            if (Scope != null)
             {
-                hash = hash * 59 + this.Scope.GetHashCode();
+                hash = hash * 59 + Scope.GetHashCode();
             }
 
-            if (this.ColSpan != null)
+            if (ColSpan != null)
             {
-                hash = hash * 59 + this.ColSpan.GetHashCode();
+                hash = hash * 59 + ColSpan.GetHashCode();
             }
 
-            if (this.RowSpan != null)
+            if (RowSpan != null)
             {
-                hash = hash * 59 + this.RowSpan.GetHashCode();
+                hash = hash * 59 + RowSpan.GetHashCode();
             }
 
             return hash;

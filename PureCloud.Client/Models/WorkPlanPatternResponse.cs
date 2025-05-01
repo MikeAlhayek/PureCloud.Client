@@ -53,7 +53,7 @@ public partial class WorkPlanPatternResponse : IEquatable<WorkPlanPatternRespons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanPatternResponse);
+        return Equals(obj as WorkPlanPatternResponse);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class WorkPlanPatternResponse : IEquatable<WorkPlanPatternRespons
 
         return true &&
             (
-                this.WorkPlans == other.WorkPlans ||
-                this.WorkPlans != null &&
-                this.WorkPlans.SequenceEqual(other.WorkPlans)
+                WorkPlans == other.WorkPlans ||
+                WorkPlans != null &&
+                WorkPlans.SequenceEqual(other.WorkPlans)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class WorkPlanPatternResponse : IEquatable<WorkPlanPatternRespons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WorkPlans != null)
+            if (WorkPlans != null)
             {
-                hash = hash * 59 + this.WorkPlans.GetHashCode();
+                hash = hash * 59 + WorkPlans.GetHashCode();
             }
 
             return hash;

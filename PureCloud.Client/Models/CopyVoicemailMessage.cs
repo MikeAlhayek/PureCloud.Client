@@ -83,7 +83,7 @@ public partial class CopyVoicemailMessage : IEquatable<CopyVoicemailMessage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CopyVoicemailMessage);
+        return Equals(obj as CopyVoicemailMessage);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class CopyVoicemailMessage : IEquatable<CopyVoicemailMessage>
 
         return true &&
             (
-                this.VoicemailMessageId == other.VoicemailMessageId ||
-                this.VoicemailMessageId != null &&
-                this.VoicemailMessageId.Equals(other.VoicemailMessageId)
+                VoicemailMessageId == other.VoicemailMessageId ||
+                VoicemailMessageId != null &&
+                VoicemailMessageId.Equals(other.VoicemailMessageId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.GroupId == other.GroupId ||
-                this.GroupId != null &&
-                this.GroupId.Equals(other.GroupId)
+                GroupId == other.GroupId ||
+                GroupId != null &&
+                GroupId.Equals(other.GroupId)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class CopyVoicemailMessage : IEquatable<CopyVoicemailMessage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.VoicemailMessageId != null)
+            if (VoicemailMessageId != null)
             {
-                hash = hash * 59 + this.VoicemailMessageId.GetHashCode();
+                hash = hash * 59 + VoicemailMessageId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.GroupId != null)
+            if (GroupId != null)
             {
-                hash = hash * 59 + this.GroupId.GetHashCode();
+                hash = hash * 59 + GroupId.GetHashCode();
             }
 
             return hash;

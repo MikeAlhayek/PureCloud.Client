@@ -88,7 +88,7 @@ public partial class CampaignOutboundLinesAllocation : IEquatable<CampaignOutbou
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignOutboundLinesAllocation);
+        return Equals(obj as CampaignOutboundLinesAllocation);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class CampaignOutboundLinesAllocation : IEquatable<CampaignOutbou
 
         return true &&
             (
-                this.Campaign == other.Campaign ||
-                this.Campaign != null &&
-                this.Campaign.Equals(other.Campaign)
+                Campaign == other.Campaign ||
+                Campaign != null &&
+                Campaign.Equals(other.Campaign)
             ) &&
             (
-                this.CampaignWeight == other.CampaignWeight ||
-                this.CampaignWeight != null &&
-                this.CampaignWeight.Equals(other.CampaignWeight)
+                CampaignWeight == other.CampaignWeight ||
+                CampaignWeight != null &&
+                CampaignWeight.Equals(other.CampaignWeight)
             ) &&
             (
-                this.LinesAssigned == other.LinesAssigned ||
-                this.LinesAssigned != null &&
-                this.LinesAssigned.Equals(other.LinesAssigned)
+                LinesAssigned == other.LinesAssigned ||
+                LinesAssigned != null &&
+                LinesAssigned.Equals(other.LinesAssigned)
             ) &&
             (
-                this.LegacyWeight == other.LegacyWeight ||
-                this.LegacyWeight != null &&
-                this.LegacyWeight.Equals(other.LegacyWeight)
+                LegacyWeight == other.LegacyWeight ||
+                LegacyWeight != null &&
+                LegacyWeight.Equals(other.LegacyWeight)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class CampaignOutboundLinesAllocation : IEquatable<CampaignOutbou
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Campaign != null)
+            if (Campaign != null)
             {
-                hash = hash * 59 + this.Campaign.GetHashCode();
+                hash = hash * 59 + Campaign.GetHashCode();
             }
 
-            if (this.CampaignWeight != null)
+            if (CampaignWeight != null)
             {
-                hash = hash * 59 + this.CampaignWeight.GetHashCode();
+                hash = hash * 59 + CampaignWeight.GetHashCode();
             }
 
-            if (this.LinesAssigned != null)
+            if (LinesAssigned != null)
             {
-                hash = hash * 59 + this.LinesAssigned.GetHashCode();
+                hash = hash * 59 + LinesAssigned.GetHashCode();
             }
 
-            if (this.LegacyWeight != null)
+            if (LegacyWeight != null)
             {
-                hash = hash * 59 + this.LegacyWeight.GetHashCode();
+                hash = hash * 59 + LegacyWeight.GetHashCode();
             }
 
             return hash;

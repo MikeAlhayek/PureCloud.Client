@@ -85,7 +85,7 @@ public partial class GamificationScorecardChangeTopicPunctualityEvent : IEquatab
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GamificationScorecardChangeTopicPunctualityEvent);
+        return Equals(obj as GamificationScorecardChangeTopicPunctualityEvent);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class GamificationScorecardChangeTopicPunctualityEvent : IEquatab
 
         return true &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.DateScheduleStart == other.DateScheduleStart ||
-                this.DateScheduleStart != null &&
-                this.DateScheduleStart.Equals(other.DateScheduleStart)
+                DateScheduleStart == other.DateScheduleStart ||
+                DateScheduleStart != null &&
+                DateScheduleStart.Equals(other.DateScheduleStart)
             ) &&
             (
-                this.ActivityCode == other.ActivityCode ||
-                this.ActivityCode != null &&
-                this.ActivityCode.Equals(other.ActivityCode)
+                ActivityCode == other.ActivityCode ||
+                ActivityCode != null &&
+                ActivityCode.Equals(other.ActivityCode)
             ) &&
             (
-                this.Points == other.Points ||
-                this.Points != null &&
-                this.Points.Equals(other.Points)
+                Points == other.Points ||
+                Points != null &&
+                Points.Equals(other.Points)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class GamificationScorecardChangeTopicPunctualityEvent : IEquatab
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.DateScheduleStart != null)
+            if (DateScheduleStart != null)
             {
-                hash = hash * 59 + this.DateScheduleStart.GetHashCode();
+                hash = hash * 59 + DateScheduleStart.GetHashCode();
             }
 
-            if (this.ActivityCode != null)
+            if (ActivityCode != null)
             {
-                hash = hash * 59 + this.ActivityCode.GetHashCode();
+                hash = hash * 59 + ActivityCode.GetHashCode();
             }
 
-            if (this.Points != null)
+            if (Points != null)
             {
-                hash = hash * 59 + this.Points.GetHashCode();
+                hash = hash * 59 + Points.GetHashCode();
             }
 
             return hash;

@@ -88,7 +88,7 @@ public partial class EdgeChangeTopicEdge : IEquatable<EdgeChangeTopicEdge>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeChangeTopicEdge);
+        return Equals(obj as EdgeChangeTopicEdge);
     }
 
     /// <summary>
@@ -106,14 +106,14 @@ public partial class EdgeChangeTopicEdge : IEquatable<EdgeChangeTopicEdge>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.OnlineStatus == other.OnlineStatus ||
-                this.OnlineStatus != null &&
-                this.OnlineStatus.Equals(other.OnlineStatus)
+                OnlineStatus == other.OnlineStatus ||
+                OnlineStatus != null &&
+                OnlineStatus.Equals(other.OnlineStatus)
             );
     }
 
@@ -128,14 +128,14 @@ public partial class EdgeChangeTopicEdge : IEquatable<EdgeChangeTopicEdge>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.OnlineStatus != null)
+            if (OnlineStatus != null)
             {
-                hash = hash * 59 + this.OnlineStatus.GetHashCode();
+                hash = hash * 59 + OnlineStatus.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class EdgeRebootParameters : IEquatable<EdgeRebootParameters>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeRebootParameters);
+        return Equals(obj as EdgeRebootParameters);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class EdgeRebootParameters : IEquatable<EdgeRebootParameters>
 
         return true &&
             (
-                this.CallDrainingWaitTimeSeconds == other.CallDrainingWaitTimeSeconds ||
-                this.CallDrainingWaitTimeSeconds != null &&
-                this.CallDrainingWaitTimeSeconds.Equals(other.CallDrainingWaitTimeSeconds)
+                CallDrainingWaitTimeSeconds == other.CallDrainingWaitTimeSeconds ||
+                CallDrainingWaitTimeSeconds != null &&
+                CallDrainingWaitTimeSeconds.Equals(other.CallDrainingWaitTimeSeconds)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class EdgeRebootParameters : IEquatable<EdgeRebootParameters>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CallDrainingWaitTimeSeconds != null)
+            if (CallDrainingWaitTimeSeconds != null)
             {
-                hash = hash * 59 + this.CallDrainingWaitTimeSeconds.GetHashCode();
+                hash = hash * 59 + CallDrainingWaitTimeSeconds.GetHashCode();
             }
 
             return hash;

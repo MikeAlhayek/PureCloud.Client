@@ -139,7 +139,7 @@ public partial class PersistentConnectionChangeTopicPersistentConnectionChangeEv
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PersistentConnectionChangeTopicPersistentConnectionChangeEvent);
+        return Equals(obj as PersistentConnectionChangeTopicPersistentConnectionChangeEvent);
     }
 
     /// <summary>
@@ -157,29 +157,29 @@ public partial class PersistentConnectionChangeTopicPersistentConnectionChangeEv
 
         return true &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             ) &&
             (
-                this.StationId == other.StationId ||
-                this.StationId != null &&
-                this.StationId.Equals(other.StationId)
+                StationId == other.StationId ||
+                StationId != null &&
+                StationId.Equals(other.StationId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.PersistentState == other.PersistentState ||
-                this.PersistentState != null &&
-                this.PersistentState.Equals(other.PersistentState)
+                PersistentState == other.PersistentState ||
+                PersistentState != null &&
+                PersistentState.Equals(other.PersistentState)
             ) &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             );
     }
 
@@ -194,29 +194,29 @@ public partial class PersistentConnectionChangeTopicPersistentConnectionChangeEv
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
-            if (this.StationId != null)
+            if (StationId != null)
             {
-                hash = hash * 59 + this.StationId.GetHashCode();
+                hash = hash * 59 + StationId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.PersistentState != null)
+            if (PersistentState != null)
             {
-                hash = hash * 59 + this.PersistentState.GetHashCode();
+                hash = hash * 59 + PersistentState.GetHashCode();
             }
 
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
             return hash;

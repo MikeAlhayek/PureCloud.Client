@@ -99,7 +99,7 @@ public partial class Education : IEquatable<Education>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Education);
+        return Equals(obj as Education);
     }
 
     /// <summary>
@@ -117,29 +117,29 @@ public partial class Education : IEquatable<Education>
 
         return true &&
             (
-                this.School == other.School ||
-                this.School != null &&
-                this.School.Equals(other.School)
+                School == other.School ||
+                School != null &&
+                School.Equals(other.School)
             ) &&
             (
-                this.FieldOfStudy == other.FieldOfStudy ||
-                this.FieldOfStudy != null &&
-                this.FieldOfStudy.Equals(other.FieldOfStudy)
+                FieldOfStudy == other.FieldOfStudy ||
+                FieldOfStudy != null &&
+                FieldOfStudy.Equals(other.FieldOfStudy)
             ) &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.DateEnd == other.DateEnd ||
-                this.DateEnd != null &&
-                this.DateEnd.Equals(other.DateEnd)
+                DateEnd == other.DateEnd ||
+                DateEnd != null &&
+                DateEnd.Equals(other.DateEnd)
             );
     }
 
@@ -154,29 +154,29 @@ public partial class Education : IEquatable<Education>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.School != null)
+            if (School != null)
             {
-                hash = hash * 59 + this.School.GetHashCode();
+                hash = hash * 59 + School.GetHashCode();
             }
 
-            if (this.FieldOfStudy != null)
+            if (FieldOfStudy != null)
             {
-                hash = hash * 59 + this.FieldOfStudy.GetHashCode();
+                hash = hash * 59 + FieldOfStudy.GetHashCode();
             }
 
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.DateEnd != null)
+            if (DateEnd != null)
             {
-                hash = hash * 59 + this.DateEnd.GetHashCode();
+                hash = hash * 59 + DateEnd.GetHashCode();
             }
 
             return hash;

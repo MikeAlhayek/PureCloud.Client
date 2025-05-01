@@ -94,7 +94,7 @@ public partial class AuditQueryRequest : IEquatable<AuditQueryRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuditQueryRequest);
+        return Equals(obj as AuditQueryRequest);
     }
 
     /// <summary>
@@ -112,24 +112,24 @@ public partial class AuditQueryRequest : IEquatable<AuditQueryRequest>
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.ServiceName == other.ServiceName ||
-                this.ServiceName != null &&
-                this.ServiceName.Equals(other.ServiceName)
+                ServiceName == other.ServiceName ||
+                ServiceName != null &&
+                ServiceName.Equals(other.ServiceName)
             ) &&
             (
-                this.Filters == other.Filters ||
-                this.Filters != null &&
-                this.Filters.SequenceEqual(other.Filters)
+                Filters == other.Filters ||
+                Filters != null &&
+                Filters.SequenceEqual(other.Filters)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.SequenceEqual(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.SequenceEqual(other.Sort)
             );
     }
 
@@ -144,24 +144,24 @@ public partial class AuditQueryRequest : IEquatable<AuditQueryRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.ServiceName != null)
+            if (ServiceName != null)
             {
-                hash = hash * 59 + this.ServiceName.GetHashCode();
+                hash = hash * 59 + ServiceName.GetHashCode();
             }
 
-            if (this.Filters != null)
+            if (Filters != null)
             {
-                hash = hash * 59 + this.Filters.GetHashCode();
+                hash = hash * 59 + Filters.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
             return hash;

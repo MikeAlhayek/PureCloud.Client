@@ -77,7 +77,7 @@ public partial class BuRescheduleAgentScheduleResult : IEquatable<BuRescheduleAg
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuRescheduleAgentScheduleResult);
+        return Equals(obj as BuRescheduleAgentScheduleResult);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class BuRescheduleAgentScheduleResult : IEquatable<BuRescheduleAg
 
         return true &&
             (
-                this.ManagementUnit == other.ManagementUnit ||
-                this.ManagementUnit != null &&
-                this.ManagementUnit.Equals(other.ManagementUnit)
+                ManagementUnit == other.ManagementUnit ||
+                ManagementUnit != null &&
+                ManagementUnit.Equals(other.ManagementUnit)
             ) &&
             (
-                this.DownloadResult == other.DownloadResult ||
-                this.DownloadResult != null &&
-                this.DownloadResult.Equals(other.DownloadResult)
+                DownloadResult == other.DownloadResult ||
+                DownloadResult != null &&
+                DownloadResult.Equals(other.DownloadResult)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class BuRescheduleAgentScheduleResult : IEquatable<BuRescheduleAg
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnit != null)
+            if (ManagementUnit != null)
             {
-                hash = hash * 59 + this.ManagementUnit.GetHashCode();
+                hash = hash * 59 + ManagementUnit.GetHashCode();
             }
 
-            if (this.DownloadResult != null)
+            if (DownloadResult != null)
             {
-                hash = hash * 59 + this.DownloadResult.GetHashCode();
+                hash = hash * 59 + DownloadResult.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
             return hash;

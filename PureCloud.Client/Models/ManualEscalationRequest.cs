@@ -71,7 +71,7 @@ public partial class ManualEscalationRequest : IEquatable<ManualEscalationReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ManualEscalationRequest);
+        return Equals(obj as ManualEscalationRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ManualEscalationRequest : IEquatable<ManualEscalationReques
 
         return true &&
             (
-                this.SocialMediaNormalizedMessageId == other.SocialMediaNormalizedMessageId ||
-                this.SocialMediaNormalizedMessageId != null &&
-                this.SocialMediaNormalizedMessageId.Equals(other.SocialMediaNormalizedMessageId)
+                SocialMediaNormalizedMessageId == other.SocialMediaNormalizedMessageId ||
+                SocialMediaNormalizedMessageId != null &&
+                SocialMediaNormalizedMessageId.Equals(other.SocialMediaNormalizedMessageId)
             ) &&
             (
-                this.EscalationTarget == other.EscalationTarget ||
-                this.EscalationTarget != null &&
-                this.EscalationTarget.Equals(other.EscalationTarget)
+                EscalationTarget == other.EscalationTarget ||
+                EscalationTarget != null &&
+                EscalationTarget.Equals(other.EscalationTarget)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ManualEscalationRequest : IEquatable<ManualEscalationReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SocialMediaNormalizedMessageId != null)
+            if (SocialMediaNormalizedMessageId != null)
             {
-                hash = hash * 59 + this.SocialMediaNormalizedMessageId.GetHashCode();
+                hash = hash * 59 + SocialMediaNormalizedMessageId.GetHashCode();
             }
 
-            if (this.EscalationTarget != null)
+            if (EscalationTarget != null)
             {
-                hash = hash * 59 + this.EscalationTarget.GetHashCode();
+                hash = hash * 59 + EscalationTarget.GetHashCode();
             }
 
             return hash;

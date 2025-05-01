@@ -107,7 +107,7 @@ public partial class RecordingTranscodeCompleteTopicRecording : IEquatable<Recor
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingTranscodeCompleteTopicRecording);
+        return Equals(obj as RecordingTranscodeCompleteTopicRecording);
     }
 
     /// <summary>
@@ -125,34 +125,34 @@ public partial class RecordingTranscodeCompleteTopicRecording : IEquatable<Recor
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.FileState == other.FileState ||
-                this.FileState != null &&
-                this.FileState.Equals(other.FileState)
+                FileState == other.FileState ||
+                FileState != null &&
+                FileState.Equals(other.FileState)
             ) &&
             (
-                this.MediaUris == other.MediaUris ||
-                this.MediaUris != null &&
-                this.MediaUris.SequenceEqual(other.MediaUris)
+                MediaUris == other.MediaUris ||
+                MediaUris != null &&
+                MediaUris.SequenceEqual(other.MediaUris)
             ) &&
             (
-                this.EstimatedTranscodeTimeMs == other.EstimatedTranscodeTimeMs ||
-                this.EstimatedTranscodeTimeMs != null &&
-                this.EstimatedTranscodeTimeMs.Equals(other.EstimatedTranscodeTimeMs)
+                EstimatedTranscodeTimeMs == other.EstimatedTranscodeTimeMs ||
+                EstimatedTranscodeTimeMs != null &&
+                EstimatedTranscodeTimeMs.Equals(other.EstimatedTranscodeTimeMs)
             ) &&
             (
-                this.ActualTranscodeTimeMs == other.ActualTranscodeTimeMs ||
-                this.ActualTranscodeTimeMs != null &&
-                this.ActualTranscodeTimeMs.Equals(other.ActualTranscodeTimeMs)
+                ActualTranscodeTimeMs == other.ActualTranscodeTimeMs ||
+                ActualTranscodeTimeMs != null &&
+                ActualTranscodeTimeMs.Equals(other.ActualTranscodeTimeMs)
             );
     }
 
@@ -167,34 +167,34 @@ public partial class RecordingTranscodeCompleteTopicRecording : IEquatable<Recor
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.FileState != null)
+            if (FileState != null)
             {
-                hash = hash * 59 + this.FileState.GetHashCode();
+                hash = hash * 59 + FileState.GetHashCode();
             }
 
-            if (this.MediaUris != null)
+            if (MediaUris != null)
             {
-                hash = hash * 59 + this.MediaUris.GetHashCode();
+                hash = hash * 59 + MediaUris.GetHashCode();
             }
 
-            if (this.EstimatedTranscodeTimeMs != null)
+            if (EstimatedTranscodeTimeMs != null)
             {
-                hash = hash * 59 + this.EstimatedTranscodeTimeMs.GetHashCode();
+                hash = hash * 59 + EstimatedTranscodeTimeMs.GetHashCode();
             }
 
-            if (this.ActualTranscodeTimeMs != null)
+            if (ActualTranscodeTimeMs != null)
             {
-                hash = hash * 59 + this.ActualTranscodeTimeMs.GetHashCode();
+                hash = hash * 59 + ActualTranscodeTimeMs.GetHashCode();
             }
 
             return hash;

@@ -85,7 +85,7 @@ public partial class OutboundMessagingCampaignPostContactSmsEventTopicSMSAttribu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes);
+        return Equals(obj as OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class OutboundMessagingCampaignPostContactSmsEventTopicSMSAttribu
 
         return true &&
             (
-                this.ContactPhoneNumber == other.ContactPhoneNumber ||
-                this.ContactPhoneNumber != null &&
-                this.ContactPhoneNumber.Equals(other.ContactPhoneNumber)
+                ContactPhoneNumber == other.ContactPhoneNumber ||
+                ContactPhoneNumber != null &&
+                ContactPhoneNumber.Equals(other.ContactPhoneNumber)
             ) &&
             (
-                this.ContactPhoneNumberColumnName == other.ContactPhoneNumberColumnName ||
-                this.ContactPhoneNumberColumnName != null &&
-                this.ContactPhoneNumberColumnName.Equals(other.ContactPhoneNumberColumnName)
+                ContactPhoneNumberColumnName == other.ContactPhoneNumberColumnName ||
+                ContactPhoneNumberColumnName != null &&
+                ContactPhoneNumberColumnName.Equals(other.ContactPhoneNumberColumnName)
             ) &&
             (
-                this.ConfiguredSenderPhoneNumber == other.ConfiguredSenderPhoneNumber ||
-                this.ConfiguredSenderPhoneNumber != null &&
-                this.ConfiguredSenderPhoneNumber.Equals(other.ConfiguredSenderPhoneNumber)
+                ConfiguredSenderPhoneNumber == other.ConfiguredSenderPhoneNumber ||
+                ConfiguredSenderPhoneNumber != null &&
+                ConfiguredSenderPhoneNumber.Equals(other.ConfiguredSenderPhoneNumber)
             ) &&
             (
-                this.SenderPhoneNumber == other.SenderPhoneNumber ||
-                this.SenderPhoneNumber != null &&
-                this.SenderPhoneNumber.Equals(other.SenderPhoneNumber)
+                SenderPhoneNumber == other.SenderPhoneNumber ||
+                SenderPhoneNumber != null &&
+                SenderPhoneNumber.Equals(other.SenderPhoneNumber)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class OutboundMessagingCampaignPostContactSmsEventTopicSMSAttribu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactPhoneNumber != null)
+            if (ContactPhoneNumber != null)
             {
-                hash = hash * 59 + this.ContactPhoneNumber.GetHashCode();
+                hash = hash * 59 + ContactPhoneNumber.GetHashCode();
             }
 
-            if (this.ContactPhoneNumberColumnName != null)
+            if (ContactPhoneNumberColumnName != null)
             {
-                hash = hash * 59 + this.ContactPhoneNumberColumnName.GetHashCode();
+                hash = hash * 59 + ContactPhoneNumberColumnName.GetHashCode();
             }
 
-            if (this.ConfiguredSenderPhoneNumber != null)
+            if (ConfiguredSenderPhoneNumber != null)
             {
-                hash = hash * 59 + this.ConfiguredSenderPhoneNumber.GetHashCode();
+                hash = hash * 59 + ConfiguredSenderPhoneNumber.GetHashCode();
             }
 
-            if (this.SenderPhoneNumber != null)
+            if (SenderPhoneNumber != null)
             {
-                hash = hash * 59 + this.SenderPhoneNumber.GetHashCode();
+                hash = hash * 59 + SenderPhoneNumber.GetHashCode();
             }
 
             return hash;

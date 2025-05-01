@@ -128,7 +128,7 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainEdgeSoftwareVersionDto);
+        return Equals(obj as DomainEdgeSoftwareVersionDto);
     }
 
     /// <summary>
@@ -146,44 +146,44 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.EdgeVersion == other.EdgeVersion ||
-                this.EdgeVersion != null &&
-                this.EdgeVersion.Equals(other.EdgeVersion)
+                EdgeVersion == other.EdgeVersion ||
+                EdgeVersion != null &&
+                EdgeVersion.Equals(other.EdgeVersion)
             ) &&
             (
-                this.PublishDate == other.PublishDate ||
-                this.PublishDate != null &&
-                this.PublishDate.Equals(other.PublishDate)
+                PublishDate == other.PublishDate ||
+                PublishDate != null &&
+                PublishDate.Equals(other.PublishDate)
             ) &&
             (
-                this.EdgeUri == other.EdgeUri ||
-                this.EdgeUri != null &&
-                this.EdgeUri.Equals(other.EdgeUri)
+                EdgeUri == other.EdgeUri ||
+                EdgeUri != null &&
+                EdgeUri.Equals(other.EdgeUri)
             ) &&
             (
-                this.LatestRelease == other.LatestRelease ||
-                this.LatestRelease != null &&
-                this.LatestRelease.Equals(other.LatestRelease)
+                LatestRelease == other.LatestRelease ||
+                LatestRelease != null &&
+                LatestRelease.Equals(other.LatestRelease)
             ) &&
             (
-                this.Current == other.Current ||
-                this.Current != null &&
-                this.Current.Equals(other.Current)
+                Current == other.Current ||
+                Current != null &&
+                Current.Equals(other.Current)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -198,44 +198,44 @@ public partial class DomainEdgeSoftwareVersionDto : IEquatable<DomainEdgeSoftwar
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.EdgeVersion != null)
+            if (EdgeVersion != null)
             {
-                hash = hash * 59 + this.EdgeVersion.GetHashCode();
+                hash = hash * 59 + EdgeVersion.GetHashCode();
             }
 
-            if (this.PublishDate != null)
+            if (PublishDate != null)
             {
-                hash = hash * 59 + this.PublishDate.GetHashCode();
+                hash = hash * 59 + PublishDate.GetHashCode();
             }
 
-            if (this.EdgeUri != null)
+            if (EdgeUri != null)
             {
-                hash = hash * 59 + this.EdgeUri.GetHashCode();
+                hash = hash * 59 + EdgeUri.GetHashCode();
             }
 
-            if (this.LatestRelease != null)
+            if (LatestRelease != null)
             {
-                hash = hash * 59 + this.LatestRelease.GetHashCode();
+                hash = hash * 59 + LatestRelease.GetHashCode();
             }
 
-            if (this.Current != null)
+            if (Current != null)
             {
-                hash = hash * 59 + this.Current.GetHashCode();
+                hash = hash * 59 + Current.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

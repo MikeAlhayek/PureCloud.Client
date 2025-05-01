@@ -53,7 +53,7 @@ public partial class ContestCompleteDataScore : IEquatable<ContestCompleteDataSc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestCompleteDataScore);
+        return Equals(obj as ContestCompleteDataScore);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ContestCompleteDataScore : IEquatable<ContestCompleteDataSc
 
         return true &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ContestCompleteDataScore : IEquatable<ContestCompleteDataSc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
             return hash;

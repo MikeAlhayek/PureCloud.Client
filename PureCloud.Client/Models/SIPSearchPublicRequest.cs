@@ -162,7 +162,7 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SIPSearchPublicRequest);
+        return Equals(obj as SIPSearchPublicRequest);
     }
 
     /// <summary>
@@ -180,54 +180,54 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.CallId == other.CallId ||
-                this.CallId != null &&
-                this.CallId.Equals(other.CallId)
+                CallId == other.CallId ||
+                CallId != null &&
+                CallId.Equals(other.CallId)
             ) &&
             (
-                this.ToUser == other.ToUser ||
-                this.ToUser != null &&
-                this.ToUser.Equals(other.ToUser)
+                ToUser == other.ToUser ||
+                ToUser != null &&
+                ToUser.Equals(other.ToUser)
             ) &&
             (
-                this.FromUser == other.FromUser ||
-                this.FromUser != null &&
-                this.FromUser.Equals(other.FromUser)
+                FromUser == other.FromUser ||
+                FromUser != null &&
+                FromUser.Equals(other.FromUser)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.ParticipantId == other.ParticipantId ||
-                this.ParticipantId != null &&
-                this.ParticipantId.Equals(other.ParticipantId)
+                ParticipantId == other.ParticipantId ||
+                ParticipantId != null &&
+                ParticipantId.Equals(other.ParticipantId)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.DateEnd == other.DateEnd ||
-                this.DateEnd != null &&
-                this.DateEnd.Equals(other.DateEnd)
+                DateEnd == other.DateEnd ||
+                DateEnd != null &&
+                DateEnd.Equals(other.DateEnd)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -242,54 +242,54 @@ public partial class SIPSearchPublicRequest : IEquatable<SIPSearchPublicRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.CallId != null)
+            if (CallId != null)
             {
-                hash = hash * 59 + this.CallId.GetHashCode();
+                hash = hash * 59 + CallId.GetHashCode();
             }
 
-            if (this.ToUser != null)
+            if (ToUser != null)
             {
-                hash = hash * 59 + this.ToUser.GetHashCode();
+                hash = hash * 59 + ToUser.GetHashCode();
             }
 
-            if (this.FromUser != null)
+            if (FromUser != null)
             {
-                hash = hash * 59 + this.FromUser.GetHashCode();
+                hash = hash * 59 + FromUser.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.ParticipantId != null)
+            if (ParticipantId != null)
             {
-                hash = hash * 59 + this.ParticipantId.GetHashCode();
+                hash = hash * 59 + ParticipantId.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.DateEnd != null)
+            if (DateEnd != null)
             {
-                hash = hash * 59 + this.DateEnd.GetHashCode();
+                hash = hash * 59 + DateEnd.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -64,7 +64,7 @@ public partial class BulkResult : IEquatable<BulkResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BulkResult);
+        return Equals(obj as BulkResult);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class BulkResult : IEquatable<BulkResult>
 
         return true &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.Entity == other.Entity ||
-                this.Entity != null &&
-                this.Entity.Equals(other.Entity)
+                Entity == other.Entity ||
+                Entity != null &&
+                Entity.Equals(other.Entity)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class BulkResult : IEquatable<BulkResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.Entity != null)
+            if (Entity != null)
             {
-                hash = hash * 59 + this.Entity.GetHashCode();
+                hash = hash * 59 + Entity.GetHashCode();
             }
 
             return hash;

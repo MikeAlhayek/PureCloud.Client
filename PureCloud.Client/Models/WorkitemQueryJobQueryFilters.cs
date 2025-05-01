@@ -129,7 +129,7 @@ public partial class WorkitemQueryJobQueryFilters : IEquatable<WorkitemQueryJobQ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemQueryJobQueryFilters);
+        return Equals(obj as WorkitemQueryJobQueryFilters);
     }
 
     /// <summary>
@@ -147,19 +147,19 @@ public partial class WorkitemQueryJobQueryFilters : IEquatable<WorkitemQueryJobQ
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.SequenceEqual(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.SequenceEqual(other.Criteria)
             );
     }
 
@@ -174,19 +174,19 @@ public partial class WorkitemQueryJobQueryFilters : IEquatable<WorkitemQueryJobQ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
             return hash;

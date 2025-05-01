@@ -65,7 +65,7 @@ public partial class KnowledgeDocumentSearchResult : IEquatable<KnowledgeDocumen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentSearchResult);
+        return Equals(obj as KnowledgeDocumentSearchResult);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class KnowledgeDocumentSearchResult : IEquatable<KnowledgeDocumen
 
         return true &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             ) &&
             (
-                this.Document == other.Document ||
-                this.Document != null &&
-                this.Document.Equals(other.Document)
+                Document == other.Document ||
+                Document != null &&
+                Document.Equals(other.Document)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class KnowledgeDocumentSearchResult : IEquatable<KnowledgeDocumen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
-            if (this.Document != null)
+            if (Document != null)
             {
-                hash = hash * 59 + this.Document.GetHashCode();
+                hash = hash * 59 + Document.GetHashCode();
             }
 
             return hash;

@@ -167,7 +167,7 @@ public partial class PerformanceProfile : IEquatable<PerformanceProfile>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PerformanceProfile);
+        return Equals(obj as PerformanceProfile);
     }
 
     /// <summary>
@@ -185,59 +185,59 @@ public partial class PerformanceProfile : IEquatable<PerformanceProfile>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.MetricOrders == other.MetricOrders ||
-                this.MetricOrders != null &&
-                this.MetricOrders.SequenceEqual(other.MetricOrders)
+                MetricOrders == other.MetricOrders ||
+                MetricOrders != null &&
+                MetricOrders.SequenceEqual(other.MetricOrders)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.ReportingIntervals == other.ReportingIntervals ||
-                this.ReportingIntervals != null &&
-                this.ReportingIntervals.SequenceEqual(other.ReportingIntervals)
+                ReportingIntervals == other.ReportingIntervals ||
+                ReportingIntervals != null &&
+                ReportingIntervals.SequenceEqual(other.ReportingIntervals)
             ) &&
             (
-                this.Active == other.Active ||
-                this.Active != null &&
-                this.Active.Equals(other.Active)
+                Active == other.Active ||
+                Active != null &&
+                Active.Equals(other.Active)
             ) &&
             (
-                this.MemberCount == other.MemberCount ||
-                this.MemberCount != null &&
-                this.MemberCount.Equals(other.MemberCount)
+                MemberCount == other.MemberCount ||
+                MemberCount != null &&
+                MemberCount.Equals(other.MemberCount)
             ) &&
             (
-                this.MaxLeaderboardRankSize == other.MaxLeaderboardRankSize ||
-                this.MaxLeaderboardRankSize != null &&
-                this.MaxLeaderboardRankSize.Equals(other.MaxLeaderboardRankSize)
+                MaxLeaderboardRankSize == other.MaxLeaderboardRankSize ||
+                MaxLeaderboardRankSize != null &&
+                MaxLeaderboardRankSize.Equals(other.MaxLeaderboardRankSize)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -252,59 +252,59 @@ public partial class PerformanceProfile : IEquatable<PerformanceProfile>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.MetricOrders != null)
+            if (MetricOrders != null)
             {
-                hash = hash * 59 + this.MetricOrders.GetHashCode();
+                hash = hash * 59 + MetricOrders.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.ReportingIntervals != null)
+            if (ReportingIntervals != null)
             {
-                hash = hash * 59 + this.ReportingIntervals.GetHashCode();
+                hash = hash * 59 + ReportingIntervals.GetHashCode();
             }
 
-            if (this.Active != null)
+            if (Active != null)
             {
-                hash = hash * 59 + this.Active.GetHashCode();
+                hash = hash * 59 + Active.GetHashCode();
             }
 
-            if (this.MemberCount != null)
+            if (MemberCount != null)
             {
-                hash = hash * 59 + this.MemberCount.GetHashCode();
+                hash = hash * 59 + MemberCount.GetHashCode();
             }
 
-            if (this.MaxLeaderboardRankSize != null)
+            if (MaxLeaderboardRankSize != null)
             {
-                hash = hash * 59 + this.MaxLeaderboardRankSize.GetHashCode();
+                hash = hash * 59 + MaxLeaderboardRankSize.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings);
+        return Equals(obj as DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingS
 
         return true &&
             (
-                this.CallableWindows == other.CallableWindows ||
-                this.CallableWindows != null &&
-                this.CallableWindows.SequenceEqual(other.CallableWindows)
+                CallableWindows == other.CallableWindows ||
+                CallableWindows != null &&
+                CallableWindows.SequenceEqual(other.CallableWindows)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CallableWindows != null)
+            if (CallableWindows != null)
             {
-                hash = hash * 59 + this.CallableWindows.GetHashCode();
+                hash = hash * 59 + CallableWindows.GetHashCode();
             }
 
             return hash;

@@ -81,7 +81,7 @@ public partial class ArchiveRetention : IEquatable<ArchiveRetention>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArchiveRetention);
+        return Equals(obj as ArchiveRetention);
     }
 
     /// <summary>
@@ -99,14 +99,14 @@ public partial class ArchiveRetention : IEquatable<ArchiveRetention>
 
         return true &&
             (
-                this.Days == other.Days ||
-                this.Days != null &&
-                this.Days.Equals(other.Days)
+                Days == other.Days ||
+                Days != null &&
+                Days.Equals(other.Days)
             ) &&
             (
-                this.StorageMedium == other.StorageMedium ||
-                this.StorageMedium != null &&
-                this.StorageMedium.Equals(other.StorageMedium)
+                StorageMedium == other.StorageMedium ||
+                StorageMedium != null &&
+                StorageMedium.Equals(other.StorageMedium)
             );
     }
 
@@ -121,14 +121,14 @@ public partial class ArchiveRetention : IEquatable<ArchiveRetention>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Days != null)
+            if (Days != null)
             {
-                hash = hash * 59 + this.Days.GetHashCode();
+                hash = hash * 59 + Days.GetHashCode();
             }
 
-            if (this.StorageMedium != null)
+            if (StorageMedium != null)
             {
-                hash = hash * 59 + this.StorageMedium.GetHashCode();
+                hash = hash * 59 + StorageMedium.GetHashCode();
             }
 
             return hash;

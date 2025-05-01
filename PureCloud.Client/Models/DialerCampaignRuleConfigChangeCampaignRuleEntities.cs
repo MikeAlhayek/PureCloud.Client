@@ -65,7 +65,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleEntities : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerCampaignRuleConfigChangeCampaignRuleEntities);
+        return Equals(obj as DialerCampaignRuleConfigChangeCampaignRuleEntities);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleEntities : IEquat
 
         return true &&
             (
-                this.Campaigns == other.Campaigns ||
-                this.Campaigns != null &&
-                this.Campaigns.SequenceEqual(other.Campaigns)
+                Campaigns == other.Campaigns ||
+                Campaigns != null &&
+                Campaigns.SequenceEqual(other.Campaigns)
             ) &&
             (
-                this.Sequences == other.Sequences ||
-                this.Sequences != null &&
-                this.Sequences.SequenceEqual(other.Sequences)
+                Sequences == other.Sequences ||
+                Sequences != null &&
+                Sequences.SequenceEqual(other.Sequences)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleEntities : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Campaigns != null)
+            if (Campaigns != null)
             {
-                hash = hash * 59 + this.Campaigns.GetHashCode();
+                hash = hash * 59 + Campaigns.GetHashCode();
             }
 
-            if (this.Sequences != null)
+            if (Sequences != null)
             {
-                hash = hash * 59 + this.Sequences.GetHashCode();
+                hash = hash * 59 + Sequences.GetHashCode();
             }
 
             return hash;

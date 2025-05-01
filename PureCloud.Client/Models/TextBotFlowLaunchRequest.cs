@@ -119,7 +119,7 @@ public partial class TextBotFlowLaunchRequest : IEquatable<TextBotFlowLaunchRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotFlowLaunchRequest);
+        return Equals(obj as TextBotFlowLaunchRequest);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class TextBotFlowLaunchRequest : IEquatable<TextBotFlowLaunchRequ
 
         return true &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             ) &&
             (
-                this.ExternalSessionId == other.ExternalSessionId ||
-                this.ExternalSessionId != null &&
-                this.ExternalSessionId.Equals(other.ExternalSessionId)
+                ExternalSessionId == other.ExternalSessionId ||
+                ExternalSessionId != null &&
+                ExternalSessionId.Equals(other.ExternalSessionId)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.InputData == other.InputData ||
-                this.InputData != null &&
-                this.InputData.Equals(other.InputData)
+                InputData == other.InputData ||
+                InputData != null &&
+                InputData.Equals(other.InputData)
             ) &&
             (
-                this.Channel == other.Channel ||
-                this.Channel != null &&
-                this.Channel.Equals(other.Channel)
+                Channel == other.Channel ||
+                Channel != null &&
+                Channel.Equals(other.Channel)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class TextBotFlowLaunchRequest : IEquatable<TextBotFlowLaunchRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
-            if (this.ExternalSessionId != null)
+            if (ExternalSessionId != null)
             {
-                hash = hash * 59 + this.ExternalSessionId.GetHashCode();
+                hash = hash * 59 + ExternalSessionId.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.InputData != null)
+            if (InputData != null)
             {
-                hash = hash * 59 + this.InputData.GetHashCode();
+                hash = hash * 59 + InputData.GetHashCode();
             }
 
-            if (this.Channel != null)
+            if (Channel != null)
             {
-                hash = hash * 59 + this.Channel.GetHashCode();
+                hash = hash * 59 + Channel.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
             return hash;

@@ -156,7 +156,7 @@ public partial class AdjustableLiveSpeakerDetection : IEquatable<AdjustableLiveS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdjustableLiveSpeakerDetection);
+        return Equals(obj as AdjustableLiveSpeakerDetection);
     }
 
     /// <summary>
@@ -174,34 +174,34 @@ public partial class AdjustableLiveSpeakerDetection : IEquatable<AdjustableLiveS
 
         return true &&
             (
-                this.Mode == other.Mode ||
-                this.Mode != null &&
-                this.Mode.Equals(other.Mode)
+                Mode == other.Mode ||
+                Mode != null &&
+                Mode.Equals(other.Mode)
             ) &&
             (
-                this.PreconnectDuration == other.PreconnectDuration ||
-                this.PreconnectDuration != null &&
-                this.PreconnectDuration.Equals(other.PreconnectDuration)
+                PreconnectDuration == other.PreconnectDuration ||
+                PreconnectDuration != null &&
+                PreconnectDuration.Equals(other.PreconnectDuration)
             ) &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             ) &&
             (
-                this.IsPersonLikely == other.IsPersonLikely ||
-                this.IsPersonLikely != null &&
-                this.IsPersonLikely.Equals(other.IsPersonLikely)
+                IsPersonLikely == other.IsPersonLikely ||
+                IsPersonLikely != null &&
+                IsPersonLikely.Equals(other.IsPersonLikely)
             ) &&
             (
-                this.TotalRingbacks == other.TotalRingbacks ||
-                this.TotalRingbacks != null &&
-                this.TotalRingbacks.Equals(other.TotalRingbacks)
+                TotalRingbacks == other.TotalRingbacks ||
+                TotalRingbacks != null &&
+                TotalRingbacks.Equals(other.TotalRingbacks)
             ) &&
             (
-                this.LineConnected == other.LineConnected ||
-                this.LineConnected != null &&
-                this.LineConnected.Equals(other.LineConnected)
+                LineConnected == other.LineConnected ||
+                LineConnected != null &&
+                LineConnected.Equals(other.LineConnected)
             );
     }
 
@@ -216,34 +216,34 @@ public partial class AdjustableLiveSpeakerDetection : IEquatable<AdjustableLiveS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Mode != null)
+            if (Mode != null)
             {
-                hash = hash * 59 + this.Mode.GetHashCode();
+                hash = hash * 59 + Mode.GetHashCode();
             }
 
-            if (this.PreconnectDuration != null)
+            if (PreconnectDuration != null)
             {
-                hash = hash * 59 + this.PreconnectDuration.GetHashCode();
+                hash = hash * 59 + PreconnectDuration.GetHashCode();
             }
 
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
-            if (this.IsPersonLikely != null)
+            if (IsPersonLikely != null)
             {
-                hash = hash * 59 + this.IsPersonLikely.GetHashCode();
+                hash = hash * 59 + IsPersonLikely.GetHashCode();
             }
 
-            if (this.TotalRingbacks != null)
+            if (TotalRingbacks != null)
             {
-                hash = hash * 59 + this.TotalRingbacks.GetHashCode();
+                hash = hash * 59 + TotalRingbacks.GetHashCode();
             }
 
-            if (this.LineConnected != null)
+            if (LineConnected != null)
             {
-                hash = hash * 59 + this.LineConnected.GetHashCode();
+                hash = hash * 59 + LineConnected.GetHashCode();
             }
 
             return hash;

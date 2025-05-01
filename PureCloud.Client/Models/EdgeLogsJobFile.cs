@@ -327,7 +327,7 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeLogsJobFile);
+        return Equals(obj as EdgeLogsJobFile);
     }
 
     /// <summary>
@@ -345,99 +345,99 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.ModifiedByApp == other.ModifiedByApp ||
-                this.ModifiedByApp != null &&
-                this.ModifiedByApp.Equals(other.ModifiedByApp)
+                ModifiedByApp == other.ModifiedByApp ||
+                ModifiedByApp != null &&
+                ModifiedByApp.Equals(other.ModifiedByApp)
             ) &&
             (
-                this.CreatedByApp == other.CreatedByApp ||
-                this.CreatedByApp != null &&
-                this.CreatedByApp.Equals(other.CreatedByApp)
+                CreatedByApp == other.CreatedByApp ||
+                CreatedByApp != null &&
+                CreatedByApp.Equals(other.CreatedByApp)
             ) &&
             (
-                this.TimeCreated == other.TimeCreated ||
-                this.TimeCreated != null &&
-                this.TimeCreated.Equals(other.TimeCreated)
+                TimeCreated == other.TimeCreated ||
+                TimeCreated != null &&
+                TimeCreated.Equals(other.TimeCreated)
             ) &&
             (
-                this.TimeModified == other.TimeModified ||
-                this.TimeModified != null &&
-                this.TimeModified.Equals(other.TimeModified)
+                TimeModified == other.TimeModified ||
+                TimeModified != null &&
+                TimeModified.Equals(other.TimeModified)
             ) &&
             (
-                this.SizeBytes == other.SizeBytes ||
-                this.SizeBytes != null &&
-                this.SizeBytes.Equals(other.SizeBytes)
+                SizeBytes == other.SizeBytes ||
+                SizeBytes != null &&
+                SizeBytes.Equals(other.SizeBytes)
             ) &&
             (
-                this.UploadStatus == other.UploadStatus ||
-                this.UploadStatus != null &&
-                this.UploadStatus.Equals(other.UploadStatus)
+                UploadStatus == other.UploadStatus ||
+                UploadStatus != null &&
+                UploadStatus.Equals(other.UploadStatus)
             ) &&
             (
-                this.EdgePath == other.EdgePath ||
-                this.EdgePath != null &&
-                this.EdgePath.Equals(other.EdgePath)
+                EdgePath == other.EdgePath ||
+                EdgePath != null &&
+                EdgePath.Equals(other.EdgePath)
             ) &&
             (
-                this.DownloadId == other.DownloadId ||
-                this.DownloadId != null &&
-                this.DownloadId.Equals(other.DownloadId)
+                DownloadId == other.DownloadId ||
+                DownloadId != null &&
+                DownloadId.Equals(other.DownloadId)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -452,99 +452,99 @@ public partial class EdgeLogsJobFile : IEquatable<EdgeLogsJobFile>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.ModifiedByApp != null)
+            if (ModifiedByApp != null)
             {
-                hash = hash * 59 + this.ModifiedByApp.GetHashCode();
+                hash = hash * 59 + ModifiedByApp.GetHashCode();
             }
 
-            if (this.CreatedByApp != null)
+            if (CreatedByApp != null)
             {
-                hash = hash * 59 + this.CreatedByApp.GetHashCode();
+                hash = hash * 59 + CreatedByApp.GetHashCode();
             }
 
-            if (this.TimeCreated != null)
+            if (TimeCreated != null)
             {
-                hash = hash * 59 + this.TimeCreated.GetHashCode();
+                hash = hash * 59 + TimeCreated.GetHashCode();
             }
 
-            if (this.TimeModified != null)
+            if (TimeModified != null)
             {
-                hash = hash * 59 + this.TimeModified.GetHashCode();
+                hash = hash * 59 + TimeModified.GetHashCode();
             }
 
-            if (this.SizeBytes != null)
+            if (SizeBytes != null)
             {
-                hash = hash * 59 + this.SizeBytes.GetHashCode();
+                hash = hash * 59 + SizeBytes.GetHashCode();
             }
 
-            if (this.UploadStatus != null)
+            if (UploadStatus != null)
             {
-                hash = hash * 59 + this.UploadStatus.GetHashCode();
+                hash = hash * 59 + UploadStatus.GetHashCode();
             }
 
-            if (this.EdgePath != null)
+            if (EdgePath != null)
             {
-                hash = hash * 59 + this.EdgePath.GetHashCode();
+                hash = hash * 59 + EdgePath.GetHashCode();
             }
 
-            if (this.DownloadId != null)
+            if (DownloadId != null)
             {
-                hash = hash * 59 + this.DownloadId.GetHashCode();
+                hash = hash * 59 + DownloadId.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

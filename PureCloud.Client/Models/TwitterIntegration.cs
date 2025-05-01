@@ -236,7 +236,7 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TwitterIntegration);
+        return Equals(obj as TwitterIntegration);
     }
 
     /// <summary>
@@ -254,74 +254,74 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.SupportedContent == other.SupportedContent ||
-                this.SupportedContent != null &&
-                this.SupportedContent.Equals(other.SupportedContent)
+                SupportedContent == other.SupportedContent ||
+                SupportedContent != null &&
+                SupportedContent.Equals(other.SupportedContent)
             ) &&
             (
-                this.MessagingSetting == other.MessagingSetting ||
-                this.MessagingSetting != null &&
-                this.MessagingSetting.Equals(other.MessagingSetting)
+                MessagingSetting == other.MessagingSetting ||
+                MessagingSetting != null &&
+                MessagingSetting.Equals(other.MessagingSetting)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Recipient == other.Recipient ||
-                this.Recipient != null &&
-                this.Recipient.Equals(other.Recipient)
+                Recipient == other.Recipient ||
+                Recipient != null &&
+                Recipient.Equals(other.Recipient)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.CreateStatus == other.CreateStatus ||
-                this.CreateStatus != null &&
-                this.CreateStatus.Equals(other.CreateStatus)
+                CreateStatus == other.CreateStatus ||
+                CreateStatus != null &&
+                CreateStatus.Equals(other.CreateStatus)
             ) &&
             (
-                this.CreateError == other.CreateError ||
-                this.CreateError != null &&
-                this.CreateError.Equals(other.CreateError)
+                CreateError == other.CreateError ||
+                CreateError != null &&
+                CreateError.Equals(other.CreateError)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -336,74 +336,74 @@ public partial class TwitterIntegration : IEquatable<TwitterIntegration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.SupportedContent != null)
+            if (SupportedContent != null)
             {
-                hash = hash * 59 + this.SupportedContent.GetHashCode();
+                hash = hash * 59 + SupportedContent.GetHashCode();
             }
 
-            if (this.MessagingSetting != null)
+            if (MessagingSetting != null)
             {
-                hash = hash * 59 + this.MessagingSetting.GetHashCode();
+                hash = hash * 59 + MessagingSetting.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Recipient != null)
+            if (Recipient != null)
             {
-                hash = hash * 59 + this.Recipient.GetHashCode();
+                hash = hash * 59 + Recipient.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.CreateStatus != null)
+            if (CreateStatus != null)
             {
-                hash = hash * 59 + this.CreateStatus.GetHashCode();
+                hash = hash * 59 + CreateStatus.GetHashCode();
             }
 
-            if (this.CreateError != null)
+            if (CreateError != null)
             {
-                hash = hash * 59 + this.CreateError.GetHashCode();
+                hash = hash * 59 + CreateError.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

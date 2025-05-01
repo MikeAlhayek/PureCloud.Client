@@ -89,7 +89,7 @@ public partial class GamificationStatus : IEquatable<GamificationStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GamificationStatus);
+        return Equals(obj as GamificationStatus);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class GamificationStatus : IEquatable<GamificationStatus>
 
         return true &&
             (
-                this.IsActive == other.IsActive ||
-                this.IsActive != null &&
-                this.IsActive.Equals(other.IsActive)
+                IsActive == other.IsActive ||
+                IsActive != null &&
+                IsActive.Equals(other.IsActive)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.AutomaticUserAssignment == other.AutomaticUserAssignment ||
-                this.AutomaticUserAssignment != null &&
-                this.AutomaticUserAssignment.Equals(other.AutomaticUserAssignment)
+                AutomaticUserAssignment == other.AutomaticUserAssignment ||
+                AutomaticUserAssignment != null &&
+                AutomaticUserAssignment.Equals(other.AutomaticUserAssignment)
             ) &&
             (
-                this.DateStartPersonalBest == other.DateStartPersonalBest ||
-                this.DateStartPersonalBest != null &&
-                this.DateStartPersonalBest.Equals(other.DateStartPersonalBest)
+                DateStartPersonalBest == other.DateStartPersonalBest ||
+                DateStartPersonalBest != null &&
+                DateStartPersonalBest.Equals(other.DateStartPersonalBest)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class GamificationStatus : IEquatable<GamificationStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IsActive != null)
+            if (IsActive != null)
             {
-                hash = hash * 59 + this.IsActive.GetHashCode();
+                hash = hash * 59 + IsActive.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.AutomaticUserAssignment != null)
+            if (AutomaticUserAssignment != null)
             {
-                hash = hash * 59 + this.AutomaticUserAssignment.GetHashCode();
+                hash = hash * 59 + AutomaticUserAssignment.GetHashCode();
             }
 
-            if (this.DateStartPersonalBest != null)
+            if (DateStartPersonalBest != null)
             {
-                hash = hash * 59 + this.DateStartPersonalBest.GetHashCode();
+                hash = hash * 59 + DateStartPersonalBest.GetHashCode();
             }
 
             return hash;

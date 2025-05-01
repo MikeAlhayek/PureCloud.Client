@@ -161,7 +161,7 @@ public partial class CampaignStats : IEquatable<CampaignStats>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignStats);
+        return Equals(obj as CampaignStats);
     }
 
     /// <summary>
@@ -179,64 +179,64 @@ public partial class CampaignStats : IEquatable<CampaignStats>
 
         return true &&
             (
-                this.ContactRate == other.ContactRate ||
-                this.ContactRate != null &&
-                this.ContactRate.Equals(other.ContactRate)
+                ContactRate == other.ContactRate ||
+                ContactRate != null &&
+                ContactRate.Equals(other.ContactRate)
             ) &&
             (
-                this.IdleAgents == other.IdleAgents ||
-                this.IdleAgents != null &&
-                this.IdleAgents.Equals(other.IdleAgents)
+                IdleAgents == other.IdleAgents ||
+                IdleAgents != null &&
+                IdleAgents.Equals(other.IdleAgents)
             ) &&
             (
-                this.EffectiveIdleAgents == other.EffectiveIdleAgents ||
-                this.EffectiveIdleAgents != null &&
-                this.EffectiveIdleAgents.Equals(other.EffectiveIdleAgents)
+                EffectiveIdleAgents == other.EffectiveIdleAgents ||
+                EffectiveIdleAgents != null &&
+                EffectiveIdleAgents.Equals(other.EffectiveIdleAgents)
             ) &&
             (
-                this.AdjustedCallsPerAgent == other.AdjustedCallsPerAgent ||
-                this.AdjustedCallsPerAgent != null &&
-                this.AdjustedCallsPerAgent.Equals(other.AdjustedCallsPerAgent)
+                AdjustedCallsPerAgent == other.AdjustedCallsPerAgent ||
+                AdjustedCallsPerAgent != null &&
+                AdjustedCallsPerAgent.Equals(other.AdjustedCallsPerAgent)
             ) &&
             (
-                this.OutstandingCalls == other.OutstandingCalls ||
-                this.OutstandingCalls != null &&
-                this.OutstandingCalls.Equals(other.OutstandingCalls)
+                OutstandingCalls == other.OutstandingCalls ||
+                OutstandingCalls != null &&
+                OutstandingCalls.Equals(other.OutstandingCalls)
             ) &&
             (
-                this.ScheduledCalls == other.ScheduledCalls ||
-                this.ScheduledCalls != null &&
-                this.ScheduledCalls.Equals(other.ScheduledCalls)
+                ScheduledCalls == other.ScheduledCalls ||
+                ScheduledCalls != null &&
+                ScheduledCalls.Equals(other.ScheduledCalls)
             ) &&
             (
-                this.TimeZoneRescheduledCalls == other.TimeZoneRescheduledCalls ||
-                this.TimeZoneRescheduledCalls != null &&
-                this.TimeZoneRescheduledCalls.Equals(other.TimeZoneRescheduledCalls)
+                TimeZoneRescheduledCalls == other.TimeZoneRescheduledCalls ||
+                TimeZoneRescheduledCalls != null &&
+                TimeZoneRescheduledCalls.Equals(other.TimeZoneRescheduledCalls)
             ) &&
             (
-                this.FilteredOutContactsCount == other.FilteredOutContactsCount ||
-                this.FilteredOutContactsCount != null &&
-                this.FilteredOutContactsCount.Equals(other.FilteredOutContactsCount)
+                FilteredOutContactsCount == other.FilteredOutContactsCount ||
+                FilteredOutContactsCount != null &&
+                FilteredOutContactsCount.Equals(other.FilteredOutContactsCount)
             ) &&
             (
-                this.RightPartyContactsCount == other.RightPartyContactsCount ||
-                this.RightPartyContactsCount != null &&
-                this.RightPartyContactsCount.Equals(other.RightPartyContactsCount)
+                RightPartyContactsCount == other.RightPartyContactsCount ||
+                RightPartyContactsCount != null &&
+                RightPartyContactsCount.Equals(other.RightPartyContactsCount)
             ) &&
             (
-                this.ValidAttempts == other.ValidAttempts ||
-                this.ValidAttempts != null &&
-                this.ValidAttempts.Equals(other.ValidAttempts)
+                ValidAttempts == other.ValidAttempts ||
+                ValidAttempts != null &&
+                ValidAttempts.Equals(other.ValidAttempts)
             ) &&
             (
-                this.LinesUtilization == other.LinesUtilization ||
-                this.LinesUtilization != null &&
-                this.LinesUtilization.Equals(other.LinesUtilization)
+                LinesUtilization == other.LinesUtilization ||
+                LinesUtilization != null &&
+                LinesUtilization.Equals(other.LinesUtilization)
             ) &&
             (
-                this.BusinessCategoryMetrics == other.BusinessCategoryMetrics ||
-                this.BusinessCategoryMetrics != null &&
-                this.BusinessCategoryMetrics.Equals(other.BusinessCategoryMetrics)
+                BusinessCategoryMetrics == other.BusinessCategoryMetrics ||
+                BusinessCategoryMetrics != null &&
+                BusinessCategoryMetrics.Equals(other.BusinessCategoryMetrics)
             );
     }
 
@@ -251,64 +251,64 @@ public partial class CampaignStats : IEquatable<CampaignStats>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactRate != null)
+            if (ContactRate != null)
             {
-                hash = hash * 59 + this.ContactRate.GetHashCode();
+                hash = hash * 59 + ContactRate.GetHashCode();
             }
 
-            if (this.IdleAgents != null)
+            if (IdleAgents != null)
             {
-                hash = hash * 59 + this.IdleAgents.GetHashCode();
+                hash = hash * 59 + IdleAgents.GetHashCode();
             }
 
-            if (this.EffectiveIdleAgents != null)
+            if (EffectiveIdleAgents != null)
             {
-                hash = hash * 59 + this.EffectiveIdleAgents.GetHashCode();
+                hash = hash * 59 + EffectiveIdleAgents.GetHashCode();
             }
 
-            if (this.AdjustedCallsPerAgent != null)
+            if (AdjustedCallsPerAgent != null)
             {
-                hash = hash * 59 + this.AdjustedCallsPerAgent.GetHashCode();
+                hash = hash * 59 + AdjustedCallsPerAgent.GetHashCode();
             }
 
-            if (this.OutstandingCalls != null)
+            if (OutstandingCalls != null)
             {
-                hash = hash * 59 + this.OutstandingCalls.GetHashCode();
+                hash = hash * 59 + OutstandingCalls.GetHashCode();
             }
 
-            if (this.ScheduledCalls != null)
+            if (ScheduledCalls != null)
             {
-                hash = hash * 59 + this.ScheduledCalls.GetHashCode();
+                hash = hash * 59 + ScheduledCalls.GetHashCode();
             }
 
-            if (this.TimeZoneRescheduledCalls != null)
+            if (TimeZoneRescheduledCalls != null)
             {
-                hash = hash * 59 + this.TimeZoneRescheduledCalls.GetHashCode();
+                hash = hash * 59 + TimeZoneRescheduledCalls.GetHashCode();
             }
 
-            if (this.FilteredOutContactsCount != null)
+            if (FilteredOutContactsCount != null)
             {
-                hash = hash * 59 + this.FilteredOutContactsCount.GetHashCode();
+                hash = hash * 59 + FilteredOutContactsCount.GetHashCode();
             }
 
-            if (this.RightPartyContactsCount != null)
+            if (RightPartyContactsCount != null)
             {
-                hash = hash * 59 + this.RightPartyContactsCount.GetHashCode();
+                hash = hash * 59 + RightPartyContactsCount.GetHashCode();
             }
 
-            if (this.ValidAttempts != null)
+            if (ValidAttempts != null)
             {
-                hash = hash * 59 + this.ValidAttempts.GetHashCode();
+                hash = hash * 59 + ValidAttempts.GetHashCode();
             }
 
-            if (this.LinesUtilization != null)
+            if (LinesUtilization != null)
             {
-                hash = hash * 59 + this.LinesUtilization.GetHashCode();
+                hash = hash * 59 + LinesUtilization.GetHashCode();
             }
 
-            if (this.BusinessCategoryMetrics != null)
+            if (BusinessCategoryMetrics != null)
             {
-                hash = hash * 59 + this.BusinessCategoryMetrics.GetHashCode();
+                hash = hash * 59 + BusinessCategoryMetrics.GetHashCode();
             }
 
             return hash;

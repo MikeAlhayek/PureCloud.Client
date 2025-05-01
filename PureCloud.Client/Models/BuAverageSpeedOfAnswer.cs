@@ -70,7 +70,7 @@ public partial class BuAverageSpeedOfAnswer : IEquatable<BuAverageSpeedOfAnswer>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuAverageSpeedOfAnswer);
+        return Equals(obj as BuAverageSpeedOfAnswer);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class BuAverageSpeedOfAnswer : IEquatable<BuAverageSpeedOfAnswer>
 
         return true &&
             (
-                this.Include == other.Include ||
-                this.Include != null &&
-                this.Include.Equals(other.Include)
+                Include == other.Include ||
+                Include != null &&
+                Include.Equals(other.Include)
             ) &&
             (
-                this.Seconds == other.Seconds ||
-                this.Seconds != null &&
-                this.Seconds.Equals(other.Seconds)
+                Seconds == other.Seconds ||
+                Seconds != null &&
+                Seconds.Equals(other.Seconds)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class BuAverageSpeedOfAnswer : IEquatable<BuAverageSpeedOfAnswer>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Include != null)
+            if (Include != null)
             {
-                hash = hash * 59 + this.Include.GetHashCode();
+                hash = hash * 59 + Include.GetHashCode();
             }
 
-            if (this.Seconds != null)
+            if (Seconds != null)
             {
-                hash = hash * 59 + this.Seconds.GetHashCode();
+                hash = hash * 59 + Seconds.GetHashCode();
             }
 
             return hash;

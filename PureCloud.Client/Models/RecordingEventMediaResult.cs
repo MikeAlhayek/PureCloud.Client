@@ -85,7 +85,7 @@ public partial class RecordingEventMediaResult : IEquatable<RecordingEventMediaR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingEventMediaResult);
+        return Equals(obj as RecordingEventMediaResult);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class RecordingEventMediaResult : IEquatable<RecordingEventMediaR
 
         return true &&
             (
-                this.ChannelId == other.ChannelId ||
-                this.ChannelId != null &&
-                this.ChannelId.Equals(other.ChannelId)
+                ChannelId == other.ChannelId ||
+                ChannelId != null &&
+                ChannelId.Equals(other.ChannelId)
             ) &&
             (
-                this.WaveUri == other.WaveUri ||
-                this.WaveUri != null &&
-                this.WaveUri.Equals(other.WaveUri)
+                WaveUri == other.WaveUri ||
+                WaveUri != null &&
+                WaveUri.Equals(other.WaveUri)
             ) &&
             (
-                this.MediaUri == other.MediaUri ||
-                this.MediaUri != null &&
-                this.MediaUri.Equals(other.MediaUri)
+                MediaUri == other.MediaUri ||
+                MediaUri != null &&
+                MediaUri.Equals(other.MediaUri)
             ) &&
             (
-                this.WaveformData == other.WaveformData ||
-                this.WaveformData != null &&
-                this.WaveformData.SequenceEqual(other.WaveformData)
+                WaveformData == other.WaveformData ||
+                WaveformData != null &&
+                WaveformData.SequenceEqual(other.WaveformData)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class RecordingEventMediaResult : IEquatable<RecordingEventMediaR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ChannelId != null)
+            if (ChannelId != null)
             {
-                hash = hash * 59 + this.ChannelId.GetHashCode();
+                hash = hash * 59 + ChannelId.GetHashCode();
             }
 
-            if (this.WaveUri != null)
+            if (WaveUri != null)
             {
-                hash = hash * 59 + this.WaveUri.GetHashCode();
+                hash = hash * 59 + WaveUri.GetHashCode();
             }
 
-            if (this.MediaUri != null)
+            if (MediaUri != null)
             {
-                hash = hash * 59 + this.MediaUri.GetHashCode();
+                hash = hash * 59 + MediaUri.GetHashCode();
             }
 
-            if (this.WaveformData != null)
+            if (WaveformData != null)
             {
-                hash = hash * 59 + this.WaveformData.GetHashCode();
+                hash = hash * 59 + WaveformData.GetHashCode();
             }
 
             return hash;

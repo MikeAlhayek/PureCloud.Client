@@ -83,7 +83,7 @@ public partial class PropertyIndexRequest : IEquatable<PropertyIndexRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PropertyIndexRequest);
+        return Equals(obj as PropertyIndexRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class PropertyIndexRequest : IEquatable<PropertyIndexRequest>
 
         return true &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.TargetDate == other.TargetDate ||
-                this.TargetDate != null &&
-                this.TargetDate.Equals(other.TargetDate)
+                TargetDate == other.TargetDate ||
+                TargetDate != null &&
+                TargetDate.Equals(other.TargetDate)
             ) &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.SequenceEqual(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.SequenceEqual(other.Properties)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class PropertyIndexRequest : IEquatable<PropertyIndexRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.TargetDate != null)
+            if (TargetDate != null)
             {
-                hash = hash * 59 + this.TargetDate.GetHashCode();
+                hash = hash * 59 + TargetDate.GetHashCode();
             }
 
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
             return hash;

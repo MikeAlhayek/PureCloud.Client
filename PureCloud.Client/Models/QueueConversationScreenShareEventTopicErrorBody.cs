@@ -162,7 +162,7 @@ public partial class QueueConversationScreenShareEventTopicErrorBody : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationScreenShareEventTopicErrorBody);
+        return Equals(obj as QueueConversationScreenShareEventTopicErrorBody);
     }
 
     /// <summary>
@@ -180,59 +180,59 @@ public partial class QueueConversationScreenShareEventTopicErrorBody : IEquatabl
 
         return true &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.EntityId == other.EntityId ||
-                this.EntityId != null &&
-                this.EntityId.Equals(other.EntityId)
+                EntityId == other.EntityId ||
+                EntityId != null &&
+                EntityId.Equals(other.EntityId)
             ) &&
             (
-                this.EntityName == other.EntityName ||
-                this.EntityName != null &&
-                this.EntityName.Equals(other.EntityName)
+                EntityName == other.EntityName ||
+                EntityName != null &&
+                EntityName.Equals(other.EntityName)
             ) &&
             (
-                this.MessageWithParams == other.MessageWithParams ||
-                this.MessageWithParams != null &&
-                this.MessageWithParams.Equals(other.MessageWithParams)
+                MessageWithParams == other.MessageWithParams ||
+                MessageWithParams != null &&
+                MessageWithParams.Equals(other.MessageWithParams)
             ) &&
             (
-                this.MessageParams == other.MessageParams ||
-                this.MessageParams != null &&
-                this.MessageParams.SequenceEqual(other.MessageParams)
+                MessageParams == other.MessageParams ||
+                MessageParams != null &&
+                MessageParams.SequenceEqual(other.MessageParams)
             ) &&
             (
-                this.ContextId == other.ContextId ||
-                this.ContextId != null &&
-                this.ContextId.Equals(other.ContextId)
+                ContextId == other.ContextId ||
+                ContextId != null &&
+                ContextId.Equals(other.ContextId)
             ) &&
             (
-                this.Details == other.Details ||
-                this.Details != null &&
-                this.Details.SequenceEqual(other.Details)
+                Details == other.Details ||
+                Details != null &&
+                Details.SequenceEqual(other.Details)
             ) &&
             (
-                this.Errors == other.Errors ||
-                this.Errors != null &&
-                this.Errors.SequenceEqual(other.Errors)
+                Errors == other.Errors ||
+                Errors != null &&
+                Errors.SequenceEqual(other.Errors)
             ) &&
             (
-                this.Limit == other.Limit ||
-                this.Limit != null &&
-                this.Limit.Equals(other.Limit)
+                Limit == other.Limit ||
+                Limit != null &&
+                Limit.Equals(other.Limit)
             );
     }
 
@@ -247,59 +247,59 @@ public partial class QueueConversationScreenShareEventTopicErrorBody : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.EntityId != null)
+            if (EntityId != null)
             {
-                hash = hash * 59 + this.EntityId.GetHashCode();
+                hash = hash * 59 + EntityId.GetHashCode();
             }
 
-            if (this.EntityName != null)
+            if (EntityName != null)
             {
-                hash = hash * 59 + this.EntityName.GetHashCode();
+                hash = hash * 59 + EntityName.GetHashCode();
             }
 
-            if (this.MessageWithParams != null)
+            if (MessageWithParams != null)
             {
-                hash = hash * 59 + this.MessageWithParams.GetHashCode();
+                hash = hash * 59 + MessageWithParams.GetHashCode();
             }
 
-            if (this.MessageParams != null)
+            if (MessageParams != null)
             {
-                hash = hash * 59 + this.MessageParams.GetHashCode();
+                hash = hash * 59 + MessageParams.GetHashCode();
             }
 
-            if (this.ContextId != null)
+            if (ContextId != null)
             {
-                hash = hash * 59 + this.ContextId.GetHashCode();
+                hash = hash * 59 + ContextId.GetHashCode();
             }
 
-            if (this.Details != null)
+            if (Details != null)
             {
-                hash = hash * 59 + this.Details.GetHashCode();
+                hash = hash * 59 + Details.GetHashCode();
             }
 
-            if (this.Errors != null)
+            if (Errors != null)
             {
-                hash = hash * 59 + this.Errors.GetHashCode();
+                hash = hash * 59 + Errors.GetHashCode();
             }
 
-            if (this.Limit != null)
+            if (Limit != null)
             {
-                hash = hash * 59 + this.Limit.GetHashCode();
+                hash = hash * 59 + Limit.GetHashCode();
             }
 
             return hash;

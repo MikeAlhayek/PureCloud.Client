@@ -120,7 +120,7 @@ public partial class AnalyticsRoutingStatusRecord : IEquatable<AnalyticsRoutingS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsRoutingStatusRecord);
+        return Equals(obj as AnalyticsRoutingStatusRecord);
     }
 
     /// <summary>
@@ -138,19 +138,19 @@ public partial class AnalyticsRoutingStatusRecord : IEquatable<AnalyticsRoutingS
 
         return true &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             ) &&
             (
-                this.EndTime == other.EndTime ||
-                this.EndTime != null &&
-                this.EndTime.Equals(other.EndTime)
+                EndTime == other.EndTime ||
+                EndTime != null &&
+                EndTime.Equals(other.EndTime)
             ) &&
             (
-                this.RoutingStatus == other.RoutingStatus ||
-                this.RoutingStatus != null &&
-                this.RoutingStatus.Equals(other.RoutingStatus)
+                RoutingStatus == other.RoutingStatus ||
+                RoutingStatus != null &&
+                RoutingStatus.Equals(other.RoutingStatus)
             );
     }
 
@@ -165,19 +165,19 @@ public partial class AnalyticsRoutingStatusRecord : IEquatable<AnalyticsRoutingS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
-            if (this.EndTime != null)
+            if (EndTime != null)
             {
-                hash = hash * 59 + this.EndTime.GetHashCode();
+                hash = hash * 59 + EndTime.GetHashCode();
             }
 
-            if (this.RoutingStatus != null)
+            if (RoutingStatus != null)
             {
-                hash = hash * 59 + this.RoutingStatus.GetHashCode();
+                hash = hash * 59 + RoutingStatus.GetHashCode();
             }
 
             return hash;

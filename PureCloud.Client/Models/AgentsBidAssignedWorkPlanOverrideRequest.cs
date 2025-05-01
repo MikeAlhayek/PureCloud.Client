@@ -58,7 +58,7 @@ public partial class AgentsBidAssignedWorkPlanOverrideRequest : IEquatable<Agent
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentsBidAssignedWorkPlanOverrideRequest);
+        return Equals(obj as AgentsBidAssignedWorkPlanOverrideRequest);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class AgentsBidAssignedWorkPlanOverrideRequest : IEquatable<Agent
 
         return true &&
             (
-                this.AgentWorkPlanOverrides == other.AgentWorkPlanOverrides ||
-                this.AgentWorkPlanOverrides != null &&
-                this.AgentWorkPlanOverrides.SequenceEqual(other.AgentWorkPlanOverrides)
+                AgentWorkPlanOverrides == other.AgentWorkPlanOverrides ||
+                AgentWorkPlanOverrides != null &&
+                AgentWorkPlanOverrides.SequenceEqual(other.AgentWorkPlanOverrides)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class AgentsBidAssignedWorkPlanOverrideRequest : IEquatable<Agent
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentWorkPlanOverrides != null)
+            if (AgentWorkPlanOverrides != null)
             {
-                hash = hash * 59 + this.AgentWorkPlanOverrides.GetHashCode();
+                hash = hash * 59 + AgentWorkPlanOverrides.GetHashCode();
             }
 
             return hash;

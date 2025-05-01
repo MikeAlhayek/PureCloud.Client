@@ -83,7 +83,7 @@ public partial class RuleConfig : IEquatable<RuleConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RuleConfig);
+        return Equals(obj as RuleConfig);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class RuleConfig : IEquatable<RuleConfig>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Rule == other.Rule ||
-                this.Rule != null &&
-                this.Rule.Equals(other.Rule)
+                Rule == other.Rule ||
+                Rule != null &&
+                Rule.Equals(other.Rule)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class RuleConfig : IEquatable<RuleConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Rule != null)
+            if (Rule != null)
             {
-                hash = hash * 59 + this.Rule.GetHashCode();
+                hash = hash * 59 + Rule.GetHashCode();
             }
 
             return hash;

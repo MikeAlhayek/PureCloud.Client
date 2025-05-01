@@ -100,7 +100,7 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentOwnedMappingPreview);
+        return Equals(obj as AgentOwnedMappingPreview);
     }
 
     /// <summary>
@@ -118,34 +118,34 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
 
         return true &&
             (
-                this.AgentOwnedColumn == other.AgentOwnedColumn ||
-                this.AgentOwnedColumn != null &&
-                this.AgentOwnedColumn.Equals(other.AgentOwnedColumn)
+                AgentOwnedColumn == other.AgentOwnedColumn ||
+                AgentOwnedColumn != null &&
+                AgentOwnedColumn.Equals(other.AgentOwnedColumn)
             ) &&
             (
-                this.Email == other.Email ||
-                this.Email != null &&
-                this.Email.Equals(other.Email)
+                Email == other.Email ||
+                Email != null &&
+                Email.Equals(other.Email)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.Exists == other.Exists ||
-                this.Exists != null &&
-                this.Exists.Equals(other.Exists)
+                Exists == other.Exists ||
+                Exists != null &&
+                Exists.Equals(other.Exists)
             ) &&
             (
-                this.IsQueueMember == other.IsQueueMember ||
-                this.IsQueueMember != null &&
-                this.IsQueueMember.Equals(other.IsQueueMember)
+                IsQueueMember == other.IsQueueMember ||
+                IsQueueMember != null &&
+                IsQueueMember.Equals(other.IsQueueMember)
             ) &&
             (
-                this.RecordCount == other.RecordCount ||
-                this.RecordCount != null &&
-                this.RecordCount.Equals(other.RecordCount)
+                RecordCount == other.RecordCount ||
+                RecordCount != null &&
+                RecordCount.Equals(other.RecordCount)
             );
     }
 
@@ -160,34 +160,34 @@ public partial class AgentOwnedMappingPreview : IEquatable<AgentOwnedMappingPrev
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentOwnedColumn != null)
+            if (AgentOwnedColumn != null)
             {
-                hash = hash * 59 + this.AgentOwnedColumn.GetHashCode();
+                hash = hash * 59 + AgentOwnedColumn.GetHashCode();
             }
 
-            if (this.Email != null)
+            if (Email != null)
             {
-                hash = hash * 59 + this.Email.GetHashCode();
+                hash = hash * 59 + Email.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.Exists != null)
+            if (Exists != null)
             {
-                hash = hash * 59 + this.Exists.GetHashCode();
+                hash = hash * 59 + Exists.GetHashCode();
             }
 
-            if (this.IsQueueMember != null)
+            if (IsQueueMember != null)
             {
-                hash = hash * 59 + this.IsQueueMember.GetHashCode();
+                hash = hash * 59 + IsQueueMember.GetHashCode();
             }
 
-            if (this.RecordCount != null)
+            if (RecordCount != null)
             {
-                hash = hash * 59 + this.RecordCount.GetHashCode();
+                hash = hash * 59 + RecordCount.GetHashCode();
             }
 
             return hash;

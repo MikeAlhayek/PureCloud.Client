@@ -76,7 +76,7 @@ public partial class DialerContactlistConfigChangeEmailColumn : IEquatable<Diale
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerContactlistConfigChangeEmailColumn);
+        return Equals(obj as DialerContactlistConfigChangeEmailColumn);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class DialerContactlistConfigChangeEmailColumn : IEquatable<Diale
 
         return true &&
             (
-                this.ColumnName == other.ColumnName ||
-                this.ColumnName != null &&
-                this.ColumnName.Equals(other.ColumnName)
+                ColumnName == other.ColumnName ||
+                ColumnName != null &&
+                ColumnName.Equals(other.ColumnName)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class DialerContactlistConfigChangeEmailColumn : IEquatable<Diale
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ColumnName != null)
+            if (ColumnName != null)
             {
-                hash = hash * 59 + this.ColumnName.GetHashCode();
+                hash = hash * 59 + ColumnName.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

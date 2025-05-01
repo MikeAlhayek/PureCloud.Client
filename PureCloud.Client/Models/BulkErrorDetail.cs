@@ -76,7 +76,7 @@ public partial class BulkErrorDetail : IEquatable<BulkErrorDetail>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BulkErrorDetail);
+        return Equals(obj as BulkErrorDetail);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class BulkErrorDetail : IEquatable<BulkErrorDetail>
 
         return true &&
             (
-                this.FieldName == other.FieldName ||
-                this.FieldName != null &&
-                this.FieldName.Equals(other.FieldName)
+                FieldName == other.FieldName ||
+                FieldName != null &&
+                FieldName.Equals(other.FieldName)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class BulkErrorDetail : IEquatable<BulkErrorDetail>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FieldName != null)
+            if (FieldName != null)
             {
-                hash = hash * 59 + this.FieldName.GetHashCode();
+                hash = hash * 59 + FieldName.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class ConversationDivisionMembership : IEquatable<ConversationDiv
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationDivisionMembership);
+        return Equals(obj as ConversationDivisionMembership);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ConversationDivisionMembership : IEquatable<ConversationDiv
 
         return true &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ConversationDivisionMembership : IEquatable<ConversationDiv
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
             return hash;

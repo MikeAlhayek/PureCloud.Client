@@ -101,7 +101,7 @@ public partial class MediaRtpStatistics : IEquatable<MediaRtpStatistics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaRtpStatistics);
+        return Equals(obj as MediaRtpStatistics);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class MediaRtpStatistics : IEquatable<MediaRtpStatistics>
 
         return true &&
             (
-                this.PacketsReceived == other.PacketsReceived ||
-                this.PacketsReceived != null &&
-                this.PacketsReceived.Equals(other.PacketsReceived)
+                PacketsReceived == other.PacketsReceived ||
+                PacketsReceived != null &&
+                PacketsReceived.Equals(other.PacketsReceived)
             ) &&
             (
-                this.PacketsSent == other.PacketsSent ||
-                this.PacketsSent != null &&
-                this.PacketsSent.Equals(other.PacketsSent)
+                PacketsSent == other.PacketsSent ||
+                PacketsSent != null &&
+                PacketsSent.Equals(other.PacketsSent)
             ) &&
             (
-                this.RtpEventsReceived == other.RtpEventsReceived ||
-                this.RtpEventsReceived != null &&
-                this.RtpEventsReceived.Equals(other.RtpEventsReceived)
+                RtpEventsReceived == other.RtpEventsReceived ||
+                RtpEventsReceived != null &&
+                RtpEventsReceived.Equals(other.RtpEventsReceived)
             ) &&
             (
-                this.RtpEventsSent == other.RtpEventsSent ||
-                this.RtpEventsSent != null &&
-                this.RtpEventsSent.Equals(other.RtpEventsSent)
+                RtpEventsSent == other.RtpEventsSent ||
+                RtpEventsSent != null &&
+                RtpEventsSent.Equals(other.RtpEventsSent)
             ) &&
             (
-                this.EstimatedAverageMos == other.EstimatedAverageMos ||
-                this.EstimatedAverageMos != null &&
-                this.EstimatedAverageMos.Equals(other.EstimatedAverageMos)
+                EstimatedAverageMos == other.EstimatedAverageMos ||
+                EstimatedAverageMos != null &&
+                EstimatedAverageMos.Equals(other.EstimatedAverageMos)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class MediaRtpStatistics : IEquatable<MediaRtpStatistics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PacketsReceived != null)
+            if (PacketsReceived != null)
             {
-                hash = hash * 59 + this.PacketsReceived.GetHashCode();
+                hash = hash * 59 + PacketsReceived.GetHashCode();
             }
 
-            if (this.PacketsSent != null)
+            if (PacketsSent != null)
             {
-                hash = hash * 59 + this.PacketsSent.GetHashCode();
+                hash = hash * 59 + PacketsSent.GetHashCode();
             }
 
-            if (this.RtpEventsReceived != null)
+            if (RtpEventsReceived != null)
             {
-                hash = hash * 59 + this.RtpEventsReceived.GetHashCode();
+                hash = hash * 59 + RtpEventsReceived.GetHashCode();
             }
 
-            if (this.RtpEventsSent != null)
+            if (RtpEventsSent != null)
             {
-                hash = hash * 59 + this.RtpEventsSent.GetHashCode();
+                hash = hash * 59 + RtpEventsSent.GetHashCode();
             }
 
-            if (this.EstimatedAverageMos != null)
+            if (EstimatedAverageMos != null)
             {
-                hash = hash * 59 + this.EstimatedAverageMos.GetHashCode();
+                hash = hash * 59 + EstimatedAverageMos.GetHashCode();
             }
 
             return hash;

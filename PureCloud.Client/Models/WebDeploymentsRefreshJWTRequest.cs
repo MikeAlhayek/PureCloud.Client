@@ -71,7 +71,7 @@ public partial class WebDeploymentsRefreshJWTRequest : IEquatable<WebDeployments
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebDeploymentsRefreshJWTRequest);
+        return Equals(obj as WebDeploymentsRefreshJWTRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class WebDeploymentsRefreshJWTRequest : IEquatable<WebDeployments
 
         return true &&
             (
-                this.RefreshToken == other.RefreshToken ||
-                this.RefreshToken != null &&
-                this.RefreshToken.Equals(other.RefreshToken)
+                RefreshToken == other.RefreshToken ||
+                RefreshToken != null &&
+                RefreshToken.Equals(other.RefreshToken)
             ) &&
             (
-                this.DeploymentId == other.DeploymentId ||
-                this.DeploymentId != null &&
-                this.DeploymentId.Equals(other.DeploymentId)
+                DeploymentId == other.DeploymentId ||
+                DeploymentId != null &&
+                DeploymentId.Equals(other.DeploymentId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class WebDeploymentsRefreshJWTRequest : IEquatable<WebDeployments
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RefreshToken != null)
+            if (RefreshToken != null)
             {
-                hash = hash * 59 + this.RefreshToken.GetHashCode();
+                hash = hash * 59 + RefreshToken.GetHashCode();
             }
 
-            if (this.DeploymentId != null)
+            if (DeploymentId != null)
             {
-                hash = hash * 59 + this.DeploymentId.GetHashCode();
+                hash = hash * 59 + DeploymentId.GetHashCode();
             }
 
             return hash;

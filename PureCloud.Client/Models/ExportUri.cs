@@ -64,7 +64,7 @@ public partial class ExportUri : IEquatable<ExportUri>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExportUri);
+        return Equals(obj as ExportUri);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class ExportUri : IEquatable<ExportUri>
 
         return true &&
             (
-                this.Uri == other.Uri ||
-                this.Uri != null &&
-                this.Uri.Equals(other.Uri)
+                Uri == other.Uri ||
+                Uri != null &&
+                Uri.Equals(other.Uri)
             ) &&
             (
-                this.ExportTimestamp == other.ExportTimestamp ||
-                this.ExportTimestamp != null &&
-                this.ExportTimestamp.Equals(other.ExportTimestamp)
+                ExportTimestamp == other.ExportTimestamp ||
+                ExportTimestamp != null &&
+                ExportTimestamp.Equals(other.ExportTimestamp)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class ExportUri : IEquatable<ExportUri>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Uri != null)
+            if (Uri != null)
             {
-                hash = hash * 59 + this.Uri.GetHashCode();
+                hash = hash * 59 + Uri.GetHashCode();
             }
 
-            if (this.ExportTimestamp != null)
+            if (ExportTimestamp != null)
             {
-                hash = hash * 59 + this.ExportTimestamp.GetHashCode();
+                hash = hash * 59 + ExportTimestamp.GetHashCode();
             }
 
             return hash;

@@ -255,7 +255,7 @@ public partial class ConversationChannel : IEquatable<ConversationChannel>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationChannel);
+        return Equals(obj as ConversationChannel);
     }
 
     /// <summary>
@@ -273,19 +273,19 @@ public partial class ConversationChannel : IEquatable<ConversationChannel>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.MessageType == other.MessageType ||
-                this.MessageType != null &&
-                this.MessageType.Equals(other.MessageType)
+                MessageType == other.MessageType ||
+                MessageType != null &&
+                MessageType.Equals(other.MessageType)
             ) &&
             (
-                this.Platform == other.Platform ||
-                this.Platform != null &&
-                this.Platform.Equals(other.Platform)
+                Platform == other.Platform ||
+                Platform != null &&
+                Platform.Equals(other.Platform)
             );
     }
 
@@ -300,19 +300,19 @@ public partial class ConversationChannel : IEquatable<ConversationChannel>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.MessageType != null)
+            if (MessageType != null)
             {
-                hash = hash * 59 + this.MessageType.GetHashCode();
+                hash = hash * 59 + MessageType.GetHashCode();
             }
 
-            if (this.Platform != null)
+            if (Platform != null)
             {
-                hash = hash * 59 + this.Platform.GetHashCode();
+                hash = hash * 59 + Platform.GetHashCode();
             }
 
             return hash;

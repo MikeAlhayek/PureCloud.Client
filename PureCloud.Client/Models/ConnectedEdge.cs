@@ -103,7 +103,7 @@ public partial class ConnectedEdge : IEquatable<ConnectedEdge>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConnectedEdge);
+        return Equals(obj as ConnectedEdge);
     }
 
     /// <summary>
@@ -121,34 +121,34 @@ public partial class ConnectedEdge : IEquatable<ConnectedEdge>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.InterfaceName == other.InterfaceName ||
-                this.InterfaceName != null &&
-                this.InterfaceName.Equals(other.InterfaceName)
+                InterfaceName == other.InterfaceName ||
+                InterfaceName != null &&
+                InterfaceName.Equals(other.InterfaceName)
             ) &&
             (
-                this.InterfaceIpAddress == other.InterfaceIpAddress ||
-                this.InterfaceIpAddress != null &&
-                this.InterfaceIpAddress.Equals(other.InterfaceIpAddress)
+                InterfaceIpAddress == other.InterfaceIpAddress ||
+                InterfaceIpAddress != null &&
+                InterfaceIpAddress.Equals(other.InterfaceIpAddress)
             ) &&
             (
-                this.EdgeConnectionList == other.EdgeConnectionList ||
-                this.EdgeConnectionList != null &&
-                this.EdgeConnectionList.SequenceEqual(other.EdgeConnectionList)
+                EdgeConnectionList == other.EdgeConnectionList ||
+                EdgeConnectionList != null &&
+                EdgeConnectionList.SequenceEqual(other.EdgeConnectionList)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -163,34 +163,34 @@ public partial class ConnectedEdge : IEquatable<ConnectedEdge>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.InterfaceName != null)
+            if (InterfaceName != null)
             {
-                hash = hash * 59 + this.InterfaceName.GetHashCode();
+                hash = hash * 59 + InterfaceName.GetHashCode();
             }
 
-            if (this.InterfaceIpAddress != null)
+            if (InterfaceIpAddress != null)
             {
-                hash = hash * 59 + this.InterfaceIpAddress.GetHashCode();
+                hash = hash * 59 + InterfaceIpAddress.GetHashCode();
             }
 
-            if (this.EdgeConnectionList != null)
+            if (EdgeConnectionList != null)
             {
-                hash = hash * 59 + this.EdgeConnectionList.GetHashCode();
+                hash = hash * 59 + EdgeConnectionList.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

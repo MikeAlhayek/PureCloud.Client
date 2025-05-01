@@ -96,7 +96,7 @@ public partial class V2FlowExecutionDataFlowidTopicInvokingContext : IEquatable<
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2FlowExecutionDataFlowidTopicInvokingContext);
+        return Equals(obj as V2FlowExecutionDataFlowidTopicInvokingContext);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class V2FlowExecutionDataFlowidTopicInvokingContext : IEquatable<
 
         return true &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             ) &&
             (
-                this.JourneyActionMap == other.JourneyActionMap ||
-                this.JourneyActionMap != null &&
-                this.JourneyActionMap.Equals(other.JourneyActionMap)
+                JourneyActionMap == other.JourneyActionMap ||
+                JourneyActionMap != null &&
+                JourneyActionMap.Equals(other.JourneyActionMap)
             ) &&
             (
-                this.ProcessAutomation == other.ProcessAutomation ||
-                this.ProcessAutomation != null &&
-                this.ProcessAutomation.Equals(other.ProcessAutomation)
+                ProcessAutomation == other.ProcessAutomation ||
+                ProcessAutomation != null &&
+                ProcessAutomation.Equals(other.ProcessAutomation)
             ) &&
             (
-                this.Quality == other.Quality ||
-                this.Quality != null &&
-                this.Quality.Equals(other.Quality)
+                Quality == other.Quality ||
+                Quality != null &&
+                Quality.Equals(other.Quality)
             ) &&
             (
-                this.Workitem == other.Workitem ||
-                this.Workitem != null &&
-                this.Workitem.Equals(other.Workitem)
+                Workitem == other.Workitem ||
+                Workitem != null &&
+                Workitem.Equals(other.Workitem)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class V2FlowExecutionDataFlowidTopicInvokingContext : IEquatable<
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
-            if (this.JourneyActionMap != null)
+            if (JourneyActionMap != null)
             {
-                hash = hash * 59 + this.JourneyActionMap.GetHashCode();
+                hash = hash * 59 + JourneyActionMap.GetHashCode();
             }
 
-            if (this.ProcessAutomation != null)
+            if (ProcessAutomation != null)
             {
-                hash = hash * 59 + this.ProcessAutomation.GetHashCode();
+                hash = hash * 59 + ProcessAutomation.GetHashCode();
             }
 
-            if (this.Quality != null)
+            if (Quality != null)
             {
-                hash = hash * 59 + this.Quality.GetHashCode();
+                hash = hash * 59 + Quality.GetHashCode();
             }
 
-            if (this.Workitem != null)
+            if (Workitem != null)
             {
-                hash = hash * 59 + this.Workitem.GetHashCode();
+                hash = hash * 59 + Workitem.GetHashCode();
             }
 
             return hash;

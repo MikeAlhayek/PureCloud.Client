@@ -82,7 +82,7 @@ public partial class AuthenticationSettings : IEquatable<AuthenticationSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuthenticationSettings);
+        return Equals(obj as AuthenticationSettings);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class AuthenticationSettings : IEquatable<AuthenticationSettings>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             ) &&
             (
-                this.AllowSessionUpgrade == other.AllowSessionUpgrade ||
-                this.AllowSessionUpgrade != null &&
-                this.AllowSessionUpgrade.Equals(other.AllowSessionUpgrade)
+                AllowSessionUpgrade == other.AllowSessionUpgrade ||
+                AllowSessionUpgrade != null &&
+                AllowSessionUpgrade.Equals(other.AllowSessionUpgrade)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class AuthenticationSettings : IEquatable<AuthenticationSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
-            if (this.AllowSessionUpgrade != null)
+            if (AllowSessionUpgrade != null)
             {
-                hash = hash * 59 + this.AllowSessionUpgrade.GetHashCode();
+                hash = hash * 59 + AllowSessionUpgrade.GetHashCode();
             }
 
             return hash;

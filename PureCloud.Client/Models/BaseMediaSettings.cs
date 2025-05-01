@@ -52,7 +52,7 @@ public partial class BaseMediaSettings : IEquatable<BaseMediaSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BaseMediaSettings);
+        return Equals(obj as BaseMediaSettings);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class BaseMediaSettings : IEquatable<BaseMediaSettings>
 
         return true &&
             (
-                this.EnableAutoAnswer == other.EnableAutoAnswer ||
-                this.EnableAutoAnswer != null &&
-                this.EnableAutoAnswer.Equals(other.EnableAutoAnswer)
+                EnableAutoAnswer == other.EnableAutoAnswer ||
+                EnableAutoAnswer != null &&
+                EnableAutoAnswer.Equals(other.EnableAutoAnswer)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class BaseMediaSettings : IEquatable<BaseMediaSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EnableAutoAnswer != null)
+            if (EnableAutoAnswer != null)
             {
-                hash = hash * 59 + this.EnableAutoAnswer.GetHashCode();
+                hash = hash * 59 + EnableAutoAnswer.GetHashCode();
             }
 
             return hash;

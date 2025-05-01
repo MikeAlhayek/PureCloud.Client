@@ -83,7 +83,7 @@ public partial class RestorePresenceSettings : IEquatable<RestorePresenceSetting
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RestorePresenceSettings);
+        return Equals(obj as RestorePresenceSettings);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class RestorePresenceSettings : IEquatable<RestorePresenceSetting
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.RestoreTimeMilliseconds == other.RestoreTimeMilliseconds ||
-                this.RestoreTimeMilliseconds != null &&
-                this.RestoreTimeMilliseconds.Equals(other.RestoreTimeMilliseconds)
+                RestoreTimeMilliseconds == other.RestoreTimeMilliseconds ||
+                RestoreTimeMilliseconds != null &&
+                RestoreTimeMilliseconds.Equals(other.RestoreTimeMilliseconds)
             ) &&
             (
-                this.RestoreOnQueueEnabled == other.RestoreOnQueueEnabled ||
-                this.RestoreOnQueueEnabled != null &&
-                this.RestoreOnQueueEnabled.Equals(other.RestoreOnQueueEnabled)
+                RestoreOnQueueEnabled == other.RestoreOnQueueEnabled ||
+                RestoreOnQueueEnabled != null &&
+                RestoreOnQueueEnabled.Equals(other.RestoreOnQueueEnabled)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class RestorePresenceSettings : IEquatable<RestorePresenceSetting
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.RestoreTimeMilliseconds != null)
+            if (RestoreTimeMilliseconds != null)
             {
-                hash = hash * 59 + this.RestoreTimeMilliseconds.GetHashCode();
+                hash = hash * 59 + RestoreTimeMilliseconds.GetHashCode();
             }
 
-            if (this.RestoreOnQueueEnabled != null)
+            if (RestoreOnQueueEnabled != null)
             {
-                hash = hash * 59 + this.RestoreOnQueueEnabled.GetHashCode();
+                hash = hash * 59 + RestoreOnQueueEnabled.GetHashCode();
             }
 
             return hash;

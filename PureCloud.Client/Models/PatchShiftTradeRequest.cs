@@ -95,7 +95,7 @@ public partial class PatchShiftTradeRequest : IEquatable<PatchShiftTradeRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchShiftTradeRequest);
+        return Equals(obj as PatchShiftTradeRequest);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class PatchShiftTradeRequest : IEquatable<PatchShiftTradeRequest>
 
         return true &&
             (
-                this.ReceivingUserId == other.ReceivingUserId ||
-                this.ReceivingUserId != null &&
-                this.ReceivingUserId.Equals(other.ReceivingUserId)
+                ReceivingUserId == other.ReceivingUserId ||
+                ReceivingUserId != null &&
+                ReceivingUserId.Equals(other.ReceivingUserId)
             ) &&
             (
-                this.Expiration == other.Expiration ||
-                this.Expiration != null &&
-                this.Expiration.Equals(other.Expiration)
+                Expiration == other.Expiration ||
+                Expiration != null &&
+                Expiration.Equals(other.Expiration)
             ) &&
             (
-                this.AcceptableIntervals == other.AcceptableIntervals ||
-                this.AcceptableIntervals != null &&
-                this.AcceptableIntervals.Equals(other.AcceptableIntervals)
+                AcceptableIntervals == other.AcceptableIntervals ||
+                AcceptableIntervals != null &&
+                AcceptableIntervals.Equals(other.AcceptableIntervals)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class PatchShiftTradeRequest : IEquatable<PatchShiftTradeRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ReceivingUserId != null)
+            if (ReceivingUserId != null)
             {
-                hash = hash * 59 + this.ReceivingUserId.GetHashCode();
+                hash = hash * 59 + ReceivingUserId.GetHashCode();
             }
 
-            if (this.Expiration != null)
+            if (Expiration != null)
             {
-                hash = hash * 59 + this.Expiration.GetHashCode();
+                hash = hash * 59 + Expiration.GetHashCode();
             }
 
-            if (this.AcceptableIntervals != null)
+            if (AcceptableIntervals != null)
             {
-                hash = hash * 59 + this.AcceptableIntervals.GetHashCode();
+                hash = hash * 59 + AcceptableIntervals.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

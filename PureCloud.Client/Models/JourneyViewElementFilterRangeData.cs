@@ -65,7 +65,7 @@ public partial class JourneyViewElementFilterRangeData : IEquatable<JourneyViewE
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewElementFilterRangeData);
+        return Equals(obj as JourneyViewElementFilterRangeData);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class JourneyViewElementFilterRangeData : IEquatable<JourneyViewE
 
         return true &&
             (
-                this.Duration == other.Duration ||
-                this.Duration != null &&
-                this.Duration.Equals(other.Duration)
+                Duration == other.Duration ||
+                Duration != null &&
+                Duration.Equals(other.Duration)
             ) &&
             (
-                this.Number == other.Number ||
-                this.Number != null &&
-                this.Number.Equals(other.Number)
+                Number == other.Number ||
+                Number != null &&
+                Number.Equals(other.Number)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class JourneyViewElementFilterRangeData : IEquatable<JourneyViewE
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Duration != null)
+            if (Duration != null)
             {
-                hash = hash * 59 + this.Duration.GetHashCode();
+                hash = hash * 59 + Duration.GetHashCode();
             }
 
-            if (this.Number != null)
+            if (Number != null)
             {
-                hash = hash * 59 + this.Number.GetHashCode();
+                hash = hash * 59 + Number.GetHashCode();
             }
 
             return hash;

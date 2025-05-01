@@ -53,7 +53,7 @@ public partial class TextBotModeConstraints : IEquatable<TextBotModeConstraints>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotModeConstraints);
+        return Equals(obj as TextBotModeConstraints);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class TextBotModeConstraints : IEquatable<TextBotModeConstraints>
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class TextBotModeConstraints : IEquatable<TextBotModeConstraints>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
             return hash;

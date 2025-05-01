@@ -133,7 +133,7 @@ public partial class FlowPathsQuery : IEquatable<FlowPathsQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowPathsQuery);
+        return Equals(obj as FlowPathsQuery);
     }
 
     /// <summary>
@@ -151,14 +151,14 @@ public partial class FlowPathsQuery : IEquatable<FlowPathsQuery>
 
         return true &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.Flows == other.Flows ||
-                this.Flows != null &&
-                this.Flows.SequenceEqual(other.Flows)
+                Flows == other.Flows ||
+                Flows != null &&
+                Flows.SequenceEqual(other.Flows)
             );
     }
 
@@ -173,14 +173,14 @@ public partial class FlowPathsQuery : IEquatable<FlowPathsQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.Flows != null)
+            if (Flows != null)
             {
-                hash = hash * 59 + this.Flows.GetHashCode();
+                hash = hash * 59 + Flows.GetHashCode();
             }
 
             return hash;

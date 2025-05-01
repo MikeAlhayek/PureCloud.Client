@@ -71,7 +71,7 @@ public partial class ScimServiceProviderConfigBulkFeature : IEquatable<ScimServi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimServiceProviderConfigBulkFeature);
+        return Equals(obj as ScimServiceProviderConfigBulkFeature);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class ScimServiceProviderConfigBulkFeature : IEquatable<ScimServi
 
         return true &&
             (
-                this.Supported == other.Supported ||
-                this.Supported != null &&
-                this.Supported.Equals(other.Supported)
+                Supported == other.Supported ||
+                Supported != null &&
+                Supported.Equals(other.Supported)
             ) &&
             (
-                this.MaxOperations == other.MaxOperations ||
-                this.MaxOperations != null &&
-                this.MaxOperations.Equals(other.MaxOperations)
+                MaxOperations == other.MaxOperations ||
+                MaxOperations != null &&
+                MaxOperations.Equals(other.MaxOperations)
             ) &&
             (
-                this.MaxPayloadSize == other.MaxPayloadSize ||
-                this.MaxPayloadSize != null &&
-                this.MaxPayloadSize.Equals(other.MaxPayloadSize)
+                MaxPayloadSize == other.MaxPayloadSize ||
+                MaxPayloadSize != null &&
+                MaxPayloadSize.Equals(other.MaxPayloadSize)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class ScimServiceProviderConfigBulkFeature : IEquatable<ScimServi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Supported != null)
+            if (Supported != null)
             {
-                hash = hash * 59 + this.Supported.GetHashCode();
+                hash = hash * 59 + Supported.GetHashCode();
             }
 
-            if (this.MaxOperations != null)
+            if (MaxOperations != null)
             {
-                hash = hash * 59 + this.MaxOperations.GetHashCode();
+                hash = hash * 59 + MaxOperations.GetHashCode();
             }
 
-            if (this.MaxPayloadSize != null)
+            if (MaxPayloadSize != null)
             {
-                hash = hash * 59 + this.MaxPayloadSize.GetHashCode();
+                hash = hash * 59 + MaxPayloadSize.GetHashCode();
             }
 
             return hash;

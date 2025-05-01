@@ -76,7 +76,7 @@ public partial class AnalyticsSessionMetric : IEquatable<AnalyticsSessionMetric>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsSessionMetric);
+        return Equals(obj as AnalyticsSessionMetric);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class AnalyticsSessionMetric : IEquatable<AnalyticsSessionMetric>
 
         return true &&
             (
-                this.EmitDate == other.EmitDate ||
-                this.EmitDate != null &&
-                this.EmitDate.Equals(other.EmitDate)
+                EmitDate == other.EmitDate ||
+                EmitDate != null &&
+                EmitDate.Equals(other.EmitDate)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class AnalyticsSessionMetric : IEquatable<AnalyticsSessionMetric>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EmitDate != null)
+            if (EmitDate != null)
             {
-                hash = hash * 59 + this.EmitDate.GetHashCode();
+                hash = hash * 59 + EmitDate.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

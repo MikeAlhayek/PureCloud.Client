@@ -91,7 +91,7 @@ public partial class Schema : IEquatable<Schema>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Schema);
+        return Equals(obj as Schema);
     }
 
     /// <summary>
@@ -109,29 +109,29 @@ public partial class Schema : IEquatable<Schema>
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.SequenceEqual(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.SequenceEqual(other.Type)
             ) &&
             (
-                this.Items == other.Items ||
-                this.Items != null &&
-                this.Items.Equals(other.Items)
+                Items == other.Items ||
+                Items != null &&
+                Items.Equals(other.Items)
             ) &&
             (
-                this.Pattern == other.Pattern ||
-                this.Pattern != null &&
-                this.Pattern.Equals(other.Pattern)
+                Pattern == other.Pattern ||
+                Pattern != null &&
+                Pattern.Equals(other.Pattern)
             );
     }
 
@@ -146,29 +146,29 @@ public partial class Schema : IEquatable<Schema>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Items != null)
+            if (Items != null)
             {
-                hash = hash * 59 + this.Items.GetHashCode();
+                hash = hash * 59 + Items.GetHashCode();
             }
 
-            if (this.Pattern != null)
+            if (Pattern != null)
             {
-                hash = hash * 59 + this.Pattern.GetHashCode();
+                hash = hash * 59 + Pattern.GetHashCode();
             }
 
             return hash;

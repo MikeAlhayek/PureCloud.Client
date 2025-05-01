@@ -71,7 +71,7 @@ public partial class TranslateSupportedLanguage : IEquatable<TranslateSupportedL
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranslateSupportedLanguage);
+        return Equals(obj as TranslateSupportedLanguage);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class TranslateSupportedLanguage : IEquatable<TranslateSupportedL
 
         return true &&
             (
-                this.LanguageName == other.LanguageName ||
-                this.LanguageName != null &&
-                this.LanguageName.Equals(other.LanguageName)
+                LanguageName == other.LanguageName ||
+                LanguageName != null &&
+                LanguageName.Equals(other.LanguageName)
             ) &&
             (
-                this.LanguageCode == other.LanguageCode ||
-                this.LanguageCode != null &&
-                this.LanguageCode.Equals(other.LanguageCode)
+                LanguageCode == other.LanguageCode ||
+                LanguageCode != null &&
+                LanguageCode.Equals(other.LanguageCode)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class TranslateSupportedLanguage : IEquatable<TranslateSupportedL
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LanguageName != null)
+            if (LanguageName != null)
             {
-                hash = hash * 59 + this.LanguageName.GetHashCode();
+                hash = hash * 59 + LanguageName.GetHashCode();
             }
 
-            if (this.LanguageCode != null)
+            if (LanguageCode != null)
             {
-                hash = hash * 59 + this.LanguageCode.GetHashCode();
+                hash = hash * 59 + LanguageCode.GetHashCode();
             }
 
             return hash;

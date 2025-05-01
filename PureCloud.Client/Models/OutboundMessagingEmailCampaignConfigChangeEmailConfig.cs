@@ -87,7 +87,7 @@ public partial class OutboundMessagingEmailCampaignConfigChangeEmailConfig : IEq
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingEmailCampaignConfigChangeEmailConfig);
+        return Equals(obj as OutboundMessagingEmailCampaignConfigChangeEmailConfig);
     }
 
     /// <summary>
@@ -105,24 +105,24 @@ public partial class OutboundMessagingEmailCampaignConfigChangeEmailConfig : IEq
 
         return true &&
             (
-                this.EmailColumns == other.EmailColumns ||
-                this.EmailColumns != null &&
-                this.EmailColumns.SequenceEqual(other.EmailColumns)
+                EmailColumns == other.EmailColumns ||
+                EmailColumns != null &&
+                EmailColumns.SequenceEqual(other.EmailColumns)
             ) &&
             (
-                this.ContentTemplate == other.ContentTemplate ||
-                this.ContentTemplate != null &&
-                this.ContentTemplate.Equals(other.ContentTemplate)
+                ContentTemplate == other.ContentTemplate ||
+                ContentTemplate != null &&
+                ContentTemplate.Equals(other.ContentTemplate)
             ) &&
             (
-                this.FromAddress == other.FromAddress ||
-                this.FromAddress != null &&
-                this.FromAddress.Equals(other.FromAddress)
+                FromAddress == other.FromAddress ||
+                FromAddress != null &&
+                FromAddress.Equals(other.FromAddress)
             ) &&
             (
-                this.ReplyToAddress == other.ReplyToAddress ||
-                this.ReplyToAddress != null &&
-                this.ReplyToAddress.Equals(other.ReplyToAddress)
+                ReplyToAddress == other.ReplyToAddress ||
+                ReplyToAddress != null &&
+                ReplyToAddress.Equals(other.ReplyToAddress)
             );
     }
 
@@ -137,24 +137,24 @@ public partial class OutboundMessagingEmailCampaignConfigChangeEmailConfig : IEq
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EmailColumns != null)
+            if (EmailColumns != null)
             {
-                hash = hash * 59 + this.EmailColumns.GetHashCode();
+                hash = hash * 59 + EmailColumns.GetHashCode();
             }
 
-            if (this.ContentTemplate != null)
+            if (ContentTemplate != null)
             {
-                hash = hash * 59 + this.ContentTemplate.GetHashCode();
+                hash = hash * 59 + ContentTemplate.GetHashCode();
             }
 
-            if (this.FromAddress != null)
+            if (FromAddress != null)
             {
-                hash = hash * 59 + this.FromAddress.GetHashCode();
+                hash = hash * 59 + FromAddress.GetHashCode();
             }
 
-            if (this.ReplyToAddress != null)
+            if (ReplyToAddress != null)
             {
-                hash = hash * 59 + this.ReplyToAddress.GetHashCode();
+                hash = hash * 59 + ReplyToAddress.GetHashCode();
             }
 
             return hash;

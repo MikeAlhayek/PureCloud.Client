@@ -127,7 +127,7 @@ public partial class LearningAssignmentExternalUpdate : IEquatable<LearningAssig
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentExternalUpdate);
+        return Equals(obj as LearningAssignmentExternalUpdate);
     }
 
     /// <summary>
@@ -145,19 +145,19 @@ public partial class LearningAssignmentExternalUpdate : IEquatable<LearningAssig
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.PercentageScore == other.PercentageScore ||
-                this.PercentageScore != null &&
-                this.PercentageScore.Equals(other.PercentageScore)
+                PercentageScore == other.PercentageScore ||
+                PercentageScore != null &&
+                PercentageScore.Equals(other.PercentageScore)
             ) &&
             (
-                this.IsPassed == other.IsPassed ||
-                this.IsPassed != null &&
-                this.IsPassed.Equals(other.IsPassed)
+                IsPassed == other.IsPassed ||
+                IsPassed != null &&
+                IsPassed.Equals(other.IsPassed)
             );
     }
 
@@ -172,19 +172,19 @@ public partial class LearningAssignmentExternalUpdate : IEquatable<LearningAssig
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.PercentageScore != null)
+            if (PercentageScore != null)
             {
-                hash = hash * 59 + this.PercentageScore.GetHashCode();
+                hash = hash * 59 + PercentageScore.GetHashCode();
             }
 
-            if (this.IsPassed != null)
+            if (IsPassed != null)
             {
-                hash = hash * 59 + this.IsPassed.GetHashCode();
+                hash = hash * 59 + IsPassed.GetHashCode();
             }
 
             return hash;

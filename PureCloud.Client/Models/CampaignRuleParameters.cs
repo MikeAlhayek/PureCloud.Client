@@ -346,7 +346,7 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignRuleParameters);
+        return Equals(obj as CampaignRuleParameters);
     }
 
     /// <summary>
@@ -364,74 +364,74 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
 
         return true &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.DialingMode == other.DialingMode ||
-                this.DialingMode != null &&
-                this.DialingMode.Equals(other.DialingMode)
+                DialingMode == other.DialingMode ||
+                DialingMode != null &&
+                DialingMode.Equals(other.DialingMode)
             ) &&
             (
-                this.AbandonRate == other.AbandonRate ||
-                this.AbandonRate != null &&
-                this.AbandonRate.Equals(other.AbandonRate)
+                AbandonRate == other.AbandonRate ||
+                AbandonRate != null &&
+                AbandonRate.Equals(other.AbandonRate)
             ) &&
             (
-                this.OutboundLineCount == other.OutboundLineCount ||
-                this.OutboundLineCount != null &&
-                this.OutboundLineCount.Equals(other.OutboundLineCount)
+                OutboundLineCount == other.OutboundLineCount ||
+                OutboundLineCount != null &&
+                OutboundLineCount.Equals(other.OutboundLineCount)
             ) &&
             (
-                this.RelativeWeight == other.RelativeWeight ||
-                this.RelativeWeight != null &&
-                this.RelativeWeight.Equals(other.RelativeWeight)
+                RelativeWeight == other.RelativeWeight ||
+                RelativeWeight != null &&
+                RelativeWeight.Equals(other.RelativeWeight)
             ) &&
             (
-                this.MaxCallsPerAgent == other.MaxCallsPerAgent ||
-                this.MaxCallsPerAgent != null &&
-                this.MaxCallsPerAgent.Equals(other.MaxCallsPerAgent)
+                MaxCallsPerAgent == other.MaxCallsPerAgent ||
+                MaxCallsPerAgent != null &&
+                MaxCallsPerAgent.Equals(other.MaxCallsPerAgent)
             ) &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.MessagesPerMinute == other.MessagesPerMinute ||
-                this.MessagesPerMinute != null &&
-                this.MessagesPerMinute.Equals(other.MessagesPerMinute)
+                MessagesPerMinute == other.MessagesPerMinute ||
+                MessagesPerMinute != null &&
+                MessagesPerMinute.Equals(other.MessagesPerMinute)
             ) &&
             (
-                this.SmsMessagesPerMinute == other.SmsMessagesPerMinute ||
-                this.SmsMessagesPerMinute != null &&
-                this.SmsMessagesPerMinute.Equals(other.SmsMessagesPerMinute)
+                SmsMessagesPerMinute == other.SmsMessagesPerMinute ||
+                SmsMessagesPerMinute != null &&
+                SmsMessagesPerMinute.Equals(other.SmsMessagesPerMinute)
             ) &&
             (
-                this.EmailMessagesPerMinute == other.EmailMessagesPerMinute ||
-                this.EmailMessagesPerMinute != null &&
-                this.EmailMessagesPerMinute.Equals(other.EmailMessagesPerMinute)
+                EmailMessagesPerMinute == other.EmailMessagesPerMinute ||
+                EmailMessagesPerMinute != null &&
+                EmailMessagesPerMinute.Equals(other.EmailMessagesPerMinute)
             ) &&
             (
-                this.SmsContentTemplate == other.SmsContentTemplate ||
-                this.SmsContentTemplate != null &&
-                this.SmsContentTemplate.Equals(other.SmsContentTemplate)
+                SmsContentTemplate == other.SmsContentTemplate ||
+                SmsContentTemplate != null &&
+                SmsContentTemplate.Equals(other.SmsContentTemplate)
             ) &&
             (
-                this.EmailContentTemplate == other.EmailContentTemplate ||
-                this.EmailContentTemplate != null &&
-                this.EmailContentTemplate.Equals(other.EmailContentTemplate)
+                EmailContentTemplate == other.EmailContentTemplate ||
+                EmailContentTemplate != null &&
+                EmailContentTemplate.Equals(other.EmailContentTemplate)
             );
     }
 
@@ -446,74 +446,74 @@ public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.DialingMode != null)
+            if (DialingMode != null)
             {
-                hash = hash * 59 + this.DialingMode.GetHashCode();
+                hash = hash * 59 + DialingMode.GetHashCode();
             }
 
-            if (this.AbandonRate != null)
+            if (AbandonRate != null)
             {
-                hash = hash * 59 + this.AbandonRate.GetHashCode();
+                hash = hash * 59 + AbandonRate.GetHashCode();
             }
 
-            if (this.OutboundLineCount != null)
+            if (OutboundLineCount != null)
             {
-                hash = hash * 59 + this.OutboundLineCount.GetHashCode();
+                hash = hash * 59 + OutboundLineCount.GetHashCode();
             }
 
-            if (this.RelativeWeight != null)
+            if (RelativeWeight != null)
             {
-                hash = hash * 59 + this.RelativeWeight.GetHashCode();
+                hash = hash * 59 + RelativeWeight.GetHashCode();
             }
 
-            if (this.MaxCallsPerAgent != null)
+            if (MaxCallsPerAgent != null)
             {
-                hash = hash * 59 + this.MaxCallsPerAgent.GetHashCode();
+                hash = hash * 59 + MaxCallsPerAgent.GetHashCode();
             }
 
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.MessagesPerMinute != null)
+            if (MessagesPerMinute != null)
             {
-                hash = hash * 59 + this.MessagesPerMinute.GetHashCode();
+                hash = hash * 59 + MessagesPerMinute.GetHashCode();
             }
 
-            if (this.SmsMessagesPerMinute != null)
+            if (SmsMessagesPerMinute != null)
             {
-                hash = hash * 59 + this.SmsMessagesPerMinute.GetHashCode();
+                hash = hash * 59 + SmsMessagesPerMinute.GetHashCode();
             }
 
-            if (this.EmailMessagesPerMinute != null)
+            if (EmailMessagesPerMinute != null)
             {
-                hash = hash * 59 + this.EmailMessagesPerMinute.GetHashCode();
+                hash = hash * 59 + EmailMessagesPerMinute.GetHashCode();
             }
 
-            if (this.SmsContentTemplate != null)
+            if (SmsContentTemplate != null)
             {
-                hash = hash * 59 + this.SmsContentTemplate.GetHashCode();
+                hash = hash * 59 + SmsContentTemplate.GetHashCode();
             }
 
-            if (this.EmailContentTemplate != null)
+            if (EmailContentTemplate != null)
             {
-                hash = hash * 59 + this.EmailContentTemplate.GetHashCode();
+                hash = hash * 59 + EmailContentTemplate.GetHashCode();
             }
 
             return hash;

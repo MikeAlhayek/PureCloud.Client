@@ -238,7 +238,7 @@ public partial class BulkJob : IEquatable<BulkJob>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BulkJob);
+        return Equals(obj as BulkJob);
     }
 
     /// <summary>
@@ -256,54 +256,54 @@ public partial class BulkJob : IEquatable<BulkJob>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.TotalCount == other.TotalCount ||
-                this.TotalCount != null &&
-                this.TotalCount.Equals(other.TotalCount)
+                TotalCount == other.TotalCount ||
+                TotalCount != null &&
+                TotalCount.Equals(other.TotalCount)
             ) &&
             (
-                this.SuccessfulCount == other.SuccessfulCount ||
-                this.SuccessfulCount != null &&
-                this.SuccessfulCount.Equals(other.SuccessfulCount)
+                SuccessfulCount == other.SuccessfulCount ||
+                SuccessfulCount != null &&
+                SuccessfulCount.Equals(other.SuccessfulCount)
             ) &&
             (
-                this.FailedCount == other.FailedCount ||
-                this.FailedCount != null &&
-                this.FailedCount.Equals(other.FailedCount)
+                FailedCount == other.FailedCount ||
+                FailedCount != null &&
+                FailedCount.Equals(other.FailedCount)
             ) &&
             (
-                this.DateStarted == other.DateStarted ||
-                this.DateStarted != null &&
-                this.DateStarted.Equals(other.DateStarted)
+                DateStarted == other.DateStarted ||
+                DateStarted != null &&
+                DateStarted.Equals(other.DateStarted)
             ) &&
             (
-                this.DateFinished == other.DateFinished ||
-                this.DateFinished != null &&
-                this.DateFinished.Equals(other.DateFinished)
+                DateFinished == other.DateFinished ||
+                DateFinished != null &&
+                DateFinished.Equals(other.DateFinished)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -318,54 +318,54 @@ public partial class BulkJob : IEquatable<BulkJob>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.TotalCount != null)
+            if (TotalCount != null)
             {
-                hash = hash * 59 + this.TotalCount.GetHashCode();
+                hash = hash * 59 + TotalCount.GetHashCode();
             }
 
-            if (this.SuccessfulCount != null)
+            if (SuccessfulCount != null)
             {
-                hash = hash * 59 + this.SuccessfulCount.GetHashCode();
+                hash = hash * 59 + SuccessfulCount.GetHashCode();
             }
 
-            if (this.FailedCount != null)
+            if (FailedCount != null)
             {
-                hash = hash * 59 + this.FailedCount.GetHashCode();
+                hash = hash * 59 + FailedCount.GetHashCode();
             }
 
-            if (this.DateStarted != null)
+            if (DateStarted != null)
             {
-                hash = hash * 59 + this.DateStarted.GetHashCode();
+                hash = hash * 59 + DateStarted.GetHashCode();
             }
 
-            if (this.DateFinished != null)
+            if (DateFinished != null)
             {
-                hash = hash * 59 + this.DateFinished.GetHashCode();
+                hash = hash * 59 + DateFinished.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

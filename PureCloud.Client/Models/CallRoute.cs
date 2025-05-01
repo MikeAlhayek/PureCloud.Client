@@ -53,7 +53,7 @@ public partial class CallRoute : IEquatable<CallRoute>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallRoute);
+        return Equals(obj as CallRoute);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class CallRoute : IEquatable<CallRoute>
 
         return true &&
             (
-                this.Targets == other.Targets ||
-                this.Targets != null &&
-                this.Targets.SequenceEqual(other.Targets)
+                Targets == other.Targets ||
+                Targets != null &&
+                Targets.SequenceEqual(other.Targets)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class CallRoute : IEquatable<CallRoute>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Targets != null)
+            if (Targets != null)
             {
-                hash = hash * 59 + this.Targets.GetHashCode();
+                hash = hash * 59 + Targets.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class MessagingTemplate : IEquatable<MessagingTemplate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessagingTemplate);
+        return Equals(obj as MessagingTemplate);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class MessagingTemplate : IEquatable<MessagingTemplate>
 
         return true &&
             (
-                this.WhatsApp == other.WhatsApp ||
-                this.WhatsApp != null &&
-                this.WhatsApp.Equals(other.WhatsApp)
+                WhatsApp == other.WhatsApp ||
+                WhatsApp != null &&
+                WhatsApp.Equals(other.WhatsApp)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class MessagingTemplate : IEquatable<MessagingTemplate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WhatsApp != null)
+            if (WhatsApp != null)
             {
-                hash = hash * 59 + this.WhatsApp.GetHashCode();
+                hash = hash * 59 + WhatsApp.GetHashCode();
             }
 
             return hash;

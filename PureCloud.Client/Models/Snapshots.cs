@@ -65,7 +65,7 @@ public partial class Snapshots : IEquatable<Snapshots>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Snapshots);
+        return Equals(obj as Snapshots);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class Snapshots : IEquatable<Snapshots>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DaysInPast == other.DaysInPast ||
-                this.DaysInPast != null &&
-                this.DaysInPast.Equals(other.DaysInPast)
+                DaysInPast == other.DaysInPast ||
+                DaysInPast != null &&
+                DaysInPast.Equals(other.DaysInPast)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class Snapshots : IEquatable<Snapshots>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DaysInPast != null)
+            if (DaysInPast != null)
             {
-                hash = hash * 59 + this.DaysInPast.GetHashCode();
+                hash = hash * 59 + DaysInPast.GetHashCode();
             }
 
             return hash;

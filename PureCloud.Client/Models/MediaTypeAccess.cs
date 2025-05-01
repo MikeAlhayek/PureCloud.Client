@@ -65,7 +65,7 @@ public partial class MediaTypeAccess : IEquatable<MediaTypeAccess>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaTypeAccess);
+        return Equals(obj as MediaTypeAccess);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class MediaTypeAccess : IEquatable<MediaTypeAccess>
 
         return true &&
             (
-                this.Inbound == other.Inbound ||
-                this.Inbound != null &&
-                this.Inbound.SequenceEqual(other.Inbound)
+                Inbound == other.Inbound ||
+                Inbound != null &&
+                Inbound.SequenceEqual(other.Inbound)
             ) &&
             (
-                this.Outbound == other.Outbound ||
-                this.Outbound != null &&
-                this.Outbound.SequenceEqual(other.Outbound)
+                Outbound == other.Outbound ||
+                Outbound != null &&
+                Outbound.SequenceEqual(other.Outbound)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class MediaTypeAccess : IEquatable<MediaTypeAccess>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Inbound != null)
+            if (Inbound != null)
             {
-                hash = hash * 59 + this.Inbound.GetHashCode();
+                hash = hash * 59 + Inbound.GetHashCode();
             }
 
-            if (this.Outbound != null)
+            if (Outbound != null)
             {
-                hash = hash * 59 + this.Outbound.GetHashCode();
+                hash = hash * 59 + Outbound.GetHashCode();
             }
 
             return hash;

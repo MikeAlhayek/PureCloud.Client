@@ -197,7 +197,7 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignSequence);
+        return Equals(obj as CampaignSequence);
     }
 
     /// <summary>
@@ -215,59 +215,59 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Campaigns == other.Campaigns ||
-                this.Campaigns != null &&
-                this.Campaigns.SequenceEqual(other.Campaigns)
+                Campaigns == other.Campaigns ||
+                Campaigns != null &&
+                Campaigns.SequenceEqual(other.Campaigns)
             ) &&
             (
-                this.CurrentCampaign == other.CurrentCampaign ||
-                this.CurrentCampaign != null &&
-                this.CurrentCampaign.Equals(other.CurrentCampaign)
+                CurrentCampaign == other.CurrentCampaign ||
+                CurrentCampaign != null &&
+                CurrentCampaign.Equals(other.CurrentCampaign)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.StopMessage == other.StopMessage ||
-                this.StopMessage != null &&
-                this.StopMessage.Equals(other.StopMessage)
+                StopMessage == other.StopMessage ||
+                StopMessage != null &&
+                StopMessage.Equals(other.StopMessage)
             ) &&
             (
-                this.Repeat == other.Repeat ||
-                this.Repeat != null &&
-                this.Repeat.Equals(other.Repeat)
+                Repeat == other.Repeat ||
+                Repeat != null &&
+                Repeat.Equals(other.Repeat)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -282,59 +282,59 @@ public partial class CampaignSequence : IEquatable<CampaignSequence>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Campaigns != null)
+            if (Campaigns != null)
             {
-                hash = hash * 59 + this.Campaigns.GetHashCode();
+                hash = hash * 59 + Campaigns.GetHashCode();
             }
 
-            if (this.CurrentCampaign != null)
+            if (CurrentCampaign != null)
             {
-                hash = hash * 59 + this.CurrentCampaign.GetHashCode();
+                hash = hash * 59 + CurrentCampaign.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.StopMessage != null)
+            if (StopMessage != null)
             {
-                hash = hash * 59 + this.StopMessage.GetHashCode();
+                hash = hash * 59 + StopMessage.GetHashCode();
             }
 
-            if (this.Repeat != null)
+            if (Repeat != null)
             {
-                hash = hash * 59 + this.Repeat.GetHashCode();
+                hash = hash * 59 + Repeat.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -216,7 +216,7 @@ public partial class PromptAsset : IEquatable<PromptAsset>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PromptAsset);
+        return Equals(obj as PromptAsset);
     }
 
     /// <summary>
@@ -234,69 +234,69 @@ public partial class PromptAsset : IEquatable<PromptAsset>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.PromptId == other.PromptId ||
-                this.PromptId != null &&
-                this.PromptId.Equals(other.PromptId)
+                PromptId == other.PromptId ||
+                PromptId != null &&
+                PromptId.Equals(other.PromptId)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.MediaUri == other.MediaUri ||
-                this.MediaUri != null &&
-                this.MediaUri.Equals(other.MediaUri)
+                MediaUri == other.MediaUri ||
+                MediaUri != null &&
+                MediaUri.Equals(other.MediaUri)
             ) &&
             (
-                this.TtsString == other.TtsString ||
-                this.TtsString != null &&
-                this.TtsString.Equals(other.TtsString)
+                TtsString == other.TtsString ||
+                TtsString != null &&
+                TtsString.Equals(other.TtsString)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.UploadStatus == other.UploadStatus ||
-                this.UploadStatus != null &&
-                this.UploadStatus.Equals(other.UploadStatus)
+                UploadStatus == other.UploadStatus ||
+                UploadStatus != null &&
+                UploadStatus.Equals(other.UploadStatus)
             ) &&
             (
-                this.UploadUri == other.UploadUri ||
-                this.UploadUri != null &&
-                this.UploadUri.Equals(other.UploadUri)
+                UploadUri == other.UploadUri ||
+                UploadUri != null &&
+                UploadUri.Equals(other.UploadUri)
             ) &&
             (
-                this.LanguageDefault == other.LanguageDefault ||
-                this.LanguageDefault != null &&
-                this.LanguageDefault.Equals(other.LanguageDefault)
+                LanguageDefault == other.LanguageDefault ||
+                LanguageDefault != null &&
+                LanguageDefault.Equals(other.LanguageDefault)
             ) &&
             (
-                this.Tags == other.Tags ||
-                this.Tags != null &&
-                this.Tags.SequenceEqual(other.Tags)
+                Tags == other.Tags ||
+                Tags != null &&
+                Tags.SequenceEqual(other.Tags)
             ) &&
             (
-                this.DurationSeconds == other.DurationSeconds ||
-                this.DurationSeconds != null &&
-                this.DurationSeconds.Equals(other.DurationSeconds)
+                DurationSeconds == other.DurationSeconds ||
+                DurationSeconds != null &&
+                DurationSeconds.Equals(other.DurationSeconds)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -311,69 +311,69 @@ public partial class PromptAsset : IEquatable<PromptAsset>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.PromptId != null)
+            if (PromptId != null)
             {
-                hash = hash * 59 + this.PromptId.GetHashCode();
+                hash = hash * 59 + PromptId.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.MediaUri != null)
+            if (MediaUri != null)
             {
-                hash = hash * 59 + this.MediaUri.GetHashCode();
+                hash = hash * 59 + MediaUri.GetHashCode();
             }
 
-            if (this.TtsString != null)
+            if (TtsString != null)
             {
-                hash = hash * 59 + this.TtsString.GetHashCode();
+                hash = hash * 59 + TtsString.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.UploadStatus != null)
+            if (UploadStatus != null)
             {
-                hash = hash * 59 + this.UploadStatus.GetHashCode();
+                hash = hash * 59 + UploadStatus.GetHashCode();
             }
 
-            if (this.UploadUri != null)
+            if (UploadUri != null)
             {
-                hash = hash * 59 + this.UploadUri.GetHashCode();
+                hash = hash * 59 + UploadUri.GetHashCode();
             }
 
-            if (this.LanguageDefault != null)
+            if (LanguageDefault != null)
             {
-                hash = hash * 59 + this.LanguageDefault.GetHashCode();
+                hash = hash * 59 + LanguageDefault.GetHashCode();
             }
 
-            if (this.Tags != null)
+            if (Tags != null)
             {
-                hash = hash * 59 + this.Tags.GetHashCode();
+                hash = hash * 59 + Tags.GetHashCode();
             }
 
-            if (this.DurationSeconds != null)
+            if (DurationSeconds != null)
             {
-                hash = hash * 59 + this.DurationSeconds.GetHashCode();
+                hash = hash * 59 + DurationSeconds.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

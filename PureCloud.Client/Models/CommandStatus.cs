@@ -244,7 +244,7 @@ public partial class CommandStatus : IEquatable<CommandStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CommandStatus);
+        return Equals(obj as CommandStatus);
     }
 
     /// <summary>
@@ -262,44 +262,44 @@ public partial class CommandStatus : IEquatable<CommandStatus>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Expiration == other.Expiration ||
-                this.Expiration != null &&
-                this.Expiration.Equals(other.Expiration)
+                Expiration == other.Expiration ||
+                Expiration != null &&
+                Expiration.Equals(other.Expiration)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.StatusCode == other.StatusCode ||
-                this.StatusCode != null &&
-                this.StatusCode.Equals(other.StatusCode)
+                StatusCode == other.StatusCode ||
+                StatusCode != null &&
+                StatusCode.Equals(other.StatusCode)
             ) &&
             (
-                this.CommandType == other.CommandType ||
-                this.CommandType != null &&
-                this.CommandType.Equals(other.CommandType)
+                CommandType == other.CommandType ||
+                CommandType != null &&
+                CommandType.Equals(other.CommandType)
             ) &&
             (
-                this.Document == other.Document ||
-                this.Document != null &&
-                this.Document.Equals(other.Document)
+                Document == other.Document ||
+                Document != null &&
+                Document.Equals(other.Document)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -314,44 +314,44 @@ public partial class CommandStatus : IEquatable<CommandStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Expiration != null)
+            if (Expiration != null)
             {
-                hash = hash * 59 + this.Expiration.GetHashCode();
+                hash = hash * 59 + Expiration.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.StatusCode != null)
+            if (StatusCode != null)
             {
-                hash = hash * 59 + this.StatusCode.GetHashCode();
+                hash = hash * 59 + StatusCode.GetHashCode();
             }
 
-            if (this.CommandType != null)
+            if (CommandType != null)
             {
-                hash = hash * 59 + this.CommandType.GetHashCode();
+                hash = hash * 59 + CommandType.GetHashCode();
             }
 
-            if (this.Document != null)
+            if (Document != null)
             {
-                hash = hash * 59 + this.Document.GetHashCode();
+                hash = hash * 59 + Document.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

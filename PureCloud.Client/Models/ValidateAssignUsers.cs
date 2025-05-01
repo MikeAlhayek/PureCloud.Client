@@ -59,7 +59,7 @@ public partial class ValidateAssignUsers : IEquatable<ValidateAssignUsers>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValidateAssignUsers);
+        return Equals(obj as ValidateAssignUsers);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ValidateAssignUsers : IEquatable<ValidateAssignUsers>
 
         return true &&
             (
-                this.MembersToAssign == other.MembersToAssign ||
-                this.MembersToAssign != null &&
-                this.MembersToAssign.SequenceEqual(other.MembersToAssign)
+                MembersToAssign == other.MembersToAssign ||
+                MembersToAssign != null &&
+                MembersToAssign.SequenceEqual(other.MembersToAssign)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ValidateAssignUsers : IEquatable<ValidateAssignUsers>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MembersToAssign != null)
+            if (MembersToAssign != null)
             {
-                hash = hash * 59 + this.MembersToAssign.GetHashCode();
+                hash = hash * 59 + MembersToAssign.GetHashCode();
             }
 
             return hash;

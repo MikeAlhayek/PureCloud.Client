@@ -71,7 +71,7 @@ public partial class JourneyViewChartGroupByAttribute : IEquatable<JourneyViewCh
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewChartGroupByAttribute);
+        return Equals(obj as JourneyViewChartGroupByAttribute);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class JourneyViewChartGroupByAttribute : IEquatable<JourneyViewCh
 
         return true &&
             (
-                this.ElementId == other.ElementId ||
-                this.ElementId != null &&
-                this.ElementId.Equals(other.ElementId)
+                ElementId == other.ElementId ||
+                ElementId != null &&
+                ElementId.Equals(other.ElementId)
             ) &&
             (
-                this.Attribute == other.Attribute ||
-                this.Attribute != null &&
-                this.Attribute.Equals(other.Attribute)
+                Attribute == other.Attribute ||
+                Attribute != null &&
+                Attribute.Equals(other.Attribute)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class JourneyViewChartGroupByAttribute : IEquatable<JourneyViewCh
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ElementId != null)
+            if (ElementId != null)
             {
-                hash = hash * 59 + this.ElementId.GetHashCode();
+                hash = hash * 59 + ElementId.GetHashCode();
             }
 
-            if (this.Attribute != null)
+            if (Attribute != null)
             {
-                hash = hash * 59 + this.Attribute.GetHashCode();
+                hash = hash * 59 + Attribute.GetHashCode();
             }
 
             return hash;

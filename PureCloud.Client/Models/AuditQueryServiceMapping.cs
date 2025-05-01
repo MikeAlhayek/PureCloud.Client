@@ -52,7 +52,7 @@ public partial class AuditQueryServiceMapping : IEquatable<AuditQueryServiceMapp
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuditQueryServiceMapping);
+        return Equals(obj as AuditQueryServiceMapping);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class AuditQueryServiceMapping : IEquatable<AuditQueryServiceMapp
 
         return true &&
             (
-                this.Services == other.Services ||
-                this.Services != null &&
-                this.Services.SequenceEqual(other.Services)
+                Services == other.Services ||
+                Services != null &&
+                Services.SequenceEqual(other.Services)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class AuditQueryServiceMapping : IEquatable<AuditQueryServiceMapp
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Services != null)
+            if (Services != null)
             {
-                hash = hash * 59 + this.Services.GetHashCode();
+                hash = hash * 59 + Services.GetHashCode();
             }
 
             return hash;

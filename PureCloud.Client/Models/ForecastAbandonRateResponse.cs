@@ -53,7 +53,7 @@ public partial class ForecastAbandonRateResponse : IEquatable<ForecastAbandonRat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ForecastAbandonRateResponse);
+        return Equals(obj as ForecastAbandonRateResponse);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ForecastAbandonRateResponse : IEquatable<ForecastAbandonRat
 
         return true &&
             (
-                this.Percent == other.Percent ||
-                this.Percent != null &&
-                this.Percent.Equals(other.Percent)
+                Percent == other.Percent ||
+                Percent != null &&
+                Percent.Equals(other.Percent)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ForecastAbandonRateResponse : IEquatable<ForecastAbandonRat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Percent != null)
+            if (Percent != null)
             {
-                hash = hash * 59 + this.Percent.GetHashCode();
+                hash = hash * 59 + Percent.GetHashCode();
             }
 
             return hash;

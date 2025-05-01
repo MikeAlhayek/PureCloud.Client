@@ -392,7 +392,7 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsFlow);
+        return Equals(obj as AnalyticsFlow);
     }
 
     /// <summary>
@@ -410,79 +410,79 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
 
         return true &&
             (
-                this.EndingLanguage == other.EndingLanguage ||
-                this.EndingLanguage != null &&
-                this.EndingLanguage.Equals(other.EndingLanguage)
+                EndingLanguage == other.EndingLanguage ||
+                EndingLanguage != null &&
+                EndingLanguage.Equals(other.EndingLanguage)
             ) &&
             (
-                this.EntryReason == other.EntryReason ||
-                this.EntryReason != null &&
-                this.EntryReason.Equals(other.EntryReason)
+                EntryReason == other.EntryReason ||
+                EntryReason != null &&
+                EntryReason.Equals(other.EntryReason)
             ) &&
             (
-                this.EntryType == other.EntryType ||
-                this.EntryType != null &&
-                this.EntryType.Equals(other.EntryType)
+                EntryType == other.EntryType ||
+                EntryType != null &&
+                EntryType.Equals(other.EntryType)
             ) &&
             (
-                this.ExitReason == other.ExitReason ||
-                this.ExitReason != null &&
-                this.ExitReason.Equals(other.ExitReason)
+                ExitReason == other.ExitReason ||
+                ExitReason != null &&
+                ExitReason.Equals(other.ExitReason)
             ) &&
             (
-                this.FlowId == other.FlowId ||
-                this.FlowId != null &&
-                this.FlowId.Equals(other.FlowId)
+                FlowId == other.FlowId ||
+                FlowId != null &&
+                FlowId.Equals(other.FlowId)
             ) &&
             (
-                this.FlowName == other.FlowName ||
-                this.FlowName != null &&
-                this.FlowName.Equals(other.FlowName)
+                FlowName == other.FlowName ||
+                FlowName != null &&
+                FlowName.Equals(other.FlowName)
             ) &&
             (
-                this.FlowType == other.FlowType ||
-                this.FlowType != null &&
-                this.FlowType.Equals(other.FlowType)
+                FlowType == other.FlowType ||
+                FlowType != null &&
+                FlowType.Equals(other.FlowType)
             ) &&
             (
-                this.FlowVersion == other.FlowVersion ||
-                this.FlowVersion != null &&
-                this.FlowVersion.Equals(other.FlowVersion)
+                FlowVersion == other.FlowVersion ||
+                FlowVersion != null &&
+                FlowVersion.Equals(other.FlowVersion)
             ) &&
             (
-                this.IssuedCallback == other.IssuedCallback ||
-                this.IssuedCallback != null &&
-                this.IssuedCallback.Equals(other.IssuedCallback)
+                IssuedCallback == other.IssuedCallback ||
+                IssuedCallback != null &&
+                IssuedCallback.Equals(other.IssuedCallback)
             ) &&
             (
-                this.RecognitionFailureReason == other.RecognitionFailureReason ||
-                this.RecognitionFailureReason != null &&
-                this.RecognitionFailureReason.Equals(other.RecognitionFailureReason)
+                RecognitionFailureReason == other.RecognitionFailureReason ||
+                RecognitionFailureReason != null &&
+                RecognitionFailureReason.Equals(other.RecognitionFailureReason)
             ) &&
             (
-                this.StartingLanguage == other.StartingLanguage ||
-                this.StartingLanguage != null &&
-                this.StartingLanguage.Equals(other.StartingLanguage)
+                StartingLanguage == other.StartingLanguage ||
+                StartingLanguage != null &&
+                StartingLanguage.Equals(other.StartingLanguage)
             ) &&
             (
-                this.TransferTargetAddress == other.TransferTargetAddress ||
-                this.TransferTargetAddress != null &&
-                this.TransferTargetAddress.Equals(other.TransferTargetAddress)
+                TransferTargetAddress == other.TransferTargetAddress ||
+                TransferTargetAddress != null &&
+                TransferTargetAddress.Equals(other.TransferTargetAddress)
             ) &&
             (
-                this.TransferTargetName == other.TransferTargetName ||
-                this.TransferTargetName != null &&
-                this.TransferTargetName.Equals(other.TransferTargetName)
+                TransferTargetName == other.TransferTargetName ||
+                TransferTargetName != null &&
+                TransferTargetName.Equals(other.TransferTargetName)
             ) &&
             (
-                this.TransferType == other.TransferType ||
-                this.TransferType != null &&
-                this.TransferType.Equals(other.TransferType)
+                TransferType == other.TransferType ||
+                TransferType != null &&
+                TransferType.Equals(other.TransferType)
             ) &&
             (
-                this.Outcomes == other.Outcomes ||
-                this.Outcomes != null &&
-                this.Outcomes.SequenceEqual(other.Outcomes)
+                Outcomes == other.Outcomes ||
+                Outcomes != null &&
+                Outcomes.SequenceEqual(other.Outcomes)
             );
     }
 
@@ -497,79 +497,79 @@ public partial class AnalyticsFlow : IEquatable<AnalyticsFlow>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EndingLanguage != null)
+            if (EndingLanguage != null)
             {
-                hash = hash * 59 + this.EndingLanguage.GetHashCode();
+                hash = hash * 59 + EndingLanguage.GetHashCode();
             }
 
-            if (this.EntryReason != null)
+            if (EntryReason != null)
             {
-                hash = hash * 59 + this.EntryReason.GetHashCode();
+                hash = hash * 59 + EntryReason.GetHashCode();
             }
 
-            if (this.EntryType != null)
+            if (EntryType != null)
             {
-                hash = hash * 59 + this.EntryType.GetHashCode();
+                hash = hash * 59 + EntryType.GetHashCode();
             }
 
-            if (this.ExitReason != null)
+            if (ExitReason != null)
             {
-                hash = hash * 59 + this.ExitReason.GetHashCode();
+                hash = hash * 59 + ExitReason.GetHashCode();
             }
 
-            if (this.FlowId != null)
+            if (FlowId != null)
             {
-                hash = hash * 59 + this.FlowId.GetHashCode();
+                hash = hash * 59 + FlowId.GetHashCode();
             }
 
-            if (this.FlowName != null)
+            if (FlowName != null)
             {
-                hash = hash * 59 + this.FlowName.GetHashCode();
+                hash = hash * 59 + FlowName.GetHashCode();
             }
 
-            if (this.FlowType != null)
+            if (FlowType != null)
             {
-                hash = hash * 59 + this.FlowType.GetHashCode();
+                hash = hash * 59 + FlowType.GetHashCode();
             }
 
-            if (this.FlowVersion != null)
+            if (FlowVersion != null)
             {
-                hash = hash * 59 + this.FlowVersion.GetHashCode();
+                hash = hash * 59 + FlowVersion.GetHashCode();
             }
 
-            if (this.IssuedCallback != null)
+            if (IssuedCallback != null)
             {
-                hash = hash * 59 + this.IssuedCallback.GetHashCode();
+                hash = hash * 59 + IssuedCallback.GetHashCode();
             }
 
-            if (this.RecognitionFailureReason != null)
+            if (RecognitionFailureReason != null)
             {
-                hash = hash * 59 + this.RecognitionFailureReason.GetHashCode();
+                hash = hash * 59 + RecognitionFailureReason.GetHashCode();
             }
 
-            if (this.StartingLanguage != null)
+            if (StartingLanguage != null)
             {
-                hash = hash * 59 + this.StartingLanguage.GetHashCode();
+                hash = hash * 59 + StartingLanguage.GetHashCode();
             }
 
-            if (this.TransferTargetAddress != null)
+            if (TransferTargetAddress != null)
             {
-                hash = hash * 59 + this.TransferTargetAddress.GetHashCode();
+                hash = hash * 59 + TransferTargetAddress.GetHashCode();
             }
 
-            if (this.TransferTargetName != null)
+            if (TransferTargetName != null)
             {
-                hash = hash * 59 + this.TransferTargetName.GetHashCode();
+                hash = hash * 59 + TransferTargetName.GetHashCode();
             }
 
-            if (this.TransferType != null)
+            if (TransferType != null)
             {
-                hash = hash * 59 + this.TransferType.GetHashCode();
+                hash = hash * 59 + TransferType.GetHashCode();
             }
 
-            if (this.Outcomes != null)
+            if (Outcomes != null)
             {
-                hash = hash * 59 + this.Outcomes.GetHashCode();
+                hash = hash * 59 + Outcomes.GetHashCode();
             }
 
             return hash;

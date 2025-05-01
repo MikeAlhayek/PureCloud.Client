@@ -214,7 +214,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftNotification);
+        return Equals(obj as AlternativeShiftNotification);
     }
 
     /// <summary>
@@ -232,49 +232,49 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             ) &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             ) &&
             (
-                this.NewState == other.NewState ||
-                this.NewState != null &&
-                this.NewState.Equals(other.NewState)
+                NewState == other.NewState ||
+                NewState != null &&
+                NewState.Equals(other.NewState)
             ) &&
             (
-                this.InitiatingUser == other.InitiatingUser ||
-                this.InitiatingUser != null &&
-                this.InitiatingUser.Equals(other.InitiatingUser)
+                InitiatingUser == other.InitiatingUser ||
+                InitiatingUser != null &&
+                InitiatingUser.Equals(other.InitiatingUser)
             ) &&
             (
-                this.InitiatingShiftDate == other.InitiatingShiftDate ||
-                this.InitiatingShiftDate != null &&
-                this.InitiatingShiftDate.Equals(other.InitiatingShiftDate)
+                InitiatingShiftDate == other.InitiatingShiftDate ||
+                InitiatingShiftDate != null &&
+                InitiatingShiftDate.Equals(other.InitiatingShiftDate)
             ) &&
             (
-                this.ReceivingUser == other.ReceivingUser ||
-                this.ReceivingUser != null &&
-                this.ReceivingUser.Equals(other.ReceivingUser)
+                ReceivingUser == other.ReceivingUser ||
+                ReceivingUser != null &&
+                ReceivingUser.Equals(other.ReceivingUser)
             ) &&
             (
-                this.ReceivingShiftDate == other.ReceivingShiftDate ||
-                this.ReceivingShiftDate != null &&
-                this.ReceivingShiftDate.Equals(other.ReceivingShiftDate)
+                ReceivingShiftDate == other.ReceivingShiftDate ||
+                ReceivingShiftDate != null &&
+                ReceivingShiftDate.Equals(other.ReceivingShiftDate)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -289,49 +289,49 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
-            if (this.NewState != null)
+            if (NewState != null)
             {
-                hash = hash * 59 + this.NewState.GetHashCode();
+                hash = hash * 59 + NewState.GetHashCode();
             }
 
-            if (this.InitiatingUser != null)
+            if (InitiatingUser != null)
             {
-                hash = hash * 59 + this.InitiatingUser.GetHashCode();
+                hash = hash * 59 + InitiatingUser.GetHashCode();
             }
 
-            if (this.InitiatingShiftDate != null)
+            if (InitiatingShiftDate != null)
             {
-                hash = hash * 59 + this.InitiatingShiftDate.GetHashCode();
+                hash = hash * 59 + InitiatingShiftDate.GetHashCode();
             }
 
-            if (this.ReceivingUser != null)
+            if (ReceivingUser != null)
             {
-                hash = hash * 59 + this.ReceivingUser.GetHashCode();
+                hash = hash * 59 + ReceivingUser.GetHashCode();
             }
 
-            if (this.ReceivingShiftDate != null)
+            if (ReceivingShiftDate != null)
             {
-                hash = hash * 59 + this.ReceivingShiftDate.GetHashCode();
+                hash = hash * 59 + ReceivingShiftDate.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

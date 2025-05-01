@@ -63,7 +63,7 @@ public partial class PredictorModels : IEquatable<PredictorModels>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PredictorModels);
+        return Equals(obj as PredictorModels);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class PredictorModels : IEquatable<PredictorModels>
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this._PredictorModels == other._PredictorModels ||
-                this._PredictorModels != null &&
-                this._PredictorModels.SequenceEqual(other._PredictorModels)
+                _PredictorModels == other._PredictorModels ||
+                _PredictorModels != null &&
+                _PredictorModels.SequenceEqual(other._PredictorModels)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class PredictorModels : IEquatable<PredictorModels>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this._PredictorModels != null)
+            if (_PredictorModels != null)
             {
-                hash = hash * 59 + this._PredictorModels.GetHashCode();
+                hash = hash * 59 + _PredictorModels.GetHashCode();
             }
 
             return hash;

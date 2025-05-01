@@ -62,7 +62,7 @@ public partial class NluDomainVersionTrainingResponse : IEquatable<NluDomainVers
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluDomainVersionTrainingResponse);
+        return Equals(obj as NluDomainVersionTrainingResponse);
     }
 
     /// <summary>
@@ -80,14 +80,14 @@ public partial class NluDomainVersionTrainingResponse : IEquatable<NluDomainVers
 
         return true &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -102,14 +102,14 @@ public partial class NluDomainVersionTrainingResponse : IEquatable<NluDomainVers
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

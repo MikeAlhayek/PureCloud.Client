@@ -189,7 +189,7 @@ public partial class LearningModuleRuleParts : IEquatable<LearningModuleRulePart
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModuleRuleParts);
+        return Equals(obj as LearningModuleRuleParts);
     }
 
     /// <summary>
@@ -207,24 +207,24 @@ public partial class LearningModuleRuleParts : IEquatable<LearningModuleRulePart
 
         return true &&
             (
-                this.Operation == other.Operation ||
-                this.Operation != null &&
-                this.Operation.Equals(other.Operation)
+                Operation == other.Operation ||
+                Operation != null &&
+                Operation.Equals(other.Operation)
             ) &&
             (
-                this.Selector == other.Selector ||
-                this.Selector != null &&
-                this.Selector.Equals(other.Selector)
+                Selector == other.Selector ||
+                Selector != null &&
+                Selector.Equals(other.Selector)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.SequenceEqual(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.SequenceEqual(other.Value)
             ) &&
             (
-                this.Order == other.Order ||
-                this.Order != null &&
-                this.Order.Equals(other.Order)
+                Order == other.Order ||
+                Order != null &&
+                Order.Equals(other.Order)
             );
     }
 
@@ -239,24 +239,24 @@ public partial class LearningModuleRuleParts : IEquatable<LearningModuleRulePart
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Operation != null)
+            if (Operation != null)
             {
-                hash = hash * 59 + this.Operation.GetHashCode();
+                hash = hash * 59 + Operation.GetHashCode();
             }
 
-            if (this.Selector != null)
+            if (Selector != null)
             {
-                hash = hash * 59 + this.Selector.GetHashCode();
+                hash = hash * 59 + Selector.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Order != null)
+            if (Order != null)
             {
-                hash = hash * 59 + this.Order.GetHashCode();
+                hash = hash * 59 + Order.GetHashCode();
             }
 
             return hash;

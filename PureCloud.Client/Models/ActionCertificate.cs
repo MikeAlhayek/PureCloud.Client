@@ -160,7 +160,7 @@ public partial class ActionCertificate : IEquatable<ActionCertificate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionCertificate);
+        return Equals(obj as ActionCertificate);
     }
 
     /// <summary>
@@ -178,24 +178,24 @@ public partial class ActionCertificate : IEquatable<ActionCertificate>
 
         return true &&
             (
-                this.SigningAuthority == other.SigningAuthority ||
-                this.SigningAuthority != null &&
-                this.SigningAuthority.Equals(other.SigningAuthority)
+                SigningAuthority == other.SigningAuthority ||
+                SigningAuthority != null &&
+                SigningAuthority.Equals(other.SigningAuthority)
             ) &&
             (
-                this.Certificate == other.Certificate ||
-                this.Certificate != null &&
-                this.Certificate.Equals(other.Certificate)
+                Certificate == other.Certificate ||
+                Certificate != null &&
+                Certificate.Equals(other.Certificate)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -210,24 +210,24 @@ public partial class ActionCertificate : IEquatable<ActionCertificate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SigningAuthority != null)
+            if (SigningAuthority != null)
             {
-                hash = hash * 59 + this.SigningAuthority.GetHashCode();
+                hash = hash * 59 + SigningAuthority.GetHashCode();
             }
 
-            if (this.Certificate != null)
+            if (Certificate != null)
             {
-                hash = hash * 59 + this.Certificate.GetHashCode();
+                hash = hash * 59 + Certificate.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

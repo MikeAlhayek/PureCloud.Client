@@ -183,7 +183,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuTimeOffLimitValueRange);
+        return Equals(obj as BuTimeOffLimitValueRange);
     }
 
     /// <summary>
@@ -201,54 +201,54 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.TimeOffLimit == other.TimeOffLimit ||
-                this.TimeOffLimit != null &&
-                this.TimeOffLimit.Equals(other.TimeOffLimit)
+                TimeOffLimit == other.TimeOffLimit ||
+                TimeOffLimit != null &&
+                TimeOffLimit.Equals(other.TimeOffLimit)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             ) &&
             (
-                this.LimitMinutesPerInterval == other.LimitMinutesPerInterval ||
-                this.LimitMinutesPerInterval != null &&
-                this.LimitMinutesPerInterval.SequenceEqual(other.LimitMinutesPerInterval)
+                LimitMinutesPerInterval == other.LimitMinutesPerInterval ||
+                LimitMinutesPerInterval != null &&
+                LimitMinutesPerInterval.SequenceEqual(other.LimitMinutesPerInterval)
             ) &&
             (
-                this.AllocatedMinutesPerInterval == other.AllocatedMinutesPerInterval ||
-                this.AllocatedMinutesPerInterval != null &&
-                this.AllocatedMinutesPerInterval.SequenceEqual(other.AllocatedMinutesPerInterval)
+                AllocatedMinutesPerInterval == other.AllocatedMinutesPerInterval ||
+                AllocatedMinutesPerInterval != null &&
+                AllocatedMinutesPerInterval.SequenceEqual(other.AllocatedMinutesPerInterval)
             ) &&
             (
-                this.WaitlistedMinutesPerInterval == other.WaitlistedMinutesPerInterval ||
-                this.WaitlistedMinutesPerInterval != null &&
-                this.WaitlistedMinutesPerInterval.SequenceEqual(other.WaitlistedMinutesPerInterval)
+                WaitlistedMinutesPerInterval == other.WaitlistedMinutesPerInterval ||
+                WaitlistedMinutesPerInterval != null &&
+                WaitlistedMinutesPerInterval.SequenceEqual(other.WaitlistedMinutesPerInterval)
             ) &&
             (
-                this.WaitlistedRequestsPerInterval == other.WaitlistedRequestsPerInterval ||
-                this.WaitlistedRequestsPerInterval != null &&
-                this.WaitlistedRequestsPerInterval.SequenceEqual(other.WaitlistedRequestsPerInterval)
+                WaitlistedRequestsPerInterval == other.WaitlistedRequestsPerInterval ||
+                WaitlistedRequestsPerInterval != null &&
+                WaitlistedRequestsPerInterval.SequenceEqual(other.WaitlistedRequestsPerInterval)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -263,54 +263,54 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.TimeOffLimit != null)
+            if (TimeOffLimit != null)
             {
-                hash = hash * 59 + this.TimeOffLimit.GetHashCode();
+                hash = hash * 59 + TimeOffLimit.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
-            if (this.LimitMinutesPerInterval != null)
+            if (LimitMinutesPerInterval != null)
             {
-                hash = hash * 59 + this.LimitMinutesPerInterval.GetHashCode();
+                hash = hash * 59 + LimitMinutesPerInterval.GetHashCode();
             }
 
-            if (this.AllocatedMinutesPerInterval != null)
+            if (AllocatedMinutesPerInterval != null)
             {
-                hash = hash * 59 + this.AllocatedMinutesPerInterval.GetHashCode();
+                hash = hash * 59 + AllocatedMinutesPerInterval.GetHashCode();
             }
 
-            if (this.WaitlistedMinutesPerInterval != null)
+            if (WaitlistedMinutesPerInterval != null)
             {
-                hash = hash * 59 + this.WaitlistedMinutesPerInterval.GetHashCode();
+                hash = hash * 59 + WaitlistedMinutesPerInterval.GetHashCode();
             }
 
-            if (this.WaitlistedRequestsPerInterval != null)
+            if (WaitlistedRequestsPerInterval != null)
             {
-                hash = hash * 59 + this.WaitlistedRequestsPerInterval.GetHashCode();
+                hash = hash * 59 + WaitlistedRequestsPerInterval.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

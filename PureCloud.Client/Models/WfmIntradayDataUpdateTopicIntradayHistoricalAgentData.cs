@@ -63,7 +63,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalAgentData : IEq
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmIntradayDataUpdateTopicIntradayHistoricalAgentData);
+        return Equals(obj as WfmIntradayDataUpdateTopicIntradayHistoricalAgentData);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalAgentData : IEq
 
         return true &&
             (
-                this.OnQueueTimeSeconds == other.OnQueueTimeSeconds ||
-                this.OnQueueTimeSeconds != null &&
-                this.OnQueueTimeSeconds.Equals(other.OnQueueTimeSeconds)
+                OnQueueTimeSeconds == other.OnQueueTimeSeconds ||
+                OnQueueTimeSeconds != null &&
+                OnQueueTimeSeconds.Equals(other.OnQueueTimeSeconds)
             ) &&
             (
-                this.InteractingTimeSeconds == other.InteractingTimeSeconds ||
-                this.InteractingTimeSeconds != null &&
-                this.InteractingTimeSeconds.Equals(other.InteractingTimeSeconds)
+                InteractingTimeSeconds == other.InteractingTimeSeconds ||
+                InteractingTimeSeconds != null &&
+                InteractingTimeSeconds.Equals(other.InteractingTimeSeconds)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class WfmIntradayDataUpdateTopicIntradayHistoricalAgentData : IEq
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OnQueueTimeSeconds != null)
+            if (OnQueueTimeSeconds != null)
             {
-                hash = hash * 59 + this.OnQueueTimeSeconds.GetHashCode();
+                hash = hash * 59 + OnQueueTimeSeconds.GetHashCode();
             }
 
-            if (this.InteractingTimeSeconds != null)
+            if (InteractingTimeSeconds != null)
             {
-                hash = hash * 59 + this.InteractingTimeSeconds.GetHashCode();
+                hash = hash * 59 + InteractingTimeSeconds.GetHashCode();
             }
 
             return hash;

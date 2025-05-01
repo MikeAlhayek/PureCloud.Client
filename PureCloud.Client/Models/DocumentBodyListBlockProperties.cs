@@ -159,7 +159,7 @@ public partial class DocumentBodyListBlockProperties : IEquatable<DocumentBodyLi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyListBlockProperties);
+        return Equals(obj as DocumentBodyListBlockProperties);
     }
 
     /// <summary>
@@ -177,14 +177,14 @@ public partial class DocumentBodyListBlockProperties : IEquatable<DocumentBodyLi
 
         return true &&
             (
-                this.UnorderedType == other.UnorderedType ||
-                this.UnorderedType != null &&
-                this.UnorderedType.Equals(other.UnorderedType)
+                UnorderedType == other.UnorderedType ||
+                UnorderedType != null &&
+                UnorderedType.Equals(other.UnorderedType)
             ) &&
             (
-                this.OrderedType == other.OrderedType ||
-                this.OrderedType != null &&
-                this.OrderedType.Equals(other.OrderedType)
+                OrderedType == other.OrderedType ||
+                OrderedType != null &&
+                OrderedType.Equals(other.OrderedType)
             );
     }
 
@@ -199,14 +199,14 @@ public partial class DocumentBodyListBlockProperties : IEquatable<DocumentBodyLi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UnorderedType != null)
+            if (UnorderedType != null)
             {
-                hash = hash * 59 + this.UnorderedType.GetHashCode();
+                hash = hash * 59 + UnorderedType.GetHashCode();
             }
 
-            if (this.OrderedType != null)
+            if (OrderedType != null)
             {
-                hash = hash * 59 + this.OrderedType.GetHashCode();
+                hash = hash * 59 + OrderedType.GetHashCode();
             }
 
             return hash;

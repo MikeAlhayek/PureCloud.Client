@@ -35,7 +35,7 @@ public class ApiException : Exception
     /// <param name="message">Error message.</param>
     public ApiException(int errorCode, string message) : base(message)
     {
-        this.ErrorCode = errorCode;
+        ErrorCode = errorCode;
     }
 
     /// <summary>
@@ -47,8 +47,8 @@ public class ApiException : Exception
     /// <param name="headers">HTTP headers.</param>
     public ApiException(int errorCode, string message, dynamic errorContent = null, IDictionary<string, string> headers = null) : base(message)
     {
-        this.ErrorCode = errorCode;
-        this.ErrorContent = errorContent;
-        this.Headers = headers;
+        ErrorCode = errorCode;
+        ErrorContent = errorContent;
+        Headers = headers;
     }
 }

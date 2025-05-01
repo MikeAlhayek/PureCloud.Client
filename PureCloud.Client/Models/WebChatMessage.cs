@@ -182,7 +182,7 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebChatMessage);
+        return Equals(obj as WebChatMessage);
     }
 
     /// <summary>
@@ -200,44 +200,44 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.Sender == other.Sender ||
-                this.Sender != null &&
-                this.Sender.Equals(other.Sender)
+                Sender == other.Sender ||
+                Sender != null &&
+                Sender.Equals(other.Sender)
             ) &&
             (
-                this.Body == other.Body ||
-                this.Body != null &&
-                this.Body.Equals(other.Body)
+                Body == other.Body ||
+                Body != null &&
+                Body.Equals(other.Body)
             ) &&
             (
-                this.BodyType == other.BodyType ||
-                this.BodyType != null &&
-                this.BodyType.Equals(other.BodyType)
+                BodyType == other.BodyType ||
+                BodyType != null &&
+                BodyType.Equals(other.BodyType)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -252,44 +252,44 @@ public partial class WebChatMessage : IEquatable<WebChatMessage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.Sender != null)
+            if (Sender != null)
             {
-                hash = hash * 59 + this.Sender.GetHashCode();
+                hash = hash * 59 + Sender.GetHashCode();
             }
 
-            if (this.Body != null)
+            if (Body != null)
             {
-                hash = hash * 59 + this.Body.GetHashCode();
+                hash = hash * 59 + Body.GetHashCode();
             }
 
-            if (this.BodyType != null)
+            if (BodyType != null)
             {
-                hash = hash * 59 + this.BodyType.GetHashCode();
+                hash = hash * 59 + BodyType.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

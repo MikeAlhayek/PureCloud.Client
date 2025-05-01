@@ -218,7 +218,7 @@ public partial class ChatItem : IEquatable<ChatItem>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatItem);
+        return Equals(obj as ChatItem);
     }
 
     /// <summary>
@@ -236,59 +236,59 @@ public partial class ChatItem : IEquatable<ChatItem>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Open == other.Open ||
-                this.Open != null &&
-                this.Open.Equals(other.Open)
+                Open == other.Open ||
+                Open != null &&
+                Open.Equals(other.Open)
             ) &&
             (
-                this.Favorite == other.Favorite ||
-                this.Favorite != null &&
-                this.Favorite.Equals(other.Favorite)
+                Favorite == other.Favorite ||
+                Favorite != null &&
+                Favorite.Equals(other.Favorite)
             ) &&
             (
-                this.Images == other.Images ||
-                this.Images != null &&
-                this.Images.SequenceEqual(other.Images)
+                Images == other.Images ||
+                Images != null &&
+                Images.SequenceEqual(other.Images)
             ) &&
             (
-                this.DateLastMessage == other.DateLastMessage ||
-                this.DateLastMessage != null &&
-                this.DateLastMessage.Equals(other.DateLastMessage)
+                DateLastMessage == other.DateLastMessage ||
+                DateLastMessage != null &&
+                DateLastMessage.Equals(other.DateLastMessage)
             ) &&
             (
-                this.DateClosed == other.DateClosed ||
-                this.DateClosed != null &&
-                this.DateClosed.Equals(other.DateClosed)
+                DateClosed == other.DateClosed ||
+                DateClosed != null &&
+                DateClosed.Equals(other.DateClosed)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Room == other.Room ||
-                this.Room != null &&
-                this.Room.Equals(other.Room)
+                Room == other.Room ||
+                Room != null &&
+                Room.Equals(other.Room)
             ) &&
             (
-                this.ChatType == other.ChatType ||
-                this.ChatType != null &&
-                this.ChatType.Equals(other.ChatType)
+                ChatType == other.ChatType ||
+                ChatType != null &&
+                ChatType.Equals(other.ChatType)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -303,59 +303,59 @@ public partial class ChatItem : IEquatable<ChatItem>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Open != null)
+            if (Open != null)
             {
-                hash = hash * 59 + this.Open.GetHashCode();
+                hash = hash * 59 + Open.GetHashCode();
             }
 
-            if (this.Favorite != null)
+            if (Favorite != null)
             {
-                hash = hash * 59 + this.Favorite.GetHashCode();
+                hash = hash * 59 + Favorite.GetHashCode();
             }
 
-            if (this.Images != null)
+            if (Images != null)
             {
-                hash = hash * 59 + this.Images.GetHashCode();
+                hash = hash * 59 + Images.GetHashCode();
             }
 
-            if (this.DateLastMessage != null)
+            if (DateLastMessage != null)
             {
-                hash = hash * 59 + this.DateLastMessage.GetHashCode();
+                hash = hash * 59 + DateLastMessage.GetHashCode();
             }
 
-            if (this.DateClosed != null)
+            if (DateClosed != null)
             {
-                hash = hash * 59 + this.DateClosed.GetHashCode();
+                hash = hash * 59 + DateClosed.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Room != null)
+            if (Room != null)
             {
-                hash = hash * 59 + this.Room.GetHashCode();
+                hash = hash * 59 + Room.GetHashCode();
             }
 
-            if (this.ChatType != null)
+            if (ChatType != null)
             {
-                hash = hash * 59 + this.ChatType.GetHashCode();
+                hash = hash * 59 + ChatType.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

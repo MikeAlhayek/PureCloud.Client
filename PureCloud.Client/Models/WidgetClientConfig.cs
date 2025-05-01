@@ -85,7 +85,7 @@ public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WidgetClientConfig);
+        return Equals(obj as WidgetClientConfig);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
 
         return true &&
             (
-                this.V1 == other.V1 ||
-                this.V1 != null &&
-                this.V1.Equals(other.V1)
+                V1 == other.V1 ||
+                V1 != null &&
+                V1.Equals(other.V1)
             ) &&
             (
-                this.V2 == other.V2 ||
-                this.V2 != null &&
-                this.V2.Equals(other.V2)
+                V2 == other.V2 ||
+                V2 != null &&
+                V2.Equals(other.V2)
             ) &&
             (
-                this.V1Http == other.V1Http ||
-                this.V1Http != null &&
-                this.V1Http.Equals(other.V1Http)
+                V1Http == other.V1Http ||
+                V1Http != null &&
+                V1Http.Equals(other.V1Http)
             ) &&
             (
-                this.ThirdParty == other.ThirdParty ||
-                this.ThirdParty != null &&
-                this.ThirdParty.Equals(other.ThirdParty)
+                ThirdParty == other.ThirdParty ||
+                ThirdParty != null &&
+                ThirdParty.Equals(other.ThirdParty)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.V1 != null)
+            if (V1 != null)
             {
-                hash = hash * 59 + this.V1.GetHashCode();
+                hash = hash * 59 + V1.GetHashCode();
             }
 
-            if (this.V2 != null)
+            if (V2 != null)
             {
-                hash = hash * 59 + this.V2.GetHashCode();
+                hash = hash * 59 + V2.GetHashCode();
             }
 
-            if (this.V1Http != null)
+            if (V1Http != null)
             {
-                hash = hash * 59 + this.V1Http.GetHashCode();
+                hash = hash * 59 + V1Http.GetHashCode();
             }
 
-            if (this.ThirdParty != null)
+            if (ThirdParty != null)
             {
-                hash = hash * 59 + this.ThirdParty.GetHashCode();
+                hash = hash * 59 + ThirdParty.GetHashCode();
             }
 
             return hash;

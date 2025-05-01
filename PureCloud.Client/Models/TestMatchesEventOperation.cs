@@ -89,7 +89,7 @@ public partial class TestMatchesEventOperation : IEquatable<TestMatchesEventOper
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TestMatchesEventOperation);
+        return Equals(obj as TestMatchesEventOperation);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class TestMatchesEventOperation : IEquatable<TestMatchesEventOper
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Step == other.Step ||
-                this.Step != null &&
-                this.Step.Equals(other.Step)
+                Step == other.Step ||
+                Step != null &&
+                Step.Equals(other.Step)
             ) &&
             (
-                this.MatchedTriggers == other.MatchedTriggers ||
-                this.MatchedTriggers != null &&
-                this.MatchedTriggers.SequenceEqual(other.MatchedTriggers)
+                MatchedTriggers == other.MatchedTriggers ||
+                MatchedTriggers != null &&
+                MatchedTriggers.SequenceEqual(other.MatchedTriggers)
             ) &&
             (
-                this.UnmatchedTriggers == other.UnmatchedTriggers ||
-                this.UnmatchedTriggers != null &&
-                this.UnmatchedTriggers.SequenceEqual(other.UnmatchedTriggers)
+                UnmatchedTriggers == other.UnmatchedTriggers ||
+                UnmatchedTriggers != null &&
+                UnmatchedTriggers.SequenceEqual(other.UnmatchedTriggers)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class TestMatchesEventOperation : IEquatable<TestMatchesEventOper
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Step != null)
+            if (Step != null)
             {
-                hash = hash * 59 + this.Step.GetHashCode();
+                hash = hash * 59 + Step.GetHashCode();
             }
 
-            if (this.MatchedTriggers != null)
+            if (MatchedTriggers != null)
             {
-                hash = hash * 59 + this.MatchedTriggers.GetHashCode();
+                hash = hash * 59 + MatchedTriggers.GetHashCode();
             }
 
-            if (this.UnmatchedTriggers != null)
+            if (UnmatchedTriggers != null)
             {
-                hash = hash * 59 + this.UnmatchedTriggers.GetHashCode();
+                hash = hash * 59 + UnmatchedTriggers.GetHashCode();
             }
 
             return hash;

@@ -297,7 +297,7 @@ public partial class Objective : IEquatable<Objective>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Objective);
+        return Equals(obj as Objective);
     }
 
     /// <summary>
@@ -315,59 +315,59 @@ public partial class Objective : IEquatable<Objective>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.TemplateId == other.TemplateId ||
-                this.TemplateId != null &&
-                this.TemplateId.Equals(other.TemplateId)
+                TemplateId == other.TemplateId ||
+                TemplateId != null &&
+                TemplateId.Equals(other.TemplateId)
             ) &&
             (
-                this.Zones == other.Zones ||
-                this.Zones != null &&
-                this.Zones.SequenceEqual(other.Zones)
+                Zones == other.Zones ||
+                Zones != null &&
+                Zones.SequenceEqual(other.Zones)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.MediaTypes == other.MediaTypes ||
-                this.MediaTypes != null &&
-                this.MediaTypes.SequenceEqual(other.MediaTypes)
+                MediaTypes == other.MediaTypes ||
+                MediaTypes != null &&
+                MediaTypes.SequenceEqual(other.MediaTypes)
             ) &&
             (
-                this.Queues == other.Queues ||
-                this.Queues != null &&
-                this.Queues.SequenceEqual(other.Queues)
+                Queues == other.Queues ||
+                Queues != null &&
+                Queues.SequenceEqual(other.Queues)
             ) &&
             (
-                this.Topics == other.Topics ||
-                this.Topics != null &&
-                this.Topics.SequenceEqual(other.Topics)
+                Topics == other.Topics ||
+                Topics != null &&
+                Topics.SequenceEqual(other.Topics)
             ) &&
             (
-                this.TopicIdsFilterType == other.TopicIdsFilterType ||
-                this.TopicIdsFilterType != null &&
-                this.TopicIdsFilterType.Equals(other.TopicIdsFilterType)
+                TopicIdsFilterType == other.TopicIdsFilterType ||
+                TopicIdsFilterType != null &&
+                TopicIdsFilterType.Equals(other.TopicIdsFilterType)
             ) &&
             (
-                this.EvaluationFormContextIds == other.EvaluationFormContextIds ||
-                this.EvaluationFormContextIds != null &&
-                this.EvaluationFormContextIds.SequenceEqual(other.EvaluationFormContextIds)
+                EvaluationFormContextIds == other.EvaluationFormContextIds ||
+                EvaluationFormContextIds != null &&
+                EvaluationFormContextIds.SequenceEqual(other.EvaluationFormContextIds)
             ) &&
             (
-                this.InitialDirection == other.InitialDirection ||
-                this.InitialDirection != null &&
-                this.InitialDirection.Equals(other.InitialDirection)
+                InitialDirection == other.InitialDirection ||
+                InitialDirection != null &&
+                InitialDirection.Equals(other.InitialDirection)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             );
     }
 
@@ -382,59 +382,59 @@ public partial class Objective : IEquatable<Objective>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.TemplateId != null)
+            if (TemplateId != null)
             {
-                hash = hash * 59 + this.TemplateId.GetHashCode();
+                hash = hash * 59 + TemplateId.GetHashCode();
             }
 
-            if (this.Zones != null)
+            if (Zones != null)
             {
-                hash = hash * 59 + this.Zones.GetHashCode();
+                hash = hash * 59 + Zones.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.MediaTypes != null)
+            if (MediaTypes != null)
             {
-                hash = hash * 59 + this.MediaTypes.GetHashCode();
+                hash = hash * 59 + MediaTypes.GetHashCode();
             }
 
-            if (this.Queues != null)
+            if (Queues != null)
             {
-                hash = hash * 59 + this.Queues.GetHashCode();
+                hash = hash * 59 + Queues.GetHashCode();
             }
 
-            if (this.Topics != null)
+            if (Topics != null)
             {
-                hash = hash * 59 + this.Topics.GetHashCode();
+                hash = hash * 59 + Topics.GetHashCode();
             }
 
-            if (this.TopicIdsFilterType != null)
+            if (TopicIdsFilterType != null)
             {
-                hash = hash * 59 + this.TopicIdsFilterType.GetHashCode();
+                hash = hash * 59 + TopicIdsFilterType.GetHashCode();
             }
 
-            if (this.EvaluationFormContextIds != null)
+            if (EvaluationFormContextIds != null)
             {
-                hash = hash * 59 + this.EvaluationFormContextIds.GetHashCode();
+                hash = hash * 59 + EvaluationFormContextIds.GetHashCode();
             }
 
-            if (this.InitialDirection != null)
+            if (InitialDirection != null)
             {
-                hash = hash * 59 + this.InitialDirection.GetHashCode();
+                hash = hash * 59 + InitialDirection.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
             return hash;

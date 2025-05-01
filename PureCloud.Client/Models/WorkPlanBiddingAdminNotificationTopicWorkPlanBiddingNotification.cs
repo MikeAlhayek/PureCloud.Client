@@ -313,7 +313,7 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification);
+        return Equals(obj as WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification);
     }
 
     /// <summary>
@@ -331,49 +331,49 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.BuId == other.BuId ||
-                this.BuId != null &&
-                this.BuId.Equals(other.BuId)
+                BuId == other.BuId ||
+                BuId != null &&
+                BuId.Equals(other.BuId)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.BidWindowStartDate == other.BidWindowStartDate ||
-                this.BidWindowStartDate != null &&
-                this.BidWindowStartDate.Equals(other.BidWindowStartDate)
+                BidWindowStartDate == other.BidWindowStartDate ||
+                BidWindowStartDate != null &&
+                BidWindowStartDate.Equals(other.BidWindowStartDate)
             ) &&
             (
-                this.BidWindowEndDate == other.BidWindowEndDate ||
-                this.BidWindowEndDate != null &&
-                this.BidWindowEndDate.Equals(other.BidWindowEndDate)
+                BidWindowEndDate == other.BidWindowEndDate ||
+                BidWindowEndDate != null &&
+                BidWindowEndDate.Equals(other.BidWindowEndDate)
             ) &&
             (
-                this.EffectiveDate == other.EffectiveDate ||
-                this.EffectiveDate != null &&
-                this.EffectiveDate.Equals(other.EffectiveDate)
+                EffectiveDate == other.EffectiveDate ||
+                EffectiveDate != null &&
+                EffectiveDate.Equals(other.EffectiveDate)
             ) &&
             (
-                this.AgentRankingType == other.AgentRankingType ||
-                this.AgentRankingType != null &&
-                this.AgentRankingType.Equals(other.AgentRankingType)
+                AgentRankingType == other.AgentRankingType ||
+                AgentRankingType != null &&
+                AgentRankingType.Equals(other.AgentRankingType)
             ) &&
             (
-                this.RankingTiebreakerType == other.RankingTiebreakerType ||
-                this.RankingTiebreakerType != null &&
-                this.RankingTiebreakerType.Equals(other.RankingTiebreakerType)
+                RankingTiebreakerType == other.RankingTiebreakerType ||
+                RankingTiebreakerType != null &&
+                RankingTiebreakerType.Equals(other.RankingTiebreakerType)
             ) &&
             (
-                this.WorkPlanFieldsVisibleToAgents == other.WorkPlanFieldsVisibleToAgents ||
-                this.WorkPlanFieldsVisibleToAgents != null &&
-                this.WorkPlanFieldsVisibleToAgents.SequenceEqual(other.WorkPlanFieldsVisibleToAgents)
+                WorkPlanFieldsVisibleToAgents == other.WorkPlanFieldsVisibleToAgents ||
+                WorkPlanFieldsVisibleToAgents != null &&
+                WorkPlanFieldsVisibleToAgents.SequenceEqual(other.WorkPlanFieldsVisibleToAgents)
             );
     }
 
@@ -388,49 +388,49 @@ public partial class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotific
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.BuId != null)
+            if (BuId != null)
             {
-                hash = hash * 59 + this.BuId.GetHashCode();
+                hash = hash * 59 + BuId.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.BidWindowStartDate != null)
+            if (BidWindowStartDate != null)
             {
-                hash = hash * 59 + this.BidWindowStartDate.GetHashCode();
+                hash = hash * 59 + BidWindowStartDate.GetHashCode();
             }
 
-            if (this.BidWindowEndDate != null)
+            if (BidWindowEndDate != null)
             {
-                hash = hash * 59 + this.BidWindowEndDate.GetHashCode();
+                hash = hash * 59 + BidWindowEndDate.GetHashCode();
             }
 
-            if (this.EffectiveDate != null)
+            if (EffectiveDate != null)
             {
-                hash = hash * 59 + this.EffectiveDate.GetHashCode();
+                hash = hash * 59 + EffectiveDate.GetHashCode();
             }
 
-            if (this.AgentRankingType != null)
+            if (AgentRankingType != null)
             {
-                hash = hash * 59 + this.AgentRankingType.GetHashCode();
+                hash = hash * 59 + AgentRankingType.GetHashCode();
             }
 
-            if (this.RankingTiebreakerType != null)
+            if (RankingTiebreakerType != null)
             {
-                hash = hash * 59 + this.RankingTiebreakerType.GetHashCode();
+                hash = hash * 59 + RankingTiebreakerType.GetHashCode();
             }
 
-            if (this.WorkPlanFieldsVisibleToAgents != null)
+            if (WorkPlanFieldsVisibleToAgents != null)
             {
-                hash = hash * 59 + this.WorkPlanFieldsVisibleToAgents.GetHashCode();
+                hash = hash * 59 + WorkPlanFieldsVisibleToAgents.GetHashCode();
             }
 
             return hash;

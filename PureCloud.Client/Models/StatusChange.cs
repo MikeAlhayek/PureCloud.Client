@@ -793,7 +793,7 @@ public partial class StatusChange : IEquatable<StatusChange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as StatusChange);
+        return Equals(obj as StatusChange);
     }
 
     /// <summary>
@@ -811,34 +811,34 @@ public partial class StatusChange : IEquatable<StatusChange>
 
         return true &&
             (
-                this.DateStatusChanged == other.DateStatusChanged ||
-                this.DateStatusChanged != null &&
-                this.DateStatusChanged.Equals(other.DateStatusChanged)
+                DateStatusChanged == other.DateStatusChanged ||
+                DateStatusChanged != null &&
+                DateStatusChanged.Equals(other.DateStatusChanged)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.PreviousStatus == other.PreviousStatus ||
-                this.PreviousStatus != null &&
-                this.PreviousStatus.Equals(other.PreviousStatus)
+                PreviousStatus == other.PreviousStatus ||
+                PreviousStatus != null &&
+                PreviousStatus.Equals(other.PreviousStatus)
             ) &&
             (
-                this.Namespace == other.Namespace ||
-                this.Namespace != null &&
-                this.Namespace.Equals(other.Namespace)
+                Namespace == other.Namespace ||
+                Namespace != null &&
+                Namespace.Equals(other.Namespace)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.RejectReason == other.RejectReason ||
-                this.RejectReason != null &&
-                this.RejectReason.Equals(other.RejectReason)
+                RejectReason == other.RejectReason ||
+                RejectReason != null &&
+                RejectReason.Equals(other.RejectReason)
             );
     }
 
@@ -853,34 +853,34 @@ public partial class StatusChange : IEquatable<StatusChange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateStatusChanged != null)
+            if (DateStatusChanged != null)
             {
-                hash = hash * 59 + this.DateStatusChanged.GetHashCode();
+                hash = hash * 59 + DateStatusChanged.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.PreviousStatus != null)
+            if (PreviousStatus != null)
             {
-                hash = hash * 59 + this.PreviousStatus.GetHashCode();
+                hash = hash * 59 + PreviousStatus.GetHashCode();
             }
 
-            if (this.Namespace != null)
+            if (Namespace != null)
             {
-                hash = hash * 59 + this.Namespace.GetHashCode();
+                hash = hash * 59 + Namespace.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.RejectReason != null)
+            if (RejectReason != null)
             {
-                hash = hash * 59 + this.RejectReason.GetHashCode();
+                hash = hash * 59 + RejectReason.GetHashCode();
             }
 
             return hash;

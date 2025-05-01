@@ -169,7 +169,7 @@ public partial class Trigger : IEquatable<Trigger>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Trigger);
+        return Equals(obj as Trigger);
     }
 
     /// <summary>
@@ -187,59 +187,59 @@ public partial class Trigger : IEquatable<Trigger>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.TopicName == other.TopicName ||
-                this.TopicName != null &&
-                this.TopicName.Equals(other.TopicName)
+                TopicName == other.TopicName ||
+                TopicName != null &&
+                TopicName.Equals(other.TopicName)
             ) &&
             (
-                this.Target == other.Target ||
-                this.Target != null &&
-                this.Target.Equals(other.Target)
+                Target == other.Target ||
+                Target != null &&
+                Target.Equals(other.Target)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.MatchCriteria == other.MatchCriteria ||
-                this.MatchCriteria != null &&
-                this.MatchCriteria.SequenceEqual(other.MatchCriteria)
+                MatchCriteria == other.MatchCriteria ||
+                MatchCriteria != null &&
+                MatchCriteria.SequenceEqual(other.MatchCriteria)
             ) &&
             (
-                this.EventTTLSeconds == other.EventTTLSeconds ||
-                this.EventTTLSeconds != null &&
-                this.EventTTLSeconds.Equals(other.EventTTLSeconds)
+                EventTTLSeconds == other.EventTTLSeconds ||
+                EventTTLSeconds != null &&
+                EventTTLSeconds.Equals(other.EventTTLSeconds)
             ) &&
             (
-                this.DelayBySeconds == other.DelayBySeconds ||
-                this.DelayBySeconds != null &&
-                this.DelayBySeconds.Equals(other.DelayBySeconds)
+                DelayBySeconds == other.DelayBySeconds ||
+                DelayBySeconds != null &&
+                DelayBySeconds.Equals(other.DelayBySeconds)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -254,59 +254,59 @@ public partial class Trigger : IEquatable<Trigger>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.TopicName != null)
+            if (TopicName != null)
             {
-                hash = hash * 59 + this.TopicName.GetHashCode();
+                hash = hash * 59 + TopicName.GetHashCode();
             }
 
-            if (this.Target != null)
+            if (Target != null)
             {
-                hash = hash * 59 + this.Target.GetHashCode();
+                hash = hash * 59 + Target.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.MatchCriteria != null)
+            if (MatchCriteria != null)
             {
-                hash = hash * 59 + this.MatchCriteria.GetHashCode();
+                hash = hash * 59 + MatchCriteria.GetHashCode();
             }
 
-            if (this.EventTTLSeconds != null)
+            if (EventTTLSeconds != null)
             {
-                hash = hash * 59 + this.EventTTLSeconds.GetHashCode();
+                hash = hash * 59 + EventTTLSeconds.GetHashCode();
             }
 
-            if (this.DelayBySeconds != null)
+            if (DelayBySeconds != null)
             {
-                hash = hash * 59 + this.DelayBySeconds.GetHashCode();
+                hash = hash * 59 + DelayBySeconds.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

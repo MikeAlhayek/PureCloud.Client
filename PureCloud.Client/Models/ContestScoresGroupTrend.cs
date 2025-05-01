@@ -77,7 +77,7 @@ public partial class ContestScoresGroupTrend : IEquatable<ContestScoresGroupTren
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestScoresGroupTrend);
+        return Equals(obj as ContestScoresGroupTrend);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ContestScoresGroupTrend : IEquatable<ContestScoresGroupTren
 
         return true &&
             (
-                this.DateWorkday == other.DateWorkday ||
-                this.DateWorkday != null &&
-                this.DateWorkday.Equals(other.DateWorkday)
+                DateWorkday == other.DateWorkday ||
+                DateWorkday != null &&
+                DateWorkday.Equals(other.DateWorkday)
             ) &&
             (
-                this.ContestScore == other.ContestScore ||
-                this.ContestScore != null &&
-                this.ContestScore.Equals(other.ContestScore)
+                ContestScore == other.ContestScore ||
+                ContestScore != null &&
+                ContestScore.Equals(other.ContestScore)
             ) &&
             (
-                this.MetricScores == other.MetricScores ||
-                this.MetricScores != null &&
-                this.MetricScores.SequenceEqual(other.MetricScores)
+                MetricScores == other.MetricScores ||
+                MetricScores != null &&
+                MetricScores.SequenceEqual(other.MetricScores)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ContestScoresGroupTrend : IEquatable<ContestScoresGroupTren
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateWorkday != null)
+            if (DateWorkday != null)
             {
-                hash = hash * 59 + this.DateWorkday.GetHashCode();
+                hash = hash * 59 + DateWorkday.GetHashCode();
             }
 
-            if (this.ContestScore != null)
+            if (ContestScore != null)
             {
-                hash = hash * 59 + this.ContestScore.GetHashCode();
+                hash = hash * 59 + ContestScore.GetHashCode();
             }
 
-            if (this.MetricScores != null)
+            if (MetricScores != null)
             {
-                hash = hash * 59 + this.MetricScores.GetHashCode();
+                hash = hash * 59 + MetricScores.GetHashCode();
             }
 
             return hash;

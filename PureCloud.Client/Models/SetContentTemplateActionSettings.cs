@@ -71,7 +71,7 @@ public partial class SetContentTemplateActionSettings : IEquatable<SetContentTem
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SetContentTemplateActionSettings);
+        return Equals(obj as SetContentTemplateActionSettings);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class SetContentTemplateActionSettings : IEquatable<SetContentTem
 
         return true &&
             (
-                this.SmsContentTemplateId == other.SmsContentTemplateId ||
-                this.SmsContentTemplateId != null &&
-                this.SmsContentTemplateId.Equals(other.SmsContentTemplateId)
+                SmsContentTemplateId == other.SmsContentTemplateId ||
+                SmsContentTemplateId != null &&
+                SmsContentTemplateId.Equals(other.SmsContentTemplateId)
             ) &&
             (
-                this.EmailContentTemplateId == other.EmailContentTemplateId ||
-                this.EmailContentTemplateId != null &&
-                this.EmailContentTemplateId.Equals(other.EmailContentTemplateId)
+                EmailContentTemplateId == other.EmailContentTemplateId ||
+                EmailContentTemplateId != null &&
+                EmailContentTemplateId.Equals(other.EmailContentTemplateId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class SetContentTemplateActionSettings : IEquatable<SetContentTem
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SmsContentTemplateId != null)
+            if (SmsContentTemplateId != null)
             {
-                hash = hash * 59 + this.SmsContentTemplateId.GetHashCode();
+                hash = hash * 59 + SmsContentTemplateId.GetHashCode();
             }
 
-            if (this.EmailContentTemplateId != null)
+            if (EmailContentTemplateId != null)
             {
-                hash = hash * 59 + this.EmailContentTemplateId.GetHashCode();
+                hash = hash * 59 + EmailContentTemplateId.GetHashCode();
             }
 
             return hash;

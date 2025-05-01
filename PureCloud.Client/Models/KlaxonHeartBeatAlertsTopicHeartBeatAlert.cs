@@ -202,7 +202,7 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KlaxonHeartBeatAlertsTopicHeartBeatAlert);
+        return Equals(obj as KlaxonHeartBeatAlertsTopicHeartBeatAlert);
     }
 
     /// <summary>
@@ -220,54 +220,54 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.SenderId == other.SenderId ||
-                this.SenderId != null &&
-                this.SenderId.Equals(other.SenderId)
+                SenderId == other.SenderId ||
+                SenderId != null &&
+                SenderId.Equals(other.SenderId)
             ) &&
             (
-                this.HeartBeatTimeoutInMinutes == other.HeartBeatTimeoutInMinutes ||
-                this.HeartBeatTimeoutInMinutes != null &&
-                this.HeartBeatTimeoutInMinutes.Equals(other.HeartBeatTimeoutInMinutes)
+                HeartBeatTimeoutInMinutes == other.HeartBeatTimeoutInMinutes ||
+                HeartBeatTimeoutInMinutes != null &&
+                HeartBeatTimeoutInMinutes.Equals(other.HeartBeatTimeoutInMinutes)
             ) &&
             (
-                this.RuleId == other.RuleId ||
-                this.RuleId != null &&
-                this.RuleId.Equals(other.RuleId)
+                RuleId == other.RuleId ||
+                RuleId != null &&
+                RuleId.Equals(other.RuleId)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.NotificationUsers == other.NotificationUsers ||
-                this.NotificationUsers != null &&
-                this.NotificationUsers.SequenceEqual(other.NotificationUsers)
+                NotificationUsers == other.NotificationUsers ||
+                NotificationUsers != null &&
+                NotificationUsers.SequenceEqual(other.NotificationUsers)
             ) &&
             (
-                this.AlertTypes == other.AlertTypes ||
-                this.AlertTypes != null &&
-                this.AlertTypes.SequenceEqual(other.AlertTypes)
+                AlertTypes == other.AlertTypes ||
+                AlertTypes != null &&
+                AlertTypes.SequenceEqual(other.AlertTypes)
             ) &&
             (
-                this.RuleType == other.RuleType ||
-                this.RuleType != null &&
-                this.RuleType.Equals(other.RuleType)
+                RuleType == other.RuleType ||
+                RuleType != null &&
+                RuleType.Equals(other.RuleType)
             );
     }
 
@@ -282,54 +282,54 @@ public partial class KlaxonHeartBeatAlertsTopicHeartBeatAlert : IEquatable<Klaxo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.SenderId != null)
+            if (SenderId != null)
             {
-                hash = hash * 59 + this.SenderId.GetHashCode();
+                hash = hash * 59 + SenderId.GetHashCode();
             }
 
-            if (this.HeartBeatTimeoutInMinutes != null)
+            if (HeartBeatTimeoutInMinutes != null)
             {
-                hash = hash * 59 + this.HeartBeatTimeoutInMinutes.GetHashCode();
+                hash = hash * 59 + HeartBeatTimeoutInMinutes.GetHashCode();
             }
 
-            if (this.RuleId != null)
+            if (RuleId != null)
             {
-                hash = hash * 59 + this.RuleId.GetHashCode();
+                hash = hash * 59 + RuleId.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.NotificationUsers != null)
+            if (NotificationUsers != null)
             {
-                hash = hash * 59 + this.NotificationUsers.GetHashCode();
+                hash = hash * 59 + NotificationUsers.GetHashCode();
             }
 
-            if (this.AlertTypes != null)
+            if (AlertTypes != null)
             {
-                hash = hash * 59 + this.AlertTypes.GetHashCode();
+                hash = hash * 59 + AlertTypes.GetHashCode();
             }
 
-            if (this.RuleType != null)
+            if (RuleType != null)
             {
-                hash = hash * 59 + this.RuleType.GetHashCode();
+                hash = hash * 59 + RuleType.GetHashCode();
             }
 
             return hash;

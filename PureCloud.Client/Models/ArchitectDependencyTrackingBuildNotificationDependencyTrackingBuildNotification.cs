@@ -86,7 +86,7 @@ public partial class ArchitectDependencyTrackingBuildNotificationDependencyTrack
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification);
+        return Equals(obj as ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification);
     }
 
     /// <summary>
@@ -104,24 +104,24 @@ public partial class ArchitectDependencyTrackingBuildNotificationDependencyTrack
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Client == other.Client ||
-                this.Client != null &&
-                this.Client.Equals(other.Client)
+                Client == other.Client ||
+                Client != null &&
+                Client.Equals(other.Client)
             ) &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             );
     }
 
@@ -136,24 +136,24 @@ public partial class ArchitectDependencyTrackingBuildNotificationDependencyTrack
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Client != null)
+            if (Client != null)
             {
-                hash = hash * 59 + this.Client.GetHashCode();
+                hash = hash * 59 + Client.GetHashCode();
             }
 
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
             return hash;

@@ -41,7 +41,7 @@ public partial class OutboundMessagingMessagingCampaignProgressEventObject : IEq
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingMessagingCampaignProgressEventObject);
+        return Equals(obj as OutboundMessagingMessagingCampaignProgressEventObject);
     }
 
     /// <summary>

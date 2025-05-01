@@ -186,7 +186,7 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewChart);
+        return Equals(obj as JourneyViewChart);
     }
 
     /// <summary>
@@ -204,49 +204,49 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.GroupByTime == other.GroupByTime ||
-                this.GroupByTime != null &&
-                this.GroupByTime.Equals(other.GroupByTime)
+                GroupByTime == other.GroupByTime ||
+                GroupByTime != null &&
+                GroupByTime.Equals(other.GroupByTime)
             ) &&
             (
-                this.GroupByAttributes == other.GroupByAttributes ||
-                this.GroupByAttributes != null &&
-                this.GroupByAttributes.SequenceEqual(other.GroupByAttributes)
+                GroupByAttributes == other.GroupByAttributes ||
+                GroupByAttributes != null &&
+                GroupByAttributes.SequenceEqual(other.GroupByAttributes)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.DisplayAttributes == other.DisplayAttributes ||
-                this.DisplayAttributes != null &&
-                this.DisplayAttributes.Equals(other.DisplayAttributes)
+                DisplayAttributes == other.DisplayAttributes ||
+                DisplayAttributes != null &&
+                DisplayAttributes.Equals(other.DisplayAttributes)
             ) &&
             (
-                this.GroupByMax == other.GroupByMax ||
-                this.GroupByMax != null &&
-                this.GroupByMax.Equals(other.GroupByMax)
+                GroupByMax == other.GroupByMax ||
+                GroupByMax != null &&
+                GroupByMax.Equals(other.GroupByMax)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -261,49 +261,49 @@ public partial class JourneyViewChart : IEquatable<JourneyViewChart>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.GroupByTime != null)
+            if (GroupByTime != null)
             {
-                hash = hash * 59 + this.GroupByTime.GetHashCode();
+                hash = hash * 59 + GroupByTime.GetHashCode();
             }
 
-            if (this.GroupByAttributes != null)
+            if (GroupByAttributes != null)
             {
-                hash = hash * 59 + this.GroupByAttributes.GetHashCode();
+                hash = hash * 59 + GroupByAttributes.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.DisplayAttributes != null)
+            if (DisplayAttributes != null)
             {
-                hash = hash * 59 + this.DisplayAttributes.GetHashCode();
+                hash = hash * 59 + DisplayAttributes.GetHashCode();
             }
 
-            if (this.GroupByMax != null)
+            if (GroupByMax != null)
             {
-                hash = hash * 59 + this.GroupByMax.GetHashCode();
+                hash = hash * 59 + GroupByMax.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

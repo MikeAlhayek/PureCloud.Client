@@ -61,7 +61,7 @@ public partial class FlowHealthVersionInfo : IEquatable<FlowHealthVersionInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowHealthVersionInfo);
+        return Equals(obj as FlowHealthVersionInfo);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class FlowHealthVersionInfo : IEquatable<FlowHealthVersionInfo>
 
         return true &&
             (
-                this.FlowVersion == other.FlowVersion ||
-                this.FlowVersion != null &&
-                this.FlowVersion.Equals(other.FlowVersion)
+                FlowVersion == other.FlowVersion ||
+                FlowVersion != null &&
+                FlowVersion.Equals(other.FlowVersion)
             ) &&
             (
-                this.NluDomain == other.NluDomain ||
-                this.NluDomain != null &&
-                this.NluDomain.Equals(other.NluDomain)
+                NluDomain == other.NluDomain ||
+                NluDomain != null &&
+                NluDomain.Equals(other.NluDomain)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class FlowHealthVersionInfo : IEquatable<FlowHealthVersionInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FlowVersion != null)
+            if (FlowVersion != null)
             {
-                hash = hash * 59 + this.FlowVersion.GetHashCode();
+                hash = hash * 59 + FlowVersion.GetHashCode();
             }
 
-            if (this.NluDomain != null)
+            if (NluDomain != null)
             {
-                hash = hash * 59 + this.NluDomain.GetHashCode();
+                hash = hash * 59 + NluDomain.GetHashCode();
             }
 
             return hash;

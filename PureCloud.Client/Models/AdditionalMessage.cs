@@ -94,7 +94,7 @@ public partial class AdditionalMessage : IEquatable<AdditionalMessage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdditionalMessage);
+        return Equals(obj as AdditionalMessage);
     }
 
     /// <summary>
@@ -112,24 +112,24 @@ public partial class AdditionalMessage : IEquatable<AdditionalMessage>
 
         return true &&
             (
-                this.TextBody == other.TextBody ||
-                this.TextBody != null &&
-                this.TextBody.Equals(other.TextBody)
+                TextBody == other.TextBody ||
+                TextBody != null &&
+                TextBody.Equals(other.TextBody)
             ) &&
             (
-                this.MediaIds == other.MediaIds ||
-                this.MediaIds != null &&
-                this.MediaIds.SequenceEqual(other.MediaIds)
+                MediaIds == other.MediaIds ||
+                MediaIds != null &&
+                MediaIds.SequenceEqual(other.MediaIds)
             ) &&
             (
-                this.StickerIds == other.StickerIds ||
-                this.StickerIds != null &&
-                this.StickerIds.SequenceEqual(other.StickerIds)
+                StickerIds == other.StickerIds ||
+                StickerIds != null &&
+                StickerIds.SequenceEqual(other.StickerIds)
             ) &&
             (
-                this.MessagingTemplate == other.MessagingTemplate ||
-                this.MessagingTemplate != null &&
-                this.MessagingTemplate.Equals(other.MessagingTemplate)
+                MessagingTemplate == other.MessagingTemplate ||
+                MessagingTemplate != null &&
+                MessagingTemplate.Equals(other.MessagingTemplate)
             );
     }
 
@@ -144,24 +144,24 @@ public partial class AdditionalMessage : IEquatable<AdditionalMessage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TextBody != null)
+            if (TextBody != null)
             {
-                hash = hash * 59 + this.TextBody.GetHashCode();
+                hash = hash * 59 + TextBody.GetHashCode();
             }
 
-            if (this.MediaIds != null)
+            if (MediaIds != null)
             {
-                hash = hash * 59 + this.MediaIds.GetHashCode();
+                hash = hash * 59 + MediaIds.GetHashCode();
             }
 
-            if (this.StickerIds != null)
+            if (StickerIds != null)
             {
-                hash = hash * 59 + this.StickerIds.GetHashCode();
+                hash = hash * 59 + StickerIds.GetHashCode();
             }
 
-            if (this.MessagingTemplate != null)
+            if (MessagingTemplate != null)
             {
-                hash = hash * 59 + this.MessagingTemplate.GetHashCode();
+                hash = hash * 59 + MessagingTemplate.GetHashCode();
             }
 
             return hash;

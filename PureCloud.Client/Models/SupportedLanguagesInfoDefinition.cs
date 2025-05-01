@@ -133,7 +133,7 @@ public partial class SupportedLanguagesInfoDefinition : IEquatable<SupportedLang
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportedLanguagesInfoDefinition);
+        return Equals(obj as SupportedLanguagesInfoDefinition);
     }
 
     /// <summary>
@@ -151,29 +151,29 @@ public partial class SupportedLanguagesInfoDefinition : IEquatable<SupportedLang
 
         return true &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.IntentClassification == other.IntentClassification ||
-                this.IntentClassification != null &&
-                this.IntentClassification.Equals(other.IntentClassification)
+                IntentClassification == other.IntentClassification ||
+                IntentClassification != null &&
+                IntentClassification.Equals(other.IntentClassification)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.SupportedEntityTypes == other.SupportedEntityTypes ||
-                this.SupportedEntityTypes != null &&
-                this.SupportedEntityTypes.SequenceEqual(other.SupportedEntityTypes)
+                SupportedEntityTypes == other.SupportedEntityTypes ||
+                SupportedEntityTypes != null &&
+                SupportedEntityTypes.SequenceEqual(other.SupportedEntityTypes)
             ) &&
             (
-                this.SupportedEntityTypeConfiguration == other.SupportedEntityTypeConfiguration ||
-                this.SupportedEntityTypeConfiguration != null &&
-                this.SupportedEntityTypeConfiguration.Equals(other.SupportedEntityTypeConfiguration)
+                SupportedEntityTypeConfiguration == other.SupportedEntityTypeConfiguration ||
+                SupportedEntityTypeConfiguration != null &&
+                SupportedEntityTypeConfiguration.Equals(other.SupportedEntityTypeConfiguration)
             );
     }
 
@@ -188,29 +188,29 @@ public partial class SupportedLanguagesInfoDefinition : IEquatable<SupportedLang
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.IntentClassification != null)
+            if (IntentClassification != null)
             {
-                hash = hash * 59 + this.IntentClassification.GetHashCode();
+                hash = hash * 59 + IntentClassification.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.SupportedEntityTypes != null)
+            if (SupportedEntityTypes != null)
             {
-                hash = hash * 59 + this.SupportedEntityTypes.GetHashCode();
+                hash = hash * 59 + SupportedEntityTypes.GetHashCode();
             }
 
-            if (this.SupportedEntityTypeConfiguration != null)
+            if (SupportedEntityTypeConfiguration != null)
             {
-                hash = hash * 59 + this.SupportedEntityTypeConfiguration.GetHashCode();
+                hash = hash * 59 + SupportedEntityTypeConfiguration.GetHashCode();
             }
 
             return hash;

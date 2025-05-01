@@ -71,7 +71,7 @@ public partial class UpdateAgentWorkPlanBiddingPreference : IEquatable<UpdateAge
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateAgentWorkPlanBiddingPreference);
+        return Equals(obj as UpdateAgentWorkPlanBiddingPreference);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class UpdateAgentWorkPlanBiddingPreference : IEquatable<UpdateAge
 
         return true &&
             (
-                this.Submitted == other.Submitted ||
-                this.Submitted != null &&
-                this.Submitted.Equals(other.Submitted)
+                Submitted == other.Submitted ||
+                Submitted != null &&
+                Submitted.Equals(other.Submitted)
             ) &&
             (
-                this.AgentWorkPlanBidPreferences == other.AgentWorkPlanBidPreferences ||
-                this.AgentWorkPlanBidPreferences != null &&
-                this.AgentWorkPlanBidPreferences.SequenceEqual(other.AgentWorkPlanBidPreferences)
+                AgentWorkPlanBidPreferences == other.AgentWorkPlanBidPreferences ||
+                AgentWorkPlanBidPreferences != null &&
+                AgentWorkPlanBidPreferences.SequenceEqual(other.AgentWorkPlanBidPreferences)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class UpdateAgentWorkPlanBiddingPreference : IEquatable<UpdateAge
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Submitted != null)
+            if (Submitted != null)
             {
-                hash = hash * 59 + this.Submitted.GetHashCode();
+                hash = hash * 59 + Submitted.GetHashCode();
             }
 
-            if (this.AgentWorkPlanBidPreferences != null)
+            if (AgentWorkPlanBidPreferences != null)
             {
-                hash = hash * 59 + this.AgentWorkPlanBidPreferences.GetHashCode();
+                hash = hash * 59 + AgentWorkPlanBidPreferences.GetHashCode();
             }
 
             return hash;

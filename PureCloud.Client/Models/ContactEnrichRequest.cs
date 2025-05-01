@@ -169,7 +169,7 @@ public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactEnrichRequest);
+        return Equals(obj as ContactEnrichRequest);
     }
 
     /// <summary>
@@ -187,39 +187,39 @@ public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.MatchingIdentifiers == other.MatchingIdentifiers ||
-                this.MatchingIdentifiers != null &&
-                this.MatchingIdentifiers.SequenceEqual(other.MatchingIdentifiers)
+                MatchingIdentifiers == other.MatchingIdentifiers ||
+                MatchingIdentifiers != null &&
+                MatchingIdentifiers.SequenceEqual(other.MatchingIdentifiers)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.Contact == other.Contact ||
-                this.Contact != null &&
-                this.Contact.Equals(other.Contact)
+                Contact == other.Contact ||
+                Contact != null &&
+                Contact.Equals(other.Contact)
             ) &&
             (
-                this.FieldRules == other.FieldRules ||
-                this.FieldRules != null &&
-                this.FieldRules.Equals(other.FieldRules)
+                FieldRules == other.FieldRules ||
+                FieldRules != null &&
+                FieldRules.Equals(other.FieldRules)
             ) &&
             (
-                this.Options == other.Options ||
-                this.Options != null &&
-                this.Options.Equals(other.Options)
+                Options == other.Options ||
+                Options != null &&
+                Options.Equals(other.Options)
             );
     }
 
@@ -234,39 +234,39 @@ public partial class ContactEnrichRequest : IEquatable<ContactEnrichRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.MatchingIdentifiers != null)
+            if (MatchingIdentifiers != null)
             {
-                hash = hash * 59 + this.MatchingIdentifiers.GetHashCode();
+                hash = hash * 59 + MatchingIdentifiers.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.Contact != null)
+            if (Contact != null)
             {
-                hash = hash * 59 + this.Contact.GetHashCode();
+                hash = hash * 59 + Contact.GetHashCode();
             }
 
-            if (this.FieldRules != null)
+            if (FieldRules != null)
             {
-                hash = hash * 59 + this.FieldRules.GetHashCode();
+                hash = hash * 59 + FieldRules.GetHashCode();
             }
 
-            if (this.Options != null)
+            if (Options != null)
             {
-                hash = hash * 59 + this.Options.GetHashCode();
+                hash = hash * 59 + Options.GetHashCode();
             }
 
             return hash;

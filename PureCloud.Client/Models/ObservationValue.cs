@@ -436,7 +436,7 @@ public partial class ObservationValue : IEquatable<ObservationValue>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ObservationValue);
+        return Equals(obj as ObservationValue);
     }
 
     /// <summary>
@@ -454,99 +454,99 @@ public partial class ObservationValue : IEquatable<ObservationValue>
 
         return true &&
             (
-                this.ObservationDate == other.ObservationDate ||
-                this.ObservationDate != null &&
-                this.ObservationDate.Equals(other.ObservationDate)
+                ObservationDate == other.ObservationDate ||
+                ObservationDate != null &&
+                ObservationDate.Equals(other.ObservationDate)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.RequestedRoutingSkillIds == other.RequestedRoutingSkillIds ||
-                this.RequestedRoutingSkillIds != null &&
-                this.RequestedRoutingSkillIds.SequenceEqual(other.RequestedRoutingSkillIds)
+                RequestedRoutingSkillIds == other.RequestedRoutingSkillIds ||
+                RequestedRoutingSkillIds != null &&
+                RequestedRoutingSkillIds.SequenceEqual(other.RequestedRoutingSkillIds)
             ) &&
             (
-                this.RequestedLanguageId == other.RequestedLanguageId ||
-                this.RequestedLanguageId != null &&
-                this.RequestedLanguageId.Equals(other.RequestedLanguageId)
+                RequestedLanguageId == other.RequestedLanguageId ||
+                RequestedLanguageId != null &&
+                RequestedLanguageId.Equals(other.RequestedLanguageId)
             ) &&
             (
-                this.RoutingPriority == other.RoutingPriority ||
-                this.RoutingPriority != null &&
-                this.RoutingPriority.Equals(other.RoutingPriority)
+                RoutingPriority == other.RoutingPriority ||
+                RoutingPriority != null &&
+                RoutingPriority.Equals(other.RoutingPriority)
             ) &&
             (
-                this.ParticipantName == other.ParticipantName ||
-                this.ParticipantName != null &&
-                this.ParticipantName.Equals(other.ParticipantName)
+                ParticipantName == other.ParticipantName ||
+                ParticipantName != null &&
+                ParticipantName.Equals(other.ParticipantName)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.Direction == other.Direction ||
-                this.Direction != null &&
-                this.Direction.Equals(other.Direction)
+                Direction == other.Direction ||
+                Direction != null &&
+                Direction.Equals(other.Direction)
             ) &&
             (
-                this.ConvertedFrom == other.ConvertedFrom ||
-                this.ConvertedFrom != null &&
-                this.ConvertedFrom.Equals(other.ConvertedFrom)
+                ConvertedFrom == other.ConvertedFrom ||
+                ConvertedFrom != null &&
+                ConvertedFrom.Equals(other.ConvertedFrom)
             ) &&
             (
-                this.ConvertedTo == other.ConvertedTo ||
-                this.ConvertedTo != null &&
-                this.ConvertedTo.Equals(other.ConvertedTo)
+                ConvertedTo == other.ConvertedTo ||
+                ConvertedTo != null &&
+                ConvertedTo.Equals(other.ConvertedTo)
             ) &&
             (
-                this.AddressFrom == other.AddressFrom ||
-                this.AddressFrom != null &&
-                this.AddressFrom.Equals(other.AddressFrom)
+                AddressFrom == other.AddressFrom ||
+                AddressFrom != null &&
+                AddressFrom.Equals(other.AddressFrom)
             ) &&
             (
-                this.AddressTo == other.AddressTo ||
-                this.AddressTo != null &&
-                this.AddressTo.Equals(other.AddressTo)
+                AddressTo == other.AddressTo ||
+                AddressTo != null &&
+                AddressTo.Equals(other.AddressTo)
             ) &&
             (
-                this.Ani == other.Ani ||
-                this.Ani != null &&
-                this.Ani.Equals(other.Ani)
+                Ani == other.Ani ||
+                Ani != null &&
+                Ani.Equals(other.Ani)
             ) &&
             (
-                this.Dnis == other.Dnis ||
-                this.Dnis != null &&
-                this.Dnis.Equals(other.Dnis)
+                Dnis == other.Dnis ||
+                Dnis != null &&
+                Dnis.Equals(other.Dnis)
             ) &&
             (
-                this.TeamId == other.TeamId ||
-                this.TeamId != null &&
-                this.TeamId.Equals(other.TeamId)
+                TeamId == other.TeamId ||
+                TeamId != null &&
+                TeamId.Equals(other.TeamId)
             ) &&
             (
-                this.RequestedRoutings == other.RequestedRoutings ||
-                this.RequestedRoutings != null &&
-                this.RequestedRoutings.SequenceEqual(other.RequestedRoutings)
+                RequestedRoutings == other.RequestedRoutings ||
+                RequestedRoutings != null &&
+                RequestedRoutings.SequenceEqual(other.RequestedRoutings)
             ) &&
             (
-                this.UsedRouting == other.UsedRouting ||
-                this.UsedRouting != null &&
-                this.UsedRouting.Equals(other.UsedRouting)
+                UsedRouting == other.UsedRouting ||
+                UsedRouting != null &&
+                UsedRouting.Equals(other.UsedRouting)
             ) &&
             (
-                this.ScoredAgents == other.ScoredAgents ||
-                this.ScoredAgents != null &&
-                this.ScoredAgents.SequenceEqual(other.ScoredAgents)
+                ScoredAgents == other.ScoredAgents ||
+                ScoredAgents != null &&
+                ScoredAgents.SequenceEqual(other.ScoredAgents)
             );
     }
 
@@ -561,99 +561,99 @@ public partial class ObservationValue : IEquatable<ObservationValue>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ObservationDate != null)
+            if (ObservationDate != null)
             {
-                hash = hash * 59 + this.ObservationDate.GetHashCode();
+                hash = hash * 59 + ObservationDate.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.RequestedRoutingSkillIds != null)
+            if (RequestedRoutingSkillIds != null)
             {
-                hash = hash * 59 + this.RequestedRoutingSkillIds.GetHashCode();
+                hash = hash * 59 + RequestedRoutingSkillIds.GetHashCode();
             }
 
-            if (this.RequestedLanguageId != null)
+            if (RequestedLanguageId != null)
             {
-                hash = hash * 59 + this.RequestedLanguageId.GetHashCode();
+                hash = hash * 59 + RequestedLanguageId.GetHashCode();
             }
 
-            if (this.RoutingPriority != null)
+            if (RoutingPriority != null)
             {
-                hash = hash * 59 + this.RoutingPriority.GetHashCode();
+                hash = hash * 59 + RoutingPriority.GetHashCode();
             }
 
-            if (this.ParticipantName != null)
+            if (ParticipantName != null)
             {
-                hash = hash * 59 + this.ParticipantName.GetHashCode();
+                hash = hash * 59 + ParticipantName.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.Direction != null)
+            if (Direction != null)
             {
-                hash = hash * 59 + this.Direction.GetHashCode();
+                hash = hash * 59 + Direction.GetHashCode();
             }
 
-            if (this.ConvertedFrom != null)
+            if (ConvertedFrom != null)
             {
-                hash = hash * 59 + this.ConvertedFrom.GetHashCode();
+                hash = hash * 59 + ConvertedFrom.GetHashCode();
             }
 
-            if (this.ConvertedTo != null)
+            if (ConvertedTo != null)
             {
-                hash = hash * 59 + this.ConvertedTo.GetHashCode();
+                hash = hash * 59 + ConvertedTo.GetHashCode();
             }
 
-            if (this.AddressFrom != null)
+            if (AddressFrom != null)
             {
-                hash = hash * 59 + this.AddressFrom.GetHashCode();
+                hash = hash * 59 + AddressFrom.GetHashCode();
             }
 
-            if (this.AddressTo != null)
+            if (AddressTo != null)
             {
-                hash = hash * 59 + this.AddressTo.GetHashCode();
+                hash = hash * 59 + AddressTo.GetHashCode();
             }
 
-            if (this.Ani != null)
+            if (Ani != null)
             {
-                hash = hash * 59 + this.Ani.GetHashCode();
+                hash = hash * 59 + Ani.GetHashCode();
             }
 
-            if (this.Dnis != null)
+            if (Dnis != null)
             {
-                hash = hash * 59 + this.Dnis.GetHashCode();
+                hash = hash * 59 + Dnis.GetHashCode();
             }
 
-            if (this.TeamId != null)
+            if (TeamId != null)
             {
-                hash = hash * 59 + this.TeamId.GetHashCode();
+                hash = hash * 59 + TeamId.GetHashCode();
             }
 
-            if (this.RequestedRoutings != null)
+            if (RequestedRoutings != null)
             {
-                hash = hash * 59 + this.RequestedRoutings.GetHashCode();
+                hash = hash * 59 + RequestedRoutings.GetHashCode();
             }
 
-            if (this.UsedRouting != null)
+            if (UsedRouting != null)
             {
-                hash = hash * 59 + this.UsedRouting.GetHashCode();
+                hash = hash * 59 + UsedRouting.GetHashCode();
             }
 
-            if (this.ScoredAgents != null)
+            if (ScoredAgents != null)
             {
-                hash = hash * 59 + this.ScoredAgents.GetHashCode();
+                hash = hash * 59 + ScoredAgents.GetHashCode();
             }
 
             return hash;

@@ -63,7 +63,7 @@ public partial class ReverseWhitepagesLookupResult : IEquatable<ReverseWhitepage
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReverseWhitepagesLookupResult);
+        return Equals(obj as ReverseWhitepagesLookupResult);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class ReverseWhitepagesLookupResult : IEquatable<ReverseWhitepage
 
         return true &&
             (
-                this.Contacts == other.Contacts ||
-                this.Contacts != null &&
-                this.Contacts.SequenceEqual(other.Contacts)
+                Contacts == other.Contacts ||
+                Contacts != null &&
+                Contacts.SequenceEqual(other.Contacts)
             ) &&
             (
-                this.ExternalOrganizations == other.ExternalOrganizations ||
-                this.ExternalOrganizations != null &&
-                this.ExternalOrganizations.SequenceEqual(other.ExternalOrganizations)
+                ExternalOrganizations == other.ExternalOrganizations ||
+                ExternalOrganizations != null &&
+                ExternalOrganizations.SequenceEqual(other.ExternalOrganizations)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class ReverseWhitepagesLookupResult : IEquatable<ReverseWhitepage
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Contacts != null)
+            if (Contacts != null)
             {
-                hash = hash * 59 + this.Contacts.GetHashCode();
+                hash = hash * 59 + Contacts.GetHashCode();
             }
 
-            if (this.ExternalOrganizations != null)
+            if (ExternalOrganizations != null)
             {
-                hash = hash * 59 + this.ExternalOrganizations.GetHashCode();
+                hash = hash * 59 + ExternalOrganizations.GetHashCode();
             }
 
             return hash;

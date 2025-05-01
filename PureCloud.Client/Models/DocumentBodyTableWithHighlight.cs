@@ -71,7 +71,7 @@ public partial class DocumentBodyTableWithHighlight : IEquatable<DocumentBodyTab
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyTableWithHighlight);
+        return Equals(obj as DocumentBodyTableWithHighlight);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class DocumentBodyTableWithHighlight : IEquatable<DocumentBodyTab
 
         return true &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.Equals(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.Equals(other.Properties)
             ) &&
             (
-                this.Rows == other.Rows ||
-                this.Rows != null &&
-                this.Rows.SequenceEqual(other.Rows)
+                Rows == other.Rows ||
+                Rows != null &&
+                Rows.SequenceEqual(other.Rows)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class DocumentBodyTableWithHighlight : IEquatable<DocumentBodyTab
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
-            if (this.Rows != null)
+            if (Rows != null)
             {
-                hash = hash * 59 + this.Rows.GetHashCode();
+                hash = hash * 59 + Rows.GetHashCode();
             }
 
             return hash;

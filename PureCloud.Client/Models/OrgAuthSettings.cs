@@ -113,7 +113,7 @@ public partial class OrgAuthSettings : IEquatable<OrgAuthSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OrgAuthSettings);
+        return Equals(obj as OrgAuthSettings);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class OrgAuthSettings : IEquatable<OrgAuthSettings>
 
         return true &&
             (
-                this.MultifactorAuthenticationRequired == other.MultifactorAuthenticationRequired ||
-                this.MultifactorAuthenticationRequired != null &&
-                this.MultifactorAuthenticationRequired.Equals(other.MultifactorAuthenticationRequired)
+                MultifactorAuthenticationRequired == other.MultifactorAuthenticationRequired ||
+                MultifactorAuthenticationRequired != null &&
+                MultifactorAuthenticationRequired.Equals(other.MultifactorAuthenticationRequired)
             ) &&
             (
-                this.DomainAllowlistEnabled == other.DomainAllowlistEnabled ||
-                this.DomainAllowlistEnabled != null &&
-                this.DomainAllowlistEnabled.Equals(other.DomainAllowlistEnabled)
+                DomainAllowlistEnabled == other.DomainAllowlistEnabled ||
+                DomainAllowlistEnabled != null &&
+                DomainAllowlistEnabled.Equals(other.DomainAllowlistEnabled)
             ) &&
             (
-                this.DomainAllowlist == other.DomainAllowlist ||
-                this.DomainAllowlist != null &&
-                this.DomainAllowlist.SequenceEqual(other.DomainAllowlist)
+                DomainAllowlist == other.DomainAllowlist ||
+                DomainAllowlist != null &&
+                DomainAllowlist.SequenceEqual(other.DomainAllowlist)
             ) &&
             (
-                this.IpAddressAllowlist == other.IpAddressAllowlist ||
-                this.IpAddressAllowlist != null &&
-                this.IpAddressAllowlist.SequenceEqual(other.IpAddressAllowlist)
+                IpAddressAllowlist == other.IpAddressAllowlist ||
+                IpAddressAllowlist != null &&
+                IpAddressAllowlist.SequenceEqual(other.IpAddressAllowlist)
             ) &&
             (
-                this.PasswordRequirements == other.PasswordRequirements ||
-                this.PasswordRequirements != null &&
-                this.PasswordRequirements.Equals(other.PasswordRequirements)
+                PasswordRequirements == other.PasswordRequirements ||
+                PasswordRequirements != null &&
+                PasswordRequirements.Equals(other.PasswordRequirements)
             ) &&
             (
-                this.InactivityTimeoutExclusions == other.InactivityTimeoutExclusions ||
-                this.InactivityTimeoutExclusions != null &&
-                this.InactivityTimeoutExclusions.SequenceEqual(other.InactivityTimeoutExclusions)
+                InactivityTimeoutExclusions == other.InactivityTimeoutExclusions ||
+                InactivityTimeoutExclusions != null &&
+                InactivityTimeoutExclusions.SequenceEqual(other.InactivityTimeoutExclusions)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class OrgAuthSettings : IEquatable<OrgAuthSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MultifactorAuthenticationRequired != null)
+            if (MultifactorAuthenticationRequired != null)
             {
-                hash = hash * 59 + this.MultifactorAuthenticationRequired.GetHashCode();
+                hash = hash * 59 + MultifactorAuthenticationRequired.GetHashCode();
             }
 
-            if (this.DomainAllowlistEnabled != null)
+            if (DomainAllowlistEnabled != null)
             {
-                hash = hash * 59 + this.DomainAllowlistEnabled.GetHashCode();
+                hash = hash * 59 + DomainAllowlistEnabled.GetHashCode();
             }
 
-            if (this.DomainAllowlist != null)
+            if (DomainAllowlist != null)
             {
-                hash = hash * 59 + this.DomainAllowlist.GetHashCode();
+                hash = hash * 59 + DomainAllowlist.GetHashCode();
             }
 
-            if (this.IpAddressAllowlist != null)
+            if (IpAddressAllowlist != null)
             {
-                hash = hash * 59 + this.IpAddressAllowlist.GetHashCode();
+                hash = hash * 59 + IpAddressAllowlist.GetHashCode();
             }
 
-            if (this.PasswordRequirements != null)
+            if (PasswordRequirements != null)
             {
-                hash = hash * 59 + this.PasswordRequirements.GetHashCode();
+                hash = hash * 59 + PasswordRequirements.GetHashCode();
             }
 
-            if (this.InactivityTimeoutExclusions != null)
+            if (InactivityTimeoutExclusions != null)
             {
-                hash = hash * 59 + this.InactivityTimeoutExclusions.GetHashCode();
+                hash = hash * 59 + InactivityTimeoutExclusions.GetHashCode();
             }
 
             return hash;

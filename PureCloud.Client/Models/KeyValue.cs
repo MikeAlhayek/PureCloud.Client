@@ -71,7 +71,7 @@ public partial class KeyValue : IEquatable<KeyValue>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KeyValue);
+        return Equals(obj as KeyValue);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class KeyValue : IEquatable<KeyValue>
 
         return true &&
             (
-                this.Key == other.Key ||
-                this.Key != null &&
-                this.Key.Equals(other.Key)
+                Key == other.Key ||
+                Key != null &&
+                Key.Equals(other.Key)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class KeyValue : IEquatable<KeyValue>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Key != null)
+            if (Key != null)
             {
-                hash = hash * 59 + this.Key.GetHashCode();
+                hash = hash * 59 + Key.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

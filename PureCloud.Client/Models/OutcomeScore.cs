@@ -125,7 +125,7 @@ public partial class OutcomeScore : IEquatable<OutcomeScore>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomeScore);
+        return Equals(obj as OutcomeScore);
     }
 
     /// <summary>
@@ -143,39 +143,39 @@ public partial class OutcomeScore : IEquatable<OutcomeScore>
 
         return true &&
             (
-                this.Outcome == other.Outcome ||
-                this.Outcome != null &&
-                this.Outcome.Equals(other.Outcome)
+                Outcome == other.Outcome ||
+                Outcome != null &&
+                Outcome.Equals(other.Outcome)
             ) &&
             (
-                this.SessionMaxProbability == other.SessionMaxProbability ||
-                this.SessionMaxProbability != null &&
-                this.SessionMaxProbability.Equals(other.SessionMaxProbability)
+                SessionMaxProbability == other.SessionMaxProbability ||
+                SessionMaxProbability != null &&
+                SessionMaxProbability.Equals(other.SessionMaxProbability)
             ) &&
             (
-                this.Probability == other.Probability ||
-                this.Probability != null &&
-                this.Probability.Equals(other.Probability)
+                Probability == other.Probability ||
+                Probability != null &&
+                Probability.Equals(other.Probability)
             ) &&
             (
-                this.Percentile == other.Percentile ||
-                this.Percentile != null &&
-                this.Percentile.Equals(other.Percentile)
+                Percentile == other.Percentile ||
+                Percentile != null &&
+                Percentile.Equals(other.Percentile)
             ) &&
             (
-                this.SessionMaxPercentile == other.SessionMaxPercentile ||
-                this.SessionMaxPercentile != null &&
-                this.SessionMaxPercentile.Equals(other.SessionMaxPercentile)
+                SessionMaxPercentile == other.SessionMaxPercentile ||
+                SessionMaxPercentile != null &&
+                SessionMaxPercentile.Equals(other.SessionMaxPercentile)
             ) &&
             (
-                this.Quantile == other.Quantile ||
-                this.Quantile != null &&
-                this.Quantile.Equals(other.Quantile)
+                Quantile == other.Quantile ||
+                Quantile != null &&
+                Quantile.Equals(other.Quantile)
             ) &&
             (
-                this.SessionMaxQuantile == other.SessionMaxQuantile ||
-                this.SessionMaxQuantile != null &&
-                this.SessionMaxQuantile.Equals(other.SessionMaxQuantile)
+                SessionMaxQuantile == other.SessionMaxQuantile ||
+                SessionMaxQuantile != null &&
+                SessionMaxQuantile.Equals(other.SessionMaxQuantile)
             );
     }
 
@@ -190,39 +190,39 @@ public partial class OutcomeScore : IEquatable<OutcomeScore>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Outcome != null)
+            if (Outcome != null)
             {
-                hash = hash * 59 + this.Outcome.GetHashCode();
+                hash = hash * 59 + Outcome.GetHashCode();
             }
 
-            if (this.SessionMaxProbability != null)
+            if (SessionMaxProbability != null)
             {
-                hash = hash * 59 + this.SessionMaxProbability.GetHashCode();
+                hash = hash * 59 + SessionMaxProbability.GetHashCode();
             }
 
-            if (this.Probability != null)
+            if (Probability != null)
             {
-                hash = hash * 59 + this.Probability.GetHashCode();
+                hash = hash * 59 + Probability.GetHashCode();
             }
 
-            if (this.Percentile != null)
+            if (Percentile != null)
             {
-                hash = hash * 59 + this.Percentile.GetHashCode();
+                hash = hash * 59 + Percentile.GetHashCode();
             }
 
-            if (this.SessionMaxPercentile != null)
+            if (SessionMaxPercentile != null)
             {
-                hash = hash * 59 + this.SessionMaxPercentile.GetHashCode();
+                hash = hash * 59 + SessionMaxPercentile.GetHashCode();
             }
 
-            if (this.Quantile != null)
+            if (Quantile != null)
             {
-                hash = hash * 59 + this.Quantile.GetHashCode();
+                hash = hash * 59 + Quantile.GetHashCode();
             }
 
-            if (this.SessionMaxQuantile != null)
+            if (SessionMaxQuantile != null)
             {
-                hash = hash * 59 + this.SessionMaxQuantile.GetHashCode();
+                hash = hash * 59 + SessionMaxQuantile.GetHashCode();
             }
 
             return hash;

@@ -222,7 +222,7 @@ public partial class AgentStateQueryRequest : IEquatable<AgentStateQueryRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentStateQueryRequest);
+        return Equals(obj as AgentStateQueryRequest);
     }
 
     /// <summary>
@@ -240,34 +240,34 @@ public partial class AgentStateQueryRequest : IEquatable<AgentStateQueryRequest>
 
         return true &&
             (
-                this.UserFilter == other.UserFilter ||
-                this.UserFilter != null &&
-                this.UserFilter.Equals(other.UserFilter)
+                UserFilter == other.UserFilter ||
+                UserFilter != null &&
+                UserFilter.Equals(other.UserFilter)
             ) &&
             (
-                this.SessionFilter == other.SessionFilter ||
-                this.SessionFilter != null &&
-                this.SessionFilter.Equals(other.SessionFilter)
+                SessionFilter == other.SessionFilter ||
+                SessionFilter != null &&
+                SessionFilter.Equals(other.SessionFilter)
             ) &&
             (
-                this.UserOrderBy == other.UserOrderBy ||
-                this.UserOrderBy != null &&
-                this.UserOrderBy.Equals(other.UserOrderBy)
+                UserOrderBy == other.UserOrderBy ||
+                UserOrderBy != null &&
+                UserOrderBy.Equals(other.UserOrderBy)
             ) &&
             (
-                this.UserOrder == other.UserOrder ||
-                this.UserOrder != null &&
-                this.UserOrder.Equals(other.UserOrder)
+                UserOrder == other.UserOrder ||
+                UserOrder != null &&
+                UserOrder.Equals(other.UserOrder)
             ) &&
             (
-                this.SessionOrderBy == other.SessionOrderBy ||
-                this.SessionOrderBy != null &&
-                this.SessionOrderBy.Equals(other.SessionOrderBy)
+                SessionOrderBy == other.SessionOrderBy ||
+                SessionOrderBy != null &&
+                SessionOrderBy.Equals(other.SessionOrderBy)
             ) &&
             (
-                this.SessionOrder == other.SessionOrder ||
-                this.SessionOrder != null &&
-                this.SessionOrder.Equals(other.SessionOrder)
+                SessionOrder == other.SessionOrder ||
+                SessionOrder != null &&
+                SessionOrder.Equals(other.SessionOrder)
             );
     }
 
@@ -282,34 +282,34 @@ public partial class AgentStateQueryRequest : IEquatable<AgentStateQueryRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserFilter != null)
+            if (UserFilter != null)
             {
-                hash = hash * 59 + this.UserFilter.GetHashCode();
+                hash = hash * 59 + UserFilter.GetHashCode();
             }
 
-            if (this.SessionFilter != null)
+            if (SessionFilter != null)
             {
-                hash = hash * 59 + this.SessionFilter.GetHashCode();
+                hash = hash * 59 + SessionFilter.GetHashCode();
             }
 
-            if (this.UserOrderBy != null)
+            if (UserOrderBy != null)
             {
-                hash = hash * 59 + this.UserOrderBy.GetHashCode();
+                hash = hash * 59 + UserOrderBy.GetHashCode();
             }
 
-            if (this.UserOrder != null)
+            if (UserOrder != null)
             {
-                hash = hash * 59 + this.UserOrder.GetHashCode();
+                hash = hash * 59 + UserOrder.GetHashCode();
             }
 
-            if (this.SessionOrderBy != null)
+            if (SessionOrderBy != null)
             {
-                hash = hash * 59 + this.SessionOrderBy.GetHashCode();
+                hash = hash * 59 + SessionOrderBy.GetHashCode();
             }
 
-            if (this.SessionOrder != null)
+            if (SessionOrder != null)
             {
-                hash = hash * 59 + this.SessionOrder.GetHashCode();
+                hash = hash * 59 + SessionOrder.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class OpenRichMediaSetting : IEquatable<OpenRichMediaSetting>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenRichMediaSetting);
+        return Equals(obj as OpenRichMediaSetting);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class OpenRichMediaSetting : IEquatable<OpenRichMediaSetting>
 
         return true &&
             (
-                this.QuickReply == other.QuickReply ||
-                this.QuickReply != null &&
-                this.QuickReply.Equals(other.QuickReply)
+                QuickReply == other.QuickReply ||
+                QuickReply != null &&
+                QuickReply.Equals(other.QuickReply)
             ) &&
             (
-                this.Cards == other.Cards ||
-                this.Cards != null &&
-                this.Cards.Equals(other.Cards)
+                Cards == other.Cards ||
+                Cards != null &&
+                Cards.Equals(other.Cards)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class OpenRichMediaSetting : IEquatable<OpenRichMediaSetting>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QuickReply != null)
+            if (QuickReply != null)
             {
-                hash = hash * 59 + this.QuickReply.GetHashCode();
+                hash = hash * 59 + QuickReply.GetHashCode();
             }
 
-            if (this.Cards != null)
+            if (Cards != null)
             {
-                hash = hash * 59 + this.Cards.GetHashCode();
+                hash = hash * 59 + Cards.GetHashCode();
             }
 
             return hash;

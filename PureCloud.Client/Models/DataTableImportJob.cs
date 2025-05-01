@@ -272,7 +272,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DataTableImportJob);
+        return Equals(obj as DataTableImportJob);
     }
 
     /// <summary>
@@ -290,74 +290,74 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Owner == other.Owner ||
-                this.Owner != null &&
-                this.Owner.Equals(other.Owner)
+                Owner == other.Owner ||
+                Owner != null &&
+                Owner.Equals(other.Owner)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateCompleted == other.DateCompleted ||
-                this.DateCompleted != null &&
-                this.DateCompleted.Equals(other.DateCompleted)
+                DateCompleted == other.DateCompleted ||
+                DateCompleted != null &&
+                DateCompleted.Equals(other.DateCompleted)
             ) &&
             (
-                this.UploadURI == other.UploadURI ||
-                this.UploadURI != null &&
-                this.UploadURI.Equals(other.UploadURI)
+                UploadURI == other.UploadURI ||
+                UploadURI != null &&
+                UploadURI.Equals(other.UploadURI)
             ) &&
             (
-                this.ImportMode == other.ImportMode ||
-                this.ImportMode != null &&
-                this.ImportMode.Equals(other.ImportMode)
+                ImportMode == other.ImportMode ||
+                ImportMode != null &&
+                ImportMode.Equals(other.ImportMode)
             ) &&
             (
-                this.ErrorInformation == other.ErrorInformation ||
-                this.ErrorInformation != null &&
-                this.ErrorInformation.Equals(other.ErrorInformation)
+                ErrorInformation == other.ErrorInformation ||
+                ErrorInformation != null &&
+                ErrorInformation.Equals(other.ErrorInformation)
             ) &&
             (
-                this.CountRecordsUpdated == other.CountRecordsUpdated ||
-                this.CountRecordsUpdated != null &&
-                this.CountRecordsUpdated.Equals(other.CountRecordsUpdated)
+                CountRecordsUpdated == other.CountRecordsUpdated ||
+                CountRecordsUpdated != null &&
+                CountRecordsUpdated.Equals(other.CountRecordsUpdated)
             ) &&
             (
-                this.CountRecordsDeleted == other.CountRecordsDeleted ||
-                this.CountRecordsDeleted != null &&
-                this.CountRecordsDeleted.Equals(other.CountRecordsDeleted)
+                CountRecordsDeleted == other.CountRecordsDeleted ||
+                CountRecordsDeleted != null &&
+                CountRecordsDeleted.Equals(other.CountRecordsDeleted)
             ) &&
             (
-                this.CountRecordsFailed == other.CountRecordsFailed ||
-                this.CountRecordsFailed != null &&
-                this.CountRecordsFailed.Equals(other.CountRecordsFailed)
+                CountRecordsFailed == other.CountRecordsFailed ||
+                CountRecordsFailed != null &&
+                CountRecordsFailed.Equals(other.CountRecordsFailed)
             ) &&
             (
-                this.UploadHeaders == other.UploadHeaders ||
-                this.UploadHeaders != null &&
-                this.UploadHeaders.SequenceEqual(other.UploadHeaders)
+                UploadHeaders == other.UploadHeaders ||
+                UploadHeaders != null &&
+                UploadHeaders.SequenceEqual(other.UploadHeaders)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -372,74 +372,74 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Owner != null)
+            if (Owner != null)
             {
-                hash = hash * 59 + this.Owner.GetHashCode();
+                hash = hash * 59 + Owner.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateCompleted != null)
+            if (DateCompleted != null)
             {
-                hash = hash * 59 + this.DateCompleted.GetHashCode();
+                hash = hash * 59 + DateCompleted.GetHashCode();
             }
 
-            if (this.UploadURI != null)
+            if (UploadURI != null)
             {
-                hash = hash * 59 + this.UploadURI.GetHashCode();
+                hash = hash * 59 + UploadURI.GetHashCode();
             }
 
-            if (this.ImportMode != null)
+            if (ImportMode != null)
             {
-                hash = hash * 59 + this.ImportMode.GetHashCode();
+                hash = hash * 59 + ImportMode.GetHashCode();
             }
 
-            if (this.ErrorInformation != null)
+            if (ErrorInformation != null)
             {
-                hash = hash * 59 + this.ErrorInformation.GetHashCode();
+                hash = hash * 59 + ErrorInformation.GetHashCode();
             }
 
-            if (this.CountRecordsUpdated != null)
+            if (CountRecordsUpdated != null)
             {
-                hash = hash * 59 + this.CountRecordsUpdated.GetHashCode();
+                hash = hash * 59 + CountRecordsUpdated.GetHashCode();
             }
 
-            if (this.CountRecordsDeleted != null)
+            if (CountRecordsDeleted != null)
             {
-                hash = hash * 59 + this.CountRecordsDeleted.GetHashCode();
+                hash = hash * 59 + CountRecordsDeleted.GetHashCode();
             }
 
-            if (this.CountRecordsFailed != null)
+            if (CountRecordsFailed != null)
             {
-                hash = hash * 59 + this.CountRecordsFailed.GetHashCode();
+                hash = hash * 59 + CountRecordsFailed.GetHashCode();
             }
 
-            if (this.UploadHeaders != null)
+            if (UploadHeaders != null)
             {
-                hash = hash * 59 + this.UploadHeaders.GetHashCode();
+                hash = hash * 59 + UploadHeaders.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class PatchActionMapScheduleGroups : IEquatable<PatchActionMapSch
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchActionMapScheduleGroups);
+        return Equals(obj as PatchActionMapScheduleGroups);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class PatchActionMapScheduleGroups : IEquatable<PatchActionMapSch
 
         return true &&
             (
-                this.ActionMapScheduleGroup == other.ActionMapScheduleGroup ||
-                this.ActionMapScheduleGroup != null &&
-                this.ActionMapScheduleGroup.Equals(other.ActionMapScheduleGroup)
+                ActionMapScheduleGroup == other.ActionMapScheduleGroup ||
+                ActionMapScheduleGroup != null &&
+                ActionMapScheduleGroup.Equals(other.ActionMapScheduleGroup)
             ) &&
             (
-                this.EmergencyActionMapScheduleGroup == other.EmergencyActionMapScheduleGroup ||
-                this.EmergencyActionMapScheduleGroup != null &&
-                this.EmergencyActionMapScheduleGroup.Equals(other.EmergencyActionMapScheduleGroup)
+                EmergencyActionMapScheduleGroup == other.EmergencyActionMapScheduleGroup ||
+                EmergencyActionMapScheduleGroup != null &&
+                EmergencyActionMapScheduleGroup.Equals(other.EmergencyActionMapScheduleGroup)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class PatchActionMapScheduleGroups : IEquatable<PatchActionMapSch
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActionMapScheduleGroup != null)
+            if (ActionMapScheduleGroup != null)
             {
-                hash = hash * 59 + this.ActionMapScheduleGroup.GetHashCode();
+                hash = hash * 59 + ActionMapScheduleGroup.GetHashCode();
             }
 
-            if (this.EmergencyActionMapScheduleGroup != null)
+            if (EmergencyActionMapScheduleGroup != null)
             {
-                hash = hash * 59 + this.EmergencyActionMapScheduleGroup.GetHashCode();
+                hash = hash * 59 + EmergencyActionMapScheduleGroup.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class LearningModulePreviewUpdateResponseCurrentStep : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModulePreviewUpdateResponseCurrentStep);
+        return Equals(obj as LearningModulePreviewUpdateResponseCurrentStep);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class LearningModulePreviewUpdateResponseCurrentStep : IEquatable
 
         return true &&
             (
-                this.ShareableContentObject == other.ShareableContentObject ||
-                this.ShareableContentObject != null &&
-                this.ShareableContentObject.Equals(other.ShareableContentObject)
+                ShareableContentObject == other.ShareableContentObject ||
+                ShareableContentObject != null &&
+                ShareableContentObject.Equals(other.ShareableContentObject)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class LearningModulePreviewUpdateResponseCurrentStep : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ShareableContentObject != null)
+            if (ShareableContentObject != null)
             {
-                hash = hash * 59 + this.ShareableContentObject.GetHashCode();
+                hash = hash * 59 + ShareableContentObject.GetHashCode();
             }
 
             return hash;

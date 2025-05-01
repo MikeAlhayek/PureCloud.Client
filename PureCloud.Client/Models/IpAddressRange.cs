@@ -153,7 +153,7 @@ public partial class IpAddressRange : IEquatable<IpAddressRange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IpAddressRange);
+        return Equals(obj as IpAddressRange);
     }
 
     /// <summary>
@@ -171,19 +171,19 @@ public partial class IpAddressRange : IEquatable<IpAddressRange>
 
         return true &&
             (
-                this.Cidr == other.Cidr ||
-                this.Cidr != null &&
-                this.Cidr.Equals(other.Cidr)
+                Cidr == other.Cidr ||
+                Cidr != null &&
+                Cidr.Equals(other.Cidr)
             ) &&
             (
-                this.Service == other.Service ||
-                this.Service != null &&
-                this.Service.Equals(other.Service)
+                Service == other.Service ||
+                Service != null &&
+                Service.Equals(other.Service)
             ) &&
             (
-                this.Region == other.Region ||
-                this.Region != null &&
-                this.Region.Equals(other.Region)
+                Region == other.Region ||
+                Region != null &&
+                Region.Equals(other.Region)
             );
     }
 
@@ -198,19 +198,19 @@ public partial class IpAddressRange : IEquatable<IpAddressRange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Cidr != null)
+            if (Cidr != null)
             {
-                hash = hash * 59 + this.Cidr.GetHashCode();
+                hash = hash * 59 + Cidr.GetHashCode();
             }
 
-            if (this.Service != null)
+            if (Service != null)
             {
-                hash = hash * 59 + this.Service.GetHashCode();
+                hash = hash * 59 + Service.GetHashCode();
             }
 
-            if (this.Region != null)
+            if (Region != null)
             {
-                hash = hash * 59 + this.Region.GetHashCode();
+                hash = hash * 59 + Region.GetHashCode();
             }
 
             return hash;

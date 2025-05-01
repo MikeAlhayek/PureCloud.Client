@@ -71,7 +71,7 @@ public partial class TimeOffBalanceRequest : IEquatable<TimeOffBalanceRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeOffBalanceRequest);
+        return Equals(obj as TimeOffBalanceRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class TimeOffBalanceRequest : IEquatable<TimeOffBalanceRequest>
 
         return true &&
             (
-                this.ActivityCodeIds == other.ActivityCodeIds ||
-                this.ActivityCodeIds != null &&
-                this.ActivityCodeIds.SequenceEqual(other.ActivityCodeIds)
+                ActivityCodeIds == other.ActivityCodeIds ||
+                ActivityCodeIds != null &&
+                ActivityCodeIds.SequenceEqual(other.ActivityCodeIds)
             ) &&
             (
-                this.DateRanges == other.DateRanges ||
-                this.DateRanges != null &&
-                this.DateRanges.SequenceEqual(other.DateRanges)
+                DateRanges == other.DateRanges ||
+                DateRanges != null &&
+                DateRanges.SequenceEqual(other.DateRanges)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class TimeOffBalanceRequest : IEquatable<TimeOffBalanceRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityCodeIds != null)
+            if (ActivityCodeIds != null)
             {
-                hash = hash * 59 + this.ActivityCodeIds.GetHashCode();
+                hash = hash * 59 + ActivityCodeIds.GetHashCode();
             }
 
-            if (this.DateRanges != null)
+            if (DateRanges != null)
             {
-                hash = hash * 59 + this.DateRanges.GetHashCode();
+                hash = hash * 59 + DateRanges.GetHashCode();
             }
 
             return hash;

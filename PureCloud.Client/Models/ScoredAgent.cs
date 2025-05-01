@@ -65,7 +65,7 @@ public partial class ScoredAgent : IEquatable<ScoredAgent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScoredAgent);
+        return Equals(obj as ScoredAgent);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ScoredAgent : IEquatable<ScoredAgent>
 
         return true &&
             (
-                this.Agent == other.Agent ||
-                this.Agent != null &&
-                this.Agent.Equals(other.Agent)
+                Agent == other.Agent ||
+                Agent != null &&
+                Agent.Equals(other.Agent)
             ) &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ScoredAgent : IEquatable<ScoredAgent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Agent != null)
+            if (Agent != null)
             {
-                hash = hash * 59 + this.Agent.GetHashCode();
+                hash = hash * 59 + Agent.GetHashCode();
             }
 
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
             return hash;

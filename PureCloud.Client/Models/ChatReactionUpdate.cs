@@ -59,7 +59,7 @@ public partial class ChatReactionUpdate : IEquatable<ChatReactionUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatReactionUpdate);
+        return Equals(obj as ChatReactionUpdate);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ChatReactionUpdate : IEquatable<ChatReactionUpdate>
 
         return true &&
             (
-                this.Reactions == other.Reactions ||
-                this.Reactions != null &&
-                this.Reactions.SequenceEqual(other.Reactions)
+                Reactions == other.Reactions ||
+                Reactions != null &&
+                Reactions.SequenceEqual(other.Reactions)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ChatReactionUpdate : IEquatable<ChatReactionUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Reactions != null)
+            if (Reactions != null)
             {
-                hash = hash * 59 + this.Reactions.GetHashCode();
+                hash = hash * 59 + Reactions.GetHashCode();
             }
 
             return hash;

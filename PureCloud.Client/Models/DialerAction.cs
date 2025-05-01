@@ -305,7 +305,7 @@ public partial class DialerAction : IEquatable<DialerAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerAction);
+        return Equals(obj as DialerAction);
     }
 
     /// <summary>
@@ -323,49 +323,49 @@ public partial class DialerAction : IEquatable<DialerAction>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ActionTypeName == other.ActionTypeName ||
-                this.ActionTypeName != null &&
-                this.ActionTypeName.Equals(other.ActionTypeName)
+                ActionTypeName == other.ActionTypeName ||
+                ActionTypeName != null &&
+                ActionTypeName.Equals(other.ActionTypeName)
             ) &&
             (
-                this.UpdateOption == other.UpdateOption ||
-                this.UpdateOption != null &&
-                this.UpdateOption.Equals(other.UpdateOption)
+                UpdateOption == other.UpdateOption ||
+                UpdateOption != null &&
+                UpdateOption.Equals(other.UpdateOption)
             ) &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.SequenceEqual(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.SequenceEqual(other.Properties)
             ) &&
             (
-                this.DataAction == other.DataAction ||
-                this.DataAction != null &&
-                this.DataAction.Equals(other.DataAction)
+                DataAction == other.DataAction ||
+                DataAction != null &&
+                DataAction.Equals(other.DataAction)
             ) &&
             (
-                this.ContactColumnToDataActionFieldMappings == other.ContactColumnToDataActionFieldMappings ||
-                this.ContactColumnToDataActionFieldMappings != null &&
-                this.ContactColumnToDataActionFieldMappings.SequenceEqual(other.ContactColumnToDataActionFieldMappings)
+                ContactColumnToDataActionFieldMappings == other.ContactColumnToDataActionFieldMappings ||
+                ContactColumnToDataActionFieldMappings != null &&
+                ContactColumnToDataActionFieldMappings.SequenceEqual(other.ContactColumnToDataActionFieldMappings)
             ) &&
             (
-                this.ContactIdField == other.ContactIdField ||
-                this.ContactIdField != null &&
-                this.ContactIdField.Equals(other.ContactIdField)
+                ContactIdField == other.ContactIdField ||
+                ContactIdField != null &&
+                ContactIdField.Equals(other.ContactIdField)
             ) &&
             (
-                this.CallAnalysisResultField == other.CallAnalysisResultField ||
-                this.CallAnalysisResultField != null &&
-                this.CallAnalysisResultField.Equals(other.CallAnalysisResultField)
+                CallAnalysisResultField == other.CallAnalysisResultField ||
+                CallAnalysisResultField != null &&
+                CallAnalysisResultField.Equals(other.CallAnalysisResultField)
             ) &&
             (
-                this.AgentWrapupField == other.AgentWrapupField ||
-                this.AgentWrapupField != null &&
-                this.AgentWrapupField.Equals(other.AgentWrapupField)
+                AgentWrapupField == other.AgentWrapupField ||
+                AgentWrapupField != null &&
+                AgentWrapupField.Equals(other.AgentWrapupField)
             );
     }
 
@@ -380,49 +380,49 @@ public partial class DialerAction : IEquatable<DialerAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ActionTypeName != null)
+            if (ActionTypeName != null)
             {
-                hash = hash * 59 + this.ActionTypeName.GetHashCode();
+                hash = hash * 59 + ActionTypeName.GetHashCode();
             }
 
-            if (this.UpdateOption != null)
+            if (UpdateOption != null)
             {
-                hash = hash * 59 + this.UpdateOption.GetHashCode();
+                hash = hash * 59 + UpdateOption.GetHashCode();
             }
 
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
-            if (this.DataAction != null)
+            if (DataAction != null)
             {
-                hash = hash * 59 + this.DataAction.GetHashCode();
+                hash = hash * 59 + DataAction.GetHashCode();
             }
 
-            if (this.ContactColumnToDataActionFieldMappings != null)
+            if (ContactColumnToDataActionFieldMappings != null)
             {
-                hash = hash * 59 + this.ContactColumnToDataActionFieldMappings.GetHashCode();
+                hash = hash * 59 + ContactColumnToDataActionFieldMappings.GetHashCode();
             }
 
-            if (this.ContactIdField != null)
+            if (ContactIdField != null)
             {
-                hash = hash * 59 + this.ContactIdField.GetHashCode();
+                hash = hash * 59 + ContactIdField.GetHashCode();
             }
 
-            if (this.CallAnalysisResultField != null)
+            if (CallAnalysisResultField != null)
             {
-                hash = hash * 59 + this.CallAnalysisResultField.GetHashCode();
+                hash = hash * 59 + CallAnalysisResultField.GetHashCode();
             }
 
-            if (this.AgentWrapupField != null)
+            if (AgentWrapupField != null)
             {
-                hash = hash * 59 + this.AgentWrapupField.GetHashCode();
+                hash = hash * 59 + AgentWrapupField.GetHashCode();
             }
 
             return hash;

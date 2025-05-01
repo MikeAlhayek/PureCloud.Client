@@ -95,7 +95,7 @@ public partial class UpdateActionInput : IEquatable<UpdateActionInput>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateActionInput);
+        return Equals(obj as UpdateActionInput);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class UpdateActionInput : IEquatable<UpdateActionInput>
 
         return true &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Config == other.Config ||
-                this.Config != null &&
-                this.Config.Equals(other.Config)
+                Config == other.Config ||
+                Config != null &&
+                Config.Equals(other.Config)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class UpdateActionInput : IEquatable<UpdateActionInput>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Config != null)
+            if (Config != null)
             {
-                hash = hash * 59 + this.Config.GetHashCode();
+                hash = hash * 59 + Config.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

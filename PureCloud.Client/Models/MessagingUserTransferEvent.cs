@@ -181,7 +181,7 @@ public partial class MessagingUserTransferEvent : IEquatable<MessagingUserTransf
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessagingUserTransferEvent);
+        return Equals(obj as MessagingUserTransferEvent);
     }
 
     /// <summary>
@@ -199,49 +199,49 @@ public partial class MessagingUserTransferEvent : IEquatable<MessagingUserTransf
 
         return true &&
             (
-                this.EventId == other.EventId ||
-                this.EventId != null &&
-                this.EventId.Equals(other.EventId)
+                EventId == other.EventId ||
+                EventId != null &&
+                EventId.Equals(other.EventId)
             ) &&
             (
-                this.EventDateTime == other.EventDateTime ||
-                this.EventDateTime != null &&
-                this.EventDateTime.Equals(other.EventDateTime)
+                EventDateTime == other.EventDateTime ||
+                EventDateTime != null &&
+                EventDateTime.Equals(other.EventDateTime)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.TransferType == other.TransferType ||
-                this.TransferType != null &&
-                this.TransferType.Equals(other.TransferType)
+                TransferType == other.TransferType ||
+                TransferType != null &&
+                TransferType.Equals(other.TransferType)
             ) &&
             (
-                this.CommandId == other.CommandId ||
-                this.CommandId != null &&
-                this.CommandId.Equals(other.CommandId)
+                CommandId == other.CommandId ||
+                CommandId != null &&
+                CommandId.Equals(other.CommandId)
             ) &&
             (
-                this.InitiatingCommunicationId == other.InitiatingCommunicationId ||
-                this.InitiatingCommunicationId != null &&
-                this.InitiatingCommunicationId.Equals(other.InitiatingCommunicationId)
+                InitiatingCommunicationId == other.InitiatingCommunicationId ||
+                InitiatingCommunicationId != null &&
+                InitiatingCommunicationId.Equals(other.InitiatingCommunicationId)
             ) &&
             (
-                this.TargetCommunicationId == other.TargetCommunicationId ||
-                this.TargetCommunicationId != null &&
-                this.TargetCommunicationId.Equals(other.TargetCommunicationId)
+                TargetCommunicationId == other.TargetCommunicationId ||
+                TargetCommunicationId != null &&
+                TargetCommunicationId.Equals(other.TargetCommunicationId)
             ) &&
             (
-                this.ObjectCommunicationId == other.ObjectCommunicationId ||
-                this.ObjectCommunicationId != null &&
-                this.ObjectCommunicationId.Equals(other.ObjectCommunicationId)
+                ObjectCommunicationId == other.ObjectCommunicationId ||
+                ObjectCommunicationId != null &&
+                ObjectCommunicationId.Equals(other.ObjectCommunicationId)
             ) &&
             (
-                this.DestinationUserId == other.DestinationUserId ||
-                this.DestinationUserId != null &&
-                this.DestinationUserId.Equals(other.DestinationUserId)
+                DestinationUserId == other.DestinationUserId ||
+                DestinationUserId != null &&
+                DestinationUserId.Equals(other.DestinationUserId)
             );
     }
 
@@ -256,49 +256,49 @@ public partial class MessagingUserTransferEvent : IEquatable<MessagingUserTransf
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventId != null)
+            if (EventId != null)
             {
-                hash = hash * 59 + this.EventId.GetHashCode();
+                hash = hash * 59 + EventId.GetHashCode();
             }
 
-            if (this.EventDateTime != null)
+            if (EventDateTime != null)
             {
-                hash = hash * 59 + this.EventDateTime.GetHashCode();
+                hash = hash * 59 + EventDateTime.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.TransferType != null)
+            if (TransferType != null)
             {
-                hash = hash * 59 + this.TransferType.GetHashCode();
+                hash = hash * 59 + TransferType.GetHashCode();
             }
 
-            if (this.CommandId != null)
+            if (CommandId != null)
             {
-                hash = hash * 59 + this.CommandId.GetHashCode();
+                hash = hash * 59 + CommandId.GetHashCode();
             }
 
-            if (this.InitiatingCommunicationId != null)
+            if (InitiatingCommunicationId != null)
             {
-                hash = hash * 59 + this.InitiatingCommunicationId.GetHashCode();
+                hash = hash * 59 + InitiatingCommunicationId.GetHashCode();
             }
 
-            if (this.TargetCommunicationId != null)
+            if (TargetCommunicationId != null)
             {
-                hash = hash * 59 + this.TargetCommunicationId.GetHashCode();
+                hash = hash * 59 + TargetCommunicationId.GetHashCode();
             }
 
-            if (this.ObjectCommunicationId != null)
+            if (ObjectCommunicationId != null)
             {
-                hash = hash * 59 + this.ObjectCommunicationId.GetHashCode();
+                hash = hash * 59 + ObjectCommunicationId.GetHashCode();
             }
 
-            if (this.DestinationUserId != null)
+            if (DestinationUserId != null)
             {
-                hash = hash * 59 + this.DestinationUserId.GetHashCode();
+                hash = hash * 59 + DestinationUserId.GetHashCode();
             }
 
             return hash;

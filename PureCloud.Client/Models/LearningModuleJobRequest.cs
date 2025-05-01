@@ -97,7 +97,7 @@ public partial class LearningModuleJobRequest : IEquatable<LearningModuleJobRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModuleJobRequest);
+        return Equals(obj as LearningModuleJobRequest);
     }
 
     /// <summary>
@@ -115,9 +115,9 @@ public partial class LearningModuleJobRequest : IEquatable<LearningModuleJobRequ
 
         return true &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             );
     }
 
@@ -132,9 +132,9 @@ public partial class LearningModuleJobRequest : IEquatable<LearningModuleJobRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
             return hash;

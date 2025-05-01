@@ -74,7 +74,7 @@ public partial class TopicPhrase : IEquatable<TopicPhrase>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TopicPhrase);
+        return Equals(obj as TopicPhrase);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class TopicPhrase : IEquatable<TopicPhrase>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.UtteranceCount == other.UtteranceCount ||
-                this.UtteranceCount != null &&
-                this.UtteranceCount.Equals(other.UtteranceCount)
+                UtteranceCount == other.UtteranceCount ||
+                UtteranceCount != null &&
+                UtteranceCount.Equals(other.UtteranceCount)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class TopicPhrase : IEquatable<TopicPhrase>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.UtteranceCount != null)
+            if (UtteranceCount != null)
             {
-                hash = hash * 59 + this.UtteranceCount.GetHashCode();
+                hash = hash * 59 + UtteranceCount.GetHashCode();
             }
 
             return hash;

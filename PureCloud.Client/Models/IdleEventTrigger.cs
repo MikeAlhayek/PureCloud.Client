@@ -71,7 +71,7 @@ public partial class IdleEventTrigger : IEquatable<IdleEventTrigger>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IdleEventTrigger);
+        return Equals(obj as IdleEventTrigger);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class IdleEventTrigger : IEquatable<IdleEventTrigger>
 
         return true &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             ) &&
             (
-                this.IdleAfterSeconds == other.IdleAfterSeconds ||
-                this.IdleAfterSeconds != null &&
-                this.IdleAfterSeconds.Equals(other.IdleAfterSeconds)
+                IdleAfterSeconds == other.IdleAfterSeconds ||
+                IdleAfterSeconds != null &&
+                IdleAfterSeconds.Equals(other.IdleAfterSeconds)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class IdleEventTrigger : IEquatable<IdleEventTrigger>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
-            if (this.IdleAfterSeconds != null)
+            if (IdleAfterSeconds != null)
             {
-                hash = hash * 59 + this.IdleAfterSeconds.GetHashCode();
+                hash = hash * 59 + IdleAfterSeconds.GetHashCode();
             }
 
             return hash;

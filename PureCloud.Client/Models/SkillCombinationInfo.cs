@@ -73,7 +73,7 @@ public partial class SkillCombinationInfo : IEquatable<SkillCombinationInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SkillCombinationInfo);
+        return Equals(obj as SkillCombinationInfo);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class SkillCombinationInfo : IEquatable<SkillCombinationInfo>
 
         return true &&
             (
-                this.SkillCombination == other.SkillCombination ||
-                this.SkillCombination != null &&
-                this.SkillCombination.SequenceEqual(other.SkillCombination)
+                SkillCombination == other.SkillCombination ||
+                SkillCombination != null &&
+                SkillCombination.SequenceEqual(other.SkillCombination)
             ) &&
             (
-                this.TotalCount == other.TotalCount ||
-                this.TotalCount != null &&
-                this.TotalCount.Equals(other.TotalCount)
+                TotalCount == other.TotalCount ||
+                TotalCount != null &&
+                TotalCount.Equals(other.TotalCount)
             ) &&
             (
-                this.RemainingCount == other.RemainingCount ||
-                this.RemainingCount != null &&
-                this.RemainingCount.Equals(other.RemainingCount)
+                RemainingCount == other.RemainingCount ||
+                RemainingCount != null &&
+                RemainingCount.Equals(other.RemainingCount)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class SkillCombinationInfo : IEquatable<SkillCombinationInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SkillCombination != null)
+            if (SkillCombination != null)
             {
-                hash = hash * 59 + this.SkillCombination.GetHashCode();
+                hash = hash * 59 + SkillCombination.GetHashCode();
             }
 
-            if (this.TotalCount != null)
+            if (TotalCount != null)
             {
-                hash = hash * 59 + this.TotalCount.GetHashCode();
+                hash = hash * 59 + TotalCount.GetHashCode();
             }
 
-            if (this.RemainingCount != null)
+            if (RemainingCount != null)
             {
-                hash = hash * 59 + this.RemainingCount.GetHashCode();
+                hash = hash * 59 + RemainingCount.GetHashCode();
             }
 
             return hash;

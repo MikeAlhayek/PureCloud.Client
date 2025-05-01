@@ -85,7 +85,7 @@ public partial class TimeInterval : IEquatable<TimeInterval>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeInterval);
+        return Equals(obj as TimeInterval);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class TimeInterval : IEquatable<TimeInterval>
 
         return true &&
             (
-                this.Months == other.Months ||
-                this.Months != null &&
-                this.Months.Equals(other.Months)
+                Months == other.Months ||
+                Months != null &&
+                Months.Equals(other.Months)
             ) &&
             (
-                this.Weeks == other.Weeks ||
-                this.Weeks != null &&
-                this.Weeks.Equals(other.Weeks)
+                Weeks == other.Weeks ||
+                Weeks != null &&
+                Weeks.Equals(other.Weeks)
             ) &&
             (
-                this.Days == other.Days ||
-                this.Days != null &&
-                this.Days.Equals(other.Days)
+                Days == other.Days ||
+                Days != null &&
+                Days.Equals(other.Days)
             ) &&
             (
-                this.Hours == other.Hours ||
-                this.Hours != null &&
-                this.Hours.Equals(other.Hours)
+                Hours == other.Hours ||
+                Hours != null &&
+                Hours.Equals(other.Hours)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class TimeInterval : IEquatable<TimeInterval>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Months != null)
+            if (Months != null)
             {
-                hash = hash * 59 + this.Months.GetHashCode();
+                hash = hash * 59 + Months.GetHashCode();
             }
 
-            if (this.Weeks != null)
+            if (Weeks != null)
             {
-                hash = hash * 59 + this.Weeks.GetHashCode();
+                hash = hash * 59 + Weeks.GetHashCode();
             }
 
-            if (this.Days != null)
+            if (Days != null)
             {
-                hash = hash * 59 + this.Days.GetHashCode();
+                hash = hash * 59 + Days.GetHashCode();
             }
 
-            if (this.Hours != null)
+            if (Hours != null)
             {
-                hash = hash * 59 + this.Hours.GetHashCode();
+                hash = hash * 59 + Hours.GetHashCode();
             }
 
             return hash;

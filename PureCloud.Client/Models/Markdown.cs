@@ -53,7 +53,7 @@ public partial class Markdown : IEquatable<Markdown>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Markdown);
+        return Equals(obj as Markdown);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class Markdown : IEquatable<Markdown>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class Markdown : IEquatable<Markdown>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
             return hash;

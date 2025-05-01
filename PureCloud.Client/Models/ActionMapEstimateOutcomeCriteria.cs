@@ -106,7 +106,7 @@ public partial class ActionMapEstimateOutcomeCriteria : IEquatable<ActionMapEsti
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionMapEstimateOutcomeCriteria);
+        return Equals(obj as ActionMapEstimateOutcomeCriteria);
     }
 
     /// <summary>
@@ -124,29 +124,29 @@ public partial class ActionMapEstimateOutcomeCriteria : IEquatable<ActionMapEsti
 
         return true &&
             (
-                this.OutcomeId == other.OutcomeId ||
-                this.OutcomeId != null &&
-                this.OutcomeId.Equals(other.OutcomeId)
+                OutcomeId == other.OutcomeId ||
+                OutcomeId != null &&
+                OutcomeId.Equals(other.OutcomeId)
             ) &&
             (
-                this.MaxProbability == other.MaxProbability ||
-                this.MaxProbability != null &&
-                this.MaxProbability.Equals(other.MaxProbability)
+                MaxProbability == other.MaxProbability ||
+                MaxProbability != null &&
+                MaxProbability.Equals(other.MaxProbability)
             ) &&
             (
-                this.Probability == other.Probability ||
-                this.Probability != null &&
-                this.Probability.Equals(other.Probability)
+                Probability == other.Probability ||
+                Probability != null &&
+                Probability.Equals(other.Probability)
             ) &&
             (
-                this.Quantile == other.Quantile ||
-                this.Quantile != null &&
-                this.Quantile.Equals(other.Quantile)
+                Quantile == other.Quantile ||
+                Quantile != null &&
+                Quantile.Equals(other.Quantile)
             ) &&
             (
-                this.MaxQuantile == other.MaxQuantile ||
-                this.MaxQuantile != null &&
-                this.MaxQuantile.Equals(other.MaxQuantile)
+                MaxQuantile == other.MaxQuantile ||
+                MaxQuantile != null &&
+                MaxQuantile.Equals(other.MaxQuantile)
             );
     }
 
@@ -161,29 +161,29 @@ public partial class ActionMapEstimateOutcomeCriteria : IEquatable<ActionMapEsti
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutcomeId != null)
+            if (OutcomeId != null)
             {
-                hash = hash * 59 + this.OutcomeId.GetHashCode();
+                hash = hash * 59 + OutcomeId.GetHashCode();
             }
 
-            if (this.MaxProbability != null)
+            if (MaxProbability != null)
             {
-                hash = hash * 59 + this.MaxProbability.GetHashCode();
+                hash = hash * 59 + MaxProbability.GetHashCode();
             }
 
-            if (this.Probability != null)
+            if (Probability != null)
             {
-                hash = hash * 59 + this.Probability.GetHashCode();
+                hash = hash * 59 + Probability.GetHashCode();
             }
 
-            if (this.Quantile != null)
+            if (Quantile != null)
             {
-                hash = hash * 59 + this.Quantile.GetHashCode();
+                hash = hash * 59 + Quantile.GetHashCode();
             }
 
-            if (this.MaxQuantile != null)
+            if (MaxQuantile != null)
             {
-                hash = hash * 59 + this.MaxQuantile.GetHashCode();
+                hash = hash * 59 + MaxQuantile.GetHashCode();
             }
 
             return hash;

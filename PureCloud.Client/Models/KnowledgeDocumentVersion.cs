@@ -119,7 +119,7 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentVersion);
+        return Equals(obj as KnowledgeDocumentVersion);
     }
 
     /// <summary>
@@ -137,39 +137,39 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DatePublished == other.DatePublished ||
-                this.DatePublished != null &&
-                this.DatePublished.Equals(other.DatePublished)
+                DatePublished == other.DatePublished ||
+                DatePublished != null &&
+                DatePublished.Equals(other.DatePublished)
             ) &&
             (
-                this.Document == other.Document ||
-                this.Document != null &&
-                this.Document.Equals(other.Document)
+                Document == other.Document ||
+                Document != null &&
+                Document.Equals(other.Document)
             ) &&
             (
-                this.RestoreFromVersionId == other.RestoreFromVersionId ||
-                this.RestoreFromVersionId != null &&
-                this.RestoreFromVersionId.Equals(other.RestoreFromVersionId)
+                RestoreFromVersionId == other.RestoreFromVersionId ||
+                RestoreFromVersionId != null &&
+                RestoreFromVersionId.Equals(other.RestoreFromVersionId)
             ) &&
             (
-                this.VersionNumber == other.VersionNumber ||
-                this.VersionNumber != null &&
-                this.VersionNumber.Equals(other.VersionNumber)
+                VersionNumber == other.VersionNumber ||
+                VersionNumber != null &&
+                VersionNumber.Equals(other.VersionNumber)
             ) &&
             (
-                this.DateExpires == other.DateExpires ||
-                this.DateExpires != null &&
-                this.DateExpires.Equals(other.DateExpires)
+                DateExpires == other.DateExpires ||
+                DateExpires != null &&
+                DateExpires.Equals(other.DateExpires)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -184,39 +184,39 @@ public partial class KnowledgeDocumentVersion : IEquatable<KnowledgeDocumentVers
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DatePublished != null)
+            if (DatePublished != null)
             {
-                hash = hash * 59 + this.DatePublished.GetHashCode();
+                hash = hash * 59 + DatePublished.GetHashCode();
             }
 
-            if (this.Document != null)
+            if (Document != null)
             {
-                hash = hash * 59 + this.Document.GetHashCode();
+                hash = hash * 59 + Document.GetHashCode();
             }
 
-            if (this.RestoreFromVersionId != null)
+            if (RestoreFromVersionId != null)
             {
-                hash = hash * 59 + this.RestoreFromVersionId.GetHashCode();
+                hash = hash * 59 + RestoreFromVersionId.GetHashCode();
             }
 
-            if (this.VersionNumber != null)
+            if (VersionNumber != null)
             {
-                hash = hash * 59 + this.VersionNumber.GetHashCode();
+                hash = hash * 59 + VersionNumber.GetHashCode();
             }
 
-            if (this.DateExpires != null)
+            if (DateExpires != null)
             {
-                hash = hash * 59 + this.DateExpires.GetHashCode();
+                hash = hash * 59 + DateExpires.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -141,7 +141,7 @@ public partial class OperandPosition : IEquatable<OperandPosition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OperandPosition);
+        return Equals(obj as OperandPosition);
     }
 
     /// <summary>
@@ -159,24 +159,24 @@ public partial class OperandPosition : IEquatable<OperandPosition>
 
         return true &&
             (
-                this.StartingPositionValue == other.StartingPositionValue ||
-                this.StartingPositionValue != null &&
-                this.StartingPositionValue.Equals(other.StartingPositionValue)
+                StartingPositionValue == other.StartingPositionValue ||
+                StartingPositionValue != null &&
+                StartingPositionValue.Equals(other.StartingPositionValue)
             ) &&
             (
-                this.StartingPositionDirection == other.StartingPositionDirection ||
-                this.StartingPositionDirection != null &&
-                this.StartingPositionDirection.Equals(other.StartingPositionDirection)
+                StartingPositionDirection == other.StartingPositionDirection ||
+                StartingPositionDirection != null &&
+                StartingPositionDirection.Equals(other.StartingPositionDirection)
             ) &&
             (
-                this.EndingPositionValue == other.EndingPositionValue ||
-                this.EndingPositionValue != null &&
-                this.EndingPositionValue.Equals(other.EndingPositionValue)
+                EndingPositionValue == other.EndingPositionValue ||
+                EndingPositionValue != null &&
+                EndingPositionValue.Equals(other.EndingPositionValue)
             ) &&
             (
-                this.EndingPositionDirection == other.EndingPositionDirection ||
-                this.EndingPositionDirection != null &&
-                this.EndingPositionDirection.Equals(other.EndingPositionDirection)
+                EndingPositionDirection == other.EndingPositionDirection ||
+                EndingPositionDirection != null &&
+                EndingPositionDirection.Equals(other.EndingPositionDirection)
             );
     }
 
@@ -191,24 +191,24 @@ public partial class OperandPosition : IEquatable<OperandPosition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartingPositionValue != null)
+            if (StartingPositionValue != null)
             {
-                hash = hash * 59 + this.StartingPositionValue.GetHashCode();
+                hash = hash * 59 + StartingPositionValue.GetHashCode();
             }
 
-            if (this.StartingPositionDirection != null)
+            if (StartingPositionDirection != null)
             {
-                hash = hash * 59 + this.StartingPositionDirection.GetHashCode();
+                hash = hash * 59 + StartingPositionDirection.GetHashCode();
             }
 
-            if (this.EndingPositionValue != null)
+            if (EndingPositionValue != null)
             {
-                hash = hash * 59 + this.EndingPositionValue.GetHashCode();
+                hash = hash * 59 + EndingPositionValue.GetHashCode();
             }
 
-            if (this.EndingPositionDirection != null)
+            if (EndingPositionDirection != null)
             {
-                hash = hash * 59 + this.EndingPositionDirection.GetHashCode();
+                hash = hash * 59 + EndingPositionDirection.GetHashCode();
             }
 
             return hash;

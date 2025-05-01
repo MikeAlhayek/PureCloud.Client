@@ -77,7 +77,7 @@ public partial class LogEntry : IEquatable<LogEntry>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LogEntry);
+        return Equals(obj as LogEntry);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class LogEntry : IEquatable<LogEntry>
 
         return true &&
             (
-                this.Level == other.Level ||
-                this.Level != null &&
-                this.Level.Equals(other.Level)
+                Level == other.Level ||
+                Level != null &&
+                Level.Equals(other.Level)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class LogEntry : IEquatable<LogEntry>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Level != null)
+            if (Level != null)
             {
-                hash = hash * 59 + this.Level.GetHashCode();
+                hash = hash * 59 + Level.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
             return hash;

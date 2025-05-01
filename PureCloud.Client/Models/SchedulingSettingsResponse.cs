@@ -169,7 +169,7 @@ public partial class SchedulingSettingsResponse : IEquatable<SchedulingSettingsR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SchedulingSettingsResponse);
+        return Equals(obj as SchedulingSettingsResponse);
     }
 
     /// <summary>
@@ -187,34 +187,34 @@ public partial class SchedulingSettingsResponse : IEquatable<SchedulingSettingsR
 
         return true &&
             (
-                this.MaxOccupancyPercentForDeferredWork == other.MaxOccupancyPercentForDeferredWork ||
-                this.MaxOccupancyPercentForDeferredWork != null &&
-                this.MaxOccupancyPercentForDeferredWork.Equals(other.MaxOccupancyPercentForDeferredWork)
+                MaxOccupancyPercentForDeferredWork == other.MaxOccupancyPercentForDeferredWork ||
+                MaxOccupancyPercentForDeferredWork != null &&
+                MaxOccupancyPercentForDeferredWork.Equals(other.MaxOccupancyPercentForDeferredWork)
             ) &&
             (
-                this.DefaultShrinkagePercent == other.DefaultShrinkagePercent ||
-                this.DefaultShrinkagePercent != null &&
-                this.DefaultShrinkagePercent.Equals(other.DefaultShrinkagePercent)
+                DefaultShrinkagePercent == other.DefaultShrinkagePercent ||
+                DefaultShrinkagePercent != null &&
+                DefaultShrinkagePercent.Equals(other.DefaultShrinkagePercent)
             ) &&
             (
-                this.ShrinkageOverrides == other.ShrinkageOverrides ||
-                this.ShrinkageOverrides != null &&
-                this.ShrinkageOverrides.Equals(other.ShrinkageOverrides)
+                ShrinkageOverrides == other.ShrinkageOverrides ||
+                ShrinkageOverrides != null &&
+                ShrinkageOverrides.Equals(other.ShrinkageOverrides)
             ) &&
             (
-                this.PlanningPeriod == other.PlanningPeriod ||
-                this.PlanningPeriod != null &&
-                this.PlanningPeriod.Equals(other.PlanningPeriod)
+                PlanningPeriod == other.PlanningPeriod ||
+                PlanningPeriod != null &&
+                PlanningPeriod.Equals(other.PlanningPeriod)
             ) &&
             (
-                this.MonthlyPlanningPeriod == other.MonthlyPlanningPeriod ||
-                this.MonthlyPlanningPeriod != null &&
-                this.MonthlyPlanningPeriod.Equals(other.MonthlyPlanningPeriod)
+                MonthlyPlanningPeriod == other.MonthlyPlanningPeriod ||
+                MonthlyPlanningPeriod != null &&
+                MonthlyPlanningPeriod.Equals(other.MonthlyPlanningPeriod)
             ) &&
             (
-                this.StartDayOfWeekend == other.StartDayOfWeekend ||
-                this.StartDayOfWeekend != null &&
-                this.StartDayOfWeekend.Equals(other.StartDayOfWeekend)
+                StartDayOfWeekend == other.StartDayOfWeekend ||
+                StartDayOfWeekend != null &&
+                StartDayOfWeekend.Equals(other.StartDayOfWeekend)
             );
     }
 
@@ -229,34 +229,34 @@ public partial class SchedulingSettingsResponse : IEquatable<SchedulingSettingsR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MaxOccupancyPercentForDeferredWork != null)
+            if (MaxOccupancyPercentForDeferredWork != null)
             {
-                hash = hash * 59 + this.MaxOccupancyPercentForDeferredWork.GetHashCode();
+                hash = hash * 59 + MaxOccupancyPercentForDeferredWork.GetHashCode();
             }
 
-            if (this.DefaultShrinkagePercent != null)
+            if (DefaultShrinkagePercent != null)
             {
-                hash = hash * 59 + this.DefaultShrinkagePercent.GetHashCode();
+                hash = hash * 59 + DefaultShrinkagePercent.GetHashCode();
             }
 
-            if (this.ShrinkageOverrides != null)
+            if (ShrinkageOverrides != null)
             {
-                hash = hash * 59 + this.ShrinkageOverrides.GetHashCode();
+                hash = hash * 59 + ShrinkageOverrides.GetHashCode();
             }
 
-            if (this.PlanningPeriod != null)
+            if (PlanningPeriod != null)
             {
-                hash = hash * 59 + this.PlanningPeriod.GetHashCode();
+                hash = hash * 59 + PlanningPeriod.GetHashCode();
             }
 
-            if (this.MonthlyPlanningPeriod != null)
+            if (MonthlyPlanningPeriod != null)
             {
-                hash = hash * 59 + this.MonthlyPlanningPeriod.GetHashCode();
+                hash = hash * 59 + MonthlyPlanningPeriod.GetHashCode();
             }
 
-            if (this.StartDayOfWeekend != null)
+            if (StartDayOfWeekend != null)
             {
-                hash = hash * 59 + this.StartDayOfWeekend.GetHashCode();
+                hash = hash * 59 + StartDayOfWeekend.GetHashCode();
             }
 
             return hash;

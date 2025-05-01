@@ -151,7 +151,7 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ModifiableRuleProperties);
+        return Equals(obj as ModifiableRuleProperties);
     }
 
     /// <summary>
@@ -169,49 +169,49 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Notifications == other.Notifications ||
-                this.Notifications != null &&
-                this.Notifications.SequenceEqual(other.Notifications)
+                Notifications == other.Notifications ||
+                Notifications != null &&
+                Notifications.SequenceEqual(other.Notifications)
             ) &&
             (
-                this.SendExitingAlarmNotifications == other.SendExitingAlarmNotifications ||
-                this.SendExitingAlarmNotifications != null &&
-                this.SendExitingAlarmNotifications.Equals(other.SendExitingAlarmNotifications)
+                SendExitingAlarmNotifications == other.SendExitingAlarmNotifications ||
+                SendExitingAlarmNotifications != null &&
+                SendExitingAlarmNotifications.Equals(other.SendExitingAlarmNotifications)
             ) &&
             (
-                this.WaitBetweenNotificationMs == other.WaitBetweenNotificationMs ||
-                this.WaitBetweenNotificationMs != null &&
-                this.WaitBetweenNotificationMs.Equals(other.WaitBetweenNotificationMs)
+                WaitBetweenNotificationMs == other.WaitBetweenNotificationMs ||
+                WaitBetweenNotificationMs != null &&
+                WaitBetweenNotificationMs.Equals(other.WaitBetweenNotificationMs)
             ) &&
             (
-                this.Conditions == other.Conditions ||
-                this.Conditions != null &&
-                this.Conditions.Equals(other.Conditions)
+                Conditions == other.Conditions ||
+                Conditions != null &&
+                Conditions.Equals(other.Conditions)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -226,49 +226,49 @@ public partial class ModifiableRuleProperties : IEquatable<ModifiableRulePropert
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Notifications != null)
+            if (Notifications != null)
             {
-                hash = hash * 59 + this.Notifications.GetHashCode();
+                hash = hash * 59 + Notifications.GetHashCode();
             }
 
-            if (this.SendExitingAlarmNotifications != null)
+            if (SendExitingAlarmNotifications != null)
             {
-                hash = hash * 59 + this.SendExitingAlarmNotifications.GetHashCode();
+                hash = hash * 59 + SendExitingAlarmNotifications.GetHashCode();
             }
 
-            if (this.WaitBetweenNotificationMs != null)
+            if (WaitBetweenNotificationMs != null)
             {
-                hash = hash * 59 + this.WaitBetweenNotificationMs.GetHashCode();
+                hash = hash * 59 + WaitBetweenNotificationMs.GetHashCode();
             }
 
-            if (this.Conditions != null)
+            if (Conditions != null)
             {
-                hash = hash * 59 + this.Conditions.GetHashCode();
+                hash = hash * 59 + Conditions.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

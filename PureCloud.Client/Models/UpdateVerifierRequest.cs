@@ -77,7 +77,7 @@ public partial class UpdateVerifierRequest : IEquatable<UpdateVerifierRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateVerifierRequest);
+        return Equals(obj as UpdateVerifierRequest);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class UpdateVerifierRequest : IEquatable<UpdateVerifierRequest>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Default == other.Default ||
-                this.Default != null &&
-                this.Default.Equals(other.Default)
+                Default == other.Default ||
+                Default != null &&
+                Default.Equals(other.Default)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class UpdateVerifierRequest : IEquatable<UpdateVerifierRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Default != null)
+            if (Default != null)
             {
-                hash = hash * 59 + this.Default.GetHashCode();
+                hash = hash * 59 + Default.GetHashCode();
             }
 
             return hash;

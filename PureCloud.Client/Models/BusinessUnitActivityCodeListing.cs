@@ -64,7 +64,7 @@ public partial class BusinessUnitActivityCodeListing : IEquatable<BusinessUnitAc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BusinessUnitActivityCodeListing);
+        return Equals(obj as BusinessUnitActivityCodeListing);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class BusinessUnitActivityCodeListing : IEquatable<BusinessUnitAc
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class BusinessUnitActivityCodeListing : IEquatable<BusinessUnitAc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
             return hash;

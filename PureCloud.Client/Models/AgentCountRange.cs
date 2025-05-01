@@ -70,7 +70,7 @@ public partial class AgentCountRange : IEquatable<AgentCountRange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentCountRange);
+        return Equals(obj as AgentCountRange);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class AgentCountRange : IEquatable<AgentCountRange>
 
         return true &&
             (
-                this.Minimum == other.Minimum ||
-                this.Minimum != null &&
-                this.Minimum.Equals(other.Minimum)
+                Minimum == other.Minimum ||
+                Minimum != null &&
+                Minimum.Equals(other.Minimum)
             ) &&
             (
-                this.Maximum == other.Maximum ||
-                this.Maximum != null &&
-                this.Maximum.Equals(other.Maximum)
+                Maximum == other.Maximum ||
+                Maximum != null &&
+                Maximum.Equals(other.Maximum)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class AgentCountRange : IEquatable<AgentCountRange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Minimum != null)
+            if (Minimum != null)
             {
-                hash = hash * 59 + this.Minimum.GetHashCode();
+                hash = hash * 59 + Minimum.GetHashCode();
             }
 
-            if (this.Maximum != null)
+            if (Maximum != null)
             {
-                hash = hash * 59 + this.Maximum.GetHashCode();
+                hash = hash * 59 + Maximum.GetHashCode();
             }
 
             return hash;

@@ -59,7 +59,7 @@ public partial class PostInputContract : IEquatable<PostInputContract>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PostInputContract);
+        return Equals(obj as PostInputContract);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class PostInputContract : IEquatable<PostInputContract>
 
         return true &&
             (
-                this.InputSchema == other.InputSchema ||
-                this.InputSchema != null &&
-                this.InputSchema.Equals(other.InputSchema)
+                InputSchema == other.InputSchema ||
+                InputSchema != null &&
+                InputSchema.Equals(other.InputSchema)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class PostInputContract : IEquatable<PostInputContract>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.InputSchema != null)
+            if (InputSchema != null)
             {
-                hash = hash * 59 + this.InputSchema.GetHashCode();
+                hash = hash * 59 + InputSchema.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class SelectorEventTrigger : IEquatable<SelectorEventTrigger>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SelectorEventTrigger);
+        return Equals(obj as SelectorEventTrigger);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class SelectorEventTrigger : IEquatable<SelectorEventTrigger>
 
         return true &&
             (
-                this.Selector == other.Selector ||
-                this.Selector != null &&
-                this.Selector.Equals(other.Selector)
+                Selector == other.Selector ||
+                Selector != null &&
+                Selector.Equals(other.Selector)
             ) &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class SelectorEventTrigger : IEquatable<SelectorEventTrigger>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Selector != null)
+            if (Selector != null)
             {
-                hash = hash * 59 + this.Selector.GetHashCode();
+                hash = hash * 59 + Selector.GetHashCode();
             }
 
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
             return hash;

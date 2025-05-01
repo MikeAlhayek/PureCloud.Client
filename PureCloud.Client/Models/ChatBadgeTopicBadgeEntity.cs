@@ -52,7 +52,7 @@ public partial class ChatBadgeTopicBadgeEntity : IEquatable<ChatBadgeTopicBadgeE
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatBadgeTopicBadgeEntity);
+        return Equals(obj as ChatBadgeTopicBadgeEntity);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class ChatBadgeTopicBadgeEntity : IEquatable<ChatBadgeTopicBadgeE
 
         return true &&
             (
-                this.JabberId == other.JabberId ||
-                this.JabberId != null &&
-                this.JabberId.Equals(other.JabberId)
+                JabberId == other.JabberId ||
+                JabberId != null &&
+                JabberId.Equals(other.JabberId)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class ChatBadgeTopicBadgeEntity : IEquatable<ChatBadgeTopicBadgeE
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.JabberId != null)
+            if (JabberId != null)
             {
-                hash = hash * 59 + this.JabberId.GetHashCode();
+                hash = hash * 59 + JabberId.GetHashCode();
             }
 
             return hash;

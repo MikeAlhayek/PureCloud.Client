@@ -59,7 +59,7 @@ public partial class ExternalMetricDataWriteRequest : IEquatable<ExternalMetricD
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalMetricDataWriteRequest);
+        return Equals(obj as ExternalMetricDataWriteRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ExternalMetricDataWriteRequest : IEquatable<ExternalMetricD
 
         return true &&
             (
-                this.Items == other.Items ||
-                this.Items != null &&
-                this.Items.SequenceEqual(other.Items)
+                Items == other.Items ||
+                Items != null &&
+                Items.SequenceEqual(other.Items)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ExternalMetricDataWriteRequest : IEquatable<ExternalMetricD
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Items != null)
+            if (Items != null)
             {
-                hash = hash * 59 + this.Items.GetHashCode();
+                hash = hash * 59 + Items.GetHashCode();
             }
 
             return hash;

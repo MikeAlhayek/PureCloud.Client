@@ -74,7 +74,7 @@ public partial class JourneyOutcomeEventsNotificationSegment : IEquatable<Journe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyOutcomeEventsNotificationSegment);
+        return Equals(obj as JourneyOutcomeEventsNotificationSegment);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class JourneyOutcomeEventsNotificationSegment : IEquatable<Journe
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.AssignedDate == other.AssignedDate ||
-                this.AssignedDate != null &&
-                this.AssignedDate.Equals(other.AssignedDate)
+                AssignedDate == other.AssignedDate ||
+                AssignedDate != null &&
+                AssignedDate.Equals(other.AssignedDate)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class JourneyOutcomeEventsNotificationSegment : IEquatable<Journe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.AssignedDate != null)
+            if (AssignedDate != null)
             {
-                hash = hash * 59 + this.AssignedDate.GetHashCode();
+                hash = hash * 59 + AssignedDate.GetHashCode();
             }
 
             return hash;

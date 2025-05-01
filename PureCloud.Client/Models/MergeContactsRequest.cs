@@ -71,7 +71,7 @@ public partial class MergeContactsRequest : IEquatable<MergeContactsRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MergeContactsRequest);
+        return Equals(obj as MergeContactsRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class MergeContactsRequest : IEquatable<MergeContactsRequest>
 
         return true &&
             (
-                this.ContactIds == other.ContactIds ||
-                this.ContactIds != null &&
-                this.ContactIds.SequenceEqual(other.ContactIds)
+                ContactIds == other.ContactIds ||
+                ContactIds != null &&
+                ContactIds.SequenceEqual(other.ContactIds)
             ) &&
             (
-                this.ValueOverride == other.ValueOverride ||
-                this.ValueOverride != null &&
-                this.ValueOverride.Equals(other.ValueOverride)
+                ValueOverride == other.ValueOverride ||
+                ValueOverride != null &&
+                ValueOverride.Equals(other.ValueOverride)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class MergeContactsRequest : IEquatable<MergeContactsRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactIds != null)
+            if (ContactIds != null)
             {
-                hash = hash * 59 + this.ContactIds.GetHashCode();
+                hash = hash * 59 + ContactIds.GetHashCode();
             }
 
-            if (this.ValueOverride != null)
+            if (ValueOverride != null)
             {
-                hash = hash * 59 + this.ValueOverride.GetHashCode();
+                hash = hash * 59 + ValueOverride.GetHashCode();
             }
 
             return hash;

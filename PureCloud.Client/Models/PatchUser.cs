@@ -77,7 +77,7 @@ public partial class PatchUser : IEquatable<PatchUser>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchUser);
+        return Equals(obj as PatchUser);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class PatchUser : IEquatable<PatchUser>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.PreferredName == other.PreferredName ||
-                this.PreferredName != null &&
-                this.PreferredName.Equals(other.PreferredName)
+                PreferredName == other.PreferredName ||
+                PreferredName != null &&
+                PreferredName.Equals(other.PreferredName)
             ) &&
             (
-                this.AcdAutoAnswer == other.AcdAutoAnswer ||
-                this.AcdAutoAnswer != null &&
-                this.AcdAutoAnswer.Equals(other.AcdAutoAnswer)
+                AcdAutoAnswer == other.AcdAutoAnswer ||
+                AcdAutoAnswer != null &&
+                AcdAutoAnswer.Equals(other.AcdAutoAnswer)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class PatchUser : IEquatable<PatchUser>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.PreferredName != null)
+            if (PreferredName != null)
             {
-                hash = hash * 59 + this.PreferredName.GetHashCode();
+                hash = hash * 59 + PreferredName.GetHashCode();
             }
 
-            if (this.AcdAutoAnswer != null)
+            if (AcdAutoAnswer != null)
             {
-                hash = hash * 59 + this.AcdAutoAnswer.GetHashCode();
+                hash = hash * 59 + AcdAutoAnswer.GetHashCode();
             }
 
             return hash;

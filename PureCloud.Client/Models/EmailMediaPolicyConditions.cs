@@ -155,7 +155,7 @@ public partial class EmailMediaPolicyConditions : IEquatable<EmailMediaPolicyCon
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailMediaPolicyConditions);
+        return Equals(obj as EmailMediaPolicyConditions);
     }
 
     /// <summary>
@@ -173,44 +173,44 @@ public partial class EmailMediaPolicyConditions : IEquatable<EmailMediaPolicyCon
 
         return true &&
             (
-                this.ForUsers == other.ForUsers ||
-                this.ForUsers != null &&
-                this.ForUsers.SequenceEqual(other.ForUsers)
+                ForUsers == other.ForUsers ||
+                ForUsers != null &&
+                ForUsers.SequenceEqual(other.ForUsers)
             ) &&
             (
-                this.DateRanges == other.DateRanges ||
-                this.DateRanges != null &&
-                this.DateRanges.SequenceEqual(other.DateRanges)
+                DateRanges == other.DateRanges ||
+                DateRanges != null &&
+                DateRanges.SequenceEqual(other.DateRanges)
             ) &&
             (
-                this.ForQueues == other.ForQueues ||
-                this.ForQueues != null &&
-                this.ForQueues.SequenceEqual(other.ForQueues)
+                ForQueues == other.ForQueues ||
+                ForQueues != null &&
+                ForQueues.SequenceEqual(other.ForQueues)
             ) &&
             (
-                this.WrapupCodes == other.WrapupCodes ||
-                this.WrapupCodes != null &&
-                this.WrapupCodes.SequenceEqual(other.WrapupCodes)
+                WrapupCodes == other.WrapupCodes ||
+                WrapupCodes != null &&
+                WrapupCodes.SequenceEqual(other.WrapupCodes)
             ) &&
             (
-                this.Languages == other.Languages ||
-                this.Languages != null &&
-                this.Languages.SequenceEqual(other.Languages)
+                Languages == other.Languages ||
+                Languages != null &&
+                Languages.SequenceEqual(other.Languages)
             ) &&
             (
-                this.TimeAllowed == other.TimeAllowed ||
-                this.TimeAllowed != null &&
-                this.TimeAllowed.Equals(other.TimeAllowed)
+                TimeAllowed == other.TimeAllowed ||
+                TimeAllowed != null &&
+                TimeAllowed.Equals(other.TimeAllowed)
             ) &&
             (
-                this.Teams == other.Teams ||
-                this.Teams != null &&
-                this.Teams.SequenceEqual(other.Teams)
+                Teams == other.Teams ||
+                Teams != null &&
+                Teams.SequenceEqual(other.Teams)
             ) &&
             (
-                this.CustomerParticipation == other.CustomerParticipation ||
-                this.CustomerParticipation != null &&
-                this.CustomerParticipation.Equals(other.CustomerParticipation)
+                CustomerParticipation == other.CustomerParticipation ||
+                CustomerParticipation != null &&
+                CustomerParticipation.Equals(other.CustomerParticipation)
             );
     }
 
@@ -225,44 +225,44 @@ public partial class EmailMediaPolicyConditions : IEquatable<EmailMediaPolicyCon
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ForUsers != null)
+            if (ForUsers != null)
             {
-                hash = hash * 59 + this.ForUsers.GetHashCode();
+                hash = hash * 59 + ForUsers.GetHashCode();
             }
 
-            if (this.DateRanges != null)
+            if (DateRanges != null)
             {
-                hash = hash * 59 + this.DateRanges.GetHashCode();
+                hash = hash * 59 + DateRanges.GetHashCode();
             }
 
-            if (this.ForQueues != null)
+            if (ForQueues != null)
             {
-                hash = hash * 59 + this.ForQueues.GetHashCode();
+                hash = hash * 59 + ForQueues.GetHashCode();
             }
 
-            if (this.WrapupCodes != null)
+            if (WrapupCodes != null)
             {
-                hash = hash * 59 + this.WrapupCodes.GetHashCode();
+                hash = hash * 59 + WrapupCodes.GetHashCode();
             }
 
-            if (this.Languages != null)
+            if (Languages != null)
             {
-                hash = hash * 59 + this.Languages.GetHashCode();
+                hash = hash * 59 + Languages.GetHashCode();
             }
 
-            if (this.TimeAllowed != null)
+            if (TimeAllowed != null)
             {
-                hash = hash * 59 + this.TimeAllowed.GetHashCode();
+                hash = hash * 59 + TimeAllowed.GetHashCode();
             }
 
-            if (this.Teams != null)
+            if (Teams != null)
             {
-                hash = hash * 59 + this.Teams.GetHashCode();
+                hash = hash * 59 + Teams.GetHashCode();
             }
 
-            if (this.CustomerParticipation != null)
+            if (CustomerParticipation != null)
             {
-                hash = hash * 59 + this.CustomerParticipation.GetHashCode();
+                hash = hash * 59 + CustomerParticipation.GetHashCode();
             }
 
             return hash;

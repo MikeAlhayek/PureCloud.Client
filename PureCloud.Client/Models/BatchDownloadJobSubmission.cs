@@ -58,7 +58,7 @@ public partial class BatchDownloadJobSubmission : IEquatable<BatchDownloadJobSub
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BatchDownloadJobSubmission);
+        return Equals(obj as BatchDownloadJobSubmission);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class BatchDownloadJobSubmission : IEquatable<BatchDownloadJobSub
 
         return true &&
             (
-                this.BatchDownloadRequestList == other.BatchDownloadRequestList ||
-                this.BatchDownloadRequestList != null &&
-                this.BatchDownloadRequestList.SequenceEqual(other.BatchDownloadRequestList)
+                BatchDownloadRequestList == other.BatchDownloadRequestList ||
+                BatchDownloadRequestList != null &&
+                BatchDownloadRequestList.SequenceEqual(other.BatchDownloadRequestList)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class BatchDownloadJobSubmission : IEquatable<BatchDownloadJobSub
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BatchDownloadRequestList != null)
+            if (BatchDownloadRequestList != null)
             {
-                hash = hash * 59 + this.BatchDownloadRequestList.GetHashCode();
+                hash = hash * 59 + BatchDownloadRequestList.GetHashCode();
             }
 
             return hash;

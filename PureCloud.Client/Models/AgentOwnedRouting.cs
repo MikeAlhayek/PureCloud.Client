@@ -76,7 +76,7 @@ public partial class AgentOwnedRouting : IEquatable<AgentOwnedRouting>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentOwnedRouting);
+        return Equals(obj as AgentOwnedRouting);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class AgentOwnedRouting : IEquatable<AgentOwnedRouting>
 
         return true &&
             (
-                this.EnableAgentOwnedCallbacks == other.EnableAgentOwnedCallbacks ||
-                this.EnableAgentOwnedCallbacks != null &&
-                this.EnableAgentOwnedCallbacks.Equals(other.EnableAgentOwnedCallbacks)
+                EnableAgentOwnedCallbacks == other.EnableAgentOwnedCallbacks ||
+                EnableAgentOwnedCallbacks != null &&
+                EnableAgentOwnedCallbacks.Equals(other.EnableAgentOwnedCallbacks)
             ) &&
             (
-                this.MaxOwnedCallbackHours == other.MaxOwnedCallbackHours ||
-                this.MaxOwnedCallbackHours != null &&
-                this.MaxOwnedCallbackHours.Equals(other.MaxOwnedCallbackHours)
+                MaxOwnedCallbackHours == other.MaxOwnedCallbackHours ||
+                MaxOwnedCallbackHours != null &&
+                MaxOwnedCallbackHours.Equals(other.MaxOwnedCallbackHours)
             ) &&
             (
-                this.MaxOwnedCallbackDelayHours == other.MaxOwnedCallbackDelayHours ||
-                this.MaxOwnedCallbackDelayHours != null &&
-                this.MaxOwnedCallbackDelayHours.Equals(other.MaxOwnedCallbackDelayHours)
+                MaxOwnedCallbackDelayHours == other.MaxOwnedCallbackDelayHours ||
+                MaxOwnedCallbackDelayHours != null &&
+                MaxOwnedCallbackDelayHours.Equals(other.MaxOwnedCallbackDelayHours)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class AgentOwnedRouting : IEquatable<AgentOwnedRouting>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EnableAgentOwnedCallbacks != null)
+            if (EnableAgentOwnedCallbacks != null)
             {
-                hash = hash * 59 + this.EnableAgentOwnedCallbacks.GetHashCode();
+                hash = hash * 59 + EnableAgentOwnedCallbacks.GetHashCode();
             }
 
-            if (this.MaxOwnedCallbackHours != null)
+            if (MaxOwnedCallbackHours != null)
             {
-                hash = hash * 59 + this.MaxOwnedCallbackHours.GetHashCode();
+                hash = hash * 59 + MaxOwnedCallbackHours.GetHashCode();
             }
 
-            if (this.MaxOwnedCallbackDelayHours != null)
+            if (MaxOwnedCallbackDelayHours != null)
             {
-                hash = hash * 59 + this.MaxOwnedCallbackDelayHours.GetHashCode();
+                hash = hash * 59 + MaxOwnedCallbackDelayHours.GetHashCode();
             }
 
             return hash;

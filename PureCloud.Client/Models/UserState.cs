@@ -169,7 +169,7 @@ public partial class UserState : IEquatable<UserState>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserState);
+        return Equals(obj as UserState);
     }
 
     /// <summary>
@@ -187,24 +187,24 @@ public partial class UserState : IEquatable<UserState>
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.StateChangeReason == other.StateChangeReason ||
-                this.StateChangeReason != null &&
-                this.StateChangeReason.Equals(other.StateChangeReason)
+                StateChangeReason == other.StateChangeReason ||
+                StateChangeReason != null &&
+                StateChangeReason.Equals(other.StateChangeReason)
             ) &&
             (
-                this.StateChangeDate == other.StateChangeDate ||
-                this.StateChangeDate != null &&
-                this.StateChangeDate.Equals(other.StateChangeDate)
+                StateChangeDate == other.StateChangeDate ||
+                StateChangeDate != null &&
+                StateChangeDate.Equals(other.StateChangeDate)
             );
     }
 
@@ -219,24 +219,24 @@ public partial class UserState : IEquatable<UserState>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.StateChangeReason != null)
+            if (StateChangeReason != null)
             {
-                hash = hash * 59 + this.StateChangeReason.GetHashCode();
+                hash = hash * 59 + StateChangeReason.GetHashCode();
             }
 
-            if (this.StateChangeDate != null)
+            if (StateChangeDate != null)
             {
-                hash = hash * 59 + this.StateChangeDate.GetHashCode();
+                hash = hash * 59 + StateChangeDate.GetHashCode();
             }
 
             return hash;

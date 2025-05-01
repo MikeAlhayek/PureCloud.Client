@@ -394,7 +394,7 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerRulesetConfigChangeCondition);
+        return Equals(obj as DialerRulesetConfigChangeCondition);
     }
 
     /// <summary>
@@ -412,89 +412,89 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
 
         return true &&
             (
-                this.DataAction == other.DataAction ||
-                this.DataAction != null &&
-                this.DataAction.Equals(other.DataAction)
+                DataAction == other.DataAction ||
+                DataAction != null &&
+                DataAction.Equals(other.DataAction)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Inverted == other.Inverted ||
-                this.Inverted != null &&
-                this.Inverted.Equals(other.Inverted)
+                Inverted == other.Inverted ||
+                Inverted != null &&
+                Inverted.Equals(other.Inverted)
             ) &&
             (
-                this.AttributeName == other.AttributeName ||
-                this.AttributeName != null &&
-                this.AttributeName.Equals(other.AttributeName)
+                AttributeName == other.AttributeName ||
+                AttributeName != null &&
+                AttributeName.Equals(other.AttributeName)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.ValueType == other.ValueType ||
-                this.ValueType != null &&
-                this.ValueType.Equals(other.ValueType)
+                ValueType == other.ValueType ||
+                ValueType != null &&
+                ValueType.Equals(other.ValueType)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Codes == other.Codes ||
-                this.Codes != null &&
-                this.Codes.SequenceEqual(other.Codes)
+                Codes == other.Codes ||
+                Codes != null &&
+                Codes.SequenceEqual(other.Codes)
             ) &&
             (
-                this.PropertyType == other.PropertyType ||
-                this.PropertyType != null &&
-                this.PropertyType.Equals(other.PropertyType)
+                PropertyType == other.PropertyType ||
+                PropertyType != null &&
+                PropertyType.Equals(other.PropertyType)
             ) &&
             (
-                this.Property == other.Property ||
-                this.Property != null &&
-                this.Property.Equals(other.Property)
+                Property == other.Property ||
+                Property != null &&
+                Property.Equals(other.Property)
             ) &&
             (
-                this.DataNotFoundResolution == other.DataNotFoundResolution ||
-                this.DataNotFoundResolution != null &&
-                this.DataNotFoundResolution.Equals(other.DataNotFoundResolution)
+                DataNotFoundResolution == other.DataNotFoundResolution ||
+                DataNotFoundResolution != null &&
+                DataNotFoundResolution.Equals(other.DataNotFoundResolution)
             ) &&
             (
-                this.ContactIdField == other.ContactIdField ||
-                this.ContactIdField != null &&
-                this.ContactIdField.Equals(other.ContactIdField)
+                ContactIdField == other.ContactIdField ||
+                ContactIdField != null &&
+                ContactIdField.Equals(other.ContactIdField)
             ) &&
             (
-                this.CallAnalysisResultField == other.CallAnalysisResultField ||
-                this.CallAnalysisResultField != null &&
-                this.CallAnalysisResultField.Equals(other.CallAnalysisResultField)
+                CallAnalysisResultField == other.CallAnalysisResultField ||
+                CallAnalysisResultField != null &&
+                CallAnalysisResultField.Equals(other.CallAnalysisResultField)
             ) &&
             (
-                this.AgentWrapupField == other.AgentWrapupField ||
-                this.AgentWrapupField != null &&
-                this.AgentWrapupField.Equals(other.AgentWrapupField)
+                AgentWrapupField == other.AgentWrapupField ||
+                AgentWrapupField != null &&
+                AgentWrapupField.Equals(other.AgentWrapupField)
             ) &&
             (
-                this.ContactColumnToDataActionFieldMappings == other.ContactColumnToDataActionFieldMappings ||
-                this.ContactColumnToDataActionFieldMappings != null &&
-                this.ContactColumnToDataActionFieldMappings.SequenceEqual(other.ContactColumnToDataActionFieldMappings)
+                ContactColumnToDataActionFieldMappings == other.ContactColumnToDataActionFieldMappings ||
+                ContactColumnToDataActionFieldMappings != null &&
+                ContactColumnToDataActionFieldMappings.SequenceEqual(other.ContactColumnToDataActionFieldMappings)
             ) &&
             (
-                this.Predicates == other.Predicates ||
-                this.Predicates != null &&
-                this.Predicates.SequenceEqual(other.Predicates)
+                Predicates == other.Predicates ||
+                Predicates != null &&
+                Predicates.SequenceEqual(other.Predicates)
             );
     }
 
@@ -509,89 +509,89 @@ public partial class DialerRulesetConfigChangeCondition : IEquatable<DialerRules
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DataAction != null)
+            if (DataAction != null)
             {
-                hash = hash * 59 + this.DataAction.GetHashCode();
+                hash = hash * 59 + DataAction.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Inverted != null)
+            if (Inverted != null)
             {
-                hash = hash * 59 + this.Inverted.GetHashCode();
+                hash = hash * 59 + Inverted.GetHashCode();
             }
 
-            if (this.AttributeName != null)
+            if (AttributeName != null)
             {
-                hash = hash * 59 + this.AttributeName.GetHashCode();
+                hash = hash * 59 + AttributeName.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.ValueType != null)
+            if (ValueType != null)
             {
-                hash = hash * 59 + this.ValueType.GetHashCode();
+                hash = hash * 59 + ValueType.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Codes != null)
+            if (Codes != null)
             {
-                hash = hash * 59 + this.Codes.GetHashCode();
+                hash = hash * 59 + Codes.GetHashCode();
             }
 
-            if (this.PropertyType != null)
+            if (PropertyType != null)
             {
-                hash = hash * 59 + this.PropertyType.GetHashCode();
+                hash = hash * 59 + PropertyType.GetHashCode();
             }
 
-            if (this.Property != null)
+            if (Property != null)
             {
-                hash = hash * 59 + this.Property.GetHashCode();
+                hash = hash * 59 + Property.GetHashCode();
             }
 
-            if (this.DataNotFoundResolution != null)
+            if (DataNotFoundResolution != null)
             {
-                hash = hash * 59 + this.DataNotFoundResolution.GetHashCode();
+                hash = hash * 59 + DataNotFoundResolution.GetHashCode();
             }
 
-            if (this.ContactIdField != null)
+            if (ContactIdField != null)
             {
-                hash = hash * 59 + this.ContactIdField.GetHashCode();
+                hash = hash * 59 + ContactIdField.GetHashCode();
             }
 
-            if (this.CallAnalysisResultField != null)
+            if (CallAnalysisResultField != null)
             {
-                hash = hash * 59 + this.CallAnalysisResultField.GetHashCode();
+                hash = hash * 59 + CallAnalysisResultField.GetHashCode();
             }
 
-            if (this.AgentWrapupField != null)
+            if (AgentWrapupField != null)
             {
-                hash = hash * 59 + this.AgentWrapupField.GetHashCode();
+                hash = hash * 59 + AgentWrapupField.GetHashCode();
             }
 
-            if (this.ContactColumnToDataActionFieldMappings != null)
+            if (ContactColumnToDataActionFieldMappings != null)
             {
-                hash = hash * 59 + this.ContactColumnToDataActionFieldMappings.GetHashCode();
+                hash = hash * 59 + ContactColumnToDataActionFieldMappings.GetHashCode();
             }
 
-            if (this.Predicates != null)
+            if (Predicates != null)
             {
-                hash = hash * 59 + this.Predicates.GetHashCode();
+                hash = hash * 59 + Predicates.GetHashCode();
             }
 
             return hash;

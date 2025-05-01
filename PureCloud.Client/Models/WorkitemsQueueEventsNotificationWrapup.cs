@@ -147,7 +147,7 @@ public partial class WorkitemsQueueEventsNotificationWrapup : IEquatable<Workite
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemsQueueEventsNotificationWrapup);
+        return Equals(obj as WorkitemsQueueEventsNotificationWrapup);
     }
 
     /// <summary>
@@ -165,24 +165,24 @@ public partial class WorkitemsQueueEventsNotificationWrapup : IEquatable<Workite
 
         return true &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.Op == other.Op ||
-                this.Op != null &&
-                this.Op.Equals(other.Op)
+                Op == other.Op ||
+                Op != null &&
+                Op.Equals(other.Op)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             );
     }
 
@@ -197,24 +197,24 @@ public partial class WorkitemsQueueEventsNotificationWrapup : IEquatable<Workite
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.Op != null)
+            if (Op != null)
             {
-                hash = hash * 59 + this.Op.GetHashCode();
+                hash = hash * 59 + Op.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
             return hash;

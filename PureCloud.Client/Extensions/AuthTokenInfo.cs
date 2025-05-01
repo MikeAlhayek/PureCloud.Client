@@ -75,7 +75,7 @@ public partial class AuthTokenInfo : IEquatable<AuthTokenInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuthTokenInfo);
+        return Equals(obj as AuthTokenInfo);
     }
 
     /// <summary>
@@ -93,29 +93,29 @@ public partial class AuthTokenInfo : IEquatable<AuthTokenInfo>
 
         return
             (
-                this.AccessToken == other.AccessToken ||
-                this.AccessToken != null &&
-                this.AccessToken.Equals(other.AccessToken)
+                AccessToken == other.AccessToken ||
+                AccessToken != null &&
+                AccessToken.Equals(other.AccessToken)
             ) &&
             (
-                this.RefreshToken == other.RefreshToken ||
-                this.RefreshToken != null &&
-                this.RefreshToken.Equals(other.RefreshToken)
+                RefreshToken == other.RefreshToken ||
+                RefreshToken != null &&
+                RefreshToken.Equals(other.RefreshToken)
             ) &&
             (
-                this.TokenType == other.TokenType ||
-                this.TokenType != null &&
-                this.TokenType.Equals(other.TokenType)
+                TokenType == other.TokenType ||
+                TokenType != null &&
+                TokenType.Equals(other.TokenType)
             ) &&
             (
-                this.ExpiresIn == other.ExpiresIn ||
-                this.ExpiresIn != null &&
-                this.ExpiresIn.Equals(other.ExpiresIn)
+                ExpiresIn == other.ExpiresIn ||
+                ExpiresIn != null &&
+                ExpiresIn.Equals(other.ExpiresIn)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             );
     }
 
@@ -131,29 +131,29 @@ public partial class AuthTokenInfo : IEquatable<AuthTokenInfo>
             int hash = 41;
             // Suitable nullity checks etc, of course :)
 
-            if (this.AccessToken != null)
+            if (AccessToken != null)
             {
-                hash = hash * 59 + this.AccessToken.GetHashCode();
+                hash = hash * 59 + AccessToken.GetHashCode();
             }
 
-            if (this.RefreshToken != null)
+            if (RefreshToken != null)
             {
-                hash = hash * 59 + this.RefreshToken.GetHashCode();
+                hash = hash * 59 + RefreshToken.GetHashCode();
             }
 
-            if (this.TokenType != null)
+            if (TokenType != null)
             {
-                hash = hash * 59 + this.TokenType.GetHashCode();
+                hash = hash * 59 + TokenType.GetHashCode();
             }
 
-            if (this.ExpiresIn != null)
+            if (ExpiresIn != null)
             {
-                hash = hash * 59 + this.ExpiresIn.GetHashCode();
+                hash = hash * 59 + ExpiresIn.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
             return hash;

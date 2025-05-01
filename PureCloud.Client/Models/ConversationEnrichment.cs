@@ -65,7 +65,7 @@ public partial class ConversationEnrichment : IEquatable<ConversationEnrichment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationEnrichment);
+        return Equals(obj as ConversationEnrichment);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ConversationEnrichment : IEquatable<ConversationEnrichment>
 
         return true &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.SentimentV2 == other.SentimentV2 ||
-                this.SentimentV2 != null &&
-                this.SentimentV2.Equals(other.SentimentV2)
+                SentimentV2 == other.SentimentV2 ||
+                SentimentV2 != null &&
+                SentimentV2.Equals(other.SentimentV2)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ConversationEnrichment : IEquatable<ConversationEnrichment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.SentimentV2 != null)
+            if (SentimentV2 != null)
             {
-                hash = hash * 59 + this.SentimentV2.GetHashCode();
+                hash = hash * 59 + SentimentV2.GetHashCode();
             }
 
             return hash;

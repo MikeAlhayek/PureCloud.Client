@@ -90,7 +90,7 @@ public partial class BidGroupWorkPlanRequest : IEquatable<BidGroupWorkPlanReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BidGroupWorkPlanRequest);
+        return Equals(obj as BidGroupWorkPlanRequest);
     }
 
     /// <summary>
@@ -108,24 +108,24 @@ public partial class BidGroupWorkPlanRequest : IEquatable<BidGroupWorkPlanReques
 
         return true &&
             (
-                this.WorkPlanId == other.WorkPlanId ||
-                this.WorkPlanId != null &&
-                this.WorkPlanId.Equals(other.WorkPlanId)
+                WorkPlanId == other.WorkPlanId ||
+                WorkPlanId != null &&
+                WorkPlanId.Equals(other.WorkPlanId)
             ) &&
             (
-                this.OverrideAgentCount == other.OverrideAgentCount ||
-                this.OverrideAgentCount != null &&
-                this.OverrideAgentCount.Equals(other.OverrideAgentCount)
+                OverrideAgentCount == other.OverrideAgentCount ||
+                OverrideAgentCount != null &&
+                OverrideAgentCount.Equals(other.OverrideAgentCount)
             ) &&
             (
-                this.SuggestedAgentCount == other.SuggestedAgentCount ||
-                this.SuggestedAgentCount != null &&
-                this.SuggestedAgentCount.Equals(other.SuggestedAgentCount)
+                SuggestedAgentCount == other.SuggestedAgentCount ||
+                SuggestedAgentCount != null &&
+                SuggestedAgentCount.Equals(other.SuggestedAgentCount)
             ) &&
             (
-                this.AgentCountRange == other.AgentCountRange ||
-                this.AgentCountRange != null &&
-                this.AgentCountRange.Equals(other.AgentCountRange)
+                AgentCountRange == other.AgentCountRange ||
+                AgentCountRange != null &&
+                AgentCountRange.Equals(other.AgentCountRange)
             );
     }
 
@@ -140,24 +140,24 @@ public partial class BidGroupWorkPlanRequest : IEquatable<BidGroupWorkPlanReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WorkPlanId != null)
+            if (WorkPlanId != null)
             {
-                hash = hash * 59 + this.WorkPlanId.GetHashCode();
+                hash = hash * 59 + WorkPlanId.GetHashCode();
             }
 
-            if (this.OverrideAgentCount != null)
+            if (OverrideAgentCount != null)
             {
-                hash = hash * 59 + this.OverrideAgentCount.GetHashCode();
+                hash = hash * 59 + OverrideAgentCount.GetHashCode();
             }
 
-            if (this.SuggestedAgentCount != null)
+            if (SuggestedAgentCount != null)
             {
-                hash = hash * 59 + this.SuggestedAgentCount.GetHashCode();
+                hash = hash * 59 + SuggestedAgentCount.GetHashCode();
             }
 
-            if (this.AgentCountRange != null)
+            if (AgentCountRange != null)
             {
-                hash = hash * 59 + this.AgentCountRange.GetHashCode();
+                hash = hash * 59 + AgentCountRange.GetHashCode();
             }
 
             return hash;

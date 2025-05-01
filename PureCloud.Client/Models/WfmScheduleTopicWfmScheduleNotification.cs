@@ -176,7 +176,7 @@ public partial class WfmScheduleTopicWfmScheduleNotification : IEquatable<WfmSch
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmScheduleTopicWfmScheduleNotification);
+        return Equals(obj as WfmScheduleTopicWfmScheduleNotification);
     }
 
     /// <summary>
@@ -194,29 +194,29 @@ public partial class WfmScheduleTopicWfmScheduleNotification : IEquatable<WfmSch
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.OperationId == other.OperationId ||
-                this.OperationId != null &&
-                this.OperationId.Equals(other.OperationId)
+                OperationId == other.OperationId ||
+                OperationId != null &&
+                OperationId.Equals(other.OperationId)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.PercentComplete == other.PercentComplete ||
-                this.PercentComplete != null &&
-                this.PercentComplete.Equals(other.PercentComplete)
+                PercentComplete == other.PercentComplete ||
+                PercentComplete != null &&
+                PercentComplete.Equals(other.PercentComplete)
             ) &&
             (
-                this.EventType == other.EventType ||
-                this.EventType != null &&
-                this.EventType.Equals(other.EventType)
+                EventType == other.EventType ||
+                EventType != null &&
+                EventType.Equals(other.EventType)
             );
     }
 
@@ -231,29 +231,29 @@ public partial class WfmScheduleTopicWfmScheduleNotification : IEquatable<WfmSch
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.OperationId != null)
+            if (OperationId != null)
             {
-                hash = hash * 59 + this.OperationId.GetHashCode();
+                hash = hash * 59 + OperationId.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.PercentComplete != null)
+            if (PercentComplete != null)
             {
-                hash = hash * 59 + this.PercentComplete.GetHashCode();
+                hash = hash * 59 + PercentComplete.GetHashCode();
             }
 
-            if (this.EventType != null)
+            if (EventType != null)
             {
-                hash = hash * 59 + this.EventType.GetHashCode();
+                hash = hash * 59 + EventType.GetHashCode();
             }
 
             return hash;

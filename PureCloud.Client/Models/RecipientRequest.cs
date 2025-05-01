@@ -53,7 +53,7 @@ public partial class RecipientRequest : IEquatable<RecipientRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecipientRequest);
+        return Equals(obj as RecipientRequest);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class RecipientRequest : IEquatable<RecipientRequest>
 
         return true &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class RecipientRequest : IEquatable<RecipientRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
             return hash;

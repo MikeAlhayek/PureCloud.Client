@@ -363,7 +363,7 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimV2SchemaAttribute);
+        return Equals(obj as ScimV2SchemaAttribute);
     }
 
     /// <summary>
@@ -381,64 +381,64 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.SubAttributes == other.SubAttributes ||
-                this.SubAttributes != null &&
-                this.SubAttributes.SequenceEqual(other.SubAttributes)
+                SubAttributes == other.SubAttributes ||
+                SubAttributes != null &&
+                SubAttributes.SequenceEqual(other.SubAttributes)
             ) &&
             (
-                this.MultiValued == other.MultiValued ||
-                this.MultiValued != null &&
-                this.MultiValued.Equals(other.MultiValued)
+                MultiValued == other.MultiValued ||
+                MultiValued != null &&
+                MultiValued.Equals(other.MultiValued)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Required == other.Required ||
-                this.Required != null &&
-                this.Required.Equals(other.Required)
+                Required == other.Required ||
+                Required != null &&
+                Required.Equals(other.Required)
             ) &&
             (
-                this.CanonicalValues == other.CanonicalValues ||
-                this.CanonicalValues != null &&
-                this.CanonicalValues.SequenceEqual(other.CanonicalValues)
+                CanonicalValues == other.CanonicalValues ||
+                CanonicalValues != null &&
+                CanonicalValues.SequenceEqual(other.CanonicalValues)
             ) &&
             (
-                this.CaseExact == other.CaseExact ||
-                this.CaseExact != null &&
-                this.CaseExact.Equals(other.CaseExact)
+                CaseExact == other.CaseExact ||
+                CaseExact != null &&
+                CaseExact.Equals(other.CaseExact)
             ) &&
             (
-                this.Mutability == other.Mutability ||
-                this.Mutability != null &&
-                this.Mutability.Equals(other.Mutability)
+                Mutability == other.Mutability ||
+                Mutability != null &&
+                Mutability.Equals(other.Mutability)
             ) &&
             (
-                this.Returned == other.Returned ||
-                this.Returned != null &&
-                this.Returned.Equals(other.Returned)
+                Returned == other.Returned ||
+                Returned != null &&
+                Returned.Equals(other.Returned)
             ) &&
             (
-                this.Uniqueness == other.Uniqueness ||
-                this.Uniqueness != null &&
-                this.Uniqueness.Equals(other.Uniqueness)
+                Uniqueness == other.Uniqueness ||
+                Uniqueness != null &&
+                Uniqueness.Equals(other.Uniqueness)
             ) &&
             (
-                this.ReferenceTypes == other.ReferenceTypes ||
-                this.ReferenceTypes != null &&
-                this.ReferenceTypes.SequenceEqual(other.ReferenceTypes)
+                ReferenceTypes == other.ReferenceTypes ||
+                ReferenceTypes != null &&
+                ReferenceTypes.SequenceEqual(other.ReferenceTypes)
             );
     }
 
@@ -453,64 +453,64 @@ public partial class ScimV2SchemaAttribute : IEquatable<ScimV2SchemaAttribute>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.SubAttributes != null)
+            if (SubAttributes != null)
             {
-                hash = hash * 59 + this.SubAttributes.GetHashCode();
+                hash = hash * 59 + SubAttributes.GetHashCode();
             }
 
-            if (this.MultiValued != null)
+            if (MultiValued != null)
             {
-                hash = hash * 59 + this.MultiValued.GetHashCode();
+                hash = hash * 59 + MultiValued.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Required != null)
+            if (Required != null)
             {
-                hash = hash * 59 + this.Required.GetHashCode();
+                hash = hash * 59 + Required.GetHashCode();
             }
 
-            if (this.CanonicalValues != null)
+            if (CanonicalValues != null)
             {
-                hash = hash * 59 + this.CanonicalValues.GetHashCode();
+                hash = hash * 59 + CanonicalValues.GetHashCode();
             }
 
-            if (this.CaseExact != null)
+            if (CaseExact != null)
             {
-                hash = hash * 59 + this.CaseExact.GetHashCode();
+                hash = hash * 59 + CaseExact.GetHashCode();
             }
 
-            if (this.Mutability != null)
+            if (Mutability != null)
             {
-                hash = hash * 59 + this.Mutability.GetHashCode();
+                hash = hash * 59 + Mutability.GetHashCode();
             }
 
-            if (this.Returned != null)
+            if (Returned != null)
             {
-                hash = hash * 59 + this.Returned.GetHashCode();
+                hash = hash * 59 + Returned.GetHashCode();
             }
 
-            if (this.Uniqueness != null)
+            if (Uniqueness != null)
             {
-                hash = hash * 59 + this.Uniqueness.GetHashCode();
+                hash = hash * 59 + Uniqueness.GetHashCode();
             }
 
-            if (this.ReferenceTypes != null)
+            if (ReferenceTypes != null)
             {
-                hash = hash * 59 + this.ReferenceTypes.GetHashCode();
+                hash = hash * 59 + ReferenceTypes.GetHashCode();
             }
 
             return hash;

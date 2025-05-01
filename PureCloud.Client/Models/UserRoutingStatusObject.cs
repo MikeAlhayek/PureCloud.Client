@@ -41,7 +41,7 @@ public partial class UserRoutingStatusObject : IEquatable<UserRoutingStatusObjec
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserRoutingStatusObject);
+        return Equals(obj as UserRoutingStatusObject);
     }
 
     /// <summary>

@@ -139,7 +139,7 @@ public partial class TransferToAgentRequest : IEquatable<TransferToAgentRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TransferToAgentRequest);
+        return Equals(obj as TransferToAgentRequest);
     }
 
     /// <summary>
@@ -157,34 +157,34 @@ public partial class TransferToAgentRequest : IEquatable<TransferToAgentRequest>
 
         return true &&
             (
-                this.TransferType == other.TransferType ||
-                this.TransferType != null &&
-                this.TransferType.Equals(other.TransferType)
+                TransferType == other.TransferType ||
+                TransferType != null &&
+                TransferType.Equals(other.TransferType)
             ) &&
             (
-                this.KeepInternalMessageAlive == other.KeepInternalMessageAlive ||
-                this.KeepInternalMessageAlive != null &&
-                this.KeepInternalMessageAlive.Equals(other.KeepInternalMessageAlive)
+                KeepInternalMessageAlive == other.KeepInternalMessageAlive ||
+                KeepInternalMessageAlive != null &&
+                KeepInternalMessageAlive.Equals(other.KeepInternalMessageAlive)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.UserName == other.UserName ||
-                this.UserName != null &&
-                this.UserName.Equals(other.UserName)
+                UserName == other.UserName ||
+                UserName != null &&
+                UserName.Equals(other.UserName)
             ) &&
             (
-                this.UserDisplayName == other.UserDisplayName ||
-                this.UserDisplayName != null &&
-                this.UserDisplayName.Equals(other.UserDisplayName)
+                UserDisplayName == other.UserDisplayName ||
+                UserDisplayName != null &&
+                UserDisplayName.Equals(other.UserDisplayName)
             ) &&
             (
-                this.Voicemail == other.Voicemail ||
-                this.Voicemail != null &&
-                this.Voicemail.Equals(other.Voicemail)
+                Voicemail == other.Voicemail ||
+                Voicemail != null &&
+                Voicemail.Equals(other.Voicemail)
             );
     }
 
@@ -199,34 +199,34 @@ public partial class TransferToAgentRequest : IEquatable<TransferToAgentRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TransferType != null)
+            if (TransferType != null)
             {
-                hash = hash * 59 + this.TransferType.GetHashCode();
+                hash = hash * 59 + TransferType.GetHashCode();
             }
 
-            if (this.KeepInternalMessageAlive != null)
+            if (KeepInternalMessageAlive != null)
             {
-                hash = hash * 59 + this.KeepInternalMessageAlive.GetHashCode();
+                hash = hash * 59 + KeepInternalMessageAlive.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.UserName != null)
+            if (UserName != null)
             {
-                hash = hash * 59 + this.UserName.GetHashCode();
+                hash = hash * 59 + UserName.GetHashCode();
             }
 
-            if (this.UserDisplayName != null)
+            if (UserDisplayName != null)
             {
-                hash = hash * 59 + this.UserDisplayName.GetHashCode();
+                hash = hash * 59 + UserDisplayName.GetHashCode();
             }
 
-            if (this.Voicemail != null)
+            if (Voicemail != null)
             {
-                hash = hash * 59 + this.Voicemail.GetHashCode();
+                hash = hash * 59 + Voicemail.GetHashCode();
             }
 
             return hash;

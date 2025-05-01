@@ -115,7 +115,7 @@ public partial class LocaleHealth : IEquatable<LocaleHealth>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LocaleHealth);
+        return Equals(obj as LocaleHealth);
     }
 
     /// <summary>
@@ -133,19 +133,19 @@ public partial class LocaleHealth : IEquatable<LocaleHealth>
 
         return true &&
             (
-                this.OverallScore == other.OverallScore ||
-                this.OverallScore != null &&
-                this.OverallScore.Equals(other.OverallScore)
+                OverallScore == other.OverallScore ||
+                OverallScore != null &&
+                OverallScore.Equals(other.OverallScore)
             ) &&
             (
-                this.IssueCount == other.IssueCount ||
-                this.IssueCount != null &&
-                this.IssueCount.Equals(other.IssueCount)
+                IssueCount == other.IssueCount ||
+                IssueCount != null &&
+                IssueCount.Equals(other.IssueCount)
             ) &&
             (
-                this.StaticValidationResults == other.StaticValidationResults ||
-                this.StaticValidationResults != null &&
-                this.StaticValidationResults.SequenceEqual(other.StaticValidationResults)
+                StaticValidationResults == other.StaticValidationResults ||
+                StaticValidationResults != null &&
+                StaticValidationResults.SequenceEqual(other.StaticValidationResults)
             );
     }
 
@@ -160,19 +160,19 @@ public partial class LocaleHealth : IEquatable<LocaleHealth>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OverallScore != null)
+            if (OverallScore != null)
             {
-                hash = hash * 59 + this.OverallScore.GetHashCode();
+                hash = hash * 59 + OverallScore.GetHashCode();
             }
 
-            if (this.IssueCount != null)
+            if (IssueCount != null)
             {
-                hash = hash * 59 + this.IssueCount.GetHashCode();
+                hash = hash * 59 + IssueCount.GetHashCode();
             }
 
-            if (this.StaticValidationResults != null)
+            if (StaticValidationResults != null)
             {
-                hash = hash * 59 + this.StaticValidationResults.GetHashCode();
+                hash = hash * 59 + StaticValidationResults.GetHashCode();
             }
 
             return hash;

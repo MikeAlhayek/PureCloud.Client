@@ -63,7 +63,7 @@ public partial class Items : IEquatable<Items>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Items);
+        return Equals(obj as Items);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class Items : IEquatable<Items>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Pattern == other.Pattern ||
-                this.Pattern != null &&
-                this.Pattern.Equals(other.Pattern)
+                Pattern == other.Pattern ||
+                Pattern != null &&
+                Pattern.Equals(other.Pattern)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class Items : IEquatable<Items>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Pattern != null)
+            if (Pattern != null)
             {
-                hash = hash * 59 + this.Pattern.GetHashCode();
+                hash = hash * 59 + Pattern.GetHashCode();
             }
 
             return hash;

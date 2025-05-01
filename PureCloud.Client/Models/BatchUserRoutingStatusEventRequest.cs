@@ -52,7 +52,7 @@ public partial class BatchUserRoutingStatusEventRequest : IEquatable<BatchUserRo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BatchUserRoutingStatusEventRequest);
+        return Equals(obj as BatchUserRoutingStatusEventRequest);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class BatchUserRoutingStatusEventRequest : IEquatable<BatchUserRo
 
         return true &&
             (
-                this.UserRoutingStatusEvents == other.UserRoutingStatusEvents ||
-                this.UserRoutingStatusEvents != null &&
-                this.UserRoutingStatusEvents.SequenceEqual(other.UserRoutingStatusEvents)
+                UserRoutingStatusEvents == other.UserRoutingStatusEvents ||
+                UserRoutingStatusEvents != null &&
+                UserRoutingStatusEvents.SequenceEqual(other.UserRoutingStatusEvents)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class BatchUserRoutingStatusEventRequest : IEquatable<BatchUserRo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserRoutingStatusEvents != null)
+            if (UserRoutingStatusEvents != null)
             {
-                hash = hash * 59 + this.UserRoutingStatusEvents.GetHashCode();
+                hash = hash * 59 + UserRoutingStatusEvents.GetHashCode();
             }
 
             return hash;

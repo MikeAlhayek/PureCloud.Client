@@ -120,7 +120,7 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AssessmentForm);
+        return Equals(obj as AssessmentForm);
     }
 
     /// <summary>
@@ -138,39 +138,39 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ContextId == other.ContextId ||
-                this.ContextId != null &&
-                this.ContextId.Equals(other.ContextId)
+                ContextId == other.ContextId ||
+                ContextId != null &&
+                ContextId.Equals(other.ContextId)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.Published == other.Published ||
-                this.Published != null &&
-                this.Published.Equals(other.Published)
+                Published == other.Published ||
+                Published != null &&
+                Published.Equals(other.Published)
             ) &&
             (
-                this.PassPercent == other.PassPercent ||
-                this.PassPercent != null &&
-                this.PassPercent.Equals(other.PassPercent)
+                PassPercent == other.PassPercent ||
+                PassPercent != null &&
+                PassPercent.Equals(other.PassPercent)
             ) &&
             (
-                this.QuestionGroups == other.QuestionGroups ||
-                this.QuestionGroups != null &&
-                this.QuestionGroups.SequenceEqual(other.QuestionGroups)
+                QuestionGroups == other.QuestionGroups ||
+                QuestionGroups != null &&
+                QuestionGroups.SequenceEqual(other.QuestionGroups)
             );
     }
 
@@ -185,39 +185,39 @@ public partial class AssessmentForm : IEquatable<AssessmentForm>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ContextId != null)
+            if (ContextId != null)
             {
-                hash = hash * 59 + this.ContextId.GetHashCode();
+                hash = hash * 59 + ContextId.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.Published != null)
+            if (Published != null)
             {
-                hash = hash * 59 + this.Published.GetHashCode();
+                hash = hash * 59 + Published.GetHashCode();
             }
 
-            if (this.PassPercent != null)
+            if (PassPercent != null)
             {
-                hash = hash * 59 + this.PassPercent.GetHashCode();
+                hash = hash * 59 + PassPercent.GetHashCode();
             }
 
-            if (this.QuestionGroups != null)
+            if (QuestionGroups != null)
             {
-                hash = hash * 59 + this.QuestionGroups.GetHashCode();
+                hash = hash * 59 + QuestionGroups.GetHashCode();
             }
 
             return hash;

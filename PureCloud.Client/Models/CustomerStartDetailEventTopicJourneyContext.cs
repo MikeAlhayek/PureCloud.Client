@@ -85,7 +85,7 @@ public partial class CustomerStartDetailEventTopicJourneyContext : IEquatable<Cu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CustomerStartDetailEventTopicJourneyContext);
+        return Equals(obj as CustomerStartDetailEventTopicJourneyContext);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class CustomerStartDetailEventTopicJourneyContext : IEquatable<Cu
 
         return true &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.SessionIdType == other.SessionIdType ||
-                this.SessionIdType != null &&
-                this.SessionIdType.Equals(other.SessionIdType)
+                SessionIdType == other.SessionIdType ||
+                SessionIdType != null &&
+                SessionIdType.Equals(other.SessionIdType)
             ) &&
             (
-                this.ActionId == other.ActionId ||
-                this.ActionId != null &&
-                this.ActionId.Equals(other.ActionId)
+                ActionId == other.ActionId ||
+                ActionId != null &&
+                ActionId.Equals(other.ActionId)
             ) &&
             (
-                this.ActionMapId == other.ActionMapId ||
-                this.ActionMapId != null &&
-                this.ActionMapId.Equals(other.ActionMapId)
+                ActionMapId == other.ActionMapId ||
+                ActionMapId != null &&
+                ActionMapId.Equals(other.ActionMapId)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class CustomerStartDetailEventTopicJourneyContext : IEquatable<Cu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.SessionIdType != null)
+            if (SessionIdType != null)
             {
-                hash = hash * 59 + this.SessionIdType.GetHashCode();
+                hash = hash * 59 + SessionIdType.GetHashCode();
             }
 
-            if (this.ActionId != null)
+            if (ActionId != null)
             {
-                hash = hash * 59 + this.ActionId.GetHashCode();
+                hash = hash * 59 + ActionId.GetHashCode();
             }
 
-            if (this.ActionMapId != null)
+            if (ActionMapId != null)
             {
-                hash = hash * 59 + this.ActionMapId.GetHashCode();
+                hash = hash * 59 + ActionMapId.GetHashCode();
             }
 
             return hash;

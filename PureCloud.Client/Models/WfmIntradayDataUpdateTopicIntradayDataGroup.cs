@@ -167,7 +167,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<Wf
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmIntradayDataUpdateTopicIntradayDataGroup);
+        return Equals(obj as WfmIntradayDataUpdateTopicIntradayDataGroup);
     }
 
     /// <summary>
@@ -185,39 +185,39 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<Wf
 
         return true &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.ForecastDataPerInterval == other.ForecastDataPerInterval ||
-                this.ForecastDataPerInterval != null &&
-                this.ForecastDataPerInterval.SequenceEqual(other.ForecastDataPerInterval)
+                ForecastDataPerInterval == other.ForecastDataPerInterval ||
+                ForecastDataPerInterval != null &&
+                ForecastDataPerInterval.SequenceEqual(other.ForecastDataPerInterval)
             ) &&
             (
-                this.ScheduleDataPerInterval == other.ScheduleDataPerInterval ||
-                this.ScheduleDataPerInterval != null &&
-                this.ScheduleDataPerInterval.SequenceEqual(other.ScheduleDataPerInterval)
+                ScheduleDataPerInterval == other.ScheduleDataPerInterval ||
+                ScheduleDataPerInterval != null &&
+                ScheduleDataPerInterval.SequenceEqual(other.ScheduleDataPerInterval)
             ) &&
             (
-                this.HistoricalAgentDataPerInterval == other.HistoricalAgentDataPerInterval ||
-                this.HistoricalAgentDataPerInterval != null &&
-                this.HistoricalAgentDataPerInterval.SequenceEqual(other.HistoricalAgentDataPerInterval)
+                HistoricalAgentDataPerInterval == other.HistoricalAgentDataPerInterval ||
+                HistoricalAgentDataPerInterval != null &&
+                HistoricalAgentDataPerInterval.SequenceEqual(other.HistoricalAgentDataPerInterval)
             ) &&
             (
-                this.HistoricalQueueDataPerInterval == other.HistoricalQueueDataPerInterval ||
-                this.HistoricalQueueDataPerInterval != null &&
-                this.HistoricalQueueDataPerInterval.SequenceEqual(other.HistoricalQueueDataPerInterval)
+                HistoricalQueueDataPerInterval == other.HistoricalQueueDataPerInterval ||
+                HistoricalQueueDataPerInterval != null &&
+                HistoricalQueueDataPerInterval.SequenceEqual(other.HistoricalQueueDataPerInterval)
             ) &&
             (
-                this.PerformancePredictionAgentDataPerInterval == other.PerformancePredictionAgentDataPerInterval ||
-                this.PerformancePredictionAgentDataPerInterval != null &&
-                this.PerformancePredictionAgentDataPerInterval.SequenceEqual(other.PerformancePredictionAgentDataPerInterval)
+                PerformancePredictionAgentDataPerInterval == other.PerformancePredictionAgentDataPerInterval ||
+                PerformancePredictionAgentDataPerInterval != null &&
+                PerformancePredictionAgentDataPerInterval.SequenceEqual(other.PerformancePredictionAgentDataPerInterval)
             ) &&
             (
-                this.PerformancePredictionQueueDataPerInterval == other.PerformancePredictionQueueDataPerInterval ||
-                this.PerformancePredictionQueueDataPerInterval != null &&
-                this.PerformancePredictionQueueDataPerInterval.SequenceEqual(other.PerformancePredictionQueueDataPerInterval)
+                PerformancePredictionQueueDataPerInterval == other.PerformancePredictionQueueDataPerInterval ||
+                PerformancePredictionQueueDataPerInterval != null &&
+                PerformancePredictionQueueDataPerInterval.SequenceEqual(other.PerformancePredictionQueueDataPerInterval)
             );
     }
 
@@ -232,39 +232,39 @@ public partial class WfmIntradayDataUpdateTopicIntradayDataGroup : IEquatable<Wf
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.ForecastDataPerInterval != null)
+            if (ForecastDataPerInterval != null)
             {
-                hash = hash * 59 + this.ForecastDataPerInterval.GetHashCode();
+                hash = hash * 59 + ForecastDataPerInterval.GetHashCode();
             }
 
-            if (this.ScheduleDataPerInterval != null)
+            if (ScheduleDataPerInterval != null)
             {
-                hash = hash * 59 + this.ScheduleDataPerInterval.GetHashCode();
+                hash = hash * 59 + ScheduleDataPerInterval.GetHashCode();
             }
 
-            if (this.HistoricalAgentDataPerInterval != null)
+            if (HistoricalAgentDataPerInterval != null)
             {
-                hash = hash * 59 + this.HistoricalAgentDataPerInterval.GetHashCode();
+                hash = hash * 59 + HistoricalAgentDataPerInterval.GetHashCode();
             }
 
-            if (this.HistoricalQueueDataPerInterval != null)
+            if (HistoricalQueueDataPerInterval != null)
             {
-                hash = hash * 59 + this.HistoricalQueueDataPerInterval.GetHashCode();
+                hash = hash * 59 + HistoricalQueueDataPerInterval.GetHashCode();
             }
 
-            if (this.PerformancePredictionAgentDataPerInterval != null)
+            if (PerformancePredictionAgentDataPerInterval != null)
             {
-                hash = hash * 59 + this.PerformancePredictionAgentDataPerInterval.GetHashCode();
+                hash = hash * 59 + PerformancePredictionAgentDataPerInterval.GetHashCode();
             }
 
-            if (this.PerformancePredictionQueueDataPerInterval != null)
+            if (PerformancePredictionQueueDataPerInterval != null)
             {
-                hash = hash * 59 + this.PerformancePredictionQueueDataPerInterval.GetHashCode();
+                hash = hash * 59 + PerformancePredictionQueueDataPerInterval.GetHashCode();
             }
 
             return hash;

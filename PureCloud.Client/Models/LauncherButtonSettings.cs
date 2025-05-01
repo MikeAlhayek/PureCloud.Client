@@ -85,7 +85,7 @@ public partial class LauncherButtonSettings : IEquatable<LauncherButtonSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LauncherButtonSettings);
+        return Equals(obj as LauncherButtonSettings);
     }
 
     /// <summary>
@@ -103,9 +103,9 @@ public partial class LauncherButtonSettings : IEquatable<LauncherButtonSettings>
 
         return true &&
             (
-                this.Visibility == other.Visibility ||
-                this.Visibility != null &&
-                this.Visibility.Equals(other.Visibility)
+                Visibility == other.Visibility ||
+                Visibility != null &&
+                Visibility.Equals(other.Visibility)
             );
     }
 
@@ -120,9 +120,9 @@ public partial class LauncherButtonSettings : IEquatable<LauncherButtonSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Visibility != null)
+            if (Visibility != null)
             {
-                hash = hash * 59 + this.Visibility.GetHashCode();
+                hash = hash * 59 + Visibility.GetHashCode();
             }
 
             return hash;

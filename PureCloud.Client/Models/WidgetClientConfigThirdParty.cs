@@ -41,7 +41,7 @@ public partial class WidgetClientConfigThirdParty : IEquatable<WidgetClientConfi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WidgetClientConfigThirdParty);
+        return Equals(obj as WidgetClientConfigThirdParty);
     }
 
     /// <summary>

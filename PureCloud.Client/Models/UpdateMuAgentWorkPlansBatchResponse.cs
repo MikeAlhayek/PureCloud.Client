@@ -59,7 +59,7 @@ public partial class UpdateMuAgentWorkPlansBatchResponse : IEquatable<UpdateMuAg
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateMuAgentWorkPlansBatchResponse);
+        return Equals(obj as UpdateMuAgentWorkPlansBatchResponse);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class UpdateMuAgentWorkPlansBatchResponse : IEquatable<UpdateMuAg
 
         return true &&
             (
-                this.Failures == other.Failures ||
-                this.Failures != null &&
-                this.Failures.SequenceEqual(other.Failures)
+                Failures == other.Failures ||
+                Failures != null &&
+                Failures.SequenceEqual(other.Failures)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class UpdateMuAgentWorkPlansBatchResponse : IEquatable<UpdateMuAg
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Failures != null)
+            if (Failures != null)
             {
-                hash = hash * 59 + this.Failures.GetHashCode();
+                hash = hash * 59 + Failures.GetHashCode();
             }
 
             return hash;

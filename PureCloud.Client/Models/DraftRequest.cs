@@ -65,7 +65,7 @@ public partial class DraftRequest : IEquatable<DraftRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DraftRequest);
+        return Equals(obj as DraftRequest);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class DraftRequest : IEquatable<DraftRequest>
 
         return true &&
             (
-                this.Intents == other.Intents ||
-                this.Intents != null &&
-                this.Intents.SequenceEqual(other.Intents)
+                Intents == other.Intents ||
+                Intents != null &&
+                Intents.SequenceEqual(other.Intents)
             ) &&
             (
-                this.Topics == other.Topics ||
-                this.Topics != null &&
-                this.Topics.SequenceEqual(other.Topics)
+                Topics == other.Topics ||
+                Topics != null &&
+                Topics.SequenceEqual(other.Topics)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class DraftRequest : IEquatable<DraftRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Intents != null)
+            if (Intents != null)
             {
-                hash = hash * 59 + this.Intents.GetHashCode();
+                hash = hash * 59 + Intents.GetHashCode();
             }
 
-            if (this.Topics != null)
+            if (Topics != null)
             {
-                hash = hash * 59 + this.Topics.GetHashCode();
+                hash = hash * 59 + Topics.GetHashCode();
             }
 
             return hash;

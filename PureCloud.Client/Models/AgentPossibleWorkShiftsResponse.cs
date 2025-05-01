@@ -100,7 +100,7 @@ public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleW
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentPossibleWorkShiftsResponse);
+        return Equals(obj as AgentPossibleWorkShiftsResponse);
     }
 
     /// <summary>
@@ -118,29 +118,29 @@ public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleW
 
         return true &&
             (
-                this.WeekStartDate == other.WeekStartDate ||
-                this.WeekStartDate != null &&
-                this.WeekStartDate.Equals(other.WeekStartDate)
+                WeekStartDate == other.WeekStartDate ||
+                WeekStartDate != null &&
+                WeekStartDate.Equals(other.WeekStartDate)
             ) &&
             (
-                this.Pattern == other.Pattern ||
-                this.Pattern != null &&
-                this.Pattern.SequenceEqual(other.Pattern)
+                Pattern == other.Pattern ||
+                Pattern != null &&
+                Pattern.SequenceEqual(other.Pattern)
             ) &&
             (
-                this.WeeklyPossibleWorkShifts == other.WeeklyPossibleWorkShifts ||
-                this.WeeklyPossibleWorkShifts != null &&
-                this.WeeklyPossibleWorkShifts.SequenceEqual(other.WeeklyPossibleWorkShifts)
+                WeeklyPossibleWorkShifts == other.WeeklyPossibleWorkShifts ||
+                WeeklyPossibleWorkShifts != null &&
+                WeeklyPossibleWorkShifts.SequenceEqual(other.WeeklyPossibleWorkShifts)
             ) &&
             (
-                this.SchedulerIntervalLengthMinutes == other.SchedulerIntervalLengthMinutes ||
-                this.SchedulerIntervalLengthMinutes != null &&
-                this.SchedulerIntervalLengthMinutes.Equals(other.SchedulerIntervalLengthMinutes)
+                SchedulerIntervalLengthMinutes == other.SchedulerIntervalLengthMinutes ||
+                SchedulerIntervalLengthMinutes != null &&
+                SchedulerIntervalLengthMinutes.Equals(other.SchedulerIntervalLengthMinutes)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             );
     }
 
@@ -155,29 +155,29 @@ public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleW
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WeekStartDate != null)
+            if (WeekStartDate != null)
             {
-                hash = hash * 59 + this.WeekStartDate.GetHashCode();
+                hash = hash * 59 + WeekStartDate.GetHashCode();
             }
 
-            if (this.Pattern != null)
+            if (Pattern != null)
             {
-                hash = hash * 59 + this.Pattern.GetHashCode();
+                hash = hash * 59 + Pattern.GetHashCode();
             }
 
-            if (this.WeeklyPossibleWorkShifts != null)
+            if (WeeklyPossibleWorkShifts != null)
             {
-                hash = hash * 59 + this.WeeklyPossibleWorkShifts.GetHashCode();
+                hash = hash * 59 + WeeklyPossibleWorkShifts.GetHashCode();
             }
 
-            if (this.SchedulerIntervalLengthMinutes != null)
+            if (SchedulerIntervalLengthMinutes != null)
             {
-                hash = hash * 59 + this.SchedulerIntervalLengthMinutes.GetHashCode();
+                hash = hash * 59 + SchedulerIntervalLengthMinutes.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
             return hash;

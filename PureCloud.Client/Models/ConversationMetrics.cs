@@ -163,7 +163,7 @@ public partial class ConversationMetrics : IEquatable<ConversationMetrics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationMetrics);
+        return Equals(obj as ConversationMetrics);
     }
 
     /// <summary>
@@ -181,34 +181,34 @@ public partial class ConversationMetrics : IEquatable<ConversationMetrics>
 
         return true &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.SentimentScore == other.SentimentScore ||
-                this.SentimentScore != null &&
-                this.SentimentScore.Equals(other.SentimentScore)
+                SentimentScore == other.SentimentScore ||
+                SentimentScore != null &&
+                SentimentScore.Equals(other.SentimentScore)
             ) &&
             (
-                this.SentimentTrend == other.SentimentTrend ||
-                this.SentimentTrend != null &&
-                this.SentimentTrend.Equals(other.SentimentTrend)
+                SentimentTrend == other.SentimentTrend ||
+                SentimentTrend != null &&
+                SentimentTrend.Equals(other.SentimentTrend)
             ) &&
             (
-                this.SentimentTrendClass == other.SentimentTrendClass ||
-                this.SentimentTrendClass != null &&
-                this.SentimentTrendClass.Equals(other.SentimentTrendClass)
+                SentimentTrendClass == other.SentimentTrendClass ||
+                SentimentTrendClass != null &&
+                SentimentTrendClass.Equals(other.SentimentTrendClass)
             ) &&
             (
-                this.EmpathyScores == other.EmpathyScores ||
-                this.EmpathyScores != null &&
-                this.EmpathyScores.SequenceEqual(other.EmpathyScores)
+                EmpathyScores == other.EmpathyScores ||
+                EmpathyScores != null &&
+                EmpathyScores.SequenceEqual(other.EmpathyScores)
             ) &&
             (
-                this.ParticipantMetrics == other.ParticipantMetrics ||
-                this.ParticipantMetrics != null &&
-                this.ParticipantMetrics.Equals(other.ParticipantMetrics)
+                ParticipantMetrics == other.ParticipantMetrics ||
+                ParticipantMetrics != null &&
+                ParticipantMetrics.Equals(other.ParticipantMetrics)
             );
     }
 
@@ -223,34 +223,34 @@ public partial class ConversationMetrics : IEquatable<ConversationMetrics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.SentimentScore != null)
+            if (SentimentScore != null)
             {
-                hash = hash * 59 + this.SentimentScore.GetHashCode();
+                hash = hash * 59 + SentimentScore.GetHashCode();
             }
 
-            if (this.SentimentTrend != null)
+            if (SentimentTrend != null)
             {
-                hash = hash * 59 + this.SentimentTrend.GetHashCode();
+                hash = hash * 59 + SentimentTrend.GetHashCode();
             }
 
-            if (this.SentimentTrendClass != null)
+            if (SentimentTrendClass != null)
             {
-                hash = hash * 59 + this.SentimentTrendClass.GetHashCode();
+                hash = hash * 59 + SentimentTrendClass.GetHashCode();
             }
 
-            if (this.EmpathyScores != null)
+            if (EmpathyScores != null)
             {
-                hash = hash * 59 + this.EmpathyScores.GetHashCode();
+                hash = hash * 59 + EmpathyScores.GetHashCode();
             }
 
-            if (this.ParticipantMetrics != null)
+            if (ParticipantMetrics != null)
             {
-                hash = hash * 59 + this.ParticipantMetrics.GetHashCode();
+                hash = hash * 59 + ParticipantMetrics.GetHashCode();
             }
 
             return hash;

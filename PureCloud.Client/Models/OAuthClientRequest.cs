@@ -242,7 +242,7 @@ public partial class OAuthClientRequest : IEquatable<OAuthClientRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OAuthClientRequest);
+        return Equals(obj as OAuthClientRequest);
     }
 
     /// <summary>
@@ -260,54 +260,54 @@ public partial class OAuthClientRequest : IEquatable<OAuthClientRequest>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.AccessTokenValiditySeconds == other.AccessTokenValiditySeconds ||
-                this.AccessTokenValiditySeconds != null &&
-                this.AccessTokenValiditySeconds.Equals(other.AccessTokenValiditySeconds)
+                AccessTokenValiditySeconds == other.AccessTokenValiditySeconds ||
+                AccessTokenValiditySeconds != null &&
+                AccessTokenValiditySeconds.Equals(other.AccessTokenValiditySeconds)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.RegisteredRedirectUri == other.RegisteredRedirectUri ||
-                this.RegisteredRedirectUri != null &&
-                this.RegisteredRedirectUri.SequenceEqual(other.RegisteredRedirectUri)
+                RegisteredRedirectUri == other.RegisteredRedirectUri ||
+                RegisteredRedirectUri != null &&
+                RegisteredRedirectUri.SequenceEqual(other.RegisteredRedirectUri)
             ) &&
             (
-                this.RoleIds == other.RoleIds ||
-                this.RoleIds != null &&
-                this.RoleIds.SequenceEqual(other.RoleIds)
+                RoleIds == other.RoleIds ||
+                RoleIds != null &&
+                RoleIds.SequenceEqual(other.RoleIds)
             ) &&
             (
-                this.AuthorizedGrantType == other.AuthorizedGrantType ||
-                this.AuthorizedGrantType != null &&
-                this.AuthorizedGrantType.Equals(other.AuthorizedGrantType)
+                AuthorizedGrantType == other.AuthorizedGrantType ||
+                AuthorizedGrantType != null &&
+                AuthorizedGrantType.Equals(other.AuthorizedGrantType)
             ) &&
             (
-                this.Scope == other.Scope ||
-                this.Scope != null &&
-                this.Scope.SequenceEqual(other.Scope)
+                Scope == other.Scope ||
+                Scope != null &&
+                Scope.SequenceEqual(other.Scope)
             ) &&
             (
-                this.RoleDivisions == other.RoleDivisions ||
-                this.RoleDivisions != null &&
-                this.RoleDivisions.SequenceEqual(other.RoleDivisions)
+                RoleDivisions == other.RoleDivisions ||
+                RoleDivisions != null &&
+                RoleDivisions.SequenceEqual(other.RoleDivisions)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.DateToDelete == other.DateToDelete ||
-                this.DateToDelete != null &&
-                this.DateToDelete.Equals(other.DateToDelete)
+                DateToDelete == other.DateToDelete ||
+                DateToDelete != null &&
+                DateToDelete.Equals(other.DateToDelete)
             );
     }
 
@@ -322,54 +322,54 @@ public partial class OAuthClientRequest : IEquatable<OAuthClientRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.AccessTokenValiditySeconds != null)
+            if (AccessTokenValiditySeconds != null)
             {
-                hash = hash * 59 + this.AccessTokenValiditySeconds.GetHashCode();
+                hash = hash * 59 + AccessTokenValiditySeconds.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.RegisteredRedirectUri != null)
+            if (RegisteredRedirectUri != null)
             {
-                hash = hash * 59 + this.RegisteredRedirectUri.GetHashCode();
+                hash = hash * 59 + RegisteredRedirectUri.GetHashCode();
             }
 
-            if (this.RoleIds != null)
+            if (RoleIds != null)
             {
-                hash = hash * 59 + this.RoleIds.GetHashCode();
+                hash = hash * 59 + RoleIds.GetHashCode();
             }
 
-            if (this.AuthorizedGrantType != null)
+            if (AuthorizedGrantType != null)
             {
-                hash = hash * 59 + this.AuthorizedGrantType.GetHashCode();
+                hash = hash * 59 + AuthorizedGrantType.GetHashCode();
             }
 
-            if (this.Scope != null)
+            if (Scope != null)
             {
-                hash = hash * 59 + this.Scope.GetHashCode();
+                hash = hash * 59 + Scope.GetHashCode();
             }
 
-            if (this.RoleDivisions != null)
+            if (RoleDivisions != null)
             {
-                hash = hash * 59 + this.RoleDivisions.GetHashCode();
+                hash = hash * 59 + RoleDivisions.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.DateToDelete != null)
+            if (DateToDelete != null)
             {
-                hash = hash * 59 + this.DateToDelete.GetHashCode();
+                hash = hash * 59 + DateToDelete.GetHashCode();
             }
 
             return hash;

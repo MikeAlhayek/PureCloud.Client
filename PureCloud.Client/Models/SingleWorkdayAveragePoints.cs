@@ -81,7 +81,7 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SingleWorkdayAveragePoints);
+        return Equals(obj as SingleWorkdayAveragePoints);
     }
 
     /// <summary>
@@ -99,24 +99,24 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
 
         return true &&
             (
-                this.DateWorkday == other.DateWorkday ||
-                this.DateWorkday != null &&
-                this.DateWorkday.Equals(other.DateWorkday)
+                DateWorkday == other.DateWorkday ||
+                DateWorkday != null &&
+                DateWorkday.Equals(other.DateWorkday)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.AveragePoints == other.AveragePoints ||
-                this.AveragePoints != null &&
-                this.AveragePoints.Equals(other.AveragePoints)
+                AveragePoints == other.AveragePoints ||
+                AveragePoints != null &&
+                AveragePoints.Equals(other.AveragePoints)
             ) &&
             (
-                this.PerformanceProfile == other.PerformanceProfile ||
-                this.PerformanceProfile != null &&
-                this.PerformanceProfile.Equals(other.PerformanceProfile)
+                PerformanceProfile == other.PerformanceProfile ||
+                PerformanceProfile != null &&
+                PerformanceProfile.Equals(other.PerformanceProfile)
             );
     }
 
@@ -131,24 +131,24 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateWorkday != null)
+            if (DateWorkday != null)
             {
-                hash = hash * 59 + this.DateWorkday.GetHashCode();
+                hash = hash * 59 + DateWorkday.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.AveragePoints != null)
+            if (AveragePoints != null)
             {
-                hash = hash * 59 + this.AveragePoints.GetHashCode();
+                hash = hash * 59 + AveragePoints.GetHashCode();
             }
 
-            if (this.PerformanceProfile != null)
+            if (PerformanceProfile != null)
             {
-                hash = hash * 59 + this.PerformanceProfile.GetHashCode();
+                hash = hash * 59 + PerformanceProfile.GetHashCode();
             }
 
             return hash;

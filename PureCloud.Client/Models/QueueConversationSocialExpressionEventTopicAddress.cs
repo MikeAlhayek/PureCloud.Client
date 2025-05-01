@@ -101,7 +101,7 @@ public partial class QueueConversationSocialExpressionEventTopicAddress : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationSocialExpressionEventTopicAddress);
+        return Equals(obj as QueueConversationSocialExpressionEventTopicAddress);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class QueueConversationSocialExpressionEventTopicAddress : IEquat
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.NameRaw == other.NameRaw ||
-                this.NameRaw != null &&
-                this.NameRaw.Equals(other.NameRaw)
+                NameRaw == other.NameRaw ||
+                NameRaw != null &&
+                NameRaw.Equals(other.NameRaw)
             ) &&
             (
-                this.AddressNormalized == other.AddressNormalized ||
-                this.AddressNormalized != null &&
-                this.AddressNormalized.Equals(other.AddressNormalized)
+                AddressNormalized == other.AddressNormalized ||
+                AddressNormalized != null &&
+                AddressNormalized.Equals(other.AddressNormalized)
             ) &&
             (
-                this.AddressRaw == other.AddressRaw ||
-                this.AddressRaw != null &&
-                this.AddressRaw.Equals(other.AddressRaw)
+                AddressRaw == other.AddressRaw ||
+                AddressRaw != null &&
+                AddressRaw.Equals(other.AddressRaw)
             ) &&
             (
-                this.AddressDisplayable == other.AddressDisplayable ||
-                this.AddressDisplayable != null &&
-                this.AddressDisplayable.Equals(other.AddressDisplayable)
+                AddressDisplayable == other.AddressDisplayable ||
+                AddressDisplayable != null &&
+                AddressDisplayable.Equals(other.AddressDisplayable)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class QueueConversationSocialExpressionEventTopicAddress : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.NameRaw != null)
+            if (NameRaw != null)
             {
-                hash = hash * 59 + this.NameRaw.GetHashCode();
+                hash = hash * 59 + NameRaw.GetHashCode();
             }
 
-            if (this.AddressNormalized != null)
+            if (AddressNormalized != null)
             {
-                hash = hash * 59 + this.AddressNormalized.GetHashCode();
+                hash = hash * 59 + AddressNormalized.GetHashCode();
             }
 
-            if (this.AddressRaw != null)
+            if (AddressRaw != null)
             {
-                hash = hash * 59 + this.AddressRaw.GetHashCode();
+                hash = hash * 59 + AddressRaw.GetHashCode();
             }
 
-            if (this.AddressDisplayable != null)
+            if (AddressDisplayable != null)
             {
-                hash = hash * 59 + this.AddressDisplayable.GetHashCode();
+                hash = hash * 59 + AddressDisplayable.GetHashCode();
             }
 
             return hash;

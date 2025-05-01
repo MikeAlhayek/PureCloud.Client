@@ -114,7 +114,7 @@ public partial class AiAnswer : IEquatable<AiAnswer>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AiAnswer);
+        return Equals(obj as AiAnswer);
     }
 
     /// <summary>
@@ -132,19 +132,19 @@ public partial class AiAnswer : IEquatable<AiAnswer>
 
         return true &&
             (
-                this.AnswerId == other.AnswerId ||
-                this.AnswerId != null &&
-                this.AnswerId.Equals(other.AnswerId)
+                AnswerId == other.AnswerId ||
+                AnswerId != null &&
+                AnswerId.Equals(other.AnswerId)
             ) &&
             (
-                this.Explanation == other.Explanation ||
-                this.Explanation != null &&
-                this.Explanation.Equals(other.Explanation)
+                Explanation == other.Explanation ||
+                Explanation != null &&
+                Explanation.Equals(other.Explanation)
             ) &&
             (
-                this.FailureType == other.FailureType ||
-                this.FailureType != null &&
-                this.FailureType.Equals(other.FailureType)
+                FailureType == other.FailureType ||
+                FailureType != null &&
+                FailureType.Equals(other.FailureType)
             );
     }
 
@@ -159,19 +159,19 @@ public partial class AiAnswer : IEquatable<AiAnswer>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AnswerId != null)
+            if (AnswerId != null)
             {
-                hash = hash * 59 + this.AnswerId.GetHashCode();
+                hash = hash * 59 + AnswerId.GetHashCode();
             }
 
-            if (this.Explanation != null)
+            if (Explanation != null)
             {
-                hash = hash * 59 + this.Explanation.GetHashCode();
+                hash = hash * 59 + Explanation.GetHashCode();
             }
 
-            if (this.FailureType != null)
+            if (FailureType != null)
             {
-                hash = hash * 59 + this.FailureType.GetHashCode();
+                hash = hash * 59 + FailureType.GetHashCode();
             }
 
             return hash;

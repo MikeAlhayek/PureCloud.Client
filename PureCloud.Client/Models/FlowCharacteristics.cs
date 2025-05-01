@@ -137,7 +137,7 @@ public partial class FlowCharacteristics : IEquatable<FlowCharacteristics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowCharacteristics);
+        return Equals(obj as FlowCharacteristics);
     }
 
     /// <summary>
@@ -155,44 +155,44 @@ public partial class FlowCharacteristics : IEquatable<FlowCharacteristics>
 
         return true &&
             (
-                this.ExecutionItems == other.ExecutionItems ||
-                this.ExecutionItems != null &&
-                this.ExecutionItems.Equals(other.ExecutionItems)
+                ExecutionItems == other.ExecutionItems ||
+                ExecutionItems != null &&
+                ExecutionItems.Equals(other.ExecutionItems)
             ) &&
             (
-                this.ExecutionInputOutputs == other.ExecutionInputOutputs ||
-                this.ExecutionInputOutputs != null &&
-                this.ExecutionInputOutputs.Equals(other.ExecutionInputOutputs)
+                ExecutionInputOutputs == other.ExecutionInputOutputs ||
+                ExecutionInputOutputs != null &&
+                ExecutionInputOutputs.Equals(other.ExecutionInputOutputs)
             ) &&
             (
-                this.Communications == other.Communications ||
-                this.Communications != null &&
-                this.Communications.Equals(other.Communications)
+                Communications == other.Communications ||
+                Communications != null &&
+                Communications.Equals(other.Communications)
             ) &&
             (
-                this.EventError == other.EventError ||
-                this.EventError != null &&
-                this.EventError.Equals(other.EventError)
+                EventError == other.EventError ||
+                EventError != null &&
+                EventError.Equals(other.EventError)
             ) &&
             (
-                this.EventWarning == other.EventWarning ||
-                this.EventWarning != null &&
-                this.EventWarning.Equals(other.EventWarning)
+                EventWarning == other.EventWarning ||
+                EventWarning != null &&
+                EventWarning.Equals(other.EventWarning)
             ) &&
             (
-                this.EventOther == other.EventOther ||
-                this.EventOther != null &&
-                this.EventOther.Equals(other.EventOther)
+                EventOther == other.EventOther ||
+                EventOther != null &&
+                EventOther.Equals(other.EventOther)
             ) &&
             (
-                this.Variables == other.Variables ||
-                this.Variables != null &&
-                this.Variables.Equals(other.Variables)
+                Variables == other.Variables ||
+                Variables != null &&
+                Variables.Equals(other.Variables)
             ) &&
             (
-                this.Names == other.Names ||
-                this.Names != null &&
-                this.Names.Equals(other.Names)
+                Names == other.Names ||
+                Names != null &&
+                Names.Equals(other.Names)
             );
     }
 
@@ -207,44 +207,44 @@ public partial class FlowCharacteristics : IEquatable<FlowCharacteristics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExecutionItems != null)
+            if (ExecutionItems != null)
             {
-                hash = hash * 59 + this.ExecutionItems.GetHashCode();
+                hash = hash * 59 + ExecutionItems.GetHashCode();
             }
 
-            if (this.ExecutionInputOutputs != null)
+            if (ExecutionInputOutputs != null)
             {
-                hash = hash * 59 + this.ExecutionInputOutputs.GetHashCode();
+                hash = hash * 59 + ExecutionInputOutputs.GetHashCode();
             }
 
-            if (this.Communications != null)
+            if (Communications != null)
             {
-                hash = hash * 59 + this.Communications.GetHashCode();
+                hash = hash * 59 + Communications.GetHashCode();
             }
 
-            if (this.EventError != null)
+            if (EventError != null)
             {
-                hash = hash * 59 + this.EventError.GetHashCode();
+                hash = hash * 59 + EventError.GetHashCode();
             }
 
-            if (this.EventWarning != null)
+            if (EventWarning != null)
             {
-                hash = hash * 59 + this.EventWarning.GetHashCode();
+                hash = hash * 59 + EventWarning.GetHashCode();
             }
 
-            if (this.EventOther != null)
+            if (EventOther != null)
             {
-                hash = hash * 59 + this.EventOther.GetHashCode();
+                hash = hash * 59 + EventOther.GetHashCode();
             }
 
-            if (this.Variables != null)
+            if (Variables != null)
             {
-                hash = hash * 59 + this.Variables.GetHashCode();
+                hash = hash * 59 + Variables.GetHashCode();
             }
 
-            if (this.Names != null)
+            if (Names != null)
             {
-                hash = hash * 59 + this.Names.GetHashCode();
+                hash = hash * 59 + Names.GetHashCode();
             }
 
             return hash;

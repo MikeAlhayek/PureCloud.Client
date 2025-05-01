@@ -108,7 +108,7 @@ public partial class AdminBulkUpdateAlternativeShiftTradeState : IEquatable<Admi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdminBulkUpdateAlternativeShiftTradeState);
+        return Equals(obj as AdminBulkUpdateAlternativeShiftTradeState);
     }
 
     /// <summary>
@@ -126,19 +126,19 @@ public partial class AdminBulkUpdateAlternativeShiftTradeState : IEquatable<Admi
 
         return true &&
             (
-                this.TradeId == other.TradeId ||
-                this.TradeId != null &&
-                this.TradeId.Equals(other.TradeId)
+                TradeId == other.TradeId ||
+                TradeId != null &&
+                TradeId.Equals(other.TradeId)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -153,19 +153,19 @@ public partial class AdminBulkUpdateAlternativeShiftTradeState : IEquatable<Admi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TradeId != null)
+            if (TradeId != null)
             {
-                hash = hash * 59 + this.TradeId.GetHashCode();
+                hash = hash * 59 + TradeId.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

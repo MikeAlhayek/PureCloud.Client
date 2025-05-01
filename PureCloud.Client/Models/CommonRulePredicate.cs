@@ -513,7 +513,7 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CommonRulePredicate);
+        return Equals(obj as CommonRulePredicate);
     }
 
     /// <summary>
@@ -531,49 +531,49 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
 
         return true &&
             (
-                this.MetricType == other.MetricType ||
-                this.MetricType != null &&
-                this.MetricType.Equals(other.MetricType)
+                MetricType == other.MetricType ||
+                MetricType != null &&
+                MetricType.Equals(other.MetricType)
             ) &&
             (
-                this.MetricValueType == other.MetricValueType ||
-                this.MetricValueType != null &&
-                this.MetricValueType.Equals(other.MetricValueType)
+                MetricValueType == other.MetricValueType ||
+                MetricValueType != null &&
+                MetricValueType.Equals(other.MetricValueType)
             ) &&
             (
-                this.ComparisonOperator == other.ComparisonOperator ||
-                this.ComparisonOperator != null &&
-                this.ComparisonOperator.Equals(other.ComparisonOperator)
+                ComparisonOperator == other.ComparisonOperator ||
+                ComparisonOperator != null &&
+                ComparisonOperator.Equals(other.ComparisonOperator)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Topic == other.Topic ||
-                this.Topic != null &&
-                this.Topic.Equals(other.Topic)
+                Topic == other.Topic ||
+                Topic != null &&
+                Topic.Equals(other.Topic)
             ) &&
             (
-                this.Entity == other.Entity ||
-                this.Entity != null &&
-                this.Entity.Equals(other.Entity)
+                Entity == other.Entity ||
+                Entity != null &&
+                Entity.Equals(other.Entity)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             );
     }
 
@@ -588,49 +588,49 @@ public partial class CommonRulePredicate : IEquatable<CommonRulePredicate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MetricType != null)
+            if (MetricType != null)
             {
-                hash = hash * 59 + this.MetricType.GetHashCode();
+                hash = hash * 59 + MetricType.GetHashCode();
             }
 
-            if (this.MetricValueType != null)
+            if (MetricValueType != null)
             {
-                hash = hash * 59 + this.MetricValueType.GetHashCode();
+                hash = hash * 59 + MetricValueType.GetHashCode();
             }
 
-            if (this.ComparisonOperator != null)
+            if (ComparisonOperator != null)
             {
-                hash = hash * 59 + this.ComparisonOperator.GetHashCode();
+                hash = hash * 59 + ComparisonOperator.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Topic != null)
+            if (Topic != null)
             {
-                hash = hash * 59 + this.Topic.GetHashCode();
+                hash = hash * 59 + Topic.GetHashCode();
             }
 
-            if (this.Entity != null)
+            if (Entity != null)
             {
-                hash = hash * 59 + this.Entity.GetHashCode();
+                hash = hash * 59 + Entity.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
             return hash;

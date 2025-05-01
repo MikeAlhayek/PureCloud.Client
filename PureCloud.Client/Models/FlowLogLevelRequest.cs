@@ -59,7 +59,7 @@ public partial class FlowLogLevelRequest : IEquatable<FlowLogLevelRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowLogLevelRequest);
+        return Equals(obj as FlowLogLevelRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class FlowLogLevelRequest : IEquatable<FlowLogLevelRequest>
 
         return true &&
             (
-                this.LogLevelCharacteristics == other.LogLevelCharacteristics ||
-                this.LogLevelCharacteristics != null &&
-                this.LogLevelCharacteristics.Equals(other.LogLevelCharacteristics)
+                LogLevelCharacteristics == other.LogLevelCharacteristics ||
+                LogLevelCharacteristics != null &&
+                LogLevelCharacteristics.Equals(other.LogLevelCharacteristics)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class FlowLogLevelRequest : IEquatable<FlowLogLevelRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LogLevelCharacteristics != null)
+            if (LogLevelCharacteristics != null)
             {
-                hash = hash * 59 + this.LogLevelCharacteristics.GetHashCode();
+                hash = hash * 59 + LogLevelCharacteristics.GetHashCode();
             }
 
             return hash;

@@ -83,7 +83,7 @@ public partial class GenerateBuForecastRequest : IEquatable<GenerateBuForecastRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GenerateBuForecastRequest);
+        return Equals(obj as GenerateBuForecastRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class GenerateBuForecastRequest : IEquatable<GenerateBuForecastRe
 
         return true &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             ) &&
             (
-                this.CanUseForScheduling == other.CanUseForScheduling ||
-                this.CanUseForScheduling != null &&
-                this.CanUseForScheduling.Equals(other.CanUseForScheduling)
+                CanUseForScheduling == other.CanUseForScheduling ||
+                CanUseForScheduling != null &&
+                CanUseForScheduling.Equals(other.CanUseForScheduling)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class GenerateBuForecastRequest : IEquatable<GenerateBuForecastRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
-            if (this.CanUseForScheduling != null)
+            if (CanUseForScheduling != null)
             {
-                hash = hash * 59 + this.CanUseForScheduling.GetHashCode();
+                hash = hash * 59 + CanUseForScheduling.GetHashCode();
             }
 
             return hash;

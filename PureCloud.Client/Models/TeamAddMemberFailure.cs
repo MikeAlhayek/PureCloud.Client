@@ -94,7 +94,7 @@ public partial class TeamAddMemberFailure : IEquatable<TeamAddMemberFailure>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TeamAddMemberFailure);
+        return Equals(obj as TeamAddMemberFailure);
     }
 
     /// <summary>
@@ -112,14 +112,14 @@ public partial class TeamAddMemberFailure : IEquatable<TeamAddMemberFailure>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             );
     }
 
@@ -134,14 +134,14 @@ public partial class TeamAddMemberFailure : IEquatable<TeamAddMemberFailure>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
             return hash;

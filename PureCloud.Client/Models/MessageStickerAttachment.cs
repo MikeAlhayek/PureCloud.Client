@@ -65,7 +65,7 @@ public partial class MessageStickerAttachment : IEquatable<MessageStickerAttachm
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessageStickerAttachment);
+        return Equals(obj as MessageStickerAttachment);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class MessageStickerAttachment : IEquatable<MessageStickerAttachm
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class MessageStickerAttachment : IEquatable<MessageStickerAttachm
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
             return hash;

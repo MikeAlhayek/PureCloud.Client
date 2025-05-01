@@ -103,7 +103,7 @@ public partial class MediaIceSelectedCandidate : IEquatable<MediaIceSelectedCand
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaIceSelectedCandidate);
+        return Equals(obj as MediaIceSelectedCandidate);
     }
 
     /// <summary>
@@ -121,14 +121,14 @@ public partial class MediaIceSelectedCandidate : IEquatable<MediaIceSelectedCand
 
         return true &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -143,14 +143,14 @@ public partial class MediaIceSelectedCandidate : IEquatable<MediaIceSelectedCand
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

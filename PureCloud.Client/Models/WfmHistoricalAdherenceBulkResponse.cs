@@ -77,7 +77,7 @@ public partial class WfmHistoricalAdherenceBulkResponse : IEquatable<WfmHistoric
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalAdherenceBulkResponse);
+        return Equals(obj as WfmHistoricalAdherenceBulkResponse);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class WfmHistoricalAdherenceBulkResponse : IEquatable<WfmHistoric
 
         return true &&
             (
-                this.Job == other.Job ||
-                this.Job != null &&
-                this.Job.Equals(other.Job)
+                Job == other.Job ||
+                Job != null &&
+                Job.Equals(other.Job)
             ) &&
             (
-                this.DownloadUrls == other.DownloadUrls ||
-                this.DownloadUrls != null &&
-                this.DownloadUrls.SequenceEqual(other.DownloadUrls)
+                DownloadUrls == other.DownloadUrls ||
+                DownloadUrls != null &&
+                DownloadUrls.SequenceEqual(other.DownloadUrls)
             ) &&
             (
-                this.DownloadResult == other.DownloadResult ||
-                this.DownloadResult != null &&
-                this.DownloadResult.Equals(other.DownloadResult)
+                DownloadResult == other.DownloadResult ||
+                DownloadResult != null &&
+                DownloadResult.Equals(other.DownloadResult)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class WfmHistoricalAdherenceBulkResponse : IEquatable<WfmHistoric
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Job != null)
+            if (Job != null)
             {
-                hash = hash * 59 + this.Job.GetHashCode();
+                hash = hash * 59 + Job.GetHashCode();
             }
 
-            if (this.DownloadUrls != null)
+            if (DownloadUrls != null)
             {
-                hash = hash * 59 + this.DownloadUrls.GetHashCode();
+                hash = hash * 59 + DownloadUrls.GetHashCode();
             }
 
-            if (this.DownloadResult != null)
+            if (DownloadResult != null)
             {
-                hash = hash * 59 + this.DownloadResult.GetHashCode();
+                hash = hash * 59 + DownloadResult.GetHashCode();
             }
 
             return hash;

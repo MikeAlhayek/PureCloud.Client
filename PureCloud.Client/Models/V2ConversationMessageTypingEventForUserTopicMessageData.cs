@@ -63,7 +63,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicMessageData : I
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2ConversationMessageTypingEventForUserTopicMessageData);
+        return Equals(obj as V2ConversationMessageTypingEventForUserTopicMessageData);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class V2ConversationMessageTypingEventForUserTopicMessageData : I
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.NormalizedMessage == other.NormalizedMessage ||
-                this.NormalizedMessage != null &&
-                this.NormalizedMessage.Equals(other.NormalizedMessage)
+                NormalizedMessage == other.NormalizedMessage ||
+                NormalizedMessage != null &&
+                NormalizedMessage.Equals(other.NormalizedMessage)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class V2ConversationMessageTypingEventForUserTopicMessageData : I
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.NormalizedMessage != null)
+            if (NormalizedMessage != null)
             {
-                hash = hash * 59 + this.NormalizedMessage.GetHashCode();
+                hash = hash * 59 + NormalizedMessage.GetHashCode();
             }
 
             return hash;

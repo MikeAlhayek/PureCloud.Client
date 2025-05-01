@@ -53,7 +53,7 @@ public partial class WorkitemTerminate : IEquatable<WorkitemTerminate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemTerminate);
+        return Equals(obj as WorkitemTerminate);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class WorkitemTerminate : IEquatable<WorkitemTerminate>
 
         return true &&
             (
-                this.StatusId == other.StatusId ||
-                this.StatusId != null &&
-                this.StatusId.Equals(other.StatusId)
+                StatusId == other.StatusId ||
+                StatusId != null &&
+                StatusId.Equals(other.StatusId)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class WorkitemTerminate : IEquatable<WorkitemTerminate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StatusId != null)
+            if (StatusId != null)
             {
-                hash = hash * 59 + this.StatusId.GetHashCode();
+                hash = hash * 59 + StatusId.GetHashCode();
             }
 
             return hash;

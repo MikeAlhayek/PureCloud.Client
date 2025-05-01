@@ -188,7 +188,7 @@ public partial class AlternativeShiftTradeBulkUpdateTemplateItem : IEquatable<Al
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftTradeBulkUpdateTemplateItem);
+        return Equals(obj as AlternativeShiftTradeBulkUpdateTemplateItem);
     }
 
     /// <summary>
@@ -206,34 +206,34 @@ public partial class AlternativeShiftTradeBulkUpdateTemplateItem : IEquatable<Al
 
         return true &&
             (
-                this.TradeId == other.TradeId ||
-                this.TradeId != null &&
-                this.TradeId.Equals(other.TradeId)
+                TradeId == other.TradeId ||
+                TradeId != null &&
+                TradeId.Equals(other.TradeId)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.FailureReason == other.FailureReason ||
-                this.FailureReason != null &&
-                this.FailureReason.Equals(other.FailureReason)
+                FailureReason == other.FailureReason ||
+                FailureReason != null &&
+                FailureReason.Equals(other.FailureReason)
             ) &&
             (
-                this.AdminDateReviewed == other.AdminDateReviewed ||
-                this.AdminDateReviewed != null &&
-                this.AdminDateReviewed.Equals(other.AdminDateReviewed)
+                AdminDateReviewed == other.AdminDateReviewed ||
+                AdminDateReviewed != null &&
+                AdminDateReviewed.Equals(other.AdminDateReviewed)
             ) &&
             (
-                this.AdminReviewedBy == other.AdminReviewedBy ||
-                this.AdminReviewedBy != null &&
-                this.AdminReviewedBy.Equals(other.AdminReviewedBy)
+                AdminReviewedBy == other.AdminReviewedBy ||
+                AdminReviewedBy != null &&
+                AdminReviewedBy.Equals(other.AdminReviewedBy)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -248,34 +248,34 @@ public partial class AlternativeShiftTradeBulkUpdateTemplateItem : IEquatable<Al
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TradeId != null)
+            if (TradeId != null)
             {
-                hash = hash * 59 + this.TradeId.GetHashCode();
+                hash = hash * 59 + TradeId.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.FailureReason != null)
+            if (FailureReason != null)
             {
-                hash = hash * 59 + this.FailureReason.GetHashCode();
+                hash = hash * 59 + FailureReason.GetHashCode();
             }
 
-            if (this.AdminDateReviewed != null)
+            if (AdminDateReviewed != null)
             {
-                hash = hash * 59 + this.AdminDateReviewed.GetHashCode();
+                hash = hash * 59 + AdminDateReviewed.GetHashCode();
             }
 
-            if (this.AdminReviewedBy != null)
+            if (AdminReviewedBy != null)
             {
-                hash = hash * 59 + this.AdminReviewedBy.GetHashCode();
+                hash = hash * 59 + AdminReviewedBy.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

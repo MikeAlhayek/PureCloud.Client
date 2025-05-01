@@ -65,7 +65,7 @@ public partial class PatchCloseButtonStyleProperties : IEquatable<PatchCloseButt
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchCloseButtonStyleProperties);
+        return Equals(obj as PatchCloseButtonStyleProperties);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class PatchCloseButtonStyleProperties : IEquatable<PatchCloseButt
 
         return true &&
             (
-                this.Color == other.Color ||
-                this.Color != null &&
-                this.Color.Equals(other.Color)
+                Color == other.Color ||
+                Color != null &&
+                Color.Equals(other.Color)
             ) &&
             (
-                this.Opacity == other.Opacity ||
-                this.Opacity != null &&
-                this.Opacity.Equals(other.Opacity)
+                Opacity == other.Opacity ||
+                Opacity != null &&
+                Opacity.Equals(other.Opacity)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class PatchCloseButtonStyleProperties : IEquatable<PatchCloseButt
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Color != null)
+            if (Color != null)
             {
-                hash = hash * 59 + this.Color.GetHashCode();
+                hash = hash * 59 + Color.GetHashCode();
             }
 
-            if (this.Opacity != null)
+            if (Opacity != null)
             {
-                hash = hash * 59 + this.Opacity.GetHashCode();
+                hash = hash * 59 + Opacity.GetHashCode();
             }
 
             return hash;

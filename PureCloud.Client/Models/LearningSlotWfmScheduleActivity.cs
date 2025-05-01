@@ -77,7 +77,7 @@ public partial class LearningSlotWfmScheduleActivity : IEquatable<LearningSlotWf
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningSlotWfmScheduleActivity);
+        return Equals(obj as LearningSlotWfmScheduleActivity);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class LearningSlotWfmScheduleActivity : IEquatable<LearningSlotWf
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Activities == other.Activities ||
-                this.Activities != null &&
-                this.Activities.SequenceEqual(other.Activities)
+                Activities == other.Activities ||
+                Activities != null &&
+                Activities.SequenceEqual(other.Activities)
             ) &&
             (
-                this.FullDayTimeOffMarkers == other.FullDayTimeOffMarkers ||
-                this.FullDayTimeOffMarkers != null &&
-                this.FullDayTimeOffMarkers.SequenceEqual(other.FullDayTimeOffMarkers)
+                FullDayTimeOffMarkers == other.FullDayTimeOffMarkers ||
+                FullDayTimeOffMarkers != null &&
+                FullDayTimeOffMarkers.SequenceEqual(other.FullDayTimeOffMarkers)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class LearningSlotWfmScheduleActivity : IEquatable<LearningSlotWf
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Activities != null)
+            if (Activities != null)
             {
-                hash = hash * 59 + this.Activities.GetHashCode();
+                hash = hash * 59 + Activities.GetHashCode();
             }
 
-            if (this.FullDayTimeOffMarkers != null)
+            if (FullDayTimeOffMarkers != null)
             {
-                hash = hash * 59 + this.FullDayTimeOffMarkers.GetHashCode();
+                hash = hash * 59 + FullDayTimeOffMarkers.GetHashCode();
             }
 
             return hash;

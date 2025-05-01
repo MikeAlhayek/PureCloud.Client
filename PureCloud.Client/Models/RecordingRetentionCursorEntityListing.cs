@@ -85,7 +85,7 @@ public partial class RecordingRetentionCursorEntityListing : IEquatable<Recordin
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingRetentionCursorEntityListing);
+        return Equals(obj as RecordingRetentionCursorEntityListing);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class RecordingRetentionCursorEntityListing : IEquatable<Recordin
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.NextUri == other.NextUri ||
-                this.NextUri != null &&
-                this.NextUri.Equals(other.NextUri)
+                NextUri == other.NextUri ||
+                NextUri != null &&
+                NextUri.Equals(other.NextUri)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.PreviousUri == other.PreviousUri ||
-                this.PreviousUri != null &&
-                this.PreviousUri.Equals(other.PreviousUri)
+                PreviousUri == other.PreviousUri ||
+                PreviousUri != null &&
+                PreviousUri.Equals(other.PreviousUri)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class RecordingRetentionCursorEntityListing : IEquatable<Recordin
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.NextUri != null)
+            if (NextUri != null)
             {
-                hash = hash * 59 + this.NextUri.GetHashCode();
+                hash = hash * 59 + NextUri.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.PreviousUri != null)
+            if (PreviousUri != null)
             {
-                hash = hash * 59 + this.PreviousUri.GetHashCode();
+                hash = hash * 59 + PreviousUri.GetHashCode();
             }
 
             return hash;

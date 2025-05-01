@@ -74,7 +74,7 @@ public partial class VideoConferenceUpdateTopicVideoConference : IEquatable<Vide
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VideoConferenceUpdateTopicVideoConference);
+        return Equals(obj as VideoConferenceUpdateTopicVideoConference);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class VideoConferenceUpdateTopicVideoConference : IEquatable<Vide
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.ConferenceId == other.ConferenceId ||
-                this.ConferenceId != null &&
-                this.ConferenceId.Equals(other.ConferenceId)
+                ConferenceId == other.ConferenceId ||
+                ConferenceId != null &&
+                ConferenceId.Equals(other.ConferenceId)
             ) &&
             (
-                this.ParticipantInfo == other.ParticipantInfo ||
-                this.ParticipantInfo != null &&
-                this.ParticipantInfo.Equals(other.ParticipantInfo)
+                ParticipantInfo == other.ParticipantInfo ||
+                ParticipantInfo != null &&
+                ParticipantInfo.Equals(other.ParticipantInfo)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class VideoConferenceUpdateTopicVideoConference : IEquatable<Vide
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.ConferenceId != null)
+            if (ConferenceId != null)
             {
-                hash = hash * 59 + this.ConferenceId.GetHashCode();
+                hash = hash * 59 + ConferenceId.GetHashCode();
             }
 
-            if (this.ParticipantInfo != null)
+            if (ParticipantInfo != null)
             {
-                hash = hash * 59 + this.ParticipantInfo.GetHashCode();
+                hash = hash * 59 + ParticipantInfo.GetHashCode();
             }
 
             return hash;

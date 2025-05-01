@@ -120,7 +120,7 @@ public partial class AgentBidWorkPlanOverrideRequest : IEquatable<AgentBidWorkPl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentBidWorkPlanOverrideRequest);
+        return Equals(obj as AgentBidWorkPlanOverrideRequest);
     }
 
     /// <summary>
@@ -138,19 +138,19 @@ public partial class AgentBidWorkPlanOverrideRequest : IEquatable<AgentBidWorkPl
 
         return true &&
             (
-                this.AgentId == other.AgentId ||
-                this.AgentId != null &&
-                this.AgentId.Equals(other.AgentId)
+                AgentId == other.AgentId ||
+                AgentId != null &&
+                AgentId.Equals(other.AgentId)
             ) &&
             (
-                this.OverrideWorkPlanId == other.OverrideWorkPlanId ||
-                this.OverrideWorkPlanId != null &&
-                this.OverrideWorkPlanId.Equals(other.OverrideWorkPlanId)
+                OverrideWorkPlanId == other.OverrideWorkPlanId ||
+                OverrideWorkPlanId != null &&
+                OverrideWorkPlanId.Equals(other.OverrideWorkPlanId)
             ) &&
             (
-                this.OverrideReason == other.OverrideReason ||
-                this.OverrideReason != null &&
-                this.OverrideReason.Equals(other.OverrideReason)
+                OverrideReason == other.OverrideReason ||
+                OverrideReason != null &&
+                OverrideReason.Equals(other.OverrideReason)
             );
     }
 
@@ -165,19 +165,19 @@ public partial class AgentBidWorkPlanOverrideRequest : IEquatable<AgentBidWorkPl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentId != null)
+            if (AgentId != null)
             {
-                hash = hash * 59 + this.AgentId.GetHashCode();
+                hash = hash * 59 + AgentId.GetHashCode();
             }
 
-            if (this.OverrideWorkPlanId != null)
+            if (OverrideWorkPlanId != null)
             {
-                hash = hash * 59 + this.OverrideWorkPlanId.GetHashCode();
+                hash = hash * 59 + OverrideWorkPlanId.GetHashCode();
             }
 
-            if (this.OverrideReason != null)
+            if (OverrideReason != null)
             {
-                hash = hash * 59 + this.OverrideReason.GetHashCode();
+                hash = hash * 59 + OverrideReason.GetHashCode();
             }
 
             return hash;

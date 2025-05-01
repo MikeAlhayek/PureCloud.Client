@@ -141,7 +141,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicSourceEntity : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2WemEngagementCelebrationUpdatesTopicSourceEntity);
+        return Equals(obj as V2WemEngagementCelebrationUpdatesTopicSourceEntity);
     }
 
     /// <summary>
@@ -159,19 +159,19 @@ public partial class V2WemEngagementCelebrationUpdatesTopicSourceEntity : IEquat
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ContestCompleteData == other.ContestCompleteData ||
-                this.ContestCompleteData != null &&
-                this.ContestCompleteData.Equals(other.ContestCompleteData)
+                ContestCompleteData == other.ContestCompleteData ||
+                ContestCompleteData != null &&
+                ContestCompleteData.Equals(other.ContestCompleteData)
             );
     }
 
@@ -186,19 +186,19 @@ public partial class V2WemEngagementCelebrationUpdatesTopicSourceEntity : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ContestCompleteData != null)
+            if (ContestCompleteData != null)
             {
-                hash = hash * 59 + this.ContestCompleteData.GetHashCode();
+                hash = hash * 59 + ContestCompleteData.GetHashCode();
             }
 
             return hash;

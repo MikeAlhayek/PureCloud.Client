@@ -51,7 +51,7 @@ public partial class JourneyViewResult : IEquatable<JourneyViewResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewResult);
+        return Equals(obj as JourneyViewResult);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class JourneyViewResult : IEquatable<JourneyViewResult>
 
         return true &&
             (
-                this.Elements == other.Elements ||
-                this.Elements != null &&
-                this.Elements.SequenceEqual(other.Elements)
+                Elements == other.Elements ||
+                Elements != null &&
+                Elements.SequenceEqual(other.Elements)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class JourneyViewResult : IEquatable<JourneyViewResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Elements != null)
+            if (Elements != null)
             {
-                hash = hash * 59 + this.Elements.GetHashCode();
+                hash = hash * 59 + Elements.GetHashCode();
             }
 
             return hash;

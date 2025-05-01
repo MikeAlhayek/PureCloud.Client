@@ -65,7 +65,7 @@ public partial class DynamicContactQueueingSettings : IEquatable<DynamicContactQ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DynamicContactQueueingSettings);
+        return Equals(obj as DynamicContactQueueingSettings);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class DynamicContactQueueingSettings : IEquatable<DynamicContactQ
 
         return true &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.Equals(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.Equals(other.Sort)
             ) &&
             (
-                this.Filter == other.Filter ||
-                this.Filter != null &&
-                this.Filter.Equals(other.Filter)
+                Filter == other.Filter ||
+                Filter != null &&
+                Filter.Equals(other.Filter)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class DynamicContactQueueingSettings : IEquatable<DynamicContactQ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
-            if (this.Filter != null)
+            if (Filter != null)
             {
-                hash = hash * 59 + this.Filter.GetHashCode();
+                hash = hash * 59 + Filter.GetHashCode();
             }
 
             return hash;

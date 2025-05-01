@@ -170,7 +170,7 @@ public partial class ResourceConditionNode : IEquatable<ResourceConditionNode>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ResourceConditionNode);
+        return Equals(obj as ResourceConditionNode);
     }
 
     /// <summary>
@@ -188,29 +188,29 @@ public partial class ResourceConditionNode : IEquatable<ResourceConditionNode>
 
         return true &&
             (
-                this.VariableName == other.VariableName ||
-                this.VariableName != null &&
-                this.VariableName.Equals(other.VariableName)
+                VariableName == other.VariableName ||
+                VariableName != null &&
+                VariableName.Equals(other.VariableName)
             ) &&
             (
-                this.Conjunction == other.Conjunction ||
-                this.Conjunction != null &&
-                this.Conjunction.Equals(other.Conjunction)
+                Conjunction == other.Conjunction ||
+                Conjunction != null &&
+                Conjunction.Equals(other.Conjunction)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Operands == other.Operands ||
-                this.Operands != null &&
-                this.Operands.SequenceEqual(other.Operands)
+                Operands == other.Operands ||
+                Operands != null &&
+                Operands.SequenceEqual(other.Operands)
             ) &&
             (
-                this.Terms == other.Terms ||
-                this.Terms != null &&
-                this.Terms.SequenceEqual(other.Terms)
+                Terms == other.Terms ||
+                Terms != null &&
+                Terms.SequenceEqual(other.Terms)
             );
     }
 
@@ -225,29 +225,29 @@ public partial class ResourceConditionNode : IEquatable<ResourceConditionNode>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.VariableName != null)
+            if (VariableName != null)
             {
-                hash = hash * 59 + this.VariableName.GetHashCode();
+                hash = hash * 59 + VariableName.GetHashCode();
             }
 
-            if (this.Conjunction != null)
+            if (Conjunction != null)
             {
-                hash = hash * 59 + this.Conjunction.GetHashCode();
+                hash = hash * 59 + Conjunction.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Operands != null)
+            if (Operands != null)
             {
-                hash = hash * 59 + this.Operands.GetHashCode();
+                hash = hash * 59 + Operands.GetHashCode();
             }
 
-            if (this.Terms != null)
+            if (Terms != null)
             {
-                hash = hash * 59 + this.Terms.GetHashCode();
+                hash = hash * 59 + Terms.GetHashCode();
             }
 
             return hash;

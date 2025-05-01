@@ -65,7 +65,7 @@ public partial class DisallowedEntityLearningAssignmentReference : IEquatable<Di
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DisallowedEntityLearningAssignmentReference);
+        return Equals(obj as DisallowedEntityLearningAssignmentReference);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class DisallowedEntityLearningAssignmentReference : IEquatable<Di
 
         return true &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.Entity == other.Entity ||
-                this.Entity != null &&
-                this.Entity.Equals(other.Entity)
+                Entity == other.Entity ||
+                Entity != null &&
+                Entity.Equals(other.Entity)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class DisallowedEntityLearningAssignmentReference : IEquatable<Di
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.Entity != null)
+            if (Entity != null)
             {
-                hash = hash * 59 + this.Entity.GetHashCode();
+                hash = hash * 59 + Entity.GetHashCode();
             }
 
             return hash;

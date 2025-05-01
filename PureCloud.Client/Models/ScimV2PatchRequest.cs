@@ -71,7 +71,7 @@ public partial class ScimV2PatchRequest : IEquatable<ScimV2PatchRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimV2PatchRequest);
+        return Equals(obj as ScimV2PatchRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ScimV2PatchRequest : IEquatable<ScimV2PatchRequest>
 
         return true &&
             (
-                this.Schemas == other.Schemas ||
-                this.Schemas != null &&
-                this.Schemas.SequenceEqual(other.Schemas)
+                Schemas == other.Schemas ||
+                Schemas != null &&
+                Schemas.SequenceEqual(other.Schemas)
             ) &&
             (
-                this.Operations == other.Operations ||
-                this.Operations != null &&
-                this.Operations.SequenceEqual(other.Operations)
+                Operations == other.Operations ||
+                Operations != null &&
+                Operations.SequenceEqual(other.Operations)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ScimV2PatchRequest : IEquatable<ScimV2PatchRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Schemas != null)
+            if (Schemas != null)
             {
-                hash = hash * 59 + this.Schemas.GetHashCode();
+                hash = hash * 59 + Schemas.GetHashCode();
             }
 
-            if (this.Operations != null)
+            if (Operations != null)
             {
-                hash = hash * 59 + this.Operations.GetHashCode();
+                hash = hash * 59 + Operations.GetHashCode();
             }
 
             return hash;

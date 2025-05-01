@@ -133,7 +133,7 @@ public partial class LocationAddressVerificationDetails : IEquatable<LocationAdd
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LocationAddressVerificationDetails);
+        return Equals(obj as LocationAddressVerificationDetails);
     }
 
     /// <summary>
@@ -151,24 +151,24 @@ public partial class LocationAddressVerificationDetails : IEquatable<LocationAdd
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.DateFinished == other.DateFinished ||
-                this.DateFinished != null &&
-                this.DateFinished.Equals(other.DateFinished)
+                DateFinished == other.DateFinished ||
+                DateFinished != null &&
+                DateFinished.Equals(other.DateFinished)
             ) &&
             (
-                this.DateStarted == other.DateStarted ||
-                this.DateStarted != null &&
-                this.DateStarted.Equals(other.DateStarted)
+                DateStarted == other.DateStarted ||
+                DateStarted != null &&
+                DateStarted.Equals(other.DateStarted)
             ) &&
             (
-                this.Service == other.Service ||
-                this.Service != null &&
-                this.Service.Equals(other.Service)
+                Service == other.Service ||
+                Service != null &&
+                Service.Equals(other.Service)
             );
     }
 
@@ -183,24 +183,24 @@ public partial class LocationAddressVerificationDetails : IEquatable<LocationAdd
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.DateFinished != null)
+            if (DateFinished != null)
             {
-                hash = hash * 59 + this.DateFinished.GetHashCode();
+                hash = hash * 59 + DateFinished.GetHashCode();
             }
 
-            if (this.DateStarted != null)
+            if (DateStarted != null)
             {
-                hash = hash * 59 + this.DateStarted.GetHashCode();
+                hash = hash * 59 + DateStarted.GetHashCode();
             }
 
-            if (this.Service != null)
+            if (Service != null)
             {
-                hash = hash * 59 + this.Service.GetHashCode();
+                hash = hash * 59 + Service.GetHashCode();
             }
 
             return hash;

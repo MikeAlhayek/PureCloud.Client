@@ -112,7 +112,7 @@ public partial class AdherenceSettings : IEquatable<AdherenceSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdherenceSettings);
+        return Equals(obj as AdherenceSettings);
     }
 
     /// <summary>
@@ -130,34 +130,34 @@ public partial class AdherenceSettings : IEquatable<AdherenceSettings>
 
         return true &&
             (
-                this.SevereAlertThresholdMinutes == other.SevereAlertThresholdMinutes ||
-                this.SevereAlertThresholdMinutes != null &&
-                this.SevereAlertThresholdMinutes.Equals(other.SevereAlertThresholdMinutes)
+                SevereAlertThresholdMinutes == other.SevereAlertThresholdMinutes ||
+                SevereAlertThresholdMinutes != null &&
+                SevereAlertThresholdMinutes.Equals(other.SevereAlertThresholdMinutes)
             ) &&
             (
-                this.AdherenceTargetPercent == other.AdherenceTargetPercent ||
-                this.AdherenceTargetPercent != null &&
-                this.AdherenceTargetPercent.Equals(other.AdherenceTargetPercent)
+                AdherenceTargetPercent == other.AdherenceTargetPercent ||
+                AdherenceTargetPercent != null &&
+                AdherenceTargetPercent.Equals(other.AdherenceTargetPercent)
             ) &&
             (
-                this.AdherenceExceptionThresholdSeconds == other.AdherenceExceptionThresholdSeconds ||
-                this.AdherenceExceptionThresholdSeconds != null &&
-                this.AdherenceExceptionThresholdSeconds.Equals(other.AdherenceExceptionThresholdSeconds)
+                AdherenceExceptionThresholdSeconds == other.AdherenceExceptionThresholdSeconds ||
+                AdherenceExceptionThresholdSeconds != null &&
+                AdherenceExceptionThresholdSeconds.Equals(other.AdherenceExceptionThresholdSeconds)
             ) &&
             (
-                this.NonOnQueueActivitiesEquivalent == other.NonOnQueueActivitiesEquivalent ||
-                this.NonOnQueueActivitiesEquivalent != null &&
-                this.NonOnQueueActivitiesEquivalent.Equals(other.NonOnQueueActivitiesEquivalent)
+                NonOnQueueActivitiesEquivalent == other.NonOnQueueActivitiesEquivalent ||
+                NonOnQueueActivitiesEquivalent != null &&
+                NonOnQueueActivitiesEquivalent.Equals(other.NonOnQueueActivitiesEquivalent)
             ) &&
             (
-                this.TrackOnQueueActivity == other.TrackOnQueueActivity ||
-                this.TrackOnQueueActivity != null &&
-                this.TrackOnQueueActivity.Equals(other.TrackOnQueueActivity)
+                TrackOnQueueActivity == other.TrackOnQueueActivity ||
+                TrackOnQueueActivity != null &&
+                TrackOnQueueActivity.Equals(other.TrackOnQueueActivity)
             ) &&
             (
-                this.IgnoredActivityCategories == other.IgnoredActivityCategories ||
-                this.IgnoredActivityCategories != null &&
-                this.IgnoredActivityCategories.Equals(other.IgnoredActivityCategories)
+                IgnoredActivityCategories == other.IgnoredActivityCategories ||
+                IgnoredActivityCategories != null &&
+                IgnoredActivityCategories.Equals(other.IgnoredActivityCategories)
             );
     }
 
@@ -172,34 +172,34 @@ public partial class AdherenceSettings : IEquatable<AdherenceSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SevereAlertThresholdMinutes != null)
+            if (SevereAlertThresholdMinutes != null)
             {
-                hash = hash * 59 + this.SevereAlertThresholdMinutes.GetHashCode();
+                hash = hash * 59 + SevereAlertThresholdMinutes.GetHashCode();
             }
 
-            if (this.AdherenceTargetPercent != null)
+            if (AdherenceTargetPercent != null)
             {
-                hash = hash * 59 + this.AdherenceTargetPercent.GetHashCode();
+                hash = hash * 59 + AdherenceTargetPercent.GetHashCode();
             }
 
-            if (this.AdherenceExceptionThresholdSeconds != null)
+            if (AdherenceExceptionThresholdSeconds != null)
             {
-                hash = hash * 59 + this.AdherenceExceptionThresholdSeconds.GetHashCode();
+                hash = hash * 59 + AdherenceExceptionThresholdSeconds.GetHashCode();
             }
 
-            if (this.NonOnQueueActivitiesEquivalent != null)
+            if (NonOnQueueActivitiesEquivalent != null)
             {
-                hash = hash * 59 + this.NonOnQueueActivitiesEquivalent.GetHashCode();
+                hash = hash * 59 + NonOnQueueActivitiesEquivalent.GetHashCode();
             }
 
-            if (this.TrackOnQueueActivity != null)
+            if (TrackOnQueueActivity != null)
             {
-                hash = hash * 59 + this.TrackOnQueueActivity.GetHashCode();
+                hash = hash * 59 + TrackOnQueueActivity.GetHashCode();
             }
 
-            if (this.IgnoredActivityCategories != null)
+            if (IgnoredActivityCategories != null)
             {
-                hash = hash * 59 + this.IgnoredActivityCategories.GetHashCode();
+                hash = hash * 59 + IgnoredActivityCategories.GetHashCode();
             }
 
             return hash;

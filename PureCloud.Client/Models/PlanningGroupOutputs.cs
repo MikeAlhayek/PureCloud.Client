@@ -107,7 +107,7 @@ public partial class PlanningGroupOutputs : IEquatable<PlanningGroupOutputs>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PlanningGroupOutputs);
+        return Equals(obj as PlanningGroupOutputs);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class PlanningGroupOutputs : IEquatable<PlanningGroupOutputs>
 
         return true &&
             (
-                this.PlanningGroupId == other.PlanningGroupId ||
-                this.PlanningGroupId != null &&
-                this.PlanningGroupId.Equals(other.PlanningGroupId)
+                PlanningGroupId == other.PlanningGroupId ||
+                PlanningGroupId != null &&
+                PlanningGroupId.Equals(other.PlanningGroupId)
             ) &&
             (
-                this.ServiceLevelPerInterval == other.ServiceLevelPerInterval ||
-                this.ServiceLevelPerInterval != null &&
-                this.ServiceLevelPerInterval.SequenceEqual(other.ServiceLevelPerInterval)
+                ServiceLevelPerInterval == other.ServiceLevelPerInterval ||
+                ServiceLevelPerInterval != null &&
+                ServiceLevelPerInterval.SequenceEqual(other.ServiceLevelPerInterval)
             ) &&
             (
-                this.OccupancyPerInterval == other.OccupancyPerInterval ||
-                this.OccupancyPerInterval != null &&
-                this.OccupancyPerInterval.SequenceEqual(other.OccupancyPerInterval)
+                OccupancyPerInterval == other.OccupancyPerInterval ||
+                OccupancyPerInterval != null &&
+                OccupancyPerInterval.SequenceEqual(other.OccupancyPerInterval)
             ) &&
             (
-                this.AverageSpeedOfAnswerSecondsPerInterval == other.AverageSpeedOfAnswerSecondsPerInterval ||
-                this.AverageSpeedOfAnswerSecondsPerInterval != null &&
-                this.AverageSpeedOfAnswerSecondsPerInterval.SequenceEqual(other.AverageSpeedOfAnswerSecondsPerInterval)
+                AverageSpeedOfAnswerSecondsPerInterval == other.AverageSpeedOfAnswerSecondsPerInterval ||
+                AverageSpeedOfAnswerSecondsPerInterval != null &&
+                AverageSpeedOfAnswerSecondsPerInterval.SequenceEqual(other.AverageSpeedOfAnswerSecondsPerInterval)
             ) &&
             (
-                this.AbandonRatePerInterval == other.AbandonRatePerInterval ||
-                this.AbandonRatePerInterval != null &&
-                this.AbandonRatePerInterval.SequenceEqual(other.AbandonRatePerInterval)
+                AbandonRatePerInterval == other.AbandonRatePerInterval ||
+                AbandonRatePerInterval != null &&
+                AbandonRatePerInterval.SequenceEqual(other.AbandonRatePerInterval)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class PlanningGroupOutputs : IEquatable<PlanningGroupOutputs>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PlanningGroupId != null)
+            if (PlanningGroupId != null)
             {
-                hash = hash * 59 + this.PlanningGroupId.GetHashCode();
+                hash = hash * 59 + PlanningGroupId.GetHashCode();
             }
 
-            if (this.ServiceLevelPerInterval != null)
+            if (ServiceLevelPerInterval != null)
             {
-                hash = hash * 59 + this.ServiceLevelPerInterval.GetHashCode();
+                hash = hash * 59 + ServiceLevelPerInterval.GetHashCode();
             }
 
-            if (this.OccupancyPerInterval != null)
+            if (OccupancyPerInterval != null)
             {
-                hash = hash * 59 + this.OccupancyPerInterval.GetHashCode();
+                hash = hash * 59 + OccupancyPerInterval.GetHashCode();
             }
 
-            if (this.AverageSpeedOfAnswerSecondsPerInterval != null)
+            if (AverageSpeedOfAnswerSecondsPerInterval != null)
             {
-                hash = hash * 59 + this.AverageSpeedOfAnswerSecondsPerInterval.GetHashCode();
+                hash = hash * 59 + AverageSpeedOfAnswerSecondsPerInterval.GetHashCode();
             }
 
-            if (this.AbandonRatePerInterval != null)
+            if (AbandonRatePerInterval != null)
             {
-                hash = hash * 59 + this.AbandonRatePerInterval.GetHashCode();
+                hash = hash * 59 + AbandonRatePerInterval.GetHashCode();
             }
 
             return hash;

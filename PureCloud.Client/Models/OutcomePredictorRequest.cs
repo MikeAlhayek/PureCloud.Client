@@ -59,7 +59,7 @@ public partial class OutcomePredictorRequest : IEquatable<OutcomePredictorReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomePredictorRequest);
+        return Equals(obj as OutcomePredictorRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class OutcomePredictorRequest : IEquatable<OutcomePredictorReques
 
         return true &&
             (
-                this.Outcome == other.Outcome ||
-                this.Outcome != null &&
-                this.Outcome.Equals(other.Outcome)
+                Outcome == other.Outcome ||
+                Outcome != null &&
+                Outcome.Equals(other.Outcome)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class OutcomePredictorRequest : IEquatable<OutcomePredictorReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Outcome != null)
+            if (Outcome != null)
             {
-                hash = hash * 59 + this.Outcome.GetHashCode();
+                hash = hash * 59 + Outcome.GetHashCode();
             }
 
             return hash;

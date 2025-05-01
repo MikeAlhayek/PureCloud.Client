@@ -157,7 +157,7 @@ public partial class RoutePathRequest : IEquatable<RoutePathRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoutePathRequest);
+        return Equals(obj as RoutePathRequest);
     }
 
     /// <summary>
@@ -175,29 +175,29 @@ public partial class RoutePathRequest : IEquatable<RoutePathRequest>
 
         return true &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.LanguageId == other.LanguageId ||
-                this.LanguageId != null &&
-                this.LanguageId.Equals(other.LanguageId)
+                LanguageId == other.LanguageId ||
+                LanguageId != null &&
+                LanguageId.Equals(other.LanguageId)
             ) &&
             (
-                this.SkillIds == other.SkillIds ||
-                this.SkillIds != null &&
-                this.SkillIds.SequenceEqual(other.SkillIds)
+                SkillIds == other.SkillIds ||
+                SkillIds != null &&
+                SkillIds.SequenceEqual(other.SkillIds)
             ) &&
             (
-                this.SourcePlanningGroup == other.SourcePlanningGroup ||
-                this.SourcePlanningGroup != null &&
-                this.SourcePlanningGroup.Equals(other.SourcePlanningGroup)
+                SourcePlanningGroup == other.SourcePlanningGroup ||
+                SourcePlanningGroup != null &&
+                SourcePlanningGroup.Equals(other.SourcePlanningGroup)
             );
     }
 
@@ -212,29 +212,29 @@ public partial class RoutePathRequest : IEquatable<RoutePathRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.LanguageId != null)
+            if (LanguageId != null)
             {
-                hash = hash * 59 + this.LanguageId.GetHashCode();
+                hash = hash * 59 + LanguageId.GetHashCode();
             }
 
-            if (this.SkillIds != null)
+            if (SkillIds != null)
             {
-                hash = hash * 59 + this.SkillIds.GetHashCode();
+                hash = hash * 59 + SkillIds.GetHashCode();
             }
 
-            if (this.SourcePlanningGroup != null)
+            if (SourcePlanningGroup != null)
             {
-                hash = hash * 59 + this.SourcePlanningGroup.GetHashCode();
+                hash = hash * 59 + SourcePlanningGroup.GetHashCode();
             }
 
             return hash;

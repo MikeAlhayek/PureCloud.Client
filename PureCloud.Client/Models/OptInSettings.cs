@@ -71,7 +71,7 @@ public partial class OptInSettings : IEquatable<OptInSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OptInSettings);
+        return Equals(obj as OptInSettings);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class OptInSettings : IEquatable<OptInSettings>
 
         return true &&
             (
-                this.Keyword == other.Keyword ||
-                this.Keyword != null &&
-                this.Keyword.SequenceEqual(other.Keyword)
+                Keyword == other.Keyword ||
+                Keyword != null &&
+                Keyword.SequenceEqual(other.Keyword)
             ) &&
             (
-                this.Response == other.Response ||
-                this.Response != null &&
-                this.Response.Equals(other.Response)
+                Response == other.Response ||
+                Response != null &&
+                Response.Equals(other.Response)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class OptInSettings : IEquatable<OptInSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Keyword != null)
+            if (Keyword != null)
             {
-                hash = hash * 59 + this.Keyword.GetHashCode();
+                hash = hash * 59 + Keyword.GetHashCode();
             }
 
-            if (this.Response != null)
+            if (Response != null)
             {
-                hash = hash * 59 + this.Response.GetHashCode();
+                hash = hash * 59 + Response.GetHashCode();
             }
 
             return hash;

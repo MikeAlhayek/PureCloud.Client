@@ -139,7 +139,7 @@ public partial class KnowledgeGuestSearchClientApplication : IEquatable<Knowledg
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeGuestSearchClientApplication);
+        return Equals(obj as KnowledgeGuestSearchClientApplication);
     }
 
     /// <summary>
@@ -157,24 +157,24 @@ public partial class KnowledgeGuestSearchClientApplication : IEquatable<Knowledg
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Deployment == other.Deployment ||
-                this.Deployment != null &&
-                this.Deployment.Equals(other.Deployment)
+                Deployment == other.Deployment ||
+                Deployment != null &&
+                Deployment.Equals(other.Deployment)
             ) &&
             (
-                this.BotFlow == other.BotFlow ||
-                this.BotFlow != null &&
-                this.BotFlow.Equals(other.BotFlow)
+                BotFlow == other.BotFlow ||
+                BotFlow != null &&
+                BotFlow.Equals(other.BotFlow)
             ) &&
             (
-                this.Assistant == other.Assistant ||
-                this.Assistant != null &&
-                this.Assistant.Equals(other.Assistant)
+                Assistant == other.Assistant ||
+                Assistant != null &&
+                Assistant.Equals(other.Assistant)
             );
     }
 
@@ -189,24 +189,24 @@ public partial class KnowledgeGuestSearchClientApplication : IEquatable<Knowledg
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Deployment != null)
+            if (Deployment != null)
             {
-                hash = hash * 59 + this.Deployment.GetHashCode();
+                hash = hash * 59 + Deployment.GetHashCode();
             }
 
-            if (this.BotFlow != null)
+            if (BotFlow != null)
             {
-                hash = hash * 59 + this.BotFlow.GetHashCode();
+                hash = hash * 59 + BotFlow.GetHashCode();
             }
 
-            if (this.Assistant != null)
+            if (Assistant != null)
             {
-                hash = hash * 59 + this.Assistant.GetHashCode();
+                hash = hash * 59 + Assistant.GetHashCode();
             }
 
             return hash;

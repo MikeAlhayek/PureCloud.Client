@@ -52,7 +52,7 @@ public partial class BackgroundImageSettings : IEquatable<BackgroundImageSetting
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BackgroundImageSettings);
+        return Equals(obj as BackgroundImageSettings);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class BackgroundImageSettings : IEquatable<BackgroundImageSetting
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class BackgroundImageSettings : IEquatable<BackgroundImageSetting
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
             return hash;

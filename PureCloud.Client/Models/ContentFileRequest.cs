@@ -65,7 +65,7 @@ public partial class ContentFileRequest : IEquatable<ContentFileRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentFileRequest);
+        return Equals(obj as ContentFileRequest);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ContentFileRequest : IEquatable<ContentFileRequest>
 
         return true &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ContentFileRequest : IEquatable<ContentFileRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
             return hash;

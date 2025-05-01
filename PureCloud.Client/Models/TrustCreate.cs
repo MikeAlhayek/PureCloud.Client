@@ -107,7 +107,7 @@ public partial class TrustCreate : IEquatable<TrustCreate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrustCreate);
+        return Equals(obj as TrustCreate);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class TrustCreate : IEquatable<TrustCreate>
 
         return true &&
             (
-                this.PairingId == other.PairingId ||
-                this.PairingId != null &&
-                this.PairingId.Equals(other.PairingId)
+                PairingId == other.PairingId ||
+                PairingId != null &&
+                PairingId.Equals(other.PairingId)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Users == other.Users ||
-                this.Users != null &&
-                this.Users.SequenceEqual(other.Users)
+                Users == other.Users ||
+                Users != null &&
+                Users.SequenceEqual(other.Users)
             ) &&
             (
-                this.Groups == other.Groups ||
-                this.Groups != null &&
-                this.Groups.SequenceEqual(other.Groups)
+                Groups == other.Groups ||
+                Groups != null &&
+                Groups.SequenceEqual(other.Groups)
             ) &&
             (
-                this.DateExpired == other.DateExpired ||
-                this.DateExpired != null &&
-                this.DateExpired.Equals(other.DateExpired)
+                DateExpired == other.DateExpired ||
+                DateExpired != null &&
+                DateExpired.Equals(other.DateExpired)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class TrustCreate : IEquatable<TrustCreate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PairingId != null)
+            if (PairingId != null)
             {
-                hash = hash * 59 + this.PairingId.GetHashCode();
+                hash = hash * 59 + PairingId.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Users != null)
+            if (Users != null)
             {
-                hash = hash * 59 + this.Users.GetHashCode();
+                hash = hash * 59 + Users.GetHashCode();
             }
 
-            if (this.Groups != null)
+            if (Groups != null)
             {
-                hash = hash * 59 + this.Groups.GetHashCode();
+                hash = hash * 59 + Groups.GetHashCode();
             }
 
-            if (this.DateExpired != null)
+            if (DateExpired != null)
             {
-                hash = hash * 59 + this.DateExpired.GetHashCode();
+                hash = hash * 59 + DateExpired.GetHashCode();
             }
 
             return hash;

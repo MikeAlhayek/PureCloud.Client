@@ -401,7 +401,7 @@ public partial class KnowledgeDocumentFeedbackResponse : IEquatable<KnowledgeDoc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentFeedbackResponse);
+        return Equals(obj as KnowledgeDocumentFeedbackResponse);
     }
 
     /// <summary>
@@ -419,84 +419,84 @@ public partial class KnowledgeDocumentFeedbackResponse : IEquatable<KnowledgeDoc
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DocumentVariation == other.DocumentVariation ||
-                this.DocumentVariation != null &&
-                this.DocumentVariation.Equals(other.DocumentVariation)
+                DocumentVariation == other.DocumentVariation ||
+                DocumentVariation != null &&
+                DocumentVariation.Equals(other.DocumentVariation)
             ) &&
             (
-                this.Rating == other.Rating ||
-                this.Rating != null &&
-                this.Rating.Equals(other.Rating)
+                Rating == other.Rating ||
+                Rating != null &&
+                Rating.Equals(other.Rating)
             ) &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             ) &&
             (
-                this.Comment == other.Comment ||
-                this.Comment != null &&
-                this.Comment.Equals(other.Comment)
+                Comment == other.Comment ||
+                Comment != null &&
+                Comment.Equals(other.Comment)
             ) &&
             (
-                this.Search == other.Search ||
-                this.Search != null &&
-                this.Search.Equals(other.Search)
+                Search == other.Search ||
+                Search != null &&
+                Search.Equals(other.Search)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.QueryType == other.QueryType ||
-                this.QueryType != null &&
-                this.QueryType.Equals(other.QueryType)
+                QueryType == other.QueryType ||
+                QueryType != null &&
+                QueryType.Equals(other.QueryType)
             ) &&
             (
-                this.SurfacingMethod == other.SurfacingMethod ||
-                this.SurfacingMethod != null &&
-                this.SurfacingMethod.Equals(other.SurfacingMethod)
+                SurfacingMethod == other.SurfacingMethod ||
+                SurfacingMethod != null &&
+                SurfacingMethod.Equals(other.SurfacingMethod)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Document == other.Document ||
-                this.Document != null &&
-                this.Document.Equals(other.Document)
+                Document == other.Document ||
+                Document != null &&
+                Document.Equals(other.Document)
             ) &&
             (
-                this.Application == other.Application ||
-                this.Application != null &&
-                this.Application.Equals(other.Application)
+                Application == other.Application ||
+                Application != null &&
+                Application.Equals(other.Application)
             ) &&
             (
-                this.ConversationContext == other.ConversationContext ||
-                this.ConversationContext != null &&
-                this.ConversationContext.Equals(other.ConversationContext)
+                ConversationContext == other.ConversationContext ||
+                ConversationContext != null &&
+                ConversationContext.Equals(other.ConversationContext)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -511,84 +511,84 @@ public partial class KnowledgeDocumentFeedbackResponse : IEquatable<KnowledgeDoc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DocumentVariation != null)
+            if (DocumentVariation != null)
             {
-                hash = hash * 59 + this.DocumentVariation.GetHashCode();
+                hash = hash * 59 + DocumentVariation.GetHashCode();
             }
 
-            if (this.Rating != null)
+            if (Rating != null)
             {
-                hash = hash * 59 + this.Rating.GetHashCode();
+                hash = hash * 59 + Rating.GetHashCode();
             }
 
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
-            if (this.Comment != null)
+            if (Comment != null)
             {
-                hash = hash * 59 + this.Comment.GetHashCode();
+                hash = hash * 59 + Comment.GetHashCode();
             }
 
-            if (this.Search != null)
+            if (Search != null)
             {
-                hash = hash * 59 + this.Search.GetHashCode();
+                hash = hash * 59 + Search.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.QueryType != null)
+            if (QueryType != null)
             {
-                hash = hash * 59 + this.QueryType.GetHashCode();
+                hash = hash * 59 + QueryType.GetHashCode();
             }
 
-            if (this.SurfacingMethod != null)
+            if (SurfacingMethod != null)
             {
-                hash = hash * 59 + this.SurfacingMethod.GetHashCode();
+                hash = hash * 59 + SurfacingMethod.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Document != null)
+            if (Document != null)
             {
-                hash = hash * 59 + this.Document.GetHashCode();
+                hash = hash * 59 + Document.GetHashCode();
             }
 
-            if (this.Application != null)
+            if (Application != null)
             {
-                hash = hash * 59 + this.Application.GetHashCode();
+                hash = hash * 59 + Application.GetHashCode();
             }
 
-            if (this.ConversationContext != null)
+            if (ConversationContext != null)
             {
-                hash = hash * 59 + this.ConversationContext.GetHashCode();
+                hash = hash * 59 + ConversationContext.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

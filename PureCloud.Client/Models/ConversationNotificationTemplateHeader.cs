@@ -121,7 +121,7 @@ public partial class ConversationNotificationTemplateHeader : IEquatable<Convers
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationNotificationTemplateHeader);
+        return Equals(obj as ConversationNotificationTemplateHeader);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class ConversationNotificationTemplateHeader : IEquatable<Convers
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Media == other.Media ||
-                this.Media != null &&
-                this.Media.Equals(other.Media)
+                Media == other.Media ||
+                Media != null &&
+                Media.Equals(other.Media)
             ) &&
             (
-                this.Parameters == other.Parameters ||
-                this.Parameters != null &&
-                this.Parameters.SequenceEqual(other.Parameters)
+                Parameters == other.Parameters ||
+                Parameters != null &&
+                Parameters.SequenceEqual(other.Parameters)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class ConversationNotificationTemplateHeader : IEquatable<Convers
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Media != null)
+            if (Media != null)
             {
-                hash = hash * 59 + this.Media.GetHashCode();
+                hash = hash * 59 + Media.GetHashCode();
             }
 
-            if (this.Parameters != null)
+            if (Parameters != null)
             {
-                hash = hash * 59 + this.Parameters.GetHashCode();
+                hash = hash * 59 + Parameters.GetHashCode();
             }
 
             return hash;

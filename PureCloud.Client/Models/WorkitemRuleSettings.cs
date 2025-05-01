@@ -53,7 +53,7 @@ public partial class WorkitemRuleSettings : IEquatable<WorkitemRuleSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemRuleSettings);
+        return Equals(obj as WorkitemRuleSettings);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class WorkitemRuleSettings : IEquatable<WorkitemRuleSettings>
 
         return true &&
             (
-                this.FlowRulesEnabled == other.FlowRulesEnabled ||
-                this.FlowRulesEnabled != null &&
-                this.FlowRulesEnabled.Equals(other.FlowRulesEnabled)
+                FlowRulesEnabled == other.FlowRulesEnabled ||
+                FlowRulesEnabled != null &&
+                FlowRulesEnabled.Equals(other.FlowRulesEnabled)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class WorkitemRuleSettings : IEquatable<WorkitemRuleSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FlowRulesEnabled != null)
+            if (FlowRulesEnabled != null)
             {
-                hash = hash * 59 + this.FlowRulesEnabled.GetHashCode();
+                hash = hash * 59 + FlowRulesEnabled.GetHashCode();
             }
 
             return hash;

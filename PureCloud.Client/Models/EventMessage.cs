@@ -714,7 +714,7 @@ public partial class EventMessage : IEquatable<EventMessage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EventMessage);
+        return Equals(obj as EventMessage);
     }
 
     /// <summary>
@@ -732,34 +732,34 @@ public partial class EventMessage : IEquatable<EventMessage>
 
         return true &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.MessageWithParams == other.MessageWithParams ||
-                this.MessageWithParams != null &&
-                this.MessageWithParams.Equals(other.MessageWithParams)
+                MessageWithParams == other.MessageWithParams ||
+                MessageWithParams != null &&
+                MessageWithParams.Equals(other.MessageWithParams)
             ) &&
             (
-                this.MessageParams == other.MessageParams ||
-                this.MessageParams != null &&
-                this.MessageParams.SequenceEqual(other.MessageParams)
+                MessageParams == other.MessageParams ||
+                MessageParams != null &&
+                MessageParams.SequenceEqual(other.MessageParams)
             ) &&
             (
-                this.DocumentationUri == other.DocumentationUri ||
-                this.DocumentationUri != null &&
-                this.DocumentationUri.Equals(other.DocumentationUri)
+                DocumentationUri == other.DocumentationUri ||
+                DocumentationUri != null &&
+                DocumentationUri.Equals(other.DocumentationUri)
             ) &&
             (
-                this.ResourceURIs == other.ResourceURIs ||
-                this.ResourceURIs != null &&
-                this.ResourceURIs.SequenceEqual(other.ResourceURIs)
+                ResourceURIs == other.ResourceURIs ||
+                ResourceURIs != null &&
+                ResourceURIs.SequenceEqual(other.ResourceURIs)
             );
     }
 
@@ -774,34 +774,34 @@ public partial class EventMessage : IEquatable<EventMessage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.MessageWithParams != null)
+            if (MessageWithParams != null)
             {
-                hash = hash * 59 + this.MessageWithParams.GetHashCode();
+                hash = hash * 59 + MessageWithParams.GetHashCode();
             }
 
-            if (this.MessageParams != null)
+            if (MessageParams != null)
             {
-                hash = hash * 59 + this.MessageParams.GetHashCode();
+                hash = hash * 59 + MessageParams.GetHashCode();
             }
 
-            if (this.DocumentationUri != null)
+            if (DocumentationUri != null)
             {
-                hash = hash * 59 + this.DocumentationUri.GetHashCode();
+                hash = hash * 59 + DocumentationUri.GetHashCode();
             }
 
-            if (this.ResourceURIs != null)
+            if (ResourceURIs != null)
             {
-                hash = hash * 59 + this.ResourceURIs.GetHashCode();
+                hash = hash * 59 + ResourceURIs.GetHashCode();
             }
 
             return hash;

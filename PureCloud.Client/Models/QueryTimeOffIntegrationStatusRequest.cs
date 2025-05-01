@@ -59,7 +59,7 @@ public partial class QueryTimeOffIntegrationStatusRequest : IEquatable<QueryTime
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueryTimeOffIntegrationStatusRequest);
+        return Equals(obj as QueryTimeOffIntegrationStatusRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class QueryTimeOffIntegrationStatusRequest : IEquatable<QueryTime
 
         return true &&
             (
-                this.TimeOffRequestLookups == other.TimeOffRequestLookups ||
-                this.TimeOffRequestLookups != null &&
-                this.TimeOffRequestLookups.SequenceEqual(other.TimeOffRequestLookups)
+                TimeOffRequestLookups == other.TimeOffRequestLookups ||
+                TimeOffRequestLookups != null &&
+                TimeOffRequestLookups.SequenceEqual(other.TimeOffRequestLookups)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class QueryTimeOffIntegrationStatusRequest : IEquatable<QueryTime
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeOffRequestLookups != null)
+            if (TimeOffRequestLookups != null)
             {
-                hash = hash * 59 + this.TimeOffRequestLookups.GetHashCode();
+                hash = hash * 59 + TimeOffRequestLookups.GetHashCode();
             }
 
             return hash;

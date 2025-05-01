@@ -63,7 +63,7 @@ public partial class TrunkInstanceTopicTrunkMetricsNetworkTypeIp : IEquatable<Tr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkInstanceTopicTrunkMetricsNetworkTypeIp);
+        return Equals(obj as TrunkInstanceTopicTrunkMetricsNetworkTypeIp);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class TrunkInstanceTopicTrunkMetricsNetworkTypeIp : IEquatable<Tr
 
         return true &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class TrunkInstanceTopicTrunkMetricsNetworkTypeIp : IEquatable<Tr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
             return hash;

@@ -79,7 +79,7 @@ public partial class ConversationThreadingWindow : IEquatable<ConversationThread
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationThreadingWindow);
+        return Equals(obj as ConversationThreadingWindow);
     }
 
     /// <summary>
@@ -97,19 +97,19 @@ public partial class ConversationThreadingWindow : IEquatable<ConversationThread
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Settings == other.Settings ||
-                this.Settings != null &&
-                this.Settings.SequenceEqual(other.Settings)
+                Settings == other.Settings ||
+                Settings != null &&
+                Settings.SequenceEqual(other.Settings)
             ) &&
             (
-                this.DefaultTimeoutMinutes == other.DefaultTimeoutMinutes ||
-                this.DefaultTimeoutMinutes != null &&
-                this.DefaultTimeoutMinutes.Equals(other.DefaultTimeoutMinutes)
+                DefaultTimeoutMinutes == other.DefaultTimeoutMinutes ||
+                DefaultTimeoutMinutes != null &&
+                DefaultTimeoutMinutes.Equals(other.DefaultTimeoutMinutes)
             );
     }
 
@@ -124,19 +124,19 @@ public partial class ConversationThreadingWindow : IEquatable<ConversationThread
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Settings != null)
+            if (Settings != null)
             {
-                hash = hash * 59 + this.Settings.GetHashCode();
+                hash = hash * 59 + Settings.GetHashCode();
             }
 
-            if (this.DefaultTimeoutMinutes != null)
+            if (DefaultTimeoutMinutes != null)
             {
-                hash = hash * 59 + this.DefaultTimeoutMinutes.GetHashCode();
+                hash = hash * 59 + DefaultTimeoutMinutes.GetHashCode();
             }
 
             return hash;

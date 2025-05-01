@@ -65,7 +65,7 @@ public partial class KnowledgeSyncJobReport : IEquatable<KnowledgeSyncJobReport>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeSyncJobReport);
+        return Equals(obj as KnowledgeSyncJobReport);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class KnowledgeSyncJobReport : IEquatable<KnowledgeSyncJobReport>
 
         return true &&
             (
-                this.Errors == other.Errors ||
-                this.Errors != null &&
-                this.Errors.SequenceEqual(other.Errors)
+                Errors == other.Errors ||
+                Errors != null &&
+                Errors.SequenceEqual(other.Errors)
             ) &&
             (
-                this.Statistics == other.Statistics ||
-                this.Statistics != null &&
-                this.Statistics.Equals(other.Statistics)
+                Statistics == other.Statistics ||
+                Statistics != null &&
+                Statistics.Equals(other.Statistics)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class KnowledgeSyncJobReport : IEquatable<KnowledgeSyncJobReport>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Errors != null)
+            if (Errors != null)
             {
-                hash = hash * 59 + this.Errors.GetHashCode();
+                hash = hash * 59 + Errors.GetHashCode();
             }
 
-            if (this.Statistics != null)
+            if (Statistics != null)
             {
-                hash = hash * 59 + this.Statistics.GetHashCode();
+                hash = hash * 59 + Statistics.GetHashCode();
             }
 
             return hash;

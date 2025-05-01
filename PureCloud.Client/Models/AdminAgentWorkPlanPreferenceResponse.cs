@@ -90,7 +90,7 @@ public partial class AdminAgentWorkPlanPreferenceResponse : IEquatable<AdminAgen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdminAgentWorkPlanPreferenceResponse);
+        return Equals(obj as AdminAgentWorkPlanPreferenceResponse);
     }
 
     /// <summary>
@@ -108,24 +108,24 @@ public partial class AdminAgentWorkPlanPreferenceResponse : IEquatable<AdminAgen
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.WorkPlans == other.WorkPlans ||
-                this.WorkPlans != null &&
-                this.WorkPlans.SequenceEqual(other.WorkPlans)
+                WorkPlans == other.WorkPlans ||
+                WorkPlans != null &&
+                WorkPlans.SequenceEqual(other.WorkPlans)
             ) &&
             (
-                this.AgentWorkPlanBidPreferences == other.AgentWorkPlanBidPreferences ||
-                this.AgentWorkPlanBidPreferences != null &&
-                this.AgentWorkPlanBidPreferences.SequenceEqual(other.AgentWorkPlanBidPreferences)
+                AgentWorkPlanBidPreferences == other.AgentWorkPlanBidPreferences ||
+                AgentWorkPlanBidPreferences != null &&
+                AgentWorkPlanBidPreferences.SequenceEqual(other.AgentWorkPlanBidPreferences)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -140,24 +140,24 @@ public partial class AdminAgentWorkPlanPreferenceResponse : IEquatable<AdminAgen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.WorkPlans != null)
+            if (WorkPlans != null)
             {
-                hash = hash * 59 + this.WorkPlans.GetHashCode();
+                hash = hash * 59 + WorkPlans.GetHashCode();
             }
 
-            if (this.AgentWorkPlanBidPreferences != null)
+            if (AgentWorkPlanBidPreferences != null)
             {
-                hash = hash * 59 + this.AgentWorkPlanBidPreferences.GetHashCode();
+                hash = hash * 59 + AgentWorkPlanBidPreferences.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

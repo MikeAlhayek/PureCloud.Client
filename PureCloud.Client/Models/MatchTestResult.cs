@@ -65,7 +65,7 @@ public partial class MatchTestResult : IEquatable<MatchTestResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MatchTestResult);
+        return Equals(obj as MatchTestResult);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class MatchTestResult : IEquatable<MatchTestResult>
 
         return true &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Path == other.Path ||
-                this.Path != null &&
-                this.Path.Equals(other.Path)
+                Path == other.Path ||
+                Path != null &&
+                Path.Equals(other.Path)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class MatchTestResult : IEquatable<MatchTestResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Path != null)
+            if (Path != null)
             {
-                hash = hash * 59 + this.Path.GetHashCode();
+                hash = hash * 59 + Path.GetHashCode();
             }
 
             return hash;

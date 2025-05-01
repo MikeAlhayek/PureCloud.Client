@@ -129,7 +129,7 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PasswordRequirements);
+        return Equals(obj as PasswordRequirements);
     }
 
     /// <summary>
@@ -147,44 +147,44 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
 
         return true &&
             (
-                this.MinimumLength == other.MinimumLength ||
-                this.MinimumLength != null &&
-                this.MinimumLength.Equals(other.MinimumLength)
+                MinimumLength == other.MinimumLength ||
+                MinimumLength != null &&
+                MinimumLength.Equals(other.MinimumLength)
             ) &&
             (
-                this.MinimumDigits == other.MinimumDigits ||
-                this.MinimumDigits != null &&
-                this.MinimumDigits.Equals(other.MinimumDigits)
+                MinimumDigits == other.MinimumDigits ||
+                MinimumDigits != null &&
+                MinimumDigits.Equals(other.MinimumDigits)
             ) &&
             (
-                this.MinimumLetters == other.MinimumLetters ||
-                this.MinimumLetters != null &&
-                this.MinimumLetters.Equals(other.MinimumLetters)
+                MinimumLetters == other.MinimumLetters ||
+                MinimumLetters != null &&
+                MinimumLetters.Equals(other.MinimumLetters)
             ) &&
             (
-                this.MinimumUpper == other.MinimumUpper ||
-                this.MinimumUpper != null &&
-                this.MinimumUpper.Equals(other.MinimumUpper)
+                MinimumUpper == other.MinimumUpper ||
+                MinimumUpper != null &&
+                MinimumUpper.Equals(other.MinimumUpper)
             ) &&
             (
-                this.MinimumLower == other.MinimumLower ||
-                this.MinimumLower != null &&
-                this.MinimumLower.Equals(other.MinimumLower)
+                MinimumLower == other.MinimumLower ||
+                MinimumLower != null &&
+                MinimumLower.Equals(other.MinimumLower)
             ) &&
             (
-                this.MinimumSpecials == other.MinimumSpecials ||
-                this.MinimumSpecials != null &&
-                this.MinimumSpecials.Equals(other.MinimumSpecials)
+                MinimumSpecials == other.MinimumSpecials ||
+                MinimumSpecials != null &&
+                MinimumSpecials.Equals(other.MinimumSpecials)
             ) &&
             (
-                this.MinimumAgeSeconds == other.MinimumAgeSeconds ||
-                this.MinimumAgeSeconds != null &&
-                this.MinimumAgeSeconds.Equals(other.MinimumAgeSeconds)
+                MinimumAgeSeconds == other.MinimumAgeSeconds ||
+                MinimumAgeSeconds != null &&
+                MinimumAgeSeconds.Equals(other.MinimumAgeSeconds)
             ) &&
             (
-                this.ExpirationDays == other.ExpirationDays ||
-                this.ExpirationDays != null &&
-                this.ExpirationDays.Equals(other.ExpirationDays)
+                ExpirationDays == other.ExpirationDays ||
+                ExpirationDays != null &&
+                ExpirationDays.Equals(other.ExpirationDays)
             );
     }
 
@@ -199,44 +199,44 @@ public partial class PasswordRequirements : IEquatable<PasswordRequirements>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MinimumLength != null)
+            if (MinimumLength != null)
             {
-                hash = hash * 59 + this.MinimumLength.GetHashCode();
+                hash = hash * 59 + MinimumLength.GetHashCode();
             }
 
-            if (this.MinimumDigits != null)
+            if (MinimumDigits != null)
             {
-                hash = hash * 59 + this.MinimumDigits.GetHashCode();
+                hash = hash * 59 + MinimumDigits.GetHashCode();
             }
 
-            if (this.MinimumLetters != null)
+            if (MinimumLetters != null)
             {
-                hash = hash * 59 + this.MinimumLetters.GetHashCode();
+                hash = hash * 59 + MinimumLetters.GetHashCode();
             }
 
-            if (this.MinimumUpper != null)
+            if (MinimumUpper != null)
             {
-                hash = hash * 59 + this.MinimumUpper.GetHashCode();
+                hash = hash * 59 + MinimumUpper.GetHashCode();
             }
 
-            if (this.MinimumLower != null)
+            if (MinimumLower != null)
             {
-                hash = hash * 59 + this.MinimumLower.GetHashCode();
+                hash = hash * 59 + MinimumLower.GetHashCode();
             }
 
-            if (this.MinimumSpecials != null)
+            if (MinimumSpecials != null)
             {
-                hash = hash * 59 + this.MinimumSpecials.GetHashCode();
+                hash = hash * 59 + MinimumSpecials.GetHashCode();
             }
 
-            if (this.MinimumAgeSeconds != null)
+            if (MinimumAgeSeconds != null)
             {
-                hash = hash * 59 + this.MinimumAgeSeconds.GetHashCode();
+                hash = hash * 59 + MinimumAgeSeconds.GetHashCode();
             }
 
-            if (this.ExpirationDays != null)
+            if (ExpirationDays != null)
             {
-                hash = hash * 59 + this.ExpirationDays.GetHashCode();
+                hash = hash * 59 + ExpirationDays.GetHashCode();
             }
 
             return hash;

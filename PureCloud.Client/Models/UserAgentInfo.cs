@@ -77,7 +77,7 @@ public partial class UserAgentInfo : IEquatable<UserAgentInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserAgentInfo);
+        return Equals(obj as UserAgentInfo);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class UserAgentInfo : IEquatable<UserAgentInfo>
 
         return true &&
             (
-                this.FirmwareVersion == other.FirmwareVersion ||
-                this.FirmwareVersion != null &&
-                this.FirmwareVersion.Equals(other.FirmwareVersion)
+                FirmwareVersion == other.FirmwareVersion ||
+                FirmwareVersion != null &&
+                FirmwareVersion.Equals(other.FirmwareVersion)
             ) &&
             (
-                this.Manufacturer == other.Manufacturer ||
-                this.Manufacturer != null &&
-                this.Manufacturer.Equals(other.Manufacturer)
+                Manufacturer == other.Manufacturer ||
+                Manufacturer != null &&
+                Manufacturer.Equals(other.Manufacturer)
             ) &&
             (
-                this.Model == other.Model ||
-                this.Model != null &&
-                this.Model.Equals(other.Model)
+                Model == other.Model ||
+                Model != null &&
+                Model.Equals(other.Model)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class UserAgentInfo : IEquatable<UserAgentInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FirmwareVersion != null)
+            if (FirmwareVersion != null)
             {
-                hash = hash * 59 + this.FirmwareVersion.GetHashCode();
+                hash = hash * 59 + FirmwareVersion.GetHashCode();
             }
 
-            if (this.Manufacturer != null)
+            if (Manufacturer != null)
             {
-                hash = hash * 59 + this.Manufacturer.GetHashCode();
+                hash = hash * 59 + Manufacturer.GetHashCode();
             }
 
-            if (this.Model != null)
+            if (Model != null)
             {
-                hash = hash * 59 + this.Model.GetHashCode();
+                hash = hash * 59 + Model.GetHashCode();
             }
 
             return hash;

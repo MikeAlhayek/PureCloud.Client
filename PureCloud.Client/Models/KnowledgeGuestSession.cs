@@ -117,7 +117,7 @@ public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeGuestSession);
+        return Equals(obj as KnowledgeGuestSession);
     }
 
     /// <summary>
@@ -135,34 +135,34 @@ public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.App == other.App ||
-                this.App != null &&
-                this.App.Equals(other.App)
+                App == other.App ||
+                App != null &&
+                App.Equals(other.App)
             ) &&
             (
-                this.CustomerId == other.CustomerId ||
-                this.CustomerId != null &&
-                this.CustomerId.Equals(other.CustomerId)
+                CustomerId == other.CustomerId ||
+                CustomerId != null &&
+                CustomerId.Equals(other.CustomerId)
             ) &&
             (
-                this.PageUrl == other.PageUrl ||
-                this.PageUrl != null &&
-                this.PageUrl.Equals(other.PageUrl)
+                PageUrl == other.PageUrl ||
+                PageUrl != null &&
+                PageUrl.Equals(other.PageUrl)
             ) &&
             (
-                this.Contexts == other.Contexts ||
-                this.Contexts != null &&
-                this.Contexts.SequenceEqual(other.Contexts)
+                Contexts == other.Contexts ||
+                Contexts != null &&
+                Contexts.SequenceEqual(other.Contexts)
             ) &&
             (
-                this.JourneySessionId == other.JourneySessionId ||
-                this.JourneySessionId != null &&
-                this.JourneySessionId.Equals(other.JourneySessionId)
+                JourneySessionId == other.JourneySessionId ||
+                JourneySessionId != null &&
+                JourneySessionId.Equals(other.JourneySessionId)
             );
     }
 
@@ -177,34 +177,34 @@ public partial class KnowledgeGuestSession : IEquatable<KnowledgeGuestSession>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.App != null)
+            if (App != null)
             {
-                hash = hash * 59 + this.App.GetHashCode();
+                hash = hash * 59 + App.GetHashCode();
             }
 
-            if (this.CustomerId != null)
+            if (CustomerId != null)
             {
-                hash = hash * 59 + this.CustomerId.GetHashCode();
+                hash = hash * 59 + CustomerId.GetHashCode();
             }
 
-            if (this.PageUrl != null)
+            if (PageUrl != null)
             {
-                hash = hash * 59 + this.PageUrl.GetHashCode();
+                hash = hash * 59 + PageUrl.GetHashCode();
             }
 
-            if (this.Contexts != null)
+            if (Contexts != null)
             {
-                hash = hash * 59 + this.Contexts.GetHashCode();
+                hash = hash * 59 + Contexts.GetHashCode();
             }
 
-            if (this.JourneySessionId != null)
+            if (JourneySessionId != null)
             {
-                hash = hash * 59 + this.JourneySessionId.GetHashCode();
+                hash = hash * 59 + JourneySessionId.GetHashCode();
             }
 
             return hash;

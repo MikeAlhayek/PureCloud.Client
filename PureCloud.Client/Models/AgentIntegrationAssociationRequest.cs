@@ -82,7 +82,7 @@ public partial class AgentIntegrationAssociationRequest : IEquatable<AgentIntegr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentIntegrationAssociationRequest);
+        return Equals(obj as AgentIntegrationAssociationRequest);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class AgentIntegrationAssociationRequest : IEquatable<AgentIntegr
 
         return true &&
             (
-                this.AgentExternalId == other.AgentExternalId ||
-                this.AgentExternalId != null &&
-                this.AgentExternalId.Equals(other.AgentExternalId)
+                AgentExternalId == other.AgentExternalId ||
+                AgentExternalId != null &&
+                AgentExternalId.Equals(other.AgentExternalId)
             ) &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             ) &&
             (
-                this.Locked == other.Locked ||
-                this.Locked != null &&
-                this.Locked.Equals(other.Locked)
+                Locked == other.Locked ||
+                Locked != null &&
+                Locked.Equals(other.Locked)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class AgentIntegrationAssociationRequest : IEquatable<AgentIntegr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentExternalId != null)
+            if (AgentExternalId != null)
             {
-                hash = hash * 59 + this.AgentExternalId.GetHashCode();
+                hash = hash * 59 + AgentExternalId.GetHashCode();
             }
 
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
-            if (this.Locked != null)
+            if (Locked != null)
             {
-                hash = hash * 59 + this.Locked.GetHashCode();
+                hash = hash * 59 + Locked.GetHashCode();
             }
 
             return hash;

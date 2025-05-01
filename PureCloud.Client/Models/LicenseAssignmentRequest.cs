@@ -83,7 +83,7 @@ public partial class LicenseAssignmentRequest : IEquatable<LicenseAssignmentRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LicenseAssignmentRequest);
+        return Equals(obj as LicenseAssignmentRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class LicenseAssignmentRequest : IEquatable<LicenseAssignmentRequ
 
         return true &&
             (
-                this.LicenseId == other.LicenseId ||
-                this.LicenseId != null &&
-                this.LicenseId.Equals(other.LicenseId)
+                LicenseId == other.LicenseId ||
+                LicenseId != null &&
+                LicenseId.Equals(other.LicenseId)
             ) &&
             (
-                this.UserIdsAdd == other.UserIdsAdd ||
-                this.UserIdsAdd != null &&
-                this.UserIdsAdd.SequenceEqual(other.UserIdsAdd)
+                UserIdsAdd == other.UserIdsAdd ||
+                UserIdsAdd != null &&
+                UserIdsAdd.SequenceEqual(other.UserIdsAdd)
             ) &&
             (
-                this.UserIdsRemove == other.UserIdsRemove ||
-                this.UserIdsRemove != null &&
-                this.UserIdsRemove.SequenceEqual(other.UserIdsRemove)
+                UserIdsRemove == other.UserIdsRemove ||
+                UserIdsRemove != null &&
+                UserIdsRemove.SequenceEqual(other.UserIdsRemove)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class LicenseAssignmentRequest : IEquatable<LicenseAssignmentRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LicenseId != null)
+            if (LicenseId != null)
             {
-                hash = hash * 59 + this.LicenseId.GetHashCode();
+                hash = hash * 59 + LicenseId.GetHashCode();
             }
 
-            if (this.UserIdsAdd != null)
+            if (UserIdsAdd != null)
             {
-                hash = hash * 59 + this.UserIdsAdd.GetHashCode();
+                hash = hash * 59 + UserIdsAdd.GetHashCode();
             }
 
-            if (this.UserIdsRemove != null)
+            if (UserIdsRemove != null)
             {
-                hash = hash * 59 + this.UserIdsRemove.GetHashCode();
+                hash = hash * 59 + UserIdsRemove.GetHashCode();
             }
 
             return hash;

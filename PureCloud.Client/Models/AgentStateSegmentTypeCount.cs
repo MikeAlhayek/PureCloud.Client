@@ -204,7 +204,7 @@ public partial class AgentStateSegmentTypeCount : IEquatable<AgentStateSegmentTy
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentStateSegmentTypeCount);
+        return Equals(obj as AgentStateSegmentTypeCount);
     }
 
     /// <summary>
@@ -222,14 +222,14 @@ public partial class AgentStateSegmentTypeCount : IEquatable<AgentStateSegmentTy
 
         return true &&
             (
-                this.SegmentType == other.SegmentType ||
-                this.SegmentType != null &&
-                this.SegmentType.Equals(other.SegmentType)
+                SegmentType == other.SegmentType ||
+                SegmentType != null &&
+                SegmentType.Equals(other.SegmentType)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             );
     }
 
@@ -244,14 +244,14 @@ public partial class AgentStateSegmentTypeCount : IEquatable<AgentStateSegmentTy
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SegmentType != null)
+            if (SegmentType != null)
             {
-                hash = hash * 59 + this.SegmentType.GetHashCode();
+                hash = hash * 59 + SegmentType.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
             return hash;

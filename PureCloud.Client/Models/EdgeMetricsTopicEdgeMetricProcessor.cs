@@ -96,7 +96,7 @@ public partial class EdgeMetricsTopicEdgeMetricProcessor : IEquatable<EdgeMetric
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeMetricsTopicEdgeMetricProcessor);
+        return Equals(obj as EdgeMetricsTopicEdgeMetricProcessor);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class EdgeMetricsTopicEdgeMetricProcessor : IEquatable<EdgeMetric
 
         return true &&
             (
-                this.CpuId == other.CpuId ||
-                this.CpuId != null &&
-                this.CpuId.Equals(other.CpuId)
+                CpuId == other.CpuId ||
+                CpuId != null &&
+                CpuId.Equals(other.CpuId)
             ) &&
             (
-                this.IdleTimePct == other.IdleTimePct ||
-                this.IdleTimePct != null &&
-                this.IdleTimePct.Equals(other.IdleTimePct)
+                IdleTimePct == other.IdleTimePct ||
+                IdleTimePct != null &&
+                IdleTimePct.Equals(other.IdleTimePct)
             ) &&
             (
-                this.ActiveTimePct == other.ActiveTimePct ||
-                this.ActiveTimePct != null &&
-                this.ActiveTimePct.Equals(other.ActiveTimePct)
+                ActiveTimePct == other.ActiveTimePct ||
+                ActiveTimePct != null &&
+                ActiveTimePct.Equals(other.ActiveTimePct)
             ) &&
             (
-                this.PrivilegedTimePct == other.PrivilegedTimePct ||
-                this.PrivilegedTimePct != null &&
-                this.PrivilegedTimePct.Equals(other.PrivilegedTimePct)
+                PrivilegedTimePct == other.PrivilegedTimePct ||
+                PrivilegedTimePct != null &&
+                PrivilegedTimePct.Equals(other.PrivilegedTimePct)
             ) &&
             (
-                this.UserTimePct == other.UserTimePct ||
-                this.UserTimePct != null &&
-                this.UserTimePct.Equals(other.UserTimePct)
+                UserTimePct == other.UserTimePct ||
+                UserTimePct != null &&
+                UserTimePct.Equals(other.UserTimePct)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class EdgeMetricsTopicEdgeMetricProcessor : IEquatable<EdgeMetric
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CpuId != null)
+            if (CpuId != null)
             {
-                hash = hash * 59 + this.CpuId.GetHashCode();
+                hash = hash * 59 + CpuId.GetHashCode();
             }
 
-            if (this.IdleTimePct != null)
+            if (IdleTimePct != null)
             {
-                hash = hash * 59 + this.IdleTimePct.GetHashCode();
+                hash = hash * 59 + IdleTimePct.GetHashCode();
             }
 
-            if (this.ActiveTimePct != null)
+            if (ActiveTimePct != null)
             {
-                hash = hash * 59 + this.ActiveTimePct.GetHashCode();
+                hash = hash * 59 + ActiveTimePct.GetHashCode();
             }
 
-            if (this.PrivilegedTimePct != null)
+            if (PrivilegedTimePct != null)
             {
-                hash = hash * 59 + this.PrivilegedTimePct.GetHashCode();
+                hash = hash * 59 + PrivilegedTimePct.GetHashCode();
             }
 
-            if (this.UserTimePct != null)
+            if (UserTimePct != null)
             {
-                hash = hash * 59 + this.UserTimePct.GetHashCode();
+                hash = hash * 59 + UserTimePct.GetHashCode();
             }
 
             return hash;

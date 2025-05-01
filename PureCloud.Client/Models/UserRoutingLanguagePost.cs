@@ -91,7 +91,7 @@ public partial class UserRoutingLanguagePost : IEquatable<UserRoutingLanguagePos
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserRoutingLanguagePost);
+        return Equals(obj as UserRoutingLanguagePost);
     }
 
     /// <summary>
@@ -109,24 +109,24 @@ public partial class UserRoutingLanguagePost : IEquatable<UserRoutingLanguagePos
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Proficiency == other.Proficiency ||
-                this.Proficiency != null &&
-                this.Proficiency.Equals(other.Proficiency)
+                Proficiency == other.Proficiency ||
+                Proficiency != null &&
+                Proficiency.Equals(other.Proficiency)
             ) &&
             (
-                this.LanguageUri == other.LanguageUri ||
-                this.LanguageUri != null &&
-                this.LanguageUri.Equals(other.LanguageUri)
+                LanguageUri == other.LanguageUri ||
+                LanguageUri != null &&
+                LanguageUri.Equals(other.LanguageUri)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -141,24 +141,24 @@ public partial class UserRoutingLanguagePost : IEquatable<UserRoutingLanguagePos
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Proficiency != null)
+            if (Proficiency != null)
             {
-                hash = hash * 59 + this.Proficiency.GetHashCode();
+                hash = hash * 59 + Proficiency.GetHashCode();
             }
 
-            if (this.LanguageUri != null)
+            if (LanguageUri != null)
             {
-                hash = hash * 59 + this.LanguageUri.GetHashCode();
+                hash = hash * 59 + LanguageUri.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

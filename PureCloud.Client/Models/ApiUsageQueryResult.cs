@@ -108,7 +108,7 @@ public partial class ApiUsageQueryResult : IEquatable<ApiUsageQueryResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ApiUsageQueryResult);
+        return Equals(obj as ApiUsageQueryResult);
     }
 
     /// <summary>
@@ -126,19 +126,19 @@ public partial class ApiUsageQueryResult : IEquatable<ApiUsageQueryResult>
 
         return true &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             ) &&
             (
-                this.QueryStatus == other.QueryStatus ||
-                this.QueryStatus != null &&
-                this.QueryStatus.Equals(other.QueryStatus)
+                QueryStatus == other.QueryStatus ||
+                QueryStatus != null &&
+                QueryStatus.Equals(other.QueryStatus)
             ) &&
             (
-                this.Cursors == other.Cursors ||
-                this.Cursors != null &&
-                this.Cursors.Equals(other.Cursors)
+                Cursors == other.Cursors ||
+                Cursors != null &&
+                Cursors.Equals(other.Cursors)
             );
     }
 
@@ -153,19 +153,19 @@ public partial class ApiUsageQueryResult : IEquatable<ApiUsageQueryResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
-            if (this.QueryStatus != null)
+            if (QueryStatus != null)
             {
-                hash = hash * 59 + this.QueryStatus.GetHashCode();
+                hash = hash * 59 + QueryStatus.GetHashCode();
             }
 
-            if (this.Cursors != null)
+            if (Cursors != null)
             {
-                hash = hash * 59 + this.Cursors.GetHashCode();
+                hash = hash * 59 + Cursors.GetHashCode();
             }
 
             return hash;

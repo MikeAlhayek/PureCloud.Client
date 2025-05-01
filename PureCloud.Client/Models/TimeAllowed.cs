@@ -74,7 +74,7 @@ public partial class TimeAllowed : IEquatable<TimeAllowed>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeAllowed);
+        return Equals(obj as TimeAllowed);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class TimeAllowed : IEquatable<TimeAllowed>
 
         return true &&
             (
-                this.TimeSlots == other.TimeSlots ||
-                this.TimeSlots != null &&
-                this.TimeSlots.SequenceEqual(other.TimeSlots)
+                TimeSlots == other.TimeSlots ||
+                TimeSlots != null &&
+                TimeSlots.SequenceEqual(other.TimeSlots)
             ) &&
             (
-                this.TimeZoneId == other.TimeZoneId ||
-                this.TimeZoneId != null &&
-                this.TimeZoneId.Equals(other.TimeZoneId)
+                TimeZoneId == other.TimeZoneId ||
+                TimeZoneId != null &&
+                TimeZoneId.Equals(other.TimeZoneId)
             ) &&
             (
-                this.Empty == other.Empty ||
-                this.Empty != null &&
-                this.Empty.Equals(other.Empty)
+                Empty == other.Empty ||
+                Empty != null &&
+                Empty.Equals(other.Empty)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class TimeAllowed : IEquatable<TimeAllowed>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeSlots != null)
+            if (TimeSlots != null)
             {
-                hash = hash * 59 + this.TimeSlots.GetHashCode();
+                hash = hash * 59 + TimeSlots.GetHashCode();
             }
 
-            if (this.TimeZoneId != null)
+            if (TimeZoneId != null)
             {
-                hash = hash * 59 + this.TimeZoneId.GetHashCode();
+                hash = hash * 59 + TimeZoneId.GetHashCode();
             }
 
-            if (this.Empty != null)
+            if (Empty != null)
             {
-                hash = hash * 59 + this.Empty.GetHashCode();
+                hash = hash * 59 + Empty.GetHashCode();
             }
 
             return hash;

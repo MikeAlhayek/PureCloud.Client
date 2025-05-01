@@ -70,7 +70,7 @@ public partial class AvailabilityRange : IEquatable<AvailabilityRange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AvailabilityRange);
+        return Equals(obj as AvailabilityRange);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class AvailabilityRange : IEquatable<AvailabilityRange>
 
         return true &&
             (
-                this.EarliestStartMinutesFromMidnight == other.EarliestStartMinutesFromMidnight ||
-                this.EarliestStartMinutesFromMidnight != null &&
-                this.EarliestStartMinutesFromMidnight.Equals(other.EarliestStartMinutesFromMidnight)
+                EarliestStartMinutesFromMidnight == other.EarliestStartMinutesFromMidnight ||
+                EarliestStartMinutesFromMidnight != null &&
+                EarliestStartMinutesFromMidnight.Equals(other.EarliestStartMinutesFromMidnight)
             ) &&
             (
-                this.LatestEndMinutesFromMidnight == other.LatestEndMinutesFromMidnight ||
-                this.LatestEndMinutesFromMidnight != null &&
-                this.LatestEndMinutesFromMidnight.Equals(other.LatestEndMinutesFromMidnight)
+                LatestEndMinutesFromMidnight == other.LatestEndMinutesFromMidnight ||
+                LatestEndMinutesFromMidnight != null &&
+                LatestEndMinutesFromMidnight.Equals(other.LatestEndMinutesFromMidnight)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class AvailabilityRange : IEquatable<AvailabilityRange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EarliestStartMinutesFromMidnight != null)
+            if (EarliestStartMinutesFromMidnight != null)
             {
-                hash = hash * 59 + this.EarliestStartMinutesFromMidnight.GetHashCode();
+                hash = hash * 59 + EarliestStartMinutesFromMidnight.GetHashCode();
             }
 
-            if (this.LatestEndMinutesFromMidnight != null)
+            if (LatestEndMinutesFromMidnight != null)
             {
-                hash = hash * 59 + this.LatestEndMinutesFromMidnight.GetHashCode();
+                hash = hash * 59 + LatestEndMinutesFromMidnight.GetHashCode();
             }
 
             return hash;

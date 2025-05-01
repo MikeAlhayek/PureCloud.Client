@@ -71,7 +71,7 @@ public partial class SuggestionKnowledgeAnswer : IEquatable<SuggestionKnowledgeA
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SuggestionKnowledgeAnswer);
+        return Equals(obj as SuggestionKnowledgeAnswer);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class SuggestionKnowledgeAnswer : IEquatable<SuggestionKnowledgeA
 
         return true &&
             (
-                this.Answer == other.Answer ||
-                this.Answer != null &&
-                this.Answer.Equals(other.Answer)
+                Answer == other.Answer ||
+                Answer != null &&
+                Answer.Equals(other.Answer)
             ) &&
             (
-                this.StartIndex == other.StartIndex ||
-                this.StartIndex != null &&
-                this.StartIndex.Equals(other.StartIndex)
+                StartIndex == other.StartIndex ||
+                StartIndex != null &&
+                StartIndex.Equals(other.StartIndex)
             ) &&
             (
-                this.EndIndex == other.EndIndex ||
-                this.EndIndex != null &&
-                this.EndIndex.Equals(other.EndIndex)
+                EndIndex == other.EndIndex ||
+                EndIndex != null &&
+                EndIndex.Equals(other.EndIndex)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class SuggestionKnowledgeAnswer : IEquatable<SuggestionKnowledgeA
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Answer != null)
+            if (Answer != null)
             {
-                hash = hash * 59 + this.Answer.GetHashCode();
+                hash = hash * 59 + Answer.GetHashCode();
             }
 
-            if (this.StartIndex != null)
+            if (StartIndex != null)
             {
-                hash = hash * 59 + this.StartIndex.GetHashCode();
+                hash = hash * 59 + StartIndex.GetHashCode();
             }
 
-            if (this.EndIndex != null)
+            if (EndIndex != null)
             {
-                hash = hash * 59 + this.EndIndex.GetHashCode();
+                hash = hash * 59 + EndIndex.GetHashCode();
             }
 
             return hash;

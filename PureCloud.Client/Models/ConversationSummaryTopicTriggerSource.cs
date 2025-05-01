@@ -106,7 +106,7 @@ public partial class ConversationSummaryTopicTriggerSource : IEquatable<Conversa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationSummaryTopicTriggerSource);
+        return Equals(obj as ConversationSummaryTopicTriggerSource);
     }
 
     /// <summary>
@@ -124,14 +124,14 @@ public partial class ConversationSummaryTopicTriggerSource : IEquatable<Conversa
 
         return true &&
             (
-                this.SourceType == other.SourceType ||
-                this.SourceType != null &&
-                this.SourceType.Equals(other.SourceType)
+                SourceType == other.SourceType ||
+                SourceType != null &&
+                SourceType.Equals(other.SourceType)
             ) &&
             (
-                this.SourceId == other.SourceId ||
-                this.SourceId != null &&
-                this.SourceId.Equals(other.SourceId)
+                SourceId == other.SourceId ||
+                SourceId != null &&
+                SourceId.Equals(other.SourceId)
             );
     }
 
@@ -146,14 +146,14 @@ public partial class ConversationSummaryTopicTriggerSource : IEquatable<Conversa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SourceType != null)
+            if (SourceType != null)
             {
-                hash = hash * 59 + this.SourceType.GetHashCode();
+                hash = hash * 59 + SourceType.GetHashCode();
             }
 
-            if (this.SourceId != null)
+            if (SourceId != null)
             {
-                hash = hash * 59 + this.SourceId.GetHashCode();
+                hash = hash * 59 + SourceId.GetHashCode();
             }
 
             return hash;

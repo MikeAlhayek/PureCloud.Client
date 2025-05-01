@@ -306,7 +306,7 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BotFlowSession);
+        return Equals(obj as BotFlowSession);
     }
 
     /// <summary>
@@ -324,54 +324,54 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             ) &&
             (
-                this.Channel == other.Channel ||
-                this.Channel != null &&
-                this.Channel.Equals(other.Channel)
+                Channel == other.Channel ||
+                Channel != null &&
+                Channel.Equals(other.Channel)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.EndLanguage == other.EndLanguage ||
-                this.EndLanguage != null &&
-                this.EndLanguage.Equals(other.EndLanguage)
+                EndLanguage == other.EndLanguage ||
+                EndLanguage != null &&
+                EndLanguage.Equals(other.EndLanguage)
             ) &&
             (
-                this.BotResult == other.BotResult ||
-                this.BotResult != null &&
-                this.BotResult.Equals(other.BotResult)
+                BotResult == other.BotResult ||
+                BotResult != null &&
+                BotResult.Equals(other.BotResult)
             ) &&
             (
-                this.BotResultCategory == other.BotResultCategory ||
-                this.BotResultCategory != null &&
-                this.BotResultCategory.Equals(other.BotResultCategory)
+                BotResultCategory == other.BotResultCategory ||
+                BotResultCategory != null &&
+                BotResultCategory.Equals(other.BotResultCategory)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateCompleted == other.DateCompleted ||
-                this.DateCompleted != null &&
-                this.DateCompleted.Equals(other.DateCompleted)
+                DateCompleted == other.DateCompleted ||
+                DateCompleted != null &&
+                DateCompleted.Equals(other.DateCompleted)
             ) &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             );
     }
 
@@ -386,54 +386,54 @@ public partial class BotFlowSession : IEquatable<BotFlowSession>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
-            if (this.Channel != null)
+            if (Channel != null)
             {
-                hash = hash * 59 + this.Channel.GetHashCode();
+                hash = hash * 59 + Channel.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.EndLanguage != null)
+            if (EndLanguage != null)
             {
-                hash = hash * 59 + this.EndLanguage.GetHashCode();
+                hash = hash * 59 + EndLanguage.GetHashCode();
             }
 
-            if (this.BotResult != null)
+            if (BotResult != null)
             {
-                hash = hash * 59 + this.BotResult.GetHashCode();
+                hash = hash * 59 + BotResult.GetHashCode();
             }
 
-            if (this.BotResultCategory != null)
+            if (BotResultCategory != null)
             {
-                hash = hash * 59 + this.BotResultCategory.GetHashCode();
+                hash = hash * 59 + BotResultCategory.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateCompleted != null)
+            if (DateCompleted != null)
             {
-                hash = hash * 59 + this.DateCompleted.GetHashCode();
+                hash = hash * 59 + DateCompleted.GetHashCode();
             }
 
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
             return hash;

@@ -124,7 +124,7 @@ public partial class WfmMoveAgentsCompleteTopicWfmMoveAgentData : IEquatable<Wfm
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmMoveAgentsCompleteTopicWfmMoveAgentData);
+        return Equals(obj as WfmMoveAgentsCompleteTopicWfmMoveAgentData);
     }
 
     /// <summary>
@@ -142,14 +142,14 @@ public partial class WfmMoveAgentsCompleteTopicWfmMoveAgentData : IEquatable<Wfm
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Result == other.Result ||
-                this.Result != null &&
-                this.Result.Equals(other.Result)
+                Result == other.Result ||
+                Result != null &&
+                Result.Equals(other.Result)
             );
     }
 
@@ -164,14 +164,14 @@ public partial class WfmMoveAgentsCompleteTopicWfmMoveAgentData : IEquatable<Wfm
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Result != null)
+            if (Result != null)
             {
-                hash = hash * 59 + this.Result.GetHashCode();
+                hash = hash * 59 + Result.GetHashCode();
             }
 
             return hash;

@@ -295,7 +295,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalOrganization);
+        return Equals(obj as ExternalOrganization);
     }
 
     /// <summary>
@@ -313,114 +313,114 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.CompanyType == other.CompanyType ||
-                this.CompanyType != null &&
-                this.CompanyType.Equals(other.CompanyType)
+                CompanyType == other.CompanyType ||
+                CompanyType != null &&
+                CompanyType.Equals(other.CompanyType)
             ) &&
             (
-                this.Industry == other.Industry ||
-                this.Industry != null &&
-                this.Industry.Equals(other.Industry)
+                Industry == other.Industry ||
+                Industry != null &&
+                Industry.Equals(other.Industry)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.FaxNumber == other.FaxNumber ||
-                this.FaxNumber != null &&
-                this.FaxNumber.Equals(other.FaxNumber)
+                FaxNumber == other.FaxNumber ||
+                FaxNumber != null &&
+                FaxNumber.Equals(other.FaxNumber)
             ) &&
             (
-                this.EmployeeCount == other.EmployeeCount ||
-                this.EmployeeCount != null &&
-                this.EmployeeCount.Equals(other.EmployeeCount)
+                EmployeeCount == other.EmployeeCount ||
+                EmployeeCount != null &&
+                EmployeeCount.Equals(other.EmployeeCount)
             ) &&
             (
-                this.Revenue == other.Revenue ||
-                this.Revenue != null &&
-                this.Revenue.Equals(other.Revenue)
+                Revenue == other.Revenue ||
+                Revenue != null &&
+                Revenue.Equals(other.Revenue)
             ) &&
             (
-                this.Tags == other.Tags ||
-                this.Tags != null &&
-                this.Tags.SequenceEqual(other.Tags)
+                Tags == other.Tags ||
+                Tags != null &&
+                Tags.SequenceEqual(other.Tags)
             ) &&
             (
-                this.Websites == other.Websites ||
-                this.Websites != null &&
-                this.Websites.SequenceEqual(other.Websites)
+                Websites == other.Websites ||
+                Websites != null &&
+                Websites.SequenceEqual(other.Websites)
             ) &&
             (
-                this.Tickers == other.Tickers ||
-                this.Tickers != null &&
-                this.Tickers.SequenceEqual(other.Tickers)
+                Tickers == other.Tickers ||
+                Tickers != null &&
+                Tickers.SequenceEqual(other.Tickers)
             ) &&
             (
-                this.TwitterId == other.TwitterId ||
-                this.TwitterId != null &&
-                this.TwitterId.Equals(other.TwitterId)
+                TwitterId == other.TwitterId ||
+                TwitterId != null &&
+                TwitterId.Equals(other.TwitterId)
             ) &&
             (
-                this.ExternalSystemUrl == other.ExternalSystemUrl ||
-                this.ExternalSystemUrl != null &&
-                this.ExternalSystemUrl.Equals(other.ExternalSystemUrl)
+                ExternalSystemUrl == other.ExternalSystemUrl ||
+                ExternalSystemUrl != null &&
+                ExternalSystemUrl.Equals(other.ExternalSystemUrl)
             ) &&
             (
-                this.ModifyDate == other.ModifyDate ||
-                this.ModifyDate != null &&
-                this.ModifyDate.Equals(other.ModifyDate)
+                ModifyDate == other.ModifyDate ||
+                ModifyDate != null &&
+                ModifyDate.Equals(other.ModifyDate)
             ) &&
             (
-                this.CreateDate == other.CreateDate ||
-                this.CreateDate != null &&
-                this.CreateDate.Equals(other.CreateDate)
+                CreateDate == other.CreateDate ||
+                CreateDate != null &&
+                CreateDate.Equals(other.CreateDate)
             ) &&
             (
-                this.Trustor == other.Trustor ||
-                this.Trustor != null &&
-                this.Trustor.Equals(other.Trustor)
+                Trustor == other.Trustor ||
+                Trustor != null &&
+                Trustor.Equals(other.Trustor)
             ) &&
             (
-                this.Schema == other.Schema ||
-                this.Schema != null &&
-                this.Schema.Equals(other.Schema)
+                Schema == other.Schema ||
+                Schema != null &&
+                Schema.Equals(other.Schema)
             ) &&
             (
-                this.CustomFields == other.CustomFields ||
-                this.CustomFields != null &&
-                this.CustomFields.SequenceEqual(other.CustomFields)
+                CustomFields == other.CustomFields ||
+                CustomFields != null &&
+                CustomFields.SequenceEqual(other.CustomFields)
             ) &&
             (
-                this.ExternalDataSources == other.ExternalDataSources ||
-                this.ExternalDataSources != null &&
-                this.ExternalDataSources.SequenceEqual(other.ExternalDataSources)
+                ExternalDataSources == other.ExternalDataSources ||
+                ExternalDataSources != null &&
+                ExternalDataSources.SequenceEqual(other.ExternalDataSources)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -435,114 +435,114 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.CompanyType != null)
+            if (CompanyType != null)
             {
-                hash = hash * 59 + this.CompanyType.GetHashCode();
+                hash = hash * 59 + CompanyType.GetHashCode();
             }
 
-            if (this.Industry != null)
+            if (Industry != null)
             {
-                hash = hash * 59 + this.Industry.GetHashCode();
+                hash = hash * 59 + Industry.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.FaxNumber != null)
+            if (FaxNumber != null)
             {
-                hash = hash * 59 + this.FaxNumber.GetHashCode();
+                hash = hash * 59 + FaxNumber.GetHashCode();
             }
 
-            if (this.EmployeeCount != null)
+            if (EmployeeCount != null)
             {
-                hash = hash * 59 + this.EmployeeCount.GetHashCode();
+                hash = hash * 59 + EmployeeCount.GetHashCode();
             }
 
-            if (this.Revenue != null)
+            if (Revenue != null)
             {
-                hash = hash * 59 + this.Revenue.GetHashCode();
+                hash = hash * 59 + Revenue.GetHashCode();
             }
 
-            if (this.Tags != null)
+            if (Tags != null)
             {
-                hash = hash * 59 + this.Tags.GetHashCode();
+                hash = hash * 59 + Tags.GetHashCode();
             }
 
-            if (this.Websites != null)
+            if (Websites != null)
             {
-                hash = hash * 59 + this.Websites.GetHashCode();
+                hash = hash * 59 + Websites.GetHashCode();
             }
 
-            if (this.Tickers != null)
+            if (Tickers != null)
             {
-                hash = hash * 59 + this.Tickers.GetHashCode();
+                hash = hash * 59 + Tickers.GetHashCode();
             }
 
-            if (this.TwitterId != null)
+            if (TwitterId != null)
             {
-                hash = hash * 59 + this.TwitterId.GetHashCode();
+                hash = hash * 59 + TwitterId.GetHashCode();
             }
 
-            if (this.ExternalSystemUrl != null)
+            if (ExternalSystemUrl != null)
             {
-                hash = hash * 59 + this.ExternalSystemUrl.GetHashCode();
+                hash = hash * 59 + ExternalSystemUrl.GetHashCode();
             }
 
-            if (this.ModifyDate != null)
+            if (ModifyDate != null)
             {
-                hash = hash * 59 + this.ModifyDate.GetHashCode();
+                hash = hash * 59 + ModifyDate.GetHashCode();
             }
 
-            if (this.CreateDate != null)
+            if (CreateDate != null)
             {
-                hash = hash * 59 + this.CreateDate.GetHashCode();
+                hash = hash * 59 + CreateDate.GetHashCode();
             }
 
-            if (this.Trustor != null)
+            if (Trustor != null)
             {
-                hash = hash * 59 + this.Trustor.GetHashCode();
+                hash = hash * 59 + Trustor.GetHashCode();
             }
 
-            if (this.Schema != null)
+            if (Schema != null)
             {
-                hash = hash * 59 + this.Schema.GetHashCode();
+                hash = hash * 59 + Schema.GetHashCode();
             }
 
-            if (this.CustomFields != null)
+            if (CustomFields != null)
             {
-                hash = hash * 59 + this.CustomFields.GetHashCode();
+                hash = hash * 59 + CustomFields.GetHashCode();
             }
 
-            if (this.ExternalDataSources != null)
+            if (ExternalDataSources != null)
             {
-                hash = hash * 59 + this.ExternalDataSources.GetHashCode();
+                hash = hash * 59 + ExternalDataSources.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

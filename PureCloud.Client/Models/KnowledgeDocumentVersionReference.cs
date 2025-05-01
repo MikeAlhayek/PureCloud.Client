@@ -89,7 +89,7 @@ public partial class KnowledgeDocumentVersionReference : IEquatable<KnowledgeDoc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentVersionReference);
+        return Equals(obj as KnowledgeDocumentVersionReference);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class KnowledgeDocumentVersionReference : IEquatable<KnowledgeDoc
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.KnowledgeBase == other.KnowledgeBase ||
-                this.KnowledgeBase != null &&
-                this.KnowledgeBase.Equals(other.KnowledgeBase)
+                KnowledgeBase == other.KnowledgeBase ||
+                KnowledgeBase != null &&
+                KnowledgeBase.Equals(other.KnowledgeBase)
             ) &&
             (
-                this.VersionId == other.VersionId ||
-                this.VersionId != null &&
-                this.VersionId.Equals(other.VersionId)
+                VersionId == other.VersionId ||
+                VersionId != null &&
+                VersionId.Equals(other.VersionId)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class KnowledgeDocumentVersionReference : IEquatable<KnowledgeDoc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.KnowledgeBase != null)
+            if (KnowledgeBase != null)
             {
-                hash = hash * 59 + this.KnowledgeBase.GetHashCode();
+                hash = hash * 59 + KnowledgeBase.GetHashCode();
             }
 
-            if (this.VersionId != null)
+            if (VersionId != null)
             {
-                hash = hash * 59 + this.VersionId.GetHashCode();
+                hash = hash * 59 + VersionId.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

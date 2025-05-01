@@ -133,7 +133,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OverallBestPointsItem);
+        return Equals(obj as OverallBestPointsItem);
     }
 
     /// <summary>
@@ -151,34 +151,34 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
 
         return true &&
             (
-                this.GranularityType == other.GranularityType ||
-                this.GranularityType != null &&
-                this.GranularityType.Equals(other.GranularityType)
+                GranularityType == other.GranularityType ||
+                GranularityType != null &&
+                GranularityType.Equals(other.GranularityType)
             ) &&
             (
-                this.Users == other.Users ||
-                this.Users != null &&
-                this.Users.SequenceEqual(other.Users)
+                Users == other.Users ||
+                Users != null &&
+                Users.SequenceEqual(other.Users)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.Points == other.Points ||
-                this.Points != null &&
-                this.Points.Equals(other.Points)
+                Points == other.Points ||
+                Points != null &&
+                Points.Equals(other.Points)
             ) &&
             (
-                this.DateStartWorkday == other.DateStartWorkday ||
-                this.DateStartWorkday != null &&
-                this.DateStartWorkday.Equals(other.DateStartWorkday)
+                DateStartWorkday == other.DateStartWorkday ||
+                DateStartWorkday != null &&
+                DateStartWorkday.Equals(other.DateStartWorkday)
             ) &&
             (
-                this.DateEndWorkday == other.DateEndWorkday ||
-                this.DateEndWorkday != null &&
-                this.DateEndWorkday.Equals(other.DateEndWorkday)
+                DateEndWorkday == other.DateEndWorkday ||
+                DateEndWorkday != null &&
+                DateEndWorkday.Equals(other.DateEndWorkday)
             );
     }
 
@@ -193,34 +193,34 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.GranularityType != null)
+            if (GranularityType != null)
             {
-                hash = hash * 59 + this.GranularityType.GetHashCode();
+                hash = hash * 59 + GranularityType.GetHashCode();
             }
 
-            if (this.Users != null)
+            if (Users != null)
             {
-                hash = hash * 59 + this.Users.GetHashCode();
+                hash = hash * 59 + Users.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.Points != null)
+            if (Points != null)
             {
-                hash = hash * 59 + this.Points.GetHashCode();
+                hash = hash * 59 + Points.GetHashCode();
             }
 
-            if (this.DateStartWorkday != null)
+            if (DateStartWorkday != null)
             {
-                hash = hash * 59 + this.DateStartWorkday.GetHashCode();
+                hash = hash * 59 + DateStartWorkday.GetHashCode();
             }
 
-            if (this.DateEndWorkday != null)
+            if (DateEndWorkday != null)
             {
-                hash = hash * 59 + this.DateEndWorkday.GetHashCode();
+                hash = hash * 59 + DateEndWorkday.GetHashCode();
             }
 
             return hash;

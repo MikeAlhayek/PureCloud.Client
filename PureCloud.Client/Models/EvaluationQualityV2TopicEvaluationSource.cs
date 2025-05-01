@@ -74,7 +74,7 @@ public partial class EvaluationQualityV2TopicEvaluationSource : IEquatable<Evalu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationQualityV2TopicEvaluationSource);
+        return Equals(obj as EvaluationQualityV2TopicEvaluationSource);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class EvaluationQualityV2TopicEvaluationSource : IEquatable<Evalu
 
         return true &&
             (
-                this.EvaluationSourceType == other.EvaluationSourceType ||
-                this.EvaluationSourceType != null &&
-                this.EvaluationSourceType.Equals(other.EvaluationSourceType)
+                EvaluationSourceType == other.EvaluationSourceType ||
+                EvaluationSourceType != null &&
+                EvaluationSourceType.Equals(other.EvaluationSourceType)
             ) &&
             (
-                this.EvaluationSourceId == other.EvaluationSourceId ||
-                this.EvaluationSourceId != null &&
-                this.EvaluationSourceId.Equals(other.EvaluationSourceId)
+                EvaluationSourceId == other.EvaluationSourceId ||
+                EvaluationSourceId != null &&
+                EvaluationSourceId.Equals(other.EvaluationSourceId)
             ) &&
             (
-                this.EvaluationSourceName == other.EvaluationSourceName ||
-                this.EvaluationSourceName != null &&
-                this.EvaluationSourceName.Equals(other.EvaluationSourceName)
+                EvaluationSourceName == other.EvaluationSourceName ||
+                EvaluationSourceName != null &&
+                EvaluationSourceName.Equals(other.EvaluationSourceName)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class EvaluationQualityV2TopicEvaluationSource : IEquatable<Evalu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EvaluationSourceType != null)
+            if (EvaluationSourceType != null)
             {
-                hash = hash * 59 + this.EvaluationSourceType.GetHashCode();
+                hash = hash * 59 + EvaluationSourceType.GetHashCode();
             }
 
-            if (this.EvaluationSourceId != null)
+            if (EvaluationSourceId != null)
             {
-                hash = hash * 59 + this.EvaluationSourceId.GetHashCode();
+                hash = hash * 59 + EvaluationSourceId.GetHashCode();
             }
 
-            if (this.EvaluationSourceName != null)
+            if (EvaluationSourceName != null)
             {
-                hash = hash * 59 + this.EvaluationSourceName.GetHashCode();
+                hash = hash * 59 + EvaluationSourceName.GetHashCode();
             }
 
             return hash;

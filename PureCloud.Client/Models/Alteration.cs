@@ -102,7 +102,7 @@ public partial class Alteration : IEquatable<Alteration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Alteration);
+        return Equals(obj as Alteration);
     }
 
     /// <summary>
@@ -120,19 +120,19 @@ public partial class Alteration : IEquatable<Alteration>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Start == other.Start ||
-                this.Start != null &&
-                this.Start.Equals(other.Start)
+                Start == other.Start ||
+                Start != null &&
+                Start.Equals(other.Start)
             ) &&
             (
-                this.End == other.End ||
-                this.End != null &&
-                this.End.Equals(other.End)
+                End == other.End ||
+                End != null &&
+                End.Equals(other.End)
             );
     }
 
@@ -147,19 +147,19 @@ public partial class Alteration : IEquatable<Alteration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Start != null)
+            if (Start != null)
             {
-                hash = hash * 59 + this.Start.GetHashCode();
+                hash = hash * 59 + Start.GetHashCode();
             }
 
-            if (this.End != null)
+            if (End != null)
             {
-                hash = hash * 59 + this.End.GetHashCode();
+                hash = hash * 59 + End.GetHashCode();
             }
 
             return hash;

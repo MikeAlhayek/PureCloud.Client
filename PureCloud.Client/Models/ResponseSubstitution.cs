@@ -83,7 +83,7 @@ public partial class ResponseSubstitution : IEquatable<ResponseSubstitution>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ResponseSubstitution);
+        return Equals(obj as ResponseSubstitution);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class ResponseSubstitution : IEquatable<ResponseSubstitution>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DefaultValue == other.DefaultValue ||
-                this.DefaultValue != null &&
-                this.DefaultValue.Equals(other.DefaultValue)
+                DefaultValue == other.DefaultValue ||
+                DefaultValue != null &&
+                DefaultValue.Equals(other.DefaultValue)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class ResponseSubstitution : IEquatable<ResponseSubstitution>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DefaultValue != null)
+            if (DefaultValue != null)
             {
-                hash = hash * 59 + this.DefaultValue.GetHashCode();
+                hash = hash * 59 + DefaultValue.GetHashCode();
             }
 
             return hash;

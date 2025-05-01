@@ -85,7 +85,7 @@ public partial class CopilotTranscriptionConfig : IEquatable<CopilotTranscriptio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CopilotTranscriptionConfig);
+        return Equals(obj as CopilotTranscriptionConfig);
     }
 
     /// <summary>
@@ -103,9 +103,9 @@ public partial class CopilotTranscriptionConfig : IEquatable<CopilotTranscriptio
 
         return true &&
             (
-                this.Engine == other.Engine ||
-                this.Engine != null &&
-                this.Engine.Equals(other.Engine)
+                Engine == other.Engine ||
+                Engine != null &&
+                Engine.Equals(other.Engine)
             );
     }
 
@@ -120,9 +120,9 @@ public partial class CopilotTranscriptionConfig : IEquatable<CopilotTranscriptio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Engine != null)
+            if (Engine != null)
             {
-                hash = hash * 59 + this.Engine.GetHashCode();
+                hash = hash * 59 + Engine.GetHashCode();
             }
 
             return hash;

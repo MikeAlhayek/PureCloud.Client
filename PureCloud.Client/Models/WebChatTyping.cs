@@ -95,7 +95,7 @@ public partial class WebChatTyping : IEquatable<WebChatTyping>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebChatTyping);
+        return Equals(obj as WebChatTyping);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class WebChatTyping : IEquatable<WebChatTyping>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.Sender == other.Sender ||
-                this.Sender != null &&
-                this.Sender.Equals(other.Sender)
+                Sender == other.Sender ||
+                Sender != null &&
+                Sender.Equals(other.Sender)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class WebChatTyping : IEquatable<WebChatTyping>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.Sender != null)
+            if (Sender != null)
             {
-                hash = hash * 59 + this.Sender.GetHashCode();
+                hash = hash * 59 + Sender.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
             return hash;

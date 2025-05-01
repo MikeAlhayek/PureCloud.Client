@@ -119,7 +119,7 @@ public partial class WfmHistoricalAdherenceBulkItem : IEquatable<WfmHistoricalAd
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalAdherenceBulkItem);
+        return Equals(obj as WfmHistoricalAdherenceBulkItem);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class WfmHistoricalAdherenceBulkItem : IEquatable<WfmHistoricalAd
 
         return true &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.IncludeExceptions == other.IncludeExceptions ||
-                this.IncludeExceptions != null &&
-                this.IncludeExceptions.Equals(other.IncludeExceptions)
+                IncludeExceptions == other.IncludeExceptions ||
+                IncludeExceptions != null &&
+                IncludeExceptions.Equals(other.IncludeExceptions)
             ) &&
             (
-                this.IncludeActuals == other.IncludeActuals ||
-                this.IncludeActuals != null &&
-                this.IncludeActuals.Equals(other.IncludeActuals)
+                IncludeActuals == other.IncludeActuals ||
+                IncludeActuals != null &&
+                IncludeActuals.Equals(other.IncludeActuals)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class WfmHistoricalAdherenceBulkItem : IEquatable<WfmHistoricalAd
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.IncludeExceptions != null)
+            if (IncludeExceptions != null)
             {
-                hash = hash * 59 + this.IncludeExceptions.GetHashCode();
+                hash = hash * 59 + IncludeExceptions.GetHashCode();
             }
 
-            if (this.IncludeActuals != null)
+            if (IncludeActuals != null)
             {
-                hash = hash * 59 + this.IncludeActuals.GetHashCode();
+                hash = hash * 59 + IncludeActuals.GetHashCode();
             }
 
             return hash;

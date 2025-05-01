@@ -143,7 +143,7 @@ public partial class EmailExternalEstablishedEvent : IEquatable<EmailExternalEst
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailExternalEstablishedEvent);
+        return Equals(obj as EmailExternalEstablishedEvent);
     }
 
     /// <summary>
@@ -161,44 +161,44 @@ public partial class EmailExternalEstablishedEvent : IEquatable<EmailExternalEst
 
         return true &&
             (
-                this.EventId == other.EventId ||
-                this.EventId != null &&
-                this.EventId.Equals(other.EventId)
+                EventId == other.EventId ||
+                EventId != null &&
+                EventId.Equals(other.EventId)
             ) &&
             (
-                this.EventDateTime == other.EventDateTime ||
-                this.EventDateTime != null &&
-                this.EventDateTime.Equals(other.EventDateTime)
+                EventDateTime == other.EventDateTime ||
+                EventDateTime != null &&
+                EventDateTime.Equals(other.EventDateTime)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.CommunicationId == other.CommunicationId ||
-                this.CommunicationId != null &&
-                this.CommunicationId.Equals(other.CommunicationId)
+                CommunicationId == other.CommunicationId ||
+                CommunicationId != null &&
+                CommunicationId.Equals(other.CommunicationId)
             ) &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.IncludeMessage == other.IncludeMessage ||
-                this.IncludeMessage != null &&
-                this.IncludeMessage.Equals(other.IncludeMessage)
+                IncludeMessage == other.IncludeMessage ||
+                IncludeMessage != null &&
+                IncludeMessage.Equals(other.IncludeMessage)
             ) &&
             (
-                this.InitialConfiguration == other.InitialConfiguration ||
-                this.InitialConfiguration != null &&
-                this.InitialConfiguration.Equals(other.InitialConfiguration)
+                InitialConfiguration == other.InitialConfiguration ||
+                InitialConfiguration != null &&
+                InitialConfiguration.Equals(other.InitialConfiguration)
             ) &&
             (
-                this.SourceConfiguration == other.SourceConfiguration ||
-                this.SourceConfiguration != null &&
-                this.SourceConfiguration.Equals(other.SourceConfiguration)
+                SourceConfiguration == other.SourceConfiguration ||
+                SourceConfiguration != null &&
+                SourceConfiguration.Equals(other.SourceConfiguration)
             );
     }
 
@@ -213,44 +213,44 @@ public partial class EmailExternalEstablishedEvent : IEquatable<EmailExternalEst
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventId != null)
+            if (EventId != null)
             {
-                hash = hash * 59 + this.EventId.GetHashCode();
+                hash = hash * 59 + EventId.GetHashCode();
             }
 
-            if (this.EventDateTime != null)
+            if (EventDateTime != null)
             {
-                hash = hash * 59 + this.EventDateTime.GetHashCode();
+                hash = hash * 59 + EventDateTime.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.CommunicationId != null)
+            if (CommunicationId != null)
             {
-                hash = hash * 59 + this.CommunicationId.GetHashCode();
+                hash = hash * 59 + CommunicationId.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.IncludeMessage != null)
+            if (IncludeMessage != null)
             {
-                hash = hash * 59 + this.IncludeMessage.GetHashCode();
+                hash = hash * 59 + IncludeMessage.GetHashCode();
             }
 
-            if (this.InitialConfiguration != null)
+            if (InitialConfiguration != null)
             {
-                hash = hash * 59 + this.InitialConfiguration.GetHashCode();
+                hash = hash * 59 + InitialConfiguration.GetHashCode();
             }
 
-            if (this.SourceConfiguration != null)
+            if (SourceConfiguration != null)
             {
-                hash = hash * 59 + this.SourceConfiguration.GetHashCode();
+                hash = hash * 59 + SourceConfiguration.GetHashCode();
             }
 
             return hash;

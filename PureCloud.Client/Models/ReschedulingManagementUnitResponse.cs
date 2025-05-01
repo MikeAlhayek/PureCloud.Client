@@ -65,7 +65,7 @@ public partial class ReschedulingManagementUnitResponse : IEquatable<Reschedulin
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReschedulingManagementUnitResponse);
+        return Equals(obj as ReschedulingManagementUnitResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ReschedulingManagementUnitResponse : IEquatable<Reschedulin
 
         return true &&
             (
-                this.ManagementUnit == other.ManagementUnit ||
-                this.ManagementUnit != null &&
-                this.ManagementUnit.Equals(other.ManagementUnit)
+                ManagementUnit == other.ManagementUnit ||
+                ManagementUnit != null &&
+                ManagementUnit.Equals(other.ManagementUnit)
             ) &&
             (
-                this.Applied == other.Applied ||
-                this.Applied != null &&
-                this.Applied.Equals(other.Applied)
+                Applied == other.Applied ||
+                Applied != null &&
+                Applied.Equals(other.Applied)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ReschedulingManagementUnitResponse : IEquatable<Reschedulin
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnit != null)
+            if (ManagementUnit != null)
             {
-                hash = hash * 59 + this.ManagementUnit.GetHashCode();
+                hash = hash * 59 + ManagementUnit.GetHashCode();
             }
 
-            if (this.Applied != null)
+            if (Applied != null)
             {
-                hash = hash * 59 + this.Applied.GetHashCode();
+                hash = hash * 59 + Applied.GetHashCode();
             }
 
             return hash;

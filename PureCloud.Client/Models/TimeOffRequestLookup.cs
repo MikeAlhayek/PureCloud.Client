@@ -71,7 +71,7 @@ public partial class TimeOffRequestLookup : IEquatable<TimeOffRequestLookup>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeOffRequestLookup);
+        return Equals(obj as TimeOffRequestLookup);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class TimeOffRequestLookup : IEquatable<TimeOffRequestLookup>
 
         return true &&
             (
-                this.TimeOffRequestId == other.TimeOffRequestId ||
-                this.TimeOffRequestId != null &&
-                this.TimeOffRequestId.Equals(other.TimeOffRequestId)
+                TimeOffRequestId == other.TimeOffRequestId ||
+                TimeOffRequestId != null &&
+                TimeOffRequestId.Equals(other.TimeOffRequestId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class TimeOffRequestLookup : IEquatable<TimeOffRequestLookup>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeOffRequestId != null)
+            if (TimeOffRequestId != null)
             {
-                hash = hash * 59 + this.TimeOffRequestId.GetHashCode();
+                hash = hash * 59 + TimeOffRequestId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
             return hash;

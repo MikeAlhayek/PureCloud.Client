@@ -63,7 +63,7 @@ public partial class TargetAttributeValue : IEquatable<TargetAttributeValue>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TargetAttributeValue);
+        return Equals(obj as TargetAttributeValue);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class TargetAttributeValue : IEquatable<TargetAttributeValue>
 
         return true &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.PolicyAttributes == other.PolicyAttributes ||
-                this.PolicyAttributes != null &&
-                this.PolicyAttributes.SequenceEqual(other.PolicyAttributes)
+                PolicyAttributes == other.PolicyAttributes ||
+                PolicyAttributes != null &&
+                PolicyAttributes.SequenceEqual(other.PolicyAttributes)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class TargetAttributeValue : IEquatable<TargetAttributeValue>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.PolicyAttributes != null)
+            if (PolicyAttributes != null)
             {
-                hash = hash * 59 + this.PolicyAttributes.GetHashCode();
+                hash = hash * 59 + PolicyAttributes.GetHashCode();
             }
 
             return hash;

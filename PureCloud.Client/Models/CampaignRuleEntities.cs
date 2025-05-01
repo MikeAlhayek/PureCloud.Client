@@ -88,7 +88,7 @@ public partial class CampaignRuleEntities : IEquatable<CampaignRuleEntities>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignRuleEntities);
+        return Equals(obj as CampaignRuleEntities);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class CampaignRuleEntities : IEquatable<CampaignRuleEntities>
 
         return true &&
             (
-                this.Campaigns == other.Campaigns ||
-                this.Campaigns != null &&
-                this.Campaigns.SequenceEqual(other.Campaigns)
+                Campaigns == other.Campaigns ||
+                Campaigns != null &&
+                Campaigns.SequenceEqual(other.Campaigns)
             ) &&
             (
-                this.Sequences == other.Sequences ||
-                this.Sequences != null &&
-                this.Sequences.SequenceEqual(other.Sequences)
+                Sequences == other.Sequences ||
+                Sequences != null &&
+                Sequences.SequenceEqual(other.Sequences)
             ) &&
             (
-                this.EmailCampaigns == other.EmailCampaigns ||
-                this.EmailCampaigns != null &&
-                this.EmailCampaigns.SequenceEqual(other.EmailCampaigns)
+                EmailCampaigns == other.EmailCampaigns ||
+                EmailCampaigns != null &&
+                EmailCampaigns.SequenceEqual(other.EmailCampaigns)
             ) &&
             (
-                this.SmsCampaigns == other.SmsCampaigns ||
-                this.SmsCampaigns != null &&
-                this.SmsCampaigns.SequenceEqual(other.SmsCampaigns)
+                SmsCampaigns == other.SmsCampaigns ||
+                SmsCampaigns != null &&
+                SmsCampaigns.SequenceEqual(other.SmsCampaigns)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class CampaignRuleEntities : IEquatable<CampaignRuleEntities>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Campaigns != null)
+            if (Campaigns != null)
             {
-                hash = hash * 59 + this.Campaigns.GetHashCode();
+                hash = hash * 59 + Campaigns.GetHashCode();
             }
 
-            if (this.Sequences != null)
+            if (Sequences != null)
             {
-                hash = hash * 59 + this.Sequences.GetHashCode();
+                hash = hash * 59 + Sequences.GetHashCode();
             }
 
-            if (this.EmailCampaigns != null)
+            if (EmailCampaigns != null)
             {
-                hash = hash * 59 + this.EmailCampaigns.GetHashCode();
+                hash = hash * 59 + EmailCampaigns.GetHashCode();
             }
 
-            if (this.SmsCampaigns != null)
+            if (SmsCampaigns != null)
             {
-                hash = hash * 59 + this.SmsCampaigns.GetHashCode();
+                hash = hash * 59 + SmsCampaigns.GetHashCode();
             }
 
             return hash;

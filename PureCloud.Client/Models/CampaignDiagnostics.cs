@@ -121,7 +121,7 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignDiagnostics);
+        return Equals(obj as CampaignDiagnostics);
     }
 
     /// <summary>
@@ -139,44 +139,44 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
 
         return true &&
             (
-                this.CallableContacts == other.CallableContacts ||
-                this.CallableContacts != null &&
-                this.CallableContacts.Equals(other.CallableContacts)
+                CallableContacts == other.CallableContacts ||
+                CallableContacts != null &&
+                CallableContacts.Equals(other.CallableContacts)
             ) &&
             (
-                this.QueueUtilizationDiagnostic == other.QueueUtilizationDiagnostic ||
-                this.QueueUtilizationDiagnostic != null &&
-                this.QueueUtilizationDiagnostic.Equals(other.QueueUtilizationDiagnostic)
+                QueueUtilizationDiagnostic == other.QueueUtilizationDiagnostic ||
+                QueueUtilizationDiagnostic != null &&
+                QueueUtilizationDiagnostic.Equals(other.QueueUtilizationDiagnostic)
             ) &&
             (
-                this.RuleSetDiagnostics == other.RuleSetDiagnostics ||
-                this.RuleSetDiagnostics != null &&
-                this.RuleSetDiagnostics.SequenceEqual(other.RuleSetDiagnostics)
+                RuleSetDiagnostics == other.RuleSetDiagnostics ||
+                RuleSetDiagnostics != null &&
+                RuleSetDiagnostics.SequenceEqual(other.RuleSetDiagnostics)
             ) &&
             (
-                this.OutstandingInteractionsCount == other.OutstandingInteractionsCount ||
-                this.OutstandingInteractionsCount != null &&
-                this.OutstandingInteractionsCount.Equals(other.OutstandingInteractionsCount)
+                OutstandingInteractionsCount == other.OutstandingInteractionsCount ||
+                OutstandingInteractionsCount != null &&
+                OutstandingInteractionsCount.Equals(other.OutstandingInteractionsCount)
             ) &&
             (
-                this.ScheduledInteractionsCount == other.ScheduledInteractionsCount ||
-                this.ScheduledInteractionsCount != null &&
-                this.ScheduledInteractionsCount.Equals(other.ScheduledInteractionsCount)
+                ScheduledInteractionsCount == other.ScheduledInteractionsCount ||
+                ScheduledInteractionsCount != null &&
+                ScheduledInteractionsCount.Equals(other.ScheduledInteractionsCount)
             ) &&
             (
-                this.TimeZoneRescheduledCallsCount == other.TimeZoneRescheduledCallsCount ||
-                this.TimeZoneRescheduledCallsCount != null &&
-                this.TimeZoneRescheduledCallsCount.Equals(other.TimeZoneRescheduledCallsCount)
+                TimeZoneRescheduledCallsCount == other.TimeZoneRescheduledCallsCount ||
+                TimeZoneRescheduledCallsCount != null &&
+                TimeZoneRescheduledCallsCount.Equals(other.TimeZoneRescheduledCallsCount)
             ) &&
             (
-                this.FilteredOutContactsCount == other.FilteredOutContactsCount ||
-                this.FilteredOutContactsCount != null &&
-                this.FilteredOutContactsCount.Equals(other.FilteredOutContactsCount)
+                FilteredOutContactsCount == other.FilteredOutContactsCount ||
+                FilteredOutContactsCount != null &&
+                FilteredOutContactsCount.Equals(other.FilteredOutContactsCount)
             ) &&
             (
-                this.CampaignSkillStatistics == other.CampaignSkillStatistics ||
-                this.CampaignSkillStatistics != null &&
-                this.CampaignSkillStatistics.Equals(other.CampaignSkillStatistics)
+                CampaignSkillStatistics == other.CampaignSkillStatistics ||
+                CampaignSkillStatistics != null &&
+                CampaignSkillStatistics.Equals(other.CampaignSkillStatistics)
             );
     }
 
@@ -191,44 +191,44 @@ public partial class CampaignDiagnostics : IEquatable<CampaignDiagnostics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CallableContacts != null)
+            if (CallableContacts != null)
             {
-                hash = hash * 59 + this.CallableContacts.GetHashCode();
+                hash = hash * 59 + CallableContacts.GetHashCode();
             }
 
-            if (this.QueueUtilizationDiagnostic != null)
+            if (QueueUtilizationDiagnostic != null)
             {
-                hash = hash * 59 + this.QueueUtilizationDiagnostic.GetHashCode();
+                hash = hash * 59 + QueueUtilizationDiagnostic.GetHashCode();
             }
 
-            if (this.RuleSetDiagnostics != null)
+            if (RuleSetDiagnostics != null)
             {
-                hash = hash * 59 + this.RuleSetDiagnostics.GetHashCode();
+                hash = hash * 59 + RuleSetDiagnostics.GetHashCode();
             }
 
-            if (this.OutstandingInteractionsCount != null)
+            if (OutstandingInteractionsCount != null)
             {
-                hash = hash * 59 + this.OutstandingInteractionsCount.GetHashCode();
+                hash = hash * 59 + OutstandingInteractionsCount.GetHashCode();
             }
 
-            if (this.ScheduledInteractionsCount != null)
+            if (ScheduledInteractionsCount != null)
             {
-                hash = hash * 59 + this.ScheduledInteractionsCount.GetHashCode();
+                hash = hash * 59 + ScheduledInteractionsCount.GetHashCode();
             }
 
-            if (this.TimeZoneRescheduledCallsCount != null)
+            if (TimeZoneRescheduledCallsCount != null)
             {
-                hash = hash * 59 + this.TimeZoneRescheduledCallsCount.GetHashCode();
+                hash = hash * 59 + TimeZoneRescheduledCallsCount.GetHashCode();
             }
 
-            if (this.FilteredOutContactsCount != null)
+            if (FilteredOutContactsCount != null)
             {
-                hash = hash * 59 + this.FilteredOutContactsCount.GetHashCode();
+                hash = hash * 59 + FilteredOutContactsCount.GetHashCode();
             }
 
-            if (this.CampaignSkillStatistics != null)
+            if (CampaignSkillStatistics != null)
             {
-                hash = hash * 59 + this.CampaignSkillStatistics.GetHashCode();
+                hash = hash * 59 + CampaignSkillStatistics.GetHashCode();
             }
 
             return hash;

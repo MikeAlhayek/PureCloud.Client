@@ -88,7 +88,7 @@ public partial class WidgetClientConfigV1 : IEquatable<WidgetClientConfigV1>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WidgetClientConfigV1);
+        return Equals(obj as WidgetClientConfigV1);
     }
 
     /// <summary>
@@ -106,14 +106,14 @@ public partial class WidgetClientConfigV1 : IEquatable<WidgetClientConfigV1>
 
         return true &&
             (
-                this.WebChatSkin == other.WebChatSkin ||
-                this.WebChatSkin != null &&
-                this.WebChatSkin.Equals(other.WebChatSkin)
+                WebChatSkin == other.WebChatSkin ||
+                WebChatSkin != null &&
+                WebChatSkin.Equals(other.WebChatSkin)
             ) &&
             (
-                this.AuthenticationUrl == other.AuthenticationUrl ||
-                this.AuthenticationUrl != null &&
-                this.AuthenticationUrl.Equals(other.AuthenticationUrl)
+                AuthenticationUrl == other.AuthenticationUrl ||
+                AuthenticationUrl != null &&
+                AuthenticationUrl.Equals(other.AuthenticationUrl)
             );
     }
 
@@ -128,14 +128,14 @@ public partial class WidgetClientConfigV1 : IEquatable<WidgetClientConfigV1>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WebChatSkin != null)
+            if (WebChatSkin != null)
             {
-                hash = hash * 59 + this.WebChatSkin.GetHashCode();
+                hash = hash * 59 + WebChatSkin.GetHashCode();
             }
 
-            if (this.AuthenticationUrl != null)
+            if (AuthenticationUrl != null)
             {
-                hash = hash * 59 + this.AuthenticationUrl.GetHashCode();
+                hash = hash * 59 + AuthenticationUrl.GetHashCode();
             }
 
             return hash;

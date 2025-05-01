@@ -63,7 +63,7 @@ public partial class EvaluationFormAndScoringSet : IEquatable<EvaluationFormAndS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationFormAndScoringSet);
+        return Equals(obj as EvaluationFormAndScoringSet);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class EvaluationFormAndScoringSet : IEquatable<EvaluationFormAndS
 
         return true &&
             (
-                this.EvaluationForm == other.EvaluationForm ||
-                this.EvaluationForm != null &&
-                this.EvaluationForm.Equals(other.EvaluationForm)
+                EvaluationForm == other.EvaluationForm ||
+                EvaluationForm != null &&
+                EvaluationForm.Equals(other.EvaluationForm)
             ) &&
             (
-                this.Answers == other.Answers ||
-                this.Answers != null &&
-                this.Answers.Equals(other.Answers)
+                Answers == other.Answers ||
+                Answers != null &&
+                Answers.Equals(other.Answers)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class EvaluationFormAndScoringSet : IEquatable<EvaluationFormAndS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EvaluationForm != null)
+            if (EvaluationForm != null)
             {
-                hash = hash * 59 + this.EvaluationForm.GetHashCode();
+                hash = hash * 59 + EvaluationForm.GetHashCode();
             }
 
-            if (this.Answers != null)
+            if (Answers != null)
             {
-                hash = hash * 59 + this.Answers.GetHashCode();
+                hash = hash * 59 + Answers.GetHashCode();
             }
 
             return hash;

@@ -213,7 +213,7 @@ public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechan
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NamedEntityTypeMechanism);
+        return Equals(obj as NamedEntityTypeMechanism);
     }
 
     /// <summary>
@@ -231,39 +231,39 @@ public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechan
 
         return true &&
             (
-                this.Items == other.Items ||
-                this.Items != null &&
-                this.Items.SequenceEqual(other.Items)
+                Items == other.Items ||
+                Items != null &&
+                Items.SequenceEqual(other.Items)
             ) &&
             (
-                this.Restricted == other.Restricted ||
-                this.Restricted != null &&
-                this.Restricted.Equals(other.Restricted)
+                Restricted == other.Restricted ||
+                Restricted != null &&
+                Restricted.Equals(other.Restricted)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.SubType == other.SubType ||
-                this.SubType != null &&
-                this.SubType.Equals(other.SubType)
+                SubType == other.SubType ||
+                SubType != null &&
+                SubType.Equals(other.SubType)
             ) &&
             (
-                this.MaxLength == other.MaxLength ||
-                this.MaxLength != null &&
-                this.MaxLength.Equals(other.MaxLength)
+                MaxLength == other.MaxLength ||
+                MaxLength != null &&
+                MaxLength.Equals(other.MaxLength)
             ) &&
             (
-                this.MinLength == other.MinLength ||
-                this.MinLength != null &&
-                this.MinLength.Equals(other.MinLength)
+                MinLength == other.MinLength ||
+                MinLength != null &&
+                MinLength.Equals(other.MinLength)
             ) &&
             (
-                this.Examples == other.Examples ||
-                this.Examples != null &&
-                this.Examples.SequenceEqual(other.Examples)
+                Examples == other.Examples ||
+                Examples != null &&
+                Examples.SequenceEqual(other.Examples)
             );
     }
 
@@ -278,39 +278,39 @@ public partial class NamedEntityTypeMechanism : IEquatable<NamedEntityTypeMechan
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Items != null)
+            if (Items != null)
             {
-                hash = hash * 59 + this.Items.GetHashCode();
+                hash = hash * 59 + Items.GetHashCode();
             }
 
-            if (this.Restricted != null)
+            if (Restricted != null)
             {
-                hash = hash * 59 + this.Restricted.GetHashCode();
+                hash = hash * 59 + Restricted.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.SubType != null)
+            if (SubType != null)
             {
-                hash = hash * 59 + this.SubType.GetHashCode();
+                hash = hash * 59 + SubType.GetHashCode();
             }
 
-            if (this.MaxLength != null)
+            if (MaxLength != null)
             {
-                hash = hash * 59 + this.MaxLength.GetHashCode();
+                hash = hash * 59 + MaxLength.GetHashCode();
             }
 
-            if (this.MinLength != null)
+            if (MinLength != null)
             {
-                hash = hash * 59 + this.MinLength.GetHashCode();
+                hash = hash * 59 + MinLength.GetHashCode();
             }
 
-            if (this.Examples != null)
+            if (Examples != null)
             {
-                hash = hash * 59 + this.Examples.GetHashCode();
+                hash = hash * 59 + Examples.GetHashCode();
             }
 
             return hash;

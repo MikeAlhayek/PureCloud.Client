@@ -52,7 +52,7 @@ public partial class FreeTrialLimitDocs : IEquatable<FreeTrialLimitDocs>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FreeTrialLimitDocs);
+        return Equals(obj as FreeTrialLimitDocs);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class FreeTrialLimitDocs : IEquatable<FreeTrialLimitDocs>
 
         return true &&
             (
-                this.Namespaces == other.Namespaces ||
-                this.Namespaces != null &&
-                this.Namespaces.SequenceEqual(other.Namespaces)
+                Namespaces == other.Namespaces ||
+                Namespaces != null &&
+                Namespaces.SequenceEqual(other.Namespaces)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class FreeTrialLimitDocs : IEquatable<FreeTrialLimitDocs>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Namespaces != null)
+            if (Namespaces != null)
             {
-                hash = hash * 59 + this.Namespaces.GetHashCode();
+                hash = hash * 59 + Namespaces.GetHashCode();
             }
 
             return hash;

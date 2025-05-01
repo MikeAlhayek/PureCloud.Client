@@ -465,7 +465,7 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalAdherenceExceptionInfo);
+        return Equals(obj as HistoricalAdherenceExceptionInfo);
     }
 
     /// <summary>
@@ -483,59 +483,59 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
 
         return true &&
             (
-                this.StartOffsetSeconds == other.StartOffsetSeconds ||
-                this.StartOffsetSeconds != null &&
-                this.StartOffsetSeconds.Equals(other.StartOffsetSeconds)
+                StartOffsetSeconds == other.StartOffsetSeconds ||
+                StartOffsetSeconds != null &&
+                StartOffsetSeconds.Equals(other.StartOffsetSeconds)
             ) &&
             (
-                this.EndOffsetSeconds == other.EndOffsetSeconds ||
-                this.EndOffsetSeconds != null &&
-                this.EndOffsetSeconds.Equals(other.EndOffsetSeconds)
+                EndOffsetSeconds == other.EndOffsetSeconds ||
+                EndOffsetSeconds != null &&
+                EndOffsetSeconds.Equals(other.EndOffsetSeconds)
             ) &&
             (
-                this.ScheduledActivityCodeId == other.ScheduledActivityCodeId ||
-                this.ScheduledActivityCodeId != null &&
-                this.ScheduledActivityCodeId.Equals(other.ScheduledActivityCodeId)
+                ScheduledActivityCodeId == other.ScheduledActivityCodeId ||
+                ScheduledActivityCodeId != null &&
+                ScheduledActivityCodeId.Equals(other.ScheduledActivityCodeId)
             ) &&
             (
-                this.ScheduledActivityCategory == other.ScheduledActivityCategory ||
-                this.ScheduledActivityCategory != null &&
-                this.ScheduledActivityCategory.Equals(other.ScheduledActivityCategory)
+                ScheduledActivityCategory == other.ScheduledActivityCategory ||
+                ScheduledActivityCategory != null &&
+                ScheduledActivityCategory.Equals(other.ScheduledActivityCategory)
             ) &&
             (
-                this.ScheduledSecondaryPresenceLookupIds == other.ScheduledSecondaryPresenceLookupIds ||
-                this.ScheduledSecondaryPresenceLookupIds != null &&
-                this.ScheduledSecondaryPresenceLookupIds.SequenceEqual(other.ScheduledSecondaryPresenceLookupIds)
+                ScheduledSecondaryPresenceLookupIds == other.ScheduledSecondaryPresenceLookupIds ||
+                ScheduledSecondaryPresenceLookupIds != null &&
+                ScheduledSecondaryPresenceLookupIds.SequenceEqual(other.ScheduledSecondaryPresenceLookupIds)
             ) &&
             (
-                this.ActualActivityCodeId == other.ActualActivityCodeId ||
-                this.ActualActivityCodeId != null &&
-                this.ActualActivityCodeId.Equals(other.ActualActivityCodeId)
+                ActualActivityCodeId == other.ActualActivityCodeId ||
+                ActualActivityCodeId != null &&
+                ActualActivityCodeId.Equals(other.ActualActivityCodeId)
             ) &&
             (
-                this.ActualActivityCategory == other.ActualActivityCategory ||
-                this.ActualActivityCategory != null &&
-                this.ActualActivityCategory.Equals(other.ActualActivityCategory)
+                ActualActivityCategory == other.ActualActivityCategory ||
+                ActualActivityCategory != null &&
+                ActualActivityCategory.Equals(other.ActualActivityCategory)
             ) &&
             (
-                this.SystemPresence == other.SystemPresence ||
-                this.SystemPresence != null &&
-                this.SystemPresence.Equals(other.SystemPresence)
+                SystemPresence == other.SystemPresence ||
+                SystemPresence != null &&
+                SystemPresence.Equals(other.SystemPresence)
             ) &&
             (
-                this.RoutingStatus == other.RoutingStatus ||
-                this.RoutingStatus != null &&
-                this.RoutingStatus.Equals(other.RoutingStatus)
+                RoutingStatus == other.RoutingStatus ||
+                RoutingStatus != null &&
+                RoutingStatus.Equals(other.RoutingStatus)
             ) &&
             (
-                this.Impact == other.Impact ||
-                this.Impact != null &&
-                this.Impact.Equals(other.Impact)
+                Impact == other.Impact ||
+                Impact != null &&
+                Impact.Equals(other.Impact)
             ) &&
             (
-                this.SecondaryPresenceLookupId == other.SecondaryPresenceLookupId ||
-                this.SecondaryPresenceLookupId != null &&
-                this.SecondaryPresenceLookupId.Equals(other.SecondaryPresenceLookupId)
+                SecondaryPresenceLookupId == other.SecondaryPresenceLookupId ||
+                SecondaryPresenceLookupId != null &&
+                SecondaryPresenceLookupId.Equals(other.SecondaryPresenceLookupId)
             );
     }
 
@@ -550,59 +550,59 @@ public partial class HistoricalAdherenceExceptionInfo : IEquatable<HistoricalAdh
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartOffsetSeconds != null)
+            if (StartOffsetSeconds != null)
             {
-                hash = hash * 59 + this.StartOffsetSeconds.GetHashCode();
+                hash = hash * 59 + StartOffsetSeconds.GetHashCode();
             }
 
-            if (this.EndOffsetSeconds != null)
+            if (EndOffsetSeconds != null)
             {
-                hash = hash * 59 + this.EndOffsetSeconds.GetHashCode();
+                hash = hash * 59 + EndOffsetSeconds.GetHashCode();
             }
 
-            if (this.ScheduledActivityCodeId != null)
+            if (ScheduledActivityCodeId != null)
             {
-                hash = hash * 59 + this.ScheduledActivityCodeId.GetHashCode();
+                hash = hash * 59 + ScheduledActivityCodeId.GetHashCode();
             }
 
-            if (this.ScheduledActivityCategory != null)
+            if (ScheduledActivityCategory != null)
             {
-                hash = hash * 59 + this.ScheduledActivityCategory.GetHashCode();
+                hash = hash * 59 + ScheduledActivityCategory.GetHashCode();
             }
 
-            if (this.ScheduledSecondaryPresenceLookupIds != null)
+            if (ScheduledSecondaryPresenceLookupIds != null)
             {
-                hash = hash * 59 + this.ScheduledSecondaryPresenceLookupIds.GetHashCode();
+                hash = hash * 59 + ScheduledSecondaryPresenceLookupIds.GetHashCode();
             }
 
-            if (this.ActualActivityCodeId != null)
+            if (ActualActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActualActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActualActivityCodeId.GetHashCode();
             }
 
-            if (this.ActualActivityCategory != null)
+            if (ActualActivityCategory != null)
             {
-                hash = hash * 59 + this.ActualActivityCategory.GetHashCode();
+                hash = hash * 59 + ActualActivityCategory.GetHashCode();
             }
 
-            if (this.SystemPresence != null)
+            if (SystemPresence != null)
             {
-                hash = hash * 59 + this.SystemPresence.GetHashCode();
+                hash = hash * 59 + SystemPresence.GetHashCode();
             }
 
-            if (this.RoutingStatus != null)
+            if (RoutingStatus != null)
             {
-                hash = hash * 59 + this.RoutingStatus.GetHashCode();
+                hash = hash * 59 + RoutingStatus.GetHashCode();
             }
 
-            if (this.Impact != null)
+            if (Impact != null)
             {
-                hash = hash * 59 + this.Impact.GetHashCode();
+                hash = hash * 59 + Impact.GetHashCode();
             }
 
-            if (this.SecondaryPresenceLookupId != null)
+            if (SecondaryPresenceLookupId != null)
             {
-                hash = hash * 59 + this.SecondaryPresenceLookupId.GetHashCode();
+                hash = hash * 59 + SecondaryPresenceLookupId.GetHashCode();
             }
 
             return hash;

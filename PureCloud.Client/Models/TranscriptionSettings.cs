@@ -151,7 +151,7 @@ public partial class TranscriptionSettings : IEquatable<TranscriptionSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptionSettings);
+        return Equals(obj as TranscriptionSettings);
     }
 
     /// <summary>
@@ -169,34 +169,34 @@ public partial class TranscriptionSettings : IEquatable<TranscriptionSettings>
 
         return true &&
             (
-                this.Transcription == other.Transcription ||
-                this.Transcription != null &&
-                this.Transcription.Equals(other.Transcription)
+                Transcription == other.Transcription ||
+                Transcription != null &&
+                Transcription.Equals(other.Transcription)
             ) &&
             (
-                this.TranscriptionConfidenceThreshold == other.TranscriptionConfidenceThreshold ||
-                this.TranscriptionConfidenceThreshold != null &&
-                this.TranscriptionConfidenceThreshold.Equals(other.TranscriptionConfidenceThreshold)
+                TranscriptionConfidenceThreshold == other.TranscriptionConfidenceThreshold ||
+                TranscriptionConfidenceThreshold != null &&
+                TranscriptionConfidenceThreshold.Equals(other.TranscriptionConfidenceThreshold)
             ) &&
             (
-                this.LowLatencyTranscriptionEnabled == other.LowLatencyTranscriptionEnabled ||
-                this.LowLatencyTranscriptionEnabled != null &&
-                this.LowLatencyTranscriptionEnabled.Equals(other.LowLatencyTranscriptionEnabled)
+                LowLatencyTranscriptionEnabled == other.LowLatencyTranscriptionEnabled ||
+                LowLatencyTranscriptionEnabled != null &&
+                LowLatencyTranscriptionEnabled.Equals(other.LowLatencyTranscriptionEnabled)
             ) &&
             (
-                this.ContentSearchEnabled == other.ContentSearchEnabled ||
-                this.ContentSearchEnabled != null &&
-                this.ContentSearchEnabled.Equals(other.ContentSearchEnabled)
+                ContentSearchEnabled == other.ContentSearchEnabled ||
+                ContentSearchEnabled != null &&
+                ContentSearchEnabled.Equals(other.ContentSearchEnabled)
             ) &&
             (
-                this.PciDssRedactionEnabled == other.PciDssRedactionEnabled ||
-                this.PciDssRedactionEnabled != null &&
-                this.PciDssRedactionEnabled.Equals(other.PciDssRedactionEnabled)
+                PciDssRedactionEnabled == other.PciDssRedactionEnabled ||
+                PciDssRedactionEnabled != null &&
+                PciDssRedactionEnabled.Equals(other.PciDssRedactionEnabled)
             ) &&
             (
-                this.PiiRedactionEnabled == other.PiiRedactionEnabled ||
-                this.PiiRedactionEnabled != null &&
-                this.PiiRedactionEnabled.Equals(other.PiiRedactionEnabled)
+                PiiRedactionEnabled == other.PiiRedactionEnabled ||
+                PiiRedactionEnabled != null &&
+                PiiRedactionEnabled.Equals(other.PiiRedactionEnabled)
             );
     }
 
@@ -211,34 +211,34 @@ public partial class TranscriptionSettings : IEquatable<TranscriptionSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Transcription != null)
+            if (Transcription != null)
             {
-                hash = hash * 59 + this.Transcription.GetHashCode();
+                hash = hash * 59 + Transcription.GetHashCode();
             }
 
-            if (this.TranscriptionConfidenceThreshold != null)
+            if (TranscriptionConfidenceThreshold != null)
             {
-                hash = hash * 59 + this.TranscriptionConfidenceThreshold.GetHashCode();
+                hash = hash * 59 + TranscriptionConfidenceThreshold.GetHashCode();
             }
 
-            if (this.LowLatencyTranscriptionEnabled != null)
+            if (LowLatencyTranscriptionEnabled != null)
             {
-                hash = hash * 59 + this.LowLatencyTranscriptionEnabled.GetHashCode();
+                hash = hash * 59 + LowLatencyTranscriptionEnabled.GetHashCode();
             }
 
-            if (this.ContentSearchEnabled != null)
+            if (ContentSearchEnabled != null)
             {
-                hash = hash * 59 + this.ContentSearchEnabled.GetHashCode();
+                hash = hash * 59 + ContentSearchEnabled.GetHashCode();
             }
 
-            if (this.PciDssRedactionEnabled != null)
+            if (PciDssRedactionEnabled != null)
             {
-                hash = hash * 59 + this.PciDssRedactionEnabled.GetHashCode();
+                hash = hash * 59 + PciDssRedactionEnabled.GetHashCode();
             }
 
-            if (this.PiiRedactionEnabled != null)
+            if (PiiRedactionEnabled != null)
             {
-                hash = hash * 59 + this.PiiRedactionEnabled.GetHashCode();
+                hash = hash * 59 + PiiRedactionEnabled.GetHashCode();
             }
 
             return hash;

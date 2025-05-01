@@ -77,7 +77,7 @@ public partial class ContentActions : IEquatable<ContentActions>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentActions);
+        return Equals(obj as ContentActions);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ContentActions : IEquatable<ContentActions>
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.UrlTarget == other.UrlTarget ||
-                this.UrlTarget != null &&
-                this.UrlTarget.Equals(other.UrlTarget)
+                UrlTarget == other.UrlTarget ||
+                UrlTarget != null &&
+                UrlTarget.Equals(other.UrlTarget)
             ) &&
             (
-                this.Textback == other.Textback ||
-                this.Textback != null &&
-                this.Textback.Equals(other.Textback)
+                Textback == other.Textback ||
+                Textback != null &&
+                Textback.Equals(other.Textback)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ContentActions : IEquatable<ContentActions>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.UrlTarget != null)
+            if (UrlTarget != null)
             {
-                hash = hash * 59 + this.UrlTarget.GetHashCode();
+                hash = hash * 59 + UrlTarget.GetHashCode();
             }
 
-            if (this.Textback != null)
+            if (Textback != null)
             {
-                hash = hash * 59 + this.Textback.GetHashCode();
+                hash = hash * 59 + Textback.GetHashCode();
             }
 
             return hash;

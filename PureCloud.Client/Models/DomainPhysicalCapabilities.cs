@@ -63,7 +63,7 @@ public partial class DomainPhysicalCapabilities : IEquatable<DomainPhysicalCapab
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainPhysicalCapabilities);
+        return Equals(obj as DomainPhysicalCapabilities);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class DomainPhysicalCapabilities : IEquatable<DomainPhysicalCapab
 
         return true &&
             (
-                this.Vlan == other.Vlan ||
-                this.Vlan != null &&
-                this.Vlan.Equals(other.Vlan)
+                Vlan == other.Vlan ||
+                Vlan != null &&
+                Vlan.Equals(other.Vlan)
             ) &&
             (
-                this.Team == other.Team ||
-                this.Team != null &&
-                this.Team.Equals(other.Team)
+                Team == other.Team ||
+                Team != null &&
+                Team.Equals(other.Team)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class DomainPhysicalCapabilities : IEquatable<DomainPhysicalCapab
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Vlan != null)
+            if (Vlan != null)
             {
-                hash = hash * 59 + this.Vlan.GetHashCode();
+                hash = hash * 59 + Vlan.GetHashCode();
             }
 
-            if (this.Team != null)
+            if (Team != null)
             {
-                hash = hash * 59 + this.Team.GetHashCode();
+                hash = hash * 59 + Team.GetHashCode();
             }
 
             return hash;

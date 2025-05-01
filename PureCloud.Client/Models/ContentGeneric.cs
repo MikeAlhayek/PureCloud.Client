@@ -113,7 +113,7 @@ public partial class ContentGeneric : IEquatable<ContentGeneric>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentGeneric);
+        return Equals(obj as ContentGeneric);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class ContentGeneric : IEquatable<ContentGeneric>
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Image == other.Image ||
-                this.Image != null &&
-                this.Image.Equals(other.Image)
+                Image == other.Image ||
+                Image != null &&
+                Image.Equals(other.Image)
             ) &&
             (
-                this.Video == other.Video ||
-                this.Video != null &&
-                this.Video.Equals(other.Video)
+                Video == other.Video ||
+                Video != null &&
+                Video.Equals(other.Video)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.Equals(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.Equals(other.Actions)
             ) &&
             (
-                this.Components == other.Components ||
-                this.Components != null &&
-                this.Components.SequenceEqual(other.Components)
+                Components == other.Components ||
+                Components != null &&
+                Components.SequenceEqual(other.Components)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class ContentGeneric : IEquatable<ContentGeneric>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Image != null)
+            if (Image != null)
             {
-                hash = hash * 59 + this.Image.GetHashCode();
+                hash = hash * 59 + Image.GetHashCode();
             }
 
-            if (this.Video != null)
+            if (Video != null)
             {
-                hash = hash * 59 + this.Video.GetHashCode();
+                hash = hash * 59 + Video.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
-            if (this.Components != null)
+            if (Components != null)
             {
-                hash = hash * 59 + this.Components.GetHashCode();
+                hash = hash * 59 + Components.GetHashCode();
             }
 
             return hash;

@@ -262,7 +262,7 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerDnclistConfigChangeDncList);
+        return Equals(obj as DialerDnclistConfigChangeDncList);
     }
 
     /// <summary>
@@ -280,74 +280,74 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
 
         return true &&
             (
-                this.ImportStatus == other.ImportStatus ||
-                this.ImportStatus != null &&
-                this.ImportStatus.Equals(other.ImportStatus)
+                ImportStatus == other.ImportStatus ||
+                ImportStatus != null &&
+                ImportStatus.Equals(other.ImportStatus)
             ) &&
             (
-                this.Size == other.Size ||
-                this.Size != null &&
-                this.Size.Equals(other.Size)
+                Size == other.Size ||
+                Size != null &&
+                Size.Equals(other.Size)
             ) &&
             (
-                this.DncSourceType == other.DncSourceType ||
-                this.DncSourceType != null &&
-                this.DncSourceType.Equals(other.DncSourceType)
+                DncSourceType == other.DncSourceType ||
+                DncSourceType != null &&
+                DncSourceType.Equals(other.DncSourceType)
             ) &&
             (
-                this.LoginId == other.LoginId ||
-                this.LoginId != null &&
-                this.LoginId.Equals(other.LoginId)
+                LoginId == other.LoginId ||
+                LoginId != null &&
+                LoginId.Equals(other.LoginId)
             ) &&
             (
-                this.DncCodes == other.DncCodes ||
-                this.DncCodes != null &&
-                this.DncCodes.SequenceEqual(other.DncCodes)
+                DncCodes == other.DncCodes ||
+                DncCodes != null &&
+                DncCodes.SequenceEqual(other.DncCodes)
             ) &&
             (
-                this.LicenseId == other.LicenseId ||
-                this.LicenseId != null &&
-                this.LicenseId.Equals(other.LicenseId)
+                LicenseId == other.LicenseId ||
+                LicenseId != null &&
+                LicenseId.Equals(other.LicenseId)
             ) &&
             (
-                this.ContactMethod == other.ContactMethod ||
-                this.ContactMethod != null &&
-                this.ContactMethod.Equals(other.ContactMethod)
+                ContactMethod == other.ContactMethod ||
+                ContactMethod != null &&
+                ContactMethod.Equals(other.ContactMethod)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -362,74 +362,74 @@ public partial class DialerDnclistConfigChangeDncList : IEquatable<DialerDnclist
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ImportStatus != null)
+            if (ImportStatus != null)
             {
-                hash = hash * 59 + this.ImportStatus.GetHashCode();
+                hash = hash * 59 + ImportStatus.GetHashCode();
             }
 
-            if (this.Size != null)
+            if (Size != null)
             {
-                hash = hash * 59 + this.Size.GetHashCode();
+                hash = hash * 59 + Size.GetHashCode();
             }
 
-            if (this.DncSourceType != null)
+            if (DncSourceType != null)
             {
-                hash = hash * 59 + this.DncSourceType.GetHashCode();
+                hash = hash * 59 + DncSourceType.GetHashCode();
             }
 
-            if (this.LoginId != null)
+            if (LoginId != null)
             {
-                hash = hash * 59 + this.LoginId.GetHashCode();
+                hash = hash * 59 + LoginId.GetHashCode();
             }
 
-            if (this.DncCodes != null)
+            if (DncCodes != null)
             {
-                hash = hash * 59 + this.DncCodes.GetHashCode();
+                hash = hash * 59 + DncCodes.GetHashCode();
             }
 
-            if (this.LicenseId != null)
+            if (LicenseId != null)
             {
-                hash = hash * 59 + this.LicenseId.GetHashCode();
+                hash = hash * 59 + LicenseId.GetHashCode();
             }
 
-            if (this.ContactMethod != null)
+            if (ContactMethod != null)
             {
-                hash = hash * 59 + this.ContactMethod.GetHashCode();
+                hash = hash * 59 + ContactMethod.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class SurveyErrorDetails : IEquatable<SurveyErrorDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SurveyErrorDetails);
+        return Equals(obj as SurveyErrorDetails);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class SurveyErrorDetails : IEquatable<SurveyErrorDetails>
 
         return true &&
             (
-                this.FlowDiagnosticInfo == other.FlowDiagnosticInfo ||
-                this.FlowDiagnosticInfo != null &&
-                this.FlowDiagnosticInfo.Equals(other.FlowDiagnosticInfo)
+                FlowDiagnosticInfo == other.FlowDiagnosticInfo ||
+                FlowDiagnosticInfo != null &&
+                FlowDiagnosticInfo.Equals(other.FlowDiagnosticInfo)
             ) &&
             (
-                this.SurveyErrorReason == other.SurveyErrorReason ||
-                this.SurveyErrorReason != null &&
-                this.SurveyErrorReason.Equals(other.SurveyErrorReason)
+                SurveyErrorReason == other.SurveyErrorReason ||
+                SurveyErrorReason != null &&
+                SurveyErrorReason.Equals(other.SurveyErrorReason)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class SurveyErrorDetails : IEquatable<SurveyErrorDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FlowDiagnosticInfo != null)
+            if (FlowDiagnosticInfo != null)
             {
-                hash = hash * 59 + this.FlowDiagnosticInfo.GetHashCode();
+                hash = hash * 59 + FlowDiagnosticInfo.GetHashCode();
             }
 
-            if (this.SurveyErrorReason != null)
+            if (SurveyErrorReason != null)
             {
-                hash = hash * 59 + this.SurveyErrorReason.GetHashCode();
+                hash = hash * 59 + SurveyErrorReason.GetHashCode();
             }
 
             return hash;

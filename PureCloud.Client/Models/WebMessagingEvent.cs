@@ -109,7 +109,7 @@ public partial class WebMessagingEvent : IEquatable<WebMessagingEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebMessagingEvent);
+        return Equals(obj as WebMessagingEvent);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class WebMessagingEvent : IEquatable<WebMessagingEvent>
 
         return true &&
             (
-                this.EventType == other.EventType ||
-                this.EventType != null &&
-                this.EventType.Equals(other.EventType)
+                EventType == other.EventType ||
+                EventType != null &&
+                EventType.Equals(other.EventType)
             ) &&
             (
-                this.CoBrowse == other.CoBrowse ||
-                this.CoBrowse != null &&
-                this.CoBrowse.Equals(other.CoBrowse)
+                CoBrowse == other.CoBrowse ||
+                CoBrowse != null &&
+                CoBrowse.Equals(other.CoBrowse)
             ) &&
             (
-                this.Presence == other.Presence ||
-                this.Presence != null &&
-                this.Presence.Equals(other.Presence)
+                Presence == other.Presence ||
+                Presence != null &&
+                Presence.Equals(other.Presence)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class WebMessagingEvent : IEquatable<WebMessagingEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventType != null)
+            if (EventType != null)
             {
-                hash = hash * 59 + this.EventType.GetHashCode();
+                hash = hash * 59 + EventType.GetHashCode();
             }
 
-            if (this.CoBrowse != null)
+            if (CoBrowse != null)
             {
-                hash = hash * 59 + this.CoBrowse.GetHashCode();
+                hash = hash * 59 + CoBrowse.GetHashCode();
             }
 
-            if (this.Presence != null)
+            if (Presence != null)
             {
-                hash = hash * 59 + this.Presence.GetHashCode();
+                hash = hash * 59 + Presence.GetHashCode();
             }
 
             return hash;

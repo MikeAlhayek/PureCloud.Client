@@ -133,7 +133,7 @@ public partial class KpiResult : IEquatable<KpiResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KpiResult);
+        return Equals(obj as KpiResult);
     }
 
     /// <summary>
@@ -151,34 +151,34 @@ public partial class KpiResult : IEquatable<KpiResult>
 
         return true &&
             (
-                this.KpiTotalOn == other.KpiTotalOn ||
-                this.KpiTotalOn != null &&
-                this.KpiTotalOn.Equals(other.KpiTotalOn)
+                KpiTotalOn == other.KpiTotalOn ||
+                KpiTotalOn != null &&
+                KpiTotalOn.Equals(other.KpiTotalOn)
             ) &&
             (
-                this.KpiTotalOff == other.KpiTotalOff ||
-                this.KpiTotalOff != null &&
-                this.KpiTotalOff.Equals(other.KpiTotalOff)
+                KpiTotalOff == other.KpiTotalOff ||
+                KpiTotalOff != null &&
+                KpiTotalOff.Equals(other.KpiTotalOff)
             ) &&
             (
-                this.InteractionCountOn == other.InteractionCountOn ||
-                this.InteractionCountOn != null &&
-                this.InteractionCountOn.Equals(other.InteractionCountOn)
+                InteractionCountOn == other.InteractionCountOn ||
+                InteractionCountOn != null &&
+                InteractionCountOn.Equals(other.InteractionCountOn)
             ) &&
             (
-                this.InteractionCountOff == other.InteractionCountOff ||
-                this.InteractionCountOff != null &&
-                this.InteractionCountOff.Equals(other.InteractionCountOff)
+                InteractionCountOff == other.InteractionCountOff ||
+                InteractionCountOff != null &&
+                InteractionCountOff.Equals(other.InteractionCountOff)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.PercentageBenefit == other.PercentageBenefit ||
-                this.PercentageBenefit != null &&
-                this.PercentageBenefit.Equals(other.PercentageBenefit)
+                PercentageBenefit == other.PercentageBenefit ||
+                PercentageBenefit != null &&
+                PercentageBenefit.Equals(other.PercentageBenefit)
             );
     }
 
@@ -193,34 +193,34 @@ public partial class KpiResult : IEquatable<KpiResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.KpiTotalOn != null)
+            if (KpiTotalOn != null)
             {
-                hash = hash * 59 + this.KpiTotalOn.GetHashCode();
+                hash = hash * 59 + KpiTotalOn.GetHashCode();
             }
 
-            if (this.KpiTotalOff != null)
+            if (KpiTotalOff != null)
             {
-                hash = hash * 59 + this.KpiTotalOff.GetHashCode();
+                hash = hash * 59 + KpiTotalOff.GetHashCode();
             }
 
-            if (this.InteractionCountOn != null)
+            if (InteractionCountOn != null)
             {
-                hash = hash * 59 + this.InteractionCountOn.GetHashCode();
+                hash = hash * 59 + InteractionCountOn.GetHashCode();
             }
 
-            if (this.InteractionCountOff != null)
+            if (InteractionCountOff != null)
             {
-                hash = hash * 59 + this.InteractionCountOff.GetHashCode();
+                hash = hash * 59 + InteractionCountOff.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.PercentageBenefit != null)
+            if (PercentageBenefit != null)
             {
-                hash = hash * 59 + this.PercentageBenefit.GetHashCode();
+                hash = hash * 59 + PercentageBenefit.GetHashCode();
             }
 
             return hash;

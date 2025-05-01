@@ -115,7 +115,7 @@ public partial class CreateWebChatMessageRequest : IEquatable<CreateWebChatMessa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateWebChatMessageRequest);
+        return Equals(obj as CreateWebChatMessageRequest);
     }
 
     /// <summary>
@@ -133,14 +133,14 @@ public partial class CreateWebChatMessageRequest : IEquatable<CreateWebChatMessa
 
         return true &&
             (
-                this.Body == other.Body ||
-                this.Body != null &&
-                this.Body.Equals(other.Body)
+                Body == other.Body ||
+                Body != null &&
+                Body.Equals(other.Body)
             ) &&
             (
-                this.BodyType == other.BodyType ||
-                this.BodyType != null &&
-                this.BodyType.Equals(other.BodyType)
+                BodyType == other.BodyType ||
+                BodyType != null &&
+                BodyType.Equals(other.BodyType)
             );
     }
 
@@ -155,14 +155,14 @@ public partial class CreateWebChatMessageRequest : IEquatable<CreateWebChatMessa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Body != null)
+            if (Body != null)
             {
-                hash = hash * 59 + this.Body.GetHashCode();
+                hash = hash * 59 + Body.GetHashCode();
             }
 
-            if (this.BodyType != null)
+            if (BodyType != null)
             {
-                hash = hash * 59 + this.BodyType.GetHashCode();
+                hash = hash * 59 + BodyType.GetHashCode();
             }
 
             return hash;

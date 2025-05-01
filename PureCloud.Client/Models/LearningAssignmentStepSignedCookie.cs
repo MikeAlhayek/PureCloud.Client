@@ -61,7 +61,7 @@ public partial class LearningAssignmentStepSignedCookie : IEquatable<LearningAss
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentStepSignedCookie);
+        return Equals(obj as LearningAssignmentStepSignedCookie);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class LearningAssignmentStepSignedCookie : IEquatable<LearningAss
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.CookieValues == other.CookieValues ||
-                this.CookieValues != null &&
-                this.CookieValues.SequenceEqual(other.CookieValues)
+                CookieValues == other.CookieValues ||
+                CookieValues != null &&
+                CookieValues.SequenceEqual(other.CookieValues)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class LearningAssignmentStepSignedCookie : IEquatable<LearningAss
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.CookieValues != null)
+            if (CookieValues != null)
             {
-                hash = hash * 59 + this.CookieValues.GetHashCode();
+                hash = hash * 59 + CookieValues.GetHashCode();
             }
 
             return hash;

@@ -90,7 +90,7 @@ public partial class WfmIntradayPlanningGroupListing : IEquatable<WfmIntradayPla
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmIntradayPlanningGroupListing);
+        return Equals(obj as WfmIntradayPlanningGroupListing);
     }
 
     /// <summary>
@@ -108,14 +108,14 @@ public partial class WfmIntradayPlanningGroupListing : IEquatable<WfmIntradayPla
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.NoDataReason == other.NoDataReason ||
-                this.NoDataReason != null &&
-                this.NoDataReason.Equals(other.NoDataReason)
+                NoDataReason == other.NoDataReason ||
+                NoDataReason != null &&
+                NoDataReason.Equals(other.NoDataReason)
             );
     }
 
@@ -130,14 +130,14 @@ public partial class WfmIntradayPlanningGroupListing : IEquatable<WfmIntradayPla
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.NoDataReason != null)
+            if (NoDataReason != null)
             {
-                hash = hash * 59 + this.NoDataReason.GetHashCode();
+                hash = hash * 59 + NoDataReason.GetHashCode();
             }
 
             return hash;

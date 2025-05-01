@@ -89,7 +89,7 @@ public partial class ScheduleGenerationResultSummary : IEquatable<ScheduleGenera
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScheduleGenerationResultSummary);
+        return Equals(obj as ScheduleGenerationResultSummary);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ScheduleGenerationResultSummary : IEquatable<ScheduleGenera
 
         return true &&
             (
-                this.Failed == other.Failed ||
-                this.Failed != null &&
-                this.Failed.Equals(other.Failed)
+                Failed == other.Failed ||
+                Failed != null &&
+                Failed.Equals(other.Failed)
             ) &&
             (
-                this.RunId == other.RunId ||
-                this.RunId != null &&
-                this.RunId.Equals(other.RunId)
+                RunId == other.RunId ||
+                RunId != null &&
+                RunId.Equals(other.RunId)
             ) &&
             (
-                this.MessageCount == other.MessageCount ||
-                this.MessageCount != null &&
-                this.MessageCount.Equals(other.MessageCount)
+                MessageCount == other.MessageCount ||
+                MessageCount != null &&
+                MessageCount.Equals(other.MessageCount)
             ) &&
             (
-                this.MessageSeverityCounts == other.MessageSeverityCounts ||
-                this.MessageSeverityCounts != null &&
-                this.MessageSeverityCounts.SequenceEqual(other.MessageSeverityCounts)
+                MessageSeverityCounts == other.MessageSeverityCounts ||
+                MessageSeverityCounts != null &&
+                MessageSeverityCounts.SequenceEqual(other.MessageSeverityCounts)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ScheduleGenerationResultSummary : IEquatable<ScheduleGenera
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Failed != null)
+            if (Failed != null)
             {
-                hash = hash * 59 + this.Failed.GetHashCode();
+                hash = hash * 59 + Failed.GetHashCode();
             }
 
-            if (this.RunId != null)
+            if (RunId != null)
             {
-                hash = hash * 59 + this.RunId.GetHashCode();
+                hash = hash * 59 + RunId.GetHashCode();
             }
 
-            if (this.MessageCount != null)
+            if (MessageCount != null)
             {
-                hash = hash * 59 + this.MessageCount.GetHashCode();
+                hash = hash * 59 + MessageCount.GetHashCode();
             }
 
-            if (this.MessageSeverityCounts != null)
+            if (MessageSeverityCounts != null)
             {
-                hash = hash * 59 + this.MessageSeverityCounts.GetHashCode();
+                hash = hash * 59 + MessageSeverityCounts.GetHashCode();
             }
 
             return hash;

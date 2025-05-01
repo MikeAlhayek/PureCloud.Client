@@ -511,7 +511,7 @@ public partial class ConversationEventTopicSocialExpression : IEquatable<Convers
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationEventTopicSocialExpression);
+        return Equals(obj as ConversationEventTopicSocialExpression);
     }
 
     /// <summary>
@@ -529,99 +529,99 @@ public partial class ConversationEventTopicSocialExpression : IEquatable<Convers
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.InitialState == other.InitialState ||
-                this.InitialState != null &&
-                this.InitialState.Equals(other.InitialState)
+                InitialState == other.InitialState ||
+                InitialState != null &&
+                InitialState.Equals(other.InitialState)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.SocialMediaId == other.SocialMediaId ||
-                this.SocialMediaId != null &&
-                this.SocialMediaId.Equals(other.SocialMediaId)
+                SocialMediaId == other.SocialMediaId ||
+                SocialMediaId != null &&
+                SocialMediaId.Equals(other.SocialMediaId)
             ) &&
             (
-                this.SocialMediaHub == other.SocialMediaHub ||
-                this.SocialMediaHub != null &&
-                this.SocialMediaHub.Equals(other.SocialMediaHub)
+                SocialMediaHub == other.SocialMediaHub ||
+                SocialMediaHub != null &&
+                SocialMediaHub.Equals(other.SocialMediaHub)
             ) &&
             (
-                this.SocialUserName == other.SocialUserName ||
-                this.SocialUserName != null &&
-                this.SocialUserName.Equals(other.SocialUserName)
+                SocialUserName == other.SocialUserName ||
+                SocialUserName != null &&
+                SocialUserName.Equals(other.SocialUserName)
             ) &&
             (
-                this.PreviewText == other.PreviewText ||
-                this.PreviewText != null &&
-                this.PreviewText.Equals(other.PreviewText)
+                PreviewText == other.PreviewText ||
+                PreviewText != null &&
+                PreviewText.Equals(other.PreviewText)
             ) &&
             (
-                this.RecordingId == other.RecordingId ||
-                this.RecordingId != null &&
-                this.RecordingId.Equals(other.RecordingId)
+                RecordingId == other.RecordingId ||
+                RecordingId != null &&
+                RecordingId.Equals(other.RecordingId)
             ) &&
             (
-                this.Held == other.Held ||
-                this.Held != null &&
-                this.Held.Equals(other.Held)
+                Held == other.Held ||
+                Held != null &&
+                Held.Equals(other.Held)
             ) &&
             (
-                this.Provider == other.Provider ||
-                this.Provider != null &&
-                this.Provider.Equals(other.Provider)
+                Provider == other.Provider ||
+                Provider != null &&
+                Provider.Equals(other.Provider)
             ) &&
             (
-                this.ScriptId == other.ScriptId ||
-                this.ScriptId != null &&
-                this.ScriptId.Equals(other.ScriptId)
+                ScriptId == other.ScriptId ||
+                ScriptId != null &&
+                ScriptId.Equals(other.ScriptId)
             ) &&
             (
-                this.PeerId == other.PeerId ||
-                this.PeerId != null &&
-                this.PeerId.Equals(other.PeerId)
+                PeerId == other.PeerId ||
+                PeerId != null &&
+                PeerId.Equals(other.PeerId)
             ) &&
             (
-                this.DisconnectType == other.DisconnectType ||
-                this.DisconnectType != null &&
-                this.DisconnectType.Equals(other.DisconnectType)
+                DisconnectType == other.DisconnectType ||
+                DisconnectType != null &&
+                DisconnectType.Equals(other.DisconnectType)
             ) &&
             (
-                this.StartHoldTime == other.StartHoldTime ||
-                this.StartHoldTime != null &&
-                this.StartHoldTime.Equals(other.StartHoldTime)
+                StartHoldTime == other.StartHoldTime ||
+                StartHoldTime != null &&
+                StartHoldTime.Equals(other.StartHoldTime)
             ) &&
             (
-                this.ConnectedTime == other.ConnectedTime ||
-                this.ConnectedTime != null &&
-                this.ConnectedTime.Equals(other.ConnectedTime)
+                ConnectedTime == other.ConnectedTime ||
+                ConnectedTime != null &&
+                ConnectedTime.Equals(other.ConnectedTime)
             ) &&
             (
-                this.DisconnectedTime == other.DisconnectedTime ||
-                this.DisconnectedTime != null &&
-                this.DisconnectedTime.Equals(other.DisconnectedTime)
+                DisconnectedTime == other.DisconnectedTime ||
+                DisconnectedTime != null &&
+                DisconnectedTime.Equals(other.DisconnectedTime)
             ) &&
             (
-                this.Wrapup == other.Wrapup ||
-                this.Wrapup != null &&
-                this.Wrapup.Equals(other.Wrapup)
+                Wrapup == other.Wrapup ||
+                Wrapup != null &&
+                Wrapup.Equals(other.Wrapup)
             ) &&
             (
-                this.AfterCallWork == other.AfterCallWork ||
-                this.AfterCallWork != null &&
-                this.AfterCallWork.Equals(other.AfterCallWork)
+                AfterCallWork == other.AfterCallWork ||
+                AfterCallWork != null &&
+                AfterCallWork.Equals(other.AfterCallWork)
             ) &&
             (
-                this.AfterCallWorkRequired == other.AfterCallWorkRequired ||
-                this.AfterCallWorkRequired != null &&
-                this.AfterCallWorkRequired.Equals(other.AfterCallWorkRequired)
+                AfterCallWorkRequired == other.AfterCallWorkRequired ||
+                AfterCallWorkRequired != null &&
+                AfterCallWorkRequired.Equals(other.AfterCallWorkRequired)
             );
     }
 
@@ -636,99 +636,99 @@ public partial class ConversationEventTopicSocialExpression : IEquatable<Convers
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.InitialState != null)
+            if (InitialState != null)
             {
-                hash = hash * 59 + this.InitialState.GetHashCode();
+                hash = hash * 59 + InitialState.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.SocialMediaId != null)
+            if (SocialMediaId != null)
             {
-                hash = hash * 59 + this.SocialMediaId.GetHashCode();
+                hash = hash * 59 + SocialMediaId.GetHashCode();
             }
 
-            if (this.SocialMediaHub != null)
+            if (SocialMediaHub != null)
             {
-                hash = hash * 59 + this.SocialMediaHub.GetHashCode();
+                hash = hash * 59 + SocialMediaHub.GetHashCode();
             }
 
-            if (this.SocialUserName != null)
+            if (SocialUserName != null)
             {
-                hash = hash * 59 + this.SocialUserName.GetHashCode();
+                hash = hash * 59 + SocialUserName.GetHashCode();
             }
 
-            if (this.PreviewText != null)
+            if (PreviewText != null)
             {
-                hash = hash * 59 + this.PreviewText.GetHashCode();
+                hash = hash * 59 + PreviewText.GetHashCode();
             }
 
-            if (this.RecordingId != null)
+            if (RecordingId != null)
             {
-                hash = hash * 59 + this.RecordingId.GetHashCode();
+                hash = hash * 59 + RecordingId.GetHashCode();
             }
 
-            if (this.Held != null)
+            if (Held != null)
             {
-                hash = hash * 59 + this.Held.GetHashCode();
+                hash = hash * 59 + Held.GetHashCode();
             }
 
-            if (this.Provider != null)
+            if (Provider != null)
             {
-                hash = hash * 59 + this.Provider.GetHashCode();
+                hash = hash * 59 + Provider.GetHashCode();
             }
 
-            if (this.ScriptId != null)
+            if (ScriptId != null)
             {
-                hash = hash * 59 + this.ScriptId.GetHashCode();
+                hash = hash * 59 + ScriptId.GetHashCode();
             }
 
-            if (this.PeerId != null)
+            if (PeerId != null)
             {
-                hash = hash * 59 + this.PeerId.GetHashCode();
+                hash = hash * 59 + PeerId.GetHashCode();
             }
 
-            if (this.DisconnectType != null)
+            if (DisconnectType != null)
             {
-                hash = hash * 59 + this.DisconnectType.GetHashCode();
+                hash = hash * 59 + DisconnectType.GetHashCode();
             }
 
-            if (this.StartHoldTime != null)
+            if (StartHoldTime != null)
             {
-                hash = hash * 59 + this.StartHoldTime.GetHashCode();
+                hash = hash * 59 + StartHoldTime.GetHashCode();
             }
 
-            if (this.ConnectedTime != null)
+            if (ConnectedTime != null)
             {
-                hash = hash * 59 + this.ConnectedTime.GetHashCode();
+                hash = hash * 59 + ConnectedTime.GetHashCode();
             }
 
-            if (this.DisconnectedTime != null)
+            if (DisconnectedTime != null)
             {
-                hash = hash * 59 + this.DisconnectedTime.GetHashCode();
+                hash = hash * 59 + DisconnectedTime.GetHashCode();
             }
 
-            if (this.Wrapup != null)
+            if (Wrapup != null)
             {
-                hash = hash * 59 + this.Wrapup.GetHashCode();
+                hash = hash * 59 + Wrapup.GetHashCode();
             }
 
-            if (this.AfterCallWork != null)
+            if (AfterCallWork != null)
             {
-                hash = hash * 59 + this.AfterCallWork.GetHashCode();
+                hash = hash * 59 + AfterCallWork.GetHashCode();
             }
 
-            if (this.AfterCallWorkRequired != null)
+            if (AfterCallWorkRequired != null)
             {
-                hash = hash * 59 + this.AfterCallWorkRequired.GetHashCode();
+                hash = hash * 59 + AfterCallWorkRequired.GetHashCode();
             }
 
             return hash;

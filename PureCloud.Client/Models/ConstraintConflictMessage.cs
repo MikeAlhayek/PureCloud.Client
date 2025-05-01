@@ -65,7 +65,7 @@ public partial class ConstraintConflictMessage : IEquatable<ConstraintConflictMe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConstraintConflictMessage);
+        return Equals(obj as ConstraintConflictMessage);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ConstraintConflictMessage : IEquatable<ConstraintConflictMe
 
         return true &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.ConflictedConstraintMessages == other.ConflictedConstraintMessages ||
-                this.ConflictedConstraintMessages != null &&
-                this.ConflictedConstraintMessages.SequenceEqual(other.ConflictedConstraintMessages)
+                ConflictedConstraintMessages == other.ConflictedConstraintMessages ||
+                ConflictedConstraintMessages != null &&
+                ConflictedConstraintMessages.SequenceEqual(other.ConflictedConstraintMessages)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ConstraintConflictMessage : IEquatable<ConstraintConflictMe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.ConflictedConstraintMessages != null)
+            if (ConflictedConstraintMessages != null)
             {
-                hash = hash * 59 + this.ConflictedConstraintMessages.GetHashCode();
+                hash = hash * 59 + ConflictedConstraintMessages.GetHashCode();
             }
 
             return hash;

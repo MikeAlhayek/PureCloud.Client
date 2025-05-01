@@ -131,7 +131,7 @@ public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrustorAuditQueryRequest);
+        return Equals(obj as TrustorAuditQueryRequest);
     }
 
     /// <summary>
@@ -149,39 +149,39 @@ public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequ
 
         return true &&
             (
-                this.TrustorOrganizationId == other.TrustorOrganizationId ||
-                this.TrustorOrganizationId != null &&
-                this.TrustorOrganizationId.Equals(other.TrustorOrganizationId)
+                TrustorOrganizationId == other.TrustorOrganizationId ||
+                TrustorOrganizationId != null &&
+                TrustorOrganizationId.Equals(other.TrustorOrganizationId)
             ) &&
             (
-                this.TrusteeUserIds == other.TrusteeUserIds ||
-                this.TrusteeUserIds != null &&
-                this.TrusteeUserIds.SequenceEqual(other.TrusteeUserIds)
+                TrusteeUserIds == other.TrusteeUserIds ||
+                TrusteeUserIds != null &&
+                TrusteeUserIds.SequenceEqual(other.TrusteeUserIds)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.QueryPhrase == other.QueryPhrase ||
-                this.QueryPhrase != null &&
-                this.QueryPhrase.Equals(other.QueryPhrase)
+                QueryPhrase == other.QueryPhrase ||
+                QueryPhrase != null &&
+                QueryPhrase.Equals(other.QueryPhrase)
             ) &&
             (
-                this.Facets == other.Facets ||
-                this.Facets != null &&
-                this.Facets.SequenceEqual(other.Facets)
+                Facets == other.Facets ||
+                Facets != null &&
+                Facets.SequenceEqual(other.Facets)
             ) &&
             (
-                this.Filters == other.Filters ||
-                this.Filters != null &&
-                this.Filters.SequenceEqual(other.Filters)
+                Filters == other.Filters ||
+                Filters != null &&
+                Filters.SequenceEqual(other.Filters)
             );
     }
 
@@ -196,39 +196,39 @@ public partial class TrustorAuditQueryRequest : IEquatable<TrustorAuditQueryRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TrustorOrganizationId != null)
+            if (TrustorOrganizationId != null)
             {
-                hash = hash * 59 + this.TrustorOrganizationId.GetHashCode();
+                hash = hash * 59 + TrustorOrganizationId.GetHashCode();
             }
 
-            if (this.TrusteeUserIds != null)
+            if (TrusteeUserIds != null)
             {
-                hash = hash * 59 + this.TrusteeUserIds.GetHashCode();
+                hash = hash * 59 + TrusteeUserIds.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.QueryPhrase != null)
+            if (QueryPhrase != null)
             {
-                hash = hash * 59 + this.QueryPhrase.GetHashCode();
+                hash = hash * 59 + QueryPhrase.GetHashCode();
             }
 
-            if (this.Facets != null)
+            if (Facets != null)
             {
-                hash = hash * 59 + this.Facets.GetHashCode();
+                hash = hash * 59 + Facets.GetHashCode();
             }
 
-            if (this.Filters != null)
+            if (Filters != null)
             {
-                hash = hash * 59 + this.Filters.GetHashCode();
+                hash = hash * 59 + Filters.GetHashCode();
             }
 
             return hash;

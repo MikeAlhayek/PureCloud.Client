@@ -77,7 +77,7 @@ public partial class EventError : IEquatable<EventError>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EventError);
+        return Equals(obj as EventError);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class EventError : IEquatable<EventError>
 
         return true &&
             (
-                this.EventId == other.EventId ||
-                this.EventId != null &&
-                this.EventId.Equals(other.EventId)
+                EventId == other.EventId ||
+                EventId != null &&
+                EventId.Equals(other.EventId)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Retryable == other.Retryable ||
-                this.Retryable != null &&
-                this.Retryable.Equals(other.Retryable)
+                Retryable == other.Retryable ||
+                Retryable != null &&
+                Retryable.Equals(other.Retryable)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class EventError : IEquatable<EventError>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventId != null)
+            if (EventId != null)
             {
-                hash = hash * 59 + this.EventId.GetHashCode();
+                hash = hash * 59 + EventId.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Retryable != null)
+            if (Retryable != null)
             {
-                hash = hash * 59 + this.Retryable.GetHashCode();
+                hash = hash * 59 + Retryable.GetHashCode();
             }
 
             return hash;

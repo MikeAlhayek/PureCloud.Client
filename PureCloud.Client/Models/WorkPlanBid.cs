@@ -353,7 +353,7 @@ public partial class WorkPlanBid : IEquatable<WorkPlanBid>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanBid);
+        return Equals(obj as WorkPlanBid);
     }
 
     /// <summary>
@@ -371,69 +371,69 @@ public partial class WorkPlanBid : IEquatable<WorkPlanBid>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Forecast == other.Forecast ||
-                this.Forecast != null &&
-                this.Forecast.Equals(other.Forecast)
+                Forecast == other.Forecast ||
+                Forecast != null &&
+                Forecast.Equals(other.Forecast)
             ) &&
             (
-                this.BidWindowStartDate == other.BidWindowStartDate ||
-                this.BidWindowStartDate != null &&
-                this.BidWindowStartDate.Equals(other.BidWindowStartDate)
+                BidWindowStartDate == other.BidWindowStartDate ||
+                BidWindowStartDate != null &&
+                BidWindowStartDate.Equals(other.BidWindowStartDate)
             ) &&
             (
-                this.BidWindowEndDate == other.BidWindowEndDate ||
-                this.BidWindowEndDate != null &&
-                this.BidWindowEndDate.Equals(other.BidWindowEndDate)
+                BidWindowEndDate == other.BidWindowEndDate ||
+                BidWindowEndDate != null &&
+                BidWindowEndDate.Equals(other.BidWindowEndDate)
             ) &&
             (
-                this.EffectiveDate == other.EffectiveDate ||
-                this.EffectiveDate != null &&
-                this.EffectiveDate.Equals(other.EffectiveDate)
+                EffectiveDate == other.EffectiveDate ||
+                EffectiveDate != null &&
+                EffectiveDate.Equals(other.EffectiveDate)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.AgentRankingType == other.AgentRankingType ||
-                this.AgentRankingType != null &&
-                this.AgentRankingType.Equals(other.AgentRankingType)
+                AgentRankingType == other.AgentRankingType ||
+                AgentRankingType != null &&
+                AgentRankingType.Equals(other.AgentRankingType)
             ) &&
             (
-                this.RankingTiebreakerType == other.RankingTiebreakerType ||
-                this.RankingTiebreakerType != null &&
-                this.RankingTiebreakerType.Equals(other.RankingTiebreakerType)
+                RankingTiebreakerType == other.RankingTiebreakerType ||
+                RankingTiebreakerType != null &&
+                RankingTiebreakerType.Equals(other.RankingTiebreakerType)
             ) &&
             (
-                this.PublishedDate == other.PublishedDate ||
-                this.PublishedDate != null &&
-                this.PublishedDate.Equals(other.PublishedDate)
+                PublishedDate == other.PublishedDate ||
+                PublishedDate != null &&
+                PublishedDate.Equals(other.PublishedDate)
             ) &&
             (
-                this.WorkPlanFieldsVisibleToAgents == other.WorkPlanFieldsVisibleToAgents ||
-                this.WorkPlanFieldsVisibleToAgents != null &&
-                this.WorkPlanFieldsVisibleToAgents.SequenceEqual(other.WorkPlanFieldsVisibleToAgents)
+                WorkPlanFieldsVisibleToAgents == other.WorkPlanFieldsVisibleToAgents ||
+                WorkPlanFieldsVisibleToAgents != null &&
+                WorkPlanFieldsVisibleToAgents.SequenceEqual(other.WorkPlanFieldsVisibleToAgents)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -448,69 +448,69 @@ public partial class WorkPlanBid : IEquatable<WorkPlanBid>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Forecast != null)
+            if (Forecast != null)
             {
-                hash = hash * 59 + this.Forecast.GetHashCode();
+                hash = hash * 59 + Forecast.GetHashCode();
             }
 
-            if (this.BidWindowStartDate != null)
+            if (BidWindowStartDate != null)
             {
-                hash = hash * 59 + this.BidWindowStartDate.GetHashCode();
+                hash = hash * 59 + BidWindowStartDate.GetHashCode();
             }
 
-            if (this.BidWindowEndDate != null)
+            if (BidWindowEndDate != null)
             {
-                hash = hash * 59 + this.BidWindowEndDate.GetHashCode();
+                hash = hash * 59 + BidWindowEndDate.GetHashCode();
             }
 
-            if (this.EffectiveDate != null)
+            if (EffectiveDate != null)
             {
-                hash = hash * 59 + this.EffectiveDate.GetHashCode();
+                hash = hash * 59 + EffectiveDate.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.AgentRankingType != null)
+            if (AgentRankingType != null)
             {
-                hash = hash * 59 + this.AgentRankingType.GetHashCode();
+                hash = hash * 59 + AgentRankingType.GetHashCode();
             }
 
-            if (this.RankingTiebreakerType != null)
+            if (RankingTiebreakerType != null)
             {
-                hash = hash * 59 + this.RankingTiebreakerType.GetHashCode();
+                hash = hash * 59 + RankingTiebreakerType.GetHashCode();
             }
 
-            if (this.PublishedDate != null)
+            if (PublishedDate != null)
             {
-                hash = hash * 59 + this.PublishedDate.GetHashCode();
+                hash = hash * 59 + PublishedDate.GetHashCode();
             }
 
-            if (this.WorkPlanFieldsVisibleToAgents != null)
+            if (WorkPlanFieldsVisibleToAgents != null)
             {
-                hash = hash * 59 + this.WorkPlanFieldsVisibleToAgents.GetHashCode();
+                hash = hash * 59 + WorkPlanFieldsVisibleToAgents.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

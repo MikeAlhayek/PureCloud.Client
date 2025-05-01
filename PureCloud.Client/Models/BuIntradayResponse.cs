@@ -194,7 +194,7 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuIntradayResponse);
+        return Equals(obj as BuIntradayResponse);
     }
 
     /// <summary>
@@ -212,44 +212,44 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.IntervalLengthMinutes == other.IntervalLengthMinutes ||
-                this.IntervalLengthMinutes != null &&
-                this.IntervalLengthMinutes.Equals(other.IntervalLengthMinutes)
+                IntervalLengthMinutes == other.IntervalLengthMinutes ||
+                IntervalLengthMinutes != null &&
+                IntervalLengthMinutes.Equals(other.IntervalLengthMinutes)
             ) &&
             (
-                this.NoDataReason == other.NoDataReason ||
-                this.NoDataReason != null &&
-                this.NoDataReason.Equals(other.NoDataReason)
+                NoDataReason == other.NoDataReason ||
+                NoDataReason != null &&
+                NoDataReason.Equals(other.NoDataReason)
             ) &&
             (
-                this.Categories == other.Categories ||
-                this.Categories != null &&
-                this.Categories.SequenceEqual(other.Categories)
+                Categories == other.Categories ||
+                Categories != null &&
+                Categories.SequenceEqual(other.Categories)
             ) &&
             (
-                this.ShortTermForecast == other.ShortTermForecast ||
-                this.ShortTermForecast != null &&
-                this.ShortTermForecast.Equals(other.ShortTermForecast)
+                ShortTermForecast == other.ShortTermForecast ||
+                ShortTermForecast != null &&
+                ShortTermForecast.Equals(other.ShortTermForecast)
             ) &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             ) &&
             (
-                this.IntradayDataGroupings == other.IntradayDataGroupings ||
-                this.IntradayDataGroupings != null &&
-                this.IntradayDataGroupings.SequenceEqual(other.IntradayDataGroupings)
+                IntradayDataGroupings == other.IntradayDataGroupings ||
+                IntradayDataGroupings != null &&
+                IntradayDataGroupings.SequenceEqual(other.IntradayDataGroupings)
             );
     }
 
@@ -264,44 +264,44 @@ public partial class BuIntradayResponse : IEquatable<BuIntradayResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.IntervalLengthMinutes != null)
+            if (IntervalLengthMinutes != null)
             {
-                hash = hash * 59 + this.IntervalLengthMinutes.GetHashCode();
+                hash = hash * 59 + IntervalLengthMinutes.GetHashCode();
             }
 
-            if (this.NoDataReason != null)
+            if (NoDataReason != null)
             {
-                hash = hash * 59 + this.NoDataReason.GetHashCode();
+                hash = hash * 59 + NoDataReason.GetHashCode();
             }
 
-            if (this.Categories != null)
+            if (Categories != null)
             {
-                hash = hash * 59 + this.Categories.GetHashCode();
+                hash = hash * 59 + Categories.GetHashCode();
             }
 
-            if (this.ShortTermForecast != null)
+            if (ShortTermForecast != null)
             {
-                hash = hash * 59 + this.ShortTermForecast.GetHashCode();
+                hash = hash * 59 + ShortTermForecast.GetHashCode();
             }
 
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
-            if (this.IntradayDataGroupings != null)
+            if (IntradayDataGroupings != null)
             {
-                hash = hash * 59 + this.IntradayDataGroupings.GetHashCode();
+                hash = hash * 59 + IntradayDataGroupings.GetHashCode();
             }
 
             return hash;

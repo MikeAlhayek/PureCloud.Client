@@ -8262,12 +8262,12 @@ public partial class ArchitectApi : IArchitectApi
     /// <returns></returns>
     public ArchitectApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -8281,17 +8281,17 @@ public partial class ArchitectApi : IArchitectApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -8301,7 +8301,7 @@ public partial class ArchitectApi : IArchitectApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -8327,7 +8327,7 @@ public partial class ArchitectApi : IArchitectApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -8339,7 +8339,7 @@ public partial class ArchitectApi : IArchitectApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -8384,7 +8384,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8393,7 +8393,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8406,7 +8406,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (emergencyGroupId != null)
         {
-            localVarPathParams.Add("emergencyGroupId", this.Configuration.ApiClient.ParameterToString(emergencyGroupId));
+            localVarPathParams.Add("emergencyGroupId", Configuration.ApiClient.ParameterToString(emergencyGroupId));
         }
 
         // Query params
@@ -8422,11 +8422,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8500,7 +8500,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8509,7 +8509,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8522,7 +8522,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (emergencyGroupId != null)
         {
-            localVarPathParams.Add("emergencyGroupId", this.Configuration.ApiClient.ParameterToString(emergencyGroupId));
+            localVarPathParams.Add("emergencyGroupId", Configuration.ApiClient.ParameterToString(emergencyGroupId));
         }
 
         // Query params
@@ -8538,11 +8538,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8617,7 +8617,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8626,7 +8626,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8639,7 +8639,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         // Query params
@@ -8655,11 +8655,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8685,7 +8685,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8734,7 +8734,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8743,7 +8743,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8756,7 +8756,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         // Query params
@@ -8772,11 +8772,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8802,7 +8802,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8857,7 +8857,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8866,7 +8866,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8879,12 +8879,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -8900,11 +8900,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8986,7 +8986,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8995,7 +8995,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9008,12 +9008,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -9029,11 +9029,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9114,7 +9114,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9123,7 +9123,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9136,12 +9136,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -9157,11 +9157,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9243,7 +9243,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9252,7 +9252,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9265,12 +9265,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -9286,11 +9286,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9371,7 +9371,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9380,7 +9380,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9393,12 +9393,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -9414,11 +9414,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9500,7 +9500,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9509,7 +9509,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9522,12 +9522,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -9543,11 +9543,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9621,7 +9621,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9630,7 +9630,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9643,7 +9643,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (ivrId != null)
         {
-            localVarPathParams.Add("ivrId", this.Configuration.ApiClient.ParameterToString(ivrId));
+            localVarPathParams.Add("ivrId", Configuration.ApiClient.ParameterToString(ivrId));
         }
 
         // Query params
@@ -9659,11 +9659,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9737,7 +9737,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9746,7 +9746,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9759,7 +9759,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (ivrId != null)
         {
-            localVarPathParams.Add("ivrId", this.Configuration.ApiClient.ParameterToString(ivrId));
+            localVarPathParams.Add("ivrId", Configuration.ApiClient.ParameterToString(ivrId));
         }
 
         // Query params
@@ -9775,11 +9775,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9855,7 +9855,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9864,7 +9864,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9877,13 +9877,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
         if (allResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("allResources", this.Configuration.ApiClient.ParameterToString(allResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("allResources", Configuration.ApiClient.ParameterToString(allResources)));
         }
 
         // Header params
@@ -9897,11 +9897,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9977,7 +9977,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9986,7 +9986,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9999,13 +9999,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
         if (allResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("allResources", this.Configuration.ApiClient.ParameterToString(allResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("allResources", Configuration.ApiClient.ParameterToString(allResources)));
         }
 
         // Header params
@@ -10019,11 +10019,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10104,7 +10104,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10113,7 +10113,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10126,12 +10126,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -10147,11 +10147,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10233,7 +10233,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10242,7 +10242,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10255,12 +10255,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -10276,11 +10276,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10361,7 +10361,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10370,7 +10370,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10383,12 +10383,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -10404,11 +10404,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10490,7 +10490,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10499,7 +10499,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10512,12 +10512,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -10533,11 +10533,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10612,7 +10612,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10621,7 +10621,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10636,7 +10636,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -10650,11 +10650,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10680,7 +10680,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10729,7 +10729,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10738,7 +10738,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10753,7 +10753,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -10767,11 +10767,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10797,7 +10797,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10845,7 +10845,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10854,7 +10854,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10867,7 +10867,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleId != null)
         {
-            localVarPathParams.Add("scheduleId", this.Configuration.ApiClient.ParameterToString(scheduleId));
+            localVarPathParams.Add("scheduleId", Configuration.ApiClient.ParameterToString(scheduleId));
         }
 
         // Query params
@@ -10883,11 +10883,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10961,7 +10961,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10970,7 +10970,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10983,7 +10983,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleId != null)
         {
-            localVarPathParams.Add("scheduleId", this.Configuration.ApiClient.ParameterToString(scheduleId));
+            localVarPathParams.Add("scheduleId", Configuration.ApiClient.ParameterToString(scheduleId));
         }
 
         // Query params
@@ -10999,11 +10999,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11077,7 +11077,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11086,7 +11086,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11099,7 +11099,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleGroupId != null)
         {
-            localVarPathParams.Add("scheduleGroupId", this.Configuration.ApiClient.ParameterToString(scheduleGroupId));
+            localVarPathParams.Add("scheduleGroupId", Configuration.ApiClient.ParameterToString(scheduleGroupId));
         }
 
         // Query params
@@ -11115,11 +11115,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11193,7 +11193,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11202,7 +11202,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11215,7 +11215,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleGroupId != null)
         {
-            localVarPathParams.Add("scheduleGroupId", this.Configuration.ApiClient.ParameterToString(scheduleGroupId));
+            localVarPathParams.Add("scheduleGroupId", Configuration.ApiClient.ParameterToString(scheduleGroupId));
         }
 
         // Query params
@@ -11231,11 +11231,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11316,7 +11316,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11325,7 +11325,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11338,12 +11338,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -11359,11 +11359,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11445,7 +11445,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11454,7 +11454,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11467,12 +11467,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -11488,11 +11488,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11566,7 +11566,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11575,7 +11575,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11588,7 +11588,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
@@ -11604,11 +11604,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11682,7 +11682,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11691,7 +11691,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11704,7 +11704,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
@@ -11720,11 +11720,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11798,7 +11798,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11807,7 +11807,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11820,7 +11820,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
@@ -11836,11 +11836,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11914,7 +11914,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11923,7 +11923,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11936,7 +11936,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
@@ -11952,11 +11952,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12031,7 +12031,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12040,7 +12040,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12055,7 +12055,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -12069,11 +12069,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12099,7 +12099,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12148,7 +12148,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12157,7 +12157,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12172,7 +12172,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -12186,11 +12186,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12216,7 +12216,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12266,7 +12266,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12275,7 +12275,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12288,13 +12288,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (force != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("force", this.Configuration.ApiClient.ParameterToString(force)));
+            localVarQueryParams.Add(new Tuple<string, string>("force", Configuration.ApiClient.ParameterToString(force)));
         }
 
         // Header params
@@ -12308,11 +12308,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12388,7 +12388,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12397,7 +12397,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12410,13 +12410,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (force != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("force", this.Configuration.ApiClient.ParameterToString(force)));
+            localVarQueryParams.Add(new Tuple<string, string>("force", Configuration.ApiClient.ParameterToString(force)));
         }
 
         // Header params
@@ -12430,11 +12430,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12515,7 +12515,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12524,7 +12524,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12537,12 +12537,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         if (rowId != null)
         {
-            localVarPathParams.Add("rowId", this.Configuration.ApiClient.ParameterToString(rowId));
+            localVarPathParams.Add("rowId", Configuration.ApiClient.ParameterToString(rowId));
         }
 
         // Query params
@@ -12558,11 +12558,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12644,7 +12644,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12653,7 +12653,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12666,12 +12666,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         if (rowId != null)
         {
-            localVarPathParams.Add("rowId", this.Configuration.ApiClient.ParameterToString(rowId));
+            localVarPathParams.Add("rowId", Configuration.ApiClient.ParameterToString(rowId));
         }
 
         // Query params
@@ -12687,11 +12687,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12758,7 +12758,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12767,7 +12767,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12792,11 +12792,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12863,7 +12863,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12872,7 +12872,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12897,11 +12897,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12976,7 +12976,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12985,7 +12985,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12998,7 +12998,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (milestoneId != null)
         {
-            localVarPathParams.Add("milestoneId", this.Configuration.ApiClient.ParameterToString(milestoneId));
+            localVarPathParams.Add("milestoneId", Configuration.ApiClient.ParameterToString(milestoneId));
         }
 
         // Query params
@@ -13014,11 +13014,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13044,7 +13044,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13093,7 +13093,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13102,7 +13102,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13115,7 +13115,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (milestoneId != null)
         {
-            localVarPathParams.Add("milestoneId", this.Configuration.ApiClient.ParameterToString(milestoneId));
+            localVarPathParams.Add("milestoneId", Configuration.ApiClient.ParameterToString(milestoneId));
         }
 
         // Query params
@@ -13131,11 +13131,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13161,7 +13161,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13224,7 +13224,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13233,7 +13233,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13248,42 +13248,42 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (objectType != null)
         {
-            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (consumedResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", this.Configuration.ApiClient.ParameterToString(consumedResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", Configuration.ApiClient.ParameterToString(consumedResources)));
         }
 
         if (consumingResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumingResources", this.Configuration.ApiClient.ParameterToString(consumingResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumingResources", Configuration.ApiClient.ParameterToString(consumingResources)));
         }
 
         if (consumedResourceType != null)
         {
-            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (consumingResourceType != null)
         {
-            consumingResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumingResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumingResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumingResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -13297,11 +13297,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13327,7 +13327,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyObjectEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DependencyObjectEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
+            (DependencyObjectEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13390,7 +13390,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13399,7 +13399,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13414,42 +13414,42 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (objectType != null)
         {
-            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (consumedResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", this.Configuration.ApiClient.ParameterToString(consumedResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", Configuration.ApiClient.ParameterToString(consumedResources)));
         }
 
         if (consumingResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumingResources", this.Configuration.ApiClient.ParameterToString(consumingResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumingResources", Configuration.ApiClient.ParameterToString(consumingResources)));
         }
 
         if (consumedResourceType != null)
         {
-            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (consumingResourceType != null)
         {
-            consumingResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumingResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumingResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumingResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -13463,11 +13463,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13493,7 +13493,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyObjectEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DependencyObjectEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
+            (DependencyObjectEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13535,7 +13535,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13544,7 +13544,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13569,11 +13569,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13599,7 +13599,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyStatus>(localVarStatusCode,
             localVarHeaders,
-            (DependencyStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyStatus)),
+            (DependencyStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13641,7 +13641,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13650,7 +13650,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13675,11 +13675,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13705,7 +13705,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyStatus>(localVarStatusCode,
             localVarHeaders,
-            (DependencyStatus)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyStatus)),
+            (DependencyStatus)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyStatus)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13774,7 +13774,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13783,7 +13783,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13798,32 +13798,32 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (id != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(id)));
+            localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(id)));
         }
 
         if (version != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("version", this.Configuration.ApiClient.ParameterToString(version)));
+            localVarQueryParams.Add(new Tuple<string, string>("version", Configuration.ApiClient.ParameterToString(version)));
         }
 
         if (objectType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(objectType)));
+            localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(objectType)));
         }
 
         if (resourceType != null)
         {
-            resourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("resourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            resourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("resourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -13837,11 +13837,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13867,7 +13867,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ConsumedResourcesEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ConsumedResourcesEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsumedResourcesEntityListing)),
+            (ConsumedResourcesEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsumedResourcesEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13938,7 +13938,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13947,7 +13947,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13962,32 +13962,32 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (id != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(id)));
+            localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(id)));
         }
 
         if (version != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("version", this.Configuration.ApiClient.ParameterToString(version)));
+            localVarQueryParams.Add(new Tuple<string, string>("version", Configuration.ApiClient.ParameterToString(version)));
         }
 
         if (objectType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(objectType)));
+            localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(objectType)));
         }
 
         if (resourceType != null)
         {
-            resourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("resourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            resourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("resourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -14001,11 +14001,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14031,7 +14031,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ConsumedResourcesEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ConsumedResourcesEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsumedResourcesEntityListing)),
+            (ConsumedResourcesEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsumedResourcesEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14097,7 +14097,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14106,7 +14106,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14121,37 +14121,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (id != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(id)));
+            localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(id)));
         }
 
         if (objectType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(objectType)));
+            localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(objectType)));
         }
 
         if (resourceType != null)
         {
-            resourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("resourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            resourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("resourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (version != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("version", this.Configuration.ApiClient.ParameterToString(version)));
+            localVarQueryParams.Add(new Tuple<string, string>("version", Configuration.ApiClient.ParameterToString(version)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (flowFilter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowFilter", this.Configuration.ApiClient.ParameterToString(flowFilter)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowFilter", Configuration.ApiClient.ParameterToString(flowFilter)));
         }
 
         // Header params
@@ -14165,11 +14165,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14195,7 +14195,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ConsumingResourcesEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ConsumingResourcesEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsumingResourcesEntityListing)),
+            (ConsumingResourcesEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsumingResourcesEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14262,7 +14262,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14271,7 +14271,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14286,37 +14286,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (id != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(id)));
+            localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(id)));
         }
 
         if (objectType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(objectType)));
+            localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(objectType)));
         }
 
         if (resourceType != null)
         {
-            resourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("resourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            resourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("resourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (version != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("version", this.Configuration.ApiClient.ParameterToString(version)));
+            localVarQueryParams.Add(new Tuple<string, string>("version", Configuration.ApiClient.ParameterToString(version)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (flowFilter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowFilter", this.Configuration.ApiClient.ParameterToString(flowFilter)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowFilter", Configuration.ApiClient.ParameterToString(flowFilter)));
         }
 
         // Header params
@@ -14330,11 +14330,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14360,7 +14360,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ConsumingResourcesEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ConsumingResourcesEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsumingResourcesEntityListing)),
+            (ConsumingResourcesEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsumingResourcesEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14416,7 +14416,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14425,7 +14425,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14440,37 +14440,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (objectType != null)
         {
-            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (flowFilter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowFilter", this.Configuration.ApiClient.ParameterToString(flowFilter)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowFilter", Configuration.ApiClient.ParameterToString(flowFilter)));
         }
 
         if (consumedResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", this.Configuration.ApiClient.ParameterToString(consumedResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", Configuration.ApiClient.ParameterToString(consumedResources)));
         }
 
         if (consumedResourceType != null)
         {
-            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -14484,11 +14484,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14514,7 +14514,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyObjectEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DependencyObjectEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
+            (DependencyObjectEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14570,7 +14570,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14579,7 +14579,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14594,37 +14594,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (objectType != null)
         {
-            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (flowFilter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flowFilter", this.Configuration.ApiClient.ParameterToString(flowFilter)));
+            localVarQueryParams.Add(new Tuple<string, string>("flowFilter", Configuration.ApiClient.ParameterToString(flowFilter)));
         }
 
         if (consumedResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", this.Configuration.ApiClient.ParameterToString(consumedResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", Configuration.ApiClient.ParameterToString(consumedResources)));
         }
 
         if (consumedResourceType != null)
         {
-            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -14638,11 +14638,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14668,7 +14668,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyObjectEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DependencyObjectEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
+            (DependencyObjectEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14731,7 +14731,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14740,7 +14740,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14755,42 +14755,42 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (id != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(id)));
+            localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(id)));
         }
 
         if (version != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("version", this.Configuration.ApiClient.ParameterToString(version)));
+            localVarQueryParams.Add(new Tuple<string, string>("version", Configuration.ApiClient.ParameterToString(version)));
         }
 
         if (objectType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(objectType)));
+            localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(objectType)));
         }
 
         if (consumedResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", this.Configuration.ApiClient.ParameterToString(consumedResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", Configuration.ApiClient.ParameterToString(consumedResources)));
         }
 
         if (consumingResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumingResources", this.Configuration.ApiClient.ParameterToString(consumingResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumingResources", Configuration.ApiClient.ParameterToString(consumingResources)));
         }
 
         if (consumedResourceType != null)
         {
-            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (consumingResourceType != null)
         {
-            consumingResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumingResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumingResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumingResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (consumedResourceRequest != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumedResourceRequest", this.Configuration.ApiClient.ParameterToString(consumedResourceRequest)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumedResourceRequest", Configuration.ApiClient.ParameterToString(consumedResourceRequest)));
         }
 
         // Header params
@@ -14804,11 +14804,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14834,7 +14834,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyObject>(localVarStatusCode,
             localVarHeaders,
-            (DependencyObject)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObject)),
+            (DependencyObject)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObject)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14897,7 +14897,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14906,7 +14906,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14921,42 +14921,42 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (id != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(id)));
+            localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(id)));
         }
 
         if (version != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("version", this.Configuration.ApiClient.ParameterToString(version)));
+            localVarQueryParams.Add(new Tuple<string, string>("version", Configuration.ApiClient.ParameterToString(version)));
         }
 
         if (objectType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(objectType)));
+            localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(objectType)));
         }
 
         if (consumedResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", this.Configuration.ApiClient.ParameterToString(consumedResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", Configuration.ApiClient.ParameterToString(consumedResources)));
         }
 
         if (consumingResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumingResources", this.Configuration.ApiClient.ParameterToString(consumingResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumingResources", Configuration.ApiClient.ParameterToString(consumingResources)));
         }
 
         if (consumedResourceType != null)
         {
-            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (consumingResourceType != null)
         {
-            consumingResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumingResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumingResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumingResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (consumedResourceRequest != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumedResourceRequest", this.Configuration.ApiClient.ParameterToString(consumedResourceRequest)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumedResourceRequest", Configuration.ApiClient.ParameterToString(consumedResourceRequest)));
         }
 
         // Header params
@@ -14970,11 +14970,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15000,7 +15000,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyObject>(localVarStatusCode,
             localVarHeaders,
-            (DependencyObject)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObject)),
+            (DependencyObject)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObject)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15049,7 +15049,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15058,7 +15058,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15071,7 +15071,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (typeId != null)
         {
-            localVarPathParams.Add("typeId", this.Configuration.ApiClient.ParameterToString(typeId));
+            localVarPathParams.Add("typeId", Configuration.ApiClient.ParameterToString(typeId));
         }
 
         // Query params
@@ -15087,11 +15087,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15117,7 +15117,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyType>(localVarStatusCode,
             localVarHeaders,
-            (DependencyType)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyType)),
+            (DependencyType)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyType)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15166,7 +15166,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15175,7 +15175,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15188,7 +15188,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (typeId != null)
         {
-            localVarPathParams.Add("typeId", this.Configuration.ApiClient.ParameterToString(typeId));
+            localVarPathParams.Add("typeId", Configuration.ApiClient.ParameterToString(typeId));
         }
 
         // Query params
@@ -15204,11 +15204,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15234,7 +15234,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyType>(localVarStatusCode,
             localVarHeaders,
-            (DependencyType)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyType)),
+            (DependencyType)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyType)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15280,7 +15280,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15289,7 +15289,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15304,12 +15304,12 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -15323,11 +15323,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15353,7 +15353,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyTypeEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DependencyTypeEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyTypeEntityListing)),
+            (DependencyTypeEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyTypeEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15399,7 +15399,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15408,7 +15408,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15423,12 +15423,12 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -15442,11 +15442,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15472,7 +15472,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyTypeEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DependencyTypeEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyTypeEntityListing)),
+            (DependencyTypeEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyTypeEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15526,7 +15526,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15535,7 +15535,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15550,32 +15550,32 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (objectType != null)
         {
-            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (consumedResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", this.Configuration.ApiClient.ParameterToString(consumedResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", Configuration.ApiClient.ParameterToString(consumedResources)));
         }
 
         if (consumedResourceType != null)
         {
-            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -15589,11 +15589,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15619,7 +15619,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyObjectEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DependencyObjectEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
+            (DependencyObjectEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15673,7 +15673,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15682,7 +15682,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15697,32 +15697,32 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (objectType != null)
         {
-            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            objectType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("objectType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (consumedResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", this.Configuration.ApiClient.ParameterToString(consumedResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("consumedResources", Configuration.ApiClient.ParameterToString(consumedResources)));
         }
 
         if (consumedResourceType != null)
         {
-            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            consumedResourceType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("consumedResourceType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -15736,11 +15736,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15766,7 +15766,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DependencyObjectEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DependencyObjectEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
+            (DependencyObjectEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DependencyObjectEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15815,7 +15815,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15824,7 +15824,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15837,7 +15837,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (emergencyGroupId != null)
         {
-            localVarPathParams.Add("emergencyGroupId", this.Configuration.ApiClient.ParameterToString(emergencyGroupId));
+            localVarPathParams.Add("emergencyGroupId", Configuration.ApiClient.ParameterToString(emergencyGroupId));
         }
 
         // Query params
@@ -15853,11 +15853,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15883,7 +15883,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<EmergencyGroup>(localVarStatusCode,
             localVarHeaders,
-            (EmergencyGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
+            (EmergencyGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15932,7 +15932,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15941,7 +15941,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15954,7 +15954,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (emergencyGroupId != null)
         {
-            localVarPathParams.Add("emergencyGroupId", this.Configuration.ApiClient.ParameterToString(emergencyGroupId));
+            localVarPathParams.Add("emergencyGroupId", Configuration.ApiClient.ParameterToString(emergencyGroupId));
         }
 
         // Query params
@@ -15970,11 +15970,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16000,7 +16000,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<EmergencyGroup>(localVarStatusCode,
             localVarHeaders,
-            (EmergencyGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
+            (EmergencyGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16052,7 +16052,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16061,7 +16061,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16076,27 +16076,27 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -16110,11 +16110,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16140,7 +16140,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<EmergencyGroupListing>(localVarStatusCode,
             localVarHeaders,
-            (EmergencyGroupListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroupListing)),
+            (EmergencyGroupListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroupListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16192,7 +16192,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16201,7 +16201,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16216,27 +16216,27 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -16250,11 +16250,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16280,7 +16280,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<EmergencyGroupListing>(localVarStatusCode,
             localVarHeaders,
-            (EmergencyGroupListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroupListing)),
+            (EmergencyGroupListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroupListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16336,7 +16336,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16345,7 +16345,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16360,37 +16360,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -16404,11 +16404,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16434,7 +16434,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<EmergencyGroupDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EmergencyGroupDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroupDivisionViewEntityListing)),
+            (EmergencyGroupDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroupDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16490,7 +16490,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16499,7 +16499,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16514,37 +16514,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -16558,11 +16558,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16588,7 +16588,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<EmergencyGroupDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EmergencyGroupDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroupDivisionViewEntityListing)),
+            (EmergencyGroupDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroupDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16639,7 +16639,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16648,7 +16648,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16661,13 +16661,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         // Query params
         if (includeFileUrls != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeFileUrls", this.Configuration.ApiClient.ParameterToString(includeFileUrls)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeFileUrls", Configuration.ApiClient.ParameterToString(includeFileUrls)));
         }
 
         // Header params
@@ -16681,11 +16681,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16711,7 +16711,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Grammar>(localVarStatusCode,
             localVarHeaders,
-            (Grammar)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
+            (Grammar)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16762,7 +16762,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16771,7 +16771,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16784,13 +16784,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         // Query params
         if (includeFileUrls != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeFileUrls", this.Configuration.ApiClient.ParameterToString(includeFileUrls)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeFileUrls", Configuration.ApiClient.ParameterToString(includeFileUrls)));
         }
 
         // Header params
@@ -16804,11 +16804,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16834,7 +16834,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Grammar>(localVarStatusCode,
             localVarHeaders,
-            (Grammar)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
+            (Grammar)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16890,7 +16890,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16899,7 +16899,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16912,12 +16912,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -16933,11 +16933,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16963,7 +16963,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GrammarLanguage>(localVarStatusCode,
             localVarHeaders,
-            (GrammarLanguage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
+            (GrammarLanguage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17020,7 +17020,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17029,7 +17029,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17042,12 +17042,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -17063,11 +17063,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17093,7 +17093,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GrammarLanguage>(localVarStatusCode,
             localVarHeaders,
-            (GrammarLanguage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
+            (GrammarLanguage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17153,7 +17153,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17162,7 +17162,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17177,47 +17177,47 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (includeFileUrls != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeFileUrls", this.Configuration.ApiClient.ParameterToString(includeFileUrls)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeFileUrls", Configuration.ApiClient.ParameterToString(includeFileUrls)));
         }
 
         // Header params
@@ -17231,11 +17231,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17261,7 +17261,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GrammarListing>(localVarStatusCode,
             localVarHeaders,
-            (GrammarListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarListing)),
+            (GrammarListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17321,7 +17321,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17330,7 +17330,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17345,47 +17345,47 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (includeFileUrls != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeFileUrls", this.Configuration.ApiClient.ParameterToString(includeFileUrls)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeFileUrls", Configuration.ApiClient.ParameterToString(includeFileUrls)));
         }
 
         // Header params
@@ -17399,11 +17399,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17429,7 +17429,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GrammarListing>(localVarStatusCode,
             localVarHeaders,
-            (GrammarListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarListing)),
+            (GrammarListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17478,7 +17478,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17487,7 +17487,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17500,7 +17500,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (ivrId != null)
         {
-            localVarPathParams.Add("ivrId", this.Configuration.ApiClient.ParameterToString(ivrId));
+            localVarPathParams.Add("ivrId", Configuration.ApiClient.ParameterToString(ivrId));
         }
 
         // Query params
@@ -17516,11 +17516,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17546,7 +17546,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IVR>(localVarStatusCode,
             localVarHeaders,
-            (IVR)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
+            (IVR)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17595,7 +17595,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17604,7 +17604,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17617,7 +17617,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (ivrId != null)
         {
-            localVarPathParams.Add("ivrId", this.Configuration.ApiClient.ParameterToString(ivrId));
+            localVarPathParams.Add("ivrId", Configuration.ApiClient.ParameterToString(ivrId));
         }
 
         // Query params
@@ -17633,11 +17633,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17663,7 +17663,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IVR>(localVarStatusCode,
             localVarHeaders,
-            (IVR)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
+            (IVR)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17714,7 +17714,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17723,7 +17723,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17736,7 +17736,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (ivrId != null)
         {
-            localVarPathParams.Add("ivrId", this.Configuration.ApiClient.ParameterToString(ivrId));
+            localVarPathParams.Add("ivrId", Configuration.ApiClient.ParameterToString(ivrId));
         }
 
         // Query params
@@ -17752,11 +17752,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17782,7 +17782,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
             localVarHeaders,
-            (IdentityResolutionConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+            (IdentityResolutionConfig)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17833,7 +17833,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17842,7 +17842,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17855,7 +17855,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (ivrId != null)
         {
-            localVarPathParams.Add("ivrId", this.Configuration.ApiClient.ParameterToString(ivrId));
+            localVarPathParams.Add("ivrId", Configuration.ApiClient.ParameterToString(ivrId));
         }
 
         // Query params
@@ -17871,11 +17871,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17901,7 +17901,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
             localVarHeaders,
-            (IdentityResolutionConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+            (IdentityResolutionConfig)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17957,7 +17957,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17966,7 +17966,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17981,37 +17981,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (dnis != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dnis", this.Configuration.ApiClient.ParameterToString(dnis)));
+            localVarQueryParams.Add(new Tuple<string, string>("dnis", Configuration.ApiClient.ParameterToString(dnis)));
         }
 
         if (scheduleGroup != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scheduleGroup", this.Configuration.ApiClient.ParameterToString(scheduleGroup)));
+            localVarQueryParams.Add(new Tuple<string, string>("scheduleGroup", Configuration.ApiClient.ParameterToString(scheduleGroup)));
         }
 
         // Header params
@@ -18025,11 +18025,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18055,7 +18055,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IVREntityListing>(localVarStatusCode,
             localVarHeaders,
-            (IVREntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVREntityListing)),
+            (IVREntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVREntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18111,7 +18111,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18120,7 +18120,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18135,37 +18135,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (dnis != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dnis", this.Configuration.ApiClient.ParameterToString(dnis)));
+            localVarQueryParams.Add(new Tuple<string, string>("dnis", Configuration.ApiClient.ParameterToString(dnis)));
         }
 
         if (scheduleGroup != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scheduleGroup", this.Configuration.ApiClient.ParameterToString(scheduleGroup)));
+            localVarQueryParams.Add(new Tuple<string, string>("scheduleGroup", Configuration.ApiClient.ParameterToString(scheduleGroup)));
         }
 
         // Header params
@@ -18179,11 +18179,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18209,7 +18209,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IVREntityListing>(localVarStatusCode,
             localVarHeaders,
-            (IVREntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVREntityListing)),
+            (IVREntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVREntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18265,7 +18265,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18274,7 +18274,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18289,37 +18289,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -18333,11 +18333,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18363,7 +18363,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IVRDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (IVRDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVRDivisionViewEntityListing)),
+            (IVRDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVRDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18419,7 +18419,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18428,7 +18428,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18443,37 +18443,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -18487,11 +18487,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18517,7 +18517,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IVRDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (IVRDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVRDivisionViewEntityListing)),
+            (IVRDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVRDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18572,7 +18572,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18581,7 +18581,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18594,23 +18594,23 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
         if (includeMediaUris != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", this.Configuration.ApiClient.ParameterToString(includeMediaUris)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", Configuration.ApiClient.ParameterToString(includeMediaUris)));
         }
 
         if (includeResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeResources", this.Configuration.ApiClient.ParameterToString(includeResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeResources", Configuration.ApiClient.ParameterToString(includeResources)));
         }
 
         if (language != null)
         {
-            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(obj))); });
+            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -18624,11 +18624,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18654,7 +18654,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Prompt>(localVarStatusCode,
             localVarHeaders,
-            (Prompt)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
+            (Prompt)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18709,7 +18709,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18718,7 +18718,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18731,23 +18731,23 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
         if (includeMediaUris != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", this.Configuration.ApiClient.ParameterToString(includeMediaUris)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", Configuration.ApiClient.ParameterToString(includeMediaUris)));
         }
 
         if (includeResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeResources", this.Configuration.ApiClient.ParameterToString(includeResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeResources", Configuration.ApiClient.ParameterToString(includeResources)));
         }
 
         if (language != null)
         {
-            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(obj))); });
+            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -18761,11 +18761,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18791,7 +18791,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Prompt>(localVarStatusCode,
             localVarHeaders,
-            (Prompt)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
+            (Prompt)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18857,7 +18857,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18866,7 +18866,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18879,38 +18879,38 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (historyId != null)
         {
-            localVarPathParams.Add("historyId", this.Configuration.ApiClient.ParameterToString(historyId));
+            localVarPathParams.Add("historyId", Configuration.ApiClient.ParameterToString(historyId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (action != null)
         {
-            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", this.Configuration.ApiClient.ParameterToString(obj))); });
+            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -18924,11 +18924,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18954,7 +18954,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<HistoryListing>(localVarStatusCode,
             localVarHeaders,
-            (HistoryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
+            (HistoryListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19021,7 +19021,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19030,7 +19030,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19043,38 +19043,38 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (historyId != null)
         {
-            localVarPathParams.Add("historyId", this.Configuration.ApiClient.ParameterToString(historyId));
+            localVarPathParams.Add("historyId", Configuration.ApiClient.ParameterToString(historyId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (action != null)
         {
-            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", this.Configuration.ApiClient.ParameterToString(obj))); });
+            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19088,11 +19088,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19118,7 +19118,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<HistoryListing>(localVarStatusCode,
             localVarHeaders,
-            (HistoryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
+            (HistoryListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19174,7 +19174,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19183,7 +19183,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19196,12 +19196,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -19217,11 +19217,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19247,7 +19247,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (PromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
+            (PromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19304,7 +19304,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19313,7 +19313,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19326,12 +19326,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -19347,11 +19347,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19377,7 +19377,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (PromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
+            (PromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19430,7 +19430,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19439,7 +19439,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19452,18 +19452,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -19477,11 +19477,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19507,7 +19507,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAssetEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PromptAssetEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetEntityListing)),
+            (PromptAssetEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19560,7 +19560,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19569,7 +19569,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19582,18 +19582,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -19607,11 +19607,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19637,7 +19637,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAssetEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PromptAssetEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetEntityListing)),
+            (PromptAssetEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19699,7 +19699,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19708,7 +19708,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19723,52 +19723,52 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (name != null)
         {
-            name.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(obj))); });
+            name.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (includeMediaUris != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", this.Configuration.ApiClient.ParameterToString(includeMediaUris)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", Configuration.ApiClient.ParameterToString(includeMediaUris)));
         }
 
         if (includeResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeResources", this.Configuration.ApiClient.ParameterToString(includeResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeResources", Configuration.ApiClient.ParameterToString(includeResources)));
         }
 
         if (language != null)
         {
-            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(obj))); });
+            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19782,11 +19782,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19812,7 +19812,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PromptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptEntityListing)),
+            (PromptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19874,7 +19874,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19883,7 +19883,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19898,52 +19898,52 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (name != null)
         {
-            name.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(obj))); });
+            name.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (includeMediaUris != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", this.Configuration.ApiClient.ParameterToString(includeMediaUris)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", Configuration.ApiClient.ParameterToString(includeMediaUris)));
         }
 
         if (includeResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeResources", this.Configuration.ApiClient.ParameterToString(includeResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeResources", Configuration.ApiClient.ParameterToString(includeResources)));
         }
 
         if (language != null)
         {
-            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(obj))); });
+            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19957,11 +19957,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19987,7 +19987,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PromptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptEntityListing)),
+            (PromptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20036,7 +20036,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20045,7 +20045,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20058,7 +20058,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleId != null)
         {
-            localVarPathParams.Add("scheduleId", this.Configuration.ApiClient.ParameterToString(scheduleId));
+            localVarPathParams.Add("scheduleId", Configuration.ApiClient.ParameterToString(scheduleId));
         }
 
         // Query params
@@ -20074,11 +20074,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20104,7 +20104,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Schedule>(localVarStatusCode,
             localVarHeaders,
-            (Schedule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
+            (Schedule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20153,7 +20153,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20162,7 +20162,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20175,7 +20175,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleId != null)
         {
-            localVarPathParams.Add("scheduleId", this.Configuration.ApiClient.ParameterToString(scheduleId));
+            localVarPathParams.Add("scheduleId", Configuration.ApiClient.ParameterToString(scheduleId));
         }
 
         // Query params
@@ -20191,11 +20191,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20221,7 +20221,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Schedule>(localVarStatusCode,
             localVarHeaders,
-            (Schedule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
+            (Schedule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20270,7 +20270,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20279,7 +20279,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20292,7 +20292,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleGroupId != null)
         {
-            localVarPathParams.Add("scheduleGroupId", this.Configuration.ApiClient.ParameterToString(scheduleGroupId));
+            localVarPathParams.Add("scheduleGroupId", Configuration.ApiClient.ParameterToString(scheduleGroupId));
         }
 
         // Query params
@@ -20308,11 +20308,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20338,7 +20338,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleGroup>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
+            (ScheduleGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20387,7 +20387,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20396,7 +20396,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20409,7 +20409,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleGroupId != null)
         {
-            localVarPathParams.Add("scheduleGroupId", this.Configuration.ApiClient.ParameterToString(scheduleGroupId));
+            localVarPathParams.Add("scheduleGroupId", Configuration.ApiClient.ParameterToString(scheduleGroupId));
         }
 
         // Query params
@@ -20425,11 +20425,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20455,7 +20455,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleGroup>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
+            (ScheduleGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20511,7 +20511,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20520,7 +20520,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20535,37 +20535,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (scheduleIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scheduleIds", this.Configuration.ApiClient.ParameterToString(scheduleIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("scheduleIds", Configuration.ApiClient.ParameterToString(scheduleIds)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -20579,11 +20579,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20609,7 +20609,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleGroupEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleGroupEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroupEntityListing)),
+            (ScheduleGroupEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroupEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20665,7 +20665,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20674,7 +20674,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20689,37 +20689,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (scheduleIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("scheduleIds", this.Configuration.ApiClient.ParameterToString(scheduleIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("scheduleIds", Configuration.ApiClient.ParameterToString(scheduleIds)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -20733,11 +20733,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20763,7 +20763,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleGroupEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleGroupEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroupEntityListing)),
+            (ScheduleGroupEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroupEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20819,7 +20819,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20828,7 +20828,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20843,37 +20843,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -20887,11 +20887,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20917,7 +20917,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleGroupDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleGroupDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroupDivisionViewEntityListing)),
+            (ScheduleGroupDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroupDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20973,7 +20973,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20982,7 +20982,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20997,37 +20997,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -21041,11 +21041,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21071,7 +21071,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleGroupDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleGroupDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroupDivisionViewEntityListing)),
+            (ScheduleGroupDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroupDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21125,7 +21125,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21134,7 +21134,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21149,32 +21149,32 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -21188,11 +21188,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21218,7 +21218,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleEntityListing)),
+            (ScheduleEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21272,7 +21272,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21281,7 +21281,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21296,32 +21296,32 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -21335,11 +21335,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21365,7 +21365,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleEntityListing)),
+            (ScheduleEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21421,7 +21421,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21430,7 +21430,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21445,37 +21445,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -21489,11 +21489,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21519,7 +21519,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleDivisionViewEntityListing)),
+            (ScheduleDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21575,7 +21575,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21584,7 +21584,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21599,37 +21599,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -21643,11 +21643,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21673,7 +21673,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleDivisionViewEntityListing)),
+            (ScheduleDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21728,7 +21728,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21737,7 +21737,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21750,23 +21750,23 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
         if (includeMediaUris != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", this.Configuration.ApiClient.ParameterToString(includeMediaUris)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", Configuration.ApiClient.ParameterToString(includeMediaUris)));
         }
 
         if (includeResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeResources", this.Configuration.ApiClient.ParameterToString(includeResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeResources", Configuration.ApiClient.ParameterToString(includeResources)));
         }
 
         if (language != null)
         {
-            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(obj))); });
+            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -21780,11 +21780,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21810,7 +21810,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPrompt>(localVarStatusCode,
             localVarHeaders,
-            (SystemPrompt)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPrompt)),
+            (SystemPrompt)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPrompt)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21865,7 +21865,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21874,7 +21874,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21887,23 +21887,23 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
         if (includeMediaUris != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", this.Configuration.ApiClient.ParameterToString(includeMediaUris)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", Configuration.ApiClient.ParameterToString(includeMediaUris)));
         }
 
         if (includeResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeResources", this.Configuration.ApiClient.ParameterToString(includeResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeResources", Configuration.ApiClient.ParameterToString(includeResources)));
         }
 
         if (language != null)
         {
-            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(obj))); });
+            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -21917,11 +21917,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21947,7 +21947,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPrompt>(localVarStatusCode,
             localVarHeaders,
-            (SystemPrompt)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPrompt)),
+            (SystemPrompt)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPrompt)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22013,7 +22013,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22022,7 +22022,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22035,38 +22035,38 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (historyId != null)
         {
-            localVarPathParams.Add("historyId", this.Configuration.ApiClient.ParameterToString(historyId));
+            localVarPathParams.Add("historyId", Configuration.ApiClient.ParameterToString(historyId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (action != null)
         {
-            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", this.Configuration.ApiClient.ParameterToString(obj))); });
+            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -22080,11 +22080,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22110,7 +22110,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<HistoryListing>(localVarStatusCode,
             localVarHeaders,
-            (HistoryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
+            (HistoryListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22177,7 +22177,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22186,7 +22186,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22199,38 +22199,38 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (historyId != null)
         {
-            localVarPathParams.Add("historyId", this.Configuration.ApiClient.ParameterToString(historyId));
+            localVarPathParams.Add("historyId", Configuration.ApiClient.ParameterToString(historyId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (action != null)
         {
-            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", this.Configuration.ApiClient.ParameterToString(obj))); });
+            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -22244,11 +22244,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22274,7 +22274,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<HistoryListing>(localVarStatusCode,
             localVarHeaders,
-            (HistoryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
+            (HistoryListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22330,7 +22330,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22339,7 +22339,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22352,12 +22352,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -22373,11 +22373,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22403,7 +22403,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (SystemPromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
+            (SystemPromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22460,7 +22460,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22469,7 +22469,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22482,12 +22482,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -22503,11 +22503,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22533,7 +22533,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (SystemPromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
+            (SystemPromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22590,7 +22590,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22599,7 +22599,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22612,28 +22612,28 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -22647,11 +22647,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22677,7 +22677,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPromptAssetEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SystemPromptAssetEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAssetEntityListing)),
+            (SystemPromptAssetEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAssetEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22734,7 +22734,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22743,7 +22743,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22756,28 +22756,28 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -22791,11 +22791,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22821,7 +22821,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPromptAssetEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SystemPromptAssetEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAssetEntityListing)),
+            (SystemPromptAssetEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAssetEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22883,7 +22883,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22892,7 +22892,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22907,52 +22907,52 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (includeMediaUris != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", this.Configuration.ApiClient.ParameterToString(includeMediaUris)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", Configuration.ApiClient.ParameterToString(includeMediaUris)));
         }
 
         if (includeResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeResources", this.Configuration.ApiClient.ParameterToString(includeResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeResources", Configuration.ApiClient.ParameterToString(includeResources)));
         }
 
         if (language != null)
         {
-            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(obj))); });
+            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -22966,11 +22966,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22996,7 +22996,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPromptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SystemPromptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptEntityListing)),
+            (SystemPromptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23058,7 +23058,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23067,7 +23067,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23082,52 +23082,52 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (includeMediaUris != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", this.Configuration.ApiClient.ParameterToString(includeMediaUris)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeMediaUris", Configuration.ApiClient.ParameterToString(includeMediaUris)));
         }
 
         if (includeResources != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeResources", this.Configuration.ApiClient.ParameterToString(includeResources)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeResources", Configuration.ApiClient.ParameterToString(includeResources)));
         }
 
         if (language != null)
         {
-            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(obj))); });
+            language.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -23141,11 +23141,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23171,7 +23171,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPromptEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SystemPromptEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptEntityListing)),
+            (SystemPromptEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23222,7 +23222,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23231,7 +23231,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23244,13 +23244,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         // Header params
@@ -23264,11 +23264,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23294,7 +23294,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23345,7 +23345,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23354,7 +23354,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23367,13 +23367,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         // Header params
@@ -23387,11 +23387,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23417,7 +23417,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23483,7 +23483,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23492,7 +23492,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23505,38 +23505,38 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (historyId != null)
         {
-            localVarPathParams.Add("historyId", this.Configuration.ApiClient.ParameterToString(historyId));
+            localVarPathParams.Add("historyId", Configuration.ApiClient.ParameterToString(historyId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (action != null)
         {
-            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", this.Configuration.ApiClient.ParameterToString(obj))); });
+            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -23550,11 +23550,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23580,7 +23580,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<HistoryListing>(localVarStatusCode,
             localVarHeaders,
-            (HistoryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
+            (HistoryListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23647,7 +23647,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23656,7 +23656,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23669,38 +23669,38 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (historyId != null)
         {
-            localVarPathParams.Add("historyId", this.Configuration.ApiClient.ParameterToString(historyId));
+            localVarPathParams.Add("historyId", Configuration.ApiClient.ParameterToString(historyId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (action != null)
         {
-            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", this.Configuration.ApiClient.ParameterToString(obj))); });
+            action.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("action", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -23714,11 +23714,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23744,7 +23744,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<HistoryListing>(localVarStatusCode,
             localVarHeaders,
-            (HistoryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
+            (HistoryListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(HistoryListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23795,7 +23795,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23804,7 +23804,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23817,13 +23817,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -23837,11 +23837,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23867,7 +23867,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
+            (FlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23918,7 +23918,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23927,7 +23927,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23940,13 +23940,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -23960,11 +23960,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23990,7 +23990,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
+            (FlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24041,7 +24041,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24050,7 +24050,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24063,13 +24063,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         // Header params
@@ -24083,11 +24083,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24113,7 +24113,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24164,7 +24164,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24173,7 +24173,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24186,13 +24186,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         // Header params
@@ -24206,11 +24206,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24236,7 +24236,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24294,7 +24294,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24303,7 +24303,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24316,18 +24316,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         // Header params
@@ -24341,11 +24341,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24371,7 +24371,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowVersion>(localVarStatusCode,
             localVarHeaders,
-            (FlowVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersion)),
+            (FlowVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24430,7 +24430,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24439,7 +24439,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24452,18 +24452,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         // Header params
@@ -24477,11 +24477,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24507,7 +24507,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowVersion>(localVarStatusCode,
             localVarHeaders,
-            (FlowVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersion)),
+            (FlowVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24565,7 +24565,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24574,7 +24574,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24587,18 +24587,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         // Header params
@@ -24612,11 +24612,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24642,7 +24642,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24701,7 +24701,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24710,7 +24710,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24723,18 +24723,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         // Header params
@@ -24748,11 +24748,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24778,7 +24778,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24836,7 +24836,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24845,7 +24845,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24858,18 +24858,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (language != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
+            localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(language)));
         }
 
         // Header params
@@ -24883,11 +24883,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24913,7 +24913,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowHealth>(localVarStatusCode,
             localVarHeaders,
-            (FlowHealth)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealth)),
+            (FlowHealth)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealth)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24972,7 +24972,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24981,7 +24981,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24994,18 +24994,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (language != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
+            localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(language)));
         }
 
         // Header params
@@ -25019,11 +25019,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25049,7 +25049,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowHealth>(localVarStatusCode,
             localVarHeaders,
-            (FlowHealth)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealth)),
+            (FlowHealth)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealth)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25119,7 +25119,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25128,7 +25128,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25141,23 +25141,23 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         if (intentId != null)
         {
-            localVarPathParams.Add("intentId", this.Configuration.ApiClient.ParameterToString(intentId));
+            localVarPathParams.Add("intentId", Configuration.ApiClient.ParameterToString(intentId));
         }
 
         // Query params
         if (language != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
+            localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(language)));
         }
 
         // Header params
@@ -25171,11 +25171,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25201,7 +25201,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowHealthIntent>(localVarStatusCode,
             localVarHeaders,
-            (FlowHealthIntent)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealthIntent)),
+            (FlowHealthIntent)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealthIntent)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25274,7 +25274,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25283,7 +25283,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25296,23 +25296,23 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         if (intentId != null)
         {
-            localVarPathParams.Add("intentId", this.Configuration.ApiClient.ParameterToString(intentId));
+            localVarPathParams.Add("intentId", Configuration.ApiClient.ParameterToString(intentId));
         }
 
         // Query params
         if (language != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
+            localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(language)));
         }
 
         // Header params
@@ -25326,11 +25326,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25356,7 +25356,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowHealthIntent>(localVarStatusCode,
             localVarHeaders,
-            (FlowHealthIntent)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealthIntent)),
+            (FlowHealthIntent)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealthIntent)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25433,7 +25433,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25442,7 +25442,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25455,28 +25455,28 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         if (intentId != null)
         {
-            localVarPathParams.Add("intentId", this.Configuration.ApiClient.ParameterToString(intentId));
+            localVarPathParams.Add("intentId", Configuration.ApiClient.ParameterToString(intentId));
         }
 
         if (utteranceId != null)
         {
-            localVarPathParams.Add("utteranceId", this.Configuration.ApiClient.ParameterToString(utteranceId));
+            localVarPathParams.Add("utteranceId", Configuration.ApiClient.ParameterToString(utteranceId));
         }
 
         // Query params
         if (language != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
+            localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(language)));
         }
 
         // Header params
@@ -25490,11 +25490,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25520,7 +25520,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowHealthUtterance>(localVarStatusCode,
             localVarHeaders,
-            (FlowHealthUtterance)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealthUtterance)),
+            (FlowHealthUtterance)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealthUtterance)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25601,7 +25601,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25610,7 +25610,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25623,28 +25623,28 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         if (intentId != null)
         {
-            localVarPathParams.Add("intentId", this.Configuration.ApiClient.ParameterToString(intentId));
+            localVarPathParams.Add("intentId", Configuration.ApiClient.ParameterToString(intentId));
         }
 
         if (utteranceId != null)
         {
-            localVarPathParams.Add("utteranceId", this.Configuration.ApiClient.ParameterToString(utteranceId));
+            localVarPathParams.Add("utteranceId", Configuration.ApiClient.ParameterToString(utteranceId));
         }
 
         // Query params
         if (language != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
+            localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(language)));
         }
 
         // Header params
@@ -25658,11 +25658,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25688,7 +25688,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowHealthUtterance>(localVarStatusCode,
             localVarHeaders,
-            (FlowHealthUtterance)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealthUtterance)),
+            (FlowHealthUtterance)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowHealthUtterance)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25743,7 +25743,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25752,7 +25752,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25765,23 +25765,23 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         // Header params
@@ -25795,11 +25795,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25825,7 +25825,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowVersionEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowVersionEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersionEntityListing)),
+            (FlowVersionEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersionEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25880,7 +25880,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25889,7 +25889,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25902,23 +25902,23 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         // Header params
@@ -25932,11 +25932,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25962,7 +25962,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowVersionEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowVersionEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersionEntityListing)),
+            (FlowVersionEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersionEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26042,7 +26042,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26051,7 +26051,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26066,97 +26066,97 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (type != null)
         {
-            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(obj))); });
+            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (publishVersionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishVersionId", this.Configuration.ApiClient.ParameterToString(publishVersionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishVersionId", Configuration.ApiClient.ParameterToString(publishVersionId)));
         }
 
         if (editableBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("editableBy", this.Configuration.ApiClient.ParameterToString(editableBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("editableBy", Configuration.ApiClient.ParameterToString(editableBy)));
         }
 
         if (lockedBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lockedBy", this.Configuration.ApiClient.ParameterToString(lockedBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("lockedBy", Configuration.ApiClient.ParameterToString(lockedBy)));
         }
 
         if (lockedByClientId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lockedByClientId", this.Configuration.ApiClient.ParameterToString(lockedByClientId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lockedByClientId", Configuration.ApiClient.ParameterToString(lockedByClientId)));
         }
 
         if (secure != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("secure", this.Configuration.ApiClient.ParameterToString(secure)));
+            localVarQueryParams.Add(new Tuple<string, string>("secure", Configuration.ApiClient.ParameterToString(secure)));
         }
 
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         if (includeSchemas != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeSchemas", this.Configuration.ApiClient.ParameterToString(includeSchemas)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeSchemas", Configuration.ApiClient.ParameterToString(includeSchemas)));
         }
 
         if (publishedAfter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishedAfter", this.Configuration.ApiClient.ParameterToString(publishedAfter)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishedAfter", Configuration.ApiClient.ParameterToString(publishedAfter)));
         }
 
         if (publishedBefore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishedBefore", this.Configuration.ApiClient.ParameterToString(publishedBefore)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishedBefore", Configuration.ApiClient.ParameterToString(publishedBefore)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -26170,11 +26170,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26200,7 +26200,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowEntityListing)),
+            (FlowEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26280,7 +26280,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26289,7 +26289,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26304,97 +26304,97 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (type != null)
         {
-            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(obj))); });
+            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (publishVersionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishVersionId", this.Configuration.ApiClient.ParameterToString(publishVersionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishVersionId", Configuration.ApiClient.ParameterToString(publishVersionId)));
         }
 
         if (editableBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("editableBy", this.Configuration.ApiClient.ParameterToString(editableBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("editableBy", Configuration.ApiClient.ParameterToString(editableBy)));
         }
 
         if (lockedBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lockedBy", this.Configuration.ApiClient.ParameterToString(lockedBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("lockedBy", Configuration.ApiClient.ParameterToString(lockedBy)));
         }
 
         if (lockedByClientId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lockedByClientId", this.Configuration.ApiClient.ParameterToString(lockedByClientId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lockedByClientId", Configuration.ApiClient.ParameterToString(lockedByClientId)));
         }
 
         if (secure != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("secure", this.Configuration.ApiClient.ParameterToString(secure)));
+            localVarQueryParams.Add(new Tuple<string, string>("secure", Configuration.ApiClient.ParameterToString(secure)));
         }
 
         if (deleted != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleted", Configuration.ApiClient.ParameterToString(deleted)));
         }
 
         if (includeSchemas != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeSchemas", this.Configuration.ApiClient.ParameterToString(includeSchemas)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeSchemas", Configuration.ApiClient.ParameterToString(includeSchemas)));
         }
 
         if (publishedAfter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishedAfter", this.Configuration.ApiClient.ParameterToString(publishedAfter)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishedAfter", Configuration.ApiClient.ParameterToString(publishedAfter)));
         }
 
         if (publishedBefore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishedBefore", this.Configuration.ApiClient.ParameterToString(publishedBefore)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishedBefore", Configuration.ApiClient.ParameterToString(publishedBefore)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -26408,11 +26408,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26438,7 +26438,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowEntityListing)),
+            (FlowEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26489,7 +26489,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26498,7 +26498,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26511,13 +26511,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -26531,11 +26531,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26561,7 +26561,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTable>(localVarStatusCode,
             localVarHeaders,
-            (DataTable)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
+            (DataTable)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26612,7 +26612,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26621,7 +26621,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26634,13 +26634,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -26654,11 +26654,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26684,7 +26684,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTable>(localVarStatusCode,
             localVarHeaders,
-            (DataTable)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
+            (DataTable)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26740,7 +26740,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26749,7 +26749,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26762,12 +26762,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         if (exportJobId != null)
         {
-            localVarPathParams.Add("exportJobId", this.Configuration.ApiClient.ParameterToString(exportJobId));
+            localVarPathParams.Add("exportJobId", Configuration.ApiClient.ParameterToString(exportJobId));
         }
 
         // Query params
@@ -26783,11 +26783,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26813,7 +26813,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableExportJob>(localVarStatusCode,
             localVarHeaders,
-            (DataTableExportJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableExportJob)),
+            (DataTableExportJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableExportJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26870,7 +26870,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26879,7 +26879,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26892,12 +26892,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         if (exportJobId != null)
         {
-            localVarPathParams.Add("exportJobId", this.Configuration.ApiClient.ParameterToString(exportJobId));
+            localVarPathParams.Add("exportJobId", Configuration.ApiClient.ParameterToString(exportJobId));
         }
 
         // Query params
@@ -26913,11 +26913,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26943,7 +26943,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableExportJob>(localVarStatusCode,
             localVarHeaders,
-            (DataTableExportJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableExportJob)),
+            (DataTableExportJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableExportJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26999,7 +26999,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27008,7 +27008,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27021,12 +27021,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         if (importJobId != null)
         {
-            localVarPathParams.Add("importJobId", this.Configuration.ApiClient.ParameterToString(importJobId));
+            localVarPathParams.Add("importJobId", Configuration.ApiClient.ParameterToString(importJobId));
         }
 
         // Query params
@@ -27042,11 +27042,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27072,7 +27072,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableImportJob>(localVarStatusCode,
             localVarHeaders,
-            (DataTableImportJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportJob)),
+            (DataTableImportJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27129,7 +27129,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27138,7 +27138,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27151,12 +27151,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         if (importJobId != null)
         {
-            localVarPathParams.Add("importJobId", this.Configuration.ApiClient.ParameterToString(importJobId));
+            localVarPathParams.Add("importJobId", Configuration.ApiClient.ParameterToString(importJobId));
         }
 
         // Query params
@@ -27172,11 +27172,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27202,7 +27202,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableImportJob>(localVarStatusCode,
             localVarHeaders,
-            (DataTableImportJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportJob)),
+            (DataTableImportJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27255,7 +27255,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27264,7 +27264,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27277,18 +27277,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -27302,11 +27302,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27332,7 +27332,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableImportEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DataTableImportEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportEntityListing)),
+            (DataTableImportEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27385,7 +27385,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27394,7 +27394,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27407,18 +27407,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -27432,11 +27432,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27462,7 +27462,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableImportEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DataTableImportEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportEntityListing)),
+            (DataTableImportEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27520,7 +27520,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27529,7 +27529,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27542,18 +27542,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         if (rowId != null)
         {
-            localVarPathParams.Add("rowId", this.Configuration.ApiClient.ParameterToString(rowId));
+            localVarPathParams.Add("rowId", Configuration.ApiClient.ParameterToString(rowId));
         }
 
         // Query params
         if (showbrief != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("showbrief", this.Configuration.ApiClient.ParameterToString(showbrief)));
+            localVarQueryParams.Add(new Tuple<string, string>("showbrief", Configuration.ApiClient.ParameterToString(showbrief)));
         }
 
         // Header params
@@ -27567,11 +27567,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27597,7 +27597,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
+            (Dictionary<string, object>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27656,7 +27656,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27665,7 +27665,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27678,18 +27678,18 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         if (rowId != null)
         {
-            localVarPathParams.Add("rowId", this.Configuration.ApiClient.ParameterToString(rowId));
+            localVarPathParams.Add("rowId", Configuration.ApiClient.ParameterToString(rowId));
         }
 
         // Query params
         if (showbrief != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("showbrief", this.Configuration.ApiClient.ParameterToString(showbrief)));
+            localVarQueryParams.Add(new Tuple<string, string>("showbrief", Configuration.ApiClient.ParameterToString(showbrief)));
         }
 
         // Header params
@@ -27703,11 +27703,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27733,7 +27733,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
+            (Dictionary<string, object>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27790,7 +27790,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27799,7 +27799,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27812,28 +27812,28 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (showbrief != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("showbrief", this.Configuration.ApiClient.ParameterToString(showbrief)));
+            localVarQueryParams.Add(new Tuple<string, string>("showbrief", Configuration.ApiClient.ParameterToString(showbrief)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -27847,11 +27847,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27877,7 +27877,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableRowEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DataTableRowEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableRowEntityListing)),
+            (DataTableRowEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableRowEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27934,7 +27934,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27943,7 +27943,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27956,28 +27956,28 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (showbrief != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("showbrief", this.Configuration.ApiClient.ParameterToString(showbrief)));
+            localVarQueryParams.Add(new Tuple<string, string>("showbrief", Configuration.ApiClient.ParameterToString(showbrief)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -27991,11 +27991,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28021,7 +28021,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableRowEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DataTableRowEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableRowEntityListing)),
+            (DataTableRowEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableRowEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28077,7 +28077,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28086,7 +28086,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28101,37 +28101,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -28145,11 +28145,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28175,7 +28175,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTablesDomainEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DataTablesDomainEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTablesDomainEntityListing)),
+            (DataTablesDomainEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTablesDomainEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28231,7 +28231,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28240,7 +28240,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28255,37 +28255,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -28299,11 +28299,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28329,7 +28329,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTablesDomainEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DataTablesDomainEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTablesDomainEntityListing)),
+            (DataTablesDomainEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTablesDomainEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28380,7 +28380,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28389,7 +28389,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28402,13 +28402,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -28422,11 +28422,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28452,7 +28452,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTable>(localVarStatusCode,
             localVarHeaders,
-            (DataTable)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
+            (DataTable)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28503,7 +28503,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28512,7 +28512,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28525,13 +28525,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -28545,11 +28545,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28575,7 +28575,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTable>(localVarStatusCode,
             localVarHeaders,
-            (DataTable)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
+            (DataTable)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28631,7 +28631,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28640,7 +28640,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28655,37 +28655,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -28699,11 +28699,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28729,7 +28729,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTablesDomainEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DataTablesDomainEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTablesDomainEntityListing)),
+            (DataTablesDomainEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTablesDomainEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28785,7 +28785,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28794,7 +28794,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28809,37 +28809,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -28853,11 +28853,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28883,7 +28883,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTablesDomainEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DataTablesDomainEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTablesDomainEntityListing)),
+            (DataTablesDomainEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTablesDomainEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28949,7 +28949,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28958,7 +28958,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28973,62 +28973,62 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (type != null)
         {
-            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(obj))); });
+            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (publishVersionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishVersionId", this.Configuration.ApiClient.ParameterToString(publishVersionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishVersionId", Configuration.ApiClient.ParameterToString(publishVersionId)));
         }
 
         if (publishedAfter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishedAfter", this.Configuration.ApiClient.ParameterToString(publishedAfter)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishedAfter", Configuration.ApiClient.ParameterToString(publishedAfter)));
         }
 
         if (publishedBefore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishedBefore", this.Configuration.ApiClient.ParameterToString(publishedBefore)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishedBefore", Configuration.ApiClient.ParameterToString(publishedBefore)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includeSchemas != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeSchemas", this.Configuration.ApiClient.ParameterToString(includeSchemas)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeSchemas", Configuration.ApiClient.ParameterToString(includeSchemas)));
         }
 
         // Header params
@@ -29042,11 +29042,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29072,7 +29072,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowDivisionViewEntityListing)),
+            (FlowDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29138,7 +29138,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29147,7 +29147,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29162,62 +29162,62 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (type != null)
         {
-            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(obj))); });
+            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (publishVersionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishVersionId", this.Configuration.ApiClient.ParameterToString(publishVersionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishVersionId", Configuration.ApiClient.ParameterToString(publishVersionId)));
         }
 
         if (publishedAfter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishedAfter", this.Configuration.ApiClient.ParameterToString(publishedAfter)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishedAfter", Configuration.ApiClient.ParameterToString(publishedAfter)));
         }
 
         if (publishedBefore != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("publishedBefore", this.Configuration.ApiClient.ParameterToString(publishedBefore)));
+            localVarQueryParams.Add(new Tuple<string, string>("publishedBefore", Configuration.ApiClient.ParameterToString(publishedBefore)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includeSchemas != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeSchemas", this.Configuration.ApiClient.ParameterToString(includeSchemas)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeSchemas", Configuration.ApiClient.ParameterToString(includeSchemas)));
         }
 
         // Header params
@@ -29231,11 +29231,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29261,7 +29261,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowDivisionViewEntityListing)),
+            (FlowDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29310,7 +29310,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29319,7 +29319,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29332,7 +29332,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowExecutionId != null)
         {
-            localVarPathParams.Add("flowExecutionId", this.Configuration.ApiClient.ParameterToString(flowExecutionId));
+            localVarPathParams.Add("flowExecutionId", Configuration.ApiClient.ParameterToString(flowExecutionId));
         }
 
         // Query params
@@ -29348,11 +29348,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29378,7 +29378,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowRuntimeExecution>(localVarStatusCode,
             localVarHeaders,
-            (FlowRuntimeExecution)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowRuntimeExecution)),
+            (FlowRuntimeExecution)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowRuntimeExecution)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29427,7 +29427,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29436,7 +29436,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29449,7 +29449,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowExecutionId != null)
         {
-            localVarPathParams.Add("flowExecutionId", this.Configuration.ApiClient.ParameterToString(flowExecutionId));
+            localVarPathParams.Add("flowExecutionId", Configuration.ApiClient.ParameterToString(flowExecutionId));
         }
 
         // Query params
@@ -29465,11 +29465,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29495,7 +29495,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowRuntimeExecution>(localVarStatusCode,
             localVarHeaders,
-            (FlowRuntimeExecution)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowRuntimeExecution)),
+            (FlowRuntimeExecution)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowRuntimeExecution)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29546,7 +29546,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29555,7 +29555,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29568,13 +29568,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -29588,11 +29588,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29618,7 +29618,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ArchitectExportJobStateResponse>(localVarStatusCode,
             localVarHeaders,
-            (ArchitectExportJobStateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ArchitectExportJobStateResponse)),
+            (ArchitectExportJobStateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ArchitectExportJobStateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29669,7 +29669,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29678,7 +29678,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29691,13 +29691,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -29711,11 +29711,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29741,7 +29741,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ArchitectExportJobStateResponse>(localVarStatusCode,
             localVarHeaders,
-            (ArchitectExportJobStateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ArchitectExportJobStateResponse)),
+            (ArchitectExportJobStateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ArchitectExportJobStateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29792,7 +29792,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29801,7 +29801,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29814,13 +29814,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (instanceId != null)
         {
-            localVarPathParams.Add("instanceId", this.Configuration.ApiClient.ParameterToString(instanceId));
+            localVarPathParams.Add("instanceId", Configuration.ApiClient.ParameterToString(instanceId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -29834,11 +29834,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29864,7 +29864,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GetFlowExecutionDataJobResult>(localVarStatusCode,
             localVarHeaders,
-            (GetFlowExecutionDataJobResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
+            (GetFlowExecutionDataJobResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29915,7 +29915,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29924,7 +29924,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29937,13 +29937,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (instanceId != null)
         {
-            localVarPathParams.Add("instanceId", this.Configuration.ApiClient.ParameterToString(instanceId));
+            localVarPathParams.Add("instanceId", Configuration.ApiClient.ParameterToString(instanceId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -29957,11 +29957,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29987,7 +29987,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GetFlowExecutionDataJobResult>(localVarStatusCode,
             localVarHeaders,
-            (GetFlowExecutionDataJobResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
+            (GetFlowExecutionDataJobResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30036,7 +30036,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30045,7 +30045,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30058,7 +30058,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -30074,11 +30074,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30104,7 +30104,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GetFlowExecutionDataJobResult>(localVarStatusCode,
             localVarHeaders,
-            (GetFlowExecutionDataJobResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
+            (GetFlowExecutionDataJobResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30153,7 +30153,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30162,7 +30162,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30175,7 +30175,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -30191,11 +30191,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30221,7 +30221,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GetFlowExecutionDataJobResult>(localVarStatusCode,
             localVarHeaders,
-            (GetFlowExecutionDataJobResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
+            (GetFlowExecutionDataJobResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30265,7 +30265,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30274,7 +30274,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30289,7 +30289,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -30303,11 +30303,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30333,7 +30333,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowsQueryCriteriaResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowsQueryCriteriaResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowsQueryCriteriaResponse)),
+            (FlowsQueryCriteriaResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowsQueryCriteriaResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30377,7 +30377,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30386,7 +30386,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30401,7 +30401,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -30415,11 +30415,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30445,7 +30445,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowsQueryCriteriaResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowsQueryCriteriaResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowsQueryCriteriaResponse)),
+            (FlowsQueryCriteriaResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowsQueryCriteriaResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30487,7 +30487,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30496,7 +30496,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30521,11 +30521,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30551,7 +30551,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ExecutionDataFlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ExecutionDataFlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataFlowSettingsResponse)),
+            (ExecutionDataFlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataFlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30593,7 +30593,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30602,7 +30602,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30627,11 +30627,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30657,7 +30657,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ExecutionDataFlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ExecutionDataFlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataFlowSettingsResponse)),
+            (ExecutionDataFlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataFlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30705,7 +30705,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30714,7 +30714,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30729,17 +30729,17 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -30753,11 +30753,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30783,7 +30783,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponseEntityListing)),
+            (FlowSettingsResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30831,7 +30831,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30840,7 +30840,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30855,17 +30855,17 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -30879,11 +30879,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30909,7 +30909,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponseEntityListing)),
+            (FlowSettingsResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30951,7 +30951,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30960,7 +30960,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30985,11 +30985,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31015,7 +31015,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowLogLevelCharacteristicsDefinitions>(localVarStatusCode,
             localVarHeaders,
-            (FlowLogLevelCharacteristicsDefinitions)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowLogLevelCharacteristicsDefinitions)),
+            (FlowLogLevelCharacteristicsDefinitions)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowLogLevelCharacteristicsDefinitions)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31057,7 +31057,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31066,7 +31066,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31091,11 +31091,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31121,7 +31121,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowLogLevelCharacteristicsDefinitions>(localVarStatusCode,
             localVarHeaders,
-            (FlowLogLevelCharacteristicsDefinitions)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowLogLevelCharacteristicsDefinitions)),
+            (FlowLogLevelCharacteristicsDefinitions)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowLogLevelCharacteristicsDefinitions)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31165,7 +31165,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31174,7 +31174,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31189,7 +31189,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -31203,11 +31203,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31233,7 +31233,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
+            (FlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31277,7 +31277,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31286,7 +31286,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31301,7 +31301,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -31315,11 +31315,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31345,7 +31345,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
+            (FlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31396,7 +31396,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31405,7 +31405,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31418,13 +31418,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -31438,11 +31438,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31468,7 +31468,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ArchitectJobStateResponse>(localVarStatusCode,
             localVarHeaders,
-            (ArchitectJobStateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ArchitectJobStateResponse)),
+            (ArchitectJobStateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ArchitectJobStateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31519,7 +31519,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31528,7 +31528,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31541,13 +31541,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -31561,11 +31561,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31591,7 +31591,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ArchitectJobStateResponse>(localVarStatusCode,
             localVarHeaders,
-            (ArchitectJobStateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ArchitectJobStateResponse)),
+            (ArchitectJobStateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ArchitectJobStateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31640,7 +31640,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31649,7 +31649,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31662,7 +31662,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (milestoneId != null)
         {
-            localVarPathParams.Add("milestoneId", this.Configuration.ApiClient.ParameterToString(milestoneId));
+            localVarPathParams.Add("milestoneId", Configuration.ApiClient.ParameterToString(milestoneId));
         }
 
         // Query params
@@ -31678,11 +31678,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31708,7 +31708,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowMilestone>(localVarStatusCode,
             localVarHeaders,
-            (FlowMilestone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
+            (FlowMilestone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31757,7 +31757,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31766,7 +31766,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31779,7 +31779,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (milestoneId != null)
         {
-            localVarPathParams.Add("milestoneId", this.Configuration.ApiClient.ParameterToString(milestoneId));
+            localVarPathParams.Add("milestoneId", Configuration.ApiClient.ParameterToString(milestoneId));
         }
 
         // Query params
@@ -31795,11 +31795,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31825,7 +31825,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowMilestone>(localVarStatusCode,
             localVarHeaders,
-            (FlowMilestone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
+            (FlowMilestone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31885,7 +31885,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31894,7 +31894,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31909,47 +31909,47 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -31963,11 +31963,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31993,7 +31993,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowMilestoneListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowMilestoneListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestoneListing)),
+            (FlowMilestoneListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestoneListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32053,7 +32053,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32062,7 +32062,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32077,47 +32077,47 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -32131,11 +32131,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32161,7 +32161,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowMilestoneListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowMilestoneListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestoneListing)),
+            (FlowMilestoneListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestoneListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32217,7 +32217,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32226,7 +32226,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32241,37 +32241,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -32285,11 +32285,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32315,7 +32315,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowMilestoneDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowMilestoneDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestoneDivisionViewEntityListing)),
+            (FlowMilestoneDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestoneDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32371,7 +32371,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32380,7 +32380,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32395,37 +32395,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -32439,11 +32439,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32469,7 +32469,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowMilestoneDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowMilestoneDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestoneDivisionViewEntityListing)),
+            (FlowMilestoneDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestoneDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32518,7 +32518,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32527,7 +32527,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32540,7 +32540,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowOutcomeId != null)
         {
-            localVarPathParams.Add("flowOutcomeId", this.Configuration.ApiClient.ParameterToString(flowOutcomeId));
+            localVarPathParams.Add("flowOutcomeId", Configuration.ApiClient.ParameterToString(flowOutcomeId));
         }
 
         // Query params
@@ -32556,11 +32556,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32586,7 +32586,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowOutcome>(localVarStatusCode,
             localVarHeaders,
-            (FlowOutcome)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcome)),
+            (FlowOutcome)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcome)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32635,7 +32635,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32644,7 +32644,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32657,7 +32657,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowOutcomeId != null)
         {
-            localVarPathParams.Add("flowOutcomeId", this.Configuration.ApiClient.ParameterToString(flowOutcomeId));
+            localVarPathParams.Add("flowOutcomeId", Configuration.ApiClient.ParameterToString(flowOutcomeId));
         }
 
         // Query params
@@ -32673,11 +32673,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32703,7 +32703,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowOutcome>(localVarStatusCode,
             localVarHeaders,
-            (FlowOutcome)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcome)),
+            (FlowOutcome)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcome)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32763,7 +32763,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32772,7 +32772,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32787,47 +32787,47 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -32841,11 +32841,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32871,7 +32871,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowOutcomeListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowOutcomeListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcomeListing)),
+            (FlowOutcomeListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcomeListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32931,7 +32931,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32940,7 +32940,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32955,47 +32955,47 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (description != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("description", this.Configuration.ApiClient.ParameterToString(description)));
+            localVarQueryParams.Add(new Tuple<string, string>("description", Configuration.ApiClient.ParameterToString(description)));
         }
 
         if (nameOrDescription != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", this.Configuration.ApiClient.ParameterToString(nameOrDescription)));
+            localVarQueryParams.Add(new Tuple<string, string>("nameOrDescription", Configuration.ApiClient.ParameterToString(nameOrDescription)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -33009,11 +33009,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33039,7 +33039,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowOutcomeListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowOutcomeListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcomeListing)),
+            (FlowOutcomeListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcomeListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33095,7 +33095,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33104,7 +33104,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33119,37 +33119,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -33163,11 +33163,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33193,7 +33193,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowOutcomeDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowOutcomeDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcomeDivisionViewEntityListing)),
+            (FlowOutcomeDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcomeDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33249,7 +33249,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33258,7 +33258,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33273,37 +33273,37 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -33317,11 +33317,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33347,7 +33347,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowOutcomeDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowOutcomeDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcomeDivisionViewEntityListing)),
+            (FlowOutcomeDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcomeDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33399,7 +33399,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33408,7 +33408,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33421,7 +33421,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         // Query params
@@ -33433,7 +33433,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33446,11 +33446,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33476,7 +33476,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Grammar>(localVarStatusCode,
             localVarHeaders,
-            (Grammar)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
+            (Grammar)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33528,7 +33528,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33537,7 +33537,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33550,7 +33550,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         // Query params
@@ -33562,7 +33562,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33575,11 +33575,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33605,7 +33605,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Grammar>(localVarStatusCode,
             localVarHeaders,
-            (Grammar)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
+            (Grammar)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33664,7 +33664,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33673,7 +33673,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33686,12 +33686,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -33703,7 +33703,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33716,11 +33716,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33746,7 +33746,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GrammarLanguage>(localVarStatusCode,
             localVarHeaders,
-            (GrammarLanguage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
+            (GrammarLanguage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33806,7 +33806,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33815,7 +33815,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33828,12 +33828,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -33845,7 +33845,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33858,11 +33858,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33888,7 +33888,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GrammarLanguage>(localVarStatusCode,
             localVarHeaders,
-            (GrammarLanguage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
+            (GrammarLanguage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33938,7 +33938,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33947,7 +33947,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33968,7 +33968,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33981,11 +33981,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34011,7 +34011,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ExecutionDataFlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ExecutionDataFlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataFlowSettingsResponse)),
+            (ExecutionDataFlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataFlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34061,7 +34061,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34070,7 +34070,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34091,7 +34091,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34104,11 +34104,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34134,7 +34134,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ExecutionDataFlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (ExecutionDataFlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataFlowSettingsResponse)),
+            (ExecutionDataFlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataFlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34175,7 +34175,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34184,7 +34184,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34209,11 +34209,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34280,7 +34280,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34289,7 +34289,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34314,11 +34314,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34394,7 +34394,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34403,7 +34403,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34424,7 +34424,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34437,11 +34437,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34467,7 +34467,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<EmergencyGroup>(localVarStatusCode,
             localVarHeaders,
-            (EmergencyGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
+            (EmergencyGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34517,7 +34517,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34526,7 +34526,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34547,7 +34547,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34560,11 +34560,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34590,7 +34590,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<EmergencyGroup>(localVarStatusCode,
             localVarHeaders,
-            (EmergencyGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
+            (EmergencyGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34654,7 +34654,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34663,7 +34663,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34676,12 +34676,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -34693,7 +34693,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34706,11 +34706,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34736,7 +34736,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<UploadUrlResponse>(localVarStatusCode,
             localVarHeaders,
-            (UploadUrlResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
+            (UploadUrlResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34802,7 +34802,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34811,7 +34811,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34824,12 +34824,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -34841,7 +34841,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34854,11 +34854,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34884,7 +34884,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<UploadUrlResponse>(localVarStatusCode,
             localVarHeaders,
-            (UploadUrlResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
+            (UploadUrlResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34948,7 +34948,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34957,7 +34957,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34970,12 +34970,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -34987,7 +34987,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35000,11 +35000,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35030,7 +35030,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<UploadUrlResponse>(localVarStatusCode,
             localVarHeaders,
-            (UploadUrlResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
+            (UploadUrlResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35096,7 +35096,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35105,7 +35105,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35118,12 +35118,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -35135,7 +35135,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35148,11 +35148,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35178,7 +35178,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<UploadUrlResponse>(localVarStatusCode,
             localVarHeaders,
-            (UploadUrlResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
+            (UploadUrlResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35235,7 +35235,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35244,7 +35244,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35257,7 +35257,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         // Query params
@@ -35269,7 +35269,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35282,11 +35282,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35312,7 +35312,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GrammarLanguage>(localVarStatusCode,
             localVarHeaders,
-            (GrammarLanguage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
+            (GrammarLanguage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35370,7 +35370,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35379,7 +35379,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35392,7 +35392,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (grammarId != null)
         {
-            localVarPathParams.Add("grammarId", this.Configuration.ApiClient.ParameterToString(grammarId));
+            localVarPathParams.Add("grammarId", Configuration.ApiClient.ParameterToString(grammarId));
         }
 
         // Query params
@@ -35404,7 +35404,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35417,11 +35417,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35447,7 +35447,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GrammarLanguage>(localVarStatusCode,
             localVarHeaders,
-            (GrammarLanguage)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
+            (GrammarLanguage)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GrammarLanguage)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35497,7 +35497,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35506,7 +35506,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35527,7 +35527,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35540,11 +35540,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35570,7 +35570,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Grammar>(localVarStatusCode,
             localVarHeaders,
-            (Grammar)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
+            (Grammar)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35620,7 +35620,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35629,7 +35629,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35650,7 +35650,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35663,11 +35663,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35693,7 +35693,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Grammar>(localVarStatusCode,
             localVarHeaders,
-            (Grammar)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
+            (Grammar)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Grammar)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35743,7 +35743,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35752,7 +35752,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35773,7 +35773,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35786,11 +35786,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35816,7 +35816,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IVR>(localVarStatusCode,
             localVarHeaders,
-            (IVR)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
+            (IVR)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35866,7 +35866,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35875,7 +35875,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35896,7 +35896,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35909,11 +35909,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35939,7 +35939,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IVR>(localVarStatusCode,
             localVarHeaders,
-            (IVR)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
+            (IVR)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35988,7 +35988,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35997,7 +35997,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36010,7 +36010,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
@@ -36026,11 +36026,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36056,7 +36056,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36105,7 +36105,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36114,7 +36114,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36127,7 +36127,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
@@ -36143,11 +36143,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36173,7 +36173,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36229,7 +36229,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36238,7 +36238,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36251,12 +36251,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -36272,11 +36272,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36302,7 +36302,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAssetUpload>(localVarStatusCode,
             localVarHeaders,
-            (PromptAssetUpload)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetUpload)),
+            (PromptAssetUpload)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetUpload)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36359,7 +36359,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36368,7 +36368,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36381,12 +36381,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -36402,11 +36402,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36432,7 +36432,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAssetUpload>(localVarStatusCode,
             localVarHeaders,
-            (PromptAssetUpload)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetUpload)),
+            (PromptAssetUpload)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetUpload)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36489,7 +36489,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36498,7 +36498,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36511,7 +36511,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
@@ -36523,7 +36523,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36536,11 +36536,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36566,7 +36566,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (PromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
+            (PromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36624,7 +36624,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36633,7 +36633,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36646,7 +36646,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
@@ -36658,7 +36658,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36671,11 +36671,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36701,7 +36701,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (PromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
+            (PromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36751,7 +36751,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36760,7 +36760,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36781,7 +36781,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36794,11 +36794,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36824,7 +36824,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Prompt>(localVarStatusCode,
             localVarHeaders,
-            (Prompt)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
+            (Prompt)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36874,7 +36874,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36883,7 +36883,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36904,7 +36904,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36917,11 +36917,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36947,7 +36947,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Prompt>(localVarStatusCode,
             localVarHeaders,
-            (Prompt)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
+            (Prompt)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36997,7 +36997,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37006,7 +37006,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37027,7 +37027,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37040,11 +37040,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37070,7 +37070,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleGroup>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
+            (ScheduleGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37120,7 +37120,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37129,7 +37129,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37150,7 +37150,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37163,11 +37163,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37193,7 +37193,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleGroup>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
+            (ScheduleGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37243,7 +37243,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37252,7 +37252,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37273,7 +37273,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37286,11 +37286,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37316,7 +37316,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Schedule>(localVarStatusCode,
             localVarHeaders,
-            (Schedule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
+            (Schedule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37366,7 +37366,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37375,7 +37375,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37396,7 +37396,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37409,11 +37409,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37439,7 +37439,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Schedule>(localVarStatusCode,
             localVarHeaders,
-            (Schedule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
+            (Schedule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37488,7 +37488,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37497,7 +37497,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37510,7 +37510,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
@@ -37526,11 +37526,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37556,7 +37556,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37605,7 +37605,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37614,7 +37614,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37627,7 +37627,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
@@ -37643,11 +37643,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37673,7 +37673,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37729,7 +37729,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37738,7 +37738,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37751,12 +37751,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -37772,11 +37772,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37802,7 +37802,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAssetUpload>(localVarStatusCode,
             localVarHeaders,
-            (PromptAssetUpload)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetUpload)),
+            (PromptAssetUpload)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetUpload)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37859,7 +37859,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37868,7 +37868,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37881,12 +37881,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -37902,11 +37902,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37932,7 +37932,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAssetUpload>(localVarStatusCode,
             localVarHeaders,
-            (PromptAssetUpload)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetUpload)),
+            (PromptAssetUpload)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAssetUpload)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37989,7 +37989,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37998,7 +37998,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38011,7 +38011,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
@@ -38023,7 +38023,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38036,11 +38036,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38066,7 +38066,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (SystemPromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
+            (SystemPromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38124,7 +38124,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38133,7 +38133,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38146,7 +38146,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
@@ -38158,7 +38158,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38171,11 +38171,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38201,7 +38201,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (SystemPromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
+            (SystemPromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38250,7 +38250,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38259,7 +38259,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38272,7 +38272,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
@@ -38288,11 +38288,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38318,7 +38318,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38367,7 +38367,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38376,7 +38376,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38389,7 +38389,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
@@ -38405,11 +38405,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38435,7 +38435,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38494,7 +38494,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38503,7 +38503,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38516,13 +38516,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -38532,7 +38532,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38545,11 +38545,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38575,7 +38575,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
+            (FlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38635,7 +38635,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38644,7 +38644,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38657,13 +38657,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -38673,7 +38673,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38686,11 +38686,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38716,7 +38716,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
+            (FlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38773,7 +38773,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38782,7 +38782,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38795,7 +38795,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
@@ -38807,7 +38807,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38820,11 +38820,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38850,7 +38850,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowVersion>(localVarStatusCode,
             localVarHeaders,
-            (FlowVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersion)),
+            (FlowVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38908,7 +38908,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38917,7 +38917,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38930,7 +38930,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
@@ -38942,7 +38942,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38955,11 +38955,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38985,7 +38985,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowVersion>(localVarStatusCode,
             localVarHeaders,
-            (FlowVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersion)),
+            (FlowVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39037,7 +39037,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -39046,7 +39046,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -39061,7 +39061,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (language != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
+            localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(language)));
         }
 
         // Header params
@@ -39071,7 +39071,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -39084,11 +39084,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39114,7 +39114,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39166,7 +39166,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -39175,7 +39175,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -39190,7 +39190,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (language != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
+            localVarQueryParams.Add(new Tuple<string, string>("language", Configuration.ApiClient.ParameterToString(language)));
         }
 
         // Header params
@@ -39200,7 +39200,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -39213,11 +39213,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39243,7 +39243,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39292,7 +39292,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -39301,7 +39301,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -39316,7 +39316,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         // Header params
@@ -39330,11 +39330,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39360,7 +39360,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39409,7 +39409,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -39418,7 +39418,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -39433,7 +39433,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         // Header params
@@ -39447,11 +39447,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39477,7 +39477,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39526,7 +39526,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -39535,7 +39535,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -39550,7 +39550,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         // Header params
@@ -39564,11 +39564,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39594,7 +39594,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39643,7 +39643,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -39652,7 +39652,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -39667,7 +39667,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         // Header params
@@ -39681,11 +39681,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39711,7 +39711,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39760,7 +39760,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -39769,7 +39769,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -39784,7 +39784,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         // Header params
@@ -39798,11 +39798,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39828,7 +39828,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39877,7 +39877,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -39886,7 +39886,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -39901,7 +39901,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         // Header params
@@ -39915,11 +39915,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39945,7 +39945,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39996,7 +39996,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -40005,7 +40005,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -40020,12 +40020,12 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         if (version != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("version", this.Configuration.ApiClient.ParameterToString(version)));
+            localVarQueryParams.Add(new Tuple<string, string>("version", Configuration.ApiClient.ParameterToString(version)));
         }
 
         // Header params
@@ -40039,11 +40039,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -40069,7 +40069,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -40120,7 +40120,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -40129,7 +40129,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -40144,12 +40144,12 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         if (version != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("version", this.Configuration.ApiClient.ParameterToString(version)));
+            localVarQueryParams.Add(new Tuple<string, string>("version", Configuration.ApiClient.ParameterToString(version)));
         }
 
         // Header params
@@ -40163,11 +40163,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -40193,7 +40193,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -40242,7 +40242,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -40251,7 +40251,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -40266,7 +40266,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         // Header params
@@ -40280,11 +40280,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -40310,7 +40310,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -40359,7 +40359,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -40368,7 +40368,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -40383,7 +40383,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         // Header params
@@ -40397,11 +40397,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -40427,7 +40427,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -40476,7 +40476,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -40485,7 +40485,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -40500,7 +40500,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         // Header params
@@ -40514,11 +40514,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -40544,7 +40544,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -40593,7 +40593,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -40602,7 +40602,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -40617,7 +40617,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (flow != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("flow", this.Configuration.ApiClient.ParameterToString(flow)));
+            localVarQueryParams.Add(new Tuple<string, string>("flow", Configuration.ApiClient.ParameterToString(flow)));
         }
 
         // Header params
@@ -40631,11 +40631,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -40661,7 +40661,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -40710,7 +40710,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -40719,7 +40719,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -40732,7 +40732,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
@@ -40748,11 +40748,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -40778,7 +40778,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableExportJob>(localVarStatusCode,
             localVarHeaders,
-            (DataTableExportJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableExportJob)),
+            (DataTableExportJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableExportJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -40827,7 +40827,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -40836,7 +40836,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -40849,7 +40849,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
@@ -40865,11 +40865,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -40895,7 +40895,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableExportJob>(localVarStatusCode,
             localVarHeaders,
-            (DataTableExportJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableExportJob)),
+            (DataTableExportJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableExportJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -40952,7 +40952,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -40961,7 +40961,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -40974,7 +40974,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
@@ -40986,7 +40986,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -40999,11 +40999,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -41029,7 +41029,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableImportJob>(localVarStatusCode,
             localVarHeaders,
-            (DataTableImportJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportJob)),
+            (DataTableImportJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -41087,7 +41087,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -41096,7 +41096,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -41109,7 +41109,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
@@ -41121,7 +41121,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -41134,11 +41134,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -41164,7 +41164,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTableImportJob>(localVarStatusCode,
             localVarHeaders,
-            (DataTableImportJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportJob)),
+            (DataTableImportJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTableImportJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -41221,7 +41221,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -41230,7 +41230,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -41243,7 +41243,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
@@ -41255,7 +41255,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (dataTableRow != null && dataTableRow.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(dataTableRow); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(dataTableRow); // http body (model) parameter
         }
         else
         {
@@ -41268,11 +41268,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -41298,7 +41298,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
+            (Dictionary<string, object>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -41356,7 +41356,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -41365,7 +41365,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -41378,7 +41378,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
@@ -41390,7 +41390,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (dataTableRow != null && dataTableRow.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(dataTableRow); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(dataTableRow); // http body (model) parameter
         }
         else
         {
@@ -41403,11 +41403,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -41433,7 +41433,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
+            (Dictionary<string, object>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -41483,7 +41483,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -41492,7 +41492,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -41513,7 +41513,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -41526,11 +41526,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -41556,7 +41556,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTable>(localVarStatusCode,
             localVarHeaders,
-            (DataTable)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
+            (DataTable)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -41606,7 +41606,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -41615,7 +41615,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -41636,7 +41636,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -41649,11 +41649,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -41679,7 +41679,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTable>(localVarStatusCode,
             localVarHeaders,
-            (DataTable)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
+            (DataTable)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -41729,7 +41729,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -41738,7 +41738,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -41759,7 +41759,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (flowLaunchRequest != null && flowLaunchRequest.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(flowLaunchRequest); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(flowLaunchRequest); // http body (model) parameter
         }
         else
         {
@@ -41772,11 +41772,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -41802,7 +41802,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowExecutionLaunchResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowExecutionLaunchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowExecutionLaunchResponse)),
+            (FlowExecutionLaunchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowExecutionLaunchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -41852,7 +41852,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -41861,7 +41861,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -41882,7 +41882,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (flowLaunchRequest != null && flowLaunchRequest.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(flowLaunchRequest); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(flowLaunchRequest); // http body (model) parameter
         }
         else
         {
@@ -41895,11 +41895,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -41925,7 +41925,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowExecutionLaunchResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowExecutionLaunchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowExecutionLaunchResponse)),
+            (FlowExecutionLaunchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowExecutionLaunchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -41975,7 +41975,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -41984,7 +41984,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -42005,7 +42005,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -42018,11 +42018,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -42048,7 +42048,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<RegisterArchitectExportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (RegisterArchitectExportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterArchitectExportJobResponse)),
+            (RegisterArchitectExportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterArchitectExportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -42098,7 +42098,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -42107,7 +42107,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -42128,7 +42128,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -42141,11 +42141,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -42171,7 +42171,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<RegisterArchitectExportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (RegisterArchitectExportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterArchitectExportJobResponse)),
+            (RegisterArchitectExportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterArchitectExportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -42223,7 +42223,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -42232,7 +42232,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -42247,7 +42247,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -42257,7 +42257,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -42270,11 +42270,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -42300,7 +42300,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GetFlowExecutionDataJobResult>(localVarStatusCode,
             localVarHeaders,
-            (GetFlowExecutionDataJobResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
+            (GetFlowExecutionDataJobResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -42352,7 +42352,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -42361,7 +42361,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -42376,7 +42376,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -42386,7 +42386,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -42399,11 +42399,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -42429,7 +42429,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<GetFlowExecutionDataJobResult>(localVarStatusCode,
             localVarHeaders,
-            (GetFlowExecutionDataJobResult)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
+            (GetFlowExecutionDataJobResult)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFlowExecutionDataJobResult)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -42483,7 +42483,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -42492,7 +42492,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -42507,12 +42507,12 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (indexOnly != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("indexOnly", this.Configuration.ApiClient.ParameterToString(indexOnly)));
+            localVarQueryParams.Add(new Tuple<string, string>("indexOnly", Configuration.ApiClient.ParameterToString(indexOnly)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -42522,7 +42522,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -42535,11 +42535,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -42565,7 +42565,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowResultEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowResultEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowResultEntityListing)),
+            (FlowResultEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowResultEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -42619,7 +42619,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -42628,7 +42628,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -42643,12 +42643,12 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (indexOnly != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("indexOnly", this.Configuration.ApiClient.ParameterToString(indexOnly)));
+            localVarQueryParams.Add(new Tuple<string, string>("indexOnly", Configuration.ApiClient.ParameterToString(indexOnly)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -42658,7 +42658,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -42671,11 +42671,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -42701,7 +42701,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowResultEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (FlowResultEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowResultEntityListing)),
+            (FlowResultEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowResultEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -42743,7 +42743,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -42752,7 +42752,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -42777,11 +42777,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -42807,7 +42807,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<RegisterArchitectJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (RegisterArchitectJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterArchitectJobResponse)),
+            (RegisterArchitectJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterArchitectJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -42849,7 +42849,7 @@ public partial class ArchitectApi : IArchitectApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -42858,7 +42858,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -42883,11 +42883,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -42913,7 +42913,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<RegisterArchitectJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (RegisterArchitectJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterArchitectJobResponse)),
+            (RegisterArchitectJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterArchitectJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -42958,7 +42958,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -42967,7 +42967,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -42988,7 +42988,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -43001,11 +43001,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -43031,7 +43031,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowMilestone>(localVarStatusCode,
             localVarHeaders,
-            (FlowMilestone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
+            (FlowMilestone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -43076,7 +43076,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -43085,7 +43085,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -43106,7 +43106,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -43119,11 +43119,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -43149,7 +43149,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowMilestone>(localVarStatusCode,
             localVarHeaders,
-            (FlowMilestone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
+            (FlowMilestone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -43194,7 +43194,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -43203,7 +43203,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -43224,7 +43224,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -43237,11 +43237,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -43267,7 +43267,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowOutcome>(localVarStatusCode,
             localVarHeaders,
-            (FlowOutcome)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcome)),
+            (FlowOutcome)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcome)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -43312,7 +43312,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -43321,7 +43321,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -43342,7 +43342,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -43355,11 +43355,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -43385,7 +43385,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowOutcome>(localVarStatusCode,
             localVarHeaders,
-            (FlowOutcome)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcome)),
+            (FlowOutcome)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowOutcome)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -43442,7 +43442,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -43451,7 +43451,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -43464,7 +43464,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (emergencyGroupId != null)
         {
-            localVarPathParams.Add("emergencyGroupId", this.Configuration.ApiClient.ParameterToString(emergencyGroupId));
+            localVarPathParams.Add("emergencyGroupId", Configuration.ApiClient.ParameterToString(emergencyGroupId));
         }
 
         // Query params
@@ -43476,7 +43476,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -43489,11 +43489,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -43519,7 +43519,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<EmergencyGroup>(localVarStatusCode,
             localVarHeaders,
-            (EmergencyGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
+            (EmergencyGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -43577,7 +43577,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -43586,7 +43586,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -43599,7 +43599,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (emergencyGroupId != null)
         {
-            localVarPathParams.Add("emergencyGroupId", this.Configuration.ApiClient.ParameterToString(emergencyGroupId));
+            localVarPathParams.Add("emergencyGroupId", Configuration.ApiClient.ParameterToString(emergencyGroupId));
         }
 
         // Query params
@@ -43611,7 +43611,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -43624,11 +43624,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -43654,7 +43654,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<EmergencyGroup>(localVarStatusCode,
             localVarHeaders,
-            (EmergencyGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
+            (EmergencyGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmergencyGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -43711,7 +43711,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -43720,7 +43720,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -43733,7 +43733,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (ivrId != null)
         {
-            localVarPathParams.Add("ivrId", this.Configuration.ApiClient.ParameterToString(ivrId));
+            localVarPathParams.Add("ivrId", Configuration.ApiClient.ParameterToString(ivrId));
         }
 
         // Query params
@@ -43745,7 +43745,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -43758,11 +43758,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -43788,7 +43788,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IVR>(localVarStatusCode,
             localVarHeaders,
-            (IVR)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
+            (IVR)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -43846,7 +43846,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -43855,7 +43855,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -43868,7 +43868,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (ivrId != null)
         {
-            localVarPathParams.Add("ivrId", this.Configuration.ApiClient.ParameterToString(ivrId));
+            localVarPathParams.Add("ivrId", Configuration.ApiClient.ParameterToString(ivrId));
         }
 
         // Query params
@@ -43880,7 +43880,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -43893,11 +43893,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -43923,7 +43923,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IVR>(localVarStatusCode,
             localVarHeaders,
-            (IVR)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
+            (IVR)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IVR)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -43982,7 +43982,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -43991,7 +43991,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -44004,7 +44004,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (ivrId != null)
         {
-            localVarPathParams.Add("ivrId", this.Configuration.ApiClient.ParameterToString(ivrId));
+            localVarPathParams.Add("ivrId", Configuration.ApiClient.ParameterToString(ivrId));
         }
 
         // Query params
@@ -44016,7 +44016,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -44029,11 +44029,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -44059,7 +44059,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
             localVarHeaders,
-            (IdentityResolutionConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+            (IdentityResolutionConfig)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -44119,7 +44119,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -44128,7 +44128,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -44141,7 +44141,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (ivrId != null)
         {
-            localVarPathParams.Add("ivrId", this.Configuration.ApiClient.ParameterToString(ivrId));
+            localVarPathParams.Add("ivrId", Configuration.ApiClient.ParameterToString(ivrId));
         }
 
         // Query params
@@ -44153,7 +44153,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -44166,11 +44166,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -44196,7 +44196,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
             localVarHeaders,
-            (IdentityResolutionConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+            (IdentityResolutionConfig)Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -44253,7 +44253,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -44262,7 +44262,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -44275,7 +44275,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
@@ -44287,7 +44287,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -44300,11 +44300,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -44330,7 +44330,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Prompt>(localVarStatusCode,
             localVarHeaders,
-            (Prompt)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
+            (Prompt)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -44388,7 +44388,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -44397,7 +44397,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -44410,7 +44410,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         // Query params
@@ -44422,7 +44422,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -44435,11 +44435,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -44465,7 +44465,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Prompt>(localVarStatusCode,
             localVarHeaders,
-            (Prompt)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
+            (Prompt)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Prompt)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -44529,7 +44529,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -44538,7 +44538,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -44551,12 +44551,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -44568,7 +44568,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -44581,11 +44581,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -44611,7 +44611,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (PromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
+            (PromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -44677,7 +44677,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -44686,7 +44686,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -44699,12 +44699,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -44716,7 +44716,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -44729,11 +44729,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -44759,7 +44759,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<PromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (PromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
+            (PromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -44816,7 +44816,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -44825,7 +44825,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -44838,7 +44838,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleId != null)
         {
-            localVarPathParams.Add("scheduleId", this.Configuration.ApiClient.ParameterToString(scheduleId));
+            localVarPathParams.Add("scheduleId", Configuration.ApiClient.ParameterToString(scheduleId));
         }
 
         // Query params
@@ -44850,7 +44850,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -44863,11 +44863,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -44893,7 +44893,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Schedule>(localVarStatusCode,
             localVarHeaders,
-            (Schedule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
+            (Schedule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -44951,7 +44951,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -44960,7 +44960,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -44973,7 +44973,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleId != null)
         {
-            localVarPathParams.Add("scheduleId", this.Configuration.ApiClient.ParameterToString(scheduleId));
+            localVarPathParams.Add("scheduleId", Configuration.ApiClient.ParameterToString(scheduleId));
         }
 
         // Query params
@@ -44985,7 +44985,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -44998,11 +44998,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -45028,7 +45028,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Schedule>(localVarStatusCode,
             localVarHeaders,
-            (Schedule)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
+            (Schedule)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Schedule)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -45085,7 +45085,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -45094,7 +45094,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -45107,7 +45107,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleGroupId != null)
         {
-            localVarPathParams.Add("scheduleGroupId", this.Configuration.ApiClient.ParameterToString(scheduleGroupId));
+            localVarPathParams.Add("scheduleGroupId", Configuration.ApiClient.ParameterToString(scheduleGroupId));
         }
 
         // Query params
@@ -45119,7 +45119,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -45132,11 +45132,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -45162,7 +45162,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleGroup>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
+            (ScheduleGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -45220,7 +45220,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -45229,7 +45229,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -45242,7 +45242,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (scheduleGroupId != null)
         {
-            localVarPathParams.Add("scheduleGroupId", this.Configuration.ApiClient.ParameterToString(scheduleGroupId));
+            localVarPathParams.Add("scheduleGroupId", Configuration.ApiClient.ParameterToString(scheduleGroupId));
         }
 
         // Query params
@@ -45254,7 +45254,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -45267,11 +45267,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -45297,7 +45297,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<ScheduleGroup>(localVarStatusCode,
             localVarHeaders,
-            (ScheduleGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
+            (ScheduleGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScheduleGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -45361,7 +45361,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -45370,7 +45370,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -45383,12 +45383,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -45400,7 +45400,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -45413,11 +45413,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -45443,7 +45443,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (SystemPromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
+            (SystemPromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -45509,7 +45509,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -45518,7 +45518,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -45531,12 +45531,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (promptId != null)
         {
-            localVarPathParams.Add("promptId", this.Configuration.ApiClient.ParameterToString(promptId));
+            localVarPathParams.Add("promptId", Configuration.ApiClient.ParameterToString(promptId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -45548,7 +45548,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -45561,11 +45561,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -45591,7 +45591,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<SystemPromptAsset>(localVarStatusCode,
             localVarHeaders,
-            (SystemPromptAsset)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
+            (SystemPromptAsset)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SystemPromptAsset)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -45648,7 +45648,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -45657,7 +45657,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -45670,7 +45670,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
@@ -45682,7 +45682,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -45695,11 +45695,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -45725,7 +45725,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -45783,7 +45783,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -45792,7 +45792,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -45805,7 +45805,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
@@ -45817,7 +45817,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -45830,11 +45830,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -45860,7 +45860,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Flow>(localVarStatusCode,
             localVarHeaders,
-            (Flow)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
+            (Flow)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Flow)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -45919,7 +45919,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -45928,7 +45928,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -45941,13 +45941,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -45957,7 +45957,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -45970,11 +45970,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -46000,7 +46000,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
+            (FlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -46060,7 +46060,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -46069,7 +46069,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -46082,13 +46082,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowId != null)
         {
-            localVarPathParams.Add("flowId", this.Configuration.ApiClient.ParameterToString(flowId));
+            localVarPathParams.Add("flowId", Configuration.ApiClient.ParameterToString(flowId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -46098,7 +46098,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -46111,11 +46111,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -46141,7 +46141,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
+            (FlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -46200,7 +46200,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -46209,7 +46209,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -46222,13 +46222,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -46238,7 +46238,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -46251,11 +46251,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -46281,7 +46281,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTable>(localVarStatusCode,
             localVarHeaders,
-            (DataTable)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
+            (DataTable)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -46341,7 +46341,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -46350,7 +46350,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -46363,13 +46363,13 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         // Query params
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         // Header params
@@ -46379,7 +46379,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -46392,11 +46392,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -46422,7 +46422,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<DataTable>(localVarStatusCode,
             localVarHeaders,
-            (DataTable)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
+            (DataTable)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataTable)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -46481,7 +46481,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -46490,7 +46490,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -46503,12 +46503,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         if (rowId != null)
         {
-            localVarPathParams.Add("rowId", this.Configuration.ApiClient.ParameterToString(rowId));
+            localVarPathParams.Add("rowId", Configuration.ApiClient.ParameterToString(rowId));
         }
 
         // Query params
@@ -46520,7 +46520,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -46533,11 +46533,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -46563,7 +46563,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
+            (Dictionary<string, object>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -46623,7 +46623,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -46632,7 +46632,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -46645,12 +46645,12 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (datatableId != null)
         {
-            localVarPathParams.Add("datatableId", this.Configuration.ApiClient.ParameterToString(datatableId));
+            localVarPathParams.Add("datatableId", Configuration.ApiClient.ParameterToString(datatableId));
         }
 
         if (rowId != null)
         {
-            localVarPathParams.Add("rowId", this.Configuration.ApiClient.ParameterToString(rowId));
+            localVarPathParams.Add("rowId", Configuration.ApiClient.ParameterToString(rowId));
         }
 
         // Query params
@@ -46662,7 +46662,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -46675,11 +46675,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -46705,7 +46705,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
+            (Dictionary<string, object>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -46757,7 +46757,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -46766,7 +46766,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -46781,7 +46781,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -46791,7 +46791,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -46804,11 +46804,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -46834,7 +46834,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
+            (FlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -46886,7 +46886,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -46895,7 +46895,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -46910,7 +46910,7 @@ public partial class ArchitectApi : IArchitectApi
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -46920,7 +46920,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -46933,11 +46933,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -46963,7 +46963,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (FlowSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
+            (FlowSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -47015,7 +47015,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -47024,7 +47024,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -47037,7 +47037,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (milestoneId != null)
         {
-            localVarPathParams.Add("milestoneId", this.Configuration.ApiClient.ParameterToString(milestoneId));
+            localVarPathParams.Add("milestoneId", Configuration.ApiClient.ParameterToString(milestoneId));
         }
 
         // Query params
@@ -47049,7 +47049,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -47062,11 +47062,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -47092,7 +47092,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowMilestone>(localVarStatusCode,
             localVarHeaders,
-            (FlowMilestone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
+            (FlowMilestone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -47144,7 +47144,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -47153,7 +47153,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -47166,7 +47166,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (milestoneId != null)
         {
-            localVarPathParams.Add("milestoneId", this.Configuration.ApiClient.ParameterToString(milestoneId));
+            localVarPathParams.Add("milestoneId", Configuration.ApiClient.ParameterToString(milestoneId));
         }
 
         // Query params
@@ -47178,7 +47178,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -47191,11 +47191,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -47221,7 +47221,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<FlowMilestone>(localVarStatusCode,
             localVarHeaders,
-            (FlowMilestone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
+            (FlowMilestone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(FlowMilestone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -47273,7 +47273,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -47282,7 +47282,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -47295,7 +47295,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowOutcomeId != null)
         {
-            localVarPathParams.Add("flowOutcomeId", this.Configuration.ApiClient.ParameterToString(flowOutcomeId));
+            localVarPathParams.Add("flowOutcomeId", Configuration.ApiClient.ParameterToString(flowOutcomeId));
         }
 
         // Query params
@@ -47307,7 +47307,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -47320,11 +47320,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -47350,7 +47350,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -47402,7 +47402,7 @@ public partial class ArchitectApi : IArchitectApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -47411,7 +47411,7 @@ public partial class ArchitectApi : IArchitectApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -47424,7 +47424,7 @@ public partial class ArchitectApi : IArchitectApi
         // Path params
         if (flowOutcomeId != null)
         {
-            localVarPathParams.Add("flowOutcomeId", this.Configuration.ApiClient.ParameterToString(flowOutcomeId));
+            localVarPathParams.Add("flowOutcomeId", Configuration.ApiClient.ParameterToString(flowOutcomeId));
         }
 
         // Query params
@@ -47436,7 +47436,7 @@ public partial class ArchitectApi : IArchitectApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -47449,11 +47449,11 @@ public partial class ArchitectApi : IArchitectApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -47479,7 +47479,7 @@ public partial class ArchitectApi : IArchitectApi
 
         return new ApiResponse<Operation>(localVarStatusCode,
             localVarHeaders,
-            (Operation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
+            (Operation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Operation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

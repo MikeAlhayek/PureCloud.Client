@@ -59,7 +59,7 @@ public partial class EventAggregatesQueryRequest : IEquatable<EventAggregatesQue
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EventAggregatesQueryRequest);
+        return Equals(obj as EventAggregatesQueryRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class EventAggregatesQueryRequest : IEquatable<EventAggregatesQue
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class EventAggregatesQueryRequest : IEquatable<EventAggregatesQue
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
             return hash;

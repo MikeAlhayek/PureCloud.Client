@@ -59,7 +59,7 @@ public partial class SupportCenterImageSource : IEquatable<SupportCenterImageSou
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportCenterImageSource);
+        return Equals(obj as SupportCenterImageSource);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class SupportCenterImageSource : IEquatable<SupportCenterImageSou
 
         return true &&
             (
-                this.DefaultUrl == other.DefaultUrl ||
-                this.DefaultUrl != null &&
-                this.DefaultUrl.Equals(other.DefaultUrl)
+                DefaultUrl == other.DefaultUrl ||
+                DefaultUrl != null &&
+                DefaultUrl.Equals(other.DefaultUrl)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class SupportCenterImageSource : IEquatable<SupportCenterImageSou
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DefaultUrl != null)
+            if (DefaultUrl != null)
             {
-                hash = hash * 59 + this.DefaultUrl.GetHashCode();
+                hash = hash * 59 + DefaultUrl.GetHashCode();
             }
 
             return hash;

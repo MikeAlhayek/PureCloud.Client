@@ -115,7 +115,7 @@ public partial class FlowLogLevel : IEquatable<FlowLogLevel>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowLogLevel);
+        return Equals(obj as FlowLogLevel);
     }
 
     /// <summary>
@@ -133,14 +133,14 @@ public partial class FlowLogLevel : IEquatable<FlowLogLevel>
 
         return true &&
             (
-                this.Level == other.Level ||
-                this.Level != null &&
-                this.Level.Equals(other.Level)
+                Level == other.Level ||
+                Level != null &&
+                Level.Equals(other.Level)
             ) &&
             (
-                this.Characteristics == other.Characteristics ||
-                this.Characteristics != null &&
-                this.Characteristics.Equals(other.Characteristics)
+                Characteristics == other.Characteristics ||
+                Characteristics != null &&
+                Characteristics.Equals(other.Characteristics)
             );
     }
 
@@ -155,14 +155,14 @@ public partial class FlowLogLevel : IEquatable<FlowLogLevel>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Level != null)
+            if (Level != null)
             {
-                hash = hash * 59 + this.Level.GetHashCode();
+                hash = hash * 59 + Level.GetHashCode();
             }
 
-            if (this.Characteristics != null)
+            if (Characteristics != null)
             {
-                hash = hash * 59 + this.Characteristics.GetHashCode();
+                hash = hash * 59 + Characteristics.GetHashCode();
             }
 
             return hash;

@@ -169,7 +169,7 @@ public partial class LocationCreateDefinition : IEquatable<LocationCreateDefinit
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LocationCreateDefinition);
+        return Equals(obj as LocationCreateDefinition);
     }
 
     /// <summary>
@@ -187,44 +187,44 @@ public partial class LocationCreateDefinition : IEquatable<LocationCreateDefinit
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Path == other.Path ||
-                this.Path != null &&
-                this.Path.SequenceEqual(other.Path)
+                Path == other.Path ||
+                Path != null &&
+                Path.SequenceEqual(other.Path)
             ) &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             ) &&
             (
-                this.ContactUser == other.ContactUser ||
-                this.ContactUser != null &&
-                this.ContactUser.Equals(other.ContactUser)
+                ContactUser == other.ContactUser ||
+                ContactUser != null &&
+                ContactUser.Equals(other.ContactUser)
             ) &&
             (
-                this.EmergencyNumber == other.EmergencyNumber ||
-                this.EmergencyNumber != null &&
-                this.EmergencyNumber.Equals(other.EmergencyNumber)
+                EmergencyNumber == other.EmergencyNumber ||
+                EmergencyNumber != null &&
+                EmergencyNumber.Equals(other.EmergencyNumber)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             );
     }
 
@@ -239,44 +239,44 @@ public partial class LocationCreateDefinition : IEquatable<LocationCreateDefinit
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Path != null)
+            if (Path != null)
             {
-                hash = hash * 59 + this.Path.GetHashCode();
+                hash = hash * 59 + Path.GetHashCode();
             }
 
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
-            if (this.ContactUser != null)
+            if (ContactUser != null)
             {
-                hash = hash * 59 + this.ContactUser.GetHashCode();
+                hash = hash * 59 + ContactUser.GetHashCode();
             }
 
-            if (this.EmergencyNumber != null)
+            if (EmergencyNumber != null)
             {
-                hash = hash * 59 + this.EmergencyNumber.GetHashCode();
+                hash = hash * 59 + EmergencyNumber.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
             return hash;

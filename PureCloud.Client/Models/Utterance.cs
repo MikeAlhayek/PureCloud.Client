@@ -53,7 +53,7 @@ public partial class Utterance : IEquatable<Utterance>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Utterance);
+        return Equals(obj as Utterance);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class Utterance : IEquatable<Utterance>
 
         return true &&
             (
-                this.UtteranceText == other.UtteranceText ||
-                this.UtteranceText != null &&
-                this.UtteranceText.Equals(other.UtteranceText)
+                UtteranceText == other.UtteranceText ||
+                UtteranceText != null &&
+                UtteranceText.Equals(other.UtteranceText)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class Utterance : IEquatable<Utterance>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UtteranceText != null)
+            if (UtteranceText != null)
             {
-                hash = hash * 59 + this.UtteranceText.GetHashCode();
+                hash = hash * 59 + UtteranceText.GetHashCode();
             }
 
             return hash;

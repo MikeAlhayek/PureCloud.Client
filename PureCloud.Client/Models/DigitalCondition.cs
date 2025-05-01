@@ -149,7 +149,7 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DigitalCondition);
+        return Equals(obj as DigitalCondition);
     }
 
     /// <summary>
@@ -167,49 +167,49 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
 
         return true &&
             (
-                this.Inverted == other.Inverted ||
-                this.Inverted != null &&
-                this.Inverted.Equals(other.Inverted)
+                Inverted == other.Inverted ||
+                Inverted != null &&
+                Inverted.Equals(other.Inverted)
             ) &&
             (
-                this.ContactColumnConditionSettings == other.ContactColumnConditionSettings ||
-                this.ContactColumnConditionSettings != null &&
-                this.ContactColumnConditionSettings.Equals(other.ContactColumnConditionSettings)
+                ContactColumnConditionSettings == other.ContactColumnConditionSettings ||
+                ContactColumnConditionSettings != null &&
+                ContactColumnConditionSettings.Equals(other.ContactColumnConditionSettings)
             ) &&
             (
-                this.ContactAddressConditionSettings == other.ContactAddressConditionSettings ||
-                this.ContactAddressConditionSettings != null &&
-                this.ContactAddressConditionSettings.Equals(other.ContactAddressConditionSettings)
+                ContactAddressConditionSettings == other.ContactAddressConditionSettings ||
+                ContactAddressConditionSettings != null &&
+                ContactAddressConditionSettings.Equals(other.ContactAddressConditionSettings)
             ) &&
             (
-                this.ContactAddressTypeConditionSettings == other.ContactAddressTypeConditionSettings ||
-                this.ContactAddressTypeConditionSettings != null &&
-                this.ContactAddressTypeConditionSettings.Equals(other.ContactAddressTypeConditionSettings)
+                ContactAddressTypeConditionSettings == other.ContactAddressTypeConditionSettings ||
+                ContactAddressTypeConditionSettings != null &&
+                ContactAddressTypeConditionSettings.Equals(other.ContactAddressTypeConditionSettings)
             ) &&
             (
-                this.LastAttemptByColumnConditionSettings == other.LastAttemptByColumnConditionSettings ||
-                this.LastAttemptByColumnConditionSettings != null &&
-                this.LastAttemptByColumnConditionSettings.Equals(other.LastAttemptByColumnConditionSettings)
+                LastAttemptByColumnConditionSettings == other.LastAttemptByColumnConditionSettings ||
+                LastAttemptByColumnConditionSettings != null &&
+                LastAttemptByColumnConditionSettings.Equals(other.LastAttemptByColumnConditionSettings)
             ) &&
             (
-                this.LastAttemptOverallConditionSettings == other.LastAttemptOverallConditionSettings ||
-                this.LastAttemptOverallConditionSettings != null &&
-                this.LastAttemptOverallConditionSettings.Equals(other.LastAttemptOverallConditionSettings)
+                LastAttemptOverallConditionSettings == other.LastAttemptOverallConditionSettings ||
+                LastAttemptOverallConditionSettings != null &&
+                LastAttemptOverallConditionSettings.Equals(other.LastAttemptOverallConditionSettings)
             ) &&
             (
-                this.LastResultByColumnConditionSettings == other.LastResultByColumnConditionSettings ||
-                this.LastResultByColumnConditionSettings != null &&
-                this.LastResultByColumnConditionSettings.Equals(other.LastResultByColumnConditionSettings)
+                LastResultByColumnConditionSettings == other.LastResultByColumnConditionSettings ||
+                LastResultByColumnConditionSettings != null &&
+                LastResultByColumnConditionSettings.Equals(other.LastResultByColumnConditionSettings)
             ) &&
             (
-                this.LastResultOverallConditionSettings == other.LastResultOverallConditionSettings ||
-                this.LastResultOverallConditionSettings != null &&
-                this.LastResultOverallConditionSettings.Equals(other.LastResultOverallConditionSettings)
+                LastResultOverallConditionSettings == other.LastResultOverallConditionSettings ||
+                LastResultOverallConditionSettings != null &&
+                LastResultOverallConditionSettings.Equals(other.LastResultOverallConditionSettings)
             ) &&
             (
-                this.DataActionConditionSettings == other.DataActionConditionSettings ||
-                this.DataActionConditionSettings != null &&
-                this.DataActionConditionSettings.Equals(other.DataActionConditionSettings)
+                DataActionConditionSettings == other.DataActionConditionSettings ||
+                DataActionConditionSettings != null &&
+                DataActionConditionSettings.Equals(other.DataActionConditionSettings)
             );
     }
 
@@ -224,49 +224,49 @@ public partial class DigitalCondition : IEquatable<DigitalCondition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Inverted != null)
+            if (Inverted != null)
             {
-                hash = hash * 59 + this.Inverted.GetHashCode();
+                hash = hash * 59 + Inverted.GetHashCode();
             }
 
-            if (this.ContactColumnConditionSettings != null)
+            if (ContactColumnConditionSettings != null)
             {
-                hash = hash * 59 + this.ContactColumnConditionSettings.GetHashCode();
+                hash = hash * 59 + ContactColumnConditionSettings.GetHashCode();
             }
 
-            if (this.ContactAddressConditionSettings != null)
+            if (ContactAddressConditionSettings != null)
             {
-                hash = hash * 59 + this.ContactAddressConditionSettings.GetHashCode();
+                hash = hash * 59 + ContactAddressConditionSettings.GetHashCode();
             }
 
-            if (this.ContactAddressTypeConditionSettings != null)
+            if (ContactAddressTypeConditionSettings != null)
             {
-                hash = hash * 59 + this.ContactAddressTypeConditionSettings.GetHashCode();
+                hash = hash * 59 + ContactAddressTypeConditionSettings.GetHashCode();
             }
 
-            if (this.LastAttemptByColumnConditionSettings != null)
+            if (LastAttemptByColumnConditionSettings != null)
             {
-                hash = hash * 59 + this.LastAttemptByColumnConditionSettings.GetHashCode();
+                hash = hash * 59 + LastAttemptByColumnConditionSettings.GetHashCode();
             }
 
-            if (this.LastAttemptOverallConditionSettings != null)
+            if (LastAttemptOverallConditionSettings != null)
             {
-                hash = hash * 59 + this.LastAttemptOverallConditionSettings.GetHashCode();
+                hash = hash * 59 + LastAttemptOverallConditionSettings.GetHashCode();
             }
 
-            if (this.LastResultByColumnConditionSettings != null)
+            if (LastResultByColumnConditionSettings != null)
             {
-                hash = hash * 59 + this.LastResultByColumnConditionSettings.GetHashCode();
+                hash = hash * 59 + LastResultByColumnConditionSettings.GetHashCode();
             }
 
-            if (this.LastResultOverallConditionSettings != null)
+            if (LastResultOverallConditionSettings != null)
             {
-                hash = hash * 59 + this.LastResultOverallConditionSettings.GetHashCode();
+                hash = hash * 59 + LastResultOverallConditionSettings.GetHashCode();
             }
 
-            if (this.DataActionConditionSettings != null)
+            if (DataActionConditionSettings != null)
             {
-                hash = hash * 59 + this.DataActionConditionSettings.GetHashCode();
+                hash = hash * 59 + DataActionConditionSettings.GetHashCode();
             }
 
             return hash;

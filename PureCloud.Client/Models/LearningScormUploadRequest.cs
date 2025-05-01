@@ -59,7 +59,7 @@ public partial class LearningScormUploadRequest : IEquatable<LearningScormUpload
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningScormUploadRequest);
+        return Equals(obj as LearningScormUploadRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class LearningScormUploadRequest : IEquatable<LearningScormUpload
 
         return true &&
             (
-                this.ContentMd5 == other.ContentMd5 ||
-                this.ContentMd5 != null &&
-                this.ContentMd5.Equals(other.ContentMd5)
+                ContentMd5 == other.ContentMd5 ||
+                ContentMd5 != null &&
+                ContentMd5.Equals(other.ContentMd5)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class LearningScormUploadRequest : IEquatable<LearningScormUpload
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContentMd5 != null)
+            if (ContentMd5 != null)
             {
-                hash = hash * 59 + this.ContentMd5.GetHashCode();
+                hash = hash * 59 + ContentMd5.GetHashCode();
             }
 
             return hash;

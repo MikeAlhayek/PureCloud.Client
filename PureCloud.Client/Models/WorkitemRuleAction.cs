@@ -71,7 +71,7 @@ public partial class WorkitemRuleAction : IEquatable<WorkitemRuleAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemRuleAction);
+        return Equals(obj as WorkitemRuleAction);
     }
 
     /// <summary>
@@ -89,9 +89,9 @@ public partial class WorkitemRuleAction : IEquatable<WorkitemRuleAction>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -106,9 +106,9 @@ public partial class WorkitemRuleAction : IEquatable<WorkitemRuleAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

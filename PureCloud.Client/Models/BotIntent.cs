@@ -70,7 +70,7 @@ public partial class BotIntent : IEquatable<BotIntent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BotIntent);
+        return Equals(obj as BotIntent);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class BotIntent : IEquatable<BotIntent>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Slots == other.Slots ||
-                this.Slots != null &&
-                this.Slots.SequenceEqual(other.Slots)
+                Slots == other.Slots ||
+                Slots != null &&
+                Slots.SequenceEqual(other.Slots)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class BotIntent : IEquatable<BotIntent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Slots != null)
+            if (Slots != null)
             {
-                hash = hash * 59 + this.Slots.GetHashCode();
+                hash = hash * 59 + Slots.GetHashCode();
             }
 
             return hash;

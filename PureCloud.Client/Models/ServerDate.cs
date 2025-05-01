@@ -53,7 +53,7 @@ public partial class ServerDate : IEquatable<ServerDate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ServerDate);
+        return Equals(obj as ServerDate);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ServerDate : IEquatable<ServerDate>
 
         return true &&
             (
-                this.CurrentDate == other.CurrentDate ||
-                this.CurrentDate != null &&
-                this.CurrentDate.Equals(other.CurrentDate)
+                CurrentDate == other.CurrentDate ||
+                CurrentDate != null &&
+                CurrentDate.Equals(other.CurrentDate)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ServerDate : IEquatable<ServerDate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CurrentDate != null)
+            if (CurrentDate != null)
             {
-                hash = hash * 59 + this.CurrentDate.GetHashCode();
+                hash = hash * 59 + CurrentDate.GetHashCode();
             }
 
             return hash;

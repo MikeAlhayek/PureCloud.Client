@@ -70,7 +70,7 @@ public partial class AgentIntegrationsRequest : IEquatable<AgentIntegrationsRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentIntegrationsRequest);
+        return Equals(obj as AgentIntegrationsRequest);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class AgentIntegrationsRequest : IEquatable<AgentIntegrationsRequ
 
         return true &&
             (
-                this.SelectedIntegrationId == other.SelectedIntegrationId ||
-                this.SelectedIntegrationId != null &&
-                this.SelectedIntegrationId.Equals(other.SelectedIntegrationId)
+                SelectedIntegrationId == other.SelectedIntegrationId ||
+                SelectedIntegrationId != null &&
+                SelectedIntegrationId.Equals(other.SelectedIntegrationId)
             ) &&
             (
-                this.AssociatedIntegrations == other.AssociatedIntegrations ||
-                this.AssociatedIntegrations != null &&
-                this.AssociatedIntegrations.SequenceEqual(other.AssociatedIntegrations)
+                AssociatedIntegrations == other.AssociatedIntegrations ||
+                AssociatedIntegrations != null &&
+                AssociatedIntegrations.SequenceEqual(other.AssociatedIntegrations)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class AgentIntegrationsRequest : IEquatable<AgentIntegrationsRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SelectedIntegrationId != null)
+            if (SelectedIntegrationId != null)
             {
-                hash = hash * 59 + this.SelectedIntegrationId.GetHashCode();
+                hash = hash * 59 + SelectedIntegrationId.GetHashCode();
             }
 
-            if (this.AssociatedIntegrations != null)
+            if (AssociatedIntegrations != null)
             {
-                hash = hash * 59 + this.AssociatedIntegrations.GetHashCode();
+                hash = hash * 59 + AssociatedIntegrations.GetHashCode();
             }
 
             return hash;

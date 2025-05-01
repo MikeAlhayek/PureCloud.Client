@@ -298,7 +298,7 @@ public partial class BuForecastTimeSeriesResult : IEquatable<BuForecastTimeSerie
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuForecastTimeSeriesResult);
+        return Equals(obj as BuForecastTimeSeriesResult);
     }
 
     /// <summary>
@@ -316,19 +316,19 @@ public partial class BuForecastTimeSeriesResult : IEquatable<BuForecastTimeSerie
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.ForecastingMethod == other.ForecastingMethod ||
-                this.ForecastingMethod != null &&
-                this.ForecastingMethod.Equals(other.ForecastingMethod)
+                ForecastingMethod == other.ForecastingMethod ||
+                ForecastingMethod != null &&
+                ForecastingMethod.Equals(other.ForecastingMethod)
             ) &&
             (
-                this.ForecastType == other.ForecastType ||
-                this.ForecastType != null &&
-                this.ForecastType.Equals(other.ForecastType)
+                ForecastType == other.ForecastType ||
+                ForecastType != null &&
+                ForecastType.Equals(other.ForecastType)
             );
     }
 
@@ -343,19 +343,19 @@ public partial class BuForecastTimeSeriesResult : IEquatable<BuForecastTimeSerie
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.ForecastingMethod != null)
+            if (ForecastingMethod != null)
             {
-                hash = hash * 59 + this.ForecastingMethod.GetHashCode();
+                hash = hash * 59 + ForecastingMethod.GetHashCode();
             }
 
-            if (this.ForecastType != null)
+            if (ForecastType != null)
             {
-                hash = hash * 59 + this.ForecastType.GetHashCode();
+                hash = hash * 59 + ForecastType.GetHashCode();
             }
 
             return hash;

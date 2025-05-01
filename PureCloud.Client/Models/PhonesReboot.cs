@@ -65,7 +65,7 @@ public partial class PhonesReboot : IEquatable<PhonesReboot>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PhonesReboot);
+        return Equals(obj as PhonesReboot);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class PhonesReboot : IEquatable<PhonesReboot>
 
         return true &&
             (
-                this.PhoneIds == other.PhoneIds ||
-                this.PhoneIds != null &&
-                this.PhoneIds.SequenceEqual(other.PhoneIds)
+                PhoneIds == other.PhoneIds ||
+                PhoneIds != null &&
+                PhoneIds.SequenceEqual(other.PhoneIds)
             ) &&
             (
-                this.SiteId == other.SiteId ||
-                this.SiteId != null &&
-                this.SiteId.Equals(other.SiteId)
+                SiteId == other.SiteId ||
+                SiteId != null &&
+                SiteId.Equals(other.SiteId)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class PhonesReboot : IEquatable<PhonesReboot>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PhoneIds != null)
+            if (PhoneIds != null)
             {
-                hash = hash * 59 + this.PhoneIds.GetHashCode();
+                hash = hash * 59 + PhoneIds.GetHashCode();
             }
 
-            if (this.SiteId != null)
+            if (SiteId != null)
             {
-                hash = hash * 59 + this.SiteId.GetHashCode();
+                hash = hash * 59 + SiteId.GetHashCode();
             }
 
             return hash;

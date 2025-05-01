@@ -65,7 +65,7 @@ public partial class DynamicLineBalancingSettingsPatchRequest : IEquatable<Dynam
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DynamicLineBalancingSettingsPatchRequest);
+        return Equals(obj as DynamicLineBalancingSettingsPatchRequest);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class DynamicLineBalancingSettingsPatchRequest : IEquatable<Dynam
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.RelativeWeight == other.RelativeWeight ||
-                this.RelativeWeight != null &&
-                this.RelativeWeight.Equals(other.RelativeWeight)
+                RelativeWeight == other.RelativeWeight ||
+                RelativeWeight != null &&
+                RelativeWeight.Equals(other.RelativeWeight)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class DynamicLineBalancingSettingsPatchRequest : IEquatable<Dynam
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.RelativeWeight != null)
+            if (RelativeWeight != null)
             {
-                hash = hash * 59 + this.RelativeWeight.GetHashCode();
+                hash = hash * 59 + RelativeWeight.GetHashCode();
             }
 
             return hash;

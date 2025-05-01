@@ -65,7 +65,7 @@ public partial class CoverSheet : IEquatable<CoverSheet>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CoverSheet);
+        return Equals(obj as CoverSheet);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class CoverSheet : IEquatable<CoverSheet>
 
         return true &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             ) &&
             (
-                this.Locale == other.Locale ||
-                this.Locale != null &&
-                this.Locale.Equals(other.Locale)
+                Locale == other.Locale ||
+                Locale != null &&
+                Locale.Equals(other.Locale)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class CoverSheet : IEquatable<CoverSheet>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
-            if (this.Locale != null)
+            if (Locale != null)
             {
-                hash = hash * 59 + this.Locale.GetHashCode();
+                hash = hash * 59 + Locale.GetHashCode();
             }
 
             return hash;

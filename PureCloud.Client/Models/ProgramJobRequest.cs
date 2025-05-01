@@ -59,7 +59,7 @@ public partial class ProgramJobRequest : IEquatable<ProgramJobRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ProgramJobRequest);
+        return Equals(obj as ProgramJobRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ProgramJobRequest : IEquatable<ProgramJobRequest>
 
         return true &&
             (
-                this.ProgramIds == other.ProgramIds ||
-                this.ProgramIds != null &&
-                this.ProgramIds.SequenceEqual(other.ProgramIds)
+                ProgramIds == other.ProgramIds ||
+                ProgramIds != null &&
+                ProgramIds.SequenceEqual(other.ProgramIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ProgramJobRequest : IEquatable<ProgramJobRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ProgramIds != null)
+            if (ProgramIds != null)
             {
-                hash = hash * 59 + this.ProgramIds.GetHashCode();
+                hash = hash * 59 + ProgramIds.GetHashCode();
             }
 
             return hash;

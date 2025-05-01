@@ -234,7 +234,7 @@ public partial class OrganizationPresenceDefinition : IEquatable<OrganizationPre
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OrganizationPresenceDefinition);
+        return Equals(obj as OrganizationPresenceDefinition);
     }
 
     /// <summary>
@@ -252,44 +252,44 @@ public partial class OrganizationPresenceDefinition : IEquatable<OrganizationPre
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.LanguageLabels == other.LanguageLabels ||
-                this.LanguageLabels != null &&
-                this.LanguageLabels.SequenceEqual(other.LanguageLabels)
+                LanguageLabels == other.LanguageLabels ||
+                LanguageLabels != null &&
+                LanguageLabels.SequenceEqual(other.LanguageLabels)
             ) &&
             (
-                this.SystemPresence == other.SystemPresence ||
-                this.SystemPresence != null &&
-                this.SystemPresence.Equals(other.SystemPresence)
+                SystemPresence == other.SystemPresence ||
+                SystemPresence != null &&
+                SystemPresence.Equals(other.SystemPresence)
             ) &&
             (
-                this.DivisionId == other.DivisionId ||
-                this.DivisionId != null &&
-                this.DivisionId.Equals(other.DivisionId)
+                DivisionId == other.DivisionId ||
+                DivisionId != null &&
+                DivisionId.Equals(other.DivisionId)
             ) &&
             (
-                this.Deactivated == other.Deactivated ||
-                this.Deactivated != null &&
-                this.Deactivated.Equals(other.Deactivated)
+                Deactivated == other.Deactivated ||
+                Deactivated != null &&
+                Deactivated.Equals(other.Deactivated)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -304,44 +304,44 @@ public partial class OrganizationPresenceDefinition : IEquatable<OrganizationPre
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.LanguageLabels != null)
+            if (LanguageLabels != null)
             {
-                hash = hash * 59 + this.LanguageLabels.GetHashCode();
+                hash = hash * 59 + LanguageLabels.GetHashCode();
             }
 
-            if (this.SystemPresence != null)
+            if (SystemPresence != null)
             {
-                hash = hash * 59 + this.SystemPresence.GetHashCode();
+                hash = hash * 59 + SystemPresence.GetHashCode();
             }
 
-            if (this.DivisionId != null)
+            if (DivisionId != null)
             {
-                hash = hash * 59 + this.DivisionId.GetHashCode();
+                hash = hash * 59 + DivisionId.GetHashCode();
             }
 
-            if (this.Deactivated != null)
+            if (Deactivated != null)
             {
-                hash = hash * 59 + this.Deactivated.GetHashCode();
+                hash = hash * 59 + Deactivated.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

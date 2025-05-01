@@ -77,7 +77,7 @@ public partial class KnowledgeDocumentBulkUpdateEntity : IEquatable<KnowledgeDoc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentBulkUpdateEntity);
+        return Equals(obj as KnowledgeDocumentBulkUpdateEntity);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class KnowledgeDocumentBulkUpdateEntity : IEquatable<KnowledgeDoc
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.CategoryId == other.CategoryId ||
-                this.CategoryId != null &&
-                this.CategoryId.Equals(other.CategoryId)
+                CategoryId == other.CategoryId ||
+                CategoryId != null &&
+                CategoryId.Equals(other.CategoryId)
             ) &&
             (
-                this.LabelIds == other.LabelIds ||
-                this.LabelIds != null &&
-                this.LabelIds.SequenceEqual(other.LabelIds)
+                LabelIds == other.LabelIds ||
+                LabelIds != null &&
+                LabelIds.SequenceEqual(other.LabelIds)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class KnowledgeDocumentBulkUpdateEntity : IEquatable<KnowledgeDoc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.CategoryId != null)
+            if (CategoryId != null)
             {
-                hash = hash * 59 + this.CategoryId.GetHashCode();
+                hash = hash * 59 + CategoryId.GetHashCode();
             }
 
-            if (this.LabelIds != null)
+            if (LabelIds != null)
             {
-                hash = hash * 59 + this.LabelIds.GetHashCode();
+                hash = hash * 59 + LabelIds.GetHashCode();
             }
 
             return hash;

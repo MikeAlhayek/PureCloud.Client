@@ -71,7 +71,7 @@ public partial class LeaderboardItem : IEquatable<LeaderboardItem>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LeaderboardItem);
+        return Equals(obj as LeaderboardItem);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class LeaderboardItem : IEquatable<LeaderboardItem>
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Rank == other.Rank ||
-                this.Rank != null &&
-                this.Rank.Equals(other.Rank)
+                Rank == other.Rank ||
+                Rank != null &&
+                Rank.Equals(other.Rank)
             ) &&
             (
-                this.Points == other.Points ||
-                this.Points != null &&
-                this.Points.Equals(other.Points)
+                Points == other.Points ||
+                Points != null &&
+                Points.Equals(other.Points)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class LeaderboardItem : IEquatable<LeaderboardItem>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Rank != null)
+            if (Rank != null)
             {
-                hash = hash * 59 + this.Rank.GetHashCode();
+                hash = hash * 59 + Rank.GetHashCode();
             }
 
-            if (this.Points != null)
+            if (Points != null)
             {
-                hash = hash * 59 + this.Points.GetHashCode();
+                hash = hash * 59 + Points.GetHashCode();
             }
 
             return hash;

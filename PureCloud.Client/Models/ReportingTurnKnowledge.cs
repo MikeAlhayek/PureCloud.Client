@@ -77,7 +77,7 @@ public partial class ReportingTurnKnowledge : IEquatable<ReportingTurnKnowledge>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingTurnKnowledge);
+        return Equals(obj as ReportingTurnKnowledge);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ReportingTurnKnowledge : IEquatable<ReportingTurnKnowledge>
 
         return true &&
             (
-                this.KnowledgeBaseId == other.KnowledgeBaseId ||
-                this.KnowledgeBaseId != null &&
-                this.KnowledgeBaseId.Equals(other.KnowledgeBaseId)
+                KnowledgeBaseId == other.KnowledgeBaseId ||
+                KnowledgeBaseId != null &&
+                KnowledgeBaseId.Equals(other.KnowledgeBaseId)
             ) &&
             (
-                this.Feedback == other.Feedback ||
-                this.Feedback != null &&
-                this.Feedback.Equals(other.Feedback)
+                Feedback == other.Feedback ||
+                Feedback != null &&
+                Feedback.Equals(other.Feedback)
             ) &&
             (
-                this.Search == other.Search ||
-                this.Search != null &&
-                this.Search.Equals(other.Search)
+                Search == other.Search ||
+                Search != null &&
+                Search.Equals(other.Search)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ReportingTurnKnowledge : IEquatable<ReportingTurnKnowledge>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.KnowledgeBaseId != null)
+            if (KnowledgeBaseId != null)
             {
-                hash = hash * 59 + this.KnowledgeBaseId.GetHashCode();
+                hash = hash * 59 + KnowledgeBaseId.GetHashCode();
             }
 
-            if (this.Feedback != null)
+            if (Feedback != null)
             {
-                hash = hash * 59 + this.Feedback.GetHashCode();
+                hash = hash * 59 + Feedback.GetHashCode();
             }
 
-            if (this.Search != null)
+            if (Search != null)
             {
-                hash = hash * 59 + this.Search.GetHashCode();
+                hash = hash * 59 + Search.GetHashCode();
             }
 
             return hash;

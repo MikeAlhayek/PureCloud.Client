@@ -58,7 +58,7 @@ public partial class AddConversationRequest : IEquatable<AddConversationRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AddConversationRequest);
+        return Equals(obj as AddConversationRequest);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class AddConversationRequest : IEquatable<AddConversationRequest>
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class AddConversationRequest : IEquatable<AddConversationRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
             return hash;

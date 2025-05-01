@@ -63,7 +63,7 @@ public partial class V2IntegrationPresenceEventOrganizationPresence : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2IntegrationPresenceEventOrganizationPresence);
+        return Equals(obj as V2IntegrationPresenceEventOrganizationPresence);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class V2IntegrationPresenceEventOrganizationPresence : IEquatable
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.SystemPresence == other.SystemPresence ||
-                this.SystemPresence != null &&
-                this.SystemPresence.Equals(other.SystemPresence)
+                SystemPresence == other.SystemPresence ||
+                SystemPresence != null &&
+                SystemPresence.Equals(other.SystemPresence)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class V2IntegrationPresenceEventOrganizationPresence : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.SystemPresence != null)
+            if (SystemPresence != null)
             {
-                hash = hash * 59 + this.SystemPresence.GetHashCode();
+                hash = hash * 59 + SystemPresence.GetHashCode();
             }
 
             return hash;

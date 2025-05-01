@@ -168,7 +168,7 @@ public partial class Coretype : IEquatable<Coretype>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Coretype);
+        return Equals(obj as Coretype);
     }
 
     /// <summary>
@@ -186,59 +186,59 @@ public partial class Coretype : IEquatable<Coretype>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.Schema == other.Schema ||
-                this.Schema != null &&
-                this.Schema.Equals(other.Schema)
+                Schema == other.Schema ||
+                Schema != null &&
+                Schema.Equals(other.Schema)
             ) &&
             (
-                this.Current == other.Current ||
-                this.Current != null &&
-                this.Current.Equals(other.Current)
+                Current == other.Current ||
+                Current != null &&
+                Current.Equals(other.Current)
             ) &&
             (
-                this.ValidationFields == other.ValidationFields ||
-                this.ValidationFields != null &&
-                this.ValidationFields.SequenceEqual(other.ValidationFields)
+                ValidationFields == other.ValidationFields ||
+                ValidationFields != null &&
+                ValidationFields.SequenceEqual(other.ValidationFields)
             ) &&
             (
-                this.ValidationLimits == other.ValidationLimits ||
-                this.ValidationLimits != null &&
-                this.ValidationLimits.Equals(other.ValidationLimits)
+                ValidationLimits == other.ValidationLimits ||
+                ValidationLimits != null &&
+                ValidationLimits.Equals(other.ValidationLimits)
             ) &&
             (
-                this.ItemValidationFields == other.ItemValidationFields ||
-                this.ItemValidationFields != null &&
-                this.ItemValidationFields.SequenceEqual(other.ItemValidationFields)
+                ItemValidationFields == other.ItemValidationFields ||
+                ItemValidationFields != null &&
+                ItemValidationFields.SequenceEqual(other.ItemValidationFields)
             ) &&
             (
-                this.ItemValidationLimits == other.ItemValidationLimits ||
-                this.ItemValidationLimits != null &&
-                this.ItemValidationLimits.Equals(other.ItemValidationLimits)
+                ItemValidationLimits == other.ItemValidationLimits ||
+                ItemValidationLimits != null &&
+                ItemValidationLimits.Equals(other.ItemValidationLimits)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -253,59 +253,59 @@ public partial class Coretype : IEquatable<Coretype>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.Schema != null)
+            if (Schema != null)
             {
-                hash = hash * 59 + this.Schema.GetHashCode();
+                hash = hash * 59 + Schema.GetHashCode();
             }
 
-            if (this.Current != null)
+            if (Current != null)
             {
-                hash = hash * 59 + this.Current.GetHashCode();
+                hash = hash * 59 + Current.GetHashCode();
             }
 
-            if (this.ValidationFields != null)
+            if (ValidationFields != null)
             {
-                hash = hash * 59 + this.ValidationFields.GetHashCode();
+                hash = hash * 59 + ValidationFields.GetHashCode();
             }
 
-            if (this.ValidationLimits != null)
+            if (ValidationLimits != null)
             {
-                hash = hash * 59 + this.ValidationLimits.GetHashCode();
+                hash = hash * 59 + ValidationLimits.GetHashCode();
             }
 
-            if (this.ItemValidationFields != null)
+            if (ItemValidationFields != null)
             {
-                hash = hash * 59 + this.ItemValidationFields.GetHashCode();
+                hash = hash * 59 + ItemValidationFields.GetHashCode();
             }
 
-            if (this.ItemValidationLimits != null)
+            if (ItemValidationLimits != null)
             {
-                hash = hash * 59 + this.ItemValidationLimits.GetHashCode();
+                hash = hash * 59 + ItemValidationLimits.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

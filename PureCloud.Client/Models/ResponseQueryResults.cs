@@ -59,7 +59,7 @@ public partial class ResponseQueryResults : IEquatable<ResponseQueryResults>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ResponseQueryResults);
+        return Equals(obj as ResponseQueryResults);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ResponseQueryResults : IEquatable<ResponseQueryResults>
 
         return true &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.Equals(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.Equals(other.Results)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ResponseQueryResults : IEquatable<ResponseQueryResults>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
             return hash;

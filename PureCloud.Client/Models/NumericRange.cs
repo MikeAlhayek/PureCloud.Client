@@ -89,7 +89,7 @@ public partial class NumericRange : IEquatable<NumericRange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NumericRange);
+        return Equals(obj as NumericRange);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class NumericRange : IEquatable<NumericRange>
 
         return true &&
             (
-                this.Gt == other.Gt ||
-                this.Gt != null &&
-                this.Gt.Equals(other.Gt)
+                Gt == other.Gt ||
+                Gt != null &&
+                Gt.Equals(other.Gt)
             ) &&
             (
-                this.Gte == other.Gte ||
-                this.Gte != null &&
-                this.Gte.Equals(other.Gte)
+                Gte == other.Gte ||
+                Gte != null &&
+                Gte.Equals(other.Gte)
             ) &&
             (
-                this.Lt == other.Lt ||
-                this.Lt != null &&
-                this.Lt.Equals(other.Lt)
+                Lt == other.Lt ||
+                Lt != null &&
+                Lt.Equals(other.Lt)
             ) &&
             (
-                this.Lte == other.Lte ||
-                this.Lte != null &&
-                this.Lte.Equals(other.Lte)
+                Lte == other.Lte ||
+                Lte != null &&
+                Lte.Equals(other.Lte)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class NumericRange : IEquatable<NumericRange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Gt != null)
+            if (Gt != null)
             {
-                hash = hash * 59 + this.Gt.GetHashCode();
+                hash = hash * 59 + Gt.GetHashCode();
             }
 
-            if (this.Gte != null)
+            if (Gte != null)
             {
-                hash = hash * 59 + this.Gte.GetHashCode();
+                hash = hash * 59 + Gte.GetHashCode();
             }
 
-            if (this.Lt != null)
+            if (Lt != null)
             {
-                hash = hash * 59 + this.Lt.GetHashCode();
+                hash = hash * 59 + Lt.GetHashCode();
             }
 
-            if (this.Lte != null)
+            if (Lte != null)
             {
-                hash = hash * 59 + this.Lte.GetHashCode();
+                hash = hash * 59 + Lte.GetHashCode();
             }
 
             return hash;

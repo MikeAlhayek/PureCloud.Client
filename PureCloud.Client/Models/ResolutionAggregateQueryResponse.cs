@@ -52,7 +52,7 @@ public partial class ResolutionAggregateQueryResponse : IEquatable<ResolutionAgg
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ResolutionAggregateQueryResponse);
+        return Equals(obj as ResolutionAggregateQueryResponse);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class ResolutionAggregateQueryResponse : IEquatable<ResolutionAgg
 
         return true &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class ResolutionAggregateQueryResponse : IEquatable<ResolutionAgg
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
             return hash;

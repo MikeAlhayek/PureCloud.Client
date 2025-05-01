@@ -77,7 +77,7 @@ public partial class UnansweredPhrase : IEquatable<UnansweredPhrase>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UnansweredPhrase);
+        return Equals(obj as UnansweredPhrase);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class UnansweredPhrase : IEquatable<UnansweredPhrase>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.UnlinkedPhraseHitCount == other.UnlinkedPhraseHitCount ||
-                this.UnlinkedPhraseHitCount != null &&
-                this.UnlinkedPhraseHitCount.Equals(other.UnlinkedPhraseHitCount)
+                UnlinkedPhraseHitCount == other.UnlinkedPhraseHitCount ||
+                UnlinkedPhraseHitCount != null &&
+                UnlinkedPhraseHitCount.Equals(other.UnlinkedPhraseHitCount)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class UnansweredPhrase : IEquatable<UnansweredPhrase>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.UnlinkedPhraseHitCount != null)
+            if (UnlinkedPhraseHitCount != null)
             {
-                hash = hash * 59 + this.UnlinkedPhraseHitCount.GetHashCode();
+                hash = hash * 59 + UnlinkedPhraseHitCount.GetHashCode();
             }
 
             return hash;

@@ -59,7 +59,7 @@ public partial class CreateUploadSourceUrlJobRequest : IEquatable<CreateUploadSo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateUploadSourceUrlJobRequest);
+        return Equals(obj as CreateUploadSourceUrlJobRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class CreateUploadSourceUrlJobRequest : IEquatable<CreateUploadSo
 
         return true &&
             (
-                this.UploadUrl == other.UploadUrl ||
-                this.UploadUrl != null &&
-                this.UploadUrl.Equals(other.UploadUrl)
+                UploadUrl == other.UploadUrl ||
+                UploadUrl != null &&
+                UploadUrl.Equals(other.UploadUrl)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class CreateUploadSourceUrlJobRequest : IEquatable<CreateUploadSo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadUrl != null)
+            if (UploadUrl != null)
             {
-                hash = hash * 59 + this.UploadUrl.GetHashCode();
+                hash = hash * 59 + UploadUrl.GetHashCode();
             }
 
             return hash;

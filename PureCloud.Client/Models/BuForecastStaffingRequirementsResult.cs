@@ -94,7 +94,7 @@ public partial class BuForecastStaffingRequirementsResult : IEquatable<BuForecas
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuForecastStaffingRequirementsResult);
+        return Equals(obj as BuForecastStaffingRequirementsResult);
     }
 
     /// <summary>
@@ -112,24 +112,24 @@ public partial class BuForecastStaffingRequirementsResult : IEquatable<BuForecas
 
         return true &&
             (
-                this.WeekNumber == other.WeekNumber ||
-                this.WeekNumber != null &&
-                this.WeekNumber.Equals(other.WeekNumber)
+                WeekNumber == other.WeekNumber ||
+                WeekNumber != null &&
+                WeekNumber.Equals(other.WeekNumber)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.DownloadUrlExpirationDate == other.DownloadUrlExpirationDate ||
-                this.DownloadUrlExpirationDate != null &&
-                this.DownloadUrlExpirationDate.Equals(other.DownloadUrlExpirationDate)
+                DownloadUrlExpirationDate == other.DownloadUrlExpirationDate ||
+                DownloadUrlExpirationDate != null &&
+                DownloadUrlExpirationDate.Equals(other.DownloadUrlExpirationDate)
             ) &&
             (
-                this.PlanningGroupStaffingRequirements == other.PlanningGroupStaffingRequirements ||
-                this.PlanningGroupStaffingRequirements != null &&
-                this.PlanningGroupStaffingRequirements.SequenceEqual(other.PlanningGroupStaffingRequirements)
+                PlanningGroupStaffingRequirements == other.PlanningGroupStaffingRequirements ||
+                PlanningGroupStaffingRequirements != null &&
+                PlanningGroupStaffingRequirements.SequenceEqual(other.PlanningGroupStaffingRequirements)
             );
     }
 
@@ -144,24 +144,24 @@ public partial class BuForecastStaffingRequirementsResult : IEquatable<BuForecas
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WeekNumber != null)
+            if (WeekNumber != null)
             {
-                hash = hash * 59 + this.WeekNumber.GetHashCode();
+                hash = hash * 59 + WeekNumber.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.DownloadUrlExpirationDate != null)
+            if (DownloadUrlExpirationDate != null)
             {
-                hash = hash * 59 + this.DownloadUrlExpirationDate.GetHashCode();
+                hash = hash * 59 + DownloadUrlExpirationDate.GetHashCode();
             }
 
-            if (this.PlanningGroupStaffingRequirements != null)
+            if (PlanningGroupStaffingRequirements != null)
             {
-                hash = hash * 59 + this.PlanningGroupStaffingRequirements.GetHashCode();
+                hash = hash * 59 + PlanningGroupStaffingRequirements.GetHashCode();
             }
 
             return hash;

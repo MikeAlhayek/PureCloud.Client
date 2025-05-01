@@ -83,7 +83,7 @@ public partial class TrustMemberCreate : IEquatable<TrustMemberCreate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrustMemberCreate);
+        return Equals(obj as TrustMemberCreate);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class TrustMemberCreate : IEquatable<TrustMemberCreate>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.RoleIds == other.RoleIds ||
-                this.RoleIds != null &&
-                this.RoleIds.SequenceEqual(other.RoleIds)
+                RoleIds == other.RoleIds ||
+                RoleIds != null &&
+                RoleIds.SequenceEqual(other.RoleIds)
             ) &&
             (
-                this.RoleDivisions == other.RoleDivisions ||
-                this.RoleDivisions != null &&
-                this.RoleDivisions.Equals(other.RoleDivisions)
+                RoleDivisions == other.RoleDivisions ||
+                RoleDivisions != null &&
+                RoleDivisions.Equals(other.RoleDivisions)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class TrustMemberCreate : IEquatable<TrustMemberCreate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.RoleIds != null)
+            if (RoleIds != null)
             {
-                hash = hash * 59 + this.RoleIds.GetHashCode();
+                hash = hash * 59 + RoleIds.GetHashCode();
             }
 
-            if (this.RoleDivisions != null)
+            if (RoleDivisions != null)
             {
-                hash = hash * 59 + this.RoleDivisions.GetHashCode();
+                hash = hash * 59 + RoleDivisions.GetHashCode();
             }
 
             return hash;

@@ -197,7 +197,7 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationFormResponse);
+        return Equals(obj as EvaluationFormResponse);
     }
 
     /// <summary>
@@ -215,59 +215,59 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             ) &&
             (
-                this.Published == other.Published ||
-                this.Published != null &&
-                this.Published.Equals(other.Published)
+                Published == other.Published ||
+                Published != null &&
+                Published.Equals(other.Published)
             ) &&
             (
-                this.ContextId == other.ContextId ||
-                this.ContextId != null &&
-                this.ContextId.Equals(other.ContextId)
+                ContextId == other.ContextId ||
+                ContextId != null &&
+                ContextId.Equals(other.ContextId)
             ) &&
             (
-                this.QuestionGroups == other.QuestionGroups ||
-                this.QuestionGroups != null &&
-                this.QuestionGroups.SequenceEqual(other.QuestionGroups)
+                QuestionGroups == other.QuestionGroups ||
+                QuestionGroups != null &&
+                QuestionGroups.SequenceEqual(other.QuestionGroups)
             ) &&
             (
-                this.WeightMode == other.WeightMode ||
-                this.WeightMode != null &&
-                this.WeightMode.Equals(other.WeightMode)
+                WeightMode == other.WeightMode ||
+                WeightMode != null &&
+                WeightMode.Equals(other.WeightMode)
             ) &&
             (
-                this.EvaluationSettings == other.EvaluationSettings ||
-                this.EvaluationSettings != null &&
-                this.EvaluationSettings.Equals(other.EvaluationSettings)
+                EvaluationSettings == other.EvaluationSettings ||
+                EvaluationSettings != null &&
+                EvaluationSettings.Equals(other.EvaluationSettings)
             ) &&
             (
-                this.PublishedVersions == other.PublishedVersions ||
-                this.PublishedVersions != null &&
-                this.PublishedVersions.Equals(other.PublishedVersions)
+                PublishedVersions == other.PublishedVersions ||
+                PublishedVersions != null &&
+                PublishedVersions.Equals(other.PublishedVersions)
             ) &&
             (
-                this.AiScoring == other.AiScoring ||
-                this.AiScoring != null &&
-                this.AiScoring.Equals(other.AiScoring)
+                AiScoring == other.AiScoring ||
+                AiScoring != null &&
+                AiScoring.Equals(other.AiScoring)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -282,59 +282,59 @@ public partial class EvaluationFormResponse : IEquatable<EvaluationFormResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
-            if (this.Published != null)
+            if (Published != null)
             {
-                hash = hash * 59 + this.Published.GetHashCode();
+                hash = hash * 59 + Published.GetHashCode();
             }
 
-            if (this.ContextId != null)
+            if (ContextId != null)
             {
-                hash = hash * 59 + this.ContextId.GetHashCode();
+                hash = hash * 59 + ContextId.GetHashCode();
             }
 
-            if (this.QuestionGroups != null)
+            if (QuestionGroups != null)
             {
-                hash = hash * 59 + this.QuestionGroups.GetHashCode();
+                hash = hash * 59 + QuestionGroups.GetHashCode();
             }
 
-            if (this.WeightMode != null)
+            if (WeightMode != null)
             {
-                hash = hash * 59 + this.WeightMode.GetHashCode();
+                hash = hash * 59 + WeightMode.GetHashCode();
             }
 
-            if (this.EvaluationSettings != null)
+            if (EvaluationSettings != null)
             {
-                hash = hash * 59 + this.EvaluationSettings.GetHashCode();
+                hash = hash * 59 + EvaluationSettings.GetHashCode();
             }
 
-            if (this.PublishedVersions != null)
+            if (PublishedVersions != null)
             {
-                hash = hash * 59 + this.PublishedVersions.GetHashCode();
+                hash = hash * 59 + PublishedVersions.GetHashCode();
             }
 
-            if (this.AiScoring != null)
+            if (AiScoring != null)
             {
-                hash = hash * 59 + this.AiScoring.GetHashCode();
+                hash = hash * 59 + AiScoring.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

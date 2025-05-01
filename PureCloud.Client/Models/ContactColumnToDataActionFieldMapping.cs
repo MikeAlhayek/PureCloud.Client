@@ -71,7 +71,7 @@ public partial class ContactColumnToDataActionFieldMapping : IEquatable<ContactC
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactColumnToDataActionFieldMapping);
+        return Equals(obj as ContactColumnToDataActionFieldMapping);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ContactColumnToDataActionFieldMapping : IEquatable<ContactC
 
         return true &&
             (
-                this.ContactColumnName == other.ContactColumnName ||
-                this.ContactColumnName != null &&
-                this.ContactColumnName.Equals(other.ContactColumnName)
+                ContactColumnName == other.ContactColumnName ||
+                ContactColumnName != null &&
+                ContactColumnName.Equals(other.ContactColumnName)
             ) &&
             (
-                this.DataActionField == other.DataActionField ||
-                this.DataActionField != null &&
-                this.DataActionField.Equals(other.DataActionField)
+                DataActionField == other.DataActionField ||
+                DataActionField != null &&
+                DataActionField.Equals(other.DataActionField)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ContactColumnToDataActionFieldMapping : IEquatable<ContactC
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactColumnName != null)
+            if (ContactColumnName != null)
             {
-                hash = hash * 59 + this.ContactColumnName.GetHashCode();
+                hash = hash * 59 + ContactColumnName.GetHashCode();
             }
 
-            if (this.DataActionField != null)
+            if (DataActionField != null)
             {
-                hash = hash * 59 + this.DataActionField.GetHashCode();
+                hash = hash * 59 + DataActionField.GetHashCode();
             }
 
             return hash;

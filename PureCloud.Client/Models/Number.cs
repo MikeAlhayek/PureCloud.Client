@@ -63,7 +63,7 @@ public partial class Number : IEquatable<Number>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Number);
+        return Equals(obj as Number);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class Number : IEquatable<Number>
 
         return true &&
             (
-                this.Start == other.Start ||
-                this.Start != null &&
-                this.Start.Equals(other.Start)
+                Start == other.Start ||
+                Start != null &&
+                Start.Equals(other.Start)
             ) &&
             (
-                this.End == other.End ||
-                this.End != null &&
-                this.End.Equals(other.End)
+                End == other.End ||
+                End != null &&
+                End.Equals(other.End)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class Number : IEquatable<Number>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Start != null)
+            if (Start != null)
             {
-                hash = hash * 59 + this.Start.GetHashCode();
+                hash = hash * 59 + Start.GetHashCode();
             }
 
-            if (this.End != null)
+            if (End != null)
             {
-                hash = hash * 59 + this.End.GetHashCode();
+                hash = hash * 59 + End.GetHashCode();
             }
 
             return hash;

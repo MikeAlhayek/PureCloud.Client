@@ -88,7 +88,7 @@ public partial class BuAgentScheduleHistoryResponse : IEquatable<BuAgentSchedule
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuAgentScheduleHistoryResponse);
+        return Equals(obj as BuAgentScheduleHistoryResponse);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class BuAgentScheduleHistoryResponse : IEquatable<BuAgentSchedule
 
         return true &&
             (
-                this.PriorPublishedSchedules == other.PriorPublishedSchedules ||
-                this.PriorPublishedSchedules != null &&
-                this.PriorPublishedSchedules.SequenceEqual(other.PriorPublishedSchedules)
+                PriorPublishedSchedules == other.PriorPublishedSchedules ||
+                PriorPublishedSchedules != null &&
+                PriorPublishedSchedules.SequenceEqual(other.PriorPublishedSchedules)
             ) &&
             (
-                this.BasePublishedSchedule == other.BasePublishedSchedule ||
-                this.BasePublishedSchedule != null &&
-                this.BasePublishedSchedule.Equals(other.BasePublishedSchedule)
+                BasePublishedSchedule == other.BasePublishedSchedule ||
+                BasePublishedSchedule != null &&
+                BasePublishedSchedule.Equals(other.BasePublishedSchedule)
             ) &&
             (
-                this.DroppedChanges == other.DroppedChanges ||
-                this.DroppedChanges != null &&
-                this.DroppedChanges.SequenceEqual(other.DroppedChanges)
+                DroppedChanges == other.DroppedChanges ||
+                DroppedChanges != null &&
+                DroppedChanges.SequenceEqual(other.DroppedChanges)
             ) &&
             (
-                this.Changes == other.Changes ||
-                this.Changes != null &&
-                this.Changes.SequenceEqual(other.Changes)
+                Changes == other.Changes ||
+                Changes != null &&
+                Changes.SequenceEqual(other.Changes)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class BuAgentScheduleHistoryResponse : IEquatable<BuAgentSchedule
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PriorPublishedSchedules != null)
+            if (PriorPublishedSchedules != null)
             {
-                hash = hash * 59 + this.PriorPublishedSchedules.GetHashCode();
+                hash = hash * 59 + PriorPublishedSchedules.GetHashCode();
             }
 
-            if (this.BasePublishedSchedule != null)
+            if (BasePublishedSchedule != null)
             {
-                hash = hash * 59 + this.BasePublishedSchedule.GetHashCode();
+                hash = hash * 59 + BasePublishedSchedule.GetHashCode();
             }
 
-            if (this.DroppedChanges != null)
+            if (DroppedChanges != null)
             {
-                hash = hash * 59 + this.DroppedChanges.GetHashCode();
+                hash = hash * 59 + DroppedChanges.GetHashCode();
             }
 
-            if (this.Changes != null)
+            if (Changes != null)
             {
-                hash = hash * 59 + this.Changes.GetHashCode();
+                hash = hash * 59 + Changes.GetHashCode();
             }
 
             return hash;

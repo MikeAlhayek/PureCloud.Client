@@ -61,7 +61,7 @@ public partial class NluDetectionOutput : IEquatable<NluDetectionOutput>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluDetectionOutput);
+        return Equals(obj as NluDetectionOutput);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class NluDetectionOutput : IEquatable<NluDetectionOutput>
 
         return true &&
             (
-                this.Intents == other.Intents ||
-                this.Intents != null &&
-                this.Intents.SequenceEqual(other.Intents)
+                Intents == other.Intents ||
+                Intents != null &&
+                Intents.SequenceEqual(other.Intents)
             ) &&
             (
-                this.DialogActs == other.DialogActs ||
-                this.DialogActs != null &&
-                this.DialogActs.SequenceEqual(other.DialogActs)
+                DialogActs == other.DialogActs ||
+                DialogActs != null &&
+                DialogActs.SequenceEqual(other.DialogActs)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class NluDetectionOutput : IEquatable<NluDetectionOutput>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Intents != null)
+            if (Intents != null)
             {
-                hash = hash * 59 + this.Intents.GetHashCode();
+                hash = hash * 59 + Intents.GetHashCode();
             }
 
-            if (this.DialogActs != null)
+            if (DialogActs != null)
             {
-                hash = hash * 59 + this.DialogActs.GetHashCode();
+                hash = hash * 59 + DialogActs.GetHashCode();
             }
 
             return hash;

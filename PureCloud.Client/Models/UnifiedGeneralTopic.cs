@@ -112,7 +112,7 @@ public partial class UnifiedGeneralTopic : IEquatable<UnifiedGeneralTopic>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UnifiedGeneralTopic);
+        return Equals(obj as UnifiedGeneralTopic);
     }
 
     /// <summary>
@@ -130,14 +130,14 @@ public partial class UnifiedGeneralTopic : IEquatable<UnifiedGeneralTopic>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             );
     }
 
@@ -152,14 +152,14 @@ public partial class UnifiedGeneralTopic : IEquatable<UnifiedGeneralTopic>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
             return hash;

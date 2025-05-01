@@ -77,7 +77,7 @@ public partial class ReportingTurnKnowledgeSearch : IEquatable<ReportingTurnKnow
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingTurnKnowledgeSearch);
+        return Equals(obj as ReportingTurnKnowledgeSearch);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ReportingTurnKnowledgeSearch : IEquatable<ReportingTurnKnow
 
         return true &&
             (
-                this.SearchId == other.SearchId ||
-                this.SearchId != null &&
-                this.SearchId.Equals(other.SearchId)
+                SearchId == other.SearchId ||
+                SearchId != null &&
+                SearchId.Equals(other.SearchId)
             ) &&
             (
-                this.Documents == other.Documents ||
-                this.Documents != null &&
-                this.Documents.SequenceEqual(other.Documents)
+                Documents == other.Documents ||
+                Documents != null &&
+                Documents.SequenceEqual(other.Documents)
             ) &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.Equals(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.Equals(other.Query)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ReportingTurnKnowledgeSearch : IEquatable<ReportingTurnKnow
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SearchId != null)
+            if (SearchId != null)
             {
-                hash = hash * 59 + this.SearchId.GetHashCode();
+                hash = hash * 59 + SearchId.GetHashCode();
             }
 
-            if (this.Documents != null)
+            if (Documents != null)
             {
-                hash = hash * 59 + this.Documents.GetHashCode();
+                hash = hash * 59 + Documents.GetHashCode();
             }
 
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
             return hash;

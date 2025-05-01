@@ -183,7 +183,7 @@ public partial class ShiftTradeActivityRule : IEquatable<ShiftTradeActivityRule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShiftTradeActivityRule);
+        return Equals(obj as ShiftTradeActivityRule);
     }
 
     /// <summary>
@@ -201,19 +201,19 @@ public partial class ShiftTradeActivityRule : IEquatable<ShiftTradeActivityRule>
 
         return true &&
             (
-                this.ActivityCategory == other.ActivityCategory ||
-                this.ActivityCategory != null &&
-                this.ActivityCategory.Equals(other.ActivityCategory)
+                ActivityCategory == other.ActivityCategory ||
+                ActivityCategory != null &&
+                ActivityCategory.Equals(other.ActivityCategory)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.ActivityCodeIdReplacement == other.ActivityCodeIdReplacement ||
-                this.ActivityCodeIdReplacement != null &&
-                this.ActivityCodeIdReplacement.Equals(other.ActivityCodeIdReplacement)
+                ActivityCodeIdReplacement == other.ActivityCodeIdReplacement ||
+                ActivityCodeIdReplacement != null &&
+                ActivityCodeIdReplacement.Equals(other.ActivityCodeIdReplacement)
             );
     }
 
@@ -228,19 +228,19 @@ public partial class ShiftTradeActivityRule : IEquatable<ShiftTradeActivityRule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityCategory != null)
+            if (ActivityCategory != null)
             {
-                hash = hash * 59 + this.ActivityCategory.GetHashCode();
+                hash = hash * 59 + ActivityCategory.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.ActivityCodeIdReplacement != null)
+            if (ActivityCodeIdReplacement != null)
             {
-                hash = hash * 59 + this.ActivityCodeIdReplacement.GetHashCode();
+                hash = hash * 59 + ActivityCodeIdReplacement.GetHashCode();
             }
 
             return hash;

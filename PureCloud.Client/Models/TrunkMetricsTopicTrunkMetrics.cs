@@ -85,7 +85,7 @@ public partial class TrunkMetricsTopicTrunkMetrics : IEquatable<TrunkMetricsTopi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkMetricsTopicTrunkMetrics);
+        return Equals(obj as TrunkMetricsTopicTrunkMetrics);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class TrunkMetricsTopicTrunkMetrics : IEquatable<TrunkMetricsTopi
 
         return true &&
             (
-                this.Calls == other.Calls ||
-                this.Calls != null &&
-                this.Calls.Equals(other.Calls)
+                Calls == other.Calls ||
+                Calls != null &&
+                Calls.Equals(other.Calls)
             ) &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.Qos == other.Qos ||
-                this.Qos != null &&
-                this.Qos.Equals(other.Qos)
+                Qos == other.Qos ||
+                Qos != null &&
+                Qos.Equals(other.Qos)
             ) &&
             (
-                this.Trunk == other.Trunk ||
-                this.Trunk != null &&
-                this.Trunk.Equals(other.Trunk)
+                Trunk == other.Trunk ||
+                Trunk != null &&
+                Trunk.Equals(other.Trunk)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class TrunkMetricsTopicTrunkMetrics : IEquatable<TrunkMetricsTopi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Calls != null)
+            if (Calls != null)
             {
-                hash = hash * 59 + this.Calls.GetHashCode();
+                hash = hash * 59 + Calls.GetHashCode();
             }
 
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.Qos != null)
+            if (Qos != null)
             {
-                hash = hash * 59 + this.Qos.GetHashCode();
+                hash = hash * 59 + Qos.GetHashCode();
             }
 
-            if (this.Trunk != null)
+            if (Trunk != null)
             {
-                hash = hash * 59 + this.Trunk.GetHashCode();
+                hash = hash * 59 + Trunk.GetHashCode();
             }
 
             return hash;

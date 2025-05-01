@@ -65,7 +65,7 @@ public partial class InternalMessageDetails : IEquatable<InternalMessageDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InternalMessageDetails);
+        return Equals(obj as InternalMessageDetails);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class InternalMessageDetails : IEquatable<InternalMessageDetails>
 
         return true &&
             (
-                this.MessageId == other.MessageId ||
-                this.MessageId != null &&
-                this.MessageId.Equals(other.MessageId)
+                MessageId == other.MessageId ||
+                MessageId != null &&
+                MessageId.Equals(other.MessageId)
             ) &&
             (
-                this.MessageTime == other.MessageTime ||
-                this.MessageTime != null &&
-                this.MessageTime.Equals(other.MessageTime)
+                MessageTime == other.MessageTime ||
+                MessageTime != null &&
+                MessageTime.Equals(other.MessageTime)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class InternalMessageDetails : IEquatable<InternalMessageDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MessageId != null)
+            if (MessageId != null)
             {
-                hash = hash * 59 + this.MessageId.GetHashCode();
+                hash = hash * 59 + MessageId.GetHashCode();
             }
 
-            if (this.MessageTime != null)
+            if (MessageTime != null)
             {
-                hash = hash * 59 + this.MessageTime.GetHashCode();
+                hash = hash * 59 + MessageTime.GetHashCode();
             }
 
             return hash;

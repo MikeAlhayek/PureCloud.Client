@@ -59,7 +59,7 @@ public partial class LibraryBatchRequest : IEquatable<LibraryBatchRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LibraryBatchRequest);
+        return Equals(obj as LibraryBatchRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class LibraryBatchRequest : IEquatable<LibraryBatchRequest>
 
         return true &&
             (
-                this.LibraryIds == other.LibraryIds ||
-                this.LibraryIds != null &&
-                this.LibraryIds.SequenceEqual(other.LibraryIds)
+                LibraryIds == other.LibraryIds ||
+                LibraryIds != null &&
+                LibraryIds.SequenceEqual(other.LibraryIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class LibraryBatchRequest : IEquatable<LibraryBatchRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LibraryIds != null)
+            if (LibraryIds != null)
             {
-                hash = hash * 59 + this.LibraryIds.GetHashCode();
+                hash = hash * 59 + LibraryIds.GetHashCode();
             }
 
             return hash;

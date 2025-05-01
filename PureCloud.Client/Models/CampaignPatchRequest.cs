@@ -100,7 +100,7 @@ public partial class CampaignPatchRequest : IEquatable<CampaignPatchRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignPatchRequest);
+        return Equals(obj as CampaignPatchRequest);
     }
 
     /// <summary>
@@ -118,29 +118,29 @@ public partial class CampaignPatchRequest : IEquatable<CampaignPatchRequest>
 
         return true &&
             (
-                this.OutboundLineCount == other.OutboundLineCount ||
-                this.OutboundLineCount != null &&
-                this.OutboundLineCount.Equals(other.OutboundLineCount)
+                OutboundLineCount == other.OutboundLineCount ||
+                OutboundLineCount != null &&
+                OutboundLineCount.Equals(other.OutboundLineCount)
             ) &&
             (
-                this.AbandonRate == other.AbandonRate ||
-                this.AbandonRate != null &&
-                this.AbandonRate.Equals(other.AbandonRate)
+                AbandonRate == other.AbandonRate ||
+                AbandonRate != null &&
+                AbandonRate.Equals(other.AbandonRate)
             ) &&
             (
-                this.MaxCallsPerAgent == other.MaxCallsPerAgent ||
-                this.MaxCallsPerAgent != null &&
-                this.MaxCallsPerAgent.Equals(other.MaxCallsPerAgent)
+                MaxCallsPerAgent == other.MaxCallsPerAgent ||
+                MaxCallsPerAgent != null &&
+                MaxCallsPerAgent.Equals(other.MaxCallsPerAgent)
             ) &&
             (
-                this.DynamicLineBalancingSettings == other.DynamicLineBalancingSettings ||
-                this.DynamicLineBalancingSettings != null &&
-                this.DynamicLineBalancingSettings.Equals(other.DynamicLineBalancingSettings)
+                DynamicLineBalancingSettings == other.DynamicLineBalancingSettings ||
+                DynamicLineBalancingSettings != null &&
+                DynamicLineBalancingSettings.Equals(other.DynamicLineBalancingSettings)
             ) &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             );
     }
 
@@ -155,29 +155,29 @@ public partial class CampaignPatchRequest : IEquatable<CampaignPatchRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutboundLineCount != null)
+            if (OutboundLineCount != null)
             {
-                hash = hash * 59 + this.OutboundLineCount.GetHashCode();
+                hash = hash * 59 + OutboundLineCount.GetHashCode();
             }
 
-            if (this.AbandonRate != null)
+            if (AbandonRate != null)
             {
-                hash = hash * 59 + this.AbandonRate.GetHashCode();
+                hash = hash * 59 + AbandonRate.GetHashCode();
             }
 
-            if (this.MaxCallsPerAgent != null)
+            if (MaxCallsPerAgent != null)
             {
-                hash = hash * 59 + this.MaxCallsPerAgent.GetHashCode();
+                hash = hash * 59 + MaxCallsPerAgent.GetHashCode();
             }
 
-            if (this.DynamicLineBalancingSettings != null)
+            if (DynamicLineBalancingSettings != null)
             {
-                hash = hash * 59 + this.DynamicLineBalancingSettings.GetHashCode();
+                hash = hash * 59 + DynamicLineBalancingSettings.GetHashCode();
             }
 
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
             return hash;

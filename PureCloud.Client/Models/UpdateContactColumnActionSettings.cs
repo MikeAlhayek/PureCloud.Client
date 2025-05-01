@@ -109,7 +109,7 @@ public partial class UpdateContactColumnActionSettings : IEquatable<UpdateContac
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateContactColumnActionSettings);
+        return Equals(obj as UpdateContactColumnActionSettings);
     }
 
     /// <summary>
@@ -127,14 +127,14 @@ public partial class UpdateContactColumnActionSettings : IEquatable<UpdateContac
 
         return true &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.SequenceEqual(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.SequenceEqual(other.Properties)
             ) &&
             (
-                this.UpdateOption == other.UpdateOption ||
-                this.UpdateOption != null &&
-                this.UpdateOption.Equals(other.UpdateOption)
+                UpdateOption == other.UpdateOption ||
+                UpdateOption != null &&
+                UpdateOption.Equals(other.UpdateOption)
             );
     }
 
@@ -149,14 +149,14 @@ public partial class UpdateContactColumnActionSettings : IEquatable<UpdateContac
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
-            if (this.UpdateOption != null)
+            if (UpdateOption != null)
             {
-                hash = hash * 59 + this.UpdateOption.GetHashCode();
+                hash = hash * 59 + UpdateOption.GetHashCode();
             }
 
             return hash;

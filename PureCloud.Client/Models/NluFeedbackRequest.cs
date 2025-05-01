@@ -95,7 +95,7 @@ public partial class NluFeedbackRequest : IEquatable<NluFeedbackRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluFeedbackRequest);
+        return Equals(obj as NluFeedbackRequest);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class NluFeedbackRequest : IEquatable<NluFeedbackRequest>
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Intents == other.Intents ||
-                this.Intents != null &&
-                this.Intents.SequenceEqual(other.Intents)
+                Intents == other.Intents ||
+                Intents != null &&
+                Intents.SequenceEqual(other.Intents)
             ) &&
             (
-                this.VersionId == other.VersionId ||
-                this.VersionId != null &&
-                this.VersionId.Equals(other.VersionId)
+                VersionId == other.VersionId ||
+                VersionId != null &&
+                VersionId.Equals(other.VersionId)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class NluFeedbackRequest : IEquatable<NluFeedbackRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Intents != null)
+            if (Intents != null)
             {
-                hash = hash * 59 + this.Intents.GetHashCode();
+                hash = hash * 59 + Intents.GetHashCode();
             }
 
-            if (this.VersionId != null)
+            if (VersionId != null)
             {
-                hash = hash * 59 + this.VersionId.GetHashCode();
+                hash = hash * 59 + VersionId.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class CredentialSpecification : IEquatable<CredentialSpecificatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CredentialSpecification);
+        return Equals(obj as CredentialSpecification);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class CredentialSpecification : IEquatable<CredentialSpecificatio
 
         return true &&
             (
-                this.Required == other.Required ||
-                this.Required != null &&
-                this.Required.Equals(other.Required)
+                Required == other.Required ||
+                Required != null &&
+                Required.Equals(other.Required)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.CredentialTypes == other.CredentialTypes ||
-                this.CredentialTypes != null &&
-                this.CredentialTypes.SequenceEqual(other.CredentialTypes)
+                CredentialTypes == other.CredentialTypes ||
+                CredentialTypes != null &&
+                CredentialTypes.SequenceEqual(other.CredentialTypes)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class CredentialSpecification : IEquatable<CredentialSpecificatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Required != null)
+            if (Required != null)
             {
-                hash = hash * 59 + this.Required.GetHashCode();
+                hash = hash * 59 + Required.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.CredentialTypes != null)
+            if (CredentialTypes != null)
             {
-                hash = hash * 59 + this.CredentialTypes.GetHashCode();
+                hash = hash * 59 + CredentialTypes.GetHashCode();
             }
 
             return hash;

@@ -300,7 +300,7 @@ public partial class Organization : IEquatable<Organization>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Organization);
+        return Equals(obj as Organization);
     }
 
     /// <summary>
@@ -318,79 +318,79 @@ public partial class Organization : IEquatable<Organization>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DefaultLanguage == other.DefaultLanguage ||
-                this.DefaultLanguage != null &&
-                this.DefaultLanguage.Equals(other.DefaultLanguage)
+                DefaultLanguage == other.DefaultLanguage ||
+                DefaultLanguage != null &&
+                DefaultLanguage.Equals(other.DefaultLanguage)
             ) &&
             (
-                this.DefaultCountryCode == other.DefaultCountryCode ||
-                this.DefaultCountryCode != null &&
-                this.DefaultCountryCode.Equals(other.DefaultCountryCode)
+                DefaultCountryCode == other.DefaultCountryCode ||
+                DefaultCountryCode != null &&
+                DefaultCountryCode.Equals(other.DefaultCountryCode)
             ) &&
             (
-                this.ThirdPartyOrgName == other.ThirdPartyOrgName ||
-                this.ThirdPartyOrgName != null &&
-                this.ThirdPartyOrgName.Equals(other.ThirdPartyOrgName)
+                ThirdPartyOrgName == other.ThirdPartyOrgName ||
+                ThirdPartyOrgName != null &&
+                ThirdPartyOrgName.Equals(other.ThirdPartyOrgName)
             ) &&
             (
-                this.ThirdPartyURI == other.ThirdPartyURI ||
-                this.ThirdPartyURI != null &&
-                this.ThirdPartyURI.Equals(other.ThirdPartyURI)
+                ThirdPartyURI == other.ThirdPartyURI ||
+                ThirdPartyURI != null &&
+                ThirdPartyURI.Equals(other.ThirdPartyURI)
             ) &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.DefaultSiteId == other.DefaultSiteId ||
-                this.DefaultSiteId != null &&
-                this.DefaultSiteId.Equals(other.DefaultSiteId)
+                DefaultSiteId == other.DefaultSiteId ||
+                DefaultSiteId != null &&
+                DefaultSiteId.Equals(other.DefaultSiteId)
             ) &&
             (
-                this.SupportURI == other.SupportURI ||
-                this.SupportURI != null &&
-                this.SupportURI.Equals(other.SupportURI)
+                SupportURI == other.SupportURI ||
+                SupportURI != null &&
+                SupportURI.Equals(other.SupportURI)
             ) &&
             (
-                this.VoicemailEnabled == other.VoicemailEnabled ||
-                this.VoicemailEnabled != null &&
-                this.VoicemailEnabled.Equals(other.VoicemailEnabled)
+                VoicemailEnabled == other.VoicemailEnabled ||
+                VoicemailEnabled != null &&
+                VoicemailEnabled.Equals(other.VoicemailEnabled)
             ) &&
             (
-                this.ProductPlatform == other.ProductPlatform ||
-                this.ProductPlatform != null &&
-                this.ProductPlatform.Equals(other.ProductPlatform)
+                ProductPlatform == other.ProductPlatform ||
+                ProductPlatform != null &&
+                ProductPlatform.Equals(other.ProductPlatform)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.Features == other.Features ||
-                this.Features != null &&
-                this.Features.SequenceEqual(other.Features)
+                Features == other.Features ||
+                Features != null &&
+                Features.SequenceEqual(other.Features)
             );
     }
 
@@ -405,79 +405,79 @@ public partial class Organization : IEquatable<Organization>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DefaultLanguage != null)
+            if (DefaultLanguage != null)
             {
-                hash = hash * 59 + this.DefaultLanguage.GetHashCode();
+                hash = hash * 59 + DefaultLanguage.GetHashCode();
             }
 
-            if (this.DefaultCountryCode != null)
+            if (DefaultCountryCode != null)
             {
-                hash = hash * 59 + this.DefaultCountryCode.GetHashCode();
+                hash = hash * 59 + DefaultCountryCode.GetHashCode();
             }
 
-            if (this.ThirdPartyOrgName != null)
+            if (ThirdPartyOrgName != null)
             {
-                hash = hash * 59 + this.ThirdPartyOrgName.GetHashCode();
+                hash = hash * 59 + ThirdPartyOrgName.GetHashCode();
             }
 
-            if (this.ThirdPartyURI != null)
+            if (ThirdPartyURI != null)
             {
-                hash = hash * 59 + this.ThirdPartyURI.GetHashCode();
+                hash = hash * 59 + ThirdPartyURI.GetHashCode();
             }
 
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.DefaultSiteId != null)
+            if (DefaultSiteId != null)
             {
-                hash = hash * 59 + this.DefaultSiteId.GetHashCode();
+                hash = hash * 59 + DefaultSiteId.GetHashCode();
             }
 
-            if (this.SupportURI != null)
+            if (SupportURI != null)
             {
-                hash = hash * 59 + this.SupportURI.GetHashCode();
+                hash = hash * 59 + SupportURI.GetHashCode();
             }
 
-            if (this.VoicemailEnabled != null)
+            if (VoicemailEnabled != null)
             {
-                hash = hash * 59 + this.VoicemailEnabled.GetHashCode();
+                hash = hash * 59 + VoicemailEnabled.GetHashCode();
             }
 
-            if (this.ProductPlatform != null)
+            if (ProductPlatform != null)
             {
-                hash = hash * 59 + this.ProductPlatform.GetHashCode();
+                hash = hash * 59 + ProductPlatform.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.Features != null)
+            if (Features != null)
             {
-                hash = hash * 59 + this.Features.GetHashCode();
+                hash = hash * 59 + Features.GetHashCode();
             }
 
             return hash;

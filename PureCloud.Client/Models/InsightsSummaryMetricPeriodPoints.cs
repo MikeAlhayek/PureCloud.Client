@@ -101,7 +101,7 @@ public partial class InsightsSummaryMetricPeriodPoints : IEquatable<InsightsSumm
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InsightsSummaryMetricPeriodPoints);
+        return Equals(obj as InsightsSummaryMetricPeriodPoints);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class InsightsSummaryMetricPeriodPoints : IEquatable<InsightsSumm
 
         return true &&
             (
-                this.Points == other.Points ||
-                this.Points != null &&
-                this.Points.Equals(other.Points)
+                Points == other.Points ||
+                Points != null &&
+                Points.Equals(other.Points)
             ) &&
             (
-                this.MaxPoints == other.MaxPoints ||
-                this.MaxPoints != null &&
-                this.MaxPoints.Equals(other.MaxPoints)
+                MaxPoints == other.MaxPoints ||
+                MaxPoints != null &&
+                MaxPoints.Equals(other.MaxPoints)
             ) &&
             (
-                this.DataPointCount == other.DataPointCount ||
-                this.DataPointCount != null &&
-                this.DataPointCount.Equals(other.DataPointCount)
+                DataPointCount == other.DataPointCount ||
+                DataPointCount != null &&
+                DataPointCount.Equals(other.DataPointCount)
             ) &&
             (
-                this.PercentOfGoal == other.PercentOfGoal ||
-                this.PercentOfGoal != null &&
-                this.PercentOfGoal.Equals(other.PercentOfGoal)
+                PercentOfGoal == other.PercentOfGoal ||
+                PercentOfGoal != null &&
+                PercentOfGoal.Equals(other.PercentOfGoal)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class InsightsSummaryMetricPeriodPoints : IEquatable<InsightsSumm
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Points != null)
+            if (Points != null)
             {
-                hash = hash * 59 + this.Points.GetHashCode();
+                hash = hash * 59 + Points.GetHashCode();
             }
 
-            if (this.MaxPoints != null)
+            if (MaxPoints != null)
             {
-                hash = hash * 59 + this.MaxPoints.GetHashCode();
+                hash = hash * 59 + MaxPoints.GetHashCode();
             }
 
-            if (this.DataPointCount != null)
+            if (DataPointCount != null)
             {
-                hash = hash * 59 + this.DataPointCount.GetHashCode();
+                hash = hash * 59 + DataPointCount.GetHashCode();
             }
 
-            if (this.PercentOfGoal != null)
+            if (PercentOfGoal != null)
             {
-                hash = hash * 59 + this.PercentOfGoal.GetHashCode();
+                hash = hash * 59 + PercentOfGoal.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

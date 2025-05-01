@@ -286,7 +286,7 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsEvaluation);
+        return Equals(obj as AnalyticsEvaluation);
     }
 
     /// <summary>
@@ -304,89 +304,89 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
 
         return true &&
             (
-                this.AssigneeApplicable == other.AssigneeApplicable ||
-                this.AssigneeApplicable != null &&
-                this.AssigneeApplicable.Equals(other.AssigneeApplicable)
+                AssigneeApplicable == other.AssigneeApplicable ||
+                AssigneeApplicable != null &&
+                AssigneeApplicable.Equals(other.AssigneeApplicable)
             ) &&
             (
-                this.AssigneeId == other.AssigneeId ||
-                this.AssigneeId != null &&
-                this.AssigneeId.Equals(other.AssigneeId)
+                AssigneeId == other.AssigneeId ||
+                AssigneeId != null &&
+                AssigneeId.Equals(other.AssigneeId)
             ) &&
             (
-                this.CalibrationId == other.CalibrationId ||
-                this.CalibrationId != null &&
-                this.CalibrationId.Equals(other.CalibrationId)
+                CalibrationId == other.CalibrationId ||
+                CalibrationId != null &&
+                CalibrationId.Equals(other.CalibrationId)
             ) &&
             (
-                this.ContextId == other.ContextId ||
-                this.ContextId != null &&
-                this.ContextId.Equals(other.ContextId)
+                ContextId == other.ContextId ||
+                ContextId != null &&
+                ContextId.Equals(other.ContextId)
             ) &&
             (
-                this.Deleted == other.Deleted ||
-                this.Deleted != null &&
-                this.Deleted.Equals(other.Deleted)
+                Deleted == other.Deleted ||
+                Deleted != null &&
+                Deleted.Equals(other.Deleted)
             ) &&
             (
-                this.EvaluationId == other.EvaluationId ||
-                this.EvaluationId != null &&
-                this.EvaluationId.Equals(other.EvaluationId)
+                EvaluationId == other.EvaluationId ||
+                EvaluationId != null &&
+                EvaluationId.Equals(other.EvaluationId)
             ) &&
             (
-                this.EvaluationStatus == other.EvaluationStatus ||
-                this.EvaluationStatus != null &&
-                this.EvaluationStatus.Equals(other.EvaluationStatus)
+                EvaluationStatus == other.EvaluationStatus ||
+                EvaluationStatus != null &&
+                EvaluationStatus.Equals(other.EvaluationStatus)
             ) &&
             (
-                this.EvaluatorId == other.EvaluatorId ||
-                this.EvaluatorId != null &&
-                this.EvaluatorId.Equals(other.EvaluatorId)
+                EvaluatorId == other.EvaluatorId ||
+                EvaluatorId != null &&
+                EvaluatorId.Equals(other.EvaluatorId)
             ) &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.FormId == other.FormId ||
-                this.FormId != null &&
-                this.FormId.Equals(other.FormId)
+                FormId == other.FormId ||
+                FormId != null &&
+                FormId.Equals(other.FormId)
             ) &&
             (
-                this.FormName == other.FormName ||
-                this.FormName != null &&
-                this.FormName.Equals(other.FormName)
+                FormName == other.FormName ||
+                FormName != null &&
+                FormName.Equals(other.FormName)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.Released == other.Released ||
-                this.Released != null &&
-                this.Released.Equals(other.Released)
+                Released == other.Released ||
+                Released != null &&
+                Released.Equals(other.Released)
             ) &&
             (
-                this.Rescored == other.Rescored ||
-                this.Rescored != null &&
-                this.Rescored.Equals(other.Rescored)
+                Rescored == other.Rescored ||
+                Rescored != null &&
+                Rescored.Equals(other.Rescored)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.OTotalCriticalScore == other.OTotalCriticalScore ||
-                this.OTotalCriticalScore != null &&
-                this.OTotalCriticalScore.Equals(other.OTotalCriticalScore)
+                OTotalCriticalScore == other.OTotalCriticalScore ||
+                OTotalCriticalScore != null &&
+                OTotalCriticalScore.Equals(other.OTotalCriticalScore)
             ) &&
             (
-                this.OTotalScore == other.OTotalScore ||
-                this.OTotalScore != null &&
-                this.OTotalScore.Equals(other.OTotalScore)
+                OTotalScore == other.OTotalScore ||
+                OTotalScore != null &&
+                OTotalScore.Equals(other.OTotalScore)
             );
     }
 
@@ -401,89 +401,89 @@ public partial class AnalyticsEvaluation : IEquatable<AnalyticsEvaluation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AssigneeApplicable != null)
+            if (AssigneeApplicable != null)
             {
-                hash = hash * 59 + this.AssigneeApplicable.GetHashCode();
+                hash = hash * 59 + AssigneeApplicable.GetHashCode();
             }
 
-            if (this.AssigneeId != null)
+            if (AssigneeId != null)
             {
-                hash = hash * 59 + this.AssigneeId.GetHashCode();
+                hash = hash * 59 + AssigneeId.GetHashCode();
             }
 
-            if (this.CalibrationId != null)
+            if (CalibrationId != null)
             {
-                hash = hash * 59 + this.CalibrationId.GetHashCode();
+                hash = hash * 59 + CalibrationId.GetHashCode();
             }
 
-            if (this.ContextId != null)
+            if (ContextId != null)
             {
-                hash = hash * 59 + this.ContextId.GetHashCode();
+                hash = hash * 59 + ContextId.GetHashCode();
             }
 
-            if (this.Deleted != null)
+            if (Deleted != null)
             {
-                hash = hash * 59 + this.Deleted.GetHashCode();
+                hash = hash * 59 + Deleted.GetHashCode();
             }
 
-            if (this.EvaluationId != null)
+            if (EvaluationId != null)
             {
-                hash = hash * 59 + this.EvaluationId.GetHashCode();
+                hash = hash * 59 + EvaluationId.GetHashCode();
             }
 
-            if (this.EvaluationStatus != null)
+            if (EvaluationStatus != null)
             {
-                hash = hash * 59 + this.EvaluationStatus.GetHashCode();
+                hash = hash * 59 + EvaluationStatus.GetHashCode();
             }
 
-            if (this.EvaluatorId != null)
+            if (EvaluatorId != null)
             {
-                hash = hash * 59 + this.EvaluatorId.GetHashCode();
+                hash = hash * 59 + EvaluatorId.GetHashCode();
             }
 
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.FormId != null)
+            if (FormId != null)
             {
-                hash = hash * 59 + this.FormId.GetHashCode();
+                hash = hash * 59 + FormId.GetHashCode();
             }
 
-            if (this.FormName != null)
+            if (FormName != null)
             {
-                hash = hash * 59 + this.FormName.GetHashCode();
+                hash = hash * 59 + FormName.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.Released != null)
+            if (Released != null)
             {
-                hash = hash * 59 + this.Released.GetHashCode();
+                hash = hash * 59 + Released.GetHashCode();
             }
 
-            if (this.Rescored != null)
+            if (Rescored != null)
             {
-                hash = hash * 59 + this.Rescored.GetHashCode();
+                hash = hash * 59 + Rescored.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.OTotalCriticalScore != null)
+            if (OTotalCriticalScore != null)
             {
-                hash = hash * 59 + this.OTotalCriticalScore.GetHashCode();
+                hash = hash * 59 + OTotalCriticalScore.GetHashCode();
             }
 
-            if (this.OTotalScore != null)
+            if (OTotalScore != null)
             {
-                hash = hash * 59 + this.OTotalScore.GetHashCode();
+                hash = hash * 59 + OTotalScore.GetHashCode();
             }
 
             return hash;

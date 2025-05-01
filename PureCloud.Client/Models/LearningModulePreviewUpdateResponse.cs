@@ -65,7 +65,7 @@ public partial class LearningModulePreviewUpdateResponse : IEquatable<LearningMo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModulePreviewUpdateResponse);
+        return Equals(obj as LearningModulePreviewUpdateResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class LearningModulePreviewUpdateResponse : IEquatable<LearningMo
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Assignment == other.Assignment ||
-                this.Assignment != null &&
-                this.Assignment.Equals(other.Assignment)
+                Assignment == other.Assignment ||
+                Assignment != null &&
+                Assignment.Equals(other.Assignment)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class LearningModulePreviewUpdateResponse : IEquatable<LearningMo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Assignment != null)
+            if (Assignment != null)
             {
-                hash = hash * 59 + this.Assignment.GetHashCode();
+                hash = hash * 59 + Assignment.GetHashCode();
             }
 
             return hash;

@@ -59,7 +59,7 @@ public partial class UpdateAnalyticsDataRetentionRequest : IEquatable<UpdateAnal
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateAnalyticsDataRetentionRequest);
+        return Equals(obj as UpdateAnalyticsDataRetentionRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class UpdateAnalyticsDataRetentionRequest : IEquatable<UpdateAnal
 
         return true &&
             (
-                this.RetentionDays == other.RetentionDays ||
-                this.RetentionDays != null &&
-                this.RetentionDays.Equals(other.RetentionDays)
+                RetentionDays == other.RetentionDays ||
+                RetentionDays != null &&
+                RetentionDays.Equals(other.RetentionDays)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class UpdateAnalyticsDataRetentionRequest : IEquatable<UpdateAnal
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RetentionDays != null)
+            if (RetentionDays != null)
             {
-                hash = hash * 59 + this.RetentionDays.GetHashCode();
+                hash = hash * 59 + RetentionDays.GetHashCode();
             }
 
             return hash;

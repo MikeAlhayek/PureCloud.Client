@@ -65,7 +65,7 @@ public partial class WeekShiftTradeResponse : IEquatable<WeekShiftTradeResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WeekShiftTradeResponse);
+        return Equals(obj as WeekShiftTradeResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class WeekShiftTradeResponse : IEquatable<WeekShiftTradeResponse>
 
         return true &&
             (
-                this.Trade == other.Trade ||
-                this.Trade != null &&
-                this.Trade.Equals(other.Trade)
+                Trade == other.Trade ||
+                Trade != null &&
+                Trade.Equals(other.Trade)
             ) &&
             (
-                this.MatchReview == other.MatchReview ||
-                this.MatchReview != null &&
-                this.MatchReview.Equals(other.MatchReview)
+                MatchReview == other.MatchReview ||
+                MatchReview != null &&
+                MatchReview.Equals(other.MatchReview)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class WeekShiftTradeResponse : IEquatable<WeekShiftTradeResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Trade != null)
+            if (Trade != null)
             {
-                hash = hash * 59 + this.Trade.GetHashCode();
+                hash = hash * 59 + Trade.GetHashCode();
             }
 
-            if (this.MatchReview != null)
+            if (MatchReview != null)
             {
-                hash = hash * 59 + this.MatchReview.GetHashCode();
+                hash = hash * 59 + MatchReview.GetHashCode();
             }
 
             return hash;

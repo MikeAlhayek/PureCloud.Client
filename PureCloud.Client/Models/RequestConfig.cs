@@ -101,7 +101,7 @@ public partial class RequestConfig : IEquatable<RequestConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RequestConfig);
+        return Equals(obj as RequestConfig);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class RequestConfig : IEquatable<RequestConfig>
 
         return true &&
             (
-                this.RequestUrlTemplate == other.RequestUrlTemplate ||
-                this.RequestUrlTemplate != null &&
-                this.RequestUrlTemplate.Equals(other.RequestUrlTemplate)
+                RequestUrlTemplate == other.RequestUrlTemplate ||
+                RequestUrlTemplate != null &&
+                RequestUrlTemplate.Equals(other.RequestUrlTemplate)
             ) &&
             (
-                this.RequestTemplate == other.RequestTemplate ||
-                this.RequestTemplate != null &&
-                this.RequestTemplate.Equals(other.RequestTemplate)
+                RequestTemplate == other.RequestTemplate ||
+                RequestTemplate != null &&
+                RequestTemplate.Equals(other.RequestTemplate)
             ) &&
             (
-                this.RequestTemplateUri == other.RequestTemplateUri ||
-                this.RequestTemplateUri != null &&
-                this.RequestTemplateUri.Equals(other.RequestTemplateUri)
+                RequestTemplateUri == other.RequestTemplateUri ||
+                RequestTemplateUri != null &&
+                RequestTemplateUri.Equals(other.RequestTemplateUri)
             ) &&
             (
-                this.RequestType == other.RequestType ||
-                this.RequestType != null &&
-                this.RequestType.Equals(other.RequestType)
+                RequestType == other.RequestType ||
+                RequestType != null &&
+                RequestType.Equals(other.RequestType)
             ) &&
             (
-                this.Headers == other.Headers ||
-                this.Headers != null &&
-                this.Headers.SequenceEqual(other.Headers)
+                Headers == other.Headers ||
+                Headers != null &&
+                Headers.SequenceEqual(other.Headers)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class RequestConfig : IEquatable<RequestConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RequestUrlTemplate != null)
+            if (RequestUrlTemplate != null)
             {
-                hash = hash * 59 + this.RequestUrlTemplate.GetHashCode();
+                hash = hash * 59 + RequestUrlTemplate.GetHashCode();
             }
 
-            if (this.RequestTemplate != null)
+            if (RequestTemplate != null)
             {
-                hash = hash * 59 + this.RequestTemplate.GetHashCode();
+                hash = hash * 59 + RequestTemplate.GetHashCode();
             }
 
-            if (this.RequestTemplateUri != null)
+            if (RequestTemplateUri != null)
             {
-                hash = hash * 59 + this.RequestTemplateUri.GetHashCode();
+                hash = hash * 59 + RequestTemplateUri.GetHashCode();
             }
 
-            if (this.RequestType != null)
+            if (RequestType != null)
             {
-                hash = hash * 59 + this.RequestType.GetHashCode();
+                hash = hash * 59 + RequestType.GetHashCode();
             }
 
-            if (this.Headers != null)
+            if (Headers != null)
             {
-                hash = hash * 59 + this.Headers.GetHashCode();
+                hash = hash * 59 + Headers.GetHashCode();
             }
 
             return hash;

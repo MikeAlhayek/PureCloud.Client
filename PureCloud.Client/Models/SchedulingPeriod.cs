@@ -71,7 +71,7 @@ public partial class SchedulingPeriod : IEquatable<SchedulingPeriod>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SchedulingPeriod);
+        return Equals(obj as SchedulingPeriod);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class SchedulingPeriod : IEquatable<SchedulingPeriod>
 
         return true &&
             (
-                this.EarliestStartDate == other.EarliestStartDate ||
-                this.EarliestStartDate != null &&
-                this.EarliestStartDate.Equals(other.EarliestStartDate)
+                EarliestStartDate == other.EarliestStartDate ||
+                EarliestStartDate != null &&
+                EarliestStartDate.Equals(other.EarliestStartDate)
             ) &&
             (
-                this.LatestEndDate == other.LatestEndDate ||
-                this.LatestEndDate != null &&
-                this.LatestEndDate.Equals(other.LatestEndDate)
+                LatestEndDate == other.LatestEndDate ||
+                LatestEndDate != null &&
+                LatestEndDate.Equals(other.LatestEndDate)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class SchedulingPeriod : IEquatable<SchedulingPeriod>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EarliestStartDate != null)
+            if (EarliestStartDate != null)
             {
-                hash = hash * 59 + this.EarliestStartDate.GetHashCode();
+                hash = hash * 59 + EarliestStartDate.GetHashCode();
             }
 
-            if (this.LatestEndDate != null)
+            if (LatestEndDate != null)
             {
-                hash = hash * 59 + this.LatestEndDate.GetHashCode();
+                hash = hash * 59 + LatestEndDate.GetHashCode();
             }
 
             return hash;

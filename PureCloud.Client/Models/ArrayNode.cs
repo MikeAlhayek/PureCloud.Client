@@ -40,7 +40,7 @@ public partial class ArrayNode : IEquatable<ArrayNode>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArrayNode);
+        return Equals(obj as ArrayNode);
     }
 
     /// <summary>

@@ -65,7 +65,7 @@ public partial class CampaignLinesUtilization : IEquatable<CampaignLinesUtilizat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignLinesUtilization);
+        return Equals(obj as CampaignLinesUtilization);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class CampaignLinesUtilization : IEquatable<CampaignLinesUtilizat
 
         return true &&
             (
-                this.AssignedOutboundLines == other.AssignedOutboundLines ||
-                this.AssignedOutboundLines != null &&
-                this.AssignedOutboundLines.Equals(other.AssignedOutboundLines)
+                AssignedOutboundLines == other.AssignedOutboundLines ||
+                AssignedOutboundLines != null &&
+                AssignedOutboundLines.Equals(other.AssignedOutboundLines)
             ) &&
             (
-                this.TotalAvailableOutboundLines == other.TotalAvailableOutboundLines ||
-                this.TotalAvailableOutboundLines != null &&
-                this.TotalAvailableOutboundLines.Equals(other.TotalAvailableOutboundLines)
+                TotalAvailableOutboundLines == other.TotalAvailableOutboundLines ||
+                TotalAvailableOutboundLines != null &&
+                TotalAvailableOutboundLines.Equals(other.TotalAvailableOutboundLines)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class CampaignLinesUtilization : IEquatable<CampaignLinesUtilizat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AssignedOutboundLines != null)
+            if (AssignedOutboundLines != null)
             {
-                hash = hash * 59 + this.AssignedOutboundLines.GetHashCode();
+                hash = hash * 59 + AssignedOutboundLines.GetHashCode();
             }
 
-            if (this.TotalAvailableOutboundLines != null)
+            if (TotalAvailableOutboundLines != null)
             {
-                hash = hash * 59 + this.TotalAvailableOutboundLines.GetHashCode();
+                hash = hash * 59 + TotalAvailableOutboundLines.GetHashCode();
             }
 
             return hash;

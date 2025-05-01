@@ -162,7 +162,7 @@ public partial class AnalyticsUserPresenceRecord : IEquatable<AnalyticsUserPrese
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsUserPresenceRecord);
+        return Equals(obj as AnalyticsUserPresenceRecord);
     }
 
     /// <summary>
@@ -180,24 +180,24 @@ public partial class AnalyticsUserPresenceRecord : IEquatable<AnalyticsUserPrese
 
         return true &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             ) &&
             (
-                this.EndTime == other.EndTime ||
-                this.EndTime != null &&
-                this.EndTime.Equals(other.EndTime)
+                EndTime == other.EndTime ||
+                EndTime != null &&
+                EndTime.Equals(other.EndTime)
             ) &&
             (
-                this.SystemPresence == other.SystemPresence ||
-                this.SystemPresence != null &&
-                this.SystemPresence.Equals(other.SystemPresence)
+                SystemPresence == other.SystemPresence ||
+                SystemPresence != null &&
+                SystemPresence.Equals(other.SystemPresence)
             ) &&
             (
-                this.OrganizationPresenceId == other.OrganizationPresenceId ||
-                this.OrganizationPresenceId != null &&
-                this.OrganizationPresenceId.Equals(other.OrganizationPresenceId)
+                OrganizationPresenceId == other.OrganizationPresenceId ||
+                OrganizationPresenceId != null &&
+                OrganizationPresenceId.Equals(other.OrganizationPresenceId)
             );
     }
 
@@ -212,24 +212,24 @@ public partial class AnalyticsUserPresenceRecord : IEquatable<AnalyticsUserPrese
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
-            if (this.EndTime != null)
+            if (EndTime != null)
             {
-                hash = hash * 59 + this.EndTime.GetHashCode();
+                hash = hash * 59 + EndTime.GetHashCode();
             }
 
-            if (this.SystemPresence != null)
+            if (SystemPresence != null)
             {
-                hash = hash * 59 + this.SystemPresence.GetHashCode();
+                hash = hash * 59 + SystemPresence.GetHashCode();
             }
 
-            if (this.OrganizationPresenceId != null)
+            if (OrganizationPresenceId != null)
             {
-                hash = hash * 59 + this.OrganizationPresenceId.GetHashCode();
+                hash = hash * 59 + OrganizationPresenceId.GetHashCode();
             }
 
             return hash;

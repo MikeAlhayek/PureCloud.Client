@@ -398,7 +398,7 @@ public partial class AnalyticsConversationWithoutAttributes : IEquatable<Analyti
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsConversationWithoutAttributes);
+        return Equals(obj as AnalyticsConversationWithoutAttributes);
     }
 
     /// <summary>
@@ -416,89 +416,89 @@ public partial class AnalyticsConversationWithoutAttributes : IEquatable<Analyti
 
         return true &&
             (
-                this.ConferenceStart == other.ConferenceStart ||
-                this.ConferenceStart != null &&
-                this.ConferenceStart.Equals(other.ConferenceStart)
+                ConferenceStart == other.ConferenceStart ||
+                ConferenceStart != null &&
+                ConferenceStart.Equals(other.ConferenceStart)
             ) &&
             (
-                this.ConversationEnd == other.ConversationEnd ||
-                this.ConversationEnd != null &&
-                this.ConversationEnd.Equals(other.ConversationEnd)
+                ConversationEnd == other.ConversationEnd ||
+                ConversationEnd != null &&
+                ConversationEnd.Equals(other.ConversationEnd)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.ConversationInitiator == other.ConversationInitiator ||
-                this.ConversationInitiator != null &&
-                this.ConversationInitiator.Equals(other.ConversationInitiator)
+                ConversationInitiator == other.ConversationInitiator ||
+                ConversationInitiator != null &&
+                ConversationInitiator.Equals(other.ConversationInitiator)
             ) &&
             (
-                this.ConversationStart == other.ConversationStart ||
-                this.ConversationStart != null &&
-                this.ConversationStart.Equals(other.ConversationStart)
+                ConversationStart == other.ConversationStart ||
+                ConversationStart != null &&
+                ConversationStart.Equals(other.ConversationStart)
             ) &&
             (
-                this.CustomerParticipation == other.CustomerParticipation ||
-                this.CustomerParticipation != null &&
-                this.CustomerParticipation.Equals(other.CustomerParticipation)
+                CustomerParticipation == other.CustomerParticipation ||
+                CustomerParticipation != null &&
+                CustomerParticipation.Equals(other.CustomerParticipation)
             ) &&
             (
-                this.DivisionIds == other.DivisionIds ||
-                this.DivisionIds != null &&
-                this.DivisionIds.SequenceEqual(other.DivisionIds)
+                DivisionIds == other.DivisionIds ||
+                DivisionIds != null &&
+                DivisionIds.SequenceEqual(other.DivisionIds)
             ) &&
             (
-                this.ExternalTag == other.ExternalTag ||
-                this.ExternalTag != null &&
-                this.ExternalTag.Equals(other.ExternalTag)
+                ExternalTag == other.ExternalTag ||
+                ExternalTag != null &&
+                ExternalTag.Equals(other.ExternalTag)
             ) &&
             (
-                this.KnowledgeBaseIds == other.KnowledgeBaseIds ||
-                this.KnowledgeBaseIds != null &&
-                this.KnowledgeBaseIds.SequenceEqual(other.KnowledgeBaseIds)
+                KnowledgeBaseIds == other.KnowledgeBaseIds ||
+                KnowledgeBaseIds != null &&
+                KnowledgeBaseIds.SequenceEqual(other.KnowledgeBaseIds)
             ) &&
             (
-                this.MediaStatsMinConversationMos == other.MediaStatsMinConversationMos ||
-                this.MediaStatsMinConversationMos != null &&
-                this.MediaStatsMinConversationMos.Equals(other.MediaStatsMinConversationMos)
+                MediaStatsMinConversationMos == other.MediaStatsMinConversationMos ||
+                MediaStatsMinConversationMos != null &&
+                MediaStatsMinConversationMos.Equals(other.MediaStatsMinConversationMos)
             ) &&
             (
-                this.MediaStatsMinConversationRFactor == other.MediaStatsMinConversationRFactor ||
-                this.MediaStatsMinConversationRFactor != null &&
-                this.MediaStatsMinConversationRFactor.Equals(other.MediaStatsMinConversationRFactor)
+                MediaStatsMinConversationRFactor == other.MediaStatsMinConversationRFactor ||
+                MediaStatsMinConversationRFactor != null &&
+                MediaStatsMinConversationRFactor.Equals(other.MediaStatsMinConversationRFactor)
             ) &&
             (
-                this.OriginatingDirection == other.OriginatingDirection ||
-                this.OriginatingDirection != null &&
-                this.OriginatingDirection.Equals(other.OriginatingDirection)
+                OriginatingDirection == other.OriginatingDirection ||
+                OriginatingDirection != null &&
+                OriginatingDirection.Equals(other.OriginatingDirection)
             ) &&
             (
-                this.SelfServed == other.SelfServed ||
-                this.SelfServed != null &&
-                this.SelfServed.Equals(other.SelfServed)
+                SelfServed == other.SelfServed ||
+                SelfServed != null &&
+                SelfServed.Equals(other.SelfServed)
             ) &&
             (
-                this.Evaluations == other.Evaluations ||
-                this.Evaluations != null &&
-                this.Evaluations.SequenceEqual(other.Evaluations)
+                Evaluations == other.Evaluations ||
+                Evaluations != null &&
+                Evaluations.SequenceEqual(other.Evaluations)
             ) &&
             (
-                this.Surveys == other.Surveys ||
-                this.Surveys != null &&
-                this.Surveys.SequenceEqual(other.Surveys)
+                Surveys == other.Surveys ||
+                Surveys != null &&
+                Surveys.SequenceEqual(other.Surveys)
             ) &&
             (
-                this.Resolutions == other.Resolutions ||
-                this.Resolutions != null &&
-                this.Resolutions.SequenceEqual(other.Resolutions)
+                Resolutions == other.Resolutions ||
+                Resolutions != null &&
+                Resolutions.SequenceEqual(other.Resolutions)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.SequenceEqual(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.SequenceEqual(other.Participants)
             );
     }
 
@@ -513,89 +513,89 @@ public partial class AnalyticsConversationWithoutAttributes : IEquatable<Analyti
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConferenceStart != null)
+            if (ConferenceStart != null)
             {
-                hash = hash * 59 + this.ConferenceStart.GetHashCode();
+                hash = hash * 59 + ConferenceStart.GetHashCode();
             }
 
-            if (this.ConversationEnd != null)
+            if (ConversationEnd != null)
             {
-                hash = hash * 59 + this.ConversationEnd.GetHashCode();
+                hash = hash * 59 + ConversationEnd.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.ConversationInitiator != null)
+            if (ConversationInitiator != null)
             {
-                hash = hash * 59 + this.ConversationInitiator.GetHashCode();
+                hash = hash * 59 + ConversationInitiator.GetHashCode();
             }
 
-            if (this.ConversationStart != null)
+            if (ConversationStart != null)
             {
-                hash = hash * 59 + this.ConversationStart.GetHashCode();
+                hash = hash * 59 + ConversationStart.GetHashCode();
             }
 
-            if (this.CustomerParticipation != null)
+            if (CustomerParticipation != null)
             {
-                hash = hash * 59 + this.CustomerParticipation.GetHashCode();
+                hash = hash * 59 + CustomerParticipation.GetHashCode();
             }
 
-            if (this.DivisionIds != null)
+            if (DivisionIds != null)
             {
-                hash = hash * 59 + this.DivisionIds.GetHashCode();
+                hash = hash * 59 + DivisionIds.GetHashCode();
             }
 
-            if (this.ExternalTag != null)
+            if (ExternalTag != null)
             {
-                hash = hash * 59 + this.ExternalTag.GetHashCode();
+                hash = hash * 59 + ExternalTag.GetHashCode();
             }
 
-            if (this.KnowledgeBaseIds != null)
+            if (KnowledgeBaseIds != null)
             {
-                hash = hash * 59 + this.KnowledgeBaseIds.GetHashCode();
+                hash = hash * 59 + KnowledgeBaseIds.GetHashCode();
             }
 
-            if (this.MediaStatsMinConversationMos != null)
+            if (MediaStatsMinConversationMos != null)
             {
-                hash = hash * 59 + this.MediaStatsMinConversationMos.GetHashCode();
+                hash = hash * 59 + MediaStatsMinConversationMos.GetHashCode();
             }
 
-            if (this.MediaStatsMinConversationRFactor != null)
+            if (MediaStatsMinConversationRFactor != null)
             {
-                hash = hash * 59 + this.MediaStatsMinConversationRFactor.GetHashCode();
+                hash = hash * 59 + MediaStatsMinConversationRFactor.GetHashCode();
             }
 
-            if (this.OriginatingDirection != null)
+            if (OriginatingDirection != null)
             {
-                hash = hash * 59 + this.OriginatingDirection.GetHashCode();
+                hash = hash * 59 + OriginatingDirection.GetHashCode();
             }
 
-            if (this.SelfServed != null)
+            if (SelfServed != null)
             {
-                hash = hash * 59 + this.SelfServed.GetHashCode();
+                hash = hash * 59 + SelfServed.GetHashCode();
             }
 
-            if (this.Evaluations != null)
+            if (Evaluations != null)
             {
-                hash = hash * 59 + this.Evaluations.GetHashCode();
+                hash = hash * 59 + Evaluations.GetHashCode();
             }
 
-            if (this.Surveys != null)
+            if (Surveys != null)
             {
-                hash = hash * 59 + this.Surveys.GetHashCode();
+                hash = hash * 59 + Surveys.GetHashCode();
             }
 
-            if (this.Resolutions != null)
+            if (Resolutions != null)
             {
-                hash = hash * 59 + this.Resolutions.GetHashCode();
+                hash = hash * 59 + Resolutions.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
             return hash;

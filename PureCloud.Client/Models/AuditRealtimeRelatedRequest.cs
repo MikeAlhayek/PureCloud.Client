@@ -82,7 +82,7 @@ public partial class AuditRealtimeRelatedRequest : IEquatable<AuditRealtimeRelat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuditRealtimeRelatedRequest);
+        return Equals(obj as AuditRealtimeRelatedRequest);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class AuditRealtimeRelatedRequest : IEquatable<AuditRealtimeRelat
 
         return true &&
             (
-                this.AuditId == other.AuditId ||
-                this.AuditId != null &&
-                this.AuditId.Equals(other.AuditId)
+                AuditId == other.AuditId ||
+                AuditId != null &&
+                AuditId.Equals(other.AuditId)
             ) &&
             (
-                this.TrustorOrgId == other.TrustorOrgId ||
-                this.TrustorOrgId != null &&
-                this.TrustorOrgId.Equals(other.TrustorOrgId)
+                TrustorOrgId == other.TrustorOrgId ||
+                TrustorOrgId != null &&
+                TrustorOrgId.Equals(other.TrustorOrgId)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.SequenceEqual(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.SequenceEqual(other.Sort)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class AuditRealtimeRelatedRequest : IEquatable<AuditRealtimeRelat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AuditId != null)
+            if (AuditId != null)
             {
-                hash = hash * 59 + this.AuditId.GetHashCode();
+                hash = hash * 59 + AuditId.GetHashCode();
             }
 
-            if (this.TrustorOrgId != null)
+            if (TrustorOrgId != null)
             {
-                hash = hash * 59 + this.TrustorOrgId.GetHashCode();
+                hash = hash * 59 + TrustorOrgId.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
             return hash;

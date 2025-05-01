@@ -143,7 +143,7 @@ public partial class RoutingData : IEquatable<RoutingData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoutingData);
+        return Equals(obj as RoutingData);
     }
 
     /// <summary>
@@ -161,44 +161,44 @@ public partial class RoutingData : IEquatable<RoutingData>
 
         return true &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.LanguageId == other.LanguageId ||
-                this.LanguageId != null &&
-                this.LanguageId.Equals(other.LanguageId)
+                LanguageId == other.LanguageId ||
+                LanguageId != null &&
+                LanguageId.Equals(other.LanguageId)
             ) &&
             (
-                this.Label == other.Label ||
-                this.Label != null &&
-                this.Label.Equals(other.Label)
+                Label == other.Label ||
+                Label != null &&
+                Label.Equals(other.Label)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.SkillIds == other.SkillIds ||
-                this.SkillIds != null &&
-                this.SkillIds.SequenceEqual(other.SkillIds)
+                SkillIds == other.SkillIds ||
+                SkillIds != null &&
+                SkillIds.SequenceEqual(other.SkillIds)
             ) &&
             (
-                this.PreferredAgentIds == other.PreferredAgentIds ||
-                this.PreferredAgentIds != null &&
-                this.PreferredAgentIds.SequenceEqual(other.PreferredAgentIds)
+                PreferredAgentIds == other.PreferredAgentIds ||
+                PreferredAgentIds != null &&
+                PreferredAgentIds.SequenceEqual(other.PreferredAgentIds)
             ) &&
             (
-                this.ScoredAgents == other.ScoredAgents ||
-                this.ScoredAgents != null &&
-                this.ScoredAgents.SequenceEqual(other.ScoredAgents)
+                ScoredAgents == other.ScoredAgents ||
+                ScoredAgents != null &&
+                ScoredAgents.SequenceEqual(other.ScoredAgents)
             ) &&
             (
-                this.RoutingFlags == other.RoutingFlags ||
-                this.RoutingFlags != null &&
-                this.RoutingFlags.SequenceEqual(other.RoutingFlags)
+                RoutingFlags == other.RoutingFlags ||
+                RoutingFlags != null &&
+                RoutingFlags.SequenceEqual(other.RoutingFlags)
             );
     }
 
@@ -213,44 +213,44 @@ public partial class RoutingData : IEquatable<RoutingData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.LanguageId != null)
+            if (LanguageId != null)
             {
-                hash = hash * 59 + this.LanguageId.GetHashCode();
+                hash = hash * 59 + LanguageId.GetHashCode();
             }
 
-            if (this.Label != null)
+            if (Label != null)
             {
-                hash = hash * 59 + this.Label.GetHashCode();
+                hash = hash * 59 + Label.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.SkillIds != null)
+            if (SkillIds != null)
             {
-                hash = hash * 59 + this.SkillIds.GetHashCode();
+                hash = hash * 59 + SkillIds.GetHashCode();
             }
 
-            if (this.PreferredAgentIds != null)
+            if (PreferredAgentIds != null)
             {
-                hash = hash * 59 + this.PreferredAgentIds.GetHashCode();
+                hash = hash * 59 + PreferredAgentIds.GetHashCode();
             }
 
-            if (this.ScoredAgents != null)
+            if (ScoredAgents != null)
             {
-                hash = hash * 59 + this.ScoredAgents.GetHashCode();
+                hash = hash * 59 + ScoredAgents.GetHashCode();
             }
 
-            if (this.RoutingFlags != null)
+            if (RoutingFlags != null)
             {
-                hash = hash * 59 + this.RoutingFlags.GetHashCode();
+                hash = hash * 59 + RoutingFlags.GetHashCode();
             }
 
             return hash;

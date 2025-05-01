@@ -121,7 +121,7 @@ public partial class Reaction : IEquatable<Reaction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Reaction);
+        return Equals(obj as Reaction);
     }
 
     /// <summary>
@@ -139,19 +139,19 @@ public partial class Reaction : IEquatable<Reaction>
 
         return true &&
             (
-                this.Data == other.Data ||
-                this.Data != null &&
-                this.Data.Equals(other.Data)
+                Data == other.Data ||
+                Data != null &&
+                Data.Equals(other.Data)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ReactionType == other.ReactionType ||
-                this.ReactionType != null &&
-                this.ReactionType.Equals(other.ReactionType)
+                ReactionType == other.ReactionType ||
+                ReactionType != null &&
+                ReactionType.Equals(other.ReactionType)
             );
     }
 
@@ -166,19 +166,19 @@ public partial class Reaction : IEquatable<Reaction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Data != null)
+            if (Data != null)
             {
-                hash = hash * 59 + this.Data.GetHashCode();
+                hash = hash * 59 + Data.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ReactionType != null)
+            if (ReactionType != null)
             {
-                hash = hash * 59 + this.ReactionType.GetHashCode();
+                hash = hash * 59 + ReactionType.GetHashCode();
             }
 
             return hash;

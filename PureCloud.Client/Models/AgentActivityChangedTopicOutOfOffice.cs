@@ -62,7 +62,7 @@ public partial class AgentActivityChangedTopicOutOfOffice : IEquatable<AgentActi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentActivityChangedTopicOutOfOffice);
+        return Equals(obj as AgentActivityChangedTopicOutOfOffice);
     }
 
     /// <summary>
@@ -80,14 +80,14 @@ public partial class AgentActivityChangedTopicOutOfOffice : IEquatable<AgentActi
 
         return true &&
             (
-                this.Active == other.Active ||
-                this.Active != null &&
-                this.Active.Equals(other.Active)
+                Active == other.Active ||
+                Active != null &&
+                Active.Equals(other.Active)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             );
     }
 
@@ -102,14 +102,14 @@ public partial class AgentActivityChangedTopicOutOfOffice : IEquatable<AgentActi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Active != null)
+            if (Active != null)
             {
-                hash = hash * 59 + this.Active.GetHashCode();
+                hash = hash * 59 + Active.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
             return hash;

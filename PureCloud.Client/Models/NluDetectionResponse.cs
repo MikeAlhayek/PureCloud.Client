@@ -73,7 +73,7 @@ public partial class NluDetectionResponse : IEquatable<NluDetectionResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluDetectionResponse);
+        return Equals(obj as NluDetectionResponse);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class NluDetectionResponse : IEquatable<NluDetectionResponse>
 
         return true &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Output == other.Output ||
-                this.Output != null &&
-                this.Output.Equals(other.Output)
+                Output == other.Output ||
+                Output != null &&
+                Output.Equals(other.Output)
             ) &&
             (
-                this.Input == other.Input ||
-                this.Input != null &&
-                this.Input.Equals(other.Input)
+                Input == other.Input ||
+                Input != null &&
+                Input.Equals(other.Input)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class NluDetectionResponse : IEquatable<NluDetectionResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Output != null)
+            if (Output != null)
             {
-                hash = hash * 59 + this.Output.GetHashCode();
+                hash = hash * 59 + Output.GetHashCode();
             }
 
-            if (this.Input != null)
+            if (Input != null)
             {
-                hash = hash * 59 + this.Input.GetHashCode();
+                hash = hash * 59 + Input.GetHashCode();
             }
 
             return hash;

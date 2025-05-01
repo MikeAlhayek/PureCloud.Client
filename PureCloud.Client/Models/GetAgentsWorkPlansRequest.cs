@@ -83,7 +83,7 @@ public partial class GetAgentsWorkPlansRequest : IEquatable<GetAgentsWorkPlansRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GetAgentsWorkPlansRequest);
+        return Equals(obj as GetAgentsWorkPlansRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class GetAgentsWorkPlansRequest : IEquatable<GetAgentsWorkPlansRe
 
         return true &&
             (
-                this.AgentIds == other.AgentIds ||
-                this.AgentIds != null &&
-                this.AgentIds.SequenceEqual(other.AgentIds)
+                AgentIds == other.AgentIds ||
+                AgentIds != null &&
+                AgentIds.SequenceEqual(other.AgentIds)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class GetAgentsWorkPlansRequest : IEquatable<GetAgentsWorkPlansRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentIds != null)
+            if (AgentIds != null)
             {
-                hash = hash * 59 + this.AgentIds.GetHashCode();
+                hash = hash * 59 + AgentIds.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
             return hash;

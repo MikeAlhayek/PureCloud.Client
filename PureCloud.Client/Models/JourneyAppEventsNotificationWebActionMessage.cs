@@ -195,7 +195,7 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyAppEventsNotificationWebActionMessage);
+        return Equals(obj as JourneyAppEventsNotificationWebActionMessage);
     }
 
     /// <summary>
@@ -213,74 +213,74 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
 
         return true &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.ActionTarget == other.ActionTarget ||
-                this.ActionTarget != null &&
-                this.ActionTarget.Equals(other.ActionTarget)
+                ActionTarget == other.ActionTarget ||
+                ActionTarget != null &&
+                ActionTarget.Equals(other.ActionTarget)
             ) &&
             (
-                this.ActionMap == other.ActionMap ||
-                this.ActionMap != null &&
-                this.ActionMap.Equals(other.ActionMap)
+                ActionMap == other.ActionMap ||
+                ActionMap != null &&
+                ActionMap.Equals(other.ActionMap)
             ) &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.ErrorMessage == other.ErrorMessage ||
-                this.ErrorMessage != null &&
-                this.ErrorMessage.Equals(other.ErrorMessage)
+                ErrorMessage == other.ErrorMessage ||
+                ErrorMessage != null &&
+                ErrorMessage.Equals(other.ErrorMessage)
             ) &&
             (
-                this.UserAgentString == other.UserAgentString ||
-                this.UserAgentString != null &&
-                this.UserAgentString.Equals(other.UserAgentString)
+                UserAgentString == other.UserAgentString ||
+                UserAgentString != null &&
+                UserAgentString.Equals(other.UserAgentString)
             ) &&
             (
-                this.IpAddress == other.IpAddress ||
-                this.IpAddress != null &&
-                this.IpAddress.Equals(other.IpAddress)
+                IpAddress == other.IpAddress ||
+                IpAddress != null &&
+                IpAddress.Equals(other.IpAddress)
             ) &&
             (
-                this.IpOrganization == other.IpOrganization ||
-                this.IpOrganization != null &&
-                this.IpOrganization.Equals(other.IpOrganization)
+                IpOrganization == other.IpOrganization ||
+                IpOrganization != null &&
+                IpOrganization.Equals(other.IpOrganization)
             ) &&
             (
-                this.Browser == other.Browser ||
-                this.Browser != null &&
-                this.Browser.Equals(other.Browser)
+                Browser == other.Browser ||
+                Browser != null &&
+                Browser.Equals(other.Browser)
             ) &&
             (
-                this.Device == other.Device ||
-                this.Device != null &&
-                this.Device.Equals(other.Device)
+                Device == other.Device ||
+                Device != null &&
+                Device.Equals(other.Device)
             ) &&
             (
-                this.Geolocation == other.Geolocation ||
-                this.Geolocation != null &&
-                this.Geolocation.Equals(other.Geolocation)
+                Geolocation == other.Geolocation ||
+                Geolocation != null &&
+                Geolocation.Equals(other.Geolocation)
             ) &&
             (
-                this.MktCampaign == other.MktCampaign ||
-                this.MktCampaign != null &&
-                this.MktCampaign.Equals(other.MktCampaign)
+                MktCampaign == other.MktCampaign ||
+                MktCampaign != null &&
+                MktCampaign.Equals(other.MktCampaign)
             ) &&
             (
-                this.VisitReferrer == other.VisitReferrer ||
-                this.VisitReferrer != null &&
-                this.VisitReferrer.Equals(other.VisitReferrer)
+                VisitReferrer == other.VisitReferrer ||
+                VisitReferrer != null &&
+                VisitReferrer.Equals(other.VisitReferrer)
             ) &&
             (
-                this.TimeToDisposition == other.TimeToDisposition ||
-                this.TimeToDisposition != null &&
-                this.TimeToDisposition.Equals(other.TimeToDisposition)
+                TimeToDisposition == other.TimeToDisposition ||
+                TimeToDisposition != null &&
+                TimeToDisposition.Equals(other.TimeToDisposition)
             );
     }
 
@@ -295,74 +295,74 @@ public partial class JourneyAppEventsNotificationWebActionMessage : IEquatable<J
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.ActionTarget != null)
+            if (ActionTarget != null)
             {
-                hash = hash * 59 + this.ActionTarget.GetHashCode();
+                hash = hash * 59 + ActionTarget.GetHashCode();
             }
 
-            if (this.ActionMap != null)
+            if (ActionMap != null)
             {
-                hash = hash * 59 + this.ActionMap.GetHashCode();
+                hash = hash * 59 + ActionMap.GetHashCode();
             }
 
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.ErrorMessage != null)
+            if (ErrorMessage != null)
             {
-                hash = hash * 59 + this.ErrorMessage.GetHashCode();
+                hash = hash * 59 + ErrorMessage.GetHashCode();
             }
 
-            if (this.UserAgentString != null)
+            if (UserAgentString != null)
             {
-                hash = hash * 59 + this.UserAgentString.GetHashCode();
+                hash = hash * 59 + UserAgentString.GetHashCode();
             }
 
-            if (this.IpAddress != null)
+            if (IpAddress != null)
             {
-                hash = hash * 59 + this.IpAddress.GetHashCode();
+                hash = hash * 59 + IpAddress.GetHashCode();
             }
 
-            if (this.IpOrganization != null)
+            if (IpOrganization != null)
             {
-                hash = hash * 59 + this.IpOrganization.GetHashCode();
+                hash = hash * 59 + IpOrganization.GetHashCode();
             }
 
-            if (this.Browser != null)
+            if (Browser != null)
             {
-                hash = hash * 59 + this.Browser.GetHashCode();
+                hash = hash * 59 + Browser.GetHashCode();
             }
 
-            if (this.Device != null)
+            if (Device != null)
             {
-                hash = hash * 59 + this.Device.GetHashCode();
+                hash = hash * 59 + Device.GetHashCode();
             }
 
-            if (this.Geolocation != null)
+            if (Geolocation != null)
             {
-                hash = hash * 59 + this.Geolocation.GetHashCode();
+                hash = hash * 59 + Geolocation.GetHashCode();
             }
 
-            if (this.MktCampaign != null)
+            if (MktCampaign != null)
             {
-                hash = hash * 59 + this.MktCampaign.GetHashCode();
+                hash = hash * 59 + MktCampaign.GetHashCode();
             }
 
-            if (this.VisitReferrer != null)
+            if (VisitReferrer != null)
             {
-                hash = hash * 59 + this.VisitReferrer.GetHashCode();
+                hash = hash * 59 + VisitReferrer.GetHashCode();
             }
 
-            if (this.TimeToDisposition != null)
+            if (TimeToDisposition != null)
             {
-                hash = hash * 59 + this.TimeToDisposition.GetHashCode();
+                hash = hash * 59 + TimeToDisposition.GetHashCode();
             }
 
             return hash;

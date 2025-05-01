@@ -194,7 +194,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DataTableExportJob);
+        return Equals(obj as DataTableExportJob);
     }
 
     /// <summary>
@@ -212,54 +212,54 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Owner == other.Owner ||
-                this.Owner != null &&
-                this.Owner.Equals(other.Owner)
+                Owner == other.Owner ||
+                Owner != null &&
+                Owner.Equals(other.Owner)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateCompleted == other.DateCompleted ||
-                this.DateCompleted != null &&
-                this.DateCompleted.Equals(other.DateCompleted)
+                DateCompleted == other.DateCompleted ||
+                DateCompleted != null &&
+                DateCompleted.Equals(other.DateCompleted)
             ) &&
             (
-                this.DownloadURI == other.DownloadURI ||
-                this.DownloadURI != null &&
-                this.DownloadURI.Equals(other.DownloadURI)
+                DownloadURI == other.DownloadURI ||
+                DownloadURI != null &&
+                DownloadURI.Equals(other.DownloadURI)
             ) &&
             (
-                this.ErrorInformation == other.ErrorInformation ||
-                this.ErrorInformation != null &&
-                this.ErrorInformation.Equals(other.ErrorInformation)
+                ErrorInformation == other.ErrorInformation ||
+                ErrorInformation != null &&
+                ErrorInformation.Equals(other.ErrorInformation)
             ) &&
             (
-                this.CountRecordsProcessed == other.CountRecordsProcessed ||
-                this.CountRecordsProcessed != null &&
-                this.CountRecordsProcessed.Equals(other.CountRecordsProcessed)
+                CountRecordsProcessed == other.CountRecordsProcessed ||
+                CountRecordsProcessed != null &&
+                CountRecordsProcessed.Equals(other.CountRecordsProcessed)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -274,54 +274,54 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Owner != null)
+            if (Owner != null)
             {
-                hash = hash * 59 + this.Owner.GetHashCode();
+                hash = hash * 59 + Owner.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateCompleted != null)
+            if (DateCompleted != null)
             {
-                hash = hash * 59 + this.DateCompleted.GetHashCode();
+                hash = hash * 59 + DateCompleted.GetHashCode();
             }
 
-            if (this.DownloadURI != null)
+            if (DownloadURI != null)
             {
-                hash = hash * 59 + this.DownloadURI.GetHashCode();
+                hash = hash * 59 + DownloadURI.GetHashCode();
             }
 
-            if (this.ErrorInformation != null)
+            if (ErrorInformation != null)
             {
-                hash = hash * 59 + this.ErrorInformation.GetHashCode();
+                hash = hash * 59 + ErrorInformation.GetHashCode();
             }
 
-            if (this.CountRecordsProcessed != null)
+            if (CountRecordsProcessed != null)
             {
-                hash = hash * 59 + this.CountRecordsProcessed.GetHashCode();
+                hash = hash * 59 + CountRecordsProcessed.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

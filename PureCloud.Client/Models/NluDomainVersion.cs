@@ -289,7 +289,7 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluDomainVersion);
+        return Equals(obj as NluDomainVersion);
     }
 
     /// <summary>
@@ -307,79 +307,79 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Published == other.Published ||
-                this.Published != null &&
-                this.Published.Equals(other.Published)
+                Published == other.Published ||
+                Published != null &&
+                Published.Equals(other.Published)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.DateTrained == other.DateTrained ||
-                this.DateTrained != null &&
-                this.DateTrained.Equals(other.DateTrained)
+                DateTrained == other.DateTrained ||
+                DateTrained != null &&
+                DateTrained.Equals(other.DateTrained)
             ) &&
             (
-                this.DatePublished == other.DatePublished ||
-                this.DatePublished != null &&
-                this.DatePublished.Equals(other.DatePublished)
+                DatePublished == other.DatePublished ||
+                DatePublished != null &&
+                DatePublished.Equals(other.DatePublished)
             ) &&
             (
-                this.TrainingStatus == other.TrainingStatus ||
-                this.TrainingStatus != null &&
-                this.TrainingStatus.Equals(other.TrainingStatus)
+                TrainingStatus == other.TrainingStatus ||
+                TrainingStatus != null &&
+                TrainingStatus.Equals(other.TrainingStatus)
             ) &&
             (
-                this.EvaluationStatus == other.EvaluationStatus ||
-                this.EvaluationStatus != null &&
-                this.EvaluationStatus.Equals(other.EvaluationStatus)
+                EvaluationStatus == other.EvaluationStatus ||
+                EvaluationStatus != null &&
+                EvaluationStatus.Equals(other.EvaluationStatus)
             ) &&
             (
-                this.Intents == other.Intents ||
-                this.Intents != null &&
-                this.Intents.SequenceEqual(other.Intents)
+                Intents == other.Intents ||
+                Intents != null &&
+                Intents.SequenceEqual(other.Intents)
             ) &&
             (
-                this.EntityTypes == other.EntityTypes ||
-                this.EntityTypes != null &&
-                this.EntityTypes.SequenceEqual(other.EntityTypes)
+                EntityTypes == other.EntityTypes ||
+                EntityTypes != null &&
+                EntityTypes.SequenceEqual(other.EntityTypes)
             ) &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -394,79 +394,79 @@ public partial class NluDomainVersion : IEquatable<NluDomainVersion>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Published != null)
+            if (Published != null)
             {
-                hash = hash * 59 + this.Published.GetHashCode();
+                hash = hash * 59 + Published.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.DateTrained != null)
+            if (DateTrained != null)
             {
-                hash = hash * 59 + this.DateTrained.GetHashCode();
+                hash = hash * 59 + DateTrained.GetHashCode();
             }
 
-            if (this.DatePublished != null)
+            if (DatePublished != null)
             {
-                hash = hash * 59 + this.DatePublished.GetHashCode();
+                hash = hash * 59 + DatePublished.GetHashCode();
             }
 
-            if (this.TrainingStatus != null)
+            if (TrainingStatus != null)
             {
-                hash = hash * 59 + this.TrainingStatus.GetHashCode();
+                hash = hash * 59 + TrainingStatus.GetHashCode();
             }
 
-            if (this.EvaluationStatus != null)
+            if (EvaluationStatus != null)
             {
-                hash = hash * 59 + this.EvaluationStatus.GetHashCode();
+                hash = hash * 59 + EvaluationStatus.GetHashCode();
             }
 
-            if (this.Intents != null)
+            if (Intents != null)
             {
-                hash = hash * 59 + this.Intents.GetHashCode();
+                hash = hash * 59 + Intents.GetHashCode();
             }
 
-            if (this.EntityTypes != null)
+            if (EntityTypes != null)
             {
-                hash = hash * 59 + this.EntityTypes.GetHashCode();
+                hash = hash * 59 + EntityTypes.GetHashCode();
             }
 
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

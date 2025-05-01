@@ -85,7 +85,7 @@ public partial class TrunkInstanceTopicTrunkMetricsOptions : IEquatable<TrunkIns
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkInstanceTopicTrunkMetricsOptions);
+        return Equals(obj as TrunkInstanceTopicTrunkMetricsOptions);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class TrunkInstanceTopicTrunkMetricsOptions : IEquatable<TrunkIns
 
         return true &&
             (
-                this.ProxyAddress == other.ProxyAddress ||
-                this.ProxyAddress != null &&
-                this.ProxyAddress.Equals(other.ProxyAddress)
+                ProxyAddress == other.ProxyAddress ||
+                ProxyAddress != null &&
+                ProxyAddress.Equals(other.ProxyAddress)
             ) &&
             (
-                this.OptionState == other.OptionState ||
-                this.OptionState != null &&
-                this.OptionState.Equals(other.OptionState)
+                OptionState == other.OptionState ||
+                OptionState != null &&
+                OptionState.Equals(other.OptionState)
             ) &&
             (
-                this.OptionStateTime == other.OptionStateTime ||
-                this.OptionStateTime != null &&
-                this.OptionStateTime.Equals(other.OptionStateTime)
+                OptionStateTime == other.OptionStateTime ||
+                OptionStateTime != null &&
+                OptionStateTime.Equals(other.OptionStateTime)
             ) &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class TrunkInstanceTopicTrunkMetricsOptions : IEquatable<TrunkIns
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ProxyAddress != null)
+            if (ProxyAddress != null)
             {
-                hash = hash * 59 + this.ProxyAddress.GetHashCode();
+                hash = hash * 59 + ProxyAddress.GetHashCode();
             }
 
-            if (this.OptionState != null)
+            if (OptionState != null)
             {
-                hash = hash * 59 + this.OptionState.GetHashCode();
+                hash = hash * 59 + OptionState.GetHashCode();
             }
 
-            if (this.OptionStateTime != null)
+            if (OptionStateTime != null)
             {
-                hash = hash * 59 + this.OptionStateTime.GetHashCode();
+                hash = hash * 59 + OptionStateTime.GetHashCode();
             }
 
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
             return hash;

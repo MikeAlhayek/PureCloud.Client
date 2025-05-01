@@ -64,7 +64,7 @@ public partial class WebDeploymentsAuthorizationResponse : IEquatable<WebDeploym
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebDeploymentsAuthorizationResponse);
+        return Equals(obj as WebDeploymentsAuthorizationResponse);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class WebDeploymentsAuthorizationResponse : IEquatable<WebDeploym
 
         return true &&
             (
-                this.RefreshToken == other.RefreshToken ||
-                this.RefreshToken != null &&
-                this.RefreshToken.Equals(other.RefreshToken)
+                RefreshToken == other.RefreshToken ||
+                RefreshToken != null &&
+                RefreshToken.Equals(other.RefreshToken)
             ) &&
             (
-                this.Jwt == other.Jwt ||
-                this.Jwt != null &&
-                this.Jwt.Equals(other.Jwt)
+                Jwt == other.Jwt ||
+                Jwt != null &&
+                Jwt.Equals(other.Jwt)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class WebDeploymentsAuthorizationResponse : IEquatable<WebDeploym
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RefreshToken != null)
+            if (RefreshToken != null)
             {
-                hash = hash * 59 + this.RefreshToken.GetHashCode();
+                hash = hash * 59 + RefreshToken.GetHashCode();
             }
 
-            if (this.Jwt != null)
+            if (Jwt != null)
             {
-                hash = hash * 59 + this.Jwt.GetHashCode();
+                hash = hash * 59 + Jwt.GetHashCode();
             }
 
             return hash;

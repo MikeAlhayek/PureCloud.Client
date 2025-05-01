@@ -83,7 +83,7 @@ public partial class PredictorWorkloadBalancing : IEquatable<PredictorWorkloadBa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PredictorWorkloadBalancing);
+        return Equals(obj as PredictorWorkloadBalancing);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class PredictorWorkloadBalancing : IEquatable<PredictorWorkloadBa
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.MinimumOccupancy == other.MinimumOccupancy ||
-                this.MinimumOccupancy != null &&
-                this.MinimumOccupancy.Equals(other.MinimumOccupancy)
+                MinimumOccupancy == other.MinimumOccupancy ||
+                MinimumOccupancy != null &&
+                MinimumOccupancy.Equals(other.MinimumOccupancy)
             ) &&
             (
-                this.MaximumOccupancy == other.MaximumOccupancy ||
-                this.MaximumOccupancy != null &&
-                this.MaximumOccupancy.Equals(other.MaximumOccupancy)
+                MaximumOccupancy == other.MaximumOccupancy ||
+                MaximumOccupancy != null &&
+                MaximumOccupancy.Equals(other.MaximumOccupancy)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class PredictorWorkloadBalancing : IEquatable<PredictorWorkloadBa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.MinimumOccupancy != null)
+            if (MinimumOccupancy != null)
             {
-                hash = hash * 59 + this.MinimumOccupancy.GetHashCode();
+                hash = hash * 59 + MinimumOccupancy.GetHashCode();
             }
 
-            if (this.MaximumOccupancy != null)
+            if (MaximumOccupancy != null)
             {
-                hash = hash * 59 + this.MaximumOccupancy.GetHashCode();
+                hash = hash * 59 + MaximumOccupancy.GetHashCode();
             }
 
             return hash;

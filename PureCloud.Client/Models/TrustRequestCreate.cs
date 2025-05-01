@@ -65,7 +65,7 @@ public partial class TrustRequestCreate : IEquatable<TrustRequestCreate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrustRequestCreate);
+        return Equals(obj as TrustRequestCreate);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class TrustRequestCreate : IEquatable<TrustRequestCreate>
 
         return true &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.GroupIds == other.GroupIds ||
-                this.GroupIds != null &&
-                this.GroupIds.SequenceEqual(other.GroupIds)
+                GroupIds == other.GroupIds ||
+                GroupIds != null &&
+                GroupIds.SequenceEqual(other.GroupIds)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class TrustRequestCreate : IEquatable<TrustRequestCreate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.GroupIds != null)
+            if (GroupIds != null)
             {
-                hash = hash * 59 + this.GroupIds.GetHashCode();
+                hash = hash * 59 + GroupIds.GetHashCode();
             }
 
             return hash;

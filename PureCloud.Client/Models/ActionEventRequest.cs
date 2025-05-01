@@ -224,7 +224,7 @@ public partial class ActionEventRequest : IEquatable<ActionEventRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionEventRequest);
+        return Equals(obj as ActionEventRequest);
     }
 
     /// <summary>
@@ -242,39 +242,39 @@ public partial class ActionEventRequest : IEquatable<ActionEventRequest>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.ActionId == other.ActionId ||
-                this.ActionId != null &&
-                this.ActionId.Equals(other.ActionId)
+                ActionId == other.ActionId ||
+                ActionId != null &&
+                ActionId.Equals(other.ActionId)
             ) &&
             (
-                this.ActionState == other.ActionState ||
-                this.ActionState != null &&
-                this.ActionState.Equals(other.ActionState)
+                ActionState == other.ActionState ||
+                ActionState != null &&
+                ActionState.Equals(other.ActionState)
             ) &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.ErrorMessage == other.ErrorMessage ||
-                this.ErrorMessage != null &&
-                this.ErrorMessage.Equals(other.ErrorMessage)
+                ErrorMessage == other.ErrorMessage ||
+                ErrorMessage != null &&
+                ErrorMessage.Equals(other.ErrorMessage)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -289,39 +289,39 @@ public partial class ActionEventRequest : IEquatable<ActionEventRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.ActionId != null)
+            if (ActionId != null)
             {
-                hash = hash * 59 + this.ActionId.GetHashCode();
+                hash = hash * 59 + ActionId.GetHashCode();
             }
 
-            if (this.ActionState != null)
+            if (ActionState != null)
             {
-                hash = hash * 59 + this.ActionState.GetHashCode();
+                hash = hash * 59 + ActionState.GetHashCode();
             }
 
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.ErrorMessage != null)
+            if (ErrorMessage != null)
             {
-                hash = hash * 59 + this.ErrorMessage.GetHashCode();
+                hash = hash * 59 + ErrorMessage.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

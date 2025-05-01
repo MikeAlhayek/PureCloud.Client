@@ -76,7 +76,7 @@ public partial class UserAsyncAggregateQueryResponse : IEquatable<UserAsyncAggre
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserAsyncAggregateQueryResponse);
+        return Equals(obj as UserAsyncAggregateQueryResponse);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class UserAsyncAggregateQueryResponse : IEquatable<UserAsyncAggre
 
         return true &&
             (
-                this.SystemToOrganizationMappings == other.SystemToOrganizationMappings ||
-                this.SystemToOrganizationMappings != null &&
-                this.SystemToOrganizationMappings.SequenceEqual(other.SystemToOrganizationMappings)
+                SystemToOrganizationMappings == other.SystemToOrganizationMappings ||
+                SystemToOrganizationMappings != null &&
+                SystemToOrganizationMappings.SequenceEqual(other.SystemToOrganizationMappings)
             ) &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             ) &&
             (
-                this.Cursor == other.Cursor ||
-                this.Cursor != null &&
-                this.Cursor.Equals(other.Cursor)
+                Cursor == other.Cursor ||
+                Cursor != null &&
+                Cursor.Equals(other.Cursor)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class UserAsyncAggregateQueryResponse : IEquatable<UserAsyncAggre
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SystemToOrganizationMappings != null)
+            if (SystemToOrganizationMappings != null)
             {
-                hash = hash * 59 + this.SystemToOrganizationMappings.GetHashCode();
+                hash = hash * 59 + SystemToOrganizationMappings.GetHashCode();
             }
 
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
-            if (this.Cursor != null)
+            if (Cursor != null)
             {
-                hash = hash * 59 + this.Cursor.GetHashCode();
+                hash = hash * 59 + Cursor.GetHashCode();
             }
 
             return hash;

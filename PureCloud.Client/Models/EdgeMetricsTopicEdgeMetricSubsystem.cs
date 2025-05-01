@@ -74,7 +74,7 @@ public partial class EdgeMetricsTopicEdgeMetricSubsystem : IEquatable<EdgeMetric
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeMetricsTopicEdgeMetricSubsystem);
+        return Equals(obj as EdgeMetricsTopicEdgeMetricSubsystem);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class EdgeMetricsTopicEdgeMetricSubsystem : IEquatable<EdgeMetric
 
         return true &&
             (
-                this.ProcessName == other.ProcessName ||
-                this.ProcessName != null &&
-                this.ProcessName.Equals(other.ProcessName)
+                ProcessName == other.ProcessName ||
+                ProcessName != null &&
+                ProcessName.Equals(other.ProcessName)
             ) &&
             (
-                this.DelayMs == other.DelayMs ||
-                this.DelayMs != null &&
-                this.DelayMs.Equals(other.DelayMs)
+                DelayMs == other.DelayMs ||
+                DelayMs != null &&
+                DelayMs.Equals(other.DelayMs)
             ) &&
             (
-                this.MediaSubsystem == other.MediaSubsystem ||
-                this.MediaSubsystem != null &&
-                this.MediaSubsystem.Equals(other.MediaSubsystem)
+                MediaSubsystem == other.MediaSubsystem ||
+                MediaSubsystem != null &&
+                MediaSubsystem.Equals(other.MediaSubsystem)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class EdgeMetricsTopicEdgeMetricSubsystem : IEquatable<EdgeMetric
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ProcessName != null)
+            if (ProcessName != null)
             {
-                hash = hash * 59 + this.ProcessName.GetHashCode();
+                hash = hash * 59 + ProcessName.GetHashCode();
             }
 
-            if (this.DelayMs != null)
+            if (DelayMs != null)
             {
-                hash = hash * 59 + this.DelayMs.GetHashCode();
+                hash = hash * 59 + DelayMs.GetHashCode();
             }
 
-            if (this.MediaSubsystem != null)
+            if (MediaSubsystem != null)
             {
-                hash = hash * 59 + this.MediaSubsystem.GetHashCode();
+                hash = hash * 59 + MediaSubsystem.GetHashCode();
             }
 
             return hash;

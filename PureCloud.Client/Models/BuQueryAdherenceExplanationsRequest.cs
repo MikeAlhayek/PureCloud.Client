@@ -94,7 +94,7 @@ public partial class BuQueryAdherenceExplanationsRequest : IEquatable<BuQueryAdh
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuQueryAdherenceExplanationsRequest);
+        return Equals(obj as BuQueryAdherenceExplanationsRequest);
     }
 
     /// <summary>
@@ -112,24 +112,24 @@ public partial class BuQueryAdherenceExplanationsRequest : IEquatable<BuQueryAdh
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.ManagementUnitIds == other.ManagementUnitIds ||
-                this.ManagementUnitIds != null &&
-                this.ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
+                ManagementUnitIds == other.ManagementUnitIds ||
+                ManagementUnitIds != null &&
+                ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
             ) &&
             (
-                this.AgentIds == other.AgentIds ||
-                this.AgentIds != null &&
-                this.AgentIds.SequenceEqual(other.AgentIds)
+                AgentIds == other.AgentIds ||
+                AgentIds != null &&
+                AgentIds.SequenceEqual(other.AgentIds)
             );
     }
 
@@ -144,24 +144,24 @@ public partial class BuQueryAdherenceExplanationsRequest : IEquatable<BuQueryAdh
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.ManagementUnitIds != null)
+            if (ManagementUnitIds != null)
             {
-                hash = hash * 59 + this.ManagementUnitIds.GetHashCode();
+                hash = hash * 59 + ManagementUnitIds.GetHashCode();
             }
 
-            if (this.AgentIds != null)
+            if (AgentIds != null)
             {
-                hash = hash * 59 + this.AgentIds.GetHashCode();
+                hash = hash * 59 + AgentIds.GetHashCode();
             }
 
             return hash;

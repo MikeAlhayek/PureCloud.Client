@@ -213,7 +213,7 @@ public partial class KnowledgeAggregationView : IEquatable<KnowledgeAggregationV
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeAggregationView);
+        return Equals(obj as KnowledgeAggregationView);
     }
 
     /// <summary>
@@ -231,24 +231,24 @@ public partial class KnowledgeAggregationView : IEquatable<KnowledgeAggregationV
 
         return true &&
             (
-                this.Target == other.Target ||
-                this.Target != null &&
-                this.Target.Equals(other.Target)
+                Target == other.Target ||
+                Target != null &&
+                Target.Equals(other.Target)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Function == other.Function ||
-                this.Function != null &&
-                this.Function.Equals(other.Function)
+                Function == other.Function ||
+                Function != null &&
+                Function.Equals(other.Function)
             ) &&
             (
-                this.Range == other.Range ||
-                this.Range != null &&
-                this.Range.Equals(other.Range)
+                Range == other.Range ||
+                Range != null &&
+                Range.Equals(other.Range)
             );
     }
 
@@ -263,24 +263,24 @@ public partial class KnowledgeAggregationView : IEquatable<KnowledgeAggregationV
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Target != null)
+            if (Target != null)
             {
-                hash = hash * 59 + this.Target.GetHashCode();
+                hash = hash * 59 + Target.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Function != null)
+            if (Function != null)
             {
-                hash = hash * 59 + this.Function.GetHashCode();
+                hash = hash * 59 + Function.GetHashCode();
             }
 
-            if (this.Range != null)
+            if (Range != null)
             {
-                hash = hash * 59 + this.Range.GetHashCode();
+                hash = hash * 59 + Range.GetHashCode();
             }
 
             return hash;

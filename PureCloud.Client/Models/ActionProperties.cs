@@ -100,7 +100,7 @@ public partial class ActionProperties : IEquatable<ActionProperties>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionProperties);
+        return Equals(obj as ActionProperties);
     }
 
     /// <summary>
@@ -118,29 +118,29 @@ public partial class ActionProperties : IEquatable<ActionProperties>
 
         return true &&
             (
-                this.WebchatPrompt == other.WebchatPrompt ||
-                this.WebchatPrompt != null &&
-                this.WebchatPrompt.Equals(other.WebchatPrompt)
+                WebchatPrompt == other.WebchatPrompt ||
+                WebchatPrompt != null &&
+                WebchatPrompt.Equals(other.WebchatPrompt)
             ) &&
             (
-                this.WebchatTitleText == other.WebchatTitleText ||
-                this.WebchatTitleText != null &&
-                this.WebchatTitleText.Equals(other.WebchatTitleText)
+                WebchatTitleText == other.WebchatTitleText ||
+                WebchatTitleText != null &&
+                WebchatTitleText.Equals(other.WebchatTitleText)
             ) &&
             (
-                this.WebchatAcceptText == other.WebchatAcceptText ||
-                this.WebchatAcceptText != null &&
-                this.WebchatAcceptText.Equals(other.WebchatAcceptText)
+                WebchatAcceptText == other.WebchatAcceptText ||
+                WebchatAcceptText != null &&
+                WebchatAcceptText.Equals(other.WebchatAcceptText)
             ) &&
             (
-                this.WebchatDeclineText == other.WebchatDeclineText ||
-                this.WebchatDeclineText != null &&
-                this.WebchatDeclineText.Equals(other.WebchatDeclineText)
+                WebchatDeclineText == other.WebchatDeclineText ||
+                WebchatDeclineText != null &&
+                WebchatDeclineText.Equals(other.WebchatDeclineText)
             ) &&
             (
-                this.WebchatSurvey == other.WebchatSurvey ||
-                this.WebchatSurvey != null &&
-                this.WebchatSurvey.Equals(other.WebchatSurvey)
+                WebchatSurvey == other.WebchatSurvey ||
+                WebchatSurvey != null &&
+                WebchatSurvey.Equals(other.WebchatSurvey)
             );
     }
 
@@ -155,29 +155,29 @@ public partial class ActionProperties : IEquatable<ActionProperties>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WebchatPrompt != null)
+            if (WebchatPrompt != null)
             {
-                hash = hash * 59 + this.WebchatPrompt.GetHashCode();
+                hash = hash * 59 + WebchatPrompt.GetHashCode();
             }
 
-            if (this.WebchatTitleText != null)
+            if (WebchatTitleText != null)
             {
-                hash = hash * 59 + this.WebchatTitleText.GetHashCode();
+                hash = hash * 59 + WebchatTitleText.GetHashCode();
             }
 
-            if (this.WebchatAcceptText != null)
+            if (WebchatAcceptText != null)
             {
-                hash = hash * 59 + this.WebchatAcceptText.GetHashCode();
+                hash = hash * 59 + WebchatAcceptText.GetHashCode();
             }
 
-            if (this.WebchatDeclineText != null)
+            if (WebchatDeclineText != null)
             {
-                hash = hash * 59 + this.WebchatDeclineText.GetHashCode();
+                hash = hash * 59 + WebchatDeclineText.GetHashCode();
             }
 
-            if (this.WebchatSurvey != null)
+            if (WebchatSurvey != null)
             {
-                hash = hash * 59 + this.WebchatSurvey.GetHashCode();
+                hash = hash * 59 + WebchatSurvey.GetHashCode();
             }
 
             return hash;

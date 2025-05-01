@@ -60,7 +60,7 @@ public partial class CallRecord : IEquatable<CallRecord>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallRecord);
+        return Equals(obj as CallRecord);
     }
 
     /// <summary>
@@ -78,14 +78,14 @@ public partial class CallRecord : IEquatable<CallRecord>
 
         return true &&
             (
-                this.LastAttempt == other.LastAttempt ||
-                this.LastAttempt != null &&
-                this.LastAttempt.Equals(other.LastAttempt)
+                LastAttempt == other.LastAttempt ||
+                LastAttempt != null &&
+                LastAttempt.Equals(other.LastAttempt)
             ) &&
             (
-                this.LastResult == other.LastResult ||
-                this.LastResult != null &&
-                this.LastResult.Equals(other.LastResult)
+                LastResult == other.LastResult ||
+                LastResult != null &&
+                LastResult.Equals(other.LastResult)
             );
     }
 
@@ -100,14 +100,14 @@ public partial class CallRecord : IEquatable<CallRecord>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LastAttempt != null)
+            if (LastAttempt != null)
             {
-                hash = hash * 59 + this.LastAttempt.GetHashCode();
+                hash = hash * 59 + LastAttempt.GetHashCode();
             }
 
-            if (this.LastResult != null)
+            if (LastResult != null)
             {
-                hash = hash * 59 + this.LastResult.GetHashCode();
+                hash = hash * 59 + LastResult.GetHashCode();
             }
 
             return hash;

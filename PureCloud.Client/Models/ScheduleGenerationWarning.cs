@@ -249,7 +249,7 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScheduleGenerationWarning);
+        return Equals(obj as ScheduleGenerationWarning);
     }
 
     /// <summary>
@@ -267,44 +267,44 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.UserNotLicensed == other.UserNotLicensed ||
-                this.UserNotLicensed != null &&
-                this.UserNotLicensed.Equals(other.UserNotLicensed)
+                UserNotLicensed == other.UserNotLicensed ||
+                UserNotLicensed != null &&
+                UserNotLicensed.Equals(other.UserNotLicensed)
             ) &&
             (
-                this.UnableToMeetMaxDays == other.UnableToMeetMaxDays ||
-                this.UnableToMeetMaxDays != null &&
-                this.UnableToMeetMaxDays.Equals(other.UnableToMeetMaxDays)
+                UnableToMeetMaxDays == other.UnableToMeetMaxDays ||
+                UnableToMeetMaxDays != null &&
+                UnableToMeetMaxDays.Equals(other.UnableToMeetMaxDays)
             ) &&
             (
-                this.UnableToScheduleRequiredDays == other.UnableToScheduleRequiredDays ||
-                this.UnableToScheduleRequiredDays != null &&
-                this.UnableToScheduleRequiredDays.SequenceEqual(other.UnableToScheduleRequiredDays)
+                UnableToScheduleRequiredDays == other.UnableToScheduleRequiredDays ||
+                UnableToScheduleRequiredDays != null &&
+                UnableToScheduleRequiredDays.SequenceEqual(other.UnableToScheduleRequiredDays)
             ) &&
             (
-                this.UnableToMeetMinPaidForTheWeek == other.UnableToMeetMinPaidForTheWeek ||
-                this.UnableToMeetMinPaidForTheWeek != null &&
-                this.UnableToMeetMinPaidForTheWeek.Equals(other.UnableToMeetMinPaidForTheWeek)
+                UnableToMeetMinPaidForTheWeek == other.UnableToMeetMinPaidForTheWeek ||
+                UnableToMeetMinPaidForTheWeek != null &&
+                UnableToMeetMinPaidForTheWeek.Equals(other.UnableToMeetMinPaidForTheWeek)
             ) &&
             (
-                this.UnableToMeetMaxPaidForTheWeek == other.UnableToMeetMaxPaidForTheWeek ||
-                this.UnableToMeetMaxPaidForTheWeek != null &&
-                this.UnableToMeetMaxPaidForTheWeek.Equals(other.UnableToMeetMaxPaidForTheWeek)
+                UnableToMeetMaxPaidForTheWeek == other.UnableToMeetMaxPaidForTheWeek ||
+                UnableToMeetMaxPaidForTheWeek != null &&
+                UnableToMeetMaxPaidForTheWeek.Equals(other.UnableToMeetMaxPaidForTheWeek)
             ) &&
             (
-                this.NoNeedDays == other.NoNeedDays ||
-                this.NoNeedDays != null &&
-                this.NoNeedDays.SequenceEqual(other.NoNeedDays)
+                NoNeedDays == other.NoNeedDays ||
+                NoNeedDays != null &&
+                NoNeedDays.SequenceEqual(other.NoNeedDays)
             ) &&
             (
-                this.ShiftsTooCloseTogether == other.ShiftsTooCloseTogether ||
-                this.ShiftsTooCloseTogether != null &&
-                this.ShiftsTooCloseTogether.Equals(other.ShiftsTooCloseTogether)
+                ShiftsTooCloseTogether == other.ShiftsTooCloseTogether ||
+                ShiftsTooCloseTogether != null &&
+                ShiftsTooCloseTogether.Equals(other.ShiftsTooCloseTogether)
             );
     }
 
@@ -319,44 +319,44 @@ public partial class ScheduleGenerationWarning : IEquatable<ScheduleGenerationWa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.UserNotLicensed != null)
+            if (UserNotLicensed != null)
             {
-                hash = hash * 59 + this.UserNotLicensed.GetHashCode();
+                hash = hash * 59 + UserNotLicensed.GetHashCode();
             }
 
-            if (this.UnableToMeetMaxDays != null)
+            if (UnableToMeetMaxDays != null)
             {
-                hash = hash * 59 + this.UnableToMeetMaxDays.GetHashCode();
+                hash = hash * 59 + UnableToMeetMaxDays.GetHashCode();
             }
 
-            if (this.UnableToScheduleRequiredDays != null)
+            if (UnableToScheduleRequiredDays != null)
             {
-                hash = hash * 59 + this.UnableToScheduleRequiredDays.GetHashCode();
+                hash = hash * 59 + UnableToScheduleRequiredDays.GetHashCode();
             }
 
-            if (this.UnableToMeetMinPaidForTheWeek != null)
+            if (UnableToMeetMinPaidForTheWeek != null)
             {
-                hash = hash * 59 + this.UnableToMeetMinPaidForTheWeek.GetHashCode();
+                hash = hash * 59 + UnableToMeetMinPaidForTheWeek.GetHashCode();
             }
 
-            if (this.UnableToMeetMaxPaidForTheWeek != null)
+            if (UnableToMeetMaxPaidForTheWeek != null)
             {
-                hash = hash * 59 + this.UnableToMeetMaxPaidForTheWeek.GetHashCode();
+                hash = hash * 59 + UnableToMeetMaxPaidForTheWeek.GetHashCode();
             }
 
-            if (this.NoNeedDays != null)
+            if (NoNeedDays != null)
             {
-                hash = hash * 59 + this.NoNeedDays.GetHashCode();
+                hash = hash * 59 + NoNeedDays.GetHashCode();
             }
 
-            if (this.ShiftsTooCloseTogether != null)
+            if (ShiftsTooCloseTogether != null)
             {
-                hash = hash * 59 + this.ShiftsTooCloseTogether.GetHashCode();
+                hash = hash * 59 + ShiftsTooCloseTogether.GetHashCode();
             }
 
             return hash;

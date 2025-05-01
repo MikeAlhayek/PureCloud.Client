@@ -129,7 +129,7 @@ public partial class EscalationTarget : IEquatable<EscalationTarget>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EscalationTarget);
+        return Equals(obj as EscalationTarget);
     }
 
     /// <summary>
@@ -147,19 +147,19 @@ public partial class EscalationTarget : IEquatable<EscalationTarget>
 
         return true &&
             (
-                this.TargetType == other.TargetType ||
-                this.TargetType != null &&
-                this.TargetType.Equals(other.TargetType)
+                TargetType == other.TargetType ||
+                TargetType != null &&
+                TargetType.Equals(other.TargetType)
             ) &&
             (
-                this.Destination == other.Destination ||
-                this.Destination != null &&
-                this.Destination.Equals(other.Destination)
+                Destination == other.Destination ||
+                Destination != null &&
+                Destination.Equals(other.Destination)
             ) &&
             (
-                this.Override == other.Override ||
-                this.Override != null &&
-                this.Override.Equals(other.Override)
+                Override == other.Override ||
+                Override != null &&
+                Override.Equals(other.Override)
             );
     }
 
@@ -174,19 +174,19 @@ public partial class EscalationTarget : IEquatable<EscalationTarget>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TargetType != null)
+            if (TargetType != null)
             {
-                hash = hash * 59 + this.TargetType.GetHashCode();
+                hash = hash * 59 + TargetType.GetHashCode();
             }
 
-            if (this.Destination != null)
+            if (Destination != null)
             {
-                hash = hash * 59 + this.Destination.GetHashCode();
+                hash = hash * 59 + Destination.GetHashCode();
             }
 
-            if (this.Override != null)
+            if (Override != null)
             {
-                hash = hash * 59 + this.Override.GetHashCode();
+                hash = hash * 59 + Override.GetHashCode();
             }
 
             return hash;

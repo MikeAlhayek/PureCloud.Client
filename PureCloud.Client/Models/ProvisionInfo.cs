@@ -77,7 +77,7 @@ public partial class ProvisionInfo : IEquatable<ProvisionInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ProvisionInfo);
+        return Equals(obj as ProvisionInfo);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ProvisionInfo : IEquatable<ProvisionInfo>
 
         return true &&
             (
-                this.Time == other.Time ||
-                this.Time != null &&
-                this.Time.Equals(other.Time)
+                Time == other.Time ||
+                Time != null &&
+                Time.Equals(other.Time)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ProvisionInfo : IEquatable<ProvisionInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Time != null)
+            if (Time != null)
             {
-                hash = hash * 59 + this.Time.GetHashCode();
+                hash = hash * 59 + Time.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
             return hash;

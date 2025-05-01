@@ -52,7 +52,7 @@ public partial class Usage : IEquatable<Usage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Usage);
+        return Equals(obj as Usage);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class Usage : IEquatable<Usage>
 
         return true &&
             (
-                this.Types == other.Types ||
-                this.Types != null &&
-                this.Types.SequenceEqual(other.Types)
+                Types == other.Types ||
+                Types != null &&
+                Types.SequenceEqual(other.Types)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class Usage : IEquatable<Usage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Types != null)
+            if (Types != null)
             {
-                hash = hash * 59 + this.Types.GetHashCode();
+                hash = hash * 59 + Types.GetHashCode();
             }
 
             return hash;

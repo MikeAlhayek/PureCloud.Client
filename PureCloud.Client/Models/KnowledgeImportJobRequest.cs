@@ -127,7 +127,7 @@ public partial class KnowledgeImportJobRequest : IEquatable<KnowledgeImportJobRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeImportJobRequest);
+        return Equals(obj as KnowledgeImportJobRequest);
     }
 
     /// <summary>
@@ -145,24 +145,24 @@ public partial class KnowledgeImportJobRequest : IEquatable<KnowledgeImportJobRe
 
         return true &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.FileType == other.FileType ||
-                this.FileType != null &&
-                this.FileType.Equals(other.FileType)
+                FileType == other.FileType ||
+                FileType != null &&
+                FileType.Equals(other.FileType)
             ) &&
             (
-                this.Settings == other.Settings ||
-                this.Settings != null &&
-                this.Settings.Equals(other.Settings)
+                Settings == other.Settings ||
+                Settings != null &&
+                Settings.Equals(other.Settings)
             ) &&
             (
-                this.SkipConfirmationStep == other.SkipConfirmationStep ||
-                this.SkipConfirmationStep != null &&
-                this.SkipConfirmationStep.Equals(other.SkipConfirmationStep)
+                SkipConfirmationStep == other.SkipConfirmationStep ||
+                SkipConfirmationStep != null &&
+                SkipConfirmationStep.Equals(other.SkipConfirmationStep)
             );
     }
 
@@ -177,24 +177,24 @@ public partial class KnowledgeImportJobRequest : IEquatable<KnowledgeImportJobRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.FileType != null)
+            if (FileType != null)
             {
-                hash = hash * 59 + this.FileType.GetHashCode();
+                hash = hash * 59 + FileType.GetHashCode();
             }
 
-            if (this.Settings != null)
+            if (Settings != null)
             {
-                hash = hash * 59 + this.Settings.GetHashCode();
+                hash = hash * 59 + Settings.GetHashCode();
             }
 
-            if (this.SkipConfirmationStep != null)
+            if (SkipConfirmationStep != null)
             {
-                hash = hash * 59 + this.SkipConfirmationStep.GetHashCode();
+                hash = hash * 59 + SkipConfirmationStep.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class SnapshotMetaDataResult : IEquatable<SnapshotMetaDataResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SnapshotMetaDataResult);
+        return Equals(obj as SnapshotMetaDataResult);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class SnapshotMetaDataResult : IEquatable<SnapshotMetaDataResult>
 
         return true &&
             (
-                this.SnapshotInfo == other.SnapshotInfo ||
-                this.SnapshotInfo != null &&
-                this.SnapshotInfo.Equals(other.SnapshotInfo)
+                SnapshotInfo == other.SnapshotInfo ||
+                SnapshotInfo != null &&
+                SnapshotInfo.Equals(other.SnapshotInfo)
             ) &&
             (
-                this.DateForecastStart == other.DateForecastStart ||
-                this.DateForecastStart != null &&
-                this.DateForecastStart.Equals(other.DateForecastStart)
+                DateForecastStart == other.DateForecastStart ||
+                DateForecastStart != null &&
+                DateForecastStart.Equals(other.DateForecastStart)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class SnapshotMetaDataResult : IEquatable<SnapshotMetaDataResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SnapshotInfo != null)
+            if (SnapshotInfo != null)
             {
-                hash = hash * 59 + this.SnapshotInfo.GetHashCode();
+                hash = hash * 59 + SnapshotInfo.GetHashCode();
             }
 
-            if (this.DateForecastStart != null)
+            if (DateForecastStart != null)
             {
-                hash = hash * 59 + this.DateForecastStart.GetHashCode();
+                hash = hash * 59 + DateForecastStart.GetHashCode();
             }
 
             return hash;

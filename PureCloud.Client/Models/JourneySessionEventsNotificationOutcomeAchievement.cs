@@ -63,7 +63,7 @@ public partial class JourneySessionEventsNotificationOutcomeAchievement : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneySessionEventsNotificationOutcomeAchievement);
+        return Equals(obj as JourneySessionEventsNotificationOutcomeAchievement);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class JourneySessionEventsNotificationOutcomeAchievement : IEquat
 
         return true &&
             (
-                this.Outcome == other.Outcome ||
-                this.Outcome != null &&
-                this.Outcome.Equals(other.Outcome)
+                Outcome == other.Outcome ||
+                Outcome != null &&
+                Outcome.Equals(other.Outcome)
             ) &&
             (
-                this.AchievedDate == other.AchievedDate ||
-                this.AchievedDate != null &&
-                this.AchievedDate.Equals(other.AchievedDate)
+                AchievedDate == other.AchievedDate ||
+                AchievedDate != null &&
+                AchievedDate.Equals(other.AchievedDate)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class JourneySessionEventsNotificationOutcomeAchievement : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Outcome != null)
+            if (Outcome != null)
             {
-                hash = hash * 59 + this.Outcome.GetHashCode();
+                hash = hash * 59 + Outcome.GetHashCode();
             }
 
-            if (this.AchievedDate != null)
+            if (AchievedDate != null)
             {
-                hash = hash * 59 + this.AchievedDate.GetHashCode();
+                hash = hash * 59 + AchievedDate.GetHashCode();
             }
 
             return hash;

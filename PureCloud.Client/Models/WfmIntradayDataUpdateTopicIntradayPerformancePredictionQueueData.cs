@@ -74,7 +74,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData);
+        return Equals(obj as WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueu
 
         return true &&
             (
-                this.ServiceLevelPercent == other.ServiceLevelPercent ||
-                this.ServiceLevelPercent != null &&
-                this.ServiceLevelPercent.Equals(other.ServiceLevelPercent)
+                ServiceLevelPercent == other.ServiceLevelPercent ||
+                ServiceLevelPercent != null &&
+                ServiceLevelPercent.Equals(other.ServiceLevelPercent)
             ) &&
             (
-                this.AverageSpeedOfAnswerSeconds == other.AverageSpeedOfAnswerSeconds ||
-                this.AverageSpeedOfAnswerSeconds != null &&
-                this.AverageSpeedOfAnswerSeconds.Equals(other.AverageSpeedOfAnswerSeconds)
+                AverageSpeedOfAnswerSeconds == other.AverageSpeedOfAnswerSeconds ||
+                AverageSpeedOfAnswerSeconds != null &&
+                AverageSpeedOfAnswerSeconds.Equals(other.AverageSpeedOfAnswerSeconds)
             ) &&
             (
-                this.NumberOfInteractions == other.NumberOfInteractions ||
-                this.NumberOfInteractions != null &&
-                this.NumberOfInteractions.Equals(other.NumberOfInteractions)
+                NumberOfInteractions == other.NumberOfInteractions ||
+                NumberOfInteractions != null &&
+                NumberOfInteractions.Equals(other.NumberOfInteractions)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ServiceLevelPercent != null)
+            if (ServiceLevelPercent != null)
             {
-                hash = hash * 59 + this.ServiceLevelPercent.GetHashCode();
+                hash = hash * 59 + ServiceLevelPercent.GetHashCode();
             }
 
-            if (this.AverageSpeedOfAnswerSeconds != null)
+            if (AverageSpeedOfAnswerSeconds != null)
             {
-                hash = hash * 59 + this.AverageSpeedOfAnswerSeconds.GetHashCode();
+                hash = hash * 59 + AverageSpeedOfAnswerSeconds.GetHashCode();
             }
 
-            if (this.NumberOfInteractions != null)
+            if (NumberOfInteractions != null)
             {
-                hash = hash * 59 + this.NumberOfInteractions.GetHashCode();
+                hash = hash * 59 + NumberOfInteractions.GetHashCode();
             }
 
             return hash;

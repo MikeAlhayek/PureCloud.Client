@@ -171,7 +171,7 @@ public partial class Celebration : IEquatable<Celebration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Celebration);
+        return Equals(obj as Celebration);
     }
 
     /// <summary>
@@ -189,49 +189,49 @@ public partial class Celebration : IEquatable<Celebration>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Recipient == other.Recipient ||
-                this.Recipient != null &&
-                this.Recipient.Equals(other.Recipient)
+                Recipient == other.Recipient ||
+                Recipient != null &&
+                Recipient.Equals(other.Recipient)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Note == other.Note ||
-                this.Note != null &&
-                this.Note.Equals(other.Note)
+                Note == other.Note ||
+                Note != null &&
+                Note.Equals(other.Note)
             ) &&
             (
-                this.SourceEntity == other.SourceEntity ||
-                this.SourceEntity != null &&
-                this.SourceEntity.Equals(other.SourceEntity)
+                SourceEntity == other.SourceEntity ||
+                SourceEntity != null &&
+                SourceEntity.Equals(other.SourceEntity)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -246,49 +246,49 @@ public partial class Celebration : IEquatable<Celebration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Recipient != null)
+            if (Recipient != null)
             {
-                hash = hash * 59 + this.Recipient.GetHashCode();
+                hash = hash * 59 + Recipient.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Note != null)
+            if (Note != null)
             {
-                hash = hash * 59 + this.Note.GetHashCode();
+                hash = hash * 59 + Note.GetHashCode();
             }
 
-            if (this.SourceEntity != null)
+            if (SourceEntity != null)
             {
-                hash = hash * 59 + this.SourceEntity.GetHashCode();
+                hash = hash * 59 + SourceEntity.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

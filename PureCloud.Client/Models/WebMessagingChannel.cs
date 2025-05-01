@@ -81,7 +81,7 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebMessagingChannel);
+        return Equals(obj as WebMessagingChannel);
     }
 
     /// <summary>
@@ -99,24 +99,24 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
 
         return true &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.To == other.To ||
-                this.To != null &&
-                this.To.Equals(other.To)
+                To == other.To ||
+                To != null &&
+                To.Equals(other.To)
             ) &&
             (
-                this.Time == other.Time ||
-                this.Time != null &&
-                this.Time.Equals(other.Time)
+                Time == other.Time ||
+                Time != null &&
+                Time.Equals(other.Time)
             ) &&
             (
-                this.MessageId == other.MessageId ||
-                this.MessageId != null &&
-                this.MessageId.Equals(other.MessageId)
+                MessageId == other.MessageId ||
+                MessageId != null &&
+                MessageId.Equals(other.MessageId)
             );
     }
 
@@ -131,24 +131,24 @@ public partial class WebMessagingChannel : IEquatable<WebMessagingChannel>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.To != null)
+            if (To != null)
             {
-                hash = hash * 59 + this.To.GetHashCode();
+                hash = hash * 59 + To.GetHashCode();
             }
 
-            if (this.Time != null)
+            if (Time != null)
             {
-                hash = hash * 59 + this.Time.GetHashCode();
+                hash = hash * 59 + Time.GetHashCode();
             }
 
-            if (this.MessageId != null)
+            if (MessageId != null)
             {
-                hash = hash * 59 + this.MessageId.GetHashCode();
+                hash = hash * 59 + MessageId.GetHashCode();
             }
 
             return hash;

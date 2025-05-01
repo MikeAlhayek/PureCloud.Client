@@ -77,7 +77,7 @@ public partial class KnowledgeGroupStatistics : IEquatable<KnowledgeGroupStatist
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeGroupStatistics);
+        return Equals(obj as KnowledgeGroupStatistics);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class KnowledgeGroupStatistics : IEquatable<KnowledgeGroupStatist
 
         return true &&
             (
-                this.UnlinkedPhraseCount == other.UnlinkedPhraseCount ||
-                this.UnlinkedPhraseCount != null &&
-                this.UnlinkedPhraseCount.Equals(other.UnlinkedPhraseCount)
+                UnlinkedPhraseCount == other.UnlinkedPhraseCount ||
+                UnlinkedPhraseCount != null &&
+                UnlinkedPhraseCount.Equals(other.UnlinkedPhraseCount)
             ) &&
             (
-                this.UnlinkedPhraseHitCount == other.UnlinkedPhraseHitCount ||
-                this.UnlinkedPhraseHitCount != null &&
-                this.UnlinkedPhraseHitCount.Equals(other.UnlinkedPhraseHitCount)
+                UnlinkedPhraseHitCount == other.UnlinkedPhraseHitCount ||
+                UnlinkedPhraseHitCount != null &&
+                UnlinkedPhraseHitCount.Equals(other.UnlinkedPhraseHitCount)
             ) &&
             (
-                this.TotalPhraseHitCount == other.TotalPhraseHitCount ||
-                this.TotalPhraseHitCount != null &&
-                this.TotalPhraseHitCount.Equals(other.TotalPhraseHitCount)
+                TotalPhraseHitCount == other.TotalPhraseHitCount ||
+                TotalPhraseHitCount != null &&
+                TotalPhraseHitCount.Equals(other.TotalPhraseHitCount)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class KnowledgeGroupStatistics : IEquatable<KnowledgeGroupStatist
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UnlinkedPhraseCount != null)
+            if (UnlinkedPhraseCount != null)
             {
-                hash = hash * 59 + this.UnlinkedPhraseCount.GetHashCode();
+                hash = hash * 59 + UnlinkedPhraseCount.GetHashCode();
             }
 
-            if (this.UnlinkedPhraseHitCount != null)
+            if (UnlinkedPhraseHitCount != null)
             {
-                hash = hash * 59 + this.UnlinkedPhraseHitCount.GetHashCode();
+                hash = hash * 59 + UnlinkedPhraseHitCount.GetHashCode();
             }
 
-            if (this.TotalPhraseHitCount != null)
+            if (TotalPhraseHitCount != null)
             {
-                hash = hash * 59 + this.TotalPhraseHitCount.GetHashCode();
+                hash = hash * 59 + TotalPhraseHitCount.GetHashCode();
             }
 
             return hash;

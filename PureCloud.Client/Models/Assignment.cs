@@ -76,7 +76,7 @@ public partial class Assignment : IEquatable<Assignment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Assignment);
+        return Equals(obj as Assignment);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class Assignment : IEquatable<Assignment>
 
         return true &&
             (
-                this.AssignedMembers == other.AssignedMembers ||
-                this.AssignedMembers != null &&
-                this.AssignedMembers.SequenceEqual(other.AssignedMembers)
+                AssignedMembers == other.AssignedMembers ||
+                AssignedMembers != null &&
+                AssignedMembers.SequenceEqual(other.AssignedMembers)
             ) &&
             (
-                this.RemovedMembers == other.RemovedMembers ||
-                this.RemovedMembers != null &&
-                this.RemovedMembers.SequenceEqual(other.RemovedMembers)
+                RemovedMembers == other.RemovedMembers ||
+                RemovedMembers != null &&
+                RemovedMembers.SequenceEqual(other.RemovedMembers)
             ) &&
             (
-                this.AssignmentErrors == other.AssignmentErrors ||
-                this.AssignmentErrors != null &&
-                this.AssignmentErrors.SequenceEqual(other.AssignmentErrors)
+                AssignmentErrors == other.AssignmentErrors ||
+                AssignmentErrors != null &&
+                AssignmentErrors.SequenceEqual(other.AssignmentErrors)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class Assignment : IEquatable<Assignment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AssignedMembers != null)
+            if (AssignedMembers != null)
             {
-                hash = hash * 59 + this.AssignedMembers.GetHashCode();
+                hash = hash * 59 + AssignedMembers.GetHashCode();
             }
 
-            if (this.RemovedMembers != null)
+            if (RemovedMembers != null)
             {
-                hash = hash * 59 + this.RemovedMembers.GetHashCode();
+                hash = hash * 59 + RemovedMembers.GetHashCode();
             }
 
-            if (this.AssignmentErrors != null)
+            if (AssignmentErrors != null)
             {
-                hash = hash * 59 + this.AssignmentErrors.GetHashCode();
+                hash = hash * 59 + AssignmentErrors.GetHashCode();
             }
 
             return hash;

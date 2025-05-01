@@ -559,7 +559,7 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentsAnswerFilter);
+        return Equals(obj as KnowledgeDocumentsAnswerFilter);
     }
 
     /// <summary>
@@ -577,44 +577,44 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
 
         return true &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.Equals(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.Equals(other.Query)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.AppType == other.AppType ||
-                this.AppType != null &&
-                this.AppType.Equals(other.AppType)
+                AppType == other.AppType ||
+                AppType != null &&
+                AppType.Equals(other.AppType)
             ) &&
             (
-                this.QueryType == other.QueryType ||
-                this.QueryType != null &&
-                this.QueryType.Equals(other.QueryType)
+                QueryType == other.QueryType ||
+                QueryType != null &&
+                QueryType.Equals(other.QueryType)
             ) &&
             (
-                this.SearchId == other.SearchId ||
-                this.SearchId != null &&
-                this.SearchId.Equals(other.SearchId)
+                SearchId == other.SearchId ||
+                SearchId != null &&
+                SearchId.Equals(other.SearchId)
             ) &&
             (
-                this.InsertHighlightIntoVariationContent == other.InsertHighlightIntoVariationContent ||
-                this.InsertHighlightIntoVariationContent != null &&
-                this.InsertHighlightIntoVariationContent.Equals(other.InsertHighlightIntoVariationContent)
+                InsertHighlightIntoVariationContent == other.InsertHighlightIntoVariationContent ||
+                InsertHighlightIntoVariationContent != null &&
+                InsertHighlightIntoVariationContent.Equals(other.InsertHighlightIntoVariationContent)
             ) &&
             (
-                this.AnswerMode == other.AnswerMode ||
-                this.AnswerMode != null &&
-                this.AnswerMode.SequenceEqual(other.AnswerMode)
+                AnswerMode == other.AnswerMode ||
+                AnswerMode != null &&
+                AnswerMode.SequenceEqual(other.AnswerMode)
             ) &&
             (
-                this.VariationIds == other.VariationIds ||
-                this.VariationIds != null &&
-                this.VariationIds.SequenceEqual(other.VariationIds)
+                VariationIds == other.VariationIds ||
+                VariationIds != null &&
+                VariationIds.SequenceEqual(other.VariationIds)
             );
     }
 
@@ -629,44 +629,44 @@ public partial class KnowledgeDocumentsAnswerFilter : IEquatable<KnowledgeDocume
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.AppType != null)
+            if (AppType != null)
             {
-                hash = hash * 59 + this.AppType.GetHashCode();
+                hash = hash * 59 + AppType.GetHashCode();
             }
 
-            if (this.QueryType != null)
+            if (QueryType != null)
             {
-                hash = hash * 59 + this.QueryType.GetHashCode();
+                hash = hash * 59 + QueryType.GetHashCode();
             }
 
-            if (this.SearchId != null)
+            if (SearchId != null)
             {
-                hash = hash * 59 + this.SearchId.GetHashCode();
+                hash = hash * 59 + SearchId.GetHashCode();
             }
 
-            if (this.InsertHighlightIntoVariationContent != null)
+            if (InsertHighlightIntoVariationContent != null)
             {
-                hash = hash * 59 + this.InsertHighlightIntoVariationContent.GetHashCode();
+                hash = hash * 59 + InsertHighlightIntoVariationContent.GetHashCode();
             }
 
-            if (this.AnswerMode != null)
+            if (AnswerMode != null)
             {
-                hash = hash * 59 + this.AnswerMode.GetHashCode();
+                hash = hash * 59 + AnswerMode.GetHashCode();
             }
 
-            if (this.VariationIds != null)
+            if (VariationIds != null)
             {
-                hash = hash * 59 + this.VariationIds.GetHashCode();
+                hash = hash * 59 + VariationIds.GetHashCode();
             }
 
             return hash;

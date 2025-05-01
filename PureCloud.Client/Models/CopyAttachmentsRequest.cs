@@ -71,7 +71,7 @@ public partial class CopyAttachmentsRequest : IEquatable<CopyAttachmentsRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CopyAttachmentsRequest);
+        return Equals(obj as CopyAttachmentsRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class CopyAttachmentsRequest : IEquatable<CopyAttachmentsRequest>
 
         return true &&
             (
-                this.SourceMessage == other.SourceMessage ||
-                this.SourceMessage != null &&
-                this.SourceMessage.Equals(other.SourceMessage)
+                SourceMessage == other.SourceMessage ||
+                SourceMessage != null &&
+                SourceMessage.Equals(other.SourceMessage)
             ) &&
             (
-                this.Attachments == other.Attachments ||
-                this.Attachments != null &&
-                this.Attachments.SequenceEqual(other.Attachments)
+                Attachments == other.Attachments ||
+                Attachments != null &&
+                Attachments.SequenceEqual(other.Attachments)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class CopyAttachmentsRequest : IEquatable<CopyAttachmentsRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SourceMessage != null)
+            if (SourceMessage != null)
             {
-                hash = hash * 59 + this.SourceMessage.GetHashCode();
+                hash = hash * 59 + SourceMessage.GetHashCode();
             }
 
-            if (this.Attachments != null)
+            if (Attachments != null)
             {
-                hash = hash * 59 + this.Attachments.GetHashCode();
+                hash = hash * 59 + Attachments.GetHashCode();
             }
 
             return hash;

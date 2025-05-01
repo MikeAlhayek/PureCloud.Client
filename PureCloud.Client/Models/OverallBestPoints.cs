@@ -71,7 +71,7 @@ public partial class OverallBestPoints : IEquatable<OverallBestPoints>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OverallBestPoints);
+        return Equals(obj as OverallBestPoints);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class OverallBestPoints : IEquatable<OverallBestPoints>
 
         return true &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.BestPoints == other.BestPoints ||
-                this.BestPoints != null &&
-                this.BestPoints.SequenceEqual(other.BestPoints)
+                BestPoints == other.BestPoints ||
+                BestPoints != null &&
+                BestPoints.SequenceEqual(other.BestPoints)
             ) &&
             (
-                this.PerformanceProfile == other.PerformanceProfile ||
-                this.PerformanceProfile != null &&
-                this.PerformanceProfile.Equals(other.PerformanceProfile)
+                PerformanceProfile == other.PerformanceProfile ||
+                PerformanceProfile != null &&
+                PerformanceProfile.Equals(other.PerformanceProfile)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class OverallBestPoints : IEquatable<OverallBestPoints>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.BestPoints != null)
+            if (BestPoints != null)
             {
-                hash = hash * 59 + this.BestPoints.GetHashCode();
+                hash = hash * 59 + BestPoints.GetHashCode();
             }
 
-            if (this.PerformanceProfile != null)
+            if (PerformanceProfile != null)
             {
-                hash = hash * 59 + this.PerformanceProfile.GetHashCode();
+                hash = hash * 59 + PerformanceProfile.GetHashCode();
             }
 
             return hash;

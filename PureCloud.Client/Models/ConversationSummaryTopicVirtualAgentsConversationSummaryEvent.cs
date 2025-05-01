@@ -386,7 +386,7 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationSummaryTopicVirtualAgentsConversationSummaryEvent);
+        return Equals(obj as ConversationSummaryTopicVirtualAgentsConversationSummaryEvent);
     }
 
     /// <summary>
@@ -404,94 +404,94 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.SequenceEqual(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.SequenceEqual(other.Participants)
             ) &&
             (
-                this.CommunicationIds == other.CommunicationIds ||
-                this.CommunicationIds != null &&
-                this.CommunicationIds.SequenceEqual(other.CommunicationIds)
+                CommunicationIds == other.CommunicationIds ||
+                CommunicationIds != null &&
+                CommunicationIds.SequenceEqual(other.CommunicationIds)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             ) &&
             (
-                this.MessageType == other.MessageType ||
-                this.MessageType != null &&
-                this.MessageType.Equals(other.MessageType)
+                MessageType == other.MessageType ||
+                MessageType != null &&
+                MessageType.Equals(other.MessageType)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.SummaryId == other.SummaryId ||
-                this.SummaryId != null &&
-                this.SummaryId.Equals(other.SummaryId)
+                SummaryId == other.SummaryId ||
+                SummaryId != null &&
+                SummaryId.Equals(other.SummaryId)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Summary == other.Summary ||
-                this.Summary != null &&
-                this.Summary.Equals(other.Summary)
+                Summary == other.Summary ||
+                Summary != null &&
+                Summary.Equals(other.Summary)
             ) &&
             (
-                this.Headline == other.Headline ||
-                this.Headline != null &&
-                this.Headline.Equals(other.Headline)
+                Headline == other.Headline ||
+                Headline != null &&
+                Headline.Equals(other.Headline)
             ) &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             ) &&
             (
-                this.Resolution == other.Resolution ||
-                this.Resolution != null &&
-                this.Resolution.Equals(other.Resolution)
+                Resolution == other.Resolution ||
+                Resolution != null &&
+                Resolution.Equals(other.Resolution)
             ) &&
             (
-                this.WrapUpCodes == other.WrapUpCodes ||
-                this.WrapUpCodes != null &&
-                this.WrapUpCodes.SequenceEqual(other.WrapUpCodes)
+                WrapUpCodes == other.WrapUpCodes ||
+                WrapUpCodes != null &&
+                WrapUpCodes.SequenceEqual(other.WrapUpCodes)
             ) &&
             (
-                this.TriggerSource == other.TriggerSource ||
-                this.TriggerSource != null &&
-                this.TriggerSource.Equals(other.TriggerSource)
+                TriggerSource == other.TriggerSource ||
+                TriggerSource != null &&
+                TriggerSource.Equals(other.TriggerSource)
             ) &&
             (
-                this.LastEditedBy == other.LastEditedBy ||
-                this.LastEditedBy != null &&
-                this.LastEditedBy.Equals(other.LastEditedBy)
+                LastEditedBy == other.LastEditedBy ||
+                LastEditedBy != null &&
+                LastEditedBy.Equals(other.LastEditedBy)
             ) &&
             (
-                this.ErrorType == other.ErrorType ||
-                this.ErrorType != null &&
-                this.ErrorType.Equals(other.ErrorType)
+                ErrorType == other.ErrorType ||
+                ErrorType != null &&
+                ErrorType.Equals(other.ErrorType)
             ) &&
             (
-                this.DurationMs == other.DurationMs ||
-                this.DurationMs != null &&
-                this.DurationMs.Equals(other.DurationMs)
+                DurationMs == other.DurationMs ||
+                DurationMs != null &&
+                DurationMs.Equals(other.DurationMs)
             );
     }
 
@@ -506,94 +506,94 @@ public partial class ConversationSummaryTopicVirtualAgentsConversationSummaryEve
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
-            if (this.CommunicationIds != null)
+            if (CommunicationIds != null)
             {
-                hash = hash * 59 + this.CommunicationIds.GetHashCode();
+                hash = hash * 59 + CommunicationIds.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
-            if (this.MessageType != null)
+            if (MessageType != null)
             {
-                hash = hash * 59 + this.MessageType.GetHashCode();
+                hash = hash * 59 + MessageType.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.SummaryId != null)
+            if (SummaryId != null)
             {
-                hash = hash * 59 + this.SummaryId.GetHashCode();
+                hash = hash * 59 + SummaryId.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Summary != null)
+            if (Summary != null)
             {
-                hash = hash * 59 + this.Summary.GetHashCode();
+                hash = hash * 59 + Summary.GetHashCode();
             }
 
-            if (this.Headline != null)
+            if (Headline != null)
             {
-                hash = hash * 59 + this.Headline.GetHashCode();
+                hash = hash * 59 + Headline.GetHashCode();
             }
 
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
-            if (this.Resolution != null)
+            if (Resolution != null)
             {
-                hash = hash * 59 + this.Resolution.GetHashCode();
+                hash = hash * 59 + Resolution.GetHashCode();
             }
 
-            if (this.WrapUpCodes != null)
+            if (WrapUpCodes != null)
             {
-                hash = hash * 59 + this.WrapUpCodes.GetHashCode();
+                hash = hash * 59 + WrapUpCodes.GetHashCode();
             }
 
-            if (this.TriggerSource != null)
+            if (TriggerSource != null)
             {
-                hash = hash * 59 + this.TriggerSource.GetHashCode();
+                hash = hash * 59 + TriggerSource.GetHashCode();
             }
 
-            if (this.LastEditedBy != null)
+            if (LastEditedBy != null)
             {
-                hash = hash * 59 + this.LastEditedBy.GetHashCode();
+                hash = hash * 59 + LastEditedBy.GetHashCode();
             }
 
-            if (this.ErrorType != null)
+            if (ErrorType != null)
             {
-                hash = hash * 59 + this.ErrorType.GetHashCode();
+                hash = hash * 59 + ErrorType.GetHashCode();
             }
 
-            if (this.DurationMs != null)
+            if (DurationMs != null)
             {
-                hash = hash * 59 + this.DurationMs.GetHashCode();
+                hash = hash * 59 + DurationMs.GetHashCode();
             }
 
             return hash;

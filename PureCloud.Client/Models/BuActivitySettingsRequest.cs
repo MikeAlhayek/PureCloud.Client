@@ -52,7 +52,7 @@ public partial class BuActivitySettingsRequest : IEquatable<BuActivitySettingsRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuActivitySettingsRequest);
+        return Equals(obj as BuActivitySettingsRequest);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class BuActivitySettingsRequest : IEquatable<BuActivitySettingsRe
 
         return true &&
             (
-                this.DefaultActivityCodeId == other.DefaultActivityCodeId ||
-                this.DefaultActivityCodeId != null &&
-                this.DefaultActivityCodeId.Equals(other.DefaultActivityCodeId)
+                DefaultActivityCodeId == other.DefaultActivityCodeId ||
+                DefaultActivityCodeId != null &&
+                DefaultActivityCodeId.Equals(other.DefaultActivityCodeId)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class BuActivitySettingsRequest : IEquatable<BuActivitySettingsRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DefaultActivityCodeId != null)
+            if (DefaultActivityCodeId != null)
             {
-                hash = hash * 59 + this.DefaultActivityCodeId.GetHashCode();
+                hash = hash * 59 + DefaultActivityCodeId.GetHashCode();
             }
 
             return hash;

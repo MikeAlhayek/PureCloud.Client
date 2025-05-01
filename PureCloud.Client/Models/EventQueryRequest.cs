@@ -121,7 +121,7 @@ public partial class EventQueryRequest : IEquatable<EventQueryRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EventQueryRequest);
+        return Equals(obj as EventQueryRequest);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class EventQueryRequest : IEquatable<EventQueryRequest>
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.EventDefinitionIds == other.EventDefinitionIds ||
-                this.EventDefinitionIds != null &&
-                this.EventDefinitionIds.SequenceEqual(other.EventDefinitionIds)
+                EventDefinitionIds == other.EventDefinitionIds ||
+                EventDefinitionIds != null &&
+                EventDefinitionIds.SequenceEqual(other.EventDefinitionIds)
             ) &&
             (
-                this.SearchTerm == other.SearchTerm ||
-                this.SearchTerm != null &&
-                this.SearchTerm.Equals(other.SearchTerm)
+                SearchTerm == other.SearchTerm ||
+                SearchTerm != null &&
+                SearchTerm.Equals(other.SearchTerm)
             ) &&
             (
-                this.SortOrder == other.SortOrder ||
-                this.SortOrder != null &&
-                this.SortOrder.Equals(other.SortOrder)
+                SortOrder == other.SortOrder ||
+                SortOrder != null &&
+                SortOrder.Equals(other.SortOrder)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class EventQueryRequest : IEquatable<EventQueryRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.EventDefinitionIds != null)
+            if (EventDefinitionIds != null)
             {
-                hash = hash * 59 + this.EventDefinitionIds.GetHashCode();
+                hash = hash * 59 + EventDefinitionIds.GetHashCode();
             }
 
-            if (this.SearchTerm != null)
+            if (SearchTerm != null)
             {
-                hash = hash * 59 + this.SearchTerm.GetHashCode();
+                hash = hash * 59 + SearchTerm.GetHashCode();
             }
 
-            if (this.SortOrder != null)
+            if (SortOrder != null)
             {
-                hash = hash * 59 + this.SortOrder.GetHashCode();
+                hash = hash * 59 + SortOrder.GetHashCode();
             }
 
             return hash;

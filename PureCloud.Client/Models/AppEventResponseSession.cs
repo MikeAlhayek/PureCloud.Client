@@ -128,7 +128,7 @@ public partial class AppEventResponseSession : IEquatable<AppEventResponseSessio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AppEventResponseSession);
+        return Equals(obj as AppEventResponseSession);
     }
 
     /// <summary>
@@ -146,39 +146,39 @@ public partial class AppEventResponseSession : IEquatable<AppEventResponseSessio
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DurationInSeconds == other.DurationInSeconds ||
-                this.DurationInSeconds != null &&
-                this.DurationInSeconds.Equals(other.DurationInSeconds)
+                DurationInSeconds == other.DurationInSeconds ||
+                DurationInSeconds != null &&
+                DurationInSeconds.Equals(other.DurationInSeconds)
             ) &&
             (
-                this.EventCount == other.EventCount ||
-                this.EventCount != null &&
-                this.EventCount.Equals(other.EventCount)
+                EventCount == other.EventCount ||
+                EventCount != null &&
+                EventCount.Equals(other.EventCount)
             ) &&
             (
-                this.ScreenviewCount == other.ScreenviewCount ||
-                this.ScreenviewCount != null &&
-                this.ScreenviewCount.Equals(other.ScreenviewCount)
+                ScreenviewCount == other.ScreenviewCount ||
+                ScreenviewCount != null &&
+                ScreenviewCount.Equals(other.ScreenviewCount)
             ) &&
             (
-                this.Referrer == other.Referrer ||
-                this.Referrer != null &&
-                this.Referrer.Equals(other.Referrer)
+                Referrer == other.Referrer ||
+                Referrer != null &&
+                Referrer.Equals(other.Referrer)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             );
     }
 
@@ -193,39 +193,39 @@ public partial class AppEventResponseSession : IEquatable<AppEventResponseSessio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DurationInSeconds != null)
+            if (DurationInSeconds != null)
             {
-                hash = hash * 59 + this.DurationInSeconds.GetHashCode();
+                hash = hash * 59 + DurationInSeconds.GetHashCode();
             }
 
-            if (this.EventCount != null)
+            if (EventCount != null)
             {
-                hash = hash * 59 + this.EventCount.GetHashCode();
+                hash = hash * 59 + EventCount.GetHashCode();
             }
 
-            if (this.ScreenviewCount != null)
+            if (ScreenviewCount != null)
             {
-                hash = hash * 59 + this.ScreenviewCount.GetHashCode();
+                hash = hash * 59 + ScreenviewCount.GetHashCode();
             }
 
-            if (this.Referrer != null)
+            if (Referrer != null)
             {
-                hash = hash * 59 + this.Referrer.GetHashCode();
+                hash = hash * 59 + Referrer.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
             return hash;

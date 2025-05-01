@@ -82,7 +82,7 @@ public partial class WebDeploymentsOAuthExchangeRequest : IEquatable<WebDeployme
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebDeploymentsOAuthExchangeRequest);
+        return Equals(obj as WebDeploymentsOAuthExchangeRequest);
     }
 
     /// <summary>
@@ -100,19 +100,19 @@ public partial class WebDeploymentsOAuthExchangeRequest : IEquatable<WebDeployme
 
         return true &&
             (
-                this.DeploymentId == other.DeploymentId ||
-                this.DeploymentId != null &&
-                this.DeploymentId.Equals(other.DeploymentId)
+                DeploymentId == other.DeploymentId ||
+                DeploymentId != null &&
+                DeploymentId.Equals(other.DeploymentId)
             ) &&
             (
-                this.JourneyContext == other.JourneyContext ||
-                this.JourneyContext != null &&
-                this.JourneyContext.Equals(other.JourneyContext)
+                JourneyContext == other.JourneyContext ||
+                JourneyContext != null &&
+                JourneyContext.Equals(other.JourneyContext)
             ) &&
             (
-                this.Oauth == other.Oauth ||
-                this.Oauth != null &&
-                this.Oauth.Equals(other.Oauth)
+                Oauth == other.Oauth ||
+                Oauth != null &&
+                Oauth.Equals(other.Oauth)
             );
     }
 
@@ -127,19 +127,19 @@ public partial class WebDeploymentsOAuthExchangeRequest : IEquatable<WebDeployme
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DeploymentId != null)
+            if (DeploymentId != null)
             {
-                hash = hash * 59 + this.DeploymentId.GetHashCode();
+                hash = hash * 59 + DeploymentId.GetHashCode();
             }
 
-            if (this.JourneyContext != null)
+            if (JourneyContext != null)
             {
-                hash = hash * 59 + this.JourneyContext.GetHashCode();
+                hash = hash * 59 + JourneyContext.GetHashCode();
             }
 
-            if (this.Oauth != null)
+            if (Oauth != null)
             {
-                hash = hash * 59 + this.Oauth.GetHashCode();
+                hash = hash * 59 + Oauth.GetHashCode();
             }
 
             return hash;

@@ -51,7 +51,7 @@ public partial class ArchitectFlowOutcomeNotificationErrorMessageParams : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArchitectFlowOutcomeNotificationErrorMessageParams);
+        return Equals(obj as ArchitectFlowOutcomeNotificationErrorMessageParams);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class ArchitectFlowOutcomeNotificationErrorMessageParams : IEquat
 
         return true &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class ArchitectFlowOutcomeNotificationErrorMessageParams : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

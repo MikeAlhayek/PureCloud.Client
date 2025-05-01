@@ -141,7 +141,7 @@ public partial class DurationCondition : IEquatable<DurationCondition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DurationCondition);
+        return Equals(obj as DurationCondition);
     }
 
     /// <summary>
@@ -159,24 +159,24 @@ public partial class DurationCondition : IEquatable<DurationCondition>
 
         return true &&
             (
-                this.DurationTarget == other.DurationTarget ||
-                this.DurationTarget != null &&
-                this.DurationTarget.Equals(other.DurationTarget)
+                DurationTarget == other.DurationTarget ||
+                DurationTarget != null &&
+                DurationTarget.Equals(other.DurationTarget)
             ) &&
             (
-                this.DurationOperator == other.DurationOperator ||
-                this.DurationOperator != null &&
-                this.DurationOperator.Equals(other.DurationOperator)
+                DurationOperator == other.DurationOperator ||
+                DurationOperator != null &&
+                DurationOperator.Equals(other.DurationOperator)
             ) &&
             (
-                this.DurationRange == other.DurationRange ||
-                this.DurationRange != null &&
-                this.DurationRange.Equals(other.DurationRange)
+                DurationRange == other.DurationRange ||
+                DurationRange != null &&
+                DurationRange.Equals(other.DurationRange)
             ) &&
             (
-                this.DurationMode == other.DurationMode ||
-                this.DurationMode != null &&
-                this.DurationMode.Equals(other.DurationMode)
+                DurationMode == other.DurationMode ||
+                DurationMode != null &&
+                DurationMode.Equals(other.DurationMode)
             );
     }
 
@@ -191,24 +191,24 @@ public partial class DurationCondition : IEquatable<DurationCondition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DurationTarget != null)
+            if (DurationTarget != null)
             {
-                hash = hash * 59 + this.DurationTarget.GetHashCode();
+                hash = hash * 59 + DurationTarget.GetHashCode();
             }
 
-            if (this.DurationOperator != null)
+            if (DurationOperator != null)
             {
-                hash = hash * 59 + this.DurationOperator.GetHashCode();
+                hash = hash * 59 + DurationOperator.GetHashCode();
             }
 
-            if (this.DurationRange != null)
+            if (DurationRange != null)
             {
-                hash = hash * 59 + this.DurationRange.GetHashCode();
+                hash = hash * 59 + DurationRange.GetHashCode();
             }
 
-            if (this.DurationMode != null)
+            if (DurationMode != null)
             {
-                hash = hash * 59 + this.DurationMode.GetHashCode();
+                hash = hash * 59 + DurationMode.GetHashCode();
             }
 
             return hash;

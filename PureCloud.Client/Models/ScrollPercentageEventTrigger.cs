@@ -71,7 +71,7 @@ public partial class ScrollPercentageEventTrigger : IEquatable<ScrollPercentageE
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScrollPercentageEventTrigger);
+        return Equals(obj as ScrollPercentageEventTrigger);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ScrollPercentageEventTrigger : IEquatable<ScrollPercentageE
 
         return true &&
             (
-                this.Percentage == other.Percentage ||
-                this.Percentage != null &&
-                this.Percentage.Equals(other.Percentage)
+                Percentage == other.Percentage ||
+                Percentage != null &&
+                Percentage.Equals(other.Percentage)
             ) &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ScrollPercentageEventTrigger : IEquatable<ScrollPercentageE
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Percentage != null)
+            if (Percentage != null)
             {
-                hash = hash * 59 + this.Percentage.GetHashCode();
+                hash = hash * 59 + Percentage.GetHashCode();
             }
 
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
             return hash;

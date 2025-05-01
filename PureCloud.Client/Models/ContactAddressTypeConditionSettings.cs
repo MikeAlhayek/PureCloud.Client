@@ -109,7 +109,7 @@ public partial class ContactAddressTypeConditionSettings : IEquatable<ContactAdd
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactAddressTypeConditionSettings);
+        return Equals(obj as ContactAddressTypeConditionSettings);
     }
 
     /// <summary>
@@ -127,14 +127,14 @@ public partial class ContactAddressTypeConditionSettings : IEquatable<ContactAdd
 
         return true &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -149,14 +149,14 @@ public partial class ContactAddressTypeConditionSettings : IEquatable<ContactAdd
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

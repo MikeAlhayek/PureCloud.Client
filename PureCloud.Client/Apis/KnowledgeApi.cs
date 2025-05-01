@@ -6651,12 +6651,12 @@ public partial class KnowledgeApi : IKnowledgeApi
     /// <returns></returns>
     public KnowledgeApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -6670,17 +6670,17 @@ public partial class KnowledgeApi : IKnowledgeApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -6690,7 +6690,7 @@ public partial class KnowledgeApi : IKnowledgeApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -6716,7 +6716,7 @@ public partial class KnowledgeApi : IKnowledgeApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -6728,7 +6728,7 @@ public partial class KnowledgeApi : IKnowledgeApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -6774,7 +6774,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6783,7 +6783,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6796,7 +6796,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -6812,11 +6812,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6842,7 +6842,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeBase>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
+            (KnowledgeBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6891,7 +6891,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6900,7 +6900,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6913,7 +6913,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -6929,11 +6929,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6959,7 +6959,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeBase>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
+            (KnowledgeBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7015,7 +7015,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7024,7 +7024,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7037,12 +7037,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -7058,11 +7058,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7088,7 +7088,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryResponse>(localVarStatusCode,
             localVarHeaders,
-            (CategoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
+            (CategoryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7145,7 +7145,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7154,7 +7154,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7167,12 +7167,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -7188,11 +7188,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7218,7 +7218,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryResponse>(localVarStatusCode,
             localVarHeaders,
-            (CategoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
+            (CategoryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7273,7 +7273,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7282,7 +7282,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7295,12 +7295,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -7316,11 +7316,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7402,7 +7402,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7411,7 +7411,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7424,12 +7424,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -7445,11 +7445,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7537,7 +7537,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7546,7 +7546,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7559,17 +7559,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentVariationId != null)
         {
-            localVarPathParams.Add("documentVariationId", this.Configuration.ApiClient.ParameterToString(documentVariationId));
+            localVarPathParams.Add("documentVariationId", Configuration.ApiClient.ParameterToString(documentVariationId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -7585,11 +7585,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7679,7 +7679,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7688,7 +7688,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7701,17 +7701,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentVariationId != null)
         {
-            localVarPathParams.Add("documentVariationId", this.Configuration.ApiClient.ParameterToString(documentVariationId));
+            localVarPathParams.Add("documentVariationId", Configuration.ApiClient.ParameterToString(documentVariationId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -7727,11 +7727,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7812,7 +7812,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7821,7 +7821,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7834,12 +7834,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (exportJobId != null)
         {
-            localVarPathParams.Add("exportJobId", this.Configuration.ApiClient.ParameterToString(exportJobId));
+            localVarPathParams.Add("exportJobId", Configuration.ApiClient.ParameterToString(exportJobId));
         }
 
         // Query params
@@ -7855,11 +7855,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7941,7 +7941,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7950,7 +7950,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7963,12 +7963,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (exportJobId != null)
         {
-            localVarPathParams.Add("exportJobId", this.Configuration.ApiClient.ParameterToString(exportJobId));
+            localVarPathParams.Add("exportJobId", Configuration.ApiClient.ParameterToString(exportJobId));
         }
 
         // Query params
@@ -7984,11 +7984,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8069,7 +8069,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8078,7 +8078,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8091,12 +8091,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (importJobId != null)
         {
-            localVarPathParams.Add("importJobId", this.Configuration.ApiClient.ParameterToString(importJobId));
+            localVarPathParams.Add("importJobId", Configuration.ApiClient.ParameterToString(importJobId));
         }
 
         // Query params
@@ -8112,11 +8112,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8198,7 +8198,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8207,7 +8207,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8220,12 +8220,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (importJobId != null)
         {
-            localVarPathParams.Add("importJobId", this.Configuration.ApiClient.ParameterToString(importJobId));
+            localVarPathParams.Add("importJobId", Configuration.ApiClient.ParameterToString(importJobId));
         }
 
         // Query params
@@ -8241,11 +8241,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8327,7 +8327,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8336,7 +8336,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8349,12 +8349,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (labelId != null)
         {
-            localVarPathParams.Add("labelId", this.Configuration.ApiClient.ParameterToString(labelId));
+            localVarPathParams.Add("labelId", Configuration.ApiClient.ParameterToString(labelId));
         }
 
         // Query params
@@ -8370,11 +8370,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8400,7 +8400,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<LabelResponse>(localVarStatusCode,
             localVarHeaders,
-            (LabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
+            (LabelResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8457,7 +8457,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8466,7 +8466,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8479,12 +8479,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (labelId != null)
         {
-            localVarPathParams.Add("labelId", this.Configuration.ApiClient.ParameterToString(labelId));
+            localVarPathParams.Add("labelId", Configuration.ApiClient.ParameterToString(labelId));
         }
 
         // Query params
@@ -8500,11 +8500,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8530,7 +8530,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<LabelResponse>(localVarStatusCode,
             localVarHeaders,
-            (LabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
+            (LabelResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8593,7 +8593,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8602,7 +8602,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8615,17 +8615,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -8641,11 +8641,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8671,7 +8671,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeCategory>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeCategory)),
+            (KnowledgeCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8736,7 +8736,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8745,7 +8745,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8758,17 +8758,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -8784,11 +8784,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8814,7 +8814,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeCategory>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeCategory)),
+            (KnowledgeCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8877,7 +8877,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8886,7 +8886,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8899,17 +8899,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -8925,11 +8925,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8955,7 +8955,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocument>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
+            (KnowledgeDocument)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9020,7 +9020,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9029,7 +9029,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9042,17 +9042,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -9068,11 +9068,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9098,7 +9098,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocument>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
+            (KnowledgeDocument)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9160,7 +9160,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9169,7 +9169,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9182,17 +9182,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (importId != null)
         {
-            localVarPathParams.Add("importId", this.Configuration.ApiClient.ParameterToString(importId));
+            localVarPathParams.Add("importId", Configuration.ApiClient.ParameterToString(importId));
         }
 
         // Query params
@@ -9208,11 +9208,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9302,7 +9302,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9311,7 +9311,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9324,17 +9324,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (importId != null)
         {
-            localVarPathParams.Add("importId", this.Configuration.ApiClient.ParameterToString(importId));
+            localVarPathParams.Add("importId", Configuration.ApiClient.ParameterToString(importId));
         }
 
         // Query params
@@ -9350,11 +9350,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9435,7 +9435,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9444,7 +9444,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9457,12 +9457,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -9478,11 +9478,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9564,7 +9564,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9573,7 +9573,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9586,12 +9586,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -9607,11 +9607,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9692,7 +9692,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9701,7 +9701,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9714,12 +9714,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -9735,11 +9735,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9821,7 +9821,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9830,7 +9830,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9843,12 +9843,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -9864,11 +9864,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9949,7 +9949,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9958,7 +9958,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9971,12 +9971,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (syncJobId != null)
         {
-            localVarPathParams.Add("syncJobId", this.Configuration.ApiClient.ParameterToString(syncJobId));
+            localVarPathParams.Add("syncJobId", Configuration.ApiClient.ParameterToString(syncJobId));
         }
 
         // Query params
@@ -9992,11 +9992,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10078,7 +10078,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10087,7 +10087,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10100,12 +10100,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (syncJobId != null)
         {
-            localVarPathParams.Add("syncJobId", this.Configuration.ApiClient.ParameterToString(syncJobId));
+            localVarPathParams.Add("syncJobId", Configuration.ApiClient.ParameterToString(syncJobId));
         }
 
         // Query params
@@ -10121,11 +10121,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10218,7 +10218,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10227,7 +10227,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10240,53 +10240,53 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (parentId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("parentId", this.Configuration.ApiClient.ParameterToString(parentId)));
+            localVarQueryParams.Add(new Tuple<string, string>("parentId", Configuration.ApiClient.ParameterToString(parentId)));
         }
 
         if (isRoot != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("isRoot", this.Configuration.ApiClient.ParameterToString(isRoot)));
+            localVarQueryParams.Add(new Tuple<string, string>("isRoot", Configuration.ApiClient.ParameterToString(isRoot)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (includeDocumentCount != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", this.Configuration.ApiClient.ParameterToString(includeDocumentCount)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", Configuration.ApiClient.ParameterToString(includeDocumentCount)));
         }
 
         // Header params
@@ -10297,7 +10297,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10323,7 +10323,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<GuestCategoryResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (GuestCategoryResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuestCategoryResponseListing)),
+            (GuestCategoryResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuestCategoryResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10390,7 +10390,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10399,7 +10399,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10412,53 +10412,53 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (parentId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("parentId", this.Configuration.ApiClient.ParameterToString(parentId)));
+            localVarQueryParams.Add(new Tuple<string, string>("parentId", Configuration.ApiClient.ParameterToString(parentId)));
         }
 
         if (isRoot != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("isRoot", this.Configuration.ApiClient.ParameterToString(isRoot)));
+            localVarQueryParams.Add(new Tuple<string, string>("isRoot", Configuration.ApiClient.ParameterToString(isRoot)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (includeDocumentCount != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", this.Configuration.ApiClient.ParameterToString(includeDocumentCount)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", Configuration.ApiClient.ParameterToString(includeDocumentCount)));
         }
 
         // Header params
@@ -10469,7 +10469,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10495,7 +10495,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<GuestCategoryResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (GuestCategoryResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuestCategoryResponseListing)),
+            (GuestCategoryResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuestCategoryResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10551,7 +10551,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10560,7 +10560,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10573,12 +10573,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -10591,7 +10591,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10617,7 +10617,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestDocumentResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentResponse)),
+            (KnowledgeGuestDocumentResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10674,7 +10674,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10683,7 +10683,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10696,12 +10696,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -10714,7 +10714,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10740,7 +10740,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestDocumentResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentResponse)),
+            (KnowledgeGuestDocumentResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10793,7 +10793,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10802,7 +10802,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10815,18 +10815,18 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
         if (categoryId != null)
         {
-            categoryId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("categoryId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            categoryId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("categoryId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -10837,7 +10837,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10863,7 +10863,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestDocumentResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestDocumentResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentResponseListing)),
+            (KnowledgeGuestDocumentResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10916,7 +10916,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10925,7 +10925,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10938,18 +10938,18 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
         if (categoryId != null)
         {
-            categoryId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("categoryId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            categoryId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("categoryId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -10960,7 +10960,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10986,7 +10986,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestDocumentResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestDocumentResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentResponseListing)),
+            (KnowledgeGuestDocumentResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11037,7 +11037,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11046,7 +11046,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11059,13 +11059,13 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (integrationId != null)
         {
-            localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+            localVarPathParams.Add("integrationId", Configuration.ApiClient.ParameterToString(integrationId));
         }
 
         // Query params
         if (knowledgeBaseIds != null)
         {
-            knowledgeBaseIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("knowledgeBaseIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            knowledgeBaseIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("knowledgeBaseIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -11079,11 +11079,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11109,7 +11109,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeIntegrationOptionsResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeIntegrationOptionsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeIntegrationOptionsResponse)),
+            (KnowledgeIntegrationOptionsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeIntegrationOptionsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11160,7 +11160,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11169,7 +11169,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11182,13 +11182,13 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (integrationId != null)
         {
-            localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+            localVarPathParams.Add("integrationId", Configuration.ApiClient.ParameterToString(integrationId));
         }
 
         // Query params
         if (knowledgeBaseIds != null)
         {
-            knowledgeBaseIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("knowledgeBaseIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            knowledgeBaseIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("knowledgeBaseIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -11202,11 +11202,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11232,7 +11232,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeIntegrationOptionsResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeIntegrationOptionsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeIntegrationOptionsResponse)),
+            (KnowledgeIntegrationOptionsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeIntegrationOptionsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11281,7 +11281,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11290,7 +11290,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11303,7 +11303,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -11319,11 +11319,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11349,7 +11349,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeBase>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
+            (KnowledgeBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11398,7 +11398,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11407,7 +11407,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11420,7 +11420,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -11436,11 +11436,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11466,7 +11466,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeBase>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
+            (KnowledgeBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11533,7 +11533,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11542,7 +11542,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11555,53 +11555,53 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (parentId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("parentId", this.Configuration.ApiClient.ParameterToString(parentId)));
+            localVarQueryParams.Add(new Tuple<string, string>("parentId", Configuration.ApiClient.ParameterToString(parentId)));
         }
 
         if (isRoot != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("isRoot", this.Configuration.ApiClient.ParameterToString(isRoot)));
+            localVarQueryParams.Add(new Tuple<string, string>("isRoot", Configuration.ApiClient.ParameterToString(isRoot)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (includeDocumentCount != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", this.Configuration.ApiClient.ParameterToString(includeDocumentCount)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", Configuration.ApiClient.ParameterToString(includeDocumentCount)));
         }
 
         // Header params
@@ -11615,11 +11615,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11645,7 +11645,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (CategoryResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponseListing)),
+            (CategoryResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11712,7 +11712,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11721,7 +11721,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11734,53 +11734,53 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (parentId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("parentId", this.Configuration.ApiClient.ParameterToString(parentId)));
+            localVarQueryParams.Add(new Tuple<string, string>("parentId", Configuration.ApiClient.ParameterToString(parentId)));
         }
 
         if (isRoot != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("isRoot", this.Configuration.ApiClient.ParameterToString(isRoot)));
+            localVarQueryParams.Add(new Tuple<string, string>("isRoot", Configuration.ApiClient.ParameterToString(isRoot)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
+            localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(expand)));
         }
 
         if (includeDocumentCount != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", this.Configuration.ApiClient.ParameterToString(includeDocumentCount)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", Configuration.ApiClient.ParameterToString(includeDocumentCount)));
         }
 
         // Header params
@@ -11794,11 +11794,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11824,7 +11824,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (CategoryResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponseListing)),
+            (CategoryResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11880,7 +11880,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11889,7 +11889,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11902,12 +11902,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -11923,11 +11923,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11953,7 +11953,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryResponse>(localVarStatusCode,
             localVarHeaders,
-            (CategoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
+            (CategoryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12010,7 +12010,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12019,7 +12019,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12032,12 +12032,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -12053,11 +12053,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12083,7 +12083,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryResponse>(localVarStatusCode,
             localVarHeaders,
-            (CategoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
+            (CategoryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12143,7 +12143,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12152,7 +12152,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12165,23 +12165,23 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (state != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            localVarQueryParams.Add(new Tuple<string, string>("state", Configuration.ApiClient.ParameterToString(state)));
         }
 
         // Header params
@@ -12195,11 +12195,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12225,7 +12225,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
+            (KnowledgeDocumentResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12286,7 +12286,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12295,7 +12295,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12308,23 +12308,23 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (state != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            localVarQueryParams.Add(new Tuple<string, string>("state", Configuration.ApiClient.ParameterToString(state)));
         }
 
         // Header params
@@ -12338,11 +12338,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12368,7 +12368,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
+            (KnowledgeDocumentResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12446,7 +12446,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12455,7 +12455,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12468,68 +12468,68 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (onlyCommented != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("onlyCommented", this.Configuration.ApiClient.ParameterToString(onlyCommented)));
+            localVarQueryParams.Add(new Tuple<string, string>("onlyCommented", Configuration.ApiClient.ParameterToString(onlyCommented)));
         }
 
         if (documentVersionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("documentVersionId", this.Configuration.ApiClient.ParameterToString(documentVersionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("documentVersionId", Configuration.ApiClient.ParameterToString(documentVersionId)));
         }
 
         if (documentVariationId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("documentVariationId", this.Configuration.ApiClient.ParameterToString(documentVariationId)));
+            localVarQueryParams.Add(new Tuple<string, string>("documentVariationId", Configuration.ApiClient.ParameterToString(documentVariationId)));
         }
 
         if (appType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("appType", this.Configuration.ApiClient.ParameterToString(appType)));
+            localVarQueryParams.Add(new Tuple<string, string>("appType", Configuration.ApiClient.ParameterToString(appType)));
         }
 
         if (queryType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("queryType", this.Configuration.ApiClient.ParameterToString(queryType)));
+            localVarQueryParams.Add(new Tuple<string, string>("queryType", Configuration.ApiClient.ParameterToString(queryType)));
         }
 
         if (userId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("userId", this.Configuration.ApiClient.ParameterToString(userId)));
+            localVarQueryParams.Add(new Tuple<string, string>("userId", Configuration.ApiClient.ParameterToString(userId)));
         }
 
         if (queueId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("queueId", this.Configuration.ApiClient.ParameterToString(queueId)));
+            localVarQueryParams.Add(new Tuple<string, string>("queueId", Configuration.ApiClient.ParameterToString(queueId)));
         }
 
         if (state != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            localVarQueryParams.Add(new Tuple<string, string>("state", Configuration.ApiClient.ParameterToString(state)));
         }
 
         // Header params
@@ -12543,11 +12543,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12573,7 +12573,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentFeedbackResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentFeedbackResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponseListing)),
+            (KnowledgeDocumentFeedbackResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12652,7 +12652,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12661,7 +12661,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12674,68 +12674,68 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (onlyCommented != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("onlyCommented", this.Configuration.ApiClient.ParameterToString(onlyCommented)));
+            localVarQueryParams.Add(new Tuple<string, string>("onlyCommented", Configuration.ApiClient.ParameterToString(onlyCommented)));
         }
 
         if (documentVersionId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("documentVersionId", this.Configuration.ApiClient.ParameterToString(documentVersionId)));
+            localVarQueryParams.Add(new Tuple<string, string>("documentVersionId", Configuration.ApiClient.ParameterToString(documentVersionId)));
         }
 
         if (documentVariationId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("documentVariationId", this.Configuration.ApiClient.ParameterToString(documentVariationId)));
+            localVarQueryParams.Add(new Tuple<string, string>("documentVariationId", Configuration.ApiClient.ParameterToString(documentVariationId)));
         }
 
         if (appType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("appType", this.Configuration.ApiClient.ParameterToString(appType)));
+            localVarQueryParams.Add(new Tuple<string, string>("appType", Configuration.ApiClient.ParameterToString(appType)));
         }
 
         if (queryType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("queryType", this.Configuration.ApiClient.ParameterToString(queryType)));
+            localVarQueryParams.Add(new Tuple<string, string>("queryType", Configuration.ApiClient.ParameterToString(queryType)));
         }
 
         if (userId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("userId", this.Configuration.ApiClient.ParameterToString(userId)));
+            localVarQueryParams.Add(new Tuple<string, string>("userId", Configuration.ApiClient.ParameterToString(userId)));
         }
 
         if (queueId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("queueId", this.Configuration.ApiClient.ParameterToString(queueId)));
+            localVarQueryParams.Add(new Tuple<string, string>("queueId", Configuration.ApiClient.ParameterToString(queueId)));
         }
 
         if (state != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            localVarQueryParams.Add(new Tuple<string, string>("state", Configuration.ApiClient.ParameterToString(state)));
         }
 
         // Header params
@@ -12749,11 +12749,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12779,7 +12779,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentFeedbackResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentFeedbackResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponseListing)),
+            (KnowledgeDocumentFeedbackResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12842,7 +12842,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12851,7 +12851,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12864,17 +12864,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (feedbackId != null)
         {
-            localVarPathParams.Add("feedbackId", this.Configuration.ApiClient.ParameterToString(feedbackId));
+            localVarPathParams.Add("feedbackId", Configuration.ApiClient.ParameterToString(feedbackId));
         }
 
         // Query params
@@ -12890,11 +12890,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12920,7 +12920,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentFeedbackResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentFeedbackResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
+            (KnowledgeDocumentFeedbackResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12985,7 +12985,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12994,7 +12994,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13007,17 +13007,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (feedbackId != null)
         {
-            localVarPathParams.Add("feedbackId", this.Configuration.ApiClient.ParameterToString(feedbackId));
+            localVarPathParams.Add("feedbackId", Configuration.ApiClient.ParameterToString(feedbackId));
         }
 
         // Query params
@@ -13033,11 +13033,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13063,7 +13063,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentFeedbackResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentFeedbackResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
+            (KnowledgeDocumentFeedbackResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13130,7 +13130,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13139,7 +13139,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13152,28 +13152,28 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentVariationId != null)
         {
-            localVarPathParams.Add("documentVariationId", this.Configuration.ApiClient.ParameterToString(documentVariationId));
+            localVarPathParams.Add("documentVariationId", Configuration.ApiClient.ParameterToString(documentVariationId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (documentState != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("documentState", this.Configuration.ApiClient.ParameterToString(documentState)));
+            localVarQueryParams.Add(new Tuple<string, string>("documentState", Configuration.ApiClient.ParameterToString(documentState)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -13187,11 +13187,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13217,7 +13217,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentVariationResponse>(localVarStatusCode,
             localVarHeaders,
-            (DocumentVariationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
+            (DocumentVariationResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13286,7 +13286,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13295,7 +13295,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13308,28 +13308,28 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentVariationId != null)
         {
-            localVarPathParams.Add("documentVariationId", this.Configuration.ApiClient.ParameterToString(documentVariationId));
+            localVarPathParams.Add("documentVariationId", Configuration.ApiClient.ParameterToString(documentVariationId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (documentState != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("documentState", this.Configuration.ApiClient.ParameterToString(documentState)));
+            localVarQueryParams.Add(new Tuple<string, string>("documentState", Configuration.ApiClient.ParameterToString(documentState)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -13343,11 +13343,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13373,7 +13373,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentVariationResponse>(localVarStatusCode,
             localVarHeaders,
-            (DocumentVariationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
+            (DocumentVariationResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13439,7 +13439,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13448,7 +13448,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13461,38 +13461,38 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (documentState != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("documentState", this.Configuration.ApiClient.ParameterToString(documentState)));
+            localVarQueryParams.Add(new Tuple<string, string>("documentState", Configuration.ApiClient.ParameterToString(documentState)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -13506,11 +13506,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13536,7 +13536,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentVariationResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (DocumentVariationResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponseListing)),
+            (DocumentVariationResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13603,7 +13603,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13612,7 +13612,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13625,38 +13625,38 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (documentState != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("documentState", this.Configuration.ApiClient.ParameterToString(documentState)));
+            localVarQueryParams.Add(new Tuple<string, string>("documentState", Configuration.ApiClient.ParameterToString(documentState)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -13670,11 +13670,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13700,7 +13700,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentVariationResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (DocumentVariationResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponseListing)),
+            (DocumentVariationResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13765,7 +13765,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13774,7 +13774,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13787,23 +13787,23 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -13817,11 +13817,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13847,7 +13847,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentVersion>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersion)),
+            (KnowledgeDocumentVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13914,7 +13914,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13923,7 +13923,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13936,23 +13936,23 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -13966,11 +13966,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13996,7 +13996,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentVersion>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersion)),
+            (KnowledgeDocumentVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14066,7 +14066,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14075,7 +14075,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14088,22 +14088,22 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         if (variationId != null)
         {
-            localVarPathParams.Add("variationId", this.Configuration.ApiClient.ParameterToString(variationId));
+            localVarPathParams.Add("variationId", Configuration.ApiClient.ParameterToString(variationId));
         }
 
         // Query params
@@ -14119,11 +14119,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14149,7 +14149,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentVersionVariation>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentVersionVariation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionVariation)),
+            (KnowledgeDocumentVersionVariation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionVariation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14222,7 +14222,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14231,7 +14231,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14244,22 +14244,22 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         if (variationId != null)
         {
-            localVarPathParams.Add("variationId", this.Configuration.ApiClient.ParameterToString(variationId));
+            localVarPathParams.Add("variationId", Configuration.ApiClient.ParameterToString(variationId));
         }
 
         // Query params
@@ -14275,11 +14275,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14305,7 +14305,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentVersionVariation>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentVersionVariation)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionVariation)),
+            (KnowledgeDocumentVersionVariation)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionVariation)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14374,7 +14374,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14383,7 +14383,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14396,33 +14396,33 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -14436,11 +14436,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14466,7 +14466,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentVersionVariationListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentVersionVariationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionVariationListing)),
+            (KnowledgeDocumentVersionVariationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionVariationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14537,7 +14537,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14546,7 +14546,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14559,33 +14559,33 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (versionId != null)
         {
-            localVarPathParams.Add("versionId", this.Configuration.ApiClient.ParameterToString(versionId));
+            localVarPathParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -14599,11 +14599,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14629,7 +14629,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentVersionVariationListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentVersionVariationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionVariationListing)),
+            (KnowledgeDocumentVersionVariationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionVariationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14693,7 +14693,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14702,7 +14702,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14715,33 +14715,33 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -14755,11 +14755,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14785,7 +14785,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentVersionListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentVersionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionListing)),
+            (KnowledgeDocumentVersionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14850,7 +14850,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14859,7 +14859,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14872,33 +14872,33 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -14912,11 +14912,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14942,7 +14942,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentVersionListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentVersionListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionListing)),
+            (KnowledgeDocumentVersionListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersionListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15013,7 +15013,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15022,7 +15022,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15035,63 +15035,63 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (interval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("interval", this.Configuration.ApiClient.ParameterToString(interval)));
+            localVarQueryParams.Add(new Tuple<string, string>("interval", Configuration.ApiClient.ParameterToString(interval)));
         }
 
         if (documentId != null)
         {
-            documentId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("documentId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            documentId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("documentId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (categoryId != null)
         {
-            categoryId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("categoryId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            categoryId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("categoryId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includeSubcategories != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeSubcategories", this.Configuration.ApiClient.ParameterToString(includeSubcategories)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeSubcategories", Configuration.ApiClient.ParameterToString(includeSubcategories)));
         }
 
         if (includeDrafts != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDrafts", this.Configuration.ApiClient.ParameterToString(includeDrafts)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDrafts", Configuration.ApiClient.ParameterToString(includeDrafts)));
         }
 
         if (labelIds != null)
         {
-            labelIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("labelIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            labelIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("labelIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (externalIds != null)
         {
-            externalIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("externalIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            externalIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("externalIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15105,11 +15105,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15135,7 +15135,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponseListing)),
+            (KnowledgeDocumentResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15206,7 +15206,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15215,7 +15215,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15228,63 +15228,63 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (interval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("interval", this.Configuration.ApiClient.ParameterToString(interval)));
+            localVarQueryParams.Add(new Tuple<string, string>("interval", Configuration.ApiClient.ParameterToString(interval)));
         }
 
         if (documentId != null)
         {
-            documentId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("documentId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            documentId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("documentId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (categoryId != null)
         {
-            categoryId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("categoryId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            categoryId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("categoryId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (includeSubcategories != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeSubcategories", this.Configuration.ApiClient.ParameterToString(includeSubcategories)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeSubcategories", Configuration.ApiClient.ParameterToString(includeSubcategories)));
         }
 
         if (includeDrafts != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDrafts", this.Configuration.ApiClient.ParameterToString(includeDrafts)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDrafts", Configuration.ApiClient.ParameterToString(includeDrafts)));
         }
 
         if (labelIds != null)
         {
-            labelIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("labelIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            labelIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("labelIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (externalIds != null)
         {
-            externalIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("externalIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            externalIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("externalIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15298,11 +15298,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15328,7 +15328,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentResponseListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentResponseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponseListing)),
+            (KnowledgeDocumentResponseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15384,7 +15384,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15393,7 +15393,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15406,12 +15406,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (exportJobId != null)
         {
-            localVarPathParams.Add("exportJobId", this.Configuration.ApiClient.ParameterToString(exportJobId));
+            localVarPathParams.Add("exportJobId", Configuration.ApiClient.ParameterToString(exportJobId));
         }
 
         // Query params
@@ -15427,11 +15427,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15457,7 +15457,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeExportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeExportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExportJobResponse)),
+            (KnowledgeExportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15514,7 +15514,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15523,7 +15523,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15536,12 +15536,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (exportJobId != null)
         {
-            localVarPathParams.Add("exportJobId", this.Configuration.ApiClient.ParameterToString(exportJobId));
+            localVarPathParams.Add("exportJobId", Configuration.ApiClient.ParameterToString(exportJobId));
         }
 
         // Query params
@@ -15557,11 +15557,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15587,7 +15587,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeExportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeExportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExportJobResponse)),
+            (KnowledgeExportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15645,7 +15645,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15654,7 +15654,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15667,18 +15667,18 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (importJobId != null)
         {
-            localVarPathParams.Add("importJobId", this.Configuration.ApiClient.ParameterToString(importJobId));
+            localVarPathParams.Add("importJobId", Configuration.ApiClient.ParameterToString(importJobId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15692,11 +15692,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15722,7 +15722,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
+            (KnowledgeImportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15781,7 +15781,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15790,7 +15790,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15803,18 +15803,18 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (importJobId != null)
         {
-            localVarPathParams.Add("importJobId", this.Configuration.ApiClient.ParameterToString(importJobId));
+            localVarPathParams.Add("importJobId", Configuration.ApiClient.ParameterToString(importJobId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15828,11 +15828,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15858,7 +15858,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
+            (KnowledgeImportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15914,7 +15914,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15923,7 +15923,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15936,12 +15936,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (labelId != null)
         {
-            localVarPathParams.Add("labelId", this.Configuration.ApiClient.ParameterToString(labelId));
+            localVarPathParams.Add("labelId", Configuration.ApiClient.ParameterToString(labelId));
         }
 
         // Query params
@@ -15957,11 +15957,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15987,7 +15987,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<LabelResponse>(localVarStatusCode,
             localVarHeaders,
-            (LabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
+            (LabelResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16044,7 +16044,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16053,7 +16053,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16066,12 +16066,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (labelId != null)
         {
-            localVarPathParams.Add("labelId", this.Configuration.ApiClient.ParameterToString(labelId));
+            localVarPathParams.Add("labelId", Configuration.ApiClient.ParameterToString(labelId));
         }
 
         // Query params
@@ -16087,11 +16087,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16117,7 +16117,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<LabelResponse>(localVarStatusCode,
             localVarHeaders,
-            (LabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
+            (LabelResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16176,7 +16176,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16185,7 +16185,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16198,33 +16198,33 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (includeDocumentCount != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", this.Configuration.ApiClient.ParameterToString(includeDocumentCount)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", Configuration.ApiClient.ParameterToString(includeDocumentCount)));
         }
 
         // Header params
@@ -16238,11 +16238,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16268,7 +16268,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<LabelListing>(localVarStatusCode,
             localVarHeaders,
-            (LabelListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelListing)),
+            (LabelListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16327,7 +16327,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16336,7 +16336,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16349,33 +16349,33 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (includeDocumentCount != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", this.Configuration.ApiClient.ParameterToString(includeDocumentCount)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeDocumentCount", Configuration.ApiClient.ParameterToString(includeDocumentCount)));
         }
 
         // Header params
@@ -16389,11 +16389,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16419,7 +16419,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<LabelListing>(localVarStatusCode,
             localVarHeaders,
-            (LabelListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelListing)),
+            (LabelListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16485,7 +16485,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16494,7 +16494,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16507,38 +16507,38 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -16552,11 +16552,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16582,7 +16582,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryListing>(localVarStatusCode,
             localVarHeaders,
-            (CategoryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryListing)),
+            (CategoryListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16649,7 +16649,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16658,7 +16658,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16671,38 +16671,38 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -16716,11 +16716,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16746,7 +16746,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryListing>(localVarStatusCode,
             localVarHeaders,
-            (CategoryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryListing)),
+            (CategoryListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16809,7 +16809,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16818,7 +16818,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16831,17 +16831,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -16857,11 +16857,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16887,7 +16887,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeExtendedCategory>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeExtendedCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
+            (KnowledgeExtendedCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16952,7 +16952,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16961,7 +16961,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16974,17 +16974,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -17000,11 +17000,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17030,7 +17030,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeExtendedCategory>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeExtendedCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
+            (KnowledgeExtendedCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17093,7 +17093,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17102,7 +17102,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17115,17 +17115,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -17141,11 +17141,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17171,7 +17171,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocument>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
+            (KnowledgeDocument)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17236,7 +17236,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17245,7 +17245,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17258,17 +17258,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -17284,11 +17284,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17314,7 +17314,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocument>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
+            (KnowledgeDocument)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17384,7 +17384,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17393,7 +17393,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17406,22 +17406,22 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (uploadId != null)
         {
-            localVarPathParams.Add("uploadId", this.Configuration.ApiClient.ParameterToString(uploadId));
+            localVarPathParams.Add("uploadId", Configuration.ApiClient.ParameterToString(uploadId));
         }
 
         // Query params
@@ -17437,11 +17437,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17467,7 +17467,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentContentUpload>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentContentUpload)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentContentUpload)),
+            (KnowledgeDocumentContentUpload)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentContentUpload)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17540,7 +17540,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17549,7 +17549,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17562,22 +17562,22 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (uploadId != null)
         {
-            localVarPathParams.Add("uploadId", this.Configuration.ApiClient.ParameterToString(uploadId));
+            localVarPathParams.Add("uploadId", Configuration.ApiClient.ParameterToString(uploadId));
         }
 
         // Query params
@@ -17593,11 +17593,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17623,7 +17623,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentContentUpload>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentContentUpload)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentContentUpload)),
+            (KnowledgeDocumentContentUpload)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentContentUpload)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17697,7 +17697,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17706,7 +17706,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17719,58 +17719,58 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (categories != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("categories", this.Configuration.ApiClient.ParameterToString(categories)));
+            localVarQueryParams.Add(new Tuple<string, string>("categories", Configuration.ApiClient.ParameterToString(categories)));
         }
 
         if (title != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("title", this.Configuration.ApiClient.ParameterToString(title)));
+            localVarQueryParams.Add(new Tuple<string, string>("title", Configuration.ApiClient.ParameterToString(title)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (documentIds != null)
         {
-            documentIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("documentIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            documentIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("documentIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -17784,11 +17784,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17814,7 +17814,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentListing>(localVarStatusCode,
             localVarHeaders,
-            (DocumentListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentListing)),
+            (DocumentListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17889,7 +17889,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17898,7 +17898,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17911,58 +17911,58 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (categories != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("categories", this.Configuration.ApiClient.ParameterToString(categories)));
+            localVarQueryParams.Add(new Tuple<string, string>("categories", Configuration.ApiClient.ParameterToString(categories)));
         }
 
         if (title != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("title", this.Configuration.ApiClient.ParameterToString(title)));
+            localVarQueryParams.Add(new Tuple<string, string>("title", Configuration.ApiClient.ParameterToString(title)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (documentIds != null)
         {
-            documentIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("documentIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            documentIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("documentIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -17976,11 +17976,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18006,7 +18006,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentListing>(localVarStatusCode,
             localVarHeaders,
-            (DocumentListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentListing)),
+            (DocumentListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18069,7 +18069,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18078,7 +18078,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18091,17 +18091,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (importId != null)
         {
-            localVarPathParams.Add("importId", this.Configuration.ApiClient.ParameterToString(importId));
+            localVarPathParams.Add("importId", Configuration.ApiClient.ParameterToString(importId));
         }
 
         // Query params
@@ -18117,11 +18117,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18147,7 +18147,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImport>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
+            (KnowledgeImport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18212,7 +18212,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18221,7 +18221,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18234,17 +18234,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (importId != null)
         {
-            localVarPathParams.Add("importId", this.Configuration.ApiClient.ParameterToString(importId));
+            localVarPathParams.Add("importId", Configuration.ApiClient.ParameterToString(importId));
         }
 
         // Query params
@@ -18260,11 +18260,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18290,7 +18290,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImport>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
+            (KnowledgeImport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18353,7 +18353,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18362,7 +18362,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18375,17 +18375,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (trainingId != null)
         {
-            localVarPathParams.Add("trainingId", this.Configuration.ApiClient.ParameterToString(trainingId));
+            localVarPathParams.Add("trainingId", Configuration.ApiClient.ParameterToString(trainingId));
         }
 
         // Query params
@@ -18401,11 +18401,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18431,7 +18431,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeTraining>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeTraining)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
+            (KnowledgeTraining)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18496,7 +18496,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18505,7 +18505,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18518,17 +18518,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (trainingId != null)
         {
-            localVarPathParams.Add("trainingId", this.Configuration.ApiClient.ParameterToString(trainingId));
+            localVarPathParams.Add("trainingId", Configuration.ApiClient.ParameterToString(trainingId));
         }
 
         // Query params
@@ -18544,11 +18544,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18574,7 +18574,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeTraining>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeTraining)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
+            (KnowledgeTraining)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18640,7 +18640,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18649,7 +18649,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18662,38 +18662,38 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (knowledgeDocumentsState != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("knowledgeDocumentsState", this.Configuration.ApiClient.ParameterToString(knowledgeDocumentsState)));
+            localVarQueryParams.Add(new Tuple<string, string>("knowledgeDocumentsState", Configuration.ApiClient.ParameterToString(knowledgeDocumentsState)));
         }
 
         // Header params
@@ -18707,11 +18707,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18737,7 +18737,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<TrainingListing>(localVarStatusCode,
             localVarHeaders,
-            (TrainingListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrainingListing)),
+            (TrainingListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrainingListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18804,7 +18804,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18813,7 +18813,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18826,38 +18826,38 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (knowledgeDocumentsState != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("knowledgeDocumentsState", this.Configuration.ApiClient.ParameterToString(knowledgeDocumentsState)));
+            localVarQueryParams.Add(new Tuple<string, string>("knowledgeDocumentsState", Configuration.ApiClient.ParameterToString(knowledgeDocumentsState)));
         }
 
         // Header params
@@ -18871,11 +18871,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18901,7 +18901,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<TrainingListing>(localVarStatusCode,
             localVarHeaders,
-            (TrainingListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrainingListing)),
+            (TrainingListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrainingListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18966,7 +18966,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18975,7 +18975,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18988,48 +18988,48 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (userId != null)
         {
-            userId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            userId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (type != null)
         {
-            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(obj))); });
+            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (status != null)
         {
-            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", this.Configuration.ApiClient.ParameterToString(obj))); });
+            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (interval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("interval", this.Configuration.ApiClient.ParameterToString(interval)));
+            localVarQueryParams.Add(new Tuple<string, string>("interval", Configuration.ApiClient.ParameterToString(interval)));
         }
 
         if (sourceId != null)
         {
-            sourceId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("sourceId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            sourceId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("sourceId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19043,11 +19043,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19073,7 +19073,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<OperationListing>(localVarStatusCode,
             localVarHeaders,
-            (OperationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OperationListing)),
+            (OperationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OperationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19138,7 +19138,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19147,7 +19147,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19160,48 +19160,48 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (userId != null)
         {
-            userId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            userId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("userId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (type != null)
         {
-            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(obj))); });
+            type.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (status != null)
         {
-            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", this.Configuration.ApiClient.ParameterToString(obj))); });
+            status.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("status", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (interval != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("interval", this.Configuration.ApiClient.ParameterToString(interval)));
+            localVarQueryParams.Add(new Tuple<string, string>("interval", Configuration.ApiClient.ParameterToString(interval)));
         }
 
         if (sourceId != null)
         {
-            sourceId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("sourceId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            sourceId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("sourceId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19215,11 +19215,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19245,7 +19245,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<OperationListing>(localVarStatusCode,
             localVarHeaders,
-            (OperationListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OperationListing)),
+            (OperationListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OperationListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19294,7 +19294,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19303,7 +19303,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19316,7 +19316,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -19332,11 +19332,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19362,7 +19362,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<OperationCreatorUserResponse>(localVarStatusCode,
             localVarHeaders,
-            (OperationCreatorUserResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OperationCreatorUserResponse)),
+            (OperationCreatorUserResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OperationCreatorUserResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19411,7 +19411,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19420,7 +19420,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19433,7 +19433,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -19449,11 +19449,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19479,7 +19479,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<OperationCreatorUserResponse>(localVarStatusCode,
             localVarHeaders,
-            (OperationCreatorUserResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OperationCreatorUserResponse)),
+            (OperationCreatorUserResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OperationCreatorUserResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19537,7 +19537,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19546,7 +19546,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19559,18 +19559,18 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (parseJobId != null)
         {
-            localVarPathParams.Add("parseJobId", this.Configuration.ApiClient.ParameterToString(parseJobId));
+            localVarPathParams.Add("parseJobId", Configuration.ApiClient.ParameterToString(parseJobId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19584,11 +19584,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19614,7 +19614,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeParseJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeParseJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeParseJobResponse)),
+            (KnowledgeParseJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeParseJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19673,7 +19673,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19682,7 +19682,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19695,18 +19695,18 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (parseJobId != null)
         {
-            localVarPathParams.Add("parseJobId", this.Configuration.ApiClient.ParameterToString(parseJobId));
+            localVarPathParams.Add("parseJobId", Configuration.ApiClient.ParameterToString(parseJobId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19720,11 +19720,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19750,7 +19750,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeParseJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeParseJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeParseJobResponse)),
+            (KnowledgeParseJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeParseJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19805,7 +19805,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19814,7 +19814,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19827,23 +19827,23 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (type != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(type)));
+            localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(type)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (ids != null)
         {
-            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(obj))); });
+            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19857,11 +19857,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19887,7 +19887,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<List<SourceBaseResponse>>(localVarStatusCode,
             localVarHeaders,
-            (List<SourceBaseResponse>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SourceBaseResponse>)),
+            (List<SourceBaseResponse>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SourceBaseResponse>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19942,7 +19942,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19951,7 +19951,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19964,23 +19964,23 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (type != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(type)));
+            localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(type)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (ids != null)
         {
-            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(obj))); });
+            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19994,11 +19994,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20024,7 +20024,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<List<SourceBaseResponse>>(localVarStatusCode,
             localVarHeaders,
-            (List<SourceBaseResponse>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SourceBaseResponse>)),
+            (List<SourceBaseResponse>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SourceBaseResponse>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20082,7 +20082,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20091,7 +20091,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20104,18 +20104,18 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -20129,11 +20129,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20159,7 +20159,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<SalesforceSourceResponse>(localVarStatusCode,
             localVarHeaders,
-            (SalesforceSourceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SalesforceSourceResponse)),
+            (SalesforceSourceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SalesforceSourceResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20218,7 +20218,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20227,7 +20227,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20240,18 +20240,18 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -20265,11 +20265,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20295,7 +20295,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<SalesforceSourceResponse>(localVarStatusCode,
             localVarHeaders,
-            (SalesforceSourceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SalesforceSourceResponse)),
+            (SalesforceSourceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SalesforceSourceResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20353,7 +20353,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20362,7 +20362,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20375,18 +20375,18 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -20400,11 +20400,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20430,7 +20430,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<ServiceNowSourceResponse>(localVarStatusCode,
             localVarHeaders,
-            (ServiceNowSourceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceNowSourceResponse)),
+            (ServiceNowSourceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceNowSourceResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20489,7 +20489,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20498,7 +20498,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20511,18 +20511,18 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -20536,11 +20536,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20566,7 +20566,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<ServiceNowSourceResponse>(localVarStatusCode,
             localVarHeaders,
-            (ServiceNowSourceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceNowSourceResponse)),
+            (ServiceNowSourceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceNowSourceResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20622,7 +20622,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20631,7 +20631,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20644,12 +20644,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (syncJobId != null)
         {
-            localVarPathParams.Add("syncJobId", this.Configuration.ApiClient.ParameterToString(syncJobId));
+            localVarPathParams.Add("syncJobId", Configuration.ApiClient.ParameterToString(syncJobId));
         }
 
         // Query params
@@ -20665,11 +20665,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20695,7 +20695,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSyncJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSyncJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
+            (KnowledgeSyncJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20752,7 +20752,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20761,7 +20761,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20774,12 +20774,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (syncJobId != null)
         {
-            localVarPathParams.Add("syncJobId", this.Configuration.ApiClient.ParameterToString(syncJobId));
+            localVarPathParams.Add("syncJobId", Configuration.ApiClient.ParameterToString(syncJobId));
         }
 
         // Query params
@@ -20795,11 +20795,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20825,7 +20825,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSyncJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSyncJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
+            (KnowledgeSyncJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20887,7 +20887,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20896,7 +20896,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20909,28 +20909,28 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
         if (app != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("app", this.Configuration.ApiClient.ParameterToString(app)));
+            localVarQueryParams.Add(new Tuple<string, string>("app", Configuration.ApiClient.ParameterToString(app)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         // Header params
@@ -20944,11 +20944,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20974,7 +20974,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<UnansweredGroup>(localVarStatusCode,
             localVarHeaders,
-            (UnansweredGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredGroup)),
+            (UnansweredGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21037,7 +21037,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21046,7 +21046,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21059,28 +21059,28 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
         if (app != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("app", this.Configuration.ApiClient.ParameterToString(app)));
+            localVarQueryParams.Add(new Tuple<string, string>("app", Configuration.ApiClient.ParameterToString(app)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         // Header params
@@ -21094,11 +21094,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21124,7 +21124,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<UnansweredGroup>(localVarStatusCode,
             localVarHeaders,
-            (UnansweredGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredGroup)),
+            (UnansweredGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21193,7 +21193,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21202,7 +21202,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21215,33 +21215,33 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         if (phraseGroupId != null)
         {
-            localVarPathParams.Add("phraseGroupId", this.Configuration.ApiClient.ParameterToString(phraseGroupId));
+            localVarPathParams.Add("phraseGroupId", Configuration.ApiClient.ParameterToString(phraseGroupId));
         }
 
         // Query params
         if (app != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("app", this.Configuration.ApiClient.ParameterToString(app)));
+            localVarQueryParams.Add(new Tuple<string, string>("app", Configuration.ApiClient.ParameterToString(app)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         // Header params
@@ -21255,11 +21255,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21285,7 +21285,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<UnansweredPhraseGroup>(localVarStatusCode,
             localVarHeaders,
-            (UnansweredPhraseGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredPhraseGroup)),
+            (UnansweredPhraseGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredPhraseGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21356,7 +21356,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21365,7 +21365,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21378,33 +21378,33 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         if (phraseGroupId != null)
         {
-            localVarPathParams.Add("phraseGroupId", this.Configuration.ApiClient.ParameterToString(phraseGroupId));
+            localVarPathParams.Add("phraseGroupId", Configuration.ApiClient.ParameterToString(phraseGroupId));
         }
 
         // Query params
         if (app != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("app", this.Configuration.ApiClient.ParameterToString(app)));
+            localVarQueryParams.Add(new Tuple<string, string>("app", Configuration.ApiClient.ParameterToString(app)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         // Header params
@@ -21418,11 +21418,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21448,7 +21448,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<UnansweredPhraseGroup>(localVarStatusCode,
             localVarHeaders,
-            (UnansweredPhraseGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredPhraseGroup)),
+            (UnansweredPhraseGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredPhraseGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21503,7 +21503,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21512,7 +21512,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21525,23 +21525,23 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (app != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("app", this.Configuration.ApiClient.ParameterToString(app)));
+            localVarQueryParams.Add(new Tuple<string, string>("app", Configuration.ApiClient.ParameterToString(app)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         // Header params
@@ -21555,11 +21555,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21585,7 +21585,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<UnansweredGroups>(localVarStatusCode,
             localVarHeaders,
-            (UnansweredGroups)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredGroups)),
+            (UnansweredGroups)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredGroups)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21640,7 +21640,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21649,7 +21649,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21662,23 +21662,23 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (app != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("app", this.Configuration.ApiClient.ParameterToString(app)));
+            localVarQueryParams.Add(new Tuple<string, string>("app", Configuration.ApiClient.ParameterToString(app)));
         }
 
         if (dateStart != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateStart", this.Configuration.ApiClient.ParameterToString(dateStart)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateStart", Configuration.ApiClient.ParameterToString(dateStart)));
         }
 
         if (dateEnd != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", this.Configuration.ApiClient.ParameterToString(dateEnd)));
+            localVarQueryParams.Add(new Tuple<string, string>("dateEnd", Configuration.ApiClient.ParameterToString(dateEnd)));
         }
 
         // Header params
@@ -21692,11 +21692,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21722,7 +21722,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<UnansweredGroups>(localVarStatusCode,
             localVarHeaders,
-            (UnansweredGroups)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredGroups)),
+            (UnansweredGroups)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredGroups)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21778,7 +21778,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21787,7 +21787,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21800,12 +21800,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -21821,11 +21821,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21851,7 +21851,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<GetUploadSourceUrlJobStatusResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetUploadSourceUrlJobStatusResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetUploadSourceUrlJobStatusResponse)),
+            (GetUploadSourceUrlJobStatusResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetUploadSourceUrlJobStatusResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21908,7 +21908,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21917,7 +21917,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21930,12 +21930,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -21951,11 +21951,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21981,7 +21981,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<GetUploadSourceUrlJobStatusResponse>(localVarStatusCode,
             localVarHeaders,
-            (GetUploadSourceUrlJobStatusResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetUploadSourceUrlJobStatusResponse)),
+            (GetUploadSourceUrlJobStatusResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetUploadSourceUrlJobStatusResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22041,7 +22041,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22050,7 +22050,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22065,47 +22065,47 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (coreLanguage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("coreLanguage", this.Configuration.ApiClient.ParameterToString(coreLanguage)));
+            localVarQueryParams.Add(new Tuple<string, string>("coreLanguage", Configuration.ApiClient.ParameterToString(coreLanguage)));
         }
 
         if (published != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("published", this.Configuration.ApiClient.ParameterToString(published)));
+            localVarQueryParams.Add(new Tuple<string, string>("published", Configuration.ApiClient.ParameterToString(published)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -22119,11 +22119,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22149,7 +22149,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeBaseListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeBaseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBaseListing)),
+            (KnowledgeBaseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBaseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22209,7 +22209,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22218,7 +22218,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22233,47 +22233,47 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (coreLanguage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("coreLanguage", this.Configuration.ApiClient.ParameterToString(coreLanguage)));
+            localVarQueryParams.Add(new Tuple<string, string>("coreLanguage", Configuration.ApiClient.ParameterToString(coreLanguage)));
         }
 
         if (published != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("published", this.Configuration.ApiClient.ParameterToString(published)));
+            localVarQueryParams.Add(new Tuple<string, string>("published", Configuration.ApiClient.ParameterToString(published)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -22287,11 +22287,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22317,7 +22317,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeBaseListing>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeBaseListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBaseListing)),
+            (KnowledgeBaseListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBaseListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22380,7 +22380,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22389,7 +22389,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22402,12 +22402,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         if (searchId != null)
         {
-            localVarPathParams.Add("searchId", this.Configuration.ApiClient.ParameterToString(searchId));
+            localVarPathParams.Add("searchId", Configuration.ApiClient.ParameterToString(searchId));
         }
 
         // Query params
@@ -22419,7 +22419,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22429,7 +22429,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22520,7 +22520,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22529,7 +22529,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22542,12 +22542,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         if (searchId != null)
         {
-            localVarPathParams.Add("searchId", this.Configuration.ApiClient.ParameterToString(searchId));
+            localVarPathParams.Add("searchId", Configuration.ApiClient.ParameterToString(searchId));
         }
 
         // Query params
@@ -22559,7 +22559,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22569,7 +22569,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22652,7 +22652,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22661,7 +22661,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22674,7 +22674,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -22686,7 +22686,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22699,11 +22699,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22729,7 +22729,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeBase>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
+            (KnowledgeBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22787,7 +22787,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22796,7 +22796,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22809,7 +22809,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -22821,7 +22821,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22834,11 +22834,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22864,7 +22864,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeBase>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
+            (KnowledgeBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22928,7 +22928,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22937,7 +22937,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22950,12 +22950,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -22967,7 +22967,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -22980,11 +22980,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23010,7 +23010,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryResponse>(localVarStatusCode,
             localVarHeaders,
-            (CategoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
+            (CategoryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23076,7 +23076,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23085,7 +23085,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23098,12 +23098,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -23115,7 +23115,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23128,11 +23128,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23158,7 +23158,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryResponse>(localVarStatusCode,
             localVarHeaders,
-            (CategoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
+            (CategoryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23222,7 +23222,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23231,7 +23231,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23244,12 +23244,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -23261,7 +23261,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23274,11 +23274,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23304,7 +23304,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
+            (KnowledgeDocumentResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23370,7 +23370,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23379,7 +23379,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23392,12 +23392,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -23409,7 +23409,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23422,11 +23422,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23452,7 +23452,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
+            (KnowledgeDocumentResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23518,7 +23518,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23527,7 +23527,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23540,17 +23540,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (feedbackId != null)
         {
-            localVarPathParams.Add("feedbackId", this.Configuration.ApiClient.ParameterToString(feedbackId));
+            localVarPathParams.Add("feedbackId", Configuration.ApiClient.ParameterToString(feedbackId));
         }
 
         // Query params
@@ -23562,7 +23562,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23575,11 +23575,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23605,7 +23605,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentFeedbackResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentFeedbackResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
+            (KnowledgeDocumentFeedbackResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23673,7 +23673,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23682,7 +23682,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23695,17 +23695,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (feedbackId != null)
         {
-            localVarPathParams.Add("feedbackId", this.Configuration.ApiClient.ParameterToString(feedbackId));
+            localVarPathParams.Add("feedbackId", Configuration.ApiClient.ParameterToString(feedbackId));
         }
 
         // Query params
@@ -23717,7 +23717,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23730,11 +23730,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23760,7 +23760,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentFeedbackResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentFeedbackResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
+            (KnowledgeDocumentFeedbackResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23831,7 +23831,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23840,7 +23840,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23853,17 +23853,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentVariationId != null)
         {
-            localVarPathParams.Add("documentVariationId", this.Configuration.ApiClient.ParameterToString(documentVariationId));
+            localVarPathParams.Add("documentVariationId", Configuration.ApiClient.ParameterToString(documentVariationId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -23875,7 +23875,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -23888,11 +23888,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23918,7 +23918,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentVariationResponse>(localVarStatusCode,
             localVarHeaders,
-            (DocumentVariationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
+            (DocumentVariationResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23992,7 +23992,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24001,7 +24001,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24014,17 +24014,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentVariationId != null)
         {
-            localVarPathParams.Add("documentVariationId", this.Configuration.ApiClient.ParameterToString(documentVariationId));
+            localVarPathParams.Add("documentVariationId", Configuration.ApiClient.ParameterToString(documentVariationId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -24036,7 +24036,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24049,11 +24049,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24079,7 +24079,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentVariationResponse>(localVarStatusCode,
             localVarHeaders,
-            (DocumentVariationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
+            (DocumentVariationResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24137,7 +24137,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24146,7 +24146,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24159,12 +24159,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (searchId != null)
         {
-            localVarPathParams.Add("searchId", this.Configuration.ApiClient.ParameterToString(searchId));
+            localVarPathParams.Add("searchId", Configuration.ApiClient.ParameterToString(searchId));
         }
 
         // Query params
@@ -24176,7 +24176,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24189,11 +24189,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24278,7 +24278,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24287,7 +24287,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24300,12 +24300,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (searchId != null)
         {
-            localVarPathParams.Add("searchId", this.Configuration.ApiClient.ParameterToString(searchId));
+            localVarPathParams.Add("searchId", Configuration.ApiClient.ParameterToString(searchId));
         }
 
         // Query params
@@ -24317,7 +24317,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24330,11 +24330,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24424,7 +24424,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24433,7 +24433,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24446,12 +24446,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (importJobId != null)
         {
-            localVarPathParams.Add("importJobId", this.Configuration.ApiClient.ParameterToString(importJobId));
+            localVarPathParams.Add("importJobId", Configuration.ApiClient.ParameterToString(importJobId));
         }
 
         // Query params
@@ -24463,7 +24463,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24476,11 +24476,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24506,7 +24506,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
+            (KnowledgeImportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24572,7 +24572,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24581,7 +24581,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24594,12 +24594,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (importJobId != null)
         {
-            localVarPathParams.Add("importJobId", this.Configuration.ApiClient.ParameterToString(importJobId));
+            localVarPathParams.Add("importJobId", Configuration.ApiClient.ParameterToString(importJobId));
         }
 
         // Query params
@@ -24611,7 +24611,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24624,11 +24624,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24654,7 +24654,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
+            (KnowledgeImportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24718,7 +24718,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24727,7 +24727,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24740,12 +24740,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (labelId != null)
         {
-            localVarPathParams.Add("labelId", this.Configuration.ApiClient.ParameterToString(labelId));
+            localVarPathParams.Add("labelId", Configuration.ApiClient.ParameterToString(labelId));
         }
 
         // Query params
@@ -24757,7 +24757,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24770,11 +24770,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24800,7 +24800,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<LabelResponse>(localVarStatusCode,
             localVarHeaders,
-            (LabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
+            (LabelResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24866,7 +24866,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24875,7 +24875,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24888,12 +24888,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (labelId != null)
         {
-            localVarPathParams.Add("labelId", this.Configuration.ApiClient.ParameterToString(labelId));
+            localVarPathParams.Add("labelId", Configuration.ApiClient.ParameterToString(labelId));
         }
 
         // Query params
@@ -24905,7 +24905,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -24918,11 +24918,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24948,7 +24948,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<LabelResponse>(localVarStatusCode,
             localVarHeaders,
-            (LabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
+            (LabelResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25019,7 +25019,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25028,7 +25028,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25041,17 +25041,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -25063,7 +25063,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25076,11 +25076,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25106,7 +25106,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeExtendedCategory>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeExtendedCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
+            (KnowledgeExtendedCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25180,7 +25180,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25189,7 +25189,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25202,17 +25202,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -25224,7 +25224,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25237,11 +25237,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25267,7 +25267,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeExtendedCategory>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeExtendedCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
+            (KnowledgeExtendedCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25338,7 +25338,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25347,7 +25347,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25360,17 +25360,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -25382,7 +25382,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25395,11 +25395,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25425,7 +25425,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocument>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
+            (KnowledgeDocument)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25499,7 +25499,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25508,7 +25508,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25521,17 +25521,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -25543,7 +25543,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25556,11 +25556,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25586,7 +25586,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocument>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
+            (KnowledgeDocument)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25650,7 +25650,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25659,7 +25659,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25672,12 +25672,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -25689,7 +25689,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25702,11 +25702,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25732,7 +25732,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentListing>(localVarStatusCode,
             localVarHeaders,
-            (DocumentListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentListing)),
+            (DocumentListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25798,7 +25798,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25807,7 +25807,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25820,12 +25820,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -25837,7 +25837,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -25850,11 +25850,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25880,7 +25880,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentListing>(localVarStatusCode,
             localVarHeaders,
-            (DocumentListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentListing)),
+            (DocumentListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25951,7 +25951,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25960,7 +25960,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25973,17 +25973,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (importId != null)
         {
-            localVarPathParams.Add("importId", this.Configuration.ApiClient.ParameterToString(importId));
+            localVarPathParams.Add("importId", Configuration.ApiClient.ParameterToString(importId));
         }
 
         // Query params
@@ -25995,7 +25995,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26008,11 +26008,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26038,7 +26038,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImport>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
+            (KnowledgeImport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26112,7 +26112,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26121,7 +26121,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26134,17 +26134,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (importId != null)
         {
-            localVarPathParams.Add("importId", this.Configuration.ApiClient.ParameterToString(importId));
+            localVarPathParams.Add("importId", Configuration.ApiClient.ParameterToString(importId));
         }
 
         // Query params
@@ -26156,7 +26156,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26169,11 +26169,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26199,7 +26199,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImport>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
+            (KnowledgeImport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26262,7 +26262,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26271,7 +26271,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26284,12 +26284,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (parseJobId != null)
         {
-            localVarPathParams.Add("parseJobId", this.Configuration.ApiClient.ParameterToString(parseJobId));
+            localVarPathParams.Add("parseJobId", Configuration.ApiClient.ParameterToString(parseJobId));
         }
 
         // Query params
@@ -26301,7 +26301,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26314,11 +26314,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26409,7 +26409,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26418,7 +26418,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26431,12 +26431,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (parseJobId != null)
         {
-            localVarPathParams.Add("parseJobId", this.Configuration.ApiClient.ParameterToString(parseJobId));
+            localVarPathParams.Add("parseJobId", Configuration.ApiClient.ParameterToString(parseJobId));
         }
 
         // Query params
@@ -26448,7 +26448,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26461,11 +26461,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26555,7 +26555,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26564,7 +26564,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26577,12 +26577,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (syncJobId != null)
         {
-            localVarPathParams.Add("syncJobId", this.Configuration.ApiClient.ParameterToString(syncJobId));
+            localVarPathParams.Add("syncJobId", Configuration.ApiClient.ParameterToString(syncJobId));
         }
 
         // Query params
@@ -26594,7 +26594,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26607,11 +26607,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26637,7 +26637,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSyncJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSyncJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
+            (KnowledgeSyncJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26703,7 +26703,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26712,7 +26712,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26725,12 +26725,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (syncJobId != null)
         {
-            localVarPathParams.Add("syncJobId", this.Configuration.ApiClient.ParameterToString(syncJobId));
+            localVarPathParams.Add("syncJobId", Configuration.ApiClient.ParameterToString(syncJobId));
         }
 
         // Query params
@@ -26742,7 +26742,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26755,11 +26755,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26785,7 +26785,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSyncJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSyncJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
+            (KnowledgeSyncJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26856,7 +26856,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26865,7 +26865,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26878,17 +26878,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         if (phraseGroupId != null)
         {
-            localVarPathParams.Add("phraseGroupId", this.Configuration.ApiClient.ParameterToString(phraseGroupId));
+            localVarPathParams.Add("phraseGroupId", Configuration.ApiClient.ParameterToString(phraseGroupId));
         }
 
         // Query params
@@ -26900,7 +26900,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -26913,11 +26913,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26943,7 +26943,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<UnansweredPhraseGroupUpdateResponse>(localVarStatusCode,
             localVarHeaders,
-            (UnansweredPhraseGroupUpdateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredPhraseGroupUpdateResponse)),
+            (UnansweredPhraseGroupUpdateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredPhraseGroupUpdateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27017,7 +27017,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27026,7 +27026,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27039,17 +27039,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         if (phraseGroupId != null)
         {
-            localVarPathParams.Add("phraseGroupId", this.Configuration.ApiClient.ParameterToString(phraseGroupId));
+            localVarPathParams.Add("phraseGroupId", Configuration.ApiClient.ParameterToString(phraseGroupId));
         }
 
         // Query params
@@ -27061,7 +27061,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27074,11 +27074,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27104,7 +27104,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<UnansweredPhraseGroupUpdateResponse>(localVarStatusCode,
             localVarHeaders,
-            (UnansweredPhraseGroupUpdateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredPhraseGroupUpdateResponse)),
+            (UnansweredPhraseGroupUpdateResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredPhraseGroupUpdateResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27154,7 +27154,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27163,7 +27163,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27184,7 +27184,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27197,11 +27197,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27227,7 +27227,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<UploadUrlResponse>(localVarStatusCode,
             localVarHeaders,
-            (UploadUrlResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
+            (UploadUrlResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27277,7 +27277,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27286,7 +27286,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27307,7 +27307,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27320,11 +27320,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27350,7 +27350,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<UploadUrlResponse>(localVarStatusCode,
             localVarHeaders,
-            (UploadUrlResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
+            (UploadUrlResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UploadUrlResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27408,7 +27408,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27417,7 +27417,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27430,12 +27430,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -27447,7 +27447,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27457,7 +27457,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27542,7 +27542,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27551,7 +27551,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27564,12 +27564,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -27581,7 +27581,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27591,7 +27591,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27676,7 +27676,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27685,7 +27685,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27698,12 +27698,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -27715,7 +27715,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27725,7 +27725,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27751,7 +27751,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestDocumentFeedback>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestDocumentFeedback)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentFeedback)),
+            (KnowledgeGuestDocumentFeedback)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentFeedback)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27811,7 +27811,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27820,7 +27820,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27833,12 +27833,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -27850,7 +27850,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27860,7 +27860,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27886,7 +27886,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestDocumentFeedback>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestDocumentFeedback)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentFeedback)),
+            (KnowledgeGuestDocumentFeedback)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentFeedback)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27944,7 +27944,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27953,7 +27953,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27966,12 +27966,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -27983,7 +27983,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -27993,7 +27993,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28078,7 +28078,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28087,7 +28087,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28100,12 +28100,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -28117,7 +28117,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28127,7 +28127,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28210,7 +28210,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28219,7 +28219,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28232,7 +28232,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
@@ -28244,7 +28244,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28254,7 +28254,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28280,7 +28280,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestAnswerDocumentsResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestAnswerDocumentsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestAnswerDocumentsResponse)),
+            (KnowledgeGuestAnswerDocumentsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestAnswerDocumentsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28338,7 +28338,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28347,7 +28347,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28360,7 +28360,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
@@ -28372,7 +28372,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28382,7 +28382,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28408,7 +28408,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestAnswerDocumentsResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestAnswerDocumentsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestAnswerDocumentsResponse)),
+            (KnowledgeGuestAnswerDocumentsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestAnswerDocumentsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28459,7 +28459,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28468,7 +28468,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28481,7 +28481,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
@@ -28493,7 +28493,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28503,7 +28503,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28580,7 +28580,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28589,7 +28589,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28602,7 +28602,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
@@ -28614,7 +28614,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28624,7 +28624,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28704,7 +28704,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28713,7 +28713,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28726,13 +28726,13 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -28742,7 +28742,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28752,7 +28752,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28778,7 +28778,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentGuestSearch>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentGuestSearch)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentGuestSearch)),
+            (KnowledgeDocumentGuestSearch)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentGuestSearch)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28832,7 +28832,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28841,7 +28841,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28854,13 +28854,13 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -28870,7 +28870,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28880,7 +28880,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28906,7 +28906,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentGuestSearch>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentGuestSearch)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentGuestSearch)),
+            (KnowledgeDocumentGuestSearch)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentGuestSearch)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28958,7 +28958,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28967,7 +28967,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28980,7 +28980,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
@@ -28992,7 +28992,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29002,7 +29002,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29028,7 +29028,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestDocumentSuggestion>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestDocumentSuggestion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentSuggestion)),
+            (KnowledgeGuestDocumentSuggestion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentSuggestion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29080,7 +29080,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29089,7 +29089,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29102,7 +29102,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
@@ -29114,7 +29114,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29124,7 +29124,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29150,7 +29150,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestDocumentSuggestion>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestDocumentSuggestion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentSuggestion)),
+            (KnowledgeGuestDocumentSuggestion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestDocumentSuggestion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29200,7 +29200,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29209,7 +29209,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29230,7 +29230,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29240,7 +29240,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29266,7 +29266,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestSession>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestSession)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestSession)),
+            (KnowledgeGuestSession)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestSession)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29316,7 +29316,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29325,7 +29325,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29346,7 +29346,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29356,7 +29356,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29382,7 +29382,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeGuestSession>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeGuestSession)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestSession)),
+            (KnowledgeGuestSession)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeGuestSession)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29439,7 +29439,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29448,7 +29448,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29461,7 +29461,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -29473,7 +29473,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29486,11 +29486,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29516,7 +29516,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryResponse>(localVarStatusCode,
             localVarHeaders,
-            (CategoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
+            (CategoryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29574,7 +29574,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29583,7 +29583,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29596,7 +29596,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -29608,7 +29608,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29621,11 +29621,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29651,7 +29651,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CategoryResponse>(localVarStatusCode,
             localVarHeaders,
-            (CategoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
+            (CategoryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29709,7 +29709,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29718,7 +29718,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29731,12 +29731,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -29748,7 +29748,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29761,11 +29761,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29850,7 +29850,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29859,7 +29859,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29872,12 +29872,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -29889,7 +29889,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29902,11 +29902,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29991,7 +29991,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30000,7 +30000,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30013,12 +30013,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -30030,7 +30030,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30043,11 +30043,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30073,7 +30073,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentFeedbackResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentFeedbackResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
+            (KnowledgeDocumentFeedbackResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30133,7 +30133,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30142,7 +30142,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30155,12 +30155,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -30172,7 +30172,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30185,11 +30185,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30215,7 +30215,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentFeedbackResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentFeedbackResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
+            (KnowledgeDocumentFeedbackResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentFeedbackResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30279,7 +30279,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30288,7 +30288,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30301,12 +30301,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -30318,7 +30318,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30331,11 +30331,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30361,7 +30361,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentVariationResponse>(localVarStatusCode,
             localVarHeaders,
-            (DocumentVariationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
+            (DocumentVariationResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30427,7 +30427,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30436,7 +30436,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30449,12 +30449,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -30466,7 +30466,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30479,11 +30479,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30509,7 +30509,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<DocumentVariationResponse>(localVarStatusCode,
             localVarHeaders,
-            (DocumentVariationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
+            (DocumentVariationResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentVariationResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30573,7 +30573,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30582,7 +30582,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30595,12 +30595,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -30612,7 +30612,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30625,11 +30625,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30655,7 +30655,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentVersion>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersion)),
+            (KnowledgeDocumentVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30721,7 +30721,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30730,7 +30730,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30743,12 +30743,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -30760,7 +30760,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30773,11 +30773,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30803,7 +30803,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentVersion>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentVersion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersion)),
+            (KnowledgeDocumentVersion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentVersion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30861,7 +30861,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30870,7 +30870,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30883,12 +30883,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -30900,7 +30900,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30913,11 +30913,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31002,7 +31002,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31011,7 +31011,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31024,12 +31024,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         // Query params
@@ -31041,7 +31041,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31054,11 +31054,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31141,7 +31141,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31150,7 +31150,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31163,7 +31163,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -31175,7 +31175,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31188,11 +31188,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31218,7 +31218,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
+            (KnowledgeDocumentResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31276,7 +31276,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31285,7 +31285,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31298,7 +31298,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -31310,7 +31310,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31323,11 +31323,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31353,7 +31353,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
+            (KnowledgeDocumentResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31410,7 +31410,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31419,7 +31419,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31432,7 +31432,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -31444,7 +31444,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31457,11 +31457,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31487,7 +31487,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeAnswerDocumentsResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeAnswerDocumentsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeAnswerDocumentsResponse)),
+            (KnowledgeAnswerDocumentsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeAnswerDocumentsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31545,7 +31545,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31554,7 +31554,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31567,7 +31567,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -31579,7 +31579,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31592,11 +31592,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31622,7 +31622,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeAnswerDocumentsResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeAnswerDocumentsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeAnswerDocumentsResponse)),
+            (KnowledgeAnswerDocumentsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeAnswerDocumentsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31679,7 +31679,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31688,7 +31688,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31701,7 +31701,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -31713,7 +31713,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31726,11 +31726,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31756,7 +31756,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<BulkResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
+            (BulkResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31814,7 +31814,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31823,7 +31823,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31836,7 +31836,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -31848,7 +31848,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31861,11 +31861,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31891,7 +31891,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<BulkResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
+            (BulkResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31948,7 +31948,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31957,7 +31957,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31970,7 +31970,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -31982,7 +31982,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31995,11 +31995,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32025,7 +32025,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<BulkResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
+            (BulkResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32083,7 +32083,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32092,7 +32092,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32105,7 +32105,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -32117,7 +32117,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32130,11 +32130,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32160,7 +32160,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<BulkResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
+            (BulkResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32211,7 +32211,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32220,7 +32220,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32233,7 +32233,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -32245,7 +32245,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32258,11 +32258,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32339,7 +32339,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32348,7 +32348,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32361,7 +32361,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -32373,7 +32373,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32386,11 +32386,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32470,7 +32470,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32479,7 +32479,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32492,13 +32492,13 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -32508,7 +32508,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32521,11 +32521,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32551,7 +32551,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentQueryResponse)),
+            (KnowledgeDocumentQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32605,7 +32605,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32614,7 +32614,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32627,13 +32627,13 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -32643,7 +32643,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32656,11 +32656,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32686,7 +32686,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentQueryResponse)),
+            (KnowledgeDocumentQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32740,7 +32740,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32749,7 +32749,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32762,13 +32762,13 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -32778,7 +32778,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32791,11 +32791,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32821,7 +32821,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentSearch>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentSearch)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentSearch)),
+            (KnowledgeDocumentSearch)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentSearch)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32875,7 +32875,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32884,7 +32884,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32897,13 +32897,13 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -32913,7 +32913,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32926,11 +32926,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32956,7 +32956,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentSearch>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentSearch)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentSearch)),
+            (KnowledgeDocumentSearch)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentSearch)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33008,7 +33008,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33017,7 +33017,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33030,7 +33030,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -33042,7 +33042,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33055,11 +33055,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33085,7 +33085,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentSuggestion>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentSuggestion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentSuggestion)),
+            (KnowledgeDocumentSuggestion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentSuggestion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33137,7 +33137,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33146,7 +33146,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33159,7 +33159,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -33171,7 +33171,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33184,11 +33184,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33214,7 +33214,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentSuggestion>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentSuggestion)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentSuggestion)),
+            (KnowledgeDocumentSuggestion)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentSuggestion)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33271,7 +33271,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33280,7 +33280,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33293,7 +33293,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -33305,7 +33305,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33318,11 +33318,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33348,7 +33348,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<BulkResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
+            (BulkResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33406,7 +33406,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33415,7 +33415,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33428,7 +33428,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -33440,7 +33440,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33453,11 +33453,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33483,7 +33483,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<BulkResponse>(localVarStatusCode,
             localVarHeaders,
-            (BulkResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
+            (BulkResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BulkResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33540,7 +33540,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33549,7 +33549,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33562,7 +33562,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -33574,7 +33574,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33587,11 +33587,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33617,7 +33617,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeExportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeExportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExportJobResponse)),
+            (KnowledgeExportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33675,7 +33675,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33684,7 +33684,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33697,7 +33697,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -33709,7 +33709,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33722,11 +33722,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33752,7 +33752,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeExportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeExportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExportJobResponse)),
+            (KnowledgeExportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33809,7 +33809,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33818,7 +33818,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33831,7 +33831,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -33843,7 +33843,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33856,11 +33856,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33886,7 +33886,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
+            (KnowledgeImportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33944,7 +33944,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33953,7 +33953,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33966,7 +33966,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -33978,7 +33978,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33991,11 +33991,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34021,7 +34021,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImportJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImportJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
+            (KnowledgeImportJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImportJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34078,7 +34078,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34087,7 +34087,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34100,7 +34100,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -34112,7 +34112,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34125,11 +34125,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34155,7 +34155,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<LabelResponse>(localVarStatusCode,
             localVarHeaders,
-            (LabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
+            (LabelResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34213,7 +34213,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34222,7 +34222,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34235,7 +34235,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -34247,7 +34247,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34260,11 +34260,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34290,7 +34290,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<LabelResponse>(localVarStatusCode,
             localVarHeaders,
-            (LabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
+            (LabelResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LabelResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34354,7 +34354,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34363,7 +34363,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34376,12 +34376,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -34393,7 +34393,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34406,11 +34406,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34436,7 +34436,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeExtendedCategory>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeExtendedCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
+            (KnowledgeExtendedCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34502,7 +34502,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34511,7 +34511,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34524,12 +34524,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -34541,7 +34541,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34554,11 +34554,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34584,7 +34584,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeExtendedCategory>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeExtendedCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
+            (KnowledgeExtendedCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeExtendedCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34655,7 +34655,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34664,7 +34664,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34677,17 +34677,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -34699,7 +34699,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34712,11 +34712,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34742,7 +34742,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentContentUpload>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentContentUpload)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentContentUpload)),
+            (KnowledgeDocumentContentUpload)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentContentUpload)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34816,7 +34816,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34825,7 +34825,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34838,17 +34838,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (documentId != null)
         {
-            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+            localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId));
         }
 
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -34860,7 +34860,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34873,11 +34873,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34903,7 +34903,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocumentContentUpload>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocumentContentUpload)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentContentUpload)),
+            (KnowledgeDocumentContentUpload)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocumentContentUpload)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34967,7 +34967,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34976,7 +34976,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34989,12 +34989,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -35006,7 +35006,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35019,11 +35019,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35049,7 +35049,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocument>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
+            (KnowledgeDocument)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35115,7 +35115,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35124,7 +35124,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35137,12 +35137,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -35154,7 +35154,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35167,11 +35167,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35197,7 +35197,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeDocument>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
+            (KnowledgeDocument)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeDocument)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35261,7 +35261,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35270,7 +35270,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35283,12 +35283,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -35300,7 +35300,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35313,11 +35313,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35343,7 +35343,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImport>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
+            (KnowledgeImport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35409,7 +35409,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35418,7 +35418,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35431,12 +35431,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -35448,7 +35448,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35461,11 +35461,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35491,7 +35491,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeImport>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeImport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
+            (KnowledgeImport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeImport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35554,7 +35554,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35563,7 +35563,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35576,17 +35576,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (trainingId != null)
         {
-            localVarPathParams.Add("trainingId", this.Configuration.ApiClient.ParameterToString(trainingId));
+            localVarPathParams.Add("trainingId", Configuration.ApiClient.ParameterToString(trainingId));
         }
 
         // Query params
@@ -35602,11 +35602,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35632,7 +35632,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeTraining>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeTraining)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
+            (KnowledgeTraining)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35697,7 +35697,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35706,7 +35706,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35719,17 +35719,17 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         if (trainingId != null)
         {
-            localVarPathParams.Add("trainingId", this.Configuration.ApiClient.ParameterToString(trainingId));
+            localVarPathParams.Add("trainingId", Configuration.ApiClient.ParameterToString(trainingId));
         }
 
         // Query params
@@ -35745,11 +35745,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35775,7 +35775,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeTraining>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeTraining)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
+            (KnowledgeTraining)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35831,7 +35831,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35840,7 +35840,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35853,12 +35853,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -35874,11 +35874,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35904,7 +35904,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeTraining>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeTraining)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
+            (KnowledgeTraining)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35961,7 +35961,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35970,7 +35970,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35983,12 +35983,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (languageCode != null)
         {
-            localVarPathParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode));
+            localVarPathParams.Add("languageCode", Configuration.ApiClient.ParameterToString(languageCode));
         }
 
         // Query params
@@ -36004,11 +36004,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36034,7 +36034,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeTraining>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeTraining)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
+            (KnowledgeTraining)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeTraining)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36097,7 +36097,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36106,7 +36106,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36119,12 +36119,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (parseJobId != null)
         {
-            localVarPathParams.Add("parseJobId", this.Configuration.ApiClient.ParameterToString(parseJobId));
+            localVarPathParams.Add("parseJobId", Configuration.ApiClient.ParameterToString(parseJobId));
         }
 
         // Query params
@@ -36136,7 +36136,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36149,11 +36149,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36244,7 +36244,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36253,7 +36253,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36266,12 +36266,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (parseJobId != null)
         {
-            localVarPathParams.Add("parseJobId", this.Configuration.ApiClient.ParameterToString(parseJobId));
+            localVarPathParams.Add("parseJobId", Configuration.ApiClient.ParameterToString(parseJobId));
         }
 
         // Query params
@@ -36283,7 +36283,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36296,11 +36296,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36383,7 +36383,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36392,7 +36392,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36405,7 +36405,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -36417,7 +36417,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36430,11 +36430,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36460,7 +36460,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeParseJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeParseJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeParseJobResponse)),
+            (KnowledgeParseJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeParseJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36518,7 +36518,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36527,7 +36527,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36540,7 +36540,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -36552,7 +36552,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36565,11 +36565,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36595,7 +36595,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeParseJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeParseJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeParseJobResponse)),
+            (KnowledgeParseJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeParseJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36647,7 +36647,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36656,7 +36656,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36669,7 +36669,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -36681,7 +36681,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36694,11 +36694,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36724,7 +36724,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSearchResponse)),
+            (KnowledgeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36776,7 +36776,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36785,7 +36785,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36798,7 +36798,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -36810,7 +36810,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36823,11 +36823,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36853,7 +36853,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSearchResponse)),
+            (KnowledgeSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36910,7 +36910,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36919,7 +36919,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36932,7 +36932,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -36944,7 +36944,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36957,11 +36957,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36987,7 +36987,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSyncJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSyncJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
+            (KnowledgeSyncJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37045,7 +37045,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37054,7 +37054,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37067,7 +37067,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -37079,7 +37079,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37092,11 +37092,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37122,7 +37122,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSyncJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSyncJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
+            (KnowledgeSyncJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37181,7 +37181,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37190,7 +37190,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37203,12 +37203,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -37220,7 +37220,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37233,11 +37233,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37263,7 +37263,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<SourceSyncResponse>(localVarStatusCode,
             localVarHeaders,
-            (SourceSyncResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceSyncResponse)),
+            (SourceSyncResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceSyncResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37323,7 +37323,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37332,7 +37332,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37345,12 +37345,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -37362,7 +37362,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37375,11 +37375,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37405,7 +37405,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<SourceSyncResponse>(localVarStatusCode,
             localVarHeaders,
-            (SourceSyncResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceSyncResponse)),
+            (SourceSyncResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceSyncResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37462,7 +37462,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37471,7 +37471,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37484,7 +37484,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -37496,7 +37496,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37509,11 +37509,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37539,7 +37539,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSyncJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSyncJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
+            (KnowledgeSyncJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37597,7 +37597,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37606,7 +37606,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37619,7 +37619,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -37631,7 +37631,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37644,11 +37644,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37674,7 +37674,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSyncJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSyncJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
+            (KnowledgeSyncJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37733,7 +37733,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37742,7 +37742,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37755,12 +37755,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -37772,7 +37772,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37785,11 +37785,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37815,7 +37815,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<SourceSyncResponse>(localVarStatusCode,
             localVarHeaders,
-            (SourceSyncResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceSyncResponse)),
+            (SourceSyncResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceSyncResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37875,7 +37875,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37884,7 +37884,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37897,12 +37897,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -37914,7 +37914,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37927,11 +37927,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37957,7 +37957,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<SourceSyncResponse>(localVarStatusCode,
             localVarHeaders,
-            (SourceSyncResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceSyncResponse)),
+            (SourceSyncResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SourceSyncResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38014,7 +38014,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38023,7 +38023,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38036,7 +38036,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -38048,7 +38048,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38061,11 +38061,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38091,7 +38091,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSyncJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSyncJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
+            (KnowledgeSyncJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38149,7 +38149,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38158,7 +38158,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38171,7 +38171,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -38183,7 +38183,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38196,11 +38196,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38226,7 +38226,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeSyncJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeSyncJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
+            (KnowledgeSyncJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSyncJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38283,7 +38283,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38292,7 +38292,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38305,7 +38305,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -38317,7 +38317,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38330,11 +38330,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38360,7 +38360,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CreateUploadSourceUrlJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (CreateUploadSourceUrlJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUploadSourceUrlJobResponse)),
+            (CreateUploadSourceUrlJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUploadSourceUrlJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38418,7 +38418,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38427,7 +38427,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38440,7 +38440,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         // Query params
@@ -38452,7 +38452,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38465,11 +38465,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38495,7 +38495,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<CreateUploadSourceUrlJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (CreateUploadSourceUrlJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUploadSourceUrlJobResponse)),
+            (CreateUploadSourceUrlJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUploadSourceUrlJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38545,7 +38545,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38554,7 +38554,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38575,7 +38575,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38588,11 +38588,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38618,7 +38618,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeBase>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
+            (KnowledgeBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38668,7 +38668,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38677,7 +38677,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38698,7 +38698,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38711,11 +38711,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38741,7 +38741,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<KnowledgeBase>(localVarStatusCode,
             localVarHeaders,
-            (KnowledgeBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
+            (KnowledgeBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38805,7 +38805,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38814,7 +38814,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38827,12 +38827,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -38844,7 +38844,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38857,11 +38857,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38887,7 +38887,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<SalesforceSourceResponse>(localVarStatusCode,
             localVarHeaders,
-            (SalesforceSourceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SalesforceSourceResponse)),
+            (SalesforceSourceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SalesforceSourceResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38953,7 +38953,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38962,7 +38962,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38975,12 +38975,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -38992,7 +38992,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -39005,11 +39005,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39035,7 +39035,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<SalesforceSourceResponse>(localVarStatusCode,
             localVarHeaders,
-            (SalesforceSourceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SalesforceSourceResponse)),
+            (SalesforceSourceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SalesforceSourceResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39099,7 +39099,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -39108,7 +39108,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -39121,12 +39121,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -39138,7 +39138,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -39151,11 +39151,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39181,7 +39181,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<ServiceNowSourceResponse>(localVarStatusCode,
             localVarHeaders,
-            (ServiceNowSourceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceNowSourceResponse)),
+            (ServiceNowSourceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceNowSourceResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -39247,7 +39247,7 @@ public partial class KnowledgeApi : IKnowledgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -39256,7 +39256,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -39269,12 +39269,12 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Path params
         if (knowledgeBaseId != null)
         {
-            localVarPathParams.Add("knowledgeBaseId", this.Configuration.ApiClient.ParameterToString(knowledgeBaseId));
+            localVarPathParams.Add("knowledgeBaseId", Configuration.ApiClient.ParameterToString(knowledgeBaseId));
         }
 
         if (sourceId != null)
         {
-            localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            localVarPathParams.Add("sourceId", Configuration.ApiClient.ParameterToString(sourceId));
         }
 
         // Query params
@@ -39286,7 +39286,7 @@ public partial class KnowledgeApi : IKnowledgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -39299,11 +39299,11 @@ public partial class KnowledgeApi : IKnowledgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -39329,7 +39329,7 @@ public partial class KnowledgeApi : IKnowledgeApi
 
         return new ApiResponse<ServiceNowSourceResponse>(localVarStatusCode,
             localVarHeaders,
-            (ServiceNowSourceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceNowSourceResponse)),
+            (ServiceNowSourceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceNowSourceResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

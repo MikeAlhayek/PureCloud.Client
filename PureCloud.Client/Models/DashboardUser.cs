@@ -134,7 +134,7 @@ public partial class DashboardUser : IEquatable<DashboardUser>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DashboardUser);
+        return Equals(obj as DashboardUser);
     }
 
     /// <summary>
@@ -152,34 +152,34 @@ public partial class DashboardUser : IEquatable<DashboardUser>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DashboardCount == other.DashboardCount ||
-                this.DashboardCount != null &&
-                this.DashboardCount.Equals(other.DashboardCount)
+                DashboardCount == other.DashboardCount ||
+                DashboardCount != null &&
+                DashboardCount.Equals(other.DashboardCount)
             ) &&
             (
-                this.PublicDashboardCount == other.PublicDashboardCount ||
-                this.PublicDashboardCount != null &&
-                this.PublicDashboardCount.Equals(other.PublicDashboardCount)
+                PublicDashboardCount == other.PublicDashboardCount ||
+                PublicDashboardCount != null &&
+                PublicDashboardCount.Equals(other.PublicDashboardCount)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -194,34 +194,34 @@ public partial class DashboardUser : IEquatable<DashboardUser>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DashboardCount != null)
+            if (DashboardCount != null)
             {
-                hash = hash * 59 + this.DashboardCount.GetHashCode();
+                hash = hash * 59 + DashboardCount.GetHashCode();
             }
 
-            if (this.PublicDashboardCount != null)
+            if (PublicDashboardCount != null)
             {
-                hash = hash * 59 + this.PublicDashboardCount.GetHashCode();
+                hash = hash * 59 + PublicDashboardCount.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

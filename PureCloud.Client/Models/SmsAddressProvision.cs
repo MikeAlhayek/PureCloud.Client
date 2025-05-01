@@ -151,7 +151,7 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SmsAddressProvision);
+        return Equals(obj as SmsAddressProvision);
     }
 
     /// <summary>
@@ -169,49 +169,49 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Street == other.Street ||
-                this.Street != null &&
-                this.Street.Equals(other.Street)
+                Street == other.Street ||
+                Street != null &&
+                Street.Equals(other.Street)
             ) &&
             (
-                this.City == other.City ||
-                this.City != null &&
-                this.City.Equals(other.City)
+                City == other.City ||
+                City != null &&
+                City.Equals(other.City)
             ) &&
             (
-                this.Region == other.Region ||
-                this.Region != null &&
-                this.Region.Equals(other.Region)
+                Region == other.Region ||
+                Region != null &&
+                Region.Equals(other.Region)
             ) &&
             (
-                this.PostalCode == other.PostalCode ||
-                this.PostalCode != null &&
-                this.PostalCode.Equals(other.PostalCode)
+                PostalCode == other.PostalCode ||
+                PostalCode != null &&
+                PostalCode.Equals(other.PostalCode)
             ) &&
             (
-                this.CountryCode == other.CountryCode ||
-                this.CountryCode != null &&
-                this.CountryCode.Equals(other.CountryCode)
+                CountryCode == other.CountryCode ||
+                CountryCode != null &&
+                CountryCode.Equals(other.CountryCode)
             ) &&
             (
-                this.AutoCorrectAddress == other.AutoCorrectAddress ||
-                this.AutoCorrectAddress != null &&
-                this.AutoCorrectAddress.Equals(other.AutoCorrectAddress)
+                AutoCorrectAddress == other.AutoCorrectAddress ||
+                AutoCorrectAddress != null &&
+                AutoCorrectAddress.Equals(other.AutoCorrectAddress)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -226,49 +226,49 @@ public partial class SmsAddressProvision : IEquatable<SmsAddressProvision>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Street != null)
+            if (Street != null)
             {
-                hash = hash * 59 + this.Street.GetHashCode();
+                hash = hash * 59 + Street.GetHashCode();
             }
 
-            if (this.City != null)
+            if (City != null)
             {
-                hash = hash * 59 + this.City.GetHashCode();
+                hash = hash * 59 + City.GetHashCode();
             }
 
-            if (this.Region != null)
+            if (Region != null)
             {
-                hash = hash * 59 + this.Region.GetHashCode();
+                hash = hash * 59 + Region.GetHashCode();
             }
 
-            if (this.PostalCode != null)
+            if (PostalCode != null)
             {
-                hash = hash * 59 + this.PostalCode.GetHashCode();
+                hash = hash * 59 + PostalCode.GetHashCode();
             }
 
-            if (this.CountryCode != null)
+            if (CountryCode != null)
             {
-                hash = hash * 59 + this.CountryCode.GetHashCode();
+                hash = hash * 59 + CountryCode.GetHashCode();
             }
 
-            if (this.AutoCorrectAddress != null)
+            if (AutoCorrectAddress != null)
             {
-                hash = hash * 59 + this.AutoCorrectAddress.GetHashCode();
+                hash = hash * 59 + AutoCorrectAddress.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -147,7 +147,7 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkdayValuesMetricItem);
+        return Equals(obj as WorkdayValuesMetricItem);
     }
 
     /// <summary>
@@ -165,29 +165,29 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.MetricDefinition == other.MetricDefinition ||
-                this.MetricDefinition != null &&
-                this.MetricDefinition.Equals(other.MetricDefinition)
+                MetricDefinition == other.MetricDefinition ||
+                MetricDefinition != null &&
+                MetricDefinition.Equals(other.MetricDefinition)
             ) &&
             (
-                this.Average == other.Average ||
-                this.Average != null &&
-                this.Average.Equals(other.Average)
+                Average == other.Average ||
+                Average != null &&
+                Average.Equals(other.Average)
             ) &&
             (
-                this.UnitType == other.UnitType ||
-                this.UnitType != null &&
-                this.UnitType.Equals(other.UnitType)
+                UnitType == other.UnitType ||
+                UnitType != null &&
+                UnitType.Equals(other.UnitType)
             ) &&
             (
-                this.Trend == other.Trend ||
-                this.Trend != null &&
-                this.Trend.SequenceEqual(other.Trend)
+                Trend == other.Trend ||
+                Trend != null &&
+                Trend.SequenceEqual(other.Trend)
             );
     }
 
@@ -202,29 +202,29 @@ public partial class WorkdayValuesMetricItem : IEquatable<WorkdayValuesMetricIte
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.MetricDefinition != null)
+            if (MetricDefinition != null)
             {
-                hash = hash * 59 + this.MetricDefinition.GetHashCode();
+                hash = hash * 59 + MetricDefinition.GetHashCode();
             }
 
-            if (this.Average != null)
+            if (Average != null)
             {
-                hash = hash * 59 + this.Average.GetHashCode();
+                hash = hash * 59 + Average.GetHashCode();
             }
 
-            if (this.UnitType != null)
+            if (UnitType != null)
             {
-                hash = hash * 59 + this.UnitType.GetHashCode();
+                hash = hash * 59 + UnitType.GetHashCode();
             }
 
-            if (this.Trend != null)
+            if (Trend != null)
             {
-                hash = hash * 59 + this.Trend.GetHashCode();
+                hash = hash * 59 + Trend.GetHashCode();
             }
 
             return hash;

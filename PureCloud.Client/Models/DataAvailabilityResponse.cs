@@ -53,7 +53,7 @@ public partial class DataAvailabilityResponse : IEquatable<DataAvailabilityRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DataAvailabilityResponse);
+        return Equals(obj as DataAvailabilityResponse);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class DataAvailabilityResponse : IEquatable<DataAvailabilityRespo
 
         return true &&
             (
-                this.DataAvailabilityDate == other.DataAvailabilityDate ||
-                this.DataAvailabilityDate != null &&
-                this.DataAvailabilityDate.Equals(other.DataAvailabilityDate)
+                DataAvailabilityDate == other.DataAvailabilityDate ||
+                DataAvailabilityDate != null &&
+                DataAvailabilityDate.Equals(other.DataAvailabilityDate)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class DataAvailabilityResponse : IEquatable<DataAvailabilityRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DataAvailabilityDate != null)
+            if (DataAvailabilityDate != null)
             {
-                hash = hash * 59 + this.DataAvailabilityDate.GetHashCode();
+                hash = hash * 59 + DataAvailabilityDate.GetHashCode();
             }
 
             return hash;

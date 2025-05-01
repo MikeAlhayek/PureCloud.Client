@@ -71,7 +71,7 @@ public partial class ConnectRate : IEquatable<ConnectRate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConnectRate);
+        return Equals(obj as ConnectRate);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class ConnectRate : IEquatable<ConnectRate>
 
         return true &&
             (
-                this.Attempts == other.Attempts ||
-                this.Attempts != null &&
-                this.Attempts.Equals(other.Attempts)
+                Attempts == other.Attempts ||
+                Attempts != null &&
+                Attempts.Equals(other.Attempts)
             ) &&
             (
-                this.Connects == other.Connects ||
-                this.Connects != null &&
-                this.Connects.Equals(other.Connects)
+                Connects == other.Connects ||
+                Connects != null &&
+                Connects.Equals(other.Connects)
             ) &&
             (
-                this.ConnectRatio == other.ConnectRatio ||
-                this.ConnectRatio != null &&
-                this.ConnectRatio.Equals(other.ConnectRatio)
+                ConnectRatio == other.ConnectRatio ||
+                ConnectRatio != null &&
+                ConnectRatio.Equals(other.ConnectRatio)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class ConnectRate : IEquatable<ConnectRate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Attempts != null)
+            if (Attempts != null)
             {
-                hash = hash * 59 + this.Attempts.GetHashCode();
+                hash = hash * 59 + Attempts.GetHashCode();
             }
 
-            if (this.Connects != null)
+            if (Connects != null)
             {
-                hash = hash * 59 + this.Connects.GetHashCode();
+                hash = hash * 59 + Connects.GetHashCode();
             }
 
-            if (this.ConnectRatio != null)
+            if (ConnectRatio != null)
             {
-                hash = hash * 59 + this.ConnectRatio.GetHashCode();
+                hash = hash * 59 + ConnectRatio.GetHashCode();
             }
 
             return hash;

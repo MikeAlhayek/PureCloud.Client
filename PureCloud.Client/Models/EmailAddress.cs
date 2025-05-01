@@ -63,7 +63,7 @@ public partial class EmailAddress : IEquatable<EmailAddress>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailAddress);
+        return Equals(obj as EmailAddress);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class EmailAddress : IEquatable<EmailAddress>
 
         return true &&
             (
-                this.Email == other.Email ||
-                this.Email != null &&
-                this.Email.Equals(other.Email)
+                Email == other.Email ||
+                Email != null &&
+                Email.Equals(other.Email)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class EmailAddress : IEquatable<EmailAddress>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Email != null)
+            if (Email != null)
             {
-                hash = hash * 59 + this.Email.GetHashCode();
+                hash = hash * 59 + Email.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
             return hash;

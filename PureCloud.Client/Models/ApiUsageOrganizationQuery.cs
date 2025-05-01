@@ -220,7 +220,7 @@ public partial class ApiUsageOrganizationQuery : IEquatable<ApiUsageOrganization
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ApiUsageOrganizationQuery);
+        return Equals(obj as ApiUsageOrganizationQuery);
     }
 
     /// <summary>
@@ -238,24 +238,24 @@ public partial class ApiUsageOrganizationQuery : IEquatable<ApiUsageOrganization
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.GroupBy == other.GroupBy ||
-                this.GroupBy != null &&
-                this.GroupBy.SequenceEqual(other.GroupBy)
+                GroupBy == other.GroupBy ||
+                GroupBy != null &&
+                GroupBy.SequenceEqual(other.GroupBy)
             );
     }
 
@@ -270,24 +270,24 @@ public partial class ApiUsageOrganizationQuery : IEquatable<ApiUsageOrganization
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.GroupBy != null)
+            if (GroupBy != null)
             {
-                hash = hash * 59 + this.GroupBy.GetHashCode();
+                hash = hash * 59 + GroupBy.GetHashCode();
             }
 
             return hash;

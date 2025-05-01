@@ -64,7 +64,7 @@ public partial class WorkPlanOverrideListWrapperWorkPlanOverrideRequest : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanOverrideListWrapperWorkPlanOverrideRequest);
+        return Equals(obj as WorkPlanOverrideListWrapperWorkPlanOverrideRequest);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class WorkPlanOverrideListWrapperWorkPlanOverrideRequest : IEquat
 
         return true &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             ) &&
             (
-                this.DeleteAll == other.DeleteAll ||
-                this.DeleteAll != null &&
-                this.DeleteAll.Equals(other.DeleteAll)
+                DeleteAll == other.DeleteAll ||
+                DeleteAll != null &&
+                DeleteAll.Equals(other.DeleteAll)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class WorkPlanOverrideListWrapperWorkPlanOverrideRequest : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
-            if (this.DeleteAll != null)
+            if (DeleteAll != null)
             {
-                hash = hash * 59 + this.DeleteAll.GetHashCode();
+                hash = hash * 59 + DeleteAll.GetHashCode();
             }
 
             return hash;

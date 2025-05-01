@@ -152,7 +152,7 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PunctualityEvent);
+        return Equals(obj as PunctualityEvent);
     }
 
     /// <summary>
@@ -170,59 +170,59 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
 
         return true &&
             (
-                this.DateScheduleStart == other.DateScheduleStart ||
-                this.DateScheduleStart != null &&
-                this.DateScheduleStart.Equals(other.DateScheduleStart)
+                DateScheduleStart == other.DateScheduleStart ||
+                DateScheduleStart != null &&
+                DateScheduleStart.Equals(other.DateScheduleStart)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.LengthMinutes == other.LengthMinutes ||
-                this.LengthMinutes != null &&
-                this.LengthMinutes.Equals(other.LengthMinutes)
+                LengthMinutes == other.LengthMinutes ||
+                LengthMinutes != null &&
+                LengthMinutes.Equals(other.LengthMinutes)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.ActivityCode == other.ActivityCode ||
-                this.ActivityCode != null &&
-                this.ActivityCode.Equals(other.ActivityCode)
+                ActivityCode == other.ActivityCode ||
+                ActivityCode != null &&
+                ActivityCode.Equals(other.ActivityCode)
             ) &&
             (
-                this.ActivityName == other.ActivityName ||
-                this.ActivityName != null &&
-                this.ActivityName.Equals(other.ActivityName)
+                ActivityName == other.ActivityName ||
+                ActivityName != null &&
+                ActivityName.Equals(other.ActivityName)
             ) &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.Points == other.Points ||
-                this.Points != null &&
-                this.Points.Equals(other.Points)
+                Points == other.Points ||
+                Points != null &&
+                Points.Equals(other.Points)
             ) &&
             (
-                this.Delta == other.Delta ||
-                this.Delta != null &&
-                this.Delta.Equals(other.Delta)
+                Delta == other.Delta ||
+                Delta != null &&
+                Delta.Equals(other.Delta)
             ) &&
             (
-                this.Bullseye == other.Bullseye ||
-                this.Bullseye != null &&
-                this.Bullseye.Equals(other.Bullseye)
+                Bullseye == other.Bullseye ||
+                Bullseye != null &&
+                Bullseye.Equals(other.Bullseye)
             );
     }
 
@@ -237,59 +237,59 @@ public partial class PunctualityEvent : IEquatable<PunctualityEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateScheduleStart != null)
+            if (DateScheduleStart != null)
             {
-                hash = hash * 59 + this.DateScheduleStart.GetHashCode();
+                hash = hash * 59 + DateScheduleStart.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.LengthMinutes != null)
+            if (LengthMinutes != null)
             {
-                hash = hash * 59 + this.LengthMinutes.GetHashCode();
+                hash = hash * 59 + LengthMinutes.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.ActivityCode != null)
+            if (ActivityCode != null)
             {
-                hash = hash * 59 + this.ActivityCode.GetHashCode();
+                hash = hash * 59 + ActivityCode.GetHashCode();
             }
 
-            if (this.ActivityName != null)
+            if (ActivityName != null)
             {
-                hash = hash * 59 + this.ActivityName.GetHashCode();
+                hash = hash * 59 + ActivityName.GetHashCode();
             }
 
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.Points != null)
+            if (Points != null)
             {
-                hash = hash * 59 + this.Points.GetHashCode();
+                hash = hash * 59 + Points.GetHashCode();
             }
 
-            if (this.Delta != null)
+            if (Delta != null)
             {
-                hash = hash * 59 + this.Delta.GetHashCode();
+                hash = hash * 59 + Delta.GetHashCode();
             }
 
-            if (this.Bullseye != null)
+            if (Bullseye != null)
             {
-                hash = hash * 59 + this.Bullseye.GetHashCode();
+                hash = hash * 59 + Bullseye.GetHashCode();
             }
 
             return hash;

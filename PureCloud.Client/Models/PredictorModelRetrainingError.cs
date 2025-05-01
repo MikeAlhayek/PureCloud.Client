@@ -103,7 +103,7 @@ public partial class PredictorModelRetrainingError : IEquatable<PredictorModelRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PredictorModelRetrainingError);
+        return Equals(obj as PredictorModelRetrainingError);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class PredictorModelRetrainingError : IEquatable<PredictorModelRe
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.DateOfFirstOccurrence == other.DateOfFirstOccurrence ||
-                this.DateOfFirstOccurrence != null &&
-                this.DateOfFirstOccurrence.Equals(other.DateOfFirstOccurrence)
+                DateOfFirstOccurrence == other.DateOfFirstOccurrence ||
+                DateOfFirstOccurrence != null &&
+                DateOfFirstOccurrence.Equals(other.DateOfFirstOccurrence)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class PredictorModelRetrainingError : IEquatable<PredictorModelRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.DateOfFirstOccurrence != null)
+            if (DateOfFirstOccurrence != null)
             {
-                hash = hash * 59 + this.DateOfFirstOccurrence.GetHashCode();
+                hash = hash * 59 + DateOfFirstOccurrence.GetHashCode();
             }
 
             return hash;

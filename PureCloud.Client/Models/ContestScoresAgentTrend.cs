@@ -89,7 +89,7 @@ public partial class ContestScoresAgentTrend : IEquatable<ContestScoresAgentTren
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestScoresAgentTrend);
+        return Equals(obj as ContestScoresAgentTrend);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ContestScoresAgentTrend : IEquatable<ContestScoresAgentTren
 
         return true &&
             (
-                this.ContestScore == other.ContestScore ||
-                this.ContestScore != null &&
-                this.ContestScore.Equals(other.ContestScore)
+                ContestScore == other.ContestScore ||
+                ContestScore != null &&
+                ContestScore.Equals(other.ContestScore)
             ) &&
             (
-                this.MetricScores == other.MetricScores ||
-                this.MetricScores != null &&
-                this.MetricScores.SequenceEqual(other.MetricScores)
+                MetricScores == other.MetricScores ||
+                MetricScores != null &&
+                MetricScores.SequenceEqual(other.MetricScores)
             ) &&
             (
-                this.Disqualified == other.Disqualified ||
-                this.Disqualified != null &&
-                this.Disqualified.Equals(other.Disqualified)
+                Disqualified == other.Disqualified ||
+                Disqualified != null &&
+                Disqualified.Equals(other.Disqualified)
             ) &&
             (
-                this.DateWorkday == other.DateWorkday ||
-                this.DateWorkday != null &&
-                this.DateWorkday.Equals(other.DateWorkday)
+                DateWorkday == other.DateWorkday ||
+                DateWorkday != null &&
+                DateWorkday.Equals(other.DateWorkday)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ContestScoresAgentTrend : IEquatable<ContestScoresAgentTren
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContestScore != null)
+            if (ContestScore != null)
             {
-                hash = hash * 59 + this.ContestScore.GetHashCode();
+                hash = hash * 59 + ContestScore.GetHashCode();
             }
 
-            if (this.MetricScores != null)
+            if (MetricScores != null)
             {
-                hash = hash * 59 + this.MetricScores.GetHashCode();
+                hash = hash * 59 + MetricScores.GetHashCode();
             }
 
-            if (this.Disqualified != null)
+            if (Disqualified != null)
             {
-                hash = hash * 59 + this.Disqualified.GetHashCode();
+                hash = hash * 59 + Disqualified.GetHashCode();
             }
 
-            if (this.DateWorkday != null)
+            if (DateWorkday != null)
             {
-                hash = hash * 59 + this.DateWorkday.GetHashCode();
+                hash = hash * 59 + DateWorkday.GetHashCode();
             }
 
             return hash;

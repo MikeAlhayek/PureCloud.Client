@@ -65,7 +65,7 @@ public partial class UpdateNotificationResponse : IEquatable<UpdateNotificationR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateNotificationResponse);
+        return Equals(obj as UpdateNotificationResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class UpdateNotificationResponse : IEquatable<UpdateNotificationR
 
         return true &&
             (
-                this.MutableGroupId == other.MutableGroupId ||
-                this.MutableGroupId != null &&
-                this.MutableGroupId.Equals(other.MutableGroupId)
+                MutableGroupId == other.MutableGroupId ||
+                MutableGroupId != null &&
+                MutableGroupId.Equals(other.MutableGroupId)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class UpdateNotificationResponse : IEquatable<UpdateNotificationR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MutableGroupId != null)
+            if (MutableGroupId != null)
             {
-                hash = hash * 59 + this.MutableGroupId.GetHashCode();
+                hash = hash * 59 + MutableGroupId.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
             return hash;

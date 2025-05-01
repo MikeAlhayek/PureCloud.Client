@@ -53,7 +53,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumbe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef);
+        return Equals(obj as OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumbe
 
         return true &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumbe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
             return hash;

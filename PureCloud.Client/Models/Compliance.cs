@@ -83,7 +83,7 @@ public partial class Compliance : IEquatable<Compliance>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Compliance);
+        return Equals(obj as Compliance);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class Compliance : IEquatable<Compliance>
 
         return true &&
             (
-                this.StopSettings == other.StopSettings ||
-                this.StopSettings != null &&
-                this.StopSettings.SequenceEqual(other.StopSettings)
+                StopSettings == other.StopSettings ||
+                StopSettings != null &&
+                StopSettings.SequenceEqual(other.StopSettings)
             ) &&
             (
-                this.OptInSettings == other.OptInSettings ||
-                this.OptInSettings != null &&
-                this.OptInSettings.SequenceEqual(other.OptInSettings)
+                OptInSettings == other.OptInSettings ||
+                OptInSettings != null &&
+                OptInSettings.SequenceEqual(other.OptInSettings)
             ) &&
             (
-                this.HelpSettings == other.HelpSettings ||
-                this.HelpSettings != null &&
-                this.HelpSettings.SequenceEqual(other.HelpSettings)
+                HelpSettings == other.HelpSettings ||
+                HelpSettings != null &&
+                HelpSettings.SequenceEqual(other.HelpSettings)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class Compliance : IEquatable<Compliance>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StopSettings != null)
+            if (StopSettings != null)
             {
-                hash = hash * 59 + this.StopSettings.GetHashCode();
+                hash = hash * 59 + StopSettings.GetHashCode();
             }
 
-            if (this.OptInSettings != null)
+            if (OptInSettings != null)
             {
-                hash = hash * 59 + this.OptInSettings.GetHashCode();
+                hash = hash * 59 + OptInSettings.GetHashCode();
             }
 
-            if (this.HelpSettings != null)
+            if (HelpSettings != null)
             {
-                hash = hash * 59 + this.HelpSettings.GetHashCode();
+                hash = hash * 59 + HelpSettings.GetHashCode();
             }
 
             return hash;

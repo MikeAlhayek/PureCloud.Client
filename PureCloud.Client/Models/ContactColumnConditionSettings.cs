@@ -207,7 +207,7 @@ public partial class ContactColumnConditionSettings : IEquatable<ContactColumnCo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactColumnConditionSettings);
+        return Equals(obj as ContactColumnConditionSettings);
     }
 
     /// <summary>
@@ -225,24 +225,24 @@ public partial class ContactColumnConditionSettings : IEquatable<ContactColumnCo
 
         return true &&
             (
-                this.ColumnName == other.ColumnName ||
-                this.ColumnName != null &&
-                this.ColumnName.Equals(other.ColumnName)
+                ColumnName == other.ColumnName ||
+                ColumnName != null &&
+                ColumnName.Equals(other.ColumnName)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.ValueType == other.ValueType ||
-                this.ValueType != null &&
-                this.ValueType.Equals(other.ValueType)
+                ValueType == other.ValueType ||
+                ValueType != null &&
+                ValueType.Equals(other.ValueType)
             );
     }
 
@@ -257,24 +257,24 @@ public partial class ContactColumnConditionSettings : IEquatable<ContactColumnCo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ColumnName != null)
+            if (ColumnName != null)
             {
-                hash = hash * 59 + this.ColumnName.GetHashCode();
+                hash = hash * 59 + ColumnName.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.ValueType != null)
+            if (ValueType != null)
             {
-                hash = hash * 59 + this.ValueType.GetHashCode();
+                hash = hash * 59 + ValueType.GetHashCode();
             }
 
             return hash;

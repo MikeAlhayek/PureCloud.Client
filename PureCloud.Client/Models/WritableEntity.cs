@@ -53,7 +53,7 @@ public partial class WritableEntity : IEquatable<WritableEntity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WritableEntity);
+        return Equals(obj as WritableEntity);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class WritableEntity : IEquatable<WritableEntity>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class WritableEntity : IEquatable<WritableEntity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
             return hash;

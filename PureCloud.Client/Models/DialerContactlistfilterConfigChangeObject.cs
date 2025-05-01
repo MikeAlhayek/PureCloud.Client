@@ -41,7 +41,7 @@ public partial class DialerContactlistfilterConfigChangeObject : IEquatable<Dial
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerContactlistfilterConfigChangeObject);
+        return Equals(obj as DialerContactlistfilterConfigChangeObject);
     }
 
     /// <summary>

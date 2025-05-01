@@ -132,7 +132,7 @@ public partial class ReplaceResponse : IEquatable<ReplaceResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReplaceResponse);
+        return Equals(obj as ReplaceResponse);
     }
 
     /// <summary>
@@ -150,34 +150,34 @@ public partial class ReplaceResponse : IEquatable<ReplaceResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ChangeNumber == other.ChangeNumber ||
-                this.ChangeNumber != null &&
-                this.ChangeNumber.Equals(other.ChangeNumber)
+                ChangeNumber == other.ChangeNumber ||
+                ChangeNumber != null &&
+                ChangeNumber.Equals(other.ChangeNumber)
             ) &&
             (
-                this.UploadStatus == other.UploadStatus ||
-                this.UploadStatus != null &&
-                this.UploadStatus.Equals(other.UploadStatus)
+                UploadStatus == other.UploadStatus ||
+                UploadStatus != null &&
+                UploadStatus.Equals(other.UploadStatus)
             ) &&
             (
-                this.UploadDestinationUri == other.UploadDestinationUri ||
-                this.UploadDestinationUri != null &&
-                this.UploadDestinationUri.Equals(other.UploadDestinationUri)
+                UploadDestinationUri == other.UploadDestinationUri ||
+                UploadDestinationUri != null &&
+                UploadDestinationUri.Equals(other.UploadDestinationUri)
             ) &&
             (
-                this.UploadMethod == other.UploadMethod ||
-                this.UploadMethod != null &&
-                this.UploadMethod.Equals(other.UploadMethod)
+                UploadMethod == other.UploadMethod ||
+                UploadMethod != null &&
+                UploadMethod.Equals(other.UploadMethod)
             );
     }
 
@@ -192,34 +192,34 @@ public partial class ReplaceResponse : IEquatable<ReplaceResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ChangeNumber != null)
+            if (ChangeNumber != null)
             {
-                hash = hash * 59 + this.ChangeNumber.GetHashCode();
+                hash = hash * 59 + ChangeNumber.GetHashCode();
             }
 
-            if (this.UploadStatus != null)
+            if (UploadStatus != null)
             {
-                hash = hash * 59 + this.UploadStatus.GetHashCode();
+                hash = hash * 59 + UploadStatus.GetHashCode();
             }
 
-            if (this.UploadDestinationUri != null)
+            if (UploadDestinationUri != null)
             {
-                hash = hash * 59 + this.UploadDestinationUri.GetHashCode();
+                hash = hash * 59 + UploadDestinationUri.GetHashCode();
             }
 
-            if (this.UploadMethod != null)
+            if (UploadMethod != null)
             {
-                hash = hash * 59 + this.UploadMethod.GetHashCode();
+                hash = hash * 59 + UploadMethod.GetHashCode();
             }
 
             return hash;

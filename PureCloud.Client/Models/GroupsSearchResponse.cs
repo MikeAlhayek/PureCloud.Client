@@ -155,7 +155,7 @@ public partial class GroupsSearchResponse : IEquatable<GroupsSearchResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GroupsSearchResponse);
+        return Equals(obj as GroupsSearchResponse);
     }
 
     /// <summary>
@@ -173,49 +173,49 @@ public partial class GroupsSearchResponse : IEquatable<GroupsSearchResponse>
 
         return true &&
             (
-                this.Total == other.Total ||
-                this.Total != null &&
-                this.Total.Equals(other.Total)
+                Total == other.Total ||
+                Total != null &&
+                Total.Equals(other.Total)
             ) &&
             (
-                this.PageCount == other.PageCount ||
-                this.PageCount != null &&
-                this.PageCount.Equals(other.PageCount)
+                PageCount == other.PageCount ||
+                PageCount != null &&
+                PageCount.Equals(other.PageCount)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.PreviousPage == other.PreviousPage ||
-                this.PreviousPage != null &&
-                this.PreviousPage.Equals(other.PreviousPage)
+                PreviousPage == other.PreviousPage ||
+                PreviousPage != null &&
+                PreviousPage.Equals(other.PreviousPage)
             ) &&
             (
-                this.CurrentPage == other.CurrentPage ||
-                this.CurrentPage != null &&
-                this.CurrentPage.Equals(other.CurrentPage)
+                CurrentPage == other.CurrentPage ||
+                CurrentPage != null &&
+                CurrentPage.Equals(other.CurrentPage)
             ) &&
             (
-                this.NextPage == other.NextPage ||
-                this.NextPage != null &&
-                this.NextPage.Equals(other.NextPage)
+                NextPage == other.NextPage ||
+                NextPage != null &&
+                NextPage.Equals(other.NextPage)
             ) &&
             (
-                this.Types == other.Types ||
-                this.Types != null &&
-                this.Types.SequenceEqual(other.Types)
+                Types == other.Types ||
+                Types != null &&
+                Types.SequenceEqual(other.Types)
             ) &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             );
     }
 
@@ -230,49 +230,49 @@ public partial class GroupsSearchResponse : IEquatable<GroupsSearchResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Total != null)
+            if (Total != null)
             {
-                hash = hash * 59 + this.Total.GetHashCode();
+                hash = hash * 59 + Total.GetHashCode();
             }
 
-            if (this.PageCount != null)
+            if (PageCount != null)
             {
-                hash = hash * 59 + this.PageCount.GetHashCode();
+                hash = hash * 59 + PageCount.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.PreviousPage != null)
+            if (PreviousPage != null)
             {
-                hash = hash * 59 + this.PreviousPage.GetHashCode();
+                hash = hash * 59 + PreviousPage.GetHashCode();
             }
 
-            if (this.CurrentPage != null)
+            if (CurrentPage != null)
             {
-                hash = hash * 59 + this.CurrentPage.GetHashCode();
+                hash = hash * 59 + CurrentPage.GetHashCode();
             }
 
-            if (this.NextPage != null)
+            if (NextPage != null)
             {
-                hash = hash * 59 + this.NextPage.GetHashCode();
+                hash = hash * 59 + NextPage.GetHashCode();
             }
 
-            if (this.Types != null)
+            if (Types != null)
             {
-                hash = hash * 59 + this.Types.GetHashCode();
+                hash = hash * 59 + Types.GetHashCode();
             }
 
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
             return hash;

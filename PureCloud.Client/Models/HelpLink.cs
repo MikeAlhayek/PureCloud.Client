@@ -71,7 +71,7 @@ public partial class HelpLink : IEquatable<HelpLink>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HelpLink);
+        return Equals(obj as HelpLink);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class HelpLink : IEquatable<HelpLink>
 
         return true &&
             (
-                this.Uri == other.Uri ||
-                this.Uri != null &&
-                this.Uri.Equals(other.Uri)
+                Uri == other.Uri ||
+                Uri != null &&
+                Uri.Equals(other.Uri)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class HelpLink : IEquatable<HelpLink>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Uri != null)
+            if (Uri != null)
             {
-                hash = hash * 59 + this.Uri.GetHashCode();
+                hash = hash * 59 + Uri.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
             return hash;

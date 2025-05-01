@@ -120,7 +120,7 @@ public partial class AuditQueryFilter : IEquatable<AuditQueryFilter>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuditQueryFilter);
+        return Equals(obj as AuditQueryFilter);
     }
 
     /// <summary>
@@ -138,14 +138,14 @@ public partial class AuditQueryFilter : IEquatable<AuditQueryFilter>
 
         return true &&
             (
-                this.Property == other.Property ||
-                this.Property != null &&
-                this.Property.Equals(other.Property)
+                Property == other.Property ||
+                Property != null &&
+                Property.Equals(other.Property)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -160,14 +160,14 @@ public partial class AuditQueryFilter : IEquatable<AuditQueryFilter>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Property != null)
+            if (Property != null)
             {
-                hash = hash * 59 + this.Property.GetHashCode();
+                hash = hash * 59 + Property.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

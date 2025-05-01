@@ -99,7 +99,7 @@ public partial class RuleSetDiagnostic : IEquatable<RuleSetDiagnostic>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RuleSetDiagnostic);
+        return Equals(obj as RuleSetDiagnostic);
     }
 
     /// <summary>
@@ -117,14 +117,14 @@ public partial class RuleSetDiagnostic : IEquatable<RuleSetDiagnostic>
 
         return true &&
             (
-                this.RuleSet == other.RuleSet ||
-                this.RuleSet != null &&
-                this.RuleSet.Equals(other.RuleSet)
+                RuleSet == other.RuleSet ||
+                RuleSet != null &&
+                RuleSet.Equals(other.RuleSet)
             ) &&
             (
-                this.Warnings == other.Warnings ||
-                this.Warnings != null &&
-                this.Warnings.SequenceEqual(other.Warnings)
+                Warnings == other.Warnings ||
+                Warnings != null &&
+                Warnings.SequenceEqual(other.Warnings)
             );
     }
 
@@ -139,14 +139,14 @@ public partial class RuleSetDiagnostic : IEquatable<RuleSetDiagnostic>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RuleSet != null)
+            if (RuleSet != null)
             {
-                hash = hash * 59 + this.RuleSet.GetHashCode();
+                hash = hash * 59 + RuleSet.GetHashCode();
             }
 
-            if (this.Warnings != null)
+            if (Warnings != null)
             {
-                hash = hash * 59 + this.Warnings.GetHashCode();
+                hash = hash * 59 + Warnings.GetHashCode();
             }
 
             return hash;

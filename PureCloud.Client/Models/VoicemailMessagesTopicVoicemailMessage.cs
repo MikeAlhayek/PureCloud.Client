@@ -217,7 +217,7 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VoicemailMessagesTopicVoicemailMessage);
+        return Equals(obj as VoicemailMessagesTopicVoicemailMessage);
     }
 
     /// <summary>
@@ -235,84 +235,84 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Read == other.Read ||
-                this.Read != null &&
-                this.Read.Equals(other.Read)
+                Read == other.Read ||
+                Read != null &&
+                Read.Equals(other.Read)
             ) &&
             (
-                this.AudioRecordingDurationSeconds == other.AudioRecordingDurationSeconds ||
-                this.AudioRecordingDurationSeconds != null &&
-                this.AudioRecordingDurationSeconds.Equals(other.AudioRecordingDurationSeconds)
+                AudioRecordingDurationSeconds == other.AudioRecordingDurationSeconds ||
+                AudioRecordingDurationSeconds != null &&
+                AudioRecordingDurationSeconds.Equals(other.AudioRecordingDurationSeconds)
             ) &&
             (
-                this.AudioRecordingSizeBytes == other.AudioRecordingSizeBytes ||
-                this.AudioRecordingSizeBytes != null &&
-                this.AudioRecordingSizeBytes.Equals(other.AudioRecordingSizeBytes)
+                AudioRecordingSizeBytes == other.AudioRecordingSizeBytes ||
+                AudioRecordingSizeBytes != null &&
+                AudioRecordingSizeBytes.Equals(other.AudioRecordingSizeBytes)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             ) &&
             (
-                this.CreatedDateString == other.CreatedDateString ||
-                this.CreatedDateString != null &&
-                this.CreatedDateString.Equals(other.CreatedDateString)
+                CreatedDateString == other.CreatedDateString ||
+                CreatedDateString != null &&
+                CreatedDateString.Equals(other.CreatedDateString)
             ) &&
             (
-                this.CallerAddress == other.CallerAddress ||
-                this.CallerAddress != null &&
-                this.CallerAddress.Equals(other.CallerAddress)
+                CallerAddress == other.CallerAddress ||
+                CallerAddress != null &&
+                CallerAddress.Equals(other.CallerAddress)
             ) &&
             (
-                this.CallerName == other.CallerName ||
-                this.CallerName != null &&
-                this.CallerName.Equals(other.CallerName)
+                CallerName == other.CallerName ||
+                CallerName != null &&
+                CallerName.Equals(other.CallerName)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.Note == other.Note ||
-                this.Note != null &&
-                this.Note.Equals(other.Note)
+                Note == other.Note ||
+                Note != null &&
+                Note.Equals(other.Note)
             ) &&
             (
-                this.Deleted == other.Deleted ||
-                this.Deleted != null &&
-                this.Deleted.Equals(other.Deleted)
+                Deleted == other.Deleted ||
+                Deleted != null &&
+                Deleted.Equals(other.Deleted)
             ) &&
             (
-                this.ModifiedByUserId == other.ModifiedByUserId ||
-                this.ModifiedByUserId != null &&
-                this.ModifiedByUserId.Equals(other.ModifiedByUserId)
+                ModifiedByUserId == other.ModifiedByUserId ||
+                ModifiedByUserId != null &&
+                ModifiedByUserId.Equals(other.ModifiedByUserId)
             ) &&
             (
-                this.CopiedTo == other.CopiedTo ||
-                this.CopiedTo != null &&
-                this.CopiedTo.SequenceEqual(other.CopiedTo)
+                CopiedTo == other.CopiedTo ||
+                CopiedTo != null &&
+                CopiedTo.SequenceEqual(other.CopiedTo)
             ) &&
             (
-                this.CopiedFrom == other.CopiedFrom ||
-                this.CopiedFrom != null &&
-                this.CopiedFrom.Equals(other.CopiedFrom)
+                CopiedFrom == other.CopiedFrom ||
+                CopiedFrom != null &&
+                CopiedFrom.Equals(other.CopiedFrom)
             ) &&
             (
-                this.ModifiedDateString == other.ModifiedDateString ||
-                this.ModifiedDateString != null &&
-                this.ModifiedDateString.Equals(other.ModifiedDateString)
+                ModifiedDateString == other.ModifiedDateString ||
+                ModifiedDateString != null &&
+                ModifiedDateString.Equals(other.ModifiedDateString)
             );
     }
 
@@ -327,84 +327,84 @@ public partial class VoicemailMessagesTopicVoicemailMessage : IEquatable<Voicema
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Read != null)
+            if (Read != null)
             {
-                hash = hash * 59 + this.Read.GetHashCode();
+                hash = hash * 59 + Read.GetHashCode();
             }
 
-            if (this.AudioRecordingDurationSeconds != null)
+            if (AudioRecordingDurationSeconds != null)
             {
-                hash = hash * 59 + this.AudioRecordingDurationSeconds.GetHashCode();
+                hash = hash * 59 + AudioRecordingDurationSeconds.GetHashCode();
             }
 
-            if (this.AudioRecordingSizeBytes != null)
+            if (AudioRecordingSizeBytes != null)
             {
-                hash = hash * 59 + this.AudioRecordingSizeBytes.GetHashCode();
+                hash = hash * 59 + AudioRecordingSizeBytes.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
-            if (this.CreatedDateString != null)
+            if (CreatedDateString != null)
             {
-                hash = hash * 59 + this.CreatedDateString.GetHashCode();
+                hash = hash * 59 + CreatedDateString.GetHashCode();
             }
 
-            if (this.CallerAddress != null)
+            if (CallerAddress != null)
             {
-                hash = hash * 59 + this.CallerAddress.GetHashCode();
+                hash = hash * 59 + CallerAddress.GetHashCode();
             }
 
-            if (this.CallerName != null)
+            if (CallerName != null)
             {
-                hash = hash * 59 + this.CallerName.GetHashCode();
+                hash = hash * 59 + CallerName.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.Note != null)
+            if (Note != null)
             {
-                hash = hash * 59 + this.Note.GetHashCode();
+                hash = hash * 59 + Note.GetHashCode();
             }
 
-            if (this.Deleted != null)
+            if (Deleted != null)
             {
-                hash = hash * 59 + this.Deleted.GetHashCode();
+                hash = hash * 59 + Deleted.GetHashCode();
             }
 
-            if (this.ModifiedByUserId != null)
+            if (ModifiedByUserId != null)
             {
-                hash = hash * 59 + this.ModifiedByUserId.GetHashCode();
+                hash = hash * 59 + ModifiedByUserId.GetHashCode();
             }
 
-            if (this.CopiedTo != null)
+            if (CopiedTo != null)
             {
-                hash = hash * 59 + this.CopiedTo.GetHashCode();
+                hash = hash * 59 + CopiedTo.GetHashCode();
             }
 
-            if (this.CopiedFrom != null)
+            if (CopiedFrom != null)
             {
-                hash = hash * 59 + this.CopiedFrom.GetHashCode();
+                hash = hash * 59 + CopiedFrom.GetHashCode();
             }
 
-            if (this.ModifiedDateString != null)
+            if (ModifiedDateString != null)
             {
-                hash = hash * 59 + this.ModifiedDateString.GetHashCode();
+                hash = hash * 59 + ModifiedDateString.GetHashCode();
             }
 
             return hash;

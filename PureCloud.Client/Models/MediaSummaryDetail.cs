@@ -63,7 +63,7 @@ public partial class MediaSummaryDetail : IEquatable<MediaSummaryDetail>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaSummaryDetail);
+        return Equals(obj as MediaSummaryDetail);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class MediaSummaryDetail : IEquatable<MediaSummaryDetail>
 
         return true &&
             (
-                this.Active == other.Active ||
-                this.Active != null &&
-                this.Active.Equals(other.Active)
+                Active == other.Active ||
+                Active != null &&
+                Active.Equals(other.Active)
             ) &&
             (
-                this.Acw == other.Acw ||
-                this.Acw != null &&
-                this.Acw.Equals(other.Acw)
+                Acw == other.Acw ||
+                Acw != null &&
+                Acw.Equals(other.Acw)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class MediaSummaryDetail : IEquatable<MediaSummaryDetail>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Active != null)
+            if (Active != null)
             {
-                hash = hash * 59 + this.Active.GetHashCode();
+                hash = hash * 59 + Active.GetHashCode();
             }
 
-            if (this.Acw != null)
+            if (Acw != null)
             {
-                hash = hash * 59 + this.Acw.GetHashCode();
+                hash = hash * 59 + Acw.GetHashCode();
             }
 
             return hash;

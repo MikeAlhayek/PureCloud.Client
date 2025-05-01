@@ -53,7 +53,7 @@ public partial class BuActivitySettingsResponse : IEquatable<BuActivitySettingsR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuActivitySettingsResponse);
+        return Equals(obj as BuActivitySettingsResponse);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class BuActivitySettingsResponse : IEquatable<BuActivitySettingsR
 
         return true &&
             (
-                this.DefaultActivityCode == other.DefaultActivityCode ||
-                this.DefaultActivityCode != null &&
-                this.DefaultActivityCode.Equals(other.DefaultActivityCode)
+                DefaultActivityCode == other.DefaultActivityCode ||
+                DefaultActivityCode != null &&
+                DefaultActivityCode.Equals(other.DefaultActivityCode)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class BuActivitySettingsResponse : IEquatable<BuActivitySettingsR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DefaultActivityCode != null)
+            if (DefaultActivityCode != null)
             {
-                hash = hash * 59 + this.DefaultActivityCode.GetHashCode();
+                hash = hash * 59 + DefaultActivityCode.GetHashCode();
             }
 
             return hash;

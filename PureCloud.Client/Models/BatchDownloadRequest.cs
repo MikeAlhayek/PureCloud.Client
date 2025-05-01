@@ -64,7 +64,7 @@ public partial class BatchDownloadRequest : IEquatable<BatchDownloadRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BatchDownloadRequest);
+        return Equals(obj as BatchDownloadRequest);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class BatchDownloadRequest : IEquatable<BatchDownloadRequest>
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.RecordingId == other.RecordingId ||
-                this.RecordingId != null &&
-                this.RecordingId.Equals(other.RecordingId)
+                RecordingId == other.RecordingId ||
+                RecordingId != null &&
+                RecordingId.Equals(other.RecordingId)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class BatchDownloadRequest : IEquatable<BatchDownloadRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.RecordingId != null)
+            if (RecordingId != null)
             {
-                hash = hash * 59 + this.RecordingId.GetHashCode();
+                hash = hash * 59 + RecordingId.GetHashCode();
             }
 
             return hash;

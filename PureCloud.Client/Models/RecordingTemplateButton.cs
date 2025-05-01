@@ -145,7 +145,7 @@ public partial class RecordingTemplateButton : IEquatable<RecordingTemplateButto
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingTemplateButton);
+        return Equals(obj as RecordingTemplateButton);
     }
 
     /// <summary>
@@ -163,34 +163,34 @@ public partial class RecordingTemplateButton : IEquatable<RecordingTemplateButto
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Index == other.Index ||
-                this.Index != null &&
-                this.Index.Equals(other.Index)
+                Index == other.Index ||
+                Index != null &&
+                Index.Equals(other.Index)
             ) &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.IsSelected == other.IsSelected ||
-                this.IsSelected != null &&
-                this.IsSelected.Equals(other.IsSelected)
+                IsSelected == other.IsSelected ||
+                IsSelected != null &&
+                IsSelected.Equals(other.IsSelected)
             );
     }
 
@@ -205,34 +205,34 @@ public partial class RecordingTemplateButton : IEquatable<RecordingTemplateButto
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Index != null)
+            if (Index != null)
             {
-                hash = hash * 59 + this.Index.GetHashCode();
+                hash = hash * 59 + Index.GetHashCode();
             }
 
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.IsSelected != null)
+            if (IsSelected != null)
             {
-                hash = hash * 59 + this.IsSelected.GetHashCode();
+                hash = hash * 59 + IsSelected.GetHashCode();
             }
 
             return hash;

@@ -101,7 +101,7 @@ public partial class OrphanUpdateRequest : IEquatable<OrphanUpdateRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OrphanUpdateRequest);
+        return Equals(obj as OrphanUpdateRequest);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class OrphanUpdateRequest : IEquatable<OrphanUpdateRequest>
 
         return true &&
             (
-                this.ArchiveDate == other.ArchiveDate ||
-                this.ArchiveDate != null &&
-                this.ArchiveDate.Equals(other.ArchiveDate)
+                ArchiveDate == other.ArchiveDate ||
+                ArchiveDate != null &&
+                ArchiveDate.Equals(other.ArchiveDate)
             ) &&
             (
-                this.DeleteDate == other.DeleteDate ||
-                this.DeleteDate != null &&
-                this.DeleteDate.Equals(other.DeleteDate)
+                DeleteDate == other.DeleteDate ||
+                DeleteDate != null &&
+                DeleteDate.Equals(other.DeleteDate)
             ) &&
             (
-                this.ExportDate == other.ExportDate ||
-                this.ExportDate != null &&
-                this.ExportDate.Equals(other.ExportDate)
+                ExportDate == other.ExportDate ||
+                ExportDate != null &&
+                ExportDate.Equals(other.ExportDate)
             ) &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class OrphanUpdateRequest : IEquatable<OrphanUpdateRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ArchiveDate != null)
+            if (ArchiveDate != null)
             {
-                hash = hash * 59 + this.ArchiveDate.GetHashCode();
+                hash = hash * 59 + ArchiveDate.GetHashCode();
             }
 
-            if (this.DeleteDate != null)
+            if (DeleteDate != null)
             {
-                hash = hash * 59 + this.DeleteDate.GetHashCode();
+                hash = hash * 59 + DeleteDate.GetHashCode();
             }
 
-            if (this.ExportDate != null)
+            if (ExportDate != null)
             {
-                hash = hash * 59 + this.ExportDate.GetHashCode();
+                hash = hash * 59 + ExportDate.GetHashCode();
             }
 
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
             return hash;

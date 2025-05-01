@@ -71,7 +71,7 @@ public partial class SupportCenterDetailedCategoryModuleTemplate : IEquatable<Su
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportCenterDetailedCategoryModuleTemplate);
+        return Equals(obj as SupportCenterDetailedCategoryModuleTemplate);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class SupportCenterDetailedCategoryModuleTemplate : IEquatable<Su
 
         return true &&
             (
-                this.Active == other.Active ||
-                this.Active != null &&
-                this.Active.Equals(other.Active)
+                Active == other.Active ||
+                Active != null &&
+                Active.Equals(other.Active)
             ) &&
             (
-                this.Sidebar == other.Sidebar ||
-                this.Sidebar != null &&
-                this.Sidebar.Equals(other.Sidebar)
+                Sidebar == other.Sidebar ||
+                Sidebar != null &&
+                Sidebar.Equals(other.Sidebar)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class SupportCenterDetailedCategoryModuleTemplate : IEquatable<Su
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Active != null)
+            if (Active != null)
             {
-                hash = hash * 59 + this.Active.GetHashCode();
+                hash = hash * 59 + Active.GetHashCode();
             }
 
-            if (this.Sidebar != null)
+            if (Sidebar != null)
             {
-                hash = hash * 59 + this.Sidebar.GetHashCode();
+                hash = hash * 59 + Sidebar.GetHashCode();
             }
 
             return hash;

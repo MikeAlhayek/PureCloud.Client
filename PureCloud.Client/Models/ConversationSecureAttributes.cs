@@ -65,7 +65,7 @@ public partial class ConversationSecureAttributes : IEquatable<ConversationSecur
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationSecureAttributes);
+        return Equals(obj as ConversationSecureAttributes);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ConversationSecureAttributes : IEquatable<ConversationSecur
 
         return true &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ConversationSecureAttributes : IEquatable<ConversationSecur
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

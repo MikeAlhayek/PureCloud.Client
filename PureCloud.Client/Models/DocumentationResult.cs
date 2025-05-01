@@ -52,7 +52,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
         this.Service = Service;
         this.Slug = Slug;
         this.Title = Title;
-        this.GetTheType = GetType;
+        GetTheType = GetType;
         this.FacetFeature = FacetFeature;
         this.FacetRole = FacetRole;
         this.FacetService = FacetService;
@@ -287,7 +287,7 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentationResult);
+        return Equals(obj as DocumentationResult);
     }
 
     /// <summary>
@@ -305,104 +305,104 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Categories == other.Categories ||
-                this.Categories != null &&
-                this.Categories.SequenceEqual(other.Categories)
+                Categories == other.Categories ||
+                Categories != null &&
+                Categories.SequenceEqual(other.Categories)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Content == other.Content ||
-                this.Content != null &&
-                this.Content.Equals(other.Content)
+                Content == other.Content ||
+                Content != null &&
+                Content.Equals(other.Content)
             ) &&
             (
-                this.Excerpt == other.Excerpt ||
-                this.Excerpt != null &&
-                this.Excerpt.Equals(other.Excerpt)
+                Excerpt == other.Excerpt ||
+                Excerpt != null &&
+                Excerpt.Equals(other.Excerpt)
             ) &&
             (
-                this.Link == other.Link ||
-                this.Link != null &&
-                this.Link.Equals(other.Link)
+                Link == other.Link ||
+                Link != null &&
+                Link.Equals(other.Link)
             ) &&
             (
-                this.Modified == other.Modified ||
-                this.Modified != null &&
-                this.Modified.Equals(other.Modified)
+                Modified == other.Modified ||
+                Modified != null &&
+                Modified.Equals(other.Modified)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Service == other.Service ||
-                this.Service != null &&
-                this.Service.SequenceEqual(other.Service)
+                Service == other.Service ||
+                Service != null &&
+                Service.SequenceEqual(other.Service)
             ) &&
             (
-                this.Slug == other.Slug ||
-                this.Slug != null &&
-                this.Slug.Equals(other.Slug)
+                Slug == other.Slug ||
+                Slug != null &&
+                Slug.Equals(other.Slug)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.GetTheType == other.GetTheType ||
-                this.GetTheType != null &&
-                this.GetTheType.Equals(other.GetTheType)
+                GetTheType == other.GetTheType ||
+                GetTheType != null &&
+                GetTheType.Equals(other.GetTheType)
             ) &&
             (
-                this.FacetFeature == other.FacetFeature ||
-                this.FacetFeature != null &&
-                this.FacetFeature.SequenceEqual(other.FacetFeature)
+                FacetFeature == other.FacetFeature ||
+                FacetFeature != null &&
+                FacetFeature.SequenceEqual(other.FacetFeature)
             ) &&
             (
-                this.FacetRole == other.FacetRole ||
-                this.FacetRole != null &&
-                this.FacetRole.SequenceEqual(other.FacetRole)
+                FacetRole == other.FacetRole ||
+                FacetRole != null &&
+                FacetRole.SequenceEqual(other.FacetRole)
             ) &&
             (
-                this.FacetService == other.FacetService ||
-                this.FacetService != null &&
-                this.FacetService.SequenceEqual(other.FacetService)
+                FacetService == other.FacetService ||
+                FacetService != null &&
+                FacetService.SequenceEqual(other.FacetService)
             ) &&
             (
-                this.FaqCategories == other.FaqCategories ||
-                this.FaqCategories != null &&
-                this.FaqCategories.SequenceEqual(other.FaqCategories)
+                FaqCategories == other.FaqCategories ||
+                FaqCategories != null &&
+                FaqCategories.SequenceEqual(other.FaqCategories)
             ) &&
             (
-                this.ReleasenoteCategory == other.ReleasenoteCategory ||
-                this.ReleasenoteCategory != null &&
-                this.ReleasenoteCategory.SequenceEqual(other.ReleasenoteCategory)
+                ReleasenoteCategory == other.ReleasenoteCategory ||
+                ReleasenoteCategory != null &&
+                ReleasenoteCategory.SequenceEqual(other.ReleasenoteCategory)
             ) &&
             (
-                this.ReleasenoteTag == other.ReleasenoteTag ||
-                this.ReleasenoteTag != null &&
-                this.ReleasenoteTag.SequenceEqual(other.ReleasenoteTag)
+                ReleasenoteTag == other.ReleasenoteTag ||
+                ReleasenoteTag != null &&
+                ReleasenoteTag.SequenceEqual(other.ReleasenoteTag)
             ) &&
             (
-                this.ServiceArea == other.ServiceArea ||
-                this.ServiceArea != null &&
-                this.ServiceArea.SequenceEqual(other.ServiceArea)
+                ServiceArea == other.ServiceArea ||
+                ServiceArea != null &&
+                ServiceArea.SequenceEqual(other.ServiceArea)
             ) &&
             (
-                this.VideoCategories == other.VideoCategories ||
-                this.VideoCategories != null &&
-                this.VideoCategories.SequenceEqual(other.VideoCategories)
+                VideoCategories == other.VideoCategories ||
+                VideoCategories != null &&
+                VideoCategories.SequenceEqual(other.VideoCategories)
             );
     }
 
@@ -417,104 +417,104 @@ public partial class DocumentationResult : IEquatable<DocumentationResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Categories != null)
+            if (Categories != null)
             {
-                hash = hash * 59 + this.Categories.GetHashCode();
+                hash = hash * 59 + Categories.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Content != null)
+            if (Content != null)
             {
-                hash = hash * 59 + this.Content.GetHashCode();
+                hash = hash * 59 + Content.GetHashCode();
             }
 
-            if (this.Excerpt != null)
+            if (Excerpt != null)
             {
-                hash = hash * 59 + this.Excerpt.GetHashCode();
+                hash = hash * 59 + Excerpt.GetHashCode();
             }
 
-            if (this.Link != null)
+            if (Link != null)
             {
-                hash = hash * 59 + this.Link.GetHashCode();
+                hash = hash * 59 + Link.GetHashCode();
             }
 
-            if (this.Modified != null)
+            if (Modified != null)
             {
-                hash = hash * 59 + this.Modified.GetHashCode();
+                hash = hash * 59 + Modified.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Service != null)
+            if (Service != null)
             {
-                hash = hash * 59 + this.Service.GetHashCode();
+                hash = hash * 59 + Service.GetHashCode();
             }
 
-            if (this.Slug != null)
+            if (Slug != null)
             {
-                hash = hash * 59 + this.Slug.GetHashCode();
+                hash = hash * 59 + Slug.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.GetTheType != null)
+            if (GetTheType != null)
             {
-                hash = hash * 59 + this.GetTheType.GetHashCode();
+                hash = hash * 59 + GetTheType.GetHashCode();
             }
 
-            if (this.FacetFeature != null)
+            if (FacetFeature != null)
             {
-                hash = hash * 59 + this.FacetFeature.GetHashCode();
+                hash = hash * 59 + FacetFeature.GetHashCode();
             }
 
-            if (this.FacetRole != null)
+            if (FacetRole != null)
             {
-                hash = hash * 59 + this.FacetRole.GetHashCode();
+                hash = hash * 59 + FacetRole.GetHashCode();
             }
 
-            if (this.FacetService != null)
+            if (FacetService != null)
             {
-                hash = hash * 59 + this.FacetService.GetHashCode();
+                hash = hash * 59 + FacetService.GetHashCode();
             }
 
-            if (this.FaqCategories != null)
+            if (FaqCategories != null)
             {
-                hash = hash * 59 + this.FaqCategories.GetHashCode();
+                hash = hash * 59 + FaqCategories.GetHashCode();
             }
 
-            if (this.ReleasenoteCategory != null)
+            if (ReleasenoteCategory != null)
             {
-                hash = hash * 59 + this.ReleasenoteCategory.GetHashCode();
+                hash = hash * 59 + ReleasenoteCategory.GetHashCode();
             }
 
-            if (this.ReleasenoteTag != null)
+            if (ReleasenoteTag != null)
             {
-                hash = hash * 59 + this.ReleasenoteTag.GetHashCode();
+                hash = hash * 59 + ReleasenoteTag.GetHashCode();
             }
 
-            if (this.ServiceArea != null)
+            if (ServiceArea != null)
             {
-                hash = hash * 59 + this.ServiceArea.GetHashCode();
+                hash = hash * 59 + ServiceArea.GetHashCode();
             }
 
-            if (this.VideoCategories != null)
+            if (VideoCategories != null)
             {
-                hash = hash * 59 + this.VideoCategories.GetHashCode();
+                hash = hash * 59 + VideoCategories.GetHashCode();
             }
 
             return hash;

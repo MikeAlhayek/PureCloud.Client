@@ -61,7 +61,7 @@ public partial class SupportedLanguage : IEquatable<SupportedLanguage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportedLanguage);
+        return Equals(obj as SupportedLanguage);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class SupportedLanguage : IEquatable<SupportedLanguage>
 
         return true &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.IsDefault == other.IsDefault ||
-                this.IsDefault != null &&
-                this.IsDefault.Equals(other.IsDefault)
+                IsDefault == other.IsDefault ||
+                IsDefault != null &&
+                IsDefault.Equals(other.IsDefault)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class SupportedLanguage : IEquatable<SupportedLanguage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.IsDefault != null)
+            if (IsDefault != null)
             {
-                hash = hash * 59 + this.IsDefault.GetHashCode();
+                hash = hash * 59 + IsDefault.GetHashCode();
             }
 
             return hash;

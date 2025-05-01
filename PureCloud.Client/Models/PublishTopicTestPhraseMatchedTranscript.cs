@@ -162,7 +162,7 @@ public partial class PublishTopicTestPhraseMatchedTranscript : IEquatable<Publis
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PublishTopicTestPhraseMatchedTranscript);
+        return Equals(obj as PublishTopicTestPhraseMatchedTranscript);
     }
 
     /// <summary>
@@ -180,34 +180,34 @@ public partial class PublishTopicTestPhraseMatchedTranscript : IEquatable<Publis
 
         return true &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             ) &&
             (
-                this.TranscriptId == other.TranscriptId ||
-                this.TranscriptId != null &&
-                this.TranscriptId.Equals(other.TranscriptId)
+                TranscriptId == other.TranscriptId ||
+                TranscriptId != null &&
+                TranscriptId.Equals(other.TranscriptId)
             ) &&
             (
-                this.CommunicationId == other.CommunicationId ||
-                this.CommunicationId != null &&
-                this.CommunicationId.Equals(other.CommunicationId)
+                CommunicationId == other.CommunicationId ||
+                CommunicationId != null &&
+                CommunicationId.Equals(other.CommunicationId)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.DetectedPhrases == other.DetectedPhrases ||
-                this.DetectedPhrases != null &&
-                this.DetectedPhrases.SequenceEqual(other.DetectedPhrases)
+                DetectedPhrases == other.DetectedPhrases ||
+                DetectedPhrases != null &&
+                DetectedPhrases.SequenceEqual(other.DetectedPhrases)
             );
     }
 
@@ -222,34 +222,34 @@ public partial class PublishTopicTestPhraseMatchedTranscript : IEquatable<Publis
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
-            if (this.TranscriptId != null)
+            if (TranscriptId != null)
             {
-                hash = hash * 59 + this.TranscriptId.GetHashCode();
+                hash = hash * 59 + TranscriptId.GetHashCode();
             }
 
-            if (this.CommunicationId != null)
+            if (CommunicationId != null)
             {
-                hash = hash * 59 + this.CommunicationId.GetHashCode();
+                hash = hash * 59 + CommunicationId.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.DetectedPhrases != null)
+            if (DetectedPhrases != null)
             {
-                hash = hash * 59 + this.DetectedPhrases.GetHashCode();
+                hash = hash * 59 + DetectedPhrases.GetHashCode();
             }
 
             return hash;

@@ -61,7 +61,7 @@ public partial class WorkdayPointsTrendItem : IEquatable<WorkdayPointsTrendItem>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkdayPointsTrendItem);
+        return Equals(obj as WorkdayPointsTrendItem);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class WorkdayPointsTrendItem : IEquatable<WorkdayPointsTrendItem>
 
         return true &&
             (
-                this.DateWorkday == other.DateWorkday ||
-                this.DateWorkday != null &&
-                this.DateWorkday.Equals(other.DateWorkday)
+                DateWorkday == other.DateWorkday ||
+                DateWorkday != null &&
+                DateWorkday.Equals(other.DateWorkday)
             ) &&
             (
-                this.Points == other.Points ||
-                this.Points != null &&
-                this.Points.Equals(other.Points)
+                Points == other.Points ||
+                Points != null &&
+                Points.Equals(other.Points)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class WorkdayPointsTrendItem : IEquatable<WorkdayPointsTrendItem>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateWorkday != null)
+            if (DateWorkday != null)
             {
-                hash = hash * 59 + this.DateWorkday.GetHashCode();
+                hash = hash * 59 + DateWorkday.GetHashCode();
             }
 
-            if (this.Points != null)
+            if (Points != null)
             {
-                hash = hash * 59 + this.Points.GetHashCode();
+                hash = hash * 59 + Points.GetHashCode();
             }
 
             return hash;

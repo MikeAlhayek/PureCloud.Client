@@ -106,7 +106,7 @@ public partial class ConversationSummaryTopicConversationSummaryParticipant : IE
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationSummaryTopicConversationSummaryParticipant);
+        return Equals(obj as ConversationSummaryTopicConversationSummaryParticipant);
     }
 
     /// <summary>
@@ -124,14 +124,14 @@ public partial class ConversationSummaryTopicConversationSummaryParticipant : IE
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.Purpose == other.Purpose ||
-                this.Purpose != null &&
-                this.Purpose.Equals(other.Purpose)
+                Purpose == other.Purpose ||
+                Purpose != null &&
+                Purpose.Equals(other.Purpose)
             );
     }
 
@@ -146,14 +146,14 @@ public partial class ConversationSummaryTopicConversationSummaryParticipant : IE
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.Purpose != null)
+            if (Purpose != null)
             {
-                hash = hash * 59 + this.Purpose.GetHashCode();
+                hash = hash * 59 + Purpose.GetHashCode();
             }
 
             return hash;

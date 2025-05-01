@@ -53,7 +53,7 @@ public partial class ParsedCertificate : IEquatable<ParsedCertificate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ParsedCertificate);
+        return Equals(obj as ParsedCertificate);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ParsedCertificate : IEquatable<ParsedCertificate>
 
         return true &&
             (
-                this.CertificateDetails == other.CertificateDetails ||
-                this.CertificateDetails != null &&
-                this.CertificateDetails.SequenceEqual(other.CertificateDetails)
+                CertificateDetails == other.CertificateDetails ||
+                CertificateDetails != null &&
+                CertificateDetails.SequenceEqual(other.CertificateDetails)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ParsedCertificate : IEquatable<ParsedCertificate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CertificateDetails != null)
+            if (CertificateDetails != null)
             {
-                hash = hash * 59 + this.CertificateDetails.GetHashCode();
+                hash = hash * 59 + CertificateDetails.GetHashCode();
             }
 
             return hash;

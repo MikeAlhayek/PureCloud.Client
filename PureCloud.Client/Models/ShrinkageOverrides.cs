@@ -65,7 +65,7 @@ public partial class ShrinkageOverrides : IEquatable<ShrinkageOverrides>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShrinkageOverrides);
+        return Equals(obj as ShrinkageOverrides);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ShrinkageOverrides : IEquatable<ShrinkageOverrides>
 
         return true &&
             (
-                this.Clear == other.Clear ||
-                this.Clear != null &&
-                this.Clear.Equals(other.Clear)
+                Clear == other.Clear ||
+                Clear != null &&
+                Clear.Equals(other.Clear)
             ) &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ShrinkageOverrides : IEquatable<ShrinkageOverrides>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Clear != null)
+            if (Clear != null)
             {
-                hash = hash * 59 + this.Clear.GetHashCode();
+                hash = hash * 59 + Clear.GetHashCode();
             }
 
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
             return hash;

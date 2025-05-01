@@ -83,7 +83,7 @@ public partial class LocalEncryptionKeyRequest : IEquatable<LocalEncryptionKeyRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LocalEncryptionKeyRequest);
+        return Equals(obj as LocalEncryptionKeyRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class LocalEncryptionKeyRequest : IEquatable<LocalEncryptionKeyRe
 
         return true &&
             (
-                this.ConfigId == other.ConfigId ||
-                this.ConfigId != null &&
-                this.ConfigId.Equals(other.ConfigId)
+                ConfigId == other.ConfigId ||
+                ConfigId != null &&
+                ConfigId.Equals(other.ConfigId)
             ) &&
             (
-                this.PublicKey == other.PublicKey ||
-                this.PublicKey != null &&
-                this.PublicKey.Equals(other.PublicKey)
+                PublicKey == other.PublicKey ||
+                PublicKey != null &&
+                PublicKey.Equals(other.PublicKey)
             ) &&
             (
-                this.KeypairId == other.KeypairId ||
-                this.KeypairId != null &&
-                this.KeypairId.Equals(other.KeypairId)
+                KeypairId == other.KeypairId ||
+                KeypairId != null &&
+                KeypairId.Equals(other.KeypairId)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class LocalEncryptionKeyRequest : IEquatable<LocalEncryptionKeyRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConfigId != null)
+            if (ConfigId != null)
             {
-                hash = hash * 59 + this.ConfigId.GetHashCode();
+                hash = hash * 59 + ConfigId.GetHashCode();
             }
 
-            if (this.PublicKey != null)
+            if (PublicKey != null)
             {
-                hash = hash * 59 + this.PublicKey.GetHashCode();
+                hash = hash * 59 + PublicKey.GetHashCode();
             }
 
-            if (this.KeypairId != null)
+            if (KeypairId != null)
             {
-                hash = hash * 59 + this.KeypairId.GetHashCode();
+                hash = hash * 59 + KeypairId.GetHashCode();
             }
 
             return hash;

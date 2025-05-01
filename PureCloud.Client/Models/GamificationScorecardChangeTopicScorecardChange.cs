@@ -107,7 +107,7 @@ public partial class GamificationScorecardChangeTopicScorecardChange : IEquatabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GamificationScorecardChangeTopicScorecardChange);
+        return Equals(obj as GamificationScorecardChangeTopicScorecardChange);
     }
 
     /// <summary>
@@ -125,34 +125,34 @@ public partial class GamificationScorecardChangeTopicScorecardChange : IEquatabl
 
         return true &&
             (
-                this.Workday == other.Workday ||
-                this.Workday != null &&
-                this.Workday.Equals(other.Workday)
+                Workday == other.Workday ||
+                Workday != null &&
+                Workday.Equals(other.Workday)
             ) &&
             (
-                this.DivisionId == other.DivisionId ||
-                this.DivisionId != null &&
-                this.DivisionId.Equals(other.DivisionId)
+                DivisionId == other.DivisionId ||
+                DivisionId != null &&
+                DivisionId.Equals(other.DivisionId)
             ) &&
             (
-                this.TeamId == other.TeamId ||
-                this.TeamId != null &&
-                this.TeamId.Equals(other.TeamId)
+                TeamId == other.TeamId ||
+                TeamId != null &&
+                TeamId.Equals(other.TeamId)
             ) &&
             (
-                this.PerformanceProfileId == other.PerformanceProfileId ||
-                this.PerformanceProfileId != null &&
-                this.PerformanceProfileId.Equals(other.PerformanceProfileId)
+                PerformanceProfileId == other.PerformanceProfileId ||
+                PerformanceProfileId != null &&
+                PerformanceProfileId.Equals(other.PerformanceProfileId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.PerformanceMetrics == other.PerformanceMetrics ||
-                this.PerformanceMetrics != null &&
-                this.PerformanceMetrics.SequenceEqual(other.PerformanceMetrics)
+                PerformanceMetrics == other.PerformanceMetrics ||
+                PerformanceMetrics != null &&
+                PerformanceMetrics.SequenceEqual(other.PerformanceMetrics)
             );
     }
 
@@ -167,34 +167,34 @@ public partial class GamificationScorecardChangeTopicScorecardChange : IEquatabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Workday != null)
+            if (Workday != null)
             {
-                hash = hash * 59 + this.Workday.GetHashCode();
+                hash = hash * 59 + Workday.GetHashCode();
             }
 
-            if (this.DivisionId != null)
+            if (DivisionId != null)
             {
-                hash = hash * 59 + this.DivisionId.GetHashCode();
+                hash = hash * 59 + DivisionId.GetHashCode();
             }
 
-            if (this.TeamId != null)
+            if (TeamId != null)
             {
-                hash = hash * 59 + this.TeamId.GetHashCode();
+                hash = hash * 59 + TeamId.GetHashCode();
             }
 
-            if (this.PerformanceProfileId != null)
+            if (PerformanceProfileId != null)
             {
-                hash = hash * 59 + this.PerformanceProfileId.GetHashCode();
+                hash = hash * 59 + PerformanceProfileId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.PerformanceMetrics != null)
+            if (PerformanceMetrics != null)
             {
-                hash = hash * 59 + this.PerformanceMetrics.GetHashCode();
+                hash = hash * 59 + PerformanceMetrics.GetHashCode();
             }
 
             return hash;

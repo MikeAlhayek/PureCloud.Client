@@ -199,7 +199,7 @@ public partial class SearchRequest : IEquatable<SearchRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SearchRequest);
+        return Equals(obj as SearchRequest);
     }
 
     /// <summary>
@@ -217,54 +217,54 @@ public partial class SearchRequest : IEquatable<SearchRequest>
 
         return true &&
             (
-                this.SortOrder == other.SortOrder ||
-                this.SortOrder != null &&
-                this.SortOrder.Equals(other.SortOrder)
+                SortOrder == other.SortOrder ||
+                SortOrder != null &&
+                SortOrder.Equals(other.SortOrder)
             ) &&
             (
-                this.SortBy == other.SortBy ||
-                this.SortBy != null &&
-                this.SortBy.Equals(other.SortBy)
+                SortBy == other.SortBy ||
+                SortBy != null &&
+                SortBy.Equals(other.SortBy)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.SequenceEqual(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.SequenceEqual(other.Sort)
             ) &&
             (
-                this.ReturnFields == other.ReturnFields ||
-                this.ReturnFields != null &&
-                this.ReturnFields.SequenceEqual(other.ReturnFields)
+                ReturnFields == other.ReturnFields ||
+                ReturnFields != null &&
+                ReturnFields.SequenceEqual(other.ReturnFields)
             ) &&
             (
-                this.Expand == other.Expand ||
-                this.Expand != null &&
-                this.Expand.SequenceEqual(other.Expand)
+                Expand == other.Expand ||
+                Expand != null &&
+                Expand.SequenceEqual(other.Expand)
             ) &&
             (
-                this.Types == other.Types ||
-                this.Types != null &&
-                this.Types.SequenceEqual(other.Types)
+                Types == other.Types ||
+                Types != null &&
+                Types.SequenceEqual(other.Types)
             ) &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.SequenceEqual(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.SequenceEqual(other.Query)
             ) &&
             (
-                this.Aggregations == other.Aggregations ||
-                this.Aggregations != null &&
-                this.Aggregations.SequenceEqual(other.Aggregations)
+                Aggregations == other.Aggregations ||
+                Aggregations != null &&
+                Aggregations.SequenceEqual(other.Aggregations)
             );
     }
 
@@ -279,54 +279,54 @@ public partial class SearchRequest : IEquatable<SearchRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SortOrder != null)
+            if (SortOrder != null)
             {
-                hash = hash * 59 + this.SortOrder.GetHashCode();
+                hash = hash * 59 + SortOrder.GetHashCode();
             }
 
-            if (this.SortBy != null)
+            if (SortBy != null)
             {
-                hash = hash * 59 + this.SortBy.GetHashCode();
+                hash = hash * 59 + SortBy.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
-            if (this.ReturnFields != null)
+            if (ReturnFields != null)
             {
-                hash = hash * 59 + this.ReturnFields.GetHashCode();
+                hash = hash * 59 + ReturnFields.GetHashCode();
             }
 
-            if (this.Expand != null)
+            if (Expand != null)
             {
-                hash = hash * 59 + this.Expand.GetHashCode();
+                hash = hash * 59 + Expand.GetHashCode();
             }
 
-            if (this.Types != null)
+            if (Types != null)
             {
-                hash = hash * 59 + this.Types.GetHashCode();
+                hash = hash * 59 + Types.GetHashCode();
             }
 
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
-            if (this.Aggregations != null)
+            if (Aggregations != null)
             {
-                hash = hash * 59 + this.Aggregations.GetHashCode();
+                hash = hash * 59 + Aggregations.GetHashCode();
             }
 
             return hash;

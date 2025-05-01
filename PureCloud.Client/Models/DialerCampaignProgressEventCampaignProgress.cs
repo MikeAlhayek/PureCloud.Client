@@ -123,7 +123,7 @@ public partial class DialerCampaignProgressEventCampaignProgress : IEquatable<Di
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerCampaignProgressEventCampaignProgress);
+        return Equals(obj as DialerCampaignProgressEventCampaignProgress);
     }
 
     /// <summary>
@@ -141,39 +141,39 @@ public partial class DialerCampaignProgressEventCampaignProgress : IEquatable<Di
 
         return true &&
             (
-                this.Campaign == other.Campaign ||
-                this.Campaign != null &&
-                this.Campaign.Equals(other.Campaign)
+                Campaign == other.Campaign ||
+                Campaign != null &&
+                Campaign.Equals(other.Campaign)
             ) &&
             (
-                this.NumberOfContactsCalled == other.NumberOfContactsCalled ||
-                this.NumberOfContactsCalled != null &&
-                this.NumberOfContactsCalled.Equals(other.NumberOfContactsCalled)
+                NumberOfContactsCalled == other.NumberOfContactsCalled ||
+                NumberOfContactsCalled != null &&
+                NumberOfContactsCalled.Equals(other.NumberOfContactsCalled)
             ) &&
             (
-                this.NumberOfContactsMessaged == other.NumberOfContactsMessaged ||
-                this.NumberOfContactsMessaged != null &&
-                this.NumberOfContactsMessaged.Equals(other.NumberOfContactsMessaged)
+                NumberOfContactsMessaged == other.NumberOfContactsMessaged ||
+                NumberOfContactsMessaged != null &&
+                NumberOfContactsMessaged.Equals(other.NumberOfContactsMessaged)
             ) &&
             (
-                this.TotalNumberOfContacts == other.TotalNumberOfContacts ||
-                this.TotalNumberOfContacts != null &&
-                this.TotalNumberOfContacts.Equals(other.TotalNumberOfContacts)
+                TotalNumberOfContacts == other.TotalNumberOfContacts ||
+                TotalNumberOfContacts != null &&
+                TotalNumberOfContacts.Equals(other.TotalNumberOfContacts)
             ) &&
             (
-                this.Percentage == other.Percentage ||
-                this.Percentage != null &&
-                this.Percentage.Equals(other.Percentage)
+                Percentage == other.Percentage ||
+                Percentage != null &&
+                Percentage.Equals(other.Percentage)
             ) &&
             (
-                this.NumberOfContactsSkipped == other.NumberOfContactsSkipped ||
-                this.NumberOfContactsSkipped != null &&
-                this.NumberOfContactsSkipped.SequenceEqual(other.NumberOfContactsSkipped)
+                NumberOfContactsSkipped == other.NumberOfContactsSkipped ||
+                NumberOfContactsSkipped != null &&
+                NumberOfContactsSkipped.SequenceEqual(other.NumberOfContactsSkipped)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -188,39 +188,39 @@ public partial class DialerCampaignProgressEventCampaignProgress : IEquatable<Di
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Campaign != null)
+            if (Campaign != null)
             {
-                hash = hash * 59 + this.Campaign.GetHashCode();
+                hash = hash * 59 + Campaign.GetHashCode();
             }
 
-            if (this.NumberOfContactsCalled != null)
+            if (NumberOfContactsCalled != null)
             {
-                hash = hash * 59 + this.NumberOfContactsCalled.GetHashCode();
+                hash = hash * 59 + NumberOfContactsCalled.GetHashCode();
             }
 
-            if (this.NumberOfContactsMessaged != null)
+            if (NumberOfContactsMessaged != null)
             {
-                hash = hash * 59 + this.NumberOfContactsMessaged.GetHashCode();
+                hash = hash * 59 + NumberOfContactsMessaged.GetHashCode();
             }
 
-            if (this.TotalNumberOfContacts != null)
+            if (TotalNumberOfContacts != null)
             {
-                hash = hash * 59 + this.TotalNumberOfContacts.GetHashCode();
+                hash = hash * 59 + TotalNumberOfContacts.GetHashCode();
             }
 
-            if (this.Percentage != null)
+            if (Percentage != null)
             {
-                hash = hash * 59 + this.Percentage.GetHashCode();
+                hash = hash * 59 + Percentage.GetHashCode();
             }
 
-            if (this.NumberOfContactsSkipped != null)
+            if (NumberOfContactsSkipped != null)
             {
-                hash = hash * 59 + this.NumberOfContactsSkipped.GetHashCode();
+                hash = hash * 59 + NumberOfContactsSkipped.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

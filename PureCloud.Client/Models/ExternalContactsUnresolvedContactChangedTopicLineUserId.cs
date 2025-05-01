@@ -52,7 +52,7 @@ public partial class ExternalContactsUnresolvedContactChangedTopicLineUserId : I
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsUnresolvedContactChangedTopicLineUserId);
+        return Equals(obj as ExternalContactsUnresolvedContactChangedTopicLineUserId);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class ExternalContactsUnresolvedContactChangedTopicLineUserId : I
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class ExternalContactsUnresolvedContactChangedTopicLineUserId : I
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
             return hash;

@@ -272,7 +272,7 @@ public partial class GroupUpdate : IEquatable<GroupUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GroupUpdate);
+        return Equals(obj as GroupUpdate);
     }
 
     /// <summary>
@@ -290,74 +290,74 @@ public partial class GroupUpdate : IEquatable<GroupUpdate>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Images == other.Images ||
-                this.Images != null &&
-                this.Images.SequenceEqual(other.Images)
+                Images == other.Images ||
+                Images != null &&
+                Images.SequenceEqual(other.Images)
             ) &&
             (
-                this.Addresses == other.Addresses ||
-                this.Addresses != null &&
-                this.Addresses.SequenceEqual(other.Addresses)
+                Addresses == other.Addresses ||
+                Addresses != null &&
+                Addresses.SequenceEqual(other.Addresses)
             ) &&
             (
-                this.RulesVisible == other.RulesVisible ||
-                this.RulesVisible != null &&
-                this.RulesVisible.Equals(other.RulesVisible)
+                RulesVisible == other.RulesVisible ||
+                RulesVisible != null &&
+                RulesVisible.Equals(other.RulesVisible)
             ) &&
             (
-                this.Visibility == other.Visibility ||
-                this.Visibility != null &&
-                this.Visibility.Equals(other.Visibility)
+                Visibility == other.Visibility ||
+                Visibility != null &&
+                Visibility.Equals(other.Visibility)
             ) &&
             (
-                this.RolesEnabled == other.RolesEnabled ||
-                this.RolesEnabled != null &&
-                this.RolesEnabled.Equals(other.RolesEnabled)
+                RolesEnabled == other.RolesEnabled ||
+                RolesEnabled != null &&
+                RolesEnabled.Equals(other.RolesEnabled)
             ) &&
             (
-                this.IncludeOwners == other.IncludeOwners ||
-                this.IncludeOwners != null &&
-                this.IncludeOwners.Equals(other.IncludeOwners)
+                IncludeOwners == other.IncludeOwners ||
+                IncludeOwners != null &&
+                IncludeOwners.Equals(other.IncludeOwners)
             ) &&
             (
-                this.CallsEnabled == other.CallsEnabled ||
-                this.CallsEnabled != null &&
-                this.CallsEnabled.Equals(other.CallsEnabled)
+                CallsEnabled == other.CallsEnabled ||
+                CallsEnabled != null &&
+                CallsEnabled.Equals(other.CallsEnabled)
             ) &&
             (
-                this.OwnerIds == other.OwnerIds ||
-                this.OwnerIds != null &&
-                this.OwnerIds.SequenceEqual(other.OwnerIds)
+                OwnerIds == other.OwnerIds ||
+                OwnerIds != null &&
+                OwnerIds.SequenceEqual(other.OwnerIds)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -372,74 +372,74 @@ public partial class GroupUpdate : IEquatable<GroupUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Images != null)
+            if (Images != null)
             {
-                hash = hash * 59 + this.Images.GetHashCode();
+                hash = hash * 59 + Images.GetHashCode();
             }
 
-            if (this.Addresses != null)
+            if (Addresses != null)
             {
-                hash = hash * 59 + this.Addresses.GetHashCode();
+                hash = hash * 59 + Addresses.GetHashCode();
             }
 
-            if (this.RulesVisible != null)
+            if (RulesVisible != null)
             {
-                hash = hash * 59 + this.RulesVisible.GetHashCode();
+                hash = hash * 59 + RulesVisible.GetHashCode();
             }
 
-            if (this.Visibility != null)
+            if (Visibility != null)
             {
-                hash = hash * 59 + this.Visibility.GetHashCode();
+                hash = hash * 59 + Visibility.GetHashCode();
             }
 
-            if (this.RolesEnabled != null)
+            if (RolesEnabled != null)
             {
-                hash = hash * 59 + this.RolesEnabled.GetHashCode();
+                hash = hash * 59 + RolesEnabled.GetHashCode();
             }
 
-            if (this.IncludeOwners != null)
+            if (IncludeOwners != null)
             {
-                hash = hash * 59 + this.IncludeOwners.GetHashCode();
+                hash = hash * 59 + IncludeOwners.GetHashCode();
             }
 
-            if (this.CallsEnabled != null)
+            if (CallsEnabled != null)
             {
-                hash = hash * 59 + this.CallsEnabled.GetHashCode();
+                hash = hash * 59 + CallsEnabled.GetHashCode();
             }
 
-            if (this.OwnerIds != null)
+            if (OwnerIds != null)
             {
-                hash = hash * 59 + this.OwnerIds.GetHashCode();
+                hash = hash * 59 + OwnerIds.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

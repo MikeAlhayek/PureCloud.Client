@@ -100,7 +100,7 @@ public partial class AgentMaxUtilizationResponse : IEquatable<AgentMaxUtilizatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentMaxUtilizationResponse);
+        return Equals(obj as AgentMaxUtilizationResponse);
     }
 
     /// <summary>
@@ -118,19 +118,19 @@ public partial class AgentMaxUtilizationResponse : IEquatable<AgentMaxUtilizatio
 
         return true &&
             (
-                this.Utilization == other.Utilization ||
-                this.Utilization != null &&
-                this.Utilization.SequenceEqual(other.Utilization)
+                Utilization == other.Utilization ||
+                Utilization != null &&
+                Utilization.SequenceEqual(other.Utilization)
             ) &&
             (
-                this.LabelUtilizations == other.LabelUtilizations ||
-                this.LabelUtilizations != null &&
-                this.LabelUtilizations.SequenceEqual(other.LabelUtilizations)
+                LabelUtilizations == other.LabelUtilizations ||
+                LabelUtilizations != null &&
+                LabelUtilizations.SequenceEqual(other.LabelUtilizations)
             ) &&
             (
-                this.Level == other.Level ||
-                this.Level != null &&
-                this.Level.Equals(other.Level)
+                Level == other.Level ||
+                Level != null &&
+                Level.Equals(other.Level)
             );
     }
 
@@ -145,19 +145,19 @@ public partial class AgentMaxUtilizationResponse : IEquatable<AgentMaxUtilizatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Utilization != null)
+            if (Utilization != null)
             {
-                hash = hash * 59 + this.Utilization.GetHashCode();
+                hash = hash * 59 + Utilization.GetHashCode();
             }
 
-            if (this.LabelUtilizations != null)
+            if (LabelUtilizations != null)
             {
-                hash = hash * 59 + this.LabelUtilizations.GetHashCode();
+                hash = hash * 59 + LabelUtilizations.GetHashCode();
             }
 
-            if (this.Level != null)
+            if (Level != null)
             {
-                hash = hash * 59 + this.Level.GetHashCode();
+                hash = hash * 59 + Level.GetHashCode();
             }
 
             return hash;

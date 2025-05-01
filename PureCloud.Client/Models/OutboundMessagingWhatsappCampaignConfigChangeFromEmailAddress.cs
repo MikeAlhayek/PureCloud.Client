@@ -77,7 +77,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddre
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddress);
+        return Equals(obj as OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddress);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddre
 
         return true &&
             (
-                this.FriendlyName == other.FriendlyName ||
-                this.FriendlyName != null &&
-                this.FriendlyName.Equals(other.FriendlyName)
+                FriendlyName == other.FriendlyName ||
+                FriendlyName != null &&
+                FriendlyName.Equals(other.FriendlyName)
             ) &&
             (
-                this.LocalPart == other.LocalPart ||
-                this.LocalPart != null &&
-                this.LocalPart.Equals(other.LocalPart)
+                LocalPart == other.LocalPart ||
+                LocalPart != null &&
+                LocalPart.Equals(other.LocalPart)
             ) &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddre
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FriendlyName != null)
+            if (FriendlyName != null)
             {
-                hash = hash * 59 + this.FriendlyName.GetHashCode();
+                hash = hash * 59 + FriendlyName.GetHashCode();
             }
 
-            if (this.LocalPart != null)
+            if (LocalPart != null)
             {
-                hash = hash * 59 + this.LocalPart.GetHashCode();
+                hash = hash * 59 + LocalPart.GetHashCode();
             }
 
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
             return hash;

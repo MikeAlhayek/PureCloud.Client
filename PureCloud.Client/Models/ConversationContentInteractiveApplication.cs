@@ -89,7 +89,7 @@ public partial class ConversationContentInteractiveApplication : IEquatable<Conv
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationContentInteractiveApplication);
+        return Equals(obj as ConversationContentInteractiveApplication);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ConversationContentInteractiveApplication : IEquatable<Conv
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.ReceivedMessage == other.ReceivedMessage ||
-                this.ReceivedMessage != null &&
-                this.ReceivedMessage.Equals(other.ReceivedMessage)
+                ReceivedMessage == other.ReceivedMessage ||
+                ReceivedMessage != null &&
+                ReceivedMessage.Equals(other.ReceivedMessage)
             ) &&
             (
-                this.ReplyMessage == other.ReplyMessage ||
-                this.ReplyMessage != null &&
-                this.ReplyMessage.Equals(other.ReplyMessage)
+                ReplyMessage == other.ReplyMessage ||
+                ReplyMessage != null &&
+                ReplyMessage.Equals(other.ReplyMessage)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ConversationContentInteractiveApplication : IEquatable<Conv
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.ReceivedMessage != null)
+            if (ReceivedMessage != null)
             {
-                hash = hash * 59 + this.ReceivedMessage.GetHashCode();
+                hash = hash * 59 + ReceivedMessage.GetHashCode();
             }
 
-            if (this.ReplyMessage != null)
+            if (ReplyMessage != null)
             {
-                hash = hash * 59 + this.ReplyMessage.GetHashCode();
+                hash = hash * 59 + ReplyMessage.GetHashCode();
             }
 
             return hash;

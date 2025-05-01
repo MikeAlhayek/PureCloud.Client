@@ -77,7 +77,7 @@ public partial class PatchPredictorRequest : IEquatable<PatchPredictorRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchPredictorRequest);
+        return Equals(obj as PatchPredictorRequest);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class PatchPredictorRequest : IEquatable<PatchPredictorRequest>
 
         return true &&
             (
-                this.RoutingTimeoutSeconds == other.RoutingTimeoutSeconds ||
-                this.RoutingTimeoutSeconds != null &&
-                this.RoutingTimeoutSeconds.Equals(other.RoutingTimeoutSeconds)
+                RoutingTimeoutSeconds == other.RoutingTimeoutSeconds ||
+                RoutingTimeoutSeconds != null &&
+                RoutingTimeoutSeconds.Equals(other.RoutingTimeoutSeconds)
             ) &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             ) &&
             (
-                this.WorkloadBalancingConfig == other.WorkloadBalancingConfig ||
-                this.WorkloadBalancingConfig != null &&
-                this.WorkloadBalancingConfig.Equals(other.WorkloadBalancingConfig)
+                WorkloadBalancingConfig == other.WorkloadBalancingConfig ||
+                WorkloadBalancingConfig != null &&
+                WorkloadBalancingConfig.Equals(other.WorkloadBalancingConfig)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class PatchPredictorRequest : IEquatable<PatchPredictorRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RoutingTimeoutSeconds != null)
+            if (RoutingTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.RoutingTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + RoutingTimeoutSeconds.GetHashCode();
             }
 
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
-            if (this.WorkloadBalancingConfig != null)
+            if (WorkloadBalancingConfig != null)
             {
-                hash = hash * 59 + this.WorkloadBalancingConfig.GetHashCode();
+                hash = hash * 59 + WorkloadBalancingConfig.GetHashCode();
             }
 
             return hash;

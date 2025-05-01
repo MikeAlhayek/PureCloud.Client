@@ -77,7 +77,7 @@ public partial class UserScheduleContainer : IEquatable<UserScheduleContainer>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserScheduleContainer);
+        return Equals(obj as UserScheduleContainer);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class UserScheduleContainer : IEquatable<UserScheduleContainer>
 
         return true &&
             (
-                this.ManagementUnitTimeZone == other.ManagementUnitTimeZone ||
-                this.ManagementUnitTimeZone != null &&
-                this.ManagementUnitTimeZone.Equals(other.ManagementUnitTimeZone)
+                ManagementUnitTimeZone == other.ManagementUnitTimeZone ||
+                ManagementUnitTimeZone != null &&
+                ManagementUnitTimeZone.Equals(other.ManagementUnitTimeZone)
             ) &&
             (
-                this.PublishedSchedules == other.PublishedSchedules ||
-                this.PublishedSchedules != null &&
-                this.PublishedSchedules.SequenceEqual(other.PublishedSchedules)
+                PublishedSchedules == other.PublishedSchedules ||
+                PublishedSchedules != null &&
+                PublishedSchedules.SequenceEqual(other.PublishedSchedules)
             ) &&
             (
-                this.UserSchedules == other.UserSchedules ||
-                this.UserSchedules != null &&
-                this.UserSchedules.SequenceEqual(other.UserSchedules)
+                UserSchedules == other.UserSchedules ||
+                UserSchedules != null &&
+                UserSchedules.SequenceEqual(other.UserSchedules)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class UserScheduleContainer : IEquatable<UserScheduleContainer>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnitTimeZone != null)
+            if (ManagementUnitTimeZone != null)
             {
-                hash = hash * 59 + this.ManagementUnitTimeZone.GetHashCode();
+                hash = hash * 59 + ManagementUnitTimeZone.GetHashCode();
             }
 
-            if (this.PublishedSchedules != null)
+            if (PublishedSchedules != null)
             {
-                hash = hash * 59 + this.PublishedSchedules.GetHashCode();
+                hash = hash * 59 + PublishedSchedules.GetHashCode();
             }
 
-            if (this.UserSchedules != null)
+            if (UserSchedules != null)
             {
-                hash = hash * 59 + this.UserSchedules.GetHashCode();
+                hash = hash * 59 + UserSchedules.GetHashCode();
             }
 
             return hash;

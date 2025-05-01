@@ -97,7 +97,7 @@ public partial class Biography : IEquatable<Biography>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Biography);
+        return Equals(obj as Biography);
     }
 
     /// <summary>
@@ -115,29 +115,29 @@ public partial class Biography : IEquatable<Biography>
 
         return true &&
             (
-                this._Biography == other._Biography ||
-                this._Biography != null &&
-                this._Biography.Equals(other._Biography)
+                _Biography == other._Biography ||
+                _Biography != null &&
+                _Biography.Equals(other._Biography)
             ) &&
             (
-                this.Interests == other.Interests ||
-                this.Interests != null &&
-                this.Interests.SequenceEqual(other.Interests)
+                Interests == other.Interests ||
+                Interests != null &&
+                Interests.SequenceEqual(other.Interests)
             ) &&
             (
-                this.Hobbies == other.Hobbies ||
-                this.Hobbies != null &&
-                this.Hobbies.SequenceEqual(other.Hobbies)
+                Hobbies == other.Hobbies ||
+                Hobbies != null &&
+                Hobbies.SequenceEqual(other.Hobbies)
             ) &&
             (
-                this.Spouse == other.Spouse ||
-                this.Spouse != null &&
-                this.Spouse.Equals(other.Spouse)
+                Spouse == other.Spouse ||
+                Spouse != null &&
+                Spouse.Equals(other.Spouse)
             ) &&
             (
-                this.Education == other.Education ||
-                this.Education != null &&
-                this.Education.SequenceEqual(other.Education)
+                Education == other.Education ||
+                Education != null &&
+                Education.SequenceEqual(other.Education)
             );
     }
 
@@ -152,29 +152,29 @@ public partial class Biography : IEquatable<Biography>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this._Biography != null)
+            if (_Biography != null)
             {
-                hash = hash * 59 + this._Biography.GetHashCode();
+                hash = hash * 59 + _Biography.GetHashCode();
             }
 
-            if (this.Interests != null)
+            if (Interests != null)
             {
-                hash = hash * 59 + this.Interests.GetHashCode();
+                hash = hash * 59 + Interests.GetHashCode();
             }
 
-            if (this.Hobbies != null)
+            if (Hobbies != null)
             {
-                hash = hash * 59 + this.Hobbies.GetHashCode();
+                hash = hash * 59 + Hobbies.GetHashCode();
             }
 
-            if (this.Spouse != null)
+            if (Spouse != null)
             {
-                hash = hash * 59 + this.Spouse.GetHashCode();
+                hash = hash * 59 + Spouse.GetHashCode();
             }
 
-            if (this.Education != null)
+            if (Education != null)
             {
-                hash = hash * 59 + this.Education.GetHashCode();
+                hash = hash * 59 + Education.GetHashCode();
             }
 
             return hash;

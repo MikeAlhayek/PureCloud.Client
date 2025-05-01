@@ -59,7 +59,7 @@ public partial class WorkPlanBidGroupSummaryList : IEquatable<WorkPlanBidGroupSu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanBidGroupSummaryList);
+        return Equals(obj as WorkPlanBidGroupSummaryList);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class WorkPlanBidGroupSummaryList : IEquatable<WorkPlanBidGroupSu
 
         return true &&
             (
-                this._WorkPlanBidGroupSummaryList == other._WorkPlanBidGroupSummaryList ||
-                this._WorkPlanBidGroupSummaryList != null &&
-                this._WorkPlanBidGroupSummaryList.SequenceEqual(other._WorkPlanBidGroupSummaryList)
+                _WorkPlanBidGroupSummaryList == other._WorkPlanBidGroupSummaryList ||
+                _WorkPlanBidGroupSummaryList != null &&
+                _WorkPlanBidGroupSummaryList.SequenceEqual(other._WorkPlanBidGroupSummaryList)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class WorkPlanBidGroupSummaryList : IEquatable<WorkPlanBidGroupSu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this._WorkPlanBidGroupSummaryList != null)
+            if (_WorkPlanBidGroupSummaryList != null)
             {
-                hash = hash * 59 + this._WorkPlanBidGroupSummaryList.GetHashCode();
+                hash = hash * 59 + _WorkPlanBidGroupSummaryList.GetHashCode();
             }
 
             return hash;

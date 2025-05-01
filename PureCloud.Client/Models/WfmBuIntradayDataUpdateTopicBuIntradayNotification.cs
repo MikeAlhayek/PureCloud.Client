@@ -63,7 +63,7 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayNotification : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuIntradayDataUpdateTopicBuIntradayNotification);
+        return Equals(obj as WfmBuIntradayDataUpdateTopicBuIntradayNotification);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayNotification : IEquat
 
         return true &&
             (
-                this.OperationId == other.OperationId ||
-                this.OperationId != null &&
-                this.OperationId.Equals(other.OperationId)
+                OperationId == other.OperationId ||
+                OperationId != null &&
+                OperationId.Equals(other.OperationId)
             ) &&
             (
-                this.Result == other.Result ||
-                this.Result != null &&
-                this.Result.Equals(other.Result)
+                Result == other.Result ||
+                Result != null &&
+                Result.Equals(other.Result)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class WfmBuIntradayDataUpdateTopicBuIntradayNotification : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OperationId != null)
+            if (OperationId != null)
             {
-                hash = hash * 59 + this.OperationId.GetHashCode();
+                hash = hash * 59 + OperationId.GetHashCode();
             }
 
-            if (this.Result != null)
+            if (Result != null)
             {
-                hash = hash * 59 + this.Result.GetHashCode();
+                hash = hash * 59 + Result.GetHashCode();
             }
 
             return hash;

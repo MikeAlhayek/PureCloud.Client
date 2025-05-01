@@ -65,7 +65,7 @@ public partial class EventDefinitionAggregates : IEquatable<EventDefinitionAggre
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EventDefinitionAggregates);
+        return Equals(obj as EventDefinitionAggregates);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class EventDefinitionAggregates : IEquatable<EventDefinitionAggre
 
         return true &&
             (
-                this.EventDefinition == other.EventDefinition ||
-                this.EventDefinition != null &&
-                this.EventDefinition.Equals(other.EventDefinition)
+                EventDefinition == other.EventDefinition ||
+                EventDefinition != null &&
+                EventDefinition.Equals(other.EventDefinition)
             ) &&
             (
-                this.EventCount == other.EventCount ||
-                this.EventCount != null &&
-                this.EventCount.Equals(other.EventCount)
+                EventCount == other.EventCount ||
+                EventCount != null &&
+                EventCount.Equals(other.EventCount)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class EventDefinitionAggregates : IEquatable<EventDefinitionAggre
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventDefinition != null)
+            if (EventDefinition != null)
             {
-                hash = hash * 59 + this.EventDefinition.GetHashCode();
+                hash = hash * 59 + EventDefinition.GetHashCode();
             }
 
-            if (this.EventCount != null)
+            if (EventCount != null)
             {
-                hash = hash * 59 + this.EventCount.GetHashCode();
+                hash = hash * 59 + EventCount.GetHashCode();
             }
 
             return hash;

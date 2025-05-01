@@ -101,7 +101,7 @@ public partial class WfmHistoricalAdherenceBulkResult : IEquatable<WfmHistorical
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalAdherenceBulkResult);
+        return Equals(obj as WfmHistoricalAdherenceBulkResult);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class WfmHistoricalAdherenceBulkResult : IEquatable<WfmHistorical
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             ) &&
             (
-                this.UserResults == other.UserResults ||
-                this.UserResults != null &&
-                this.UserResults.SequenceEqual(other.UserResults)
+                UserResults == other.UserResults ||
+                UserResults != null &&
+                UserResults.SequenceEqual(other.UserResults)
             ) &&
             (
-                this.LookupIdToSecondaryPresenceId == other.LookupIdToSecondaryPresenceId ||
-                this.LookupIdToSecondaryPresenceId != null &&
-                this.LookupIdToSecondaryPresenceId.SequenceEqual(other.LookupIdToSecondaryPresenceId)
+                LookupIdToSecondaryPresenceId == other.LookupIdToSecondaryPresenceId ||
+                LookupIdToSecondaryPresenceId != null &&
+                LookupIdToSecondaryPresenceId.SequenceEqual(other.LookupIdToSecondaryPresenceId)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class WfmHistoricalAdherenceBulkResult : IEquatable<WfmHistorical
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
-            if (this.UserResults != null)
+            if (UserResults != null)
             {
-                hash = hash * 59 + this.UserResults.GetHashCode();
+                hash = hash * 59 + UserResults.GetHashCode();
             }
 
-            if (this.LookupIdToSecondaryPresenceId != null)
+            if (LookupIdToSecondaryPresenceId != null)
             {
-                hash = hash * 59 + this.LookupIdToSecondaryPresenceId.GetHashCode();
+                hash = hash * 59 + LookupIdToSecondaryPresenceId.GetHashCode();
             }
 
             return hash;

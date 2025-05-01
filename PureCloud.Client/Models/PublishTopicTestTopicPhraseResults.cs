@@ -74,7 +74,7 @@ public partial class PublishTopicTestTopicPhraseResults : IEquatable<PublishTopi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PublishTopicTestTopicPhraseResults);
+        return Equals(obj as PublishTopicTestTopicPhraseResults);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class PublishTopicTestTopicPhraseResults : IEquatable<PublishTopi
 
         return true &&
             (
-                this.ProcessedTranscriptsCount == other.ProcessedTranscriptsCount ||
-                this.ProcessedTranscriptsCount != null &&
-                this.ProcessedTranscriptsCount.Equals(other.ProcessedTranscriptsCount)
+                ProcessedTranscriptsCount == other.ProcessedTranscriptsCount ||
+                ProcessedTranscriptsCount != null &&
+                ProcessedTranscriptsCount.Equals(other.ProcessedTranscriptsCount)
             ) &&
             (
-                this.MatchedTranscriptsCount == other.MatchedTranscriptsCount ||
-                this.MatchedTranscriptsCount != null &&
-                this.MatchedTranscriptsCount.Equals(other.MatchedTranscriptsCount)
+                MatchedTranscriptsCount == other.MatchedTranscriptsCount ||
+                MatchedTranscriptsCount != null &&
+                MatchedTranscriptsCount.Equals(other.MatchedTranscriptsCount)
             ) &&
             (
-                this.MatchedTranscripts == other.MatchedTranscripts ||
-                this.MatchedTranscripts != null &&
-                this.MatchedTranscripts.SequenceEqual(other.MatchedTranscripts)
+                MatchedTranscripts == other.MatchedTranscripts ||
+                MatchedTranscripts != null &&
+                MatchedTranscripts.SequenceEqual(other.MatchedTranscripts)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class PublishTopicTestTopicPhraseResults : IEquatable<PublishTopi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ProcessedTranscriptsCount != null)
+            if (ProcessedTranscriptsCount != null)
             {
-                hash = hash * 59 + this.ProcessedTranscriptsCount.GetHashCode();
+                hash = hash * 59 + ProcessedTranscriptsCount.GetHashCode();
             }
 
-            if (this.MatchedTranscriptsCount != null)
+            if (MatchedTranscriptsCount != null)
             {
-                hash = hash * 59 + this.MatchedTranscriptsCount.GetHashCode();
+                hash = hash * 59 + MatchedTranscriptsCount.GetHashCode();
             }
 
-            if (this.MatchedTranscripts != null)
+            if (MatchedTranscripts != null)
             {
-                hash = hash * 59 + this.MatchedTranscripts.GetHashCode();
+                hash = hash * 59 + MatchedTranscripts.GetHashCode();
             }
 
             return hash;

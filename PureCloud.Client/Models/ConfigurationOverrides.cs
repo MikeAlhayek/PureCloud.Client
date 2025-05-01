@@ -53,7 +53,7 @@ public partial class ConfigurationOverrides : IEquatable<ConfigurationOverrides>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConfigurationOverrides);
+        return Equals(obj as ConfigurationOverrides);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ConfigurationOverrides : IEquatable<ConfigurationOverrides>
 
         return true &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ConfigurationOverrides : IEquatable<ConfigurationOverrides>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
             return hash;

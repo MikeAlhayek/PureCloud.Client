@@ -59,7 +59,7 @@ public partial class UnreadFields : IEquatable<UnreadFields>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UnreadFields);
+        return Equals(obj as UnreadFields);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class UnreadFields : IEquatable<UnreadFields>
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class UnreadFields : IEquatable<UnreadFields>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
             return hash;

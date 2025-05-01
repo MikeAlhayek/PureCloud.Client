@@ -59,7 +59,7 @@ public partial class SetSmsPhoneNumberActionSettings : IEquatable<SetSmsPhoneNum
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SetSmsPhoneNumberActionSettings);
+        return Equals(obj as SetSmsPhoneNumberActionSettings);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class SetSmsPhoneNumberActionSettings : IEquatable<SetSmsPhoneNum
 
         return true &&
             (
-                this.SenderSmsPhoneNumber == other.SenderSmsPhoneNumber ||
-                this.SenderSmsPhoneNumber != null &&
-                this.SenderSmsPhoneNumber.Equals(other.SenderSmsPhoneNumber)
+                SenderSmsPhoneNumber == other.SenderSmsPhoneNumber ||
+                SenderSmsPhoneNumber != null &&
+                SenderSmsPhoneNumber.Equals(other.SenderSmsPhoneNumber)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class SetSmsPhoneNumberActionSettings : IEquatable<SetSmsPhoneNum
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SenderSmsPhoneNumber != null)
+            if (SenderSmsPhoneNumber != null)
             {
-                hash = hash * 59 + this.SenderSmsPhoneNumber.GetHashCode();
+                hash = hash * 59 + SenderSmsPhoneNumber.GetHashCode();
             }
 
             return hash;

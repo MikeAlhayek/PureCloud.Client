@@ -191,7 +191,7 @@ public partial class Event : IEquatable<Event>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Event);
+        return Equals(obj as Event);
     }
 
     /// <summary>
@@ -209,64 +209,64 @@ public partial class Event : IEquatable<Event>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.CorrelationId == other.CorrelationId ||
-                this.CorrelationId != null &&
-                this.CorrelationId.Equals(other.CorrelationId)
+                CorrelationId == other.CorrelationId ||
+                CorrelationId != null &&
+                CorrelationId.Equals(other.CorrelationId)
             ) &&
             (
-                this.CustomerId == other.CustomerId ||
-                this.CustomerId != null &&
-                this.CustomerId.Equals(other.CustomerId)
+                CustomerId == other.CustomerId ||
+                CustomerId != null &&
+                CustomerId.Equals(other.CustomerId)
             ) &&
             (
-                this.CustomerIdType == other.CustomerIdType ||
-                this.CustomerIdType != null &&
-                this.CustomerIdType.Equals(other.CustomerIdType)
+                CustomerIdType == other.CustomerIdType ||
+                CustomerIdType != null &&
+                CustomerIdType.Equals(other.CustomerIdType)
             ) &&
             (
-                this.Session == other.Session ||
-                this.Session != null &&
-                this.Session.Equals(other.Session)
+                Session == other.Session ||
+                Session != null &&
+                Session.Equals(other.Session)
             ) &&
             (
-                this.EventType == other.EventType ||
-                this.EventType != null &&
-                this.EventType.Equals(other.EventType)
+                EventType == other.EventType ||
+                EventType != null &&
+                EventType.Equals(other.EventType)
             ) &&
             (
-                this.OutcomeAchievedEvent == other.OutcomeAchievedEvent ||
-                this.OutcomeAchievedEvent != null &&
-                this.OutcomeAchievedEvent.Equals(other.OutcomeAchievedEvent)
+                OutcomeAchievedEvent == other.OutcomeAchievedEvent ||
+                OutcomeAchievedEvent != null &&
+                OutcomeAchievedEvent.Equals(other.OutcomeAchievedEvent)
             ) &&
             (
-                this.SegmentAssignmentEvent == other.SegmentAssignmentEvent ||
-                this.SegmentAssignmentEvent != null &&
-                this.SegmentAssignmentEvent.Equals(other.SegmentAssignmentEvent)
+                SegmentAssignmentEvent == other.SegmentAssignmentEvent ||
+                SegmentAssignmentEvent != null &&
+                SegmentAssignmentEvent.Equals(other.SegmentAssignmentEvent)
             ) &&
             (
-                this.WebActionEvent == other.WebActionEvent ||
-                this.WebActionEvent != null &&
-                this.WebActionEvent.Equals(other.WebActionEvent)
+                WebActionEvent == other.WebActionEvent ||
+                WebActionEvent != null &&
+                WebActionEvent.Equals(other.WebActionEvent)
             ) &&
             (
-                this.WebEvent == other.WebEvent ||
-                this.WebEvent != null &&
-                this.WebEvent.Equals(other.WebEvent)
+                WebEvent == other.WebEvent ||
+                WebEvent != null &&
+                WebEvent.Equals(other.WebEvent)
             ) &&
             (
-                this.AppEvent == other.AppEvent ||
-                this.AppEvent != null &&
-                this.AppEvent.Equals(other.AppEvent)
+                AppEvent == other.AppEvent ||
+                AppEvent != null &&
+                AppEvent.Equals(other.AppEvent)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             );
     }
 
@@ -281,64 +281,64 @@ public partial class Event : IEquatable<Event>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.CorrelationId != null)
+            if (CorrelationId != null)
             {
-                hash = hash * 59 + this.CorrelationId.GetHashCode();
+                hash = hash * 59 + CorrelationId.GetHashCode();
             }
 
-            if (this.CustomerId != null)
+            if (CustomerId != null)
             {
-                hash = hash * 59 + this.CustomerId.GetHashCode();
+                hash = hash * 59 + CustomerId.GetHashCode();
             }
 
-            if (this.CustomerIdType != null)
+            if (CustomerIdType != null)
             {
-                hash = hash * 59 + this.CustomerIdType.GetHashCode();
+                hash = hash * 59 + CustomerIdType.GetHashCode();
             }
 
-            if (this.Session != null)
+            if (Session != null)
             {
-                hash = hash * 59 + this.Session.GetHashCode();
+                hash = hash * 59 + Session.GetHashCode();
             }
 
-            if (this.EventType != null)
+            if (EventType != null)
             {
-                hash = hash * 59 + this.EventType.GetHashCode();
+                hash = hash * 59 + EventType.GetHashCode();
             }
 
-            if (this.OutcomeAchievedEvent != null)
+            if (OutcomeAchievedEvent != null)
             {
-                hash = hash * 59 + this.OutcomeAchievedEvent.GetHashCode();
+                hash = hash * 59 + OutcomeAchievedEvent.GetHashCode();
             }
 
-            if (this.SegmentAssignmentEvent != null)
+            if (SegmentAssignmentEvent != null)
             {
-                hash = hash * 59 + this.SegmentAssignmentEvent.GetHashCode();
+                hash = hash * 59 + SegmentAssignmentEvent.GetHashCode();
             }
 
-            if (this.WebActionEvent != null)
+            if (WebActionEvent != null)
             {
-                hash = hash * 59 + this.WebActionEvent.GetHashCode();
+                hash = hash * 59 + WebActionEvent.GetHashCode();
             }
 
-            if (this.WebEvent != null)
+            if (WebEvent != null)
             {
-                hash = hash * 59 + this.WebEvent.GetHashCode();
+                hash = hash * 59 + WebEvent.GetHashCode();
             }
 
-            if (this.AppEvent != null)
+            if (AppEvent != null)
             {
-                hash = hash * 59 + this.AppEvent.GetHashCode();
+                hash = hash * 59 + AppEvent.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
             return hash;

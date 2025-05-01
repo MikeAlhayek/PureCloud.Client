@@ -156,7 +156,7 @@ public partial class CreateShareRequest : IEquatable<CreateShareRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateShareRequest);
+        return Equals(obj as CreateShareRequest);
     }
 
     /// <summary>
@@ -174,29 +174,29 @@ public partial class CreateShareRequest : IEquatable<CreateShareRequest>
 
         return true &&
             (
-                this.SharedEntityType == other.SharedEntityType ||
-                this.SharedEntityType != null &&
-                this.SharedEntityType.Equals(other.SharedEntityType)
+                SharedEntityType == other.SharedEntityType ||
+                SharedEntityType != null &&
+                SharedEntityType.Equals(other.SharedEntityType)
             ) &&
             (
-                this.SharedEntity == other.SharedEntity ||
-                this.SharedEntity != null &&
-                this.SharedEntity.Equals(other.SharedEntity)
+                SharedEntity == other.SharedEntity ||
+                SharedEntity != null &&
+                SharedEntity.Equals(other.SharedEntity)
             ) &&
             (
-                this.MemberType == other.MemberType ||
-                this.MemberType != null &&
-                this.MemberType.Equals(other.MemberType)
+                MemberType == other.MemberType ||
+                MemberType != null &&
+                MemberType.Equals(other.MemberType)
             ) &&
             (
-                this.Member == other.Member ||
-                this.Member != null &&
-                this.Member.Equals(other.Member)
+                Member == other.Member ||
+                Member != null &&
+                Member.Equals(other.Member)
             ) &&
             (
-                this.Members == other.Members ||
-                this.Members != null &&
-                this.Members.SequenceEqual(other.Members)
+                Members == other.Members ||
+                Members != null &&
+                Members.SequenceEqual(other.Members)
             );
     }
 
@@ -211,29 +211,29 @@ public partial class CreateShareRequest : IEquatable<CreateShareRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SharedEntityType != null)
+            if (SharedEntityType != null)
             {
-                hash = hash * 59 + this.SharedEntityType.GetHashCode();
+                hash = hash * 59 + SharedEntityType.GetHashCode();
             }
 
-            if (this.SharedEntity != null)
+            if (SharedEntity != null)
             {
-                hash = hash * 59 + this.SharedEntity.GetHashCode();
+                hash = hash * 59 + SharedEntity.GetHashCode();
             }
 
-            if (this.MemberType != null)
+            if (MemberType != null)
             {
-                hash = hash * 59 + this.MemberType.GetHashCode();
+                hash = hash * 59 + MemberType.GetHashCode();
             }
 
-            if (this.Member != null)
+            if (Member != null)
             {
-                hash = hash * 59 + this.Member.GetHashCode();
+                hash = hash * 59 + Member.GetHashCode();
             }
 
-            if (this.Members != null)
+            if (Members != null)
             {
-                hash = hash * 59 + this.Members.GetHashCode();
+                hash = hash * 59 + Members.GetHashCode();
             }
 
             return hash;

@@ -121,7 +121,7 @@ public partial class LearningSlot : IEquatable<LearningSlot>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningSlot);
+        return Equals(obj as LearningSlot);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class LearningSlot : IEquatable<LearningSlot>
 
         return true &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.StaffingDifference == other.StaffingDifference ||
-                this.StaffingDifference != null &&
-                this.StaffingDifference.Equals(other.StaffingDifference)
+                StaffingDifference == other.StaffingDifference ||
+                StaffingDifference != null &&
+                StaffingDifference.Equals(other.StaffingDifference)
             ) &&
             (
-                this.DifferenceRating == other.DifferenceRating ||
-                this.DifferenceRating != null &&
-                this.DifferenceRating.Equals(other.DifferenceRating)
+                DifferenceRating == other.DifferenceRating ||
+                DifferenceRating != null &&
+                DifferenceRating.Equals(other.DifferenceRating)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class LearningSlot : IEquatable<LearningSlot>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.StaffingDifference != null)
+            if (StaffingDifference != null)
             {
-                hash = hash * 59 + this.StaffingDifference.GetHashCode();
+                hash = hash * 59 + StaffingDifference.GetHashCode();
             }
 
-            if (this.DifferenceRating != null)
+            if (DifferenceRating != null)
             {
-                hash = hash * 59 + this.DifferenceRating.GetHashCode();
+                hash = hash * 59 + DifferenceRating.GetHashCode();
             }
 
             return hash;

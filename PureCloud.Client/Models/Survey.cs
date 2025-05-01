@@ -292,7 +292,7 @@ public partial class Survey : IEquatable<Survey>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Survey);
+        return Equals(obj as Survey);
     }
 
     /// <summary>
@@ -310,79 +310,79 @@ public partial class Survey : IEquatable<Survey>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.SurveyForm == other.SurveyForm ||
-                this.SurveyForm != null &&
-                this.SurveyForm.Equals(other.SurveyForm)
+                SurveyForm == other.SurveyForm ||
+                SurveyForm != null &&
+                SurveyForm.Equals(other.SurveyForm)
             ) &&
             (
-                this.Agent == other.Agent ||
-                this.Agent != null &&
-                this.Agent.Equals(other.Agent)
+                Agent == other.Agent ||
+                Agent != null &&
+                Agent.Equals(other.Agent)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.Answers == other.Answers ||
-                this.Answers != null &&
-                this.Answers.Equals(other.Answers)
+                Answers == other.Answers ||
+                Answers != null &&
+                Answers.Equals(other.Answers)
             ) &&
             (
-                this.CompletedDate == other.CompletedDate ||
-                this.CompletedDate != null &&
-                this.CompletedDate.Equals(other.CompletedDate)
+                CompletedDate == other.CompletedDate ||
+                CompletedDate != null &&
+                CompletedDate.Equals(other.CompletedDate)
             ) &&
             (
-                this.SurveyErrorDetails == other.SurveyErrorDetails ||
-                this.SurveyErrorDetails != null &&
-                this.SurveyErrorDetails.Equals(other.SurveyErrorDetails)
+                SurveyErrorDetails == other.SurveyErrorDetails ||
+                SurveyErrorDetails != null &&
+                SurveyErrorDetails.Equals(other.SurveyErrorDetails)
             ) &&
             (
-                this.AgentTeam == other.AgentTeam ||
-                this.AgentTeam != null &&
-                this.AgentTeam.Equals(other.AgentTeam)
+                AgentTeam == other.AgentTeam ||
+                AgentTeam != null &&
+                AgentTeam.Equals(other.AgentTeam)
             ) &&
             (
-                this.SurveyType == other.SurveyType ||
-                this.SurveyType != null &&
-                this.SurveyType.Equals(other.SurveyType)
+                SurveyType == other.SurveyType ||
+                SurveyType != null &&
+                SurveyType.Equals(other.SurveyType)
             ) &&
             (
-                this.MissingRequiredAnswer == other.MissingRequiredAnswer ||
-                this.MissingRequiredAnswer != null &&
-                this.MissingRequiredAnswer.Equals(other.MissingRequiredAnswer)
+                MissingRequiredAnswer == other.MissingRequiredAnswer ||
+                MissingRequiredAnswer != null &&
+                MissingRequiredAnswer.Equals(other.MissingRequiredAnswer)
             ) &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -397,79 +397,79 @@ public partial class Survey : IEquatable<Survey>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.SurveyForm != null)
+            if (SurveyForm != null)
             {
-                hash = hash * 59 + this.SurveyForm.GetHashCode();
+                hash = hash * 59 + SurveyForm.GetHashCode();
             }
 
-            if (this.Agent != null)
+            if (Agent != null)
             {
-                hash = hash * 59 + this.Agent.GetHashCode();
+                hash = hash * 59 + Agent.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.Answers != null)
+            if (Answers != null)
             {
-                hash = hash * 59 + this.Answers.GetHashCode();
+                hash = hash * 59 + Answers.GetHashCode();
             }
 
-            if (this.CompletedDate != null)
+            if (CompletedDate != null)
             {
-                hash = hash * 59 + this.CompletedDate.GetHashCode();
+                hash = hash * 59 + CompletedDate.GetHashCode();
             }
 
-            if (this.SurveyErrorDetails != null)
+            if (SurveyErrorDetails != null)
             {
-                hash = hash * 59 + this.SurveyErrorDetails.GetHashCode();
+                hash = hash * 59 + SurveyErrorDetails.GetHashCode();
             }
 
-            if (this.AgentTeam != null)
+            if (AgentTeam != null)
             {
-                hash = hash * 59 + this.AgentTeam.GetHashCode();
+                hash = hash * 59 + AgentTeam.GetHashCode();
             }
 
-            if (this.SurveyType != null)
+            if (SurveyType != null)
             {
-                hash = hash * 59 + this.SurveyType.GetHashCode();
+                hash = hash * 59 + SurveyType.GetHashCode();
             }
 
-            if (this.MissingRequiredAnswer != null)
+            if (MissingRequiredAnswer != null)
             {
-                hash = hash * 59 + this.MissingRequiredAnswer.GetHashCode();
+                hash = hash * 59 + MissingRequiredAnswer.GetHashCode();
             }
 
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

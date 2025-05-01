@@ -167,7 +167,7 @@ public partial class TextBotChannel : IEquatable<TextBotChannel>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotChannel);
+        return Equals(obj as TextBotChannel);
     }
 
     /// <summary>
@@ -185,24 +185,24 @@ public partial class TextBotChannel : IEquatable<TextBotChannel>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.InputModes == other.InputModes ||
-                this.InputModes != null &&
-                this.InputModes.SequenceEqual(other.InputModes)
+                InputModes == other.InputModes ||
+                InputModes != null &&
+                InputModes.SequenceEqual(other.InputModes)
             ) &&
             (
-                this.OutputModes == other.OutputModes ||
-                this.OutputModes != null &&
-                this.OutputModes.SequenceEqual(other.OutputModes)
+                OutputModes == other.OutputModes ||
+                OutputModes != null &&
+                OutputModes.SequenceEqual(other.OutputModes)
             ) &&
             (
-                this.UserAgent == other.UserAgent ||
-                this.UserAgent != null &&
-                this.UserAgent.Equals(other.UserAgent)
+                UserAgent == other.UserAgent ||
+                UserAgent != null &&
+                UserAgent.Equals(other.UserAgent)
             );
     }
 
@@ -217,24 +217,24 @@ public partial class TextBotChannel : IEquatable<TextBotChannel>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.InputModes != null)
+            if (InputModes != null)
             {
-                hash = hash * 59 + this.InputModes.GetHashCode();
+                hash = hash * 59 + InputModes.GetHashCode();
             }
 
-            if (this.OutputModes != null)
+            if (OutputModes != null)
             {
-                hash = hash * 59 + this.OutputModes.GetHashCode();
+                hash = hash * 59 + OutputModes.GetHashCode();
             }
 
-            if (this.UserAgent != null)
+            if (UserAgent != null)
             {
-                hash = hash * 59 + this.UserAgent.GetHashCode();
+                hash = hash * 59 + UserAgent.GetHashCode();
             }
 
             return hash;

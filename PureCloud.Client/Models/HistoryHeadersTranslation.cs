@@ -155,7 +155,7 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoryHeadersTranslation);
+        return Equals(obj as HistoryHeadersTranslation);
     }
 
     /// <summary>
@@ -173,49 +173,49 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
 
         return true &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.To == other.To ||
-                this.To != null &&
-                this.To.Equals(other.To)
+                To == other.To ||
+                To != null &&
+                To.Equals(other.To)
             ) &&
             (
-                this.Cc == other.Cc ||
-                this.Cc != null &&
-                this.Cc.Equals(other.Cc)
+                Cc == other.Cc ||
+                Cc != null &&
+                Cc.Equals(other.Cc)
             ) &&
             (
-                this.Subject == other.Subject ||
-                this.Subject != null &&
-                this.Subject.Equals(other.Subject)
+                Subject == other.Subject ||
+                Subject != null &&
+                Subject.Equals(other.Subject)
             ) &&
             (
-                this.ReplyPrefix == other.ReplyPrefix ||
-                this.ReplyPrefix != null &&
-                this.ReplyPrefix.Equals(other.ReplyPrefix)
+                ReplyPrefix == other.ReplyPrefix ||
+                ReplyPrefix != null &&
+                ReplyPrefix.Equals(other.ReplyPrefix)
             ) &&
             (
-                this.ForwardPrefix == other.ForwardPrefix ||
-                this.ForwardPrefix != null &&
-                this.ForwardPrefix.Equals(other.ForwardPrefix)
+                ForwardPrefix == other.ForwardPrefix ||
+                ForwardPrefix != null &&
+                ForwardPrefix.Equals(other.ForwardPrefix)
             ) &&
             (
-                this.Sent == other.Sent ||
-                this.Sent != null &&
-                this.Sent.Equals(other.Sent)
+                Sent == other.Sent ||
+                Sent != null &&
+                Sent.Equals(other.Sent)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             );
     }
 
@@ -230,49 +230,49 @@ public partial class HistoryHeadersTranslation : IEquatable<HistoryHeadersTransl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.To != null)
+            if (To != null)
             {
-                hash = hash * 59 + this.To.GetHashCode();
+                hash = hash * 59 + To.GetHashCode();
             }
 
-            if (this.Cc != null)
+            if (Cc != null)
             {
-                hash = hash * 59 + this.Cc.GetHashCode();
+                hash = hash * 59 + Cc.GetHashCode();
             }
 
-            if (this.Subject != null)
+            if (Subject != null)
             {
-                hash = hash * 59 + this.Subject.GetHashCode();
+                hash = hash * 59 + Subject.GetHashCode();
             }
 
-            if (this.ReplyPrefix != null)
+            if (ReplyPrefix != null)
             {
-                hash = hash * 59 + this.ReplyPrefix.GetHashCode();
+                hash = hash * 59 + ReplyPrefix.GetHashCode();
             }
 
-            if (this.ForwardPrefix != null)
+            if (ForwardPrefix != null)
             {
-                hash = hash * 59 + this.ForwardPrefix.GetHashCode();
+                hash = hash * 59 + ForwardPrefix.GetHashCode();
             }
 
-            if (this.Sent != null)
+            if (Sent != null)
             {
-                hash = hash * 59 + this.Sent.GetHashCode();
+                hash = hash * 59 + Sent.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
             return hash;

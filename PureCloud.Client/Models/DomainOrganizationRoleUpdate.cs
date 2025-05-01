@@ -180,7 +180,7 @@ public partial class DomainOrganizationRoleUpdate : IEquatable<DomainOrganizatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainOrganizationRoleUpdate);
+        return Equals(obj as DomainOrganizationRoleUpdate);
     }
 
     /// <summary>
@@ -198,64 +198,64 @@ public partial class DomainOrganizationRoleUpdate : IEquatable<DomainOrganizatio
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DefaultRoleId == other.DefaultRoleId ||
-                this.DefaultRoleId != null &&
-                this.DefaultRoleId.Equals(other.DefaultRoleId)
+                DefaultRoleId == other.DefaultRoleId ||
+                DefaultRoleId != null &&
+                DefaultRoleId.Equals(other.DefaultRoleId)
             ) &&
             (
-                this.Permissions == other.Permissions ||
-                this.Permissions != null &&
-                this.Permissions.SequenceEqual(other.Permissions)
+                Permissions == other.Permissions ||
+                Permissions != null &&
+                Permissions.SequenceEqual(other.Permissions)
             ) &&
             (
-                this.UnusedPermissions == other.UnusedPermissions ||
-                this.UnusedPermissions != null &&
-                this.UnusedPermissions.SequenceEqual(other.UnusedPermissions)
+                UnusedPermissions == other.UnusedPermissions ||
+                UnusedPermissions != null &&
+                UnusedPermissions.SequenceEqual(other.UnusedPermissions)
             ) &&
             (
-                this.PermissionPolicies == other.PermissionPolicies ||
-                this.PermissionPolicies != null &&
-                this.PermissionPolicies.SequenceEqual(other.PermissionPolicies)
+                PermissionPolicies == other.PermissionPolicies ||
+                PermissionPolicies != null &&
+                PermissionPolicies.SequenceEqual(other.PermissionPolicies)
             ) &&
             (
-                this.UserCount == other.UserCount ||
-                this.UserCount != null &&
-                this.UserCount.Equals(other.UserCount)
+                UserCount == other.UserCount ||
+                UserCount != null &&
+                UserCount.Equals(other.UserCount)
             ) &&
             (
-                this.RoleNeedsUpdate == other.RoleNeedsUpdate ||
-                this.RoleNeedsUpdate != null &&
-                this.RoleNeedsUpdate.Equals(other.RoleNeedsUpdate)
+                RoleNeedsUpdate == other.RoleNeedsUpdate ||
+                RoleNeedsUpdate != null &&
+                RoleNeedsUpdate.Equals(other.RoleNeedsUpdate)
             ) &&
             (
-                this.Base == other.Base ||
-                this.Base != null &&
-                this.Base.Equals(other.Base)
+                Base == other.Base ||
+                Base != null &&
+                Base.Equals(other.Base)
             ) &&
             (
-                this.Default == other.Default ||
-                this.Default != null &&
-                this.Default.Equals(other.Default)
+                Default == other.Default ||
+                Default != null &&
+                Default.Equals(other.Default)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -270,64 +270,64 @@ public partial class DomainOrganizationRoleUpdate : IEquatable<DomainOrganizatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DefaultRoleId != null)
+            if (DefaultRoleId != null)
             {
-                hash = hash * 59 + this.DefaultRoleId.GetHashCode();
+                hash = hash * 59 + DefaultRoleId.GetHashCode();
             }
 
-            if (this.Permissions != null)
+            if (Permissions != null)
             {
-                hash = hash * 59 + this.Permissions.GetHashCode();
+                hash = hash * 59 + Permissions.GetHashCode();
             }
 
-            if (this.UnusedPermissions != null)
+            if (UnusedPermissions != null)
             {
-                hash = hash * 59 + this.UnusedPermissions.GetHashCode();
+                hash = hash * 59 + UnusedPermissions.GetHashCode();
             }
 
-            if (this.PermissionPolicies != null)
+            if (PermissionPolicies != null)
             {
-                hash = hash * 59 + this.PermissionPolicies.GetHashCode();
+                hash = hash * 59 + PermissionPolicies.GetHashCode();
             }
 
-            if (this.UserCount != null)
+            if (UserCount != null)
             {
-                hash = hash * 59 + this.UserCount.GetHashCode();
+                hash = hash * 59 + UserCount.GetHashCode();
             }
 
-            if (this.RoleNeedsUpdate != null)
+            if (RoleNeedsUpdate != null)
             {
-                hash = hash * 59 + this.RoleNeedsUpdate.GetHashCode();
+                hash = hash * 59 + RoleNeedsUpdate.GetHashCode();
             }
 
-            if (this.Base != null)
+            if (Base != null)
             {
-                hash = hash * 59 + this.Base.GetHashCode();
+                hash = hash * 59 + Base.GetHashCode();
             }
 
-            if (this.Default != null)
+            if (Default != null)
             {
-                hash = hash * 59 + this.Default.GetHashCode();
+                hash = hash * 59 + Default.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

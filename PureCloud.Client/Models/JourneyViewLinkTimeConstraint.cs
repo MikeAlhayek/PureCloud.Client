@@ -115,7 +115,7 @@ public partial class JourneyViewLinkTimeConstraint : IEquatable<JourneyViewLinkT
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewLinkTimeConstraint);
+        return Equals(obj as JourneyViewLinkTimeConstraint);
     }
 
     /// <summary>
@@ -133,14 +133,14 @@ public partial class JourneyViewLinkTimeConstraint : IEquatable<JourneyViewLinkT
 
         return true &&
             (
-                this.Unit == other.Unit ||
-                this.Unit != null &&
-                this.Unit.Equals(other.Unit)
+                Unit == other.Unit ||
+                Unit != null &&
+                Unit.Equals(other.Unit)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -155,14 +155,14 @@ public partial class JourneyViewLinkTimeConstraint : IEquatable<JourneyViewLinkT
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Unit != null)
+            if (Unit != null)
             {
-                hash = hash * 59 + this.Unit.GetHashCode();
+                hash = hash * 59 + Unit.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

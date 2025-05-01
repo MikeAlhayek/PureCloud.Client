@@ -59,7 +59,7 @@ public partial class TranscriptionEnginesRequest : IEquatable<TranscriptionEngin
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptionEnginesRequest);
+        return Equals(obj as TranscriptionEnginesRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class TranscriptionEnginesRequest : IEquatable<TranscriptionEngin
 
         return true &&
             (
-                this.TranscriptionEngines == other.TranscriptionEngines ||
-                this.TranscriptionEngines != null &&
-                this.TranscriptionEngines.SequenceEqual(other.TranscriptionEngines)
+                TranscriptionEngines == other.TranscriptionEngines ||
+                TranscriptionEngines != null &&
+                TranscriptionEngines.SequenceEqual(other.TranscriptionEngines)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class TranscriptionEnginesRequest : IEquatable<TranscriptionEngin
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TranscriptionEngines != null)
+            if (TranscriptionEngines != null)
             {
-                hash = hash * 59 + this.TranscriptionEngines.GetHashCode();
+                hash = hash * 59 + TranscriptionEngines.GetHashCode();
             }
 
             return hash;

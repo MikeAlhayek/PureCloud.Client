@@ -196,7 +196,7 @@ public partial class SystemMessageSystemMessage : IEquatable<SystemMessageSystem
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SystemMessageSystemMessage);
+        return Equals(obj as SystemMessageSystemMessage);
     }
 
     /// <summary>
@@ -214,49 +214,49 @@ public partial class SystemMessageSystemMessage : IEquatable<SystemMessageSystem
 
         return true &&
             (
-                this.ChannelId == other.ChannelId ||
-                this.ChannelId != null &&
-                this.ChannelId.Equals(other.ChannelId)
+                ChannelId == other.ChannelId ||
+                ChannelId != null &&
+                ChannelId.Equals(other.ChannelId)
             ) &&
             (
-                this.SystemTopicType == other.SystemTopicType ||
-                this.SystemTopicType != null &&
-                this.SystemTopicType.Equals(other.SystemTopicType)
+                SystemTopicType == other.SystemTopicType ||
+                SystemTopicType != null &&
+                SystemTopicType.Equals(other.SystemTopicType)
             ) &&
             (
-                this.CorrelationId == other.CorrelationId ||
-                this.CorrelationId != null &&
-                this.CorrelationId.Equals(other.CorrelationId)
+                CorrelationId == other.CorrelationId ||
+                CorrelationId != null &&
+                CorrelationId.Equals(other.CorrelationId)
             ) &&
             (
-                this.OrganizationId == other.OrganizationId ||
-                this.OrganizationId != null &&
-                this.OrganizationId.Equals(other.OrganizationId)
+                OrganizationId == other.OrganizationId ||
+                OrganizationId != null &&
+                OrganizationId.Equals(other.OrganizationId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.OauthClientId == other.OauthClientId ||
-                this.OauthClientId != null &&
-                this.OauthClientId.Equals(other.OauthClientId)
+                OauthClientId == other.OauthClientId ||
+                OauthClientId != null &&
+                OauthClientId.Equals(other.OauthClientId)
             ) &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Data == other.Data ||
-                this.Data != null &&
-                this.Data.SequenceEqual(other.Data)
+                Data == other.Data ||
+                Data != null &&
+                Data.SequenceEqual(other.Data)
             );
     }
 
@@ -271,49 +271,49 @@ public partial class SystemMessageSystemMessage : IEquatable<SystemMessageSystem
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ChannelId != null)
+            if (ChannelId != null)
             {
-                hash = hash * 59 + this.ChannelId.GetHashCode();
+                hash = hash * 59 + ChannelId.GetHashCode();
             }
 
-            if (this.SystemTopicType != null)
+            if (SystemTopicType != null)
             {
-                hash = hash * 59 + this.SystemTopicType.GetHashCode();
+                hash = hash * 59 + SystemTopicType.GetHashCode();
             }
 
-            if (this.CorrelationId != null)
+            if (CorrelationId != null)
             {
-                hash = hash * 59 + this.CorrelationId.GetHashCode();
+                hash = hash * 59 + CorrelationId.GetHashCode();
             }
 
-            if (this.OrganizationId != null)
+            if (OrganizationId != null)
             {
-                hash = hash * 59 + this.OrganizationId.GetHashCode();
+                hash = hash * 59 + OrganizationId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.OauthClientId != null)
+            if (OauthClientId != null)
             {
-                hash = hash * 59 + this.OauthClientId.GetHashCode();
+                hash = hash * 59 + OauthClientId.GetHashCode();
             }
 
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Data != null)
+            if (Data != null)
             {
-                hash = hash * 59 + this.Data.GetHashCode();
+                hash = hash * 59 + Data.GetHashCode();
             }
 
             return hash;

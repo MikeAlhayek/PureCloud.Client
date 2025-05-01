@@ -100,7 +100,7 @@ public partial class AnalyticsFlowOutcome : IEquatable<AnalyticsFlowOutcome>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsFlowOutcome);
+        return Equals(obj as AnalyticsFlowOutcome);
     }
 
     /// <summary>
@@ -118,29 +118,29 @@ public partial class AnalyticsFlowOutcome : IEquatable<AnalyticsFlowOutcome>
 
         return true &&
             (
-                this.FlowOutcome == other.FlowOutcome ||
-                this.FlowOutcome != null &&
-                this.FlowOutcome.Equals(other.FlowOutcome)
+                FlowOutcome == other.FlowOutcome ||
+                FlowOutcome != null &&
+                FlowOutcome.Equals(other.FlowOutcome)
             ) &&
             (
-                this.FlowOutcomeEndTimestamp == other.FlowOutcomeEndTimestamp ||
-                this.FlowOutcomeEndTimestamp != null &&
-                this.FlowOutcomeEndTimestamp.Equals(other.FlowOutcomeEndTimestamp)
+                FlowOutcomeEndTimestamp == other.FlowOutcomeEndTimestamp ||
+                FlowOutcomeEndTimestamp != null &&
+                FlowOutcomeEndTimestamp.Equals(other.FlowOutcomeEndTimestamp)
             ) &&
             (
-                this.FlowOutcomeId == other.FlowOutcomeId ||
-                this.FlowOutcomeId != null &&
-                this.FlowOutcomeId.Equals(other.FlowOutcomeId)
+                FlowOutcomeId == other.FlowOutcomeId ||
+                FlowOutcomeId != null &&
+                FlowOutcomeId.Equals(other.FlowOutcomeId)
             ) &&
             (
-                this.FlowOutcomeStartTimestamp == other.FlowOutcomeStartTimestamp ||
-                this.FlowOutcomeStartTimestamp != null &&
-                this.FlowOutcomeStartTimestamp.Equals(other.FlowOutcomeStartTimestamp)
+                FlowOutcomeStartTimestamp == other.FlowOutcomeStartTimestamp ||
+                FlowOutcomeStartTimestamp != null &&
+                FlowOutcomeStartTimestamp.Equals(other.FlowOutcomeStartTimestamp)
             ) &&
             (
-                this.FlowOutcomeValue == other.FlowOutcomeValue ||
-                this.FlowOutcomeValue != null &&
-                this.FlowOutcomeValue.Equals(other.FlowOutcomeValue)
+                FlowOutcomeValue == other.FlowOutcomeValue ||
+                FlowOutcomeValue != null &&
+                FlowOutcomeValue.Equals(other.FlowOutcomeValue)
             );
     }
 
@@ -155,29 +155,29 @@ public partial class AnalyticsFlowOutcome : IEquatable<AnalyticsFlowOutcome>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FlowOutcome != null)
+            if (FlowOutcome != null)
             {
-                hash = hash * 59 + this.FlowOutcome.GetHashCode();
+                hash = hash * 59 + FlowOutcome.GetHashCode();
             }
 
-            if (this.FlowOutcomeEndTimestamp != null)
+            if (FlowOutcomeEndTimestamp != null)
             {
-                hash = hash * 59 + this.FlowOutcomeEndTimestamp.GetHashCode();
+                hash = hash * 59 + FlowOutcomeEndTimestamp.GetHashCode();
             }
 
-            if (this.FlowOutcomeId != null)
+            if (FlowOutcomeId != null)
             {
-                hash = hash * 59 + this.FlowOutcomeId.GetHashCode();
+                hash = hash * 59 + FlowOutcomeId.GetHashCode();
             }
 
-            if (this.FlowOutcomeStartTimestamp != null)
+            if (FlowOutcomeStartTimestamp != null)
             {
-                hash = hash * 59 + this.FlowOutcomeStartTimestamp.GetHashCode();
+                hash = hash * 59 + FlowOutcomeStartTimestamp.GetHashCode();
             }
 
-            if (this.FlowOutcomeValue != null)
+            if (FlowOutcomeValue != null)
             {
-                hash = hash * 59 + this.FlowOutcomeValue.GetHashCode();
+                hash = hash * 59 + FlowOutcomeValue.GetHashCode();
             }
 
             return hash;

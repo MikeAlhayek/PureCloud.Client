@@ -63,7 +63,7 @@ public partial class RetentionDuration : IEquatable<RetentionDuration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RetentionDuration);
+        return Equals(obj as RetentionDuration);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class RetentionDuration : IEquatable<RetentionDuration>
 
         return true &&
             (
-                this.ArchiveRetention == other.ArchiveRetention ||
-                this.ArchiveRetention != null &&
-                this.ArchiveRetention.Equals(other.ArchiveRetention)
+                ArchiveRetention == other.ArchiveRetention ||
+                ArchiveRetention != null &&
+                ArchiveRetention.Equals(other.ArchiveRetention)
             ) &&
             (
-                this.DeleteRetention == other.DeleteRetention ||
-                this.DeleteRetention != null &&
-                this.DeleteRetention.Equals(other.DeleteRetention)
+                DeleteRetention == other.DeleteRetention ||
+                DeleteRetention != null &&
+                DeleteRetention.Equals(other.DeleteRetention)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class RetentionDuration : IEquatable<RetentionDuration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ArchiveRetention != null)
+            if (ArchiveRetention != null)
             {
-                hash = hash * 59 + this.ArchiveRetention.GetHashCode();
+                hash = hash * 59 + ArchiveRetention.GetHashCode();
             }
 
-            if (this.DeleteRetention != null)
+            if (DeleteRetention != null)
             {
-                hash = hash * 59 + this.DeleteRetention.GetHashCode();
+                hash = hash * 59 + DeleteRetention.GetHashCode();
             }
 
             return hash;

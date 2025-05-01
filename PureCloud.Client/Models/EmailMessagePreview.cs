@@ -306,7 +306,7 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailMessagePreview);
+        return Equals(obj as EmailMessagePreview);
     }
 
     /// <summary>
@@ -324,89 +324,89 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.To == other.To ||
-                this.To != null &&
-                this.To.SequenceEqual(other.To)
+                To == other.To ||
+                To != null &&
+                To.SequenceEqual(other.To)
             ) &&
             (
-                this.Cc == other.Cc ||
-                this.Cc != null &&
-                this.Cc.SequenceEqual(other.Cc)
+                Cc == other.Cc ||
+                Cc != null &&
+                Cc.SequenceEqual(other.Cc)
             ) &&
             (
-                this.Bcc == other.Bcc ||
-                this.Bcc != null &&
-                this.Bcc.SequenceEqual(other.Bcc)
+                Bcc == other.Bcc ||
+                Bcc != null &&
+                Bcc.SequenceEqual(other.Bcc)
             ) &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.ReplyTo == other.ReplyTo ||
-                this.ReplyTo != null &&
-                this.ReplyTo.Equals(other.ReplyTo)
+                ReplyTo == other.ReplyTo ||
+                ReplyTo != null &&
+                ReplyTo.Equals(other.ReplyTo)
             ) &&
             (
-                this.Subject == other.Subject ||
-                this.Subject != null &&
-                this.Subject.Equals(other.Subject)
+                Subject == other.Subject ||
+                Subject != null &&
+                Subject.Equals(other.Subject)
             ) &&
             (
-                this.Attachments == other.Attachments ||
-                this.Attachments != null &&
-                this.Attachments.SequenceEqual(other.Attachments)
+                Attachments == other.Attachments ||
+                Attachments != null &&
+                Attachments.SequenceEqual(other.Attachments)
             ) &&
             (
-                this.TextBodyPreview == other.TextBodyPreview ||
-                this.TextBodyPreview != null &&
-                this.TextBodyPreview.Equals(other.TextBodyPreview)
+                TextBodyPreview == other.TextBodyPreview ||
+                TextBodyPreview != null &&
+                TextBodyPreview.Equals(other.TextBodyPreview)
             ) &&
             (
-                this.Time == other.Time ||
-                this.Time != null &&
-                this.Time.Equals(other.Time)
+                Time == other.Time ||
+                Time != null &&
+                Time.Equals(other.Time)
             ) &&
             (
-                this.HistoryIncluded == other.HistoryIncluded ||
-                this.HistoryIncluded != null &&
-                this.HistoryIncluded.Equals(other.HistoryIncluded)
+                HistoryIncluded == other.HistoryIncluded ||
+                HistoryIncluded != null &&
+                HistoryIncluded.Equals(other.HistoryIncluded)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.DraftType == other.DraftType ||
-                this.DraftType != null &&
-                this.DraftType.Equals(other.DraftType)
+                DraftType == other.DraftType ||
+                DraftType != null &&
+                DraftType.Equals(other.DraftType)
             ) &&
             (
-                this.EmailSizeBytes == other.EmailSizeBytes ||
-                this.EmailSizeBytes != null &&
-                this.EmailSizeBytes.Equals(other.EmailSizeBytes)
+                EmailSizeBytes == other.EmailSizeBytes ||
+                EmailSizeBytes != null &&
+                EmailSizeBytes.Equals(other.EmailSizeBytes)
             ) &&
             (
-                this.MaxEmailSizeBytes == other.MaxEmailSizeBytes ||
-                this.MaxEmailSizeBytes != null &&
-                this.MaxEmailSizeBytes.Equals(other.MaxEmailSizeBytes)
+                MaxEmailSizeBytes == other.MaxEmailSizeBytes ||
+                MaxEmailSizeBytes != null &&
+                MaxEmailSizeBytes.Equals(other.MaxEmailSizeBytes)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -421,89 +421,89 @@ public partial class EmailMessagePreview : IEquatable<EmailMessagePreview>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.To != null)
+            if (To != null)
             {
-                hash = hash * 59 + this.To.GetHashCode();
+                hash = hash * 59 + To.GetHashCode();
             }
 
-            if (this.Cc != null)
+            if (Cc != null)
             {
-                hash = hash * 59 + this.Cc.GetHashCode();
+                hash = hash * 59 + Cc.GetHashCode();
             }
 
-            if (this.Bcc != null)
+            if (Bcc != null)
             {
-                hash = hash * 59 + this.Bcc.GetHashCode();
+                hash = hash * 59 + Bcc.GetHashCode();
             }
 
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.ReplyTo != null)
+            if (ReplyTo != null)
             {
-                hash = hash * 59 + this.ReplyTo.GetHashCode();
+                hash = hash * 59 + ReplyTo.GetHashCode();
             }
 
-            if (this.Subject != null)
+            if (Subject != null)
             {
-                hash = hash * 59 + this.Subject.GetHashCode();
+                hash = hash * 59 + Subject.GetHashCode();
             }
 
-            if (this.Attachments != null)
+            if (Attachments != null)
             {
-                hash = hash * 59 + this.Attachments.GetHashCode();
+                hash = hash * 59 + Attachments.GetHashCode();
             }
 
-            if (this.TextBodyPreview != null)
+            if (TextBodyPreview != null)
             {
-                hash = hash * 59 + this.TextBodyPreview.GetHashCode();
+                hash = hash * 59 + TextBodyPreview.GetHashCode();
             }
 
-            if (this.Time != null)
+            if (Time != null)
             {
-                hash = hash * 59 + this.Time.GetHashCode();
+                hash = hash * 59 + Time.GetHashCode();
             }
 
-            if (this.HistoryIncluded != null)
+            if (HistoryIncluded != null)
             {
-                hash = hash * 59 + this.HistoryIncluded.GetHashCode();
+                hash = hash * 59 + HistoryIncluded.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.DraftType != null)
+            if (DraftType != null)
             {
-                hash = hash * 59 + this.DraftType.GetHashCode();
+                hash = hash * 59 + DraftType.GetHashCode();
             }
 
-            if (this.EmailSizeBytes != null)
+            if (EmailSizeBytes != null)
             {
-                hash = hash * 59 + this.EmailSizeBytes.GetHashCode();
+                hash = hash * 59 + EmailSizeBytes.GetHashCode();
             }
 
-            if (this.MaxEmailSizeBytes != null)
+            if (MaxEmailSizeBytes != null)
             {
-                hash = hash * 59 + this.MaxEmailSizeBytes.GetHashCode();
+                hash = hash * 59 + MaxEmailSizeBytes.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -101,7 +101,7 @@ public partial class RecordingSettings : IEquatable<RecordingSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingSettings);
+        return Equals(obj as RecordingSettings);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class RecordingSettings : IEquatable<RecordingSettings>
 
         return true &&
             (
-                this.MaxSimultaneousStreams == other.MaxSimultaneousStreams ||
-                this.MaxSimultaneousStreams != null &&
-                this.MaxSimultaneousStreams.Equals(other.MaxSimultaneousStreams)
+                MaxSimultaneousStreams == other.MaxSimultaneousStreams ||
+                MaxSimultaneousStreams != null &&
+                MaxSimultaneousStreams.Equals(other.MaxSimultaneousStreams)
             ) &&
             (
-                this.MaxConfigurableScreenRecordingStreams == other.MaxConfigurableScreenRecordingStreams ||
-                this.MaxConfigurableScreenRecordingStreams != null &&
-                this.MaxConfigurableScreenRecordingStreams.Equals(other.MaxConfigurableScreenRecordingStreams)
+                MaxConfigurableScreenRecordingStreams == other.MaxConfigurableScreenRecordingStreams ||
+                MaxConfigurableScreenRecordingStreams != null &&
+                MaxConfigurableScreenRecordingStreams.Equals(other.MaxConfigurableScreenRecordingStreams)
             ) &&
             (
-                this.RegionalRecordingStorageEnabled == other.RegionalRecordingStorageEnabled ||
-                this.RegionalRecordingStorageEnabled != null &&
-                this.RegionalRecordingStorageEnabled.Equals(other.RegionalRecordingStorageEnabled)
+                RegionalRecordingStorageEnabled == other.RegionalRecordingStorageEnabled ||
+                RegionalRecordingStorageEnabled != null &&
+                RegionalRecordingStorageEnabled.Equals(other.RegionalRecordingStorageEnabled)
             ) &&
             (
-                this.RecordingPlaybackUrlTtl == other.RecordingPlaybackUrlTtl ||
-                this.RecordingPlaybackUrlTtl != null &&
-                this.RecordingPlaybackUrlTtl.Equals(other.RecordingPlaybackUrlTtl)
+                RecordingPlaybackUrlTtl == other.RecordingPlaybackUrlTtl ||
+                RecordingPlaybackUrlTtl != null &&
+                RecordingPlaybackUrlTtl.Equals(other.RecordingPlaybackUrlTtl)
             ) &&
             (
-                this.RecordingBatchDownloadUrlTtl == other.RecordingBatchDownloadUrlTtl ||
-                this.RecordingBatchDownloadUrlTtl != null &&
-                this.RecordingBatchDownloadUrlTtl.Equals(other.RecordingBatchDownloadUrlTtl)
+                RecordingBatchDownloadUrlTtl == other.RecordingBatchDownloadUrlTtl ||
+                RecordingBatchDownloadUrlTtl != null &&
+                RecordingBatchDownloadUrlTtl.Equals(other.RecordingBatchDownloadUrlTtl)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class RecordingSettings : IEquatable<RecordingSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MaxSimultaneousStreams != null)
+            if (MaxSimultaneousStreams != null)
             {
-                hash = hash * 59 + this.MaxSimultaneousStreams.GetHashCode();
+                hash = hash * 59 + MaxSimultaneousStreams.GetHashCode();
             }
 
-            if (this.MaxConfigurableScreenRecordingStreams != null)
+            if (MaxConfigurableScreenRecordingStreams != null)
             {
-                hash = hash * 59 + this.MaxConfigurableScreenRecordingStreams.GetHashCode();
+                hash = hash * 59 + MaxConfigurableScreenRecordingStreams.GetHashCode();
             }
 
-            if (this.RegionalRecordingStorageEnabled != null)
+            if (RegionalRecordingStorageEnabled != null)
             {
-                hash = hash * 59 + this.RegionalRecordingStorageEnabled.GetHashCode();
+                hash = hash * 59 + RegionalRecordingStorageEnabled.GetHashCode();
             }
 
-            if (this.RecordingPlaybackUrlTtl != null)
+            if (RecordingPlaybackUrlTtl != null)
             {
-                hash = hash * 59 + this.RecordingPlaybackUrlTtl.GetHashCode();
+                hash = hash * 59 + RecordingPlaybackUrlTtl.GetHashCode();
             }
 
-            if (this.RecordingBatchDownloadUrlTtl != null)
+            if (RecordingBatchDownloadUrlTtl != null)
             {
-                hash = hash * 59 + this.RecordingBatchDownloadUrlTtl.GetHashCode();
+                hash = hash * 59 + RecordingBatchDownloadUrlTtl.GetHashCode();
             }
 
             return hash;

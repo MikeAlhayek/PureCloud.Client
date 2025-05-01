@@ -127,7 +127,7 @@ public partial class UpdateMuAgentWorkPlanFailureResponse : IEquatable<UpdateMuA
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateMuAgentWorkPlanFailureResponse);
+        return Equals(obj as UpdateMuAgentWorkPlanFailureResponse);
     }
 
     /// <summary>
@@ -145,19 +145,19 @@ public partial class UpdateMuAgentWorkPlanFailureResponse : IEquatable<UpdateMuA
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Failure == other.Failure ||
-                this.Failure != null &&
-                this.Failure.Equals(other.Failure)
+                Failure == other.Failure ||
+                Failure != null &&
+                Failure.Equals(other.Failure)
             ) &&
             (
-                this.NotFoundWorkPlanId == other.NotFoundWorkPlanId ||
-                this.NotFoundWorkPlanId != null &&
-                this.NotFoundWorkPlanId.Equals(other.NotFoundWorkPlanId)
+                NotFoundWorkPlanId == other.NotFoundWorkPlanId ||
+                NotFoundWorkPlanId != null &&
+                NotFoundWorkPlanId.Equals(other.NotFoundWorkPlanId)
             );
     }
 
@@ -172,19 +172,19 @@ public partial class UpdateMuAgentWorkPlanFailureResponse : IEquatable<UpdateMuA
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Failure != null)
+            if (Failure != null)
             {
-                hash = hash * 59 + this.Failure.GetHashCode();
+                hash = hash * 59 + Failure.GetHashCode();
             }
 
-            if (this.NotFoundWorkPlanId != null)
+            if (NotFoundWorkPlanId != null)
             {
-                hash = hash * 59 + this.NotFoundWorkPlanId.GetHashCode();
+                hash = hash * 59 + NotFoundWorkPlanId.GetHashCode();
             }
 
             return hash;

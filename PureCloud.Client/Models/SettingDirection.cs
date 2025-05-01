@@ -117,7 +117,7 @@ public partial class SettingDirection : IEquatable<SettingDirection>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SettingDirection);
+        return Equals(obj as SettingDirection);
     }
 
     /// <summary>
@@ -135,14 +135,14 @@ public partial class SettingDirection : IEquatable<SettingDirection>
 
         return true &&
             (
-                this.Inbound == other.Inbound ||
-                this.Inbound != null &&
-                this.Inbound.Equals(other.Inbound)
+                Inbound == other.Inbound ||
+                Inbound != null &&
+                Inbound.Equals(other.Inbound)
             ) &&
             (
-                this.Outbound == other.Outbound ||
-                this.Outbound != null &&
-                this.Outbound.Equals(other.Outbound)
+                Outbound == other.Outbound ||
+                Outbound != null &&
+                Outbound.Equals(other.Outbound)
             );
     }
 
@@ -157,14 +157,14 @@ public partial class SettingDirection : IEquatable<SettingDirection>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Inbound != null)
+            if (Inbound != null)
             {
-                hash = hash * 59 + this.Inbound.GetHashCode();
+                hash = hash * 59 + Inbound.GetHashCode();
             }
 
-            if (this.Outbound != null)
+            if (Outbound != null)
             {
-                hash = hash * 59 + this.Outbound.GetHashCode();
+                hash = hash * 59 + Outbound.GetHashCode();
             }
 
             return hash;

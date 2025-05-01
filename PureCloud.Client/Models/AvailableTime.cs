@@ -152,7 +152,7 @@ public partial class AvailableTime : IEquatable<AvailableTime>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AvailableTime);
+        return Equals(obj as AvailableTime);
     }
 
     /// <summary>
@@ -170,29 +170,29 @@ public partial class AvailableTime : IEquatable<AvailableTime>
 
         return true &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.IsPaid == other.IsPaid ||
-                this.IsPaid != null &&
-                this.IsPaid.Equals(other.IsPaid)
+                IsPaid == other.IsPaid ||
+                IsPaid != null &&
+                IsPaid.Equals(other.IsPaid)
             ) &&
             (
-                this.ActivityCategory == other.ActivityCategory ||
-                this.ActivityCategory != null &&
-                this.ActivityCategory.Equals(other.ActivityCategory)
+                ActivityCategory == other.ActivityCategory ||
+                ActivityCategory != null &&
+                ActivityCategory.Equals(other.ActivityCategory)
             ) &&
             (
-                this.WfmSchedule == other.WfmSchedule ||
-                this.WfmSchedule != null &&
-                this.WfmSchedule.Equals(other.WfmSchedule)
+                WfmSchedule == other.WfmSchedule ||
+                WfmSchedule != null &&
+                WfmSchedule.Equals(other.WfmSchedule)
             );
     }
 
@@ -207,29 +207,29 @@ public partial class AvailableTime : IEquatable<AvailableTime>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.IsPaid != null)
+            if (IsPaid != null)
             {
-                hash = hash * 59 + this.IsPaid.GetHashCode();
+                hash = hash * 59 + IsPaid.GetHashCode();
             }
 
-            if (this.ActivityCategory != null)
+            if (ActivityCategory != null)
             {
-                hash = hash * 59 + this.ActivityCategory.GetHashCode();
+                hash = hash * 59 + ActivityCategory.GetHashCode();
             }
 
-            if (this.WfmSchedule != null)
+            if (WfmSchedule != null)
             {
-                hash = hash * 59 + this.WfmSchedule.GetHashCode();
+                hash = hash * 59 + WfmSchedule.GetHashCode();
             }
 
             return hash;

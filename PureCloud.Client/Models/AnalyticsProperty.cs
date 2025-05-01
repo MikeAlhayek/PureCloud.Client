@@ -126,7 +126,7 @@ public partial class AnalyticsProperty : IEquatable<AnalyticsProperty>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsProperty);
+        return Equals(obj as AnalyticsProperty);
     }
 
     /// <summary>
@@ -144,19 +144,19 @@ public partial class AnalyticsProperty : IEquatable<AnalyticsProperty>
 
         return true &&
             (
-                this.Property == other.Property ||
-                this.Property != null &&
-                this.Property.Equals(other.Property)
+                Property == other.Property ||
+                Property != null &&
+                Property.Equals(other.Property)
             ) &&
             (
-                this.PropertyType == other.PropertyType ||
-                this.PropertyType != null &&
-                this.PropertyType.Equals(other.PropertyType)
+                PropertyType == other.PropertyType ||
+                PropertyType != null &&
+                PropertyType.Equals(other.PropertyType)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -171,19 +171,19 @@ public partial class AnalyticsProperty : IEquatable<AnalyticsProperty>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Property != null)
+            if (Property != null)
             {
-                hash = hash * 59 + this.Property.GetHashCode();
+                hash = hash * 59 + Property.GetHashCode();
             }
 
-            if (this.PropertyType != null)
+            if (PropertyType != null)
             {
-                hash = hash * 59 + this.PropertyType.GetHashCode();
+                hash = hash * 59 + PropertyType.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

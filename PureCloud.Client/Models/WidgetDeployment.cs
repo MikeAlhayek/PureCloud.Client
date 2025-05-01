@@ -194,7 +194,7 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WidgetDeployment);
+        return Equals(obj as WidgetDeployment);
     }
 
     /// <summary>
@@ -212,54 +212,54 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.AuthenticationRequired == other.AuthenticationRequired ||
-                this.AuthenticationRequired != null &&
-                this.AuthenticationRequired.Equals(other.AuthenticationRequired)
+                AuthenticationRequired == other.AuthenticationRequired ||
+                AuthenticationRequired != null &&
+                AuthenticationRequired.Equals(other.AuthenticationRequired)
             ) &&
             (
-                this.Disabled == other.Disabled ||
-                this.Disabled != null &&
-                this.Disabled.Equals(other.Disabled)
+                Disabled == other.Disabled ||
+                Disabled != null &&
+                Disabled.Equals(other.Disabled)
             ) &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             ) &&
             (
-                this.AllowedDomains == other.AllowedDomains ||
-                this.AllowedDomains != null &&
-                this.AllowedDomains.SequenceEqual(other.AllowedDomains)
+                AllowedDomains == other.AllowedDomains ||
+                AllowedDomains != null &&
+                AllowedDomains.SequenceEqual(other.AllowedDomains)
             ) &&
             (
-                this.ClientType == other.ClientType ||
-                this.ClientType != null &&
-                this.ClientType.Equals(other.ClientType)
+                ClientType == other.ClientType ||
+                ClientType != null &&
+                ClientType.Equals(other.ClientType)
             ) &&
             (
-                this.ClientConfig == other.ClientConfig ||
-                this.ClientConfig != null &&
-                this.ClientConfig.Equals(other.ClientConfig)
+                ClientConfig == other.ClientConfig ||
+                ClientConfig != null &&
+                ClientConfig.Equals(other.ClientConfig)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -274,54 +274,54 @@ public partial class WidgetDeployment : IEquatable<WidgetDeployment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.AuthenticationRequired != null)
+            if (AuthenticationRequired != null)
             {
-                hash = hash * 59 + this.AuthenticationRequired.GetHashCode();
+                hash = hash * 59 + AuthenticationRequired.GetHashCode();
             }
 
-            if (this.Disabled != null)
+            if (Disabled != null)
             {
-                hash = hash * 59 + this.Disabled.GetHashCode();
+                hash = hash * 59 + Disabled.GetHashCode();
             }
 
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
-            if (this.AllowedDomains != null)
+            if (AllowedDomains != null)
             {
-                hash = hash * 59 + this.AllowedDomains.GetHashCode();
+                hash = hash * 59 + AllowedDomains.GetHashCode();
             }
 
-            if (this.ClientType != null)
+            if (ClientType != null)
             {
-                hash = hash * 59 + this.ClientType.GetHashCode();
+                hash = hash * 59 + ClientType.GetHashCode();
             }
 
-            if (this.ClientConfig != null)
+            if (ClientConfig != null)
             {
-                hash = hash * 59 + this.ClientConfig.GetHashCode();
+                hash = hash * 59 + ClientConfig.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

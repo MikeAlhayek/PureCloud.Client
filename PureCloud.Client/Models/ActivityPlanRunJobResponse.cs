@@ -146,7 +146,7 @@ public partial class ActivityPlanRunJobResponse : IEquatable<ActivityPlanRunJobR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActivityPlanRunJobResponse);
+        return Equals(obj as ActivityPlanRunJobResponse);
     }
 
     /// <summary>
@@ -164,34 +164,34 @@ public partial class ActivityPlanRunJobResponse : IEquatable<ActivityPlanRunJobR
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ActivityPlan == other.ActivityPlan ||
-                this.ActivityPlan != null &&
-                this.ActivityPlan.Equals(other.ActivityPlan)
+                ActivityPlan == other.ActivityPlan ||
+                ActivityPlan != null &&
+                ActivityPlan.Equals(other.ActivityPlan)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Exceptions == other.Exceptions ||
-                this.Exceptions != null &&
-                this.Exceptions.SequenceEqual(other.Exceptions)
+                Exceptions == other.Exceptions ||
+                Exceptions != null &&
+                Exceptions.SequenceEqual(other.Exceptions)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -206,34 +206,34 @@ public partial class ActivityPlanRunJobResponse : IEquatable<ActivityPlanRunJobR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ActivityPlan != null)
+            if (ActivityPlan != null)
             {
-                hash = hash * 59 + this.ActivityPlan.GetHashCode();
+                hash = hash * 59 + ActivityPlan.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Exceptions != null)
+            if (Exceptions != null)
             {
-                hash = hash * 59 + this.Exceptions.GetHashCode();
+                hash = hash * 59 + Exceptions.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

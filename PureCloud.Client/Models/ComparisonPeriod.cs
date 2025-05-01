@@ -111,7 +111,7 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ComparisonPeriod);
+        return Equals(obj as ComparisonPeriod);
     }
 
     /// <summary>
@@ -129,39 +129,39 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Kpi == other.Kpi ||
-                this.Kpi != null &&
-                this.Kpi.Equals(other.Kpi)
+                Kpi == other.Kpi ||
+                Kpi != null &&
+                Kpi.Equals(other.Kpi)
             ) &&
             (
-                this.DateStarted == other.DateStarted ||
-                this.DateStarted != null &&
-                this.DateStarted.Equals(other.DateStarted)
+                DateStarted == other.DateStarted ||
+                DateStarted != null &&
+                DateStarted.Equals(other.DateStarted)
             ) &&
             (
-                this.DateEnded == other.DateEnded ||
-                this.DateEnded != null &&
-                this.DateEnded.Equals(other.DateEnded)
+                DateEnded == other.DateEnded ||
+                DateEnded != null &&
+                DateEnded.Equals(other.DateEnded)
             ) &&
             (
-                this.PercentageBenefit == other.PercentageBenefit ||
-                this.PercentageBenefit != null &&
-                this.PercentageBenefit.Equals(other.PercentageBenefit)
+                PercentageBenefit == other.PercentageBenefit ||
+                PercentageBenefit != null &&
+                PercentageBenefit.Equals(other.PercentageBenefit)
             ) &&
             (
-                this.KpiResults == other.KpiResults ||
-                this.KpiResults != null &&
-                this.KpiResults.SequenceEqual(other.KpiResults)
+                KpiResults == other.KpiResults ||
+                KpiResults != null &&
+                KpiResults.SequenceEqual(other.KpiResults)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -176,39 +176,39 @@ public partial class ComparisonPeriod : IEquatable<ComparisonPeriod>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Kpi != null)
+            if (Kpi != null)
             {
-                hash = hash * 59 + this.Kpi.GetHashCode();
+                hash = hash * 59 + Kpi.GetHashCode();
             }
 
-            if (this.DateStarted != null)
+            if (DateStarted != null)
             {
-                hash = hash * 59 + this.DateStarted.GetHashCode();
+                hash = hash * 59 + DateStarted.GetHashCode();
             }
 
-            if (this.DateEnded != null)
+            if (DateEnded != null)
             {
-                hash = hash * 59 + this.DateEnded.GetHashCode();
+                hash = hash * 59 + DateEnded.GetHashCode();
             }
 
-            if (this.PercentageBenefit != null)
+            if (PercentageBenefit != null)
             {
-                hash = hash * 59 + this.PercentageBenefit.GetHashCode();
+                hash = hash * 59 + PercentageBenefit.GetHashCode();
             }
 
-            if (this.KpiResults != null)
+            if (KpiResults != null)
             {
-                hash = hash * 59 + this.KpiResults.GetHashCode();
+                hash = hash * 59 + KpiResults.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

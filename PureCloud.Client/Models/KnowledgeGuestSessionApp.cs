@@ -97,7 +97,7 @@ public partial class KnowledgeGuestSessionApp : IEquatable<KnowledgeGuestSession
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeGuestSessionApp);
+        return Equals(obj as KnowledgeGuestSessionApp);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class KnowledgeGuestSessionApp : IEquatable<KnowledgeGuestSession
 
         return true &&
             (
-                this.DeploymentId == other.DeploymentId ||
-                this.DeploymentId != null &&
-                this.DeploymentId.Equals(other.DeploymentId)
+                DeploymentId == other.DeploymentId ||
+                DeploymentId != null &&
+                DeploymentId.Equals(other.DeploymentId)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class KnowledgeGuestSessionApp : IEquatable<KnowledgeGuestSession
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DeploymentId != null)
+            if (DeploymentId != null)
             {
-                hash = hash * 59 + this.DeploymentId.GetHashCode();
+                hash = hash * 59 + DeploymentId.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

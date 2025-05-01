@@ -238,7 +238,7 @@ public partial class ChatMessage : IEquatable<ChatMessage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatMessage);
+        return Equals(obj as ChatMessage);
     }
 
     /// <summary>
@@ -256,64 +256,64 @@ public partial class ChatMessage : IEquatable<ChatMessage>
 
         return true &&
             (
-                this.Body == other.Body ||
-                this.Body != null &&
-                this.Body.Equals(other.Body)
+                Body == other.Body ||
+                Body != null &&
+                Body.Equals(other.Body)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.To == other.To ||
-                this.To != null &&
-                this.To.Equals(other.To)
+                To == other.To ||
+                To != null &&
+                To.Equals(other.To)
             ) &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.Utc == other.Utc ||
-                this.Utc != null &&
-                this.Utc.Equals(other.Utc)
+                Utc == other.Utc ||
+                Utc != null &&
+                Utc.Equals(other.Utc)
             ) &&
             (
-                this.Chat == other.Chat ||
-                this.Chat != null &&
-                this.Chat.Equals(other.Chat)
+                Chat == other.Chat ||
+                Chat != null &&
+                Chat.Equals(other.Chat)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.BodyType == other.BodyType ||
-                this.BodyType != null &&
-                this.BodyType.Equals(other.BodyType)
+                BodyType == other.BodyType ||
+                BodyType != null &&
+                BodyType.Equals(other.BodyType)
             ) &&
             (
-                this.SenderCommunicationId == other.SenderCommunicationId ||
-                this.SenderCommunicationId != null &&
-                this.SenderCommunicationId.Equals(other.SenderCommunicationId)
+                SenderCommunicationId == other.SenderCommunicationId ||
+                SenderCommunicationId != null &&
+                SenderCommunicationId.Equals(other.SenderCommunicationId)
             ) &&
             (
-                this.ParticipantPurpose == other.ParticipantPurpose ||
-                this.ParticipantPurpose != null &&
-                this.ParticipantPurpose.Equals(other.ParticipantPurpose)
+                ParticipantPurpose == other.ParticipantPurpose ||
+                ParticipantPurpose != null &&
+                ParticipantPurpose.Equals(other.ParticipantPurpose)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             );
     }
 
@@ -328,64 +328,64 @@ public partial class ChatMessage : IEquatable<ChatMessage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Body != null)
+            if (Body != null)
             {
-                hash = hash * 59 + this.Body.GetHashCode();
+                hash = hash * 59 + Body.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.To != null)
+            if (To != null)
             {
-                hash = hash * 59 + this.To.GetHashCode();
+                hash = hash * 59 + To.GetHashCode();
             }
 
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.Utc != null)
+            if (Utc != null)
             {
-                hash = hash * 59 + this.Utc.GetHashCode();
+                hash = hash * 59 + Utc.GetHashCode();
             }
 
-            if (this.Chat != null)
+            if (Chat != null)
             {
-                hash = hash * 59 + this.Chat.GetHashCode();
+                hash = hash * 59 + Chat.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.BodyType != null)
+            if (BodyType != null)
             {
-                hash = hash * 59 + this.BodyType.GetHashCode();
+                hash = hash * 59 + BodyType.GetHashCode();
             }
 
-            if (this.SenderCommunicationId != null)
+            if (SenderCommunicationId != null)
             {
-                hash = hash * 59 + this.SenderCommunicationId.GetHashCode();
+                hash = hash * 59 + SenderCommunicationId.GetHashCode();
             }
 
-            if (this.ParticipantPurpose != null)
+            if (ParticipantPurpose != null)
             {
-                hash = hash * 59 + this.ParticipantPurpose.GetHashCode();
+                hash = hash * 59 + ParticipantPurpose.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
             return hash;

@@ -201,7 +201,7 @@ public partial class ObjectiveZone : IEquatable<ObjectiveZone>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ObjectiveZone);
+        return Equals(obj as ObjectiveZone);
     }
 
     /// <summary>
@@ -219,39 +219,39 @@ public partial class ObjectiveZone : IEquatable<ObjectiveZone>
 
         return true &&
             (
-                this.Label == other.Label ||
-                this.Label != null &&
-                this.Label.Equals(other.Label)
+                Label == other.Label ||
+                Label != null &&
+                Label.Equals(other.Label)
             ) &&
             (
-                this.DirectionType == other.DirectionType ||
-                this.DirectionType != null &&
-                this.DirectionType.Equals(other.DirectionType)
+                DirectionType == other.DirectionType ||
+                DirectionType != null &&
+                DirectionType.Equals(other.DirectionType)
             ) &&
             (
-                this.ZoneType == other.ZoneType ||
-                this.ZoneType != null &&
-                this.ZoneType.Equals(other.ZoneType)
+                ZoneType == other.ZoneType ||
+                ZoneType != null &&
+                ZoneType.Equals(other.ZoneType)
             ) &&
             (
-                this.UpperLimitPoints == other.UpperLimitPoints ||
-                this.UpperLimitPoints != null &&
-                this.UpperLimitPoints.Equals(other.UpperLimitPoints)
+                UpperLimitPoints == other.UpperLimitPoints ||
+                UpperLimitPoints != null &&
+                UpperLimitPoints.Equals(other.UpperLimitPoints)
             ) &&
             (
-                this.LowerLimitPoints == other.LowerLimitPoints ||
-                this.LowerLimitPoints != null &&
-                this.LowerLimitPoints.Equals(other.LowerLimitPoints)
+                LowerLimitPoints == other.LowerLimitPoints ||
+                LowerLimitPoints != null &&
+                LowerLimitPoints.Equals(other.LowerLimitPoints)
             ) &&
             (
-                this.UpperLimitValue == other.UpperLimitValue ||
-                this.UpperLimitValue != null &&
-                this.UpperLimitValue.Equals(other.UpperLimitValue)
+                UpperLimitValue == other.UpperLimitValue ||
+                UpperLimitValue != null &&
+                UpperLimitValue.Equals(other.UpperLimitValue)
             ) &&
             (
-                this.LowerLimitValue == other.LowerLimitValue ||
-                this.LowerLimitValue != null &&
-                this.LowerLimitValue.Equals(other.LowerLimitValue)
+                LowerLimitValue == other.LowerLimitValue ||
+                LowerLimitValue != null &&
+                LowerLimitValue.Equals(other.LowerLimitValue)
             );
     }
 
@@ -266,39 +266,39 @@ public partial class ObjectiveZone : IEquatable<ObjectiveZone>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Label != null)
+            if (Label != null)
             {
-                hash = hash * 59 + this.Label.GetHashCode();
+                hash = hash * 59 + Label.GetHashCode();
             }
 
-            if (this.DirectionType != null)
+            if (DirectionType != null)
             {
-                hash = hash * 59 + this.DirectionType.GetHashCode();
+                hash = hash * 59 + DirectionType.GetHashCode();
             }
 
-            if (this.ZoneType != null)
+            if (ZoneType != null)
             {
-                hash = hash * 59 + this.ZoneType.GetHashCode();
+                hash = hash * 59 + ZoneType.GetHashCode();
             }
 
-            if (this.UpperLimitPoints != null)
+            if (UpperLimitPoints != null)
             {
-                hash = hash * 59 + this.UpperLimitPoints.GetHashCode();
+                hash = hash * 59 + UpperLimitPoints.GetHashCode();
             }
 
-            if (this.LowerLimitPoints != null)
+            if (LowerLimitPoints != null)
             {
-                hash = hash * 59 + this.LowerLimitPoints.GetHashCode();
+                hash = hash * 59 + LowerLimitPoints.GetHashCode();
             }
 
-            if (this.UpperLimitValue != null)
+            if (UpperLimitValue != null)
             {
-                hash = hash * 59 + this.UpperLimitValue.GetHashCode();
+                hash = hash * 59 + UpperLimitValue.GetHashCode();
             }
 
-            if (this.LowerLimitValue != null)
+            if (LowerLimitValue != null)
             {
-                hash = hash * 59 + this.LowerLimitValue.GetHashCode();
+                hash = hash * 59 + LowerLimitValue.GetHashCode();
             }
 
             return hash;

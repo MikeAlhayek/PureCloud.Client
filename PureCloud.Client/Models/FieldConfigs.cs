@@ -74,7 +74,7 @@ public partial class FieldConfigs : IEquatable<FieldConfigs>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FieldConfigs);
+        return Equals(obj as FieldConfigs);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class FieldConfigs : IEquatable<FieldConfigs>
 
         return true &&
             (
-                this.Org == other.Org ||
-                this.Org != null &&
-                this.Org.Equals(other.Org)
+                Org == other.Org ||
+                Org != null &&
+                Org.Equals(other.Org)
             ) &&
             (
-                this.Person == other.Person ||
-                this.Person != null &&
-                this.Person.Equals(other.Person)
+                Person == other.Person ||
+                Person != null &&
+                Person.Equals(other.Person)
             ) &&
             (
-                this.Group == other.Group ||
-                this.Group != null &&
-                this.Group.Equals(other.Group)
+                Group == other.Group ||
+                Group != null &&
+                Group.Equals(other.Group)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class FieldConfigs : IEquatable<FieldConfigs>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Org != null)
+            if (Org != null)
             {
-                hash = hash * 59 + this.Org.GetHashCode();
+                hash = hash * 59 + Org.GetHashCode();
             }
 
-            if (this.Person != null)
+            if (Person != null)
             {
-                hash = hash * 59 + this.Person.GetHashCode();
+                hash = hash * 59 + Person.GetHashCode();
             }
 
-            if (this.Group != null)
+            if (Group != null)
             {
-                hash = hash * 59 + this.Group.GetHashCode();
+                hash = hash * 59 + Group.GetHashCode();
             }
 
             return hash;

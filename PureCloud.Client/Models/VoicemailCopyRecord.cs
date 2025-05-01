@@ -71,7 +71,7 @@ public partial class VoicemailCopyRecord : IEquatable<VoicemailCopyRecord>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VoicemailCopyRecord);
+        return Equals(obj as VoicemailCopyRecord);
     }
 
     /// <summary>
@@ -89,19 +89,19 @@ public partial class VoicemailCopyRecord : IEquatable<VoicemailCopyRecord>
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Group == other.Group ||
-                this.Group != null &&
-                this.Group.Equals(other.Group)
+                Group == other.Group ||
+                Group != null &&
+                Group.Equals(other.Group)
             ) &&
             (
-                this.Date == other.Date ||
-                this.Date != null &&
-                this.Date.Equals(other.Date)
+                Date == other.Date ||
+                Date != null &&
+                Date.Equals(other.Date)
             );
     }
 
@@ -116,19 +116,19 @@ public partial class VoicemailCopyRecord : IEquatable<VoicemailCopyRecord>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Group != null)
+            if (Group != null)
             {
-                hash = hash * 59 + this.Group.GetHashCode();
+                hash = hash * 59 + Group.GetHashCode();
             }
 
-            if (this.Date != null)
+            if (Date != null)
             {
-                hash = hash * 59 + this.Date.GetHashCode();
+                hash = hash * 59 + Date.GetHashCode();
             }
 
             return hash;

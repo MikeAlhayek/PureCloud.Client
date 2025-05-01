@@ -59,7 +59,7 @@ public partial class DashboardConfigurationBulkRequest : IEquatable<DashboardCon
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DashboardConfigurationBulkRequest);
+        return Equals(obj as DashboardConfigurationBulkRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class DashboardConfigurationBulkRequest : IEquatable<DashboardCon
 
         return true &&
             (
-                this.DashboardConfigurationIds == other.DashboardConfigurationIds ||
-                this.DashboardConfigurationIds != null &&
-                this.DashboardConfigurationIds.SequenceEqual(other.DashboardConfigurationIds)
+                DashboardConfigurationIds == other.DashboardConfigurationIds ||
+                DashboardConfigurationIds != null &&
+                DashboardConfigurationIds.SequenceEqual(other.DashboardConfigurationIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class DashboardConfigurationBulkRequest : IEquatable<DashboardCon
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DashboardConfigurationIds != null)
+            if (DashboardConfigurationIds != null)
             {
-                hash = hash * 59 + this.DashboardConfigurationIds.GetHashCode();
+                hash = hash * 59 + DashboardConfigurationIds.GetHashCode();
             }
 
             return hash;

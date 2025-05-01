@@ -407,7 +407,7 @@ public partial class HistoryListing : IEquatable<HistoryListing>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoryListing);
+        return Equals(obj as HistoryListing);
     }
 
     /// <summary>
@@ -425,104 +425,104 @@ public partial class HistoryListing : IEquatable<HistoryListing>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Complete == other.Complete ||
-                this.Complete != null &&
-                this.Complete.Equals(other.Complete)
+                Complete == other.Complete ||
+                Complete != null &&
+                Complete.Equals(other.Complete)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Client == other.Client ||
-                this.Client != null &&
-                this.Client.Equals(other.Client)
+                Client == other.Client ||
+                Client != null &&
+                Client.Equals(other.Client)
             ) &&
             (
-                this.ErrorMessage == other.ErrorMessage ||
-                this.ErrorMessage != null &&
-                this.ErrorMessage.Equals(other.ErrorMessage)
+                ErrorMessage == other.ErrorMessage ||
+                ErrorMessage != null &&
+                ErrorMessage.Equals(other.ErrorMessage)
             ) &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.ErrorDetails == other.ErrorDetails ||
-                this.ErrorDetails != null &&
-                this.ErrorDetails.SequenceEqual(other.ErrorDetails)
+                ErrorDetails == other.ErrorDetails ||
+                ErrorDetails != null &&
+                ErrorDetails.SequenceEqual(other.ErrorDetails)
             ) &&
             (
-                this.ErrorMessageParams == other.ErrorMessageParams ||
-                this.ErrorMessageParams != null &&
-                this.ErrorMessageParams.SequenceEqual(other.ErrorMessageParams)
+                ErrorMessageParams == other.ErrorMessageParams ||
+                ErrorMessageParams != null &&
+                ErrorMessageParams.SequenceEqual(other.ErrorMessageParams)
             ) &&
             (
-                this.ActionName == other.ActionName ||
-                this.ActionName != null &&
-                this.ActionName.Equals(other.ActionName)
+                ActionName == other.ActionName ||
+                ActionName != null &&
+                ActionName.Equals(other.ActionName)
             ) &&
             (
-                this.ActionStatus == other.ActionStatus ||
-                this.ActionStatus != null &&
-                this.ActionStatus.Equals(other.ActionStatus)
+                ActionStatus == other.ActionStatus ||
+                ActionStatus != null &&
+                ActionStatus.Equals(other.ActionStatus)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.System == other.System ||
-                this.System != null &&
-                this.System.Equals(other.System)
+                System == other.System ||
+                System != null &&
+                System.Equals(other.System)
             ) &&
             (
-                this.Started == other.Started ||
-                this.Started != null &&
-                this.Started.Equals(other.Started)
+                Started == other.Started ||
+                Started != null &&
+                Started.Equals(other.Started)
             ) &&
             (
-                this.Completed == other.Completed ||
-                this.Completed != null &&
-                this.Completed.Equals(other.Completed)
+                Completed == other.Completed ||
+                Completed != null &&
+                Completed.Equals(other.Completed)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.Total == other.Total ||
-                this.Total != null &&
-                this.Total.Equals(other.Total)
+                Total == other.Total ||
+                Total != null &&
+                Total.Equals(other.Total)
             ) &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.PageCount == other.PageCount ||
-                this.PageCount != null &&
-                this.PageCount.Equals(other.PageCount)
+                PageCount == other.PageCount ||
+                PageCount != null &&
+                PageCount.Equals(other.PageCount)
             );
     }
 
@@ -537,104 +537,104 @@ public partial class HistoryListing : IEquatable<HistoryListing>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Complete != null)
+            if (Complete != null)
             {
-                hash = hash * 59 + this.Complete.GetHashCode();
+                hash = hash * 59 + Complete.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Client != null)
+            if (Client != null)
             {
-                hash = hash * 59 + this.Client.GetHashCode();
+                hash = hash * 59 + Client.GetHashCode();
             }
 
-            if (this.ErrorMessage != null)
+            if (ErrorMessage != null)
             {
-                hash = hash * 59 + this.ErrorMessage.GetHashCode();
+                hash = hash * 59 + ErrorMessage.GetHashCode();
             }
 
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.ErrorDetails != null)
+            if (ErrorDetails != null)
             {
-                hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                hash = hash * 59 + ErrorDetails.GetHashCode();
             }
 
-            if (this.ErrorMessageParams != null)
+            if (ErrorMessageParams != null)
             {
-                hash = hash * 59 + this.ErrorMessageParams.GetHashCode();
+                hash = hash * 59 + ErrorMessageParams.GetHashCode();
             }
 
-            if (this.ActionName != null)
+            if (ActionName != null)
             {
-                hash = hash * 59 + this.ActionName.GetHashCode();
+                hash = hash * 59 + ActionName.GetHashCode();
             }
 
-            if (this.ActionStatus != null)
+            if (ActionStatus != null)
             {
-                hash = hash * 59 + this.ActionStatus.GetHashCode();
+                hash = hash * 59 + ActionStatus.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.System != null)
+            if (System != null)
             {
-                hash = hash * 59 + this.System.GetHashCode();
+                hash = hash * 59 + System.GetHashCode();
             }
 
-            if (this.Started != null)
+            if (Started != null)
             {
-                hash = hash * 59 + this.Started.GetHashCode();
+                hash = hash * 59 + Started.GetHashCode();
             }
 
-            if (this.Completed != null)
+            if (Completed != null)
             {
-                hash = hash * 59 + this.Completed.GetHashCode();
+                hash = hash * 59 + Completed.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.Total != null)
+            if (Total != null)
             {
-                hash = hash * 59 + this.Total.GetHashCode();
+                hash = hash * 59 + Total.GetHashCode();
             }
 
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.PageCount != null)
+            if (PageCount != null)
             {
-                hash = hash * 59 + this.PageCount.GetHashCode();
+                hash = hash * 59 + PageCount.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class KnowledgeGuestDocumentVariationContext : IEquatable<Knowled
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeGuestDocumentVariationContext);
+        return Equals(obj as KnowledgeGuestDocumentVariationContext);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class KnowledgeGuestDocumentVariationContext : IEquatable<Knowled
 
         return true &&
             (
-                this.Context == other.Context ||
-                this.Context != null &&
-                this.Context.Equals(other.Context)
+                Context == other.Context ||
+                Context != null &&
+                Context.Equals(other.Context)
             ) &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class KnowledgeGuestDocumentVariationContext : IEquatable<Knowled
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Context != null)
+            if (Context != null)
             {
-                hash = hash * 59 + this.Context.GetHashCode();
+                hash = hash * 59 + Context.GetHashCode();
             }
 
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
             return hash;

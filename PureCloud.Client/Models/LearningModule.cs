@@ -431,7 +431,7 @@ public partial class LearningModule : IEquatable<LearningModule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModule);
+        return Equals(obj as LearningModule);
     }
 
     /// <summary>
@@ -449,134 +449,134 @@ public partial class LearningModule : IEquatable<LearningModule>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ExcludedFromCatalog == other.ExcludedFromCatalog ||
-                this.ExcludedFromCatalog != null &&
-                this.ExcludedFromCatalog.Equals(other.ExcludedFromCatalog)
+                ExcludedFromCatalog == other.ExcludedFromCatalog ||
+                ExcludedFromCatalog != null &&
+                ExcludedFromCatalog.Equals(other.ExcludedFromCatalog)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.ExternalId == other.ExternalId ||
-                this.ExternalId != null &&
-                this.ExternalId.Equals(other.ExternalId)
+                ExternalId == other.ExternalId ||
+                ExternalId != null &&
+                ExternalId.Equals(other.ExternalId)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.Rule == other.Rule ||
-                this.Rule != null &&
-                this.Rule.Equals(other.Rule)
+                Rule == other.Rule ||
+                Rule != null &&
+                Rule.Equals(other.Rule)
             ) &&
             (
-                this.EnforceContentOrder == other.EnforceContentOrder ||
-                this.EnforceContentOrder != null &&
-                this.EnforceContentOrder.Equals(other.EnforceContentOrder)
+                EnforceContentOrder == other.EnforceContentOrder ||
+                EnforceContentOrder != null &&
+                EnforceContentOrder.Equals(other.EnforceContentOrder)
             ) &&
             (
-                this.ReviewAssessmentResults == other.ReviewAssessmentResults ||
-                this.ReviewAssessmentResults != null &&
-                this.ReviewAssessmentResults.Equals(other.ReviewAssessmentResults)
+                ReviewAssessmentResults == other.ReviewAssessmentResults ||
+                ReviewAssessmentResults != null &&
+                ReviewAssessmentResults.Equals(other.ReviewAssessmentResults)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.IsArchived == other.IsArchived ||
-                this.IsArchived != null &&
-                this.IsArchived.Equals(other.IsArchived)
+                IsArchived == other.IsArchived ||
+                IsArchived != null &&
+                IsArchived.Equals(other.IsArchived)
             ) &&
             (
-                this.IsPublished == other.IsPublished ||
-                this.IsPublished != null &&
-                this.IsPublished.Equals(other.IsPublished)
+                IsPublished == other.IsPublished ||
+                IsPublished != null &&
+                IsPublished.Equals(other.IsPublished)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.CompletionTimeInDays == other.CompletionTimeInDays ||
-                this.CompletionTimeInDays != null &&
-                this.CompletionTimeInDays.Equals(other.CompletionTimeInDays)
+                CompletionTimeInDays == other.CompletionTimeInDays ||
+                CompletionTimeInDays != null &&
+                CompletionTimeInDays.Equals(other.CompletionTimeInDays)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.InformSteps == other.InformSteps ||
-                this.InformSteps != null &&
-                this.InformSteps.SequenceEqual(other.InformSteps)
+                InformSteps == other.InformSteps ||
+                InformSteps != null &&
+                InformSteps.SequenceEqual(other.InformSteps)
             ) &&
             (
-                this.AssessmentForm == other.AssessmentForm ||
-                this.AssessmentForm != null &&
-                this.AssessmentForm.Equals(other.AssessmentForm)
+                AssessmentForm == other.AssessmentForm ||
+                AssessmentForm != null &&
+                AssessmentForm.Equals(other.AssessmentForm)
             ) &&
             (
-                this.SummaryData == other.SummaryData ||
-                this.SummaryData != null &&
-                this.SummaryData.Equals(other.SummaryData)
+                SummaryData == other.SummaryData ||
+                SummaryData != null &&
+                SummaryData.Equals(other.SummaryData)
             ) &&
             (
-                this.ReassignSummaryData == other.ReassignSummaryData ||
-                this.ReassignSummaryData != null &&
-                this.ReassignSummaryData.Equals(other.ReassignSummaryData)
+                ReassignSummaryData == other.ReassignSummaryData ||
+                ReassignSummaryData != null &&
+                ReassignSummaryData.Equals(other.ReassignSummaryData)
             ) &&
             (
-                this.CoverArt == other.CoverArt ||
-                this.CoverArt != null &&
-                this.CoverArt.Equals(other.CoverArt)
+                CoverArt == other.CoverArt ||
+                CoverArt != null &&
+                CoverArt.Equals(other.CoverArt)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.ArchivalMode == other.ArchivalMode ||
-                this.ArchivalMode != null &&
-                this.ArchivalMode.Equals(other.ArchivalMode)
+                ArchivalMode == other.ArchivalMode ||
+                ArchivalMode != null &&
+                ArchivalMode.Equals(other.ArchivalMode)
             );
     }
 
@@ -591,134 +591,134 @@ public partial class LearningModule : IEquatable<LearningModule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ExcludedFromCatalog != null)
+            if (ExcludedFromCatalog != null)
             {
-                hash = hash * 59 + this.ExcludedFromCatalog.GetHashCode();
+                hash = hash * 59 + ExcludedFromCatalog.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.ExternalId != null)
+            if (ExternalId != null)
             {
-                hash = hash * 59 + this.ExternalId.GetHashCode();
+                hash = hash * 59 + ExternalId.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.Rule != null)
+            if (Rule != null)
             {
-                hash = hash * 59 + this.Rule.GetHashCode();
+                hash = hash * 59 + Rule.GetHashCode();
             }
 
-            if (this.EnforceContentOrder != null)
+            if (EnforceContentOrder != null)
             {
-                hash = hash * 59 + this.EnforceContentOrder.GetHashCode();
+                hash = hash * 59 + EnforceContentOrder.GetHashCode();
             }
 
-            if (this.ReviewAssessmentResults != null)
+            if (ReviewAssessmentResults != null)
             {
-                hash = hash * 59 + this.ReviewAssessmentResults.GetHashCode();
+                hash = hash * 59 + ReviewAssessmentResults.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.IsArchived != null)
+            if (IsArchived != null)
             {
-                hash = hash * 59 + this.IsArchived.GetHashCode();
+                hash = hash * 59 + IsArchived.GetHashCode();
             }
 
-            if (this.IsPublished != null)
+            if (IsPublished != null)
             {
-                hash = hash * 59 + this.IsPublished.GetHashCode();
+                hash = hash * 59 + IsPublished.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.CompletionTimeInDays != null)
+            if (CompletionTimeInDays != null)
             {
-                hash = hash * 59 + this.CompletionTimeInDays.GetHashCode();
+                hash = hash * 59 + CompletionTimeInDays.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.InformSteps != null)
+            if (InformSteps != null)
             {
-                hash = hash * 59 + this.InformSteps.GetHashCode();
+                hash = hash * 59 + InformSteps.GetHashCode();
             }
 
-            if (this.AssessmentForm != null)
+            if (AssessmentForm != null)
             {
-                hash = hash * 59 + this.AssessmentForm.GetHashCode();
+                hash = hash * 59 + AssessmentForm.GetHashCode();
             }
 
-            if (this.SummaryData != null)
+            if (SummaryData != null)
             {
-                hash = hash * 59 + this.SummaryData.GetHashCode();
+                hash = hash * 59 + SummaryData.GetHashCode();
             }
 
-            if (this.ReassignSummaryData != null)
+            if (ReassignSummaryData != null)
             {
-                hash = hash * 59 + this.ReassignSummaryData.GetHashCode();
+                hash = hash * 59 + ReassignSummaryData.GetHashCode();
             }
 
-            if (this.CoverArt != null)
+            if (CoverArt != null)
             {
-                hash = hash * 59 + this.CoverArt.GetHashCode();
+                hash = hash * 59 + CoverArt.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.ArchivalMode != null)
+            if (ArchivalMode != null)
             {
-                hash = hash * 59 + this.ArchivalMode.GetHashCode();
+                hash = hash * 59 + ArchivalMode.GetHashCode();
             }
 
             return hash;

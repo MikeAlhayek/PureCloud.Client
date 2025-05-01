@@ -83,7 +83,7 @@ public partial class SupportCenterHeroStyle : IEquatable<SupportCenterHeroStyle>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportCenterHeroStyle);
+        return Equals(obj as SupportCenterHeroStyle);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class SupportCenterHeroStyle : IEquatable<SupportCenterHeroStyle>
 
         return true &&
             (
-                this.BackgroundColor == other.BackgroundColor ||
-                this.BackgroundColor != null &&
-                this.BackgroundColor.Equals(other.BackgroundColor)
+                BackgroundColor == other.BackgroundColor ||
+                BackgroundColor != null &&
+                BackgroundColor.Equals(other.BackgroundColor)
             ) &&
             (
-                this.TextColor == other.TextColor ||
-                this.TextColor != null &&
-                this.TextColor.Equals(other.TextColor)
+                TextColor == other.TextColor ||
+                TextColor != null &&
+                TextColor.Equals(other.TextColor)
             ) &&
             (
-                this.Image == other.Image ||
-                this.Image != null &&
-                this.Image.Equals(other.Image)
+                Image == other.Image ||
+                Image != null &&
+                Image.Equals(other.Image)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class SupportCenterHeroStyle : IEquatable<SupportCenterHeroStyle>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BackgroundColor != null)
+            if (BackgroundColor != null)
             {
-                hash = hash * 59 + this.BackgroundColor.GetHashCode();
+                hash = hash * 59 + BackgroundColor.GetHashCode();
             }
 
-            if (this.TextColor != null)
+            if (TextColor != null)
             {
-                hash = hash * 59 + this.TextColor.GetHashCode();
+                hash = hash * 59 + TextColor.GetHashCode();
             }
 
-            if (this.Image != null)
+            if (Image != null)
             {
-                hash = hash * 59 + this.Image.GetHashCode();
+                hash = hash * 59 + Image.GetHashCode();
             }
 
             return hash;

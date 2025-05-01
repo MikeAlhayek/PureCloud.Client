@@ -100,7 +100,7 @@ public partial class BatchDownloadJobResult : IEquatable<BatchDownloadJobResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BatchDownloadJobResult);
+        return Equals(obj as BatchDownloadJobResult);
     }
 
     /// <summary>
@@ -118,29 +118,29 @@ public partial class BatchDownloadJobResult : IEquatable<BatchDownloadJobResult>
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.RecordingId == other.RecordingId ||
-                this.RecordingId != null &&
-                this.RecordingId.Equals(other.RecordingId)
+                RecordingId == other.RecordingId ||
+                RecordingId != null &&
+                RecordingId.Equals(other.RecordingId)
             ) &&
             (
-                this.ResultUrl == other.ResultUrl ||
-                this.ResultUrl != null &&
-                this.ResultUrl.Equals(other.ResultUrl)
+                ResultUrl == other.ResultUrl ||
+                ResultUrl != null &&
+                ResultUrl.Equals(other.ResultUrl)
             ) &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.ErrorMsg == other.ErrorMsg ||
-                this.ErrorMsg != null &&
-                this.ErrorMsg.Equals(other.ErrorMsg)
+                ErrorMsg == other.ErrorMsg ||
+                ErrorMsg != null &&
+                ErrorMsg.Equals(other.ErrorMsg)
             );
     }
 
@@ -155,29 +155,29 @@ public partial class BatchDownloadJobResult : IEquatable<BatchDownloadJobResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.RecordingId != null)
+            if (RecordingId != null)
             {
-                hash = hash * 59 + this.RecordingId.GetHashCode();
+                hash = hash * 59 + RecordingId.GetHashCode();
             }
 
-            if (this.ResultUrl != null)
+            if (ResultUrl != null)
             {
-                hash = hash * 59 + this.ResultUrl.GetHashCode();
+                hash = hash * 59 + ResultUrl.GetHashCode();
             }
 
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.ErrorMsg != null)
+            if (ErrorMsg != null)
             {
-                hash = hash * 59 + this.ErrorMsg.GetHashCode();
+                hash = hash * 59 + ErrorMsg.GetHashCode();
             }
 
             return hash;

@@ -133,7 +133,7 @@ public partial class PermissionDetails : IEquatable<PermissionDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PermissionDetails);
+        return Equals(obj as PermissionDetails);
     }
 
     /// <summary>
@@ -151,24 +151,24 @@ public partial class PermissionDetails : IEquatable<PermissionDetails>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Permissions == other.Permissions ||
-                this.Permissions != null &&
-                this.Permissions.SequenceEqual(other.Permissions)
+                Permissions == other.Permissions ||
+                Permissions != null &&
+                Permissions.SequenceEqual(other.Permissions)
             ) &&
             (
-                this.AllowsCurrentUser == other.AllowsCurrentUser ||
-                this.AllowsCurrentUser != null &&
-                this.AllowsCurrentUser.Equals(other.AllowsCurrentUser)
+                AllowsCurrentUser == other.AllowsCurrentUser ||
+                AllowsCurrentUser != null &&
+                AllowsCurrentUser.Equals(other.AllowsCurrentUser)
             ) &&
             (
-                this.Enforced == other.Enforced ||
-                this.Enforced != null &&
-                this.Enforced.Equals(other.Enforced)
+                Enforced == other.Enforced ||
+                Enforced != null &&
+                Enforced.Equals(other.Enforced)
             );
     }
 
@@ -183,24 +183,24 @@ public partial class PermissionDetails : IEquatable<PermissionDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Permissions != null)
+            if (Permissions != null)
             {
-                hash = hash * 59 + this.Permissions.GetHashCode();
+                hash = hash * 59 + Permissions.GetHashCode();
             }
 
-            if (this.AllowsCurrentUser != null)
+            if (AllowsCurrentUser != null)
             {
-                hash = hash * 59 + this.AllowsCurrentUser.GetHashCode();
+                hash = hash * 59 + AllowsCurrentUser.GetHashCode();
             }
 
-            if (this.Enforced != null)
+            if (Enforced != null)
             {
-                hash = hash * 59 + this.Enforced.GetHashCode();
+                hash = hash * 59 + Enforced.GetHashCode();
             }
 
             return hash;

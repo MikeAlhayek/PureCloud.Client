@@ -70,7 +70,7 @@ public partial class SmsPhoneNumberRef : IEquatable<SmsPhoneNumberRef>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SmsPhoneNumberRef);
+        return Equals(obj as SmsPhoneNumberRef);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class SmsPhoneNumberRef : IEquatable<SmsPhoneNumberRef>
 
         return true &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class SmsPhoneNumberRef : IEquatable<SmsPhoneNumberRef>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

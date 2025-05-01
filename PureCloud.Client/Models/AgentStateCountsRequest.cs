@@ -64,7 +64,7 @@ public partial class AgentStateCountsRequest : IEquatable<AgentStateCountsReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentStateCountsRequest);
+        return Equals(obj as AgentStateCountsRequest);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class AgentStateCountsRequest : IEquatable<AgentStateCountsReques
 
         return true &&
             (
-                this.UserFilter == other.UserFilter ||
-                this.UserFilter != null &&
-                this.UserFilter.Equals(other.UserFilter)
+                UserFilter == other.UserFilter ||
+                UserFilter != null &&
+                UserFilter.Equals(other.UserFilter)
             ) &&
             (
-                this.SessionFilter == other.SessionFilter ||
-                this.SessionFilter != null &&
-                this.SessionFilter.Equals(other.SessionFilter)
+                SessionFilter == other.SessionFilter ||
+                SessionFilter != null &&
+                SessionFilter.Equals(other.SessionFilter)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class AgentStateCountsRequest : IEquatable<AgentStateCountsReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserFilter != null)
+            if (UserFilter != null)
             {
-                hash = hash * 59 + this.UserFilter.GetHashCode();
+                hash = hash * 59 + UserFilter.GetHashCode();
             }
 
-            if (this.SessionFilter != null)
+            if (SessionFilter != null)
             {
-                hash = hash * 59 + this.SessionFilter.GetHashCode();
+                hash = hash * 59 + SessionFilter.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class ScimUserRoutingLanguage : IEquatable<ScimUserRoutingLanguag
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimUserRoutingLanguage);
+        return Equals(obj as ScimUserRoutingLanguage);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ScimUserRoutingLanguage : IEquatable<ScimUserRoutingLanguag
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Proficiency == other.Proficiency ||
-                this.Proficiency != null &&
-                this.Proficiency.Equals(other.Proficiency)
+                Proficiency == other.Proficiency ||
+                Proficiency != null &&
+                Proficiency.Equals(other.Proficiency)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ScimUserRoutingLanguage : IEquatable<ScimUserRoutingLanguag
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Proficiency != null)
+            if (Proficiency != null)
             {
-                hash = hash * 59 + this.Proficiency.GetHashCode();
+                hash = hash * 59 + Proficiency.GetHashCode();
             }
 
             return hash;

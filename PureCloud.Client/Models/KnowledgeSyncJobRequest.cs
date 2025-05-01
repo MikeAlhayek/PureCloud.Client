@@ -71,7 +71,7 @@ public partial class KnowledgeSyncJobRequest : IEquatable<KnowledgeSyncJobReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeSyncJobRequest);
+        return Equals(obj as KnowledgeSyncJobRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class KnowledgeSyncJobRequest : IEquatable<KnowledgeSyncJobReques
 
         return true &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.SourceId == other.SourceId ||
-                this.SourceId != null &&
-                this.SourceId.Equals(other.SourceId)
+                SourceId == other.SourceId ||
+                SourceId != null &&
+                SourceId.Equals(other.SourceId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class KnowledgeSyncJobRequest : IEquatable<KnowledgeSyncJobReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.SourceId != null)
+            if (SourceId != null)
             {
-                hash = hash * 59 + this.SourceId.GetHashCode();
+                hash = hash * 59 + SourceId.GetHashCode();
             }
 
             return hash;

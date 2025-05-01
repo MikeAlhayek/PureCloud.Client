@@ -95,7 +95,7 @@ public partial class PatchCallbackRequest : IEquatable<PatchCallbackRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchCallbackRequest);
+        return Equals(obj as PatchCallbackRequest);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class PatchCallbackRequest : IEquatable<PatchCallbackRequest>
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.AgentId == other.AgentId ||
-                this.AgentId != null &&
-                this.AgentId.Equals(other.AgentId)
+                AgentId == other.AgentId ||
+                AgentId != null &&
+                AgentId.Equals(other.AgentId)
             ) &&
             (
-                this.CallbackScheduledTime == other.CallbackScheduledTime ||
-                this.CallbackScheduledTime != null &&
-                this.CallbackScheduledTime.Equals(other.CallbackScheduledTime)
+                CallbackScheduledTime == other.CallbackScheduledTime ||
+                CallbackScheduledTime != null &&
+                CallbackScheduledTime.Equals(other.CallbackScheduledTime)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class PatchCallbackRequest : IEquatable<PatchCallbackRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.AgentId != null)
+            if (AgentId != null)
             {
-                hash = hash * 59 + this.AgentId.GetHashCode();
+                hash = hash * 59 + AgentId.GetHashCode();
             }
 
-            if (this.CallbackScheduledTime != null)
+            if (CallbackScheduledTime != null)
             {
-                hash = hash * 59 + this.CallbackScheduledTime.GetHashCode();
+                hash = hash * 59 + CallbackScheduledTime.GetHashCode();
             }
 
             return hash;

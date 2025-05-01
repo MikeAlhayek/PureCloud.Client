@@ -118,7 +118,7 @@ public partial class JourneyAppEventsNotificationMktCampaign : IEquatable<Journe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyAppEventsNotificationMktCampaign);
+        return Equals(obj as JourneyAppEventsNotificationMktCampaign);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class JourneyAppEventsNotificationMktCampaign : IEquatable<Journe
 
         return true &&
             (
-                this.Content == other.Content ||
-                this.Content != null &&
-                this.Content.Equals(other.Content)
+                Content == other.Content ||
+                Content != null &&
+                Content.Equals(other.Content)
             ) &&
             (
-                this.Medium == other.Medium ||
-                this.Medium != null &&
-                this.Medium.Equals(other.Medium)
+                Medium == other.Medium ||
+                Medium != null &&
+                Medium.Equals(other.Medium)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.Term == other.Term ||
-                this.Term != null &&
-                this.Term.Equals(other.Term)
+                Term == other.Term ||
+                Term != null &&
+                Term.Equals(other.Term)
             ) &&
             (
-                this.ClickId == other.ClickId ||
-                this.ClickId != null &&
-                this.ClickId.Equals(other.ClickId)
+                ClickId == other.ClickId ||
+                ClickId != null &&
+                ClickId.Equals(other.ClickId)
             ) &&
             (
-                this.Network == other.Network ||
-                this.Network != null &&
-                this.Network.Equals(other.Network)
+                Network == other.Network ||
+                Network != null &&
+                Network.Equals(other.Network)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class JourneyAppEventsNotificationMktCampaign : IEquatable<Journe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Content != null)
+            if (Content != null)
             {
-                hash = hash * 59 + this.Content.GetHashCode();
+                hash = hash * 59 + Content.GetHashCode();
             }
 
-            if (this.Medium != null)
+            if (Medium != null)
             {
-                hash = hash * 59 + this.Medium.GetHashCode();
+                hash = hash * 59 + Medium.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.Term != null)
+            if (Term != null)
             {
-                hash = hash * 59 + this.Term.GetHashCode();
+                hash = hash * 59 + Term.GetHashCode();
             }
 
-            if (this.ClickId != null)
+            if (ClickId != null)
             {
-                hash = hash * 59 + this.ClickId.GetHashCode();
+                hash = hash * 59 + ClickId.GetHashCode();
             }
 
-            if (this.Network != null)
+            if (Network != null)
             {
-                hash = hash * 59 + this.Network.GetHashCode();
+                hash = hash * 59 + Network.GetHashCode();
             }
 
             return hash;

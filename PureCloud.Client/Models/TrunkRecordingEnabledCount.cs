@@ -65,7 +65,7 @@ public partial class TrunkRecordingEnabledCount : IEquatable<TrunkRecordingEnabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkRecordingEnabledCount);
+        return Equals(obj as TrunkRecordingEnabledCount);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class TrunkRecordingEnabledCount : IEquatable<TrunkRecordingEnabl
 
         return true &&
             (
-                this.EnabledCount == other.EnabledCount ||
-                this.EnabledCount != null &&
-                this.EnabledCount.Equals(other.EnabledCount)
+                EnabledCount == other.EnabledCount ||
+                EnabledCount != null &&
+                EnabledCount.Equals(other.EnabledCount)
             ) &&
             (
-                this.DisabledCount == other.DisabledCount ||
-                this.DisabledCount != null &&
-                this.DisabledCount.Equals(other.DisabledCount)
+                DisabledCount == other.DisabledCount ||
+                DisabledCount != null &&
+                DisabledCount.Equals(other.DisabledCount)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class TrunkRecordingEnabledCount : IEquatable<TrunkRecordingEnabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EnabledCount != null)
+            if (EnabledCount != null)
             {
-                hash = hash * 59 + this.EnabledCount.GetHashCode();
+                hash = hash * 59 + EnabledCount.GetHashCode();
             }
 
-            if (this.DisabledCount != null)
+            if (DisabledCount != null)
             {
-                hash = hash * 59 + this.DisabledCount.GetHashCode();
+                hash = hash * 59 + DisabledCount.GetHashCode();
             }
 
             return hash;

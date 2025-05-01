@@ -85,7 +85,7 @@ public partial class JourneyOutcomeEventsNotificationOutcomeTouchpoint : IEquata
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyOutcomeEventsNotificationOutcomeTouchpoint);
+        return Equals(obj as JourneyOutcomeEventsNotificationOutcomeTouchpoint);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class JourneyOutcomeEventsNotificationOutcomeTouchpoint : IEquata
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Channels == other.Channels ||
-                this.Channels != null &&
-                this.Channels.SequenceEqual(other.Channels)
+                Channels == other.Channels ||
+                Channels != null &&
+                Channels.SequenceEqual(other.Channels)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             ) &&
             (
-                this.ActionMap == other.ActionMap ||
-                this.ActionMap != null &&
-                this.ActionMap.Equals(other.ActionMap)
+                ActionMap == other.ActionMap ||
+                ActionMap != null &&
+                ActionMap.Equals(other.ActionMap)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class JourneyOutcomeEventsNotificationOutcomeTouchpoint : IEquata
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Channels != null)
+            if (Channels != null)
             {
-                hash = hash * 59 + this.Channels.GetHashCode();
+                hash = hash * 59 + Channels.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
-            if (this.ActionMap != null)
+            if (ActionMap != null)
             {
-                hash = hash * 59 + this.ActionMap.GetHashCode();
+                hash = hash * 59 + ActionMap.GetHashCode();
             }
 
             return hash;

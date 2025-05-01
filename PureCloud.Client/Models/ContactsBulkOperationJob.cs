@@ -189,7 +189,7 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactsBulkOperationJob);
+        return Equals(obj as ContactsBulkOperationJob);
     }
 
     /// <summary>
@@ -207,49 +207,49 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.TotalRecords == other.TotalRecords ||
-                this.TotalRecords != null &&
-                this.TotalRecords.Equals(other.TotalRecords)
+                TotalRecords == other.TotalRecords ||
+                TotalRecords != null &&
+                TotalRecords.Equals(other.TotalRecords)
             ) &&
             (
-                this.CompletedRecords == other.CompletedRecords ||
-                this.CompletedRecords != null &&
-                this.CompletedRecords.Equals(other.CompletedRecords)
+                CompletedRecords == other.CompletedRecords ||
+                CompletedRecords != null &&
+                CompletedRecords.Equals(other.CompletedRecords)
             ) &&
             (
-                this.PercentComplete == other.PercentComplete ||
-                this.PercentComplete != null &&
-                this.PercentComplete.Equals(other.PercentComplete)
+                PercentComplete == other.PercentComplete ||
+                PercentComplete != null &&
+                PercentComplete.Equals(other.PercentComplete)
             ) &&
             (
-                this.FailureReason == other.FailureReason ||
-                this.FailureReason != null &&
-                this.FailureReason.Equals(other.FailureReason)
+                FailureReason == other.FailureReason ||
+                FailureReason != null &&
+                FailureReason.Equals(other.FailureReason)
             ) &&
             (
-                this.DownloadURI == other.DownloadURI ||
-                this.DownloadURI != null &&
-                this.DownloadURI.Equals(other.DownloadURI)
+                DownloadURI == other.DownloadURI ||
+                DownloadURI != null &&
+                DownloadURI.Equals(other.DownloadURI)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -264,49 +264,49 @@ public partial class ContactsBulkOperationJob : IEquatable<ContactsBulkOperation
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.TotalRecords != null)
+            if (TotalRecords != null)
             {
-                hash = hash * 59 + this.TotalRecords.GetHashCode();
+                hash = hash * 59 + TotalRecords.GetHashCode();
             }
 
-            if (this.CompletedRecords != null)
+            if (CompletedRecords != null)
             {
-                hash = hash * 59 + this.CompletedRecords.GetHashCode();
+                hash = hash * 59 + CompletedRecords.GetHashCode();
             }
 
-            if (this.PercentComplete != null)
+            if (PercentComplete != null)
             {
-                hash = hash * 59 + this.PercentComplete.GetHashCode();
+                hash = hash * 59 + PercentComplete.GetHashCode();
             }
 
-            if (this.FailureReason != null)
+            if (FailureReason != null)
             {
-                hash = hash * 59 + this.FailureReason.GetHashCode();
+                hash = hash * 59 + FailureReason.GetHashCode();
             }
 
-            if (this.DownloadURI != null)
+            if (DownloadURI != null)
             {
-                hash = hash * 59 + this.DownloadURI.GetHashCode();
+                hash = hash * 59 + DownloadURI.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

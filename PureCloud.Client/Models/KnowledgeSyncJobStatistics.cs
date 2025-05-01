@@ -233,7 +233,7 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeSyncJobStatistics);
+        return Equals(obj as KnowledgeSyncJobStatistics);
     }
 
     /// <summary>
@@ -251,84 +251,84 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
 
         return true &&
             (
-                this.CountDocumentImportActivityCreate == other.CountDocumentImportActivityCreate ||
-                this.CountDocumentImportActivityCreate != null &&
-                this.CountDocumentImportActivityCreate.Equals(other.CountDocumentImportActivityCreate)
+                CountDocumentImportActivityCreate == other.CountDocumentImportActivityCreate ||
+                CountDocumentImportActivityCreate != null &&
+                CountDocumentImportActivityCreate.Equals(other.CountDocumentImportActivityCreate)
             ) &&
             (
-                this.CountDocumentImportActivityUpdate == other.CountDocumentImportActivityUpdate ||
-                this.CountDocumentImportActivityUpdate != null &&
-                this.CountDocumentImportActivityUpdate.Equals(other.CountDocumentImportActivityUpdate)
+                CountDocumentImportActivityUpdate == other.CountDocumentImportActivityUpdate ||
+                CountDocumentImportActivityUpdate != null &&
+                CountDocumentImportActivityUpdate.Equals(other.CountDocumentImportActivityUpdate)
             ) &&
             (
-                this.CountDocumentStateDraft == other.CountDocumentStateDraft ||
-                this.CountDocumentStateDraft != null &&
-                this.CountDocumentStateDraft.Equals(other.CountDocumentStateDraft)
+                CountDocumentStateDraft == other.CountDocumentStateDraft ||
+                CountDocumentStateDraft != null &&
+                CountDocumentStateDraft.Equals(other.CountDocumentStateDraft)
             ) &&
             (
-                this.CountDocumentStatePublished == other.CountDocumentStatePublished ||
-                this.CountDocumentStatePublished != null &&
-                this.CountDocumentStatePublished.Equals(other.CountDocumentStatePublished)
+                CountDocumentStatePublished == other.CountDocumentStatePublished ||
+                CountDocumentStatePublished != null &&
+                CountDocumentStatePublished.Equals(other.CountDocumentStatePublished)
             ) &&
             (
-                this.CountDocumentImportSuccess == other.CountDocumentImportSuccess ||
-                this.CountDocumentImportSuccess != null &&
-                this.CountDocumentImportSuccess.Equals(other.CountDocumentImportSuccess)
+                CountDocumentImportSuccess == other.CountDocumentImportSuccess ||
+                CountDocumentImportSuccess != null &&
+                CountDocumentImportSuccess.Equals(other.CountDocumentImportSuccess)
             ) &&
             (
-                this.CountDocumentImportFailure == other.CountDocumentImportFailure ||
-                this.CountDocumentImportFailure != null &&
-                this.CountDocumentImportFailure.Equals(other.CountDocumentImportFailure)
+                CountDocumentImportFailure == other.CountDocumentImportFailure ||
+                CountDocumentImportFailure != null &&
+                CountDocumentImportFailure.Equals(other.CountDocumentImportFailure)
             ) &&
             (
-                this.CountCategoryImportSuccess == other.CountCategoryImportSuccess ||
-                this.CountCategoryImportSuccess != null &&
-                this.CountCategoryImportSuccess.Equals(other.CountCategoryImportSuccess)
+                CountCategoryImportSuccess == other.CountCategoryImportSuccess ||
+                CountCategoryImportSuccess != null &&
+                CountCategoryImportSuccess.Equals(other.CountCategoryImportSuccess)
             ) &&
             (
-                this.CountCategoryImportFailure == other.CountCategoryImportFailure ||
-                this.CountCategoryImportFailure != null &&
-                this.CountCategoryImportFailure.Equals(other.CountCategoryImportFailure)
+                CountCategoryImportFailure == other.CountCategoryImportFailure ||
+                CountCategoryImportFailure != null &&
+                CountCategoryImportFailure.Equals(other.CountCategoryImportFailure)
             ) &&
             (
-                this.CountLabelImportSuccess == other.CountLabelImportSuccess ||
-                this.CountLabelImportSuccess != null &&
-                this.CountLabelImportSuccess.Equals(other.CountLabelImportSuccess)
+                CountLabelImportSuccess == other.CountLabelImportSuccess ||
+                CountLabelImportSuccess != null &&
+                CountLabelImportSuccess.Equals(other.CountLabelImportSuccess)
             ) &&
             (
-                this.CountLabelImportFailure == other.CountLabelImportFailure ||
-                this.CountLabelImportFailure != null &&
-                this.CountLabelImportFailure.Equals(other.CountLabelImportFailure)
+                CountLabelImportFailure == other.CountLabelImportFailure ||
+                CountLabelImportFailure != null &&
+                CountLabelImportFailure.Equals(other.CountLabelImportFailure)
             ) &&
             (
-                this.CountDocumentDeleteSuccess == other.CountDocumentDeleteSuccess ||
-                this.CountDocumentDeleteSuccess != null &&
-                this.CountDocumentDeleteSuccess.Equals(other.CountDocumentDeleteSuccess)
+                CountDocumentDeleteSuccess == other.CountDocumentDeleteSuccess ||
+                CountDocumentDeleteSuccess != null &&
+                CountDocumentDeleteSuccess.Equals(other.CountDocumentDeleteSuccess)
             ) &&
             (
-                this.CountDocumentDeleteFailure == other.CountDocumentDeleteFailure ||
-                this.CountDocumentDeleteFailure != null &&
-                this.CountDocumentDeleteFailure.Equals(other.CountDocumentDeleteFailure)
+                CountDocumentDeleteFailure == other.CountDocumentDeleteFailure ||
+                CountDocumentDeleteFailure != null &&
+                CountDocumentDeleteFailure.Equals(other.CountDocumentDeleteFailure)
             ) &&
             (
-                this.CountCategoryDeleteSuccess == other.CountCategoryDeleteSuccess ||
-                this.CountCategoryDeleteSuccess != null &&
-                this.CountCategoryDeleteSuccess.Equals(other.CountCategoryDeleteSuccess)
+                CountCategoryDeleteSuccess == other.CountCategoryDeleteSuccess ||
+                CountCategoryDeleteSuccess != null &&
+                CountCategoryDeleteSuccess.Equals(other.CountCategoryDeleteSuccess)
             ) &&
             (
-                this.CountCategoryDeleteFailure == other.CountCategoryDeleteFailure ||
-                this.CountCategoryDeleteFailure != null &&
-                this.CountCategoryDeleteFailure.Equals(other.CountCategoryDeleteFailure)
+                CountCategoryDeleteFailure == other.CountCategoryDeleteFailure ||
+                CountCategoryDeleteFailure != null &&
+                CountCategoryDeleteFailure.Equals(other.CountCategoryDeleteFailure)
             ) &&
             (
-                this.CountLabelDeleteSuccess == other.CountLabelDeleteSuccess ||
-                this.CountLabelDeleteSuccess != null &&
-                this.CountLabelDeleteSuccess.Equals(other.CountLabelDeleteSuccess)
+                CountLabelDeleteSuccess == other.CountLabelDeleteSuccess ||
+                CountLabelDeleteSuccess != null &&
+                CountLabelDeleteSuccess.Equals(other.CountLabelDeleteSuccess)
             ) &&
             (
-                this.CountLabelDeleteFailure == other.CountLabelDeleteFailure ||
-                this.CountLabelDeleteFailure != null &&
-                this.CountLabelDeleteFailure.Equals(other.CountLabelDeleteFailure)
+                CountLabelDeleteFailure == other.CountLabelDeleteFailure ||
+                CountLabelDeleteFailure != null &&
+                CountLabelDeleteFailure.Equals(other.CountLabelDeleteFailure)
             );
     }
 
@@ -343,84 +343,84 @@ public partial class KnowledgeSyncJobStatistics : IEquatable<KnowledgeSyncJobSta
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CountDocumentImportActivityCreate != null)
+            if (CountDocumentImportActivityCreate != null)
             {
-                hash = hash * 59 + this.CountDocumentImportActivityCreate.GetHashCode();
+                hash = hash * 59 + CountDocumentImportActivityCreate.GetHashCode();
             }
 
-            if (this.CountDocumentImportActivityUpdate != null)
+            if (CountDocumentImportActivityUpdate != null)
             {
-                hash = hash * 59 + this.CountDocumentImportActivityUpdate.GetHashCode();
+                hash = hash * 59 + CountDocumentImportActivityUpdate.GetHashCode();
             }
 
-            if (this.CountDocumentStateDraft != null)
+            if (CountDocumentStateDraft != null)
             {
-                hash = hash * 59 + this.CountDocumentStateDraft.GetHashCode();
+                hash = hash * 59 + CountDocumentStateDraft.GetHashCode();
             }
 
-            if (this.CountDocumentStatePublished != null)
+            if (CountDocumentStatePublished != null)
             {
-                hash = hash * 59 + this.CountDocumentStatePublished.GetHashCode();
+                hash = hash * 59 + CountDocumentStatePublished.GetHashCode();
             }
 
-            if (this.CountDocumentImportSuccess != null)
+            if (CountDocumentImportSuccess != null)
             {
-                hash = hash * 59 + this.CountDocumentImportSuccess.GetHashCode();
+                hash = hash * 59 + CountDocumentImportSuccess.GetHashCode();
             }
 
-            if (this.CountDocumentImportFailure != null)
+            if (CountDocumentImportFailure != null)
             {
-                hash = hash * 59 + this.CountDocumentImportFailure.GetHashCode();
+                hash = hash * 59 + CountDocumentImportFailure.GetHashCode();
             }
 
-            if (this.CountCategoryImportSuccess != null)
+            if (CountCategoryImportSuccess != null)
             {
-                hash = hash * 59 + this.CountCategoryImportSuccess.GetHashCode();
+                hash = hash * 59 + CountCategoryImportSuccess.GetHashCode();
             }
 
-            if (this.CountCategoryImportFailure != null)
+            if (CountCategoryImportFailure != null)
             {
-                hash = hash * 59 + this.CountCategoryImportFailure.GetHashCode();
+                hash = hash * 59 + CountCategoryImportFailure.GetHashCode();
             }
 
-            if (this.CountLabelImportSuccess != null)
+            if (CountLabelImportSuccess != null)
             {
-                hash = hash * 59 + this.CountLabelImportSuccess.GetHashCode();
+                hash = hash * 59 + CountLabelImportSuccess.GetHashCode();
             }
 
-            if (this.CountLabelImportFailure != null)
+            if (CountLabelImportFailure != null)
             {
-                hash = hash * 59 + this.CountLabelImportFailure.GetHashCode();
+                hash = hash * 59 + CountLabelImportFailure.GetHashCode();
             }
 
-            if (this.CountDocumentDeleteSuccess != null)
+            if (CountDocumentDeleteSuccess != null)
             {
-                hash = hash * 59 + this.CountDocumentDeleteSuccess.GetHashCode();
+                hash = hash * 59 + CountDocumentDeleteSuccess.GetHashCode();
             }
 
-            if (this.CountDocumentDeleteFailure != null)
+            if (CountDocumentDeleteFailure != null)
             {
-                hash = hash * 59 + this.CountDocumentDeleteFailure.GetHashCode();
+                hash = hash * 59 + CountDocumentDeleteFailure.GetHashCode();
             }
 
-            if (this.CountCategoryDeleteSuccess != null)
+            if (CountCategoryDeleteSuccess != null)
             {
-                hash = hash * 59 + this.CountCategoryDeleteSuccess.GetHashCode();
+                hash = hash * 59 + CountCategoryDeleteSuccess.GetHashCode();
             }
 
-            if (this.CountCategoryDeleteFailure != null)
+            if (CountCategoryDeleteFailure != null)
             {
-                hash = hash * 59 + this.CountCategoryDeleteFailure.GetHashCode();
+                hash = hash * 59 + CountCategoryDeleteFailure.GetHashCode();
             }
 
-            if (this.CountLabelDeleteSuccess != null)
+            if (CountLabelDeleteSuccess != null)
             {
-                hash = hash * 59 + this.CountLabelDeleteSuccess.GetHashCode();
+                hash = hash * 59 + CountLabelDeleteSuccess.GetHashCode();
             }
 
-            if (this.CountLabelDeleteFailure != null)
+            if (CountLabelDeleteFailure != null)
             {
-                hash = hash * 59 + this.CountLabelDeleteFailure.GetHashCode();
+                hash = hash * 59 + CountLabelDeleteFailure.GetHashCode();
             }
 
             return hash;

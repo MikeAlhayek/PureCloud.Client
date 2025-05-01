@@ -201,7 +201,7 @@ public partial class NuanceBot : IEquatable<NuanceBot>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NuanceBot);
+        return Equals(obj as NuanceBot);
     }
 
     /// <summary>
@@ -219,69 +219,69 @@ public partial class NuanceBot : IEquatable<NuanceBot>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             ) &&
             (
-                this.NuanceOrganization == other.NuanceOrganization ||
-                this.NuanceOrganization != null &&
-                this.NuanceOrganization.Equals(other.NuanceOrganization)
+                NuanceOrganization == other.NuanceOrganization ||
+                NuanceOrganization != null &&
+                NuanceOrganization.Equals(other.NuanceOrganization)
             ) &&
             (
-                this.Application == other.Application ||
-                this.Application != null &&
-                this.Application.Equals(other.Application)
+                Application == other.Application ||
+                Application != null &&
+                Application.Equals(other.Application)
             ) &&
             (
-                this.NuanceEnvironment == other.NuanceEnvironment ||
-                this.NuanceEnvironment != null &&
-                this.NuanceEnvironment.Equals(other.NuanceEnvironment)
+                NuanceEnvironment == other.NuanceEnvironment ||
+                NuanceEnvironment != null &&
+                NuanceEnvironment.Equals(other.NuanceEnvironment)
             ) &&
             (
-                this.Geography == other.Geography ||
-                this.Geography != null &&
-                this.Geography.Equals(other.Geography)
+                Geography == other.Geography ||
+                Geography != null &&
+                Geography.Equals(other.Geography)
             ) &&
             (
-                this.Credentials == other.Credentials ||
-                this.Credentials != null &&
-                this.Credentials.SequenceEqual(other.Credentials)
+                Credentials == other.Credentials ||
+                Credentials != null &&
+                Credentials.SequenceEqual(other.Credentials)
             ) &&
             (
-                this.Variables == other.Variables ||
-                this.Variables != null &&
-                this.Variables.SequenceEqual(other.Variables)
+                Variables == other.Variables ||
+                Variables != null &&
+                Variables.SequenceEqual(other.Variables)
             ) &&
             (
-                this.TransferNodes == other.TransferNodes ||
-                this.TransferNodes != null &&
-                this.TransferNodes.SequenceEqual(other.TransferNodes)
+                TransferNodes == other.TransferNodes ||
+                TransferNodes != null &&
+                TransferNodes.SequenceEqual(other.TransferNodes)
             ) &&
             (
-                this.Locales == other.Locales ||
-                this.Locales != null &&
-                this.Locales.SequenceEqual(other.Locales)
+                Locales == other.Locales ||
+                Locales != null &&
+                Locales.SequenceEqual(other.Locales)
             ) &&
             (
-                this.Channels == other.Channels ||
-                this.Channels != null &&
-                this.Channels.SequenceEqual(other.Channels)
+                Channels == other.Channels ||
+                Channels != null &&
+                Channels.SequenceEqual(other.Channels)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -296,69 +296,69 @@ public partial class NuanceBot : IEquatable<NuanceBot>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
-            if (this.NuanceOrganization != null)
+            if (NuanceOrganization != null)
             {
-                hash = hash * 59 + this.NuanceOrganization.GetHashCode();
+                hash = hash * 59 + NuanceOrganization.GetHashCode();
             }
 
-            if (this.Application != null)
+            if (Application != null)
             {
-                hash = hash * 59 + this.Application.GetHashCode();
+                hash = hash * 59 + Application.GetHashCode();
             }
 
-            if (this.NuanceEnvironment != null)
+            if (NuanceEnvironment != null)
             {
-                hash = hash * 59 + this.NuanceEnvironment.GetHashCode();
+                hash = hash * 59 + NuanceEnvironment.GetHashCode();
             }
 
-            if (this.Geography != null)
+            if (Geography != null)
             {
-                hash = hash * 59 + this.Geography.GetHashCode();
+                hash = hash * 59 + Geography.GetHashCode();
             }
 
-            if (this.Credentials != null)
+            if (Credentials != null)
             {
-                hash = hash * 59 + this.Credentials.GetHashCode();
+                hash = hash * 59 + Credentials.GetHashCode();
             }
 
-            if (this.Variables != null)
+            if (Variables != null)
             {
-                hash = hash * 59 + this.Variables.GetHashCode();
+                hash = hash * 59 + Variables.GetHashCode();
             }
 
-            if (this.TransferNodes != null)
+            if (TransferNodes != null)
             {
-                hash = hash * 59 + this.TransferNodes.GetHashCode();
+                hash = hash * 59 + TransferNodes.GetHashCode();
             }
 
-            if (this.Locales != null)
+            if (Locales != null)
             {
-                hash = hash * 59 + this.Locales.GetHashCode();
+                hash = hash * 59 + Locales.GetHashCode();
             }
 
-            if (this.Channels != null)
+            if (Channels != null)
             {
-                hash = hash * 59 + this.Channels.GetHashCode();
+                hash = hash * 59 + Channels.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -74,7 +74,7 @@ public partial class PersistentConnectionChangeTopicErrorLocation : IEquatable<P
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PersistentConnectionChangeTopicErrorLocation);
+        return Equals(obj as PersistentConnectionChangeTopicErrorLocation);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class PersistentConnectionChangeTopicErrorLocation : IEquatable<P
 
         return true &&
             (
-                this.Function == other.Function ||
-                this.Function != null &&
-                this.Function.Equals(other.Function)
+                Function == other.Function ||
+                Function != null &&
+                Function.Equals(other.Function)
             ) &&
             (
-                this.FileID == other.FileID ||
-                this.FileID != null &&
-                this.FileID.Equals(other.FileID)
+                FileID == other.FileID ||
+                FileID != null &&
+                FileID.Equals(other.FileID)
             ) &&
             (
-                this.Line == other.Line ||
-                this.Line != null &&
-                this.Line.Equals(other.Line)
+                Line == other.Line ||
+                Line != null &&
+                Line.Equals(other.Line)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class PersistentConnectionChangeTopicErrorLocation : IEquatable<P
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Function != null)
+            if (Function != null)
             {
-                hash = hash * 59 + this.Function.GetHashCode();
+                hash = hash * 59 + Function.GetHashCode();
             }
 
-            if (this.FileID != null)
+            if (FileID != null)
             {
-                hash = hash * 59 + this.FileID.GetHashCode();
+                hash = hash * 59 + FileID.GetHashCode();
             }
 
-            if (this.Line != null)
+            if (Line != null)
             {
-                hash = hash * 59 + this.Line.GetHashCode();
+                hash = hash * 59 + Line.GetHashCode();
             }
 
             return hash;

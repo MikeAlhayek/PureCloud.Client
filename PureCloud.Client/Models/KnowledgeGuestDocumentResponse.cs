@@ -265,7 +265,7 @@ public partial class KnowledgeGuestDocumentResponse : IEquatable<KnowledgeGuestD
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeGuestDocumentResponse);
+        return Equals(obj as KnowledgeGuestDocumentResponse);
     }
 
     /// <summary>
@@ -283,89 +283,89 @@ public partial class KnowledgeGuestDocumentResponse : IEquatable<KnowledgeGuestD
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Visible == other.Visible ||
-                this.Visible != null &&
-                this.Visible.Equals(other.Visible)
+                Visible == other.Visible ||
+                Visible != null &&
+                Visible.Equals(other.Visible)
             ) &&
             (
-                this.Alternatives == other.Alternatives ||
-                this.Alternatives != null &&
-                this.Alternatives.SequenceEqual(other.Alternatives)
+                Alternatives == other.Alternatives ||
+                Alternatives != null &&
+                Alternatives.SequenceEqual(other.Alternatives)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.DateImported == other.DateImported ||
-                this.DateImported != null &&
-                this.DateImported.Equals(other.DateImported)
+                DateImported == other.DateImported ||
+                DateImported != null &&
+                DateImported.Equals(other.DateImported)
             ) &&
             (
-                this.LastPublishedVersionNumber == other.LastPublishedVersionNumber ||
-                this.LastPublishedVersionNumber != null &&
-                this.LastPublishedVersionNumber.Equals(other.LastPublishedVersionNumber)
+                LastPublishedVersionNumber == other.LastPublishedVersionNumber ||
+                LastPublishedVersionNumber != null &&
+                LastPublishedVersionNumber.Equals(other.LastPublishedVersionNumber)
             ) &&
             (
-                this.DatePublished == other.DatePublished ||
-                this.DatePublished != null &&
-                this.DatePublished.Equals(other.DatePublished)
+                DatePublished == other.DatePublished ||
+                DatePublished != null &&
+                DatePublished.Equals(other.DatePublished)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.DocumentVersion == other.DocumentVersion ||
-                this.DocumentVersion != null &&
-                this.DocumentVersion.Equals(other.DocumentVersion)
+                DocumentVersion == other.DocumentVersion ||
+                DocumentVersion != null &&
+                DocumentVersion.Equals(other.DocumentVersion)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.Variations == other.Variations ||
-                this.Variations != null &&
-                this.Variations.SequenceEqual(other.Variations)
+                Variations == other.Variations ||
+                Variations != null &&
+                Variations.SequenceEqual(other.Variations)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -380,89 +380,89 @@ public partial class KnowledgeGuestDocumentResponse : IEquatable<KnowledgeGuestD
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Visible != null)
+            if (Visible != null)
             {
-                hash = hash * 59 + this.Visible.GetHashCode();
+                hash = hash * 59 + Visible.GetHashCode();
             }
 
-            if (this.Alternatives != null)
+            if (Alternatives != null)
             {
-                hash = hash * 59 + this.Alternatives.GetHashCode();
+                hash = hash * 59 + Alternatives.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.DateImported != null)
+            if (DateImported != null)
             {
-                hash = hash * 59 + this.DateImported.GetHashCode();
+                hash = hash * 59 + DateImported.GetHashCode();
             }
 
-            if (this.LastPublishedVersionNumber != null)
+            if (LastPublishedVersionNumber != null)
             {
-                hash = hash * 59 + this.LastPublishedVersionNumber.GetHashCode();
+                hash = hash * 59 + LastPublishedVersionNumber.GetHashCode();
             }
 
-            if (this.DatePublished != null)
+            if (DatePublished != null)
             {
-                hash = hash * 59 + this.DatePublished.GetHashCode();
+                hash = hash * 59 + DatePublished.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.DocumentVersion != null)
+            if (DocumentVersion != null)
             {
-                hash = hash * 59 + this.DocumentVersion.GetHashCode();
+                hash = hash * 59 + DocumentVersion.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.Variations != null)
+            if (Variations != null)
             {
-                hash = hash * 59 + this.Variations.GetHashCode();
+                hash = hash * 59 + Variations.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

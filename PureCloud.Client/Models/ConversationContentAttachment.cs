@@ -187,7 +187,7 @@ public partial class ConversationContentAttachment : IEquatable<ConversationCont
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationContentAttachment);
+        return Equals(obj as ConversationContentAttachment);
     }
 
     /// <summary>
@@ -205,44 +205,44 @@ public partial class ConversationContentAttachment : IEquatable<ConversationCont
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Mime == other.Mime ||
-                this.Mime != null &&
-                this.Mime.Equals(other.Mime)
+                Mime == other.Mime ||
+                Mime != null &&
+                Mime.Equals(other.Mime)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Sha256 == other.Sha256 ||
-                this.Sha256 != null &&
-                this.Sha256.Equals(other.Sha256)
+                Sha256 == other.Sha256 ||
+                Sha256 != null &&
+                Sha256.Equals(other.Sha256)
             ) &&
             (
-                this.Filename == other.Filename ||
-                this.Filename != null &&
-                this.Filename.Equals(other.Filename)
+                Filename == other.Filename ||
+                Filename != null &&
+                Filename.Equals(other.Filename)
             ) &&
             (
-                this.ContentSizeBytes == other.ContentSizeBytes ||
-                this.ContentSizeBytes != null &&
-                this.ContentSizeBytes.Equals(other.ContentSizeBytes)
+                ContentSizeBytes == other.ContentSizeBytes ||
+                ContentSizeBytes != null &&
+                ContentSizeBytes.Equals(other.ContentSizeBytes)
             );
     }
 
@@ -257,44 +257,44 @@ public partial class ConversationContentAttachment : IEquatable<ConversationCont
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Mime != null)
+            if (Mime != null)
             {
-                hash = hash * 59 + this.Mime.GetHashCode();
+                hash = hash * 59 + Mime.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Sha256 != null)
+            if (Sha256 != null)
             {
-                hash = hash * 59 + this.Sha256.GetHashCode();
+                hash = hash * 59 + Sha256.GetHashCode();
             }
 
-            if (this.Filename != null)
+            if (Filename != null)
             {
-                hash = hash * 59 + this.Filename.GetHashCode();
+                hash = hash * 59 + Filename.GetHashCode();
             }
 
-            if (this.ContentSizeBytes != null)
+            if (ContentSizeBytes != null)
             {
-                hash = hash * 59 + this.ContentSizeBytes.GetHashCode();
+                hash = hash * 59 + ContentSizeBytes.GetHashCode();
             }
 
             return hash;

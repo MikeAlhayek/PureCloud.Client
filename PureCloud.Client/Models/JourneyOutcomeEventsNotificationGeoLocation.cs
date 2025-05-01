@@ -151,7 +151,7 @@ public partial class JourneyOutcomeEventsNotificationGeoLocation : IEquatable<Jo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyOutcomeEventsNotificationGeoLocation);
+        return Equals(obj as JourneyOutcomeEventsNotificationGeoLocation);
     }
 
     /// <summary>
@@ -169,54 +169,54 @@ public partial class JourneyOutcomeEventsNotificationGeoLocation : IEquatable<Jo
 
         return true &&
             (
-                this.Country == other.Country ||
-                this.Country != null &&
-                this.Country.Equals(other.Country)
+                Country == other.Country ||
+                Country != null &&
+                Country.Equals(other.Country)
             ) &&
             (
-                this.CountryName == other.CountryName ||
-                this.CountryName != null &&
-                this.CountryName.Equals(other.CountryName)
+                CountryName == other.CountryName ||
+                CountryName != null &&
+                CountryName.Equals(other.CountryName)
             ) &&
             (
-                this.Latitude == other.Latitude ||
-                this.Latitude != null &&
-                this.Latitude.Equals(other.Latitude)
+                Latitude == other.Latitude ||
+                Latitude != null &&
+                Latitude.Equals(other.Latitude)
             ) &&
             (
-                this.Longitude == other.Longitude ||
-                this.Longitude != null &&
-                this.Longitude.Equals(other.Longitude)
+                Longitude == other.Longitude ||
+                Longitude != null &&
+                Longitude.Equals(other.Longitude)
             ) &&
             (
-                this.Locality == other.Locality ||
-                this.Locality != null &&
-                this.Locality.Equals(other.Locality)
+                Locality == other.Locality ||
+                Locality != null &&
+                Locality.Equals(other.Locality)
             ) &&
             (
-                this.PostalCode == other.PostalCode ||
-                this.PostalCode != null &&
-                this.PostalCode.Equals(other.PostalCode)
+                PostalCode == other.PostalCode ||
+                PostalCode != null &&
+                PostalCode.Equals(other.PostalCode)
             ) &&
             (
-                this.Region == other.Region ||
-                this.Region != null &&
-                this.Region.Equals(other.Region)
+                Region == other.Region ||
+                Region != null &&
+                Region.Equals(other.Region)
             ) &&
             (
-                this.RegionName == other.RegionName ||
-                this.RegionName != null &&
-                this.RegionName.Equals(other.RegionName)
+                RegionName == other.RegionName ||
+                RegionName != null &&
+                RegionName.Equals(other.RegionName)
             ) &&
             (
-                this.Timezone == other.Timezone ||
-                this.Timezone != null &&
-                this.Timezone.Equals(other.Timezone)
+                Timezone == other.Timezone ||
+                Timezone != null &&
+                Timezone.Equals(other.Timezone)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             );
     }
 
@@ -231,54 +231,54 @@ public partial class JourneyOutcomeEventsNotificationGeoLocation : IEquatable<Jo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Country != null)
+            if (Country != null)
             {
-                hash = hash * 59 + this.Country.GetHashCode();
+                hash = hash * 59 + Country.GetHashCode();
             }
 
-            if (this.CountryName != null)
+            if (CountryName != null)
             {
-                hash = hash * 59 + this.CountryName.GetHashCode();
+                hash = hash * 59 + CountryName.GetHashCode();
             }
 
-            if (this.Latitude != null)
+            if (Latitude != null)
             {
-                hash = hash * 59 + this.Latitude.GetHashCode();
+                hash = hash * 59 + Latitude.GetHashCode();
             }
 
-            if (this.Longitude != null)
+            if (Longitude != null)
             {
-                hash = hash * 59 + this.Longitude.GetHashCode();
+                hash = hash * 59 + Longitude.GetHashCode();
             }
 
-            if (this.Locality != null)
+            if (Locality != null)
             {
-                hash = hash * 59 + this.Locality.GetHashCode();
+                hash = hash * 59 + Locality.GetHashCode();
             }
 
-            if (this.PostalCode != null)
+            if (PostalCode != null)
             {
-                hash = hash * 59 + this.PostalCode.GetHashCode();
+                hash = hash * 59 + PostalCode.GetHashCode();
             }
 
-            if (this.Region != null)
+            if (Region != null)
             {
-                hash = hash * 59 + this.Region.GetHashCode();
+                hash = hash * 59 + Region.GetHashCode();
             }
 
-            if (this.RegionName != null)
+            if (RegionName != null)
             {
-                hash = hash * 59 + this.RegionName.GetHashCode();
+                hash = hash * 59 + RegionName.GetHashCode();
             }
 
-            if (this.Timezone != null)
+            if (Timezone != null)
             {
-                hash = hash * 59 + this.Timezone.GetHashCode();
+                hash = hash * 59 + Timezone.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
             return hash;

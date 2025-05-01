@@ -53,7 +53,7 @@ public partial class ValidateAddressRequest : IEquatable<ValidateAddressRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValidateAddressRequest);
+        return Equals(obj as ValidateAddressRequest);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ValidateAddressRequest : IEquatable<ValidateAddressRequest>
 
         return true &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ValidateAddressRequest : IEquatable<ValidateAddressRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
             return hash;

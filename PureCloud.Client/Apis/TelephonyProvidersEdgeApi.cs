@@ -6651,12 +6651,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     /// <returns></returns>
     public TelephonyProvidersEdgeApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -6670,17 +6670,17 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -6690,7 +6690,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -6716,7 +6716,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -6728,7 +6728,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -6773,7 +6773,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6782,7 +6782,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6795,7 +6795,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -6811,11 +6811,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6889,7 +6889,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6898,7 +6898,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6911,7 +6911,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -6927,11 +6927,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7012,7 +7012,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7021,7 +7021,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7034,12 +7034,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (interfaceId != null)
         {
-            localVarPathParams.Add("interfaceId", this.Configuration.ApiClient.ParameterToString(interfaceId));
+            localVarPathParams.Add("interfaceId", Configuration.ApiClient.ParameterToString(interfaceId));
         }
 
         // Query params
@@ -7055,11 +7055,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7141,7 +7141,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7150,7 +7150,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7163,12 +7163,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (interfaceId != null)
         {
-            localVarPathParams.Add("interfaceId", this.Configuration.ApiClient.ParameterToString(interfaceId));
+            localVarPathParams.Add("interfaceId", Configuration.ApiClient.ParameterToString(interfaceId));
         }
 
         // Query params
@@ -7184,11 +7184,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7262,7 +7262,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7271,7 +7271,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7284,7 +7284,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -7300,11 +7300,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7378,7 +7378,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7387,7 +7387,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7400,7 +7400,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -7416,11 +7416,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7487,7 +7487,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7496,7 +7496,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7521,11 +7521,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7592,7 +7592,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7601,7 +7601,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7626,11 +7626,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7704,7 +7704,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7713,7 +7713,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7726,7 +7726,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (certificateId != null)
         {
-            localVarPathParams.Add("certificateId", this.Configuration.ApiClient.ParameterToString(certificateId));
+            localVarPathParams.Add("certificateId", Configuration.ApiClient.ParameterToString(certificateId));
         }
 
         // Query params
@@ -7742,11 +7742,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7820,7 +7820,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7829,7 +7829,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7842,7 +7842,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (certificateId != null)
         {
-            localVarPathParams.Add("certificateId", this.Configuration.ApiClient.ParameterToString(certificateId));
+            localVarPathParams.Add("certificateId", Configuration.ApiClient.ParameterToString(certificateId));
         }
 
         // Query params
@@ -7858,11 +7858,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7936,7 +7936,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7945,7 +7945,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7958,7 +7958,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (didPoolId != null)
         {
-            localVarPathParams.Add("didPoolId", this.Configuration.ApiClient.ParameterToString(didPoolId));
+            localVarPathParams.Add("didPoolId", Configuration.ApiClient.ParameterToString(didPoolId));
         }
 
         // Query params
@@ -7974,11 +7974,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8052,7 +8052,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8061,7 +8061,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8074,7 +8074,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (didPoolId != null)
         {
-            localVarPathParams.Add("didPoolId", this.Configuration.ApiClient.ParameterToString(didPoolId));
+            localVarPathParams.Add("didPoolId", Configuration.ApiClient.ParameterToString(didPoolId));
         }
 
         // Query params
@@ -8090,11 +8090,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8168,7 +8168,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8177,7 +8177,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8190,7 +8190,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeGroupId != null)
         {
-            localVarPathParams.Add("edgeGroupId", this.Configuration.ApiClient.ParameterToString(edgeGroupId));
+            localVarPathParams.Add("edgeGroupId", Configuration.ApiClient.ParameterToString(edgeGroupId));
         }
 
         // Query params
@@ -8206,11 +8206,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8284,7 +8284,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8293,7 +8293,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8306,7 +8306,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeGroupId != null)
         {
-            localVarPathParams.Add("edgeGroupId", this.Configuration.ApiClient.ParameterToString(edgeGroupId));
+            localVarPathParams.Add("edgeGroupId", Configuration.ApiClient.ParameterToString(edgeGroupId));
         }
 
         // Query params
@@ -8322,11 +8322,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8400,7 +8400,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8409,7 +8409,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8422,7 +8422,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (extensionPoolId != null)
         {
-            localVarPathParams.Add("extensionPoolId", this.Configuration.ApiClient.ParameterToString(extensionPoolId));
+            localVarPathParams.Add("extensionPoolId", Configuration.ApiClient.ParameterToString(extensionPoolId));
         }
 
         // Query params
@@ -8438,11 +8438,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8516,7 +8516,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8525,7 +8525,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8538,7 +8538,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (extensionPoolId != null)
         {
-            localVarPathParams.Add("extensionPoolId", this.Configuration.ApiClient.ParameterToString(extensionPoolId));
+            localVarPathParams.Add("extensionPoolId", Configuration.ApiClient.ParameterToString(extensionPoolId));
         }
 
         // Query params
@@ -8554,11 +8554,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8632,7 +8632,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8641,7 +8641,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8654,7 +8654,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneId != null)
         {
-            localVarPathParams.Add("phoneId", this.Configuration.ApiClient.ParameterToString(phoneId));
+            localVarPathParams.Add("phoneId", Configuration.ApiClient.ParameterToString(phoneId));
         }
 
         // Query params
@@ -8670,11 +8670,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8748,7 +8748,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8757,7 +8757,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8770,7 +8770,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneId != null)
         {
-            localVarPathParams.Add("phoneId", this.Configuration.ApiClient.ParameterToString(phoneId));
+            localVarPathParams.Add("phoneId", Configuration.ApiClient.ParameterToString(phoneId));
         }
 
         // Query params
@@ -8786,11 +8786,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8864,7 +8864,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8873,7 +8873,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8886,7 +8886,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneBaseId != null)
         {
-            localVarPathParams.Add("phoneBaseId", this.Configuration.ApiClient.ParameterToString(phoneBaseId));
+            localVarPathParams.Add("phoneBaseId", Configuration.ApiClient.ParameterToString(phoneBaseId));
         }
 
         // Query params
@@ -8902,11 +8902,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8980,7 +8980,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8989,7 +8989,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9002,7 +9002,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneBaseId != null)
         {
-            localVarPathParams.Add("phoneBaseId", this.Configuration.ApiClient.ParameterToString(phoneBaseId));
+            localVarPathParams.Add("phoneBaseId", Configuration.ApiClient.ParameterToString(phoneBaseId));
         }
 
         // Query params
@@ -9018,11 +9018,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9096,7 +9096,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9105,7 +9105,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9118,7 +9118,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -9134,11 +9134,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9212,7 +9212,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9221,7 +9221,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9234,7 +9234,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -9250,11 +9250,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9335,7 +9335,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9344,7 +9344,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9357,12 +9357,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         if (outboundRouteId != null)
         {
-            localVarPathParams.Add("outboundRouteId", this.Configuration.ApiClient.ParameterToString(outboundRouteId));
+            localVarPathParams.Add("outboundRouteId", Configuration.ApiClient.ParameterToString(outboundRouteId));
         }
 
         // Query params
@@ -9378,11 +9378,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9464,7 +9464,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9473,7 +9473,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9486,12 +9486,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         if (outboundRouteId != null)
         {
-            localVarPathParams.Add("outboundRouteId", this.Configuration.ApiClient.ParameterToString(outboundRouteId));
+            localVarPathParams.Add("outboundRouteId", Configuration.ApiClient.ParameterToString(outboundRouteId));
         }
 
         // Query params
@@ -9507,11 +9507,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9585,7 +9585,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9594,7 +9594,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9607,7 +9607,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (trunkBaseSettingsId != null)
         {
-            localVarPathParams.Add("trunkBaseSettingsId", this.Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
+            localVarPathParams.Add("trunkBaseSettingsId", Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
         }
 
         // Query params
@@ -9623,11 +9623,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9701,7 +9701,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9710,7 +9710,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9723,7 +9723,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (trunkBaseSettingsId != null)
         {
-            localVarPathParams.Add("trunkBaseSettingsId", this.Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
+            localVarPathParams.Add("trunkBaseSettingsId", Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
         }
 
         // Query params
@@ -9739,11 +9739,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9820,7 +9820,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9829,7 +9829,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9842,13 +9842,13 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -9862,11 +9862,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9892,7 +9892,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Edge>(localVarStatusCode,
             localVarHeaders,
-            (Edge)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
+            (Edge)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9943,7 +9943,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9952,7 +9952,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9965,13 +9965,13 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -9985,11 +9985,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10015,7 +10015,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Edge>(localVarStatusCode,
             localVarHeaders,
-            (Edge)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
+            (Edge)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10064,7 +10064,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10073,7 +10073,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10086,7 +10086,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -10102,11 +10102,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10132,7 +10132,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnosticResponse>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnosticResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
+            (EdgeNetworkDiagnosticResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10181,7 +10181,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10190,7 +10190,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10203,7 +10203,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -10219,11 +10219,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10249,7 +10249,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnosticResponse>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnosticResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
+            (EdgeNetworkDiagnosticResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10298,7 +10298,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10307,7 +10307,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10320,7 +10320,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -10336,11 +10336,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10366,7 +10366,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnosticResponse>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnosticResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
+            (EdgeNetworkDiagnosticResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10415,7 +10415,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10424,7 +10424,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10437,7 +10437,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -10453,11 +10453,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10483,7 +10483,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnosticResponse>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnosticResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
+            (EdgeNetworkDiagnosticResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10532,7 +10532,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10541,7 +10541,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10554,7 +10554,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -10570,11 +10570,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10600,7 +10600,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnosticResponse>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnosticResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
+            (EdgeNetworkDiagnosticResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10649,7 +10649,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10658,7 +10658,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10671,7 +10671,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -10687,11 +10687,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10717,7 +10717,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnosticResponse>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnosticResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
+            (EdgeNetworkDiagnosticResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10766,7 +10766,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10775,7 +10775,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10788,7 +10788,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -10804,11 +10804,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10834,7 +10834,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnosticResponse>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnosticResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
+            (EdgeNetworkDiagnosticResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10883,7 +10883,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10892,7 +10892,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10905,7 +10905,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -10921,11 +10921,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10951,7 +10951,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnosticResponse>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnosticResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
+            (EdgeNetworkDiagnosticResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnosticResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11009,7 +11009,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11018,7 +11018,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11031,18 +11031,18 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (interfaceId != null)
         {
-            localVarPathParams.Add("interfaceId", this.Configuration.ApiClient.ParameterToString(interfaceId));
+            localVarPathParams.Add("interfaceId", Configuration.ApiClient.ParameterToString(interfaceId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -11056,11 +11056,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11086,7 +11086,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainLogicalInterface>(localVarStatusCode,
             localVarHeaders,
-            (DomainLogicalInterface)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
+            (DomainLogicalInterface)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11145,7 +11145,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11154,7 +11154,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11167,18 +11167,18 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (interfaceId != null)
         {
-            localVarPathParams.Add("interfaceId", this.Configuration.ApiClient.ParameterToString(interfaceId));
+            localVarPathParams.Add("interfaceId", Configuration.ApiClient.ParameterToString(interfaceId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -11192,11 +11192,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11222,7 +11222,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainLogicalInterface>(localVarStatusCode,
             localVarHeaders,
-            (DomainLogicalInterface)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
+            (DomainLogicalInterface)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11273,7 +11273,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11282,7 +11282,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11295,13 +11295,13 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -11315,11 +11315,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11345,7 +11345,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<LogicalInterfaceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LogicalInterfaceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogicalInterfaceEntityListing)),
+            (LogicalInterfaceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogicalInterfaceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11396,7 +11396,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11405,7 +11405,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11418,13 +11418,13 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -11438,11 +11438,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11468,7 +11468,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<LogicalInterfaceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LogicalInterfaceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogicalInterfaceEntityListing)),
+            (LogicalInterfaceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogicalInterfaceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11524,7 +11524,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11533,7 +11533,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11546,12 +11546,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -11567,11 +11567,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11597,7 +11597,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeLogsJob>(localVarStatusCode,
             localVarHeaders,
-            (EdgeLogsJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeLogsJob)),
+            (EdgeLogsJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeLogsJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11654,7 +11654,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11663,7 +11663,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11676,12 +11676,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -11697,11 +11697,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11727,7 +11727,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeLogsJob>(localVarStatusCode,
             localVarHeaders,
-            (EdgeLogsJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeLogsJob)),
+            (EdgeLogsJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeLogsJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11776,7 +11776,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11785,7 +11785,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11798,7 +11798,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -11814,11 +11814,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11844,7 +11844,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeMetrics>(localVarStatusCode,
             localVarHeaders,
-            (EdgeMetrics)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeMetrics)),
+            (EdgeMetrics)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeMetrics)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11893,7 +11893,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11902,7 +11902,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11915,7 +11915,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -11931,11 +11931,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11961,7 +11961,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeMetrics>(localVarStatusCode,
             localVarHeaders,
-            (EdgeMetrics)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeMetrics)),
+            (EdgeMetrics)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeMetrics)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12017,7 +12017,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12026,7 +12026,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12039,12 +12039,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (interfaceId != null)
         {
-            localVarPathParams.Add("interfaceId", this.Configuration.ApiClient.ParameterToString(interfaceId));
+            localVarPathParams.Add("interfaceId", Configuration.ApiClient.ParameterToString(interfaceId));
         }
 
         // Query params
@@ -12060,11 +12060,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12090,7 +12090,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainPhysicalInterface>(localVarStatusCode,
             localVarHeaders,
-            (DomainPhysicalInterface)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainPhysicalInterface)),
+            (DomainPhysicalInterface)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainPhysicalInterface)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12147,7 +12147,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12156,7 +12156,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12169,12 +12169,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (interfaceId != null)
         {
-            localVarPathParams.Add("interfaceId", this.Configuration.ApiClient.ParameterToString(interfaceId));
+            localVarPathParams.Add("interfaceId", Configuration.ApiClient.ParameterToString(interfaceId));
         }
 
         // Query params
@@ -12190,11 +12190,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12220,7 +12220,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainPhysicalInterface>(localVarStatusCode,
             localVarHeaders,
-            (DomainPhysicalInterface)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainPhysicalInterface)),
+            (DomainPhysicalInterface)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainPhysicalInterface)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12269,7 +12269,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12278,7 +12278,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12291,7 +12291,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -12307,11 +12307,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12337,7 +12337,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhysicalInterfaceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PhysicalInterfaceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhysicalInterfaceEntityListing)),
+            (PhysicalInterfaceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhysicalInterfaceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12386,7 +12386,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12395,7 +12395,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12408,7 +12408,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -12424,11 +12424,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12454,7 +12454,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhysicalInterfaceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PhysicalInterfaceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhysicalInterfaceEntityListing)),
+            (PhysicalInterfaceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhysicalInterfaceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12503,7 +12503,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12512,7 +12512,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12525,7 +12525,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -12541,11 +12541,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12571,7 +12571,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<VmPairingInfo>(localVarStatusCode,
             localVarHeaders,
-            (VmPairingInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VmPairingInfo)),
+            (VmPairingInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VmPairingInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12620,7 +12620,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12629,7 +12629,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12642,7 +12642,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -12658,11 +12658,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12688,7 +12688,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<VmPairingInfo>(localVarStatusCode,
             localVarHeaders,
-            (VmPairingInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VmPairingInfo)),
+            (VmPairingInfo)Configuration.ApiClient.Deserialize(localVarResponse, typeof(VmPairingInfo)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12737,7 +12737,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12746,7 +12746,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12759,7 +12759,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -12775,11 +12775,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12805,7 +12805,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainEdgeSoftwareUpdateDto>(localVarStatusCode,
             localVarHeaders,
-            (DomainEdgeSoftwareUpdateDto)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareUpdateDto)),
+            (DomainEdgeSoftwareUpdateDto)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareUpdateDto)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12854,7 +12854,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12863,7 +12863,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12876,7 +12876,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -12892,11 +12892,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12922,7 +12922,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainEdgeSoftwareUpdateDto>(localVarStatusCode,
             localVarHeaders,
-            (DomainEdgeSoftwareUpdateDto)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareUpdateDto)),
+            (DomainEdgeSoftwareUpdateDto)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareUpdateDto)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12971,7 +12971,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12980,7 +12980,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12993,7 +12993,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -13009,11 +13009,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13039,7 +13039,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DomainEdgeSoftwareVersionDtoEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareVersionDtoEntityListing)),
+            (DomainEdgeSoftwareVersionDtoEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareVersionDtoEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13088,7 +13088,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13097,7 +13097,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13110,7 +13110,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -13126,11 +13126,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13156,7 +13156,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DomainEdgeSoftwareVersionDtoEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareVersionDtoEntityListing)),
+            (DomainEdgeSoftwareVersionDtoEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareVersionDtoEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13217,7 +13217,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13226,7 +13226,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13239,38 +13239,38 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (trunkBaseId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkBase.id", this.Configuration.ApiClient.ParameterToString(trunkBaseId)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkBase.id", Configuration.ApiClient.ParameterToString(trunkBaseId)));
         }
 
         if (trunkType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkType", this.Configuration.ApiClient.ParameterToString(trunkType)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkType", Configuration.ApiClient.ParameterToString(trunkType)));
         }
 
         // Header params
@@ -13284,11 +13284,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13314,7 +13314,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TrunkEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkEntityListing)),
+            (TrunkEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13375,7 +13375,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13384,7 +13384,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13397,38 +13397,38 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (trunkBaseId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkBase.id", this.Configuration.ApiClient.ParameterToString(trunkBaseId)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkBase.id", Configuration.ApiClient.ParameterToString(trunkBaseId)));
         }
 
         if (trunkType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkType", this.Configuration.ApiClient.ParameterToString(trunkType)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkType", Configuration.ApiClient.ParameterToString(trunkType)));
         }
 
         // Header params
@@ -13442,11 +13442,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13472,7 +13472,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TrunkEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkEntityListing)),
+            (TrunkEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13530,7 +13530,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13539,7 +13539,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13554,42 +13554,42 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (siteId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("site.id", this.Configuration.ApiClient.ParameterToString(siteId)));
+            localVarQueryParams.Add(new Tuple<string, string>("site.id", Configuration.ApiClient.ParameterToString(siteId)));
         }
 
         if (edgeGroupId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("edgeGroup.id", this.Configuration.ApiClient.ParameterToString(edgeGroupId)));
+            localVarQueryParams.Add(new Tuple<string, string>("edgeGroup.id", Configuration.ApiClient.ParameterToString(edgeGroupId)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (managed != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("managed", this.Configuration.ApiClient.ParameterToString(managed)));
+            localVarQueryParams.Add(new Tuple<string, string>("managed", Configuration.ApiClient.ParameterToString(managed)));
         }
 
         if (showCloudMedia != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("showCloudMedia", this.Configuration.ApiClient.ParameterToString(showCloudMedia)));
+            localVarQueryParams.Add(new Tuple<string, string>("showCloudMedia", Configuration.ApiClient.ParameterToString(showCloudMedia)));
         }
 
         // Header params
@@ -13603,11 +13603,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13633,7 +13633,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EdgeEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeEntityListing)),
+            (EdgeEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13691,7 +13691,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13700,7 +13700,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13715,42 +13715,42 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (siteId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("site.id", this.Configuration.ApiClient.ParameterToString(siteId)));
+            localVarQueryParams.Add(new Tuple<string, string>("site.id", Configuration.ApiClient.ParameterToString(siteId)));
         }
 
         if (edgeGroupId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("edgeGroup.id", this.Configuration.ApiClient.ParameterToString(edgeGroupId)));
+            localVarQueryParams.Add(new Tuple<string, string>("edgeGroup.id", Configuration.ApiClient.ParameterToString(edgeGroupId)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (managed != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("managed", this.Configuration.ApiClient.ParameterToString(managed)));
+            localVarQueryParams.Add(new Tuple<string, string>("managed", Configuration.ApiClient.ParameterToString(managed)));
         }
 
         if (showCloudMedia != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("showCloudMedia", this.Configuration.ApiClient.ParameterToString(showCloudMedia)));
+            localVarQueryParams.Add(new Tuple<string, string>("showCloudMedia", Configuration.ApiClient.ParameterToString(showCloudMedia)));
         }
 
         // Header params
@@ -13764,11 +13764,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13794,7 +13794,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EdgeEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeEntityListing)),
+            (EdgeEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13838,7 +13838,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13847,7 +13847,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13862,7 +13862,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (type != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(type)));
+            localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(type)));
         }
 
         // Header params
@@ -13876,11 +13876,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13906,7 +13906,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<AlertablePresences>(localVarStatusCode,
             localVarHeaders,
-            (AlertablePresences)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AlertablePresences)),
+            (AlertablePresences)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AlertablePresences)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13950,7 +13950,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13959,7 +13959,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13974,7 +13974,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (type != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(type)));
+            localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(type)));
         }
 
         // Header params
@@ -13988,11 +13988,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14018,7 +14018,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<AlertablePresences>(localVarStatusCode,
             localVarHeaders,
-            (AlertablePresences)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AlertablePresences)),
+            (AlertablePresences)Configuration.ApiClient.Deserialize(localVarResponse, typeof(AlertablePresences)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14060,7 +14060,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14069,7 +14069,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14094,11 +14094,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14124,7 +14124,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<CertificateAuthorityEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (CertificateAuthorityEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CertificateAuthorityEntityListing)),
+            (CertificateAuthorityEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CertificateAuthorityEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14166,7 +14166,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14175,7 +14175,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14200,11 +14200,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14230,7 +14230,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<CertificateAuthorityEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (CertificateAuthorityEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CertificateAuthorityEntityListing)),
+            (CertificateAuthorityEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CertificateAuthorityEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14279,7 +14279,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14288,7 +14288,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14301,7 +14301,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (certificateId != null)
         {
-            localVarPathParams.Add("certificateId", this.Configuration.ApiClient.ParameterToString(certificateId));
+            localVarPathParams.Add("certificateId", Configuration.ApiClient.ParameterToString(certificateId));
         }
 
         // Query params
@@ -14317,11 +14317,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14347,7 +14347,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainCertificateAuthority>(localVarStatusCode,
             localVarHeaders,
-            (DomainCertificateAuthority)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
+            (DomainCertificateAuthority)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14396,7 +14396,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14405,7 +14405,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14418,7 +14418,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (certificateId != null)
         {
-            localVarPathParams.Add("certificateId", this.Configuration.ApiClient.ParameterToString(certificateId));
+            localVarPathParams.Add("certificateId", Configuration.ApiClient.ParameterToString(certificateId));
         }
 
         // Query params
@@ -14434,11 +14434,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14464,7 +14464,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainCertificateAuthority>(localVarStatusCode,
             localVarHeaders,
-            (DomainCertificateAuthority)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
+            (DomainCertificateAuthority)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14513,7 +14513,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14522,7 +14522,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14535,7 +14535,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (didId != null)
         {
-            localVarPathParams.Add("didId", this.Configuration.ApiClient.ParameterToString(didId));
+            localVarPathParams.Add("didId", Configuration.ApiClient.ParameterToString(didId));
         }
 
         // Query params
@@ -14551,11 +14551,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14581,7 +14581,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DID>(localVarStatusCode,
             localVarHeaders,
-            (DID)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DID)),
+            (DID)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DID)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14630,7 +14630,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14639,7 +14639,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14652,7 +14652,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (didId != null)
         {
-            localVarPathParams.Add("didId", this.Configuration.ApiClient.ParameterToString(didId));
+            localVarPathParams.Add("didId", Configuration.ApiClient.ParameterToString(didId));
         }
 
         // Query params
@@ -14668,11 +14668,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14698,7 +14698,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DID>(localVarStatusCode,
             localVarHeaders,
-            (DID)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DID)),
+            (DID)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DID)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14747,7 +14747,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14756,7 +14756,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14769,7 +14769,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (didPoolId != null)
         {
-            localVarPathParams.Add("didPoolId", this.Configuration.ApiClient.ParameterToString(didPoolId));
+            localVarPathParams.Add("didPoolId", Configuration.ApiClient.ParameterToString(didPoolId));
         }
 
         // Query params
@@ -14785,11 +14785,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14815,7 +14815,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDPool>(localVarStatusCode,
             localVarHeaders,
-            (DIDPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
+            (DIDPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14864,7 +14864,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14873,7 +14873,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14886,7 +14886,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (didPoolId != null)
         {
-            localVarPathParams.Add("didPoolId", this.Configuration.ApiClient.ParameterToString(didPoolId));
+            localVarPathParams.Add("didPoolId", Configuration.ApiClient.ParameterToString(didPoolId));
         }
 
         // Query params
@@ -14902,11 +14902,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14932,7 +14932,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDPool>(localVarStatusCode,
             localVarHeaders,
-            (DIDPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
+            (DIDPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14982,7 +14982,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14991,7 +14991,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15006,22 +15006,22 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15035,11 +15035,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15065,7 +15065,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDPoolEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DIDPoolEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPoolEntityListing)),
+            (DIDPoolEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPoolEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15115,7 +15115,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15124,7 +15124,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15139,22 +15139,22 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15168,11 +15168,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15198,7 +15198,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDPoolEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DIDPoolEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPoolEntityListing)),
+            (DIDPoolEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPoolEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15257,7 +15257,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15266,7 +15266,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15281,32 +15281,32 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (type != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(type)));
+            localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(type)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (numberMatch != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("numberMatch", this.Configuration.ApiClient.ParameterToString(numberMatch)));
+            localVarQueryParams.Add(new Tuple<string, string>("numberMatch", Configuration.ApiClient.ParameterToString(numberMatch)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -15320,11 +15320,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15350,7 +15350,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDNumberEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DIDNumberEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDNumberEntityListing)),
+            (DIDNumberEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDNumberEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15409,7 +15409,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15418,7 +15418,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15433,32 +15433,32 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (type != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(type)));
+            localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(type)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (numberMatch != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("numberMatch", this.Configuration.ApiClient.ParameterToString(numberMatch)));
+            localVarQueryParams.Add(new Tuple<string, string>("numberMatch", Configuration.ApiClient.ParameterToString(numberMatch)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -15472,11 +15472,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15502,7 +15502,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDNumberEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DIDNumberEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDNumberEntityListing)),
+            (DIDNumberEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDNumberEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15560,7 +15560,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15569,7 +15569,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15584,42 +15584,42 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (phoneNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("phoneNumber", this.Configuration.ApiClient.ParameterToString(phoneNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("phoneNumber", Configuration.ApiClient.ParameterToString(phoneNumber)));
         }
 
         if (ownerId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("owner.id", this.Configuration.ApiClient.ParameterToString(ownerId)));
+            localVarQueryParams.Add(new Tuple<string, string>("owner.id", Configuration.ApiClient.ParameterToString(ownerId)));
         }
 
         if (didPoolId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("didPool.id", this.Configuration.ApiClient.ParameterToString(didPoolId)));
+            localVarQueryParams.Add(new Tuple<string, string>("didPool.id", Configuration.ApiClient.ParameterToString(didPoolId)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15633,11 +15633,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15663,7 +15663,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DIDEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDEntityListing)),
+            (DIDEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15721,7 +15721,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15730,7 +15730,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15745,42 +15745,42 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (phoneNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("phoneNumber", this.Configuration.ApiClient.ParameterToString(phoneNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("phoneNumber", Configuration.ApiClient.ParameterToString(phoneNumber)));
         }
 
         if (ownerId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("owner.id", this.Configuration.ApiClient.ParameterToString(ownerId)));
+            localVarQueryParams.Add(new Tuple<string, string>("owner.id", Configuration.ApiClient.ParameterToString(ownerId)));
         }
 
         if (didPoolId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("didPool.id", this.Configuration.ApiClient.ParameterToString(didPoolId)));
+            localVarQueryParams.Add(new Tuple<string, string>("didPool.id", Configuration.ApiClient.ParameterToString(didPoolId)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15794,11 +15794,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15824,7 +15824,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DIDEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDEntityListing)),
+            (DIDEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15875,7 +15875,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15884,7 +15884,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15897,13 +15897,13 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeGroupId != null)
         {
-            localVarPathParams.Add("edgeGroupId", this.Configuration.ApiClient.ParameterToString(edgeGroupId));
+            localVarPathParams.Add("edgeGroupId", Configuration.ApiClient.ParameterToString(edgeGroupId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -15917,11 +15917,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15947,7 +15947,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeGroup>(localVarStatusCode,
             localVarHeaders,
-            (EdgeGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
+            (EdgeGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15998,7 +15998,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16007,7 +16007,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16020,13 +16020,13 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeGroupId != null)
         {
-            localVarPathParams.Add("edgeGroupId", this.Configuration.ApiClient.ParameterToString(edgeGroupId));
+            localVarPathParams.Add("edgeGroupId", Configuration.ApiClient.ParameterToString(edgeGroupId));
         }
 
         // Query params
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -16040,11 +16040,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16070,7 +16070,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeGroup>(localVarStatusCode,
             localVarHeaders,
-            (EdgeGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
+            (EdgeGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16126,7 +16126,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16135,7 +16135,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16148,12 +16148,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgegroupId != null)
         {
-            localVarPathParams.Add("edgegroupId", this.Configuration.ApiClient.ParameterToString(edgegroupId));
+            localVarPathParams.Add("edgegroupId", Configuration.ApiClient.ParameterToString(edgegroupId));
         }
 
         if (edgetrunkbaseId != null)
         {
-            localVarPathParams.Add("edgetrunkbaseId", this.Configuration.ApiClient.ParameterToString(edgetrunkbaseId));
+            localVarPathParams.Add("edgetrunkbaseId", Configuration.ApiClient.ParameterToString(edgetrunkbaseId));
         }
 
         // Query params
@@ -16169,11 +16169,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16199,7 +16199,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeTrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (EdgeTrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeTrunkBase)),
+            (EdgeTrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeTrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16256,7 +16256,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16265,7 +16265,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16278,12 +16278,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgegroupId != null)
         {
-            localVarPathParams.Add("edgegroupId", this.Configuration.ApiClient.ParameterToString(edgegroupId));
+            localVarPathParams.Add("edgegroupId", Configuration.ApiClient.ParameterToString(edgegroupId));
         }
 
         if (edgetrunkbaseId != null)
         {
-            localVarPathParams.Add("edgetrunkbaseId", this.Configuration.ApiClient.ParameterToString(edgetrunkbaseId));
+            localVarPathParams.Add("edgetrunkbaseId", Configuration.ApiClient.ParameterToString(edgetrunkbaseId));
         }
 
         // Query params
@@ -16299,11 +16299,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16329,7 +16329,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeTrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (EdgeTrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeTrunkBase)),
+            (EdgeTrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeTrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16381,7 +16381,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16390,7 +16390,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16405,27 +16405,27 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (managed != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("managed", this.Configuration.ApiClient.ParameterToString(managed)));
+            localVarQueryParams.Add(new Tuple<string, string>("managed", Configuration.ApiClient.ParameterToString(managed)));
         }
 
         // Header params
@@ -16439,11 +16439,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16469,7 +16469,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeGroupEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EdgeGroupEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroupEntityListing)),
+            (EdgeGroupEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroupEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16521,7 +16521,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16530,7 +16530,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16545,27 +16545,27 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (managed != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("managed", this.Configuration.ApiClient.ParameterToString(managed)));
+            localVarQueryParams.Add(new Tuple<string, string>("managed", Configuration.ApiClient.ParameterToString(managed)));
         }
 
         // Header params
@@ -16579,11 +16579,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16609,7 +16609,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeGroupEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EdgeGroupEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroupEntityListing)),
+            (EdgeGroupEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroupEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16651,7 +16651,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16660,7 +16660,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16685,11 +16685,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16715,7 +16715,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeVersionReport>(localVarStatusCode,
             localVarHeaders,
-            (EdgeVersionReport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeVersionReport)),
+            (EdgeVersionReport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeVersionReport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16757,7 +16757,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16766,7 +16766,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16791,11 +16791,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16821,7 +16821,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeVersionReport>(localVarStatusCode,
             localVarHeaders,
-            (EdgeVersionReport)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeVersionReport)),
+            (EdgeVersionReport)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeVersionReport)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16863,7 +16863,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16872,7 +16872,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16897,11 +16897,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16927,7 +16927,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExpiredEdgeListing>(localVarStatusCode,
             localVarHeaders,
-            (ExpiredEdgeListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExpiredEdgeListing)),
+            (ExpiredEdgeListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExpiredEdgeListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16969,7 +16969,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16978,7 +16978,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17003,11 +17003,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17033,7 +17033,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExpiredEdgeListing>(localVarStatusCode,
             localVarHeaders,
-            (ExpiredEdgeListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExpiredEdgeListing)),
+            (ExpiredEdgeListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExpiredEdgeListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17082,7 +17082,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17091,7 +17091,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17104,7 +17104,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (extensionId != null)
         {
-            localVarPathParams.Add("extensionId", this.Configuration.ApiClient.ParameterToString(extensionId));
+            localVarPathParams.Add("extensionId", Configuration.ApiClient.ParameterToString(extensionId));
         }
 
         // Query params
@@ -17120,11 +17120,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17150,7 +17150,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Extension>(localVarStatusCode,
             localVarHeaders,
-            (Extension)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Extension)),
+            (Extension)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Extension)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17199,7 +17199,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17208,7 +17208,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17221,7 +17221,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (extensionId != null)
         {
-            localVarPathParams.Add("extensionId", this.Configuration.ApiClient.ParameterToString(extensionId));
+            localVarPathParams.Add("extensionId", Configuration.ApiClient.ParameterToString(extensionId));
         }
 
         // Query params
@@ -17237,11 +17237,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17267,7 +17267,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Extension>(localVarStatusCode,
             localVarHeaders,
-            (Extension)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Extension)),
+            (Extension)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Extension)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17316,7 +17316,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17325,7 +17325,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17338,7 +17338,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (extensionPoolId != null)
         {
-            localVarPathParams.Add("extensionPoolId", this.Configuration.ApiClient.ParameterToString(extensionPoolId));
+            localVarPathParams.Add("extensionPoolId", Configuration.ApiClient.ParameterToString(extensionPoolId));
         }
 
         // Query params
@@ -17354,11 +17354,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17384,7 +17384,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionPool>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
+            (ExtensionPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17433,7 +17433,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17442,7 +17442,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17455,7 +17455,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (extensionPoolId != null)
         {
-            localVarPathParams.Add("extensionPoolId", this.Configuration.ApiClient.ParameterToString(extensionPoolId));
+            localVarPathParams.Add("extensionPoolId", Configuration.ApiClient.ParameterToString(extensionPoolId));
         }
 
         // Query params
@@ -17471,11 +17471,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17501,7 +17501,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionPool>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
+            (ExtensionPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17553,7 +17553,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17562,7 +17562,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17577,27 +17577,27 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (number != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("number", this.Configuration.ApiClient.ParameterToString(number)));
+            localVarQueryParams.Add(new Tuple<string, string>("number", Configuration.ApiClient.ParameterToString(number)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -17611,11 +17611,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17641,7 +17641,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionPoolEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionPoolEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPoolEntityListing)),
+            (ExtensionPoolEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPoolEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17693,7 +17693,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17702,7 +17702,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17717,27 +17717,27 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (number != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("number", this.Configuration.ApiClient.ParameterToString(number)));
+            localVarQueryParams.Add(new Tuple<string, string>("number", Configuration.ApiClient.ParameterToString(number)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -17751,11 +17751,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17781,7 +17781,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionPoolEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionPoolEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPoolEntityListing)),
+            (ExtensionPoolEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPoolEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17837,7 +17837,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -17846,7 +17846,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17861,37 +17861,37 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -17905,11 +17905,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -17935,7 +17935,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionPoolDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionPoolDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPoolDivisionViewEntityListing)),
+            (ExtensionPoolDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPoolDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -17991,7 +17991,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18000,7 +18000,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18015,37 +18015,37 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (id != null)
         {
-            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (divisionId != null)
         {
-            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -18059,11 +18059,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18089,7 +18089,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionPoolDivisionViewEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionPoolDivisionViewEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPoolDivisionViewEntityListing)),
+            (ExtensionPoolDivisionViewEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPoolDivisionViewEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18141,7 +18141,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18150,7 +18150,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18165,27 +18165,27 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (number != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("number", this.Configuration.ApiClient.ParameterToString(number)));
+            localVarQueryParams.Add(new Tuple<string, string>("number", Configuration.ApiClient.ParameterToString(number)));
         }
 
         // Header params
@@ -18199,11 +18199,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18229,7 +18229,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionEntityListing)),
+            (ExtensionEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18281,7 +18281,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18290,7 +18290,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18305,27 +18305,27 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (number != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("number", this.Configuration.ApiClient.ParameterToString(number)));
+            localVarQueryParams.Add(new Tuple<string, string>("number", Configuration.ApiClient.ParameterToString(number)));
         }
 
         // Header params
@@ -18339,11 +18339,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18369,7 +18369,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionEntityListing)),
+            (ExtensionEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18418,7 +18418,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18427,7 +18427,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18440,7 +18440,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (lineId != null)
         {
-            localVarPathParams.Add("lineId", this.Configuration.ApiClient.ParameterToString(lineId));
+            localVarPathParams.Add("lineId", Configuration.ApiClient.ParameterToString(lineId));
         }
 
         // Query params
@@ -18456,11 +18456,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18486,7 +18486,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Line>(localVarStatusCode,
             localVarHeaders,
-            (Line)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Line)),
+            (Line)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Line)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18535,7 +18535,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18544,7 +18544,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18557,7 +18557,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (lineId != null)
         {
-            localVarPathParams.Add("lineId", this.Configuration.ApiClient.ParameterToString(lineId));
+            localVarPathParams.Add("lineId", Configuration.ApiClient.ParameterToString(lineId));
         }
 
         // Query params
@@ -18573,11 +18573,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18603,7 +18603,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Line>(localVarStatusCode,
             localVarHeaders,
-            (Line)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Line)),
+            (Line)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Line)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18652,7 +18652,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18661,7 +18661,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18674,7 +18674,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (lineBaseId != null)
         {
-            localVarPathParams.Add("lineBaseId", this.Configuration.ApiClient.ParameterToString(lineBaseId));
+            localVarPathParams.Add("lineBaseId", Configuration.ApiClient.ParameterToString(lineBaseId));
         }
 
         // Query params
@@ -18690,11 +18690,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18720,7 +18720,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<LineBase>(localVarStatusCode,
             localVarHeaders,
-            (LineBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineBase)),
+            (LineBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18769,7 +18769,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18778,7 +18778,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18791,7 +18791,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (lineBaseId != null)
         {
-            localVarPathParams.Add("lineBaseId", this.Configuration.ApiClient.ParameterToString(lineBaseId));
+            localVarPathParams.Add("lineBaseId", Configuration.ApiClient.ParameterToString(lineBaseId));
         }
 
         // Query params
@@ -18807,11 +18807,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18837,7 +18837,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<LineBase>(localVarStatusCode,
             localVarHeaders,
-            (LineBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineBase)),
+            (LineBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -18889,7 +18889,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -18898,7 +18898,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18913,27 +18913,27 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -18947,11 +18947,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -18977,7 +18977,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<LineBaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LineBaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineBaseEntityListing)),
+            (LineBaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineBaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19029,7 +19029,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19038,7 +19038,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19053,27 +19053,27 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19087,11 +19087,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19117,7 +19117,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<LineBaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LineBaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineBaseEntityListing)),
+            (LineBaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineBaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19169,7 +19169,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19178,7 +19178,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19193,27 +19193,27 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19227,11 +19227,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19257,7 +19257,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<LineEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LineEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineEntityListing)),
+            (LineEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19309,7 +19309,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19318,7 +19318,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19333,27 +19333,27 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19367,11 +19367,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19397,7 +19397,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<LineEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LineEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineEntityListing)),
+            (LineEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LineEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19446,7 +19446,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19455,7 +19455,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19470,7 +19470,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (lineBaseSettingsId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lineBaseSettingsId", this.Configuration.ApiClient.ParameterToString(lineBaseSettingsId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lineBaseSettingsId", Configuration.ApiClient.ParameterToString(lineBaseSettingsId)));
         }
 
         // Header params
@@ -19484,11 +19484,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19514,7 +19514,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Line>(localVarStatusCode,
             localVarHeaders,
-            (Line)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Line)),
+            (Line)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Line)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19563,7 +19563,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19572,7 +19572,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19587,7 +19587,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (lineBaseSettingsId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lineBaseSettingsId", this.Configuration.ApiClient.ParameterToString(lineBaseSettingsId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lineBaseSettingsId", Configuration.ApiClient.ParameterToString(lineBaseSettingsId)));
         }
 
         // Header params
@@ -19601,11 +19601,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19631,7 +19631,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Line>(localVarStatusCode,
             localVarHeaders,
-            (Line)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Line)),
+            (Line)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Line)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19682,7 +19682,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19691,7 +19691,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19706,12 +19706,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (edgeIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", this.Configuration.ApiClient.ParameterToString(edgeIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", Configuration.ApiClient.ParameterToString(edgeIds)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19725,11 +19725,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19755,7 +19755,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<LogicalInterfaceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LogicalInterfaceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogicalInterfaceEntityListing)),
+            (LogicalInterfaceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogicalInterfaceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19806,7 +19806,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19815,7 +19815,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19830,12 +19830,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (edgeIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", this.Configuration.ApiClient.ParameterToString(edgeIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", Configuration.ApiClient.ParameterToString(edgeIds)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -19849,11 +19849,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19879,7 +19879,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<LogicalInterfaceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (LogicalInterfaceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogicalInterfaceEntityListing)),
+            (LogicalInterfaceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogicalInterfaceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -19930,7 +19930,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -19939,7 +19939,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19952,7 +19952,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -19968,11 +19968,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -19998,7 +19998,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<MediaStatisticsListing>(localVarStatusCode,
             localVarHeaders,
-            (MediaStatisticsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MediaStatisticsListing)),
+            (MediaStatisticsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MediaStatisticsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20049,7 +20049,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20058,7 +20058,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20071,7 +20071,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -20087,11 +20087,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20117,7 +20117,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<MediaStatisticsListing>(localVarStatusCode,
             localVarHeaders,
-            (MediaStatisticsListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MediaStatisticsListing)),
+            (MediaStatisticsListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MediaStatisticsListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20175,7 +20175,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20184,7 +20184,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20197,12 +20197,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (communicationId != null)
         {
-            localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            localVarPathParams.Add("communicationId", Configuration.ApiClient.ParameterToString(communicationId));
         }
 
         // Query params
@@ -20218,11 +20218,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20248,7 +20248,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<MediaStatistics>(localVarStatusCode,
             localVarHeaders,
-            (MediaStatistics)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MediaStatistics)),
+            (MediaStatistics)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MediaStatistics)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20307,7 +20307,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20316,7 +20316,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20329,12 +20329,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (communicationId != null)
         {
-            localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            localVarPathParams.Add("communicationId", Configuration.ApiClient.ParameterToString(communicationId));
         }
 
         // Query params
@@ -20350,11 +20350,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20380,7 +20380,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<MediaStatistics>(localVarStatusCode,
             localVarHeaders,
-            (MediaStatistics)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MediaStatistics)),
+            (MediaStatistics)Configuration.ApiClient.Deserialize(localVarResponse, typeof(MediaStatistics)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20429,7 +20429,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20438,7 +20438,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20453,7 +20453,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (edgeIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", this.Configuration.ApiClient.ParameterToString(edgeIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", Configuration.ApiClient.ParameterToString(edgeIds)));
         }
 
         // Header params
@@ -20467,11 +20467,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20497,7 +20497,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<List<EdgeMetrics>>(localVarStatusCode,
             localVarHeaders,
-            (List<EdgeMetrics>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdgeMetrics>)),
+            (List<EdgeMetrics>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdgeMetrics>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20546,7 +20546,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20555,7 +20555,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20570,7 +20570,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (edgeIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", this.Configuration.ApiClient.ParameterToString(edgeIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", Configuration.ApiClient.ParameterToString(edgeIds)));
         }
 
         // Header params
@@ -20584,11 +20584,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20614,7 +20614,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<List<EdgeMetrics>>(localVarStatusCode,
             localVarHeaders,
-            (List<EdgeMetrics>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdgeMetrics>)),
+            (List<EdgeMetrics>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdgeMetrics>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20668,7 +20668,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20677,7 +20677,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20692,32 +20692,32 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (siteId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("site.id", this.Configuration.ApiClient.ParameterToString(siteId)));
+            localVarQueryParams.Add(new Tuple<string, string>("site.id", Configuration.ApiClient.ParameterToString(siteId)));
         }
 
         if (externalTrunkBasesIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("externalTrunkBases.ids", this.Configuration.ApiClient.ParameterToString(externalTrunkBasesIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("externalTrunkBases.ids", Configuration.ApiClient.ParameterToString(externalTrunkBasesIds)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         // Header params
@@ -20731,11 +20731,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20761,7 +20761,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<OutboundRouteEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (OutboundRouteEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteEntityListing)),
+            (OutboundRouteEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20815,7 +20815,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20824,7 +20824,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20839,32 +20839,32 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (siteId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("site.id", this.Configuration.ApiClient.ParameterToString(siteId)));
+            localVarQueryParams.Add(new Tuple<string, string>("site.id", Configuration.ApiClient.ParameterToString(siteId)));
         }
 
         if (externalTrunkBasesIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("externalTrunkBases.ids", this.Configuration.ApiClient.ParameterToString(externalTrunkBasesIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("externalTrunkBases.ids", Configuration.ApiClient.ParameterToString(externalTrunkBasesIds)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         // Header params
@@ -20878,11 +20878,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -20908,7 +20908,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<OutboundRouteEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (OutboundRouteEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteEntityListing)),
+            (OutboundRouteEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -20957,7 +20957,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -20966,7 +20966,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20979,7 +20979,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneId != null)
         {
-            localVarPathParams.Add("phoneId", this.Configuration.ApiClient.ParameterToString(phoneId));
+            localVarPathParams.Add("phoneId", Configuration.ApiClient.ParameterToString(phoneId));
         }
 
         // Query params
@@ -20995,11 +20995,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21025,7 +21025,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Phone>(localVarStatusCode,
             localVarHeaders,
-            (Phone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
+            (Phone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21074,7 +21074,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21083,7 +21083,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21096,7 +21096,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneId != null)
         {
-            localVarPathParams.Add("phoneId", this.Configuration.ApiClient.ParameterToString(phoneId));
+            localVarPathParams.Add("phoneId", Configuration.ApiClient.ParameterToString(phoneId));
         }
 
         // Query params
@@ -21112,11 +21112,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21142,7 +21142,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Phone>(localVarStatusCode,
             localVarHeaders,
-            (Phone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
+            (Phone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21191,7 +21191,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21200,7 +21200,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21213,7 +21213,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneBaseId != null)
         {
-            localVarPathParams.Add("phoneBaseId", this.Configuration.ApiClient.ParameterToString(phoneBaseId));
+            localVarPathParams.Add("phoneBaseId", Configuration.ApiClient.ParameterToString(phoneBaseId));
         }
 
         // Query params
@@ -21229,11 +21229,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21259,7 +21259,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneBase>(localVarStatusCode,
             localVarHeaders,
-            (PhoneBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
+            (PhoneBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21308,7 +21308,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21317,7 +21317,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21330,7 +21330,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneBaseId != null)
         {
-            localVarPathParams.Add("phoneBaseId", this.Configuration.ApiClient.ParameterToString(phoneBaseId));
+            localVarPathParams.Add("phoneBaseId", Configuration.ApiClient.ParameterToString(phoneBaseId));
         }
 
         // Query params
@@ -21346,11 +21346,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21376,7 +21376,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneBase>(localVarStatusCode,
             localVarHeaders,
-            (PhoneBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
+            (PhoneBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21430,7 +21430,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21439,7 +21439,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21454,32 +21454,32 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -21493,11 +21493,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21523,7 +21523,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneBaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PhoneBaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBaseEntityListing)),
+            (PhoneBaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21577,7 +21577,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21586,7 +21586,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21601,32 +21601,32 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -21640,11 +21640,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21670,7 +21670,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneBaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PhoneBaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBaseEntityListing)),
+            (PhoneBaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21716,7 +21716,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21725,7 +21725,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21740,12 +21740,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -21759,11 +21759,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21789,7 +21789,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneMetaBaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PhoneMetaBaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneMetaBaseEntityListing)),
+            (PhoneMetaBaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneMetaBaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21835,7 +21835,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21844,7 +21844,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21859,12 +21859,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -21878,11 +21878,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -21908,7 +21908,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneMetaBaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PhoneMetaBaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneMetaBaseEntityListing)),
+            (PhoneMetaBaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneMetaBaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -21957,7 +21957,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -21966,7 +21966,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21981,7 +21981,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (phoneMetabaseId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("phoneMetabaseId", this.Configuration.ApiClient.ParameterToString(phoneMetabaseId)));
+            localVarQueryParams.Add(new Tuple<string, string>("phoneMetabaseId", Configuration.ApiClient.ParameterToString(phoneMetabaseId)));
         }
 
         // Header params
@@ -21995,11 +21995,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22025,7 +22025,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneBase>(localVarStatusCode,
             localVarHeaders,
-            (PhoneBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
+            (PhoneBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22074,7 +22074,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22083,7 +22083,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22098,7 +22098,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (phoneMetabaseId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("phoneMetabaseId", this.Configuration.ApiClient.ParameterToString(phoneMetabaseId)));
+            localVarQueryParams.Add(new Tuple<string, string>("phoneMetabaseId", Configuration.ApiClient.ParameterToString(phoneMetabaseId)));
         }
 
         // Header params
@@ -22112,11 +22112,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22142,7 +22142,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneBase>(localVarStatusCode,
             localVarHeaders,
-            (PhoneBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
+            (PhoneBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22218,7 +22218,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22227,7 +22227,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22242,87 +22242,87 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (siteId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("site.id", this.Configuration.ApiClient.ParameterToString(siteId)));
+            localVarQueryParams.Add(new Tuple<string, string>("site.id", Configuration.ApiClient.ParameterToString(siteId)));
         }
 
         if (webRtcUserId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("webRtcUser.id", this.Configuration.ApiClient.ParameterToString(webRtcUserId)));
+            localVarQueryParams.Add(new Tuple<string, string>("webRtcUser.id", Configuration.ApiClient.ParameterToString(webRtcUserId)));
         }
 
         if (phoneBaseSettingsId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("phoneBaseSettings.id", this.Configuration.ApiClient.ParameterToString(phoneBaseSettingsId)));
+            localVarQueryParams.Add(new Tuple<string, string>("phoneBaseSettings.id", Configuration.ApiClient.ParameterToString(phoneBaseSettingsId)));
         }
 
         if (linesLoggedInUserId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lines.loggedInUser.id", this.Configuration.ApiClient.ParameterToString(linesLoggedInUserId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lines.loggedInUser.id", Configuration.ApiClient.ParameterToString(linesLoggedInUserId)));
         }
 
         if (linesDefaultForUserId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lines.defaultForUser.id", this.Configuration.ApiClient.ParameterToString(linesDefaultForUserId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lines.defaultForUser.id", Configuration.ApiClient.ParameterToString(linesDefaultForUserId)));
         }
 
         if (phoneHardwareId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("phone_hardwareId", this.Configuration.ApiClient.ParameterToString(phoneHardwareId)));
+            localVarQueryParams.Add(new Tuple<string, string>("phone_hardwareId", Configuration.ApiClient.ParameterToString(phoneHardwareId)));
         }
 
         if (linesId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lines.id", this.Configuration.ApiClient.ParameterToString(linesId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lines.id", Configuration.ApiClient.ParameterToString(linesId)));
         }
 
         if (linesName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lines.name", this.Configuration.ApiClient.ParameterToString(linesName)));
+            localVarQueryParams.Add(new Tuple<string, string>("lines.name", Configuration.ApiClient.ParameterToString(linesName)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (statusOperationalStatus != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("status.operationalStatus", this.Configuration.ApiClient.ParameterToString(statusOperationalStatus)));
+            localVarQueryParams.Add(new Tuple<string, string>("status.operationalStatus", Configuration.ApiClient.ParameterToString(statusOperationalStatus)));
         }
 
         if (secondaryStatusOperationalStatus != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("secondaryStatus.operationalStatus", this.Configuration.ApiClient.ParameterToString(secondaryStatusOperationalStatus)));
+            localVarQueryParams.Add(new Tuple<string, string>("secondaryStatus.operationalStatus", Configuration.ApiClient.ParameterToString(secondaryStatusOperationalStatus)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (fields != null)
         {
-            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", this.Configuration.ApiClient.ParameterToString(obj))); });
+            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -22336,11 +22336,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22366,7 +22366,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PhoneEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneEntityListing)),
+            (PhoneEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22442,7 +22442,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22451,7 +22451,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22466,87 +22466,87 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (siteId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("site.id", this.Configuration.ApiClient.ParameterToString(siteId)));
+            localVarQueryParams.Add(new Tuple<string, string>("site.id", Configuration.ApiClient.ParameterToString(siteId)));
         }
 
         if (webRtcUserId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("webRtcUser.id", this.Configuration.ApiClient.ParameterToString(webRtcUserId)));
+            localVarQueryParams.Add(new Tuple<string, string>("webRtcUser.id", Configuration.ApiClient.ParameterToString(webRtcUserId)));
         }
 
         if (phoneBaseSettingsId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("phoneBaseSettings.id", this.Configuration.ApiClient.ParameterToString(phoneBaseSettingsId)));
+            localVarQueryParams.Add(new Tuple<string, string>("phoneBaseSettings.id", Configuration.ApiClient.ParameterToString(phoneBaseSettingsId)));
         }
 
         if (linesLoggedInUserId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lines.loggedInUser.id", this.Configuration.ApiClient.ParameterToString(linesLoggedInUserId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lines.loggedInUser.id", Configuration.ApiClient.ParameterToString(linesLoggedInUserId)));
         }
 
         if (linesDefaultForUserId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lines.defaultForUser.id", this.Configuration.ApiClient.ParameterToString(linesDefaultForUserId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lines.defaultForUser.id", Configuration.ApiClient.ParameterToString(linesDefaultForUserId)));
         }
 
         if (phoneHardwareId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("phone_hardwareId", this.Configuration.ApiClient.ParameterToString(phoneHardwareId)));
+            localVarQueryParams.Add(new Tuple<string, string>("phone_hardwareId", Configuration.ApiClient.ParameterToString(phoneHardwareId)));
         }
 
         if (linesId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lines.id", this.Configuration.ApiClient.ParameterToString(linesId)));
+            localVarQueryParams.Add(new Tuple<string, string>("lines.id", Configuration.ApiClient.ParameterToString(linesId)));
         }
 
         if (linesName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("lines.name", this.Configuration.ApiClient.ParameterToString(linesName)));
+            localVarQueryParams.Add(new Tuple<string, string>("lines.name", Configuration.ApiClient.ParameterToString(linesName)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (statusOperationalStatus != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("status.operationalStatus", this.Configuration.ApiClient.ParameterToString(statusOperationalStatus)));
+            localVarQueryParams.Add(new Tuple<string, string>("status.operationalStatus", Configuration.ApiClient.ParameterToString(statusOperationalStatus)));
         }
 
         if (secondaryStatusOperationalStatus != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("secondaryStatus.operationalStatus", this.Configuration.ApiClient.ParameterToString(secondaryStatusOperationalStatus)));
+            localVarQueryParams.Add(new Tuple<string, string>("secondaryStatus.operationalStatus", Configuration.ApiClient.ParameterToString(secondaryStatusOperationalStatus)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (fields != null)
         {
-            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", this.Configuration.ApiClient.ParameterToString(obj))); });
+            fields.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("fields", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -22560,11 +22560,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22590,7 +22590,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PhoneEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneEntityListing)),
+            (PhoneEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22639,7 +22639,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22648,7 +22648,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22663,7 +22663,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (phoneBaseSettingsId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("phoneBaseSettingsId", this.Configuration.ApiClient.ParameterToString(phoneBaseSettingsId)));
+            localVarQueryParams.Add(new Tuple<string, string>("phoneBaseSettingsId", Configuration.ApiClient.ParameterToString(phoneBaseSettingsId)));
         }
 
         // Header params
@@ -22677,11 +22677,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22707,7 +22707,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Phone>(localVarStatusCode,
             localVarHeaders,
-            (Phone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
+            (Phone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22756,7 +22756,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22765,7 +22765,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22780,7 +22780,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (phoneBaseSettingsId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("phoneBaseSettingsId", this.Configuration.ApiClient.ParameterToString(phoneBaseSettingsId)));
+            localVarQueryParams.Add(new Tuple<string, string>("phoneBaseSettingsId", Configuration.ApiClient.ParameterToString(phoneBaseSettingsId)));
         }
 
         // Header params
@@ -22794,11 +22794,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22824,7 +22824,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Phone>(localVarStatusCode,
             localVarHeaders,
-            (Phone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
+            (Phone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22873,7 +22873,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22882,7 +22882,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22897,7 +22897,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (edgeIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", this.Configuration.ApiClient.ParameterToString(edgeIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", Configuration.ApiClient.ParameterToString(edgeIds)));
         }
 
         // Header params
@@ -22911,11 +22911,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -22941,7 +22941,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhysicalInterfaceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PhysicalInterfaceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhysicalInterfaceEntityListing)),
+            (PhysicalInterfaceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhysicalInterfaceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -22990,7 +22990,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -22999,7 +22999,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23014,7 +23014,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (edgeIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", this.Configuration.ApiClient.ParameterToString(edgeIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("edgeIds", Configuration.ApiClient.ParameterToString(edgeIds)));
         }
 
         // Header params
@@ -23028,11 +23028,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23058,7 +23058,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhysicalInterfaceEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PhysicalInterfaceEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhysicalInterfaceEntityListing)),
+            (PhysicalInterfaceEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhysicalInterfaceEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23107,7 +23107,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23116,7 +23116,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23129,7 +23129,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -23145,11 +23145,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23175,7 +23175,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Site>(localVarStatusCode,
             localVarHeaders,
-            (Site)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
+            (Site)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23224,7 +23224,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23233,7 +23233,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23246,7 +23246,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -23262,11 +23262,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23292,7 +23292,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Site>(localVarStatusCode,
             localVarHeaders,
-            (Site)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
+            (Site)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23348,7 +23348,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23357,7 +23357,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23370,12 +23370,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         if (numberPlanId != null)
         {
-            localVarPathParams.Add("numberPlanId", this.Configuration.ApiClient.ParameterToString(numberPlanId));
+            localVarPathParams.Add("numberPlanId", Configuration.ApiClient.ParameterToString(numberPlanId));
         }
 
         // Query params
@@ -23391,11 +23391,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23421,7 +23421,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<NumberPlan>(localVarStatusCode,
             localVarHeaders,
-            (NumberPlan)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NumberPlan)),
+            (NumberPlan)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NumberPlan)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23478,7 +23478,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23487,7 +23487,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23500,12 +23500,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         if (numberPlanId != null)
         {
-            localVarPathParams.Add("numberPlanId", this.Configuration.ApiClient.ParameterToString(numberPlanId));
+            localVarPathParams.Add("numberPlanId", Configuration.ApiClient.ParameterToString(numberPlanId));
         }
 
         // Query params
@@ -23521,11 +23521,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23551,7 +23551,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<NumberPlan>(localVarStatusCode,
             localVarHeaders,
-            (NumberPlan)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(NumberPlan)),
+            (NumberPlan)Configuration.ApiClient.Deserialize(localVarResponse, typeof(NumberPlan)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23600,7 +23600,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23609,7 +23609,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23622,7 +23622,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -23638,11 +23638,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23668,7 +23668,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<List<NumberPlan>>(localVarStatusCode,
             localVarHeaders,
-            (List<NumberPlan>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NumberPlan>)),
+            (List<NumberPlan>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NumberPlan>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23717,7 +23717,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23726,7 +23726,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23739,7 +23739,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -23755,11 +23755,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23785,7 +23785,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<List<NumberPlan>>(localVarStatusCode,
             localVarHeaders,
-            (List<NumberPlan>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NumberPlan>)),
+            (List<NumberPlan>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NumberPlan>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23836,7 +23836,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23845,7 +23845,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23858,13 +23858,13 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
         if (classification != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("classification", this.Configuration.ApiClient.ParameterToString(classification)));
+            localVarQueryParams.Add(new Tuple<string, string>("classification", Configuration.ApiClient.ParameterToString(classification)));
         }
 
         // Header params
@@ -23878,11 +23878,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -23908,7 +23908,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<List<string>>(localVarStatusCode,
             localVarHeaders,
-            (List<string>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)),
+            (List<string>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -23959,7 +23959,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -23968,7 +23968,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23981,13 +23981,13 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
         if (classification != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("classification", this.Configuration.ApiClient.ParameterToString(classification)));
+            localVarQueryParams.Add(new Tuple<string, string>("classification", Configuration.ApiClient.ParameterToString(classification)));
         }
 
         // Header params
@@ -24001,11 +24001,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24031,7 +24031,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<List<string>>(localVarStatusCode,
             localVarHeaders,
-            (List<string>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)),
+            (List<string>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24087,7 +24087,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24096,7 +24096,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24109,12 +24109,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         if (outboundRouteId != null)
         {
-            localVarPathParams.Add("outboundRouteId", this.Configuration.ApiClient.ParameterToString(outboundRouteId));
+            localVarPathParams.Add("outboundRouteId", Configuration.ApiClient.ParameterToString(outboundRouteId));
         }
 
         // Query params
@@ -24130,11 +24130,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24160,7 +24160,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<OutboundRouteBase>(localVarStatusCode,
             localVarHeaders,
-            (OutboundRouteBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
+            (OutboundRouteBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24217,7 +24217,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24226,7 +24226,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24239,12 +24239,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         if (outboundRouteId != null)
         {
-            localVarPathParams.Add("outboundRouteId", this.Configuration.ApiClient.ParameterToString(outboundRouteId));
+            localVarPathParams.Add("outboundRouteId", Configuration.ApiClient.ParameterToString(outboundRouteId));
         }
 
         // Query params
@@ -24260,11 +24260,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24290,7 +24290,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<OutboundRouteBase>(localVarStatusCode,
             localVarHeaders,
-            (OutboundRouteBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
+            (OutboundRouteBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24349,7 +24349,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24358,7 +24358,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24371,33 +24371,33 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (externalTrunkBasesIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("externalTrunkBases.ids", this.Configuration.ApiClient.ParameterToString(externalTrunkBasesIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("externalTrunkBases.ids", Configuration.ApiClient.ParameterToString(externalTrunkBasesIds)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         // Header params
@@ -24411,11 +24411,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24441,7 +24441,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<OutboundRouteBaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (OutboundRouteBaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBaseEntityListing)),
+            (OutboundRouteBaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24500,7 +24500,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24509,7 +24509,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24522,33 +24522,33 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (externalTrunkBasesIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("externalTrunkBases.ids", this.Configuration.ApiClient.ParameterToString(externalTrunkBasesIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("externalTrunkBases.ids", Configuration.ApiClient.ParameterToString(externalTrunkBasesIds)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         // Header params
@@ -24562,11 +24562,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24592,7 +24592,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<OutboundRouteBaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (OutboundRouteBaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBaseEntityListing)),
+            (OutboundRouteBaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24641,7 +24641,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24650,7 +24650,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24663,7 +24663,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -24679,11 +24679,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24709,7 +24709,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SiteConnections>(localVarStatusCode,
             localVarHeaders,
-            (SiteConnections)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
+            (SiteConnections)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24758,7 +24758,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24767,7 +24767,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24780,7 +24780,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -24796,11 +24796,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24826,7 +24826,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SiteConnections>(localVarStatusCode,
             localVarHeaders,
-            (SiteConnections)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
+            (SiteConnections)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -24884,7 +24884,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -24893,7 +24893,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24908,42 +24908,42 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (locationId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("location.id", this.Configuration.ApiClient.ParameterToString(locationId)));
+            localVarQueryParams.Add(new Tuple<string, string>("location.id", Configuration.ApiClient.ParameterToString(locationId)));
         }
 
         if (managed != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("managed", this.Configuration.ApiClient.ParameterToString(managed)));
+            localVarQueryParams.Add(new Tuple<string, string>("managed", Configuration.ApiClient.ParameterToString(managed)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -24957,11 +24957,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -24987,7 +24987,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SiteEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SiteEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteEntityListing)),
+            (SiteEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25045,7 +25045,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25054,7 +25054,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25069,42 +25069,42 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (locationId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("location.id", this.Configuration.ApiClient.ParameterToString(locationId)));
+            localVarQueryParams.Add(new Tuple<string, string>("location.id", Configuration.ApiClient.ParameterToString(locationId)));
         }
 
         if (managed != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("managed", this.Configuration.ApiClient.ParameterToString(managed)));
+            localVarQueryParams.Add(new Tuple<string, string>("managed", Configuration.ApiClient.ParameterToString(managed)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -25118,11 +25118,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25148,7 +25148,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SiteEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SiteEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteEntityListing)),
+            (SiteEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25199,7 +25199,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25208,7 +25208,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25223,12 +25223,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -25242,11 +25242,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25272,7 +25272,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SitesSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (SitesSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
+            (SitesSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25323,7 +25323,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25332,7 +25332,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25347,12 +25347,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (q64 != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+            localVarQueryParams.Add(new Tuple<string, string>("q64", Configuration.ApiClient.ParameterToString(q64)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -25366,11 +25366,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25396,7 +25396,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SitesSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (SitesSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
+            (SitesSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25442,7 +25442,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25451,7 +25451,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25466,12 +25466,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -25485,11 +25485,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25515,7 +25515,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TimeZoneEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TimeZoneEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TimeZoneEntityListing)),
+            (TimeZoneEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TimeZoneEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25561,7 +25561,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25570,7 +25570,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25585,12 +25585,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -25604,11 +25604,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25634,7 +25634,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TimeZoneEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TimeZoneEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TimeZoneEntityListing)),
+            (TimeZoneEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TimeZoneEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25683,7 +25683,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25692,7 +25692,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25705,7 +25705,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (trunkId != null)
         {
-            localVarPathParams.Add("trunkId", this.Configuration.ApiClient.ParameterToString(trunkId));
+            localVarPathParams.Add("trunkId", Configuration.ApiClient.ParameterToString(trunkId));
         }
 
         // Query params
@@ -25721,11 +25721,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25751,7 +25751,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Trunk>(localVarStatusCode,
             localVarHeaders,
-            (Trunk)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trunk)),
+            (Trunk)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trunk)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25800,7 +25800,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25809,7 +25809,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25822,7 +25822,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (trunkId != null)
         {
-            localVarPathParams.Add("trunkId", this.Configuration.ApiClient.ParameterToString(trunkId));
+            localVarPathParams.Add("trunkId", Configuration.ApiClient.ParameterToString(trunkId));
         }
 
         // Query params
@@ -25838,11 +25838,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25868,7 +25868,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Trunk>(localVarStatusCode,
             localVarHeaders,
-            (Trunk)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trunk)),
+            (Trunk)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Trunk)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -25917,7 +25917,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -25926,7 +25926,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25939,7 +25939,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (trunkId != null)
         {
-            localVarPathParams.Add("trunkId", this.Configuration.ApiClient.ParameterToString(trunkId));
+            localVarPathParams.Add("trunkId", Configuration.ApiClient.ParameterToString(trunkId));
         }
 
         // Query params
@@ -25955,11 +25955,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -25985,7 +25985,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkMetrics>(localVarStatusCode,
             localVarHeaders,
-            (TrunkMetrics)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkMetrics)),
+            (TrunkMetrics)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkMetrics)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26034,7 +26034,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26043,7 +26043,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26056,7 +26056,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (trunkId != null)
         {
-            localVarPathParams.Add("trunkId", this.Configuration.ApiClient.ParameterToString(trunkId));
+            localVarPathParams.Add("trunkId", Configuration.ApiClient.ParameterToString(trunkId));
         }
 
         // Query params
@@ -26072,11 +26072,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26102,7 +26102,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkMetrics>(localVarStatusCode,
             localVarHeaders,
-            (TrunkMetrics)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkMetrics)),
+            (TrunkMetrics)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkMetrics)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26153,7 +26153,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26162,7 +26162,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26175,13 +26175,13 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (trunkBaseSettingsId != null)
         {
-            localVarPathParams.Add("trunkBaseSettingsId", this.Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
+            localVarPathParams.Add("trunkBaseSettingsId", Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
         }
 
         // Query params
         if (ignoreHidden != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ignoreHidden", this.Configuration.ApiClient.ParameterToString(ignoreHidden)));
+            localVarQueryParams.Add(new Tuple<string, string>("ignoreHidden", Configuration.ApiClient.ParameterToString(ignoreHidden)));
         }
 
         // Header params
@@ -26195,11 +26195,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26225,7 +26225,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (TrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
+            (TrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26276,7 +26276,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26285,7 +26285,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26298,13 +26298,13 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (trunkBaseSettingsId != null)
         {
-            localVarPathParams.Add("trunkBaseSettingsId", this.Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
+            localVarPathParams.Add("trunkBaseSettingsId", Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
         }
 
         // Query params
         if (ignoreHidden != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ignoreHidden", this.Configuration.ApiClient.ParameterToString(ignoreHidden)));
+            localVarQueryParams.Add(new Tuple<string, string>("ignoreHidden", Configuration.ApiClient.ParameterToString(ignoreHidden)));
         }
 
         // Header params
@@ -26318,11 +26318,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26348,7 +26348,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (TrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
+            (TrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26408,7 +26408,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26417,7 +26417,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26432,47 +26432,47 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (recordingEnabled != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("recordingEnabled", this.Configuration.ApiClient.ParameterToString(recordingEnabled)));
+            localVarQueryParams.Add(new Tuple<string, string>("recordingEnabled", Configuration.ApiClient.ParameterToString(recordingEnabled)));
         }
 
         if (ignoreHidden != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ignoreHidden", this.Configuration.ApiClient.ParameterToString(ignoreHidden)));
+            localVarQueryParams.Add(new Tuple<string, string>("ignoreHidden", Configuration.ApiClient.ParameterToString(ignoreHidden)));
         }
 
         if (managed != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("managed", this.Configuration.ApiClient.ParameterToString(managed)));
+            localVarQueryParams.Add(new Tuple<string, string>("managed", Configuration.ApiClient.ParameterToString(managed)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -26486,11 +26486,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26516,7 +26516,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkBaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TrunkBaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBaseEntityListing)),
+            (TrunkBaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26576,7 +26576,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26585,7 +26585,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26600,47 +26600,47 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (recordingEnabled != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("recordingEnabled", this.Configuration.ApiClient.ParameterToString(recordingEnabled)));
+            localVarQueryParams.Add(new Tuple<string, string>("recordingEnabled", Configuration.ApiClient.ParameterToString(recordingEnabled)));
         }
 
         if (ignoreHidden != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("ignoreHidden", this.Configuration.ApiClient.ParameterToString(ignoreHidden)));
+            localVarQueryParams.Add(new Tuple<string, string>("ignoreHidden", Configuration.ApiClient.ParameterToString(ignoreHidden)));
         }
 
         if (managed != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("managed", this.Configuration.ApiClient.ParameterToString(managed)));
+            localVarQueryParams.Add(new Tuple<string, string>("managed", Configuration.ApiClient.ParameterToString(managed)));
         }
 
         if (expand != null)
         {
-            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         // Header params
@@ -26654,11 +26654,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26684,7 +26684,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkBaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TrunkBaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBaseEntityListing)),
+            (TrunkBaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26732,7 +26732,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26741,7 +26741,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26756,17 +26756,17 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (type != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(type)));
+            localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(type)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -26780,11 +26780,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26810,7 +26810,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkMetabaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TrunkMetabaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkMetabaseEntityListing)),
+            (TrunkMetabaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkMetabaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26858,7 +26858,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26867,7 +26867,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -26882,17 +26882,17 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (type != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("type", this.Configuration.ApiClient.ParameterToString(type)));
+            localVarQueryParams.Add(new Tuple<string, string>("type", Configuration.ApiClient.ParameterToString(type)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -26906,11 +26906,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -26936,7 +26936,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkMetabaseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TrunkMetabaseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkMetabaseEntityListing)),
+            (TrunkMetabaseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkMetabaseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -26985,7 +26985,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -26994,7 +26994,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27009,7 +27009,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (trunkMetabaseId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkMetabaseId", this.Configuration.ApiClient.ParameterToString(trunkMetabaseId)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkMetabaseId", Configuration.ApiClient.ParameterToString(trunkMetabaseId)));
         }
 
         // Header params
@@ -27023,11 +27023,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27053,7 +27053,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (TrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
+            (TrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27102,7 +27102,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27111,7 +27111,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27126,7 +27126,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (trunkMetabaseId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkMetabaseId", this.Configuration.ApiClient.ParameterToString(trunkMetabaseId)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkMetabaseId", Configuration.ApiClient.ParameterToString(trunkMetabaseId)));
         }
 
         // Header params
@@ -27140,11 +27140,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27170,7 +27170,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (TrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
+            (TrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27226,7 +27226,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27235,7 +27235,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27250,37 +27250,37 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (edgeId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("edge.id", this.Configuration.ApiClient.ParameterToString(edgeId)));
+            localVarQueryParams.Add(new Tuple<string, string>("edge.id", Configuration.ApiClient.ParameterToString(edgeId)));
         }
 
         if (trunkBaseId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkBase.id", this.Configuration.ApiClient.ParameterToString(trunkBaseId)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkBase.id", Configuration.ApiClient.ParameterToString(trunkBaseId)));
         }
 
         if (trunkType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkType", this.Configuration.ApiClient.ParameterToString(trunkType)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkType", Configuration.ApiClient.ParameterToString(trunkType)));
         }
 
         // Header params
@@ -27294,11 +27294,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27324,7 +27324,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TrunkEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkEntityListing)),
+            (TrunkEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27380,7 +27380,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27389,7 +27389,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27404,37 +27404,37 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (edgeId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("edge.id", this.Configuration.ApiClient.ParameterToString(edgeId)));
+            localVarQueryParams.Add(new Tuple<string, string>("edge.id", Configuration.ApiClient.ParameterToString(edgeId)));
         }
 
         if (trunkBaseId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkBase.id", this.Configuration.ApiClient.ParameterToString(trunkBaseId)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkBase.id", Configuration.ApiClient.ParameterToString(trunkBaseId)));
         }
 
         if (trunkType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkType", this.Configuration.ApiClient.ParameterToString(trunkType)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkType", Configuration.ApiClient.ParameterToString(trunkType)));
         }
 
         // Header params
@@ -27448,11 +27448,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27478,7 +27478,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TrunkEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkEntityListing)),
+            (TrunkEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27527,7 +27527,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27536,7 +27536,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27551,7 +27551,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (trunkIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkIds", this.Configuration.ApiClient.ParameterToString(trunkIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkIds", Configuration.ApiClient.ParameterToString(trunkIds)));
         }
 
         // Header params
@@ -27565,11 +27565,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27595,7 +27595,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<List<TrunkMetrics>>(localVarStatusCode,
             localVarHeaders,
-            (List<TrunkMetrics>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TrunkMetrics>)),
+            (List<TrunkMetrics>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TrunkMetrics>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27644,7 +27644,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27653,7 +27653,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27668,7 +27668,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (trunkIds != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkIds", this.Configuration.ApiClient.ParameterToString(trunkIds)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkIds", Configuration.ApiClient.ParameterToString(trunkIds)));
         }
 
         // Header params
@@ -27682,11 +27682,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27712,7 +27712,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<List<TrunkMetrics>>(localVarStatusCode,
             localVarHeaders,
-            (List<TrunkMetrics>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TrunkMetrics>)),
+            (List<TrunkMetrics>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TrunkMetrics>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27756,7 +27756,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27765,7 +27765,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27780,7 +27780,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (trunkType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkType", this.Configuration.ApiClient.ParameterToString(trunkType)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkType", Configuration.ApiClient.ParameterToString(trunkType)));
         }
 
         // Header params
@@ -27794,11 +27794,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27824,7 +27824,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkRecordingEnabledCount>(localVarStatusCode,
             localVarHeaders,
-            (TrunkRecordingEnabledCount)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkRecordingEnabledCount)),
+            (TrunkRecordingEnabledCount)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkRecordingEnabledCount)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27868,7 +27868,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -27877,7 +27877,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -27892,7 +27892,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Query params
         if (trunkType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("trunkType", this.Configuration.ApiClient.ParameterToString(trunkType)));
+            localVarQueryParams.Add(new Tuple<string, string>("trunkType", Configuration.ApiClient.ParameterToString(trunkType)));
         }
 
         // Header params
@@ -27906,11 +27906,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -27936,7 +27936,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkRecordingEnabledCount>(localVarStatusCode,
             localVarHeaders,
-            (TrunkRecordingEnabledCount)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkRecordingEnabledCount)),
+            (TrunkRecordingEnabledCount)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkRecordingEnabledCount)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -27993,7 +27993,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28002,7 +28002,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28015,7 +28015,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -28027,7 +28027,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28040,11 +28040,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28070,7 +28070,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SiteConnections>(localVarStatusCode,
             localVarHeaders,
-            (SiteConnections)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
+            (SiteConnections)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28128,7 +28128,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28137,7 +28137,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28150,7 +28150,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -28162,7 +28162,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28175,11 +28175,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28205,7 +28205,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SiteConnections>(localVarStatusCode,
             localVarHeaders,
-            (SiteConnections)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
+            (SiteConnections)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28262,7 +28262,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28271,7 +28271,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28284,7 +28284,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -28296,7 +28296,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28309,11 +28309,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28339,7 +28339,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnostic>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnostic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
+            (EdgeNetworkDiagnostic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28397,7 +28397,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28406,7 +28406,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28419,7 +28419,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -28431,7 +28431,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28444,11 +28444,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28474,7 +28474,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnostic>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnostic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
+            (EdgeNetworkDiagnostic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28531,7 +28531,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28540,7 +28540,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28553,7 +28553,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -28565,7 +28565,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28578,11 +28578,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28608,7 +28608,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnostic>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnostic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
+            (EdgeNetworkDiagnostic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28666,7 +28666,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28675,7 +28675,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28688,7 +28688,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -28700,7 +28700,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28713,11 +28713,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28743,7 +28743,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnostic>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnostic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
+            (EdgeNetworkDiagnostic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28800,7 +28800,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28809,7 +28809,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28822,7 +28822,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -28834,7 +28834,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28847,11 +28847,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -28877,7 +28877,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnostic>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnostic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
+            (EdgeNetworkDiagnostic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -28935,7 +28935,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -28944,7 +28944,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -28957,7 +28957,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -28969,7 +28969,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -28982,11 +28982,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29012,7 +29012,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnostic>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnostic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
+            (EdgeNetworkDiagnostic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29069,7 +29069,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29078,7 +29078,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29091,7 +29091,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -29103,7 +29103,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29116,11 +29116,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29146,7 +29146,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnostic>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnostic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
+            (EdgeNetworkDiagnostic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29204,7 +29204,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29213,7 +29213,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29226,7 +29226,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -29238,7 +29238,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29251,11 +29251,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29281,7 +29281,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeNetworkDiagnostic>(localVarStatusCode,
             localVarHeaders,
-            (EdgeNetworkDiagnostic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
+            (EdgeNetworkDiagnostic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeNetworkDiagnostic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29338,7 +29338,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29347,7 +29347,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29360,7 +29360,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -29372,7 +29372,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29385,11 +29385,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29415,7 +29415,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainLogicalInterface>(localVarStatusCode,
             localVarHeaders,
-            (DomainLogicalInterface)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
+            (DomainLogicalInterface)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29473,7 +29473,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29482,7 +29482,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29495,7 +29495,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -29507,7 +29507,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29520,11 +29520,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29550,7 +29550,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainLogicalInterface>(localVarStatusCode,
             localVarHeaders,
-            (DomainLogicalInterface)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
+            (DomainLogicalInterface)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -29613,7 +29613,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29622,7 +29622,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29635,12 +29635,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -29652,7 +29652,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29665,11 +29665,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29760,7 +29760,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29769,7 +29769,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29782,12 +29782,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -29799,7 +29799,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29812,11 +29812,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29899,7 +29899,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -29908,7 +29908,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -29921,7 +29921,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -29933,7 +29933,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -29946,11 +29946,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -29976,7 +29976,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeLogsJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (EdgeLogsJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeLogsJobResponse)),
+            (EdgeLogsJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeLogsJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30034,7 +30034,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30043,7 +30043,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30056,7 +30056,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -30068,7 +30068,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30081,11 +30081,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30111,7 +30111,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeLogsJobResponse>(localVarStatusCode,
             localVarHeaders,
-            (EdgeLogsJobResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeLogsJobResponse)),
+            (EdgeLogsJobResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeLogsJobResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30163,7 +30163,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30172,7 +30172,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30185,7 +30185,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -30197,7 +30197,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30210,11 +30210,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30240,7 +30240,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<string>(localVarStatusCode,
             localVarHeaders,
-            (string)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
+            (string)Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30292,7 +30292,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30301,7 +30301,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30314,7 +30314,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -30326,7 +30326,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30339,11 +30339,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30369,7 +30369,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<string>(localVarStatusCode,
             localVarHeaders,
-            (string)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
+            (string)Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30426,7 +30426,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30435,7 +30435,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30448,7 +30448,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -30460,7 +30460,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30473,11 +30473,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30503,7 +30503,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainEdgeSoftwareUpdateDto>(localVarStatusCode,
             localVarHeaders,
-            (DomainEdgeSoftwareUpdateDto)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareUpdateDto)),
+            (DomainEdgeSoftwareUpdateDto)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareUpdateDto)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30561,7 +30561,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30570,7 +30570,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30583,7 +30583,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -30595,7 +30595,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30608,11 +30608,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30638,7 +30638,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainEdgeSoftwareUpdateDto>(localVarStatusCode,
             localVarHeaders,
-            (DomainEdgeSoftwareUpdateDto)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareUpdateDto)),
+            (DomainEdgeSoftwareUpdateDto)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainEdgeSoftwareUpdateDto)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30690,7 +30690,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30699,7 +30699,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30712,7 +30712,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -30724,7 +30724,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30737,11 +30737,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30767,7 +30767,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<string>(localVarStatusCode,
             localVarHeaders,
-            (string)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
+            (string)Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30819,7 +30819,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30828,7 +30828,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30841,7 +30841,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -30853,7 +30853,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -30866,11 +30866,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -30896,7 +30896,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<string>(localVarStatusCode,
             localVarHeaders,
-            (string)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
+            (string)Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -30945,7 +30945,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -30954,7 +30954,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -30967,7 +30967,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -30983,11 +30983,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31013,7 +31013,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<string>(localVarStatusCode,
             localVarHeaders,
-            (string)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
+            (string)Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31062,7 +31062,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31071,7 +31071,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31084,7 +31084,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -31100,11 +31100,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31130,7 +31130,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<string>(localVarStatusCode,
             localVarHeaders,
-            (string)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
+            (string)Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31180,7 +31180,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31189,7 +31189,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31210,7 +31210,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31223,11 +31223,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31253,7 +31253,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Edge>(localVarStatusCode,
             localVarHeaders,
-            (Edge)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
+            (Edge)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31303,7 +31303,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31312,7 +31312,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31333,7 +31333,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31346,11 +31346,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31376,7 +31376,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Edge>(localVarStatusCode,
             localVarHeaders,
-            (Edge)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
+            (Edge)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31426,7 +31426,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31435,7 +31435,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31456,7 +31456,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31469,11 +31469,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31499,7 +31499,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ValidateAddressResponse>(localVarStatusCode,
             localVarHeaders,
-            (ValidateAddressResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ValidateAddressResponse)),
+            (ValidateAddressResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ValidateAddressResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31549,7 +31549,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31558,7 +31558,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31579,7 +31579,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31592,11 +31592,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31622,7 +31622,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ValidateAddressResponse>(localVarStatusCode,
             localVarHeaders,
-            (ValidateAddressResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ValidateAddressResponse)),
+            (ValidateAddressResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ValidateAddressResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31672,7 +31672,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31681,7 +31681,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31702,7 +31702,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31715,11 +31715,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31745,7 +31745,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainCertificateAuthority>(localVarStatusCode,
             localVarHeaders,
-            (DomainCertificateAuthority)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
+            (DomainCertificateAuthority)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31795,7 +31795,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31804,7 +31804,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31825,7 +31825,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31838,11 +31838,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31868,7 +31868,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainCertificateAuthority>(localVarStatusCode,
             localVarHeaders,
-            (DomainCertificateAuthority)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
+            (DomainCertificateAuthority)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -31918,7 +31918,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -31927,7 +31927,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -31948,7 +31948,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -31961,11 +31961,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -31991,7 +31991,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDPool>(localVarStatusCode,
             localVarHeaders,
-            (DIDPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
+            (DIDPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32041,7 +32041,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32050,7 +32050,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32071,7 +32071,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32084,11 +32084,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32114,7 +32114,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDPool>(localVarStatusCode,
             localVarHeaders,
-            (DIDPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
+            (DIDPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32164,7 +32164,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32173,7 +32173,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32194,7 +32194,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32207,11 +32207,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32237,7 +32237,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeGroup>(localVarStatusCode,
             localVarHeaders,
-            (EdgeGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
+            (EdgeGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32287,7 +32287,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32296,7 +32296,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32317,7 +32317,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32330,11 +32330,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32360,7 +32360,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeGroup>(localVarStatusCode,
             localVarHeaders,
-            (EdgeGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
+            (EdgeGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32410,7 +32410,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32419,7 +32419,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32440,7 +32440,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32453,11 +32453,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32483,7 +32483,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionPool>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
+            (ExtensionPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32533,7 +32533,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32542,7 +32542,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32563,7 +32563,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32576,11 +32576,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32606,7 +32606,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionPool>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
+            (ExtensionPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -32654,7 +32654,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32663,7 +32663,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32676,7 +32676,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneId != null)
         {
-            localVarPathParams.Add("phoneId", this.Configuration.ApiClient.ParameterToString(phoneId));
+            localVarPathParams.Add("phoneId", Configuration.ApiClient.ParameterToString(phoneId));
         }
 
         // Query params
@@ -32692,11 +32692,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32770,7 +32770,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32779,7 +32779,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32792,7 +32792,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneId != null)
         {
-            localVarPathParams.Add("phoneId", this.Configuration.ApiClient.ParameterToString(phoneId));
+            localVarPathParams.Add("phoneId", Configuration.ApiClient.ParameterToString(phoneId));
         }
 
         // Query params
@@ -32808,11 +32808,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32888,7 +32888,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -32897,7 +32897,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -32918,7 +32918,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -32931,11 +32931,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -32961,7 +32961,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneBase>(localVarStatusCode,
             localVarHeaders,
-            (PhoneBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
+            (PhoneBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33011,7 +33011,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33020,7 +33020,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33041,7 +33041,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33054,11 +33054,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33084,7 +33084,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneBase>(localVarStatusCode,
             localVarHeaders,
-            (PhoneBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
+            (PhoneBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33134,7 +33134,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33143,7 +33143,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33164,7 +33164,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33177,11 +33177,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33207,7 +33207,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Phone>(localVarStatusCode,
             localVarHeaders,
-            (Phone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
+            (Phone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33257,7 +33257,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33266,7 +33266,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33287,7 +33287,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33300,11 +33300,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33330,7 +33330,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Phone>(localVarStatusCode,
             localVarHeaders,
-            (Phone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
+            (Phone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33379,7 +33379,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33388,7 +33388,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33409,7 +33409,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33422,11 +33422,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33501,7 +33501,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33510,7 +33510,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33531,7 +33531,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33544,11 +33544,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33631,7 +33631,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33640,7 +33640,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33653,7 +33653,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -33665,7 +33665,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33678,11 +33678,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33708,7 +33708,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<OutboundRouteBase>(localVarStatusCode,
             localVarHeaders,
-            (OutboundRouteBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
+            (OutboundRouteBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33766,7 +33766,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33775,7 +33775,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33788,7 +33788,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -33800,7 +33800,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33813,11 +33813,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33843,7 +33843,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<OutboundRouteBase>(localVarStatusCode,
             localVarHeaders,
-            (OutboundRouteBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
+            (OutboundRouteBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -33893,7 +33893,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -33902,7 +33902,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -33923,7 +33923,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -33936,11 +33936,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -33966,7 +33966,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Site>(localVarStatusCode,
             localVarHeaders,
-            (Site)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
+            (Site)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34016,7 +34016,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34025,7 +34025,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34046,7 +34046,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34059,11 +34059,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34089,7 +34089,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Site>(localVarStatusCode,
             localVarHeaders,
-            (Site)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
+            (Site)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34139,7 +34139,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34148,7 +34148,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34169,7 +34169,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34182,11 +34182,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34212,7 +34212,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SitesSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (SitesSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
+            (SitesSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34262,7 +34262,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34271,7 +34271,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34292,7 +34292,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34305,11 +34305,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34335,7 +34335,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SitesSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (SitesSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
+            (SitesSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SitesSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34385,7 +34385,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34394,7 +34394,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34415,7 +34415,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34428,11 +34428,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34458,7 +34458,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (TrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
+            (TrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34508,7 +34508,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34517,7 +34517,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34538,7 +34538,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34551,11 +34551,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34581,7 +34581,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (TrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
+            (TrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34638,7 +34638,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34647,7 +34647,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34660,7 +34660,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -34672,7 +34672,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34685,11 +34685,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34715,7 +34715,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Edge>(localVarStatusCode,
             localVarHeaders,
-            (Edge)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
+            (Edge)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34773,7 +34773,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34782,7 +34782,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34795,7 +34795,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         // Query params
@@ -34807,7 +34807,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34820,11 +34820,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34850,7 +34850,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Edge>(localVarStatusCode,
             localVarHeaders,
-            (Edge)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
+            (Edge)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Edge)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -34914,7 +34914,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -34923,7 +34923,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -34936,12 +34936,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (interfaceId != null)
         {
-            localVarPathParams.Add("interfaceId", this.Configuration.ApiClient.ParameterToString(interfaceId));
+            localVarPathParams.Add("interfaceId", Configuration.ApiClient.ParameterToString(interfaceId));
         }
 
         // Query params
@@ -34953,7 +34953,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -34966,11 +34966,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -34996,7 +34996,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainLogicalInterface>(localVarStatusCode,
             localVarHeaders,
-            (DomainLogicalInterface)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
+            (DomainLogicalInterface)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35062,7 +35062,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35071,7 +35071,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35084,12 +35084,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeId != null)
         {
-            localVarPathParams.Add("edgeId", this.Configuration.ApiClient.ParameterToString(edgeId));
+            localVarPathParams.Add("edgeId", Configuration.ApiClient.ParameterToString(edgeId));
         }
 
         if (interfaceId != null)
         {
-            localVarPathParams.Add("interfaceId", this.Configuration.ApiClient.ParameterToString(interfaceId));
+            localVarPathParams.Add("interfaceId", Configuration.ApiClient.ParameterToString(interfaceId));
         }
 
         // Query params
@@ -35101,7 +35101,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35114,11 +35114,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35144,7 +35144,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainLogicalInterface>(localVarStatusCode,
             localVarHeaders,
-            (DomainLogicalInterface)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
+            (DomainLogicalInterface)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainLogicalInterface)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35193,7 +35193,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35202,7 +35202,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35223,7 +35223,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35236,11 +35236,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35315,7 +35315,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35324,7 +35324,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35345,7 +35345,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35358,11 +35358,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35445,7 +35445,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35454,7 +35454,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35467,7 +35467,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (certificateId != null)
         {
-            localVarPathParams.Add("certificateId", this.Configuration.ApiClient.ParameterToString(certificateId));
+            localVarPathParams.Add("certificateId", Configuration.ApiClient.ParameterToString(certificateId));
         }
 
         // Query params
@@ -35479,7 +35479,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35492,11 +35492,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35522,7 +35522,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainCertificateAuthority>(localVarStatusCode,
             localVarHeaders,
-            (DomainCertificateAuthority)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
+            (DomainCertificateAuthority)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35580,7 +35580,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35589,7 +35589,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35602,7 +35602,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (certificateId != null)
         {
-            localVarPathParams.Add("certificateId", this.Configuration.ApiClient.ParameterToString(certificateId));
+            localVarPathParams.Add("certificateId", Configuration.ApiClient.ParameterToString(certificateId));
         }
 
         // Query params
@@ -35614,7 +35614,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35627,11 +35627,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35657,7 +35657,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DomainCertificateAuthority>(localVarStatusCode,
             localVarHeaders,
-            (DomainCertificateAuthority)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
+            (DomainCertificateAuthority)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DomainCertificateAuthority)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35714,7 +35714,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35723,7 +35723,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35736,7 +35736,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (didPoolId != null)
         {
-            localVarPathParams.Add("didPoolId", this.Configuration.ApiClient.ParameterToString(didPoolId));
+            localVarPathParams.Add("didPoolId", Configuration.ApiClient.ParameterToString(didPoolId));
         }
 
         // Query params
@@ -35748,7 +35748,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35761,11 +35761,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35791,7 +35791,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDPool>(localVarStatusCode,
             localVarHeaders,
-            (DIDPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
+            (DIDPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35849,7 +35849,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35858,7 +35858,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -35871,7 +35871,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (didPoolId != null)
         {
-            localVarPathParams.Add("didPoolId", this.Configuration.ApiClient.ParameterToString(didPoolId));
+            localVarPathParams.Add("didPoolId", Configuration.ApiClient.ParameterToString(didPoolId));
         }
 
         // Query params
@@ -35883,7 +35883,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -35896,11 +35896,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -35926,7 +35926,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<DIDPool>(localVarStatusCode,
             localVarHeaders,
-            (DIDPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
+            (DIDPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DIDPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -35983,7 +35983,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -35992,7 +35992,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36005,7 +36005,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeGroupId != null)
         {
-            localVarPathParams.Add("edgeGroupId", this.Configuration.ApiClient.ParameterToString(edgeGroupId));
+            localVarPathParams.Add("edgeGroupId", Configuration.ApiClient.ParameterToString(edgeGroupId));
         }
 
         // Query params
@@ -36017,7 +36017,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36030,11 +36030,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36060,7 +36060,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeGroup>(localVarStatusCode,
             localVarHeaders,
-            (EdgeGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
+            (EdgeGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36118,7 +36118,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36127,7 +36127,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36140,7 +36140,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgeGroupId != null)
         {
-            localVarPathParams.Add("edgeGroupId", this.Configuration.ApiClient.ParameterToString(edgeGroupId));
+            localVarPathParams.Add("edgeGroupId", Configuration.ApiClient.ParameterToString(edgeGroupId));
         }
 
         // Query params
@@ -36152,7 +36152,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36165,11 +36165,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36195,7 +36195,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeGroup>(localVarStatusCode,
             localVarHeaders,
-            (EdgeGroup)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
+            (EdgeGroup)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeGroup)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36259,7 +36259,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36268,7 +36268,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36281,12 +36281,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgegroupId != null)
         {
-            localVarPathParams.Add("edgegroupId", this.Configuration.ApiClient.ParameterToString(edgegroupId));
+            localVarPathParams.Add("edgegroupId", Configuration.ApiClient.ParameterToString(edgegroupId));
         }
 
         if (edgetrunkbaseId != null)
         {
-            localVarPathParams.Add("edgetrunkbaseId", this.Configuration.ApiClient.ParameterToString(edgetrunkbaseId));
+            localVarPathParams.Add("edgetrunkbaseId", Configuration.ApiClient.ParameterToString(edgetrunkbaseId));
         }
 
         // Query params
@@ -36298,7 +36298,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36311,11 +36311,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36341,7 +36341,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeTrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (EdgeTrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeTrunkBase)),
+            (EdgeTrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeTrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36407,7 +36407,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36416,7 +36416,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36429,12 +36429,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (edgegroupId != null)
         {
-            localVarPathParams.Add("edgegroupId", this.Configuration.ApiClient.ParameterToString(edgegroupId));
+            localVarPathParams.Add("edgegroupId", Configuration.ApiClient.ParameterToString(edgegroupId));
         }
 
         if (edgetrunkbaseId != null)
         {
-            localVarPathParams.Add("edgetrunkbaseId", this.Configuration.ApiClient.ParameterToString(edgetrunkbaseId));
+            localVarPathParams.Add("edgetrunkbaseId", Configuration.ApiClient.ParameterToString(edgetrunkbaseId));
         }
 
         // Query params
@@ -36446,7 +36446,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36459,11 +36459,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36489,7 +36489,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<EdgeTrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (EdgeTrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeTrunkBase)),
+            (EdgeTrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdgeTrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36546,7 +36546,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36555,7 +36555,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36568,7 +36568,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (extensionPoolId != null)
         {
-            localVarPathParams.Add("extensionPoolId", this.Configuration.ApiClient.ParameterToString(extensionPoolId));
+            localVarPathParams.Add("extensionPoolId", Configuration.ApiClient.ParameterToString(extensionPoolId));
         }
 
         // Query params
@@ -36580,7 +36580,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36593,11 +36593,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36623,7 +36623,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionPool>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
+            (ExtensionPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36681,7 +36681,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36690,7 +36690,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36703,7 +36703,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (extensionPoolId != null)
         {
-            localVarPathParams.Add("extensionPoolId", this.Configuration.ApiClient.ParameterToString(extensionPoolId));
+            localVarPathParams.Add("extensionPoolId", Configuration.ApiClient.ParameterToString(extensionPoolId));
         }
 
         // Query params
@@ -36715,7 +36715,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36728,11 +36728,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36758,7 +36758,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<ExtensionPool>(localVarStatusCode,
             localVarHeaders,
-            (ExtensionPool)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
+            (ExtensionPool)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExtensionPool)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36815,7 +36815,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36824,7 +36824,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36837,7 +36837,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneId != null)
         {
-            localVarPathParams.Add("phoneId", this.Configuration.ApiClient.ParameterToString(phoneId));
+            localVarPathParams.Add("phoneId", Configuration.ApiClient.ParameterToString(phoneId));
         }
 
         // Query params
@@ -36849,7 +36849,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36862,11 +36862,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -36892,7 +36892,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Phone>(localVarStatusCode,
             localVarHeaders,
-            (Phone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
+            (Phone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -36950,7 +36950,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -36959,7 +36959,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -36972,7 +36972,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneId != null)
         {
-            localVarPathParams.Add("phoneId", this.Configuration.ApiClient.ParameterToString(phoneId));
+            localVarPathParams.Add("phoneId", Configuration.ApiClient.ParameterToString(phoneId));
         }
 
         // Query params
@@ -36984,7 +36984,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -36997,11 +36997,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37027,7 +37027,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Phone>(localVarStatusCode,
             localVarHeaders,
-            (Phone)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
+            (Phone)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Phone)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37084,7 +37084,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37093,7 +37093,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37106,7 +37106,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneBaseId != null)
         {
-            localVarPathParams.Add("phoneBaseId", this.Configuration.ApiClient.ParameterToString(phoneBaseId));
+            localVarPathParams.Add("phoneBaseId", Configuration.ApiClient.ParameterToString(phoneBaseId));
         }
 
         // Query params
@@ -37118,7 +37118,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37131,11 +37131,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37161,7 +37161,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneBase>(localVarStatusCode,
             localVarHeaders,
-            (PhoneBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
+            (PhoneBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37219,7 +37219,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37228,7 +37228,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37241,7 +37241,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (phoneBaseId != null)
         {
-            localVarPathParams.Add("phoneBaseId", this.Configuration.ApiClient.ParameterToString(phoneBaseId));
+            localVarPathParams.Add("phoneBaseId", Configuration.ApiClient.ParameterToString(phoneBaseId));
         }
 
         // Query params
@@ -37253,7 +37253,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37266,11 +37266,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37296,7 +37296,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<PhoneBase>(localVarStatusCode,
             localVarHeaders,
-            (PhoneBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
+            (PhoneBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37353,7 +37353,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37362,7 +37362,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37375,7 +37375,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -37387,7 +37387,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37400,11 +37400,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37430,7 +37430,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Site>(localVarStatusCode,
             localVarHeaders,
-            (Site)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
+            (Site)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37488,7 +37488,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37497,7 +37497,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37510,7 +37510,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -37522,7 +37522,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37535,11 +37535,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37565,7 +37565,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<Site>(localVarStatusCode,
             localVarHeaders,
-            (Site)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
+            (Site)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Site)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37622,7 +37622,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37631,7 +37631,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37644,7 +37644,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -37656,7 +37656,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37669,11 +37669,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37699,7 +37699,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<List<NumberPlan>>(localVarStatusCode,
             localVarHeaders,
-            (List<NumberPlan>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NumberPlan>)),
+            (List<NumberPlan>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NumberPlan>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37757,7 +37757,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37766,7 +37766,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37779,7 +37779,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -37791,7 +37791,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37804,11 +37804,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37834,7 +37834,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<List<NumberPlan>>(localVarStatusCode,
             localVarHeaders,
-            (List<NumberPlan>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NumberPlan>)),
+            (List<NumberPlan>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<NumberPlan>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -37898,7 +37898,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -37907,7 +37907,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -37920,12 +37920,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         if (outboundRouteId != null)
         {
-            localVarPathParams.Add("outboundRouteId", this.Configuration.ApiClient.ParameterToString(outboundRouteId));
+            localVarPathParams.Add("outboundRouteId", Configuration.ApiClient.ParameterToString(outboundRouteId));
         }
 
         // Query params
@@ -37937,7 +37937,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -37950,11 +37950,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -37980,7 +37980,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<OutboundRouteBase>(localVarStatusCode,
             localVarHeaders,
-            (OutboundRouteBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
+            (OutboundRouteBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38046,7 +38046,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38055,7 +38055,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38068,12 +38068,12 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         if (outboundRouteId != null)
         {
-            localVarPathParams.Add("outboundRouteId", this.Configuration.ApiClient.ParameterToString(outboundRouteId));
+            localVarPathParams.Add("outboundRouteId", Configuration.ApiClient.ParameterToString(outboundRouteId));
         }
 
         // Query params
@@ -38085,7 +38085,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38098,11 +38098,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38128,7 +38128,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<OutboundRouteBase>(localVarStatusCode,
             localVarHeaders,
-            (OutboundRouteBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
+            (OutboundRouteBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundRouteBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38185,7 +38185,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38194,7 +38194,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38207,7 +38207,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -38219,7 +38219,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38232,11 +38232,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38262,7 +38262,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SiteConnections>(localVarStatusCode,
             localVarHeaders,
-            (SiteConnections)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
+            (SiteConnections)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38320,7 +38320,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38329,7 +38329,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38342,7 +38342,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (siteId != null)
         {
-            localVarPathParams.Add("siteId", this.Configuration.ApiClient.ParameterToString(siteId));
+            localVarPathParams.Add("siteId", Configuration.ApiClient.ParameterToString(siteId));
         }
 
         // Query params
@@ -38354,7 +38354,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38367,11 +38367,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38397,7 +38397,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<SiteConnections>(localVarStatusCode,
             localVarHeaders,
-            (SiteConnections)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
+            (SiteConnections)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SiteConnections)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38454,7 +38454,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38463,7 +38463,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38476,7 +38476,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (trunkBaseSettingsId != null)
         {
-            localVarPathParams.Add("trunkBaseSettingsId", this.Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
+            localVarPathParams.Add("trunkBaseSettingsId", Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
         }
 
         // Query params
@@ -38488,7 +38488,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38501,11 +38501,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38531,7 +38531,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (TrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
+            (TrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -38589,7 +38589,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -38598,7 +38598,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -38611,7 +38611,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Path params
         if (trunkBaseSettingsId != null)
         {
-            localVarPathParams.Add("trunkBaseSettingsId", this.Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
+            localVarPathParams.Add("trunkBaseSettingsId", Configuration.ApiClient.ParameterToString(trunkBaseSettingsId));
         }
 
         // Query params
@@ -38623,7 +38623,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -38636,11 +38636,11 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -38666,7 +38666,7 @@ public partial class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return new ApiResponse<TrunkBase>(localVarStatusCode,
             localVarHeaders,
-            (TrunkBase)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
+            (TrunkBase)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrunkBase)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

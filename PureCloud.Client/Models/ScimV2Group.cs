@@ -105,7 +105,7 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimV2Group);
+        return Equals(obj as ScimV2Group);
     }
 
     /// <summary>
@@ -123,34 +123,34 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Schemas == other.Schemas ||
-                this.Schemas != null &&
-                this.Schemas.SequenceEqual(other.Schemas)
+                Schemas == other.Schemas ||
+                Schemas != null &&
+                Schemas.SequenceEqual(other.Schemas)
             ) &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.ExternalId == other.ExternalId ||
-                this.ExternalId != null &&
-                this.ExternalId.Equals(other.ExternalId)
+                ExternalId == other.ExternalId ||
+                ExternalId != null &&
+                ExternalId.Equals(other.ExternalId)
             ) &&
             (
-                this.Members == other.Members ||
-                this.Members != null &&
-                this.Members.SequenceEqual(other.Members)
+                Members == other.Members ||
+                Members != null &&
+                Members.SequenceEqual(other.Members)
             ) &&
             (
-                this.Meta == other.Meta ||
-                this.Meta != null &&
-                this.Meta.Equals(other.Meta)
+                Meta == other.Meta ||
+                Meta != null &&
+                Meta.Equals(other.Meta)
             );
     }
 
@@ -165,34 +165,34 @@ public partial class ScimV2Group : IEquatable<ScimV2Group>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Schemas != null)
+            if (Schemas != null)
             {
-                hash = hash * 59 + this.Schemas.GetHashCode();
+                hash = hash * 59 + Schemas.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.ExternalId != null)
+            if (ExternalId != null)
             {
-                hash = hash * 59 + this.ExternalId.GetHashCode();
+                hash = hash * 59 + ExternalId.GetHashCode();
             }
 
-            if (this.Members != null)
+            if (Members != null)
             {
-                hash = hash * 59 + this.Members.GetHashCode();
+                hash = hash * 59 + Members.GetHashCode();
             }
 
-            if (this.Meta != null)
+            if (Meta != null)
             {
-                hash = hash * 59 + this.Meta.GetHashCode();
+                hash = hash * 59 + Meta.GetHashCode();
             }
 
             return hash;

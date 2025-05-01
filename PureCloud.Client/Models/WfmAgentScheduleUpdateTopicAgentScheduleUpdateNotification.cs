@@ -85,7 +85,7 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification 
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification);
+        return Equals(obj as WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification 
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.Updates == other.Updates ||
-                this.Updates != null &&
-                this.Updates.SequenceEqual(other.Updates)
+                Updates == other.Updates ||
+                Updates != null &&
+                Updates.SequenceEqual(other.Updates)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification 
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.Updates != null)
+            if (Updates != null)
             {
-                hash = hash * 59 + this.Updates.GetHashCode();
+                hash = hash * 59 + Updates.GetHashCode();
             }
 
             return hash;

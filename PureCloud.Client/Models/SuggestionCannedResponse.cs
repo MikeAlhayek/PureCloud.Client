@@ -61,7 +61,7 @@ public partial class SuggestionCannedResponse : IEquatable<SuggestionCannedRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SuggestionCannedResponse);
+        return Equals(obj as SuggestionCannedResponse);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class SuggestionCannedResponse : IEquatable<SuggestionCannedRespo
 
         return true &&
             (
-                this.Response == other.Response ||
-                this.Response != null &&
-                this.Response.Equals(other.Response)
+                Response == other.Response ||
+                Response != null &&
+                Response.Equals(other.Response)
             ) &&
             (
-                this.Library == other.Library ||
-                this.Library != null &&
-                this.Library.Equals(other.Library)
+                Library == other.Library ||
+                Library != null &&
+                Library.Equals(other.Library)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class SuggestionCannedResponse : IEquatable<SuggestionCannedRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Response != null)
+            if (Response != null)
             {
-                hash = hash * 59 + this.Response.GetHashCode();
+                hash = hash * 59 + Response.GetHashCode();
             }
 
-            if (this.Library != null)
+            if (Library != null)
             {
-                hash = hash * 59 + this.Library.GetHashCode();
+                hash = hash * 59 + Library.GetHashCode();
             }
 
             return hash;

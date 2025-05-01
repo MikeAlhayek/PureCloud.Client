@@ -167,7 +167,7 @@ public partial class UserActivityEntityData : IEquatable<UserActivityEntityData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserActivityEntityData);
+        return Equals(obj as UserActivityEntityData);
     }
 
     /// <summary>
@@ -185,54 +185,54 @@ public partial class UserActivityEntityData : IEquatable<UserActivityEntityData>
 
         return true &&
             (
-                this.ActivityDate == other.ActivityDate ||
-                this.ActivityDate != null &&
-                this.ActivityDate.Equals(other.ActivityDate)
+                ActivityDate == other.ActivityDate ||
+                ActivityDate != null &&
+                ActivityDate.Equals(other.ActivityDate)
             ) &&
             (
-                this.OrganizationPresenceId == other.OrganizationPresenceId ||
-                this.OrganizationPresenceId != null &&
-                this.OrganizationPresenceId.Equals(other.OrganizationPresenceId)
+                OrganizationPresenceId == other.OrganizationPresenceId ||
+                OrganizationPresenceId != null &&
+                OrganizationPresenceId.Equals(other.OrganizationPresenceId)
             ) &&
             (
-                this.PresenceDate == other.PresenceDate ||
-                this.PresenceDate != null &&
-                this.PresenceDate.Equals(other.PresenceDate)
+                PresenceDate == other.PresenceDate ||
+                PresenceDate != null &&
+                PresenceDate.Equals(other.PresenceDate)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.QueueMembershipStatus == other.QueueMembershipStatus ||
-                this.QueueMembershipStatus != null &&
-                this.QueueMembershipStatus.Equals(other.QueueMembershipStatus)
+                QueueMembershipStatus == other.QueueMembershipStatus ||
+                QueueMembershipStatus != null &&
+                QueueMembershipStatus.Equals(other.QueueMembershipStatus)
             ) &&
             (
-                this.RoutingStatus == other.RoutingStatus ||
-                this.RoutingStatus != null &&
-                this.RoutingStatus.Equals(other.RoutingStatus)
+                RoutingStatus == other.RoutingStatus ||
+                RoutingStatus != null &&
+                RoutingStatus.Equals(other.RoutingStatus)
             ) &&
             (
-                this.RoutingStatusDate == other.RoutingStatusDate ||
-                this.RoutingStatusDate != null &&
-                this.RoutingStatusDate.Equals(other.RoutingStatusDate)
+                RoutingStatusDate == other.RoutingStatusDate ||
+                RoutingStatusDate != null &&
+                RoutingStatusDate.Equals(other.RoutingStatusDate)
             ) &&
             (
-                this.SystemPresence == other.SystemPresence ||
-                this.SystemPresence != null &&
-                this.SystemPresence.Equals(other.SystemPresence)
+                SystemPresence == other.SystemPresence ||
+                SystemPresence != null &&
+                SystemPresence.Equals(other.SystemPresence)
             ) &&
             (
-                this.TeamId == other.TeamId ||
-                this.TeamId != null &&
-                this.TeamId.Equals(other.TeamId)
+                TeamId == other.TeamId ||
+                TeamId != null &&
+                TeamId.Equals(other.TeamId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             );
     }
 
@@ -247,54 +247,54 @@ public partial class UserActivityEntityData : IEquatable<UserActivityEntityData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityDate != null)
+            if (ActivityDate != null)
             {
-                hash = hash * 59 + this.ActivityDate.GetHashCode();
+                hash = hash * 59 + ActivityDate.GetHashCode();
             }
 
-            if (this.OrganizationPresenceId != null)
+            if (OrganizationPresenceId != null)
             {
-                hash = hash * 59 + this.OrganizationPresenceId.GetHashCode();
+                hash = hash * 59 + OrganizationPresenceId.GetHashCode();
             }
 
-            if (this.PresenceDate != null)
+            if (PresenceDate != null)
             {
-                hash = hash * 59 + this.PresenceDate.GetHashCode();
+                hash = hash * 59 + PresenceDate.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.QueueMembershipStatus != null)
+            if (QueueMembershipStatus != null)
             {
-                hash = hash * 59 + this.QueueMembershipStatus.GetHashCode();
+                hash = hash * 59 + QueueMembershipStatus.GetHashCode();
             }
 
-            if (this.RoutingStatus != null)
+            if (RoutingStatus != null)
             {
-                hash = hash * 59 + this.RoutingStatus.GetHashCode();
+                hash = hash * 59 + RoutingStatus.GetHashCode();
             }
 
-            if (this.RoutingStatusDate != null)
+            if (RoutingStatusDate != null)
             {
-                hash = hash * 59 + this.RoutingStatusDate.GetHashCode();
+                hash = hash * 59 + RoutingStatusDate.GetHashCode();
             }
 
-            if (this.SystemPresence != null)
+            if (SystemPresence != null)
             {
-                hash = hash * 59 + this.SystemPresence.GetHashCode();
+                hash = hash * 59 + SystemPresence.GetHashCode();
             }
 
-            if (this.TeamId != null)
+            if (TeamId != null)
             {
-                hash = hash * 59 + this.TeamId.GetHashCode();
+                hash = hash * 59 + TeamId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
             return hash;

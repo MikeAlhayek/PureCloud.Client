@@ -89,7 +89,7 @@ public partial class SpeechTextAnalyticsSettingsResponse : IEquatable<SpeechText
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SpeechTextAnalyticsSettingsResponse);
+        return Equals(obj as SpeechTextAnalyticsSettingsResponse);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class SpeechTextAnalyticsSettingsResponse : IEquatable<SpeechText
 
         return true &&
             (
-                this.DefaultProgram == other.DefaultProgram ||
-                this.DefaultProgram != null &&
-                this.DefaultProgram.Equals(other.DefaultProgram)
+                DefaultProgram == other.DefaultProgram ||
+                DefaultProgram != null &&
+                DefaultProgram.Equals(other.DefaultProgram)
             ) &&
             (
-                this.ExpectedDialects == other.ExpectedDialects ||
-                this.ExpectedDialects != null &&
-                this.ExpectedDialects.SequenceEqual(other.ExpectedDialects)
+                ExpectedDialects == other.ExpectedDialects ||
+                ExpectedDialects != null &&
+                ExpectedDialects.SequenceEqual(other.ExpectedDialects)
             ) &&
             (
-                this.TextAnalyticsEnabled == other.TextAnalyticsEnabled ||
-                this.TextAnalyticsEnabled != null &&
-                this.TextAnalyticsEnabled.Equals(other.TextAnalyticsEnabled)
+                TextAnalyticsEnabled == other.TextAnalyticsEnabled ||
+                TextAnalyticsEnabled != null &&
+                TextAnalyticsEnabled.Equals(other.TextAnalyticsEnabled)
             ) &&
             (
-                this.AgentEmpathyEnabled == other.AgentEmpathyEnabled ||
-                this.AgentEmpathyEnabled != null &&
-                this.AgentEmpathyEnabled.Equals(other.AgentEmpathyEnabled)
+                AgentEmpathyEnabled == other.AgentEmpathyEnabled ||
+                AgentEmpathyEnabled != null &&
+                AgentEmpathyEnabled.Equals(other.AgentEmpathyEnabled)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class SpeechTextAnalyticsSettingsResponse : IEquatable<SpeechText
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DefaultProgram != null)
+            if (DefaultProgram != null)
             {
-                hash = hash * 59 + this.DefaultProgram.GetHashCode();
+                hash = hash * 59 + DefaultProgram.GetHashCode();
             }
 
-            if (this.ExpectedDialects != null)
+            if (ExpectedDialects != null)
             {
-                hash = hash * 59 + this.ExpectedDialects.GetHashCode();
+                hash = hash * 59 + ExpectedDialects.GetHashCode();
             }
 
-            if (this.TextAnalyticsEnabled != null)
+            if (TextAnalyticsEnabled != null)
             {
-                hash = hash * 59 + this.TextAnalyticsEnabled.GetHashCode();
+                hash = hash * 59 + TextAnalyticsEnabled.GetHashCode();
             }
 
-            if (this.AgentEmpathyEnabled != null)
+            if (AgentEmpathyEnabled != null)
             {
-                hash = hash * 59 + this.AgentEmpathyEnabled.GetHashCode();
+                hash = hash * 59 + AgentEmpathyEnabled.GetHashCode();
             }
 
             return hash;

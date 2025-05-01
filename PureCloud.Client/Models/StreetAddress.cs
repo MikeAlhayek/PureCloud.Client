@@ -143,7 +143,7 @@ public partial class StreetAddress : IEquatable<StreetAddress>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as StreetAddress);
+        return Equals(obj as StreetAddress);
     }
 
     /// <summary>
@@ -161,44 +161,44 @@ public partial class StreetAddress : IEquatable<StreetAddress>
 
         return true &&
             (
-                this.Country == other.Country ||
-                this.Country != null &&
-                this.Country.Equals(other.Country)
+                Country == other.Country ||
+                Country != null &&
+                Country.Equals(other.Country)
             ) &&
             (
-                this.A1 == other.A1 ||
-                this.A1 != null &&
-                this.A1.Equals(other.A1)
+                A1 == other.A1 ||
+                A1 != null &&
+                A1.Equals(other.A1)
             ) &&
             (
-                this.A3 == other.A3 ||
-                this.A3 != null &&
-                this.A3.Equals(other.A3)
+                A3 == other.A3 ||
+                A3 != null &&
+                A3.Equals(other.A3)
             ) &&
             (
-                this.RD == other.RD ||
-                this.RD != null &&
-                this.RD.Equals(other.RD)
+                RD == other.RD ||
+                RD != null &&
+                RD.Equals(other.RD)
             ) &&
             (
-                this.HNO == other.HNO ||
-                this.HNO != null &&
-                this.HNO.Equals(other.HNO)
+                HNO == other.HNO ||
+                HNO != null &&
+                HNO.Equals(other.HNO)
             ) &&
             (
-                this.LOC == other.LOC ||
-                this.LOC != null &&
-                this.LOC.Equals(other.LOC)
+                LOC == other.LOC ||
+                LOC != null &&
+                LOC.Equals(other.LOC)
             ) &&
             (
-                this.NAM == other.NAM ||
-                this.NAM != null &&
-                this.NAM.Equals(other.NAM)
+                NAM == other.NAM ||
+                NAM != null &&
+                NAM.Equals(other.NAM)
             ) &&
             (
-                this.PC == other.PC ||
-                this.PC != null &&
-                this.PC.Equals(other.PC)
+                PC == other.PC ||
+                PC != null &&
+                PC.Equals(other.PC)
             );
     }
 
@@ -213,44 +213,44 @@ public partial class StreetAddress : IEquatable<StreetAddress>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Country != null)
+            if (Country != null)
             {
-                hash = hash * 59 + this.Country.GetHashCode();
+                hash = hash * 59 + Country.GetHashCode();
             }
 
-            if (this.A1 != null)
+            if (A1 != null)
             {
-                hash = hash * 59 + this.A1.GetHashCode();
+                hash = hash * 59 + A1.GetHashCode();
             }
 
-            if (this.A3 != null)
+            if (A3 != null)
             {
-                hash = hash * 59 + this.A3.GetHashCode();
+                hash = hash * 59 + A3.GetHashCode();
             }
 
-            if (this.RD != null)
+            if (RD != null)
             {
-                hash = hash * 59 + this.RD.GetHashCode();
+                hash = hash * 59 + RD.GetHashCode();
             }
 
-            if (this.HNO != null)
+            if (HNO != null)
             {
-                hash = hash * 59 + this.HNO.GetHashCode();
+                hash = hash * 59 + HNO.GetHashCode();
             }
 
-            if (this.LOC != null)
+            if (LOC != null)
             {
-                hash = hash * 59 + this.LOC.GetHashCode();
+                hash = hash * 59 + LOC.GetHashCode();
             }
 
-            if (this.NAM != null)
+            if (NAM != null)
             {
-                hash = hash * 59 + this.NAM.GetHashCode();
+                hash = hash * 59 + NAM.GetHashCode();
             }
 
-            if (this.PC != null)
+            if (PC != null)
             {
-                hash = hash * 59 + this.PC.GetHashCode();
+                hash = hash * 59 + PC.GetHashCode();
             }
 
             return hash;

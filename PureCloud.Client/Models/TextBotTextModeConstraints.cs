@@ -71,7 +71,7 @@ public partial class TextBotTextModeConstraints : IEquatable<TextBotTextModeCons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotTextModeConstraints);
+        return Equals(obj as TextBotTextModeConstraints);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class TextBotTextModeConstraints : IEquatable<TextBotTextModeCons
 
         return true &&
             (
-                this.LanguagePreferences == other.LanguagePreferences ||
-                this.LanguagePreferences != null &&
-                this.LanguagePreferences.SequenceEqual(other.LanguagePreferences)
+                LanguagePreferences == other.LanguagePreferences ||
+                LanguagePreferences != null &&
+                LanguagePreferences.SequenceEqual(other.LanguagePreferences)
             ) &&
             (
-                this.NoInputTimeoutMilliseconds == other.NoInputTimeoutMilliseconds ||
-                this.NoInputTimeoutMilliseconds != null &&
-                this.NoInputTimeoutMilliseconds.Equals(other.NoInputTimeoutMilliseconds)
+                NoInputTimeoutMilliseconds == other.NoInputTimeoutMilliseconds ||
+                NoInputTimeoutMilliseconds != null &&
+                NoInputTimeoutMilliseconds.Equals(other.NoInputTimeoutMilliseconds)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class TextBotTextModeConstraints : IEquatable<TextBotTextModeCons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LanguagePreferences != null)
+            if (LanguagePreferences != null)
             {
-                hash = hash * 59 + this.LanguagePreferences.GetHashCode();
+                hash = hash * 59 + LanguagePreferences.GetHashCode();
             }
 
-            if (this.NoInputTimeoutMilliseconds != null)
+            if (NoInputTimeoutMilliseconds != null)
             {
-                hash = hash * 59 + this.NoInputTimeoutMilliseconds.GetHashCode();
+                hash = hash * 59 + NoInputTimeoutMilliseconds.GetHashCode();
             }
 
             return hash;

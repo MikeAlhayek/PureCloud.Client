@@ -63,7 +63,7 @@ public partial class LicenseOrgToggle : IEquatable<LicenseOrgToggle>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LicenseOrgToggle);
+        return Equals(obj as LicenseOrgToggle);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class LicenseOrgToggle : IEquatable<LicenseOrgToggle>
 
         return true &&
             (
-                this.FeatureName == other.FeatureName ||
-                this.FeatureName != null &&
-                this.FeatureName.Equals(other.FeatureName)
+                FeatureName == other.FeatureName ||
+                FeatureName != null &&
+                FeatureName.Equals(other.FeatureName)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class LicenseOrgToggle : IEquatable<LicenseOrgToggle>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FeatureName != null)
+            if (FeatureName != null)
             {
-                hash = hash * 59 + this.FeatureName.GetHashCode();
+                hash = hash * 59 + FeatureName.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
             return hash;

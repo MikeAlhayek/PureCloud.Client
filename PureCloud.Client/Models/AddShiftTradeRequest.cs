@@ -106,7 +106,7 @@ public partial class AddShiftTradeRequest : IEquatable<AddShiftTradeRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AddShiftTradeRequest);
+        return Equals(obj as AddShiftTradeRequest);
     }
 
     /// <summary>
@@ -124,29 +124,29 @@ public partial class AddShiftTradeRequest : IEquatable<AddShiftTradeRequest>
 
         return true &&
             (
-                this.ScheduleId == other.ScheduleId ||
-                this.ScheduleId != null &&
-                this.ScheduleId.Equals(other.ScheduleId)
+                ScheduleId == other.ScheduleId ||
+                ScheduleId != null &&
+                ScheduleId.Equals(other.ScheduleId)
             ) &&
             (
-                this.InitiatingShiftId == other.InitiatingShiftId ||
-                this.InitiatingShiftId != null &&
-                this.InitiatingShiftId.Equals(other.InitiatingShiftId)
+                InitiatingShiftId == other.InitiatingShiftId ||
+                InitiatingShiftId != null &&
+                InitiatingShiftId.Equals(other.InitiatingShiftId)
             ) &&
             (
-                this.ReceivingUserId == other.ReceivingUserId ||
-                this.ReceivingUserId != null &&
-                this.ReceivingUserId.Equals(other.ReceivingUserId)
+                ReceivingUserId == other.ReceivingUserId ||
+                ReceivingUserId != null &&
+                ReceivingUserId.Equals(other.ReceivingUserId)
             ) &&
             (
-                this.Expiration == other.Expiration ||
-                this.Expiration != null &&
-                this.Expiration.Equals(other.Expiration)
+                Expiration == other.Expiration ||
+                Expiration != null &&
+                Expiration.Equals(other.Expiration)
             ) &&
             (
-                this.AcceptableIntervals == other.AcceptableIntervals ||
-                this.AcceptableIntervals != null &&
-                this.AcceptableIntervals.SequenceEqual(other.AcceptableIntervals)
+                AcceptableIntervals == other.AcceptableIntervals ||
+                AcceptableIntervals != null &&
+                AcceptableIntervals.SequenceEqual(other.AcceptableIntervals)
             );
     }
 
@@ -161,29 +161,29 @@ public partial class AddShiftTradeRequest : IEquatable<AddShiftTradeRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ScheduleId != null)
+            if (ScheduleId != null)
             {
-                hash = hash * 59 + this.ScheduleId.GetHashCode();
+                hash = hash * 59 + ScheduleId.GetHashCode();
             }
 
-            if (this.InitiatingShiftId != null)
+            if (InitiatingShiftId != null)
             {
-                hash = hash * 59 + this.InitiatingShiftId.GetHashCode();
+                hash = hash * 59 + InitiatingShiftId.GetHashCode();
             }
 
-            if (this.ReceivingUserId != null)
+            if (ReceivingUserId != null)
             {
-                hash = hash * 59 + this.ReceivingUserId.GetHashCode();
+                hash = hash * 59 + ReceivingUserId.GetHashCode();
             }
 
-            if (this.Expiration != null)
+            if (Expiration != null)
             {
-                hash = hash * 59 + this.Expiration.GetHashCode();
+                hash = hash * 59 + Expiration.GetHashCode();
             }
 
-            if (this.AcceptableIntervals != null)
+            if (AcceptableIntervals != null)
             {
-                hash = hash * 59 + this.AcceptableIntervals.GetHashCode();
+                hash = hash * 59 + AcceptableIntervals.GetHashCode();
             }
 
             return hash;

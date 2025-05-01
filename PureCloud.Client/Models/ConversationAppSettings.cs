@@ -149,7 +149,7 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationAppSettings);
+        return Equals(obj as ConversationAppSettings);
     }
 
     /// <summary>
@@ -167,49 +167,49 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.ShowAgentTypingIndicator == other.ShowAgentTypingIndicator ||
-                this.ShowAgentTypingIndicator != null &&
-                this.ShowAgentTypingIndicator.Equals(other.ShowAgentTypingIndicator)
+                ShowAgentTypingIndicator == other.ShowAgentTypingIndicator ||
+                ShowAgentTypingIndicator != null &&
+                ShowAgentTypingIndicator.Equals(other.ShowAgentTypingIndicator)
             ) &&
             (
-                this.ShowUserTypingIndicator == other.ShowUserTypingIndicator ||
-                this.ShowUserTypingIndicator != null &&
-                this.ShowUserTypingIndicator.Equals(other.ShowUserTypingIndicator)
+                ShowUserTypingIndicator == other.ShowUserTypingIndicator ||
+                ShowUserTypingIndicator != null &&
+                ShowUserTypingIndicator.Equals(other.ShowUserTypingIndicator)
             ) &&
             (
-                this.AutoStart == other.AutoStart ||
-                this.AutoStart != null &&
-                this.AutoStart.Equals(other.AutoStart)
+                AutoStart == other.AutoStart ||
+                AutoStart != null &&
+                AutoStart.Equals(other.AutoStart)
             ) &&
             (
-                this.Markdown == other.Markdown ||
-                this.Markdown != null &&
-                this.Markdown.Equals(other.Markdown)
+                Markdown == other.Markdown ||
+                Markdown != null &&
+                Markdown.Equals(other.Markdown)
             ) &&
             (
-                this.ConversationDisconnect == other.ConversationDisconnect ||
-                this.ConversationDisconnect != null &&
-                this.ConversationDisconnect.Equals(other.ConversationDisconnect)
+                ConversationDisconnect == other.ConversationDisconnect ||
+                ConversationDisconnect != null &&
+                ConversationDisconnect.Equals(other.ConversationDisconnect)
             ) &&
             (
-                this.ConversationClear == other.ConversationClear ||
-                this.ConversationClear != null &&
-                this.ConversationClear.Equals(other.ConversationClear)
+                ConversationClear == other.ConversationClear ||
+                ConversationClear != null &&
+                ConversationClear.Equals(other.ConversationClear)
             ) &&
             (
-                this.Humanize == other.Humanize ||
-                this.Humanize != null &&
-                this.Humanize.Equals(other.Humanize)
+                Humanize == other.Humanize ||
+                Humanize != null &&
+                Humanize.Equals(other.Humanize)
             ) &&
             (
-                this.Notifications == other.Notifications ||
-                this.Notifications != null &&
-                this.Notifications.Equals(other.Notifications)
+                Notifications == other.Notifications ||
+                Notifications != null &&
+                Notifications.Equals(other.Notifications)
             );
     }
 
@@ -224,49 +224,49 @@ public partial class ConversationAppSettings : IEquatable<ConversationAppSetting
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.ShowAgentTypingIndicator != null)
+            if (ShowAgentTypingIndicator != null)
             {
-                hash = hash * 59 + this.ShowAgentTypingIndicator.GetHashCode();
+                hash = hash * 59 + ShowAgentTypingIndicator.GetHashCode();
             }
 
-            if (this.ShowUserTypingIndicator != null)
+            if (ShowUserTypingIndicator != null)
             {
-                hash = hash * 59 + this.ShowUserTypingIndicator.GetHashCode();
+                hash = hash * 59 + ShowUserTypingIndicator.GetHashCode();
             }
 
-            if (this.AutoStart != null)
+            if (AutoStart != null)
             {
-                hash = hash * 59 + this.AutoStart.GetHashCode();
+                hash = hash * 59 + AutoStart.GetHashCode();
             }
 
-            if (this.Markdown != null)
+            if (Markdown != null)
             {
-                hash = hash * 59 + this.Markdown.GetHashCode();
+                hash = hash * 59 + Markdown.GetHashCode();
             }
 
-            if (this.ConversationDisconnect != null)
+            if (ConversationDisconnect != null)
             {
-                hash = hash * 59 + this.ConversationDisconnect.GetHashCode();
+                hash = hash * 59 + ConversationDisconnect.GetHashCode();
             }
 
-            if (this.ConversationClear != null)
+            if (ConversationClear != null)
             {
-                hash = hash * 59 + this.ConversationClear.GetHashCode();
+                hash = hash * 59 + ConversationClear.GetHashCode();
             }
 
-            if (this.Humanize != null)
+            if (Humanize != null)
             {
-                hash = hash * 59 + this.Humanize.GetHashCode();
+                hash = hash * 59 + Humanize.GetHashCode();
             }
 
-            if (this.Notifications != null)
+            if (Notifications != null)
             {
-                hash = hash * 59 + this.Notifications.GetHashCode();
+                hash = hash * 59 + Notifications.GetHashCode();
             }
 
             return hash;

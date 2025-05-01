@@ -69,7 +69,7 @@ public partial class AdminBulkUpdateAlternativeShiftTradeStateRequest : IEquatab
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AdminBulkUpdateAlternativeShiftTradeStateRequest);
+        return Equals(obj as AdminBulkUpdateAlternativeShiftTradeStateRequest);
     }
 
     /// <summary>
@@ -87,14 +87,14 @@ public partial class AdminBulkUpdateAlternativeShiftTradeStateRequest : IEquatab
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             );
     }
 
@@ -109,14 +109,14 @@ public partial class AdminBulkUpdateAlternativeShiftTradeStateRequest : IEquatab
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
             return hash;

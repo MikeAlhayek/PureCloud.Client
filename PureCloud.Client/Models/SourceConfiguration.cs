@@ -83,7 +83,7 @@ public partial class SourceConfiguration : IEquatable<SourceConfiguration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SourceConfiguration);
+        return Equals(obj as SourceConfiguration);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class SourceConfiguration : IEquatable<SourceConfiguration>
 
         return true &&
             (
-                this.SourceId == other.SourceId ||
-                this.SourceId != null &&
-                this.SourceId.Equals(other.SourceId)
+                SourceId == other.SourceId ||
+                SourceId != null &&
+                SourceId.Equals(other.SourceId)
             ) &&
             (
-                this.InteractionId == other.InteractionId ||
-                this.InteractionId != null &&
-                this.InteractionId.Equals(other.InteractionId)
+                InteractionId == other.InteractionId ||
+                InteractionId != null &&
+                InteractionId.Equals(other.InteractionId)
             ) &&
             (
-                this.TagId == other.TagId ||
-                this.TagId != null &&
-                this.TagId.Equals(other.TagId)
+                TagId == other.TagId ||
+                TagId != null &&
+                TagId.Equals(other.TagId)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class SourceConfiguration : IEquatable<SourceConfiguration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SourceId != null)
+            if (SourceId != null)
             {
-                hash = hash * 59 + this.SourceId.GetHashCode();
+                hash = hash * 59 + SourceId.GetHashCode();
             }
 
-            if (this.InteractionId != null)
+            if (InteractionId != null)
             {
-                hash = hash * 59 + this.InteractionId.GetHashCode();
+                hash = hash * 59 + InteractionId.GetHashCode();
             }
 
-            if (this.TagId != null)
+            if (TagId != null)
             {
-                hash = hash * 59 + this.TagId.GetHashCode();
+                hash = hash * 59 + TagId.GetHashCode();
             }
 
             return hash;

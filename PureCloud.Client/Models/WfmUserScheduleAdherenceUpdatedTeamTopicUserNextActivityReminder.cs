@@ -63,7 +63,7 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityRem
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder);
+        return Equals(obj as WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityRem
 
         return true &&
             (
-                this.ActivityCategory == other.ActivityCategory ||
-                this.ActivityCategory != null &&
-                this.ActivityCategory.Equals(other.ActivityCategory)
+                ActivityCategory == other.ActivityCategory ||
+                ActivityCategory != null &&
+                ActivityCategory.Equals(other.ActivityCategory)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityRem
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityCategory != null)
+            if (ActivityCategory != null)
             {
-                hash = hash * 59 + this.ActivityCategory.GetHashCode();
+                hash = hash * 59 + ActivityCategory.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
             return hash;

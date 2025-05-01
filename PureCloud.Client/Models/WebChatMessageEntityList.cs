@@ -96,7 +96,7 @@ public partial class WebChatMessageEntityList : IEquatable<WebChatMessageEntityL
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebChatMessageEntityList);
+        return Equals(obj as WebChatMessageEntityList);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class WebChatMessageEntityList : IEquatable<WebChatMessageEntityL
 
         return true &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.PreviousPage == other.PreviousPage ||
-                this.PreviousPage != null &&
-                this.PreviousPage.Equals(other.PreviousPage)
+                PreviousPage == other.PreviousPage ||
+                PreviousPage != null &&
+                PreviousPage.Equals(other.PreviousPage)
             ) &&
             (
-                this.Next == other.Next ||
-                this.Next != null &&
-                this.Next.Equals(other.Next)
+                Next == other.Next ||
+                Next != null &&
+                Next.Equals(other.Next)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class WebChatMessageEntityList : IEquatable<WebChatMessageEntityL
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.PreviousPage != null)
+            if (PreviousPage != null)
             {
-                hash = hash * 59 + this.PreviousPage.GetHashCode();
+                hash = hash * 59 + PreviousPage.GetHashCode();
             }
 
-            if (this.Next != null)
+            if (Next != null)
             {
-                hash = hash * 59 + this.Next.GetHashCode();
+                hash = hash * 59 + Next.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

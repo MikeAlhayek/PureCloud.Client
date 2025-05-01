@@ -109,7 +109,7 @@ public partial class ContestsFinalizeRequest : IEquatable<ContestsFinalizeReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestsFinalizeRequest);
+        return Equals(obj as ContestsFinalizeRequest);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class ContestsFinalizeRequest : IEquatable<ContestsFinalizeReques
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Winners == other.Winners ||
-                this.Winners != null &&
-                this.Winners.SequenceEqual(other.Winners)
+                Winners == other.Winners ||
+                Winners != null &&
+                Winners.SequenceEqual(other.Winners)
             ) &&
             (
-                this.DisqualifiedAgents == other.DisqualifiedAgents ||
-                this.DisqualifiedAgents != null &&
-                this.DisqualifiedAgents.SequenceEqual(other.DisqualifiedAgents)
+                DisqualifiedAgents == other.DisqualifiedAgents ||
+                DisqualifiedAgents != null &&
+                DisqualifiedAgents.SequenceEqual(other.DisqualifiedAgents)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class ContestsFinalizeRequest : IEquatable<ContestsFinalizeReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Winners != null)
+            if (Winners != null)
             {
-                hash = hash * 59 + this.Winners.GetHashCode();
+                hash = hash * 59 + Winners.GetHashCode();
             }
 
-            if (this.DisqualifiedAgents != null)
+            if (DisqualifiedAgents != null)
             {
-                hash = hash * 59 + this.DisqualifiedAgents.GetHashCode();
+                hash = hash * 59 + DisqualifiedAgents.GetHashCode();
             }
 
             return hash;

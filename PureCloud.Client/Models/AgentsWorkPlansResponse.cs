@@ -64,7 +64,7 @@ public partial class AgentsWorkPlansResponse : IEquatable<AgentsWorkPlansRespons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentsWorkPlansResponse);
+        return Equals(obj as AgentsWorkPlansResponse);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class AgentsWorkPlansResponse : IEquatable<AgentsWorkPlansRespons
 
         return true &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.Result == other.Result ||
-                this.Result != null &&
-                this.Result.Equals(other.Result)
+                Result == other.Result ||
+                Result != null &&
+                Result.Equals(other.Result)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class AgentsWorkPlansResponse : IEquatable<AgentsWorkPlansRespons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.Result != null)
+            if (Result != null)
             {
-                hash = hash * 59 + this.Result.GetHashCode();
+                hash = hash * 59 + Result.GetHashCode();
             }
 
             return hash;

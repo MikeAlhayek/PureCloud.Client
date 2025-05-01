@@ -64,7 +64,7 @@ public partial class ArticlesFilter : IEquatable<ArticlesFilter>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArticlesFilter);
+        return Equals(obj as ArticlesFilter);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class ArticlesFilter : IEquatable<ArticlesFilter>
 
         return true &&
             (
-                this.Labels == other.Labels ||
-                this.Labels != null &&
-                this.Labels.Equals(other.Labels)
+                Labels == other.Labels ||
+                Labels != null &&
+                Labels.Equals(other.Labels)
             ) &&
             (
-                this.Categories == other.Categories ||
-                this.Categories != null &&
-                this.Categories.Equals(other.Categories)
+                Categories == other.Categories ||
+                Categories != null &&
+                Categories.Equals(other.Categories)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class ArticlesFilter : IEquatable<ArticlesFilter>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Labels != null)
+            if (Labels != null)
             {
-                hash = hash * 59 + this.Labels.GetHashCode();
+                hash = hash * 59 + Labels.GetHashCode();
             }
 
-            if (this.Categories != null)
+            if (Categories != null)
             {
-                hash = hash * 59 + this.Categories.GetHashCode();
+                hash = hash * 59 + Categories.GetHashCode();
             }
 
             return hash;

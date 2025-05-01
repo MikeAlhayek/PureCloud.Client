@@ -237,7 +237,7 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalMetricDefinition);
+        return Equals(obj as ExternalMetricDefinition);
     }
 
     /// <summary>
@@ -255,59 +255,59 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Unit == other.Unit ||
-                this.Unit != null &&
-                this.Unit.Equals(other.Unit)
+                Unit == other.Unit ||
+                Unit != null &&
+                Unit.Equals(other.Unit)
             ) &&
             (
-                this.UnitDefinition == other.UnitDefinition ||
-                this.UnitDefinition != null &&
-                this.UnitDefinition.Equals(other.UnitDefinition)
+                UnitDefinition == other.UnitDefinition ||
+                UnitDefinition != null &&
+                UnitDefinition.Equals(other.UnitDefinition)
             ) &&
             (
-                this.Precision == other.Precision ||
-                this.Precision != null &&
-                this.Precision.Equals(other.Precision)
+                Precision == other.Precision ||
+                Precision != null &&
+                Precision.Equals(other.Precision)
             ) &&
             (
-                this.DefaultObjectiveType == other.DefaultObjectiveType ||
-                this.DefaultObjectiveType != null &&
-                this.DefaultObjectiveType.Equals(other.DefaultObjectiveType)
+                DefaultObjectiveType == other.DefaultObjectiveType ||
+                DefaultObjectiveType != null &&
+                DefaultObjectiveType.Equals(other.DefaultObjectiveType)
             ) &&
             (
-                this.RetentionMonths == other.RetentionMonths ||
-                this.RetentionMonths != null &&
-                this.RetentionMonths.Equals(other.RetentionMonths)
+                RetentionMonths == other.RetentionMonths ||
+                RetentionMonths != null &&
+                RetentionMonths.Equals(other.RetentionMonths)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.InUse == other.InUse ||
-                this.InUse != null &&
-                this.InUse.Equals(other.InUse)
+                InUse == other.InUse ||
+                InUse != null &&
+                InUse.Equals(other.InUse)
             ) &&
             (
-                this.DateLastRefreshed == other.DateLastRefreshed ||
-                this.DateLastRefreshed != null &&
-                this.DateLastRefreshed.Equals(other.DateLastRefreshed)
+                DateLastRefreshed == other.DateLastRefreshed ||
+                DateLastRefreshed != null &&
+                DateLastRefreshed.Equals(other.DateLastRefreshed)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -322,59 +322,59 @@ public partial class ExternalMetricDefinition : IEquatable<ExternalMetricDefinit
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Unit != null)
+            if (Unit != null)
             {
-                hash = hash * 59 + this.Unit.GetHashCode();
+                hash = hash * 59 + Unit.GetHashCode();
             }
 
-            if (this.UnitDefinition != null)
+            if (UnitDefinition != null)
             {
-                hash = hash * 59 + this.UnitDefinition.GetHashCode();
+                hash = hash * 59 + UnitDefinition.GetHashCode();
             }
 
-            if (this.Precision != null)
+            if (Precision != null)
             {
-                hash = hash * 59 + this.Precision.GetHashCode();
+                hash = hash * 59 + Precision.GetHashCode();
             }
 
-            if (this.DefaultObjectiveType != null)
+            if (DefaultObjectiveType != null)
             {
-                hash = hash * 59 + this.DefaultObjectiveType.GetHashCode();
+                hash = hash * 59 + DefaultObjectiveType.GetHashCode();
             }
 
-            if (this.RetentionMonths != null)
+            if (RetentionMonths != null)
             {
-                hash = hash * 59 + this.RetentionMonths.GetHashCode();
+                hash = hash * 59 + RetentionMonths.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.InUse != null)
+            if (InUse != null)
             {
-                hash = hash * 59 + this.InUse.GetHashCode();
+                hash = hash * 59 + InUse.GetHashCode();
             }
 
-            if (this.DateLastRefreshed != null)
+            if (DateLastRefreshed != null)
             {
-                hash = hash * 59 + this.DateLastRefreshed.GetHashCode();
+                hash = hash * 59 + DateLastRefreshed.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

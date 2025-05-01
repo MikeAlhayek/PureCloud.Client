@@ -225,7 +225,7 @@ public partial class TopicRequest : IEquatable<TopicRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TopicRequest);
+        return Equals(obj as TopicRequest);
     }
 
     /// <summary>
@@ -243,44 +243,44 @@ public partial class TopicRequest : IEquatable<TopicRequest>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Strictness == other.Strictness ||
-                this.Strictness != null &&
-                this.Strictness.Equals(other.Strictness)
+                Strictness == other.Strictness ||
+                Strictness != null &&
+                Strictness.Equals(other.Strictness)
             ) &&
             (
-                this.ProgramIds == other.ProgramIds ||
-                this.ProgramIds != null &&
-                this.ProgramIds.SequenceEqual(other.ProgramIds)
+                ProgramIds == other.ProgramIds ||
+                ProgramIds != null &&
+                ProgramIds.SequenceEqual(other.ProgramIds)
             ) &&
             (
-                this.Tags == other.Tags ||
-                this.Tags != null &&
-                this.Tags.SequenceEqual(other.Tags)
+                Tags == other.Tags ||
+                Tags != null &&
+                Tags.SequenceEqual(other.Tags)
             ) &&
             (
-                this.Dialect == other.Dialect ||
-                this.Dialect != null &&
-                this.Dialect.Equals(other.Dialect)
+                Dialect == other.Dialect ||
+                Dialect != null &&
+                Dialect.Equals(other.Dialect)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.Equals(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.Equals(other.Participants)
             ) &&
             (
-                this.Phrases == other.Phrases ||
-                this.Phrases != null &&
-                this.Phrases.SequenceEqual(other.Phrases)
+                Phrases == other.Phrases ||
+                Phrases != null &&
+                Phrases.SequenceEqual(other.Phrases)
             );
     }
 
@@ -295,44 +295,44 @@ public partial class TopicRequest : IEquatable<TopicRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Strictness != null)
+            if (Strictness != null)
             {
-                hash = hash * 59 + this.Strictness.GetHashCode();
+                hash = hash * 59 + Strictness.GetHashCode();
             }
 
-            if (this.ProgramIds != null)
+            if (ProgramIds != null)
             {
-                hash = hash * 59 + this.ProgramIds.GetHashCode();
+                hash = hash * 59 + ProgramIds.GetHashCode();
             }
 
-            if (this.Tags != null)
+            if (Tags != null)
             {
-                hash = hash * 59 + this.Tags.GetHashCode();
+                hash = hash * 59 + Tags.GetHashCode();
             }
 
-            if (this.Dialect != null)
+            if (Dialect != null)
             {
-                hash = hash * 59 + this.Dialect.GetHashCode();
+                hash = hash * 59 + Dialect.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
-            if (this.Phrases != null)
+            if (Phrases != null)
             {
-                hash = hash * 59 + this.Phrases.GetHashCode();
+                hash = hash * 59 + Phrases.GetHashCode();
             }
 
             return hash;

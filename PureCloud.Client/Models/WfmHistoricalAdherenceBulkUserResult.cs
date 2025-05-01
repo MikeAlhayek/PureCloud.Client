@@ -163,7 +163,7 @@ public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistor
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmHistoricalAdherenceBulkUserResult);
+        return Equals(obj as WfmHistoricalAdherenceBulkUserResult);
     }
 
     /// <summary>
@@ -181,39 +181,39 @@ public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistor
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.AdherencePercentage == other.AdherencePercentage ||
-                this.AdherencePercentage != null &&
-                this.AdherencePercentage.Equals(other.AdherencePercentage)
+                AdherencePercentage == other.AdherencePercentage ||
+                AdherencePercentage != null &&
+                AdherencePercentage.Equals(other.AdherencePercentage)
             ) &&
             (
-                this.ConformancePercentage == other.ConformancePercentage ||
-                this.ConformancePercentage != null &&
-                this.ConformancePercentage.Equals(other.ConformancePercentage)
+                ConformancePercentage == other.ConformancePercentage ||
+                ConformancePercentage != null &&
+                ConformancePercentage.Equals(other.ConformancePercentage)
             ) &&
             (
-                this.Impact == other.Impact ||
-                this.Impact != null &&
-                this.Impact.Equals(other.Impact)
+                Impact == other.Impact ||
+                Impact != null &&
+                Impact.Equals(other.Impact)
             ) &&
             (
-                this.ExceptionInfo == other.ExceptionInfo ||
-                this.ExceptionInfo != null &&
-                this.ExceptionInfo.SequenceEqual(other.ExceptionInfo)
+                ExceptionInfo == other.ExceptionInfo ||
+                ExceptionInfo != null &&
+                ExceptionInfo.SequenceEqual(other.ExceptionInfo)
             ) &&
             (
-                this.Actuals == other.Actuals ||
-                this.Actuals != null &&
-                this.Actuals.SequenceEqual(other.Actuals)
+                Actuals == other.Actuals ||
+                Actuals != null &&
+                Actuals.SequenceEqual(other.Actuals)
             ) &&
             (
-                this.DayMetrics == other.DayMetrics ||
-                this.DayMetrics != null &&
-                this.DayMetrics.SequenceEqual(other.DayMetrics)
+                DayMetrics == other.DayMetrics ||
+                DayMetrics != null &&
+                DayMetrics.SequenceEqual(other.DayMetrics)
             );
     }
 
@@ -228,39 +228,39 @@ public partial class WfmHistoricalAdherenceBulkUserResult : IEquatable<WfmHistor
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.AdherencePercentage != null)
+            if (AdherencePercentage != null)
             {
-                hash = hash * 59 + this.AdherencePercentage.GetHashCode();
+                hash = hash * 59 + AdherencePercentage.GetHashCode();
             }
 
-            if (this.ConformancePercentage != null)
+            if (ConformancePercentage != null)
             {
-                hash = hash * 59 + this.ConformancePercentage.GetHashCode();
+                hash = hash * 59 + ConformancePercentage.GetHashCode();
             }
 
-            if (this.Impact != null)
+            if (Impact != null)
             {
-                hash = hash * 59 + this.Impact.GetHashCode();
+                hash = hash * 59 + Impact.GetHashCode();
             }
 
-            if (this.ExceptionInfo != null)
+            if (ExceptionInfo != null)
             {
-                hash = hash * 59 + this.ExceptionInfo.GetHashCode();
+                hash = hash * 59 + ExceptionInfo.GetHashCode();
             }
 
-            if (this.Actuals != null)
+            if (Actuals != null)
             {
-                hash = hash * 59 + this.Actuals.GetHashCode();
+                hash = hash * 59 + Actuals.GetHashCode();
             }
 
-            if (this.DayMetrics != null)
+            if (DayMetrics != null)
             {
-                hash = hash * 59 + this.DayMetrics.GetHashCode();
+                hash = hash * 59 + DayMetrics.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class InstagramScopedId : IEquatable<InstagramScopedId>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InstagramScopedId);
+        return Equals(obj as InstagramScopedId);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class InstagramScopedId : IEquatable<InstagramScopedId>
 
         return true &&
             (
-                this.ScopedId == other.ScopedId ||
-                this.ScopedId != null &&
-                this.ScopedId.Equals(other.ScopedId)
+                ScopedId == other.ScopedId ||
+                ScopedId != null &&
+                ScopedId.Equals(other.ScopedId)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class InstagramScopedId : IEquatable<InstagramScopedId>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ScopedId != null)
+            if (ScopedId != null)
             {
-                hash = hash * 59 + this.ScopedId.GetHashCode();
+                hash = hash * 59 + ScopedId.GetHashCode();
             }
 
             return hash;

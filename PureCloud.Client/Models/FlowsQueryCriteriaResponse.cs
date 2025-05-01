@@ -1047,7 +1047,7 @@ public partial class FlowsQueryCriteriaResponse : IEquatable<FlowsQueryCriteriaR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowsQueryCriteriaResponse);
+        return Equals(obj as FlowsQueryCriteriaResponse);
     }
 
     /// <summary>
@@ -1065,29 +1065,29 @@ public partial class FlowsQueryCriteriaResponse : IEquatable<FlowsQueryCriteriaR
 
         return true &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.SequenceEqual(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.SequenceEqual(other.Criteria)
             ) &&
             (
-                this.FlowTypes == other.FlowTypes ||
-                this.FlowTypes != null &&
-                this.FlowTypes.SequenceEqual(other.FlowTypes)
+                FlowTypes == other.FlowTypes ||
+                FlowTypes != null &&
+                FlowTypes.SequenceEqual(other.FlowTypes)
             ) &&
             (
-                this.ActionTypes == other.ActionTypes ||
-                this.ActionTypes != null &&
-                this.ActionTypes.SequenceEqual(other.ActionTypes)
+                ActionTypes == other.ActionTypes ||
+                ActionTypes != null &&
+                ActionTypes.SequenceEqual(other.ActionTypes)
             ) &&
             (
-                this.ErrorCodes == other.ErrorCodes ||
-                this.ErrorCodes != null &&
-                this.ErrorCodes.SequenceEqual(other.ErrorCodes)
+                ErrorCodes == other.ErrorCodes ||
+                ErrorCodes != null &&
+                ErrorCodes.SequenceEqual(other.ErrorCodes)
             ) &&
             (
-                this.WarningCodes == other.WarningCodes ||
-                this.WarningCodes != null &&
-                this.WarningCodes.SequenceEqual(other.WarningCodes)
+                WarningCodes == other.WarningCodes ||
+                WarningCodes != null &&
+                WarningCodes.SequenceEqual(other.WarningCodes)
             );
     }
 
@@ -1102,29 +1102,29 @@ public partial class FlowsQueryCriteriaResponse : IEquatable<FlowsQueryCriteriaR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
-            if (this.FlowTypes != null)
+            if (FlowTypes != null)
             {
-                hash = hash * 59 + this.FlowTypes.GetHashCode();
+                hash = hash * 59 + FlowTypes.GetHashCode();
             }
 
-            if (this.ActionTypes != null)
+            if (ActionTypes != null)
             {
-                hash = hash * 59 + this.ActionTypes.GetHashCode();
+                hash = hash * 59 + ActionTypes.GetHashCode();
             }
 
-            if (this.ErrorCodes != null)
+            if (ErrorCodes != null)
             {
-                hash = hash * 59 + this.ErrorCodes.GetHashCode();
+                hash = hash * 59 + ErrorCodes.GetHashCode();
             }
 
-            if (this.WarningCodes != null)
+            if (WarningCodes != null)
             {
-                hash = hash * 59 + this.WarningCodes.GetHashCode();
+                hash = hash * 59 + WarningCodes.GetHashCode();
             }
 
             return hash;

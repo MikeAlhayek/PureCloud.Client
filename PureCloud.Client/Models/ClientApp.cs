@@ -177,7 +177,7 @@ public partial class ClientApp : IEquatable<ClientApp>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ClientApp);
+        return Equals(obj as ClientApp);
     }
 
     /// <summary>
@@ -195,49 +195,49 @@ public partial class ClientApp : IEquatable<ClientApp>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.IntegrationType == other.IntegrationType ||
-                this.IntegrationType != null &&
-                this.IntegrationType.Equals(other.IntegrationType)
+                IntegrationType == other.IntegrationType ||
+                IntegrationType != null &&
+                IntegrationType.Equals(other.IntegrationType)
             ) &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             ) &&
             (
-                this.IntendedState == other.IntendedState ||
-                this.IntendedState != null &&
-                this.IntendedState.Equals(other.IntendedState)
+                IntendedState == other.IntendedState ||
+                IntendedState != null &&
+                IntendedState.Equals(other.IntendedState)
             ) &&
             (
-                this.Config == other.Config ||
-                this.Config != null &&
-                this.Config.Equals(other.Config)
+                Config == other.Config ||
+                Config != null &&
+                Config.Equals(other.Config)
             ) &&
             (
-                this.ReportedState == other.ReportedState ||
-                this.ReportedState != null &&
-                this.ReportedState.Equals(other.ReportedState)
+                ReportedState == other.ReportedState ||
+                ReportedState != null &&
+                ReportedState.Equals(other.ReportedState)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -252,49 +252,49 @@ public partial class ClientApp : IEquatable<ClientApp>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.IntegrationType != null)
+            if (IntegrationType != null)
             {
-                hash = hash * 59 + this.IntegrationType.GetHashCode();
+                hash = hash * 59 + IntegrationType.GetHashCode();
             }
 
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
-            if (this.IntendedState != null)
+            if (IntendedState != null)
             {
-                hash = hash * 59 + this.IntendedState.GetHashCode();
+                hash = hash * 59 + IntendedState.GetHashCode();
             }
 
-            if (this.Config != null)
+            if (Config != null)
             {
-                hash = hash * 59 + this.Config.GetHashCode();
+                hash = hash * 59 + Config.GetHashCode();
             }
 
-            if (this.ReportedState != null)
+            if (ReportedState != null)
             {
-                hash = hash * 59 + this.ReportedState.GetHashCode();
+                hash = hash * 59 + ReportedState.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

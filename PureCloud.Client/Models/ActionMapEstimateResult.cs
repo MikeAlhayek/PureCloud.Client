@@ -88,7 +88,7 @@ public partial class ActionMapEstimateResult : IEquatable<ActionMapEstimateResul
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionMapEstimateResult);
+        return Equals(obj as ActionMapEstimateResult);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class ActionMapEstimateResult : IEquatable<ActionMapEstimateResul
 
         return true &&
             (
-                this.QualifiedSessionCount == other.QualifiedSessionCount ||
-                this.QualifiedSessionCount != null &&
-                this.QualifiedSessionCount.Equals(other.QualifiedSessionCount)
+                QualifiedSessionCount == other.QualifiedSessionCount ||
+                QualifiedSessionCount != null &&
+                QualifiedSessionCount.Equals(other.QualifiedSessionCount)
             ) &&
             (
-                this.TotalSessionCount == other.TotalSessionCount ||
-                this.TotalSessionCount != null &&
-                this.TotalSessionCount.Equals(other.TotalSessionCount)
+                TotalSessionCount == other.TotalSessionCount ||
+                TotalSessionCount != null &&
+                TotalSessionCount.Equals(other.TotalSessionCount)
             ) &&
             (
-                this.PerSegmentCounts == other.PerSegmentCounts ||
-                this.PerSegmentCounts != null &&
-                this.PerSegmentCounts.SequenceEqual(other.PerSegmentCounts)
+                PerSegmentCounts == other.PerSegmentCounts ||
+                PerSegmentCounts != null &&
+                PerSegmentCounts.SequenceEqual(other.PerSegmentCounts)
             ) &&
             (
-                this.OutcomesScoresCount == other.OutcomesScoresCount ||
-                this.OutcomesScoresCount != null &&
-                this.OutcomesScoresCount.Equals(other.OutcomesScoresCount)
+                OutcomesScoresCount == other.OutcomesScoresCount ||
+                OutcomesScoresCount != null &&
+                OutcomesScoresCount.Equals(other.OutcomesScoresCount)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class ActionMapEstimateResult : IEquatable<ActionMapEstimateResul
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QualifiedSessionCount != null)
+            if (QualifiedSessionCount != null)
             {
-                hash = hash * 59 + this.QualifiedSessionCount.GetHashCode();
+                hash = hash * 59 + QualifiedSessionCount.GetHashCode();
             }
 
-            if (this.TotalSessionCount != null)
+            if (TotalSessionCount != null)
             {
-                hash = hash * 59 + this.TotalSessionCount.GetHashCode();
+                hash = hash * 59 + TotalSessionCount.GetHashCode();
             }
 
-            if (this.PerSegmentCounts != null)
+            if (PerSegmentCounts != null)
             {
-                hash = hash * 59 + this.PerSegmentCounts.GetHashCode();
+                hash = hash * 59 + PerSegmentCounts.GetHashCode();
             }
 
-            if (this.OutcomesScoresCount != null)
+            if (OutcomesScoresCount != null)
             {
-                hash = hash * 59 + this.OutcomesScoresCount.GetHashCode();
+                hash = hash * 59 + OutcomesScoresCount.GetHashCode();
             }
 
             return hash;

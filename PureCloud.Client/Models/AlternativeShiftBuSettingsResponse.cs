@@ -170,7 +170,7 @@ public partial class AlternativeShiftBuSettingsResponse : IEquatable<Alternative
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftBuSettingsResponse);
+        return Equals(obj as AlternativeShiftBuSettingsResponse);
     }
 
     /// <summary>
@@ -188,24 +188,24 @@ public partial class AlternativeShiftBuSettingsResponse : IEquatable<Alternative
 
         return true &&
             (
-                this.EnabledGranularities == other.EnabledGranularities ||
-                this.EnabledGranularities != null &&
-                this.EnabledGranularities.SequenceEqual(other.EnabledGranularities)
+                EnabledGranularities == other.EnabledGranularities ||
+                EnabledGranularities != null &&
+                EnabledGranularities.SequenceEqual(other.EnabledGranularities)
             ) &&
             (
-                this.MinMinutesBeforeStartTime == other.MinMinutesBeforeStartTime ||
-                this.MinMinutesBeforeStartTime != null &&
-                this.MinMinutesBeforeStartTime.Equals(other.MinMinutesBeforeStartTime)
+                MinMinutesBeforeStartTime == other.MinMinutesBeforeStartTime ||
+                MinMinutesBeforeStartTime != null &&
+                MinMinutesBeforeStartTime.Equals(other.MinMinutesBeforeStartTime)
             ) &&
             (
-                this.RetainedActivityCategories == other.RetainedActivityCategories ||
-                this.RetainedActivityCategories != null &&
-                this.RetainedActivityCategories.SequenceEqual(other.RetainedActivityCategories)
+                RetainedActivityCategories == other.RetainedActivityCategories ||
+                RetainedActivityCategories != null &&
+                RetainedActivityCategories.SequenceEqual(other.RetainedActivityCategories)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -220,24 +220,24 @@ public partial class AlternativeShiftBuSettingsResponse : IEquatable<Alternative
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EnabledGranularities != null)
+            if (EnabledGranularities != null)
             {
-                hash = hash * 59 + this.EnabledGranularities.GetHashCode();
+                hash = hash * 59 + EnabledGranularities.GetHashCode();
             }
 
-            if (this.MinMinutesBeforeStartTime != null)
+            if (MinMinutesBeforeStartTime != null)
             {
-                hash = hash * 59 + this.MinMinutesBeforeStartTime.GetHashCode();
+                hash = hash * 59 + MinMinutesBeforeStartTime.GetHashCode();
             }
 
-            if (this.RetainedActivityCategories != null)
+            if (RetainedActivityCategories != null)
             {
-                hash = hash * 59 + this.RetainedActivityCategories.GetHashCode();
+                hash = hash * 59 + RetainedActivityCategories.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

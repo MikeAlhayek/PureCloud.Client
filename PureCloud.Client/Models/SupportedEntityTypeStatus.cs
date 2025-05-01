@@ -85,7 +85,7 @@ public partial class SupportedEntityTypeStatus : IEquatable<SupportedEntityTypeS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportedEntityTypeStatus);
+        return Equals(obj as SupportedEntityTypeStatus);
     }
 
     /// <summary>
@@ -103,9 +103,9 @@ public partial class SupportedEntityTypeStatus : IEquatable<SupportedEntityTypeS
 
         return true &&
             (
-                this.ListSlotType == other.ListSlotType ||
-                this.ListSlotType != null &&
-                this.ListSlotType.Equals(other.ListSlotType)
+                ListSlotType == other.ListSlotType ||
+                ListSlotType != null &&
+                ListSlotType.Equals(other.ListSlotType)
             );
     }
 
@@ -120,9 +120,9 @@ public partial class SupportedEntityTypeStatus : IEquatable<SupportedEntityTypeS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ListSlotType != null)
+            if (ListSlotType != null)
             {
-                hash = hash * 59 + this.ListSlotType.GetHashCode();
+                hash = hash * 59 + ListSlotType.GetHashCode();
             }
 
             return hash;

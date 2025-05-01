@@ -283,7 +283,7 @@ public partial class ActionMap : IEquatable<ActionMap>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionMap);
+        return Equals(obj as ActionMap);
     }
 
     /// <summary>
@@ -301,104 +301,104 @@ public partial class ActionMap : IEquatable<ActionMap>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.IsActive == other.IsActive ||
-                this.IsActive != null &&
-                this.IsActive.Equals(other.IsActive)
+                IsActive == other.IsActive ||
+                IsActive != null &&
+                IsActive.Equals(other.IsActive)
             ) &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.TriggerWithSegments == other.TriggerWithSegments ||
-                this.TriggerWithSegments != null &&
-                this.TriggerWithSegments.SequenceEqual(other.TriggerWithSegments)
+                TriggerWithSegments == other.TriggerWithSegments ||
+                TriggerWithSegments != null &&
+                TriggerWithSegments.SequenceEqual(other.TriggerWithSegments)
             ) &&
             (
-                this.TriggerWithEventConditions == other.TriggerWithEventConditions ||
-                this.TriggerWithEventConditions != null &&
-                this.TriggerWithEventConditions.SequenceEqual(other.TriggerWithEventConditions)
+                TriggerWithEventConditions == other.TriggerWithEventConditions ||
+                TriggerWithEventConditions != null &&
+                TriggerWithEventConditions.SequenceEqual(other.TriggerWithEventConditions)
             ) &&
             (
-                this.TriggerWithOutcomeProbabilityConditions == other.TriggerWithOutcomeProbabilityConditions ||
-                this.TriggerWithOutcomeProbabilityConditions != null &&
-                this.TriggerWithOutcomeProbabilityConditions.SequenceEqual(other.TriggerWithOutcomeProbabilityConditions)
+                TriggerWithOutcomeProbabilityConditions == other.TriggerWithOutcomeProbabilityConditions ||
+                TriggerWithOutcomeProbabilityConditions != null &&
+                TriggerWithOutcomeProbabilityConditions.SequenceEqual(other.TriggerWithOutcomeProbabilityConditions)
             ) &&
             (
-                this.TriggerWithOutcomePercentileConditions == other.TriggerWithOutcomePercentileConditions ||
-                this.TriggerWithOutcomePercentileConditions != null &&
-                this.TriggerWithOutcomePercentileConditions.SequenceEqual(other.TriggerWithOutcomePercentileConditions)
+                TriggerWithOutcomePercentileConditions == other.TriggerWithOutcomePercentileConditions ||
+                TriggerWithOutcomePercentileConditions != null &&
+                TriggerWithOutcomePercentileConditions.SequenceEqual(other.TriggerWithOutcomePercentileConditions)
             ) &&
             (
-                this.TriggerWithOutcomeQuantileConditions == other.TriggerWithOutcomeQuantileConditions ||
-                this.TriggerWithOutcomeQuantileConditions != null &&
-                this.TriggerWithOutcomeQuantileConditions.SequenceEqual(other.TriggerWithOutcomeQuantileConditions)
+                TriggerWithOutcomeQuantileConditions == other.TriggerWithOutcomeQuantileConditions ||
+                TriggerWithOutcomeQuantileConditions != null &&
+                TriggerWithOutcomeQuantileConditions.SequenceEqual(other.TriggerWithOutcomeQuantileConditions)
             ) &&
             (
-                this.PageUrlConditions == other.PageUrlConditions ||
-                this.PageUrlConditions != null &&
-                this.PageUrlConditions.SequenceEqual(other.PageUrlConditions)
+                PageUrlConditions == other.PageUrlConditions ||
+                PageUrlConditions != null &&
+                PageUrlConditions.SequenceEqual(other.PageUrlConditions)
             ) &&
             (
-                this.Activation == other.Activation ||
-                this.Activation != null &&
-                this.Activation.Equals(other.Activation)
+                Activation == other.Activation ||
+                Activation != null &&
+                Activation.Equals(other.Activation)
             ) &&
             (
-                this.Weight == other.Weight ||
-                this.Weight != null &&
-                this.Weight.Equals(other.Weight)
+                Weight == other.Weight ||
+                Weight != null &&
+                Weight.Equals(other.Weight)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.ActionMapScheduleGroups == other.ActionMapScheduleGroups ||
-                this.ActionMapScheduleGroups != null &&
-                this.ActionMapScheduleGroups.Equals(other.ActionMapScheduleGroups)
+                ActionMapScheduleGroups == other.ActionMapScheduleGroups ||
+                ActionMapScheduleGroups != null &&
+                ActionMapScheduleGroups.Equals(other.ActionMapScheduleGroups)
             ) &&
             (
-                this.IgnoreFrequencyCap == other.IgnoreFrequencyCap ||
-                this.IgnoreFrequencyCap != null &&
-                this.IgnoreFrequencyCap.Equals(other.IgnoreFrequencyCap)
+                IgnoreFrequencyCap == other.IgnoreFrequencyCap ||
+                IgnoreFrequencyCap != null &&
+                IgnoreFrequencyCap.Equals(other.IgnoreFrequencyCap)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             );
     }
 
@@ -413,104 +413,104 @@ public partial class ActionMap : IEquatable<ActionMap>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.IsActive != null)
+            if (IsActive != null)
             {
-                hash = hash * 59 + this.IsActive.GetHashCode();
+                hash = hash * 59 + IsActive.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.TriggerWithSegments != null)
+            if (TriggerWithSegments != null)
             {
-                hash = hash * 59 + this.TriggerWithSegments.GetHashCode();
+                hash = hash * 59 + TriggerWithSegments.GetHashCode();
             }
 
-            if (this.TriggerWithEventConditions != null)
+            if (TriggerWithEventConditions != null)
             {
-                hash = hash * 59 + this.TriggerWithEventConditions.GetHashCode();
+                hash = hash * 59 + TriggerWithEventConditions.GetHashCode();
             }
 
-            if (this.TriggerWithOutcomeProbabilityConditions != null)
+            if (TriggerWithOutcomeProbabilityConditions != null)
             {
-                hash = hash * 59 + this.TriggerWithOutcomeProbabilityConditions.GetHashCode();
+                hash = hash * 59 + TriggerWithOutcomeProbabilityConditions.GetHashCode();
             }
 
-            if (this.TriggerWithOutcomePercentileConditions != null)
+            if (TriggerWithOutcomePercentileConditions != null)
             {
-                hash = hash * 59 + this.TriggerWithOutcomePercentileConditions.GetHashCode();
+                hash = hash * 59 + TriggerWithOutcomePercentileConditions.GetHashCode();
             }
 
-            if (this.TriggerWithOutcomeQuantileConditions != null)
+            if (TriggerWithOutcomeQuantileConditions != null)
             {
-                hash = hash * 59 + this.TriggerWithOutcomeQuantileConditions.GetHashCode();
+                hash = hash * 59 + TriggerWithOutcomeQuantileConditions.GetHashCode();
             }
 
-            if (this.PageUrlConditions != null)
+            if (PageUrlConditions != null)
             {
-                hash = hash * 59 + this.PageUrlConditions.GetHashCode();
+                hash = hash * 59 + PageUrlConditions.GetHashCode();
             }
 
-            if (this.Activation != null)
+            if (Activation != null)
             {
-                hash = hash * 59 + this.Activation.GetHashCode();
+                hash = hash * 59 + Activation.GetHashCode();
             }
 
-            if (this.Weight != null)
+            if (Weight != null)
             {
-                hash = hash * 59 + this.Weight.GetHashCode();
+                hash = hash * 59 + Weight.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.ActionMapScheduleGroups != null)
+            if (ActionMapScheduleGroups != null)
             {
-                hash = hash * 59 + this.ActionMapScheduleGroups.GetHashCode();
+                hash = hash * 59 + ActionMapScheduleGroups.GetHashCode();
             }
 
-            if (this.IgnoreFrequencyCap != null)
+            if (IgnoreFrequencyCap != null)
             {
-                hash = hash * 59 + this.IgnoreFrequencyCap.GetHashCode();
+                hash = hash * 59 + IgnoreFrequencyCap.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
             return hash;

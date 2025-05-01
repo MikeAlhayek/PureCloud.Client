@@ -205,7 +205,7 @@ public partial class Workspace : IEquatable<Workspace>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Workspace);
+        return Equals(obj as Workspace);
     }
 
     /// <summary>
@@ -223,64 +223,64 @@ public partial class Workspace : IEquatable<Workspace>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.IsCurrentUserWorkspace == other.IsCurrentUserWorkspace ||
-                this.IsCurrentUserWorkspace != null &&
-                this.IsCurrentUserWorkspace.Equals(other.IsCurrentUserWorkspace)
+                IsCurrentUserWorkspace == other.IsCurrentUserWorkspace ||
+                IsCurrentUserWorkspace != null &&
+                IsCurrentUserWorkspace.Equals(other.IsCurrentUserWorkspace)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Bucket == other.Bucket ||
-                this.Bucket != null &&
-                this.Bucket.Equals(other.Bucket)
+                Bucket == other.Bucket ||
+                Bucket != null &&
+                Bucket.Equals(other.Bucket)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Summary == other.Summary ||
-                this.Summary != null &&
-                this.Summary.Equals(other.Summary)
+                Summary == other.Summary ||
+                Summary != null &&
+                Summary.Equals(other.Summary)
             ) &&
             (
-                this.Acl == other.Acl ||
-                this.Acl != null &&
-                this.Acl.SequenceEqual(other.Acl)
+                Acl == other.Acl ||
+                Acl != null &&
+                Acl.SequenceEqual(other.Acl)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -295,64 +295,64 @@ public partial class Workspace : IEquatable<Workspace>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.IsCurrentUserWorkspace != null)
+            if (IsCurrentUserWorkspace != null)
             {
-                hash = hash * 59 + this.IsCurrentUserWorkspace.GetHashCode();
+                hash = hash * 59 + IsCurrentUserWorkspace.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Bucket != null)
+            if (Bucket != null)
             {
-                hash = hash * 59 + this.Bucket.GetHashCode();
+                hash = hash * 59 + Bucket.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Summary != null)
+            if (Summary != null)
             {
-                hash = hash * 59 + this.Summary.GetHashCode();
+                hash = hash * 59 + Summary.GetHashCode();
             }
 
-            if (this.Acl != null)
+            if (Acl != null)
             {
-                hash = hash * 59 + this.Acl.GetHashCode();
+                hash = hash * 59 + Acl.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class MessageMediaPolicy : IEquatable<MessageMediaPolicy>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessageMediaPolicy);
+        return Equals(obj as MessageMediaPolicy);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class MessageMediaPolicy : IEquatable<MessageMediaPolicy>
 
         return true &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.Equals(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.Equals(other.Actions)
             ) &&
             (
-                this.Conditions == other.Conditions ||
-                this.Conditions != null &&
-                this.Conditions.Equals(other.Conditions)
+                Conditions == other.Conditions ||
+                Conditions != null &&
+                Conditions.Equals(other.Conditions)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class MessageMediaPolicy : IEquatable<MessageMediaPolicy>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
-            if (this.Conditions != null)
+            if (Conditions != null)
             {
-                hash = hash * 59 + this.Conditions.GetHashCode();
+                hash = hash * 59 + Conditions.GetHashCode();
             }
 
             return hash;

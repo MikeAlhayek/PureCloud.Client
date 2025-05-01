@@ -109,7 +109,7 @@ public partial class ContentStory : IEquatable<ContentStory>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentStory);
+        return Equals(obj as ContentStory);
     }
 
     /// <summary>
@@ -127,19 +127,19 @@ public partial class ContentStory : IEquatable<ContentStory>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.ReplyToId == other.ReplyToId ||
-                this.ReplyToId != null &&
-                this.ReplyToId.Equals(other.ReplyToId)
+                ReplyToId == other.ReplyToId ||
+                ReplyToId != null &&
+                ReplyToId.Equals(other.ReplyToId)
             );
     }
 
@@ -154,19 +154,19 @@ public partial class ContentStory : IEquatable<ContentStory>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.ReplyToId != null)
+            if (ReplyToId != null)
             {
-                hash = hash * 59 + this.ReplyToId.GetHashCode();
+                hash = hash * 59 + ReplyToId.GetHashCode();
             }
 
             return hash;

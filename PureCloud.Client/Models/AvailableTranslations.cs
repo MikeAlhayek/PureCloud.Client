@@ -62,7 +62,7 @@ public partial class AvailableTranslations : IEquatable<AvailableTranslations>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AvailableTranslations);
+        return Equals(obj as AvailableTranslations);
     }
 
     /// <summary>
@@ -80,14 +80,14 @@ public partial class AvailableTranslations : IEquatable<AvailableTranslations>
 
         return true &&
             (
-                this.OrgSpecific == other.OrgSpecific ||
-                this.OrgSpecific != null &&
-                this.OrgSpecific.SequenceEqual(other.OrgSpecific)
+                OrgSpecific == other.OrgSpecific ||
+                OrgSpecific != null &&
+                OrgSpecific.SequenceEqual(other.OrgSpecific)
             ) &&
             (
-                this.Builtin == other.Builtin ||
-                this.Builtin != null &&
-                this.Builtin.SequenceEqual(other.Builtin)
+                Builtin == other.Builtin ||
+                Builtin != null &&
+                Builtin.SequenceEqual(other.Builtin)
             );
     }
 
@@ -102,14 +102,14 @@ public partial class AvailableTranslations : IEquatable<AvailableTranslations>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OrgSpecific != null)
+            if (OrgSpecific != null)
             {
-                hash = hash * 59 + this.OrgSpecific.GetHashCode();
+                hash = hash * 59 + OrgSpecific.GetHashCode();
             }
 
-            if (this.Builtin != null)
+            if (Builtin != null)
             {
-                hash = hash * 59 + this.Builtin.GetHashCode();
+                hash = hash * 59 + Builtin.GetHashCode();
             }
 
             return hash;

@@ -74,7 +74,7 @@ public partial class MetaData : IEquatable<MetaData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MetaData);
+        return Equals(obj as MetaData);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class MetaData : IEquatable<MetaData>
 
         return true &&
             (
-                this.PairingToken == other.PairingToken ||
-                this.PairingToken != null &&
-                this.PairingToken.Equals(other.PairingToken)
+                PairingToken == other.PairingToken ||
+                PairingToken != null &&
+                PairingToken.Equals(other.PairingToken)
             ) &&
             (
-                this.PairingTrust == other.PairingTrust ||
-                this.PairingTrust != null &&
-                this.PairingTrust.SequenceEqual(other.PairingTrust)
+                PairingTrust == other.PairingTrust ||
+                PairingTrust != null &&
+                PairingTrust.SequenceEqual(other.PairingTrust)
             ) &&
             (
-                this.PairingUrl == other.PairingUrl ||
-                this.PairingUrl != null &&
-                this.PairingUrl.Equals(other.PairingUrl)
+                PairingUrl == other.PairingUrl ||
+                PairingUrl != null &&
+                PairingUrl.Equals(other.PairingUrl)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class MetaData : IEquatable<MetaData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PairingToken != null)
+            if (PairingToken != null)
             {
-                hash = hash * 59 + this.PairingToken.GetHashCode();
+                hash = hash * 59 + PairingToken.GetHashCode();
             }
 
-            if (this.PairingTrust != null)
+            if (PairingTrust != null)
             {
-                hash = hash * 59 + this.PairingTrust.GetHashCode();
+                hash = hash * 59 + PairingTrust.GetHashCode();
             }
 
-            if (this.PairingUrl != null)
+            if (PairingUrl != null)
             {
-                hash = hash * 59 + this.PairingUrl.GetHashCode();
+                hash = hash * 59 + PairingUrl.GetHashCode();
             }
 
             return hash;

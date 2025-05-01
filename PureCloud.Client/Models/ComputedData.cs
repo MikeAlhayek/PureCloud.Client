@@ -65,7 +65,7 @@ public partial class ComputedData : IEquatable<ComputedData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ComputedData);
+        return Equals(obj as ComputedData);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ComputedData : IEquatable<ComputedData>
 
         return true &&
             (
-                this.Weekly == other.Weekly ||
-                this.Weekly != null &&
-                this.Weekly.Equals(other.Weekly)
+                Weekly == other.Weekly ||
+                Weekly != null &&
+                Weekly.Equals(other.Weekly)
             ) &&
             (
-                this.QuarterHour == other.QuarterHour ||
-                this.QuarterHour != null &&
-                this.QuarterHour.Equals(other.QuarterHour)
+                QuarterHour == other.QuarterHour ||
+                QuarterHour != null &&
+                QuarterHour.Equals(other.QuarterHour)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ComputedData : IEquatable<ComputedData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Weekly != null)
+            if (Weekly != null)
             {
-                hash = hash * 59 + this.Weekly.GetHashCode();
+                hash = hash * 59 + Weekly.GetHashCode();
             }
 
-            if (this.QuarterHour != null)
+            if (QuarterHour != null)
             {
-                hash = hash * 59 + this.QuarterHour.GetHashCode();
+                hash = hash * 59 + QuarterHour.GetHashCode();
             }
 
             return hash;

@@ -63,7 +63,7 @@ public partial class MediaSummary : IEquatable<MediaSummary>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaSummary);
+        return Equals(obj as MediaSummary);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class MediaSummary : IEquatable<MediaSummary>
 
         return true &&
             (
-                this.ContactCenter == other.ContactCenter ||
-                this.ContactCenter != null &&
-                this.ContactCenter.Equals(other.ContactCenter)
+                ContactCenter == other.ContactCenter ||
+                ContactCenter != null &&
+                ContactCenter.Equals(other.ContactCenter)
             ) &&
             (
-                this.Enterprise == other.Enterprise ||
-                this.Enterprise != null &&
-                this.Enterprise.Equals(other.Enterprise)
+                Enterprise == other.Enterprise ||
+                Enterprise != null &&
+                Enterprise.Equals(other.Enterprise)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class MediaSummary : IEquatable<MediaSummary>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactCenter != null)
+            if (ContactCenter != null)
             {
-                hash = hash * 59 + this.ContactCenter.GetHashCode();
+                hash = hash * 59 + ContactCenter.GetHashCode();
             }
 
-            if (this.Enterprise != null)
+            if (Enterprise != null)
             {
-                hash = hash * 59 + this.Enterprise.GetHashCode();
+                hash = hash * 59 + Enterprise.GetHashCode();
             }
 
             return hash;

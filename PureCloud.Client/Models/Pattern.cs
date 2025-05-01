@@ -165,7 +165,7 @@ public partial class Pattern : IEquatable<Pattern>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Pattern);
+        return Equals(obj as Pattern);
     }
 
     /// <summary>
@@ -183,19 +183,19 @@ public partial class Pattern : IEquatable<Pattern>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.DaysOfWeek == other.DaysOfWeek ||
-                this.DaysOfWeek != null &&
-                this.DaysOfWeek.SequenceEqual(other.DaysOfWeek)
+                DaysOfWeek == other.DaysOfWeek ||
+                DaysOfWeek != null &&
+                DaysOfWeek.SequenceEqual(other.DaysOfWeek)
             );
     }
 
@@ -210,19 +210,19 @@ public partial class Pattern : IEquatable<Pattern>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.DaysOfWeek != null)
+            if (DaysOfWeek != null)
             {
-                hash = hash * 59 + this.DaysOfWeek.GetHashCode();
+                hash = hash * 59 + DaysOfWeek.GetHashCode();
             }
 
             return hash;

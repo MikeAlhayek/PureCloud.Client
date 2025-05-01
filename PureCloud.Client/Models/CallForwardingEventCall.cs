@@ -51,7 +51,7 @@ public partial class CallForwardingEventCall : IEquatable<CallForwardingEventCal
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallForwardingEventCall);
+        return Equals(obj as CallForwardingEventCall);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class CallForwardingEventCall : IEquatable<CallForwardingEventCal
 
         return true &&
             (
-                this.Targets == other.Targets ||
-                this.Targets != null &&
-                this.Targets.SequenceEqual(other.Targets)
+                Targets == other.Targets ||
+                Targets != null &&
+                Targets.SequenceEqual(other.Targets)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class CallForwardingEventCall : IEquatable<CallForwardingEventCal
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Targets != null)
+            if (Targets != null)
             {
-                hash = hash * 59 + this.Targets.GetHashCode();
+                hash = hash * 59 + Targets.GetHashCode();
             }
 
             return hash;

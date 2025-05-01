@@ -53,7 +53,7 @@ public partial class ContactEnrichOptions : IEquatable<ContactEnrichOptions>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactEnrichOptions);
+        return Equals(obj as ContactEnrichOptions);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ContactEnrichOptions : IEquatable<ContactEnrichOptions>
 
         return true &&
             (
-                this.Promote == other.Promote ||
-                this.Promote != null &&
-                this.Promote.Equals(other.Promote)
+                Promote == other.Promote ||
+                Promote != null &&
+                Promote.Equals(other.Promote)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ContactEnrichOptions : IEquatable<ContactEnrichOptions>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Promote != null)
+            if (Promote != null)
             {
-                hash = hash * 59 + this.Promote.GetHashCode();
+                hash = hash * 59 + Promote.GetHashCode();
             }
 
             return hash;

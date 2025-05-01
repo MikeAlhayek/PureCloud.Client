@@ -162,7 +162,7 @@ public partial class Geolocation : IEquatable<Geolocation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Geolocation);
+        return Equals(obj as Geolocation);
     }
 
     /// <summary>
@@ -180,59 +180,59 @@ public partial class Geolocation : IEquatable<Geolocation>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Primary == other.Primary ||
-                this.Primary != null &&
-                this.Primary.Equals(other.Primary)
+                Primary == other.Primary ||
+                Primary != null &&
+                Primary.Equals(other.Primary)
             ) &&
             (
-                this.Latitude == other.Latitude ||
-                this.Latitude != null &&
-                this.Latitude.Equals(other.Latitude)
+                Latitude == other.Latitude ||
+                Latitude != null &&
+                Latitude.Equals(other.Latitude)
             ) &&
             (
-                this.Longitude == other.Longitude ||
-                this.Longitude != null &&
-                this.Longitude.Equals(other.Longitude)
+                Longitude == other.Longitude ||
+                Longitude != null &&
+                Longitude.Equals(other.Longitude)
             ) &&
             (
-                this.Country == other.Country ||
-                this.Country != null &&
-                this.Country.Equals(other.Country)
+                Country == other.Country ||
+                Country != null &&
+                Country.Equals(other.Country)
             ) &&
             (
-                this.Region == other.Region ||
-                this.Region != null &&
-                this.Region.Equals(other.Region)
+                Region == other.Region ||
+                Region != null &&
+                Region.Equals(other.Region)
             ) &&
             (
-                this.City == other.City ||
-                this.City != null &&
-                this.City.Equals(other.City)
+                City == other.City ||
+                City != null &&
+                City.Equals(other.City)
             ) &&
             (
-                this.Locations == other.Locations ||
-                this.Locations != null &&
-                this.Locations.SequenceEqual(other.Locations)
+                Locations == other.Locations ||
+                Locations != null &&
+                Locations.SequenceEqual(other.Locations)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -247,59 +247,59 @@ public partial class Geolocation : IEquatable<Geolocation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Primary != null)
+            if (Primary != null)
             {
-                hash = hash * 59 + this.Primary.GetHashCode();
+                hash = hash * 59 + Primary.GetHashCode();
             }
 
-            if (this.Latitude != null)
+            if (Latitude != null)
             {
-                hash = hash * 59 + this.Latitude.GetHashCode();
+                hash = hash * 59 + Latitude.GetHashCode();
             }
 
-            if (this.Longitude != null)
+            if (Longitude != null)
             {
-                hash = hash * 59 + this.Longitude.GetHashCode();
+                hash = hash * 59 + Longitude.GetHashCode();
             }
 
-            if (this.Country != null)
+            if (Country != null)
             {
-                hash = hash * 59 + this.Country.GetHashCode();
+                hash = hash * 59 + Country.GetHashCode();
             }
 
-            if (this.Region != null)
+            if (Region != null)
             {
-                hash = hash * 59 + this.Region.GetHashCode();
+                hash = hash * 59 + Region.GetHashCode();
             }
 
-            if (this.City != null)
+            if (City != null)
             {
-                hash = hash * 59 + this.City.GetHashCode();
+                hash = hash * 59 + City.GetHashCode();
             }
 
-            if (this.Locations != null)
+            if (Locations != null)
             {
-                hash = hash * 59 + this.Locations.GetHashCode();
+                hash = hash * 59 + Locations.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

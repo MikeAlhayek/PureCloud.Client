@@ -89,7 +89,7 @@ public partial class MediaPolicies : IEquatable<MediaPolicies>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaPolicies);
+        return Equals(obj as MediaPolicies);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class MediaPolicies : IEquatable<MediaPolicies>
 
         return true &&
             (
-                this.CallPolicy == other.CallPolicy ||
-                this.CallPolicy != null &&
-                this.CallPolicy.Equals(other.CallPolicy)
+                CallPolicy == other.CallPolicy ||
+                CallPolicy != null &&
+                CallPolicy.Equals(other.CallPolicy)
             ) &&
             (
-                this.ChatPolicy == other.ChatPolicy ||
-                this.ChatPolicy != null &&
-                this.ChatPolicy.Equals(other.ChatPolicy)
+                ChatPolicy == other.ChatPolicy ||
+                ChatPolicy != null &&
+                ChatPolicy.Equals(other.ChatPolicy)
             ) &&
             (
-                this.EmailPolicy == other.EmailPolicy ||
-                this.EmailPolicy != null &&
-                this.EmailPolicy.Equals(other.EmailPolicy)
+                EmailPolicy == other.EmailPolicy ||
+                EmailPolicy != null &&
+                EmailPolicy.Equals(other.EmailPolicy)
             ) &&
             (
-                this.MessagePolicy == other.MessagePolicy ||
-                this.MessagePolicy != null &&
-                this.MessagePolicy.Equals(other.MessagePolicy)
+                MessagePolicy == other.MessagePolicy ||
+                MessagePolicy != null &&
+                MessagePolicy.Equals(other.MessagePolicy)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class MediaPolicies : IEquatable<MediaPolicies>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CallPolicy != null)
+            if (CallPolicy != null)
             {
-                hash = hash * 59 + this.CallPolicy.GetHashCode();
+                hash = hash * 59 + CallPolicy.GetHashCode();
             }
 
-            if (this.ChatPolicy != null)
+            if (ChatPolicy != null)
             {
-                hash = hash * 59 + this.ChatPolicy.GetHashCode();
+                hash = hash * 59 + ChatPolicy.GetHashCode();
             }
 
-            if (this.EmailPolicy != null)
+            if (EmailPolicy != null)
             {
-                hash = hash * 59 + this.EmailPolicy.GetHashCode();
+                hash = hash * 59 + EmailPolicy.GetHashCode();
             }
 
-            if (this.MessagePolicy != null)
+            if (MessagePolicy != null)
             {
-                hash = hash * 59 + this.MessagePolicy.GetHashCode();
+                hash = hash * 59 + MessagePolicy.GetHashCode();
             }
 
             return hash;

@@ -129,7 +129,7 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody);
+        return Equals(obj as V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody);
     }
 
     /// <summary>
@@ -147,44 +147,44 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
 
         return true &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.DeploymentId == other.DeploymentId ||
-                this.DeploymentId != null &&
-                this.DeploymentId.Equals(other.DeploymentId)
+                DeploymentId == other.DeploymentId ||
+                DeploymentId != null &&
+                DeploymentId.Equals(other.DeploymentId)
             ) &&
             (
-                this.ParticipantId == other.ParticipantId ||
-                this.ParticipantId != null &&
-                this.ParticipantId.Equals(other.ParticipantId)
+                ParticipantId == other.ParticipantId ||
+                ParticipantId != null &&
+                ParticipantId.Equals(other.ParticipantId)
             ) &&
             (
-                this.ExternalContactId == other.ExternalContactId ||
-                this.ExternalContactId != null &&
-                this.ExternalContactId.Equals(other.ExternalContactId)
+                ExternalContactId == other.ExternalContactId ||
+                ExternalContactId != null &&
+                ExternalContactId.Equals(other.ExternalContactId)
             ) &&
             (
-                this.CommunicationId == other.CommunicationId ||
-                this.CommunicationId != null &&
-                this.CommunicationId.Equals(other.CommunicationId)
+                CommunicationId == other.CommunicationId ||
+                CommunicationId != null &&
+                CommunicationId.Equals(other.CommunicationId)
             ) &&
             (
-                this.SessionExpiry == other.SessionExpiry ||
-                this.SessionExpiry != null &&
-                this.SessionExpiry.Equals(other.SessionExpiry)
+                SessionExpiry == other.SessionExpiry ||
+                SessionExpiry != null &&
+                SessionExpiry.Equals(other.SessionExpiry)
             ) &&
             (
-                this.Messages == other.Messages ||
-                this.Messages != null &&
-                this.Messages.SequenceEqual(other.Messages)
+                Messages == other.Messages ||
+                Messages != null &&
+                Messages.SequenceEqual(other.Messages)
             ) &&
             (
-                this.EventTimeMs == other.EventTimeMs ||
-                this.EventTimeMs != null &&
-                this.EventTimeMs.Equals(other.EventTimeMs)
+                EventTimeMs == other.EventTimeMs ||
+                EventTimeMs != null &&
+                EventTimeMs.Equals(other.EventTimeMs)
             );
     }
 
@@ -199,44 +199,44 @@ public partial class V2WebMessagingUndeliveredMessageTopicWebMessagingUndelivere
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.DeploymentId != null)
+            if (DeploymentId != null)
             {
-                hash = hash * 59 + this.DeploymentId.GetHashCode();
+                hash = hash * 59 + DeploymentId.GetHashCode();
             }
 
-            if (this.ParticipantId != null)
+            if (ParticipantId != null)
             {
-                hash = hash * 59 + this.ParticipantId.GetHashCode();
+                hash = hash * 59 + ParticipantId.GetHashCode();
             }
 
-            if (this.ExternalContactId != null)
+            if (ExternalContactId != null)
             {
-                hash = hash * 59 + this.ExternalContactId.GetHashCode();
+                hash = hash * 59 + ExternalContactId.GetHashCode();
             }
 
-            if (this.CommunicationId != null)
+            if (CommunicationId != null)
             {
-                hash = hash * 59 + this.CommunicationId.GetHashCode();
+                hash = hash * 59 + CommunicationId.GetHashCode();
             }
 
-            if (this.SessionExpiry != null)
+            if (SessionExpiry != null)
             {
-                hash = hash * 59 + this.SessionExpiry.GetHashCode();
+                hash = hash * 59 + SessionExpiry.GetHashCode();
             }
 
-            if (this.Messages != null)
+            if (Messages != null)
             {
-                hash = hash * 59 + this.Messages.GetHashCode();
+                hash = hash * 59 + Messages.GetHashCode();
             }
 
-            if (this.EventTimeMs != null)
+            if (EventTimeMs != null)
             {
-                hash = hash * 59 + this.EventTimeMs.GetHashCode();
+                hash = hash * 59 + EventTimeMs.GetHashCode();
             }
 
             return hash;

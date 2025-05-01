@@ -157,7 +157,7 @@ public partial class InsightsTrend : IEquatable<InsightsTrend>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InsightsTrend);
+        return Equals(obj as InsightsTrend);
     }
 
     /// <summary>
@@ -175,39 +175,39 @@ public partial class InsightsTrend : IEquatable<InsightsTrend>
 
         return true &&
             (
-                this.PerformanceProfile == other.PerformanceProfile ||
-                this.PerformanceProfile != null &&
-                this.PerformanceProfile.Equals(other.PerformanceProfile)
+                PerformanceProfile == other.PerformanceProfile ||
+                PerformanceProfile != null &&
+                PerformanceProfile.Equals(other.PerformanceProfile)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             ) &&
             (
-                this.ComparativePeriod == other.ComparativePeriod ||
-                this.ComparativePeriod != null &&
-                this.ComparativePeriod.Equals(other.ComparativePeriod)
+                ComparativePeriod == other.ComparativePeriod ||
+                ComparativePeriod != null &&
+                ComparativePeriod.Equals(other.ComparativePeriod)
             ) &&
             (
-                this.PrimaryPeriod == other.PrimaryPeriod ||
-                this.PrimaryPeriod != null &&
-                this.PrimaryPeriod.Equals(other.PrimaryPeriod)
+                PrimaryPeriod == other.PrimaryPeriod ||
+                PrimaryPeriod != null &&
+                PrimaryPeriod.Equals(other.PrimaryPeriod)
             ) &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.Total == other.Total ||
-                this.Total != null &&
-                this.Total.Equals(other.Total)
+                Total == other.Total ||
+                Total != null &&
+                Total.Equals(other.Total)
             );
     }
 
@@ -222,39 +222,39 @@ public partial class InsightsTrend : IEquatable<InsightsTrend>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PerformanceProfile != null)
+            if (PerformanceProfile != null)
             {
-                hash = hash * 59 + this.PerformanceProfile.GetHashCode();
+                hash = hash * 59 + PerformanceProfile.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
-            if (this.ComparativePeriod != null)
+            if (ComparativePeriod != null)
             {
-                hash = hash * 59 + this.ComparativePeriod.GetHashCode();
+                hash = hash * 59 + ComparativePeriod.GetHashCode();
             }
 
-            if (this.PrimaryPeriod != null)
+            if (PrimaryPeriod != null)
             {
-                hash = hash * 59 + this.PrimaryPeriod.GetHashCode();
+                hash = hash * 59 + PrimaryPeriod.GetHashCode();
             }
 
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.Total != null)
+            if (Total != null)
             {
-                hash = hash * 59 + this.Total.GetHashCode();
+                hash = hash * 59 + Total.GetHashCode();
             }
 
             return hash;

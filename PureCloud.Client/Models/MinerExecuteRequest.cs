@@ -183,7 +183,7 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MinerExecuteRequest);
+        return Equals(obj as MinerExecuteRequest);
     }
 
     /// <summary>
@@ -201,34 +201,34 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
 
         return true &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.DateEnd == other.DateEnd ||
-                this.DateEnd != null &&
-                this.DateEnd.Equals(other.DateEnd)
+                DateEnd == other.DateEnd ||
+                DateEnd != null &&
+                DateEnd.Equals(other.DateEnd)
             ) &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.ParticipantType == other.ParticipantType ||
-                this.ParticipantType != null &&
-                this.ParticipantType.Equals(other.ParticipantType)
+                ParticipantType == other.ParticipantType ||
+                ParticipantType != null &&
+                ParticipantType.Equals(other.ParticipantType)
             ) &&
             (
-                this.QueueIds == other.QueueIds ||
-                this.QueueIds != null &&
-                this.QueueIds.SequenceEqual(other.QueueIds)
+                QueueIds == other.QueueIds ||
+                QueueIds != null &&
+                QueueIds.SequenceEqual(other.QueueIds)
             );
     }
 
@@ -243,34 +243,34 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.DateEnd != null)
+            if (DateEnd != null)
             {
-                hash = hash * 59 + this.DateEnd.GetHashCode();
+                hash = hash * 59 + DateEnd.GetHashCode();
             }
 
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.ParticipantType != null)
+            if (ParticipantType != null)
             {
-                hash = hash * 59 + this.ParticipantType.GetHashCode();
+                hash = hash * 59 + ParticipantType.GetHashCode();
             }
 
-            if (this.QueueIds != null)
+            if (QueueIds != null)
             {
-                hash = hash * 59 + this.QueueIds.GetHashCode();
+                hash = hash * 59 + QueueIds.GetHashCode();
             }
 
             return hash;

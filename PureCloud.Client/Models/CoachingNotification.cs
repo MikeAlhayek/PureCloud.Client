@@ -261,7 +261,7 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CoachingNotification);
+        return Equals(obj as CoachingNotification);
     }
 
     /// <summary>
@@ -279,59 +279,59 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.MarkedAsRead == other.MarkedAsRead ||
-                this.MarkedAsRead != null &&
-                this.MarkedAsRead.Equals(other.MarkedAsRead)
+                MarkedAsRead == other.MarkedAsRead ||
+                MarkedAsRead != null &&
+                MarkedAsRead.Equals(other.MarkedAsRead)
             ) &&
             (
-                this.ActionType == other.ActionType ||
-                this.ActionType != null &&
-                this.ActionType.Equals(other.ActionType)
+                ActionType == other.ActionType ||
+                ActionType != null &&
+                ActionType.Equals(other.ActionType)
             ) &&
             (
-                this.Relationship == other.Relationship ||
-                this.Relationship != null &&
-                this.Relationship.Equals(other.Relationship)
+                Relationship == other.Relationship ||
+                Relationship != null &&
+                Relationship.Equals(other.Relationship)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Appointment == other.Appointment ||
-                this.Appointment != null &&
-                this.Appointment.Equals(other.Appointment)
+                Appointment == other.Appointment ||
+                Appointment != null &&
+                Appointment.Equals(other.Appointment)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -346,59 +346,59 @@ public partial class CoachingNotification : IEquatable<CoachingNotification>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.MarkedAsRead != null)
+            if (MarkedAsRead != null)
             {
-                hash = hash * 59 + this.MarkedAsRead.GetHashCode();
+                hash = hash * 59 + MarkedAsRead.GetHashCode();
             }
 
-            if (this.ActionType != null)
+            if (ActionType != null)
             {
-                hash = hash * 59 + this.ActionType.GetHashCode();
+                hash = hash * 59 + ActionType.GetHashCode();
             }
 
-            if (this.Relationship != null)
+            if (Relationship != null)
             {
-                hash = hash * 59 + this.Relationship.GetHashCode();
+                hash = hash * 59 + Relationship.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Appointment != null)
+            if (Appointment != null)
             {
-                hash = hash * 59 + this.Appointment.GetHashCode();
+                hash = hash * 59 + Appointment.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

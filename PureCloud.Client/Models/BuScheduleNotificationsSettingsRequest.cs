@@ -64,7 +64,7 @@ public partial class BuScheduleNotificationsSettingsRequest : IEquatable<BuSched
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuScheduleNotificationsSettingsRequest);
+        return Equals(obj as BuScheduleNotificationsSettingsRequest);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class BuScheduleNotificationsSettingsRequest : IEquatable<BuSched
 
         return true &&
             (
-                this.EarlyReminderMinutes == other.EarlyReminderMinutes ||
-                this.EarlyReminderMinutes != null &&
-                this.EarlyReminderMinutes.Equals(other.EarlyReminderMinutes)
+                EarlyReminderMinutes == other.EarlyReminderMinutes ||
+                EarlyReminderMinutes != null &&
+                EarlyReminderMinutes.Equals(other.EarlyReminderMinutes)
             ) &&
             (
-                this.ActivityCategorySettings == other.ActivityCategorySettings ||
-                this.ActivityCategorySettings != null &&
-                this.ActivityCategorySettings.SequenceEqual(other.ActivityCategorySettings)
+                ActivityCategorySettings == other.ActivityCategorySettings ||
+                ActivityCategorySettings != null &&
+                ActivityCategorySettings.SequenceEqual(other.ActivityCategorySettings)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class BuScheduleNotificationsSettingsRequest : IEquatable<BuSched
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EarlyReminderMinutes != null)
+            if (EarlyReminderMinutes != null)
             {
-                hash = hash * 59 + this.EarlyReminderMinutes.GetHashCode();
+                hash = hash * 59 + EarlyReminderMinutes.GetHashCode();
             }
 
-            if (this.ActivityCategorySettings != null)
+            if (ActivityCategorySettings != null)
             {
-                hash = hash * 59 + this.ActivityCategorySettings.GetHashCode();
+                hash = hash * 59 + ActivityCategorySettings.GetHashCode();
             }
 
             return hash;

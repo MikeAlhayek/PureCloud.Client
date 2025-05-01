@@ -170,7 +170,7 @@ public partial class DIDNumber : IEquatable<DIDNumber>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DIDNumber);
+        return Equals(obj as DIDNumber);
     }
 
     /// <summary>
@@ -188,44 +188,44 @@ public partial class DIDNumber : IEquatable<DIDNumber>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Number == other.Number ||
-                this.Number != null &&
-                this.Number.Equals(other.Number)
+                Number == other.Number ||
+                Number != null &&
+                Number.Equals(other.Number)
             ) &&
             (
-                this.Assigned == other.Assigned ||
-                this.Assigned != null &&
-                this.Assigned.Equals(other.Assigned)
+                Assigned == other.Assigned ||
+                Assigned != null &&
+                Assigned.Equals(other.Assigned)
             ) &&
             (
-                this.DidPool == other.DidPool ||
-                this.DidPool != null &&
-                this.DidPool.Equals(other.DidPool)
+                DidPool == other.DidPool ||
+                DidPool != null &&
+                DidPool.Equals(other.DidPool)
             ) &&
             (
-                this.Owner == other.Owner ||
-                this.Owner != null &&
-                this.Owner.Equals(other.Owner)
+                Owner == other.Owner ||
+                Owner != null &&
+                Owner.Equals(other.Owner)
             ) &&
             (
-                this.OwnerType == other.OwnerType ||
-                this.OwnerType != null &&
-                this.OwnerType.Equals(other.OwnerType)
+                OwnerType == other.OwnerType ||
+                OwnerType != null &&
+                OwnerType.Equals(other.OwnerType)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -240,44 +240,44 @@ public partial class DIDNumber : IEquatable<DIDNumber>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Number != null)
+            if (Number != null)
             {
-                hash = hash * 59 + this.Number.GetHashCode();
+                hash = hash * 59 + Number.GetHashCode();
             }
 
-            if (this.Assigned != null)
+            if (Assigned != null)
             {
-                hash = hash * 59 + this.Assigned.GetHashCode();
+                hash = hash * 59 + Assigned.GetHashCode();
             }
 
-            if (this.DidPool != null)
+            if (DidPool != null)
             {
-                hash = hash * 59 + this.DidPool.GetHashCode();
+                hash = hash * 59 + DidPool.GetHashCode();
             }
 
-            if (this.Owner != null)
+            if (Owner != null)
             {
-                hash = hash * 59 + this.Owner.GetHashCode();
+                hash = hash * 59 + Owner.GetHashCode();
             }
 
-            if (this.OwnerType != null)
+            if (OwnerType != null)
             {
-                hash = hash * 59 + this.OwnerType.GetHashCode();
+                hash = hash * 59 + OwnerType.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -52,7 +52,7 @@ public partial class LinkConfiguration : IEquatable<LinkConfiguration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LinkConfiguration);
+        return Equals(obj as LinkConfiguration);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class LinkConfiguration : IEquatable<LinkConfiguration>
 
         return true &&
             (
-                this.UriTemplate == other.UriTemplate ||
-                this.UriTemplate != null &&
-                this.UriTemplate.Equals(other.UriTemplate)
+                UriTemplate == other.UriTemplate ||
+                UriTemplate != null &&
+                UriTemplate.Equals(other.UriTemplate)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class LinkConfiguration : IEquatable<LinkConfiguration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UriTemplate != null)
+            if (UriTemplate != null)
             {
-                hash = hash * 59 + this.UriTemplate.GetHashCode();
+                hash = hash * 59 + UriTemplate.GetHashCode();
             }
 
             return hash;

@@ -113,7 +113,7 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FunctionRuntime);
+        return Equals(obj as FunctionRuntime);
     }
 
     /// <summary>
@@ -131,24 +131,24 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.DateEndOfLife == other.DateEndOfLife ||
-                this.DateEndOfLife != null &&
-                this.DateEndOfLife.Equals(other.DateEndOfLife)
+                DateEndOfLife == other.DateEndOfLife ||
+                DateEndOfLife != null &&
+                DateEndOfLife.Equals(other.DateEndOfLife)
             );
     }
 
@@ -163,24 +163,24 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.DateEndOfLife != null)
+            if (DateEndOfLife != null)
             {
-                hash = hash * 59 + this.DateEndOfLife.GetHashCode();
+                hash = hash * 59 + DateEndOfLife.GetHashCode();
             }
 
             return hash;

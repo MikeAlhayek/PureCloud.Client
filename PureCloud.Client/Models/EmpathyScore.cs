@@ -65,7 +65,7 @@ public partial class EmpathyScore : IEquatable<EmpathyScore>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmpathyScore);
+        return Equals(obj as EmpathyScore);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class EmpathyScore : IEquatable<EmpathyScore>
 
         return true &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class EmpathyScore : IEquatable<EmpathyScore>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
             return hash;

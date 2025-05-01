@@ -200,7 +200,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuScheduleRunTopicBuScheduleRun);
+        return Equals(obj as WfmBuScheduleRunTopicBuScheduleRun);
     }
 
     /// <summary>
@@ -218,54 +218,54 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.PercentComplete == other.PercentComplete ||
-                this.PercentComplete != null &&
-                this.PercentComplete.Equals(other.PercentComplete)
+                PercentComplete == other.PercentComplete ||
+                PercentComplete != null &&
+                PercentComplete.Equals(other.PercentComplete)
             ) &&
             (
-                this.IntradayRescheduling == other.IntradayRescheduling ||
-                this.IntradayRescheduling != null &&
-                this.IntradayRescheduling.Equals(other.IntradayRescheduling)
+                IntradayRescheduling == other.IntradayRescheduling ||
+                IntradayRescheduling != null &&
+                IntradayRescheduling.Equals(other.IntradayRescheduling)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             ) &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             ) &&
             (
-                this.SchedulingCanceledBy == other.SchedulingCanceledBy ||
-                this.SchedulingCanceledBy != null &&
-                this.SchedulingCanceledBy.Equals(other.SchedulingCanceledBy)
+                SchedulingCanceledBy == other.SchedulingCanceledBy ||
+                SchedulingCanceledBy != null &&
+                SchedulingCanceledBy.Equals(other.SchedulingCanceledBy)
             ) &&
             (
-                this.SchedulingCompletedTime == other.SchedulingCompletedTime ||
-                this.SchedulingCompletedTime != null &&
-                this.SchedulingCompletedTime.Equals(other.SchedulingCompletedTime)
+                SchedulingCompletedTime == other.SchedulingCompletedTime ||
+                SchedulingCompletedTime != null &&
+                SchedulingCompletedTime.Equals(other.SchedulingCompletedTime)
             ) &&
             (
-                this.MessageCount == other.MessageCount ||
-                this.MessageCount != null &&
-                this.MessageCount.Equals(other.MessageCount)
+                MessageCount == other.MessageCount ||
+                MessageCount != null &&
+                MessageCount.Equals(other.MessageCount)
             ) &&
             (
-                this.MessageSeverityCounts == other.MessageSeverityCounts ||
-                this.MessageSeverityCounts != null &&
-                this.MessageSeverityCounts.SequenceEqual(other.MessageSeverityCounts)
+                MessageSeverityCounts == other.MessageSeverityCounts ||
+                MessageSeverityCounts != null &&
+                MessageSeverityCounts.SequenceEqual(other.MessageSeverityCounts)
             );
     }
 
@@ -280,54 +280,54 @@ public partial class WfmBuScheduleRunTopicBuScheduleRun : IEquatable<WfmBuSchedu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.PercentComplete != null)
+            if (PercentComplete != null)
             {
-                hash = hash * 59 + this.PercentComplete.GetHashCode();
+                hash = hash * 59 + PercentComplete.GetHashCode();
             }
 
-            if (this.IntradayRescheduling != null)
+            if (IntradayRescheduling != null)
             {
-                hash = hash * 59 + this.IntradayRescheduling.GetHashCode();
+                hash = hash * 59 + IntradayRescheduling.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
-            if (this.SchedulingCanceledBy != null)
+            if (SchedulingCanceledBy != null)
             {
-                hash = hash * 59 + this.SchedulingCanceledBy.GetHashCode();
+                hash = hash * 59 + SchedulingCanceledBy.GetHashCode();
             }
 
-            if (this.SchedulingCompletedTime != null)
+            if (SchedulingCompletedTime != null)
             {
-                hash = hash * 59 + this.SchedulingCompletedTime.GetHashCode();
+                hash = hash * 59 + SchedulingCompletedTime.GetHashCode();
             }
 
-            if (this.MessageCount != null)
+            if (MessageCount != null)
             {
-                hash = hash * 59 + this.MessageCount.GetHashCode();
+                hash = hash * 59 + MessageCount.GetHashCode();
             }
 
-            if (this.MessageSeverityCounts != null)
+            if (MessageSeverityCounts != null)
             {
-                hash = hash * 59 + this.MessageSeverityCounts.GetHashCode();
+                hash = hash * 59 + MessageSeverityCounts.GetHashCode();
             }
 
             return hash;

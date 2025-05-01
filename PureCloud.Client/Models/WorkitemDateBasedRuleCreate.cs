@@ -71,7 +71,7 @@ public partial class WorkitemDateBasedRuleCreate : IEquatable<WorkitemDateBasedR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemDateBasedRuleCreate);
+        return Equals(obj as WorkitemDateBasedRuleCreate);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class WorkitemDateBasedRuleCreate : IEquatable<WorkitemDateBasedR
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Condition == other.Condition ||
-                this.Condition != null &&
-                this.Condition.Equals(other.Condition)
+                Condition == other.Condition ||
+                Condition != null &&
+                Condition.Equals(other.Condition)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class WorkitemDateBasedRuleCreate : IEquatable<WorkitemDateBasedR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Condition != null)
+            if (Condition != null)
             {
-                hash = hash * 59 + this.Condition.GetHashCode();
+                hash = hash * 59 + Condition.GetHashCode();
             }
 
             return hash;

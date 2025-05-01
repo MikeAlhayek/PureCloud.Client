@@ -65,7 +65,7 @@ public partial class WebMessagingOfferFields : IEquatable<WebMessagingOfferField
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebMessagingOfferFields);
+        return Equals(obj as WebMessagingOfferFields);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class WebMessagingOfferFields : IEquatable<WebMessagingOfferField
 
         return true &&
             (
-                this.OfferText == other.OfferText ||
-                this.OfferText != null &&
-                this.OfferText.Equals(other.OfferText)
+                OfferText == other.OfferText ||
+                OfferText != null &&
+                OfferText.Equals(other.OfferText)
             ) &&
             (
-                this.ArchitectFlow == other.ArchitectFlow ||
-                this.ArchitectFlow != null &&
-                this.ArchitectFlow.Equals(other.ArchitectFlow)
+                ArchitectFlow == other.ArchitectFlow ||
+                ArchitectFlow != null &&
+                ArchitectFlow.Equals(other.ArchitectFlow)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class WebMessagingOfferFields : IEquatable<WebMessagingOfferField
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OfferText != null)
+            if (OfferText != null)
             {
-                hash = hash * 59 + this.OfferText.GetHashCode();
+                hash = hash * 59 + OfferText.GetHashCode();
             }
 
-            if (this.ArchitectFlow != null)
+            if (ArchitectFlow != null)
             {
-                hash = hash * 59 + this.ArchitectFlow.GetHashCode();
+                hash = hash * 59 + ArchitectFlow.GetHashCode();
             }
 
             return hash;

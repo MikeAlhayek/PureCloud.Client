@@ -103,7 +103,7 @@ public partial class DocumentBodyListBlock : IEquatable<DocumentBodyListBlock>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyListBlock);
+        return Equals(obj as DocumentBodyListBlock);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class DocumentBodyListBlock : IEquatable<DocumentBodyListBlock>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.Equals(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.Equals(other.Properties)
             ) &&
             (
-                this.Blocks == other.Blocks ||
-                this.Blocks != null &&
-                this.Blocks.SequenceEqual(other.Blocks)
+                Blocks == other.Blocks ||
+                Blocks != null &&
+                Blocks.SequenceEqual(other.Blocks)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class DocumentBodyListBlock : IEquatable<DocumentBodyListBlock>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
-            if (this.Blocks != null)
+            if (Blocks != null)
             {
-                hash = hash * 59 + this.Blocks.GetHashCode();
+                hash = hash * 59 + Blocks.GetHashCode();
             }
 
             return hash;

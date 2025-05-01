@@ -446,7 +446,7 @@ public partial class ExternalContactsContactChangedTopicContact : IEquatable<Ext
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsContactChangedTopicContact);
+        return Equals(obj as ExternalContactsContactChangedTopicContact);
     }
 
     /// <summary>
@@ -464,174 +464,174 @@ public partial class ExternalContactsContactChangedTopicContact : IEquatable<Ext
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.ExternalOrganization == other.ExternalOrganization ||
-                this.ExternalOrganization != null &&
-                this.ExternalOrganization.Equals(other.ExternalOrganization)
+                ExternalOrganization == other.ExternalOrganization ||
+                ExternalOrganization != null &&
+                ExternalOrganization.Equals(other.ExternalOrganization)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.FirstName == other.FirstName ||
-                this.FirstName != null &&
-                this.FirstName.Equals(other.FirstName)
+                FirstName == other.FirstName ||
+                FirstName != null &&
+                FirstName.Equals(other.FirstName)
             ) &&
             (
-                this.MiddleName == other.MiddleName ||
-                this.MiddleName != null &&
-                this.MiddleName.Equals(other.MiddleName)
+                MiddleName == other.MiddleName ||
+                MiddleName != null &&
+                MiddleName.Equals(other.MiddleName)
             ) &&
             (
-                this.LastName == other.LastName ||
-                this.LastName != null &&
-                this.LastName.Equals(other.LastName)
+                LastName == other.LastName ||
+                LastName != null &&
+                LastName.Equals(other.LastName)
             ) &&
             (
-                this.Salutation == other.Salutation ||
-                this.Salutation != null &&
-                this.Salutation.Equals(other.Salutation)
+                Salutation == other.Salutation ||
+                Salutation != null &&
+                Salutation.Equals(other.Salutation)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.WorkPhone == other.WorkPhone ||
-                this.WorkPhone != null &&
-                this.WorkPhone.Equals(other.WorkPhone)
+                WorkPhone == other.WorkPhone ||
+                WorkPhone != null &&
+                WorkPhone.Equals(other.WorkPhone)
             ) &&
             (
-                this.CellPhone == other.CellPhone ||
-                this.CellPhone != null &&
-                this.CellPhone.Equals(other.CellPhone)
+                CellPhone == other.CellPhone ||
+                CellPhone != null &&
+                CellPhone.Equals(other.CellPhone)
             ) &&
             (
-                this.HomePhone == other.HomePhone ||
-                this.HomePhone != null &&
-                this.HomePhone.Equals(other.HomePhone)
+                HomePhone == other.HomePhone ||
+                HomePhone != null &&
+                HomePhone.Equals(other.HomePhone)
             ) &&
             (
-                this.OtherPhone == other.OtherPhone ||
-                this.OtherPhone != null &&
-                this.OtherPhone.Equals(other.OtherPhone)
+                OtherPhone == other.OtherPhone ||
+                OtherPhone != null &&
+                OtherPhone.Equals(other.OtherPhone)
             ) &&
             (
-                this.WorkEmail == other.WorkEmail ||
-                this.WorkEmail != null &&
-                this.WorkEmail.Equals(other.WorkEmail)
+                WorkEmail == other.WorkEmail ||
+                WorkEmail != null &&
+                WorkEmail.Equals(other.WorkEmail)
             ) &&
             (
-                this.PersonalEmail == other.PersonalEmail ||
-                this.PersonalEmail != null &&
-                this.PersonalEmail.Equals(other.PersonalEmail)
+                PersonalEmail == other.PersonalEmail ||
+                PersonalEmail != null &&
+                PersonalEmail.Equals(other.PersonalEmail)
             ) &&
             (
-                this.OtherEmail == other.OtherEmail ||
-                this.OtherEmail != null &&
-                this.OtherEmail.Equals(other.OtherEmail)
+                OtherEmail == other.OtherEmail ||
+                OtherEmail != null &&
+                OtherEmail.Equals(other.OtherEmail)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.SurveyOptOut == other.SurveyOptOut ||
-                this.SurveyOptOut != null &&
-                this.SurveyOptOut.Equals(other.SurveyOptOut)
+                SurveyOptOut == other.SurveyOptOut ||
+                SurveyOptOut != null &&
+                SurveyOptOut.Equals(other.SurveyOptOut)
             ) &&
             (
-                this.ExternalSystemUrl == other.ExternalSystemUrl ||
-                this.ExternalSystemUrl != null &&
-                this.ExternalSystemUrl.Equals(other.ExternalSystemUrl)
+                ExternalSystemUrl == other.ExternalSystemUrl ||
+                ExternalSystemUrl != null &&
+                ExternalSystemUrl.Equals(other.ExternalSystemUrl)
             ) &&
             (
-                this.TwitterId == other.TwitterId ||
-                this.TwitterId != null &&
-                this.TwitterId.Equals(other.TwitterId)
+                TwitterId == other.TwitterId ||
+                TwitterId != null &&
+                TwitterId.Equals(other.TwitterId)
             ) &&
             (
-                this.LineId == other.LineId ||
-                this.LineId != null &&
-                this.LineId.Equals(other.LineId)
+                LineId == other.LineId ||
+                LineId != null &&
+                LineId.Equals(other.LineId)
             ) &&
             (
-                this.WhatsAppId == other.WhatsAppId ||
-                this.WhatsAppId != null &&
-                this.WhatsAppId.Equals(other.WhatsAppId)
+                WhatsAppId == other.WhatsAppId ||
+                WhatsAppId != null &&
+                WhatsAppId.Equals(other.WhatsAppId)
             ) &&
             (
-                this.FacebookId == other.FacebookId ||
-                this.FacebookId != null &&
-                this.FacebookId.Equals(other.FacebookId)
+                FacebookId == other.FacebookId ||
+                FacebookId != null &&
+                FacebookId.Equals(other.FacebookId)
             ) &&
             (
-                this.InstagramId == other.InstagramId ||
-                this.InstagramId != null &&
-                this.InstagramId.Equals(other.InstagramId)
+                InstagramId == other.InstagramId ||
+                InstagramId != null &&
+                InstagramId.Equals(other.InstagramId)
             ) &&
             (
-                this.ExternalIds == other.ExternalIds ||
-                this.ExternalIds != null &&
-                this.ExternalIds.SequenceEqual(other.ExternalIds)
+                ExternalIds == other.ExternalIds ||
+                ExternalIds != null &&
+                ExternalIds.SequenceEqual(other.ExternalIds)
             ) &&
             (
-                this.CanonicalContactId == other.CanonicalContactId ||
-                this.CanonicalContactId != null &&
-                this.CanonicalContactId.Equals(other.CanonicalContactId)
+                CanonicalContactId == other.CanonicalContactId ||
+                CanonicalContactId != null &&
+                CanonicalContactId.Equals(other.CanonicalContactId)
             ) &&
             (
-                this.Schema == other.Schema ||
-                this.Schema != null &&
-                this.Schema.Equals(other.Schema)
+                Schema == other.Schema ||
+                Schema != null &&
+                Schema.Equals(other.Schema)
             ) &&
             (
-                this.CustomFields == other.CustomFields ||
-                this.CustomFields != null &&
-                this.CustomFields.SequenceEqual(other.CustomFields)
+                CustomFields == other.CustomFields ||
+                CustomFields != null &&
+                CustomFields.SequenceEqual(other.CustomFields)
             ) &&
             (
-                this.MergeSet == other.MergeSet ||
-                this.MergeSet != null &&
-                this.MergeSet.SequenceEqual(other.MergeSet)
+                MergeSet == other.MergeSet ||
+                MergeSet != null &&
+                MergeSet.SequenceEqual(other.MergeSet)
             ) &&
             (
-                this.MergedFrom == other.MergedFrom ||
-                this.MergedFrom != null &&
-                this.MergedFrom.SequenceEqual(other.MergedFrom)
+                MergedFrom == other.MergedFrom ||
+                MergedFrom != null &&
+                MergedFrom.SequenceEqual(other.MergedFrom)
             ) &&
             (
-                this.MergedTo == other.MergedTo ||
-                this.MergedTo != null &&
-                this.MergedTo.Equals(other.MergedTo)
+                MergedTo == other.MergedTo ||
+                MergedTo != null &&
+                MergedTo.Equals(other.MergedTo)
             ) &&
             (
-                this.MergeOperation == other.MergeOperation ||
-                this.MergeOperation != null &&
-                this.MergeOperation.Equals(other.MergeOperation)
+                MergeOperation == other.MergeOperation ||
+                MergeOperation != null &&
+                MergeOperation.Equals(other.MergeOperation)
             ) &&
             (
-                this.CreateDate == other.CreateDate ||
-                this.CreateDate != null &&
-                this.CreateDate.Equals(other.CreateDate)
+                CreateDate == other.CreateDate ||
+                CreateDate != null &&
+                CreateDate.Equals(other.CreateDate)
             ) &&
             (
-                this.ModifyDate == other.ModifyDate ||
-                this.ModifyDate != null &&
-                this.ModifyDate.Equals(other.ModifyDate)
+                ModifyDate == other.ModifyDate ||
+                ModifyDate != null &&
+                ModifyDate.Equals(other.ModifyDate)
             );
     }
 
@@ -646,174 +646,174 @@ public partial class ExternalContactsContactChangedTopicContact : IEquatable<Ext
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.ExternalOrganization != null)
+            if (ExternalOrganization != null)
             {
-                hash = hash * 59 + this.ExternalOrganization.GetHashCode();
+                hash = hash * 59 + ExternalOrganization.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.FirstName != null)
+            if (FirstName != null)
             {
-                hash = hash * 59 + this.FirstName.GetHashCode();
+                hash = hash * 59 + FirstName.GetHashCode();
             }
 
-            if (this.MiddleName != null)
+            if (MiddleName != null)
             {
-                hash = hash * 59 + this.MiddleName.GetHashCode();
+                hash = hash * 59 + MiddleName.GetHashCode();
             }
 
-            if (this.LastName != null)
+            if (LastName != null)
             {
-                hash = hash * 59 + this.LastName.GetHashCode();
+                hash = hash * 59 + LastName.GetHashCode();
             }
 
-            if (this.Salutation != null)
+            if (Salutation != null)
             {
-                hash = hash * 59 + this.Salutation.GetHashCode();
+                hash = hash * 59 + Salutation.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.WorkPhone != null)
+            if (WorkPhone != null)
             {
-                hash = hash * 59 + this.WorkPhone.GetHashCode();
+                hash = hash * 59 + WorkPhone.GetHashCode();
             }
 
-            if (this.CellPhone != null)
+            if (CellPhone != null)
             {
-                hash = hash * 59 + this.CellPhone.GetHashCode();
+                hash = hash * 59 + CellPhone.GetHashCode();
             }
 
-            if (this.HomePhone != null)
+            if (HomePhone != null)
             {
-                hash = hash * 59 + this.HomePhone.GetHashCode();
+                hash = hash * 59 + HomePhone.GetHashCode();
             }
 
-            if (this.OtherPhone != null)
+            if (OtherPhone != null)
             {
-                hash = hash * 59 + this.OtherPhone.GetHashCode();
+                hash = hash * 59 + OtherPhone.GetHashCode();
             }
 
-            if (this.WorkEmail != null)
+            if (WorkEmail != null)
             {
-                hash = hash * 59 + this.WorkEmail.GetHashCode();
+                hash = hash * 59 + WorkEmail.GetHashCode();
             }
 
-            if (this.PersonalEmail != null)
+            if (PersonalEmail != null)
             {
-                hash = hash * 59 + this.PersonalEmail.GetHashCode();
+                hash = hash * 59 + PersonalEmail.GetHashCode();
             }
 
-            if (this.OtherEmail != null)
+            if (OtherEmail != null)
             {
-                hash = hash * 59 + this.OtherEmail.GetHashCode();
+                hash = hash * 59 + OtherEmail.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.SurveyOptOut != null)
+            if (SurveyOptOut != null)
             {
-                hash = hash * 59 + this.SurveyOptOut.GetHashCode();
+                hash = hash * 59 + SurveyOptOut.GetHashCode();
             }
 
-            if (this.ExternalSystemUrl != null)
+            if (ExternalSystemUrl != null)
             {
-                hash = hash * 59 + this.ExternalSystemUrl.GetHashCode();
+                hash = hash * 59 + ExternalSystemUrl.GetHashCode();
             }
 
-            if (this.TwitterId != null)
+            if (TwitterId != null)
             {
-                hash = hash * 59 + this.TwitterId.GetHashCode();
+                hash = hash * 59 + TwitterId.GetHashCode();
             }
 
-            if (this.LineId != null)
+            if (LineId != null)
             {
-                hash = hash * 59 + this.LineId.GetHashCode();
+                hash = hash * 59 + LineId.GetHashCode();
             }
 
-            if (this.WhatsAppId != null)
+            if (WhatsAppId != null)
             {
-                hash = hash * 59 + this.WhatsAppId.GetHashCode();
+                hash = hash * 59 + WhatsAppId.GetHashCode();
             }
 
-            if (this.FacebookId != null)
+            if (FacebookId != null)
             {
-                hash = hash * 59 + this.FacebookId.GetHashCode();
+                hash = hash * 59 + FacebookId.GetHashCode();
             }
 
-            if (this.InstagramId != null)
+            if (InstagramId != null)
             {
-                hash = hash * 59 + this.InstagramId.GetHashCode();
+                hash = hash * 59 + InstagramId.GetHashCode();
             }
 
-            if (this.ExternalIds != null)
+            if (ExternalIds != null)
             {
-                hash = hash * 59 + this.ExternalIds.GetHashCode();
+                hash = hash * 59 + ExternalIds.GetHashCode();
             }
 
-            if (this.CanonicalContactId != null)
+            if (CanonicalContactId != null)
             {
-                hash = hash * 59 + this.CanonicalContactId.GetHashCode();
+                hash = hash * 59 + CanonicalContactId.GetHashCode();
             }
 
-            if (this.Schema != null)
+            if (Schema != null)
             {
-                hash = hash * 59 + this.Schema.GetHashCode();
+                hash = hash * 59 + Schema.GetHashCode();
             }
 
-            if (this.CustomFields != null)
+            if (CustomFields != null)
             {
-                hash = hash * 59 + this.CustomFields.GetHashCode();
+                hash = hash * 59 + CustomFields.GetHashCode();
             }
 
-            if (this.MergeSet != null)
+            if (MergeSet != null)
             {
-                hash = hash * 59 + this.MergeSet.GetHashCode();
+                hash = hash * 59 + MergeSet.GetHashCode();
             }
 
-            if (this.MergedFrom != null)
+            if (MergedFrom != null)
             {
-                hash = hash * 59 + this.MergedFrom.GetHashCode();
+                hash = hash * 59 + MergedFrom.GetHashCode();
             }
 
-            if (this.MergedTo != null)
+            if (MergedTo != null)
             {
-                hash = hash * 59 + this.MergedTo.GetHashCode();
+                hash = hash * 59 + MergedTo.GetHashCode();
             }
 
-            if (this.MergeOperation != null)
+            if (MergeOperation != null)
             {
-                hash = hash * 59 + this.MergeOperation.GetHashCode();
+                hash = hash * 59 + MergeOperation.GetHashCode();
             }
 
-            if (this.CreateDate != null)
+            if (CreateDate != null)
             {
-                hash = hash * 59 + this.CreateDate.GetHashCode();
+                hash = hash * 59 + CreateDate.GetHashCode();
             }
 
-            if (this.ModifyDate != null)
+            if (ModifyDate != null)
             {
-                hash = hash * 59 + this.ModifyDate.GetHashCode();
+                hash = hash * 59 + ModifyDate.GetHashCode();
             }
 
             return hash;

@@ -399,7 +399,7 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingMetadata);
+        return Equals(obj as RecordingMetadata);
     }
 
     /// <summary>
@@ -417,109 +417,109 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.Path == other.Path ||
-                this.Path != null &&
-                this.Path.Equals(other.Path)
+                Path == other.Path ||
+                Path != null &&
+                Path.Equals(other.Path)
             ) &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             ) &&
             (
-                this.EndTime == other.EndTime ||
-                this.EndTime != null &&
-                this.EndTime.Equals(other.EndTime)
+                EndTime == other.EndTime ||
+                EndTime != null &&
+                EndTime.Equals(other.EndTime)
             ) &&
             (
-                this.Media == other.Media ||
-                this.Media != null &&
-                this.Media.Equals(other.Media)
+                Media == other.Media ||
+                Media != null &&
+                Media.Equals(other.Media)
             ) &&
             (
-                this.MediaSubtype == other.MediaSubtype ||
-                this.MediaSubtype != null &&
-                this.MediaSubtype.Equals(other.MediaSubtype)
+                MediaSubtype == other.MediaSubtype ||
+                MediaSubtype != null &&
+                MediaSubtype.Equals(other.MediaSubtype)
             ) &&
             (
-                this.MediaSubject == other.MediaSubject ||
-                this.MediaSubject != null &&
-                this.MediaSubject.Equals(other.MediaSubject)
+                MediaSubject == other.MediaSubject ||
+                MediaSubject != null &&
+                MediaSubject.Equals(other.MediaSubject)
             ) &&
             (
-                this.Annotations == other.Annotations ||
-                this.Annotations != null &&
-                this.Annotations.SequenceEqual(other.Annotations)
+                Annotations == other.Annotations ||
+                Annotations != null &&
+                Annotations.SequenceEqual(other.Annotations)
             ) &&
             (
-                this.FileState == other.FileState ||
-                this.FileState != null &&
-                this.FileState.Equals(other.FileState)
+                FileState == other.FileState ||
+                FileState != null &&
+                FileState.Equals(other.FileState)
             ) &&
             (
-                this.RestoreExpirationTime == other.RestoreExpirationTime ||
-                this.RestoreExpirationTime != null &&
-                this.RestoreExpirationTime.Equals(other.RestoreExpirationTime)
+                RestoreExpirationTime == other.RestoreExpirationTime ||
+                RestoreExpirationTime != null &&
+                RestoreExpirationTime.Equals(other.RestoreExpirationTime)
             ) &&
             (
-                this.ArchiveDate == other.ArchiveDate ||
-                this.ArchiveDate != null &&
-                this.ArchiveDate.Equals(other.ArchiveDate)
+                ArchiveDate == other.ArchiveDate ||
+                ArchiveDate != null &&
+                ArchiveDate.Equals(other.ArchiveDate)
             ) &&
             (
-                this.ArchiveMedium == other.ArchiveMedium ||
-                this.ArchiveMedium != null &&
-                this.ArchiveMedium.Equals(other.ArchiveMedium)
+                ArchiveMedium == other.ArchiveMedium ||
+                ArchiveMedium != null &&
+                ArchiveMedium.Equals(other.ArchiveMedium)
             ) &&
             (
-                this.DeleteDate == other.DeleteDate ||
-                this.DeleteDate != null &&
-                this.DeleteDate.Equals(other.DeleteDate)
+                DeleteDate == other.DeleteDate ||
+                DeleteDate != null &&
+                DeleteDate.Equals(other.DeleteDate)
             ) &&
             (
-                this.ExportDate == other.ExportDate ||
-                this.ExportDate != null &&
-                this.ExportDate.Equals(other.ExportDate)
+                ExportDate == other.ExportDate ||
+                ExportDate != null &&
+                ExportDate.Equals(other.ExportDate)
             ) &&
             (
-                this.ExportedDate == other.ExportedDate ||
-                this.ExportedDate != null &&
-                this.ExportedDate.Equals(other.ExportedDate)
+                ExportedDate == other.ExportedDate ||
+                ExportedDate != null &&
+                ExportedDate.Equals(other.ExportedDate)
             ) &&
             (
-                this.MaxAllowedRestorationsForOrg == other.MaxAllowedRestorationsForOrg ||
-                this.MaxAllowedRestorationsForOrg != null &&
-                this.MaxAllowedRestorationsForOrg.Equals(other.MaxAllowedRestorationsForOrg)
+                MaxAllowedRestorationsForOrg == other.MaxAllowedRestorationsForOrg ||
+                MaxAllowedRestorationsForOrg != null &&
+                MaxAllowedRestorationsForOrg.Equals(other.MaxAllowedRestorationsForOrg)
             ) &&
             (
-                this.RemainingRestorationsAllowedForOrg == other.RemainingRestorationsAllowedForOrg ||
-                this.RemainingRestorationsAllowedForOrg != null &&
-                this.RemainingRestorationsAllowedForOrg.Equals(other.RemainingRestorationsAllowedForOrg)
+                RemainingRestorationsAllowedForOrg == other.RemainingRestorationsAllowedForOrg ||
+                RemainingRestorationsAllowedForOrg != null &&
+                RemainingRestorationsAllowedForOrg.Equals(other.RemainingRestorationsAllowedForOrg)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -534,109 +534,109 @@ public partial class RecordingMetadata : IEquatable<RecordingMetadata>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.Path != null)
+            if (Path != null)
             {
-                hash = hash * 59 + this.Path.GetHashCode();
+                hash = hash * 59 + Path.GetHashCode();
             }
 
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
-            if (this.EndTime != null)
+            if (EndTime != null)
             {
-                hash = hash * 59 + this.EndTime.GetHashCode();
+                hash = hash * 59 + EndTime.GetHashCode();
             }
 
-            if (this.Media != null)
+            if (Media != null)
             {
-                hash = hash * 59 + this.Media.GetHashCode();
+                hash = hash * 59 + Media.GetHashCode();
             }
 
-            if (this.MediaSubtype != null)
+            if (MediaSubtype != null)
             {
-                hash = hash * 59 + this.MediaSubtype.GetHashCode();
+                hash = hash * 59 + MediaSubtype.GetHashCode();
             }
 
-            if (this.MediaSubject != null)
+            if (MediaSubject != null)
             {
-                hash = hash * 59 + this.MediaSubject.GetHashCode();
+                hash = hash * 59 + MediaSubject.GetHashCode();
             }
 
-            if (this.Annotations != null)
+            if (Annotations != null)
             {
-                hash = hash * 59 + this.Annotations.GetHashCode();
+                hash = hash * 59 + Annotations.GetHashCode();
             }
 
-            if (this.FileState != null)
+            if (FileState != null)
             {
-                hash = hash * 59 + this.FileState.GetHashCode();
+                hash = hash * 59 + FileState.GetHashCode();
             }
 
-            if (this.RestoreExpirationTime != null)
+            if (RestoreExpirationTime != null)
             {
-                hash = hash * 59 + this.RestoreExpirationTime.GetHashCode();
+                hash = hash * 59 + RestoreExpirationTime.GetHashCode();
             }
 
-            if (this.ArchiveDate != null)
+            if (ArchiveDate != null)
             {
-                hash = hash * 59 + this.ArchiveDate.GetHashCode();
+                hash = hash * 59 + ArchiveDate.GetHashCode();
             }
 
-            if (this.ArchiveMedium != null)
+            if (ArchiveMedium != null)
             {
-                hash = hash * 59 + this.ArchiveMedium.GetHashCode();
+                hash = hash * 59 + ArchiveMedium.GetHashCode();
             }
 
-            if (this.DeleteDate != null)
+            if (DeleteDate != null)
             {
-                hash = hash * 59 + this.DeleteDate.GetHashCode();
+                hash = hash * 59 + DeleteDate.GetHashCode();
             }
 
-            if (this.ExportDate != null)
+            if (ExportDate != null)
             {
-                hash = hash * 59 + this.ExportDate.GetHashCode();
+                hash = hash * 59 + ExportDate.GetHashCode();
             }
 
-            if (this.ExportedDate != null)
+            if (ExportedDate != null)
             {
-                hash = hash * 59 + this.ExportedDate.GetHashCode();
+                hash = hash * 59 + ExportedDate.GetHashCode();
             }
 
-            if (this.MaxAllowedRestorationsForOrg != null)
+            if (MaxAllowedRestorationsForOrg != null)
             {
-                hash = hash * 59 + this.MaxAllowedRestorationsForOrg.GetHashCode();
+                hash = hash * 59 + MaxAllowedRestorationsForOrg.GetHashCode();
             }
 
-            if (this.RemainingRestorationsAllowedForOrg != null)
+            if (RemainingRestorationsAllowedForOrg != null)
             {
-                hash = hash * 59 + this.RemainingRestorationsAllowedForOrg.GetHashCode();
+                hash = hash * 59 + RemainingRestorationsAllowedForOrg.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

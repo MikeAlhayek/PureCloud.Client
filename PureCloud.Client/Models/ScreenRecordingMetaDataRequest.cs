@@ -74,7 +74,7 @@ public partial class ScreenRecordingMetaDataRequest : IEquatable<ScreenRecording
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScreenRecordingMetaDataRequest);
+        return Equals(obj as ScreenRecordingMetaDataRequest);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class ScreenRecordingMetaDataRequest : IEquatable<ScreenRecording
 
         return true &&
             (
-                this.ParticipantJid == other.ParticipantJid ||
-                this.ParticipantJid != null &&
-                this.ParticipantJid.Equals(other.ParticipantJid)
+                ParticipantJid == other.ParticipantJid ||
+                ParticipantJid != null &&
+                ParticipantJid.Equals(other.ParticipantJid)
             ) &&
             (
-                this.RoomId == other.RoomId ||
-                this.RoomId != null &&
-                this.RoomId.Equals(other.RoomId)
+                RoomId == other.RoomId ||
+                RoomId != null &&
+                RoomId.Equals(other.RoomId)
             ) &&
             (
-                this.MetaData == other.MetaData ||
-                this.MetaData != null &&
-                this.MetaData.SequenceEqual(other.MetaData)
+                MetaData == other.MetaData ||
+                MetaData != null &&
+                MetaData.SequenceEqual(other.MetaData)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class ScreenRecordingMetaDataRequest : IEquatable<ScreenRecording
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ParticipantJid != null)
+            if (ParticipantJid != null)
             {
-                hash = hash * 59 + this.ParticipantJid.GetHashCode();
+                hash = hash * 59 + ParticipantJid.GetHashCode();
             }
 
-            if (this.RoomId != null)
+            if (RoomId != null)
             {
-                hash = hash * 59 + this.RoomId.GetHashCode();
+                hash = hash * 59 + RoomId.GetHashCode();
             }
 
-            if (this.MetaData != null)
+            if (MetaData != null)
             {
-                hash = hash * 59 + this.MetaData.GetHashCode();
+                hash = hash * 59 + MetaData.GetHashCode();
             }
 
             return hash;

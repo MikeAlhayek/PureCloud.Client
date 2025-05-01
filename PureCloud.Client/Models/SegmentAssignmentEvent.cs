@@ -59,7 +59,7 @@ public partial class SegmentAssignmentEvent : IEquatable<SegmentAssignmentEvent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SegmentAssignmentEvent);
+        return Equals(obj as SegmentAssignmentEvent);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class SegmentAssignmentEvent : IEquatable<SegmentAssignmentEvent>
 
         return true &&
             (
-                this.Segment == other.Segment ||
-                this.Segment != null &&
-                this.Segment.Equals(other.Segment)
+                Segment == other.Segment ||
+                Segment != null &&
+                Segment.Equals(other.Segment)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class SegmentAssignmentEvent : IEquatable<SegmentAssignmentEvent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Segment != null)
+            if (Segment != null)
             {
-                hash = hash * 59 + this.Segment.GetHashCode();
+                hash = hash * 59 + Segment.GetHashCode();
             }
 
             return hash;

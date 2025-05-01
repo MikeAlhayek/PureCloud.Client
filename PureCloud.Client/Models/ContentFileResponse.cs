@@ -139,7 +139,7 @@ public partial class ContentFileResponse : IEquatable<ContentFileResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentFileResponse);
+        return Equals(obj as ContentFileResponse);
     }
 
     /// <summary>
@@ -157,29 +157,29 @@ public partial class ContentFileResponse : IEquatable<ContentFileResponse>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Checksum == other.Checksum ||
-                this.Checksum != null &&
-                this.Checksum.Equals(other.Checksum)
+                Checksum == other.Checksum ||
+                Checksum != null &&
+                Checksum.Equals(other.Checksum)
             ) &&
             (
-                this.Size == other.Size ||
-                this.Size != null &&
-                this.Size.Equals(other.Size)
+                Size == other.Size ||
+                Size != null &&
+                Size.Equals(other.Size)
             ) &&
             (
-                this.ContentUrl == other.ContentUrl ||
-                this.ContentUrl != null &&
-                this.ContentUrl.Equals(other.ContentUrl)
+                ContentUrl == other.ContentUrl ||
+                ContentUrl != null &&
+                ContentUrl.Equals(other.ContentUrl)
             );
     }
 
@@ -194,29 +194,29 @@ public partial class ContentFileResponse : IEquatable<ContentFileResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Checksum != null)
+            if (Checksum != null)
             {
-                hash = hash * 59 + this.Checksum.GetHashCode();
+                hash = hash * 59 + Checksum.GetHashCode();
             }
 
-            if (this.Size != null)
+            if (Size != null)
             {
-                hash = hash * 59 + this.Size.GetHashCode();
+                hash = hash * 59 + Size.GetHashCode();
             }
 
-            if (this.ContentUrl != null)
+            if (ContentUrl != null)
             {
-                hash = hash * 59 + this.ContentUrl.GetHashCode();
+                hash = hash * 59 + ContentUrl.GetHashCode();
             }
 
             return hash;

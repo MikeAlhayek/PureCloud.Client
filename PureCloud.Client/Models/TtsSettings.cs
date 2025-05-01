@@ -71,7 +71,7 @@ public partial class TtsSettings : IEquatable<TtsSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TtsSettings);
+        return Equals(obj as TtsSettings);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class TtsSettings : IEquatable<TtsSettings>
 
         return true &&
             (
-                this.DefaultEngine == other.DefaultEngine ||
-                this.DefaultEngine != null &&
-                this.DefaultEngine.Equals(other.DefaultEngine)
+                DefaultEngine == other.DefaultEngine ||
+                DefaultEngine != null &&
+                DefaultEngine.Equals(other.DefaultEngine)
             ) &&
             (
-                this.LanguageOverrides == other.LanguageOverrides ||
-                this.LanguageOverrides != null &&
-                this.LanguageOverrides.SequenceEqual(other.LanguageOverrides)
+                LanguageOverrides == other.LanguageOverrides ||
+                LanguageOverrides != null &&
+                LanguageOverrides.SequenceEqual(other.LanguageOverrides)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class TtsSettings : IEquatable<TtsSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DefaultEngine != null)
+            if (DefaultEngine != null)
             {
-                hash = hash * 59 + this.DefaultEngine.GetHashCode();
+                hash = hash * 59 + DefaultEngine.GetHashCode();
             }
 
-            if (this.LanguageOverrides != null)
+            if (LanguageOverrides != null)
             {
-                hash = hash * 59 + this.LanguageOverrides.GetHashCode();
+                hash = hash * 59 + LanguageOverrides.GetHashCode();
             }
 
             return hash;

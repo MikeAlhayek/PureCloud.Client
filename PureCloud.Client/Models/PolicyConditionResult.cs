@@ -65,7 +65,7 @@ public partial class PolicyConditionResult : IEquatable<PolicyConditionResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PolicyConditionResult);
+        return Equals(obj as PolicyConditionResult);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class PolicyConditionResult : IEquatable<PolicyConditionResult>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Result == other.Result ||
-                this.Result != null &&
-                this.Result.Equals(other.Result)
+                Result == other.Result ||
+                Result != null &&
+                Result.Equals(other.Result)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class PolicyConditionResult : IEquatable<PolicyConditionResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Result != null)
+            if (Result != null)
             {
-                hash = hash * 59 + this.Result.GetHashCode();
+                hash = hash * 59 + Result.GetHashCode();
             }
 
             return hash;

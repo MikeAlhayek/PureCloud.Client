@@ -96,7 +96,7 @@ public partial class CallForwardingEventCallForwarding : IEquatable<CallForwardi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallForwardingEventCallForwarding);
+        return Equals(obj as CallForwardingEventCallForwarding);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class CallForwardingEventCallForwarding : IEquatable<CallForwardi
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Calls == other.Calls ||
-                this.Calls != null &&
-                this.Calls.SequenceEqual(other.Calls)
+                Calls == other.Calls ||
+                Calls != null &&
+                Calls.SequenceEqual(other.Calls)
             ) &&
             (
-                this.Voicemail == other.Voicemail ||
-                this.Voicemail != null &&
-                this.Voicemail.Equals(other.Voicemail)
+                Voicemail == other.Voicemail ||
+                Voicemail != null &&
+                Voicemail.Equals(other.Voicemail)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class CallForwardingEventCallForwarding : IEquatable<CallForwardi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Calls != null)
+            if (Calls != null)
             {
-                hash = hash * 59 + this.Calls.GetHashCode();
+                hash = hash * 59 + Calls.GetHashCode();
             }
 
-            if (this.Voicemail != null)
+            if (Voicemail != null)
             {
-                hash = hash * 59 + this.Voicemail.GetHashCode();
+                hash = hash * 59 + Voicemail.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
             return hash;

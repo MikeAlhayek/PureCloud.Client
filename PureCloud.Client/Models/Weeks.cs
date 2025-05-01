@@ -65,7 +65,7 @@ public partial class Weeks : IEquatable<Weeks>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Weeks);
+        return Equals(obj as Weeks);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class Weeks : IEquatable<Weeks>
 
         return true &&
             (
-                this.WeekOffset == other.WeekOffset ||
-                this.WeekOffset != null &&
-                this.WeekOffset.Equals(other.WeekOffset)
+                WeekOffset == other.WeekOffset ||
+                WeekOffset != null &&
+                WeekOffset.Equals(other.WeekOffset)
             ) &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class Weeks : IEquatable<Weeks>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WeekOffset != null)
+            if (WeekOffset != null)
             {
-                hash = hash * 59 + this.WeekOffset.GetHashCode();
+                hash = hash * 59 + WeekOffset.GetHashCode();
             }
 
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
             return hash;

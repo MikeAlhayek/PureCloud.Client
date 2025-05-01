@@ -89,7 +89,7 @@ public partial class TestExecutionResult : IEquatable<TestExecutionResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TestExecutionResult);
+        return Equals(obj as TestExecutionResult);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class TestExecutionResult : IEquatable<TestExecutionResult>
 
         return true &&
             (
-                this.Operations == other.Operations ||
-                this.Operations != null &&
-                this.Operations.SequenceEqual(other.Operations)
+                Operations == other.Operations ||
+                Operations != null &&
+                Operations.SequenceEqual(other.Operations)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             ) &&
             (
-                this.FinalResult == other.FinalResult ||
-                this.FinalResult != null &&
-                this.FinalResult.Equals(other.FinalResult)
+                FinalResult == other.FinalResult ||
+                FinalResult != null &&
+                FinalResult.Equals(other.FinalResult)
             ) &&
             (
-                this.Success == other.Success ||
-                this.Success != null &&
-                this.Success.Equals(other.Success)
+                Success == other.Success ||
+                Success != null &&
+                Success.Equals(other.Success)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class TestExecutionResult : IEquatable<TestExecutionResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Operations != null)
+            if (Operations != null)
             {
-                hash = hash * 59 + this.Operations.GetHashCode();
+                hash = hash * 59 + Operations.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
-            if (this.FinalResult != null)
+            if (FinalResult != null)
             {
-                hash = hash * 59 + this.FinalResult.GetHashCode();
+                hash = hash * 59 + FinalResult.GetHashCode();
             }
 
-            if (this.Success != null)
+            if (Success != null)
             {
-                hash = hash * 59 + this.Success.GetHashCode();
+                hash = hash * 59 + Success.GetHashCode();
             }
 
             return hash;

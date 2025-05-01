@@ -242,7 +242,7 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerContactlistConfigChangeContactList);
+        return Equals(obj as DialerContactlistConfigChangeContactList);
     }
 
     /// <summary>
@@ -260,89 +260,89 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
 
         return true &&
             (
-                this.ColumnNames == other.ColumnNames ||
-                this.ColumnNames != null &&
-                this.ColumnNames.SequenceEqual(other.ColumnNames)
+                ColumnNames == other.ColumnNames ||
+                ColumnNames != null &&
+                ColumnNames.SequenceEqual(other.ColumnNames)
             ) &&
             (
-                this.PhoneColumns == other.PhoneColumns ||
-                this.PhoneColumns != null &&
-                this.PhoneColumns.SequenceEqual(other.PhoneColumns)
+                PhoneColumns == other.PhoneColumns ||
+                PhoneColumns != null &&
+                PhoneColumns.SequenceEqual(other.PhoneColumns)
             ) &&
             (
-                this.EmailColumns == other.EmailColumns ||
-                this.EmailColumns != null &&
-                this.EmailColumns.SequenceEqual(other.EmailColumns)
+                EmailColumns == other.EmailColumns ||
+                EmailColumns != null &&
+                EmailColumns.SequenceEqual(other.EmailColumns)
             ) &&
             (
-                this.ImportStatus == other.ImportStatus ||
-                this.ImportStatus != null &&
-                this.ImportStatus.Equals(other.ImportStatus)
+                ImportStatus == other.ImportStatus ||
+                ImportStatus != null &&
+                ImportStatus.Equals(other.ImportStatus)
             ) &&
             (
-                this.PreviewModeColumnName == other.PreviewModeColumnName ||
-                this.PreviewModeColumnName != null &&
-                this.PreviewModeColumnName.Equals(other.PreviewModeColumnName)
+                PreviewModeColumnName == other.PreviewModeColumnName ||
+                PreviewModeColumnName != null &&
+                PreviewModeColumnName.Equals(other.PreviewModeColumnName)
             ) &&
             (
-                this.PreviewModeAcceptedValues == other.PreviewModeAcceptedValues ||
-                this.PreviewModeAcceptedValues != null &&
-                this.PreviewModeAcceptedValues.SequenceEqual(other.PreviewModeAcceptedValues)
+                PreviewModeAcceptedValues == other.PreviewModeAcceptedValues ||
+                PreviewModeAcceptedValues != null &&
+                PreviewModeAcceptedValues.SequenceEqual(other.PreviewModeAcceptedValues)
             ) &&
             (
-                this.Size == other.Size ||
-                this.Size != null &&
-                this.Size.Equals(other.Size)
+                Size == other.Size ||
+                Size != null &&
+                Size.Equals(other.Size)
             ) &&
             (
-                this.AttemptLimits == other.AttemptLimits ||
-                this.AttemptLimits != null &&
-                this.AttemptLimits.Equals(other.AttemptLimits)
+                AttemptLimits == other.AttemptLimits ||
+                AttemptLimits != null &&
+                AttemptLimits.Equals(other.AttemptLimits)
             ) &&
             (
-                this.AutomaticTimeZoneMapping == other.AutomaticTimeZoneMapping ||
-                this.AutomaticTimeZoneMapping != null &&
-                this.AutomaticTimeZoneMapping.Equals(other.AutomaticTimeZoneMapping)
+                AutomaticTimeZoneMapping == other.AutomaticTimeZoneMapping ||
+                AutomaticTimeZoneMapping != null &&
+                AutomaticTimeZoneMapping.Equals(other.AutomaticTimeZoneMapping)
             ) &&
             (
-                this.ZipCodeColumnName == other.ZipCodeColumnName ||
-                this.ZipCodeColumnName != null &&
-                this.ZipCodeColumnName.Equals(other.ZipCodeColumnName)
+                ZipCodeColumnName == other.ZipCodeColumnName ||
+                ZipCodeColumnName != null &&
+                ZipCodeColumnName.Equals(other.ZipCodeColumnName)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             );
     }
 
@@ -357,89 +357,89 @@ public partial class DialerContactlistConfigChangeContactList : IEquatable<Diale
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ColumnNames != null)
+            if (ColumnNames != null)
             {
-                hash = hash * 59 + this.ColumnNames.GetHashCode();
+                hash = hash * 59 + ColumnNames.GetHashCode();
             }
 
-            if (this.PhoneColumns != null)
+            if (PhoneColumns != null)
             {
-                hash = hash * 59 + this.PhoneColumns.GetHashCode();
+                hash = hash * 59 + PhoneColumns.GetHashCode();
             }
 
-            if (this.EmailColumns != null)
+            if (EmailColumns != null)
             {
-                hash = hash * 59 + this.EmailColumns.GetHashCode();
+                hash = hash * 59 + EmailColumns.GetHashCode();
             }
 
-            if (this.ImportStatus != null)
+            if (ImportStatus != null)
             {
-                hash = hash * 59 + this.ImportStatus.GetHashCode();
+                hash = hash * 59 + ImportStatus.GetHashCode();
             }
 
-            if (this.PreviewModeColumnName != null)
+            if (PreviewModeColumnName != null)
             {
-                hash = hash * 59 + this.PreviewModeColumnName.GetHashCode();
+                hash = hash * 59 + PreviewModeColumnName.GetHashCode();
             }
 
-            if (this.PreviewModeAcceptedValues != null)
+            if (PreviewModeAcceptedValues != null)
             {
-                hash = hash * 59 + this.PreviewModeAcceptedValues.GetHashCode();
+                hash = hash * 59 + PreviewModeAcceptedValues.GetHashCode();
             }
 
-            if (this.Size != null)
+            if (Size != null)
             {
-                hash = hash * 59 + this.Size.GetHashCode();
+                hash = hash * 59 + Size.GetHashCode();
             }
 
-            if (this.AttemptLimits != null)
+            if (AttemptLimits != null)
             {
-                hash = hash * 59 + this.AttemptLimits.GetHashCode();
+                hash = hash * 59 + AttemptLimits.GetHashCode();
             }
 
-            if (this.AutomaticTimeZoneMapping != null)
+            if (AutomaticTimeZoneMapping != null)
             {
-                hash = hash * 59 + this.AutomaticTimeZoneMapping.GetHashCode();
+                hash = hash * 59 + AutomaticTimeZoneMapping.GetHashCode();
             }
 
-            if (this.ZipCodeColumnName != null)
+            if (ZipCodeColumnName != null)
             {
-                hash = hash * 59 + this.ZipCodeColumnName.GetHashCode();
+                hash = hash * 59 + ZipCodeColumnName.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
             return hash;

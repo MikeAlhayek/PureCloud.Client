@@ -83,7 +83,7 @@ public partial class DocumentFaq : IEquatable<DocumentFaq>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentFaq);
+        return Equals(obj as DocumentFaq);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class DocumentFaq : IEquatable<DocumentFaq>
 
         return true &&
             (
-                this.Question == other.Question ||
-                this.Question != null &&
-                this.Question.Equals(other.Question)
+                Question == other.Question ||
+                Question != null &&
+                Question.Equals(other.Question)
             ) &&
             (
-                this.Answer == other.Answer ||
-                this.Answer != null &&
-                this.Answer.Equals(other.Answer)
+                Answer == other.Answer ||
+                Answer != null &&
+                Answer.Equals(other.Answer)
             ) &&
             (
-                this.Alternatives == other.Alternatives ||
-                this.Alternatives != null &&
-                this.Alternatives.SequenceEqual(other.Alternatives)
+                Alternatives == other.Alternatives ||
+                Alternatives != null &&
+                Alternatives.SequenceEqual(other.Alternatives)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class DocumentFaq : IEquatable<DocumentFaq>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Question != null)
+            if (Question != null)
             {
-                hash = hash * 59 + this.Question.GetHashCode();
+                hash = hash * 59 + Question.GetHashCode();
             }
 
-            if (this.Answer != null)
+            if (Answer != null)
             {
-                hash = hash * 59 + this.Answer.GetHashCode();
+                hash = hash * 59 + Answer.GetHashCode();
             }
 
-            if (this.Alternatives != null)
+            if (Alternatives != null)
             {
-                hash = hash * 59 + this.Alternatives.GetHashCode();
+                hash = hash * 59 + Alternatives.GetHashCode();
             }
 
             return hash;

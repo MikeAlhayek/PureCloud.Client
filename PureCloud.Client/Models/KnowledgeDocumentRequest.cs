@@ -133,7 +133,7 @@ public partial class KnowledgeDocumentRequest : IEquatable<KnowledgeDocumentRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentRequest);
+        return Equals(obj as KnowledgeDocumentRequest);
     }
 
     /// <summary>
@@ -151,29 +151,29 @@ public partial class KnowledgeDocumentRequest : IEquatable<KnowledgeDocumentRequ
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ExternalUrl == other.ExternalUrl ||
-                this.ExternalUrl != null &&
-                this.ExternalUrl.Equals(other.ExternalUrl)
+                ExternalUrl == other.ExternalUrl ||
+                ExternalUrl != null &&
+                ExternalUrl.Equals(other.ExternalUrl)
             ) &&
             (
-                this.Faq == other.Faq ||
-                this.Faq != null &&
-                this.Faq.Equals(other.Faq)
+                Faq == other.Faq ||
+                Faq != null &&
+                Faq.Equals(other.Faq)
             ) &&
             (
-                this.Categories == other.Categories ||
-                this.Categories != null &&
-                this.Categories.SequenceEqual(other.Categories)
+                Categories == other.Categories ||
+                Categories != null &&
+                Categories.SequenceEqual(other.Categories)
             ) &&
             (
-                this.Article == other.Article ||
-                this.Article != null &&
-                this.Article.Equals(other.Article)
+                Article == other.Article ||
+                Article != null &&
+                Article.Equals(other.Article)
             );
     }
 
@@ -188,29 +188,29 @@ public partial class KnowledgeDocumentRequest : IEquatable<KnowledgeDocumentRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ExternalUrl != null)
+            if (ExternalUrl != null)
             {
-                hash = hash * 59 + this.ExternalUrl.GetHashCode();
+                hash = hash * 59 + ExternalUrl.GetHashCode();
             }
 
-            if (this.Faq != null)
+            if (Faq != null)
             {
-                hash = hash * 59 + this.Faq.GetHashCode();
+                hash = hash * 59 + Faq.GetHashCode();
             }
 
-            if (this.Categories != null)
+            if (Categories != null)
             {
-                hash = hash * 59 + this.Categories.GetHashCode();
+                hash = hash * 59 + Categories.GetHashCode();
             }
 
-            if (this.Article != null)
+            if (Article != null)
             {
-                hash = hash * 59 + this.Article.GetHashCode();
+                hash = hash * 59 + Article.GetHashCode();
             }
 
             return hash;

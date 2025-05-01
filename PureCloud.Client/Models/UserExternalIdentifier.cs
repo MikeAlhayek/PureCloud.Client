@@ -81,7 +81,7 @@ public partial class UserExternalIdentifier : IEquatable<UserExternalIdentifier>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserExternalIdentifier);
+        return Equals(obj as UserExternalIdentifier);
     }
 
     /// <summary>
@@ -99,19 +99,19 @@ public partial class UserExternalIdentifier : IEquatable<UserExternalIdentifier>
 
         return true &&
             (
-                this.AuthorityName == other.AuthorityName ||
-                this.AuthorityName != null &&
-                this.AuthorityName.Equals(other.AuthorityName)
+                AuthorityName == other.AuthorityName ||
+                AuthorityName != null &&
+                AuthorityName.Equals(other.AuthorityName)
             ) &&
             (
-                this.ExternalKey == other.ExternalKey ||
-                this.ExternalKey != null &&
-                this.ExternalKey.Equals(other.ExternalKey)
+                ExternalKey == other.ExternalKey ||
+                ExternalKey != null &&
+                ExternalKey.Equals(other.ExternalKey)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -126,19 +126,19 @@ public partial class UserExternalIdentifier : IEquatable<UserExternalIdentifier>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AuthorityName != null)
+            if (AuthorityName != null)
             {
-                hash = hash * 59 + this.AuthorityName.GetHashCode();
+                hash = hash * 59 + AuthorityName.GetHashCode();
             }
 
-            if (this.ExternalKey != null)
+            if (ExternalKey != null)
             {
-                hash = hash * 59 + this.ExternalKey.GetHashCode();
+                hash = hash * 59 + ExternalKey.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

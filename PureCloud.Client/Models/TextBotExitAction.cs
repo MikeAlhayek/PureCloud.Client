@@ -163,7 +163,7 @@ public partial class TextBotExitAction : IEquatable<TextBotExitAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotExitAction);
+        return Equals(obj as TextBotExitAction);
     }
 
     /// <summary>
@@ -181,34 +181,34 @@ public partial class TextBotExitAction : IEquatable<TextBotExitAction>
 
         return true &&
             (
-                this.Reason == other.Reason ||
-                this.Reason != null &&
-                this.Reason.Equals(other.Reason)
+                Reason == other.Reason ||
+                Reason != null &&
+                Reason.Equals(other.Reason)
             ) &&
             (
-                this.ReasonExtendedInfo == other.ReasonExtendedInfo ||
-                this.ReasonExtendedInfo != null &&
-                this.ReasonExtendedInfo.Equals(other.ReasonExtendedInfo)
+                ReasonExtendedInfo == other.ReasonExtendedInfo ||
+                ReasonExtendedInfo != null &&
+                ReasonExtendedInfo.Equals(other.ReasonExtendedInfo)
             ) &&
             (
-                this.ActiveIntent == other.ActiveIntent ||
-                this.ActiveIntent != null &&
-                this.ActiveIntent.Equals(other.ActiveIntent)
+                ActiveIntent == other.ActiveIntent ||
+                ActiveIntent != null &&
+                ActiveIntent.Equals(other.ActiveIntent)
             ) &&
             (
-                this.FlowLocation == other.FlowLocation ||
-                this.FlowLocation != null &&
-                this.FlowLocation.Equals(other.FlowLocation)
+                FlowLocation == other.FlowLocation ||
+                FlowLocation != null &&
+                FlowLocation.Equals(other.FlowLocation)
             ) &&
             (
-                this.OutputData == other.OutputData ||
-                this.OutputData != null &&
-                this.OutputData.Equals(other.OutputData)
+                OutputData == other.OutputData ||
+                OutputData != null &&
+                OutputData.Equals(other.OutputData)
             ) &&
             (
-                this.FlowOutcomes == other.FlowOutcomes ||
-                this.FlowOutcomes != null &&
-                this.FlowOutcomes.SequenceEqual(other.FlowOutcomes)
+                FlowOutcomes == other.FlowOutcomes ||
+                FlowOutcomes != null &&
+                FlowOutcomes.SequenceEqual(other.FlowOutcomes)
             );
     }
 
@@ -223,34 +223,34 @@ public partial class TextBotExitAction : IEquatable<TextBotExitAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Reason != null)
+            if (Reason != null)
             {
-                hash = hash * 59 + this.Reason.GetHashCode();
+                hash = hash * 59 + Reason.GetHashCode();
             }
 
-            if (this.ReasonExtendedInfo != null)
+            if (ReasonExtendedInfo != null)
             {
-                hash = hash * 59 + this.ReasonExtendedInfo.GetHashCode();
+                hash = hash * 59 + ReasonExtendedInfo.GetHashCode();
             }
 
-            if (this.ActiveIntent != null)
+            if (ActiveIntent != null)
             {
-                hash = hash * 59 + this.ActiveIntent.GetHashCode();
+                hash = hash * 59 + ActiveIntent.GetHashCode();
             }
 
-            if (this.FlowLocation != null)
+            if (FlowLocation != null)
             {
-                hash = hash * 59 + this.FlowLocation.GetHashCode();
+                hash = hash * 59 + FlowLocation.GetHashCode();
             }
 
-            if (this.OutputData != null)
+            if (OutputData != null)
             {
-                hash = hash * 59 + this.OutputData.GetHashCode();
+                hash = hash * 59 + OutputData.GetHashCode();
             }
 
-            if (this.FlowOutcomes != null)
+            if (FlowOutcomes != null)
             {
-                hash = hash * 59 + this.FlowOutcomes.GetHashCode();
+                hash = hash * 59 + FlowOutcomes.GetHashCode();
             }
 
             return hash;

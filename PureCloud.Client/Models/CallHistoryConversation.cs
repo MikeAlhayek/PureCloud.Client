@@ -218,7 +218,7 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CallHistoryConversation);
+        return Equals(obj as CallHistoryConversation);
     }
 
     /// <summary>
@@ -236,69 +236,69 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.SequenceEqual(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.SequenceEqual(other.Participants)
             ) &&
             (
-                this.Direction == other.Direction ||
-                this.Direction != null &&
-                this.Direction.Equals(other.Direction)
+                Direction == other.Direction ||
+                Direction != null &&
+                Direction.Equals(other.Direction)
             ) &&
             (
-                this.WentToVoicemail == other.WentToVoicemail ||
-                this.WentToVoicemail != null &&
-                this.WentToVoicemail.Equals(other.WentToVoicemail)
+                WentToVoicemail == other.WentToVoicemail ||
+                WentToVoicemail != null &&
+                WentToVoicemail.Equals(other.WentToVoicemail)
             ) &&
             (
-                this.MissedCall == other.MissedCall ||
-                this.MissedCall != null &&
-                this.MissedCall.Equals(other.MissedCall)
+                MissedCall == other.MissedCall ||
+                MissedCall != null &&
+                MissedCall.Equals(other.MissedCall)
             ) &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             ) &&
             (
-                this.WasConference == other.WasConference ||
-                this.WasConference != null &&
-                this.WasConference.Equals(other.WasConference)
+                WasConference == other.WasConference ||
+                WasConference != null &&
+                WasConference.Equals(other.WasConference)
             ) &&
             (
-                this.WasCallback == other.WasCallback ||
-                this.WasCallback != null &&
-                this.WasCallback.Equals(other.WasCallback)
+                WasCallback == other.WasCallback ||
+                WasCallback != null &&
+                WasCallback.Equals(other.WasCallback)
             ) &&
             (
-                this.HadScreenShare == other.HadScreenShare ||
-                this.HadScreenShare != null &&
-                this.HadScreenShare.Equals(other.HadScreenShare)
+                HadScreenShare == other.HadScreenShare ||
+                HadScreenShare != null &&
+                HadScreenShare.Equals(other.HadScreenShare)
             ) &&
             (
-                this.HadCobrowse == other.HadCobrowse ||
-                this.HadCobrowse != null &&
-                this.HadCobrowse.Equals(other.HadCobrowse)
+                HadCobrowse == other.HadCobrowse ||
+                HadCobrowse != null &&
+                HadCobrowse.Equals(other.HadCobrowse)
             ) &&
             (
-                this.WasOutboundCampaign == other.WasOutboundCampaign ||
-                this.WasOutboundCampaign != null &&
-                this.WasOutboundCampaign.Equals(other.WasOutboundCampaign)
+                WasOutboundCampaign == other.WasOutboundCampaign ||
+                WasOutboundCampaign != null &&
+                WasOutboundCampaign.Equals(other.WasOutboundCampaign)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -313,69 +313,69 @@ public partial class CallHistoryConversation : IEquatable<CallHistoryConversatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
-            if (this.Direction != null)
+            if (Direction != null)
             {
-                hash = hash * 59 + this.Direction.GetHashCode();
+                hash = hash * 59 + Direction.GetHashCode();
             }
 
-            if (this.WentToVoicemail != null)
+            if (WentToVoicemail != null)
             {
-                hash = hash * 59 + this.WentToVoicemail.GetHashCode();
+                hash = hash * 59 + WentToVoicemail.GetHashCode();
             }
 
-            if (this.MissedCall != null)
+            if (MissedCall != null)
             {
-                hash = hash * 59 + this.MissedCall.GetHashCode();
+                hash = hash * 59 + MissedCall.GetHashCode();
             }
 
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
-            if (this.WasConference != null)
+            if (WasConference != null)
             {
-                hash = hash * 59 + this.WasConference.GetHashCode();
+                hash = hash * 59 + WasConference.GetHashCode();
             }
 
-            if (this.WasCallback != null)
+            if (WasCallback != null)
             {
-                hash = hash * 59 + this.WasCallback.GetHashCode();
+                hash = hash * 59 + WasCallback.GetHashCode();
             }
 
-            if (this.HadScreenShare != null)
+            if (HadScreenShare != null)
             {
-                hash = hash * 59 + this.HadScreenShare.GetHashCode();
+                hash = hash * 59 + HadScreenShare.GetHashCode();
             }
 
-            if (this.HadCobrowse != null)
+            if (HadCobrowse != null)
             {
-                hash = hash * 59 + this.HadCobrowse.GetHashCode();
+                hash = hash * 59 + HadCobrowse.GetHashCode();
             }
 
-            if (this.WasOutboundCampaign != null)
+            if (WasOutboundCampaign != null)
             {
-                hash = hash * 59 + this.WasOutboundCampaign.GetHashCode();
+                hash = hash * 59 + WasOutboundCampaign.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

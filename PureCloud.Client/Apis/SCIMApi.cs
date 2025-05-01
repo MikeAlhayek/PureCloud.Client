@@ -1647,12 +1647,12 @@ public partial class SCIMApi : ISCIMApi
     /// <returns></returns>
     public SCIMApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1666,17 +1666,17 @@ public partial class SCIMApi : ISCIMApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1686,7 +1686,7 @@ public partial class SCIMApi : ISCIMApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -1712,7 +1712,7 @@ public partial class SCIMApi : ISCIMApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -1724,7 +1724,7 @@ public partial class SCIMApi : ISCIMApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -1772,7 +1772,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1783,7 +1783,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1796,7 +1796,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -1804,7 +1804,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -1816,11 +1816,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1846,7 +1846,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1897,7 +1897,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1909,7 +1909,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1922,7 +1922,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -1930,7 +1930,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -1942,11 +1942,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1972,7 +1972,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2023,7 +2023,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2034,7 +2034,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2047,7 +2047,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -2055,7 +2055,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -2067,11 +2067,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2097,7 +2097,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2148,7 +2148,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2160,7 +2160,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2173,7 +2173,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -2181,7 +2181,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -2193,11 +2193,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2223,7 +2223,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
+            (object)Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2278,7 +2278,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2289,7 +2289,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2302,24 +2302,24 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -2331,11 +2331,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2361,7 +2361,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2416,7 +2416,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2428,7 +2428,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2441,24 +2441,24 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -2470,11 +2470,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2500,7 +2500,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2552,7 +2552,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2563,7 +2563,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2578,27 +2578,27 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (startIndex != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startIndex", this.Configuration.ApiClient.ParameterToString(startIndex)));
+            localVarQueryParams.Add(new Tuple<string, string>("startIndex", Configuration.ApiClient.ParameterToString(startIndex)));
         }
 
         if (count != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("count", this.Configuration.ApiClient.ParameterToString(count)));
+            localVarQueryParams.Add(new Tuple<string, string>("count", Configuration.ApiClient.ParameterToString(count)));
         }
 
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -2612,11 +2612,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2642,7 +2642,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimGroupListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimGroupListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimGroupListResponse)),
+            (ScimGroupListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimGroupListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2694,7 +2694,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2706,7 +2706,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2721,27 +2721,27 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (startIndex != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startIndex", this.Configuration.ApiClient.ParameterToString(startIndex)));
+            localVarQueryParams.Add(new Tuple<string, string>("startIndex", Configuration.ApiClient.ParameterToString(startIndex)));
         }
 
         if (count != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("count", this.Configuration.ApiClient.ParameterToString(count)));
+            localVarQueryParams.Add(new Tuple<string, string>("count", Configuration.ApiClient.ParameterToString(count)));
         }
 
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -2755,11 +2755,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2785,7 +2785,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimGroupListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimGroupListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimGroupListResponse)),
+            (ScimGroupListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimGroupListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2834,7 +2834,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2845,7 +2845,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2858,7 +2858,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (resourceType != null)
         {
-            localVarPathParams.Add("resourceType", this.Configuration.ApiClient.ParameterToString(resourceType));
+            localVarPathParams.Add("resourceType", Configuration.ApiClient.ParameterToString(resourceType));
         }
 
         // Query params
@@ -2874,11 +2874,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2904,7 +2904,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimConfigResourceType>(localVarStatusCode,
             localVarHeaders,
-            (ScimConfigResourceType)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceType)),
+            (ScimConfigResourceType)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceType)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2953,7 +2953,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2965,7 +2965,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2978,7 +2978,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (resourceType != null)
         {
-            localVarPathParams.Add("resourceType", this.Configuration.ApiClient.ParameterToString(resourceType));
+            localVarPathParams.Add("resourceType", Configuration.ApiClient.ParameterToString(resourceType));
         }
 
         // Query params
@@ -2994,11 +2994,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3024,7 +3024,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimConfigResourceType>(localVarStatusCode,
             localVarHeaders,
-            (ScimConfigResourceType)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceType)),
+            (ScimConfigResourceType)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceType)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3066,7 +3066,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3077,7 +3077,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3102,11 +3102,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3132,7 +3132,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimConfigResourceTypesListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimConfigResourceTypesListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceTypesListResponse)),
+            (ScimConfigResourceTypesListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceTypesListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3174,7 +3174,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3186,7 +3186,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3211,11 +3211,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3241,7 +3241,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimConfigResourceTypesListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimConfigResourceTypesListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceTypesListResponse)),
+            (ScimConfigResourceTypesListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceTypesListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3290,7 +3290,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3301,7 +3301,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3314,7 +3314,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -3330,11 +3330,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3360,7 +3360,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2SchemaDefinition>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2SchemaDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaDefinition)),
+            (ScimV2SchemaDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3409,7 +3409,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3421,7 +3421,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3434,7 +3434,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -3450,11 +3450,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3480,7 +3480,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2SchemaDefinition>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2SchemaDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaDefinition)),
+            (ScimV2SchemaDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3524,7 +3524,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3535,7 +3535,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3550,7 +3550,7 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -3564,11 +3564,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3594,7 +3594,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2SchemaListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2SchemaListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaListResponse)),
+            (ScimV2SchemaListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3638,7 +3638,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3650,7 +3650,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3665,7 +3665,7 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -3679,11 +3679,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3709,7 +3709,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2SchemaListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2SchemaListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaListResponse)),
+            (ScimV2SchemaListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3753,7 +3753,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3764,7 +3764,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3781,7 +3781,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -3793,11 +3793,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3823,7 +3823,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimServiceProviderConfig>(localVarStatusCode,
             localVarHeaders,
-            (ScimServiceProviderConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimServiceProviderConfig)),
+            (ScimServiceProviderConfig)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimServiceProviderConfig)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3867,7 +3867,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3879,7 +3879,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3896,7 +3896,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -3908,11 +3908,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3938,7 +3938,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimServiceProviderConfig>(localVarStatusCode,
             localVarHeaders,
-            (ScimServiceProviderConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimServiceProviderConfig)),
+            (ScimServiceProviderConfig)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimServiceProviderConfig)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3993,7 +3993,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4004,7 +4004,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4017,24 +4017,24 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -4046,11 +4046,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4076,7 +4076,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4131,7 +4131,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4143,7 +4143,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4156,24 +4156,24 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -4185,11 +4185,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4215,7 +4215,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4267,7 +4267,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4278,7 +4278,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4293,27 +4293,27 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (startIndex != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startIndex", this.Configuration.ApiClient.ParameterToString(startIndex)));
+            localVarQueryParams.Add(new Tuple<string, string>("startIndex", Configuration.ApiClient.ParameterToString(startIndex)));
         }
 
         if (count != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("count", this.Configuration.ApiClient.ParameterToString(count)));
+            localVarQueryParams.Add(new Tuple<string, string>("count", Configuration.ApiClient.ParameterToString(count)));
         }
 
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -4327,11 +4327,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4357,7 +4357,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimUserListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimUserListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimUserListResponse)),
+            (ScimUserListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimUserListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4409,7 +4409,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4421,7 +4421,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4436,27 +4436,27 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (startIndex != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startIndex", this.Configuration.ApiClient.ParameterToString(startIndex)));
+            localVarQueryParams.Add(new Tuple<string, string>("startIndex", Configuration.ApiClient.ParameterToString(startIndex)));
         }
 
         if (count != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("count", this.Configuration.ApiClient.ParameterToString(count)));
+            localVarQueryParams.Add(new Tuple<string, string>("count", Configuration.ApiClient.ParameterToString(count)));
         }
 
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -4470,11 +4470,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4500,7 +4500,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimUserListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimUserListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimUserListResponse)),
+            (ScimUserListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimUserListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4555,7 +4555,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4566,7 +4566,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4579,24 +4579,24 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -4608,11 +4608,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4638,7 +4638,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4693,7 +4693,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4705,7 +4705,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4718,24 +4718,24 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -4747,11 +4747,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4777,7 +4777,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4834,7 +4834,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4845,7 +4845,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4860,27 +4860,27 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (startIndex != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startIndex", this.Configuration.ApiClient.ParameterToString(startIndex)));
+            localVarQueryParams.Add(new Tuple<string, string>("startIndex", Configuration.ApiClient.ParameterToString(startIndex)));
         }
 
         if (count != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("count", this.Configuration.ApiClient.ParameterToString(count)));
+            localVarQueryParams.Add(new Tuple<string, string>("count", Configuration.ApiClient.ParameterToString(count)));
         }
 
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -4894,11 +4894,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4924,7 +4924,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimGroupListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimGroupListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimGroupListResponse)),
+            (ScimGroupListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimGroupListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4981,7 +4981,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4993,7 +4993,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5008,27 +5008,27 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (startIndex != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startIndex", this.Configuration.ApiClient.ParameterToString(startIndex)));
+            localVarQueryParams.Add(new Tuple<string, string>("startIndex", Configuration.ApiClient.ParameterToString(startIndex)));
         }
 
         if (count != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("count", this.Configuration.ApiClient.ParameterToString(count)));
+            localVarQueryParams.Add(new Tuple<string, string>("count", Configuration.ApiClient.ParameterToString(count)));
         }
 
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -5042,11 +5042,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5072,7 +5072,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimGroupListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimGroupListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimGroupListResponse)),
+            (ScimGroupListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimGroupListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5121,7 +5121,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5132,7 +5132,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5145,7 +5145,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (resourceType != null)
         {
-            localVarPathParams.Add("resourceType", this.Configuration.ApiClient.ParameterToString(resourceType));
+            localVarPathParams.Add("resourceType", Configuration.ApiClient.ParameterToString(resourceType));
         }
 
         // Query params
@@ -5161,11 +5161,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5191,7 +5191,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimConfigResourceType>(localVarStatusCode,
             localVarHeaders,
-            (ScimConfigResourceType)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceType)),
+            (ScimConfigResourceType)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceType)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5240,7 +5240,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5252,7 +5252,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5265,7 +5265,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (resourceType != null)
         {
-            localVarPathParams.Add("resourceType", this.Configuration.ApiClient.ParameterToString(resourceType));
+            localVarPathParams.Add("resourceType", Configuration.ApiClient.ParameterToString(resourceType));
         }
 
         // Query params
@@ -5281,11 +5281,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5311,7 +5311,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimConfigResourceType>(localVarStatusCode,
             localVarHeaders,
-            (ScimConfigResourceType)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceType)),
+            (ScimConfigResourceType)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceType)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5353,7 +5353,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5364,7 +5364,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5389,11 +5389,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5419,7 +5419,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimConfigResourceTypesListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimConfigResourceTypesListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceTypesListResponse)),
+            (ScimConfigResourceTypesListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceTypesListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5461,7 +5461,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5473,7 +5473,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5498,11 +5498,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5528,7 +5528,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimConfigResourceTypesListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimConfigResourceTypesListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceTypesListResponse)),
+            (ScimConfigResourceTypesListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimConfigResourceTypesListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5577,7 +5577,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5588,7 +5588,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5601,7 +5601,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -5617,11 +5617,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5647,7 +5647,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2SchemaDefinition>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2SchemaDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaDefinition)),
+            (ScimV2SchemaDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5696,7 +5696,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5708,7 +5708,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5721,7 +5721,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (schemaId != null)
         {
-            localVarPathParams.Add("schemaId", this.Configuration.ApiClient.ParameterToString(schemaId));
+            localVarPathParams.Add("schemaId", Configuration.ApiClient.ParameterToString(schemaId));
         }
 
         // Query params
@@ -5737,11 +5737,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5767,7 +5767,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2SchemaDefinition>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2SchemaDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaDefinition)),
+            (ScimV2SchemaDefinition)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaDefinition)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5811,7 +5811,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5822,7 +5822,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5837,7 +5837,7 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -5851,11 +5851,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5881,7 +5881,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2SchemaListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2SchemaListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaListResponse)),
+            (ScimV2SchemaListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5925,7 +5925,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5937,7 +5937,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5952,7 +5952,7 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -5966,11 +5966,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5996,7 +5996,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2SchemaListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2SchemaListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaListResponse)),
+            (ScimV2SchemaListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2SchemaListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6040,7 +6040,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6051,7 +6051,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6068,7 +6068,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -6080,11 +6080,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6110,7 +6110,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimServiceProviderConfig>(localVarStatusCode,
             localVarHeaders,
-            (ScimServiceProviderConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimServiceProviderConfig)),
+            (ScimServiceProviderConfig)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimServiceProviderConfig)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6154,7 +6154,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6166,7 +6166,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6183,7 +6183,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -6195,11 +6195,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6225,7 +6225,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimServiceProviderConfig>(localVarStatusCode,
             localVarHeaders,
-            (ScimServiceProviderConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimServiceProviderConfig)),
+            (ScimServiceProviderConfig)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimServiceProviderConfig)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6280,7 +6280,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6291,7 +6291,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6304,24 +6304,24 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -6333,11 +6333,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6363,7 +6363,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6418,7 +6418,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6430,7 +6430,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6443,24 +6443,24 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
         if (ifNoneMatch != null)
         {
-            localVarHeaderParams.Add("If-None-Match", this.Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+            localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
         }
 
         // Form params
@@ -6472,11 +6472,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6502,7 +6502,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6554,7 +6554,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6565,7 +6565,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6580,27 +6580,27 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (startIndex != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startIndex", this.Configuration.ApiClient.ParameterToString(startIndex)));
+            localVarQueryParams.Add(new Tuple<string, string>("startIndex", Configuration.ApiClient.ParameterToString(startIndex)));
         }
 
         if (count != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("count", this.Configuration.ApiClient.ParameterToString(count)));
+            localVarQueryParams.Add(new Tuple<string, string>("count", Configuration.ApiClient.ParameterToString(count)));
         }
 
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -6614,11 +6614,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6644,7 +6644,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimUserListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimUserListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimUserListResponse)),
+            (ScimUserListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimUserListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6696,7 +6696,7 @@ public partial class SCIMApi : ISCIMApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6708,7 +6708,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6723,27 +6723,27 @@ public partial class SCIMApi : ISCIMApi
         // Query params
         if (startIndex != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("startIndex", this.Configuration.ApiClient.ParameterToString(startIndex)));
+            localVarQueryParams.Add(new Tuple<string, string>("startIndex", Configuration.ApiClient.ParameterToString(startIndex)));
         }
 
         if (count != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("count", this.Configuration.ApiClient.ParameterToString(count)));
+            localVarQueryParams.Add(new Tuple<string, string>("count", Configuration.ApiClient.ParameterToString(count)));
         }
 
         if (attributes != null)
         {
-            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            attributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("attributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (excludedAttributes != null)
         {
-            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", this.Configuration.ApiClient.ParameterToString(obj))); });
+            excludedAttributes.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("excludedAttributes", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (filter != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("filter", this.Configuration.ApiClient.ParameterToString(filter)));
+            localVarQueryParams.Add(new Tuple<string, string>("filter", Configuration.ApiClient.ParameterToString(filter)));
         }
 
         // Header params
@@ -6757,11 +6757,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6787,7 +6787,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimUserListResponse>(localVarStatusCode,
             localVarHeaders,
-            (ScimUserListResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimUserListResponse)),
+            (ScimUserListResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimUserListResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6847,7 +6847,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6858,7 +6858,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6871,7 +6871,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -6879,7 +6879,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -6887,7 +6887,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6900,11 +6900,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6930,7 +6930,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6991,7 +6991,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7003,7 +7003,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7016,7 +7016,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -7024,7 +7024,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -7032,7 +7032,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7045,11 +7045,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7075,7 +7075,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7135,7 +7135,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7146,7 +7146,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7159,7 +7159,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7167,7 +7167,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -7175,7 +7175,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7188,11 +7188,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7218,7 +7218,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7279,7 +7279,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7291,7 +7291,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7304,7 +7304,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7312,7 +7312,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -7320,7 +7320,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7333,11 +7333,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7363,7 +7363,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7423,7 +7423,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7434,7 +7434,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7447,7 +7447,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -7455,7 +7455,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -7463,7 +7463,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7476,11 +7476,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7506,7 +7506,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7567,7 +7567,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7579,7 +7579,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7592,7 +7592,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -7600,7 +7600,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -7608,7 +7608,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7621,11 +7621,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7651,7 +7651,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7711,7 +7711,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7722,7 +7722,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7735,7 +7735,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7743,7 +7743,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -7751,7 +7751,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7764,11 +7764,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7794,7 +7794,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7855,7 +7855,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7867,7 +7867,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7880,7 +7880,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7888,7 +7888,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -7896,7 +7896,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7909,11 +7909,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7939,7 +7939,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7990,7 +7990,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8001,7 +8001,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8022,7 +8022,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8035,11 +8035,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8065,7 +8065,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8116,7 +8116,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8128,7 +8128,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8149,7 +8149,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8162,11 +8162,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8192,7 +8192,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8243,7 +8243,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8254,7 +8254,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8275,7 +8275,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8288,11 +8288,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8318,7 +8318,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8369,7 +8369,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8381,7 +8381,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8402,7 +8402,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8415,11 +8415,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8445,7 +8445,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8505,7 +8505,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8516,7 +8516,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8529,7 +8529,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -8537,7 +8537,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -8545,7 +8545,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8558,11 +8558,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8588,7 +8588,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8649,7 +8649,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8661,7 +8661,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8674,7 +8674,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -8682,7 +8682,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -8690,7 +8690,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8703,11 +8703,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8733,7 +8733,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8793,7 +8793,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8804,7 +8804,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8817,7 +8817,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -8825,7 +8825,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -8833,7 +8833,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8846,11 +8846,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8876,7 +8876,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8937,7 +8937,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8949,7 +8949,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8962,7 +8962,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -8970,7 +8970,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -8978,7 +8978,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8991,11 +8991,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9021,7 +9021,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9081,7 +9081,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9092,7 +9092,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9105,7 +9105,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -9113,7 +9113,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -9121,7 +9121,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9134,11 +9134,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9164,7 +9164,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9225,7 +9225,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9237,7 +9237,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9250,7 +9250,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (groupId != null)
         {
-            localVarPathParams.Add("groupId", this.Configuration.ApiClient.ParameterToString(groupId));
+            localVarPathParams.Add("groupId", Configuration.ApiClient.ParameterToString(groupId));
         }
 
         // Query params
@@ -9258,7 +9258,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -9266,7 +9266,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9279,11 +9279,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9309,7 +9309,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2Group>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2Group)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
+            (ScimV2Group)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2Group)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9369,7 +9369,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9380,7 +9380,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9393,7 +9393,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -9401,7 +9401,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -9409,7 +9409,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9422,11 +9422,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9452,7 +9452,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9513,7 +9513,7 @@ public partial class SCIMApi : ISCIMApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9525,7 +9525,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9538,7 +9538,7 @@ public partial class SCIMApi : ISCIMApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -9546,7 +9546,7 @@ public partial class SCIMApi : ISCIMApi
         // Header params
         if (ifMatch != null)
         {
-            localVarHeaderParams.Add("If-Match", this.Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
+            localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
         }
 
         // Form params
@@ -9554,7 +9554,7 @@ public partial class SCIMApi : ISCIMApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9567,11 +9567,11 @@ public partial class SCIMApi : ISCIMApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9597,7 +9597,7 @@ public partial class SCIMApi : ISCIMApi
 
         return new ApiResponse<ScimV2User>(localVarStatusCode,
             localVarHeaders,
-            (ScimV2User)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
+            (ScimV2User)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ScimV2User)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

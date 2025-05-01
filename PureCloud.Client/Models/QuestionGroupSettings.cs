@@ -64,7 +64,7 @@ public partial class QuestionGroupSettings : IEquatable<QuestionGroupSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QuestionGroupSettings);
+        return Equals(obj as QuestionGroupSettings);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class QuestionGroupSettings : IEquatable<QuestionGroupSettings>
 
         return true &&
             (
-                this.QuestionGroupContextId == other.QuestionGroupContextId ||
-                this.QuestionGroupContextId != null &&
-                this.QuestionGroupContextId.Equals(other.QuestionGroupContextId)
+                QuestionGroupContextId == other.QuestionGroupContextId ||
+                QuestionGroupContextId != null &&
+                QuestionGroupContextId.Equals(other.QuestionGroupContextId)
             ) &&
             (
-                this.QuestionSettings == other.QuestionSettings ||
-                this.QuestionSettings != null &&
-                this.QuestionSettings.SequenceEqual(other.QuestionSettings)
+                QuestionSettings == other.QuestionSettings ||
+                QuestionSettings != null &&
+                QuestionSettings.SequenceEqual(other.QuestionSettings)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class QuestionGroupSettings : IEquatable<QuestionGroupSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QuestionGroupContextId != null)
+            if (QuestionGroupContextId != null)
             {
-                hash = hash * 59 + this.QuestionGroupContextId.GetHashCode();
+                hash = hash * 59 + QuestionGroupContextId.GetHashCode();
             }
 
-            if (this.QuestionSettings != null)
+            if (QuestionSettings != null)
             {
-                hash = hash * 59 + this.QuestionSettings.GetHashCode();
+                hash = hash * 59 + QuestionSettings.GetHashCode();
             }
 
             return hash;

@@ -231,7 +231,7 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PolicyConditions);
+        return Equals(obj as PolicyConditions);
     }
 
     /// <summary>
@@ -249,54 +249,54 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
 
         return true &&
             (
-                this.ForUsers == other.ForUsers ||
-                this.ForUsers != null &&
-                this.ForUsers.SequenceEqual(other.ForUsers)
+                ForUsers == other.ForUsers ||
+                ForUsers != null &&
+                ForUsers.SequenceEqual(other.ForUsers)
             ) &&
             (
-                this.Directions == other.Directions ||
-                this.Directions != null &&
-                this.Directions.SequenceEqual(other.Directions)
+                Directions == other.Directions ||
+                Directions != null &&
+                Directions.SequenceEqual(other.Directions)
             ) &&
             (
-                this.DateRanges == other.DateRanges ||
-                this.DateRanges != null &&
-                this.DateRanges.SequenceEqual(other.DateRanges)
+                DateRanges == other.DateRanges ||
+                DateRanges != null &&
+                DateRanges.SequenceEqual(other.DateRanges)
             ) &&
             (
-                this.MediaTypes == other.MediaTypes ||
-                this.MediaTypes != null &&
-                this.MediaTypes.SequenceEqual(other.MediaTypes)
+                MediaTypes == other.MediaTypes ||
+                MediaTypes != null &&
+                MediaTypes.SequenceEqual(other.MediaTypes)
             ) &&
             (
-                this.ForQueues == other.ForQueues ||
-                this.ForQueues != null &&
-                this.ForQueues.SequenceEqual(other.ForQueues)
+                ForQueues == other.ForQueues ||
+                ForQueues != null &&
+                ForQueues.SequenceEqual(other.ForQueues)
             ) &&
             (
-                this.Duration == other.Duration ||
-                this.Duration != null &&
-                this.Duration.Equals(other.Duration)
+                Duration == other.Duration ||
+                Duration != null &&
+                Duration.Equals(other.Duration)
             ) &&
             (
-                this.WrapupCodes == other.WrapupCodes ||
-                this.WrapupCodes != null &&
-                this.WrapupCodes.SequenceEqual(other.WrapupCodes)
+                WrapupCodes == other.WrapupCodes ||
+                WrapupCodes != null &&
+                WrapupCodes.SequenceEqual(other.WrapupCodes)
             ) &&
             (
-                this.TimeAllowed == other.TimeAllowed ||
-                this.TimeAllowed != null &&
-                this.TimeAllowed.Equals(other.TimeAllowed)
+                TimeAllowed == other.TimeAllowed ||
+                TimeAllowed != null &&
+                TimeAllowed.Equals(other.TimeAllowed)
             ) &&
             (
-                this.Teams == other.Teams ||
-                this.Teams != null &&
-                this.Teams.SequenceEqual(other.Teams)
+                Teams == other.Teams ||
+                Teams != null &&
+                Teams.SequenceEqual(other.Teams)
             ) &&
             (
-                this.CustomerParticipation == other.CustomerParticipation ||
-                this.CustomerParticipation != null &&
-                this.CustomerParticipation.Equals(other.CustomerParticipation)
+                CustomerParticipation == other.CustomerParticipation ||
+                CustomerParticipation != null &&
+                CustomerParticipation.Equals(other.CustomerParticipation)
             );
     }
 
@@ -311,54 +311,54 @@ public partial class PolicyConditions : IEquatable<PolicyConditions>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ForUsers != null)
+            if (ForUsers != null)
             {
-                hash = hash * 59 + this.ForUsers.GetHashCode();
+                hash = hash * 59 + ForUsers.GetHashCode();
             }
 
-            if (this.Directions != null)
+            if (Directions != null)
             {
-                hash = hash * 59 + this.Directions.GetHashCode();
+                hash = hash * 59 + Directions.GetHashCode();
             }
 
-            if (this.DateRanges != null)
+            if (DateRanges != null)
             {
-                hash = hash * 59 + this.DateRanges.GetHashCode();
+                hash = hash * 59 + DateRanges.GetHashCode();
             }
 
-            if (this.MediaTypes != null)
+            if (MediaTypes != null)
             {
-                hash = hash * 59 + this.MediaTypes.GetHashCode();
+                hash = hash * 59 + MediaTypes.GetHashCode();
             }
 
-            if (this.ForQueues != null)
+            if (ForQueues != null)
             {
-                hash = hash * 59 + this.ForQueues.GetHashCode();
+                hash = hash * 59 + ForQueues.GetHashCode();
             }
 
-            if (this.Duration != null)
+            if (Duration != null)
             {
-                hash = hash * 59 + this.Duration.GetHashCode();
+                hash = hash * 59 + Duration.GetHashCode();
             }
 
-            if (this.WrapupCodes != null)
+            if (WrapupCodes != null)
             {
-                hash = hash * 59 + this.WrapupCodes.GetHashCode();
+                hash = hash * 59 + WrapupCodes.GetHashCode();
             }
 
-            if (this.TimeAllowed != null)
+            if (TimeAllowed != null)
             {
-                hash = hash * 59 + this.TimeAllowed.GetHashCode();
+                hash = hash * 59 + TimeAllowed.GetHashCode();
             }
 
-            if (this.Teams != null)
+            if (Teams != null)
             {
-                hash = hash * 59 + this.Teams.GetHashCode();
+                hash = hash * 59 + Teams.GetHashCode();
             }
 
-            if (this.CustomerParticipation != null)
+            if (CustomerParticipation != null)
             {
-                hash = hash * 59 + this.CustomerParticipation.GetHashCode();
+                hash = hash * 59 + CustomerParticipation.GetHashCode();
             }
 
             return hash;

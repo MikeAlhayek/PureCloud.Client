@@ -161,7 +161,7 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReschedulingOptionsRunResponse);
+        return Equals(obj as ReschedulingOptionsRunResponse);
     }
 
     /// <summary>
@@ -179,54 +179,54 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
 
         return true &&
             (
-                this.ExistingSchedule == other.ExistingSchedule ||
-                this.ExistingSchedule != null &&
-                this.ExistingSchedule.Equals(other.ExistingSchedule)
+                ExistingSchedule == other.ExistingSchedule ||
+                ExistingSchedule != null &&
+                ExistingSchedule.Equals(other.ExistingSchedule)
             ) &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.ManagementUnits == other.ManagementUnits ||
-                this.ManagementUnits != null &&
-                this.ManagementUnits.SequenceEqual(other.ManagementUnits)
+                ManagementUnits == other.ManagementUnits ||
+                ManagementUnits != null &&
+                ManagementUnits.SequenceEqual(other.ManagementUnits)
             ) &&
             (
-                this.AgentCount == other.AgentCount ||
-                this.AgentCount != null &&
-                this.AgentCount.Equals(other.AgentCount)
+                AgentCount == other.AgentCount ||
+                AgentCount != null &&
+                AgentCount.Equals(other.AgentCount)
             ) &&
             (
-                this.ActivityCodeIds == other.ActivityCodeIds ||
-                this.ActivityCodeIds != null &&
-                this.ActivityCodeIds.SequenceEqual(other.ActivityCodeIds)
+                ActivityCodeIds == other.ActivityCodeIds ||
+                ActivityCodeIds != null &&
+                ActivityCodeIds.SequenceEqual(other.ActivityCodeIds)
             ) &&
             (
-                this.DoNotChangeWeeklyPaidTime == other.DoNotChangeWeeklyPaidTime ||
-                this.DoNotChangeWeeklyPaidTime != null &&
-                this.DoNotChangeWeeklyPaidTime.Equals(other.DoNotChangeWeeklyPaidTime)
+                DoNotChangeWeeklyPaidTime == other.DoNotChangeWeeklyPaidTime ||
+                DoNotChangeWeeklyPaidTime != null &&
+                DoNotChangeWeeklyPaidTime.Equals(other.DoNotChangeWeeklyPaidTime)
             ) &&
             (
-                this.DoNotChangeDailyPaidTime == other.DoNotChangeDailyPaidTime ||
-                this.DoNotChangeDailyPaidTime != null &&
-                this.DoNotChangeDailyPaidTime.Equals(other.DoNotChangeDailyPaidTime)
+                DoNotChangeDailyPaidTime == other.DoNotChangeDailyPaidTime ||
+                DoNotChangeDailyPaidTime != null &&
+                DoNotChangeDailyPaidTime.Equals(other.DoNotChangeDailyPaidTime)
             ) &&
             (
-                this.DoNotChangeShiftStartTimes == other.DoNotChangeShiftStartTimes ||
-                this.DoNotChangeShiftStartTimes != null &&
-                this.DoNotChangeShiftStartTimes.Equals(other.DoNotChangeShiftStartTimes)
+                DoNotChangeShiftStartTimes == other.DoNotChangeShiftStartTimes ||
+                DoNotChangeShiftStartTimes != null &&
+                DoNotChangeShiftStartTimes.Equals(other.DoNotChangeShiftStartTimes)
             ) &&
             (
-                this.DoNotChangeManuallyEditedShifts == other.DoNotChangeManuallyEditedShifts ||
-                this.DoNotChangeManuallyEditedShifts != null &&
-                this.DoNotChangeManuallyEditedShifts.Equals(other.DoNotChangeManuallyEditedShifts)
+                DoNotChangeManuallyEditedShifts == other.DoNotChangeManuallyEditedShifts ||
+                DoNotChangeManuallyEditedShifts != null &&
+                DoNotChangeManuallyEditedShifts.Equals(other.DoNotChangeManuallyEditedShifts)
             );
     }
 
@@ -241,54 +241,54 @@ public partial class ReschedulingOptionsRunResponse : IEquatable<ReschedulingOpt
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExistingSchedule != null)
+            if (ExistingSchedule != null)
             {
-                hash = hash * 59 + this.ExistingSchedule.GetHashCode();
+                hash = hash * 59 + ExistingSchedule.GetHashCode();
             }
 
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.ManagementUnits != null)
+            if (ManagementUnits != null)
             {
-                hash = hash * 59 + this.ManagementUnits.GetHashCode();
+                hash = hash * 59 + ManagementUnits.GetHashCode();
             }
 
-            if (this.AgentCount != null)
+            if (AgentCount != null)
             {
-                hash = hash * 59 + this.AgentCount.GetHashCode();
+                hash = hash * 59 + AgentCount.GetHashCode();
             }
 
-            if (this.ActivityCodeIds != null)
+            if (ActivityCodeIds != null)
             {
-                hash = hash * 59 + this.ActivityCodeIds.GetHashCode();
+                hash = hash * 59 + ActivityCodeIds.GetHashCode();
             }
 
-            if (this.DoNotChangeWeeklyPaidTime != null)
+            if (DoNotChangeWeeklyPaidTime != null)
             {
-                hash = hash * 59 + this.DoNotChangeWeeklyPaidTime.GetHashCode();
+                hash = hash * 59 + DoNotChangeWeeklyPaidTime.GetHashCode();
             }
 
-            if (this.DoNotChangeDailyPaidTime != null)
+            if (DoNotChangeDailyPaidTime != null)
             {
-                hash = hash * 59 + this.DoNotChangeDailyPaidTime.GetHashCode();
+                hash = hash * 59 + DoNotChangeDailyPaidTime.GetHashCode();
             }
 
-            if (this.DoNotChangeShiftStartTimes != null)
+            if (DoNotChangeShiftStartTimes != null)
             {
-                hash = hash * 59 + this.DoNotChangeShiftStartTimes.GetHashCode();
+                hash = hash * 59 + DoNotChangeShiftStartTimes.GetHashCode();
             }
 
-            if (this.DoNotChangeManuallyEditedShifts != null)
+            if (DoNotChangeManuallyEditedShifts != null)
             {
-                hash = hash * 59 + this.DoNotChangeManuallyEditedShifts.GetHashCode();
+                hash = hash * 59 + DoNotChangeManuallyEditedShifts.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class UserStaffingGroupResponse : IEquatable<UserStaffingGroupRes
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserStaffingGroupResponse);
+        return Equals(obj as UserStaffingGroupResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class UserStaffingGroupResponse : IEquatable<UserStaffingGroupRes
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.StaffingGroup == other.StaffingGroup ||
-                this.StaffingGroup != null &&
-                this.StaffingGroup.Equals(other.StaffingGroup)
+                StaffingGroup == other.StaffingGroup ||
+                StaffingGroup != null &&
+                StaffingGroup.Equals(other.StaffingGroup)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class UserStaffingGroupResponse : IEquatable<UserStaffingGroupRes
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.StaffingGroup != null)
+            if (StaffingGroup != null)
             {
-                hash = hash * 59 + this.StaffingGroup.GetHashCode();
+                hash = hash * 59 + StaffingGroup.GetHashCode();
             }
 
             return hash;

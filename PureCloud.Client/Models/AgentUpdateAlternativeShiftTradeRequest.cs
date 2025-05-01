@@ -90,7 +90,7 @@ public partial class AgentUpdateAlternativeShiftTradeRequest : IEquatable<AgentU
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentUpdateAlternativeShiftTradeRequest);
+        return Equals(obj as AgentUpdateAlternativeShiftTradeRequest);
     }
 
     /// <summary>
@@ -108,14 +108,14 @@ public partial class AgentUpdateAlternativeShiftTradeRequest : IEquatable<AgentU
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -130,14 +130,14 @@ public partial class AgentUpdateAlternativeShiftTradeRequest : IEquatable<AgentU
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

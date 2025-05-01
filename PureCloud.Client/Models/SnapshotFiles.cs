@@ -77,7 +77,7 @@ public partial class SnapshotFiles : IEquatable<SnapshotFiles>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SnapshotFiles);
+        return Equals(obj as SnapshotFiles);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class SnapshotFiles : IEquatable<SnapshotFiles>
 
         return true &&
             (
-                this.MetaData == other.MetaData ||
-                this.MetaData != null &&
-                this.MetaData.Equals(other.MetaData)
+                MetaData == other.MetaData ||
+                MetaData != null &&
+                MetaData.Equals(other.MetaData)
             ) &&
             (
-                this.Offered == other.Offered ||
-                this.Offered != null &&
-                this.Offered.Equals(other.Offered)
+                Offered == other.Offered ||
+                Offered != null &&
+                Offered.Equals(other.Offered)
             ) &&
             (
-                this.AverageHandleTime == other.AverageHandleTime ||
-                this.AverageHandleTime != null &&
-                this.AverageHandleTime.Equals(other.AverageHandleTime)
+                AverageHandleTime == other.AverageHandleTime ||
+                AverageHandleTime != null &&
+                AverageHandleTime.Equals(other.AverageHandleTime)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class SnapshotFiles : IEquatable<SnapshotFiles>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MetaData != null)
+            if (MetaData != null)
             {
-                hash = hash * 59 + this.MetaData.GetHashCode();
+                hash = hash * 59 + MetaData.GetHashCode();
             }
 
-            if (this.Offered != null)
+            if (Offered != null)
             {
-                hash = hash * 59 + this.Offered.GetHashCode();
+                hash = hash * 59 + Offered.GetHashCode();
             }
 
-            if (this.AverageHandleTime != null)
+            if (AverageHandleTime != null)
             {
-                hash = hash * 59 + this.AverageHandleTime.GetHashCode();
+                hash = hash * 59 + AverageHandleTime.GetHashCode();
             }
 
             return hash;

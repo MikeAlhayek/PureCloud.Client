@@ -63,7 +63,7 @@ public partial class OutcomeScoresResult : IEquatable<OutcomeScoresResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomeScoresResult);
+        return Equals(obj as OutcomeScoresResult);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class OutcomeScoresResult : IEquatable<OutcomeScoresResult>
 
         return true &&
             (
-                this.OutcomeScores == other.OutcomeScores ||
-                this.OutcomeScores != null &&
-                this.OutcomeScores.SequenceEqual(other.OutcomeScores)
+                OutcomeScores == other.OutcomeScores ||
+                OutcomeScores != null &&
+                OutcomeScores.SequenceEqual(other.OutcomeScores)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class OutcomeScoresResult : IEquatable<OutcomeScoresResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutcomeScores != null)
+            if (OutcomeScores != null)
             {
-                hash = hash * 59 + this.OutcomeScores.GetHashCode();
+                hash = hash * 59 + OutcomeScores.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
             return hash;

@@ -177,7 +177,7 @@ public partial class ConditionalGroupRoutingRule : IEquatable<ConditionalGroupRo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConditionalGroupRoutingRule);
+        return Equals(obj as ConditionalGroupRoutingRule);
     }
 
     /// <summary>
@@ -195,34 +195,34 @@ public partial class ConditionalGroupRoutingRule : IEquatable<ConditionalGroupRo
 
         return true &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.ConditionValue == other.ConditionValue ||
-                this.ConditionValue != null &&
-                this.ConditionValue.Equals(other.ConditionValue)
+                ConditionValue == other.ConditionValue ||
+                ConditionValue != null &&
+                ConditionValue.Equals(other.ConditionValue)
             ) &&
             (
-                this.Groups == other.Groups ||
-                this.Groups != null &&
-                this.Groups.SequenceEqual(other.Groups)
+                Groups == other.Groups ||
+                Groups != null &&
+                Groups.SequenceEqual(other.Groups)
             ) &&
             (
-                this.WaitSeconds == other.WaitSeconds ||
-                this.WaitSeconds != null &&
-                this.WaitSeconds.Equals(other.WaitSeconds)
+                WaitSeconds == other.WaitSeconds ||
+                WaitSeconds != null &&
+                WaitSeconds.Equals(other.WaitSeconds)
             );
     }
 
@@ -237,34 +237,34 @@ public partial class ConditionalGroupRoutingRule : IEquatable<ConditionalGroupRo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.ConditionValue != null)
+            if (ConditionValue != null)
             {
-                hash = hash * 59 + this.ConditionValue.GetHashCode();
+                hash = hash * 59 + ConditionValue.GetHashCode();
             }
 
-            if (this.Groups != null)
+            if (Groups != null)
             {
-                hash = hash * 59 + this.Groups.GetHashCode();
+                hash = hash * 59 + Groups.GetHashCode();
             }
 
-            if (this.WaitSeconds != null)
+            if (WaitSeconds != null)
             {
-                hash = hash * 59 + this.WaitSeconds.GetHashCode();
+                hash = hash * 59 + WaitSeconds.GetHashCode();
             }
 
             return hash;

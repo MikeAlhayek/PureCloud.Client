@@ -59,7 +59,7 @@ public partial class PolicyTestPayload : IEquatable<PolicyTestPayload>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PolicyTestPayload);
+        return Equals(obj as PolicyTestPayload);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class PolicyTestPayload : IEquatable<PolicyTestPayload>
 
         return true &&
             (
-                this.AttributeData == other.AttributeData ||
-                this.AttributeData != null &&
-                this.AttributeData.SequenceEqual(other.AttributeData)
+                AttributeData == other.AttributeData ||
+                AttributeData != null &&
+                AttributeData.SequenceEqual(other.AttributeData)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class PolicyTestPayload : IEquatable<PolicyTestPayload>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AttributeData != null)
+            if (AttributeData != null)
             {
-                hash = hash * 59 + this.AttributeData.GetHashCode();
+                hash = hash * 59 + AttributeData.GetHashCode();
             }
 
             return hash;

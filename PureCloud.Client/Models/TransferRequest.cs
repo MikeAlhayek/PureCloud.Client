@@ -151,7 +151,7 @@ public partial class TransferRequest : IEquatable<TransferRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TransferRequest);
+        return Equals(obj as TransferRequest);
     }
 
     /// <summary>
@@ -169,39 +169,39 @@ public partial class TransferRequest : IEquatable<TransferRequest>
 
         return true &&
             (
-                this.TransferType == other.TransferType ||
-                this.TransferType != null &&
-                this.TransferType.Equals(other.TransferType)
+                TransferType == other.TransferType ||
+                TransferType != null &&
+                TransferType.Equals(other.TransferType)
             ) &&
             (
-                this.KeepInternalMessageAlive == other.KeepInternalMessageAlive ||
-                this.KeepInternalMessageAlive != null &&
-                this.KeepInternalMessageAlive.Equals(other.KeepInternalMessageAlive)
+                KeepInternalMessageAlive == other.KeepInternalMessageAlive ||
+                KeepInternalMessageAlive != null &&
+                KeepInternalMessageAlive.Equals(other.KeepInternalMessageAlive)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.UserName == other.UserName ||
-                this.UserName != null &&
-                this.UserName.Equals(other.UserName)
+                UserName == other.UserName ||
+                UserName != null &&
+                UserName.Equals(other.UserName)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.Voicemail == other.Voicemail ||
-                this.Voicemail != null &&
-                this.Voicemail.Equals(other.Voicemail)
+                Voicemail == other.Voicemail ||
+                Voicemail != null &&
+                Voicemail.Equals(other.Voicemail)
             );
     }
 
@@ -216,39 +216,39 @@ public partial class TransferRequest : IEquatable<TransferRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TransferType != null)
+            if (TransferType != null)
             {
-                hash = hash * 59 + this.TransferType.GetHashCode();
+                hash = hash * 59 + TransferType.GetHashCode();
             }
 
-            if (this.KeepInternalMessageAlive != null)
+            if (KeepInternalMessageAlive != null)
             {
-                hash = hash * 59 + this.KeepInternalMessageAlive.GetHashCode();
+                hash = hash * 59 + KeepInternalMessageAlive.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.UserName != null)
+            if (UserName != null)
             {
-                hash = hash * 59 + this.UserName.GetHashCode();
+                hash = hash * 59 + UserName.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.Voicemail != null)
+            if (Voicemail != null)
             {
-                hash = hash * 59 + this.Voicemail.GetHashCode();
+                hash = hash * 59 + Voicemail.GetHashCode();
             }
 
             return hash;

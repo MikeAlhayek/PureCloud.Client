@@ -65,7 +65,7 @@ public partial class PredictiveRouting : IEquatable<PredictiveRouting>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PredictiveRouting);
+        return Equals(obj as PredictiveRouting);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class PredictiveRouting : IEquatable<PredictiveRouting>
 
         return true &&
             (
-                this.RespectSkills == other.RespectSkills ||
-                this.RespectSkills != null &&
-                this.RespectSkills.Equals(other.RespectSkills)
+                RespectSkills == other.RespectSkills ||
+                RespectSkills != null &&
+                RespectSkills.Equals(other.RespectSkills)
             ) &&
             (
-                this.EnableConversationScoreBiasing == other.EnableConversationScoreBiasing ||
-                this.EnableConversationScoreBiasing != null &&
-                this.EnableConversationScoreBiasing.Equals(other.EnableConversationScoreBiasing)
+                EnableConversationScoreBiasing == other.EnableConversationScoreBiasing ||
+                EnableConversationScoreBiasing != null &&
+                EnableConversationScoreBiasing.Equals(other.EnableConversationScoreBiasing)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class PredictiveRouting : IEquatable<PredictiveRouting>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RespectSkills != null)
+            if (RespectSkills != null)
             {
-                hash = hash * 59 + this.RespectSkills.GetHashCode();
+                hash = hash * 59 + RespectSkills.GetHashCode();
             }
 
-            if (this.EnableConversationScoreBiasing != null)
+            if (EnableConversationScoreBiasing != null)
             {
-                hash = hash * 59 + this.EnableConversationScoreBiasing.GetHashCode();
+                hash = hash * 59 + EnableConversationScoreBiasing.GetHashCode();
             }
 
             return hash;

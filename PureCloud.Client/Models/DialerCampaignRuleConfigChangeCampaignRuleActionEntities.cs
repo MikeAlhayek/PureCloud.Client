@@ -88,7 +88,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : 
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerCampaignRuleConfigChangeCampaignRuleActionEntities);
+        return Equals(obj as DialerCampaignRuleConfigChangeCampaignRuleActionEntities);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : 
 
         return true &&
             (
-                this.UseTriggeringEntity == other.UseTriggeringEntity ||
-                this.UseTriggeringEntity != null &&
-                this.UseTriggeringEntity.Equals(other.UseTriggeringEntity)
+                UseTriggeringEntity == other.UseTriggeringEntity ||
+                UseTriggeringEntity != null &&
+                UseTriggeringEntity.Equals(other.UseTriggeringEntity)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             ) &&
             (
-                this.Campaigns == other.Campaigns ||
-                this.Campaigns != null &&
-                this.Campaigns.SequenceEqual(other.Campaigns)
+                Campaigns == other.Campaigns ||
+                Campaigns != null &&
+                Campaigns.SequenceEqual(other.Campaigns)
             ) &&
             (
-                this.Sequences == other.Sequences ||
-                this.Sequences != null &&
-                this.Sequences.SequenceEqual(other.Sequences)
+                Sequences == other.Sequences ||
+                Sequences != null &&
+                Sequences.SequenceEqual(other.Sequences)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : 
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UseTriggeringEntity != null)
+            if (UseTriggeringEntity != null)
             {
-                hash = hash * 59 + this.UseTriggeringEntity.GetHashCode();
+                hash = hash * 59 + UseTriggeringEntity.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
-            if (this.Campaigns != null)
+            if (Campaigns != null)
             {
-                hash = hash * 59 + this.Campaigns.GetHashCode();
+                hash = hash * 59 + Campaigns.GetHashCode();
             }
 
-            if (this.Sequences != null)
+            if (Sequences != null)
             {
-                hash = hash * 59 + this.Sequences.GetHashCode();
+                hash = hash * 59 + Sequences.GetHashCode();
             }
 
             return hash;

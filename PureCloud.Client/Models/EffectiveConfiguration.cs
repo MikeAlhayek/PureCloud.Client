@@ -107,7 +107,7 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EffectiveConfiguration);
+        return Equals(obj as EffectiveConfiguration);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
 
         return true &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.SequenceEqual(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.SequenceEqual(other.Properties)
             ) &&
             (
-                this.Advanced == other.Advanced ||
-                this.Advanced != null &&
-                this.Advanced.SequenceEqual(other.Advanced)
+                Advanced == other.Advanced ||
+                Advanced != null &&
+                Advanced.SequenceEqual(other.Advanced)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Notes == other.Notes ||
-                this.Notes != null &&
-                this.Notes.Equals(other.Notes)
+                Notes == other.Notes ||
+                Notes != null &&
+                Notes.Equals(other.Notes)
             ) &&
             (
-                this.Credentials == other.Credentials ||
-                this.Credentials != null &&
-                this.Credentials.SequenceEqual(other.Credentials)
+                Credentials == other.Credentials ||
+                Credentials != null &&
+                Credentials.SequenceEqual(other.Credentials)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
-            if (this.Advanced != null)
+            if (Advanced != null)
             {
-                hash = hash * 59 + this.Advanced.GetHashCode();
+                hash = hash * 59 + Advanced.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Notes != null)
+            if (Notes != null)
             {
-                hash = hash * 59 + this.Notes.GetHashCode();
+                hash = hash * 59 + Notes.GetHashCode();
             }
 
-            if (this.Credentials != null)
+            if (Credentials != null)
             {
-                hash = hash * 59 + this.Credentials.GetHashCode();
+                hash = hash * 59 + Credentials.GetHashCode();
             }
 
             return hash;

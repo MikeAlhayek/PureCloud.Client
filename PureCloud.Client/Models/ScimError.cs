@@ -155,7 +155,7 @@ public partial class ScimError : IEquatable<ScimError>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimError);
+        return Equals(obj as ScimError);
     }
 
     /// <summary>
@@ -173,24 +173,24 @@ public partial class ScimError : IEquatable<ScimError>
 
         return true &&
             (
-                this.Schemas == other.Schemas ||
-                this.Schemas != null &&
-                this.Schemas.SequenceEqual(other.Schemas)
+                Schemas == other.Schemas ||
+                Schemas != null &&
+                Schemas.SequenceEqual(other.Schemas)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ScimType == other.ScimType ||
-                this.ScimType != null &&
-                this.ScimType.Equals(other.ScimType)
+                ScimType == other.ScimType ||
+                ScimType != null &&
+                ScimType.Equals(other.ScimType)
             ) &&
             (
-                this.Detail == other.Detail ||
-                this.Detail != null &&
-                this.Detail.Equals(other.Detail)
+                Detail == other.Detail ||
+                Detail != null &&
+                Detail.Equals(other.Detail)
             );
     }
 
@@ -205,24 +205,24 @@ public partial class ScimError : IEquatable<ScimError>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Schemas != null)
+            if (Schemas != null)
             {
-                hash = hash * 59 + this.Schemas.GetHashCode();
+                hash = hash * 59 + Schemas.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ScimType != null)
+            if (ScimType != null)
             {
-                hash = hash * 59 + this.ScimType.GetHashCode();
+                hash = hash * 59 + ScimType.GetHashCode();
             }
 
-            if (this.Detail != null)
+            if (Detail != null)
             {
-                hash = hash * 59 + this.Detail.GetHashCode();
+                hash = hash * 59 + Detail.GetHashCode();
             }
 
             return hash;

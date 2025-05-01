@@ -77,7 +77,7 @@ public partial class TwitterSignupOAuthSettings : IEquatable<TwitterSignupOAuthS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TwitterSignupOAuthSettings);
+        return Equals(obj as TwitterSignupOAuthSettings);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class TwitterSignupOAuthSettings : IEquatable<TwitterSignupOAuthS
 
         return true &&
             (
-                this.ClientId == other.ClientId ||
-                this.ClientId != null &&
-                this.ClientId.Equals(other.ClientId)
+                ClientId == other.ClientId ||
+                ClientId != null &&
+                ClientId.Equals(other.ClientId)
             ) &&
             (
-                this.Scopes == other.Scopes ||
-                this.Scopes != null &&
-                this.Scopes.SequenceEqual(other.Scopes)
+                Scopes == other.Scopes ||
+                Scopes != null &&
+                Scopes.SequenceEqual(other.Scopes)
             ) &&
             (
-                this.AppId == other.AppId ||
-                this.AppId != null &&
-                this.AppId.Equals(other.AppId)
+                AppId == other.AppId ||
+                AppId != null &&
+                AppId.Equals(other.AppId)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class TwitterSignupOAuthSettings : IEquatable<TwitterSignupOAuthS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ClientId != null)
+            if (ClientId != null)
             {
-                hash = hash * 59 + this.ClientId.GetHashCode();
+                hash = hash * 59 + ClientId.GetHashCode();
             }
 
-            if (this.Scopes != null)
+            if (Scopes != null)
             {
-                hash = hash * 59 + this.Scopes.GetHashCode();
+                hash = hash * 59 + Scopes.GetHashCode();
             }
 
-            if (this.AppId != null)
+            if (AppId != null)
             {
-                hash = hash * 59 + this.AppId.GetHashCode();
+                hash = hash * 59 + AppId.GetHashCode();
             }
 
             return hash;

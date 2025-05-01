@@ -139,7 +139,7 @@ public partial class DocumentTextProperties : IEquatable<DocumentTextProperties>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentTextProperties);
+        return Equals(obj as DocumentTextProperties);
     }
 
     /// <summary>
@@ -157,19 +157,19 @@ public partial class DocumentTextProperties : IEquatable<DocumentTextProperties>
 
         return true &&
             (
-                this.FontSize == other.FontSize ||
-                this.FontSize != null &&
-                this.FontSize.Equals(other.FontSize)
+                FontSize == other.FontSize ||
+                FontSize != null &&
+                FontSize.Equals(other.FontSize)
             ) &&
             (
-                this.TextColor == other.TextColor ||
-                this.TextColor != null &&
-                this.TextColor.Equals(other.TextColor)
+                TextColor == other.TextColor ||
+                TextColor != null &&
+                TextColor.Equals(other.TextColor)
             ) &&
             (
-                this.BackgroundColor == other.BackgroundColor ||
-                this.BackgroundColor != null &&
-                this.BackgroundColor.Equals(other.BackgroundColor)
+                BackgroundColor == other.BackgroundColor ||
+                BackgroundColor != null &&
+                BackgroundColor.Equals(other.BackgroundColor)
             );
     }
 
@@ -184,19 +184,19 @@ public partial class DocumentTextProperties : IEquatable<DocumentTextProperties>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FontSize != null)
+            if (FontSize != null)
             {
-                hash = hash * 59 + this.FontSize.GetHashCode();
+                hash = hash * 59 + FontSize.GetHashCode();
             }
 
-            if (this.TextColor != null)
+            if (TextColor != null)
             {
-                hash = hash * 59 + this.TextColor.GetHashCode();
+                hash = hash * 59 + TextColor.GetHashCode();
             }
 
-            if (this.BackgroundColor != null)
+            if (BackgroundColor != null)
             {
-                hash = hash * 59 + this.BackgroundColor.GetHashCode();
+                hash = hash * 59 + BackgroundColor.GetHashCode();
             }
 
             return hash;

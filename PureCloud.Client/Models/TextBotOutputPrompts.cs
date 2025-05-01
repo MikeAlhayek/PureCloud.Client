@@ -71,7 +71,7 @@ public partial class TextBotOutputPrompts : IEquatable<TextBotOutputPrompts>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotOutputPrompts);
+        return Equals(obj as TextBotOutputPrompts);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class TextBotOutputPrompts : IEquatable<TextBotOutputPrompts>
 
         return true &&
             (
-                this.OutputLanguage == other.OutputLanguage ||
-                this.OutputLanguage != null &&
-                this.OutputLanguage.Equals(other.OutputLanguage)
+                OutputLanguage == other.OutputLanguage ||
+                OutputLanguage != null &&
+                OutputLanguage.Equals(other.OutputLanguage)
             ) &&
             (
-                this.TextPrompts == other.TextPrompts ||
-                this.TextPrompts != null &&
-                this.TextPrompts.Equals(other.TextPrompts)
+                TextPrompts == other.TextPrompts ||
+                TextPrompts != null &&
+                TextPrompts.Equals(other.TextPrompts)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class TextBotOutputPrompts : IEquatable<TextBotOutputPrompts>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutputLanguage != null)
+            if (OutputLanguage != null)
             {
-                hash = hash * 59 + this.OutputLanguage.GetHashCode();
+                hash = hash * 59 + OutputLanguage.GetHashCode();
             }
 
-            if (this.TextPrompts != null)
+            if (TextPrompts != null)
             {
-                hash = hash * 59 + this.TextPrompts.GetHashCode();
+                hash = hash * 59 + TextPrompts.GetHashCode();
             }
 
             return hash;

@@ -157,7 +157,7 @@ public partial class HistoricalAdherenceActuals : IEquatable<HistoricalAdherence
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalAdherenceActuals);
+        return Equals(obj as HistoricalAdherenceActuals);
     }
 
     /// <summary>
@@ -175,24 +175,24 @@ public partial class HistoricalAdherenceActuals : IEquatable<HistoricalAdherence
 
         return true &&
             (
-                this.ActualActivityCategory == other.ActualActivityCategory ||
-                this.ActualActivityCategory != null &&
-                this.ActualActivityCategory.Equals(other.ActualActivityCategory)
+                ActualActivityCategory == other.ActualActivityCategory ||
+                ActualActivityCategory != null &&
+                ActualActivityCategory.Equals(other.ActualActivityCategory)
             ) &&
             (
-                this.ActualSecondaryPresenceLookupId == other.ActualSecondaryPresenceLookupId ||
-                this.ActualSecondaryPresenceLookupId != null &&
-                this.ActualSecondaryPresenceLookupId.Equals(other.ActualSecondaryPresenceLookupId)
+                ActualSecondaryPresenceLookupId == other.ActualSecondaryPresenceLookupId ||
+                ActualSecondaryPresenceLookupId != null &&
+                ActualSecondaryPresenceLookupId.Equals(other.ActualSecondaryPresenceLookupId)
             ) &&
             (
-                this.StartOffsetSeconds == other.StartOffsetSeconds ||
-                this.StartOffsetSeconds != null &&
-                this.StartOffsetSeconds.Equals(other.StartOffsetSeconds)
+                StartOffsetSeconds == other.StartOffsetSeconds ||
+                StartOffsetSeconds != null &&
+                StartOffsetSeconds.Equals(other.StartOffsetSeconds)
             ) &&
             (
-                this.EndOffsetSeconds == other.EndOffsetSeconds ||
-                this.EndOffsetSeconds != null &&
-                this.EndOffsetSeconds.Equals(other.EndOffsetSeconds)
+                EndOffsetSeconds == other.EndOffsetSeconds ||
+                EndOffsetSeconds != null &&
+                EndOffsetSeconds.Equals(other.EndOffsetSeconds)
             );
     }
 
@@ -207,24 +207,24 @@ public partial class HistoricalAdherenceActuals : IEquatable<HistoricalAdherence
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActualActivityCategory != null)
+            if (ActualActivityCategory != null)
             {
-                hash = hash * 59 + this.ActualActivityCategory.GetHashCode();
+                hash = hash * 59 + ActualActivityCategory.GetHashCode();
             }
 
-            if (this.ActualSecondaryPresenceLookupId != null)
+            if (ActualSecondaryPresenceLookupId != null)
             {
-                hash = hash * 59 + this.ActualSecondaryPresenceLookupId.GetHashCode();
+                hash = hash * 59 + ActualSecondaryPresenceLookupId.GetHashCode();
             }
 
-            if (this.StartOffsetSeconds != null)
+            if (StartOffsetSeconds != null)
             {
-                hash = hash * 59 + this.StartOffsetSeconds.GetHashCode();
+                hash = hash * 59 + StartOffsetSeconds.GetHashCode();
             }
 
-            if (this.EndOffsetSeconds != null)
+            if (EndOffsetSeconds != null)
             {
-                hash = hash * 59 + this.EndOffsetSeconds.GetHashCode();
+                hash = hash * 59 + EndOffsetSeconds.GetHashCode();
             }
 
             return hash;

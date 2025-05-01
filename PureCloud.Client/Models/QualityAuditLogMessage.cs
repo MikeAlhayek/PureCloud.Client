@@ -471,7 +471,7 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QualityAuditLogMessage);
+        return Equals(obj as QualityAuditLogMessage);
     }
 
     /// <summary>
@@ -489,84 +489,84 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.UserHomeOrgId == other.UserHomeOrgId ||
-                this.UserHomeOrgId != null &&
-                this.UserHomeOrgId.Equals(other.UserHomeOrgId)
+                UserHomeOrgId == other.UserHomeOrgId ||
+                UserHomeOrgId != null &&
+                UserHomeOrgId.Equals(other.UserHomeOrgId)
             ) &&
             (
-                this.UserTrusteeOrgId == other.UserTrusteeOrgId ||
-                this.UserTrusteeOrgId != null &&
-                this.UserTrusteeOrgId.Equals(other.UserTrusteeOrgId)
+                UserTrusteeOrgId == other.UserTrusteeOrgId ||
+                UserTrusteeOrgId != null &&
+                UserTrusteeOrgId.Equals(other.UserTrusteeOrgId)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Client == other.Client ||
-                this.Client != null &&
-                this.Client.Equals(other.Client)
+                Client == other.Client ||
+                Client != null &&
+                Client.Equals(other.Client)
             ) &&
             (
-                this.RemoteIps == other.RemoteIps ||
-                this.RemoteIps != null &&
-                this.RemoteIps.SequenceEqual(other.RemoteIps)
+                RemoteIps == other.RemoteIps ||
+                RemoteIps != null &&
+                RemoteIps.SequenceEqual(other.RemoteIps)
             ) &&
             (
-                this.ServiceName == other.ServiceName ||
-                this.ServiceName != null &&
-                this.ServiceName.Equals(other.ServiceName)
+                ServiceName == other.ServiceName ||
+                ServiceName != null &&
+                ServiceName.Equals(other.ServiceName)
             ) &&
             (
-                this.Level == other.Level ||
-                this.Level != null &&
-                this.Level.Equals(other.Level)
+                Level == other.Level ||
+                Level != null &&
+                Level.Equals(other.Level)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.EventDate == other.EventDate ||
-                this.EventDate != null &&
-                this.EventDate.Equals(other.EventDate)
+                EventDate == other.EventDate ||
+                EventDate != null &&
+                EventDate.Equals(other.EventDate)
             ) &&
             (
-                this.MessageInfo == other.MessageInfo ||
-                this.MessageInfo != null &&
-                this.MessageInfo.Equals(other.MessageInfo)
+                MessageInfo == other.MessageInfo ||
+                MessageInfo != null &&
+                MessageInfo.Equals(other.MessageInfo)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.Entity == other.Entity ||
-                this.Entity != null &&
-                this.Entity.Equals(other.Entity)
+                Entity == other.Entity ||
+                Entity != null &&
+                Entity.Equals(other.Entity)
             ) &&
             (
-                this.EntityType == other.EntityType ||
-                this.EntityType != null &&
-                this.EntityType.Equals(other.EntityType)
+                EntityType == other.EntityType ||
+                EntityType != null &&
+                EntityType.Equals(other.EntityType)
             ) &&
             (
-                this.PropertyChanges == other.PropertyChanges ||
-                this.PropertyChanges != null &&
-                this.PropertyChanges.SequenceEqual(other.PropertyChanges)
+                PropertyChanges == other.PropertyChanges ||
+                PropertyChanges != null &&
+                PropertyChanges.SequenceEqual(other.PropertyChanges)
             ) &&
             (
-                this.Context == other.Context ||
-                this.Context != null &&
-                this.Context.SequenceEqual(other.Context)
+                Context == other.Context ||
+                Context != null &&
+                Context.SequenceEqual(other.Context)
             );
     }
 
@@ -581,84 +581,84 @@ public partial class QualityAuditLogMessage : IEquatable<QualityAuditLogMessage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.UserHomeOrgId != null)
+            if (UserHomeOrgId != null)
             {
-                hash = hash * 59 + this.UserHomeOrgId.GetHashCode();
+                hash = hash * 59 + UserHomeOrgId.GetHashCode();
             }
 
-            if (this.UserTrusteeOrgId != null)
+            if (UserTrusteeOrgId != null)
             {
-                hash = hash * 59 + this.UserTrusteeOrgId.GetHashCode();
+                hash = hash * 59 + UserTrusteeOrgId.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Client != null)
+            if (Client != null)
             {
-                hash = hash * 59 + this.Client.GetHashCode();
+                hash = hash * 59 + Client.GetHashCode();
             }
 
-            if (this.RemoteIps != null)
+            if (RemoteIps != null)
             {
-                hash = hash * 59 + this.RemoteIps.GetHashCode();
+                hash = hash * 59 + RemoteIps.GetHashCode();
             }
 
-            if (this.ServiceName != null)
+            if (ServiceName != null)
             {
-                hash = hash * 59 + this.ServiceName.GetHashCode();
+                hash = hash * 59 + ServiceName.GetHashCode();
             }
 
-            if (this.Level != null)
+            if (Level != null)
             {
-                hash = hash * 59 + this.Level.GetHashCode();
+                hash = hash * 59 + Level.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.EventDate != null)
+            if (EventDate != null)
             {
-                hash = hash * 59 + this.EventDate.GetHashCode();
+                hash = hash * 59 + EventDate.GetHashCode();
             }
 
-            if (this.MessageInfo != null)
+            if (MessageInfo != null)
             {
-                hash = hash * 59 + this.MessageInfo.GetHashCode();
+                hash = hash * 59 + MessageInfo.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.Entity != null)
+            if (Entity != null)
             {
-                hash = hash * 59 + this.Entity.GetHashCode();
+                hash = hash * 59 + Entity.GetHashCode();
             }
 
-            if (this.EntityType != null)
+            if (EntityType != null)
             {
-                hash = hash * 59 + this.EntityType.GetHashCode();
+                hash = hash * 59 + EntityType.GetHashCode();
             }
 
-            if (this.PropertyChanges != null)
+            if (PropertyChanges != null)
             {
-                hash = hash * 59 + this.PropertyChanges.GetHashCode();
+                hash = hash * 59 + PropertyChanges.GetHashCode();
             }
 
-            if (this.Context != null)
+            if (Context != null)
             {
-                hash = hash * 59 + this.Context.GetHashCode();
+                hash = hash * 59 + Context.GetHashCode();
             }
 
             return hash;

@@ -89,7 +89,7 @@ public partial class EvaluationSettings : IEquatable<EvaluationSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationSettings);
+        return Equals(obj as EvaluationSettings);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class EvaluationSettings : IEquatable<EvaluationSettings>
 
         return true &&
             (
-                this.RevisionsEnabled == other.RevisionsEnabled ||
-                this.RevisionsEnabled != null &&
-                this.RevisionsEnabled.Equals(other.RevisionsEnabled)
+                RevisionsEnabled == other.RevisionsEnabled ||
+                RevisionsEnabled != null &&
+                RevisionsEnabled.Equals(other.RevisionsEnabled)
             ) &&
             (
-                this.DisputesEnabled == other.DisputesEnabled ||
-                this.DisputesEnabled != null &&
-                this.DisputesEnabled.Equals(other.DisputesEnabled)
+                DisputesEnabled == other.DisputesEnabled ||
+                DisputesEnabled != null &&
+                DisputesEnabled.Equals(other.DisputesEnabled)
             ) &&
             (
-                this.DisputesAllowedPerEvaluation == other.DisputesAllowedPerEvaluation ||
-                this.DisputesAllowedPerEvaluation != null &&
-                this.DisputesAllowedPerEvaluation.Equals(other.DisputesAllowedPerEvaluation)
+                DisputesAllowedPerEvaluation == other.DisputesAllowedPerEvaluation ||
+                DisputesAllowedPerEvaluation != null &&
+                DisputesAllowedPerEvaluation.Equals(other.DisputesAllowedPerEvaluation)
             ) &&
             (
-                this.DisputesAssignees == other.DisputesAssignees ||
-                this.DisputesAssignees != null &&
-                this.DisputesAssignees.SequenceEqual(other.DisputesAssignees)
+                DisputesAssignees == other.DisputesAssignees ||
+                DisputesAssignees != null &&
+                DisputesAssignees.SequenceEqual(other.DisputesAssignees)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class EvaluationSettings : IEquatable<EvaluationSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RevisionsEnabled != null)
+            if (RevisionsEnabled != null)
             {
-                hash = hash * 59 + this.RevisionsEnabled.GetHashCode();
+                hash = hash * 59 + RevisionsEnabled.GetHashCode();
             }
 
-            if (this.DisputesEnabled != null)
+            if (DisputesEnabled != null)
             {
-                hash = hash * 59 + this.DisputesEnabled.GetHashCode();
+                hash = hash * 59 + DisputesEnabled.GetHashCode();
             }
 
-            if (this.DisputesAllowedPerEvaluation != null)
+            if (DisputesAllowedPerEvaluation != null)
             {
-                hash = hash * 59 + this.DisputesAllowedPerEvaluation.GetHashCode();
+                hash = hash * 59 + DisputesAllowedPerEvaluation.GetHashCode();
             }
 
-            if (this.DisputesAssignees != null)
+            if (DisputesAssignees != null)
             {
-                hash = hash * 59 + this.DisputesAssignees.GetHashCode();
+                hash = hash * 59 + DisputesAssignees.GetHashCode();
             }
 
             return hash;

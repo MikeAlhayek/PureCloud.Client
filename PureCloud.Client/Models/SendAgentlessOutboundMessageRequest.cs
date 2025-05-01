@@ -151,7 +151,7 @@ public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SendAgentlessOutboundMessageRequest);
+        return Equals(obj as SendAgentlessOutboundMessageRequest);
     }
 
     /// <summary>
@@ -169,34 +169,34 @@ public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentl
 
         return true &&
             (
-                this.FromAddress == other.FromAddress ||
-                this.FromAddress != null &&
-                this.FromAddress.Equals(other.FromAddress)
+                FromAddress == other.FromAddress ||
+                FromAddress != null &&
+                FromAddress.Equals(other.FromAddress)
             ) &&
             (
-                this.ToAddress == other.ToAddress ||
-                this.ToAddress != null &&
-                this.ToAddress.Equals(other.ToAddress)
+                ToAddress == other.ToAddress ||
+                ToAddress != null &&
+                ToAddress.Equals(other.ToAddress)
             ) &&
             (
-                this.ToAddressMessengerType == other.ToAddressMessengerType ||
-                this.ToAddressMessengerType != null &&
-                this.ToAddressMessengerType.Equals(other.ToAddressMessengerType)
+                ToAddressMessengerType == other.ToAddressMessengerType ||
+                ToAddressMessengerType != null &&
+                ToAddressMessengerType.Equals(other.ToAddressMessengerType)
             ) &&
             (
-                this.TextBody == other.TextBody ||
-                this.TextBody != null &&
-                this.TextBody.Equals(other.TextBody)
+                TextBody == other.TextBody ||
+                TextBody != null &&
+                TextBody.Equals(other.TextBody)
             ) &&
             (
-                this.MessagingTemplate == other.MessagingTemplate ||
-                this.MessagingTemplate != null &&
-                this.MessagingTemplate.Equals(other.MessagingTemplate)
+                MessagingTemplate == other.MessagingTemplate ||
+                MessagingTemplate != null &&
+                MessagingTemplate.Equals(other.MessagingTemplate)
             ) &&
             (
-                this.UseExistingActiveConversation == other.UseExistingActiveConversation ||
-                this.UseExistingActiveConversation != null &&
-                this.UseExistingActiveConversation.Equals(other.UseExistingActiveConversation)
+                UseExistingActiveConversation == other.UseExistingActiveConversation ||
+                UseExistingActiveConversation != null &&
+                UseExistingActiveConversation.Equals(other.UseExistingActiveConversation)
             );
     }
 
@@ -211,34 +211,34 @@ public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FromAddress != null)
+            if (FromAddress != null)
             {
-                hash = hash * 59 + this.FromAddress.GetHashCode();
+                hash = hash * 59 + FromAddress.GetHashCode();
             }
 
-            if (this.ToAddress != null)
+            if (ToAddress != null)
             {
-                hash = hash * 59 + this.ToAddress.GetHashCode();
+                hash = hash * 59 + ToAddress.GetHashCode();
             }
 
-            if (this.ToAddressMessengerType != null)
+            if (ToAddressMessengerType != null)
             {
-                hash = hash * 59 + this.ToAddressMessengerType.GetHashCode();
+                hash = hash * 59 + ToAddressMessengerType.GetHashCode();
             }
 
-            if (this.TextBody != null)
+            if (TextBody != null)
             {
-                hash = hash * 59 + this.TextBody.GetHashCode();
+                hash = hash * 59 + TextBody.GetHashCode();
             }
 
-            if (this.MessagingTemplate != null)
+            if (MessagingTemplate != null)
             {
-                hash = hash * 59 + this.MessagingTemplate.GetHashCode();
+                hash = hash * 59 + MessagingTemplate.GetHashCode();
             }
 
-            if (this.UseExistingActiveConversation != null)
+            if (UseExistingActiveConversation != null)
             {
-                hash = hash * 59 + this.UseExistingActiveConversation.GetHashCode();
+                hash = hash * 59 + UseExistingActiveConversation.GetHashCode();
             }
 
             return hash;

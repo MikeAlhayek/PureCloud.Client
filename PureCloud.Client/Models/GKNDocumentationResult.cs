@@ -95,7 +95,7 @@ public partial class GKNDocumentationResult : IEquatable<GKNDocumentationResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GKNDocumentationResult);
+        return Equals(obj as GKNDocumentationResult);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class GKNDocumentationResult : IEquatable<GKNDocumentationResult>
 
         return true &&
             (
-                this.Content == other.Content ||
-                this.Content != null &&
-                this.Content.Equals(other.Content)
+                Content == other.Content ||
+                Content != null &&
+                Content.Equals(other.Content)
             ) &&
             (
-                this.Link == other.Link ||
-                this.Link != null &&
-                this.Link.Equals(other.Link)
+                Link == other.Link ||
+                Link != null &&
+                Link.Equals(other.Link)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class GKNDocumentationResult : IEquatable<GKNDocumentationResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Content != null)
+            if (Content != null)
             {
-                hash = hash * 59 + this.Content.GetHashCode();
+                hash = hash * 59 + Content.GetHashCode();
             }
 
-            if (this.Link != null)
+            if (Link != null)
             {
-                hash = hash * 59 + this.Link.GetHashCode();
+                hash = hash * 59 + Link.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
             return hash;

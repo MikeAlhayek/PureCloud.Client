@@ -170,7 +170,7 @@ public partial class EmailOutboundDomainResult : IEquatable<EmailOutboundDomainR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailOutboundDomainResult);
+        return Equals(obj as EmailOutboundDomainResult);
     }
 
     /// <summary>
@@ -188,29 +188,29 @@ public partial class EmailOutboundDomainResult : IEquatable<EmailOutboundDomainR
 
         return true &&
             (
-                this.DnsCnameBounceRecord == other.DnsCnameBounceRecord ||
-                this.DnsCnameBounceRecord != null &&
-                this.DnsCnameBounceRecord.Equals(other.DnsCnameBounceRecord)
+                DnsCnameBounceRecord == other.DnsCnameBounceRecord ||
+                DnsCnameBounceRecord != null &&
+                DnsCnameBounceRecord.Equals(other.DnsCnameBounceRecord)
             ) &&
             (
-                this.DnsTxtSendingRecord == other.DnsTxtSendingRecord ||
-                this.DnsTxtSendingRecord != null &&
-                this.DnsTxtSendingRecord.Equals(other.DnsTxtSendingRecord)
+                DnsTxtSendingRecord == other.DnsTxtSendingRecord ||
+                DnsTxtSendingRecord != null &&
+                DnsTxtSendingRecord.Equals(other.DnsTxtSendingRecord)
             ) &&
             (
-                this.DomainName == other.DomainName ||
-                this.DomainName != null &&
-                this.DomainName.Equals(other.DomainName)
+                DomainName == other.DomainName ||
+                DomainName != null &&
+                DomainName.Equals(other.DomainName)
             ) &&
             (
-                this.SenderStatus == other.SenderStatus ||
-                this.SenderStatus != null &&
-                this.SenderStatus.Equals(other.SenderStatus)
+                SenderStatus == other.SenderStatus ||
+                SenderStatus != null &&
+                SenderStatus.Equals(other.SenderStatus)
             ) &&
             (
-                this.SenderType == other.SenderType ||
-                this.SenderType != null &&
-                this.SenderType.Equals(other.SenderType)
+                SenderType == other.SenderType ||
+                SenderType != null &&
+                SenderType.Equals(other.SenderType)
             );
     }
 
@@ -225,29 +225,29 @@ public partial class EmailOutboundDomainResult : IEquatable<EmailOutboundDomainR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DnsCnameBounceRecord != null)
+            if (DnsCnameBounceRecord != null)
             {
-                hash = hash * 59 + this.DnsCnameBounceRecord.GetHashCode();
+                hash = hash * 59 + DnsCnameBounceRecord.GetHashCode();
             }
 
-            if (this.DnsTxtSendingRecord != null)
+            if (DnsTxtSendingRecord != null)
             {
-                hash = hash * 59 + this.DnsTxtSendingRecord.GetHashCode();
+                hash = hash * 59 + DnsTxtSendingRecord.GetHashCode();
             }
 
-            if (this.DomainName != null)
+            if (DomainName != null)
             {
-                hash = hash * 59 + this.DomainName.GetHashCode();
+                hash = hash * 59 + DomainName.GetHashCode();
             }
 
-            if (this.SenderStatus != null)
+            if (SenderStatus != null)
             {
-                hash = hash * 59 + this.SenderStatus.GetHashCode();
+                hash = hash * 59 + SenderStatus.GetHashCode();
             }
 
-            if (this.SenderType != null)
+            if (SenderType != null)
             {
-                hash = hash * 59 + this.SenderType.GetHashCode();
+                hash = hash * 59 + SenderType.GetHashCode();
             }
 
             return hash;

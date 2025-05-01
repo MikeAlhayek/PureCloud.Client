@@ -71,7 +71,7 @@ public partial class BuTimeOffLimitRange : IEquatable<BuTimeOffLimitRange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuTimeOffLimitRange);
+        return Equals(obj as BuTimeOffLimitRange);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class BuTimeOffLimitRange : IEquatable<BuTimeOffLimitRange>
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.LimitMinutesPerDay == other.LimitMinutesPerDay ||
-                this.LimitMinutesPerDay != null &&
-                this.LimitMinutesPerDay.SequenceEqual(other.LimitMinutesPerDay)
+                LimitMinutesPerDay == other.LimitMinutesPerDay ||
+                LimitMinutesPerDay != null &&
+                LimitMinutesPerDay.SequenceEqual(other.LimitMinutesPerDay)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class BuTimeOffLimitRange : IEquatable<BuTimeOffLimitRange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.LimitMinutesPerDay != null)
+            if (LimitMinutesPerDay != null)
             {
-                hash = hash * 59 + this.LimitMinutesPerDay.GetHashCode();
+                hash = hash * 59 + LimitMinutesPerDay.GetHashCode();
             }
 
             return hash;

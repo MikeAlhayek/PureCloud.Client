@@ -71,7 +71,7 @@ public partial class OpenActionFields : IEquatable<OpenActionFields>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenActionFields);
+        return Equals(obj as OpenActionFields);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class OpenActionFields : IEquatable<OpenActionFields>
 
         return true &&
             (
-                this.OpenAction == other.OpenAction ||
-                this.OpenAction != null &&
-                this.OpenAction.Equals(other.OpenAction)
+                OpenAction == other.OpenAction ||
+                OpenAction != null &&
+                OpenAction.Equals(other.OpenAction)
             ) &&
             (
-                this.ConfigurationFields == other.ConfigurationFields ||
-                this.ConfigurationFields != null &&
-                this.ConfigurationFields.SequenceEqual(other.ConfigurationFields)
+                ConfigurationFields == other.ConfigurationFields ||
+                ConfigurationFields != null &&
+                ConfigurationFields.SequenceEqual(other.ConfigurationFields)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class OpenActionFields : IEquatable<OpenActionFields>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OpenAction != null)
+            if (OpenAction != null)
             {
-                hash = hash * 59 + this.OpenAction.GetHashCode();
+                hash = hash * 59 + OpenAction.GetHashCode();
             }
 
-            if (this.ConfigurationFields != null)
+            if (ConfigurationFields != null)
             {
-                hash = hash * 59 + this.ConfigurationFields.GetHashCode();
+                hash = hash * 59 + ConfigurationFields.GetHashCode();
             }
 
             return hash;

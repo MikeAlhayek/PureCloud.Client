@@ -171,7 +171,7 @@ public partial class CommonRuleBulkUpdateNotificationsRequest : IEquatable<Commo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CommonRuleBulkUpdateNotificationsRequest);
+        return Equals(obj as CommonRuleBulkUpdateNotificationsRequest);
     }
 
     /// <summary>
@@ -189,24 +189,24 @@ public partial class CommonRuleBulkUpdateNotificationsRequest : IEquatable<Commo
 
         return true &&
             (
-                this.RuleIds == other.RuleIds ||
-                this.RuleIds != null &&
-                this.RuleIds.SequenceEqual(other.RuleIds)
+                RuleIds == other.RuleIds ||
+                RuleIds != null &&
+                RuleIds.SequenceEqual(other.RuleIds)
             ) &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.Equals(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.Equals(other.Properties)
             ) &&
             (
-                this.TypesToAdd == other.TypesToAdd ||
-                this.TypesToAdd != null &&
-                this.TypesToAdd.SequenceEqual(other.TypesToAdd)
+                TypesToAdd == other.TypesToAdd ||
+                TypesToAdd != null &&
+                TypesToAdd.SequenceEqual(other.TypesToAdd)
             ) &&
             (
-                this.TypesToRemove == other.TypesToRemove ||
-                this.TypesToRemove != null &&
-                this.TypesToRemove.SequenceEqual(other.TypesToRemove)
+                TypesToRemove == other.TypesToRemove ||
+                TypesToRemove != null &&
+                TypesToRemove.SequenceEqual(other.TypesToRemove)
             );
     }
 
@@ -221,24 +221,24 @@ public partial class CommonRuleBulkUpdateNotificationsRequest : IEquatable<Commo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RuleIds != null)
+            if (RuleIds != null)
             {
-                hash = hash * 59 + this.RuleIds.GetHashCode();
+                hash = hash * 59 + RuleIds.GetHashCode();
             }
 
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
-            if (this.TypesToAdd != null)
+            if (TypesToAdd != null)
             {
-                hash = hash * 59 + this.TypesToAdd.GetHashCode();
+                hash = hash * 59 + TypesToAdd.GetHashCode();
             }
 
-            if (this.TypesToRemove != null)
+            if (TypesToRemove != null)
             {
-                hash = hash * 59 + this.TypesToRemove.GetHashCode();
+                hash = hash * 59 + TypesToRemove.GetHashCode();
             }
 
             return hash;

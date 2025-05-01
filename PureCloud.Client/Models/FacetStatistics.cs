@@ -120,7 +120,7 @@ public partial class FacetStatistics : IEquatable<FacetStatistics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FacetStatistics);
+        return Equals(obj as FacetStatistics);
     }
 
     /// <summary>
@@ -138,39 +138,39 @@ public partial class FacetStatistics : IEquatable<FacetStatistics>
 
         return true &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.Min == other.Min ||
-                this.Min != null &&
-                this.Min.Equals(other.Min)
+                Min == other.Min ||
+                Min != null &&
+                Min.Equals(other.Min)
             ) &&
             (
-                this.Max == other.Max ||
-                this.Max != null &&
-                this.Max.Equals(other.Max)
+                Max == other.Max ||
+                Max != null &&
+                Max.Equals(other.Max)
             ) &&
             (
-                this.Mean == other.Mean ||
-                this.Mean != null &&
-                this.Mean.Equals(other.Mean)
+                Mean == other.Mean ||
+                Mean != null &&
+                Mean.Equals(other.Mean)
             ) &&
             (
-                this.StdDeviation == other.StdDeviation ||
-                this.StdDeviation != null &&
-                this.StdDeviation.Equals(other.StdDeviation)
+                StdDeviation == other.StdDeviation ||
+                StdDeviation != null &&
+                StdDeviation.Equals(other.StdDeviation)
             ) &&
             (
-                this.DateMin == other.DateMin ||
-                this.DateMin != null &&
-                this.DateMin.Equals(other.DateMin)
+                DateMin == other.DateMin ||
+                DateMin != null &&
+                DateMin.Equals(other.DateMin)
             ) &&
             (
-                this.DateMax == other.DateMax ||
-                this.DateMax != null &&
-                this.DateMax.Equals(other.DateMax)
+                DateMax == other.DateMax ||
+                DateMax != null &&
+                DateMax.Equals(other.DateMax)
             );
     }
 
@@ -185,39 +185,39 @@ public partial class FacetStatistics : IEquatable<FacetStatistics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.Min != null)
+            if (Min != null)
             {
-                hash = hash * 59 + this.Min.GetHashCode();
+                hash = hash * 59 + Min.GetHashCode();
             }
 
-            if (this.Max != null)
+            if (Max != null)
             {
-                hash = hash * 59 + this.Max.GetHashCode();
+                hash = hash * 59 + Max.GetHashCode();
             }
 
-            if (this.Mean != null)
+            if (Mean != null)
             {
-                hash = hash * 59 + this.Mean.GetHashCode();
+                hash = hash * 59 + Mean.GetHashCode();
             }
 
-            if (this.StdDeviation != null)
+            if (StdDeviation != null)
             {
-                hash = hash * 59 + this.StdDeviation.GetHashCode();
+                hash = hash * 59 + StdDeviation.GetHashCode();
             }
 
-            if (this.DateMin != null)
+            if (DateMin != null)
             {
-                hash = hash * 59 + this.DateMin.GetHashCode();
+                hash = hash * 59 + DateMin.GetHashCode();
             }
 
-            if (this.DateMax != null)
+            if (DateMax != null)
             {
-                hash = hash * 59 + this.DateMax.GetHashCode();
+                hash = hash * 59 + DateMax.GetHashCode();
             }
 
             return hash;

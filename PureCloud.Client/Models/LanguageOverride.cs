@@ -83,7 +83,7 @@ public partial class LanguageOverride : IEquatable<LanguageOverride>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LanguageOverride);
+        return Equals(obj as LanguageOverride);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class LanguageOverride : IEquatable<LanguageOverride>
 
         return true &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Engine == other.Engine ||
-                this.Engine != null &&
-                this.Engine.Equals(other.Engine)
+                Engine == other.Engine ||
+                Engine != null &&
+                Engine.Equals(other.Engine)
             ) &&
             (
-                this.Voice == other.Voice ||
-                this.Voice != null &&
-                this.Voice.Equals(other.Voice)
+                Voice == other.Voice ||
+                Voice != null &&
+                Voice.Equals(other.Voice)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class LanguageOverride : IEquatable<LanguageOverride>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Engine != null)
+            if (Engine != null)
             {
-                hash = hash * 59 + this.Engine.GetHashCode();
+                hash = hash * 59 + Engine.GetHashCode();
             }
 
-            if (this.Voice != null)
+            if (Voice != null)
             {
-                hash = hash * 59 + this.Voice.GetHashCode();
+                hash = hash * 59 + Voice.GetHashCode();
             }
 
             return hash;

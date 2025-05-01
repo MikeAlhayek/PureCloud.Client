@@ -85,7 +85,7 @@ public partial class EmployerInfo : IEquatable<EmployerInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmployerInfo);
+        return Equals(obj as EmployerInfo);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class EmployerInfo : IEquatable<EmployerInfo>
 
         return true &&
             (
-                this.OfficialName == other.OfficialName ||
-                this.OfficialName != null &&
-                this.OfficialName.Equals(other.OfficialName)
+                OfficialName == other.OfficialName ||
+                OfficialName != null &&
+                OfficialName.Equals(other.OfficialName)
             ) &&
             (
-                this.EmployeeId == other.EmployeeId ||
-                this.EmployeeId != null &&
-                this.EmployeeId.Equals(other.EmployeeId)
+                EmployeeId == other.EmployeeId ||
+                EmployeeId != null &&
+                EmployeeId.Equals(other.EmployeeId)
             ) &&
             (
-                this.EmployeeType == other.EmployeeType ||
-                this.EmployeeType != null &&
-                this.EmployeeType.Equals(other.EmployeeType)
+                EmployeeType == other.EmployeeType ||
+                EmployeeType != null &&
+                EmployeeType.Equals(other.EmployeeType)
             ) &&
             (
-                this.DateHire == other.DateHire ||
-                this.DateHire != null &&
-                this.DateHire.Equals(other.DateHire)
+                DateHire == other.DateHire ||
+                DateHire != null &&
+                DateHire.Equals(other.DateHire)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class EmployerInfo : IEquatable<EmployerInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OfficialName != null)
+            if (OfficialName != null)
             {
-                hash = hash * 59 + this.OfficialName.GetHashCode();
+                hash = hash * 59 + OfficialName.GetHashCode();
             }
 
-            if (this.EmployeeId != null)
+            if (EmployeeId != null)
             {
-                hash = hash * 59 + this.EmployeeId.GetHashCode();
+                hash = hash * 59 + EmployeeId.GetHashCode();
             }
 
-            if (this.EmployeeType != null)
+            if (EmployeeType != null)
             {
-                hash = hash * 59 + this.EmployeeType.GetHashCode();
+                hash = hash * 59 + EmployeeType.GetHashCode();
             }
 
-            if (this.DateHire != null)
+            if (DateHire != null)
             {
-                hash = hash * 59 + this.DateHire.GetHashCode();
+                hash = hash * 59 + DateHire.GetHashCode();
             }
 
             return hash;

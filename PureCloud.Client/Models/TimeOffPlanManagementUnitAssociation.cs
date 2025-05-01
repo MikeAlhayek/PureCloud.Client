@@ -71,7 +71,7 @@ public partial class TimeOffPlanManagementUnitAssociation : IEquatable<TimeOffPl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeOffPlanManagementUnitAssociation);
+        return Equals(obj as TimeOffPlanManagementUnitAssociation);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class TimeOffPlanManagementUnitAssociation : IEquatable<TimeOffPl
 
         return true &&
             (
-                this.ManagementUnit == other.ManagementUnit ||
-                this.ManagementUnit != null &&
-                this.ManagementUnit.Equals(other.ManagementUnit)
+                ManagementUnit == other.ManagementUnit ||
+                ManagementUnit != null &&
+                ManagementUnit.Equals(other.ManagementUnit)
             ) &&
             (
-                this.StaffingGroups == other.StaffingGroups ||
-                this.StaffingGroups != null &&
-                this.StaffingGroups.SequenceEqual(other.StaffingGroups)
+                StaffingGroups == other.StaffingGroups ||
+                StaffingGroups != null &&
+                StaffingGroups.SequenceEqual(other.StaffingGroups)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class TimeOffPlanManagementUnitAssociation : IEquatable<TimeOffPl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManagementUnit != null)
+            if (ManagementUnit != null)
             {
-                hash = hash * 59 + this.ManagementUnit.GetHashCode();
+                hash = hash * 59 + ManagementUnit.GetHashCode();
             }
 
-            if (this.StaffingGroups != null)
+            if (StaffingGroups != null)
             {
-                hash = hash * 59 + this.StaffingGroups.GetHashCode();
+                hash = hash * 59 + StaffingGroups.GetHashCode();
             }
 
             return hash;

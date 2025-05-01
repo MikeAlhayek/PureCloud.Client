@@ -77,7 +77,7 @@ public partial class MoveAgentsResponse : IEquatable<MoveAgentsResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MoveAgentsResponse);
+        return Equals(obj as MoveAgentsResponse);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class MoveAgentsResponse : IEquatable<MoveAgentsResponse>
 
         return true &&
             (
-                this.RequestingUser == other.RequestingUser ||
-                this.RequestingUser != null &&
-                this.RequestingUser.Equals(other.RequestingUser)
+                RequestingUser == other.RequestingUser ||
+                RequestingUser != null &&
+                RequestingUser.Equals(other.RequestingUser)
             ) &&
             (
-                this.DestinationManagementUnit == other.DestinationManagementUnit ||
-                this.DestinationManagementUnit != null &&
-                this.DestinationManagementUnit.Equals(other.DestinationManagementUnit)
+                DestinationManagementUnit == other.DestinationManagementUnit ||
+                DestinationManagementUnit != null &&
+                DestinationManagementUnit.Equals(other.DestinationManagementUnit)
             ) &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class MoveAgentsResponse : IEquatable<MoveAgentsResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RequestingUser != null)
+            if (RequestingUser != null)
             {
-                hash = hash * 59 + this.RequestingUser.GetHashCode();
+                hash = hash * 59 + RequestingUser.GetHashCode();
             }
 
-            if (this.DestinationManagementUnit != null)
+            if (DestinationManagementUnit != null)
             {
-                hash = hash * 59 + this.DestinationManagementUnit.GetHashCode();
+                hash = hash * 59 + DestinationManagementUnit.GetHashCode();
             }
 
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
             return hash;

@@ -345,7 +345,7 @@ public partial class Suggestion : IEquatable<Suggestion>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Suggestion);
+        return Equals(obj as Suggestion);
     }
 
     /// <summary>
@@ -363,84 +363,84 @@ public partial class Suggestion : IEquatable<Suggestion>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Faq == other.Faq ||
-                this.Faq != null &&
-                this.Faq.Equals(other.Faq)
+                Faq == other.Faq ||
+                Faq != null &&
+                Faq.Equals(other.Faq)
             ) &&
             (
-                this.Article == other.Article ||
-                this.Article != null &&
-                this.Article.Equals(other.Article)
+                Article == other.Article ||
+                Article != null &&
+                Article.Equals(other.Article)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.AnswerRecordId == other.AnswerRecordId ||
-                this.AnswerRecordId != null &&
-                this.AnswerRecordId.Equals(other.AnswerRecordId)
+                AnswerRecordId == other.AnswerRecordId ||
+                AnswerRecordId != null &&
+                AnswerRecordId.Equals(other.AnswerRecordId)
             ) &&
             (
-                this.TriggerType == other.TriggerType ||
-                this.TriggerType != null &&
-                this.TriggerType.Equals(other.TriggerType)
+                TriggerType == other.TriggerType ||
+                TriggerType != null &&
+                TriggerType.Equals(other.TriggerType)
             ) &&
             (
-                this.Context == other.Context ||
-                this.Context != null &&
-                this.Context.Equals(other.Context)
+                Context == other.Context ||
+                Context != null &&
+                Context.Equals(other.Context)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.KnowledgeSearch == other.KnowledgeSearch ||
-                this.KnowledgeSearch != null &&
-                this.KnowledgeSearch.Equals(other.KnowledgeSearch)
+                KnowledgeSearch == other.KnowledgeSearch ||
+                KnowledgeSearch != null &&
+                KnowledgeSearch.Equals(other.KnowledgeSearch)
             ) &&
             (
-                this.KnowledgeArticle == other.KnowledgeArticle ||
-                this.KnowledgeArticle != null &&
-                this.KnowledgeArticle.Equals(other.KnowledgeArticle)
+                KnowledgeArticle == other.KnowledgeArticle ||
+                KnowledgeArticle != null &&
+                KnowledgeArticle.Equals(other.KnowledgeArticle)
             ) &&
             (
-                this.CannedResponse == other.CannedResponse ||
-                this.CannedResponse != null &&
-                this.CannedResponse.Equals(other.CannedResponse)
+                CannedResponse == other.CannedResponse ||
+                CannedResponse != null &&
+                CannedResponse.Equals(other.CannedResponse)
             ) &&
             (
-                this.Script == other.Script ||
-                this.Script != null &&
-                this.Script.Equals(other.Script)
+                Script == other.Script ||
+                Script != null &&
+                Script.Equals(other.Script)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.Assistant == other.Assistant ||
-                this.Assistant != null &&
-                this.Assistant.Equals(other.Assistant)
+                Assistant == other.Assistant ||
+                Assistant != null &&
+                Assistant.Equals(other.Assistant)
             );
     }
 
@@ -455,84 +455,84 @@ public partial class Suggestion : IEquatable<Suggestion>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Faq != null)
+            if (Faq != null)
             {
-                hash = hash * 59 + this.Faq.GetHashCode();
+                hash = hash * 59 + Faq.GetHashCode();
             }
 
-            if (this.Article != null)
+            if (Article != null)
             {
-                hash = hash * 59 + this.Article.GetHashCode();
+                hash = hash * 59 + Article.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.AnswerRecordId != null)
+            if (AnswerRecordId != null)
             {
-                hash = hash * 59 + this.AnswerRecordId.GetHashCode();
+                hash = hash * 59 + AnswerRecordId.GetHashCode();
             }
 
-            if (this.TriggerType != null)
+            if (TriggerType != null)
             {
-                hash = hash * 59 + this.TriggerType.GetHashCode();
+                hash = hash * 59 + TriggerType.GetHashCode();
             }
 
-            if (this.Context != null)
+            if (Context != null)
             {
-                hash = hash * 59 + this.Context.GetHashCode();
+                hash = hash * 59 + Context.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.KnowledgeSearch != null)
+            if (KnowledgeSearch != null)
             {
-                hash = hash * 59 + this.KnowledgeSearch.GetHashCode();
+                hash = hash * 59 + KnowledgeSearch.GetHashCode();
             }
 
-            if (this.KnowledgeArticle != null)
+            if (KnowledgeArticle != null)
             {
-                hash = hash * 59 + this.KnowledgeArticle.GetHashCode();
+                hash = hash * 59 + KnowledgeArticle.GetHashCode();
             }
 
-            if (this.CannedResponse != null)
+            if (CannedResponse != null)
             {
-                hash = hash * 59 + this.CannedResponse.GetHashCode();
+                hash = hash * 59 + CannedResponse.GetHashCode();
             }
 
-            if (this.Script != null)
+            if (Script != null)
             {
-                hash = hash * 59 + this.Script.GetHashCode();
+                hash = hash * 59 + Script.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.Assistant != null)
+            if (Assistant != null)
             {
-                hash = hash * 59 + this.Assistant.GetHashCode();
+                hash = hash * 59 + Assistant.GetHashCode();
             }
 
             return hash;

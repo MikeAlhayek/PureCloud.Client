@@ -403,7 +403,7 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningShareableContentObject);
+        return Equals(obj as LearningShareableContentObject);
     }
 
     /// <summary>
@@ -421,84 +421,84 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.LessonStatus == other.LessonStatus ||
-                this.LessonStatus != null &&
-                this.LessonStatus.Equals(other.LessonStatus)
+                LessonStatus == other.LessonStatus ||
+                LessonStatus != null &&
+                LessonStatus.Equals(other.LessonStatus)
             ) &&
             (
-                this.Exit == other.Exit ||
-                this.Exit != null &&
-                this.Exit.Equals(other.Exit)
+                Exit == other.Exit ||
+                Exit != null &&
+                Exit.Equals(other.Exit)
             ) &&
             (
-                this.Location == other.Location ||
-                this.Location != null &&
-                this.Location.Equals(other.Location)
+                Location == other.Location ||
+                Location != null &&
+                Location.Equals(other.Location)
             ) &&
             (
-                this.ScoreRaw == other.ScoreRaw ||
-                this.ScoreRaw != null &&
-                this.ScoreRaw.Equals(other.ScoreRaw)
+                ScoreRaw == other.ScoreRaw ||
+                ScoreRaw != null &&
+                ScoreRaw.Equals(other.ScoreRaw)
             ) &&
             (
-                this.ScoreMax == other.ScoreMax ||
-                this.ScoreMax != null &&
-                this.ScoreMax.Equals(other.ScoreMax)
+                ScoreMax == other.ScoreMax ||
+                ScoreMax != null &&
+                ScoreMax.Equals(other.ScoreMax)
             ) &&
             (
-                this.ScoreMin == other.ScoreMin ||
-                this.ScoreMin != null &&
-                this.ScoreMin.Equals(other.ScoreMin)
+                ScoreMin == other.ScoreMin ||
+                ScoreMin != null &&
+                ScoreMin.Equals(other.ScoreMin)
             ) &&
             (
-                this.SuspendData == other.SuspendData ||
-                this.SuspendData != null &&
-                this.SuspendData.Equals(other.SuspendData)
+                SuspendData == other.SuspendData ||
+                SuspendData != null &&
+                SuspendData.Equals(other.SuspendData)
             ) &&
             (
-                this.Credit == other.Credit ||
-                this.Credit != null &&
-                this.Credit.Equals(other.Credit)
+                Credit == other.Credit ||
+                Credit != null &&
+                Credit.Equals(other.Credit)
             ) &&
             (
-                this.Entry == other.Entry ||
-                this.Entry != null &&
-                this.Entry.Equals(other.Entry)
+                Entry == other.Entry ||
+                Entry != null &&
+                Entry.Equals(other.Entry)
             ) &&
             (
-                this.Mode == other.Mode ||
-                this.Mode != null &&
-                this.Mode.Equals(other.Mode)
+                Mode == other.Mode ||
+                Mode != null &&
+                Mode.Equals(other.Mode)
             ) &&
             (
-                this.TotalTime == other.TotalTime ||
-                this.TotalTime != null &&
-                this.TotalTime.Equals(other.TotalTime)
+                TotalTime == other.TotalTime ||
+                TotalTime != null &&
+                TotalTime.Equals(other.TotalTime)
             ) &&
             (
-                this.SessionTime == other.SessionTime ||
-                this.SessionTime != null &&
-                this.SessionTime.Equals(other.SessionTime)
+                SessionTime == other.SessionTime ||
+                SessionTime != null &&
+                SessionTime.Equals(other.SessionTime)
             ) &&
             (
-                this.Href == other.Href ||
-                this.Href != null &&
-                this.Href.Equals(other.Href)
+                Href == other.Href ||
+                Href != null &&
+                Href.Equals(other.Href)
             ) &&
             (
-                this.Parameters == other.Parameters ||
-                this.Parameters != null &&
-                this.Parameters.Equals(other.Parameters)
+                Parameters == other.Parameters ||
+                Parameters != null &&
+                Parameters.Equals(other.Parameters)
             ) &&
             (
-                this.LaunchData == other.LaunchData ||
-                this.LaunchData != null &&
-                this.LaunchData.Equals(other.LaunchData)
+                LaunchData == other.LaunchData ||
+                LaunchData != null &&
+                LaunchData.Equals(other.LaunchData)
             );
     }
 
@@ -513,84 +513,84 @@ public partial class LearningShareableContentObject : IEquatable<LearningShareab
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.LessonStatus != null)
+            if (LessonStatus != null)
             {
-                hash = hash * 59 + this.LessonStatus.GetHashCode();
+                hash = hash * 59 + LessonStatus.GetHashCode();
             }
 
-            if (this.Exit != null)
+            if (Exit != null)
             {
-                hash = hash * 59 + this.Exit.GetHashCode();
+                hash = hash * 59 + Exit.GetHashCode();
             }
 
-            if (this.Location != null)
+            if (Location != null)
             {
-                hash = hash * 59 + this.Location.GetHashCode();
+                hash = hash * 59 + Location.GetHashCode();
             }
 
-            if (this.ScoreRaw != null)
+            if (ScoreRaw != null)
             {
-                hash = hash * 59 + this.ScoreRaw.GetHashCode();
+                hash = hash * 59 + ScoreRaw.GetHashCode();
             }
 
-            if (this.ScoreMax != null)
+            if (ScoreMax != null)
             {
-                hash = hash * 59 + this.ScoreMax.GetHashCode();
+                hash = hash * 59 + ScoreMax.GetHashCode();
             }
 
-            if (this.ScoreMin != null)
+            if (ScoreMin != null)
             {
-                hash = hash * 59 + this.ScoreMin.GetHashCode();
+                hash = hash * 59 + ScoreMin.GetHashCode();
             }
 
-            if (this.SuspendData != null)
+            if (SuspendData != null)
             {
-                hash = hash * 59 + this.SuspendData.GetHashCode();
+                hash = hash * 59 + SuspendData.GetHashCode();
             }
 
-            if (this.Credit != null)
+            if (Credit != null)
             {
-                hash = hash * 59 + this.Credit.GetHashCode();
+                hash = hash * 59 + Credit.GetHashCode();
             }
 
-            if (this.Entry != null)
+            if (Entry != null)
             {
-                hash = hash * 59 + this.Entry.GetHashCode();
+                hash = hash * 59 + Entry.GetHashCode();
             }
 
-            if (this.Mode != null)
+            if (Mode != null)
             {
-                hash = hash * 59 + this.Mode.GetHashCode();
+                hash = hash * 59 + Mode.GetHashCode();
             }
 
-            if (this.TotalTime != null)
+            if (TotalTime != null)
             {
-                hash = hash * 59 + this.TotalTime.GetHashCode();
+                hash = hash * 59 + TotalTime.GetHashCode();
             }
 
-            if (this.SessionTime != null)
+            if (SessionTime != null)
             {
-                hash = hash * 59 + this.SessionTime.GetHashCode();
+                hash = hash * 59 + SessionTime.GetHashCode();
             }
 
-            if (this.Href != null)
+            if (Href != null)
             {
-                hash = hash * 59 + this.Href.GetHashCode();
+                hash = hash * 59 + Href.GetHashCode();
             }
 
-            if (this.Parameters != null)
+            if (Parameters != null)
             {
-                hash = hash * 59 + this.Parameters.GetHashCode();
+                hash = hash * 59 + Parameters.GetHashCode();
             }
 
-            if (this.LaunchData != null)
+            if (LaunchData != null)
             {
-                hash = hash * 59 + this.LaunchData.GetHashCode();
+                hash = hash * 59 + LaunchData.GetHashCode();
             }
 
             return hash;

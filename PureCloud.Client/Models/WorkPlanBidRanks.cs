@@ -87,7 +87,7 @@ public partial class WorkPlanBidRanks : IEquatable<WorkPlanBidRanks>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanBidRanks);
+        return Equals(obj as WorkPlanBidRanks);
     }
 
     /// <summary>
@@ -105,24 +105,24 @@ public partial class WorkPlanBidRanks : IEquatable<WorkPlanBidRanks>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.WorkPlanBiddingPerformance == other.WorkPlanBiddingPerformance ||
-                this.WorkPlanBiddingPerformance != null &&
-                this.WorkPlanBiddingPerformance.Equals(other.WorkPlanBiddingPerformance)
+                WorkPlanBiddingPerformance == other.WorkPlanBiddingPerformance ||
+                WorkPlanBiddingPerformance != null &&
+                WorkPlanBiddingPerformance.Equals(other.WorkPlanBiddingPerformance)
             ) &&
             (
-                this.BiddingTieBreaker == other.BiddingTieBreaker ||
-                this.BiddingTieBreaker != null &&
-                this.BiddingTieBreaker.Equals(other.BiddingTieBreaker)
+                BiddingTieBreaker == other.BiddingTieBreaker ||
+                BiddingTieBreaker != null &&
+                BiddingTieBreaker.Equals(other.BiddingTieBreaker)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -137,24 +137,24 @@ public partial class WorkPlanBidRanks : IEquatable<WorkPlanBidRanks>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.WorkPlanBiddingPerformance != null)
+            if (WorkPlanBiddingPerformance != null)
             {
-                hash = hash * 59 + this.WorkPlanBiddingPerformance.GetHashCode();
+                hash = hash * 59 + WorkPlanBiddingPerformance.GetHashCode();
             }
 
-            if (this.BiddingTieBreaker != null)
+            if (BiddingTieBreaker != null)
             {
-                hash = hash * 59 + this.BiddingTieBreaker.GetHashCode();
+                hash = hash * 59 + BiddingTieBreaker.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

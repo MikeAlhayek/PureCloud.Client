@@ -257,7 +257,7 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorktypeUpdate);
+        return Equals(obj as WorktypeUpdate);
     }
 
     /// <summary>
@@ -275,94 +275,94 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DefaultWorkbinId == other.DefaultWorkbinId ||
-                this.DefaultWorkbinId != null &&
-                this.DefaultWorkbinId.Equals(other.DefaultWorkbinId)
+                DefaultWorkbinId == other.DefaultWorkbinId ||
+                DefaultWorkbinId != null &&
+                DefaultWorkbinId.Equals(other.DefaultWorkbinId)
             ) &&
             (
-                this.DefaultDurationSeconds == other.DefaultDurationSeconds ||
-                this.DefaultDurationSeconds != null &&
-                this.DefaultDurationSeconds.Equals(other.DefaultDurationSeconds)
+                DefaultDurationSeconds == other.DefaultDurationSeconds ||
+                DefaultDurationSeconds != null &&
+                DefaultDurationSeconds.Equals(other.DefaultDurationSeconds)
             ) &&
             (
-                this.DefaultExpirationSeconds == other.DefaultExpirationSeconds ||
-                this.DefaultExpirationSeconds != null &&
-                this.DefaultExpirationSeconds.Equals(other.DefaultExpirationSeconds)
+                DefaultExpirationSeconds == other.DefaultExpirationSeconds ||
+                DefaultExpirationSeconds != null &&
+                DefaultExpirationSeconds.Equals(other.DefaultExpirationSeconds)
             ) &&
             (
-                this.DefaultDueDurationSeconds == other.DefaultDueDurationSeconds ||
-                this.DefaultDueDurationSeconds != null &&
-                this.DefaultDueDurationSeconds.Equals(other.DefaultDueDurationSeconds)
+                DefaultDueDurationSeconds == other.DefaultDueDurationSeconds ||
+                DefaultDueDurationSeconds != null &&
+                DefaultDueDurationSeconds.Equals(other.DefaultDueDurationSeconds)
             ) &&
             (
-                this.DefaultPriority == other.DefaultPriority ||
-                this.DefaultPriority != null &&
-                this.DefaultPriority.Equals(other.DefaultPriority)
+                DefaultPriority == other.DefaultPriority ||
+                DefaultPriority != null &&
+                DefaultPriority.Equals(other.DefaultPriority)
             ) &&
             (
-                this.DefaultTtlSeconds == other.DefaultTtlSeconds ||
-                this.DefaultTtlSeconds != null &&
-                this.DefaultTtlSeconds.Equals(other.DefaultTtlSeconds)
+                DefaultTtlSeconds == other.DefaultTtlSeconds ||
+                DefaultTtlSeconds != null &&
+                DefaultTtlSeconds.Equals(other.DefaultTtlSeconds)
             ) &&
             (
-                this.AssignmentEnabled == other.AssignmentEnabled ||
-                this.AssignmentEnabled != null &&
-                this.AssignmentEnabled.Equals(other.AssignmentEnabled)
+                AssignmentEnabled == other.AssignmentEnabled ||
+                AssignmentEnabled != null &&
+                AssignmentEnabled.Equals(other.AssignmentEnabled)
             ) &&
             (
-                this.SchemaId == other.SchemaId ||
-                this.SchemaId != null &&
-                this.SchemaId.Equals(other.SchemaId)
+                SchemaId == other.SchemaId ||
+                SchemaId != null &&
+                SchemaId.Equals(other.SchemaId)
             ) &&
             (
-                this.ServiceLevelTarget == other.ServiceLevelTarget ||
-                this.ServiceLevelTarget != null &&
-                this.ServiceLevelTarget.Equals(other.ServiceLevelTarget)
+                ServiceLevelTarget == other.ServiceLevelTarget ||
+                ServiceLevelTarget != null &&
+                ServiceLevelTarget.Equals(other.ServiceLevelTarget)
             ) &&
             (
-                this.RuleSettings == other.RuleSettings ||
-                this.RuleSettings != null &&
-                this.RuleSettings.Equals(other.RuleSettings)
+                RuleSettings == other.RuleSettings ||
+                RuleSettings != null &&
+                RuleSettings.Equals(other.RuleSettings)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DefaultStatusId == other.DefaultStatusId ||
-                this.DefaultStatusId != null &&
-                this.DefaultStatusId.Equals(other.DefaultStatusId)
+                DefaultStatusId == other.DefaultStatusId ||
+                DefaultStatusId != null &&
+                DefaultStatusId.Equals(other.DefaultStatusId)
             ) &&
             (
-                this.SchemaVersion == other.SchemaVersion ||
-                this.SchemaVersion != null &&
-                this.SchemaVersion.Equals(other.SchemaVersion)
+                SchemaVersion == other.SchemaVersion ||
+                SchemaVersion != null &&
+                SchemaVersion.Equals(other.SchemaVersion)
             ) &&
             (
-                this.DefaultLanguageId == other.DefaultLanguageId ||
-                this.DefaultLanguageId != null &&
-                this.DefaultLanguageId.Equals(other.DefaultLanguageId)
+                DefaultLanguageId == other.DefaultLanguageId ||
+                DefaultLanguageId != null &&
+                DefaultLanguageId.Equals(other.DefaultLanguageId)
             ) &&
             (
-                this.DefaultSkillIds == other.DefaultSkillIds ||
-                this.DefaultSkillIds != null &&
-                this.DefaultSkillIds.SequenceEqual(other.DefaultSkillIds)
+                DefaultSkillIds == other.DefaultSkillIds ||
+                DefaultSkillIds != null &&
+                DefaultSkillIds.SequenceEqual(other.DefaultSkillIds)
             ) &&
             (
-                this.DefaultQueueId == other.DefaultQueueId ||
-                this.DefaultQueueId != null &&
-                this.DefaultQueueId.Equals(other.DefaultQueueId)
+                DefaultQueueId == other.DefaultQueueId ||
+                DefaultQueueId != null &&
+                DefaultQueueId.Equals(other.DefaultQueueId)
             ) &&
             (
-                this.DefaultScriptId == other.DefaultScriptId ||
-                this.DefaultScriptId != null &&
-                this.DefaultScriptId.Equals(other.DefaultScriptId)
+                DefaultScriptId == other.DefaultScriptId ||
+                DefaultScriptId != null &&
+                DefaultScriptId.Equals(other.DefaultScriptId)
             );
     }
 
@@ -377,94 +377,94 @@ public partial class WorktypeUpdate : IEquatable<WorktypeUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DefaultWorkbinId != null)
+            if (DefaultWorkbinId != null)
             {
-                hash = hash * 59 + this.DefaultWorkbinId.GetHashCode();
+                hash = hash * 59 + DefaultWorkbinId.GetHashCode();
             }
 
-            if (this.DefaultDurationSeconds != null)
+            if (DefaultDurationSeconds != null)
             {
-                hash = hash * 59 + this.DefaultDurationSeconds.GetHashCode();
+                hash = hash * 59 + DefaultDurationSeconds.GetHashCode();
             }
 
-            if (this.DefaultExpirationSeconds != null)
+            if (DefaultExpirationSeconds != null)
             {
-                hash = hash * 59 + this.DefaultExpirationSeconds.GetHashCode();
+                hash = hash * 59 + DefaultExpirationSeconds.GetHashCode();
             }
 
-            if (this.DefaultDueDurationSeconds != null)
+            if (DefaultDueDurationSeconds != null)
             {
-                hash = hash * 59 + this.DefaultDueDurationSeconds.GetHashCode();
+                hash = hash * 59 + DefaultDueDurationSeconds.GetHashCode();
             }
 
-            if (this.DefaultPriority != null)
+            if (DefaultPriority != null)
             {
-                hash = hash * 59 + this.DefaultPriority.GetHashCode();
+                hash = hash * 59 + DefaultPriority.GetHashCode();
             }
 
-            if (this.DefaultTtlSeconds != null)
+            if (DefaultTtlSeconds != null)
             {
-                hash = hash * 59 + this.DefaultTtlSeconds.GetHashCode();
+                hash = hash * 59 + DefaultTtlSeconds.GetHashCode();
             }
 
-            if (this.AssignmentEnabled != null)
+            if (AssignmentEnabled != null)
             {
-                hash = hash * 59 + this.AssignmentEnabled.GetHashCode();
+                hash = hash * 59 + AssignmentEnabled.GetHashCode();
             }
 
-            if (this.SchemaId != null)
+            if (SchemaId != null)
             {
-                hash = hash * 59 + this.SchemaId.GetHashCode();
+                hash = hash * 59 + SchemaId.GetHashCode();
             }
 
-            if (this.ServiceLevelTarget != null)
+            if (ServiceLevelTarget != null)
             {
-                hash = hash * 59 + this.ServiceLevelTarget.GetHashCode();
+                hash = hash * 59 + ServiceLevelTarget.GetHashCode();
             }
 
-            if (this.RuleSettings != null)
+            if (RuleSettings != null)
             {
-                hash = hash * 59 + this.RuleSettings.GetHashCode();
+                hash = hash * 59 + RuleSettings.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DefaultStatusId != null)
+            if (DefaultStatusId != null)
             {
-                hash = hash * 59 + this.DefaultStatusId.GetHashCode();
+                hash = hash * 59 + DefaultStatusId.GetHashCode();
             }
 
-            if (this.SchemaVersion != null)
+            if (SchemaVersion != null)
             {
-                hash = hash * 59 + this.SchemaVersion.GetHashCode();
+                hash = hash * 59 + SchemaVersion.GetHashCode();
             }
 
-            if (this.DefaultLanguageId != null)
+            if (DefaultLanguageId != null)
             {
-                hash = hash * 59 + this.DefaultLanguageId.GetHashCode();
+                hash = hash * 59 + DefaultLanguageId.GetHashCode();
             }
 
-            if (this.DefaultSkillIds != null)
+            if (DefaultSkillIds != null)
             {
-                hash = hash * 59 + this.DefaultSkillIds.GetHashCode();
+                hash = hash * 59 + DefaultSkillIds.GetHashCode();
             }
 
-            if (this.DefaultQueueId != null)
+            if (DefaultQueueId != null)
             {
-                hash = hash * 59 + this.DefaultQueueId.GetHashCode();
+                hash = hash * 59 + DefaultQueueId.GetHashCode();
             }
 
-            if (this.DefaultScriptId != null)
+            if (DefaultScriptId != null)
             {
-                hash = hash * 59 + this.DefaultScriptId.GetHashCode();
+                hash = hash * 59 + DefaultScriptId.GetHashCode();
             }
 
             return hash;

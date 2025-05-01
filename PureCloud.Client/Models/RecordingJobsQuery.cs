@@ -211,7 +211,7 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingJobsQuery);
+        return Equals(obj as RecordingJobsQuery);
     }
 
     /// <summary>
@@ -229,59 +229,59 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
 
         return true &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.ActionDate == other.ActionDate ||
-                this.ActionDate != null &&
-                this.ActionDate.Equals(other.ActionDate)
+                ActionDate == other.ActionDate ||
+                ActionDate != null &&
+                ActionDate.Equals(other.ActionDate)
             ) &&
             (
-                this.ActionAge == other.ActionAge ||
-                this.ActionAge != null &&
-                this.ActionAge.Equals(other.ActionAge)
+                ActionAge == other.ActionAge ||
+                ActionAge != null &&
+                ActionAge.Equals(other.ActionAge)
             ) &&
             (
-                this.ScreenRecordingActionDate == other.ScreenRecordingActionDate ||
-                this.ScreenRecordingActionDate != null &&
-                this.ScreenRecordingActionDate.Equals(other.ScreenRecordingActionDate)
+                ScreenRecordingActionDate == other.ScreenRecordingActionDate ||
+                ScreenRecordingActionDate != null &&
+                ScreenRecordingActionDate.Equals(other.ScreenRecordingActionDate)
             ) &&
             (
-                this.ScreenRecordingActionAge == other.ScreenRecordingActionAge ||
-                this.ScreenRecordingActionAge != null &&
-                this.ScreenRecordingActionAge.Equals(other.ScreenRecordingActionAge)
+                ScreenRecordingActionAge == other.ScreenRecordingActionAge ||
+                ScreenRecordingActionAge != null &&
+                ScreenRecordingActionAge.Equals(other.ScreenRecordingActionAge)
             ) &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             ) &&
             (
-                this.IncludeRecordingsWithSensitiveData == other.IncludeRecordingsWithSensitiveData ||
-                this.IncludeRecordingsWithSensitiveData != null &&
-                this.IncludeRecordingsWithSensitiveData.Equals(other.IncludeRecordingsWithSensitiveData)
+                IncludeRecordingsWithSensitiveData == other.IncludeRecordingsWithSensitiveData ||
+                IncludeRecordingsWithSensitiveData != null &&
+                IncludeRecordingsWithSensitiveData.Equals(other.IncludeRecordingsWithSensitiveData)
             ) &&
             (
-                this.IncludeScreenRecordings == other.IncludeScreenRecordings ||
-                this.IncludeScreenRecordings != null &&
-                this.IncludeScreenRecordings.Equals(other.IncludeScreenRecordings)
+                IncludeScreenRecordings == other.IncludeScreenRecordings ||
+                IncludeScreenRecordings != null &&
+                IncludeScreenRecordings.Equals(other.IncludeScreenRecordings)
             ) &&
             (
-                this.ClearExport == other.ClearExport ||
-                this.ClearExport != null &&
-                this.ClearExport.Equals(other.ClearExport)
+                ClearExport == other.ClearExport ||
+                ClearExport != null &&
+                ClearExport.Equals(other.ClearExport)
             ) &&
             (
-                this.ConversationQuery == other.ConversationQuery ||
-                this.ConversationQuery != null &&
-                this.ConversationQuery.Equals(other.ConversationQuery)
+                ConversationQuery == other.ConversationQuery ||
+                ConversationQuery != null &&
+                ConversationQuery.Equals(other.ConversationQuery)
             ) &&
             (
-                this.AgedConversationInterval == other.AgedConversationInterval ||
-                this.AgedConversationInterval != null &&
-                this.AgedConversationInterval.Equals(other.AgedConversationInterval)
+                AgedConversationInterval == other.AgedConversationInterval ||
+                AgedConversationInterval != null &&
+                AgedConversationInterval.Equals(other.AgedConversationInterval)
             );
     }
 
@@ -296,59 +296,59 @@ public partial class RecordingJobsQuery : IEquatable<RecordingJobsQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.ActionDate != null)
+            if (ActionDate != null)
             {
-                hash = hash * 59 + this.ActionDate.GetHashCode();
+                hash = hash * 59 + ActionDate.GetHashCode();
             }
 
-            if (this.ActionAge != null)
+            if (ActionAge != null)
             {
-                hash = hash * 59 + this.ActionAge.GetHashCode();
+                hash = hash * 59 + ActionAge.GetHashCode();
             }
 
-            if (this.ScreenRecordingActionDate != null)
+            if (ScreenRecordingActionDate != null)
             {
-                hash = hash * 59 + this.ScreenRecordingActionDate.GetHashCode();
+                hash = hash * 59 + ScreenRecordingActionDate.GetHashCode();
             }
 
-            if (this.ScreenRecordingActionAge != null)
+            if (ScreenRecordingActionAge != null)
             {
-                hash = hash * 59 + this.ScreenRecordingActionAge.GetHashCode();
+                hash = hash * 59 + ScreenRecordingActionAge.GetHashCode();
             }
 
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
-            if (this.IncludeRecordingsWithSensitiveData != null)
+            if (IncludeRecordingsWithSensitiveData != null)
             {
-                hash = hash * 59 + this.IncludeRecordingsWithSensitiveData.GetHashCode();
+                hash = hash * 59 + IncludeRecordingsWithSensitiveData.GetHashCode();
             }
 
-            if (this.IncludeScreenRecordings != null)
+            if (IncludeScreenRecordings != null)
             {
-                hash = hash * 59 + this.IncludeScreenRecordings.GetHashCode();
+                hash = hash * 59 + IncludeScreenRecordings.GetHashCode();
             }
 
-            if (this.ClearExport != null)
+            if (ClearExport != null)
             {
-                hash = hash * 59 + this.ClearExport.GetHashCode();
+                hash = hash * 59 + ClearExport.GetHashCode();
             }
 
-            if (this.ConversationQuery != null)
+            if (ConversationQuery != null)
             {
-                hash = hash * 59 + this.ConversationQuery.GetHashCode();
+                hash = hash * 59 + ConversationQuery.GetHashCode();
             }
 
-            if (this.AgedConversationInterval != null)
+            if (AgedConversationInterval != null)
             {
-                hash = hash * 59 + this.AgedConversationInterval.GetHashCode();
+                hash = hash * 59 + AgedConversationInterval.GetHashCode();
             }
 
             return hash;

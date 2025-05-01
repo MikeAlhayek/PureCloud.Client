@@ -89,7 +89,7 @@ public partial class TestTargetOperation : IEquatable<TestTargetOperation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TestTargetOperation);
+        return Equals(obj as TestTargetOperation);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class TestTargetOperation : IEquatable<TestTargetOperation>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Step == other.Step ||
-                this.Step != null &&
-                this.Step.Equals(other.Step)
+                Step == other.Step ||
+                Step != null &&
+                Step.Equals(other.Step)
             ) &&
             (
-                this.Matches == other.Matches ||
-                this.Matches != null &&
-                this.Matches.Equals(other.Matches)
+                Matches == other.Matches ||
+                Matches != null &&
+                Matches.Equals(other.Matches)
             ) &&
             (
-                this.Details == other.Details ||
-                this.Details != null &&
-                this.Details.SequenceEqual(other.Details)
+                Details == other.Details ||
+                Details != null &&
+                Details.SequenceEqual(other.Details)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class TestTargetOperation : IEquatable<TestTargetOperation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Step != null)
+            if (Step != null)
             {
-                hash = hash * 59 + this.Step.GetHashCode();
+                hash = hash * 59 + Step.GetHashCode();
             }
 
-            if (this.Matches != null)
+            if (Matches != null)
             {
-                hash = hash * 59 + this.Matches.GetHashCode();
+                hash = hash * 59 + Matches.GetHashCode();
             }
 
-            if (this.Details != null)
+            if (Details != null)
             {
-                hash = hash * 59 + this.Details.GetHashCode();
+                hash = hash * 59 + Details.GetHashCode();
             }
 
             return hash;

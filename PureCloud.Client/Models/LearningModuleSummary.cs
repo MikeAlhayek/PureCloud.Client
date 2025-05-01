@@ -89,7 +89,7 @@ public partial class LearningModuleSummary : IEquatable<LearningModuleSummary>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModuleSummary);
+        return Equals(obj as LearningModuleSummary);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class LearningModuleSummary : IEquatable<LearningModuleSummary>
 
         return true &&
             (
-                this.AssignedCount == other.AssignedCount ||
-                this.AssignedCount != null &&
-                this.AssignedCount.Equals(other.AssignedCount)
+                AssignedCount == other.AssignedCount ||
+                AssignedCount != null &&
+                AssignedCount.Equals(other.AssignedCount)
             ) &&
             (
-                this.CompletedCount == other.CompletedCount ||
-                this.CompletedCount != null &&
-                this.CompletedCount.Equals(other.CompletedCount)
+                CompletedCount == other.CompletedCount ||
+                CompletedCount != null &&
+                CompletedCount.Equals(other.CompletedCount)
             ) &&
             (
-                this.PassedCount == other.PassedCount ||
-                this.PassedCount != null &&
-                this.PassedCount.Equals(other.PassedCount)
+                PassedCount == other.PassedCount ||
+                PassedCount != null &&
+                PassedCount.Equals(other.PassedCount)
             ) &&
             (
-                this.CompletedSum == other.CompletedSum ||
-                this.CompletedSum != null &&
-                this.CompletedSum.Equals(other.CompletedSum)
+                CompletedSum == other.CompletedSum ||
+                CompletedSum != null &&
+                CompletedSum.Equals(other.CompletedSum)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class LearningModuleSummary : IEquatable<LearningModuleSummary>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AssignedCount != null)
+            if (AssignedCount != null)
             {
-                hash = hash * 59 + this.AssignedCount.GetHashCode();
+                hash = hash * 59 + AssignedCount.GetHashCode();
             }
 
-            if (this.CompletedCount != null)
+            if (CompletedCount != null)
             {
-                hash = hash * 59 + this.CompletedCount.GetHashCode();
+                hash = hash * 59 + CompletedCount.GetHashCode();
             }
 
-            if (this.PassedCount != null)
+            if (PassedCount != null)
             {
-                hash = hash * 59 + this.PassedCount.GetHashCode();
+                hash = hash * 59 + PassedCount.GetHashCode();
             }
 
-            if (this.CompletedSum != null)
+            if (CompletedSum != null)
             {
-                hash = hash * 59 + this.CompletedSum.GetHashCode();
+                hash = hash * 59 + CompletedSum.GetHashCode();
             }
 
             return hash;

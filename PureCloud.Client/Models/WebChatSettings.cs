@@ -52,7 +52,7 @@ public partial class WebChatSettings : IEquatable<WebChatSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebChatSettings);
+        return Equals(obj as WebChatSettings);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class WebChatSettings : IEquatable<WebChatSettings>
 
         return true &&
             (
-                this.RequireDeployment == other.RequireDeployment ||
-                this.RequireDeployment != null &&
-                this.RequireDeployment.Equals(other.RequireDeployment)
+                RequireDeployment == other.RequireDeployment ||
+                RequireDeployment != null &&
+                RequireDeployment.Equals(other.RequireDeployment)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class WebChatSettings : IEquatable<WebChatSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RequireDeployment != null)
+            if (RequireDeployment != null)
             {
-                hash = hash * 59 + this.RequireDeployment.GetHashCode();
+                hash = hash * 59 + RequireDeployment.GetHashCode();
             }
 
             return hash;

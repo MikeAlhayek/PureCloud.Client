@@ -119,7 +119,7 @@ public partial class SupportCenterGlobalStyle : IEquatable<SupportCenterGlobalSt
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportCenterGlobalStyle);
+        return Equals(obj as SupportCenterGlobalStyle);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class SupportCenterGlobalStyle : IEquatable<SupportCenterGlobalSt
 
         return true &&
             (
-                this.BackgroundColor == other.BackgroundColor ||
-                this.BackgroundColor != null &&
-                this.BackgroundColor.Equals(other.BackgroundColor)
+                BackgroundColor == other.BackgroundColor ||
+                BackgroundColor != null &&
+                BackgroundColor.Equals(other.BackgroundColor)
             ) &&
             (
-                this.PrimaryColor == other.PrimaryColor ||
-                this.PrimaryColor != null &&
-                this.PrimaryColor.Equals(other.PrimaryColor)
+                PrimaryColor == other.PrimaryColor ||
+                PrimaryColor != null &&
+                PrimaryColor.Equals(other.PrimaryColor)
             ) &&
             (
-                this.PrimaryColorDark == other.PrimaryColorDark ||
-                this.PrimaryColorDark != null &&
-                this.PrimaryColorDark.Equals(other.PrimaryColorDark)
+                PrimaryColorDark == other.PrimaryColorDark ||
+                PrimaryColorDark != null &&
+                PrimaryColorDark.Equals(other.PrimaryColorDark)
             ) &&
             (
-                this.PrimaryColorLight == other.PrimaryColorLight ||
-                this.PrimaryColorLight != null &&
-                this.PrimaryColorLight.Equals(other.PrimaryColorLight)
+                PrimaryColorLight == other.PrimaryColorLight ||
+                PrimaryColorLight != null &&
+                PrimaryColorLight.Equals(other.PrimaryColorLight)
             ) &&
             (
-                this.TextColor == other.TextColor ||
-                this.TextColor != null &&
-                this.TextColor.Equals(other.TextColor)
+                TextColor == other.TextColor ||
+                TextColor != null &&
+                TextColor.Equals(other.TextColor)
             ) &&
             (
-                this.FontFamily == other.FontFamily ||
-                this.FontFamily != null &&
-                this.FontFamily.Equals(other.FontFamily)
+                FontFamily == other.FontFamily ||
+                FontFamily != null &&
+                FontFamily.Equals(other.FontFamily)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class SupportCenterGlobalStyle : IEquatable<SupportCenterGlobalSt
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BackgroundColor != null)
+            if (BackgroundColor != null)
             {
-                hash = hash * 59 + this.BackgroundColor.GetHashCode();
+                hash = hash * 59 + BackgroundColor.GetHashCode();
             }
 
-            if (this.PrimaryColor != null)
+            if (PrimaryColor != null)
             {
-                hash = hash * 59 + this.PrimaryColor.GetHashCode();
+                hash = hash * 59 + PrimaryColor.GetHashCode();
             }
 
-            if (this.PrimaryColorDark != null)
+            if (PrimaryColorDark != null)
             {
-                hash = hash * 59 + this.PrimaryColorDark.GetHashCode();
+                hash = hash * 59 + PrimaryColorDark.GetHashCode();
             }
 
-            if (this.PrimaryColorLight != null)
+            if (PrimaryColorLight != null)
             {
-                hash = hash * 59 + this.PrimaryColorLight.GetHashCode();
+                hash = hash * 59 + PrimaryColorLight.GetHashCode();
             }
 
-            if (this.TextColor != null)
+            if (TextColor != null)
             {
-                hash = hash * 59 + this.TextColor.GetHashCode();
+                hash = hash * 59 + TextColor.GetHashCode();
             }
 
-            if (this.FontFamily != null)
+            if (FontFamily != null)
             {
-                hash = hash * 59 + this.FontFamily.GetHashCode();
+                hash = hash * 59 + FontFamily.GetHashCode();
             }
 
             return hash;

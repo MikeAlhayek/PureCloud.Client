@@ -71,7 +71,7 @@ public partial class PerformancePredictionUploadSchema : IEquatable<PerformanceP
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PerformancePredictionUploadSchema);
+        return Equals(obj as PerformancePredictionUploadSchema);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class PerformancePredictionUploadSchema : IEquatable<PerformanceP
 
         return true &&
             (
-                this.CalculationStartDate == other.CalculationStartDate ||
-                this.CalculationStartDate != null &&
-                this.CalculationStartDate.Equals(other.CalculationStartDate)
+                CalculationStartDate == other.CalculationStartDate ||
+                CalculationStartDate != null &&
+                CalculationStartDate.Equals(other.CalculationStartDate)
             ) &&
             (
-                this.OnQueueTimes == other.OnQueueTimes ||
-                this.OnQueueTimes != null &&
-                this.OnQueueTimes.SequenceEqual(other.OnQueueTimes)
+                OnQueueTimes == other.OnQueueTimes ||
+                OnQueueTimes != null &&
+                OnQueueTimes.SequenceEqual(other.OnQueueTimes)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class PerformancePredictionUploadSchema : IEquatable<PerformanceP
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CalculationStartDate != null)
+            if (CalculationStartDate != null)
             {
-                hash = hash * 59 + this.CalculationStartDate.GetHashCode();
+                hash = hash * 59 + CalculationStartDate.GetHashCode();
             }
 
-            if (this.OnQueueTimes != null)
+            if (OnQueueTimes != null)
             {
-                hash = hash * 59 + this.OnQueueTimes.GetHashCode();
+                hash = hash * 59 + OnQueueTimes.GetHashCode();
             }
 
             return hash;

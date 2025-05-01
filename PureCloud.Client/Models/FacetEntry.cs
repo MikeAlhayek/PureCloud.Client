@@ -178,7 +178,7 @@ public partial class FacetEntry : IEquatable<FacetEntry>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FacetEntry);
+        return Equals(obj as FacetEntry);
     }
 
     /// <summary>
@@ -196,44 +196,44 @@ public partial class FacetEntry : IEquatable<FacetEntry>
 
         return true &&
             (
-                this.Attribute == other.Attribute ||
-                this.Attribute != null &&
-                this.Attribute.Equals(other.Attribute)
+                Attribute == other.Attribute ||
+                Attribute != null &&
+                Attribute.Equals(other.Attribute)
             ) &&
             (
-                this.Statistics == other.Statistics ||
-                this.Statistics != null &&
-                this.Statistics.Equals(other.Statistics)
+                Statistics == other.Statistics ||
+                Statistics != null &&
+                Statistics.Equals(other.Statistics)
             ) &&
             (
-                this.Other == other.Other ||
-                this.Other != null &&
-                this.Other.Equals(other.Other)
+                Other == other.Other ||
+                Other != null &&
+                Other.Equals(other.Other)
             ) &&
             (
-                this.Total == other.Total ||
-                this.Total != null &&
-                this.Total.Equals(other.Total)
+                Total == other.Total ||
+                Total != null &&
+                Total.Equals(other.Total)
             ) &&
             (
-                this.Missing == other.Missing ||
-                this.Missing != null &&
-                this.Missing.Equals(other.Missing)
+                Missing == other.Missing ||
+                Missing != null &&
+                Missing.Equals(other.Missing)
             ) &&
             (
-                this.TermCount == other.TermCount ||
-                this.TermCount != null &&
-                this.TermCount.Equals(other.TermCount)
+                TermCount == other.TermCount ||
+                TermCount != null &&
+                TermCount.Equals(other.TermCount)
             ) &&
             (
-                this.TermType == other.TermType ||
-                this.TermType != null &&
-                this.TermType.Equals(other.TermType)
+                TermType == other.TermType ||
+                TermType != null &&
+                TermType.Equals(other.TermType)
             ) &&
             (
-                this.Terms == other.Terms ||
-                this.Terms != null &&
-                this.Terms.SequenceEqual(other.Terms)
+                Terms == other.Terms ||
+                Terms != null &&
+                Terms.SequenceEqual(other.Terms)
             );
     }
 
@@ -248,44 +248,44 @@ public partial class FacetEntry : IEquatable<FacetEntry>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Attribute != null)
+            if (Attribute != null)
             {
-                hash = hash * 59 + this.Attribute.GetHashCode();
+                hash = hash * 59 + Attribute.GetHashCode();
             }
 
-            if (this.Statistics != null)
+            if (Statistics != null)
             {
-                hash = hash * 59 + this.Statistics.GetHashCode();
+                hash = hash * 59 + Statistics.GetHashCode();
             }
 
-            if (this.Other != null)
+            if (Other != null)
             {
-                hash = hash * 59 + this.Other.GetHashCode();
+                hash = hash * 59 + Other.GetHashCode();
             }
 
-            if (this.Total != null)
+            if (Total != null)
             {
-                hash = hash * 59 + this.Total.GetHashCode();
+                hash = hash * 59 + Total.GetHashCode();
             }
 
-            if (this.Missing != null)
+            if (Missing != null)
             {
-                hash = hash * 59 + this.Missing.GetHashCode();
+                hash = hash * 59 + Missing.GetHashCode();
             }
 
-            if (this.TermCount != null)
+            if (TermCount != null)
             {
-                hash = hash * 59 + this.TermCount.GetHashCode();
+                hash = hash * 59 + TermCount.GetHashCode();
             }
 
-            if (this.TermType != null)
+            if (TermType != null)
             {
-                hash = hash * 59 + this.TermType.GetHashCode();
+                hash = hash * 59 + TermType.GetHashCode();
             }
 
-            if (this.Terms != null)
+            if (Terms != null)
             {
-                hash = hash * 59 + this.Terms.GetHashCode();
+                hash = hash * 59 + Terms.GetHashCode();
             }
 
             return hash;

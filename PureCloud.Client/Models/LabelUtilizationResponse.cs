@@ -77,7 +77,7 @@ public partial class LabelUtilizationResponse : IEquatable<LabelUtilizationRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LabelUtilizationResponse);
+        return Equals(obj as LabelUtilizationResponse);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class LabelUtilizationResponse : IEquatable<LabelUtilizationRespo
 
         return true &&
             (
-                this.MaximumCapacity == other.MaximumCapacity ||
-                this.MaximumCapacity != null &&
-                this.MaximumCapacity.Equals(other.MaximumCapacity)
+                MaximumCapacity == other.MaximumCapacity ||
+                MaximumCapacity != null &&
+                MaximumCapacity.Equals(other.MaximumCapacity)
             ) &&
             (
-                this.InterruptingLabelIds == other.InterruptingLabelIds ||
-                this.InterruptingLabelIds != null &&
-                this.InterruptingLabelIds.SequenceEqual(other.InterruptingLabelIds)
+                InterruptingLabelIds == other.InterruptingLabelIds ||
+                InterruptingLabelIds != null &&
+                InterruptingLabelIds.SequenceEqual(other.InterruptingLabelIds)
             ) &&
             (
-                this.LabelName == other.LabelName ||
-                this.LabelName != null &&
-                this.LabelName.Equals(other.LabelName)
+                LabelName == other.LabelName ||
+                LabelName != null &&
+                LabelName.Equals(other.LabelName)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class LabelUtilizationResponse : IEquatable<LabelUtilizationRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MaximumCapacity != null)
+            if (MaximumCapacity != null)
             {
-                hash = hash * 59 + this.MaximumCapacity.GetHashCode();
+                hash = hash * 59 + MaximumCapacity.GetHashCode();
             }
 
-            if (this.InterruptingLabelIds != null)
+            if (InterruptingLabelIds != null)
             {
-                hash = hash * 59 + this.InterruptingLabelIds.GetHashCode();
+                hash = hash * 59 + InterruptingLabelIds.GetHashCode();
             }
 
-            if (this.LabelName != null)
+            if (LabelName != null)
             {
-                hash = hash * 59 + this.LabelName.GetHashCode();
+                hash = hash * 59 + LabelName.GetHashCode();
             }
 
             return hash;

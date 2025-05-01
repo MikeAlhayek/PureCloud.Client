@@ -133,7 +133,7 @@ public partial class FixedAvailability : IEquatable<FixedAvailability>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FixedAvailability);
+        return Equals(obj as FixedAvailability);
     }
 
     /// <summary>
@@ -151,19 +151,19 @@ public partial class FixedAvailability : IEquatable<FixedAvailability>
 
         return true &&
             (
-                this.AvailabilityRange == other.AvailabilityRange ||
-                this.AvailabilityRange != null &&
-                this.AvailabilityRange.Equals(other.AvailabilityRange)
+                AvailabilityRange == other.AvailabilityRange ||
+                AvailabilityRange != null &&
+                AvailabilityRange.Equals(other.AvailabilityRange)
             ) &&
             (
-                this.DateRange == other.DateRange ||
-                this.DateRange != null &&
-                this.DateRange.Equals(other.DateRange)
+                DateRange == other.DateRange ||
+                DateRange != null &&
+                DateRange.Equals(other.DateRange)
             ) &&
             (
-                this.DaysOfWeek == other.DaysOfWeek ||
-                this.DaysOfWeek != null &&
-                this.DaysOfWeek.SequenceEqual(other.DaysOfWeek)
+                DaysOfWeek == other.DaysOfWeek ||
+                DaysOfWeek != null &&
+                DaysOfWeek.SequenceEqual(other.DaysOfWeek)
             );
     }
 
@@ -178,19 +178,19 @@ public partial class FixedAvailability : IEquatable<FixedAvailability>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AvailabilityRange != null)
+            if (AvailabilityRange != null)
             {
-                hash = hash * 59 + this.AvailabilityRange.GetHashCode();
+                hash = hash * 59 + AvailabilityRange.GetHashCode();
             }
 
-            if (this.DateRange != null)
+            if (DateRange != null)
             {
-                hash = hash * 59 + this.DateRange.GetHashCode();
+                hash = hash * 59 + DateRange.GetHashCode();
             }
 
-            if (this.DaysOfWeek != null)
+            if (DaysOfWeek != null)
             {
-                hash = hash * 59 + this.DaysOfWeek.GetHashCode();
+                hash = hash * 59 + DaysOfWeek.GetHashCode();
             }
 
             return hash;

@@ -94,7 +94,7 @@ public partial class AddWorkPlanRotationRequest : IEquatable<AddWorkPlanRotation
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AddWorkPlanRotationRequest);
+        return Equals(obj as AddWorkPlanRotationRequest);
     }
 
     /// <summary>
@@ -112,24 +112,24 @@ public partial class AddWorkPlanRotationRequest : IEquatable<AddWorkPlanRotation
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateRange == other.DateRange ||
-                this.DateRange != null &&
-                this.DateRange.Equals(other.DateRange)
+                DateRange == other.DateRange ||
+                DateRange != null &&
+                DateRange.Equals(other.DateRange)
             ) &&
             (
-                this.Agents == other.Agents ||
-                this.Agents != null &&
-                this.Agents.SequenceEqual(other.Agents)
+                Agents == other.Agents ||
+                Agents != null &&
+                Agents.SequenceEqual(other.Agents)
             ) &&
             (
-                this.Pattern == other.Pattern ||
-                this.Pattern != null &&
-                this.Pattern.Equals(other.Pattern)
+                Pattern == other.Pattern ||
+                Pattern != null &&
+                Pattern.Equals(other.Pattern)
             );
     }
 
@@ -144,24 +144,24 @@ public partial class AddWorkPlanRotationRequest : IEquatable<AddWorkPlanRotation
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateRange != null)
+            if (DateRange != null)
             {
-                hash = hash * 59 + this.DateRange.GetHashCode();
+                hash = hash * 59 + DateRange.GetHashCode();
             }
 
-            if (this.Agents != null)
+            if (Agents != null)
             {
-                hash = hash * 59 + this.Agents.GetHashCode();
+                hash = hash * 59 + Agents.GetHashCode();
             }
 
-            if (this.Pattern != null)
+            if (Pattern != null)
             {
-                hash = hash * 59 + this.Pattern.GetHashCode();
+                hash = hash * 59 + Pattern.GetHashCode();
             }
 
             return hash;

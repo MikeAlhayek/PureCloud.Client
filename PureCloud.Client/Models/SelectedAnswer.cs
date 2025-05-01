@@ -59,7 +59,7 @@ public partial class SelectedAnswer : IEquatable<SelectedAnswer>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SelectedAnswer);
+        return Equals(obj as SelectedAnswer);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class SelectedAnswer : IEquatable<SelectedAnswer>
 
         return true &&
             (
-                this.Document == other.Document ||
-                this.Document != null &&
-                this.Document.Equals(other.Document)
+                Document == other.Document ||
+                Document != null &&
+                Document.Equals(other.Document)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class SelectedAnswer : IEquatable<SelectedAnswer>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Document != null)
+            if (Document != null)
             {
-                hash = hash * 59 + this.Document.GetHashCode();
+                hash = hash * 59 + Document.GetHashCode();
             }
 
             return hash;

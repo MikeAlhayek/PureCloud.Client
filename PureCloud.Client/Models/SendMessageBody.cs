@@ -83,7 +83,7 @@ public partial class SendMessageBody : IEquatable<SendMessageBody>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SendMessageBody);
+        return Equals(obj as SendMessageBody);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class SendMessageBody : IEquatable<SendMessageBody>
 
         return true &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Mentions == other.Mentions ||
-                this.Mentions != null &&
-                this.Mentions.SequenceEqual(other.Mentions)
+                Mentions == other.Mentions ||
+                Mentions != null &&
+                Mentions.SequenceEqual(other.Mentions)
             ) &&
             (
-                this.ThreadId == other.ThreadId ||
-                this.ThreadId != null &&
-                this.ThreadId.Equals(other.ThreadId)
+                ThreadId == other.ThreadId ||
+                ThreadId != null &&
+                ThreadId.Equals(other.ThreadId)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class SendMessageBody : IEquatable<SendMessageBody>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Mentions != null)
+            if (Mentions != null)
             {
-                hash = hash * 59 + this.Mentions.GetHashCode();
+                hash = hash * 59 + Mentions.GetHashCode();
             }
 
-            if (this.ThreadId != null)
+            if (ThreadId != null)
             {
-                hash = hash * 59 + this.ThreadId.GetHashCode();
+                hash = hash * 59 + ThreadId.GetHashCode();
             }
 
             return hash;

@@ -115,7 +115,7 @@ public partial class GrammarLanguageFileMetadata : IEquatable<GrammarLanguageFil
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GrammarLanguageFileMetadata);
+        return Equals(obj as GrammarLanguageFileMetadata);
     }
 
     /// <summary>
@@ -133,24 +133,24 @@ public partial class GrammarLanguageFileMetadata : IEquatable<GrammarLanguageFil
 
         return true &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.FileSizeBytes == other.FileSizeBytes ||
-                this.FileSizeBytes != null &&
-                this.FileSizeBytes.Equals(other.FileSizeBytes)
+                FileSizeBytes == other.FileSizeBytes ||
+                FileSizeBytes != null &&
+                FileSizeBytes.Equals(other.FileSizeBytes)
             ) &&
             (
-                this.DateUploaded == other.DateUploaded ||
-                this.DateUploaded != null &&
-                this.DateUploaded.Equals(other.DateUploaded)
+                DateUploaded == other.DateUploaded ||
+                DateUploaded != null &&
+                DateUploaded.Equals(other.DateUploaded)
             ) &&
             (
-                this.FileType == other.FileType ||
-                this.FileType != null &&
-                this.FileType.Equals(other.FileType)
+                FileType == other.FileType ||
+                FileType != null &&
+                FileType.Equals(other.FileType)
             );
     }
 
@@ -165,24 +165,24 @@ public partial class GrammarLanguageFileMetadata : IEquatable<GrammarLanguageFil
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.FileSizeBytes != null)
+            if (FileSizeBytes != null)
             {
-                hash = hash * 59 + this.FileSizeBytes.GetHashCode();
+                hash = hash * 59 + FileSizeBytes.GetHashCode();
             }
 
-            if (this.DateUploaded != null)
+            if (DateUploaded != null)
             {
-                hash = hash * 59 + this.DateUploaded.GetHashCode();
+                hash = hash * 59 + DateUploaded.GetHashCode();
             }
 
-            if (this.FileType != null)
+            if (FileType != null)
             {
-                hash = hash * 59 + this.FileType.GetHashCode();
+                hash = hash * 59 + FileType.GetHashCode();
             }
 
             return hash;

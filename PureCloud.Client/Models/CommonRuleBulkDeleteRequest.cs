@@ -59,7 +59,7 @@ public partial class CommonRuleBulkDeleteRequest : IEquatable<CommonRuleBulkDele
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CommonRuleBulkDeleteRequest);
+        return Equals(obj as CommonRuleBulkDeleteRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class CommonRuleBulkDeleteRequest : IEquatable<CommonRuleBulkDele
 
         return true &&
             (
-                this.RuleIds == other.RuleIds ||
-                this.RuleIds != null &&
-                this.RuleIds.SequenceEqual(other.RuleIds)
+                RuleIds == other.RuleIds ||
+                RuleIds != null &&
+                RuleIds.SequenceEqual(other.RuleIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class CommonRuleBulkDeleteRequest : IEquatable<CommonRuleBulkDele
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RuleIds != null)
+            if (RuleIds != null)
             {
-                hash = hash * 59 + this.RuleIds.GetHashCode();
+                hash = hash * 59 + RuleIds.GetHashCode();
             }
 
             return hash;

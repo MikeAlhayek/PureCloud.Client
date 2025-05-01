@@ -121,7 +121,7 @@ public partial class JourneyViewElementFilterNumberPredicate : IEquatable<Journe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewElementFilterNumberPredicate);
+        return Equals(obj as JourneyViewElementFilterNumberPredicate);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class JourneyViewElementFilterNumberPredicate : IEquatable<Journe
 
         return true &&
             (
-                this.Dimension == other.Dimension ||
-                this.Dimension != null &&
-                this.Dimension.Equals(other.Dimension)
+                Dimension == other.Dimension ||
+                Dimension != null &&
+                Dimension.Equals(other.Dimension)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.NoValue == other.NoValue ||
-                this.NoValue != null &&
-                this.NoValue.Equals(other.NoValue)
+                NoValue == other.NoValue ||
+                NoValue != null &&
+                NoValue.Equals(other.NoValue)
             ) &&
             (
-                this.Range == other.Range ||
-                this.Range != null &&
-                this.Range.Equals(other.Range)
+                Range == other.Range ||
+                Range != null &&
+                Range.Equals(other.Range)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class JourneyViewElementFilterNumberPredicate : IEquatable<Journe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Dimension != null)
+            if (Dimension != null)
             {
-                hash = hash * 59 + this.Dimension.GetHashCode();
+                hash = hash * 59 + Dimension.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.NoValue != null)
+            if (NoValue != null)
             {
-                hash = hash * 59 + this.NoValue.GetHashCode();
+                hash = hash * 59 + NoValue.GetHashCode();
             }
 
-            if (this.Range != null)
+            if (Range != null)
             {
-                hash = hash * 59 + this.Range.GetHashCode();
+                hash = hash * 59 + Range.GetHashCode();
             }
 
             return hash;

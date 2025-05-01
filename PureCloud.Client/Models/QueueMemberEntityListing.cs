@@ -118,7 +118,7 @@ public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityList
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueMemberEntityListing);
+        return Equals(obj as QueueMemberEntityListing);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityList
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.FirstUri == other.FirstUri ||
-                this.FirstUri != null &&
-                this.FirstUri.Equals(other.FirstUri)
+                FirstUri == other.FirstUri ||
+                FirstUri != null &&
+                FirstUri.Equals(other.FirstUri)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.NextUri == other.NextUri ||
-                this.NextUri != null &&
-                this.NextUri.Equals(other.NextUri)
+                NextUri == other.NextUri ||
+                NextUri != null &&
+                NextUri.Equals(other.NextUri)
             ) &&
             (
-                this.PreviousUri == other.PreviousUri ||
-                this.PreviousUri != null &&
-                this.PreviousUri.Equals(other.PreviousUri)
+                PreviousUri == other.PreviousUri ||
+                PreviousUri != null &&
+                PreviousUri.Equals(other.PreviousUri)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class QueueMemberEntityListing : IEquatable<QueueMemberEntityList
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.FirstUri != null)
+            if (FirstUri != null)
             {
-                hash = hash * 59 + this.FirstUri.GetHashCode();
+                hash = hash * 59 + FirstUri.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.NextUri != null)
+            if (NextUri != null)
             {
-                hash = hash * 59 + this.NextUri.GetHashCode();
+                hash = hash * 59 + NextUri.GetHashCode();
             }
 
-            if (this.PreviousUri != null)
+            if (PreviousUri != null)
             {
-                hash = hash * 59 + this.PreviousUri.GetHashCode();
+                hash = hash * 59 + PreviousUri.GetHashCode();
             }
 
             return hash;

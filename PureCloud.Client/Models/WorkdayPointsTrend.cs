@@ -157,7 +157,7 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkdayPointsTrend);
+        return Equals(obj as WorkdayPointsTrend);
     }
 
     /// <summary>
@@ -175,34 +175,34 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
 
         return true &&
             (
-                this.DateStartWorkday == other.DateStartWorkday ||
-                this.DateStartWorkday != null &&
-                this.DateStartWorkday.Equals(other.DateStartWorkday)
+                DateStartWorkday == other.DateStartWorkday ||
+                DateStartWorkday != null &&
+                DateStartWorkday.Equals(other.DateStartWorkday)
             ) &&
             (
-                this.DateEndWorkday == other.DateEndWorkday ||
-                this.DateEndWorkday != null &&
-                this.DateEndWorkday.Equals(other.DateEndWorkday)
+                DateEndWorkday == other.DateEndWorkday ||
+                DateEndWorkday != null &&
+                DateEndWorkday.Equals(other.DateEndWorkday)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.DayOfWeek == other.DayOfWeek ||
-                this.DayOfWeek != null &&
-                this.DayOfWeek.Equals(other.DayOfWeek)
+                DayOfWeek == other.DayOfWeek ||
+                DayOfWeek != null &&
+                DayOfWeek.Equals(other.DayOfWeek)
             ) &&
             (
-                this.AveragePoints == other.AveragePoints ||
-                this.AveragePoints != null &&
-                this.AveragePoints.Equals(other.AveragePoints)
+                AveragePoints == other.AveragePoints ||
+                AveragePoints != null &&
+                AveragePoints.Equals(other.AveragePoints)
             ) &&
             (
-                this.Trend == other.Trend ||
-                this.Trend != null &&
-                this.Trend.SequenceEqual(other.Trend)
+                Trend == other.Trend ||
+                Trend != null &&
+                Trend.SequenceEqual(other.Trend)
             );
     }
 
@@ -217,34 +217,34 @@ public partial class WorkdayPointsTrend : IEquatable<WorkdayPointsTrend>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateStartWorkday != null)
+            if (DateStartWorkday != null)
             {
-                hash = hash * 59 + this.DateStartWorkday.GetHashCode();
+                hash = hash * 59 + DateStartWorkday.GetHashCode();
             }
 
-            if (this.DateEndWorkday != null)
+            if (DateEndWorkday != null)
             {
-                hash = hash * 59 + this.DateEndWorkday.GetHashCode();
+                hash = hash * 59 + DateEndWorkday.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.DayOfWeek != null)
+            if (DayOfWeek != null)
             {
-                hash = hash * 59 + this.DayOfWeek.GetHashCode();
+                hash = hash * 59 + DayOfWeek.GetHashCode();
             }
 
-            if (this.AveragePoints != null)
+            if (AveragePoints != null)
             {
-                hash = hash * 59 + this.AveragePoints.GetHashCode();
+                hash = hash * 59 + AveragePoints.GetHashCode();
             }
 
-            if (this.Trend != null)
+            if (Trend != null)
             {
-                hash = hash * 59 + this.Trend.GetHashCode();
+                hash = hash * 59 + Trend.GetHashCode();
             }
 
             return hash;

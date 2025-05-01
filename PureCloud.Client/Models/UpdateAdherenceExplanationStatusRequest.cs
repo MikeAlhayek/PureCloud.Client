@@ -85,7 +85,7 @@ public partial class UpdateAdherenceExplanationStatusRequest : IEquatable<Update
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UpdateAdherenceExplanationStatusRequest);
+        return Equals(obj as UpdateAdherenceExplanationStatusRequest);
     }
 
     /// <summary>
@@ -103,9 +103,9 @@ public partial class UpdateAdherenceExplanationStatusRequest : IEquatable<Update
 
         return true &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             );
     }
 
@@ -120,9 +120,9 @@ public partial class UpdateAdherenceExplanationStatusRequest : IEquatable<Update
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
             return hash;

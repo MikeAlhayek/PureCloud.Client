@@ -275,7 +275,7 @@ public partial class DocumentBodyParagraphProperties : IEquatable<DocumentBodyPa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyParagraphProperties);
+        return Equals(obj as DocumentBodyParagraphProperties);
     }
 
     /// <summary>
@@ -293,34 +293,34 @@ public partial class DocumentBodyParagraphProperties : IEquatable<DocumentBodyPa
 
         return true &&
             (
-                this.FontSize == other.FontSize ||
-                this.FontSize != null &&
-                this.FontSize.Equals(other.FontSize)
+                FontSize == other.FontSize ||
+                FontSize != null &&
+                FontSize.Equals(other.FontSize)
             ) &&
             (
-                this.FontType == other.FontType ||
-                this.FontType != null &&
-                this.FontType.Equals(other.FontType)
+                FontType == other.FontType ||
+                FontType != null &&
+                FontType.Equals(other.FontType)
             ) &&
             (
-                this.TextColor == other.TextColor ||
-                this.TextColor != null &&
-                this.TextColor.Equals(other.TextColor)
+                TextColor == other.TextColor ||
+                TextColor != null &&
+                TextColor.Equals(other.TextColor)
             ) &&
             (
-                this.BackgroundColor == other.BackgroundColor ||
-                this.BackgroundColor != null &&
-                this.BackgroundColor.Equals(other.BackgroundColor)
+                BackgroundColor == other.BackgroundColor ||
+                BackgroundColor != null &&
+                BackgroundColor.Equals(other.BackgroundColor)
             ) &&
             (
-                this.Align == other.Align ||
-                this.Align != null &&
-                this.Align.Equals(other.Align)
+                Align == other.Align ||
+                Align != null &&
+                Align.Equals(other.Align)
             ) &&
             (
-                this.Indentation == other.Indentation ||
-                this.Indentation != null &&
-                this.Indentation.Equals(other.Indentation)
+                Indentation == other.Indentation ||
+                Indentation != null &&
+                Indentation.Equals(other.Indentation)
             );
     }
 
@@ -335,34 +335,34 @@ public partial class DocumentBodyParagraphProperties : IEquatable<DocumentBodyPa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FontSize != null)
+            if (FontSize != null)
             {
-                hash = hash * 59 + this.FontSize.GetHashCode();
+                hash = hash * 59 + FontSize.GetHashCode();
             }
 
-            if (this.FontType != null)
+            if (FontType != null)
             {
-                hash = hash * 59 + this.FontType.GetHashCode();
+                hash = hash * 59 + FontType.GetHashCode();
             }
 
-            if (this.TextColor != null)
+            if (TextColor != null)
             {
-                hash = hash * 59 + this.TextColor.GetHashCode();
+                hash = hash * 59 + TextColor.GetHashCode();
             }
 
-            if (this.BackgroundColor != null)
+            if (BackgroundColor != null)
             {
-                hash = hash * 59 + this.BackgroundColor.GetHashCode();
+                hash = hash * 59 + BackgroundColor.GetHashCode();
             }
 
-            if (this.Align != null)
+            if (Align != null)
             {
-                hash = hash * 59 + this.Align.GetHashCode();
+                hash = hash * 59 + Align.GetHashCode();
             }
 
-            if (this.Indentation != null)
+            if (Indentation != null)
             {
-                hash = hash * 59 + this.Indentation.GetHashCode();
+                hash = hash * 59 + Indentation.GetHashCode();
             }
 
             return hash;

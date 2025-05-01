@@ -195,7 +195,7 @@ public partial class PredictionResults : IEquatable<PredictionResults>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PredictionResults);
+        return Equals(obj as PredictionResults);
     }
 
     /// <summary>
@@ -213,24 +213,24 @@ public partial class PredictionResults : IEquatable<PredictionResults>
 
         return true &&
             (
-                this.Intent == other.Intent ||
-                this.Intent != null &&
-                this.Intent.Equals(other.Intent)
+                Intent == other.Intent ||
+                Intent != null &&
+                Intent.Equals(other.Intent)
             ) &&
             (
-                this.Formula == other.Formula ||
-                this.Formula != null &&
-                this.Formula.Equals(other.Formula)
+                Formula == other.Formula ||
+                Formula != null &&
+                Formula.Equals(other.Formula)
             ) &&
             (
-                this.EstimatedWaitTimeSeconds == other.EstimatedWaitTimeSeconds ||
-                this.EstimatedWaitTimeSeconds != null &&
-                this.EstimatedWaitTimeSeconds.Equals(other.EstimatedWaitTimeSeconds)
+                EstimatedWaitTimeSeconds == other.EstimatedWaitTimeSeconds ||
+                EstimatedWaitTimeSeconds != null &&
+                EstimatedWaitTimeSeconds.Equals(other.EstimatedWaitTimeSeconds)
             ) &&
             (
-                this.Label == other.Label ||
-                this.Label != null &&
-                this.Label.Equals(other.Label)
+                Label == other.Label ||
+                Label != null &&
+                Label.Equals(other.Label)
             );
     }
 
@@ -245,24 +245,24 @@ public partial class PredictionResults : IEquatable<PredictionResults>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Intent != null)
+            if (Intent != null)
             {
-                hash = hash * 59 + this.Intent.GetHashCode();
+                hash = hash * 59 + Intent.GetHashCode();
             }
 
-            if (this.Formula != null)
+            if (Formula != null)
             {
-                hash = hash * 59 + this.Formula.GetHashCode();
+                hash = hash * 59 + Formula.GetHashCode();
             }
 
-            if (this.EstimatedWaitTimeSeconds != null)
+            if (EstimatedWaitTimeSeconds != null)
             {
-                hash = hash * 59 + this.EstimatedWaitTimeSeconds.GetHashCode();
+                hash = hash * 59 + EstimatedWaitTimeSeconds.GetHashCode();
             }
 
-            if (this.Label != null)
+            if (Label != null)
             {
-                hash = hash * 59 + this.Label.GetHashCode();
+                hash = hash * 59 + Label.GetHashCode();
             }
 
             return hash;

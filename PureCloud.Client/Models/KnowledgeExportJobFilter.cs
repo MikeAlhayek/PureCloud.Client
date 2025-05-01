@@ -141,7 +141,7 @@ public partial class KnowledgeExportJobFilter : IEquatable<KnowledgeExportJobFil
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeExportJobFilter);
+        return Equals(obj as KnowledgeExportJobFilter);
     }
 
     /// <summary>
@@ -159,19 +159,19 @@ public partial class KnowledgeExportJobFilter : IEquatable<KnowledgeExportJobFil
 
         return true &&
             (
-                this.DocumentsFilter == other.DocumentsFilter ||
-                this.DocumentsFilter != null &&
-                this.DocumentsFilter.Equals(other.DocumentsFilter)
+                DocumentsFilter == other.DocumentsFilter ||
+                DocumentsFilter != null &&
+                DocumentsFilter.Equals(other.DocumentsFilter)
             ) &&
             (
-                this.VersionFilter == other.VersionFilter ||
-                this.VersionFilter != null &&
-                this.VersionFilter.Equals(other.VersionFilter)
+                VersionFilter == other.VersionFilter ||
+                VersionFilter != null &&
+                VersionFilter.Equals(other.VersionFilter)
             ) &&
             (
-                this.Exclude == other.Exclude ||
-                this.Exclude != null &&
-                this.Exclude.SequenceEqual(other.Exclude)
+                Exclude == other.Exclude ||
+                Exclude != null &&
+                Exclude.SequenceEqual(other.Exclude)
             );
     }
 
@@ -186,19 +186,19 @@ public partial class KnowledgeExportJobFilter : IEquatable<KnowledgeExportJobFil
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DocumentsFilter != null)
+            if (DocumentsFilter != null)
             {
-                hash = hash * 59 + this.DocumentsFilter.GetHashCode();
+                hash = hash * 59 + DocumentsFilter.GetHashCode();
             }
 
-            if (this.VersionFilter != null)
+            if (VersionFilter != null)
             {
-                hash = hash * 59 + this.VersionFilter.GetHashCode();
+                hash = hash * 59 + VersionFilter.GetHashCode();
             }
 
-            if (this.Exclude != null)
+            if (Exclude != null)
             {
-                hash = hash * 59 + this.Exclude.GetHashCode();
+                hash = hash * 59 + Exclude.GetHashCode();
             }
 
             return hash;

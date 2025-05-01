@@ -315,7 +315,7 @@ public partial class OutboundMessagingCampaignPreContactSmsEventTopicOutboundMes
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent);
+        return Equals(obj as OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent);
     }
 
     /// <summary>
@@ -333,54 +333,54 @@ public partial class OutboundMessagingCampaignPreContactSmsEventTopicOutboundMes
 
         return true &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.OutboundCampaignType == other.OutboundCampaignType ||
-                this.OutboundCampaignType != null &&
-                this.OutboundCampaignType.Equals(other.OutboundCampaignType)
+                OutboundCampaignType == other.OutboundCampaignType ||
+                OutboundCampaignType != null &&
+                OutboundCampaignType.Equals(other.OutboundCampaignType)
             ) &&
             (
-                this.SmsAttributes == other.SmsAttributes ||
-                this.SmsAttributes != null &&
-                this.SmsAttributes.Equals(other.SmsAttributes)
+                SmsAttributes == other.SmsAttributes ||
+                SmsAttributes != null &&
+                SmsAttributes.Equals(other.SmsAttributes)
             ) &&
             (
-                this.WrapupCode == other.WrapupCode ||
-                this.WrapupCode != null &&
-                this.WrapupCode.Equals(other.WrapupCode)
+                WrapupCode == other.WrapupCode ||
+                WrapupCode != null &&
+                WrapupCode.Equals(other.WrapupCode)
             ) &&
             (
-                this.OutboundCampaignId == other.OutboundCampaignId ||
-                this.OutboundCampaignId != null &&
-                this.OutboundCampaignId.Equals(other.OutboundCampaignId)
+                OutboundCampaignId == other.OutboundCampaignId ||
+                OutboundCampaignId != null &&
+                OutboundCampaignId.Equals(other.OutboundCampaignId)
             ) &&
             (
-                this.DivisionId == other.DivisionId ||
-                this.DivisionId != null &&
-                this.DivisionId.Equals(other.DivisionId)
+                DivisionId == other.DivisionId ||
+                DivisionId != null &&
+                DivisionId.Equals(other.DivisionId)
             ) &&
             (
-                this.ContentTemplateId == other.ContentTemplateId ||
-                this.ContentTemplateId != null &&
-                this.ContentTemplateId.Equals(other.ContentTemplateId)
+                ContentTemplateId == other.ContentTemplateId ||
+                ContentTemplateId != null &&
+                ContentTemplateId.Equals(other.ContentTemplateId)
             ) &&
             (
-                this.OutboundContactListId == other.OutboundContactListId ||
-                this.OutboundContactListId != null &&
-                this.OutboundContactListId.Equals(other.OutboundContactListId)
+                OutboundContactListId == other.OutboundContactListId ||
+                OutboundContactListId != null &&
+                OutboundContactListId.Equals(other.OutboundContactListId)
             ) &&
             (
-                this.OutboundContactId == other.OutboundContactId ||
-                this.OutboundContactId != null &&
-                this.OutboundContactId.Equals(other.OutboundContactId)
+                OutboundContactId == other.OutboundContactId ||
+                OutboundContactId != null &&
+                OutboundContactId.Equals(other.OutboundContactId)
             ) &&
             (
-                this.IsCampaignAlwaysRunning == other.IsCampaignAlwaysRunning ||
-                this.IsCampaignAlwaysRunning != null &&
-                this.IsCampaignAlwaysRunning.Equals(other.IsCampaignAlwaysRunning)
+                IsCampaignAlwaysRunning == other.IsCampaignAlwaysRunning ||
+                IsCampaignAlwaysRunning != null &&
+                IsCampaignAlwaysRunning.Equals(other.IsCampaignAlwaysRunning)
             );
     }
 
@@ -395,54 +395,54 @@ public partial class OutboundMessagingCampaignPreContactSmsEventTopicOutboundMes
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.OutboundCampaignType != null)
+            if (OutboundCampaignType != null)
             {
-                hash = hash * 59 + this.OutboundCampaignType.GetHashCode();
+                hash = hash * 59 + OutboundCampaignType.GetHashCode();
             }
 
-            if (this.SmsAttributes != null)
+            if (SmsAttributes != null)
             {
-                hash = hash * 59 + this.SmsAttributes.GetHashCode();
+                hash = hash * 59 + SmsAttributes.GetHashCode();
             }
 
-            if (this.WrapupCode != null)
+            if (WrapupCode != null)
             {
-                hash = hash * 59 + this.WrapupCode.GetHashCode();
+                hash = hash * 59 + WrapupCode.GetHashCode();
             }
 
-            if (this.OutboundCampaignId != null)
+            if (OutboundCampaignId != null)
             {
-                hash = hash * 59 + this.OutboundCampaignId.GetHashCode();
+                hash = hash * 59 + OutboundCampaignId.GetHashCode();
             }
 
-            if (this.DivisionId != null)
+            if (DivisionId != null)
             {
-                hash = hash * 59 + this.DivisionId.GetHashCode();
+                hash = hash * 59 + DivisionId.GetHashCode();
             }
 
-            if (this.ContentTemplateId != null)
+            if (ContentTemplateId != null)
             {
-                hash = hash * 59 + this.ContentTemplateId.GetHashCode();
+                hash = hash * 59 + ContentTemplateId.GetHashCode();
             }
 
-            if (this.OutboundContactListId != null)
+            if (OutboundContactListId != null)
             {
-                hash = hash * 59 + this.OutboundContactListId.GetHashCode();
+                hash = hash * 59 + OutboundContactListId.GetHashCode();
             }
 
-            if (this.OutboundContactId != null)
+            if (OutboundContactId != null)
             {
-                hash = hash * 59 + this.OutboundContactId.GetHashCode();
+                hash = hash * 59 + OutboundContactId.GetHashCode();
             }
 
-            if (this.IsCampaignAlwaysRunning != null)
+            if (IsCampaignAlwaysRunning != null)
             {
-                hash = hash * 59 + this.IsCampaignAlwaysRunning.GetHashCode();
+                hash = hash * 59 + IsCampaignAlwaysRunning.GetHashCode();
             }
 
             return hash;

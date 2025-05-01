@@ -101,7 +101,7 @@ public partial class SendMessagingTemplateRequest : IEquatable<SendMessagingTemp
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SendMessagingTemplateRequest);
+        return Equals(obj as SendMessagingTemplateRequest);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class SendMessagingTemplateRequest : IEquatable<SendMessagingTemp
 
         return true &&
             (
-                this.ResponseId == other.ResponseId ||
-                this.ResponseId != null &&
-                this.ResponseId.Equals(other.ResponseId)
+                ResponseId == other.ResponseId ||
+                ResponseId != null &&
+                ResponseId.Equals(other.ResponseId)
             ) &&
             (
-                this.Parameters == other.Parameters ||
-                this.Parameters != null &&
-                this.Parameters.SequenceEqual(other.Parameters)
+                Parameters == other.Parameters ||
+                Parameters != null &&
+                Parameters.SequenceEqual(other.Parameters)
             ) &&
             (
-                this.HeaderParameters == other.HeaderParameters ||
-                this.HeaderParameters != null &&
-                this.HeaderParameters.SequenceEqual(other.HeaderParameters)
+                HeaderParameters == other.HeaderParameters ||
+                HeaderParameters != null &&
+                HeaderParameters.SequenceEqual(other.HeaderParameters)
             ) &&
             (
-                this.BodyParameters == other.BodyParameters ||
-                this.BodyParameters != null &&
-                this.BodyParameters.SequenceEqual(other.BodyParameters)
+                BodyParameters == other.BodyParameters ||
+                BodyParameters != null &&
+                BodyParameters.SequenceEqual(other.BodyParameters)
             ) &&
             (
-                this.ButtonUrlParameters == other.ButtonUrlParameters ||
-                this.ButtonUrlParameters != null &&
-                this.ButtonUrlParameters.SequenceEqual(other.ButtonUrlParameters)
+                ButtonUrlParameters == other.ButtonUrlParameters ||
+                ButtonUrlParameters != null &&
+                ButtonUrlParameters.SequenceEqual(other.ButtonUrlParameters)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class SendMessagingTemplateRequest : IEquatable<SendMessagingTemp
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ResponseId != null)
+            if (ResponseId != null)
             {
-                hash = hash * 59 + this.ResponseId.GetHashCode();
+                hash = hash * 59 + ResponseId.GetHashCode();
             }
 
-            if (this.Parameters != null)
+            if (Parameters != null)
             {
-                hash = hash * 59 + this.Parameters.GetHashCode();
+                hash = hash * 59 + Parameters.GetHashCode();
             }
 
-            if (this.HeaderParameters != null)
+            if (HeaderParameters != null)
             {
-                hash = hash * 59 + this.HeaderParameters.GetHashCode();
+                hash = hash * 59 + HeaderParameters.GetHashCode();
             }
 
-            if (this.BodyParameters != null)
+            if (BodyParameters != null)
             {
-                hash = hash * 59 + this.BodyParameters.GetHashCode();
+                hash = hash * 59 + BodyParameters.GetHashCode();
             }
 
-            if (this.ButtonUrlParameters != null)
+            if (ButtonUrlParameters != null)
             {
-                hash = hash * 59 + this.ButtonUrlParameters.GetHashCode();
+                hash = hash * 59 + ButtonUrlParameters.GetHashCode();
             }
 
             return hash;

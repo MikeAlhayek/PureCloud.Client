@@ -95,7 +95,7 @@ public partial class FlowExecutionLaunchRequest : IEquatable<FlowExecutionLaunch
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowExecutionLaunchRequest);
+        return Equals(obj as FlowExecutionLaunchRequest);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class FlowExecutionLaunchRequest : IEquatable<FlowExecutionLaunch
 
         return true &&
             (
-                this.FlowId == other.FlowId ||
-                this.FlowId != null &&
-                this.FlowId.Equals(other.FlowId)
+                FlowId == other.FlowId ||
+                FlowId != null &&
+                FlowId.Equals(other.FlowId)
             ) &&
             (
-                this.FlowVersion == other.FlowVersion ||
-                this.FlowVersion != null &&
-                this.FlowVersion.Equals(other.FlowVersion)
+                FlowVersion == other.FlowVersion ||
+                FlowVersion != null &&
+                FlowVersion.Equals(other.FlowVersion)
             ) &&
             (
-                this.InputData == other.InputData ||
-                this.InputData != null &&
-                this.InputData.SequenceEqual(other.InputData)
+                InputData == other.InputData ||
+                InputData != null &&
+                InputData.SequenceEqual(other.InputData)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class FlowExecutionLaunchRequest : IEquatable<FlowExecutionLaunch
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FlowId != null)
+            if (FlowId != null)
             {
-                hash = hash * 59 + this.FlowId.GetHashCode();
+                hash = hash * 59 + FlowId.GetHashCode();
             }
 
-            if (this.FlowVersion != null)
+            if (FlowVersion != null)
             {
-                hash = hash * 59 + this.FlowVersion.GetHashCode();
+                hash = hash * 59 + FlowVersion.GetHashCode();
             }
 
-            if (this.InputData != null)
+            if (InputData != null)
             {
-                hash = hash * 59 + this.InputData.GetHashCode();
+                hash = hash * 59 + InputData.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
             return hash;

@@ -235,12 +235,12 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
     /// <returns></returns>
     public GeneralDataProtectionRegulationApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -254,17 +254,17 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -274,7 +274,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -300,7 +300,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -312,7 +312,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -358,7 +358,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -367,7 +367,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -380,7 +380,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // Path params
         if (requestId != null)
         {
-            localVarPathParams.Add("requestId", this.Configuration.ApiClient.ParameterToString(requestId));
+            localVarPathParams.Add("requestId", Configuration.ApiClient.ParameterToString(requestId));
         }
 
         // Query params
@@ -396,11 +396,11 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -426,7 +426,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
         return new ApiResponse<GDPRRequest>(localVarStatusCode,
             localVarHeaders,
-            (GDPRRequest)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequest)),
+            (GDPRRequest)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequest)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -475,7 +475,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -484,7 +484,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -497,7 +497,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // Path params
         if (requestId != null)
         {
-            localVarPathParams.Add("requestId", this.Configuration.ApiClient.ParameterToString(requestId));
+            localVarPathParams.Add("requestId", Configuration.ApiClient.ParameterToString(requestId));
         }
 
         // Query params
@@ -513,11 +513,11 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -543,7 +543,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
         return new ApiResponse<GDPRRequest>(localVarStatusCode,
             localVarHeaders,
-            (GDPRRequest)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequest)),
+            (GDPRRequest)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequest)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -589,7 +589,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -598,7 +598,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -613,12 +613,12 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -632,11 +632,11 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -662,7 +662,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
         return new ApiResponse<GDPRRequestEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (GDPRRequestEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequestEntityListing)),
+            (GDPRRequestEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequestEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -708,7 +708,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -717,7 +717,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -732,12 +732,12 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -751,11 +751,11 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -781,7 +781,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
         return new ApiResponse<GDPRRequestEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (GDPRRequestEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequestEntityListing)),
+            (GDPRRequestEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequestEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -837,7 +837,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -846,7 +846,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -861,12 +861,12 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // Query params
         if (searchType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("searchType", this.Configuration.ApiClient.ParameterToString(searchType)));
+            localVarQueryParams.Add(new Tuple<string, string>("searchType", Configuration.ApiClient.ParameterToString(searchType)));
         }
 
         if (searchValue != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("searchValue", this.Configuration.ApiClient.ParameterToString(searchValue)));
+            localVarQueryParams.Add(new Tuple<string, string>("searchValue", Configuration.ApiClient.ParameterToString(searchValue)));
         }
 
         // Header params
@@ -880,11 +880,11 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -910,7 +910,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
         return new ApiResponse<GDPRSubjectEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (GDPRSubjectEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRSubjectEntityListing)),
+            (GDPRSubjectEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRSubjectEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -967,7 +967,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -976,7 +976,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -991,12 +991,12 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // Query params
         if (searchType != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("searchType", this.Configuration.ApiClient.ParameterToString(searchType)));
+            localVarQueryParams.Add(new Tuple<string, string>("searchType", Configuration.ApiClient.ParameterToString(searchType)));
         }
 
         if (searchValue != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("searchValue", this.Configuration.ApiClient.ParameterToString(searchValue)));
+            localVarQueryParams.Add(new Tuple<string, string>("searchValue", Configuration.ApiClient.ParameterToString(searchValue)));
         }
 
         // Header params
@@ -1010,11 +1010,11 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1040,7 +1040,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
         return new ApiResponse<GDPRSubjectEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (GDPRSubjectEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRSubjectEntityListing)),
+            (GDPRSubjectEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRSubjectEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1092,7 +1092,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1101,7 +1101,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1116,7 +1116,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // Query params
         if (deleteConfirmed != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleteConfirmed", this.Configuration.ApiClient.ParameterToString(deleteConfirmed)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleteConfirmed", Configuration.ApiClient.ParameterToString(deleteConfirmed)));
         }
 
         // Header params
@@ -1126,7 +1126,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1139,11 +1139,11 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1169,7 +1169,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
         return new ApiResponse<GDPRRequest>(localVarStatusCode,
             localVarHeaders,
-            (GDPRRequest)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequest)),
+            (GDPRRequest)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequest)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1221,7 +1221,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1230,7 +1230,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1245,7 +1245,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // Query params
         if (deleteConfirmed != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("deleteConfirmed", this.Configuration.ApiClient.ParameterToString(deleteConfirmed)));
+            localVarQueryParams.Add(new Tuple<string, string>("deleteConfirmed", Configuration.ApiClient.ParameterToString(deleteConfirmed)));
         }
 
         // Header params
@@ -1255,7 +1255,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1268,11 +1268,11 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1298,7 +1298,7 @@ public partial class GeneralDataProtectionRegulationApi : IGeneralDataProtection
 
         return new ApiResponse<GDPRRequest>(localVarStatusCode,
             localVarHeaders,
-            (GDPRRequest)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequest)),
+            (GDPRRequest)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GDPRRequest)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

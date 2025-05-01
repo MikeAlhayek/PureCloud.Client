@@ -52,7 +52,7 @@ public partial class FlowAggregateQueryResponse : IEquatable<FlowAggregateQueryR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowAggregateQueryResponse);
+        return Equals(obj as FlowAggregateQueryResponse);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class FlowAggregateQueryResponse : IEquatable<FlowAggregateQueryR
 
         return true &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class FlowAggregateQueryResponse : IEquatable<FlowAggregateQueryR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class ConversationContentQuickReplyV2 : IEquatable<ConversationCo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationContentQuickReplyV2);
+        return Equals(obj as ConversationContentQuickReplyV2);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ConversationContentQuickReplyV2 : IEquatable<ConversationCo
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.SequenceEqual(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.SequenceEqual(other.Actions)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ConversationContentQuickReplyV2 : IEquatable<ConversationCo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
             return hash;

@@ -159,7 +159,7 @@ public partial class ConversationBasic : IEquatable<ConversationBasic>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationBasic);
+        return Equals(obj as ConversationBasic);
     }
 
     /// <summary>
@@ -177,54 +177,54 @@ public partial class ConversationBasic : IEquatable<ConversationBasic>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ExternalTag == other.ExternalTag ||
-                this.ExternalTag != null &&
-                this.ExternalTag.Equals(other.ExternalTag)
+                ExternalTag == other.ExternalTag ||
+                ExternalTag != null &&
+                ExternalTag.Equals(other.ExternalTag)
             ) &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             ) &&
             (
-                this.EndTime == other.EndTime ||
-                this.EndTime != null &&
-                this.EndTime.Equals(other.EndTime)
+                EndTime == other.EndTime ||
+                EndTime != null &&
+                EndTime.Equals(other.EndTime)
             ) &&
             (
-                this.Divisions == other.Divisions ||
-                this.Divisions != null &&
-                this.Divisions.SequenceEqual(other.Divisions)
+                Divisions == other.Divisions ||
+                Divisions != null &&
+                Divisions.SequenceEqual(other.Divisions)
             ) &&
             (
-                this.SecurePause == other.SecurePause ||
-                this.SecurePause != null &&
-                this.SecurePause.Equals(other.SecurePause)
+                SecurePause == other.SecurePause ||
+                SecurePause != null &&
+                SecurePause.Equals(other.SecurePause)
             ) &&
             (
-                this.UtilizationLabelId == other.UtilizationLabelId ||
-                this.UtilizationLabelId != null &&
-                this.UtilizationLabelId.Equals(other.UtilizationLabelId)
+                UtilizationLabelId == other.UtilizationLabelId ||
+                UtilizationLabelId != null &&
+                UtilizationLabelId.Equals(other.UtilizationLabelId)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.Participants == other.Participants ||
-                this.Participants != null &&
-                this.Participants.SequenceEqual(other.Participants)
+                Participants == other.Participants ||
+                Participants != null &&
+                Participants.SequenceEqual(other.Participants)
             );
     }
 
@@ -239,54 +239,54 @@ public partial class ConversationBasic : IEquatable<ConversationBasic>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ExternalTag != null)
+            if (ExternalTag != null)
             {
-                hash = hash * 59 + this.ExternalTag.GetHashCode();
+                hash = hash * 59 + ExternalTag.GetHashCode();
             }
 
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
-            if (this.EndTime != null)
+            if (EndTime != null)
             {
-                hash = hash * 59 + this.EndTime.GetHashCode();
+                hash = hash * 59 + EndTime.GetHashCode();
             }
 
-            if (this.Divisions != null)
+            if (Divisions != null)
             {
-                hash = hash * 59 + this.Divisions.GetHashCode();
+                hash = hash * 59 + Divisions.GetHashCode();
             }
 
-            if (this.SecurePause != null)
+            if (SecurePause != null)
             {
-                hash = hash * 59 + this.SecurePause.GetHashCode();
+                hash = hash * 59 + SecurePause.GetHashCode();
             }
 
-            if (this.UtilizationLabelId != null)
+            if (UtilizationLabelId != null)
             {
-                hash = hash * 59 + this.UtilizationLabelId.GetHashCode();
+                hash = hash * 59 + UtilizationLabelId.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.Participants != null)
+            if (Participants != null)
             {
-                hash = hash * 59 + this.Participants.GetHashCode();
+                hash = hash * 59 + Participants.GetHashCode();
             }
 
             return hash;

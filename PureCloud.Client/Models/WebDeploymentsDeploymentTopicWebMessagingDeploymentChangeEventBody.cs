@@ -117,7 +117,7 @@ public partial class WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEv
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody);
+        return Equals(obj as WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody);
     }
 
     /// <summary>
@@ -135,19 +135,19 @@ public partial class WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEv
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Configuration == other.Configuration ||
-                this.Configuration != null &&
-                this.Configuration.Equals(other.Configuration)
+                Configuration == other.Configuration ||
+                Configuration != null &&
+                Configuration.Equals(other.Configuration)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             );
     }
 
@@ -162,19 +162,19 @@ public partial class WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEv
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Configuration != null)
+            if (Configuration != null)
             {
-                hash = hash * 59 + this.Configuration.GetHashCode();
+                hash = hash * 59 + Configuration.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
             return hash;

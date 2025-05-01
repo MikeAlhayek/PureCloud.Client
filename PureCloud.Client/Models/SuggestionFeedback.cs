@@ -85,7 +85,7 @@ public partial class SuggestionFeedback : IEquatable<SuggestionFeedback>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SuggestionFeedback);
+        return Equals(obj as SuggestionFeedback);
     }
 
     /// <summary>
@@ -103,9 +103,9 @@ public partial class SuggestionFeedback : IEquatable<SuggestionFeedback>
 
         return true &&
             (
-                this.Rating == other.Rating ||
-                this.Rating != null &&
-                this.Rating.Equals(other.Rating)
+                Rating == other.Rating ||
+                Rating != null &&
+                Rating.Equals(other.Rating)
             );
     }
 
@@ -120,9 +120,9 @@ public partial class SuggestionFeedback : IEquatable<SuggestionFeedback>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Rating != null)
+            if (Rating != null)
             {
-                hash = hash * 59 + this.Rating.GetHashCode();
+                hash = hash * 59 + Rating.GetHashCode();
             }
 
             return hash;

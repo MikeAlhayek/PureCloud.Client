@@ -91,7 +91,7 @@ public partial class LearningModuleRule : IEquatable<LearningModuleRule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModuleRule);
+        return Equals(obj as LearningModuleRule);
     }
 
     /// <summary>
@@ -109,24 +109,24 @@ public partial class LearningModuleRule : IEquatable<LearningModuleRule>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.IsActive == other.IsActive ||
-                this.IsActive != null &&
-                this.IsActive.Equals(other.IsActive)
+                IsActive == other.IsActive ||
+                IsActive != null &&
+                IsActive.Equals(other.IsActive)
             ) &&
             (
-                this.Parts == other.Parts ||
-                this.Parts != null &&
-                this.Parts.SequenceEqual(other.Parts)
+                Parts == other.Parts ||
+                Parts != null &&
+                Parts.SequenceEqual(other.Parts)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -141,24 +141,24 @@ public partial class LearningModuleRule : IEquatable<LearningModuleRule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.IsActive != null)
+            if (IsActive != null)
             {
-                hash = hash * 59 + this.IsActive.GetHashCode();
+                hash = hash * 59 + IsActive.GetHashCode();
             }
 
-            if (this.Parts != null)
+            if (Parts != null)
             {
-                hash = hash * 59 + this.Parts.GetHashCode();
+                hash = hash * 59 + Parts.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -73,7 +73,7 @@ public partial class OutcomeAttributionAsyncResponse : IEquatable<OutcomeAttribu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomeAttributionAsyncResponse);
+        return Equals(obj as OutcomeAttributionAsyncResponse);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class OutcomeAttributionAsyncResponse : IEquatable<OutcomeAttribu
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.PercentFailedThreshold == other.PercentFailedThreshold ||
-                this.PercentFailedThreshold != null &&
-                this.PercentFailedThreshold.Equals(other.PercentFailedThreshold)
+                PercentFailedThreshold == other.PercentFailedThreshold ||
+                PercentFailedThreshold != null &&
+                PercentFailedThreshold.Equals(other.PercentFailedThreshold)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class OutcomeAttributionAsyncResponse : IEquatable<OutcomeAttribu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.PercentFailedThreshold != null)
+            if (PercentFailedThreshold != null)
             {
-                hash = hash * 59 + this.PercentFailedThreshold.GetHashCode();
+                hash = hash * 59 + PercentFailedThreshold.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

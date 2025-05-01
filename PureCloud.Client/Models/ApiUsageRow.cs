@@ -196,7 +196,7 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ApiUsageRow);
+        return Equals(obj as ApiUsageRow);
     }
 
     /// <summary>
@@ -214,69 +214,69 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
 
         return true &&
             (
-                this.ClientId == other.ClientId ||
-                this.ClientId != null &&
-                this.ClientId.Equals(other.ClientId)
+                ClientId == other.ClientId ||
+                ClientId != null &&
+                ClientId.Equals(other.ClientId)
             ) &&
             (
-                this.ClientName == other.ClientName ||
-                this.ClientName != null &&
-                this.ClientName.Equals(other.ClientName)
+                ClientName == other.ClientName ||
+                ClientName != null &&
+                ClientName.Equals(other.ClientName)
             ) &&
             (
-                this.OrganizationId == other.OrganizationId ||
-                this.OrganizationId != null &&
-                this.OrganizationId.Equals(other.OrganizationId)
+                OrganizationId == other.OrganizationId ||
+                OrganizationId != null &&
+                OrganizationId.Equals(other.OrganizationId)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.TemplateUri == other.TemplateUri ||
-                this.TemplateUri != null &&
-                this.TemplateUri.Equals(other.TemplateUri)
+                TemplateUri == other.TemplateUri ||
+                TemplateUri != null &&
+                TemplateUri.Equals(other.TemplateUri)
             ) &&
             (
-                this.HttpMethod == other.HttpMethod ||
-                this.HttpMethod != null &&
-                this.HttpMethod.Equals(other.HttpMethod)
+                HttpMethod == other.HttpMethod ||
+                HttpMethod != null &&
+                HttpMethod.Equals(other.HttpMethod)
             ) &&
             (
-                this.Status200 == other.Status200 ||
-                this.Status200 != null &&
-                this.Status200.Equals(other.Status200)
+                Status200 == other.Status200 ||
+                Status200 != null &&
+                Status200.Equals(other.Status200)
             ) &&
             (
-                this.Status300 == other.Status300 ||
-                this.Status300 != null &&
-                this.Status300.Equals(other.Status300)
+                Status300 == other.Status300 ||
+                Status300 != null &&
+                Status300.Equals(other.Status300)
             ) &&
             (
-                this.Status400 == other.Status400 ||
-                this.Status400 != null &&
-                this.Status400.Equals(other.Status400)
+                Status400 == other.Status400 ||
+                Status400 != null &&
+                Status400.Equals(other.Status400)
             ) &&
             (
-                this.Status500 == other.Status500 ||
-                this.Status500 != null &&
-                this.Status500.Equals(other.Status500)
+                Status500 == other.Status500 ||
+                Status500 != null &&
+                Status500.Equals(other.Status500)
             ) &&
             (
-                this.Status429 == other.Status429 ||
-                this.Status429 != null &&
-                this.Status429.Equals(other.Status429)
+                Status429 == other.Status429 ||
+                Status429 != null &&
+                Status429.Equals(other.Status429)
             ) &&
             (
-                this.Requests == other.Requests ||
-                this.Requests != null &&
-                this.Requests.Equals(other.Requests)
+                Requests == other.Requests ||
+                Requests != null &&
+                Requests.Equals(other.Requests)
             ) &&
             (
-                this.Date == other.Date ||
-                this.Date != null &&
-                this.Date.Equals(other.Date)
+                Date == other.Date ||
+                Date != null &&
+                Date.Equals(other.Date)
             );
     }
 
@@ -291,69 +291,69 @@ public partial class ApiUsageRow : IEquatable<ApiUsageRow>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ClientId != null)
+            if (ClientId != null)
             {
-                hash = hash * 59 + this.ClientId.GetHashCode();
+                hash = hash * 59 + ClientId.GetHashCode();
             }
 
-            if (this.ClientName != null)
+            if (ClientName != null)
             {
-                hash = hash * 59 + this.ClientName.GetHashCode();
+                hash = hash * 59 + ClientName.GetHashCode();
             }
 
-            if (this.OrganizationId != null)
+            if (OrganizationId != null)
             {
-                hash = hash * 59 + this.OrganizationId.GetHashCode();
+                hash = hash * 59 + OrganizationId.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.TemplateUri != null)
+            if (TemplateUri != null)
             {
-                hash = hash * 59 + this.TemplateUri.GetHashCode();
+                hash = hash * 59 + TemplateUri.GetHashCode();
             }
 
-            if (this.HttpMethod != null)
+            if (HttpMethod != null)
             {
-                hash = hash * 59 + this.HttpMethod.GetHashCode();
+                hash = hash * 59 + HttpMethod.GetHashCode();
             }
 
-            if (this.Status200 != null)
+            if (Status200 != null)
             {
-                hash = hash * 59 + this.Status200.GetHashCode();
+                hash = hash * 59 + Status200.GetHashCode();
             }
 
-            if (this.Status300 != null)
+            if (Status300 != null)
             {
-                hash = hash * 59 + this.Status300.GetHashCode();
+                hash = hash * 59 + Status300.GetHashCode();
             }
 
-            if (this.Status400 != null)
+            if (Status400 != null)
             {
-                hash = hash * 59 + this.Status400.GetHashCode();
+                hash = hash * 59 + Status400.GetHashCode();
             }
 
-            if (this.Status500 != null)
+            if (Status500 != null)
             {
-                hash = hash * 59 + this.Status500.GetHashCode();
+                hash = hash * 59 + Status500.GetHashCode();
             }
 
-            if (this.Status429 != null)
+            if (Status429 != null)
             {
-                hash = hash * 59 + this.Status429.GetHashCode();
+                hash = hash * 59 + Status429.GetHashCode();
             }
 
-            if (this.Requests != null)
+            if (Requests != null)
             {
-                hash = hash * 59 + this.Requests.GetHashCode();
+                hash = hash * 59 + Requests.GetHashCode();
             }
 
-            if (this.Date != null)
+            if (Date != null)
             {
-                hash = hash * 59 + this.Date.GetHashCode();
+                hash = hash * 59 + Date.GetHashCode();
             }
 
             return hash;

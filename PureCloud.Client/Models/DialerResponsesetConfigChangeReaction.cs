@@ -122,7 +122,7 @@ public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerResponsesetConfigChangeReaction);
+        return Equals(obj as DialerResponsesetConfigChangeReaction);
     }
 
     /// <summary>
@@ -140,24 +140,24 @@ public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerRe
 
         return true &&
             (
-                this.Data == other.Data ||
-                this.Data != null &&
-                this.Data.Equals(other.Data)
+                Data == other.Data ||
+                Data != null &&
+                Data.Equals(other.Data)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ReactionType == other.ReactionType ||
-                this.ReactionType != null &&
-                this.ReactionType.Equals(other.ReactionType)
+                ReactionType == other.ReactionType ||
+                ReactionType != null &&
+                ReactionType.Equals(other.ReactionType)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -172,24 +172,24 @@ public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Data != null)
+            if (Data != null)
             {
-                hash = hash * 59 + this.Data.GetHashCode();
+                hash = hash * 59 + Data.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ReactionType != null)
+            if (ReactionType != null)
             {
-                hash = hash * 59 + this.ReactionType.GetHashCode();
+                hash = hash * 59 + ReactionType.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

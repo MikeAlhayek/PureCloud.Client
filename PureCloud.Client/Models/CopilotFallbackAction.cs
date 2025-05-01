@@ -109,7 +109,7 @@ public partial class CopilotFallbackAction : IEquatable<CopilotFallbackAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CopilotFallbackAction);
+        return Equals(obj as CopilotFallbackAction);
     }
 
     /// <summary>
@@ -127,14 +127,14 @@ public partial class CopilotFallbackAction : IEquatable<CopilotFallbackAction>
 
         return true &&
             (
-                this.ActionType == other.ActionType ||
-                this.ActionType != null &&
-                this.ActionType.Equals(other.ActionType)
+                ActionType == other.ActionType ||
+                ActionType != null &&
+                ActionType.Equals(other.ActionType)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             );
     }
 
@@ -149,14 +149,14 @@ public partial class CopilotFallbackAction : IEquatable<CopilotFallbackAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActionType != null)
+            if (ActionType != null)
             {
-                hash = hash * 59 + this.ActionType.GetHashCode();
+                hash = hash * 59 + ActionType.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
             return hash;

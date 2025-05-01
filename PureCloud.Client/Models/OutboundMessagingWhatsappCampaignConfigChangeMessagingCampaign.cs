@@ -306,7 +306,7 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeMessagingCampa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign);
+        return Equals(obj as OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign);
     }
 
     /// <summary>
@@ -324,99 +324,99 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeMessagingCampa
 
         return true &&
             (
-                this.CampaignStatus == other.CampaignStatus ||
-                this.CampaignStatus != null &&
-                this.CampaignStatus.Equals(other.CampaignStatus)
+                CampaignStatus == other.CampaignStatus ||
+                CampaignStatus != null &&
+                CampaignStatus.Equals(other.CampaignStatus)
             ) &&
             (
-                this.CallableTimeSet == other.CallableTimeSet ||
-                this.CallableTimeSet != null &&
-                this.CallableTimeSet.Equals(other.CallableTimeSet)
+                CallableTimeSet == other.CallableTimeSet ||
+                CallableTimeSet != null &&
+                CallableTimeSet.Equals(other.CallableTimeSet)
             ) &&
             (
-                this.ContactList == other.ContactList ||
-                this.ContactList != null &&
-                this.ContactList.Equals(other.ContactList)
+                ContactList == other.ContactList ||
+                ContactList != null &&
+                ContactList.Equals(other.ContactList)
             ) &&
             (
-                this.DncLists == other.DncLists ||
-                this.DncLists != null &&
-                this.DncLists.SequenceEqual(other.DncLists)
+                DncLists == other.DncLists ||
+                DncLists != null &&
+                DncLists.SequenceEqual(other.DncLists)
             ) &&
             (
-                this.ContactListFilters == other.ContactListFilters ||
-                this.ContactListFilters != null &&
-                this.ContactListFilters.SequenceEqual(other.ContactListFilters)
+                ContactListFilters == other.ContactListFilters ||
+                ContactListFilters != null &&
+                ContactListFilters.SequenceEqual(other.ContactListFilters)
             ) &&
             (
-                this.AlwaysRunning == other.AlwaysRunning ||
-                this.AlwaysRunning != null &&
-                this.AlwaysRunning.Equals(other.AlwaysRunning)
+                AlwaysRunning == other.AlwaysRunning ||
+                AlwaysRunning != null &&
+                AlwaysRunning.Equals(other.AlwaysRunning)
             ) &&
             (
-                this.ContactSorts == other.ContactSorts ||
-                this.ContactSorts != null &&
-                this.ContactSorts.SequenceEqual(other.ContactSorts)
+                ContactSorts == other.ContactSorts ||
+                ContactSorts != null &&
+                ContactSorts.SequenceEqual(other.ContactSorts)
             ) &&
             (
-                this.MessagesPerMinute == other.MessagesPerMinute ||
-                this.MessagesPerMinute != null &&
-                this.MessagesPerMinute.Equals(other.MessagesPerMinute)
+                MessagesPerMinute == other.MessagesPerMinute ||
+                MessagesPerMinute != null &&
+                MessagesPerMinute.Equals(other.MessagesPerMinute)
             ) &&
             (
-                this.RuleSets == other.RuleSets ||
-                this.RuleSets != null &&
-                this.RuleSets.SequenceEqual(other.RuleSets)
+                RuleSets == other.RuleSets ||
+                RuleSets != null &&
+                RuleSets.SequenceEqual(other.RuleSets)
             ) &&
             (
-                this.SmsConfig == other.SmsConfig ||
-                this.SmsConfig != null &&
-                this.SmsConfig.Equals(other.SmsConfig)
+                SmsConfig == other.SmsConfig ||
+                SmsConfig != null &&
+                SmsConfig.Equals(other.SmsConfig)
             ) &&
             (
-                this.EmailConfig == other.EmailConfig ||
-                this.EmailConfig != null &&
-                this.EmailConfig.Equals(other.EmailConfig)
+                EmailConfig == other.EmailConfig ||
+                EmailConfig != null &&
+                EmailConfig.Equals(other.EmailConfig)
             ) &&
             (
-                this.WhatsAppConfig == other.WhatsAppConfig ||
-                this.WhatsAppConfig != null &&
-                this.WhatsAppConfig.Equals(other.WhatsAppConfig)
+                WhatsAppConfig == other.WhatsAppConfig ||
+                WhatsAppConfig != null &&
+                WhatsAppConfig.Equals(other.WhatsAppConfig)
             ) &&
             (
-                this.Errors == other.Errors ||
-                this.Errors != null &&
-                this.Errors.SequenceEqual(other.Errors)
+                Errors == other.Errors ||
+                Errors != null &&
+                Errors.SequenceEqual(other.Errors)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             );
     }
 
@@ -431,99 +431,99 @@ public partial class OutboundMessagingWhatsappCampaignConfigChangeMessagingCampa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CampaignStatus != null)
+            if (CampaignStatus != null)
             {
-                hash = hash * 59 + this.CampaignStatus.GetHashCode();
+                hash = hash * 59 + CampaignStatus.GetHashCode();
             }
 
-            if (this.CallableTimeSet != null)
+            if (CallableTimeSet != null)
             {
-                hash = hash * 59 + this.CallableTimeSet.GetHashCode();
+                hash = hash * 59 + CallableTimeSet.GetHashCode();
             }
 
-            if (this.ContactList != null)
+            if (ContactList != null)
             {
-                hash = hash * 59 + this.ContactList.GetHashCode();
+                hash = hash * 59 + ContactList.GetHashCode();
             }
 
-            if (this.DncLists != null)
+            if (DncLists != null)
             {
-                hash = hash * 59 + this.DncLists.GetHashCode();
+                hash = hash * 59 + DncLists.GetHashCode();
             }
 
-            if (this.ContactListFilters != null)
+            if (ContactListFilters != null)
             {
-                hash = hash * 59 + this.ContactListFilters.GetHashCode();
+                hash = hash * 59 + ContactListFilters.GetHashCode();
             }
 
-            if (this.AlwaysRunning != null)
+            if (AlwaysRunning != null)
             {
-                hash = hash * 59 + this.AlwaysRunning.GetHashCode();
+                hash = hash * 59 + AlwaysRunning.GetHashCode();
             }
 
-            if (this.ContactSorts != null)
+            if (ContactSorts != null)
             {
-                hash = hash * 59 + this.ContactSorts.GetHashCode();
+                hash = hash * 59 + ContactSorts.GetHashCode();
             }
 
-            if (this.MessagesPerMinute != null)
+            if (MessagesPerMinute != null)
             {
-                hash = hash * 59 + this.MessagesPerMinute.GetHashCode();
+                hash = hash * 59 + MessagesPerMinute.GetHashCode();
             }
 
-            if (this.RuleSets != null)
+            if (RuleSets != null)
             {
-                hash = hash * 59 + this.RuleSets.GetHashCode();
+                hash = hash * 59 + RuleSets.GetHashCode();
             }
 
-            if (this.SmsConfig != null)
+            if (SmsConfig != null)
             {
-                hash = hash * 59 + this.SmsConfig.GetHashCode();
+                hash = hash * 59 + SmsConfig.GetHashCode();
             }
 
-            if (this.EmailConfig != null)
+            if (EmailConfig != null)
             {
-                hash = hash * 59 + this.EmailConfig.GetHashCode();
+                hash = hash * 59 + EmailConfig.GetHashCode();
             }
 
-            if (this.WhatsAppConfig != null)
+            if (WhatsAppConfig != null)
             {
-                hash = hash * 59 + this.WhatsAppConfig.GetHashCode();
+                hash = hash * 59 + WhatsAppConfig.GetHashCode();
             }
 
-            if (this.Errors != null)
+            if (Errors != null)
             {
-                hash = hash * 59 + this.Errors.GetHashCode();
+                hash = hash * 59 + Errors.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
             return hash;

@@ -64,7 +64,7 @@ public partial class AnalyticsProposedAgent : IEquatable<AnalyticsProposedAgent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsProposedAgent);
+        return Equals(obj as AnalyticsProposedAgent);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class AnalyticsProposedAgent : IEquatable<AnalyticsProposedAgent>
 
         return true &&
             (
-                this.AgentRank == other.AgentRank ||
-                this.AgentRank != null &&
-                this.AgentRank.Equals(other.AgentRank)
+                AgentRank == other.AgentRank ||
+                AgentRank != null &&
+                AgentRank.Equals(other.AgentRank)
             ) &&
             (
-                this.ProposedAgentId == other.ProposedAgentId ||
-                this.ProposedAgentId != null &&
-                this.ProposedAgentId.Equals(other.ProposedAgentId)
+                ProposedAgentId == other.ProposedAgentId ||
+                ProposedAgentId != null &&
+                ProposedAgentId.Equals(other.ProposedAgentId)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class AnalyticsProposedAgent : IEquatable<AnalyticsProposedAgent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentRank != null)
+            if (AgentRank != null)
             {
-                hash = hash * 59 + this.AgentRank.GetHashCode();
+                hash = hash * 59 + AgentRank.GetHashCode();
             }
 
-            if (this.ProposedAgentId != null)
+            if (ProposedAgentId != null)
             {
-                hash = hash * 59 + this.ProposedAgentId.GetHashCode();
+                hash = hash * 59 + ProposedAgentId.GetHashCode();
             }
 
             return hash;

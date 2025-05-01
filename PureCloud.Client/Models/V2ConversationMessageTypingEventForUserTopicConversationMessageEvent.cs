@@ -88,7 +88,7 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2ConversationMessageTypingEventForUserTopicConversationMessageEvent);
+        return Equals(obj as V2ConversationMessageTypingEventForUserTopicConversationMessageEvent);
     }
 
     /// <summary>
@@ -106,14 +106,14 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
 
         return true &&
             (
-                this.EventType == other.EventType ||
-                this.EventType != null &&
-                this.EventType.Equals(other.EventType)
+                EventType == other.EventType ||
+                EventType != null &&
+                EventType.Equals(other.EventType)
             ) &&
             (
-                this.Typing == other.Typing ||
-                this.Typing != null &&
-                this.Typing.Equals(other.Typing)
+                Typing == other.Typing ||
+                Typing != null &&
+                Typing.Equals(other.Typing)
             );
     }
 
@@ -128,14 +128,14 @@ public partial class V2ConversationMessageTypingEventForUserTopicConversationMes
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventType != null)
+            if (EventType != null)
             {
-                hash = hash * 59 + this.EventType.GetHashCode();
+                hash = hash * 59 + EventType.GetHashCode();
             }
 
-            if (this.Typing != null)
+            if (Typing != null)
             {
-                hash = hash * 59 + this.Typing.GetHashCode();
+                hash = hash * 59 + Typing.GetHashCode();
             }
 
             return hash;

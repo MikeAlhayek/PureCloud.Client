@@ -158,7 +158,7 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BatchDownloadJobStatusResult);
+        return Equals(obj as BatchDownloadJobStatusResult);
     }
 
     /// <summary>
@@ -176,44 +176,44 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.JobId == other.JobId ||
-                this.JobId != null &&
-                this.JobId.Equals(other.JobId)
+                JobId == other.JobId ||
+                JobId != null &&
+                JobId.Equals(other.JobId)
             ) &&
             (
-                this.ExpectedResultCount == other.ExpectedResultCount ||
-                this.ExpectedResultCount != null &&
-                this.ExpectedResultCount.Equals(other.ExpectedResultCount)
+                ExpectedResultCount == other.ExpectedResultCount ||
+                ExpectedResultCount != null &&
+                ExpectedResultCount.Equals(other.ExpectedResultCount)
             ) &&
             (
-                this.ResultCount == other.ResultCount ||
-                this.ResultCount != null &&
-                this.ResultCount.Equals(other.ResultCount)
+                ResultCount == other.ResultCount ||
+                ResultCount != null &&
+                ResultCount.Equals(other.ResultCount)
             ) &&
             (
-                this.ErrorCount == other.ErrorCount ||
-                this.ErrorCount != null &&
-                this.ErrorCount.Equals(other.ErrorCount)
+                ErrorCount == other.ErrorCount ||
+                ErrorCount != null &&
+                ErrorCount.Equals(other.ErrorCount)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -228,44 +228,44 @@ public partial class BatchDownloadJobStatusResult : IEquatable<BatchDownloadJobS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.JobId != null)
+            if (JobId != null)
             {
-                hash = hash * 59 + this.JobId.GetHashCode();
+                hash = hash * 59 + JobId.GetHashCode();
             }
 
-            if (this.ExpectedResultCount != null)
+            if (ExpectedResultCount != null)
             {
-                hash = hash * 59 + this.ExpectedResultCount.GetHashCode();
+                hash = hash * 59 + ExpectedResultCount.GetHashCode();
             }
 
-            if (this.ResultCount != null)
+            if (ResultCount != null)
             {
-                hash = hash * 59 + this.ResultCount.GetHashCode();
+                hash = hash * 59 + ResultCount.GetHashCode();
             }
 
-            if (this.ErrorCount != null)
+            if (ErrorCount != null)
             {
-                hash = hash * 59 + this.ErrorCount.GetHashCode();
+                hash = hash * 59 + ErrorCount.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

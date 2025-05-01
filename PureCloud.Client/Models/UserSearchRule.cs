@@ -59,7 +59,7 @@ public partial class UserSearchRule : IEquatable<UserSearchRule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserSearchRule);
+        return Equals(obj as UserSearchRule);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class UserSearchRule : IEquatable<UserSearchRule>
 
         return true &&
             (
-                this.Parts == other.Parts ||
-                this.Parts != null &&
-                this.Parts.SequenceEqual(other.Parts)
+                Parts == other.Parts ||
+                Parts != null &&
+                Parts.SequenceEqual(other.Parts)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class UserSearchRule : IEquatable<UserSearchRule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Parts != null)
+            if (Parts != null)
             {
-                hash = hash * 59 + this.Parts.GetHashCode();
+                hash = hash * 59 + Parts.GetHashCode();
             }
 
             return hash;

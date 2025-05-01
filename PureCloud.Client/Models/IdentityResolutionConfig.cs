@@ -91,7 +91,7 @@ public partial class IdentityResolutionConfig : IEquatable<IdentityResolutionCon
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IdentityResolutionConfig);
+        return Equals(obj as IdentityResolutionConfig);
     }
 
     /// <summary>
@@ -109,24 +109,24 @@ public partial class IdentityResolutionConfig : IEquatable<IdentityResolutionCon
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.ResolveIdentities == other.ResolveIdentities ||
-                this.ResolveIdentities != null &&
-                this.ResolveIdentities.Equals(other.ResolveIdentities)
+                ResolveIdentities == other.ResolveIdentities ||
+                ResolveIdentities != null &&
+                ResolveIdentities.Equals(other.ResolveIdentities)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -141,24 +141,24 @@ public partial class IdentityResolutionConfig : IEquatable<IdentityResolutionCon
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.ResolveIdentities != null)
+            if (ResolveIdentities != null)
             {
-                hash = hash * 59 + this.ResolveIdentities.GetHashCode();
+                hash = hash * 59 + ResolveIdentities.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

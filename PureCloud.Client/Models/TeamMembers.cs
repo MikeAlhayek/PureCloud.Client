@@ -59,7 +59,7 @@ public partial class TeamMembers : IEquatable<TeamMembers>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TeamMembers);
+        return Equals(obj as TeamMembers);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class TeamMembers : IEquatable<TeamMembers>
 
         return true &&
             (
-                this.MemberIds == other.MemberIds ||
-                this.MemberIds != null &&
-                this.MemberIds.SequenceEqual(other.MemberIds)
+                MemberIds == other.MemberIds ||
+                MemberIds != null &&
+                MemberIds.SequenceEqual(other.MemberIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class TeamMembers : IEquatable<TeamMembers>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MemberIds != null)
+            if (MemberIds != null)
             {
-                hash = hash * 59 + this.MemberIds.GetHashCode();
+                hash = hash * 59 + MemberIds.GetHashCode();
             }
 
             return hash;

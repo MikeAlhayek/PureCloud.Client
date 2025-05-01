@@ -101,7 +101,7 @@ public partial class TestExecutionOperationResult : IEquatable<TestExecutionOper
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TestExecutionOperationResult);
+        return Equals(obj as TestExecutionOperationResult);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class TestExecutionOperationResult : IEquatable<TestExecutionOper
 
         return true &&
             (
-                this.Step == other.Step ||
-                this.Step != null &&
-                this.Step.Equals(other.Step)
+                Step == other.Step ||
+                Step != null &&
+                Step.Equals(other.Step)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Success == other.Success ||
-                this.Success != null &&
-                this.Success.Equals(other.Success)
+                Success == other.Success ||
+                Success != null &&
+                Success.Equals(other.Success)
             ) &&
             (
-                this.Result == other.Result ||
-                this.Result != null &&
-                this.Result.Equals(other.Result)
+                Result == other.Result ||
+                Result != null &&
+                Result.Equals(other.Result)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class TestExecutionOperationResult : IEquatable<TestExecutionOper
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Step != null)
+            if (Step != null)
             {
-                hash = hash * 59 + this.Step.GetHashCode();
+                hash = hash * 59 + Step.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Success != null)
+            if (Success != null)
             {
-                hash = hash * 59 + this.Success.GetHashCode();
+                hash = hash * 59 + Success.GetHashCode();
             }
 
-            if (this.Result != null)
+            if (Result != null)
             {
-                hash = hash * 59 + this.Result.GetHashCode();
+                hash = hash * 59 + Result.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
             return hash;

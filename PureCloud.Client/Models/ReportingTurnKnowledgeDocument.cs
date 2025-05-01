@@ -89,7 +89,7 @@ public partial class ReportingTurnKnowledgeDocument : IEquatable<ReportingTurnKn
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingTurnKnowledgeDocument);
+        return Equals(obj as ReportingTurnKnowledgeDocument);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ReportingTurnKnowledgeDocument : IEquatable<ReportingTurnKn
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Question == other.Question ||
-                this.Question != null &&
-                this.Question.Equals(other.Question)
+                Question == other.Question ||
+                Question != null &&
+                Question.Equals(other.Question)
             ) &&
             (
-                this.Answer == other.Answer ||
-                this.Answer != null &&
-                this.Answer.Equals(other.Answer)
+                Answer == other.Answer ||
+                Answer != null &&
+                Answer.Equals(other.Answer)
             ) &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ReportingTurnKnowledgeDocument : IEquatable<ReportingTurnKn
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Question != null)
+            if (Question != null)
             {
-                hash = hash * 59 + this.Question.GetHashCode();
+                hash = hash * 59 + Question.GetHashCode();
             }
 
-            if (this.Answer != null)
+            if (Answer != null)
             {
-                hash = hash * 59 + this.Answer.GetHashCode();
+                hash = hash * 59 + Answer.GetHashCode();
             }
 
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
             return hash;

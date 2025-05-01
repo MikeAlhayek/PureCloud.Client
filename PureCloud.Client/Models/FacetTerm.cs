@@ -108,7 +108,7 @@ public partial class FacetTerm : IEquatable<FacetTerm>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FacetTerm);
+        return Equals(obj as FacetTerm);
     }
 
     /// <summary>
@@ -126,34 +126,34 @@ public partial class FacetTerm : IEquatable<FacetTerm>
 
         return true &&
             (
-                this.Term == other.Term ||
-                this.Term != null &&
-                this.Term.Equals(other.Term)
+                Term == other.Term ||
+                Term != null &&
+                Term.Equals(other.Term)
             ) &&
             (
-                this.Key == other.Key ||
-                this.Key != null &&
-                this.Key.Equals(other.Key)
+                Key == other.Key ||
+                Key != null &&
+                Key.Equals(other.Key)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.Time == other.Time ||
-                this.Time != null &&
-                this.Time.Equals(other.Time)
+                Time == other.Time ||
+                Time != null &&
+                Time.Equals(other.Time)
             );
     }
 
@@ -168,34 +168,34 @@ public partial class FacetTerm : IEquatable<FacetTerm>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Term != null)
+            if (Term != null)
             {
-                hash = hash * 59 + this.Term.GetHashCode();
+                hash = hash * 59 + Term.GetHashCode();
             }
 
-            if (this.Key != null)
+            if (Key != null)
             {
-                hash = hash * 59 + this.Key.GetHashCode();
+                hash = hash * 59 + Key.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.Time != null)
+            if (Time != null)
             {
-                hash = hash * 59 + this.Time.GetHashCode();
+                hash = hash * 59 + Time.GetHashCode();
             }
 
             return hash;

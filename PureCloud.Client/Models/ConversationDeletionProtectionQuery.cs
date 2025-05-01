@@ -59,7 +59,7 @@ public partial class ConversationDeletionProtectionQuery : IEquatable<Conversati
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationDeletionProtectionQuery);
+        return Equals(obj as ConversationDeletionProtectionQuery);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ConversationDeletionProtectionQuery : IEquatable<Conversati
 
         return true &&
             (
-                this.ConversationIds == other.ConversationIds ||
-                this.ConversationIds != null &&
-                this.ConversationIds.SequenceEqual(other.ConversationIds)
+                ConversationIds == other.ConversationIds ||
+                ConversationIds != null &&
+                ConversationIds.SequenceEqual(other.ConversationIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ConversationDeletionProtectionQuery : IEquatable<Conversati
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationIds != null)
+            if (ConversationIds != null)
             {
-                hash = hash * 59 + this.ConversationIds.GetHashCode();
+                hash = hash * 59 + ConversationIds.GetHashCode();
             }
 
             return hash;

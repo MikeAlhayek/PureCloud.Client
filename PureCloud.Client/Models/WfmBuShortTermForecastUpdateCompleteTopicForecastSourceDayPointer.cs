@@ -157,7 +157,7 @@ public partial class WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayP
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer);
+        return Equals(obj as WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer);
     }
 
     /// <summary>
@@ -175,29 +175,29 @@ public partial class WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayP
 
         return true &&
             (
-                this.DayOfWeek == other.DayOfWeek ||
-                this.DayOfWeek != null &&
-                this.DayOfWeek.Equals(other.DayOfWeek)
+                DayOfWeek == other.DayOfWeek ||
+                DayOfWeek != null &&
+                DayOfWeek.Equals(other.DayOfWeek)
             ) &&
             (
-                this.Weight == other.Weight ||
-                this.Weight != null &&
-                this.Weight.Equals(other.Weight)
+                Weight == other.Weight ||
+                Weight != null &&
+                Weight.Equals(other.Weight)
             ) &&
             (
-                this.Date == other.Date ||
-                this.Date != null &&
-                this.Date.Equals(other.Date)
+                Date == other.Date ||
+                Date != null &&
+                Date.Equals(other.Date)
             ) &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.DataKey == other.DataKey ||
-                this.DataKey != null &&
-                this.DataKey.Equals(other.DataKey)
+                DataKey == other.DataKey ||
+                DataKey != null &&
+                DataKey.Equals(other.DataKey)
             );
     }
 
@@ -212,29 +212,29 @@ public partial class WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayP
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DayOfWeek != null)
+            if (DayOfWeek != null)
             {
-                hash = hash * 59 + this.DayOfWeek.GetHashCode();
+                hash = hash * 59 + DayOfWeek.GetHashCode();
             }
 
-            if (this.Weight != null)
+            if (Weight != null)
             {
-                hash = hash * 59 + this.Weight.GetHashCode();
+                hash = hash * 59 + Weight.GetHashCode();
             }
 
-            if (this.Date != null)
+            if (Date != null)
             {
-                hash = hash * 59 + this.Date.GetHashCode();
+                hash = hash * 59 + Date.GetHashCode();
             }
 
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.DataKey != null)
+            if (DataKey != null)
             {
-                hash = hash * 59 + this.DataKey.GetHashCode();
+                hash = hash * 59 + DataKey.GetHashCode();
             }
 
             return hash;

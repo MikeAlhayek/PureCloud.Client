@@ -91,7 +91,7 @@ public partial class ContactListFilterClause : IEquatable<ContactListFilterClaus
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactListFilterClause);
+        return Equals(obj as ContactListFilterClause);
     }
 
     /// <summary>
@@ -109,14 +109,14 @@ public partial class ContactListFilterClause : IEquatable<ContactListFilterClaus
 
         return true &&
             (
-                this.FilterType == other.FilterType ||
-                this.FilterType != null &&
-                this.FilterType.Equals(other.FilterType)
+                FilterType == other.FilterType ||
+                FilterType != null &&
+                FilterType.Equals(other.FilterType)
             ) &&
             (
-                this.Predicates == other.Predicates ||
-                this.Predicates != null &&
-                this.Predicates.SequenceEqual(other.Predicates)
+                Predicates == other.Predicates ||
+                Predicates != null &&
+                Predicates.SequenceEqual(other.Predicates)
             );
     }
 
@@ -131,14 +131,14 @@ public partial class ContactListFilterClause : IEquatable<ContactListFilterClaus
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FilterType != null)
+            if (FilterType != null)
             {
-                hash = hash * 59 + this.FilterType.GetHashCode();
+                hash = hash * 59 + FilterType.GetHashCode();
             }
 
-            if (this.Predicates != null)
+            if (Predicates != null)
             {
-                hash = hash * 59 + this.Predicates.GetHashCode();
+                hash = hash * 59 + Predicates.GetHashCode();
             }
 
             return hash;

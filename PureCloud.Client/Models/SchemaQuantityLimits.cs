@@ -182,7 +182,7 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SchemaQuantityLimits);
+        return Equals(obj as SchemaQuantityLimits);
     }
 
     /// <summary>
@@ -200,74 +200,74 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.MinFieldNameCharacters == other.MinFieldNameCharacters ||
-                this.MinFieldNameCharacters != null &&
-                this.MinFieldNameCharacters.Equals(other.MinFieldNameCharacters)
+                MinFieldNameCharacters == other.MinFieldNameCharacters ||
+                MinFieldNameCharacters != null &&
+                MinFieldNameCharacters.Equals(other.MinFieldNameCharacters)
             ) &&
             (
-                this.MaxFieldNameCharacters == other.MaxFieldNameCharacters ||
-                this.MaxFieldNameCharacters != null &&
-                this.MaxFieldNameCharacters.Equals(other.MaxFieldNameCharacters)
+                MaxFieldNameCharacters == other.MaxFieldNameCharacters ||
+                MaxFieldNameCharacters != null &&
+                MaxFieldNameCharacters.Equals(other.MaxFieldNameCharacters)
             ) &&
             (
-                this.MinFieldDescriptionCharacters == other.MinFieldDescriptionCharacters ||
-                this.MinFieldDescriptionCharacters != null &&
-                this.MinFieldDescriptionCharacters.Equals(other.MinFieldDescriptionCharacters)
+                MinFieldDescriptionCharacters == other.MinFieldDescriptionCharacters ||
+                MinFieldDescriptionCharacters != null &&
+                MinFieldDescriptionCharacters.Equals(other.MinFieldDescriptionCharacters)
             ) &&
             (
-                this.MaxFieldDescriptionCharacters == other.MaxFieldDescriptionCharacters ||
-                this.MaxFieldDescriptionCharacters != null &&
-                this.MaxFieldDescriptionCharacters.Equals(other.MaxFieldDescriptionCharacters)
+                MaxFieldDescriptionCharacters == other.MaxFieldDescriptionCharacters ||
+                MaxFieldDescriptionCharacters != null &&
+                MaxFieldDescriptionCharacters.Equals(other.MaxFieldDescriptionCharacters)
             ) &&
             (
-                this.MinSchemaNameCharacters == other.MinSchemaNameCharacters ||
-                this.MinSchemaNameCharacters != null &&
-                this.MinSchemaNameCharacters.Equals(other.MinSchemaNameCharacters)
+                MinSchemaNameCharacters == other.MinSchemaNameCharacters ||
+                MinSchemaNameCharacters != null &&
+                MinSchemaNameCharacters.Equals(other.MinSchemaNameCharacters)
             ) &&
             (
-                this.MaxSchemaNameCharacters == other.MaxSchemaNameCharacters ||
-                this.MaxSchemaNameCharacters != null &&
-                this.MaxSchemaNameCharacters.Equals(other.MaxSchemaNameCharacters)
+                MaxSchemaNameCharacters == other.MaxSchemaNameCharacters ||
+                MaxSchemaNameCharacters != null &&
+                MaxSchemaNameCharacters.Equals(other.MaxSchemaNameCharacters)
             ) &&
             (
-                this.MinSchemaDescriptionCharacters == other.MinSchemaDescriptionCharacters ||
-                this.MinSchemaDescriptionCharacters != null &&
-                this.MinSchemaDescriptionCharacters.Equals(other.MinSchemaDescriptionCharacters)
+                MinSchemaDescriptionCharacters == other.MinSchemaDescriptionCharacters ||
+                MinSchemaDescriptionCharacters != null &&
+                MinSchemaDescriptionCharacters.Equals(other.MinSchemaDescriptionCharacters)
             ) &&
             (
-                this.MaxSchemaDescriptionCharacters == other.MaxSchemaDescriptionCharacters ||
-                this.MaxSchemaDescriptionCharacters != null &&
-                this.MaxSchemaDescriptionCharacters.Equals(other.MaxSchemaDescriptionCharacters)
+                MaxSchemaDescriptionCharacters == other.MaxSchemaDescriptionCharacters ||
+                MaxSchemaDescriptionCharacters != null &&
+                MaxSchemaDescriptionCharacters.Equals(other.MaxSchemaDescriptionCharacters)
             ) &&
             (
-                this.MaxNumberOfSchemasPerOrg == other.MaxNumberOfSchemasPerOrg ||
-                this.MaxNumberOfSchemasPerOrg != null &&
-                this.MaxNumberOfSchemasPerOrg.Equals(other.MaxNumberOfSchemasPerOrg)
+                MaxNumberOfSchemasPerOrg == other.MaxNumberOfSchemasPerOrg ||
+                MaxNumberOfSchemasPerOrg != null &&
+                MaxNumberOfSchemasPerOrg.Equals(other.MaxNumberOfSchemasPerOrg)
             ) &&
             (
-                this.MaxNumberOfFieldsPerSchema == other.MaxNumberOfFieldsPerSchema ||
-                this.MaxNumberOfFieldsPerSchema != null &&
-                this.MaxNumberOfFieldsPerSchema.Equals(other.MaxNumberOfFieldsPerSchema)
+                MaxNumberOfFieldsPerSchema == other.MaxNumberOfFieldsPerSchema ||
+                MaxNumberOfFieldsPerSchema != null &&
+                MaxNumberOfFieldsPerSchema.Equals(other.MaxNumberOfFieldsPerSchema)
             ) &&
             (
-                this.MaxNumberOfFieldsPerOrg == other.MaxNumberOfFieldsPerOrg ||
-                this.MaxNumberOfFieldsPerOrg != null &&
-                this.MaxNumberOfFieldsPerOrg.Equals(other.MaxNumberOfFieldsPerOrg)
+                MaxNumberOfFieldsPerOrg == other.MaxNumberOfFieldsPerOrg ||
+                MaxNumberOfFieldsPerOrg != null &&
+                MaxNumberOfFieldsPerOrg.Equals(other.MaxNumberOfFieldsPerOrg)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -282,74 +282,74 @@ public partial class SchemaQuantityLimits : IEquatable<SchemaQuantityLimits>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.MinFieldNameCharacters != null)
+            if (MinFieldNameCharacters != null)
             {
-                hash = hash * 59 + this.MinFieldNameCharacters.GetHashCode();
+                hash = hash * 59 + MinFieldNameCharacters.GetHashCode();
             }
 
-            if (this.MaxFieldNameCharacters != null)
+            if (MaxFieldNameCharacters != null)
             {
-                hash = hash * 59 + this.MaxFieldNameCharacters.GetHashCode();
+                hash = hash * 59 + MaxFieldNameCharacters.GetHashCode();
             }
 
-            if (this.MinFieldDescriptionCharacters != null)
+            if (MinFieldDescriptionCharacters != null)
             {
-                hash = hash * 59 + this.MinFieldDescriptionCharacters.GetHashCode();
+                hash = hash * 59 + MinFieldDescriptionCharacters.GetHashCode();
             }
 
-            if (this.MaxFieldDescriptionCharacters != null)
+            if (MaxFieldDescriptionCharacters != null)
             {
-                hash = hash * 59 + this.MaxFieldDescriptionCharacters.GetHashCode();
+                hash = hash * 59 + MaxFieldDescriptionCharacters.GetHashCode();
             }
 
-            if (this.MinSchemaNameCharacters != null)
+            if (MinSchemaNameCharacters != null)
             {
-                hash = hash * 59 + this.MinSchemaNameCharacters.GetHashCode();
+                hash = hash * 59 + MinSchemaNameCharacters.GetHashCode();
             }
 
-            if (this.MaxSchemaNameCharacters != null)
+            if (MaxSchemaNameCharacters != null)
             {
-                hash = hash * 59 + this.MaxSchemaNameCharacters.GetHashCode();
+                hash = hash * 59 + MaxSchemaNameCharacters.GetHashCode();
             }
 
-            if (this.MinSchemaDescriptionCharacters != null)
+            if (MinSchemaDescriptionCharacters != null)
             {
-                hash = hash * 59 + this.MinSchemaDescriptionCharacters.GetHashCode();
+                hash = hash * 59 + MinSchemaDescriptionCharacters.GetHashCode();
             }
 
-            if (this.MaxSchemaDescriptionCharacters != null)
+            if (MaxSchemaDescriptionCharacters != null)
             {
-                hash = hash * 59 + this.MaxSchemaDescriptionCharacters.GetHashCode();
+                hash = hash * 59 + MaxSchemaDescriptionCharacters.GetHashCode();
             }
 
-            if (this.MaxNumberOfSchemasPerOrg != null)
+            if (MaxNumberOfSchemasPerOrg != null)
             {
-                hash = hash * 59 + this.MaxNumberOfSchemasPerOrg.GetHashCode();
+                hash = hash * 59 + MaxNumberOfSchemasPerOrg.GetHashCode();
             }
 
-            if (this.MaxNumberOfFieldsPerSchema != null)
+            if (MaxNumberOfFieldsPerSchema != null)
             {
-                hash = hash * 59 + this.MaxNumberOfFieldsPerSchema.GetHashCode();
+                hash = hash * 59 + MaxNumberOfFieldsPerSchema.GetHashCode();
             }
 
-            if (this.MaxNumberOfFieldsPerOrg != null)
+            if (MaxNumberOfFieldsPerOrg != null)
             {
-                hash = hash * 59 + this.MaxNumberOfFieldsPerOrg.GetHashCode();
+                hash = hash * 59 + MaxNumberOfFieldsPerOrg.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

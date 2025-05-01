@@ -153,7 +153,7 @@ public partial class DomainNetworkAddress : IEquatable<DomainNetworkAddress>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainNetworkAddress);
+        return Equals(obj as DomainNetworkAddress);
     }
 
     /// <summary>
@@ -171,24 +171,24 @@ public partial class DomainNetworkAddress : IEquatable<DomainNetworkAddress>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             ) &&
             (
-                this.Persistent == other.Persistent ||
-                this.Persistent != null &&
-                this.Persistent.Equals(other.Persistent)
+                Persistent == other.Persistent ||
+                Persistent != null &&
+                Persistent.Equals(other.Persistent)
             ) &&
             (
-                this.Family == other.Family ||
-                this.Family != null &&
-                this.Family.Equals(other.Family)
+                Family == other.Family ||
+                Family != null &&
+                Family.Equals(other.Family)
             );
     }
 
@@ -203,24 +203,24 @@ public partial class DomainNetworkAddress : IEquatable<DomainNetworkAddress>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
-            if (this.Persistent != null)
+            if (Persistent != null)
             {
-                hash = hash * 59 + this.Persistent.GetHashCode();
+                hash = hash * 59 + Persistent.GetHashCode();
             }
 
-            if (this.Family != null)
+            if (Family != null)
             {
-                hash = hash * 59 + this.Family.GetHashCode();
+                hash = hash * 59 + Family.GetHashCode();
             }
 
             return hash;

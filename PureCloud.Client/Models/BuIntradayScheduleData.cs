@@ -52,7 +52,7 @@ public partial class BuIntradayScheduleData : IEquatable<BuIntradayScheduleData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuIntradayScheduleData);
+        return Equals(obj as BuIntradayScheduleData);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class BuIntradayScheduleData : IEquatable<BuIntradayScheduleData>
 
         return true &&
             (
-                this.OnQueueTimeSeconds == other.OnQueueTimeSeconds ||
-                this.OnQueueTimeSeconds != null &&
-                this.OnQueueTimeSeconds.Equals(other.OnQueueTimeSeconds)
+                OnQueueTimeSeconds == other.OnQueueTimeSeconds ||
+                OnQueueTimeSeconds != null &&
+                OnQueueTimeSeconds.Equals(other.OnQueueTimeSeconds)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class BuIntradayScheduleData : IEquatable<BuIntradayScheduleData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OnQueueTimeSeconds != null)
+            if (OnQueueTimeSeconds != null)
             {
-                hash = hash * 59 + this.OnQueueTimeSeconds.GetHashCode();
+                hash = hash * 59 + OnQueueTimeSeconds.GetHashCode();
             }
 
             return hash;

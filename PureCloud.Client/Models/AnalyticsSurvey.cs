@@ -221,7 +221,7 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsSurvey);
+        return Equals(obj as AnalyticsSurvey);
     }
 
     /// <summary>
@@ -239,69 +239,69 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
 
         return true &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.SurveyCompletedDate == other.SurveyCompletedDate ||
-                this.SurveyCompletedDate != null &&
-                this.SurveyCompletedDate.Equals(other.SurveyCompletedDate)
+                SurveyCompletedDate == other.SurveyCompletedDate ||
+                SurveyCompletedDate != null &&
+                SurveyCompletedDate.Equals(other.SurveyCompletedDate)
             ) &&
             (
-                this.SurveyFormContextId == other.SurveyFormContextId ||
-                this.SurveyFormContextId != null &&
-                this.SurveyFormContextId.Equals(other.SurveyFormContextId)
+                SurveyFormContextId == other.SurveyFormContextId ||
+                SurveyFormContextId != null &&
+                SurveyFormContextId.Equals(other.SurveyFormContextId)
             ) &&
             (
-                this.SurveyFormId == other.SurveyFormId ||
-                this.SurveyFormId != null &&
-                this.SurveyFormId.Equals(other.SurveyFormId)
+                SurveyFormId == other.SurveyFormId ||
+                SurveyFormId != null &&
+                SurveyFormId.Equals(other.SurveyFormId)
             ) &&
             (
-                this.SurveyFormName == other.SurveyFormName ||
-                this.SurveyFormName != null &&
-                this.SurveyFormName.Equals(other.SurveyFormName)
+                SurveyFormName == other.SurveyFormName ||
+                SurveyFormName != null &&
+                SurveyFormName.Equals(other.SurveyFormName)
             ) &&
             (
-                this.SurveyId == other.SurveyId ||
-                this.SurveyId != null &&
-                this.SurveyId.Equals(other.SurveyId)
+                SurveyId == other.SurveyId ||
+                SurveyId != null &&
+                SurveyId.Equals(other.SurveyId)
             ) &&
             (
-                this.SurveyPartialResponse == other.SurveyPartialResponse ||
-                this.SurveyPartialResponse != null &&
-                this.SurveyPartialResponse.Equals(other.SurveyPartialResponse)
+                SurveyPartialResponse == other.SurveyPartialResponse ||
+                SurveyPartialResponse != null &&
+                SurveyPartialResponse.Equals(other.SurveyPartialResponse)
             ) &&
             (
-                this.SurveyPromoterScore == other.SurveyPromoterScore ||
-                this.SurveyPromoterScore != null &&
-                this.SurveyPromoterScore.Equals(other.SurveyPromoterScore)
+                SurveyPromoterScore == other.SurveyPromoterScore ||
+                SurveyPromoterScore != null &&
+                SurveyPromoterScore.Equals(other.SurveyPromoterScore)
             ) &&
             (
-                this.SurveyStatus == other.SurveyStatus ||
-                this.SurveyStatus != null &&
-                this.SurveyStatus.Equals(other.SurveyStatus)
+                SurveyStatus == other.SurveyStatus ||
+                SurveyStatus != null &&
+                SurveyStatus.Equals(other.SurveyStatus)
             ) &&
             (
-                this.SurveyType == other.SurveyType ||
-                this.SurveyType != null &&
-                this.SurveyType.Equals(other.SurveyType)
+                SurveyType == other.SurveyType ||
+                SurveyType != null &&
+                SurveyType.Equals(other.SurveyType)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.OSurveyTotalScore == other.OSurveyTotalScore ||
-                this.OSurveyTotalScore != null &&
-                this.OSurveyTotalScore.Equals(other.OSurveyTotalScore)
+                OSurveyTotalScore == other.OSurveyTotalScore ||
+                OSurveyTotalScore != null &&
+                OSurveyTotalScore.Equals(other.OSurveyTotalScore)
             );
     }
 
@@ -316,69 +316,69 @@ public partial class AnalyticsSurvey : IEquatable<AnalyticsSurvey>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.SurveyCompletedDate != null)
+            if (SurveyCompletedDate != null)
             {
-                hash = hash * 59 + this.SurveyCompletedDate.GetHashCode();
+                hash = hash * 59 + SurveyCompletedDate.GetHashCode();
             }
 
-            if (this.SurveyFormContextId != null)
+            if (SurveyFormContextId != null)
             {
-                hash = hash * 59 + this.SurveyFormContextId.GetHashCode();
+                hash = hash * 59 + SurveyFormContextId.GetHashCode();
             }
 
-            if (this.SurveyFormId != null)
+            if (SurveyFormId != null)
             {
-                hash = hash * 59 + this.SurveyFormId.GetHashCode();
+                hash = hash * 59 + SurveyFormId.GetHashCode();
             }
 
-            if (this.SurveyFormName != null)
+            if (SurveyFormName != null)
             {
-                hash = hash * 59 + this.SurveyFormName.GetHashCode();
+                hash = hash * 59 + SurveyFormName.GetHashCode();
             }
 
-            if (this.SurveyId != null)
+            if (SurveyId != null)
             {
-                hash = hash * 59 + this.SurveyId.GetHashCode();
+                hash = hash * 59 + SurveyId.GetHashCode();
             }
 
-            if (this.SurveyPartialResponse != null)
+            if (SurveyPartialResponse != null)
             {
-                hash = hash * 59 + this.SurveyPartialResponse.GetHashCode();
+                hash = hash * 59 + SurveyPartialResponse.GetHashCode();
             }
 
-            if (this.SurveyPromoterScore != null)
+            if (SurveyPromoterScore != null)
             {
-                hash = hash * 59 + this.SurveyPromoterScore.GetHashCode();
+                hash = hash * 59 + SurveyPromoterScore.GetHashCode();
             }
 
-            if (this.SurveyStatus != null)
+            if (SurveyStatus != null)
             {
-                hash = hash * 59 + this.SurveyStatus.GetHashCode();
+                hash = hash * 59 + SurveyStatus.GetHashCode();
             }
 
-            if (this.SurveyType != null)
+            if (SurveyType != null)
             {
-                hash = hash * 59 + this.SurveyType.GetHashCode();
+                hash = hash * 59 + SurveyType.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.OSurveyTotalScore != null)
+            if (OSurveyTotalScore != null)
             {
-                hash = hash * 59 + this.OSurveyTotalScore.GetHashCode();
+                hash = hash * 59 + OSurveyTotalScore.GetHashCode();
             }
 
             return hash;

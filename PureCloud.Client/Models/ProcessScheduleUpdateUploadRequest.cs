@@ -83,7 +83,7 @@ public partial class ProcessScheduleUpdateUploadRequest : IEquatable<ProcessSche
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ProcessScheduleUpdateUploadRequest);
+        return Equals(obj as ProcessScheduleUpdateUploadRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class ProcessScheduleUpdateUploadRequest : IEquatable<ProcessSche
 
         return true &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.TeamIds == other.TeamIds ||
-                this.TeamIds != null &&
-                this.TeamIds.SequenceEqual(other.TeamIds)
+                TeamIds == other.TeamIds ||
+                TeamIds != null &&
+                TeamIds.SequenceEqual(other.TeamIds)
             ) &&
             (
-                this.ManagementUnitIdsForAddedTeamUsers == other.ManagementUnitIdsForAddedTeamUsers ||
-                this.ManagementUnitIdsForAddedTeamUsers != null &&
-                this.ManagementUnitIdsForAddedTeamUsers.SequenceEqual(other.ManagementUnitIdsForAddedTeamUsers)
+                ManagementUnitIdsForAddedTeamUsers == other.ManagementUnitIdsForAddedTeamUsers ||
+                ManagementUnitIdsForAddedTeamUsers != null &&
+                ManagementUnitIdsForAddedTeamUsers.SequenceEqual(other.ManagementUnitIdsForAddedTeamUsers)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class ProcessScheduleUpdateUploadRequest : IEquatable<ProcessSche
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.TeamIds != null)
+            if (TeamIds != null)
             {
-                hash = hash * 59 + this.TeamIds.GetHashCode();
+                hash = hash * 59 + TeamIds.GetHashCode();
             }
 
-            if (this.ManagementUnitIdsForAddedTeamUsers != null)
+            if (ManagementUnitIdsForAddedTeamUsers != null)
             {
-                hash = hash * 59 + this.ManagementUnitIdsForAddedTeamUsers.GetHashCode();
+                hash = hash * 59 + ManagementUnitIdsForAddedTeamUsers.GetHashCode();
             }
 
             return hash;

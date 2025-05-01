@@ -175,7 +175,7 @@ public partial class CreateTimeOffPlanRequest : IEquatable<CreateTimeOffPlanRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateTimeOffPlanRequest);
+        return Equals(obj as CreateTimeOffPlanRequest);
     }
 
     /// <summary>
@@ -193,39 +193,39 @@ public partial class CreateTimeOffPlanRequest : IEquatable<CreateTimeOffPlanRequ
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ActivityCodeIds == other.ActivityCodeIds ||
-                this.ActivityCodeIds != null &&
-                this.ActivityCodeIds.SequenceEqual(other.ActivityCodeIds)
+                ActivityCodeIds == other.ActivityCodeIds ||
+                ActivityCodeIds != null &&
+                ActivityCodeIds.SequenceEqual(other.ActivityCodeIds)
             ) &&
             (
-                this.TimeOffLimitIds == other.TimeOffLimitIds ||
-                this.TimeOffLimitIds != null &&
-                this.TimeOffLimitIds.SequenceEqual(other.TimeOffLimitIds)
+                TimeOffLimitIds == other.TimeOffLimitIds ||
+                TimeOffLimitIds != null &&
+                TimeOffLimitIds.SequenceEqual(other.TimeOffLimitIds)
             ) &&
             (
-                this.AutoApprovalRule == other.AutoApprovalRule ||
-                this.AutoApprovalRule != null &&
-                this.AutoApprovalRule.Equals(other.AutoApprovalRule)
+                AutoApprovalRule == other.AutoApprovalRule ||
+                AutoApprovalRule != null &&
+                AutoApprovalRule.Equals(other.AutoApprovalRule)
             ) &&
             (
-                this.DaysBeforeStartToExpireFromWaitlist == other.DaysBeforeStartToExpireFromWaitlist ||
-                this.DaysBeforeStartToExpireFromWaitlist != null &&
-                this.DaysBeforeStartToExpireFromWaitlist.Equals(other.DaysBeforeStartToExpireFromWaitlist)
+                DaysBeforeStartToExpireFromWaitlist == other.DaysBeforeStartToExpireFromWaitlist ||
+                DaysBeforeStartToExpireFromWaitlist != null &&
+                DaysBeforeStartToExpireFromWaitlist.Equals(other.DaysBeforeStartToExpireFromWaitlist)
             ) &&
             (
-                this.HrisTimeOffType == other.HrisTimeOffType ||
-                this.HrisTimeOffType != null &&
-                this.HrisTimeOffType.Equals(other.HrisTimeOffType)
+                HrisTimeOffType == other.HrisTimeOffType ||
+                HrisTimeOffType != null &&
+                HrisTimeOffType.Equals(other.HrisTimeOffType)
             ) &&
             (
-                this.Active == other.Active ||
-                this.Active != null &&
-                this.Active.Equals(other.Active)
+                Active == other.Active ||
+                Active != null &&
+                Active.Equals(other.Active)
             );
     }
 
@@ -240,39 +240,39 @@ public partial class CreateTimeOffPlanRequest : IEquatable<CreateTimeOffPlanRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ActivityCodeIds != null)
+            if (ActivityCodeIds != null)
             {
-                hash = hash * 59 + this.ActivityCodeIds.GetHashCode();
+                hash = hash * 59 + ActivityCodeIds.GetHashCode();
             }
 
-            if (this.TimeOffLimitIds != null)
+            if (TimeOffLimitIds != null)
             {
-                hash = hash * 59 + this.TimeOffLimitIds.GetHashCode();
+                hash = hash * 59 + TimeOffLimitIds.GetHashCode();
             }
 
-            if (this.AutoApprovalRule != null)
+            if (AutoApprovalRule != null)
             {
-                hash = hash * 59 + this.AutoApprovalRule.GetHashCode();
+                hash = hash * 59 + AutoApprovalRule.GetHashCode();
             }
 
-            if (this.DaysBeforeStartToExpireFromWaitlist != null)
+            if (DaysBeforeStartToExpireFromWaitlist != null)
             {
-                hash = hash * 59 + this.DaysBeforeStartToExpireFromWaitlist.GetHashCode();
+                hash = hash * 59 + DaysBeforeStartToExpireFromWaitlist.GetHashCode();
             }
 
-            if (this.HrisTimeOffType != null)
+            if (HrisTimeOffType != null)
             {
-                hash = hash * 59 + this.HrisTimeOffType.GetHashCode();
+                hash = hash * 59 + HrisTimeOffType.GetHashCode();
             }
 
-            if (this.Active != null)
+            if (Active != null)
             {
-                hash = hash * 59 + this.Active.GetHashCode();
+                hash = hash * 59 + Active.GetHashCode();
             }
 
             return hash;

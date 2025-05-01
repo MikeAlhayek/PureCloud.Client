@@ -111,7 +111,7 @@ public partial class Leaderboard : IEquatable<Leaderboard>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Leaderboard);
+        return Equals(obj as Leaderboard);
     }
 
     /// <summary>
@@ -129,39 +129,39 @@ public partial class Leaderboard : IEquatable<Leaderboard>
 
         return true &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.DateStartWorkday == other.DateStartWorkday ||
-                this.DateStartWorkday != null &&
-                this.DateStartWorkday.Equals(other.DateStartWorkday)
+                DateStartWorkday == other.DateStartWorkday ||
+                DateStartWorkday != null &&
+                DateStartWorkday.Equals(other.DateStartWorkday)
             ) &&
             (
-                this.DateEndWorkday == other.DateEndWorkday ||
-                this.DateEndWorkday != null &&
-                this.DateEndWorkday.Equals(other.DateEndWorkday)
+                DateEndWorkday == other.DateEndWorkday ||
+                DateEndWorkday != null &&
+                DateEndWorkday.Equals(other.DateEndWorkday)
             ) &&
             (
-                this.Leaders == other.Leaders ||
-                this.Leaders != null &&
-                this.Leaders.SequenceEqual(other.Leaders)
+                Leaders == other.Leaders ||
+                Leaders != null &&
+                Leaders.SequenceEqual(other.Leaders)
             ) &&
             (
-                this.UserRank == other.UserRank ||
-                this.UserRank != null &&
-                this.UserRank.Equals(other.UserRank)
+                UserRank == other.UserRank ||
+                UserRank != null &&
+                UserRank.Equals(other.UserRank)
             ) &&
             (
-                this.PerformanceProfile == other.PerformanceProfile ||
-                this.PerformanceProfile != null &&
-                this.PerformanceProfile.Equals(other.PerformanceProfile)
+                PerformanceProfile == other.PerformanceProfile ||
+                PerformanceProfile != null &&
+                PerformanceProfile.Equals(other.PerformanceProfile)
             );
     }
 
@@ -176,39 +176,39 @@ public partial class Leaderboard : IEquatable<Leaderboard>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.DateStartWorkday != null)
+            if (DateStartWorkday != null)
             {
-                hash = hash * 59 + this.DateStartWorkday.GetHashCode();
+                hash = hash * 59 + DateStartWorkday.GetHashCode();
             }
 
-            if (this.DateEndWorkday != null)
+            if (DateEndWorkday != null)
             {
-                hash = hash * 59 + this.DateEndWorkday.GetHashCode();
+                hash = hash * 59 + DateEndWorkday.GetHashCode();
             }
 
-            if (this.Leaders != null)
+            if (Leaders != null)
             {
-                hash = hash * 59 + this.Leaders.GetHashCode();
+                hash = hash * 59 + Leaders.GetHashCode();
             }
 
-            if (this.UserRank != null)
+            if (UserRank != null)
             {
-                hash = hash * 59 + this.UserRank.GetHashCode();
+                hash = hash * 59 + UserRank.GetHashCode();
             }
 
-            if (this.PerformanceProfile != null)
+            if (PerformanceProfile != null)
             {
-                hash = hash * 59 + this.PerformanceProfile.GetHashCode();
+                hash = hash * 59 + PerformanceProfile.GetHashCode();
             }
 
             return hash;

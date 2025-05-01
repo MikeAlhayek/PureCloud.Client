@@ -64,7 +64,7 @@ public partial class CampaignOutboundLinesReservation : IEquatable<CampaignOutbo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignOutboundLinesReservation);
+        return Equals(obj as CampaignOutboundLinesReservation);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class CampaignOutboundLinesReservation : IEquatable<CampaignOutbo
 
         return true &&
             (
-                this.Campaign == other.Campaign ||
-                this.Campaign != null &&
-                this.Campaign.Equals(other.Campaign)
+                Campaign == other.Campaign ||
+                Campaign != null &&
+                Campaign.Equals(other.Campaign)
             ) &&
             (
-                this.LinesReserved == other.LinesReserved ||
-                this.LinesReserved != null &&
-                this.LinesReserved.Equals(other.LinesReserved)
+                LinesReserved == other.LinesReserved ||
+                LinesReserved != null &&
+                LinesReserved.Equals(other.LinesReserved)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class CampaignOutboundLinesReservation : IEquatable<CampaignOutbo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Campaign != null)
+            if (Campaign != null)
             {
-                hash = hash * 59 + this.Campaign.GetHashCode();
+                hash = hash * 59 + Campaign.GetHashCode();
             }
 
-            if (this.LinesReserved != null)
+            if (LinesReserved != null)
             {
-                hash = hash * 59 + this.LinesReserved.GetHashCode();
+                hash = hash * 59 + LinesReserved.GetHashCode();
             }
 
             return hash;

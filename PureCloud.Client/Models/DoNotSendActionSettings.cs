@@ -41,7 +41,7 @@ public partial class DoNotSendActionSettings : IEquatable<DoNotSendActionSetting
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DoNotSendActionSettings);
+        return Equals(obj as DoNotSendActionSettings);
     }
 
     /// <summary>

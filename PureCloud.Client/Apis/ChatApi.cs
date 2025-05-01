@@ -1675,12 +1675,12 @@ public partial class ChatApi : IChatApi
     /// <returns></returns>
     public ChatApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1694,17 +1694,17 @@ public partial class ChatApi : IChatApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -1714,7 +1714,7 @@ public partial class ChatApi : IChatApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -1740,7 +1740,7 @@ public partial class ChatApi : IChatApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -1752,7 +1752,7 @@ public partial class ChatApi : IChatApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -1804,7 +1804,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1813,7 +1813,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1826,12 +1826,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -1847,11 +1847,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1933,7 +1933,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1942,7 +1942,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1955,12 +1955,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -1976,11 +1976,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2061,7 +2061,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2070,7 +2070,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2083,12 +2083,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (pinnedMessageId != null)
         {
-            localVarPathParams.Add("pinnedMessageId", this.Configuration.ApiClient.ParameterToString(pinnedMessageId));
+            localVarPathParams.Add("pinnedMessageId", Configuration.ApiClient.ParameterToString(pinnedMessageId));
         }
 
         // Query params
@@ -2104,11 +2104,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2190,7 +2190,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2199,7 +2199,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2212,12 +2212,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (pinnedMessageId != null)
         {
-            localVarPathParams.Add("pinnedMessageId", this.Configuration.ApiClient.ParameterToString(pinnedMessageId));
+            localVarPathParams.Add("pinnedMessageId", Configuration.ApiClient.ParameterToString(pinnedMessageId));
         }
 
         // Query params
@@ -2233,11 +2233,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2318,7 +2318,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2327,7 +2327,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2340,12 +2340,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -2361,11 +2361,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2447,7 +2447,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2456,7 +2456,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2469,12 +2469,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -2490,11 +2490,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2575,7 +2575,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2584,7 +2584,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2597,12 +2597,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -2618,11 +2618,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2704,7 +2704,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2713,7 +2713,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2726,12 +2726,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -2747,11 +2747,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2832,7 +2832,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2841,7 +2841,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2854,12 +2854,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (pinnedMessageId != null)
         {
-            localVarPathParams.Add("pinnedMessageId", this.Configuration.ApiClient.ParameterToString(pinnedMessageId));
+            localVarPathParams.Add("pinnedMessageId", Configuration.ApiClient.ParameterToString(pinnedMessageId));
         }
 
         // Query params
@@ -2875,11 +2875,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2961,7 +2961,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2970,7 +2970,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2983,12 +2983,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (pinnedMessageId != null)
         {
-            localVarPathParams.Add("pinnedMessageId", this.Configuration.ApiClient.ParameterToString(pinnedMessageId));
+            localVarPathParams.Add("pinnedMessageId", Configuration.ApiClient.ParameterToString(pinnedMessageId));
         }
 
         // Query params
@@ -3004,11 +3004,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3083,7 +3083,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3092,7 +3092,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3105,7 +3105,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -3121,11 +3121,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3151,7 +3151,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageResponse)),
+            (ChatMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3200,7 +3200,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3209,7 +3209,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3222,7 +3222,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -3238,11 +3238,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3268,7 +3268,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageResponse)),
+            (ChatMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3317,7 +3317,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3326,7 +3326,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3339,7 +3339,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
@@ -3355,11 +3355,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3385,7 +3385,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<Room>(localVarStatusCode,
             localVarHeaders,
-            (Room)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Room)),
+            (Room)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Room)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3434,7 +3434,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3443,7 +3443,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3456,7 +3456,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
@@ -3472,11 +3472,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3502,7 +3502,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<Room>(localVarStatusCode,
             localVarHeaders,
-            (Room)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Room)),
+            (Room)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Room)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3558,7 +3558,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3567,7 +3567,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3580,12 +3580,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (messageIds != null)
         {
-            localVarPathParams.Add("messageIds", this.Configuration.ApiClient.ParameterToString(messageIds));
+            localVarPathParams.Add("messageIds", Configuration.ApiClient.ParameterToString(messageIds));
         }
 
         // Query params
@@ -3601,11 +3601,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3631,7 +3631,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
+            (ChatMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3688,7 +3688,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3697,7 +3697,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3710,12 +3710,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (messageIds != null)
         {
-            localVarPathParams.Add("messageIds", this.Configuration.ApiClient.ParameterToString(messageIds));
+            localVarPathParams.Add("messageIds", Configuration.ApiClient.ParameterToString(messageIds));
         }
 
         // Query params
@@ -3731,11 +3731,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3761,7 +3761,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
+            (ChatMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3816,7 +3816,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3825,7 +3825,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3838,23 +3838,23 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         // Header params
@@ -3868,11 +3868,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3898,7 +3898,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
+            (ChatMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3953,7 +3953,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3962,7 +3962,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3975,23 +3975,23 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         // Header params
@@ -4005,11 +4005,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4035,7 +4035,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
+            (ChatMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4091,7 +4091,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4100,7 +4100,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4113,12 +4113,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (participantJid != null)
         {
-            localVarPathParams.Add("participantJid", this.Configuration.ApiClient.ParameterToString(participantJid));
+            localVarPathParams.Add("participantJid", Configuration.ApiClient.ParameterToString(participantJid));
         }
 
         // Query params
@@ -4134,11 +4134,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4164,7 +4164,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<RoomParticipant>(localVarStatusCode,
             localVarHeaders,
-            (RoomParticipant)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoomParticipant)),
+            (RoomParticipant)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoomParticipant)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4221,7 +4221,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4230,7 +4230,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4243,12 +4243,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (participantJid != null)
         {
-            localVarPathParams.Add("participantJid", this.Configuration.ApiClient.ParameterToString(participantJid));
+            localVarPathParams.Add("participantJid", Configuration.ApiClient.ParameterToString(participantJid));
         }
 
         // Query params
@@ -4264,11 +4264,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4294,7 +4294,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<RoomParticipant>(localVarStatusCode,
             localVarHeaders,
-            (RoomParticipant)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoomParticipant)),
+            (RoomParticipant)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoomParticipant)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4343,7 +4343,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4352,7 +4352,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4365,7 +4365,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
@@ -4381,11 +4381,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4411,7 +4411,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<RoomParticipantsResponse>(localVarStatusCode,
             localVarHeaders,
-            (RoomParticipantsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoomParticipantsResponse)),
+            (RoomParticipantsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoomParticipantsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4460,7 +4460,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4469,7 +4469,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4482,7 +4482,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
@@ -4498,11 +4498,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4528,7 +4528,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<RoomParticipantsResponse>(localVarStatusCode,
             localVarHeaders,
-            (RoomParticipantsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoomParticipantsResponse)),
+            (RoomParticipantsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoomParticipantsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4570,7 +4570,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4579,7 +4579,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4604,11 +4604,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4634,7 +4634,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
+            (ChatSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4676,7 +4676,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4685,7 +4685,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4710,11 +4710,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4740,7 +4740,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
+            (ChatSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4795,7 +4795,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4804,7 +4804,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4817,23 +4817,23 @@ public partial class ChatApi : IChatApi
         // Path params
         if (threadId != null)
         {
-            localVarPathParams.Add("threadId", this.Configuration.ApiClient.ParameterToString(threadId));
+            localVarPathParams.Add("threadId", Configuration.ApiClient.ParameterToString(threadId));
         }
 
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         // Header params
@@ -4847,11 +4847,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4877,7 +4877,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
+            (ChatMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4932,7 +4932,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4941,7 +4941,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4954,23 +4954,23 @@ public partial class ChatApi : IChatApi
         // Path params
         if (threadId != null)
         {
-            localVarPathParams.Add("threadId", this.Configuration.ApiClient.ParameterToString(threadId));
+            localVarPathParams.Add("threadId", Configuration.ApiClient.ParameterToString(threadId));
         }
 
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         // Header params
@@ -4984,11 +4984,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5014,7 +5014,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
+            (ChatMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5063,7 +5063,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5072,7 +5072,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5085,7 +5085,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -5101,11 +5101,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5131,7 +5131,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<OneOnOne>(localVarStatusCode,
             localVarHeaders,
-            (OneOnOne)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OneOnOne)),
+            (OneOnOne)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OneOnOne)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5180,7 +5180,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5189,7 +5189,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5202,7 +5202,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -5218,11 +5218,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5248,7 +5248,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<OneOnOne>(localVarStatusCode,
             localVarHeaders,
-            (OneOnOne)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OneOnOne)),
+            (OneOnOne)Configuration.ApiClient.Deserialize(localVarResponse, typeof(OneOnOne)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5304,7 +5304,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5313,7 +5313,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5326,12 +5326,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (messageIds != null)
         {
-            localVarPathParams.Add("messageIds", this.Configuration.ApiClient.ParameterToString(messageIds));
+            localVarPathParams.Add("messageIds", Configuration.ApiClient.ParameterToString(messageIds));
         }
 
         // Query params
@@ -5347,11 +5347,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5377,7 +5377,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
+            (ChatMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5434,7 +5434,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5443,7 +5443,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5456,12 +5456,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (messageIds != null)
         {
-            localVarPathParams.Add("messageIds", this.Configuration.ApiClient.ParameterToString(messageIds));
+            localVarPathParams.Add("messageIds", Configuration.ApiClient.ParameterToString(messageIds));
         }
 
         // Query params
@@ -5477,11 +5477,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5507,7 +5507,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
+            (ChatMessageEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5562,7 +5562,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5571,7 +5571,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5584,23 +5584,23 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         // Header params
@@ -5614,11 +5614,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5644,7 +5644,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageResponse)),
+            (ChatMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5699,7 +5699,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5708,7 +5708,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5721,23 +5721,23 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
         if (limit != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("limit", this.Configuration.ApiClient.ParameterToString(limit)));
+            localVarQueryParams.Add(new Tuple<string, string>("limit", Configuration.ApiClient.ParameterToString(limit)));
         }
 
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         // Header params
@@ -5751,11 +5751,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5781,7 +5781,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageResponse)),
+            (ChatMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5830,7 +5830,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5839,7 +5839,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5852,7 +5852,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -5868,11 +5868,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5898,7 +5898,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatUserSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatUserSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
+            (ChatUserSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5947,7 +5947,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5956,7 +5956,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5969,7 +5969,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -5985,11 +5985,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6015,7 +6015,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatUserSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatUserSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
+            (ChatUserSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6057,7 +6057,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6066,7 +6066,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6091,11 +6091,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6121,7 +6121,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatUserSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatUserSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
+            (ChatUserSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6163,7 +6163,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6172,7 +6172,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6197,11 +6197,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6227,7 +6227,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatUserSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatUserSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
+            (ChatUserSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6283,7 +6283,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6292,7 +6292,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6305,7 +6305,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
@@ -6317,7 +6317,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6330,11 +6330,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6417,7 +6417,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6426,7 +6426,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6439,7 +6439,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
@@ -6451,7 +6451,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6464,11 +6464,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6558,7 +6558,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6567,7 +6567,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6580,12 +6580,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -6597,7 +6597,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6610,11 +6610,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6640,7 +6640,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSendMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatSendMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
+            (ChatSendMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6706,7 +6706,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6715,7 +6715,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6728,12 +6728,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -6745,7 +6745,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6758,11 +6758,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6788,7 +6788,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSendMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatSendMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
+            (ChatSendMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6838,7 +6838,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6847,7 +6847,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6868,7 +6868,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -6881,11 +6881,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6911,7 +6911,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
+            (ChatSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6961,7 +6961,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6970,7 +6970,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6991,7 +6991,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7004,11 +7004,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7034,7 +7034,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
+            (ChatSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7098,7 +7098,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7107,7 +7107,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7120,12 +7120,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -7137,7 +7137,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7150,11 +7150,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7180,7 +7180,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSendMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatSendMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
+            (ChatSendMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7246,7 +7246,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7255,7 +7255,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7268,12 +7268,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -7285,7 +7285,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7298,11 +7298,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7328,7 +7328,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSendMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatSendMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
+            (ChatSendMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7385,7 +7385,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7394,7 +7394,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7407,7 +7407,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7419,7 +7419,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7432,11 +7432,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7462,7 +7462,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatUserSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatUserSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
+            (ChatUserSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7520,7 +7520,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7529,7 +7529,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7542,7 +7542,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -7554,7 +7554,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7567,11 +7567,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7597,7 +7597,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatUserSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatUserSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
+            (ChatUserSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7647,7 +7647,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7656,7 +7656,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7677,7 +7677,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7690,11 +7690,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7720,7 +7720,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatUserSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatUserSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
+            (ChatUserSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7770,7 +7770,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7779,7 +7779,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7800,7 +7800,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7813,11 +7813,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7843,7 +7843,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatUserSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatUserSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
+            (ChatUserSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatUserSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7900,7 +7900,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7909,7 +7909,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7922,7 +7922,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
@@ -7934,7 +7934,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -7947,11 +7947,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7977,7 +7977,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSendMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatSendMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
+            (ChatSendMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8035,7 +8035,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8044,7 +8044,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8057,7 +8057,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
@@ -8069,7 +8069,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8082,11 +8082,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8112,7 +8112,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSendMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatSendMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
+            (ChatSendMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8168,7 +8168,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8177,7 +8177,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8190,7 +8190,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
@@ -8202,7 +8202,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8215,11 +8215,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8302,7 +8302,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8311,7 +8311,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8324,7 +8324,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         // Query params
@@ -8336,7 +8336,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8349,11 +8349,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8434,7 +8434,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8443,7 +8443,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8456,12 +8456,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -8477,11 +8477,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8563,7 +8563,7 @@ public partial class ChatApi : IChatApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8572,7 +8572,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8585,12 +8585,12 @@ public partial class ChatApi : IChatApi
         // Path params
         if (roomJid != null)
         {
-            localVarPathParams.Add("roomJid", this.Configuration.ApiClient.ParameterToString(roomJid));
+            localVarPathParams.Add("roomJid", Configuration.ApiClient.ParameterToString(roomJid));
         }
 
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -8606,11 +8606,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8686,7 +8686,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8695,7 +8695,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8716,7 +8716,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8729,11 +8729,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8759,7 +8759,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<CreateRoomResponse>(localVarStatusCode,
             localVarHeaders,
-            (CreateRoomResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateRoomResponse)),
+            (CreateRoomResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateRoomResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8809,7 +8809,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8818,7 +8818,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8839,7 +8839,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8852,11 +8852,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8882,7 +8882,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<CreateRoomResponse>(localVarStatusCode,
             localVarHeaders,
-            (CreateRoomResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateRoomResponse)),
+            (CreateRoomResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateRoomResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8939,7 +8939,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8948,7 +8948,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8961,7 +8961,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -8973,7 +8973,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -8986,11 +8986,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9016,7 +9016,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSendMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatSendMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
+            (ChatSendMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9074,7 +9074,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9083,7 +9083,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9096,7 +9096,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -9108,7 +9108,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9121,11 +9121,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9151,7 +9151,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSendMessageResponse>(localVarStatusCode,
             localVarHeaders,
-            (ChatSendMessageResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
+            (ChatSendMessageResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSendMessageResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9207,7 +9207,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9216,7 +9216,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9229,7 +9229,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -9241,7 +9241,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9254,11 +9254,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9341,7 +9341,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9350,7 +9350,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9363,7 +9363,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -9375,7 +9375,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9388,11 +9388,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9474,7 +9474,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9483,7 +9483,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9496,7 +9496,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -9508,7 +9508,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9521,11 +9521,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9608,7 +9608,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9617,7 +9617,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9630,7 +9630,7 @@ public partial class ChatApi : IChatApi
         // Path params
         if (messageId != null)
         {
-            localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+            localVarPathParams.Add("messageId", Configuration.ApiClient.ParameterToString(messageId));
         }
 
         // Query params
@@ -9642,7 +9642,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9655,11 +9655,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9735,7 +9735,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9744,7 +9744,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9765,7 +9765,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9778,11 +9778,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9808,7 +9808,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
+            (ChatSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9858,7 +9858,7 @@ public partial class ChatApi : IChatApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9867,7 +9867,7 @@ public partial class ChatApi : IChatApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9888,7 +9888,7 @@ public partial class ChatApi : IChatApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -9901,11 +9901,11 @@ public partial class ChatApi : IChatApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9931,7 +9931,7 @@ public partial class ChatApi : IChatApi
 
         return new ApiResponse<ChatSettings>(localVarStatusCode,
             localVarHeaders,
-            (ChatSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
+            (ChatSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChatSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

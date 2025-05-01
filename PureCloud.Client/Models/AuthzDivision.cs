@@ -109,7 +109,7 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuthzDivision);
+        return Equals(obj as AuthzDivision);
     }
 
     /// <summary>
@@ -127,34 +127,34 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.HomeDivision == other.HomeDivision ||
-                this.HomeDivision != null &&
-                this.HomeDivision.Equals(other.HomeDivision)
+                HomeDivision == other.HomeDivision ||
+                HomeDivision != null &&
+                HomeDivision.Equals(other.HomeDivision)
             ) &&
             (
-                this.ObjectCounts == other.ObjectCounts ||
-                this.ObjectCounts != null &&
-                this.ObjectCounts.SequenceEqual(other.ObjectCounts)
+                ObjectCounts == other.ObjectCounts ||
+                ObjectCounts != null &&
+                ObjectCounts.SequenceEqual(other.ObjectCounts)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -169,34 +169,34 @@ public partial class AuthzDivision : IEquatable<AuthzDivision>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.HomeDivision != null)
+            if (HomeDivision != null)
             {
-                hash = hash * 59 + this.HomeDivision.GetHashCode();
+                hash = hash * 59 + HomeDivision.GetHashCode();
             }
 
-            if (this.ObjectCounts != null)
+            if (ObjectCounts != null)
             {
-                hash = hash * 59 + this.ObjectCounts.GetHashCode();
+                hash = hash * 59 + ObjectCounts.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

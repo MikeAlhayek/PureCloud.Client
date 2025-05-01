@@ -77,7 +77,7 @@ public partial class ConversationContentReceivedReplyMessage : IEquatable<Conver
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationContentReceivedReplyMessage);
+        return Equals(obj as ConversationContentReceivedReplyMessage);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ConversationContentReceivedReplyMessage : IEquatable<Conver
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Subtitle == other.Subtitle ||
-                this.Subtitle != null &&
-                this.Subtitle.Equals(other.Subtitle)
+                Subtitle == other.Subtitle ||
+                Subtitle != null &&
+                Subtitle.Equals(other.Subtitle)
             ) &&
             (
-                this.ImageUrl == other.ImageUrl ||
-                this.ImageUrl != null &&
-                this.ImageUrl.Equals(other.ImageUrl)
+                ImageUrl == other.ImageUrl ||
+                ImageUrl != null &&
+                ImageUrl.Equals(other.ImageUrl)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ConversationContentReceivedReplyMessage : IEquatable<Conver
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Subtitle != null)
+            if (Subtitle != null)
             {
-                hash = hash * 59 + this.Subtitle.GetHashCode();
+                hash = hash * 59 + Subtitle.GetHashCode();
             }
 
-            if (this.ImageUrl != null)
+            if (ImageUrl != null)
             {
-                hash = hash * 59 + this.ImageUrl.GetHashCode();
+                hash = hash * 59 + ImageUrl.GetHashCode();
             }
 
             return hash;

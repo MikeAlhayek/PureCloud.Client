@@ -145,7 +145,7 @@ public partial class SkillGroupLanguageCondition : IEquatable<SkillGroupLanguage
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SkillGroupLanguageCondition);
+        return Equals(obj as SkillGroupLanguageCondition);
     }
 
     /// <summary>
@@ -163,24 +163,24 @@ public partial class SkillGroupLanguageCondition : IEquatable<SkillGroupLanguage
 
         return true &&
             (
-                this.LanguageSkill == other.LanguageSkill ||
-                this.LanguageSkill != null &&
-                this.LanguageSkill.Equals(other.LanguageSkill)
+                LanguageSkill == other.LanguageSkill ||
+                LanguageSkill != null &&
+                LanguageSkill.Equals(other.LanguageSkill)
             ) &&
             (
-                this.Comparator == other.Comparator ||
-                this.Comparator != null &&
-                this.Comparator.Equals(other.Comparator)
+                Comparator == other.Comparator ||
+                Comparator != null &&
+                Comparator.Equals(other.Comparator)
             ) &&
             (
-                this.Proficiency == other.Proficiency ||
-                this.Proficiency != null &&
-                this.Proficiency.Equals(other.Proficiency)
+                Proficiency == other.Proficiency ||
+                Proficiency != null &&
+                Proficiency.Equals(other.Proficiency)
             ) &&
             (
-                this.ChildConditions == other.ChildConditions ||
-                this.ChildConditions != null &&
-                this.ChildConditions.SequenceEqual(other.ChildConditions)
+                ChildConditions == other.ChildConditions ||
+                ChildConditions != null &&
+                ChildConditions.SequenceEqual(other.ChildConditions)
             );
     }
 
@@ -195,24 +195,24 @@ public partial class SkillGroupLanguageCondition : IEquatable<SkillGroupLanguage
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LanguageSkill != null)
+            if (LanguageSkill != null)
             {
-                hash = hash * 59 + this.LanguageSkill.GetHashCode();
+                hash = hash * 59 + LanguageSkill.GetHashCode();
             }
 
-            if (this.Comparator != null)
+            if (Comparator != null)
             {
-                hash = hash * 59 + this.Comparator.GetHashCode();
+                hash = hash * 59 + Comparator.GetHashCode();
             }
 
-            if (this.Proficiency != null)
+            if (Proficiency != null)
             {
-                hash = hash * 59 + this.Proficiency.GetHashCode();
+                hash = hash * 59 + Proficiency.GetHashCode();
             }
 
-            if (this.ChildConditions != null)
+            if (ChildConditions != null)
             {
-                hash = hash * 59 + this.ChildConditions.GetHashCode();
+                hash = hash * 59 + ChildConditions.GetHashCode();
             }
 
             return hash;

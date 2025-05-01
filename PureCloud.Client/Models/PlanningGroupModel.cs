@@ -53,7 +53,7 @@ public partial class PlanningGroupModel : IEquatable<PlanningGroupModel>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PlanningGroupModel);
+        return Equals(obj as PlanningGroupModel);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class PlanningGroupModel : IEquatable<PlanningGroupModel>
 
         return true &&
             (
-                this.PlanningGroup == other.PlanningGroup ||
-                this.PlanningGroup != null &&
-                this.PlanningGroup.Equals(other.PlanningGroup)
+                PlanningGroup == other.PlanningGroup ||
+                PlanningGroup != null &&
+                PlanningGroup.Equals(other.PlanningGroup)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class PlanningGroupModel : IEquatable<PlanningGroupModel>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PlanningGroup != null)
+            if (PlanningGroup != null)
             {
-                hash = hash * 59 + this.PlanningGroup.GetHashCode();
+                hash = hash * 59 + PlanningGroup.GetHashCode();
             }
 
             return hash;

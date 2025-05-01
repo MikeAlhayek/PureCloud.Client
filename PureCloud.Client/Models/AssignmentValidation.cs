@@ -88,7 +88,7 @@ public partial class AssignmentValidation : IEquatable<AssignmentValidation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AssignmentValidation);
+        return Equals(obj as AssignmentValidation);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class AssignmentValidation : IEquatable<AssignmentValidation>
 
         return true &&
             (
-                this.MembersNotAssigned == other.MembersNotAssigned ||
-                this.MembersNotAssigned != null &&
-                this.MembersNotAssigned.SequenceEqual(other.MembersNotAssigned)
+                MembersNotAssigned == other.MembersNotAssigned ||
+                MembersNotAssigned != null &&
+                MembersNotAssigned.SequenceEqual(other.MembersNotAssigned)
             ) &&
             (
-                this.MembersAlreadyAssigned == other.MembersAlreadyAssigned ||
-                this.MembersAlreadyAssigned != null &&
-                this.MembersAlreadyAssigned.SequenceEqual(other.MembersAlreadyAssigned)
+                MembersAlreadyAssigned == other.MembersAlreadyAssigned ||
+                MembersAlreadyAssigned != null &&
+                MembersAlreadyAssigned.SequenceEqual(other.MembersAlreadyAssigned)
             ) &&
             (
-                this.MembersAlreadyAssignedToOther == other.MembersAlreadyAssignedToOther ||
-                this.MembersAlreadyAssignedToOther != null &&
-                this.MembersAlreadyAssignedToOther.SequenceEqual(other.MembersAlreadyAssignedToOther)
+                MembersAlreadyAssignedToOther == other.MembersAlreadyAssignedToOther ||
+                MembersAlreadyAssignedToOther != null &&
+                MembersAlreadyAssignedToOther.SequenceEqual(other.MembersAlreadyAssignedToOther)
             ) &&
             (
-                this.InvalidMemberAssignments == other.InvalidMemberAssignments ||
-                this.InvalidMemberAssignments != null &&
-                this.InvalidMemberAssignments.SequenceEqual(other.InvalidMemberAssignments)
+                InvalidMemberAssignments == other.InvalidMemberAssignments ||
+                InvalidMemberAssignments != null &&
+                InvalidMemberAssignments.SequenceEqual(other.InvalidMemberAssignments)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class AssignmentValidation : IEquatable<AssignmentValidation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MembersNotAssigned != null)
+            if (MembersNotAssigned != null)
             {
-                hash = hash * 59 + this.MembersNotAssigned.GetHashCode();
+                hash = hash * 59 + MembersNotAssigned.GetHashCode();
             }
 
-            if (this.MembersAlreadyAssigned != null)
+            if (MembersAlreadyAssigned != null)
             {
-                hash = hash * 59 + this.MembersAlreadyAssigned.GetHashCode();
+                hash = hash * 59 + MembersAlreadyAssigned.GetHashCode();
             }
 
-            if (this.MembersAlreadyAssignedToOther != null)
+            if (MembersAlreadyAssignedToOther != null)
             {
-                hash = hash * 59 + this.MembersAlreadyAssignedToOther.GetHashCode();
+                hash = hash * 59 + MembersAlreadyAssignedToOther.GetHashCode();
             }
 
-            if (this.InvalidMemberAssignments != null)
+            if (InvalidMemberAssignments != null)
             {
-                hash = hash * 59 + this.InvalidMemberAssignments.GetHashCode();
+                hash = hash * 59 + InvalidMemberAssignments.GetHashCode();
             }
 
             return hash;

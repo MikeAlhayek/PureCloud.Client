@@ -65,7 +65,7 @@ public partial class ProgramInsightsSettings : IEquatable<ProgramInsightsSetting
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ProgramInsightsSettings);
+        return Equals(obj as ProgramInsightsSettings);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ProgramInsightsSettings : IEquatable<ProgramInsightsSetting
 
         return true &&
             (
-                this.Program == other.Program ||
-                this.Program != null &&
-                this.Program.Equals(other.Program)
+                Program == other.Program ||
+                Program != null &&
+                Program.Equals(other.Program)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ProgramInsightsSettings : IEquatable<ProgramInsightsSetting
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Program != null)
+            if (Program != null)
             {
-                hash = hash * 59 + this.Program.GetHashCode();
+                hash = hash * 59 + Program.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
             return hash;

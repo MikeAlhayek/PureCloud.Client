@@ -110,7 +110,7 @@ public partial class Article : IEquatable<Article>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Article);
+        return Equals(obj as Article);
     }
 
     /// <summary>
@@ -128,39 +128,39 @@ public partial class Article : IEquatable<Article>
 
         return true &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Uri == other.Uri ||
-                this.Uri != null &&
-                this.Uri.Equals(other.Uri)
+                Uri == other.Uri ||
+                Uri != null &&
+                Uri.Equals(other.Uri)
             ) &&
             (
-                this.Snippets == other.Snippets ||
-                this.Snippets != null &&
-                this.Snippets.SequenceEqual(other.Snippets)
+                Snippets == other.Snippets ||
+                Snippets != null &&
+                Snippets.SequenceEqual(other.Snippets)
             ) &&
             (
-                this.Confidence == other.Confidence ||
-                this.Confidence != null &&
-                this.Confidence.Equals(other.Confidence)
+                Confidence == other.Confidence ||
+                Confidence != null &&
+                Confidence.Equals(other.Confidence)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.SequenceEqual(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.SequenceEqual(other.Metadata)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Variations == other.Variations ||
-                this.Variations != null &&
-                this.Variations.SequenceEqual(other.Variations)
+                Variations == other.Variations ||
+                Variations != null &&
+                Variations.SequenceEqual(other.Variations)
             );
     }
 
@@ -175,39 +175,39 @@ public partial class Article : IEquatable<Article>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Uri != null)
+            if (Uri != null)
             {
-                hash = hash * 59 + this.Uri.GetHashCode();
+                hash = hash * 59 + Uri.GetHashCode();
             }
 
-            if (this.Snippets != null)
+            if (Snippets != null)
             {
-                hash = hash * 59 + this.Snippets.GetHashCode();
+                hash = hash * 59 + Snippets.GetHashCode();
             }
 
-            if (this.Confidence != null)
+            if (Confidence != null)
             {
-                hash = hash * 59 + this.Confidence.GetHashCode();
+                hash = hash * 59 + Confidence.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Variations != null)
+            if (Variations != null)
             {
-                hash = hash * 59 + this.Variations.GetHashCode();
+                hash = hash * 59 + Variations.GetHashCode();
             }
 
             return hash;

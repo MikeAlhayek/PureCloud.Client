@@ -77,7 +77,7 @@ public partial class InboundDomainPatchRequest : IEquatable<InboundDomainPatchRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InboundDomainPatchRequest);
+        return Equals(obj as InboundDomainPatchRequest);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class InboundDomainPatchRequest : IEquatable<InboundDomainPatchRe
 
         return true &&
             (
-                this.MailFromSettings == other.MailFromSettings ||
-                this.MailFromSettings != null &&
-                this.MailFromSettings.Equals(other.MailFromSettings)
+                MailFromSettings == other.MailFromSettings ||
+                MailFromSettings != null &&
+                MailFromSettings.Equals(other.MailFromSettings)
             ) &&
             (
-                this.CustomSMTPServer == other.CustomSMTPServer ||
-                this.CustomSMTPServer != null &&
-                this.CustomSMTPServer.Equals(other.CustomSMTPServer)
+                CustomSMTPServer == other.CustomSMTPServer ||
+                CustomSMTPServer != null &&
+                CustomSMTPServer.Equals(other.CustomSMTPServer)
             ) &&
             (
-                this.ImapSettings == other.ImapSettings ||
-                this.ImapSettings != null &&
-                this.ImapSettings.Equals(other.ImapSettings)
+                ImapSettings == other.ImapSettings ||
+                ImapSettings != null &&
+                ImapSettings.Equals(other.ImapSettings)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class InboundDomainPatchRequest : IEquatable<InboundDomainPatchRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MailFromSettings != null)
+            if (MailFromSettings != null)
             {
-                hash = hash * 59 + this.MailFromSettings.GetHashCode();
+                hash = hash * 59 + MailFromSettings.GetHashCode();
             }
 
-            if (this.CustomSMTPServer != null)
+            if (CustomSMTPServer != null)
             {
-                hash = hash * 59 + this.CustomSMTPServer.GetHashCode();
+                hash = hash * 59 + CustomSMTPServer.GetHashCode();
             }
 
-            if (this.ImapSettings != null)
+            if (ImapSettings != null)
             {
-                hash = hash * 59 + this.ImapSettings.GetHashCode();
+                hash = hash * 59 + ImapSettings.GetHashCode();
             }
 
             return hash;

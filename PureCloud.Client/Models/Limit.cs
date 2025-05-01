@@ -537,7 +537,7 @@ public partial class Limit : IEquatable<Limit>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Limit);
+        return Equals(obj as Limit);
     }
 
     /// <summary>
@@ -555,19 +555,19 @@ public partial class Limit : IEquatable<Limit>
 
         return true &&
             (
-                this.Key == other.Key ||
-                this.Key != null &&
-                this.Key.Equals(other.Key)
+                Key == other.Key ||
+                Key != null &&
+                Key.Equals(other.Key)
             ) &&
             (
-                this.Namespace == other.Namespace ||
-                this.Namespace != null &&
-                this.Namespace.Equals(other.Namespace)
+                Namespace == other.Namespace ||
+                Namespace != null &&
+                Namespace.Equals(other.Namespace)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -582,19 +582,19 @@ public partial class Limit : IEquatable<Limit>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Key != null)
+            if (Key != null)
             {
-                hash = hash * 59 + this.Key.GetHashCode();
+                hash = hash * 59 + Key.GetHashCode();
             }
 
-            if (this.Namespace != null)
+            if (Namespace != null)
             {
-                hash = hash * 59 + this.Namespace.GetHashCode();
+                hash = hash * 59 + Namespace.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

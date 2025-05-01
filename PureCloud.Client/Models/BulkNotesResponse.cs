@@ -76,7 +76,7 @@ public partial class BulkNotesResponse : IEquatable<BulkNotesResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BulkNotesResponse);
+        return Equals(obj as BulkNotesResponse);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class BulkNotesResponse : IEquatable<BulkNotesResponse>
 
         return true &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             ) &&
             (
-                this.ErrorCount == other.ErrorCount ||
-                this.ErrorCount != null &&
-                this.ErrorCount.Equals(other.ErrorCount)
+                ErrorCount == other.ErrorCount ||
+                ErrorCount != null &&
+                ErrorCount.Equals(other.ErrorCount)
             ) &&
             (
-                this.ErrorIndexes == other.ErrorIndexes ||
-                this.ErrorIndexes != null &&
-                this.ErrorIndexes.SequenceEqual(other.ErrorIndexes)
+                ErrorIndexes == other.ErrorIndexes ||
+                ErrorIndexes != null &&
+                ErrorIndexes.SequenceEqual(other.ErrorIndexes)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class BulkNotesResponse : IEquatable<BulkNotesResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
-            if (this.ErrorCount != null)
+            if (ErrorCount != null)
             {
-                hash = hash * 59 + this.ErrorCount.GetHashCode();
+                hash = hash * 59 + ErrorCount.GetHashCode();
             }
 
-            if (this.ErrorIndexes != null)
+            if (ErrorIndexes != null)
             {
-                hash = hash * 59 + this.ErrorIndexes.GetHashCode();
+                hash = hash * 59 + ErrorIndexes.GetHashCode();
             }
 
             return hash;

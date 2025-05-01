@@ -74,7 +74,7 @@ public partial class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionDa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData);
+        return Equals(obj as WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionDa
 
         return true &&
             (
-                this.ServiceLevelPercent == other.ServiceLevelPercent ||
-                this.ServiceLevelPercent != null &&
-                this.ServiceLevelPercent.Equals(other.ServiceLevelPercent)
+                ServiceLevelPercent == other.ServiceLevelPercent ||
+                ServiceLevelPercent != null &&
+                ServiceLevelPercent.Equals(other.ServiceLevelPercent)
             ) &&
             (
-                this.AverageSpeedOfAnswerSeconds == other.AverageSpeedOfAnswerSeconds ||
-                this.AverageSpeedOfAnswerSeconds != null &&
-                this.AverageSpeedOfAnswerSeconds.Equals(other.AverageSpeedOfAnswerSeconds)
+                AverageSpeedOfAnswerSeconds == other.AverageSpeedOfAnswerSeconds ||
+                AverageSpeedOfAnswerSeconds != null &&
+                AverageSpeedOfAnswerSeconds.Equals(other.AverageSpeedOfAnswerSeconds)
             ) &&
             (
-                this.OccupancyPercent == other.OccupancyPercent ||
-                this.OccupancyPercent != null &&
-                this.OccupancyPercent.Equals(other.OccupancyPercent)
+                OccupancyPercent == other.OccupancyPercent ||
+                OccupancyPercent != null &&
+                OccupancyPercent.Equals(other.OccupancyPercent)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionDa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ServiceLevelPercent != null)
+            if (ServiceLevelPercent != null)
             {
-                hash = hash * 59 + this.ServiceLevelPercent.GetHashCode();
+                hash = hash * 59 + ServiceLevelPercent.GetHashCode();
             }
 
-            if (this.AverageSpeedOfAnswerSeconds != null)
+            if (AverageSpeedOfAnswerSeconds != null)
             {
-                hash = hash * 59 + this.AverageSpeedOfAnswerSeconds.GetHashCode();
+                hash = hash * 59 + AverageSpeedOfAnswerSeconds.GetHashCode();
             }
 
-            if (this.OccupancyPercent != null)
+            if (OccupancyPercent != null)
             {
-                hash = hash * 59 + this.OccupancyPercent.GetHashCode();
+                hash = hash * 59 + OccupancyPercent.GetHashCode();
             }
 
             return hash;

@@ -75,7 +75,7 @@ public partial class OtherProfileAssignment : IEquatable<OtherProfileAssignment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OtherProfileAssignment);
+        return Equals(obj as OtherProfileAssignment);
     }
 
     /// <summary>
@@ -93,19 +93,19 @@ public partial class OtherProfileAssignment : IEquatable<OtherProfileAssignment>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.CurrentProfile == other.CurrentProfile ||
-                this.CurrentProfile != null &&
-                this.CurrentProfile.Equals(other.CurrentProfile)
+                CurrentProfile == other.CurrentProfile ||
+                CurrentProfile != null &&
+                CurrentProfile.Equals(other.CurrentProfile)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -120,19 +120,19 @@ public partial class OtherProfileAssignment : IEquatable<OtherProfileAssignment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.CurrentProfile != null)
+            if (CurrentProfile != null)
             {
-                hash = hash * 59 + this.CurrentProfile.GetHashCode();
+                hash = hash * 59 + CurrentProfile.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

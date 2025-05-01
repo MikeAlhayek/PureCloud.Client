@@ -107,7 +107,7 @@ public partial class SurveyAssignment : IEquatable<SurveyAssignment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SurveyAssignment);
+        return Equals(obj as SurveyAssignment);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class SurveyAssignment : IEquatable<SurveyAssignment>
 
         return true &&
             (
-                this.SurveyForm == other.SurveyForm ||
-                this.SurveyForm != null &&
-                this.SurveyForm.Equals(other.SurveyForm)
+                SurveyForm == other.SurveyForm ||
+                SurveyForm != null &&
+                SurveyForm.Equals(other.SurveyForm)
             ) &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             ) &&
             (
-                this.InviteTimeInterval == other.InviteTimeInterval ||
-                this.InviteTimeInterval != null &&
-                this.InviteTimeInterval.Equals(other.InviteTimeInterval)
+                InviteTimeInterval == other.InviteTimeInterval ||
+                InviteTimeInterval != null &&
+                InviteTimeInterval.Equals(other.InviteTimeInterval)
             ) &&
             (
-                this.SendingUser == other.SendingUser ||
-                this.SendingUser != null &&
-                this.SendingUser.Equals(other.SendingUser)
+                SendingUser == other.SendingUser ||
+                SendingUser != null &&
+                SendingUser.Equals(other.SendingUser)
             ) &&
             (
-                this.SendingDomain == other.SendingDomain ||
-                this.SendingDomain != null &&
-                this.SendingDomain.Equals(other.SendingDomain)
+                SendingDomain == other.SendingDomain ||
+                SendingDomain != null &&
+                SendingDomain.Equals(other.SendingDomain)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class SurveyAssignment : IEquatable<SurveyAssignment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SurveyForm != null)
+            if (SurveyForm != null)
             {
-                hash = hash * 59 + this.SurveyForm.GetHashCode();
+                hash = hash * 59 + SurveyForm.GetHashCode();
             }
 
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
-            if (this.InviteTimeInterval != null)
+            if (InviteTimeInterval != null)
             {
-                hash = hash * 59 + this.InviteTimeInterval.GetHashCode();
+                hash = hash * 59 + InviteTimeInterval.GetHashCode();
             }
 
-            if (this.SendingUser != null)
+            if (SendingUser != null)
             {
-                hash = hash * 59 + this.SendingUser.GetHashCode();
+                hash = hash * 59 + SendingUser.GetHashCode();
             }
 
-            if (this.SendingDomain != null)
+            if (SendingDomain != null)
             {
-                hash = hash * 59 + this.SendingDomain.GetHashCode();
+                hash = hash * 59 + SendingDomain.GetHashCode();
             }
 
             return hash;

@@ -59,7 +59,7 @@ public partial class DynamicGroupQuery : IEquatable<DynamicGroupQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DynamicGroupQuery);
+        return Equals(obj as DynamicGroupQuery);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class DynamicGroupQuery : IEquatable<DynamicGroupQuery>
 
         return true &&
             (
-                this.SkillConditions == other.SkillConditions ||
-                this.SkillConditions != null &&
-                this.SkillConditions.SequenceEqual(other.SkillConditions)
+                SkillConditions == other.SkillConditions ||
+                SkillConditions != null &&
+                SkillConditions.SequenceEqual(other.SkillConditions)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class DynamicGroupQuery : IEquatable<DynamicGroupQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SkillConditions != null)
+            if (SkillConditions != null)
             {
-                hash = hash * 59 + this.SkillConditions.GetHashCode();
+                hash = hash * 59 + SkillConditions.GetHashCode();
             }
 
             return hash;

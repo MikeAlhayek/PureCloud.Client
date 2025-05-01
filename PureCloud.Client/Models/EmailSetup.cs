@@ -53,7 +53,7 @@ public partial class EmailSetup : IEquatable<EmailSetup>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailSetup);
+        return Equals(obj as EmailSetup);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class EmailSetup : IEquatable<EmailSetup>
 
         return true &&
             (
-                this.RootDomain == other.RootDomain ||
-                this.RootDomain != null &&
-                this.RootDomain.Equals(other.RootDomain)
+                RootDomain == other.RootDomain ||
+                RootDomain != null &&
+                RootDomain.Equals(other.RootDomain)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class EmailSetup : IEquatable<EmailSetup>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RootDomain != null)
+            if (RootDomain != null)
             {
-                hash = hash * 59 + this.RootDomain.GetHashCode();
+                hash = hash * 59 + RootDomain.GetHashCode();
             }
 
             return hash;

@@ -405,7 +405,7 @@ public partial class SchedulerMessageTypeSeverity : IEquatable<SchedulerMessageT
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SchedulerMessageTypeSeverity);
+        return Equals(obj as SchedulerMessageTypeSeverity);
     }
 
     /// <summary>
@@ -423,14 +423,14 @@ public partial class SchedulerMessageTypeSeverity : IEquatable<SchedulerMessageT
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Severity == other.Severity ||
-                this.Severity != null &&
-                this.Severity.Equals(other.Severity)
+                Severity == other.Severity ||
+                Severity != null &&
+                Severity.Equals(other.Severity)
             );
     }
 
@@ -445,14 +445,14 @@ public partial class SchedulerMessageTypeSeverity : IEquatable<SchedulerMessageT
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Severity != null)
+            if (Severity != null)
             {
-                hash = hash * 59 + this.Severity.GetHashCode();
+                hash = hash * 59 + Severity.GetHashCode();
             }
 
             return hash;

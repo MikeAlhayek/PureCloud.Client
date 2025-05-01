@@ -125,7 +125,7 @@ public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemStatusUpdate);
+        return Equals(obj as WorkitemStatusUpdate);
     }
 
     /// <summary>
@@ -143,39 +143,39 @@ public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DestinationStatusIds == other.DestinationStatusIds ||
-                this.DestinationStatusIds != null &&
-                this.DestinationStatusIds.SequenceEqual(other.DestinationStatusIds)
+                DestinationStatusIds == other.DestinationStatusIds ||
+                DestinationStatusIds != null &&
+                DestinationStatusIds.SequenceEqual(other.DestinationStatusIds)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DefaultDestinationStatusId == other.DefaultDestinationStatusId ||
-                this.DefaultDestinationStatusId != null &&
-                this.DefaultDestinationStatusId.Equals(other.DefaultDestinationStatusId)
+                DefaultDestinationStatusId == other.DefaultDestinationStatusId ||
+                DefaultDestinationStatusId != null &&
+                DefaultDestinationStatusId.Equals(other.DefaultDestinationStatusId)
             ) &&
             (
-                this.StatusTransitionDelaySeconds == other.StatusTransitionDelaySeconds ||
-                this.StatusTransitionDelaySeconds != null &&
-                this.StatusTransitionDelaySeconds.Equals(other.StatusTransitionDelaySeconds)
+                StatusTransitionDelaySeconds == other.StatusTransitionDelaySeconds ||
+                StatusTransitionDelaySeconds != null &&
+                StatusTransitionDelaySeconds.Equals(other.StatusTransitionDelaySeconds)
             ) &&
             (
-                this.StatusTransitionTime == other.StatusTransitionTime ||
-                this.StatusTransitionTime != null &&
-                this.StatusTransitionTime.Equals(other.StatusTransitionTime)
+                StatusTransitionTime == other.StatusTransitionTime ||
+                StatusTransitionTime != null &&
+                StatusTransitionTime.Equals(other.StatusTransitionTime)
             ) &&
             (
-                this.AutoTerminateWorkitem == other.AutoTerminateWorkitem ||
-                this.AutoTerminateWorkitem != null &&
-                this.AutoTerminateWorkitem.Equals(other.AutoTerminateWorkitem)
+                AutoTerminateWorkitem == other.AutoTerminateWorkitem ||
+                AutoTerminateWorkitem != null &&
+                AutoTerminateWorkitem.Equals(other.AutoTerminateWorkitem)
             );
     }
 
@@ -190,39 +190,39 @@ public partial class WorkitemStatusUpdate : IEquatable<WorkitemStatusUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DestinationStatusIds != null)
+            if (DestinationStatusIds != null)
             {
-                hash = hash * 59 + this.DestinationStatusIds.GetHashCode();
+                hash = hash * 59 + DestinationStatusIds.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DefaultDestinationStatusId != null)
+            if (DefaultDestinationStatusId != null)
             {
-                hash = hash * 59 + this.DefaultDestinationStatusId.GetHashCode();
+                hash = hash * 59 + DefaultDestinationStatusId.GetHashCode();
             }
 
-            if (this.StatusTransitionDelaySeconds != null)
+            if (StatusTransitionDelaySeconds != null)
             {
-                hash = hash * 59 + this.StatusTransitionDelaySeconds.GetHashCode();
+                hash = hash * 59 + StatusTransitionDelaySeconds.GetHashCode();
             }
 
-            if (this.StatusTransitionTime != null)
+            if (StatusTransitionTime != null)
             {
-                hash = hash * 59 + this.StatusTransitionTime.GetHashCode();
+                hash = hash * 59 + StatusTransitionTime.GetHashCode();
             }
 
-            if (this.AutoTerminateWorkitem != null)
+            if (AutoTerminateWorkitem != null)
             {
-                hash = hash * 59 + this.AutoTerminateWorkitem.GetHashCode();
+                hash = hash * 59 + AutoTerminateWorkitem.GetHashCode();
             }
 
             return hash;

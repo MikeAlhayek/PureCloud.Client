@@ -74,7 +74,7 @@ public partial class StatisticalResponse : IEquatable<StatisticalResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as StatisticalResponse);
+        return Equals(obj as StatisticalResponse);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class StatisticalResponse : IEquatable<StatisticalResponse>
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.Views == other.Views ||
-                this.Views != null &&
-                this.Views.SequenceEqual(other.Views)
+                Views == other.Views ||
+                Views != null &&
+                Views.SequenceEqual(other.Views)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class StatisticalResponse : IEquatable<StatisticalResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.Views != null)
+            if (Views != null)
             {
-                hash = hash * 59 + this.Views.GetHashCode();
+                hash = hash * 59 + Views.GetHashCode();
             }
 
             return hash;

@@ -91,7 +91,7 @@ public partial class ContactBulkSearchCriteria : IEquatable<ContactBulkSearchCri
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactBulkSearchCriteria);
+        return Equals(obj as ContactBulkSearchCriteria);
     }
 
     /// <summary>
@@ -109,14 +109,14 @@ public partial class ContactBulkSearchCriteria : IEquatable<ContactBulkSearchCri
 
         return true &&
             (
-                this.Clauses == other.Clauses ||
-                this.Clauses != null &&
-                this.Clauses.SequenceEqual(other.Clauses)
+                Clauses == other.Clauses ||
+                Clauses != null &&
+                Clauses.SequenceEqual(other.Clauses)
             ) &&
             (
-                this.FilterType == other.FilterType ||
-                this.FilterType != null &&
-                this.FilterType.Equals(other.FilterType)
+                FilterType == other.FilterType ||
+                FilterType != null &&
+                FilterType.Equals(other.FilterType)
             );
     }
 
@@ -131,14 +131,14 @@ public partial class ContactBulkSearchCriteria : IEquatable<ContactBulkSearchCri
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Clauses != null)
+            if (Clauses != null)
             {
-                hash = hash * 59 + this.Clauses.GetHashCode();
+                hash = hash * 59 + Clauses.GetHashCode();
             }
 
-            if (this.FilterType != null)
+            if (FilterType != null)
             {
-                hash = hash * 59 + this.FilterType.GetHashCode();
+                hash = hash * 59 + FilterType.GetHashCode();
             }
 
             return hash;

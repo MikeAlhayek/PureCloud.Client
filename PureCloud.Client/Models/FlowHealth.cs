@@ -87,7 +87,7 @@ public partial class FlowHealth : IEquatable<FlowHealth>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowHealth);
+        return Equals(obj as FlowHealth);
     }
 
     /// <summary>
@@ -105,24 +105,24 @@ public partial class FlowHealth : IEquatable<FlowHealth>
 
         return true &&
             (
-                this.FlowVersionInfo == other.FlowVersionInfo ||
-                this.FlowVersionInfo != null &&
-                this.FlowVersionInfo.Equals(other.FlowVersionInfo)
+                FlowVersionInfo == other.FlowVersionInfo ||
+                FlowVersionInfo != null &&
+                FlowVersionInfo.Equals(other.FlowVersionInfo)
             ) &&
             (
-                this.LanguageInfo == other.LanguageInfo ||
-                this.LanguageInfo != null &&
-                this.LanguageInfo.SequenceEqual(other.LanguageInfo)
+                LanguageInfo == other.LanguageInfo ||
+                LanguageInfo != null &&
+                LanguageInfo.SequenceEqual(other.LanguageInfo)
             ) &&
             (
-                this.Intents == other.Intents ||
-                this.Intents != null &&
-                this.Intents.SequenceEqual(other.Intents)
+                Intents == other.Intents ||
+                Intents != null &&
+                Intents.SequenceEqual(other.Intents)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -137,24 +137,24 @@ public partial class FlowHealth : IEquatable<FlowHealth>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FlowVersionInfo != null)
+            if (FlowVersionInfo != null)
             {
-                hash = hash * 59 + this.FlowVersionInfo.GetHashCode();
+                hash = hash * 59 + FlowVersionInfo.GetHashCode();
             }
 
-            if (this.LanguageInfo != null)
+            if (LanguageInfo != null)
             {
-                hash = hash * 59 + this.LanguageInfo.GetHashCode();
+                hash = hash * 59 + LanguageInfo.GetHashCode();
             }
 
-            if (this.Intents != null)
+            if (Intents != null)
             {
-                hash = hash * 59 + this.Intents.GetHashCode();
+                hash = hash * 59 + Intents.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

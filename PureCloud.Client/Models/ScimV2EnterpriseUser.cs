@@ -101,7 +101,7 @@ public partial class ScimV2EnterpriseUser : IEquatable<ScimV2EnterpriseUser>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimV2EnterpriseUser);
+        return Equals(obj as ScimV2EnterpriseUser);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class ScimV2EnterpriseUser : IEquatable<ScimV2EnterpriseUser>
 
         return true &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Department == other.Department ||
-                this.Department != null &&
-                this.Department.Equals(other.Department)
+                Department == other.Department ||
+                Department != null &&
+                Department.Equals(other.Department)
             ) &&
             (
-                this.Manager == other.Manager ||
-                this.Manager != null &&
-                this.Manager.Equals(other.Manager)
+                Manager == other.Manager ||
+                Manager != null &&
+                Manager.Equals(other.Manager)
             ) &&
             (
-                this.EmployeeNumber == other.EmployeeNumber ||
-                this.EmployeeNumber != null &&
-                this.EmployeeNumber.Equals(other.EmployeeNumber)
+                EmployeeNumber == other.EmployeeNumber ||
+                EmployeeNumber != null &&
+                EmployeeNumber.Equals(other.EmployeeNumber)
             ) &&
             (
-                this.DateHire == other.DateHire ||
-                this.DateHire != null &&
-                this.DateHire.Equals(other.DateHire)
+                DateHire == other.DateHire ||
+                DateHire != null &&
+                DateHire.Equals(other.DateHire)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class ScimV2EnterpriseUser : IEquatable<ScimV2EnterpriseUser>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Department != null)
+            if (Department != null)
             {
-                hash = hash * 59 + this.Department.GetHashCode();
+                hash = hash * 59 + Department.GetHashCode();
             }
 
-            if (this.Manager != null)
+            if (Manager != null)
             {
-                hash = hash * 59 + this.Manager.GetHashCode();
+                hash = hash * 59 + Manager.GetHashCode();
             }
 
-            if (this.EmployeeNumber != null)
+            if (EmployeeNumber != null)
             {
-                hash = hash * 59 + this.EmployeeNumber.GetHashCode();
+                hash = hash * 59 + EmployeeNumber.GetHashCode();
             }
 
-            if (this.DateHire != null)
+            if (DateHire != null)
             {
-                hash = hash * 59 + this.DateHire.GetHashCode();
+                hash = hash * 59 + DateHire.GetHashCode();
             }
 
             return hash;

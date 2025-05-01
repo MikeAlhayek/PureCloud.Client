@@ -71,7 +71,7 @@ public partial class FunctionUploadRequest : IEquatable<FunctionUploadRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FunctionUploadRequest);
+        return Equals(obj as FunctionUploadRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class FunctionUploadRequest : IEquatable<FunctionUploadRequest>
 
         return true &&
             (
-                this.FileName == other.FileName ||
-                this.FileName != null &&
-                this.FileName.Equals(other.FileName)
+                FileName == other.FileName ||
+                FileName != null &&
+                FileName.Equals(other.FileName)
             ) &&
             (
-                this.SignedUrlTimeoutSeconds == other.SignedUrlTimeoutSeconds ||
-                this.SignedUrlTimeoutSeconds != null &&
-                this.SignedUrlTimeoutSeconds.Equals(other.SignedUrlTimeoutSeconds)
+                SignedUrlTimeoutSeconds == other.SignedUrlTimeoutSeconds ||
+                SignedUrlTimeoutSeconds != null &&
+                SignedUrlTimeoutSeconds.Equals(other.SignedUrlTimeoutSeconds)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class FunctionUploadRequest : IEquatable<FunctionUploadRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FileName != null)
+            if (FileName != null)
             {
-                hash = hash * 59 + this.FileName.GetHashCode();
+                hash = hash * 59 + FileName.GetHashCode();
             }
 
-            if (this.SignedUrlTimeoutSeconds != null)
+            if (SignedUrlTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.SignedUrlTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + SignedUrlTimeoutSeconds.GetHashCode();
             }
 
             return hash;

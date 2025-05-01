@@ -74,7 +74,7 @@ public partial class WfmIntradayDataUpdateTopicIntradayForecastData : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmIntradayDataUpdateTopicIntradayForecastData);
+        return Equals(obj as WfmIntradayDataUpdateTopicIntradayForecastData);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class WfmIntradayDataUpdateTopicIntradayForecastData : IEquatable
 
         return true &&
             (
-                this.Offered == other.Offered ||
-                this.Offered != null &&
-                this.Offered.Equals(other.Offered)
+                Offered == other.Offered ||
+                Offered != null &&
+                Offered.Equals(other.Offered)
             ) &&
             (
-                this.AverageTalkTimeSeconds == other.AverageTalkTimeSeconds ||
-                this.AverageTalkTimeSeconds != null &&
-                this.AverageTalkTimeSeconds.Equals(other.AverageTalkTimeSeconds)
+                AverageTalkTimeSeconds == other.AverageTalkTimeSeconds ||
+                AverageTalkTimeSeconds != null &&
+                AverageTalkTimeSeconds.Equals(other.AverageTalkTimeSeconds)
             ) &&
             (
-                this.AverageAfterCallWorkSeconds == other.AverageAfterCallWorkSeconds ||
-                this.AverageAfterCallWorkSeconds != null &&
-                this.AverageAfterCallWorkSeconds.Equals(other.AverageAfterCallWorkSeconds)
+                AverageAfterCallWorkSeconds == other.AverageAfterCallWorkSeconds ||
+                AverageAfterCallWorkSeconds != null &&
+                AverageAfterCallWorkSeconds.Equals(other.AverageAfterCallWorkSeconds)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class WfmIntradayDataUpdateTopicIntradayForecastData : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Offered != null)
+            if (Offered != null)
             {
-                hash = hash * 59 + this.Offered.GetHashCode();
+                hash = hash * 59 + Offered.GetHashCode();
             }
 
-            if (this.AverageTalkTimeSeconds != null)
+            if (AverageTalkTimeSeconds != null)
             {
-                hash = hash * 59 + this.AverageTalkTimeSeconds.GetHashCode();
+                hash = hash * 59 + AverageTalkTimeSeconds.GetHashCode();
             }
 
-            if (this.AverageAfterCallWorkSeconds != null)
+            if (AverageAfterCallWorkSeconds != null)
             {
-                hash = hash * 59 + this.AverageAfterCallWorkSeconds.GetHashCode();
+                hash = hash * 59 + AverageAfterCallWorkSeconds.GetHashCode();
             }
 
             return hash;

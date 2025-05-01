@@ -150,7 +150,7 @@ public partial class BuScheduleNotificationsCategorySettings : IEquatable<BuSche
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuScheduleNotificationsCategorySettings);
+        return Equals(obj as BuScheduleNotificationsCategorySettings);
     }
 
     /// <summary>
@@ -168,19 +168,19 @@ public partial class BuScheduleNotificationsCategorySettings : IEquatable<BuSche
 
         return true &&
             (
-                this.ActivityCategory == other.ActivityCategory ||
-                this.ActivityCategory != null &&
-                this.ActivityCategory.Equals(other.ActivityCategory)
+                ActivityCategory == other.ActivityCategory ||
+                ActivityCategory != null &&
+                ActivityCategory.Equals(other.ActivityCategory)
             ) &&
             (
-                this.EarlyReminderEnabled == other.EarlyReminderEnabled ||
-                this.EarlyReminderEnabled != null &&
-                this.EarlyReminderEnabled.Equals(other.EarlyReminderEnabled)
+                EarlyReminderEnabled == other.EarlyReminderEnabled ||
+                EarlyReminderEnabled != null &&
+                EarlyReminderEnabled.Equals(other.EarlyReminderEnabled)
             ) &&
             (
-                this.OnTimeReminderEnabled == other.OnTimeReminderEnabled ||
-                this.OnTimeReminderEnabled != null &&
-                this.OnTimeReminderEnabled.Equals(other.OnTimeReminderEnabled)
+                OnTimeReminderEnabled == other.OnTimeReminderEnabled ||
+                OnTimeReminderEnabled != null &&
+                OnTimeReminderEnabled.Equals(other.OnTimeReminderEnabled)
             );
     }
 
@@ -195,19 +195,19 @@ public partial class BuScheduleNotificationsCategorySettings : IEquatable<BuSche
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityCategory != null)
+            if (ActivityCategory != null)
             {
-                hash = hash * 59 + this.ActivityCategory.GetHashCode();
+                hash = hash * 59 + ActivityCategory.GetHashCode();
             }
 
-            if (this.EarlyReminderEnabled != null)
+            if (EarlyReminderEnabled != null)
             {
-                hash = hash * 59 + this.EarlyReminderEnabled.GetHashCode();
+                hash = hash * 59 + EarlyReminderEnabled.GetHashCode();
             }
 
-            if (this.OnTimeReminderEnabled != null)
+            if (OnTimeReminderEnabled != null)
             {
-                hash = hash * 59 + this.OnTimeReminderEnabled.GetHashCode();
+                hash = hash * 59 + OnTimeReminderEnabled.GetHashCode();
             }
 
             return hash;

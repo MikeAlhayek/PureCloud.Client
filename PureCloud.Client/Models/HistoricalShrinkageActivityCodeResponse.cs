@@ -65,7 +65,7 @@ public partial class HistoricalShrinkageActivityCodeResponse : IEquatable<Histor
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalShrinkageActivityCodeResponse);
+        return Equals(obj as HistoricalShrinkageActivityCodeResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class HistoricalShrinkageActivityCodeResponse : IEquatable<Histor
 
         return true &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.ShrinkageForActivityCode == other.ShrinkageForActivityCode ||
-                this.ShrinkageForActivityCode != null &&
-                this.ShrinkageForActivityCode.Equals(other.ShrinkageForActivityCode)
+                ShrinkageForActivityCode == other.ShrinkageForActivityCode ||
+                ShrinkageForActivityCode != null &&
+                ShrinkageForActivityCode.Equals(other.ShrinkageForActivityCode)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class HistoricalShrinkageActivityCodeResponse : IEquatable<Histor
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.ShrinkageForActivityCode != null)
+            if (ShrinkageForActivityCode != null)
             {
-                hash = hash * 59 + this.ShrinkageForActivityCode.GetHashCode();
+                hash = hash * 59 + ShrinkageForActivityCode.GetHashCode();
             }
 
             return hash;

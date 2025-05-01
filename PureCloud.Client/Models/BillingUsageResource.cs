@@ -70,7 +70,7 @@ public partial class BillingUsageResource : IEquatable<BillingUsageResource>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BillingUsageResource);
+        return Equals(obj as BillingUsageResource);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class BillingUsageResource : IEquatable<BillingUsageResource>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Date == other.Date ||
-                this.Date != null &&
-                this.Date.Equals(other.Date)
+                Date == other.Date ||
+                Date != null &&
+                Date.Equals(other.Date)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class BillingUsageResource : IEquatable<BillingUsageResource>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Date != null)
+            if (Date != null)
             {
-                hash = hash * 59 + this.Date.GetHashCode();
+                hash = hash * 59 + Date.GetHashCode();
             }
 
             return hash;

@@ -95,7 +95,7 @@ public partial class LearningScheduleSlotsQueryRequest : IEquatable<LearningSche
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningScheduleSlotsQueryRequest);
+        return Equals(obj as LearningScheduleSlotsQueryRequest);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class LearningScheduleSlotsQueryRequest : IEquatable<LearningSche
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             ) &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.InterruptibleAssignmentId == other.InterruptibleAssignmentId ||
-                this.InterruptibleAssignmentId != null &&
-                this.InterruptibleAssignmentId.Equals(other.InterruptibleAssignmentId)
+                InterruptibleAssignmentId == other.InterruptibleAssignmentId ||
+                InterruptibleAssignmentId != null &&
+                InterruptibleAssignmentId.Equals(other.InterruptibleAssignmentId)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class LearningScheduleSlotsQueryRequest : IEquatable<LearningSche
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.InterruptibleAssignmentId != null)
+            if (InterruptibleAssignmentId != null)
             {
-                hash = hash * 59 + this.InterruptibleAssignmentId.GetHashCode();
+                hash = hash * 59 + InterruptibleAssignmentId.GetHashCode();
             }
 
             return hash;

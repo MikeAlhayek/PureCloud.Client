@@ -63,7 +63,7 @@ public partial class BuHeadcountForecast : IEquatable<BuHeadcountForecast>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuHeadcountForecast);
+        return Equals(obj as BuHeadcountForecast);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class BuHeadcountForecast : IEquatable<BuHeadcountForecast>
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.ReferenceStartDate == other.ReferenceStartDate ||
-                this.ReferenceStartDate != null &&
-                this.ReferenceStartDate.Equals(other.ReferenceStartDate)
+                ReferenceStartDate == other.ReferenceStartDate ||
+                ReferenceStartDate != null &&
+                ReferenceStartDate.Equals(other.ReferenceStartDate)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class BuHeadcountForecast : IEquatable<BuHeadcountForecast>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.ReferenceStartDate != null)
+            if (ReferenceStartDate != null)
             {
-                hash = hash * 59 + this.ReferenceStartDate.GetHashCode();
+                hash = hash * 59 + ReferenceStartDate.GetHashCode();
             }
 
             return hash;

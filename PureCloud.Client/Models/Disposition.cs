@@ -107,7 +107,7 @@ public partial class Disposition : IEquatable<Disposition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Disposition);
+        return Equals(obj as Disposition);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class Disposition : IEquatable<Disposition>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Analyzer == other.Analyzer ||
-                this.Analyzer != null &&
-                this.Analyzer.Equals(other.Analyzer)
+                Analyzer == other.Analyzer ||
+                Analyzer != null &&
+                Analyzer.Equals(other.Analyzer)
             ) &&
             (
-                this.DispositionParameters == other.DispositionParameters ||
-                this.DispositionParameters != null &&
-                this.DispositionParameters.Equals(other.DispositionParameters)
+                DispositionParameters == other.DispositionParameters ||
+                DispositionParameters != null &&
+                DispositionParameters.Equals(other.DispositionParameters)
             ) &&
             (
-                this.DetectedSpeechStart == other.DetectedSpeechStart ||
-                this.DetectedSpeechStart != null &&
-                this.DetectedSpeechStart.Equals(other.DetectedSpeechStart)
+                DetectedSpeechStart == other.DetectedSpeechStart ||
+                DetectedSpeechStart != null &&
+                DetectedSpeechStart.Equals(other.DetectedSpeechStart)
             ) &&
             (
-                this.DetectedSpeechEnd == other.DetectedSpeechEnd ||
-                this.DetectedSpeechEnd != null &&
-                this.DetectedSpeechEnd.Equals(other.DetectedSpeechEnd)
+                DetectedSpeechEnd == other.DetectedSpeechEnd ||
+                DetectedSpeechEnd != null &&
+                DetectedSpeechEnd.Equals(other.DetectedSpeechEnd)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class Disposition : IEquatable<Disposition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Analyzer != null)
+            if (Analyzer != null)
             {
-                hash = hash * 59 + this.Analyzer.GetHashCode();
+                hash = hash * 59 + Analyzer.GetHashCode();
             }
 
-            if (this.DispositionParameters != null)
+            if (DispositionParameters != null)
             {
-                hash = hash * 59 + this.DispositionParameters.GetHashCode();
+                hash = hash * 59 + DispositionParameters.GetHashCode();
             }
 
-            if (this.DetectedSpeechStart != null)
+            if (DetectedSpeechStart != null)
             {
-                hash = hash * 59 + this.DetectedSpeechStart.GetHashCode();
+                hash = hash * 59 + DetectedSpeechStart.GetHashCode();
             }
 
-            if (this.DetectedSpeechEnd != null)
+            if (DetectedSpeechEnd != null)
             {
-                hash = hash * 59 + this.DetectedSpeechEnd.GetHashCode();
+                hash = hash * 59 + DetectedSpeechEnd.GetHashCode();
             }
 
             return hash;

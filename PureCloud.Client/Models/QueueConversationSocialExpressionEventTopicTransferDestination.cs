@@ -65,7 +65,7 @@ public partial class QueueConversationSocialExpressionEventTopicTransferDestinat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationSocialExpressionEventTopicTransferDestination);
+        return Equals(obj as QueueConversationSocialExpressionEventTopicTransferDestination);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class QueueConversationSocialExpressionEventTopicTransferDestinat
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.Address == other.Address ||
-                this.Address != null &&
-                this.Address.Equals(other.Address)
+                Address == other.Address ||
+                Address != null &&
+                Address.Equals(other.Address)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class QueueConversationSocialExpressionEventTopicTransferDestinat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (Address != null)
             {
-                hash = hash * 59 + this.Address.GetHashCode();
+                hash = hash * 59 + Address.GetHashCode();
             }
 
             return hash;

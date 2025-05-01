@@ -197,7 +197,7 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateWorkPlanActivity);
+        return Equals(obj as CreateWorkPlanActivity);
     }
 
     /// <summary>
@@ -215,69 +215,69 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
 
         return true &&
             (
-                this.ActivityCodeId == other.ActivityCodeId ||
-                this.ActivityCodeId != null &&
-                this.ActivityCodeId.Equals(other.ActivityCodeId)
+                ActivityCodeId == other.ActivityCodeId ||
+                ActivityCodeId != null &&
+                ActivityCodeId.Equals(other.ActivityCodeId)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.LengthMinutes == other.LengthMinutes ||
-                this.LengthMinutes != null &&
-                this.LengthMinutes.Equals(other.LengthMinutes)
+                LengthMinutes == other.LengthMinutes ||
+                LengthMinutes != null &&
+                LengthMinutes.Equals(other.LengthMinutes)
             ) &&
             (
-                this.StartTimeIsRelativeToShiftStart == other.StartTimeIsRelativeToShiftStart ||
-                this.StartTimeIsRelativeToShiftStart != null &&
-                this.StartTimeIsRelativeToShiftStart.Equals(other.StartTimeIsRelativeToShiftStart)
+                StartTimeIsRelativeToShiftStart == other.StartTimeIsRelativeToShiftStart ||
+                StartTimeIsRelativeToShiftStart != null &&
+                StartTimeIsRelativeToShiftStart.Equals(other.StartTimeIsRelativeToShiftStart)
             ) &&
             (
-                this.FlexibleStartTime == other.FlexibleStartTime ||
-                this.FlexibleStartTime != null &&
-                this.FlexibleStartTime.Equals(other.FlexibleStartTime)
+                FlexibleStartTime == other.FlexibleStartTime ||
+                FlexibleStartTime != null &&
+                FlexibleStartTime.Equals(other.FlexibleStartTime)
             ) &&
             (
-                this.EarliestStartTimeMinutes == other.EarliestStartTimeMinutes ||
-                this.EarliestStartTimeMinutes != null &&
-                this.EarliestStartTimeMinutes.Equals(other.EarliestStartTimeMinutes)
+                EarliestStartTimeMinutes == other.EarliestStartTimeMinutes ||
+                EarliestStartTimeMinutes != null &&
+                EarliestStartTimeMinutes.Equals(other.EarliestStartTimeMinutes)
             ) &&
             (
-                this.LatestStartTimeMinutes == other.LatestStartTimeMinutes ||
-                this.LatestStartTimeMinutes != null &&
-                this.LatestStartTimeMinutes.Equals(other.LatestStartTimeMinutes)
+                LatestStartTimeMinutes == other.LatestStartTimeMinutes ||
+                LatestStartTimeMinutes != null &&
+                LatestStartTimeMinutes.Equals(other.LatestStartTimeMinutes)
             ) &&
             (
-                this.ExactStartTimeMinutes == other.ExactStartTimeMinutes ||
-                this.ExactStartTimeMinutes != null &&
-                this.ExactStartTimeMinutes.Equals(other.ExactStartTimeMinutes)
+                ExactStartTimeMinutes == other.ExactStartTimeMinutes ||
+                ExactStartTimeMinutes != null &&
+                ExactStartTimeMinutes.Equals(other.ExactStartTimeMinutes)
             ) &&
             (
-                this.StartTimeIncrementMinutes == other.StartTimeIncrementMinutes ||
-                this.StartTimeIncrementMinutes != null &&
-                this.StartTimeIncrementMinutes.Equals(other.StartTimeIncrementMinutes)
+                StartTimeIncrementMinutes == other.StartTimeIncrementMinutes ||
+                StartTimeIncrementMinutes != null &&
+                StartTimeIncrementMinutes.Equals(other.StartTimeIncrementMinutes)
             ) &&
             (
-                this.CountsAsPaidTime == other.CountsAsPaidTime ||
-                this.CountsAsPaidTime != null &&
-                this.CountsAsPaidTime.Equals(other.CountsAsPaidTime)
+                CountsAsPaidTime == other.CountsAsPaidTime ||
+                CountsAsPaidTime != null &&
+                CountsAsPaidTime.Equals(other.CountsAsPaidTime)
             ) &&
             (
-                this.CountsAsContiguousWorkTime == other.CountsAsContiguousWorkTime ||
-                this.CountsAsContiguousWorkTime != null &&
-                this.CountsAsContiguousWorkTime.Equals(other.CountsAsContiguousWorkTime)
+                CountsAsContiguousWorkTime == other.CountsAsContiguousWorkTime ||
+                CountsAsContiguousWorkTime != null &&
+                CountsAsContiguousWorkTime.Equals(other.CountsAsContiguousWorkTime)
             ) &&
             (
-                this.MinimumLengthFromShiftStartMinutes == other.MinimumLengthFromShiftStartMinutes ||
-                this.MinimumLengthFromShiftStartMinutes != null &&
-                this.MinimumLengthFromShiftStartMinutes.Equals(other.MinimumLengthFromShiftStartMinutes)
+                MinimumLengthFromShiftStartMinutes == other.MinimumLengthFromShiftStartMinutes ||
+                MinimumLengthFromShiftStartMinutes != null &&
+                MinimumLengthFromShiftStartMinutes.Equals(other.MinimumLengthFromShiftStartMinutes)
             ) &&
             (
-                this.MinimumLengthFromShiftEndMinutes == other.MinimumLengthFromShiftEndMinutes ||
-                this.MinimumLengthFromShiftEndMinutes != null &&
-                this.MinimumLengthFromShiftEndMinutes.Equals(other.MinimumLengthFromShiftEndMinutes)
+                MinimumLengthFromShiftEndMinutes == other.MinimumLengthFromShiftEndMinutes ||
+                MinimumLengthFromShiftEndMinutes != null &&
+                MinimumLengthFromShiftEndMinutes.Equals(other.MinimumLengthFromShiftEndMinutes)
             );
     }
 
@@ -292,69 +292,69 @@ public partial class CreateWorkPlanActivity : IEquatable<CreateWorkPlanActivity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActivityCodeId != null)
+            if (ActivityCodeId != null)
             {
-                hash = hash * 59 + this.ActivityCodeId.GetHashCode();
+                hash = hash * 59 + ActivityCodeId.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.LengthMinutes != null)
+            if (LengthMinutes != null)
             {
-                hash = hash * 59 + this.LengthMinutes.GetHashCode();
+                hash = hash * 59 + LengthMinutes.GetHashCode();
             }
 
-            if (this.StartTimeIsRelativeToShiftStart != null)
+            if (StartTimeIsRelativeToShiftStart != null)
             {
-                hash = hash * 59 + this.StartTimeIsRelativeToShiftStart.GetHashCode();
+                hash = hash * 59 + StartTimeIsRelativeToShiftStart.GetHashCode();
             }
 
-            if (this.FlexibleStartTime != null)
+            if (FlexibleStartTime != null)
             {
-                hash = hash * 59 + this.FlexibleStartTime.GetHashCode();
+                hash = hash * 59 + FlexibleStartTime.GetHashCode();
             }
 
-            if (this.EarliestStartTimeMinutes != null)
+            if (EarliestStartTimeMinutes != null)
             {
-                hash = hash * 59 + this.EarliestStartTimeMinutes.GetHashCode();
+                hash = hash * 59 + EarliestStartTimeMinutes.GetHashCode();
             }
 
-            if (this.LatestStartTimeMinutes != null)
+            if (LatestStartTimeMinutes != null)
             {
-                hash = hash * 59 + this.LatestStartTimeMinutes.GetHashCode();
+                hash = hash * 59 + LatestStartTimeMinutes.GetHashCode();
             }
 
-            if (this.ExactStartTimeMinutes != null)
+            if (ExactStartTimeMinutes != null)
             {
-                hash = hash * 59 + this.ExactStartTimeMinutes.GetHashCode();
+                hash = hash * 59 + ExactStartTimeMinutes.GetHashCode();
             }
 
-            if (this.StartTimeIncrementMinutes != null)
+            if (StartTimeIncrementMinutes != null)
             {
-                hash = hash * 59 + this.StartTimeIncrementMinutes.GetHashCode();
+                hash = hash * 59 + StartTimeIncrementMinutes.GetHashCode();
             }
 
-            if (this.CountsAsPaidTime != null)
+            if (CountsAsPaidTime != null)
             {
-                hash = hash * 59 + this.CountsAsPaidTime.GetHashCode();
+                hash = hash * 59 + CountsAsPaidTime.GetHashCode();
             }
 
-            if (this.CountsAsContiguousWorkTime != null)
+            if (CountsAsContiguousWorkTime != null)
             {
-                hash = hash * 59 + this.CountsAsContiguousWorkTime.GetHashCode();
+                hash = hash * 59 + CountsAsContiguousWorkTime.GetHashCode();
             }
 
-            if (this.MinimumLengthFromShiftStartMinutes != null)
+            if (MinimumLengthFromShiftStartMinutes != null)
             {
-                hash = hash * 59 + this.MinimumLengthFromShiftStartMinutes.GetHashCode();
+                hash = hash * 59 + MinimumLengthFromShiftStartMinutes.GetHashCode();
             }
 
-            if (this.MinimumLengthFromShiftEndMinutes != null)
+            if (MinimumLengthFromShiftEndMinutes != null)
             {
-                hash = hash * 59 + this.MinimumLengthFromShiftEndMinutes.GetHashCode();
+                hash = hash * 59 + MinimumLengthFromShiftEndMinutes.GetHashCode();
             }
 
             return hash;

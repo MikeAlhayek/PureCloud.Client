@@ -89,7 +89,7 @@ public partial class ServiceNowSettings : IEquatable<ServiceNowSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ServiceNowSettings);
+        return Equals(obj as ServiceNowSettings);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ServiceNowSettings : IEquatable<ServiceNowSettings>
 
         return true &&
             (
-                this.KnowledgeBaseIds == other.KnowledgeBaseIds ||
-                this.KnowledgeBaseIds != null &&
-                this.KnowledgeBaseIds.SequenceEqual(other.KnowledgeBaseIds)
+                KnowledgeBaseIds == other.KnowledgeBaseIds ||
+                KnowledgeBaseIds != null &&
+                KnowledgeBaseIds.SequenceEqual(other.KnowledgeBaseIds)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Categories == other.Categories ||
-                this.Categories != null &&
-                this.Categories.SequenceEqual(other.Categories)
+                Categories == other.Categories ||
+                Categories != null &&
+                Categories.SequenceEqual(other.Categories)
             ) &&
             (
-                this.BaseUrl == other.BaseUrl ||
-                this.BaseUrl != null &&
-                this.BaseUrl.Equals(other.BaseUrl)
+                BaseUrl == other.BaseUrl ||
+                BaseUrl != null &&
+                BaseUrl.Equals(other.BaseUrl)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ServiceNowSettings : IEquatable<ServiceNowSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.KnowledgeBaseIds != null)
+            if (KnowledgeBaseIds != null)
             {
-                hash = hash * 59 + this.KnowledgeBaseIds.GetHashCode();
+                hash = hash * 59 + KnowledgeBaseIds.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Categories != null)
+            if (Categories != null)
             {
-                hash = hash * 59 + this.Categories.GetHashCode();
+                hash = hash * 59 + Categories.GetHashCode();
             }
 
-            if (this.BaseUrl != null)
+            if (BaseUrl != null)
             {
-                hash = hash * 59 + this.BaseUrl.GetHashCode();
+                hash = hash * 59 + BaseUrl.GetHashCode();
             }
 
             return hash;

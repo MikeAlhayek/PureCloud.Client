@@ -64,7 +64,7 @@ public partial class BuCreateTimeOffLimitRequest : IEquatable<BuCreateTimeOffLim
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuCreateTimeOffLimitRequest);
+        return Equals(obj as BuCreateTimeOffLimitRequest);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class BuCreateTimeOffLimitRequest : IEquatable<BuCreateTimeOffLim
 
         return true &&
             (
-                this.StaffingGroupId == other.StaffingGroupId ||
-                this.StaffingGroupId != null &&
-                this.StaffingGroupId.Equals(other.StaffingGroupId)
+                StaffingGroupId == other.StaffingGroupId ||
+                StaffingGroupId != null &&
+                StaffingGroupId.Equals(other.StaffingGroupId)
             ) &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class BuCreateTimeOffLimitRequest : IEquatable<BuCreateTimeOffLim
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StaffingGroupId != null)
+            if (StaffingGroupId != null)
             {
-                hash = hash * 59 + this.StaffingGroupId.GetHashCode();
+                hash = hash * 59 + StaffingGroupId.GetHashCode();
             }
 
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
             return hash;

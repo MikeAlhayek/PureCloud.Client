@@ -109,7 +109,7 @@ public partial class RecordingUploadReportRequest : IEquatable<RecordingUploadRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingUploadReportRequest);
+        return Equals(obj as RecordingUploadReportRequest);
     }
 
     /// <summary>
@@ -127,14 +127,14 @@ public partial class RecordingUploadReportRequest : IEquatable<RecordingUploadRe
 
         return true &&
             (
-                this.DateSince == other.DateSince ||
-                this.DateSince != null &&
-                this.DateSince.Equals(other.DateSince)
+                DateSince == other.DateSince ||
+                DateSince != null &&
+                DateSince.Equals(other.DateSince)
             ) &&
             (
-                this.UploadStatus == other.UploadStatus ||
-                this.UploadStatus != null &&
-                this.UploadStatus.Equals(other.UploadStatus)
+                UploadStatus == other.UploadStatus ||
+                UploadStatus != null &&
+                UploadStatus.Equals(other.UploadStatus)
             );
     }
 
@@ -149,14 +149,14 @@ public partial class RecordingUploadReportRequest : IEquatable<RecordingUploadRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateSince != null)
+            if (DateSince != null)
             {
-                hash = hash * 59 + this.DateSince.GetHashCode();
+                hash = hash * 59 + DateSince.GetHashCode();
             }
 
-            if (this.UploadStatus != null)
+            if (UploadStatus != null)
             {
-                hash = hash * 59 + this.UploadStatus.GetHashCode();
+                hash = hash * 59 + UploadStatus.GetHashCode();
             }
 
             return hash;

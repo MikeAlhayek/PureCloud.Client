@@ -63,7 +63,7 @@ public partial class GroupEmailPolicy : IEquatable<GroupEmailPolicy>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GroupEmailPolicy);
+        return Equals(obj as GroupEmailPolicy);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class GroupEmailPolicy : IEquatable<GroupEmailPolicy>
 
         return true &&
             (
-                this.EmailMembers == other.EmailMembers ||
-                this.EmailMembers != null &&
-                this.EmailMembers.Equals(other.EmailMembers)
+                EmailMembers == other.EmailMembers ||
+                EmailMembers != null &&
+                EmailMembers.Equals(other.EmailMembers)
             ) &&
             (
-                this.EmailGroup == other.EmailGroup ||
-                this.EmailGroup != null &&
-                this.EmailGroup.Equals(other.EmailGroup)
+                EmailGroup == other.EmailGroup ||
+                EmailGroup != null &&
+                EmailGroup.Equals(other.EmailGroup)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class GroupEmailPolicy : IEquatable<GroupEmailPolicy>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EmailMembers != null)
+            if (EmailMembers != null)
             {
-                hash = hash * 59 + this.EmailMembers.GetHashCode();
+                hash = hash * 59 + EmailMembers.GetHashCode();
             }
 
-            if (this.EmailGroup != null)
+            if (EmailGroup != null)
             {
-                hash = hash * 59 + this.EmailGroup.GetHashCode();
+                hash = hash * 59 + EmailGroup.GetHashCode();
             }
 
             return hash;

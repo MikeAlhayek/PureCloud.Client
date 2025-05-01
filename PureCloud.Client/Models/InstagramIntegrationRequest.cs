@@ -163,7 +163,7 @@ public partial class InstagramIntegrationRequest : IEquatable<InstagramIntegrati
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InstagramIntegrationRequest);
+        return Equals(obj as InstagramIntegrationRequest);
     }
 
     /// <summary>
@@ -181,54 +181,54 @@ public partial class InstagramIntegrationRequest : IEquatable<InstagramIntegrati
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.SupportedContent == other.SupportedContent ||
-                this.SupportedContent != null &&
-                this.SupportedContent.Equals(other.SupportedContent)
+                SupportedContent == other.SupportedContent ||
+                SupportedContent != null &&
+                SupportedContent.Equals(other.SupportedContent)
             ) &&
             (
-                this.MessagingSetting == other.MessagingSetting ||
-                this.MessagingSetting != null &&
-                this.MessagingSetting.Equals(other.MessagingSetting)
+                MessagingSetting == other.MessagingSetting ||
+                MessagingSetting != null &&
+                MessagingSetting.Equals(other.MessagingSetting)
             ) &&
             (
-                this.PageAccessToken == other.PageAccessToken ||
-                this.PageAccessToken != null &&
-                this.PageAccessToken.Equals(other.PageAccessToken)
+                PageAccessToken == other.PageAccessToken ||
+                PageAccessToken != null &&
+                PageAccessToken.Equals(other.PageAccessToken)
             ) &&
             (
-                this.UserAccessToken == other.UserAccessToken ||
-                this.UserAccessToken != null &&
-                this.UserAccessToken.Equals(other.UserAccessToken)
+                UserAccessToken == other.UserAccessToken ||
+                UserAccessToken != null &&
+                UserAccessToken.Equals(other.UserAccessToken)
             ) &&
             (
-                this.PageId == other.PageId ||
-                this.PageId != null &&
-                this.PageId.Equals(other.PageId)
+                PageId == other.PageId ||
+                PageId != null &&
+                PageId.Equals(other.PageId)
             ) &&
             (
-                this.AppId == other.AppId ||
-                this.AppId != null &&
-                this.AppId.Equals(other.AppId)
+                AppId == other.AppId ||
+                AppId != null &&
+                AppId.Equals(other.AppId)
             ) &&
             (
-                this.AppSecret == other.AppSecret ||
-                this.AppSecret != null &&
-                this.AppSecret.Equals(other.AppSecret)
+                AppSecret == other.AppSecret ||
+                AppSecret != null &&
+                AppSecret.Equals(other.AppSecret)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -243,54 +243,54 @@ public partial class InstagramIntegrationRequest : IEquatable<InstagramIntegrati
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.SupportedContent != null)
+            if (SupportedContent != null)
             {
-                hash = hash * 59 + this.SupportedContent.GetHashCode();
+                hash = hash * 59 + SupportedContent.GetHashCode();
             }
 
-            if (this.MessagingSetting != null)
+            if (MessagingSetting != null)
             {
-                hash = hash * 59 + this.MessagingSetting.GetHashCode();
+                hash = hash * 59 + MessagingSetting.GetHashCode();
             }
 
-            if (this.PageAccessToken != null)
+            if (PageAccessToken != null)
             {
-                hash = hash * 59 + this.PageAccessToken.GetHashCode();
+                hash = hash * 59 + PageAccessToken.GetHashCode();
             }
 
-            if (this.UserAccessToken != null)
+            if (UserAccessToken != null)
             {
-                hash = hash * 59 + this.UserAccessToken.GetHashCode();
+                hash = hash * 59 + UserAccessToken.GetHashCode();
             }
 
-            if (this.PageId != null)
+            if (PageId != null)
             {
-                hash = hash * 59 + this.PageId.GetHashCode();
+                hash = hash * 59 + PageId.GetHashCode();
             }
 
-            if (this.AppId != null)
+            if (AppId != null)
             {
-                hash = hash * 59 + this.AppId.GetHashCode();
+                hash = hash * 59 + AppId.GetHashCode();
             }
 
-            if (this.AppSecret != null)
+            if (AppSecret != null)
             {
-                hash = hash * 59 + this.AppSecret.GetHashCode();
+                hash = hash * 59 + AppSecret.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

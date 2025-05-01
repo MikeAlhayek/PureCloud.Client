@@ -112,7 +112,7 @@ public partial class BulkEntityErrorNote : IEquatable<BulkEntityErrorNote>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BulkEntityErrorNote);
+        return Equals(obj as BulkEntityErrorNote);
     }
 
     /// <summary>
@@ -130,34 +130,34 @@ public partial class BulkEntityErrorNote : IEquatable<BulkEntityErrorNote>
 
         return true &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Retryable == other.Retryable ||
-                this.Retryable != null &&
-                this.Retryable.Equals(other.Retryable)
+                Retryable == other.Retryable ||
+                Retryable != null &&
+                Retryable.Equals(other.Retryable)
             ) &&
             (
-                this.Details == other.Details ||
-                this.Details != null &&
-                this.Details.SequenceEqual(other.Details)
+                Details == other.Details ||
+                Details != null &&
+                Details.SequenceEqual(other.Details)
             ) &&
             (
-                this.Entity == other.Entity ||
-                this.Entity != null &&
-                this.Entity.Equals(other.Entity)
+                Entity == other.Entity ||
+                Entity != null &&
+                Entity.Equals(other.Entity)
             );
     }
 
@@ -172,34 +172,34 @@ public partial class BulkEntityErrorNote : IEquatable<BulkEntityErrorNote>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Retryable != null)
+            if (Retryable != null)
             {
-                hash = hash * 59 + this.Retryable.GetHashCode();
+                hash = hash * 59 + Retryable.GetHashCode();
             }
 
-            if (this.Details != null)
+            if (Details != null)
             {
-                hash = hash * 59 + this.Details.GetHashCode();
+                hash = hash * 59 + Details.GetHashCode();
             }
 
-            if (this.Entity != null)
+            if (Entity != null)
             {
-                hash = hash * 59 + this.Entity.GetHashCode();
+                hash = hash * 59 + Entity.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class ContactBulkSearchParameters : IEquatable<ContactBulkSearchP
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactBulkSearchParameters);
+        return Equals(obj as ContactBulkSearchParameters);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ContactBulkSearchParameters : IEquatable<ContactBulkSearchP
 
         return true &&
             (
-                this.ContactListFilterId == other.ContactListFilterId ||
-                this.ContactListFilterId != null &&
-                this.ContactListFilterId.Equals(other.ContactListFilterId)
+                ContactListFilterId == other.ContactListFilterId ||
+                ContactListFilterId != null &&
+                ContactListFilterId.Equals(other.ContactListFilterId)
             ) &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.Equals(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.Equals(other.Criteria)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ContactBulkSearchParameters : IEquatable<ContactBulkSearchP
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactListFilterId != null)
+            if (ContactListFilterId != null)
             {
-                hash = hash * 59 + this.ContactListFilterId.GetHashCode();
+                hash = hash * 59 + ContactListFilterId.GetHashCode();
             }
 
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class SearchShiftTradesResponse : IEquatable<SearchShiftTradesRes
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SearchShiftTradesResponse);
+        return Equals(obj as SearchShiftTradesResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class SearchShiftTradesResponse : IEquatable<SearchShiftTradesRes
 
         return true &&
             (
-                this.Trades == other.Trades ||
-                this.Trades != null &&
-                this.Trades.SequenceEqual(other.Trades)
+                Trades == other.Trades ||
+                Trades != null &&
+                Trades.SequenceEqual(other.Trades)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class SearchShiftTradesResponse : IEquatable<SearchShiftTradesRes
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Trades != null)
+            if (Trades != null)
             {
-                hash = hash * 59 + this.Trades.GetHashCode();
+                hash = hash * 59 + Trades.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
             return hash;

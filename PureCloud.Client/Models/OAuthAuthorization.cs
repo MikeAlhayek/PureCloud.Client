@@ -200,7 +200,7 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OAuthAuthorization);
+        return Equals(obj as OAuthAuthorization);
     }
 
     /// <summary>
@@ -218,59 +218,59 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
 
         return true &&
             (
-                this.Client == other.Client ||
-                this.Client != null &&
-                this.Client.Equals(other.Client)
+                Client == other.Client ||
+                Client != null &&
+                Client.Equals(other.Client)
             ) &&
             (
-                this.Scope == other.Scope ||
-                this.Scope != null &&
-                this.Scope.SequenceEqual(other.Scope)
+                Scope == other.Scope ||
+                Scope != null &&
+                Scope.SequenceEqual(other.Scope)
             ) &&
             (
-                this.Roles == other.Roles ||
-                this.Roles != null &&
-                this.Roles.SequenceEqual(other.Roles)
+                Roles == other.Roles ||
+                Roles != null &&
+                Roles.SequenceEqual(other.Roles)
             ) &&
             (
-                this.ResourceOwner == other.ResourceOwner ||
-                this.ResourceOwner != null &&
-                this.ResourceOwner.Equals(other.ResourceOwner)
+                ResourceOwner == other.ResourceOwner ||
+                ResourceOwner != null &&
+                ResourceOwner.Equals(other.ResourceOwner)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.Pending == other.Pending ||
-                this.Pending != null &&
-                this.Pending.Equals(other.Pending)
+                Pending == other.Pending ||
+                Pending != null &&
+                Pending.Equals(other.Pending)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -285,59 +285,59 @@ public partial class OAuthAuthorization : IEquatable<OAuthAuthorization>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Client != null)
+            if (Client != null)
             {
-                hash = hash * 59 + this.Client.GetHashCode();
+                hash = hash * 59 + Client.GetHashCode();
             }
 
-            if (this.Scope != null)
+            if (Scope != null)
             {
-                hash = hash * 59 + this.Scope.GetHashCode();
+                hash = hash * 59 + Scope.GetHashCode();
             }
 
-            if (this.Roles != null)
+            if (Roles != null)
             {
-                hash = hash * 59 + this.Roles.GetHashCode();
+                hash = hash * 59 + Roles.GetHashCode();
             }
 
-            if (this.ResourceOwner != null)
+            if (ResourceOwner != null)
             {
-                hash = hash * 59 + this.ResourceOwner.GetHashCode();
+                hash = hash * 59 + ResourceOwner.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.Pending != null)
+            if (Pending != null)
             {
-                hash = hash * 59 + this.Pending.GetHashCode();
+                hash = hash * 59 + Pending.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

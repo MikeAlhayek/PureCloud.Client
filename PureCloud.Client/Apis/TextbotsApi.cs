@@ -239,12 +239,12 @@ public partial class TextbotsApi : ITextbotsApi
     /// <returns></returns>
     public TextbotsApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -258,17 +258,17 @@ public partial class TextbotsApi : ITextbotsApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -278,7 +278,7 @@ public partial class TextbotsApi : ITextbotsApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -304,7 +304,7 @@ public partial class TextbotsApi : ITextbotsApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -316,7 +316,7 @@ public partial class TextbotsApi : ITextbotsApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -363,7 +363,7 @@ public partial class TextbotsApi : ITextbotsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -372,7 +372,7 @@ public partial class TextbotsApi : ITextbotsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -387,22 +387,22 @@ public partial class TextbotsApi : ITextbotsApi
         // Query params
         if (botType != null)
         {
-            botType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("botType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            botType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("botType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (botName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("botName", this.Configuration.ApiClient.ParameterToString(botName)));
+            localVarQueryParams.Add(new Tuple<string, string>("botName", Configuration.ApiClient.ParameterToString(botName)));
         }
 
         if (botId != null)
         {
-            botId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("botId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            botId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("botId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -416,11 +416,11 @@ public partial class TextbotsApi : ITextbotsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -446,7 +446,7 @@ public partial class TextbotsApi : ITextbotsApi
 
         return new ApiResponse<BotSearchResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (BotSearchResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BotSearchResponseEntityListing)),
+            (BotSearchResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BotSearchResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -496,7 +496,7 @@ public partial class TextbotsApi : ITextbotsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -505,7 +505,7 @@ public partial class TextbotsApi : ITextbotsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -520,22 +520,22 @@ public partial class TextbotsApi : ITextbotsApi
         // Query params
         if (botType != null)
         {
-            botType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("botType", this.Configuration.ApiClient.ParameterToString(obj))); });
+            botType.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("botType", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (botName != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("botName", this.Configuration.ApiClient.ParameterToString(botName)));
+            localVarQueryParams.Add(new Tuple<string, string>("botName", Configuration.ApiClient.ParameterToString(botName)));
         }
 
         if (botId != null)
         {
-            botId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("botId", this.Configuration.ApiClient.ParameterToString(obj))); });
+            botId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("botId", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -549,11 +549,11 @@ public partial class TextbotsApi : ITextbotsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -579,7 +579,7 @@ public partial class TextbotsApi : ITextbotsApi
 
         return new ApiResponse<BotSearchResponseEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (BotSearchResponseEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BotSearchResponseEntityListing)),
+            (BotSearchResponseEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(BotSearchResponseEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -636,7 +636,7 @@ public partial class TextbotsApi : ITextbotsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -645,7 +645,7 @@ public partial class TextbotsApi : ITextbotsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -658,7 +658,7 @@ public partial class TextbotsApi : ITextbotsApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
@@ -670,7 +670,7 @@ public partial class TextbotsApi : ITextbotsApi
         // Body param
         if (turnRequest != null && turnRequest.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(turnRequest); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(turnRequest); // http body (model) parameter
         }
         else
         {
@@ -683,11 +683,11 @@ public partial class TextbotsApi : ITextbotsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -713,7 +713,7 @@ public partial class TextbotsApi : ITextbotsApi
 
         return new ApiResponse<TextBotFlowTurnResponse>(localVarStatusCode,
             localVarHeaders,
-            (TextBotFlowTurnResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TextBotFlowTurnResponse)),
+            (TextBotFlowTurnResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TextBotFlowTurnResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -771,7 +771,7 @@ public partial class TextbotsApi : ITextbotsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -780,7 +780,7 @@ public partial class TextbotsApi : ITextbotsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -793,7 +793,7 @@ public partial class TextbotsApi : ITextbotsApi
         // Path params
         if (sessionId != null)
         {
-            localVarPathParams.Add("sessionId", this.Configuration.ApiClient.ParameterToString(sessionId));
+            localVarPathParams.Add("sessionId", Configuration.ApiClient.ParameterToString(sessionId));
         }
 
         // Query params
@@ -805,7 +805,7 @@ public partial class TextbotsApi : ITextbotsApi
         // Body param
         if (turnRequest != null && turnRequest.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(turnRequest); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(turnRequest); // http body (model) parameter
         }
         else
         {
@@ -818,11 +818,11 @@ public partial class TextbotsApi : ITextbotsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -848,7 +848,7 @@ public partial class TextbotsApi : ITextbotsApi
 
         return new ApiResponse<TextBotFlowTurnResponse>(localVarStatusCode,
             localVarHeaders,
-            (TextBotFlowTurnResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TextBotFlowTurnResponse)),
+            (TextBotFlowTurnResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TextBotFlowTurnResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -898,7 +898,7 @@ public partial class TextbotsApi : ITextbotsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -907,7 +907,7 @@ public partial class TextbotsApi : ITextbotsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -928,7 +928,7 @@ public partial class TextbotsApi : ITextbotsApi
         // Body param
         if (launchRequest != null && launchRequest.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(launchRequest); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(launchRequest); // http body (model) parameter
         }
         else
         {
@@ -941,11 +941,11 @@ public partial class TextbotsApi : ITextbotsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -971,7 +971,7 @@ public partial class TextbotsApi : ITextbotsApi
 
         return new ApiResponse<TextBotFlowLaunchResponse>(localVarStatusCode,
             localVarHeaders,
-            (TextBotFlowLaunchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TextBotFlowLaunchResponse)),
+            (TextBotFlowLaunchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TextBotFlowLaunchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1021,7 +1021,7 @@ public partial class TextbotsApi : ITextbotsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1030,7 +1030,7 @@ public partial class TextbotsApi : ITextbotsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1051,7 +1051,7 @@ public partial class TextbotsApi : ITextbotsApi
         // Body param
         if (launchRequest != null && launchRequest.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(launchRequest); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(launchRequest); // http body (model) parameter
         }
         else
         {
@@ -1064,11 +1064,11 @@ public partial class TextbotsApi : ITextbotsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1094,7 +1094,7 @@ public partial class TextbotsApi : ITextbotsApi
 
         return new ApiResponse<TextBotFlowLaunchResponse>(localVarStatusCode,
             localVarHeaders,
-            (TextBotFlowLaunchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TextBotFlowLaunchResponse)),
+            (TextBotFlowLaunchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TextBotFlowLaunchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1144,7 +1144,7 @@ public partial class TextbotsApi : ITextbotsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1153,7 +1153,7 @@ public partial class TextbotsApi : ITextbotsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1174,7 +1174,7 @@ public partial class TextbotsApi : ITextbotsApi
         // Body param
         if (postTextRequest != null && postTextRequest.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(postTextRequest); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(postTextRequest); // http body (model) parameter
         }
         else
         {
@@ -1187,11 +1187,11 @@ public partial class TextbotsApi : ITextbotsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1217,7 +1217,7 @@ public partial class TextbotsApi : ITextbotsApi
 
         return new ApiResponse<PostTextResponse>(localVarStatusCode,
             localVarHeaders,
-            (PostTextResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostTextResponse)),
+            (PostTextResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostTextResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1267,7 +1267,7 @@ public partial class TextbotsApi : ITextbotsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1276,7 +1276,7 @@ public partial class TextbotsApi : ITextbotsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1297,7 +1297,7 @@ public partial class TextbotsApi : ITextbotsApi
         // Body param
         if (postTextRequest != null && postTextRequest.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(postTextRequest); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(postTextRequest); // http body (model) parameter
         }
         else
         {
@@ -1310,11 +1310,11 @@ public partial class TextbotsApi : ITextbotsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1340,7 +1340,7 @@ public partial class TextbotsApi : ITextbotsApi
 
         return new ApiResponse<PostTextResponse>(localVarStatusCode,
             localVarHeaders,
-            (PostTextResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostTextResponse)),
+            (PostTextResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostTextResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

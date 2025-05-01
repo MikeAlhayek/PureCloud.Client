@@ -83,7 +83,7 @@ public partial class CsvUploadPreviewResponse : IEquatable<CsvUploadPreviewRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CsvUploadPreviewResponse);
+        return Equals(obj as CsvUploadPreviewResponse);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class CsvUploadPreviewResponse : IEquatable<CsvUploadPreviewRespo
 
         return true &&
             (
-                this.UploadId == other.UploadId ||
-                this.UploadId != null &&
-                this.UploadId.Equals(other.UploadId)
+                UploadId == other.UploadId ||
+                UploadId != null &&
+                UploadId.Equals(other.UploadId)
             ) &&
             (
-                this.Headers == other.Headers ||
-                this.Headers != null &&
-                this.Headers.SequenceEqual(other.Headers)
+                Headers == other.Headers ||
+                Headers != null &&
+                Headers.SequenceEqual(other.Headers)
             ) &&
             (
-                this.Entries == other.Entries ||
-                this.Entries != null &&
-                this.Entries.SequenceEqual(other.Entries)
+                Entries == other.Entries ||
+                Entries != null &&
+                Entries.SequenceEqual(other.Entries)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class CsvUploadPreviewResponse : IEquatable<CsvUploadPreviewRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadId != null)
+            if (UploadId != null)
             {
-                hash = hash * 59 + this.UploadId.GetHashCode();
+                hash = hash * 59 + UploadId.GetHashCode();
             }
 
-            if (this.Headers != null)
+            if (Headers != null)
             {
-                hash = hash * 59 + this.Headers.GetHashCode();
+                hash = hash * 59 + Headers.GetHashCode();
             }
 
-            if (this.Entries != null)
+            if (Entries != null)
             {
-                hash = hash * 59 + this.Entries.GetHashCode();
+                hash = hash * 59 + Entries.GetHashCode();
             }
 
             return hash;

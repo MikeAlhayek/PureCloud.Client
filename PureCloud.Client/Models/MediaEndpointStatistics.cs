@@ -113,7 +113,7 @@ public partial class MediaEndpointStatistics : IEquatable<MediaEndpointStatistic
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaEndpointStatistics);
+        return Equals(obj as MediaEndpointStatistics);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class MediaEndpointStatistics : IEquatable<MediaEndpointStatistic
 
         return true &&
             (
-                this.Trunk == other.Trunk ||
-                this.Trunk != null &&
-                this.Trunk.Equals(other.Trunk)
+                Trunk == other.Trunk ||
+                Trunk != null &&
+                Trunk.Equals(other.Trunk)
             ) &&
             (
-                this.Station == other.Station ||
-                this.Station != null &&
-                this.Station.Equals(other.Station)
+                Station == other.Station ||
+                Station != null &&
+                Station.Equals(other.Station)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Ice == other.Ice ||
-                this.Ice != null &&
-                this.Ice.Equals(other.Ice)
+                Ice == other.Ice ||
+                Ice != null &&
+                Ice.Equals(other.Ice)
             ) &&
             (
-                this.Rtp == other.Rtp ||
-                this.Rtp != null &&
-                this.Rtp.Equals(other.Rtp)
+                Rtp == other.Rtp ||
+                Rtp != null &&
+                Rtp.Equals(other.Rtp)
             ) &&
             (
-                this.ReconnectAttemptCount == other.ReconnectAttemptCount ||
-                this.ReconnectAttemptCount != null &&
-                this.ReconnectAttemptCount.Equals(other.ReconnectAttemptCount)
+                ReconnectAttemptCount == other.ReconnectAttemptCount ||
+                ReconnectAttemptCount != null &&
+                ReconnectAttemptCount.Equals(other.ReconnectAttemptCount)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class MediaEndpointStatistics : IEquatable<MediaEndpointStatistic
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Trunk != null)
+            if (Trunk != null)
             {
-                hash = hash * 59 + this.Trunk.GetHashCode();
+                hash = hash * 59 + Trunk.GetHashCode();
             }
 
-            if (this.Station != null)
+            if (Station != null)
             {
-                hash = hash * 59 + this.Station.GetHashCode();
+                hash = hash * 59 + Station.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Ice != null)
+            if (Ice != null)
             {
-                hash = hash * 59 + this.Ice.GetHashCode();
+                hash = hash * 59 + Ice.GetHashCode();
             }
 
-            if (this.Rtp != null)
+            if (Rtp != null)
             {
-                hash = hash * 59 + this.Rtp.GetHashCode();
+                hash = hash * 59 + Rtp.GetHashCode();
             }
 
-            if (this.ReconnectAttemptCount != null)
+            if (ReconnectAttemptCount != null)
             {
-                hash = hash * 59 + this.ReconnectAttemptCount.GetHashCode();
+                hash = hash * 59 + ReconnectAttemptCount.GetHashCode();
             }
 
             return hash;

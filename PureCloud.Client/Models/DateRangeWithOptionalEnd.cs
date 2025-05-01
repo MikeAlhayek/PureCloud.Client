@@ -71,7 +71,7 @@ public partial class DateRangeWithOptionalEnd : IEquatable<DateRangeWithOptional
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DateRangeWithOptionalEnd);
+        return Equals(obj as DateRangeWithOptionalEnd);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class DateRangeWithOptionalEnd : IEquatable<DateRangeWithOptional
 
         return true &&
             (
-                this.StartBusinessUnitDate == other.StartBusinessUnitDate ||
-                this.StartBusinessUnitDate != null &&
-                this.StartBusinessUnitDate.Equals(other.StartBusinessUnitDate)
+                StartBusinessUnitDate == other.StartBusinessUnitDate ||
+                StartBusinessUnitDate != null &&
+                StartBusinessUnitDate.Equals(other.StartBusinessUnitDate)
             ) &&
             (
-                this.EndBusinessUnitDate == other.EndBusinessUnitDate ||
-                this.EndBusinessUnitDate != null &&
-                this.EndBusinessUnitDate.Equals(other.EndBusinessUnitDate)
+                EndBusinessUnitDate == other.EndBusinessUnitDate ||
+                EndBusinessUnitDate != null &&
+                EndBusinessUnitDate.Equals(other.EndBusinessUnitDate)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class DateRangeWithOptionalEnd : IEquatable<DateRangeWithOptional
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartBusinessUnitDate != null)
+            if (StartBusinessUnitDate != null)
             {
-                hash = hash * 59 + this.StartBusinessUnitDate.GetHashCode();
+                hash = hash * 59 + StartBusinessUnitDate.GetHashCode();
             }
 
-            if (this.EndBusinessUnitDate != null)
+            if (EndBusinessUnitDate != null)
             {
-                hash = hash * 59 + this.EndBusinessUnitDate.GetHashCode();
+                hash = hash * 59 + EndBusinessUnitDate.GetHashCode();
             }
 
             return hash;

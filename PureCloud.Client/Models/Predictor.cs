@@ -209,7 +209,7 @@ public partial class Predictor : IEquatable<Predictor>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Predictor);
+        return Equals(obj as Predictor);
     }
 
     /// <summary>
@@ -227,64 +227,64 @@ public partial class Predictor : IEquatable<Predictor>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Queues == other.Queues ||
-                this.Queues != null &&
-                this.Queues.SequenceEqual(other.Queues)
+                Queues == other.Queues ||
+                Queues != null &&
+                Queues.SequenceEqual(other.Queues)
             ) &&
             (
-                this.Kpi == other.Kpi ||
-                this.Kpi != null &&
-                this.Kpi.Equals(other.Kpi)
+                Kpi == other.Kpi ||
+                Kpi != null &&
+                Kpi.Equals(other.Kpi)
             ) &&
             (
-                this.RoutingTimeoutSeconds == other.RoutingTimeoutSeconds ||
-                this.RoutingTimeoutSeconds != null &&
-                this.RoutingTimeoutSeconds.Equals(other.RoutingTimeoutSeconds)
+                RoutingTimeoutSeconds == other.RoutingTimeoutSeconds ||
+                RoutingTimeoutSeconds != null &&
+                RoutingTimeoutSeconds.Equals(other.RoutingTimeoutSeconds)
             ) &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.WorkloadBalancingConfig == other.WorkloadBalancingConfig ||
-                this.WorkloadBalancingConfig != null &&
-                this.WorkloadBalancingConfig.Equals(other.WorkloadBalancingConfig)
+                WorkloadBalancingConfig == other.WorkloadBalancingConfig ||
+                WorkloadBalancingConfig != null &&
+                WorkloadBalancingConfig.Equals(other.WorkloadBalancingConfig)
             ) &&
             (
-                this.ErrorCode == other.ErrorCode ||
-                this.ErrorCode != null &&
-                this.ErrorCode.Equals(other.ErrorCode)
+                ErrorCode == other.ErrorCode ||
+                ErrorCode != null &&
+                ErrorCode.Equals(other.ErrorCode)
             ) &&
             (
-                this.Models == other.Models ||
-                this.Models != null &&
-                this.Models.SequenceEqual(other.Models)
+                Models == other.Models ||
+                Models != null &&
+                Models.SequenceEqual(other.Models)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -299,64 +299,64 @@ public partial class Predictor : IEquatable<Predictor>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Queues != null)
+            if (Queues != null)
             {
-                hash = hash * 59 + this.Queues.GetHashCode();
+                hash = hash * 59 + Queues.GetHashCode();
             }
 
-            if (this.Kpi != null)
+            if (Kpi != null)
             {
-                hash = hash * 59 + this.Kpi.GetHashCode();
+                hash = hash * 59 + Kpi.GetHashCode();
             }
 
-            if (this.RoutingTimeoutSeconds != null)
+            if (RoutingTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.RoutingTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + RoutingTimeoutSeconds.GetHashCode();
             }
 
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.WorkloadBalancingConfig != null)
+            if (WorkloadBalancingConfig != null)
             {
-                hash = hash * 59 + this.WorkloadBalancingConfig.GetHashCode();
+                hash = hash * 59 + WorkloadBalancingConfig.GetHashCode();
             }
 
-            if (this.ErrorCode != null)
+            if (ErrorCode != null)
             {
-                hash = hash * 59 + this.ErrorCode.GetHashCode();
+                hash = hash * 59 + ErrorCode.GetHashCode();
             }
 
-            if (this.Models != null)
+            if (Models != null)
             {
-                hash = hash * 59 + this.Models.GetHashCode();
+                hash = hash * 59 + Models.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

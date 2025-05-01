@@ -51,7 +51,7 @@ public partial class AgentCopilotAggregateQueryResponse : IEquatable<AgentCopilo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentCopilotAggregateQueryResponse);
+        return Equals(obj as AgentCopilotAggregateQueryResponse);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class AgentCopilotAggregateQueryResponse : IEquatable<AgentCopilo
 
         return true &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class AgentCopilotAggregateQueryResponse : IEquatable<AgentCopilo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
             return hash;

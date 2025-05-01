@@ -53,7 +53,7 @@ public partial class ShiftTradePreviewResponse : IEquatable<ShiftTradePreviewRes
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ShiftTradePreviewResponse);
+        return Equals(obj as ShiftTradePreviewResponse);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ShiftTradePreviewResponse : IEquatable<ShiftTradePreviewRes
 
         return true &&
             (
-                this.Activities == other.Activities ||
-                this.Activities != null &&
-                this.Activities.SequenceEqual(other.Activities)
+                Activities == other.Activities ||
+                Activities != null &&
+                Activities.SequenceEqual(other.Activities)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ShiftTradePreviewResponse : IEquatable<ShiftTradePreviewRes
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Activities != null)
+            if (Activities != null)
             {
-                hash = hash * 59 + this.Activities.GetHashCode();
+                hash = hash * 59 + Activities.GetHashCode();
             }
 
             return hash;

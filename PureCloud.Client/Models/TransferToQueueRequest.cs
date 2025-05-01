@@ -115,7 +115,7 @@ public partial class TransferToQueueRequest : IEquatable<TransferToQueueRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TransferToQueueRequest);
+        return Equals(obj as TransferToQueueRequest);
     }
 
     /// <summary>
@@ -133,24 +133,24 @@ public partial class TransferToQueueRequest : IEquatable<TransferToQueueRequest>
 
         return true &&
             (
-                this.TransferType == other.TransferType ||
-                this.TransferType != null &&
-                this.TransferType.Equals(other.TransferType)
+                TransferType == other.TransferType ||
+                TransferType != null &&
+                TransferType.Equals(other.TransferType)
             ) &&
             (
-                this.KeepInternalMessageAlive == other.KeepInternalMessageAlive ||
-                this.KeepInternalMessageAlive != null &&
-                this.KeepInternalMessageAlive.Equals(other.KeepInternalMessageAlive)
+                KeepInternalMessageAlive == other.KeepInternalMessageAlive ||
+                KeepInternalMessageAlive != null &&
+                KeepInternalMessageAlive.Equals(other.KeepInternalMessageAlive)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.QueueName == other.QueueName ||
-                this.QueueName != null &&
-                this.QueueName.Equals(other.QueueName)
+                QueueName == other.QueueName ||
+                QueueName != null &&
+                QueueName.Equals(other.QueueName)
             );
     }
 
@@ -165,24 +165,24 @@ public partial class TransferToQueueRequest : IEquatable<TransferToQueueRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TransferType != null)
+            if (TransferType != null)
             {
-                hash = hash * 59 + this.TransferType.GetHashCode();
+                hash = hash * 59 + TransferType.GetHashCode();
             }
 
-            if (this.KeepInternalMessageAlive != null)
+            if (KeepInternalMessageAlive != null)
             {
-                hash = hash * 59 + this.KeepInternalMessageAlive.GetHashCode();
+                hash = hash * 59 + KeepInternalMessageAlive.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.QueueName != null)
+            if (QueueName != null)
             {
-                hash = hash * 59 + this.QueueName.GetHashCode();
+                hash = hash * 59 + QueueName.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class ConfusionDetails : IEquatable<ConfusionDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConfusionDetails);
+        return Equals(obj as ConfusionDetails);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ConfusionDetails : IEquatable<ConfusionDetails>
 
         return true &&
             (
-                this.Intents == other.Intents ||
-                this.Intents != null &&
-                this.Intents.SequenceEqual(other.Intents)
+                Intents == other.Intents ||
+                Intents != null &&
+                Intents.SequenceEqual(other.Intents)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ConfusionDetails : IEquatable<ConfusionDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Intents != null)
+            if (Intents != null)
             {
-                hash = hash * 59 + this.Intents.GetHashCode();
+                hash = hash * 59 + Intents.GetHashCode();
             }
 
             return hash;

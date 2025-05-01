@@ -63,7 +63,7 @@ public partial class WfmBuScheduleRunTopicBuScheduleReference : IEquatable<WfmBu
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuScheduleRunTopicBuScheduleReference);
+        return Equals(obj as WfmBuScheduleRunTopicBuScheduleReference);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class WfmBuScheduleRunTopicBuScheduleReference : IEquatable<WfmBu
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class WfmBuScheduleRunTopicBuScheduleReference : IEquatable<WfmBu
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
             return hash;

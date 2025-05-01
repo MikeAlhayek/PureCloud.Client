@@ -89,7 +89,7 @@ public partial class CriteriaGroup : IEquatable<CriteriaGroup>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CriteriaGroup);
+        return Equals(obj as CriteriaGroup);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class CriteriaGroup : IEquatable<CriteriaGroup>
 
         return true &&
             (
-                this.And == other.And ||
-                this.And != null &&
-                this.And.SequenceEqual(other.And)
+                And == other.And ||
+                And != null &&
+                And.SequenceEqual(other.And)
             ) &&
             (
-                this.Or == other.Or ||
-                this.Or != null &&
-                this.Or.SequenceEqual(other.Or)
+                Or == other.Or ||
+                Or != null &&
+                Or.SequenceEqual(other.Or)
             ) &&
             (
-                this.Not == other.Not ||
-                this.Not != null &&
-                this.Not.SequenceEqual(other.Not)
+                Not == other.Not ||
+                Not != null &&
+                Not.SequenceEqual(other.Not)
             ) &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.Equals(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.Equals(other.Criteria)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class CriteriaGroup : IEquatable<CriteriaGroup>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.And != null)
+            if (And != null)
             {
-                hash = hash * 59 + this.And.GetHashCode();
+                hash = hash * 59 + And.GetHashCode();
             }
 
-            if (this.Or != null)
+            if (Or != null)
             {
-                hash = hash * 59 + this.Or.GetHashCode();
+                hash = hash * 59 + Or.GetHashCode();
             }
 
-            if (this.Not != null)
+            if (Not != null)
             {
-                hash = hash * 59 + this.Not.GetHashCode();
+                hash = hash * 59 + Not.GetHashCode();
             }
 
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
             return hash;

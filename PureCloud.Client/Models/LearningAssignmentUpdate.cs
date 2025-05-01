@@ -115,7 +115,7 @@ public partial class LearningAssignmentUpdate : IEquatable<LearningAssignmentUpd
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentUpdate);
+        return Equals(obj as LearningAssignmentUpdate);
     }
 
     /// <summary>
@@ -133,14 +133,14 @@ public partial class LearningAssignmentUpdate : IEquatable<LearningAssignmentUpd
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Assessment == other.Assessment ||
-                this.Assessment != null &&
-                this.Assessment.Equals(other.Assessment)
+                Assessment == other.Assessment ||
+                Assessment != null &&
+                Assessment.Equals(other.Assessment)
             );
     }
 
@@ -155,14 +155,14 @@ public partial class LearningAssignmentUpdate : IEquatable<LearningAssignmentUpd
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Assessment != null)
+            if (Assessment != null)
             {
-                hash = hash * 59 + this.Assessment.GetHashCode();
+                hash = hash * 59 + Assessment.GetHashCode();
             }
 
             return hash;

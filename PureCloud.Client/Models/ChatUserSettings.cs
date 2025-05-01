@@ -59,7 +59,7 @@ public partial class ChatUserSettings : IEquatable<ChatUserSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatUserSettings);
+        return Equals(obj as ChatUserSettings);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ChatUserSettings : IEquatable<ChatUserSettings>
 
         return true &&
             (
-                this.Mobile == other.Mobile ||
-                this.Mobile != null &&
-                this.Mobile.Equals(other.Mobile)
+                Mobile == other.Mobile ||
+                Mobile != null &&
+                Mobile.Equals(other.Mobile)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ChatUserSettings : IEquatable<ChatUserSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Mobile != null)
+            if (Mobile != null)
             {
-                hash = hash * 59 + this.Mobile.GetHashCode();
+                hash = hash * 59 + Mobile.GetHashCode();
             }
 
             return hash;

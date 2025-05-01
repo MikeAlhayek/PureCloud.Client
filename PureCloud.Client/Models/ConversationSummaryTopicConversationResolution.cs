@@ -85,7 +85,7 @@ public partial class ConversationSummaryTopicConversationResolution : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationSummaryTopicConversationResolution);
+        return Equals(obj as ConversationSummaryTopicConversationResolution);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class ConversationSummaryTopicConversationResolution : IEquatable
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.ResolutionValue == other.ResolutionValue ||
-                this.ResolutionValue != null &&
-                this.ResolutionValue.Equals(other.ResolutionValue)
+                ResolutionValue == other.ResolutionValue ||
+                ResolutionValue != null &&
+                ResolutionValue.Equals(other.ResolutionValue)
             ) &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class ConversationSummaryTopicConversationResolution : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.ResolutionValue != null)
+            if (ResolutionValue != null)
             {
-                hash = hash * 59 + this.ResolutionValue.GetHashCode();
+                hash = hash * 59 + ResolutionValue.GetHashCode();
             }
 
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
             return hash;

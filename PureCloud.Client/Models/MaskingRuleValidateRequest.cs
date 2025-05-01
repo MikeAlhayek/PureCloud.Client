@@ -71,7 +71,7 @@ public partial class MaskingRuleValidateRequest : IEquatable<MaskingRuleValidate
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MaskingRuleValidateRequest);
+        return Equals(obj as MaskingRuleValidateRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class MaskingRuleValidateRequest : IEquatable<MaskingRuleValidate
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Definition == other.Definition ||
-                this.Definition != null &&
-                this.Definition.Equals(other.Definition)
+                Definition == other.Definition ||
+                Definition != null &&
+                Definition.Equals(other.Definition)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class MaskingRuleValidateRequest : IEquatable<MaskingRuleValidate
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Definition != null)
+            if (Definition != null)
             {
-                hash = hash * 59 + this.Definition.GetHashCode();
+                hash = hash * 59 + Definition.GetHashCode();
             }
 
             return hash;

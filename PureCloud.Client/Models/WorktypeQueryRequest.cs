@@ -139,7 +139,7 @@ public partial class WorktypeQueryRequest : IEquatable<WorktypeQueryRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorktypeQueryRequest);
+        return Equals(obj as WorktypeQueryRequest);
     }
 
     /// <summary>
@@ -157,34 +157,34 @@ public partial class WorktypeQueryRequest : IEquatable<WorktypeQueryRequest>
 
         return true &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.Select == other.Select ||
-                this.Select != null &&
-                this.Select.Equals(other.Select)
+                Select == other.Select ||
+                Select != null &&
+                Select.Equals(other.Select)
             ) &&
             (
-                this.Filters == other.Filters ||
-                this.Filters != null &&
-                this.Filters.SequenceEqual(other.Filters)
+                Filters == other.Filters ||
+                Filters != null &&
+                Filters.SequenceEqual(other.Filters)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.After == other.After ||
-                this.After != null &&
-                this.After.Equals(other.After)
+                After == other.After ||
+                After != null &&
+                After.Equals(other.After)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.Equals(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.Equals(other.Sort)
             );
     }
 
@@ -199,34 +199,34 @@ public partial class WorktypeQueryRequest : IEquatable<WorktypeQueryRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.Select != null)
+            if (Select != null)
             {
-                hash = hash * 59 + this.Select.GetHashCode();
+                hash = hash * 59 + Select.GetHashCode();
             }
 
-            if (this.Filters != null)
+            if (Filters != null)
             {
-                hash = hash * 59 + this.Filters.GetHashCode();
+                hash = hash * 59 + Filters.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.After != null)
+            if (After != null)
             {
-                hash = hash * 59 + this.After.GetHashCode();
+                hash = hash * 59 + After.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
             return hash;

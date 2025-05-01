@@ -137,7 +137,7 @@ public partial class ImportStatus : IEquatable<ImportStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ImportStatus);
+        return Equals(obj as ImportStatus);
     }
 
     /// <summary>
@@ -155,39 +155,39 @@ public partial class ImportStatus : IEquatable<ImportStatus>
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.TotalRecords == other.TotalRecords ||
-                this.TotalRecords != null &&
-                this.TotalRecords.Equals(other.TotalRecords)
+                TotalRecords == other.TotalRecords ||
+                TotalRecords != null &&
+                TotalRecords.Equals(other.TotalRecords)
             ) &&
             (
-                this.CompletedRecords == other.CompletedRecords ||
-                this.CompletedRecords != null &&
-                this.CompletedRecords.Equals(other.CompletedRecords)
+                CompletedRecords == other.CompletedRecords ||
+                CompletedRecords != null &&
+                CompletedRecords.Equals(other.CompletedRecords)
             ) &&
             (
-                this.PercentComplete == other.PercentComplete ||
-                this.PercentComplete != null &&
-                this.PercentComplete.Equals(other.PercentComplete)
+                PercentComplete == other.PercentComplete ||
+                PercentComplete != null &&
+                PercentComplete.Equals(other.PercentComplete)
             ) &&
             (
-                this.FailureReason == other.FailureReason ||
-                this.FailureReason != null &&
-                this.FailureReason.Equals(other.FailureReason)
+                FailureReason == other.FailureReason ||
+                FailureReason != null &&
+                FailureReason.Equals(other.FailureReason)
             ) &&
             (
-                this.TargetContactListIds == other.TargetContactListIds ||
-                this.TargetContactListIds != null &&
-                this.TargetContactListIds.SequenceEqual(other.TargetContactListIds)
+                TargetContactListIds == other.TargetContactListIds ||
+                TargetContactListIds != null &&
+                TargetContactListIds.SequenceEqual(other.TargetContactListIds)
             ) &&
             (
-                this.ListNamePrefix == other.ListNamePrefix ||
-                this.ListNamePrefix != null &&
-                this.ListNamePrefix.Equals(other.ListNamePrefix)
+                ListNamePrefix == other.ListNamePrefix ||
+                ListNamePrefix != null &&
+                ListNamePrefix.Equals(other.ListNamePrefix)
             );
     }
 
@@ -202,39 +202,39 @@ public partial class ImportStatus : IEquatable<ImportStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.TotalRecords != null)
+            if (TotalRecords != null)
             {
-                hash = hash * 59 + this.TotalRecords.GetHashCode();
+                hash = hash * 59 + TotalRecords.GetHashCode();
             }
 
-            if (this.CompletedRecords != null)
+            if (CompletedRecords != null)
             {
-                hash = hash * 59 + this.CompletedRecords.GetHashCode();
+                hash = hash * 59 + CompletedRecords.GetHashCode();
             }
 
-            if (this.PercentComplete != null)
+            if (PercentComplete != null)
             {
-                hash = hash * 59 + this.PercentComplete.GetHashCode();
+                hash = hash * 59 + PercentComplete.GetHashCode();
             }
 
-            if (this.FailureReason != null)
+            if (FailureReason != null)
             {
-                hash = hash * 59 + this.FailureReason.GetHashCode();
+                hash = hash * 59 + FailureReason.GetHashCode();
             }
 
-            if (this.TargetContactListIds != null)
+            if (TargetContactListIds != null)
             {
-                hash = hash * 59 + this.TargetContactListIds.GetHashCode();
+                hash = hash * 59 + TargetContactListIds.GetHashCode();
             }
 
-            if (this.ListNamePrefix != null)
+            if (ListNamePrefix != null)
             {
-                hash = hash * 59 + this.ListNamePrefix.GetHashCode();
+                hash = hash * 59 + ListNamePrefix.GetHashCode();
             }
 
             return hash;

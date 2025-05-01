@@ -41,7 +41,7 @@ public partial class ConversationChannelMetadata : IEquatable<ConversationChanne
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationChannelMetadata);
+        return Equals(obj as ConversationChannelMetadata);
     }
 
     /// <summary>

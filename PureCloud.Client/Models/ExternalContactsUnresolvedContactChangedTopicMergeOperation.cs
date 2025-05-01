@@ -74,7 +74,7 @@ public partial class ExternalContactsUnresolvedContactChangedTopicMergeOperation
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsUnresolvedContactChangedTopicMergeOperation);
+        return Equals(obj as ExternalContactsUnresolvedContactChangedTopicMergeOperation);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class ExternalContactsUnresolvedContactChangedTopicMergeOperation
 
         return true &&
             (
-                this.SourceContactId == other.SourceContactId ||
-                this.SourceContactId != null &&
-                this.SourceContactId.Equals(other.SourceContactId)
+                SourceContactId == other.SourceContactId ||
+                SourceContactId != null &&
+                SourceContactId.Equals(other.SourceContactId)
             ) &&
             (
-                this.TargetContactId == other.TargetContactId ||
-                this.TargetContactId != null &&
-                this.TargetContactId.Equals(other.TargetContactId)
+                TargetContactId == other.TargetContactId ||
+                TargetContactId != null &&
+                TargetContactId.Equals(other.TargetContactId)
             ) &&
             (
-                this.ResultingContactId == other.ResultingContactId ||
-                this.ResultingContactId != null &&
-                this.ResultingContactId.Equals(other.ResultingContactId)
+                ResultingContactId == other.ResultingContactId ||
+                ResultingContactId != null &&
+                ResultingContactId.Equals(other.ResultingContactId)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class ExternalContactsUnresolvedContactChangedTopicMergeOperation
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SourceContactId != null)
+            if (SourceContactId != null)
             {
-                hash = hash * 59 + this.SourceContactId.GetHashCode();
+                hash = hash * 59 + SourceContactId.GetHashCode();
             }
 
-            if (this.TargetContactId != null)
+            if (TargetContactId != null)
             {
-                hash = hash * 59 + this.TargetContactId.GetHashCode();
+                hash = hash * 59 + TargetContactId.GetHashCode();
             }
 
-            if (this.ResultingContactId != null)
+            if (ResultingContactId != null)
             {
-                hash = hash * 59 + this.ResultingContactId.GetHashCode();
+                hash = hash * 59 + ResultingContactId.GetHashCode();
             }
 
             return hash;

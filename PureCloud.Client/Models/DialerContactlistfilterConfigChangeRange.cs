@@ -112,7 +112,7 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerContactlistfilterConfigChangeRange);
+        return Equals(obj as DialerContactlistfilterConfigChangeRange);
     }
 
     /// <summary>
@@ -130,34 +130,34 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
 
         return true &&
             (
-                this.Min == other.Min ||
-                this.Min != null &&
-                this.Min.Equals(other.Min)
+                Min == other.Min ||
+                Min != null &&
+                Min.Equals(other.Min)
             ) &&
             (
-                this.Max == other.Max ||
-                this.Max != null &&
-                this.Max.Equals(other.Max)
+                Max == other.Max ||
+                Max != null &&
+                Max.Equals(other.Max)
             ) &&
             (
-                this.MinInclusive == other.MinInclusive ||
-                this.MinInclusive != null &&
-                this.MinInclusive.Equals(other.MinInclusive)
+                MinInclusive == other.MinInclusive ||
+                MinInclusive != null &&
+                MinInclusive.Equals(other.MinInclusive)
             ) &&
             (
-                this.MaxInclusive == other.MaxInclusive ||
-                this.MaxInclusive != null &&
-                this.MaxInclusive.Equals(other.MaxInclusive)
+                MaxInclusive == other.MaxInclusive ||
+                MaxInclusive != null &&
+                MaxInclusive.Equals(other.MaxInclusive)
             ) &&
             (
-                this.InSet == other.InSet ||
-                this.InSet != null &&
-                this.InSet.SequenceEqual(other.InSet)
+                InSet == other.InSet ||
+                InSet != null &&
+                InSet.SequenceEqual(other.InSet)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -172,34 +172,34 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Min != null)
+            if (Min != null)
             {
-                hash = hash * 59 + this.Min.GetHashCode();
+                hash = hash * 59 + Min.GetHashCode();
             }
 
-            if (this.Max != null)
+            if (Max != null)
             {
-                hash = hash * 59 + this.Max.GetHashCode();
+                hash = hash * 59 + Max.GetHashCode();
             }
 
-            if (this.MinInclusive != null)
+            if (MinInclusive != null)
             {
-                hash = hash * 59 + this.MinInclusive.GetHashCode();
+                hash = hash * 59 + MinInclusive.GetHashCode();
             }
 
-            if (this.MaxInclusive != null)
+            if (MaxInclusive != null)
             {
-                hash = hash * 59 + this.MaxInclusive.GetHashCode();
+                hash = hash * 59 + MaxInclusive.GetHashCode();
             }
 
-            if (this.InSet != null)
+            if (InSet != null)
             {
-                hash = hash * 59 + this.InSet.GetHashCode();
+                hash = hash * 59 + InSet.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

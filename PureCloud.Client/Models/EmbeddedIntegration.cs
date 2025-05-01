@@ -63,7 +63,7 @@ public partial class EmbeddedIntegration : IEquatable<EmbeddedIntegration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmbeddedIntegration);
+        return Equals(obj as EmbeddedIntegration);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class EmbeddedIntegration : IEquatable<EmbeddedIntegration>
 
         return true &&
             (
-                this.EnableWhitelist == other.EnableWhitelist ||
-                this.EnableWhitelist != null &&
-                this.EnableWhitelist.Equals(other.EnableWhitelist)
+                EnableWhitelist == other.EnableWhitelist ||
+                EnableWhitelist != null &&
+                EnableWhitelist.Equals(other.EnableWhitelist)
             ) &&
             (
-                this.DomainWhitelist == other.DomainWhitelist ||
-                this.DomainWhitelist != null &&
-                this.DomainWhitelist.SequenceEqual(other.DomainWhitelist)
+                DomainWhitelist == other.DomainWhitelist ||
+                DomainWhitelist != null &&
+                DomainWhitelist.SequenceEqual(other.DomainWhitelist)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class EmbeddedIntegration : IEquatable<EmbeddedIntegration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EnableWhitelist != null)
+            if (EnableWhitelist != null)
             {
-                hash = hash * 59 + this.EnableWhitelist.GetHashCode();
+                hash = hash * 59 + EnableWhitelist.GetHashCode();
             }
 
-            if (this.DomainWhitelist != null)
+            if (DomainWhitelist != null)
             {
-                hash = hash * 59 + this.DomainWhitelist.GetHashCode();
+                hash = hash * 59 + DomainWhitelist.GetHashCode();
             }
 
             return hash;

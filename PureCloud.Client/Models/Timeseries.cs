@@ -65,7 +65,7 @@ public partial class Timeseries : IEquatable<Timeseries>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Timeseries);
+        return Equals(obj as Timeseries);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class Timeseries : IEquatable<Timeseries>
 
         return true &&
             (
-                this.PlanningGroup == other.PlanningGroup ||
-                this.PlanningGroup != null &&
-                this.PlanningGroup.Equals(other.PlanningGroup)
+                PlanningGroup == other.PlanningGroup ||
+                PlanningGroup != null &&
+                PlanningGroup.Equals(other.PlanningGroup)
             ) &&
             (
-                this.Weeks == other.Weeks ||
-                this.Weeks != null &&
-                this.Weeks.SequenceEqual(other.Weeks)
+                Weeks == other.Weeks ||
+                Weeks != null &&
+                Weeks.SequenceEqual(other.Weeks)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class Timeseries : IEquatable<Timeseries>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PlanningGroup != null)
+            if (PlanningGroup != null)
             {
-                hash = hash * 59 + this.PlanningGroup.GetHashCode();
+                hash = hash * 59 + PlanningGroup.GetHashCode();
             }
 
-            if (this.Weeks != null)
+            if (Weeks != null)
             {
-                hash = hash * 59 + this.Weeks.GetHashCode();
+                hash = hash * 59 + Weeks.GetHashCode();
             }
 
             return hash;

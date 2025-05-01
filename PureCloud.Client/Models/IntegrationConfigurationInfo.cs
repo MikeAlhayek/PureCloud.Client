@@ -51,7 +51,7 @@ public partial class IntegrationConfigurationInfo : IEquatable<IntegrationConfig
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IntegrationConfigurationInfo);
+        return Equals(obj as IntegrationConfigurationInfo);
     }
 
     /// <summary>
@@ -69,9 +69,9 @@ public partial class IntegrationConfigurationInfo : IEquatable<IntegrationConfig
 
         return true &&
             (
-                this.Current == other.Current ||
-                this.Current != null &&
-                this.Current.Equals(other.Current)
+                Current == other.Current ||
+                Current != null &&
+                Current.Equals(other.Current)
             );
     }
 
@@ -86,9 +86,9 @@ public partial class IntegrationConfigurationInfo : IEquatable<IntegrationConfig
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Current != null)
+            if (Current != null)
             {
-                hash = hash * 59 + this.Current.GetHashCode();
+                hash = hash * 59 + Current.GetHashCode();
             }
 
             return hash;

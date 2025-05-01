@@ -223,7 +223,7 @@ public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentPresentation);
+        return Equals(obj as KnowledgeDocumentPresentation);
     }
 
     /// <summary>
@@ -241,39 +241,39 @@ public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumen
 
         return true &&
             (
-                this.Documents == other.Documents ||
-                this.Documents != null &&
-                this.Documents.SequenceEqual(other.Documents)
+                Documents == other.Documents ||
+                Documents != null &&
+                Documents.SequenceEqual(other.Documents)
             ) &&
             (
-                this.SearchId == other.SearchId ||
-                this.SearchId != null &&
-                this.SearchId.Equals(other.SearchId)
+                SearchId == other.SearchId ||
+                SearchId != null &&
+                SearchId.Equals(other.SearchId)
             ) &&
             (
-                this.QueryType == other.QueryType ||
-                this.QueryType != null &&
-                this.QueryType.Equals(other.QueryType)
+                QueryType == other.QueryType ||
+                QueryType != null &&
+                QueryType.Equals(other.QueryType)
             ) &&
             (
-                this.SurfacingMethod == other.SurfacingMethod ||
-                this.SurfacingMethod != null &&
-                this.SurfacingMethod.Equals(other.SurfacingMethod)
+                SurfacingMethod == other.SurfacingMethod ||
+                SurfacingMethod != null &&
+                SurfacingMethod.Equals(other.SurfacingMethod)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.ConversationContext == other.ConversationContext ||
-                this.ConversationContext != null &&
-                this.ConversationContext.Equals(other.ConversationContext)
+                ConversationContext == other.ConversationContext ||
+                ConversationContext != null &&
+                ConversationContext.Equals(other.ConversationContext)
             ) &&
             (
-                this.Application == other.Application ||
-                this.Application != null &&
-                this.Application.Equals(other.Application)
+                Application == other.Application ||
+                Application != null &&
+                Application.Equals(other.Application)
             );
     }
 
@@ -288,39 +288,39 @@ public partial class KnowledgeDocumentPresentation : IEquatable<KnowledgeDocumen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Documents != null)
+            if (Documents != null)
             {
-                hash = hash * 59 + this.Documents.GetHashCode();
+                hash = hash * 59 + Documents.GetHashCode();
             }
 
-            if (this.SearchId != null)
+            if (SearchId != null)
             {
-                hash = hash * 59 + this.SearchId.GetHashCode();
+                hash = hash * 59 + SearchId.GetHashCode();
             }
 
-            if (this.QueryType != null)
+            if (QueryType != null)
             {
-                hash = hash * 59 + this.QueryType.GetHashCode();
+                hash = hash * 59 + QueryType.GetHashCode();
             }
 
-            if (this.SurfacingMethod != null)
+            if (SurfacingMethod != null)
             {
-                hash = hash * 59 + this.SurfacingMethod.GetHashCode();
+                hash = hash * 59 + SurfacingMethod.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.ConversationContext != null)
+            if (ConversationContext != null)
             {
-                hash = hash * 59 + this.ConversationContext.GetHashCode();
+                hash = hash * 59 + ConversationContext.GetHashCode();
             }
 
-            if (this.Application != null)
+            if (Application != null)
             {
-                hash = hash * 59 + this.Application.GetHashCode();
+                hash = hash * 59 + Application.GetHashCode();
             }
 
             return hash;

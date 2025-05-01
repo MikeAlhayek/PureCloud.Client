@@ -65,7 +65,7 @@ public partial class NluDetectionContext : IEquatable<NluDetectionContext>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluDetectionContext);
+        return Equals(obj as NluDetectionContext);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class NluDetectionContext : IEquatable<NluDetectionContext>
 
         return true &&
             (
-                this.Intent == other.Intent ||
-                this.Intent != null &&
-                this.Intent.Equals(other.Intent)
+                Intent == other.Intent ||
+                Intent != null &&
+                Intent.Equals(other.Intent)
             ) &&
             (
-                this.Entity == other.Entity ||
-                this.Entity != null &&
-                this.Entity.Equals(other.Entity)
+                Entity == other.Entity ||
+                Entity != null &&
+                Entity.Equals(other.Entity)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class NluDetectionContext : IEquatable<NluDetectionContext>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Intent != null)
+            if (Intent != null)
             {
-                hash = hash * 59 + this.Intent.GetHashCode();
+                hash = hash * 59 + Intent.GetHashCode();
             }
 
-            if (this.Entity != null)
+            if (Entity != null)
             {
-                hash = hash * 59 + this.Entity.GetHashCode();
+                hash = hash * 59 + Entity.GetHashCode();
             }
 
             return hash;

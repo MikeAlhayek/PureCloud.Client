@@ -53,7 +53,7 @@ public partial class KnowledgeIntegrationDefaultSettings : IEquatable<KnowledgeI
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeIntegrationDefaultSettings);
+        return Equals(obj as KnowledgeIntegrationDefaultSettings);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class KnowledgeIntegrationDefaultSettings : IEquatable<KnowledgeI
 
         return true &&
             (
-                this.BaseUrl == other.BaseUrl ||
-                this.BaseUrl != null &&
-                this.BaseUrl.Equals(other.BaseUrl)
+                BaseUrl == other.BaseUrl ||
+                BaseUrl != null &&
+                BaseUrl.Equals(other.BaseUrl)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class KnowledgeIntegrationDefaultSettings : IEquatable<KnowledgeI
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BaseUrl != null)
+            if (BaseUrl != null)
             {
-                hash = hash * 59 + this.BaseUrl.GetHashCode();
+                hash = hash * 59 + BaseUrl.GetHashCode();
             }
 
             return hash;

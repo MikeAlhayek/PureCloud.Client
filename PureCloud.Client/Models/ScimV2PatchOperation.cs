@@ -115,7 +115,7 @@ public partial class ScimV2PatchOperation : IEquatable<ScimV2PatchOperation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimV2PatchOperation);
+        return Equals(obj as ScimV2PatchOperation);
     }
 
     /// <summary>
@@ -133,19 +133,19 @@ public partial class ScimV2PatchOperation : IEquatable<ScimV2PatchOperation>
 
         return true &&
             (
-                this.Op == other.Op ||
-                this.Op != null &&
-                this.Op.Equals(other.Op)
+                Op == other.Op ||
+                Op != null &&
+                Op.Equals(other.Op)
             ) &&
             (
-                this.Path == other.Path ||
-                this.Path != null &&
-                this.Path.Equals(other.Path)
+                Path == other.Path ||
+                Path != null &&
+                Path.Equals(other.Path)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -160,19 +160,19 @@ public partial class ScimV2PatchOperation : IEquatable<ScimV2PatchOperation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Op != null)
+            if (Op != null)
             {
-                hash = hash * 59 + this.Op.GetHashCode();
+                hash = hash * 59 + Op.GetHashCode();
             }
 
-            if (this.Path != null)
+            if (Path != null)
             {
-                hash = hash * 59 + this.Path.GetHashCode();
+                hash = hash * 59 + Path.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

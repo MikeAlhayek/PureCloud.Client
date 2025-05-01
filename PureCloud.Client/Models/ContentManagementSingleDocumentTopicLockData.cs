@@ -74,7 +74,7 @@ public partial class ContentManagementSingleDocumentTopicLockData : IEquatable<C
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentManagementSingleDocumentTopicLockData);
+        return Equals(obj as ContentManagementSingleDocumentTopicLockData);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class ContentManagementSingleDocumentTopicLockData : IEquatable<C
 
         return true &&
             (
-                this.LockedBy == other.LockedBy ||
-                this.LockedBy != null &&
-                this.LockedBy.Equals(other.LockedBy)
+                LockedBy == other.LockedBy ||
+                LockedBy != null &&
+                LockedBy.Equals(other.LockedBy)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateExpires == other.DateExpires ||
-                this.DateExpires != null &&
-                this.DateExpires.Equals(other.DateExpires)
+                DateExpires == other.DateExpires ||
+                DateExpires != null &&
+                DateExpires.Equals(other.DateExpires)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class ContentManagementSingleDocumentTopicLockData : IEquatable<C
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LockedBy != null)
+            if (LockedBy != null)
             {
-                hash = hash * 59 + this.LockedBy.GetHashCode();
+                hash = hash * 59 + LockedBy.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateExpires != null)
+            if (DateExpires != null)
             {
-                hash = hash * 59 + this.DateExpires.GetHashCode();
+                hash = hash * 59 + DateExpires.GetHashCode();
             }
 
             return hash;

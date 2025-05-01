@@ -120,7 +120,7 @@ public partial class AlertSummary : IEquatable<AlertSummary>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlertSummary);
+        return Equals(obj as AlertSummary);
     }
 
     /// <summary>
@@ -138,24 +138,24 @@ public partial class AlertSummary : IEquatable<AlertSummary>
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.Conversation == other.Conversation ||
-                this.Conversation != null &&
-                this.Conversation.Equals(other.Conversation)
+                Conversation == other.Conversation ||
+                Conversation != null &&
+                Conversation.Equals(other.Conversation)
             ) &&
             (
-                this.MetricType == other.MetricType ||
-                this.MetricType != null &&
-                this.MetricType.Equals(other.MetricType)
+                MetricType == other.MetricType ||
+                MetricType != null &&
+                MetricType.Equals(other.MetricType)
             ) &&
             (
-                this.EntitiesAreTeamMembers == other.EntitiesAreTeamMembers ||
-                this.EntitiesAreTeamMembers != null &&
-                this.EntitiesAreTeamMembers.Equals(other.EntitiesAreTeamMembers)
+                EntitiesAreTeamMembers == other.EntitiesAreTeamMembers ||
+                EntitiesAreTeamMembers != null &&
+                EntitiesAreTeamMembers.Equals(other.EntitiesAreTeamMembers)
             );
     }
 
@@ -170,24 +170,24 @@ public partial class AlertSummary : IEquatable<AlertSummary>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.Conversation != null)
+            if (Conversation != null)
             {
-                hash = hash * 59 + this.Conversation.GetHashCode();
+                hash = hash * 59 + Conversation.GetHashCode();
             }
 
-            if (this.MetricType != null)
+            if (MetricType != null)
             {
-                hash = hash * 59 + this.MetricType.GetHashCode();
+                hash = hash * 59 + MetricType.GetHashCode();
             }
 
-            if (this.EntitiesAreTeamMembers != null)
+            if (EntitiesAreTeamMembers != null)
             {
-                hash = hash * 59 + this.EntitiesAreTeamMembers.GetHashCode();
+                hash = hash * 59 + EntitiesAreTeamMembers.GetHashCode();
             }
 
             return hash;

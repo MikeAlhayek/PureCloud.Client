@@ -107,7 +107,7 @@ public partial class ContactCallbackRequest : IEquatable<ContactCallbackRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactCallbackRequest);
+        return Equals(obj as ContactCallbackRequest);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class ContactCallbackRequest : IEquatable<ContactCallbackRequest>
 
         return true &&
             (
-                this.CampaignId == other.CampaignId ||
-                this.CampaignId != null &&
-                this.CampaignId.Equals(other.CampaignId)
+                CampaignId == other.CampaignId ||
+                CampaignId != null &&
+                CampaignId.Equals(other.CampaignId)
             ) &&
             (
-                this.ContactListId == other.ContactListId ||
-                this.ContactListId != null &&
-                this.ContactListId.Equals(other.ContactListId)
+                ContactListId == other.ContactListId ||
+                ContactListId != null &&
+                ContactListId.Equals(other.ContactListId)
             ) &&
             (
-                this.ContactId == other.ContactId ||
-                this.ContactId != null &&
-                this.ContactId.Equals(other.ContactId)
+                ContactId == other.ContactId ||
+                ContactId != null &&
+                ContactId.Equals(other.ContactId)
             ) &&
             (
-                this.PhoneColumn == other.PhoneColumn ||
-                this.PhoneColumn != null &&
-                this.PhoneColumn.Equals(other.PhoneColumn)
+                PhoneColumn == other.PhoneColumn ||
+                PhoneColumn != null &&
+                PhoneColumn.Equals(other.PhoneColumn)
             ) &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class ContactCallbackRequest : IEquatable<ContactCallbackRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CampaignId != null)
+            if (CampaignId != null)
             {
-                hash = hash * 59 + this.CampaignId.GetHashCode();
+                hash = hash * 59 + CampaignId.GetHashCode();
             }
 
-            if (this.ContactListId != null)
+            if (ContactListId != null)
             {
-                hash = hash * 59 + this.ContactListId.GetHashCode();
+                hash = hash * 59 + ContactListId.GetHashCode();
             }
 
-            if (this.ContactId != null)
+            if (ContactId != null)
             {
-                hash = hash * 59 + this.ContactId.GetHashCode();
+                hash = hash * 59 + ContactId.GetHashCode();
             }
 
-            if (this.PhoneColumn != null)
+            if (PhoneColumn != null)
             {
-                hash = hash * 59 + this.PhoneColumn.GetHashCode();
+                hash = hash * 59 + PhoneColumn.GetHashCode();
             }
 
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
             return hash;

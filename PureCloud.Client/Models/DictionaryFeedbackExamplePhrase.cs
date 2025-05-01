@@ -91,7 +91,7 @@ public partial class DictionaryFeedbackExamplePhrase : IEquatable<DictionaryFeed
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DictionaryFeedbackExamplePhrase);
+        return Equals(obj as DictionaryFeedbackExamplePhrase);
     }
 
     /// <summary>
@@ -109,14 +109,14 @@ public partial class DictionaryFeedbackExamplePhrase : IEquatable<DictionaryFeed
 
         return true &&
             (
-                this.Phrase == other.Phrase ||
-                this.Phrase != null &&
-                this.Phrase.Equals(other.Phrase)
+                Phrase == other.Phrase ||
+                Phrase != null &&
+                Phrase.Equals(other.Phrase)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             );
     }
 
@@ -131,14 +131,14 @@ public partial class DictionaryFeedbackExamplePhrase : IEquatable<DictionaryFeed
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Phrase != null)
+            if (Phrase != null)
             {
-                hash = hash * 59 + this.Phrase.GetHashCode();
+                hash = hash * 59 + Phrase.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class NamedEntityTypeBinding : IEquatable<NamedEntityTypeBinding>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NamedEntityTypeBinding);
+        return Equals(obj as NamedEntityTypeBinding);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class NamedEntityTypeBinding : IEquatable<NamedEntityTypeBinding>
 
         return true &&
             (
-                this.EntityType == other.EntityType ||
-                this.EntityType != null &&
-                this.EntityType.Equals(other.EntityType)
+                EntityType == other.EntityType ||
+                EntityType != null &&
+                EntityType.Equals(other.EntityType)
             ) &&
             (
-                this.EntityName == other.EntityName ||
-                this.EntityName != null &&
-                this.EntityName.Equals(other.EntityName)
+                EntityName == other.EntityName ||
+                EntityName != null &&
+                EntityName.Equals(other.EntityName)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class NamedEntityTypeBinding : IEquatable<NamedEntityTypeBinding>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EntityType != null)
+            if (EntityType != null)
             {
-                hash = hash * 59 + this.EntityType.GetHashCode();
+                hash = hash * 59 + EntityType.GetHashCode();
             }
 
-            if (this.EntityName != null)
+            if (EntityName != null)
             {
-                hash = hash * 59 + this.EntityName.GetHashCode();
+                hash = hash * 59 + EntityName.GetHashCode();
             }
 
             return hash;

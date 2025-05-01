@@ -59,7 +59,7 @@ public partial class WfmProcessUploadRequest : IEquatable<WfmProcessUploadReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmProcessUploadRequest);
+        return Equals(obj as WfmProcessUploadRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class WfmProcessUploadRequest : IEquatable<WfmProcessUploadReques
 
         return true &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class WfmProcessUploadRequest : IEquatable<WfmProcessUploadReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
             return hash;

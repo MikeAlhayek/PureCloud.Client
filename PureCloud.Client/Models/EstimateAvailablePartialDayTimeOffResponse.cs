@@ -95,7 +95,7 @@ public partial class EstimateAvailablePartialDayTimeOffResponse : IEquatable<Est
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EstimateAvailablePartialDayTimeOffResponse);
+        return Equals(obj as EstimateAvailablePartialDayTimeOffResponse);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class EstimateAvailablePartialDayTimeOffResponse : IEquatable<Est
 
         return true &&
             (
-                this.Date == other.Date ||
-                this.Date != null &&
-                this.Date.Equals(other.Date)
+                Date == other.Date ||
+                Date != null &&
+                Date.Equals(other.Date)
             ) &&
             (
-                this.DurationMinutes == other.DurationMinutes ||
-                this.DurationMinutes != null &&
-                this.DurationMinutes.Equals(other.DurationMinutes)
+                DurationMinutes == other.DurationMinutes ||
+                DurationMinutes != null &&
+                DurationMinutes.Equals(other.DurationMinutes)
             ) &&
             (
-                this.PayableMinutes == other.PayableMinutes ||
-                this.PayableMinutes != null &&
-                this.PayableMinutes.Equals(other.PayableMinutes)
+                PayableMinutes == other.PayableMinutes ||
+                PayableMinutes != null &&
+                PayableMinutes.Equals(other.PayableMinutes)
             ) &&
             (
-                this.Flexible == other.Flexible ||
-                this.Flexible != null &&
-                this.Flexible.Equals(other.Flexible)
+                Flexible == other.Flexible ||
+                Flexible != null &&
+                Flexible.Equals(other.Flexible)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class EstimateAvailablePartialDayTimeOffResponse : IEquatable<Est
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Date != null)
+            if (Date != null)
             {
-                hash = hash * 59 + this.Date.GetHashCode();
+                hash = hash * 59 + Date.GetHashCode();
             }
 
-            if (this.DurationMinutes != null)
+            if (DurationMinutes != null)
             {
-                hash = hash * 59 + this.DurationMinutes.GetHashCode();
+                hash = hash * 59 + DurationMinutes.GetHashCode();
             }
 
-            if (this.PayableMinutes != null)
+            if (PayableMinutes != null)
             {
-                hash = hash * 59 + this.PayableMinutes.GetHashCode();
+                hash = hash * 59 + PayableMinutes.GetHashCode();
             }
 
-            if (this.Flexible != null)
+            if (Flexible != null)
             {
-                hash = hash * 59 + this.Flexible.GetHashCode();
+                hash = hash * 59 + Flexible.GetHashCode();
             }
 
             return hash;

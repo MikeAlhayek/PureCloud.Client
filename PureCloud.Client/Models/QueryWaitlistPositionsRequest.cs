@@ -59,7 +59,7 @@ public partial class QueryWaitlistPositionsRequest : IEquatable<QueryWaitlistPos
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueryWaitlistPositionsRequest);
+        return Equals(obj as QueryWaitlistPositionsRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class QueryWaitlistPositionsRequest : IEquatable<QueryWaitlistPos
 
         return true &&
             (
-                this.TimeOffRequests == other.TimeOffRequests ||
-                this.TimeOffRequests != null &&
-                this.TimeOffRequests.SequenceEqual(other.TimeOffRequests)
+                TimeOffRequests == other.TimeOffRequests ||
+                TimeOffRequests != null &&
+                TimeOffRequests.SequenceEqual(other.TimeOffRequests)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class QueryWaitlistPositionsRequest : IEquatable<QueryWaitlistPos
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TimeOffRequests != null)
+            if (TimeOffRequests != null)
             {
-                hash = hash * 59 + this.TimeOffRequests.GetHashCode();
+                hash = hash * 59 + TimeOffRequests.GetHashCode();
             }
 
             return hash;

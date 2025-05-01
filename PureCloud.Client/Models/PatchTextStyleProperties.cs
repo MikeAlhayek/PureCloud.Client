@@ -121,7 +121,7 @@ public partial class PatchTextStyleProperties : IEquatable<PatchTextStylePropert
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchTextStyleProperties);
+        return Equals(obj as PatchTextStyleProperties);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class PatchTextStyleProperties : IEquatable<PatchTextStylePropert
 
         return true &&
             (
-                this.Color == other.Color ||
-                this.Color != null &&
-                this.Color.Equals(other.Color)
+                Color == other.Color ||
+                Color != null &&
+                Color.Equals(other.Color)
             ) &&
             (
-                this.Font == other.Font ||
-                this.Font != null &&
-                this.Font.Equals(other.Font)
+                Font == other.Font ||
+                Font != null &&
+                Font.Equals(other.Font)
             ) &&
             (
-                this.FontSize == other.FontSize ||
-                this.FontSize != null &&
-                this.FontSize.Equals(other.FontSize)
+                FontSize == other.FontSize ||
+                FontSize != null &&
+                FontSize.Equals(other.FontSize)
             ) &&
             (
-                this.TextAlign == other.TextAlign ||
-                this.TextAlign != null &&
-                this.TextAlign.Equals(other.TextAlign)
+                TextAlign == other.TextAlign ||
+                TextAlign != null &&
+                TextAlign.Equals(other.TextAlign)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class PatchTextStyleProperties : IEquatable<PatchTextStylePropert
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Color != null)
+            if (Color != null)
             {
-                hash = hash * 59 + this.Color.GetHashCode();
+                hash = hash * 59 + Color.GetHashCode();
             }
 
-            if (this.Font != null)
+            if (Font != null)
             {
-                hash = hash * 59 + this.Font.GetHashCode();
+                hash = hash * 59 + Font.GetHashCode();
             }
 
-            if (this.FontSize != null)
+            if (FontSize != null)
             {
-                hash = hash * 59 + this.FontSize.GetHashCode();
+                hash = hash * 59 + FontSize.GetHashCode();
             }
 
-            if (this.TextAlign != null)
+            if (TextAlign != null)
             {
-                hash = hash * 59 + this.TextAlign.GetHashCode();
+                hash = hash * 59 + TextAlign.GetHashCode();
             }
 
             return hash;

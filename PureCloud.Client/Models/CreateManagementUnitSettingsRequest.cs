@@ -101,7 +101,7 @@ public partial class CreateManagementUnitSettingsRequest : IEquatable<CreateMana
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateManagementUnitSettingsRequest);
+        return Equals(obj as CreateManagementUnitSettingsRequest);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class CreateManagementUnitSettingsRequest : IEquatable<CreateMana
 
         return true &&
             (
-                this.Adherence == other.Adherence ||
-                this.Adherence != null &&
-                this.Adherence.Equals(other.Adherence)
+                Adherence == other.Adherence ||
+                Adherence != null &&
+                Adherence.Equals(other.Adherence)
             ) &&
             (
-                this.ShortTermForecasting == other.ShortTermForecasting ||
-                this.ShortTermForecasting != null &&
-                this.ShortTermForecasting.Equals(other.ShortTermForecasting)
+                ShortTermForecasting == other.ShortTermForecasting ||
+                ShortTermForecasting != null &&
+                ShortTermForecasting.Equals(other.ShortTermForecasting)
             ) &&
             (
-                this.TimeOff == other.TimeOff ||
-                this.TimeOff != null &&
-                this.TimeOff.Equals(other.TimeOff)
+                TimeOff == other.TimeOff ||
+                TimeOff != null &&
+                TimeOff.Equals(other.TimeOff)
             ) &&
             (
-                this.Scheduling == other.Scheduling ||
-                this.Scheduling != null &&
-                this.Scheduling.Equals(other.Scheduling)
+                Scheduling == other.Scheduling ||
+                Scheduling != null &&
+                Scheduling.Equals(other.Scheduling)
             ) &&
             (
-                this.ShiftTrading == other.ShiftTrading ||
-                this.ShiftTrading != null &&
-                this.ShiftTrading.Equals(other.ShiftTrading)
+                ShiftTrading == other.ShiftTrading ||
+                ShiftTrading != null &&
+                ShiftTrading.Equals(other.ShiftTrading)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class CreateManagementUnitSettingsRequest : IEquatable<CreateMana
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Adherence != null)
+            if (Adherence != null)
             {
-                hash = hash * 59 + this.Adherence.GetHashCode();
+                hash = hash * 59 + Adherence.GetHashCode();
             }
 
-            if (this.ShortTermForecasting != null)
+            if (ShortTermForecasting != null)
             {
-                hash = hash * 59 + this.ShortTermForecasting.GetHashCode();
+                hash = hash * 59 + ShortTermForecasting.GetHashCode();
             }
 
-            if (this.TimeOff != null)
+            if (TimeOff != null)
             {
-                hash = hash * 59 + this.TimeOff.GetHashCode();
+                hash = hash * 59 + TimeOff.GetHashCode();
             }
 
-            if (this.Scheduling != null)
+            if (Scheduling != null)
             {
-                hash = hash * 59 + this.Scheduling.GetHashCode();
+                hash = hash * 59 + Scheduling.GetHashCode();
             }
 
-            if (this.ShiftTrading != null)
+            if (ShiftTrading != null)
             {
-                hash = hash * 59 + this.ShiftTrading.GetHashCode();
+                hash = hash * 59 + ShiftTrading.GetHashCode();
             }
 
             return hash;

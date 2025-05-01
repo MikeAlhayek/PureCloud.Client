@@ -83,7 +83,7 @@ public partial class ValidationResult : IEquatable<ValidationResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValidationResult);
+        return Equals(obj as ValidationResult);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class ValidationResult : IEquatable<ValidationResult>
 
         return true &&
             (
-                this.SeparatorValid == other.SeparatorValid ||
-                this.SeparatorValid != null &&
-                this.SeparatorValid.Equals(other.SeparatorValid)
+                SeparatorValid == other.SeparatorValid ||
+                SeparatorValid != null &&
+                SeparatorValid.Equals(other.SeparatorValid)
             ) &&
             (
-                this.FileEncodingValid == other.FileEncodingValid ||
-                this.FileEncodingValid != null &&
-                this.FileEncodingValid.Equals(other.FileEncodingValid)
+                FileEncodingValid == other.FileEncodingValid ||
+                FileEncodingValid != null &&
+                FileEncodingValid.Equals(other.FileEncodingValid)
             ) &&
             (
-                this.Errors == other.Errors ||
-                this.Errors != null &&
-                this.Errors.SequenceEqual(other.Errors)
+                Errors == other.Errors ||
+                Errors != null &&
+                Errors.SequenceEqual(other.Errors)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class ValidationResult : IEquatable<ValidationResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SeparatorValid != null)
+            if (SeparatorValid != null)
             {
-                hash = hash * 59 + this.SeparatorValid.GetHashCode();
+                hash = hash * 59 + SeparatorValid.GetHashCode();
             }
 
-            if (this.FileEncodingValid != null)
+            if (FileEncodingValid != null)
             {
-                hash = hash * 59 + this.FileEncodingValid.GetHashCode();
+                hash = hash * 59 + FileEncodingValid.GetHashCode();
             }
 
-            if (this.Errors != null)
+            if (Errors != null)
             {
-                hash = hash * 59 + this.Errors.GetHashCode();
+                hash = hash * 59 + Errors.GetHashCode();
             }
 
             return hash;

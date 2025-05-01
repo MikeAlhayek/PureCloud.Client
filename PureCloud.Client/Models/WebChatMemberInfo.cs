@@ -273,7 +273,7 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebChatMemberInfo);
+        return Equals(obj as WebChatMemberInfo);
     }
 
     /// <summary>
@@ -291,69 +291,69 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.FirstName == other.FirstName ||
-                this.FirstName != null &&
-                this.FirstName.Equals(other.FirstName)
+                FirstName == other.FirstName ||
+                FirstName != null &&
+                FirstName.Equals(other.FirstName)
             ) &&
             (
-                this.LastName == other.LastName ||
-                this.LastName != null &&
-                this.LastName.Equals(other.LastName)
+                LastName == other.LastName ||
+                LastName != null &&
+                LastName.Equals(other.LastName)
             ) &&
             (
-                this.Email == other.Email ||
-                this.Email != null &&
-                this.Email.Equals(other.Email)
+                Email == other.Email ||
+                Email != null &&
+                Email.Equals(other.Email)
             ) &&
             (
-                this.PhoneNumber == other.PhoneNumber ||
-                this.PhoneNumber != null &&
-                this.PhoneNumber.Equals(other.PhoneNumber)
+                PhoneNumber == other.PhoneNumber ||
+                PhoneNumber != null &&
+                PhoneNumber.Equals(other.PhoneNumber)
             ) &&
             (
-                this.AvatarImageUrl == other.AvatarImageUrl ||
-                this.AvatarImageUrl != null &&
-                this.AvatarImageUrl.Equals(other.AvatarImageUrl)
+                AvatarImageUrl == other.AvatarImageUrl ||
+                AvatarImageUrl != null &&
+                AvatarImageUrl.Equals(other.AvatarImageUrl)
             ) &&
             (
-                this.Role == other.Role ||
-                this.Role != null &&
-                this.Role.Equals(other.Role)
+                Role == other.Role ||
+                Role != null &&
+                Role.Equals(other.Role)
             ) &&
             (
-                this.JoinDate == other.JoinDate ||
-                this.JoinDate != null &&
-                this.JoinDate.Equals(other.JoinDate)
+                JoinDate == other.JoinDate ||
+                JoinDate != null &&
+                JoinDate.Equals(other.JoinDate)
             ) &&
             (
-                this.LeaveDate == other.LeaveDate ||
-                this.LeaveDate != null &&
-                this.LeaveDate.Equals(other.LeaveDate)
+                LeaveDate == other.LeaveDate ||
+                LeaveDate != null &&
+                LeaveDate.Equals(other.LeaveDate)
             ) &&
             (
-                this.AuthenticatedGuest == other.AuthenticatedGuest ||
-                this.AuthenticatedGuest != null &&
-                this.AuthenticatedGuest.Equals(other.AuthenticatedGuest)
+                AuthenticatedGuest == other.AuthenticatedGuest ||
+                AuthenticatedGuest != null &&
+                AuthenticatedGuest.Equals(other.AuthenticatedGuest)
             ) &&
             (
-                this.CustomFields == other.CustomFields ||
-                this.CustomFields != null &&
-                this.CustomFields.SequenceEqual(other.CustomFields)
+                CustomFields == other.CustomFields ||
+                CustomFields != null &&
+                CustomFields.SequenceEqual(other.CustomFields)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             );
     }
 
@@ -368,69 +368,69 @@ public partial class WebChatMemberInfo : IEquatable<WebChatMemberInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.FirstName != null)
+            if (FirstName != null)
             {
-                hash = hash * 59 + this.FirstName.GetHashCode();
+                hash = hash * 59 + FirstName.GetHashCode();
             }
 
-            if (this.LastName != null)
+            if (LastName != null)
             {
-                hash = hash * 59 + this.LastName.GetHashCode();
+                hash = hash * 59 + LastName.GetHashCode();
             }
 
-            if (this.Email != null)
+            if (Email != null)
             {
-                hash = hash * 59 + this.Email.GetHashCode();
+                hash = hash * 59 + Email.GetHashCode();
             }
 
-            if (this.PhoneNumber != null)
+            if (PhoneNumber != null)
             {
-                hash = hash * 59 + this.PhoneNumber.GetHashCode();
+                hash = hash * 59 + PhoneNumber.GetHashCode();
             }
 
-            if (this.AvatarImageUrl != null)
+            if (AvatarImageUrl != null)
             {
-                hash = hash * 59 + this.AvatarImageUrl.GetHashCode();
+                hash = hash * 59 + AvatarImageUrl.GetHashCode();
             }
 
-            if (this.Role != null)
+            if (Role != null)
             {
-                hash = hash * 59 + this.Role.GetHashCode();
+                hash = hash * 59 + Role.GetHashCode();
             }
 
-            if (this.JoinDate != null)
+            if (JoinDate != null)
             {
-                hash = hash * 59 + this.JoinDate.GetHashCode();
+                hash = hash * 59 + JoinDate.GetHashCode();
             }
 
-            if (this.LeaveDate != null)
+            if (LeaveDate != null)
             {
-                hash = hash * 59 + this.LeaveDate.GetHashCode();
+                hash = hash * 59 + LeaveDate.GetHashCode();
             }
 
-            if (this.AuthenticatedGuest != null)
+            if (AuthenticatedGuest != null)
             {
-                hash = hash * 59 + this.AuthenticatedGuest.GetHashCode();
+                hash = hash * 59 + AuthenticatedGuest.GetHashCode();
             }
 
-            if (this.CustomFields != null)
+            if (CustomFields != null)
             {
-                hash = hash * 59 + this.CustomFields.GetHashCode();
+                hash = hash * 59 + CustomFields.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
             return hash;

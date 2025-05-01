@@ -211,7 +211,7 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SendAgentlessOutboundMessageResponse);
+        return Equals(obj as SendAgentlessOutboundMessageResponse);
     }
 
     /// <summary>
@@ -229,64 +229,64 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.FromAddress == other.FromAddress ||
-                this.FromAddress != null &&
-                this.FromAddress.Equals(other.FromAddress)
+                FromAddress == other.FromAddress ||
+                FromAddress != null &&
+                FromAddress.Equals(other.FromAddress)
             ) &&
             (
-                this.ToAddress == other.ToAddress ||
-                this.ToAddress != null &&
-                this.ToAddress.Equals(other.ToAddress)
+                ToAddress == other.ToAddress ||
+                ToAddress != null &&
+                ToAddress.Equals(other.ToAddress)
             ) &&
             (
-                this.MessengerType == other.MessengerType ||
-                this.MessengerType != null &&
-                this.MessengerType.Equals(other.MessengerType)
+                MessengerType == other.MessengerType ||
+                MessengerType != null &&
+                MessengerType.Equals(other.MessengerType)
             ) &&
             (
-                this.TextBody == other.TextBody ||
-                this.TextBody != null &&
-                this.TextBody.Equals(other.TextBody)
+                TextBody == other.TextBody ||
+                TextBody != null &&
+                TextBody.Equals(other.TextBody)
             ) &&
             (
-                this.MessagingTemplate == other.MessagingTemplate ||
-                this.MessagingTemplate != null &&
-                this.MessagingTemplate.Equals(other.MessagingTemplate)
+                MessagingTemplate == other.MessagingTemplate ||
+                MessagingTemplate != null &&
+                MessagingTemplate.Equals(other.MessagingTemplate)
             ) &&
             (
-                this.UseExistingActiveConversation == other.UseExistingActiveConversation ||
-                this.UseExistingActiveConversation != null &&
-                this.UseExistingActiveConversation.Equals(other.UseExistingActiveConversation)
+                UseExistingActiveConversation == other.UseExistingActiveConversation ||
+                UseExistingActiveConversation != null &&
+                UseExistingActiveConversation.Equals(other.UseExistingActiveConversation)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             );
     }
 
@@ -301,64 +301,64 @@ public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgent
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.FromAddress != null)
+            if (FromAddress != null)
             {
-                hash = hash * 59 + this.FromAddress.GetHashCode();
+                hash = hash * 59 + FromAddress.GetHashCode();
             }
 
-            if (this.ToAddress != null)
+            if (ToAddress != null)
             {
-                hash = hash * 59 + this.ToAddress.GetHashCode();
+                hash = hash * 59 + ToAddress.GetHashCode();
             }
 
-            if (this.MessengerType != null)
+            if (MessengerType != null)
             {
-                hash = hash * 59 + this.MessengerType.GetHashCode();
+                hash = hash * 59 + MessengerType.GetHashCode();
             }
 
-            if (this.TextBody != null)
+            if (TextBody != null)
             {
-                hash = hash * 59 + this.TextBody.GetHashCode();
+                hash = hash * 59 + TextBody.GetHashCode();
             }
 
-            if (this.MessagingTemplate != null)
+            if (MessagingTemplate != null)
             {
-                hash = hash * 59 + this.MessagingTemplate.GetHashCode();
+                hash = hash * 59 + MessagingTemplate.GetHashCode();
             }
 
-            if (this.UseExistingActiveConversation != null)
+            if (UseExistingActiveConversation != null)
             {
-                hash = hash * 59 + this.UseExistingActiveConversation.GetHashCode();
+                hash = hash * 59 + UseExistingActiveConversation.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
             return hash;

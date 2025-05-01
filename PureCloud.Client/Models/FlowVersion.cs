@@ -459,7 +459,7 @@ public partial class FlowVersion : IEquatable<FlowVersion>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowVersion);
+        return Equals(obj as FlowVersion);
     }
 
     /// <summary>
@@ -477,124 +477,124 @@ public partial class FlowVersion : IEquatable<FlowVersion>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.CommitVersion == other.CommitVersion ||
-                this.CommitVersion != null &&
-                this.CommitVersion.Equals(other.CommitVersion)
+                CommitVersion == other.CommitVersion ||
+                CommitVersion != null &&
+                CommitVersion.Equals(other.CommitVersion)
             ) &&
             (
-                this.ConfigurationVersion == other.ConfigurationVersion ||
-                this.ConfigurationVersion != null &&
-                this.ConfigurationVersion.Equals(other.ConfigurationVersion)
+                ConfigurationVersion == other.ConfigurationVersion ||
+                ConfigurationVersion != null &&
+                ConfigurationVersion.Equals(other.ConfigurationVersion)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Secure == other.Secure ||
-                this.Secure != null &&
-                this.Secure.Equals(other.Secure)
+                Secure == other.Secure ||
+                Secure != null &&
+                Secure.Equals(other.Secure)
             ) &&
             (
-                this.Debug == other.Debug ||
-                this.Debug != null &&
-                this.Debug.Equals(other.Debug)
+                Debug == other.Debug ||
+                Debug != null &&
+                Debug.Equals(other.Debug)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.CreatedByClient == other.CreatedByClient ||
-                this.CreatedByClient != null &&
-                this.CreatedByClient.Equals(other.CreatedByClient)
+                CreatedByClient == other.CreatedByClient ||
+                CreatedByClient != null &&
+                CreatedByClient.Equals(other.CreatedByClient)
             ) &&
             (
-                this.ConfigurationUri == other.ConfigurationUri ||
-                this.ConfigurationUri != null &&
-                this.ConfigurationUri.Equals(other.ConfigurationUri)
+                ConfigurationUri == other.ConfigurationUri ||
+                ConfigurationUri != null &&
+                ConfigurationUri.Equals(other.ConfigurationUri)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateCheckedIn == other.DateCheckedIn ||
-                this.DateCheckedIn != null &&
-                this.DateCheckedIn.Equals(other.DateCheckedIn)
+                DateCheckedIn == other.DateCheckedIn ||
+                DateCheckedIn != null &&
+                DateCheckedIn.Equals(other.DateCheckedIn)
             ) &&
             (
-                this.DateSaved == other.DateSaved ||
-                this.DateSaved != null &&
-                this.DateSaved.Equals(other.DateSaved)
+                DateSaved == other.DateSaved ||
+                DateSaved != null &&
+                DateSaved.Equals(other.DateSaved)
             ) &&
             (
-                this.GenerationId == other.GenerationId ||
-                this.GenerationId != null &&
-                this.GenerationId.Equals(other.GenerationId)
+                GenerationId == other.GenerationId ||
+                GenerationId != null &&
+                GenerationId.Equals(other.GenerationId)
             ) &&
             (
-                this.PublishResultUri == other.PublishResultUri ||
-                this.PublishResultUri != null &&
-                this.PublishResultUri.Equals(other.PublishResultUri)
+                PublishResultUri == other.PublishResultUri ||
+                PublishResultUri != null &&
+                PublishResultUri.Equals(other.PublishResultUri)
             ) &&
             (
-                this.InputSchema == other.InputSchema ||
-                this.InputSchema != null &&
-                this.InputSchema.Equals(other.InputSchema)
+                InputSchema == other.InputSchema ||
+                InputSchema != null &&
+                InputSchema.Equals(other.InputSchema)
             ) &&
             (
-                this.OutputSchema == other.OutputSchema ||
-                this.OutputSchema != null &&
-                this.OutputSchema.Equals(other.OutputSchema)
+                OutputSchema == other.OutputSchema ||
+                OutputSchema != null &&
+                OutputSchema.Equals(other.OutputSchema)
             ) &&
             (
-                this.VirtualAgentEnabled == other.VirtualAgentEnabled ||
-                this.VirtualAgentEnabled != null &&
-                this.VirtualAgentEnabled.Equals(other.VirtualAgentEnabled)
+                VirtualAgentEnabled == other.VirtualAgentEnabled ||
+                VirtualAgentEnabled != null &&
+                VirtualAgentEnabled.Equals(other.VirtualAgentEnabled)
             ) &&
             (
-                this.DatePublished == other.DatePublished ||
-                this.DatePublished != null &&
-                this.DatePublished.Equals(other.DatePublished)
+                DatePublished == other.DatePublished ||
+                DatePublished != null &&
+                DatePublished.Equals(other.DatePublished)
             ) &&
             (
-                this.DatePublishedEnd == other.DatePublishedEnd ||
-                this.DatePublishedEnd != null &&
-                this.DatePublishedEnd.Equals(other.DatePublishedEnd)
+                DatePublishedEnd == other.DatePublishedEnd ||
+                DatePublishedEnd != null &&
+                DatePublishedEnd.Equals(other.DatePublishedEnd)
             ) &&
             (
-                this.NluInfo == other.NluInfo ||
-                this.NluInfo != null &&
-                this.NluInfo.Equals(other.NluInfo)
+                NluInfo == other.NluInfo ||
+                NluInfo != null &&
+                NluInfo.Equals(other.NluInfo)
             ) &&
             (
-                this.SupportedLanguages == other.SupportedLanguages ||
-                this.SupportedLanguages != null &&
-                this.SupportedLanguages.SequenceEqual(other.SupportedLanguages)
+                SupportedLanguages == other.SupportedLanguages ||
+                SupportedLanguages != null &&
+                SupportedLanguages.SequenceEqual(other.SupportedLanguages)
             ) &&
             (
-                this.CompatibleFlowTypes == other.CompatibleFlowTypes ||
-                this.CompatibleFlowTypes != null &&
-                this.CompatibleFlowTypes.SequenceEqual(other.CompatibleFlowTypes)
+                CompatibleFlowTypes == other.CompatibleFlowTypes ||
+                CompatibleFlowTypes != null &&
+                CompatibleFlowTypes.SequenceEqual(other.CompatibleFlowTypes)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -609,124 +609,124 @@ public partial class FlowVersion : IEquatable<FlowVersion>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.CommitVersion != null)
+            if (CommitVersion != null)
             {
-                hash = hash * 59 + this.CommitVersion.GetHashCode();
+                hash = hash * 59 + CommitVersion.GetHashCode();
             }
 
-            if (this.ConfigurationVersion != null)
+            if (ConfigurationVersion != null)
             {
-                hash = hash * 59 + this.ConfigurationVersion.GetHashCode();
+                hash = hash * 59 + ConfigurationVersion.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Secure != null)
+            if (Secure != null)
             {
-                hash = hash * 59 + this.Secure.GetHashCode();
+                hash = hash * 59 + Secure.GetHashCode();
             }
 
-            if (this.Debug != null)
+            if (Debug != null)
             {
-                hash = hash * 59 + this.Debug.GetHashCode();
+                hash = hash * 59 + Debug.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.CreatedByClient != null)
+            if (CreatedByClient != null)
             {
-                hash = hash * 59 + this.CreatedByClient.GetHashCode();
+                hash = hash * 59 + CreatedByClient.GetHashCode();
             }
 
-            if (this.ConfigurationUri != null)
+            if (ConfigurationUri != null)
             {
-                hash = hash * 59 + this.ConfigurationUri.GetHashCode();
+                hash = hash * 59 + ConfigurationUri.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateCheckedIn != null)
+            if (DateCheckedIn != null)
             {
-                hash = hash * 59 + this.DateCheckedIn.GetHashCode();
+                hash = hash * 59 + DateCheckedIn.GetHashCode();
             }
 
-            if (this.DateSaved != null)
+            if (DateSaved != null)
             {
-                hash = hash * 59 + this.DateSaved.GetHashCode();
+                hash = hash * 59 + DateSaved.GetHashCode();
             }
 
-            if (this.GenerationId != null)
+            if (GenerationId != null)
             {
-                hash = hash * 59 + this.GenerationId.GetHashCode();
+                hash = hash * 59 + GenerationId.GetHashCode();
             }
 
-            if (this.PublishResultUri != null)
+            if (PublishResultUri != null)
             {
-                hash = hash * 59 + this.PublishResultUri.GetHashCode();
+                hash = hash * 59 + PublishResultUri.GetHashCode();
             }
 
-            if (this.InputSchema != null)
+            if (InputSchema != null)
             {
-                hash = hash * 59 + this.InputSchema.GetHashCode();
+                hash = hash * 59 + InputSchema.GetHashCode();
             }
 
-            if (this.OutputSchema != null)
+            if (OutputSchema != null)
             {
-                hash = hash * 59 + this.OutputSchema.GetHashCode();
+                hash = hash * 59 + OutputSchema.GetHashCode();
             }
 
-            if (this.VirtualAgentEnabled != null)
+            if (VirtualAgentEnabled != null)
             {
-                hash = hash * 59 + this.VirtualAgentEnabled.GetHashCode();
+                hash = hash * 59 + VirtualAgentEnabled.GetHashCode();
             }
 
-            if (this.DatePublished != null)
+            if (DatePublished != null)
             {
-                hash = hash * 59 + this.DatePublished.GetHashCode();
+                hash = hash * 59 + DatePublished.GetHashCode();
             }
 
-            if (this.DatePublishedEnd != null)
+            if (DatePublishedEnd != null)
             {
-                hash = hash * 59 + this.DatePublishedEnd.GetHashCode();
+                hash = hash * 59 + DatePublishedEnd.GetHashCode();
             }
 
-            if (this.NluInfo != null)
+            if (NluInfo != null)
             {
-                hash = hash * 59 + this.NluInfo.GetHashCode();
+                hash = hash * 59 + NluInfo.GetHashCode();
             }
 
-            if (this.SupportedLanguages != null)
+            if (SupportedLanguages != null)
             {
-                hash = hash * 59 + this.SupportedLanguages.GetHashCode();
+                hash = hash * 59 + SupportedLanguages.GetHashCode();
             }
 
-            if (this.CompatibleFlowTypes != null)
+            if (CompatibleFlowTypes != null)
             {
-                hash = hash * 59 + this.CompatibleFlowTypes.GetHashCode();
+                hash = hash * 59 + CompatibleFlowTypes.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

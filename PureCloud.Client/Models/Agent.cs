@@ -52,7 +52,7 @@ public partial class Agent : IEquatable<Agent>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Agent);
+        return Equals(obj as Agent);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class Agent : IEquatable<Agent>
 
         return true &&
             (
-                this.Stage == other.Stage ||
-                this.Stage != null &&
-                this.Stage.Equals(other.Stage)
+                Stage == other.Stage ||
+                Stage != null &&
+                Stage.Equals(other.Stage)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class Agent : IEquatable<Agent>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Stage != null)
+            if (Stage != null)
             {
-                hash = hash * 59 + this.Stage.GetHashCode();
+                hash = hash * 59 + Stage.GetHashCode();
             }
 
             return hash;

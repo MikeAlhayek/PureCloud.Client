@@ -287,7 +287,7 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowPathsElement);
+        return Equals(obj as FlowPathsElement);
     }
 
     /// <summary>
@@ -305,39 +305,39 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
 
         return true &&
             (
-                this.ParentId == other.ParentId ||
-                this.ParentId != null &&
-                this.ParentId.Equals(other.ParentId)
+                ParentId == other.ParentId ||
+                ParentId != null &&
+                ParentId.Equals(other.ParentId)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Count == other.Count ||
-                this.Count != null &&
-                this.Count.Equals(other.Count)
+                Count == other.Count ||
+                Count != null &&
+                Count.Equals(other.Count)
             ) &&
             (
-                this.Flows == other.Flows ||
-                this.Flows != null &&
-                this.Flows.SequenceEqual(other.Flows)
+                Flows == other.Flows ||
+                Flows != null &&
+                Flows.SequenceEqual(other.Flows)
             ) &&
             (
-                this.FlowOutcomeValue == other.FlowOutcomeValue ||
-                this.FlowOutcomeValue != null &&
-                this.FlowOutcomeValue.Equals(other.FlowOutcomeValue)
+                FlowOutcomeValue == other.FlowOutcomeValue ||
+                FlowOutcomeValue != null &&
+                FlowOutcomeValue.Equals(other.FlowOutcomeValue)
             ) &&
             (
-                this.FlowMilestone == other.FlowMilestone ||
-                this.FlowMilestone != null &&
-                this.FlowMilestone.Equals(other.FlowMilestone)
+                FlowMilestone == other.FlowMilestone ||
+                FlowMilestone != null &&
+                FlowMilestone.Equals(other.FlowMilestone)
             ) &&
             (
-                this.FlowOutcome == other.FlowOutcome ||
-                this.FlowOutcome != null &&
-                this.FlowOutcome.Equals(other.FlowOutcome)
+                FlowOutcome == other.FlowOutcome ||
+                FlowOutcome != null &&
+                FlowOutcome.Equals(other.FlowOutcome)
             );
     }
 
@@ -352,39 +352,39 @@ public partial class FlowPathsElement : IEquatable<FlowPathsElement>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ParentId != null)
+            if (ParentId != null)
             {
-                hash = hash * 59 + this.ParentId.GetHashCode();
+                hash = hash * 59 + ParentId.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Count != null)
+            if (Count != null)
             {
-                hash = hash * 59 + this.Count.GetHashCode();
+                hash = hash * 59 + Count.GetHashCode();
             }
 
-            if (this.Flows != null)
+            if (Flows != null)
             {
-                hash = hash * 59 + this.Flows.GetHashCode();
+                hash = hash * 59 + Flows.GetHashCode();
             }
 
-            if (this.FlowOutcomeValue != null)
+            if (FlowOutcomeValue != null)
             {
-                hash = hash * 59 + this.FlowOutcomeValue.GetHashCode();
+                hash = hash * 59 + FlowOutcomeValue.GetHashCode();
             }
 
-            if (this.FlowMilestone != null)
+            if (FlowMilestone != null)
             {
-                hash = hash * 59 + this.FlowMilestone.GetHashCode();
+                hash = hash * 59 + FlowMilestone.GetHashCode();
             }
 
-            if (this.FlowOutcome != null)
+            if (FlowOutcome != null)
             {
-                hash = hash * 59 + this.FlowOutcome.GetHashCode();
+                hash = hash * 59 + FlowOutcome.GetHashCode();
             }
 
             return hash;

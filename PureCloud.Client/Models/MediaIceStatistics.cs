@@ -53,7 +53,7 @@ public partial class MediaIceStatistics : IEquatable<MediaIceStatistics>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaIceStatistics);
+        return Equals(obj as MediaIceStatistics);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class MediaIceStatistics : IEquatable<MediaIceStatistics>
 
         return true &&
             (
-                this.SelectedPairs == other.SelectedPairs ||
-                this.SelectedPairs != null &&
-                this.SelectedPairs.SequenceEqual(other.SelectedPairs)
+                SelectedPairs == other.SelectedPairs ||
+                SelectedPairs != null &&
+                SelectedPairs.SequenceEqual(other.SelectedPairs)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class MediaIceStatistics : IEquatable<MediaIceStatistics>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SelectedPairs != null)
+            if (SelectedPairs != null)
             {
-                hash = hash * 59 + this.SelectedPairs.GetHashCode();
+                hash = hash * 59 + SelectedPairs.GetHashCode();
             }
 
             return hash;

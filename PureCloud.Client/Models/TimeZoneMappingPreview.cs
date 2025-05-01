@@ -149,7 +149,7 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeZoneMappingPreview);
+        return Equals(obj as TimeZoneMappingPreview);
     }
 
     /// <summary>
@@ -167,49 +167,49 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
 
         return true &&
             (
-                this.ContactList == other.ContactList ||
-                this.ContactList != null &&
-                this.ContactList.Equals(other.ContactList)
+                ContactList == other.ContactList ||
+                ContactList != null &&
+                ContactList.Equals(other.ContactList)
             ) &&
             (
-                this.ContactsPerTimeZone == other.ContactsPerTimeZone ||
-                this.ContactsPerTimeZone != null &&
-                this.ContactsPerTimeZone.SequenceEqual(other.ContactsPerTimeZone)
+                ContactsPerTimeZone == other.ContactsPerTimeZone ||
+                ContactsPerTimeZone != null &&
+                ContactsPerTimeZone.SequenceEqual(other.ContactsPerTimeZone)
             ) &&
             (
-                this.ContactsMappedUsingZipCode == other.ContactsMappedUsingZipCode ||
-                this.ContactsMappedUsingZipCode != null &&
-                this.ContactsMappedUsingZipCode.SequenceEqual(other.ContactsMappedUsingZipCode)
+                ContactsMappedUsingZipCode == other.ContactsMappedUsingZipCode ||
+                ContactsMappedUsingZipCode != null &&
+                ContactsMappedUsingZipCode.SequenceEqual(other.ContactsMappedUsingZipCode)
             ) &&
             (
-                this.ContactsMappedToASingleZone == other.ContactsMappedToASingleZone ||
-                this.ContactsMappedToASingleZone != null &&
-                this.ContactsMappedToASingleZone.Equals(other.ContactsMappedToASingleZone)
+                ContactsMappedToASingleZone == other.ContactsMappedToASingleZone ||
+                ContactsMappedToASingleZone != null &&
+                ContactsMappedToASingleZone.Equals(other.ContactsMappedToASingleZone)
             ) &&
             (
-                this.ContactsMappedToASingleZoneUsingZipCode == other.ContactsMappedToASingleZoneUsingZipCode ||
-                this.ContactsMappedToASingleZoneUsingZipCode != null &&
-                this.ContactsMappedToASingleZoneUsingZipCode.Equals(other.ContactsMappedToASingleZoneUsingZipCode)
+                ContactsMappedToASingleZoneUsingZipCode == other.ContactsMappedToASingleZoneUsingZipCode ||
+                ContactsMappedToASingleZoneUsingZipCode != null &&
+                ContactsMappedToASingleZoneUsingZipCode.Equals(other.ContactsMappedToASingleZoneUsingZipCode)
             ) &&
             (
-                this.ContactsMappedToMultipleZones == other.ContactsMappedToMultipleZones ||
-                this.ContactsMappedToMultipleZones != null &&
-                this.ContactsMappedToMultipleZones.Equals(other.ContactsMappedToMultipleZones)
+                ContactsMappedToMultipleZones == other.ContactsMappedToMultipleZones ||
+                ContactsMappedToMultipleZones != null &&
+                ContactsMappedToMultipleZones.Equals(other.ContactsMappedToMultipleZones)
             ) &&
             (
-                this.ContactsMappedToMultipleZonesUsingZipCode == other.ContactsMappedToMultipleZonesUsingZipCode ||
-                this.ContactsMappedToMultipleZonesUsingZipCode != null &&
-                this.ContactsMappedToMultipleZonesUsingZipCode.Equals(other.ContactsMappedToMultipleZonesUsingZipCode)
+                ContactsMappedToMultipleZonesUsingZipCode == other.ContactsMappedToMultipleZonesUsingZipCode ||
+                ContactsMappedToMultipleZonesUsingZipCode != null &&
+                ContactsMappedToMultipleZonesUsingZipCode.Equals(other.ContactsMappedToMultipleZonesUsingZipCode)
             ) &&
             (
-                this.ContactsInDefaultWindow == other.ContactsInDefaultWindow ||
-                this.ContactsInDefaultWindow != null &&
-                this.ContactsInDefaultWindow.Equals(other.ContactsInDefaultWindow)
+                ContactsInDefaultWindow == other.ContactsInDefaultWindow ||
+                ContactsInDefaultWindow != null &&
+                ContactsInDefaultWindow.Equals(other.ContactsInDefaultWindow)
             ) &&
             (
-                this.ContactListSize == other.ContactListSize ||
-                this.ContactListSize != null &&
-                this.ContactListSize.Equals(other.ContactListSize)
+                ContactListSize == other.ContactListSize ||
+                ContactListSize != null &&
+                ContactListSize.Equals(other.ContactListSize)
             );
     }
 
@@ -224,49 +224,49 @@ public partial class TimeZoneMappingPreview : IEquatable<TimeZoneMappingPreview>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactList != null)
+            if (ContactList != null)
             {
-                hash = hash * 59 + this.ContactList.GetHashCode();
+                hash = hash * 59 + ContactList.GetHashCode();
             }
 
-            if (this.ContactsPerTimeZone != null)
+            if (ContactsPerTimeZone != null)
             {
-                hash = hash * 59 + this.ContactsPerTimeZone.GetHashCode();
+                hash = hash * 59 + ContactsPerTimeZone.GetHashCode();
             }
 
-            if (this.ContactsMappedUsingZipCode != null)
+            if (ContactsMappedUsingZipCode != null)
             {
-                hash = hash * 59 + this.ContactsMappedUsingZipCode.GetHashCode();
+                hash = hash * 59 + ContactsMappedUsingZipCode.GetHashCode();
             }
 
-            if (this.ContactsMappedToASingleZone != null)
+            if (ContactsMappedToASingleZone != null)
             {
-                hash = hash * 59 + this.ContactsMappedToASingleZone.GetHashCode();
+                hash = hash * 59 + ContactsMappedToASingleZone.GetHashCode();
             }
 
-            if (this.ContactsMappedToASingleZoneUsingZipCode != null)
+            if (ContactsMappedToASingleZoneUsingZipCode != null)
             {
-                hash = hash * 59 + this.ContactsMappedToASingleZoneUsingZipCode.GetHashCode();
+                hash = hash * 59 + ContactsMappedToASingleZoneUsingZipCode.GetHashCode();
             }
 
-            if (this.ContactsMappedToMultipleZones != null)
+            if (ContactsMappedToMultipleZones != null)
             {
-                hash = hash * 59 + this.ContactsMappedToMultipleZones.GetHashCode();
+                hash = hash * 59 + ContactsMappedToMultipleZones.GetHashCode();
             }
 
-            if (this.ContactsMappedToMultipleZonesUsingZipCode != null)
+            if (ContactsMappedToMultipleZonesUsingZipCode != null)
             {
-                hash = hash * 59 + this.ContactsMappedToMultipleZonesUsingZipCode.GetHashCode();
+                hash = hash * 59 + ContactsMappedToMultipleZonesUsingZipCode.GetHashCode();
             }
 
-            if (this.ContactsInDefaultWindow != null)
+            if (ContactsInDefaultWindow != null)
             {
-                hash = hash * 59 + this.ContactsInDefaultWindow.GetHashCode();
+                hash = hash * 59 + ContactsInDefaultWindow.GetHashCode();
             }
 
-            if (this.ContactListSize != null)
+            if (ContactListSize != null)
             {
-                hash = hash * 59 + this.ContactListSize.GetHashCode();
+                hash = hash * 59 + ContactListSize.GetHashCode();
             }
 
             return hash;

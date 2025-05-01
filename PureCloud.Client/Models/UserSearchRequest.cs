@@ -212,7 +212,7 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserSearchRequest);
+        return Equals(obj as UserSearchRequest);
     }
 
     /// <summary>
@@ -230,49 +230,49 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
 
         return true &&
             (
-                this.SortOrder == other.SortOrder ||
-                this.SortOrder != null &&
-                this.SortOrder.Equals(other.SortOrder)
+                SortOrder == other.SortOrder ||
+                SortOrder != null &&
+                SortOrder.Equals(other.SortOrder)
             ) &&
             (
-                this.SortBy == other.SortBy ||
-                this.SortBy != null &&
-                this.SortBy.Equals(other.SortBy)
+                SortBy == other.SortBy ||
+                SortBy != null &&
+                SortBy.Equals(other.SortBy)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.SequenceEqual(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.SequenceEqual(other.Sort)
             ) &&
             (
-                this.Expand == other.Expand ||
-                this.Expand != null &&
-                this.Expand.SequenceEqual(other.Expand)
+                Expand == other.Expand ||
+                Expand != null &&
+                Expand.SequenceEqual(other.Expand)
             ) &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.SequenceEqual(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.SequenceEqual(other.Query)
             ) &&
             (
-                this.IntegrationPresenceSource == other.IntegrationPresenceSource ||
-                this.IntegrationPresenceSource != null &&
-                this.IntegrationPresenceSource.Equals(other.IntegrationPresenceSource)
+                IntegrationPresenceSource == other.IntegrationPresenceSource ||
+                IntegrationPresenceSource != null &&
+                IntegrationPresenceSource.Equals(other.IntegrationPresenceSource)
             ) &&
             (
-                this.EnforcePermissions == other.EnforcePermissions ||
-                this.EnforcePermissions != null &&
-                this.EnforcePermissions.Equals(other.EnforcePermissions)
+                EnforcePermissions == other.EnforcePermissions ||
+                EnforcePermissions != null &&
+                EnforcePermissions.Equals(other.EnforcePermissions)
             );
     }
 
@@ -287,49 +287,49 @@ public partial class UserSearchRequest : IEquatable<UserSearchRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SortOrder != null)
+            if (SortOrder != null)
             {
-                hash = hash * 59 + this.SortOrder.GetHashCode();
+                hash = hash * 59 + SortOrder.GetHashCode();
             }
 
-            if (this.SortBy != null)
+            if (SortBy != null)
             {
-                hash = hash * 59 + this.SortBy.GetHashCode();
+                hash = hash * 59 + SortBy.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
-            if (this.Expand != null)
+            if (Expand != null)
             {
-                hash = hash * 59 + this.Expand.GetHashCode();
+                hash = hash * 59 + Expand.GetHashCode();
             }
 
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
-            if (this.IntegrationPresenceSource != null)
+            if (IntegrationPresenceSource != null)
             {
-                hash = hash * 59 + this.IntegrationPresenceSource.GetHashCode();
+                hash = hash * 59 + IntegrationPresenceSource.GetHashCode();
             }
 
-            if (this.EnforcePermissions != null)
+            if (EnforcePermissions != null)
             {
-                hash = hash * 59 + this.EnforcePermissions.GetHashCode();
+                hash = hash * 59 + EnforcePermissions.GetHashCode();
             }
 
             return hash;

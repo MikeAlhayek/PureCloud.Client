@@ -186,7 +186,7 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActionMapAction);
+        return Equals(obj as ActionMapAction);
     }
 
     /// <summary>
@@ -204,44 +204,44 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
 
         return true &&
             (
-                this.ActionTemplate == other.ActionTemplate ||
-                this.ActionTemplate != null &&
-                this.ActionTemplate.Equals(other.ActionTemplate)
+                ActionTemplate == other.ActionTemplate ||
+                ActionTemplate != null &&
+                ActionTemplate.Equals(other.ActionTemplate)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.ActionTargetId == other.ActionTargetId ||
-                this.ActionTargetId != null &&
-                this.ActionTargetId.Equals(other.ActionTargetId)
+                ActionTargetId == other.ActionTargetId ||
+                ActionTargetId != null &&
+                ActionTargetId.Equals(other.ActionTargetId)
             ) &&
             (
-                this.IsPacingEnabled == other.IsPacingEnabled ||
-                this.IsPacingEnabled != null &&
-                this.IsPacingEnabled.Equals(other.IsPacingEnabled)
+                IsPacingEnabled == other.IsPacingEnabled ||
+                IsPacingEnabled != null &&
+                IsPacingEnabled.Equals(other.IsPacingEnabled)
             ) &&
             (
-                this.Props == other.Props ||
-                this.Props != null &&
-                this.Props.Equals(other.Props)
+                Props == other.Props ||
+                Props != null &&
+                Props.Equals(other.Props)
             ) &&
             (
-                this.ArchitectFlowFields == other.ArchitectFlowFields ||
-                this.ArchitectFlowFields != null &&
-                this.ArchitectFlowFields.Equals(other.ArchitectFlowFields)
+                ArchitectFlowFields == other.ArchitectFlowFields ||
+                ArchitectFlowFields != null &&
+                ArchitectFlowFields.Equals(other.ArchitectFlowFields)
             ) &&
             (
-                this.WebMessagingOfferFields == other.WebMessagingOfferFields ||
-                this.WebMessagingOfferFields != null &&
-                this.WebMessagingOfferFields.Equals(other.WebMessagingOfferFields)
+                WebMessagingOfferFields == other.WebMessagingOfferFields ||
+                WebMessagingOfferFields != null &&
+                WebMessagingOfferFields.Equals(other.WebMessagingOfferFields)
             ) &&
             (
-                this.OpenActionFields == other.OpenActionFields ||
-                this.OpenActionFields != null &&
-                this.OpenActionFields.Equals(other.OpenActionFields)
+                OpenActionFields == other.OpenActionFields ||
+                OpenActionFields != null &&
+                OpenActionFields.Equals(other.OpenActionFields)
             );
     }
 
@@ -256,44 +256,44 @@ public partial class ActionMapAction : IEquatable<ActionMapAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActionTemplate != null)
+            if (ActionTemplate != null)
             {
-                hash = hash * 59 + this.ActionTemplate.GetHashCode();
+                hash = hash * 59 + ActionTemplate.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.ActionTargetId != null)
+            if (ActionTargetId != null)
             {
-                hash = hash * 59 + this.ActionTargetId.GetHashCode();
+                hash = hash * 59 + ActionTargetId.GetHashCode();
             }
 
-            if (this.IsPacingEnabled != null)
+            if (IsPacingEnabled != null)
             {
-                hash = hash * 59 + this.IsPacingEnabled.GetHashCode();
+                hash = hash * 59 + IsPacingEnabled.GetHashCode();
             }
 
-            if (this.Props != null)
+            if (Props != null)
             {
-                hash = hash * 59 + this.Props.GetHashCode();
+                hash = hash * 59 + Props.GetHashCode();
             }
 
-            if (this.ArchitectFlowFields != null)
+            if (ArchitectFlowFields != null)
             {
-                hash = hash * 59 + this.ArchitectFlowFields.GetHashCode();
+                hash = hash * 59 + ArchitectFlowFields.GetHashCode();
             }
 
-            if (this.WebMessagingOfferFields != null)
+            if (WebMessagingOfferFields != null)
             {
-                hash = hash * 59 + this.WebMessagingOfferFields.GetHashCode();
+                hash = hash * 59 + WebMessagingOfferFields.GetHashCode();
             }
 
-            if (this.OpenActionFields != null)
+            if (OpenActionFields != null)
             {
-                hash = hash * 59 + this.OpenActionFields.GetHashCode();
+                hash = hash * 59 + OpenActionFields.GetHashCode();
             }
 
             return hash;

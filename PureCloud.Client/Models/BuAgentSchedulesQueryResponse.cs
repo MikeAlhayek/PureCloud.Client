@@ -64,7 +64,7 @@ public partial class BuAgentSchedulesQueryResponse : IEquatable<BuAgentSchedules
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuAgentSchedulesQueryResponse);
+        return Equals(obj as BuAgentSchedulesQueryResponse);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class BuAgentSchedulesQueryResponse : IEquatable<BuAgentSchedules
 
         return true &&
             (
-                this.AgentSchedules == other.AgentSchedules ||
-                this.AgentSchedules != null &&
-                this.AgentSchedules.SequenceEqual(other.AgentSchedules)
+                AgentSchedules == other.AgentSchedules ||
+                AgentSchedules != null &&
+                AgentSchedules.SequenceEqual(other.AgentSchedules)
             ) &&
             (
-                this.BusinessUnitTimeZone == other.BusinessUnitTimeZone ||
-                this.BusinessUnitTimeZone != null &&
-                this.BusinessUnitTimeZone.Equals(other.BusinessUnitTimeZone)
+                BusinessUnitTimeZone == other.BusinessUnitTimeZone ||
+                BusinessUnitTimeZone != null &&
+                BusinessUnitTimeZone.Equals(other.BusinessUnitTimeZone)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class BuAgentSchedulesQueryResponse : IEquatable<BuAgentSchedules
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentSchedules != null)
+            if (AgentSchedules != null)
             {
-                hash = hash * 59 + this.AgentSchedules.GetHashCode();
+                hash = hash * 59 + AgentSchedules.GetHashCode();
             }
 
-            if (this.BusinessUnitTimeZone != null)
+            if (BusinessUnitTimeZone != null)
             {
-                hash = hash * 59 + this.BusinessUnitTimeZone.GetHashCode();
+                hash = hash * 59 + BusinessUnitTimeZone.GetHashCode();
             }
 
             return hash;

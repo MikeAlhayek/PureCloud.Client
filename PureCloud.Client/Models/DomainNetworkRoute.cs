@@ -127,7 +127,7 @@ public partial class DomainNetworkRoute : IEquatable<DomainNetworkRoute>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainNetworkRoute);
+        return Equals(obj as DomainNetworkRoute);
     }
 
     /// <summary>
@@ -145,29 +145,29 @@ public partial class DomainNetworkRoute : IEquatable<DomainNetworkRoute>
 
         return true &&
             (
-                this.Prefix == other.Prefix ||
-                this.Prefix != null &&
-                this.Prefix.Equals(other.Prefix)
+                Prefix == other.Prefix ||
+                Prefix != null &&
+                Prefix.Equals(other.Prefix)
             ) &&
             (
-                this.Nexthop == other.Nexthop ||
-                this.Nexthop != null &&
-                this.Nexthop.Equals(other.Nexthop)
+                Nexthop == other.Nexthop ||
+                Nexthop != null &&
+                Nexthop.Equals(other.Nexthop)
             ) &&
             (
-                this.Persistent == other.Persistent ||
-                this.Persistent != null &&
-                this.Persistent.Equals(other.Persistent)
+                Persistent == other.Persistent ||
+                Persistent != null &&
+                Persistent.Equals(other.Persistent)
             ) &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Family == other.Family ||
-                this.Family != null &&
-                this.Family.Equals(other.Family)
+                Family == other.Family ||
+                Family != null &&
+                Family.Equals(other.Family)
             );
     }
 
@@ -182,29 +182,29 @@ public partial class DomainNetworkRoute : IEquatable<DomainNetworkRoute>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Prefix != null)
+            if (Prefix != null)
             {
-                hash = hash * 59 + this.Prefix.GetHashCode();
+                hash = hash * 59 + Prefix.GetHashCode();
             }
 
-            if (this.Nexthop != null)
+            if (Nexthop != null)
             {
-                hash = hash * 59 + this.Nexthop.GetHashCode();
+                hash = hash * 59 + Nexthop.GetHashCode();
             }
 
-            if (this.Persistent != null)
+            if (Persistent != null)
             {
-                hash = hash * 59 + this.Persistent.GetHashCode();
+                hash = hash * 59 + Persistent.GetHashCode();
             }
 
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Family != null)
+            if (Family != null)
             {
-                hash = hash * 59 + this.Family.GetHashCode();
+                hash = hash * 59 + Family.GetHashCode();
             }
 
             return hash;

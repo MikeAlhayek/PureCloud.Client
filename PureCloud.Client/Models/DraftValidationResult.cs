@@ -65,7 +65,7 @@ public partial class DraftValidationResult : IEquatable<DraftValidationResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DraftValidationResult);
+        return Equals(obj as DraftValidationResult);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class DraftValidationResult : IEquatable<DraftValidationResult>
 
         return true &&
             (
-                this.Valid == other.Valid ||
-                this.Valid != null &&
-                this.Valid.Equals(other.Valid)
+                Valid == other.Valid ||
+                Valid != null &&
+                Valid.Equals(other.Valid)
             ) &&
             (
-                this.Errors == other.Errors ||
-                this.Errors != null &&
-                this.Errors.SequenceEqual(other.Errors)
+                Errors == other.Errors ||
+                Errors != null &&
+                Errors.SequenceEqual(other.Errors)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class DraftValidationResult : IEquatable<DraftValidationResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Valid != null)
+            if (Valid != null)
             {
-                hash = hash * 59 + this.Valid.GetHashCode();
+                hash = hash * 59 + Valid.GetHashCode();
             }
 
-            if (this.Errors != null)
+            if (Errors != null)
             {
-                hash = hash * 59 + this.Errors.GetHashCode();
+                hash = hash * 59 + Errors.GetHashCode();
             }
 
             return hash;

@@ -181,7 +181,7 @@ public partial class WorkitemsQueueEventsNotificationSession : IEquatable<Workit
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemsQueueEventsNotificationSession);
+        return Equals(obj as WorkitemsQueueEventsNotificationSession);
     }
 
     /// <summary>
@@ -199,34 +199,34 @@ public partial class WorkitemsQueueEventsNotificationSession : IEquatable<Workit
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.DateSessionStart == other.DateSessionStart ||
-                this.DateSessionStart != null &&
-                this.DateSessionStart.Equals(other.DateSessionStart)
+                DateSessionStart == other.DateSessionStart ||
+                DateSessionStart != null &&
+                DateSessionStart.Equals(other.DateSessionStart)
             ) &&
             (
-                this.DateSessionEnd == other.DateSessionEnd ||
-                this.DateSessionEnd != null &&
-                this.DateSessionEnd.Equals(other.DateSessionEnd)
+                DateSessionEnd == other.DateSessionEnd ||
+                DateSessionEnd != null &&
+                DateSessionEnd.Equals(other.DateSessionEnd)
             ) &&
             (
-                this.AssignmentSegments == other.AssignmentSegments ||
-                this.AssignmentSegments != null &&
-                this.AssignmentSegments.SequenceEqual(other.AssignmentSegments)
+                AssignmentSegments == other.AssignmentSegments ||
+                AssignmentSegments != null &&
+                AssignmentSegments.SequenceEqual(other.AssignmentSegments)
             );
     }
 
@@ -241,34 +241,34 @@ public partial class WorkitemsQueueEventsNotificationSession : IEquatable<Workit
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.DateSessionStart != null)
+            if (DateSessionStart != null)
             {
-                hash = hash * 59 + this.DateSessionStart.GetHashCode();
+                hash = hash * 59 + DateSessionStart.GetHashCode();
             }
 
-            if (this.DateSessionEnd != null)
+            if (DateSessionEnd != null)
             {
-                hash = hash * 59 + this.DateSessionEnd.GetHashCode();
+                hash = hash * 59 + DateSessionEnd.GetHashCode();
             }
 
-            if (this.AssignmentSegments != null)
+            if (AssignmentSegments != null)
             {
-                hash = hash * 59 + this.AssignmentSegments.GetHashCode();
+                hash = hash * 59 + AssignmentSegments.GetHashCode();
             }
 
             return hash;

@@ -89,7 +89,7 @@ public partial class ContactBulkEditRequest : IEquatable<ContactBulkEditRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactBulkEditRequest);
+        return Equals(obj as ContactBulkEditRequest);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class ContactBulkEditRequest : IEquatable<ContactBulkEditRequest>
 
         return true &&
             (
-                this.ContactListFilterId == other.ContactListFilterId ||
-                this.ContactListFilterId != null &&
-                this.ContactListFilterId.Equals(other.ContactListFilterId)
+                ContactListFilterId == other.ContactListFilterId ||
+                ContactListFilterId != null &&
+                ContactListFilterId.Equals(other.ContactListFilterId)
             ) &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.Equals(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.Equals(other.Criteria)
             ) &&
             (
-                this.ContactIds == other.ContactIds ||
-                this.ContactIds != null &&
-                this.ContactIds.SequenceEqual(other.ContactIds)
+                ContactIds == other.ContactIds ||
+                ContactIds != null &&
+                ContactIds.SequenceEqual(other.ContactIds)
             ) &&
             (
-                this.Contact == other.Contact ||
-                this.Contact != null &&
-                this.Contact.Equals(other.Contact)
+                Contact == other.Contact ||
+                Contact != null &&
+                Contact.Equals(other.Contact)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class ContactBulkEditRequest : IEquatable<ContactBulkEditRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactListFilterId != null)
+            if (ContactListFilterId != null)
             {
-                hash = hash * 59 + this.ContactListFilterId.GetHashCode();
+                hash = hash * 59 + ContactListFilterId.GetHashCode();
             }
 
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
-            if (this.ContactIds != null)
+            if (ContactIds != null)
             {
-                hash = hash * 59 + this.ContactIds.GetHashCode();
+                hash = hash * 59 + ContactIds.GetHashCode();
             }
 
-            if (this.Contact != null)
+            if (Contact != null)
             {
-                hash = hash * 59 + this.Contact.GetHashCode();
+                hash = hash * 59 + Contact.GetHashCode();
             }
 
             return hash;

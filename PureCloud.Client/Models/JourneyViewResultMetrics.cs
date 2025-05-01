@@ -91,7 +91,7 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewResultMetrics);
+        return Equals(obj as JourneyViewResultMetrics);
     }
 
     /// <summary>
@@ -109,29 +109,29 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
 
         return true &&
             (
-                this.ParticipantCount == other.ParticipantCount ||
-                this.ParticipantCount != null &&
-                this.ParticipantCount.Equals(other.ParticipantCount)
+                ParticipantCount == other.ParticipantCount ||
+                ParticipantCount != null &&
+                ParticipantCount.Equals(other.ParticipantCount)
             ) &&
             (
-                this.ActiveCount == other.ActiveCount ||
-                this.ActiveCount != null &&
-                this.ActiveCount.Equals(other.ActiveCount)
+                ActiveCount == other.ActiveCount ||
+                ActiveCount != null &&
+                ActiveCount.Equals(other.ActiveCount)
             ) &&
             (
-                this.CompletedCount == other.CompletedCount ||
-                this.CompletedCount != null &&
-                this.CompletedCount.Equals(other.CompletedCount)
+                CompletedCount == other.CompletedCount ||
+                CompletedCount != null &&
+                CompletedCount.Equals(other.CompletedCount)
             ) &&
             (
-                this.DropoutCount == other.DropoutCount ||
-                this.DropoutCount != null &&
-                this.DropoutCount.Equals(other.DropoutCount)
+                DropoutCount == other.DropoutCount ||
+                DropoutCount != null &&
+                DropoutCount.Equals(other.DropoutCount)
             ) &&
             (
-                this.FlowCount == other.FlowCount ||
-                this.FlowCount != null &&
-                this.FlowCount.Equals(other.FlowCount)
+                FlowCount == other.FlowCount ||
+                FlowCount != null &&
+                FlowCount.Equals(other.FlowCount)
             );
     }
 
@@ -146,29 +146,29 @@ public partial class JourneyViewResultMetrics : IEquatable<JourneyViewResultMetr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ParticipantCount != null)
+            if (ParticipantCount != null)
             {
-                hash = hash * 59 + this.ParticipantCount.GetHashCode();
+                hash = hash * 59 + ParticipantCount.GetHashCode();
             }
 
-            if (this.ActiveCount != null)
+            if (ActiveCount != null)
             {
-                hash = hash * 59 + this.ActiveCount.GetHashCode();
+                hash = hash * 59 + ActiveCount.GetHashCode();
             }
 
-            if (this.CompletedCount != null)
+            if (CompletedCount != null)
             {
-                hash = hash * 59 + this.CompletedCount.GetHashCode();
+                hash = hash * 59 + CompletedCount.GetHashCode();
             }
 
-            if (this.DropoutCount != null)
+            if (DropoutCount != null)
             {
-                hash = hash * 59 + this.DropoutCount.GetHashCode();
+                hash = hash * 59 + DropoutCount.GetHashCode();
             }
 
-            if (this.FlowCount != null)
+            if (FlowCount != null)
             {
-                hash = hash * 59 + this.FlowCount.GetHashCode();
+                hash = hash * 59 + FlowCount.GetHashCode();
             }
 
             return hash;

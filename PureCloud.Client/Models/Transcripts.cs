@@ -77,7 +77,7 @@ public partial class Transcripts : IEquatable<Transcripts>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Transcripts);
+        return Equals(obj as Transcripts);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class Transcripts : IEquatable<Transcripts>
 
         return true &&
             (
-                this.ExactMatch == other.ExactMatch ||
-                this.ExactMatch != null &&
-                this.ExactMatch.SequenceEqual(other.ExactMatch)
+                ExactMatch == other.ExactMatch ||
+                ExactMatch != null &&
+                ExactMatch.SequenceEqual(other.ExactMatch)
             ) &&
             (
-                this.Contains == other.Contains ||
-                this.Contains != null &&
-                this.Contains.SequenceEqual(other.Contains)
+                Contains == other.Contains ||
+                Contains != null &&
+                Contains.SequenceEqual(other.Contains)
             ) &&
             (
-                this.DoesNotContain == other.DoesNotContain ||
-                this.DoesNotContain != null &&
-                this.DoesNotContain.SequenceEqual(other.DoesNotContain)
+                DoesNotContain == other.DoesNotContain ||
+                DoesNotContain != null &&
+                DoesNotContain.SequenceEqual(other.DoesNotContain)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class Transcripts : IEquatable<Transcripts>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExactMatch != null)
+            if (ExactMatch != null)
             {
-                hash = hash * 59 + this.ExactMatch.GetHashCode();
+                hash = hash * 59 + ExactMatch.GetHashCode();
             }
 
-            if (this.Contains != null)
+            if (Contains != null)
             {
-                hash = hash * 59 + this.Contains.GetHashCode();
+                hash = hash * 59 + Contains.GetHashCode();
             }
 
-            if (this.DoesNotContain != null)
+            if (DoesNotContain != null)
             {
-                hash = hash * 59 + this.DoesNotContain.GetHashCode();
+                hash = hash * 59 + DoesNotContain.GetHashCode();
             }
 
             return hash;

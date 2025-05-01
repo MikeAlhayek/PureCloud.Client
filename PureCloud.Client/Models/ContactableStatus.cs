@@ -65,7 +65,7 @@ public partial class ContactableStatus : IEquatable<ContactableStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactableStatus);
+        return Equals(obj as ContactableStatus);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ContactableStatus : IEquatable<ContactableStatus>
 
         return true &&
             (
-                this.Contactable == other.Contactable ||
-                this.Contactable != null &&
-                this.Contactable.Equals(other.Contactable)
+                Contactable == other.Contactable ||
+                Contactable != null &&
+                Contactable.Equals(other.Contactable)
             ) &&
             (
-                this.ColumnStatus == other.ColumnStatus ||
-                this.ColumnStatus != null &&
-                this.ColumnStatus.SequenceEqual(other.ColumnStatus)
+                ColumnStatus == other.ColumnStatus ||
+                ColumnStatus != null &&
+                ColumnStatus.SequenceEqual(other.ColumnStatus)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ContactableStatus : IEquatable<ContactableStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Contactable != null)
+            if (Contactable != null)
             {
-                hash = hash * 59 + this.Contactable.GetHashCode();
+                hash = hash * 59 + Contactable.GetHashCode();
             }
 
-            if (this.ColumnStatus != null)
+            if (ColumnStatus != null)
             {
-                hash = hash * 59 + this.ColumnStatus.GetHashCode();
+                hash = hash * 59 + ColumnStatus.GetHashCode();
             }
 
             return hash;

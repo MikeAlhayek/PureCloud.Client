@@ -61,7 +61,7 @@ public partial class ScimServiceProviderConfigFilterFeature : IEquatable<ScimSer
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimServiceProviderConfigFilterFeature);
+        return Equals(obj as ScimServiceProviderConfigFilterFeature);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class ScimServiceProviderConfigFilterFeature : IEquatable<ScimSer
 
         return true &&
             (
-                this.Supported == other.Supported ||
-                this.Supported != null &&
-                this.Supported.Equals(other.Supported)
+                Supported == other.Supported ||
+                Supported != null &&
+                Supported.Equals(other.Supported)
             ) &&
             (
-                this.MaxResults == other.MaxResults ||
-                this.MaxResults != null &&
-                this.MaxResults.Equals(other.MaxResults)
+                MaxResults == other.MaxResults ||
+                MaxResults != null &&
+                MaxResults.Equals(other.MaxResults)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class ScimServiceProviderConfigFilterFeature : IEquatable<ScimSer
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Supported != null)
+            if (Supported != null)
             {
-                hash = hash * 59 + this.Supported.GetHashCode();
+                hash = hash * 59 + Supported.GetHashCode();
             }
 
-            if (this.MaxResults != null)
+            if (MaxResults != null)
             {
-                hash = hash * 59 + this.MaxResults.GetHashCode();
+                hash = hash * 59 + MaxResults.GetHashCode();
             }
 
             return hash;

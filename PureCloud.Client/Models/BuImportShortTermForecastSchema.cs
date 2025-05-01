@@ -106,7 +106,7 @@ public partial class BuImportShortTermForecastSchema : IEquatable<BuImportShortT
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuImportShortTermForecastSchema);
+        return Equals(obj as BuImportShortTermForecastSchema);
     }
 
     /// <summary>
@@ -124,29 +124,29 @@ public partial class BuImportShortTermForecastSchema : IEquatable<BuImportShortT
 
         return true &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             ) &&
             (
-                this.PlanningGroups == other.PlanningGroups ||
-                this.PlanningGroups != null &&
-                this.PlanningGroups.SequenceEqual(other.PlanningGroups)
+                PlanningGroups == other.PlanningGroups ||
+                PlanningGroups != null &&
+                PlanningGroups.SequenceEqual(other.PlanningGroups)
             ) &&
             (
-                this.LongTermPlanningGroups == other.LongTermPlanningGroups ||
-                this.LongTermPlanningGroups != null &&
-                this.LongTermPlanningGroups.SequenceEqual(other.LongTermPlanningGroups)
+                LongTermPlanningGroups == other.LongTermPlanningGroups ||
+                LongTermPlanningGroups != null &&
+                LongTermPlanningGroups.SequenceEqual(other.LongTermPlanningGroups)
             ) &&
             (
-                this.CanUseForScheduling == other.CanUseForScheduling ||
-                this.CanUseForScheduling != null &&
-                this.CanUseForScheduling.Equals(other.CanUseForScheduling)
+                CanUseForScheduling == other.CanUseForScheduling ||
+                CanUseForScheduling != null &&
+                CanUseForScheduling.Equals(other.CanUseForScheduling)
             );
     }
 
@@ -161,29 +161,29 @@ public partial class BuImportShortTermForecastSchema : IEquatable<BuImportShortT
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
-            if (this.PlanningGroups != null)
+            if (PlanningGroups != null)
             {
-                hash = hash * 59 + this.PlanningGroups.GetHashCode();
+                hash = hash * 59 + PlanningGroups.GetHashCode();
             }
 
-            if (this.LongTermPlanningGroups != null)
+            if (LongTermPlanningGroups != null)
             {
-                hash = hash * 59 + this.LongTermPlanningGroups.GetHashCode();
+                hash = hash * 59 + LongTermPlanningGroups.GetHashCode();
             }
 
-            if (this.CanUseForScheduling != null)
+            if (CanUseForScheduling != null)
             {
-                hash = hash * 59 + this.CanUseForScheduling.GetHashCode();
+                hash = hash * 59 + CanUseForScheduling.GetHashCode();
             }
 
             return hash;

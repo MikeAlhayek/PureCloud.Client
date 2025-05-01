@@ -73,7 +73,7 @@ public partial class Adjacents : IEquatable<Adjacents>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Adjacents);
+        return Equals(obj as Adjacents);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class Adjacents : IEquatable<Adjacents>
 
         return true &&
             (
-                this.Superiors == other.Superiors ||
-                this.Superiors != null &&
-                this.Superiors.SequenceEqual(other.Superiors)
+                Superiors == other.Superiors ||
+                Superiors != null &&
+                Superiors.SequenceEqual(other.Superiors)
             ) &&
             (
-                this.Siblings == other.Siblings ||
-                this.Siblings != null &&
-                this.Siblings.SequenceEqual(other.Siblings)
+                Siblings == other.Siblings ||
+                Siblings != null &&
+                Siblings.SequenceEqual(other.Siblings)
             ) &&
             (
-                this.DirectReports == other.DirectReports ||
-                this.DirectReports != null &&
-                this.DirectReports.SequenceEqual(other.DirectReports)
+                DirectReports == other.DirectReports ||
+                DirectReports != null &&
+                DirectReports.SequenceEqual(other.DirectReports)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class Adjacents : IEquatable<Adjacents>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Superiors != null)
+            if (Superiors != null)
             {
-                hash = hash * 59 + this.Superiors.GetHashCode();
+                hash = hash * 59 + Superiors.GetHashCode();
             }
 
-            if (this.Siblings != null)
+            if (Siblings != null)
             {
-                hash = hash * 59 + this.Siblings.GetHashCode();
+                hash = hash * 59 + Siblings.GetHashCode();
             }
 
-            if (this.DirectReports != null)
+            if (DirectReports != null)
             {
-                hash = hash * 59 + this.DirectReports.GetHashCode();
+                hash = hash * 59 + DirectReports.GetHashCode();
             }
 
             return hash;

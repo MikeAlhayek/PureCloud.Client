@@ -65,7 +65,7 @@ public partial class ContestWinnersRequest : IEquatable<ContestWinnersRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContestWinnersRequest);
+        return Equals(obj as ContestWinnersRequest);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ContestWinnersRequest : IEquatable<ContestWinnersRequest>
 
         return true &&
             (
-                this.Tier == other.Tier ||
-                this.Tier != null &&
-                this.Tier.Equals(other.Tier)
+                Tier == other.Tier ||
+                Tier != null &&
+                Tier.Equals(other.Tier)
             ) &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ContestWinnersRequest : IEquatable<ContestWinnersRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Tier != null)
+            if (Tier != null)
             {
-                hash = hash * 59 + this.Tier.GetHashCode();
+                hash = hash * 59 + Tier.GetHashCode();
             }
 
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
             return hash;

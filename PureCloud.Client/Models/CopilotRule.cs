@@ -71,7 +71,7 @@ public partial class CopilotRule : IEquatable<CopilotRule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CopilotRule);
+        return Equals(obj as CopilotRule);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class CopilotRule : IEquatable<CopilotRule>
 
         return true &&
             (
-                this.Conditions == other.Conditions ||
-                this.Conditions != null &&
-                this.Conditions.SequenceEqual(other.Conditions)
+                Conditions == other.Conditions ||
+                Conditions != null &&
+                Conditions.SequenceEqual(other.Conditions)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.SequenceEqual(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.SequenceEqual(other.Actions)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class CopilotRule : IEquatable<CopilotRule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Conditions != null)
+            if (Conditions != null)
             {
-                hash = hash * 59 + this.Conditions.GetHashCode();
+                hash = hash * 59 + Conditions.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
             return hash;

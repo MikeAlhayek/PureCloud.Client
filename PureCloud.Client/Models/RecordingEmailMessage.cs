@@ -152,7 +152,7 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingEmailMessage);
+        return Equals(obj as RecordingEmailMessage);
     }
 
     /// <summary>
@@ -170,54 +170,54 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
 
         return true &&
             (
-                this.HtmlBody == other.HtmlBody ||
-                this.HtmlBody != null &&
-                this.HtmlBody.Equals(other.HtmlBody)
+                HtmlBody == other.HtmlBody ||
+                HtmlBody != null &&
+                HtmlBody.Equals(other.HtmlBody)
             ) &&
             (
-                this.TextBody == other.TextBody ||
-                this.TextBody != null &&
-                this.TextBody.Equals(other.TextBody)
+                TextBody == other.TextBody ||
+                TextBody != null &&
+                TextBody.Equals(other.TextBody)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.To == other.To ||
-                this.To != null &&
-                this.To.SequenceEqual(other.To)
+                To == other.To ||
+                To != null &&
+                To.SequenceEqual(other.To)
             ) &&
             (
-                this.Cc == other.Cc ||
-                this.Cc != null &&
-                this.Cc.SequenceEqual(other.Cc)
+                Cc == other.Cc ||
+                Cc != null &&
+                Cc.SequenceEqual(other.Cc)
             ) &&
             (
-                this.Bcc == other.Bcc ||
-                this.Bcc != null &&
-                this.Bcc.SequenceEqual(other.Bcc)
+                Bcc == other.Bcc ||
+                Bcc != null &&
+                Bcc.SequenceEqual(other.Bcc)
             ) &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.Subject == other.Subject ||
-                this.Subject != null &&
-                this.Subject.Equals(other.Subject)
+                Subject == other.Subject ||
+                Subject != null &&
+                Subject.Equals(other.Subject)
             ) &&
             (
-                this.Attachments == other.Attachments ||
-                this.Attachments != null &&
-                this.Attachments.SequenceEqual(other.Attachments)
+                Attachments == other.Attachments ||
+                Attachments != null &&
+                Attachments.SequenceEqual(other.Attachments)
             ) &&
             (
-                this.Time == other.Time ||
-                this.Time != null &&
-                this.Time.Equals(other.Time)
+                Time == other.Time ||
+                Time != null &&
+                Time.Equals(other.Time)
             );
     }
 
@@ -232,54 +232,54 @@ public partial class RecordingEmailMessage : IEquatable<RecordingEmailMessage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.HtmlBody != null)
+            if (HtmlBody != null)
             {
-                hash = hash * 59 + this.HtmlBody.GetHashCode();
+                hash = hash * 59 + HtmlBody.GetHashCode();
             }
 
-            if (this.TextBody != null)
+            if (TextBody != null)
             {
-                hash = hash * 59 + this.TextBody.GetHashCode();
+                hash = hash * 59 + TextBody.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.To != null)
+            if (To != null)
             {
-                hash = hash * 59 + this.To.GetHashCode();
+                hash = hash * 59 + To.GetHashCode();
             }
 
-            if (this.Cc != null)
+            if (Cc != null)
             {
-                hash = hash * 59 + this.Cc.GetHashCode();
+                hash = hash * 59 + Cc.GetHashCode();
             }
 
-            if (this.Bcc != null)
+            if (Bcc != null)
             {
-                hash = hash * 59 + this.Bcc.GetHashCode();
+                hash = hash * 59 + Bcc.GetHashCode();
             }
 
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.Subject != null)
+            if (Subject != null)
             {
-                hash = hash * 59 + this.Subject.GetHashCode();
+                hash = hash * 59 + Subject.GetHashCode();
             }
 
-            if (this.Attachments != null)
+            if (Attachments != null)
             {
-                hash = hash * 59 + this.Attachments.GetHashCode();
+                hash = hash * 59 + Attachments.GetHashCode();
             }
 
-            if (this.Time != null)
+            if (Time != null)
             {
-                hash = hash * 59 + this.Time.GetHashCode();
+                hash = hash * 59 + Time.GetHashCode();
             }
 
             return hash;

@@ -52,7 +52,7 @@ public partial class PolicyErrors : IEquatable<PolicyErrors>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PolicyErrors);
+        return Equals(obj as PolicyErrors);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class PolicyErrors : IEquatable<PolicyErrors>
 
         return true &&
             (
-                this.PolicyErrorMessages == other.PolicyErrorMessages ||
-                this.PolicyErrorMessages != null &&
-                this.PolicyErrorMessages.SequenceEqual(other.PolicyErrorMessages)
+                PolicyErrorMessages == other.PolicyErrorMessages ||
+                PolicyErrorMessages != null &&
+                PolicyErrorMessages.SequenceEqual(other.PolicyErrorMessages)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class PolicyErrors : IEquatable<PolicyErrors>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PolicyErrorMessages != null)
+            if (PolicyErrorMessages != null)
             {
-                hash = hash * 59 + this.PolicyErrorMessages.GetHashCode();
+                hash = hash * 59 + PolicyErrorMessages.GetHashCode();
             }
 
             return hash;

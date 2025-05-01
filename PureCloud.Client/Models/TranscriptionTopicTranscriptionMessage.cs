@@ -129,7 +129,7 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TranscriptionTopicTranscriptionMessage);
+        return Equals(obj as TranscriptionTopicTranscriptionMessage);
     }
 
     /// <summary>
@@ -147,44 +147,44 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
 
         return true &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.OrganizationId == other.OrganizationId ||
-                this.OrganizationId != null &&
-                this.OrganizationId.Equals(other.OrganizationId)
+                OrganizationId == other.OrganizationId ||
+                OrganizationId != null &&
+                OrganizationId.Equals(other.OrganizationId)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.CommunicationId == other.CommunicationId ||
-                this.CommunicationId != null &&
-                this.CommunicationId.Equals(other.CommunicationId)
+                CommunicationId == other.CommunicationId ||
+                CommunicationId != null &&
+                CommunicationId.Equals(other.CommunicationId)
             ) &&
             (
-                this.SessionStartTimeMs == other.SessionStartTimeMs ||
-                this.SessionStartTimeMs != null &&
-                this.SessionStartTimeMs.Equals(other.SessionStartTimeMs)
+                SessionStartTimeMs == other.SessionStartTimeMs ||
+                SessionStartTimeMs != null &&
+                SessionStartTimeMs.Equals(other.SessionStartTimeMs)
             ) &&
             (
-                this.TranscriptionStartTimeMs == other.TranscriptionStartTimeMs ||
-                this.TranscriptionStartTimeMs != null &&
-                this.TranscriptionStartTimeMs.Equals(other.TranscriptionStartTimeMs)
+                TranscriptionStartTimeMs == other.TranscriptionStartTimeMs ||
+                TranscriptionStartTimeMs != null &&
+                TranscriptionStartTimeMs.Equals(other.TranscriptionStartTimeMs)
             ) &&
             (
-                this.Transcripts == other.Transcripts ||
-                this.Transcripts != null &&
-                this.Transcripts.SequenceEqual(other.Transcripts)
+                Transcripts == other.Transcripts ||
+                Transcripts != null &&
+                Transcripts.SequenceEqual(other.Transcripts)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             );
     }
 
@@ -199,44 +199,44 @@ public partial class TranscriptionTopicTranscriptionMessage : IEquatable<Transcr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.OrganizationId != null)
+            if (OrganizationId != null)
             {
-                hash = hash * 59 + this.OrganizationId.GetHashCode();
+                hash = hash * 59 + OrganizationId.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.CommunicationId != null)
+            if (CommunicationId != null)
             {
-                hash = hash * 59 + this.CommunicationId.GetHashCode();
+                hash = hash * 59 + CommunicationId.GetHashCode();
             }
 
-            if (this.SessionStartTimeMs != null)
+            if (SessionStartTimeMs != null)
             {
-                hash = hash * 59 + this.SessionStartTimeMs.GetHashCode();
+                hash = hash * 59 + SessionStartTimeMs.GetHashCode();
             }
 
-            if (this.TranscriptionStartTimeMs != null)
+            if (TranscriptionStartTimeMs != null)
             {
-                hash = hash * 59 + this.TranscriptionStartTimeMs.GetHashCode();
+                hash = hash * 59 + TranscriptionStartTimeMs.GetHashCode();
             }
 
-            if (this.Transcripts != null)
+            if (Transcripts != null)
             {
-                hash = hash * 59 + this.Transcripts.GetHashCode();
+                hash = hash * 59 + Transcripts.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
             return hash;

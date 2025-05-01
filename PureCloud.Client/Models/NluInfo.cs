@@ -92,7 +92,7 @@ public partial class NluInfo : IEquatable<NluInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluInfo);
+        return Equals(obj as NluInfo);
     }
 
     /// <summary>
@@ -110,29 +110,29 @@ public partial class NluInfo : IEquatable<NluInfo>
 
         return true &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Intents == other.Intents ||
-                this.Intents != null &&
-                this.Intents.SequenceEqual(other.Intents)
+                Intents == other.Intents ||
+                Intents != null &&
+                Intents.SequenceEqual(other.Intents)
             ) &&
             (
-                this.EngineVersion == other.EngineVersion ||
-                this.EngineVersion != null &&
-                this.EngineVersion.Equals(other.EngineVersion)
+                EngineVersion == other.EngineVersion ||
+                EngineVersion != null &&
+                EngineVersion.Equals(other.EngineVersion)
             ) &&
             (
-                this.NluData == other.NluData ||
-                this.NluData != null &&
-                this.NluData.Equals(other.NluData)
+                NluData == other.NluData ||
+                NluData != null &&
+                NluData.Equals(other.NluData)
             );
     }
 
@@ -147,29 +147,29 @@ public partial class NluInfo : IEquatable<NluInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Intents != null)
+            if (Intents != null)
             {
-                hash = hash * 59 + this.Intents.GetHashCode();
+                hash = hash * 59 + Intents.GetHashCode();
             }
 
-            if (this.EngineVersion != null)
+            if (EngineVersion != null)
             {
-                hash = hash * 59 + this.EngineVersion.GetHashCode();
+                hash = hash * 59 + EngineVersion.GetHashCode();
             }
 
-            if (this.NluData != null)
+            if (NluData != null)
             {
-                hash = hash * 59 + this.NluData.GetHashCode();
+                hash = hash * 59 + NluData.GetHashCode();
             }
 
             return hash;

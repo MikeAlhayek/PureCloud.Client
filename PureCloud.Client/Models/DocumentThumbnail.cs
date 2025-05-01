@@ -85,7 +85,7 @@ public partial class DocumentThumbnail : IEquatable<DocumentThumbnail>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentThumbnail);
+        return Equals(obj as DocumentThumbnail);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class DocumentThumbnail : IEquatable<DocumentThumbnail>
 
         return true &&
             (
-                this.Resolution == other.Resolution ||
-                this.Resolution != null &&
-                this.Resolution.Equals(other.Resolution)
+                Resolution == other.Resolution ||
+                Resolution != null &&
+                Resolution.Equals(other.Resolution)
             ) &&
             (
-                this.ImageUri == other.ImageUri ||
-                this.ImageUri != null &&
-                this.ImageUri.Equals(other.ImageUri)
+                ImageUri == other.ImageUri ||
+                ImageUri != null &&
+                ImageUri.Equals(other.ImageUri)
             ) &&
             (
-                this.Height == other.Height ||
-                this.Height != null &&
-                this.Height.Equals(other.Height)
+                Height == other.Height ||
+                Height != null &&
+                Height.Equals(other.Height)
             ) &&
             (
-                this.Width == other.Width ||
-                this.Width != null &&
-                this.Width.Equals(other.Width)
+                Width == other.Width ||
+                Width != null &&
+                Width.Equals(other.Width)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class DocumentThumbnail : IEquatable<DocumentThumbnail>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Resolution != null)
+            if (Resolution != null)
             {
-                hash = hash * 59 + this.Resolution.GetHashCode();
+                hash = hash * 59 + Resolution.GetHashCode();
             }
 
-            if (this.ImageUri != null)
+            if (ImageUri != null)
             {
-                hash = hash * 59 + this.ImageUri.GetHashCode();
+                hash = hash * 59 + ImageUri.GetHashCode();
             }
 
-            if (this.Height != null)
+            if (Height != null)
             {
-                hash = hash * 59 + this.Height.GetHashCode();
+                hash = hash * 59 + Height.GetHashCode();
             }
 
-            if (this.Width != null)
+            if (Width != null)
             {
-                hash = hash * 59 + this.Width.GetHashCode();
+                hash = hash * 59 + Width.GetHashCode();
             }
 
             return hash;

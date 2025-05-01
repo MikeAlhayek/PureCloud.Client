@@ -101,7 +101,7 @@ public partial class EntityChange : IEquatable<EntityChange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EntityChange);
+        return Equals(obj as EntityChange);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class EntityChange : IEquatable<EntityChange>
 
         return true &&
             (
-                this.EntityId == other.EntityId ||
-                this.EntityId != null &&
-                this.EntityId.Equals(other.EntityId)
+                EntityId == other.EntityId ||
+                EntityId != null &&
+                EntityId.Equals(other.EntityId)
             ) &&
             (
-                this.EntityName == other.EntityName ||
-                this.EntityName != null &&
-                this.EntityName.Equals(other.EntityName)
+                EntityName == other.EntityName ||
+                EntityName != null &&
+                EntityName.Equals(other.EntityName)
             ) &&
             (
-                this.EntityType == other.EntityType ||
-                this.EntityType != null &&
-                this.EntityType.Equals(other.EntityType)
+                EntityType == other.EntityType ||
+                EntityType != null &&
+                EntityType.Equals(other.EntityType)
             ) &&
             (
-                this.OldValues == other.OldValues ||
-                this.OldValues != null &&
-                this.OldValues.SequenceEqual(other.OldValues)
+                OldValues == other.OldValues ||
+                OldValues != null &&
+                OldValues.SequenceEqual(other.OldValues)
             ) &&
             (
-                this.NewValues == other.NewValues ||
-                this.NewValues != null &&
-                this.NewValues.SequenceEqual(other.NewValues)
+                NewValues == other.NewValues ||
+                NewValues != null &&
+                NewValues.SequenceEqual(other.NewValues)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class EntityChange : IEquatable<EntityChange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EntityId != null)
+            if (EntityId != null)
             {
-                hash = hash * 59 + this.EntityId.GetHashCode();
+                hash = hash * 59 + EntityId.GetHashCode();
             }
 
-            if (this.EntityName != null)
+            if (EntityName != null)
             {
-                hash = hash * 59 + this.EntityName.GetHashCode();
+                hash = hash * 59 + EntityName.GetHashCode();
             }
 
-            if (this.EntityType != null)
+            if (EntityType != null)
             {
-                hash = hash * 59 + this.EntityType.GetHashCode();
+                hash = hash * 59 + EntityType.GetHashCode();
             }
 
-            if (this.OldValues != null)
+            if (OldValues != null)
             {
-                hash = hash * 59 + this.OldValues.GetHashCode();
+                hash = hash * 59 + OldValues.GetHashCode();
             }
 
-            if (this.NewValues != null)
+            if (NewValues != null)
             {
-                hash = hash * 59 + this.NewValues.GetHashCode();
+                hash = hash * 59 + NewValues.GetHashCode();
             }
 
             return hash;

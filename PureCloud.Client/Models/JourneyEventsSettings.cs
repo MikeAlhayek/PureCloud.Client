@@ -193,7 +193,7 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyEventsSettings);
+        return Equals(obj as JourneyEventsSettings);
     }
 
     /// <summary>
@@ -211,54 +211,54 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.ExcludedQueryParameters == other.ExcludedQueryParameters ||
-                this.ExcludedQueryParameters != null &&
-                this.ExcludedQueryParameters.SequenceEqual(other.ExcludedQueryParameters)
+                ExcludedQueryParameters == other.ExcludedQueryParameters ||
+                ExcludedQueryParameters != null &&
+                ExcludedQueryParameters.SequenceEqual(other.ExcludedQueryParameters)
             ) &&
             (
-                this.ShouldKeepUrlFragment == other.ShouldKeepUrlFragment ||
-                this.ShouldKeepUrlFragment != null &&
-                this.ShouldKeepUrlFragment.Equals(other.ShouldKeepUrlFragment)
+                ShouldKeepUrlFragment == other.ShouldKeepUrlFragment ||
+                ShouldKeepUrlFragment != null &&
+                ShouldKeepUrlFragment.Equals(other.ShouldKeepUrlFragment)
             ) &&
             (
-                this.SearchQueryParameters == other.SearchQueryParameters ||
-                this.SearchQueryParameters != null &&
-                this.SearchQueryParameters.SequenceEqual(other.SearchQueryParameters)
+                SearchQueryParameters == other.SearchQueryParameters ||
+                SearchQueryParameters != null &&
+                SearchQueryParameters.SequenceEqual(other.SearchQueryParameters)
             ) &&
             (
-                this.PageviewConfig == other.PageviewConfig ||
-                this.PageviewConfig != null &&
-                this.PageviewConfig.Equals(other.PageviewConfig)
+                PageviewConfig == other.PageviewConfig ||
+                PageviewConfig != null &&
+                PageviewConfig.Equals(other.PageviewConfig)
             ) &&
             (
-                this.ClickEvents == other.ClickEvents ||
-                this.ClickEvents != null &&
-                this.ClickEvents.SequenceEqual(other.ClickEvents)
+                ClickEvents == other.ClickEvents ||
+                ClickEvents != null &&
+                ClickEvents.SequenceEqual(other.ClickEvents)
             ) &&
             (
-                this.FormsTrackEvents == other.FormsTrackEvents ||
-                this.FormsTrackEvents != null &&
-                this.FormsTrackEvents.SequenceEqual(other.FormsTrackEvents)
+                FormsTrackEvents == other.FormsTrackEvents ||
+                FormsTrackEvents != null &&
+                FormsTrackEvents.SequenceEqual(other.FormsTrackEvents)
             ) &&
             (
-                this.IdleEvents == other.IdleEvents ||
-                this.IdleEvents != null &&
-                this.IdleEvents.SequenceEqual(other.IdleEvents)
+                IdleEvents == other.IdleEvents ||
+                IdleEvents != null &&
+                IdleEvents.SequenceEqual(other.IdleEvents)
             ) &&
             (
-                this.InViewportEvents == other.InViewportEvents ||
-                this.InViewportEvents != null &&
-                this.InViewportEvents.SequenceEqual(other.InViewportEvents)
+                InViewportEvents == other.InViewportEvents ||
+                InViewportEvents != null &&
+                InViewportEvents.SequenceEqual(other.InViewportEvents)
             ) &&
             (
-                this.ScrollDepthEvents == other.ScrollDepthEvents ||
-                this.ScrollDepthEvents != null &&
-                this.ScrollDepthEvents.SequenceEqual(other.ScrollDepthEvents)
+                ScrollDepthEvents == other.ScrollDepthEvents ||
+                ScrollDepthEvents != null &&
+                ScrollDepthEvents.SequenceEqual(other.ScrollDepthEvents)
             );
     }
 
@@ -273,54 +273,54 @@ public partial class JourneyEventsSettings : IEquatable<JourneyEventsSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.ExcludedQueryParameters != null)
+            if (ExcludedQueryParameters != null)
             {
-                hash = hash * 59 + this.ExcludedQueryParameters.GetHashCode();
+                hash = hash * 59 + ExcludedQueryParameters.GetHashCode();
             }
 
-            if (this.ShouldKeepUrlFragment != null)
+            if (ShouldKeepUrlFragment != null)
             {
-                hash = hash * 59 + this.ShouldKeepUrlFragment.GetHashCode();
+                hash = hash * 59 + ShouldKeepUrlFragment.GetHashCode();
             }
 
-            if (this.SearchQueryParameters != null)
+            if (SearchQueryParameters != null)
             {
-                hash = hash * 59 + this.SearchQueryParameters.GetHashCode();
+                hash = hash * 59 + SearchQueryParameters.GetHashCode();
             }
 
-            if (this.PageviewConfig != null)
+            if (PageviewConfig != null)
             {
-                hash = hash * 59 + this.PageviewConfig.GetHashCode();
+                hash = hash * 59 + PageviewConfig.GetHashCode();
             }
 
-            if (this.ClickEvents != null)
+            if (ClickEvents != null)
             {
-                hash = hash * 59 + this.ClickEvents.GetHashCode();
+                hash = hash * 59 + ClickEvents.GetHashCode();
             }
 
-            if (this.FormsTrackEvents != null)
+            if (FormsTrackEvents != null)
             {
-                hash = hash * 59 + this.FormsTrackEvents.GetHashCode();
+                hash = hash * 59 + FormsTrackEvents.GetHashCode();
             }
 
-            if (this.IdleEvents != null)
+            if (IdleEvents != null)
             {
-                hash = hash * 59 + this.IdleEvents.GetHashCode();
+                hash = hash * 59 + IdleEvents.GetHashCode();
             }
 
-            if (this.InViewportEvents != null)
+            if (InViewportEvents != null)
             {
-                hash = hash * 59 + this.InViewportEvents.GetHashCode();
+                hash = hash * 59 + InViewportEvents.GetHashCode();
             }
 
-            if (this.ScrollDepthEvents != null)
+            if (ScrollDepthEvents != null)
             {
-                hash = hash * 59 + this.ScrollDepthEvents.GetHashCode();
+                hash = hash * 59 + ScrollDepthEvents.GetHashCode();
             }
 
             return hash;

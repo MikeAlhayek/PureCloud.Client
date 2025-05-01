@@ -88,7 +88,7 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanJobException : I
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmActivityPlanJobCompleteTopicActivityPlanJobException);
+        return Equals(obj as WfmActivityPlanJobCompleteTopicActivityPlanJobException);
     }
 
     /// <summary>
@@ -106,14 +106,14 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanJobException : I
 
         return true &&
             (
-                this.ExceptionType == other.ExceptionType ||
-                this.ExceptionType != null &&
-                this.ExceptionType.Equals(other.ExceptionType)
+                ExceptionType == other.ExceptionType ||
+                ExceptionType != null &&
+                ExceptionType.Equals(other.ExceptionType)
             ) &&
             (
-                this.Occurrences == other.Occurrences ||
-                this.Occurrences != null &&
-                this.Occurrences.SequenceEqual(other.Occurrences)
+                Occurrences == other.Occurrences ||
+                Occurrences != null &&
+                Occurrences.SequenceEqual(other.Occurrences)
             );
     }
 
@@ -128,14 +128,14 @@ public partial class WfmActivityPlanJobCompleteTopicActivityPlanJobException : I
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExceptionType != null)
+            if (ExceptionType != null)
             {
-                hash = hash * 59 + this.ExceptionType.GetHashCode();
+                hash = hash * 59 + ExceptionType.GetHashCode();
             }
 
-            if (this.Occurrences != null)
+            if (Occurrences != null)
             {
-                hash = hash * 59 + this.Occurrences.GetHashCode();
+                hash = hash * 59 + Occurrences.GetHashCode();
             }
 
             return hash;

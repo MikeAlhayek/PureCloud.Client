@@ -357,7 +357,7 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignment);
+        return Equals(obj as LearningAssignment);
     }
 
     /// <summary>
@@ -375,129 +375,129 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Assessment == other.Assessment ||
-                this.Assessment != null &&
-                this.Assessment.Equals(other.Assessment)
+                Assessment == other.Assessment ||
+                Assessment != null &&
+                Assessment.Equals(other.Assessment)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.IsOverdue == other.IsOverdue ||
-                this.IsOverdue != null &&
-                this.IsOverdue.Equals(other.IsOverdue)
+                IsOverdue == other.IsOverdue ||
+                IsOverdue != null &&
+                IsOverdue.Equals(other.IsOverdue)
             ) &&
             (
-                this.PercentageScore == other.PercentageScore ||
-                this.PercentageScore != null &&
-                this.PercentageScore.Equals(other.PercentageScore)
+                PercentageScore == other.PercentageScore ||
+                PercentageScore != null &&
+                PercentageScore.Equals(other.PercentageScore)
             ) &&
             (
-                this.AssessmentPercentageScore == other.AssessmentPercentageScore ||
-                this.AssessmentPercentageScore != null &&
-                this.AssessmentPercentageScore.Equals(other.AssessmentPercentageScore)
+                AssessmentPercentageScore == other.AssessmentPercentageScore ||
+                AssessmentPercentageScore != null &&
+                AssessmentPercentageScore.Equals(other.AssessmentPercentageScore)
             ) &&
             (
-                this.IsRule == other.IsRule ||
-                this.IsRule != null &&
-                this.IsRule.Equals(other.IsRule)
+                IsRule == other.IsRule ||
+                IsRule != null &&
+                IsRule.Equals(other.IsRule)
             ) &&
             (
-                this.IsManual == other.IsManual ||
-                this.IsManual != null &&
-                this.IsManual.Equals(other.IsManual)
+                IsManual == other.IsManual ||
+                IsManual != null &&
+                IsManual.Equals(other.IsManual)
             ) &&
             (
-                this.IsPassed == other.IsPassed ||
-                this.IsPassed != null &&
-                this.IsPassed.Equals(other.IsPassed)
+                IsPassed == other.IsPassed ||
+                IsPassed != null &&
+                IsPassed.Equals(other.IsPassed)
             ) &&
             (
-                this.IsLatest == other.IsLatest ||
-                this.IsLatest != null &&
-                this.IsLatest.Equals(other.IsLatest)
+                IsLatest == other.IsLatest ||
+                IsLatest != null &&
+                IsLatest.Equals(other.IsLatest)
             ) &&
             (
-                this.AssessmentCompletionPercentage == other.AssessmentCompletionPercentage ||
-                this.AssessmentCompletionPercentage != null &&
-                this.AssessmentCompletionPercentage.Equals(other.AssessmentCompletionPercentage)
+                AssessmentCompletionPercentage == other.AssessmentCompletionPercentage ||
+                AssessmentCompletionPercentage != null &&
+                AssessmentCompletionPercentage.Equals(other.AssessmentCompletionPercentage)
             ) &&
             (
-                this.CompletionPercentage == other.CompletionPercentage ||
-                this.CompletionPercentage != null &&
-                this.CompletionPercentage.Equals(other.CompletionPercentage)
+                CompletionPercentage == other.CompletionPercentage ||
+                CompletionPercentage != null &&
+                CompletionPercentage.Equals(other.CompletionPercentage)
             ) &&
             (
-                this.Steps == other.Steps ||
-                this.Steps != null &&
-                this.Steps.SequenceEqual(other.Steps)
+                Steps == other.Steps ||
+                Steps != null &&
+                Steps.SequenceEqual(other.Steps)
             ) &&
             (
-                this.NextStep == other.NextStep ||
-                this.NextStep != null &&
-                this.NextStep.Equals(other.NextStep)
+                NextStep == other.NextStep ||
+                NextStep != null &&
+                NextStep.Equals(other.NextStep)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.DateRecommendedForCompletion == other.DateRecommendedForCompletion ||
-                this.DateRecommendedForCompletion != null &&
-                this.DateRecommendedForCompletion.Equals(other.DateRecommendedForCompletion)
+                DateRecommendedForCompletion == other.DateRecommendedForCompletion ||
+                DateRecommendedForCompletion != null &&
+                DateRecommendedForCompletion.Equals(other.DateRecommendedForCompletion)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.Module == other.Module ||
-                this.Module != null &&
-                this.Module.Equals(other.Module)
+                Module == other.Module ||
+                Module != null &&
+                Module.Equals(other.Module)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.AssessmentForm == other.AssessmentForm ||
-                this.AssessmentForm != null &&
-                this.AssessmentForm.Equals(other.AssessmentForm)
+                AssessmentForm == other.AssessmentForm ||
+                AssessmentForm != null &&
+                AssessmentForm.Equals(other.AssessmentForm)
             ) &&
             (
-                this.LengthInMinutes == other.LengthInMinutes ||
-                this.LengthInMinutes != null &&
-                this.LengthInMinutes.Equals(other.LengthInMinutes)
+                LengthInMinutes == other.LengthInMinutes ||
+                LengthInMinutes != null &&
+                LengthInMinutes.Equals(other.LengthInMinutes)
             );
     }
 
@@ -512,129 +512,129 @@ public partial class LearningAssignment : IEquatable<LearningAssignment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Assessment != null)
+            if (Assessment != null)
             {
-                hash = hash * 59 + this.Assessment.GetHashCode();
+                hash = hash * 59 + Assessment.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.IsOverdue != null)
+            if (IsOverdue != null)
             {
-                hash = hash * 59 + this.IsOverdue.GetHashCode();
+                hash = hash * 59 + IsOverdue.GetHashCode();
             }
 
-            if (this.PercentageScore != null)
+            if (PercentageScore != null)
             {
-                hash = hash * 59 + this.PercentageScore.GetHashCode();
+                hash = hash * 59 + PercentageScore.GetHashCode();
             }
 
-            if (this.AssessmentPercentageScore != null)
+            if (AssessmentPercentageScore != null)
             {
-                hash = hash * 59 + this.AssessmentPercentageScore.GetHashCode();
+                hash = hash * 59 + AssessmentPercentageScore.GetHashCode();
             }
 
-            if (this.IsRule != null)
+            if (IsRule != null)
             {
-                hash = hash * 59 + this.IsRule.GetHashCode();
+                hash = hash * 59 + IsRule.GetHashCode();
             }
 
-            if (this.IsManual != null)
+            if (IsManual != null)
             {
-                hash = hash * 59 + this.IsManual.GetHashCode();
+                hash = hash * 59 + IsManual.GetHashCode();
             }
 
-            if (this.IsPassed != null)
+            if (IsPassed != null)
             {
-                hash = hash * 59 + this.IsPassed.GetHashCode();
+                hash = hash * 59 + IsPassed.GetHashCode();
             }
 
-            if (this.IsLatest != null)
+            if (IsLatest != null)
             {
-                hash = hash * 59 + this.IsLatest.GetHashCode();
+                hash = hash * 59 + IsLatest.GetHashCode();
             }
 
-            if (this.AssessmentCompletionPercentage != null)
+            if (AssessmentCompletionPercentage != null)
             {
-                hash = hash * 59 + this.AssessmentCompletionPercentage.GetHashCode();
+                hash = hash * 59 + AssessmentCompletionPercentage.GetHashCode();
             }
 
-            if (this.CompletionPercentage != null)
+            if (CompletionPercentage != null)
             {
-                hash = hash * 59 + this.CompletionPercentage.GetHashCode();
+                hash = hash * 59 + CompletionPercentage.GetHashCode();
             }
 
-            if (this.Steps != null)
+            if (Steps != null)
             {
-                hash = hash * 59 + this.Steps.GetHashCode();
+                hash = hash * 59 + Steps.GetHashCode();
             }
 
-            if (this.NextStep != null)
+            if (NextStep != null)
             {
-                hash = hash * 59 + this.NextStep.GetHashCode();
+                hash = hash * 59 + NextStep.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.DateRecommendedForCompletion != null)
+            if (DateRecommendedForCompletion != null)
             {
-                hash = hash * 59 + this.DateRecommendedForCompletion.GetHashCode();
+                hash = hash * 59 + DateRecommendedForCompletion.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.Module != null)
+            if (Module != null)
             {
-                hash = hash * 59 + this.Module.GetHashCode();
+                hash = hash * 59 + Module.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.AssessmentForm != null)
+            if (AssessmentForm != null)
             {
-                hash = hash * 59 + this.AssessmentForm.GetHashCode();
+                hash = hash * 59 + AssessmentForm.GetHashCode();
             }
 
-            if (this.LengthInMinutes != null)
+            if (LengthInMinutes != null)
             {
-                hash = hash * 59 + this.LengthInMinutes.GetHashCode();
+                hash = hash * 59 + LengthInMinutes.GetHashCode();
             }
 
             return hash;

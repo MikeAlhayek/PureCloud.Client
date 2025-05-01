@@ -331,7 +331,7 @@ public partial class Format : IEquatable<Format>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Format);
+        return Equals(obj as Format);
     }
 
     /// <summary>
@@ -349,9 +349,9 @@ public partial class Format : IEquatable<Format>
 
         return true &&
             (
-                this.Flags == other.Flags ||
-                this.Flags != null &&
-                this.Flags.SequenceEqual(other.Flags)
+                Flags == other.Flags ||
+                Flags != null &&
+                Flags.SequenceEqual(other.Flags)
             );
     }
 
@@ -366,9 +366,9 @@ public partial class Format : IEquatable<Format>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Flags != null)
+            if (Flags != null)
             {
-                hash = hash * 59 + this.Flags.GetHashCode();
+                hash = hash * 59 + Flags.GetHashCode();
             }
 
             return hash;

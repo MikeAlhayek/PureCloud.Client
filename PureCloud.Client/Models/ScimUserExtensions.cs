@@ -77,7 +77,7 @@ public partial class ScimUserExtensions : IEquatable<ScimUserExtensions>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimUserExtensions);
+        return Equals(obj as ScimUserExtensions);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ScimUserExtensions : IEquatable<ScimUserExtensions>
 
         return true &&
             (
-                this.RoutingSkills == other.RoutingSkills ||
-                this.RoutingSkills != null &&
-                this.RoutingSkills.SequenceEqual(other.RoutingSkills)
+                RoutingSkills == other.RoutingSkills ||
+                RoutingSkills != null &&
+                RoutingSkills.SequenceEqual(other.RoutingSkills)
             ) &&
             (
-                this.RoutingLanguages == other.RoutingLanguages ||
-                this.RoutingLanguages != null &&
-                this.RoutingLanguages.SequenceEqual(other.RoutingLanguages)
+                RoutingLanguages == other.RoutingLanguages ||
+                RoutingLanguages != null &&
+                RoutingLanguages.SequenceEqual(other.RoutingLanguages)
             ) &&
             (
-                this.ExternalIds == other.ExternalIds ||
-                this.ExternalIds != null &&
-                this.ExternalIds.SequenceEqual(other.ExternalIds)
+                ExternalIds == other.ExternalIds ||
+                ExternalIds != null &&
+                ExternalIds.SequenceEqual(other.ExternalIds)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ScimUserExtensions : IEquatable<ScimUserExtensions>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RoutingSkills != null)
+            if (RoutingSkills != null)
             {
-                hash = hash * 59 + this.RoutingSkills.GetHashCode();
+                hash = hash * 59 + RoutingSkills.GetHashCode();
             }
 
-            if (this.RoutingLanguages != null)
+            if (RoutingLanguages != null)
             {
-                hash = hash * 59 + this.RoutingLanguages.GetHashCode();
+                hash = hash * 59 + RoutingLanguages.GetHashCode();
             }
 
-            if (this.ExternalIds != null)
+            if (ExternalIds != null)
             {
-                hash = hash * 59 + this.ExternalIds.GetHashCode();
+                hash = hash * 59 + ExternalIds.GetHashCode();
             }
 
             return hash;

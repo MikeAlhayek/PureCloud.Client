@@ -151,7 +151,7 @@ public partial class KnowledgeDocumentReq : IEquatable<KnowledgeDocumentReq>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeDocumentReq);
+        return Equals(obj as KnowledgeDocumentReq);
     }
 
     /// <summary>
@@ -169,49 +169,49 @@ public partial class KnowledgeDocumentReq : IEquatable<KnowledgeDocumentReq>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Title == other.Title ||
-                this.Title != null &&
-                this.Title.Equals(other.Title)
+                Title == other.Title ||
+                Title != null &&
+                Title.Equals(other.Title)
             ) &&
             (
-                this.Visible == other.Visible ||
-                this.Visible != null &&
-                this.Visible.Equals(other.Visible)
+                Visible == other.Visible ||
+                Visible != null &&
+                Visible.Equals(other.Visible)
             ) &&
             (
-                this.Alternatives == other.Alternatives ||
-                this.Alternatives != null &&
-                this.Alternatives.SequenceEqual(other.Alternatives)
+                Alternatives == other.Alternatives ||
+                Alternatives != null &&
+                Alternatives.SequenceEqual(other.Alternatives)
             ) &&
             (
-                this.CategoryId == other.CategoryId ||
-                this.CategoryId != null &&
-                this.CategoryId.Equals(other.CategoryId)
+                CategoryId == other.CategoryId ||
+                CategoryId != null &&
+                CategoryId.Equals(other.CategoryId)
             ) &&
             (
-                this.LabelIds == other.LabelIds ||
-                this.LabelIds != null &&
-                this.LabelIds.SequenceEqual(other.LabelIds)
+                LabelIds == other.LabelIds ||
+                LabelIds != null &&
+                LabelIds.SequenceEqual(other.LabelIds)
             ) &&
             (
-                this.ExternalId == other.ExternalId ||
-                this.ExternalId != null &&
-                this.ExternalId.Equals(other.ExternalId)
+                ExternalId == other.ExternalId ||
+                ExternalId != null &&
+                ExternalId.Equals(other.ExternalId)
             ) &&
             (
-                this.ExternalUrl == other.ExternalUrl ||
-                this.ExternalUrl != null &&
-                this.ExternalUrl.Equals(other.ExternalUrl)
+                ExternalUrl == other.ExternalUrl ||
+                ExternalUrl != null &&
+                ExternalUrl.Equals(other.ExternalUrl)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -226,49 +226,49 @@ public partial class KnowledgeDocumentReq : IEquatable<KnowledgeDocumentReq>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Title != null)
+            if (Title != null)
             {
-                hash = hash * 59 + this.Title.GetHashCode();
+                hash = hash * 59 + Title.GetHashCode();
             }
 
-            if (this.Visible != null)
+            if (Visible != null)
             {
-                hash = hash * 59 + this.Visible.GetHashCode();
+                hash = hash * 59 + Visible.GetHashCode();
             }
 
-            if (this.Alternatives != null)
+            if (Alternatives != null)
             {
-                hash = hash * 59 + this.Alternatives.GetHashCode();
+                hash = hash * 59 + Alternatives.GetHashCode();
             }
 
-            if (this.CategoryId != null)
+            if (CategoryId != null)
             {
-                hash = hash * 59 + this.CategoryId.GetHashCode();
+                hash = hash * 59 + CategoryId.GetHashCode();
             }
 
-            if (this.LabelIds != null)
+            if (LabelIds != null)
             {
-                hash = hash * 59 + this.LabelIds.GetHashCode();
+                hash = hash * 59 + LabelIds.GetHashCode();
             }
 
-            if (this.ExternalId != null)
+            if (ExternalId != null)
             {
-                hash = hash * 59 + this.ExternalId.GetHashCode();
+                hash = hash * 59 + ExternalId.GetHashCode();
             }
 
-            if (this.ExternalUrl != null)
+            if (ExternalUrl != null)
             {
-                hash = hash * 59 + this.ExternalUrl.GetHashCode();
+                hash = hash * 59 + ExternalUrl.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

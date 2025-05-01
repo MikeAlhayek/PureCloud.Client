@@ -103,7 +103,7 @@ public partial class DncPatchWhatsAppNumbersRequest : IEquatable<DncPatchWhatsAp
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DncPatchWhatsAppNumbersRequest);
+        return Equals(obj as DncPatchWhatsAppNumbersRequest);
     }
 
     /// <summary>
@@ -121,19 +121,19 @@ public partial class DncPatchWhatsAppNumbersRequest : IEquatable<DncPatchWhatsAp
 
         return true &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.WhatsAppNumbers == other.WhatsAppNumbers ||
-                this.WhatsAppNumbers != null &&
-                this.WhatsAppNumbers.SequenceEqual(other.WhatsAppNumbers)
+                WhatsAppNumbers == other.WhatsAppNumbers ||
+                WhatsAppNumbers != null &&
+                WhatsAppNumbers.SequenceEqual(other.WhatsAppNumbers)
             ) &&
             (
-                this.ExpirationDateTime == other.ExpirationDateTime ||
-                this.ExpirationDateTime != null &&
-                this.ExpirationDateTime.Equals(other.ExpirationDateTime)
+                ExpirationDateTime == other.ExpirationDateTime ||
+                ExpirationDateTime != null &&
+                ExpirationDateTime.Equals(other.ExpirationDateTime)
             );
     }
 
@@ -148,19 +148,19 @@ public partial class DncPatchWhatsAppNumbersRequest : IEquatable<DncPatchWhatsAp
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.WhatsAppNumbers != null)
+            if (WhatsAppNumbers != null)
             {
-                hash = hash * 59 + this.WhatsAppNumbers.GetHashCode();
+                hash = hash * 59 + WhatsAppNumbers.GetHashCode();
             }
 
-            if (this.ExpirationDateTime != null)
+            if (ExpirationDateTime != null)
             {
-                hash = hash * 59 + this.ExpirationDateTime.GetHashCode();
+                hash = hash * 59 + ExpirationDateTime.GetHashCode();
             }
 
             return hash;

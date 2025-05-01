@@ -89,7 +89,7 @@ public partial class UserProfilesInDateRange : IEquatable<UserProfilesInDateRang
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserProfilesInDateRange);
+        return Equals(obj as UserProfilesInDateRange);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class UserProfilesInDateRange : IEquatable<UserProfilesInDateRang
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.DateStartWorkday == other.DateStartWorkday ||
-                this.DateStartWorkday != null &&
-                this.DateStartWorkday.Equals(other.DateStartWorkday)
+                DateStartWorkday == other.DateStartWorkday ||
+                DateStartWorkday != null &&
+                DateStartWorkday.Equals(other.DateStartWorkday)
             ) &&
             (
-                this.DateEndWorkday == other.DateEndWorkday ||
-                this.DateEndWorkday != null &&
-                this.DateEndWorkday.Equals(other.DateEndWorkday)
+                DateEndWorkday == other.DateEndWorkday ||
+                DateEndWorkday != null &&
+                DateEndWorkday.Equals(other.DateEndWorkday)
             ) &&
             (
-                this.Profiles == other.Profiles ||
-                this.Profiles != null &&
-                this.Profiles.SequenceEqual(other.Profiles)
+                Profiles == other.Profiles ||
+                Profiles != null &&
+                Profiles.SequenceEqual(other.Profiles)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class UserProfilesInDateRange : IEquatable<UserProfilesInDateRang
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.DateStartWorkday != null)
+            if (DateStartWorkday != null)
             {
-                hash = hash * 59 + this.DateStartWorkday.GetHashCode();
+                hash = hash * 59 + DateStartWorkday.GetHashCode();
             }
 
-            if (this.DateEndWorkday != null)
+            if (DateEndWorkday != null)
             {
-                hash = hash * 59 + this.DateEndWorkday.GetHashCode();
+                hash = hash * 59 + DateEndWorkday.GetHashCode();
             }
 
-            if (this.Profiles != null)
+            if (Profiles != null)
             {
-                hash = hash * 59 + this.Profiles.GetHashCode();
+                hash = hash * 59 + Profiles.GetHashCode();
             }
 
             return hash;

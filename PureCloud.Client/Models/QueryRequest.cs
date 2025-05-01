@@ -129,7 +129,7 @@ public partial class QueryRequest : IEquatable<QueryRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueryRequest);
+        return Equals(obj as QueryRequest);
     }
 
     /// <summary>
@@ -147,44 +147,44 @@ public partial class QueryRequest : IEquatable<QueryRequest>
 
         return true &&
             (
-                this.QueryPhrase == other.QueryPhrase ||
-                this.QueryPhrase != null &&
-                this.QueryPhrase.Equals(other.QueryPhrase)
+                QueryPhrase == other.QueryPhrase ||
+                QueryPhrase != null &&
+                QueryPhrase.Equals(other.QueryPhrase)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.FacetNameRequests == other.FacetNameRequests ||
-                this.FacetNameRequests != null &&
-                this.FacetNameRequests.SequenceEqual(other.FacetNameRequests)
+                FacetNameRequests == other.FacetNameRequests ||
+                FacetNameRequests != null &&
+                FacetNameRequests.SequenceEqual(other.FacetNameRequests)
             ) &&
             (
-                this.Sort == other.Sort ||
-                this.Sort != null &&
-                this.Sort.SequenceEqual(other.Sort)
+                Sort == other.Sort ||
+                Sort != null &&
+                Sort.SequenceEqual(other.Sort)
             ) &&
             (
-                this.Filters == other.Filters ||
-                this.Filters != null &&
-                this.Filters.SequenceEqual(other.Filters)
+                Filters == other.Filters ||
+                Filters != null &&
+                Filters.SequenceEqual(other.Filters)
             ) &&
             (
-                this.AttributeFilters == other.AttributeFilters ||
-                this.AttributeFilters != null &&
-                this.AttributeFilters.SequenceEqual(other.AttributeFilters)
+                AttributeFilters == other.AttributeFilters ||
+                AttributeFilters != null &&
+                AttributeFilters.SequenceEqual(other.AttributeFilters)
             ) &&
             (
-                this.IncludeShares == other.IncludeShares ||
-                this.IncludeShares != null &&
-                this.IncludeShares.Equals(other.IncludeShares)
+                IncludeShares == other.IncludeShares ||
+                IncludeShares != null &&
+                IncludeShares.Equals(other.IncludeShares)
             );
     }
 
@@ -199,44 +199,44 @@ public partial class QueryRequest : IEquatable<QueryRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueryPhrase != null)
+            if (QueryPhrase != null)
             {
-                hash = hash * 59 + this.QueryPhrase.GetHashCode();
+                hash = hash * 59 + QueryPhrase.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.FacetNameRequests != null)
+            if (FacetNameRequests != null)
             {
-                hash = hash * 59 + this.FacetNameRequests.GetHashCode();
+                hash = hash * 59 + FacetNameRequests.GetHashCode();
             }
 
-            if (this.Sort != null)
+            if (Sort != null)
             {
-                hash = hash * 59 + this.Sort.GetHashCode();
+                hash = hash * 59 + Sort.GetHashCode();
             }
 
-            if (this.Filters != null)
+            if (Filters != null)
             {
-                hash = hash * 59 + this.Filters.GetHashCode();
+                hash = hash * 59 + Filters.GetHashCode();
             }
 
-            if (this.AttributeFilters != null)
+            if (AttributeFilters != null)
             {
-                hash = hash * 59 + this.AttributeFilters.GetHashCode();
+                hash = hash * 59 + AttributeFilters.GetHashCode();
             }
 
-            if (this.IncludeShares != null)
+            if (IncludeShares != null)
             {
-                hash = hash * 59 + this.IncludeShares.GetHashCode();
+                hash = hash * 59 + IncludeShares.GetHashCode();
             }
 
             return hash;

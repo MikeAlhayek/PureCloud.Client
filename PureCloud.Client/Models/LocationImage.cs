@@ -64,7 +64,7 @@ public partial class LocationImage : IEquatable<LocationImage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LocationImage);
+        return Equals(obj as LocationImage);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class LocationImage : IEquatable<LocationImage>
 
         return true &&
             (
-                this.Resolution == other.Resolution ||
-                this.Resolution != null &&
-                this.Resolution.Equals(other.Resolution)
+                Resolution == other.Resolution ||
+                Resolution != null &&
+                Resolution.Equals(other.Resolution)
             ) &&
             (
-                this.ImageUri == other.ImageUri ||
-                this.ImageUri != null &&
-                this.ImageUri.Equals(other.ImageUri)
+                ImageUri == other.ImageUri ||
+                ImageUri != null &&
+                ImageUri.Equals(other.ImageUri)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class LocationImage : IEquatable<LocationImage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Resolution != null)
+            if (Resolution != null)
             {
-                hash = hash * 59 + this.Resolution.GetHashCode();
+                hash = hash * 59 + Resolution.GetHashCode();
             }
 
-            if (this.ImageUri != null)
+            if (ImageUri != null)
             {
-                hash = hash * 59 + this.ImageUri.GetHashCode();
+                hash = hash * 59 + ImageUri.GetHashCode();
             }
 
             return hash;

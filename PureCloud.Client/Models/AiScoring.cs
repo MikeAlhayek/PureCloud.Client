@@ -120,7 +120,7 @@ public partial class AiScoring : IEquatable<AiScoring>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AiScoring);
+        return Equals(obj as AiScoring);
     }
 
     /// <summary>
@@ -138,19 +138,19 @@ public partial class AiScoring : IEquatable<AiScoring>
 
         return true &&
             (
-                this.FailureType == other.FailureType ||
-                this.FailureType != null &&
-                this.FailureType.Equals(other.FailureType)
+                FailureType == other.FailureType ||
+                FailureType != null &&
+                FailureType.Equals(other.FailureType)
             ) &&
             (
-                this.Pending == other.Pending ||
-                this.Pending != null &&
-                this.Pending.Equals(other.Pending)
+                Pending == other.Pending ||
+                Pending != null &&
+                Pending.Equals(other.Pending)
             ) &&
             (
-                this.DateLastChanged == other.DateLastChanged ||
-                this.DateLastChanged != null &&
-                this.DateLastChanged.Equals(other.DateLastChanged)
+                DateLastChanged == other.DateLastChanged ||
+                DateLastChanged != null &&
+                DateLastChanged.Equals(other.DateLastChanged)
             );
     }
 
@@ -165,19 +165,19 @@ public partial class AiScoring : IEquatable<AiScoring>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FailureType != null)
+            if (FailureType != null)
             {
-                hash = hash * 59 + this.FailureType.GetHashCode();
+                hash = hash * 59 + FailureType.GetHashCode();
             }
 
-            if (this.Pending != null)
+            if (Pending != null)
             {
-                hash = hash * 59 + this.Pending.GetHashCode();
+                hash = hash * 59 + Pending.GetHashCode();
             }
 
-            if (this.DateLastChanged != null)
+            if (DateLastChanged != null)
             {
-                hash = hash * 59 + this.DateLastChanged.GetHashCode();
+                hash = hash * 59 + DateLastChanged.GetHashCode();
             }
 
             return hash;

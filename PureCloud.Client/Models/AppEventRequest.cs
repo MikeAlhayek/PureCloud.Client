@@ -190,7 +190,7 @@ public partial class AppEventRequest : IEquatable<AppEventRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AppEventRequest);
+        return Equals(obj as AppEventRequest);
     }
 
     /// <summary>
@@ -208,64 +208,64 @@ public partial class AppEventRequest : IEquatable<AppEventRequest>
 
         return true &&
             (
-                this.EventName == other.EventName ||
-                this.EventName != null &&
-                this.EventName.Equals(other.EventName)
+                EventName == other.EventName ||
+                EventName != null &&
+                EventName.Equals(other.EventName)
             ) &&
             (
-                this.ScreenName == other.ScreenName ||
-                this.ScreenName != null &&
-                this.ScreenName.Equals(other.ScreenName)
+                ScreenName == other.ScreenName ||
+                ScreenName != null &&
+                ScreenName.Equals(other.ScreenName)
             ) &&
             (
-                this.App == other.App ||
-                this.App != null &&
-                this.App.Equals(other.App)
+                App == other.App ||
+                App != null &&
+                App.Equals(other.App)
             ) &&
             (
-                this.Device == other.Device ||
-                this.Device != null &&
-                this.Device.Equals(other.Device)
+                Device == other.Device ||
+                Device != null &&
+                Device.Equals(other.Device)
             ) &&
             (
-                this.SdkLibrary == other.SdkLibrary ||
-                this.SdkLibrary != null &&
-                this.SdkLibrary.Equals(other.SdkLibrary)
+                SdkLibrary == other.SdkLibrary ||
+                SdkLibrary != null &&
+                SdkLibrary.Equals(other.SdkLibrary)
             ) &&
             (
-                this.NetworkConnectivity == other.NetworkConnectivity ||
-                this.NetworkConnectivity != null &&
-                this.NetworkConnectivity.Equals(other.NetworkConnectivity)
+                NetworkConnectivity == other.NetworkConnectivity ||
+                NetworkConnectivity != null &&
+                NetworkConnectivity.Equals(other.NetworkConnectivity)
             ) &&
             (
-                this.ReferrerUrl == other.ReferrerUrl ||
-                this.ReferrerUrl != null &&
-                this.ReferrerUrl.Equals(other.ReferrerUrl)
+                ReferrerUrl == other.ReferrerUrl ||
+                ReferrerUrl != null &&
+                ReferrerUrl.Equals(other.ReferrerUrl)
             ) &&
             (
-                this.SearchQuery == other.SearchQuery ||
-                this.SearchQuery != null &&
-                this.SearchQuery.Equals(other.SearchQuery)
+                SearchQuery == other.SearchQuery ||
+                SearchQuery != null &&
+                SearchQuery.Equals(other.SearchQuery)
             ) &&
             (
-                this.Attributes == other.Attributes ||
-                this.Attributes != null &&
-                this.Attributes.SequenceEqual(other.Attributes)
+                Attributes == other.Attributes ||
+                Attributes != null &&
+                Attributes.SequenceEqual(other.Attributes)
             ) &&
             (
-                this.Traits == other.Traits ||
-                this.Traits != null &&
-                this.Traits.SequenceEqual(other.Traits)
+                Traits == other.Traits ||
+                Traits != null &&
+                Traits.SequenceEqual(other.Traits)
             ) &&
             (
-                this.CustomerCookieId == other.CustomerCookieId ||
-                this.CustomerCookieId != null &&
-                this.CustomerCookieId.Equals(other.CustomerCookieId)
+                CustomerCookieId == other.CustomerCookieId ||
+                CustomerCookieId != null &&
+                CustomerCookieId.Equals(other.CustomerCookieId)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             );
     }
 
@@ -280,64 +280,64 @@ public partial class AppEventRequest : IEquatable<AppEventRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EventName != null)
+            if (EventName != null)
             {
-                hash = hash * 59 + this.EventName.GetHashCode();
+                hash = hash * 59 + EventName.GetHashCode();
             }
 
-            if (this.ScreenName != null)
+            if (ScreenName != null)
             {
-                hash = hash * 59 + this.ScreenName.GetHashCode();
+                hash = hash * 59 + ScreenName.GetHashCode();
             }
 
-            if (this.App != null)
+            if (App != null)
             {
-                hash = hash * 59 + this.App.GetHashCode();
+                hash = hash * 59 + App.GetHashCode();
             }
 
-            if (this.Device != null)
+            if (Device != null)
             {
-                hash = hash * 59 + this.Device.GetHashCode();
+                hash = hash * 59 + Device.GetHashCode();
             }
 
-            if (this.SdkLibrary != null)
+            if (SdkLibrary != null)
             {
-                hash = hash * 59 + this.SdkLibrary.GetHashCode();
+                hash = hash * 59 + SdkLibrary.GetHashCode();
             }
 
-            if (this.NetworkConnectivity != null)
+            if (NetworkConnectivity != null)
             {
-                hash = hash * 59 + this.NetworkConnectivity.GetHashCode();
+                hash = hash * 59 + NetworkConnectivity.GetHashCode();
             }
 
-            if (this.ReferrerUrl != null)
+            if (ReferrerUrl != null)
             {
-                hash = hash * 59 + this.ReferrerUrl.GetHashCode();
+                hash = hash * 59 + ReferrerUrl.GetHashCode();
             }
 
-            if (this.SearchQuery != null)
+            if (SearchQuery != null)
             {
-                hash = hash * 59 + this.SearchQuery.GetHashCode();
+                hash = hash * 59 + SearchQuery.GetHashCode();
             }
 
-            if (this.Attributes != null)
+            if (Attributes != null)
             {
-                hash = hash * 59 + this.Attributes.GetHashCode();
+                hash = hash * 59 + Attributes.GetHashCode();
             }
 
-            if (this.Traits != null)
+            if (Traits != null)
             {
-                hash = hash * 59 + this.Traits.GetHashCode();
+                hash = hash * 59 + Traits.GetHashCode();
             }
 
-            if (this.CustomerCookieId != null)
+            if (CustomerCookieId != null)
             {
-                hash = hash * 59 + this.CustomerCookieId.GetHashCode();
+                hash = hash * 59 + CustomerCookieId.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
             return hash;

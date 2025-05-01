@@ -53,7 +53,7 @@ public partial class KnowledgeParseJobRequestPatch : IEquatable<KnowledgeParseJo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeParseJobRequestPatch);
+        return Equals(obj as KnowledgeParseJobRequestPatch);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class KnowledgeParseJobRequestPatch : IEquatable<KnowledgeParseJo
 
         return true &&
             (
-                this.Hints == other.Hints ||
-                this.Hints != null &&
-                this.Hints.SequenceEqual(other.Hints)
+                Hints == other.Hints ||
+                Hints != null &&
+                Hints.SequenceEqual(other.Hints)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class KnowledgeParseJobRequestPatch : IEquatable<KnowledgeParseJo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Hints != null)
+            if (Hints != null)
             {
-                hash = hash * 59 + this.Hints.GetHashCode();
+                hash = hash * 59 + Hints.GetHashCode();
             }
 
             return hash;

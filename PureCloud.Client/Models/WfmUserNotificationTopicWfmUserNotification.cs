@@ -199,7 +199,7 @@ public partial class WfmUserNotificationTopicWfmUserNotification : IEquatable<Wf
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmUserNotificationTopicWfmUserNotification);
+        return Equals(obj as WfmUserNotificationTopicWfmUserNotification);
     }
 
     /// <summary>
@@ -217,59 +217,59 @@ public partial class WfmUserNotificationTopicWfmUserNotification : IEquatable<Wf
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.MutableGroupId == other.MutableGroupId ||
-                this.MutableGroupId != null &&
-                this.MutableGroupId.Equals(other.MutableGroupId)
+                MutableGroupId == other.MutableGroupId ||
+                MutableGroupId != null &&
+                MutableGroupId.Equals(other.MutableGroupId)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ShiftTrade == other.ShiftTrade ||
-                this.ShiftTrade != null &&
-                this.ShiftTrade.Equals(other.ShiftTrade)
+                ShiftTrade == other.ShiftTrade ||
+                ShiftTrade != null &&
+                ShiftTrade.Equals(other.ShiftTrade)
             ) &&
             (
-                this.TimeOffRequest == other.TimeOffRequest ||
-                this.TimeOffRequest != null &&
-                this.TimeOffRequest.Equals(other.TimeOffRequest)
+                TimeOffRequest == other.TimeOffRequest ||
+                TimeOffRequest != null &&
+                TimeOffRequest.Equals(other.TimeOffRequest)
             ) &&
             (
-                this.AdherenceExplanation == other.AdherenceExplanation ||
-                this.AdherenceExplanation != null &&
-                this.AdherenceExplanation.Equals(other.AdherenceExplanation)
+                AdherenceExplanation == other.AdherenceExplanation ||
+                AdherenceExplanation != null &&
+                AdherenceExplanation.Equals(other.AdherenceExplanation)
             ) &&
             (
-                this.AlternativeShift == other.AlternativeShift ||
-                this.AlternativeShift != null &&
-                this.AlternativeShift.Equals(other.AlternativeShift)
+                AlternativeShift == other.AlternativeShift ||
+                AlternativeShift != null &&
+                AlternativeShift.Equals(other.AlternativeShift)
             ) &&
             (
-                this.AgentNotification == other.AgentNotification ||
-                this.AgentNotification != null &&
-                this.AgentNotification.Equals(other.AgentNotification)
+                AgentNotification == other.AgentNotification ||
+                AgentNotification != null &&
+                AgentNotification.Equals(other.AgentNotification)
             ) &&
             (
-                this.OtherNotificationIdsInGroup == other.OtherNotificationIdsInGroup ||
-                this.OtherNotificationIdsInGroup != null &&
-                this.OtherNotificationIdsInGroup.SequenceEqual(other.OtherNotificationIdsInGroup)
+                OtherNotificationIdsInGroup == other.OtherNotificationIdsInGroup ||
+                OtherNotificationIdsInGroup != null &&
+                OtherNotificationIdsInGroup.SequenceEqual(other.OtherNotificationIdsInGroup)
             ) &&
             (
-                this.MarkedAsRead == other.MarkedAsRead ||
-                this.MarkedAsRead != null &&
-                this.MarkedAsRead.Equals(other.MarkedAsRead)
+                MarkedAsRead == other.MarkedAsRead ||
+                MarkedAsRead != null &&
+                MarkedAsRead.Equals(other.MarkedAsRead)
             );
     }
 
@@ -284,59 +284,59 @@ public partial class WfmUserNotificationTopicWfmUserNotification : IEquatable<Wf
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.MutableGroupId != null)
+            if (MutableGroupId != null)
             {
-                hash = hash * 59 + this.MutableGroupId.GetHashCode();
+                hash = hash * 59 + MutableGroupId.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ShiftTrade != null)
+            if (ShiftTrade != null)
             {
-                hash = hash * 59 + this.ShiftTrade.GetHashCode();
+                hash = hash * 59 + ShiftTrade.GetHashCode();
             }
 
-            if (this.TimeOffRequest != null)
+            if (TimeOffRequest != null)
             {
-                hash = hash * 59 + this.TimeOffRequest.GetHashCode();
+                hash = hash * 59 + TimeOffRequest.GetHashCode();
             }
 
-            if (this.AdherenceExplanation != null)
+            if (AdherenceExplanation != null)
             {
-                hash = hash * 59 + this.AdherenceExplanation.GetHashCode();
+                hash = hash * 59 + AdherenceExplanation.GetHashCode();
             }
 
-            if (this.AlternativeShift != null)
+            if (AlternativeShift != null)
             {
-                hash = hash * 59 + this.AlternativeShift.GetHashCode();
+                hash = hash * 59 + AlternativeShift.GetHashCode();
             }
 
-            if (this.AgentNotification != null)
+            if (AgentNotification != null)
             {
-                hash = hash * 59 + this.AgentNotification.GetHashCode();
+                hash = hash * 59 + AgentNotification.GetHashCode();
             }
 
-            if (this.OtherNotificationIdsInGroup != null)
+            if (OtherNotificationIdsInGroup != null)
             {
-                hash = hash * 59 + this.OtherNotificationIdsInGroup.GetHashCode();
+                hash = hash * 59 + OtherNotificationIdsInGroup.GetHashCode();
             }
 
-            if (this.MarkedAsRead != null)
+            if (MarkedAsRead != null)
             {
-                hash = hash * 59 + this.MarkedAsRead.GetHashCode();
+                hash = hash * 59 + MarkedAsRead.GetHashCode();
             }
 
             return hash;

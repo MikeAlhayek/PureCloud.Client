@@ -267,7 +267,7 @@ public partial class CommonRule : IEquatable<CommonRule>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CommonRule);
+        return Equals(obj as CommonRule);
     }
 
     /// <summary>
@@ -285,79 +285,79 @@ public partial class CommonRule : IEquatable<CommonRule>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.Notifications == other.Notifications ||
-                this.Notifications != null &&
-                this.Notifications.SequenceEqual(other.Notifications)
+                Notifications == other.Notifications ||
+                Notifications != null &&
+                Notifications.SequenceEqual(other.Notifications)
             ) &&
             (
-                this.SendExitingAlarmNotifications == other.SendExitingAlarmNotifications ||
-                this.SendExitingAlarmNotifications != null &&
-                this.SendExitingAlarmNotifications.Equals(other.SendExitingAlarmNotifications)
+                SendExitingAlarmNotifications == other.SendExitingAlarmNotifications ||
+                SendExitingAlarmNotifications != null &&
+                SendExitingAlarmNotifications.Equals(other.SendExitingAlarmNotifications)
             ) &&
             (
-                this.WaitBetweenNotificationMs == other.WaitBetweenNotificationMs ||
-                this.WaitBetweenNotificationMs != null &&
-                this.WaitBetweenNotificationMs.Equals(other.WaitBetweenNotificationMs)
+                WaitBetweenNotificationMs == other.WaitBetweenNotificationMs ||
+                WaitBetweenNotificationMs != null &&
+                WaitBetweenNotificationMs.Equals(other.WaitBetweenNotificationMs)
             ) &&
             (
-                this.Conditions == other.Conditions ||
-                this.Conditions != null &&
-                this.Conditions.Equals(other.Conditions)
+                Conditions == other.Conditions ||
+                Conditions != null &&
+                Conditions.Equals(other.Conditions)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.InAlarm == other.InAlarm ||
-                this.InAlarm != null &&
-                this.InAlarm.Equals(other.InAlarm)
+                InAlarm == other.InAlarm ||
+                InAlarm != null &&
+                InAlarm.Equals(other.InAlarm)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateLastModified == other.DateLastModified ||
-                this.DateLastModified != null &&
-                this.DateLastModified.Equals(other.DateLastModified)
+                DateLastModified == other.DateLastModified ||
+                DateLastModified != null &&
+                DateLastModified.Equals(other.DateLastModified)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -372,79 +372,79 @@ public partial class CommonRule : IEquatable<CommonRule>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.Notifications != null)
+            if (Notifications != null)
             {
-                hash = hash * 59 + this.Notifications.GetHashCode();
+                hash = hash * 59 + Notifications.GetHashCode();
             }
 
-            if (this.SendExitingAlarmNotifications != null)
+            if (SendExitingAlarmNotifications != null)
             {
-                hash = hash * 59 + this.SendExitingAlarmNotifications.GetHashCode();
+                hash = hash * 59 + SendExitingAlarmNotifications.GetHashCode();
             }
 
-            if (this.WaitBetweenNotificationMs != null)
+            if (WaitBetweenNotificationMs != null)
             {
-                hash = hash * 59 + this.WaitBetweenNotificationMs.GetHashCode();
+                hash = hash * 59 + WaitBetweenNotificationMs.GetHashCode();
             }
 
-            if (this.Conditions != null)
+            if (Conditions != null)
             {
-                hash = hash * 59 + this.Conditions.GetHashCode();
+                hash = hash * 59 + Conditions.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.InAlarm != null)
+            if (InAlarm != null)
             {
-                hash = hash * 59 + this.InAlarm.GetHashCode();
+                hash = hash * 59 + InAlarm.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateLastModified != null)
+            if (DateLastModified != null)
             {
-                hash = hash * 59 + this.DateLastModified.GetHashCode();
+                hash = hash * 59 + DateLastModified.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

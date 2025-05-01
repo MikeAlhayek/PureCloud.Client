@@ -70,7 +70,7 @@ public partial class AllTimePoints : IEquatable<AllTimePoints>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AllTimePoints);
+        return Equals(obj as AllTimePoints);
     }
 
     /// <summary>
@@ -88,19 +88,19 @@ public partial class AllTimePoints : IEquatable<AllTimePoints>
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.DateEndWorkday == other.DateEndWorkday ||
-                this.DateEndWorkday != null &&
-                this.DateEndWorkday.Equals(other.DateEndWorkday)
+                DateEndWorkday == other.DateEndWorkday ||
+                DateEndWorkday != null &&
+                DateEndWorkday.Equals(other.DateEndWorkday)
             ) &&
             (
-                this._AllTimePoints == other._AllTimePoints ||
-                this._AllTimePoints != null &&
-                this._AllTimePoints.Equals(other._AllTimePoints)
+                _AllTimePoints == other._AllTimePoints ||
+                _AllTimePoints != null &&
+                _AllTimePoints.Equals(other._AllTimePoints)
             );
     }
 
@@ -115,19 +115,19 @@ public partial class AllTimePoints : IEquatable<AllTimePoints>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.DateEndWorkday != null)
+            if (DateEndWorkday != null)
             {
-                hash = hash * 59 + this.DateEndWorkday.GetHashCode();
+                hash = hash * 59 + DateEndWorkday.GetHashCode();
             }
 
-            if (this._AllTimePoints != null)
+            if (_AllTimePoints != null)
             {
-                hash = hash * 59 + this._AllTimePoints.GetHashCode();
+                hash = hash * 59 + _AllTimePoints.GetHashCode();
             }
 
             return hash;

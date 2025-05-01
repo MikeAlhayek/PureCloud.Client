@@ -249,7 +249,7 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ImportTemplate);
+        return Equals(obj as ImportTemplate);
     }
 
     /// <summary>
@@ -267,69 +267,69 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.ContactListTemplate == other.ContactListTemplate ||
-                this.ContactListTemplate != null &&
-                this.ContactListTemplate.Equals(other.ContactListTemplate)
+                ContactListTemplate == other.ContactListTemplate ||
+                ContactListTemplate != null &&
+                ContactListTemplate.Equals(other.ContactListTemplate)
             ) &&
             (
-                this.ContactListFilter == other.ContactListFilter ||
-                this.ContactListFilter != null &&
-                this.ContactListFilter.Equals(other.ContactListFilter)
+                ContactListFilter == other.ContactListFilter ||
+                ContactListFilter != null &&
+                ContactListFilter.Equals(other.ContactListFilter)
             ) &&
             (
-                this.UseSplittingCriteria == other.UseSplittingCriteria ||
-                this.UseSplittingCriteria != null &&
-                this.UseSplittingCriteria.Equals(other.UseSplittingCriteria)
+                UseSplittingCriteria == other.UseSplittingCriteria ||
+                UseSplittingCriteria != null &&
+                UseSplittingCriteria.Equals(other.UseSplittingCriteria)
             ) &&
             (
-                this.SplittingInformation == other.SplittingInformation ||
-                this.SplittingInformation != null &&
-                this.SplittingInformation.Equals(other.SplittingInformation)
+                SplittingInformation == other.SplittingInformation ||
+                SplittingInformation != null &&
+                SplittingInformation.Equals(other.SplittingInformation)
             ) &&
             (
-                this.ListNameFormat == other.ListNameFormat ||
-                this.ListNameFormat != null &&
-                this.ListNameFormat.Equals(other.ListNameFormat)
+                ListNameFormat == other.ListNameFormat ||
+                ListNameFormat != null &&
+                ListNameFormat.Equals(other.ListNameFormat)
             ) &&
             (
-                this.CustomListNameFormatValue == other.CustomListNameFormatValue ||
-                this.CustomListNameFormatValue != null &&
-                this.CustomListNameFormatValue.Equals(other.CustomListNameFormatValue)
+                CustomListNameFormatValue == other.CustomListNameFormatValue ||
+                CustomListNameFormatValue != null &&
+                CustomListNameFormatValue.Equals(other.CustomListNameFormatValue)
             ) &&
             (
-                this.ImportStatus == other.ImportStatus ||
-                this.ImportStatus != null &&
-                this.ImportStatus.Equals(other.ImportStatus)
+                ImportStatus == other.ImportStatus ||
+                ImportStatus != null &&
+                ImportStatus.Equals(other.ImportStatus)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -344,69 +344,69 @@ public partial class ImportTemplate : IEquatable<ImportTemplate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.ContactListTemplate != null)
+            if (ContactListTemplate != null)
             {
-                hash = hash * 59 + this.ContactListTemplate.GetHashCode();
+                hash = hash * 59 + ContactListTemplate.GetHashCode();
             }
 
-            if (this.ContactListFilter != null)
+            if (ContactListFilter != null)
             {
-                hash = hash * 59 + this.ContactListFilter.GetHashCode();
+                hash = hash * 59 + ContactListFilter.GetHashCode();
             }
 
-            if (this.UseSplittingCriteria != null)
+            if (UseSplittingCriteria != null)
             {
-                hash = hash * 59 + this.UseSplittingCriteria.GetHashCode();
+                hash = hash * 59 + UseSplittingCriteria.GetHashCode();
             }
 
-            if (this.SplittingInformation != null)
+            if (SplittingInformation != null)
             {
-                hash = hash * 59 + this.SplittingInformation.GetHashCode();
+                hash = hash * 59 + SplittingInformation.GetHashCode();
             }
 
-            if (this.ListNameFormat != null)
+            if (ListNameFormat != null)
             {
-                hash = hash * 59 + this.ListNameFormat.GetHashCode();
+                hash = hash * 59 + ListNameFormat.GetHashCode();
             }
 
-            if (this.CustomListNameFormatValue != null)
+            if (CustomListNameFormatValue != null)
             {
-                hash = hash * 59 + this.CustomListNameFormatValue.GetHashCode();
+                hash = hash * 59 + CustomListNameFormatValue.GetHashCode();
             }
 
-            if (this.ImportStatus != null)
+            if (ImportStatus != null)
             {
-                hash = hash * 59 + this.ImportStatus.GetHashCode();
+                hash = hash * 59 + ImportStatus.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

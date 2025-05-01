@@ -619,7 +619,7 @@ public partial class CreateQueueRequest : IEquatable<CreateQueueRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateQueueRequest);
+        return Equals(obj as CreateQueueRequest);
     }
 
     /// <summary>
@@ -637,209 +637,209 @@ public partial class CreateQueueRequest : IEquatable<CreateQueueRequest>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.MemberCount == other.MemberCount ||
-                this.MemberCount != null &&
-                this.MemberCount.Equals(other.MemberCount)
+                MemberCount == other.MemberCount ||
+                MemberCount != null &&
+                MemberCount.Equals(other.MemberCount)
             ) &&
             (
-                this.UserMemberCount == other.UserMemberCount ||
-                this.UserMemberCount != null &&
-                this.UserMemberCount.Equals(other.UserMemberCount)
+                UserMemberCount == other.UserMemberCount ||
+                UserMemberCount != null &&
+                UserMemberCount.Equals(other.UserMemberCount)
             ) &&
             (
-                this.JoinedMemberCount == other.JoinedMemberCount ||
-                this.JoinedMemberCount != null &&
-                this.JoinedMemberCount.Equals(other.JoinedMemberCount)
+                JoinedMemberCount == other.JoinedMemberCount ||
+                JoinedMemberCount != null &&
+                JoinedMemberCount.Equals(other.JoinedMemberCount)
             ) &&
             (
-                this.MediaSettings == other.MediaSettings ||
-                this.MediaSettings != null &&
-                this.MediaSettings.Equals(other.MediaSettings)
+                MediaSettings == other.MediaSettings ||
+                MediaSettings != null &&
+                MediaSettings.Equals(other.MediaSettings)
             ) &&
             (
-                this.RoutingRules == other.RoutingRules ||
-                this.RoutingRules != null &&
-                this.RoutingRules.SequenceEqual(other.RoutingRules)
+                RoutingRules == other.RoutingRules ||
+                RoutingRules != null &&
+                RoutingRules.SequenceEqual(other.RoutingRules)
             ) &&
             (
-                this.ConditionalGroupRouting == other.ConditionalGroupRouting ||
-                this.ConditionalGroupRouting != null &&
-                this.ConditionalGroupRouting.Equals(other.ConditionalGroupRouting)
+                ConditionalGroupRouting == other.ConditionalGroupRouting ||
+                ConditionalGroupRouting != null &&
+                ConditionalGroupRouting.Equals(other.ConditionalGroupRouting)
             ) &&
             (
-                this.Bullseye == other.Bullseye ||
-                this.Bullseye != null &&
-                this.Bullseye.Equals(other.Bullseye)
+                Bullseye == other.Bullseye ||
+                Bullseye != null &&
+                Bullseye.Equals(other.Bullseye)
             ) &&
             (
-                this.ScoringMethod == other.ScoringMethod ||
-                this.ScoringMethod != null &&
-                this.ScoringMethod.Equals(other.ScoringMethod)
+                ScoringMethod == other.ScoringMethod ||
+                ScoringMethod != null &&
+                ScoringMethod.Equals(other.ScoringMethod)
             ) &&
             (
-                this.LastAgentRoutingMode == other.LastAgentRoutingMode ||
-                this.LastAgentRoutingMode != null &&
-                this.LastAgentRoutingMode.Equals(other.LastAgentRoutingMode)
+                LastAgentRoutingMode == other.LastAgentRoutingMode ||
+                LastAgentRoutingMode != null &&
+                LastAgentRoutingMode.Equals(other.LastAgentRoutingMode)
             ) &&
             (
-                this.AcwSettings == other.AcwSettings ||
-                this.AcwSettings != null &&
-                this.AcwSettings.Equals(other.AcwSettings)
+                AcwSettings == other.AcwSettings ||
+                AcwSettings != null &&
+                AcwSettings.Equals(other.AcwSettings)
             ) &&
             (
-                this.SkillEvaluationMethod == other.SkillEvaluationMethod ||
-                this.SkillEvaluationMethod != null &&
-                this.SkillEvaluationMethod.Equals(other.SkillEvaluationMethod)
+                SkillEvaluationMethod == other.SkillEvaluationMethod ||
+                SkillEvaluationMethod != null &&
+                SkillEvaluationMethod.Equals(other.SkillEvaluationMethod)
             ) &&
             (
-                this.MemberGroups == other.MemberGroups ||
-                this.MemberGroups != null &&
-                this.MemberGroups.SequenceEqual(other.MemberGroups)
+                MemberGroups == other.MemberGroups ||
+                MemberGroups != null &&
+                MemberGroups.SequenceEqual(other.MemberGroups)
             ) &&
             (
-                this.QueueFlow == other.QueueFlow ||
-                this.QueueFlow != null &&
-                this.QueueFlow.Equals(other.QueueFlow)
+                QueueFlow == other.QueueFlow ||
+                QueueFlow != null &&
+                QueueFlow.Equals(other.QueueFlow)
             ) &&
             (
-                this.EmailInQueueFlow == other.EmailInQueueFlow ||
-                this.EmailInQueueFlow != null &&
-                this.EmailInQueueFlow.Equals(other.EmailInQueueFlow)
+                EmailInQueueFlow == other.EmailInQueueFlow ||
+                EmailInQueueFlow != null &&
+                EmailInQueueFlow.Equals(other.EmailInQueueFlow)
             ) &&
             (
-                this.MessageInQueueFlow == other.MessageInQueueFlow ||
-                this.MessageInQueueFlow != null &&
-                this.MessageInQueueFlow.Equals(other.MessageInQueueFlow)
+                MessageInQueueFlow == other.MessageInQueueFlow ||
+                MessageInQueueFlow != null &&
+                MessageInQueueFlow.Equals(other.MessageInQueueFlow)
             ) &&
             (
-                this.WhisperPrompt == other.WhisperPrompt ||
-                this.WhisperPrompt != null &&
-                this.WhisperPrompt.Equals(other.WhisperPrompt)
+                WhisperPrompt == other.WhisperPrompt ||
+                WhisperPrompt != null &&
+                WhisperPrompt.Equals(other.WhisperPrompt)
             ) &&
             (
-                this.OnHoldPrompt == other.OnHoldPrompt ||
-                this.OnHoldPrompt != null &&
-                this.OnHoldPrompt.Equals(other.OnHoldPrompt)
+                OnHoldPrompt == other.OnHoldPrompt ||
+                OnHoldPrompt != null &&
+                OnHoldPrompt.Equals(other.OnHoldPrompt)
             ) &&
             (
-                this.AutoAnswerOnly == other.AutoAnswerOnly ||
-                this.AutoAnswerOnly != null &&
-                this.AutoAnswerOnly.Equals(other.AutoAnswerOnly)
+                AutoAnswerOnly == other.AutoAnswerOnly ||
+                AutoAnswerOnly != null &&
+                AutoAnswerOnly.Equals(other.AutoAnswerOnly)
             ) &&
             (
-                this.CannedResponseLibraries == other.CannedResponseLibraries ||
-                this.CannedResponseLibraries != null &&
-                this.CannedResponseLibraries.Equals(other.CannedResponseLibraries)
+                CannedResponseLibraries == other.CannedResponseLibraries ||
+                CannedResponseLibraries != null &&
+                CannedResponseLibraries.Equals(other.CannedResponseLibraries)
             ) &&
             (
-                this.EnableTranscription == other.EnableTranscription ||
-                this.EnableTranscription != null &&
-                this.EnableTranscription.Equals(other.EnableTranscription)
+                EnableTranscription == other.EnableTranscription ||
+                EnableTranscription != null &&
+                EnableTranscription.Equals(other.EnableTranscription)
             ) &&
             (
-                this.EnableAudioMonitoring == other.EnableAudioMonitoring ||
-                this.EnableAudioMonitoring != null &&
-                this.EnableAudioMonitoring.Equals(other.EnableAudioMonitoring)
+                EnableAudioMonitoring == other.EnableAudioMonitoring ||
+                EnableAudioMonitoring != null &&
+                EnableAudioMonitoring.Equals(other.EnableAudioMonitoring)
             ) &&
             (
-                this.EnableManualAssignment == other.EnableManualAssignment ||
-                this.EnableManualAssignment != null &&
-                this.EnableManualAssignment.Equals(other.EnableManualAssignment)
+                EnableManualAssignment == other.EnableManualAssignment ||
+                EnableManualAssignment != null &&
+                EnableManualAssignment.Equals(other.EnableManualAssignment)
             ) &&
             (
-                this.AgentOwnedRouting == other.AgentOwnedRouting ||
-                this.AgentOwnedRouting != null &&
-                this.AgentOwnedRouting.Equals(other.AgentOwnedRouting)
+                AgentOwnedRouting == other.AgentOwnedRouting ||
+                AgentOwnedRouting != null &&
+                AgentOwnedRouting.Equals(other.AgentOwnedRouting)
             ) &&
             (
-                this.DirectRouting == other.DirectRouting ||
-                this.DirectRouting != null &&
-                this.DirectRouting.Equals(other.DirectRouting)
+                DirectRouting == other.DirectRouting ||
+                DirectRouting != null &&
+                DirectRouting.Equals(other.DirectRouting)
             ) &&
             (
-                this.CallingPartyName == other.CallingPartyName ||
-                this.CallingPartyName != null &&
-                this.CallingPartyName.Equals(other.CallingPartyName)
+                CallingPartyName == other.CallingPartyName ||
+                CallingPartyName != null &&
+                CallingPartyName.Equals(other.CallingPartyName)
             ) &&
             (
-                this.CallingPartyNumber == other.CallingPartyNumber ||
-                this.CallingPartyNumber != null &&
-                this.CallingPartyNumber.Equals(other.CallingPartyNumber)
+                CallingPartyNumber == other.CallingPartyNumber ||
+                CallingPartyNumber != null &&
+                CallingPartyNumber.Equals(other.CallingPartyNumber)
             ) &&
             (
-                this.DefaultScripts == other.DefaultScripts ||
-                this.DefaultScripts != null &&
-                this.DefaultScripts.SequenceEqual(other.DefaultScripts)
+                DefaultScripts == other.DefaultScripts ||
+                DefaultScripts != null &&
+                DefaultScripts.SequenceEqual(other.DefaultScripts)
             ) &&
             (
-                this.OutboundMessagingAddresses == other.OutboundMessagingAddresses ||
-                this.OutboundMessagingAddresses != null &&
-                this.OutboundMessagingAddresses.Equals(other.OutboundMessagingAddresses)
+                OutboundMessagingAddresses == other.OutboundMessagingAddresses ||
+                OutboundMessagingAddresses != null &&
+                OutboundMessagingAddresses.Equals(other.OutboundMessagingAddresses)
             ) &&
             (
-                this.OutboundEmailAddress == other.OutboundEmailAddress ||
-                this.OutboundEmailAddress != null &&
-                this.OutboundEmailAddress.Equals(other.OutboundEmailAddress)
+                OutboundEmailAddress == other.OutboundEmailAddress ||
+                OutboundEmailAddress != null &&
+                OutboundEmailAddress.Equals(other.OutboundEmailAddress)
             ) &&
             (
-                this.PeerId == other.PeerId ||
-                this.PeerId != null &&
-                this.PeerId.Equals(other.PeerId)
+                PeerId == other.PeerId ||
+                PeerId != null &&
+                PeerId.Equals(other.PeerId)
             ) &&
             (
-                this.SuppressInQueueCallRecording == other.SuppressInQueueCallRecording ||
-                this.SuppressInQueueCallRecording != null &&
-                this.SuppressInQueueCallRecording.Equals(other.SuppressInQueueCallRecording)
+                SuppressInQueueCallRecording == other.SuppressInQueueCallRecording ||
+                SuppressInQueueCallRecording != null &&
+                SuppressInQueueCallRecording.Equals(other.SuppressInQueueCallRecording)
             ) &&
             (
-                this.SourceQueueId == other.SourceQueueId ||
-                this.SourceQueueId != null &&
-                this.SourceQueueId.Equals(other.SourceQueueId)
+                SourceQueueId == other.SourceQueueId ||
+                SourceQueueId != null &&
+                SourceQueueId.Equals(other.SourceQueueId)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -854,209 +854,209 @@ public partial class CreateQueueRequest : IEquatable<CreateQueueRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.MemberCount != null)
+            if (MemberCount != null)
             {
-                hash = hash * 59 + this.MemberCount.GetHashCode();
+                hash = hash * 59 + MemberCount.GetHashCode();
             }
 
-            if (this.UserMemberCount != null)
+            if (UserMemberCount != null)
             {
-                hash = hash * 59 + this.UserMemberCount.GetHashCode();
+                hash = hash * 59 + UserMemberCount.GetHashCode();
             }
 
-            if (this.JoinedMemberCount != null)
+            if (JoinedMemberCount != null)
             {
-                hash = hash * 59 + this.JoinedMemberCount.GetHashCode();
+                hash = hash * 59 + JoinedMemberCount.GetHashCode();
             }
 
-            if (this.MediaSettings != null)
+            if (MediaSettings != null)
             {
-                hash = hash * 59 + this.MediaSettings.GetHashCode();
+                hash = hash * 59 + MediaSettings.GetHashCode();
             }
 
-            if (this.RoutingRules != null)
+            if (RoutingRules != null)
             {
-                hash = hash * 59 + this.RoutingRules.GetHashCode();
+                hash = hash * 59 + RoutingRules.GetHashCode();
             }
 
-            if (this.ConditionalGroupRouting != null)
+            if (ConditionalGroupRouting != null)
             {
-                hash = hash * 59 + this.ConditionalGroupRouting.GetHashCode();
+                hash = hash * 59 + ConditionalGroupRouting.GetHashCode();
             }
 
-            if (this.Bullseye != null)
+            if (Bullseye != null)
             {
-                hash = hash * 59 + this.Bullseye.GetHashCode();
+                hash = hash * 59 + Bullseye.GetHashCode();
             }
 
-            if (this.ScoringMethod != null)
+            if (ScoringMethod != null)
             {
-                hash = hash * 59 + this.ScoringMethod.GetHashCode();
+                hash = hash * 59 + ScoringMethod.GetHashCode();
             }
 
-            if (this.LastAgentRoutingMode != null)
+            if (LastAgentRoutingMode != null)
             {
-                hash = hash * 59 + this.LastAgentRoutingMode.GetHashCode();
+                hash = hash * 59 + LastAgentRoutingMode.GetHashCode();
             }
 
-            if (this.AcwSettings != null)
+            if (AcwSettings != null)
             {
-                hash = hash * 59 + this.AcwSettings.GetHashCode();
+                hash = hash * 59 + AcwSettings.GetHashCode();
             }
 
-            if (this.SkillEvaluationMethod != null)
+            if (SkillEvaluationMethod != null)
             {
-                hash = hash * 59 + this.SkillEvaluationMethod.GetHashCode();
+                hash = hash * 59 + SkillEvaluationMethod.GetHashCode();
             }
 
-            if (this.MemberGroups != null)
+            if (MemberGroups != null)
             {
-                hash = hash * 59 + this.MemberGroups.GetHashCode();
+                hash = hash * 59 + MemberGroups.GetHashCode();
             }
 
-            if (this.QueueFlow != null)
+            if (QueueFlow != null)
             {
-                hash = hash * 59 + this.QueueFlow.GetHashCode();
+                hash = hash * 59 + QueueFlow.GetHashCode();
             }
 
-            if (this.EmailInQueueFlow != null)
+            if (EmailInQueueFlow != null)
             {
-                hash = hash * 59 + this.EmailInQueueFlow.GetHashCode();
+                hash = hash * 59 + EmailInQueueFlow.GetHashCode();
             }
 
-            if (this.MessageInQueueFlow != null)
+            if (MessageInQueueFlow != null)
             {
-                hash = hash * 59 + this.MessageInQueueFlow.GetHashCode();
+                hash = hash * 59 + MessageInQueueFlow.GetHashCode();
             }
 
-            if (this.WhisperPrompt != null)
+            if (WhisperPrompt != null)
             {
-                hash = hash * 59 + this.WhisperPrompt.GetHashCode();
+                hash = hash * 59 + WhisperPrompt.GetHashCode();
             }
 
-            if (this.OnHoldPrompt != null)
+            if (OnHoldPrompt != null)
             {
-                hash = hash * 59 + this.OnHoldPrompt.GetHashCode();
+                hash = hash * 59 + OnHoldPrompt.GetHashCode();
             }
 
-            if (this.AutoAnswerOnly != null)
+            if (AutoAnswerOnly != null)
             {
-                hash = hash * 59 + this.AutoAnswerOnly.GetHashCode();
+                hash = hash * 59 + AutoAnswerOnly.GetHashCode();
             }
 
-            if (this.CannedResponseLibraries != null)
+            if (CannedResponseLibraries != null)
             {
-                hash = hash * 59 + this.CannedResponseLibraries.GetHashCode();
+                hash = hash * 59 + CannedResponseLibraries.GetHashCode();
             }
 
-            if (this.EnableTranscription != null)
+            if (EnableTranscription != null)
             {
-                hash = hash * 59 + this.EnableTranscription.GetHashCode();
+                hash = hash * 59 + EnableTranscription.GetHashCode();
             }
 
-            if (this.EnableAudioMonitoring != null)
+            if (EnableAudioMonitoring != null)
             {
-                hash = hash * 59 + this.EnableAudioMonitoring.GetHashCode();
+                hash = hash * 59 + EnableAudioMonitoring.GetHashCode();
             }
 
-            if (this.EnableManualAssignment != null)
+            if (EnableManualAssignment != null)
             {
-                hash = hash * 59 + this.EnableManualAssignment.GetHashCode();
+                hash = hash * 59 + EnableManualAssignment.GetHashCode();
             }
 
-            if (this.AgentOwnedRouting != null)
+            if (AgentOwnedRouting != null)
             {
-                hash = hash * 59 + this.AgentOwnedRouting.GetHashCode();
+                hash = hash * 59 + AgentOwnedRouting.GetHashCode();
             }
 
-            if (this.DirectRouting != null)
+            if (DirectRouting != null)
             {
-                hash = hash * 59 + this.DirectRouting.GetHashCode();
+                hash = hash * 59 + DirectRouting.GetHashCode();
             }
 
-            if (this.CallingPartyName != null)
+            if (CallingPartyName != null)
             {
-                hash = hash * 59 + this.CallingPartyName.GetHashCode();
+                hash = hash * 59 + CallingPartyName.GetHashCode();
             }
 
-            if (this.CallingPartyNumber != null)
+            if (CallingPartyNumber != null)
             {
-                hash = hash * 59 + this.CallingPartyNumber.GetHashCode();
+                hash = hash * 59 + CallingPartyNumber.GetHashCode();
             }
 
-            if (this.DefaultScripts != null)
+            if (DefaultScripts != null)
             {
-                hash = hash * 59 + this.DefaultScripts.GetHashCode();
+                hash = hash * 59 + DefaultScripts.GetHashCode();
             }
 
-            if (this.OutboundMessagingAddresses != null)
+            if (OutboundMessagingAddresses != null)
             {
-                hash = hash * 59 + this.OutboundMessagingAddresses.GetHashCode();
+                hash = hash * 59 + OutboundMessagingAddresses.GetHashCode();
             }
 
-            if (this.OutboundEmailAddress != null)
+            if (OutboundEmailAddress != null)
             {
-                hash = hash * 59 + this.OutboundEmailAddress.GetHashCode();
+                hash = hash * 59 + OutboundEmailAddress.GetHashCode();
             }
 
-            if (this.PeerId != null)
+            if (PeerId != null)
             {
-                hash = hash * 59 + this.PeerId.GetHashCode();
+                hash = hash * 59 + PeerId.GetHashCode();
             }
 
-            if (this.SuppressInQueueCallRecording != null)
+            if (SuppressInQueueCallRecording != null)
             {
-                hash = hash * 59 + this.SuppressInQueueCallRecording.GetHashCode();
+                hash = hash * 59 + SuppressInQueueCallRecording.GetHashCode();
             }
 
-            if (this.SourceQueueId != null)
+            if (SourceQueueId != null)
             {
-                hash = hash * 59 + this.SourceQueueId.GetHashCode();
+                hash = hash * 59 + SourceQueueId.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

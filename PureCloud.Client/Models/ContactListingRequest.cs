@@ -107,7 +107,7 @@ public partial class ContactListingRequest : IEquatable<ContactListingRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContactListingRequest);
+        return Equals(obj as ContactListingRequest);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class ContactListingRequest : IEquatable<ContactListingRequest>
 
         return true &&
             (
-                this.ContactListFilterId == other.ContactListFilterId ||
-                this.ContactListFilterId != null &&
-                this.ContactListFilterId.Equals(other.ContactListFilterId)
+                ContactListFilterId == other.ContactListFilterId ||
+                ContactListFilterId != null &&
+                ContactListFilterId.Equals(other.ContactListFilterId)
             ) &&
             (
-                this.Criteria == other.Criteria ||
-                this.Criteria != null &&
-                this.Criteria.Equals(other.Criteria)
+                Criteria == other.Criteria ||
+                Criteria != null &&
+                Criteria.Equals(other.Criteria)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.ContactSorts == other.ContactSorts ||
-                this.ContactSorts != null &&
-                this.ContactSorts.SequenceEqual(other.ContactSorts)
+                ContactSorts == other.ContactSorts ||
+                ContactSorts != null &&
+                ContactSorts.SequenceEqual(other.ContactSorts)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class ContactListingRequest : IEquatable<ContactListingRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ContactListFilterId != null)
+            if (ContactListFilterId != null)
             {
-                hash = hash * 59 + this.ContactListFilterId.GetHashCode();
+                hash = hash * 59 + ContactListFilterId.GetHashCode();
             }
 
-            if (this.Criteria != null)
+            if (Criteria != null)
             {
-                hash = hash * 59 + this.Criteria.GetHashCode();
+                hash = hash * 59 + Criteria.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.ContactSorts != null)
+            if (ContactSorts != null)
             {
-                hash = hash * 59 + this.ContactSorts.GetHashCode();
+                hash = hash * 59 + ContactSorts.GetHashCode();
             }
 
             return hash;

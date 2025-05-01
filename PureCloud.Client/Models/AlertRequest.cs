@@ -137,7 +137,7 @@ public partial class AlertRequest : IEquatable<AlertRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlertRequest);
+        return Equals(obj as AlertRequest);
     }
 
     /// <summary>
@@ -155,29 +155,29 @@ public partial class AlertRequest : IEquatable<AlertRequest>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.DateEnd == other.DateEnd ||
-                this.DateEnd != null &&
-                this.DateEnd.Equals(other.DateEnd)
+                DateEnd == other.DateEnd ||
+                DateEnd != null &&
+                DateEnd.Equals(other.DateEnd)
             ) &&
             (
-                this.Unread == other.Unread ||
-                this.Unread != null &&
-                this.Unread.Equals(other.Unread)
+                Unread == other.Unread ||
+                Unread != null &&
+                Unread.Equals(other.Unread)
             ) &&
             (
-                this.ValidRequest == other.ValidRequest ||
-                this.ValidRequest != null &&
-                this.ValidRequest.Equals(other.ValidRequest)
+                ValidRequest == other.ValidRequest ||
+                ValidRequest != null &&
+                ValidRequest.Equals(other.ValidRequest)
             );
     }
 
@@ -192,29 +192,29 @@ public partial class AlertRequest : IEquatable<AlertRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.DateEnd != null)
+            if (DateEnd != null)
             {
-                hash = hash * 59 + this.DateEnd.GetHashCode();
+                hash = hash * 59 + DateEnd.GetHashCode();
             }
 
-            if (this.Unread != null)
+            if (Unread != null)
             {
-                hash = hash * 59 + this.Unread.GetHashCode();
+                hash = hash * 59 + Unread.GetHashCode();
             }
 
-            if (this.ValidRequest != null)
+            if (ValidRequest != null)
             {
-                hash = hash * 59 + this.ValidRequest.GetHashCode();
+                hash = hash * 59 + ValidRequest.GetHashCode();
             }
 
             return hash;

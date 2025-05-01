@@ -59,7 +59,7 @@ public partial class TrunkMetricsQoS : IEquatable<TrunkMetricsQoS>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkMetricsQoS);
+        return Equals(obj as TrunkMetricsQoS);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class TrunkMetricsQoS : IEquatable<TrunkMetricsQoS>
 
         return true &&
             (
-                this.MismatchCount == other.MismatchCount ||
-                this.MismatchCount != null &&
-                this.MismatchCount.Equals(other.MismatchCount)
+                MismatchCount == other.MismatchCount ||
+                MismatchCount != null &&
+                MismatchCount.Equals(other.MismatchCount)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class TrunkMetricsQoS : IEquatable<TrunkMetricsQoS>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MismatchCount != null)
+            if (MismatchCount != null)
             {
-                hash = hash * 59 + this.MismatchCount.GetHashCode();
+                hash = hash * 59 + MismatchCount.GetHashCode();
             }
 
             return hash;

@@ -88,7 +88,7 @@ public partial class BulkResponseResultNoteEntityBulkEntityErrorEntity : IEquata
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BulkResponseResultNoteEntityBulkEntityErrorEntity);
+        return Equals(obj as BulkResponseResultNoteEntityBulkEntityErrorEntity);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class BulkResponseResultNoteEntityBulkEntityErrorEntity : IEquata
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Success == other.Success ||
-                this.Success != null &&
-                this.Success.Equals(other.Success)
+                Success == other.Success ||
+                Success != null &&
+                Success.Equals(other.Success)
             ) &&
             (
-                this.Entity == other.Entity ||
-                this.Entity != null &&
-                this.Entity.Equals(other.Entity)
+                Entity == other.Entity ||
+                Entity != null &&
+                Entity.Equals(other.Entity)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class BulkResponseResultNoteEntityBulkEntityErrorEntity : IEquata
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Success != null)
+            if (Success != null)
             {
-                hash = hash * 59 + this.Success.GetHashCode();
+                hash = hash * 59 + Success.GetHashCode();
             }
 
-            if (this.Entity != null)
+            if (Entity != null)
             {
-                hash = hash * 59 + this.Entity.GetHashCode();
+                hash = hash * 59 + Entity.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
             return hash;

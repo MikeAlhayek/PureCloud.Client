@@ -180,7 +180,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuShortTermForecastListItem);
+        return Equals(obj as BuShortTermForecastListItem);
     }
 
     /// <summary>
@@ -198,49 +198,49 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             ) &&
             (
-                this.CreationMethod == other.CreationMethod ||
-                this.CreationMethod != null &&
-                this.CreationMethod.Equals(other.CreationMethod)
+                CreationMethod == other.CreationMethod ||
+                CreationMethod != null &&
+                CreationMethod.Equals(other.CreationMethod)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Legacy == other.Legacy ||
-                this.Legacy != null &&
-                this.Legacy.Equals(other.Legacy)
+                Legacy == other.Legacy ||
+                Legacy != null &&
+                Legacy.Equals(other.Legacy)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.CanUseForScheduling == other.CanUseForScheduling ||
-                this.CanUseForScheduling != null &&
-                this.CanUseForScheduling.Equals(other.CanUseForScheduling)
+                CanUseForScheduling == other.CanUseForScheduling ||
+                CanUseForScheduling != null &&
+                CanUseForScheduling.Equals(other.CanUseForScheduling)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -255,49 +255,49 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
-            if (this.CreationMethod != null)
+            if (CreationMethod != null)
             {
-                hash = hash * 59 + this.CreationMethod.GetHashCode();
+                hash = hash * 59 + CreationMethod.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Legacy != null)
+            if (Legacy != null)
             {
-                hash = hash * 59 + this.Legacy.GetHashCode();
+                hash = hash * 59 + Legacy.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.CanUseForScheduling != null)
+            if (CanUseForScheduling != null)
             {
-                hash = hash * 59 + this.CanUseForScheduling.GetHashCode();
+                hash = hash * 59 + CanUseForScheduling.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

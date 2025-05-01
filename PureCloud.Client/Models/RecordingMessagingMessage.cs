@@ -379,7 +379,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingMessagingMessage);
+        return Equals(obj as RecordingMessagingMessage);
     }
 
     /// <summary>
@@ -397,104 +397,104 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
 
         return true &&
             (
-                this.From == other.From ||
-                this.From != null &&
-                this.From.Equals(other.From)
+                From == other.From ||
+                From != null &&
+                From.Equals(other.From)
             ) &&
             (
-                this.FromUser == other.FromUser ||
-                this.FromUser != null &&
-                this.FromUser.Equals(other.FromUser)
+                FromUser == other.FromUser ||
+                FromUser != null &&
+                FromUser.Equals(other.FromUser)
             ) &&
             (
-                this.FromExternalContact == other.FromExternalContact ||
-                this.FromExternalContact != null &&
-                this.FromExternalContact.Equals(other.FromExternalContact)
+                FromExternalContact == other.FromExternalContact ||
+                FromExternalContact != null &&
+                FromExternalContact.Equals(other.FromExternalContact)
             ) &&
             (
-                this.To == other.To ||
-                this.To != null &&
-                this.To.Equals(other.To)
+                To == other.To ||
+                To != null &&
+                To.Equals(other.To)
             ) &&
             (
-                this.Timestamp == other.Timestamp ||
-                this.Timestamp != null &&
-                this.Timestamp.Equals(other.Timestamp)
+                Timestamp == other.Timestamp ||
+                Timestamp != null &&
+                Timestamp.Equals(other.Timestamp)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Purpose == other.Purpose ||
-                this.Purpose != null &&
-                this.Purpose.Equals(other.Purpose)
+                Purpose == other.Purpose ||
+                Purpose != null &&
+                Purpose.Equals(other.Purpose)
             ) &&
             (
-                this.ParticipantId == other.ParticipantId ||
-                this.ParticipantId != null &&
-                this.ParticipantId.Equals(other.ParticipantId)
+                ParticipantId == other.ParticipantId ||
+                ParticipantId != null &&
+                ParticipantId.Equals(other.ParticipantId)
             ) &&
             (
-                this.Queue == other.Queue ||
-                this.Queue != null &&
-                this.Queue.Equals(other.Queue)
+                Queue == other.Queue ||
+                Queue != null &&
+                Queue.Equals(other.Queue)
             ) &&
             (
-                this.Workflow == other.Workflow ||
-                this.Workflow != null &&
-                this.Workflow.Equals(other.Workflow)
+                Workflow == other.Workflow ||
+                Workflow != null &&
+                Workflow.Equals(other.Workflow)
             ) &&
             (
-                this.MessageText == other.MessageText ||
-                this.MessageText != null &&
-                this.MessageText.Equals(other.MessageText)
+                MessageText == other.MessageText ||
+                MessageText != null &&
+                MessageText.Equals(other.MessageText)
             ) &&
             (
-                this.MessageMediaAttachments == other.MessageMediaAttachments ||
-                this.MessageMediaAttachments != null &&
-                this.MessageMediaAttachments.SequenceEqual(other.MessageMediaAttachments)
+                MessageMediaAttachments == other.MessageMediaAttachments ||
+                MessageMediaAttachments != null &&
+                MessageMediaAttachments.SequenceEqual(other.MessageMediaAttachments)
             ) &&
             (
-                this.MessageStickerAttachments == other.MessageStickerAttachments ||
-                this.MessageStickerAttachments != null &&
-                this.MessageStickerAttachments.SequenceEqual(other.MessageStickerAttachments)
+                MessageStickerAttachments == other.MessageStickerAttachments ||
+                MessageStickerAttachments != null &&
+                MessageStickerAttachments.SequenceEqual(other.MessageStickerAttachments)
             ) &&
             (
-                this.QuickReplies == other.QuickReplies ||
-                this.QuickReplies != null &&
-                this.QuickReplies.SequenceEqual(other.QuickReplies)
+                QuickReplies == other.QuickReplies ||
+                QuickReplies != null &&
+                QuickReplies.SequenceEqual(other.QuickReplies)
             ) &&
             (
-                this.ButtonResponse == other.ButtonResponse ||
-                this.ButtonResponse != null &&
-                this.ButtonResponse.Equals(other.ButtonResponse)
+                ButtonResponse == other.ButtonResponse ||
+                ButtonResponse != null &&
+                ButtonResponse.Equals(other.ButtonResponse)
             ) &&
             (
-                this.Story == other.Story ||
-                this.Story != null &&
-                this.Story.Equals(other.Story)
+                Story == other.Story ||
+                Story != null &&
+                Story.Equals(other.Story)
             ) &&
             (
-                this.Cards == other.Cards ||
-                this.Cards != null &&
-                this.Cards.SequenceEqual(other.Cards)
+                Cards == other.Cards ||
+                Cards != null &&
+                Cards.SequenceEqual(other.Cards)
             ) &&
             (
-                this.NotificationTemplate == other.NotificationTemplate ||
-                this.NotificationTemplate != null &&
-                this.NotificationTemplate.Equals(other.NotificationTemplate)
+                NotificationTemplate == other.NotificationTemplate ||
+                NotificationTemplate != null &&
+                NotificationTemplate.Equals(other.NotificationTemplate)
             ) &&
             (
-                this.ContentType == other.ContentType ||
-                this.ContentType != null &&
-                this.ContentType.Equals(other.ContentType)
+                ContentType == other.ContentType ||
+                ContentType != null &&
+                ContentType.Equals(other.ContentType)
             ) &&
             (
-                this.Events == other.Events ||
-                this.Events != null &&
-                this.Events.SequenceEqual(other.Events)
+                Events == other.Events ||
+                Events != null &&
+                Events.SequenceEqual(other.Events)
             );
     }
 
@@ -509,104 +509,104 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.From != null)
+            if (From != null)
             {
-                hash = hash * 59 + this.From.GetHashCode();
+                hash = hash * 59 + From.GetHashCode();
             }
 
-            if (this.FromUser != null)
+            if (FromUser != null)
             {
-                hash = hash * 59 + this.FromUser.GetHashCode();
+                hash = hash * 59 + FromUser.GetHashCode();
             }
 
-            if (this.FromExternalContact != null)
+            if (FromExternalContact != null)
             {
-                hash = hash * 59 + this.FromExternalContact.GetHashCode();
+                hash = hash * 59 + FromExternalContact.GetHashCode();
             }
 
-            if (this.To != null)
+            if (To != null)
             {
-                hash = hash * 59 + this.To.GetHashCode();
+                hash = hash * 59 + To.GetHashCode();
             }
 
-            if (this.Timestamp != null)
+            if (Timestamp != null)
             {
-                hash = hash * 59 + this.Timestamp.GetHashCode();
+                hash = hash * 59 + Timestamp.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Purpose != null)
+            if (Purpose != null)
             {
-                hash = hash * 59 + this.Purpose.GetHashCode();
+                hash = hash * 59 + Purpose.GetHashCode();
             }
 
-            if (this.ParticipantId != null)
+            if (ParticipantId != null)
             {
-                hash = hash * 59 + this.ParticipantId.GetHashCode();
+                hash = hash * 59 + ParticipantId.GetHashCode();
             }
 
-            if (this.Queue != null)
+            if (Queue != null)
             {
-                hash = hash * 59 + this.Queue.GetHashCode();
+                hash = hash * 59 + Queue.GetHashCode();
             }
 
-            if (this.Workflow != null)
+            if (Workflow != null)
             {
-                hash = hash * 59 + this.Workflow.GetHashCode();
+                hash = hash * 59 + Workflow.GetHashCode();
             }
 
-            if (this.MessageText != null)
+            if (MessageText != null)
             {
-                hash = hash * 59 + this.MessageText.GetHashCode();
+                hash = hash * 59 + MessageText.GetHashCode();
             }
 
-            if (this.MessageMediaAttachments != null)
+            if (MessageMediaAttachments != null)
             {
-                hash = hash * 59 + this.MessageMediaAttachments.GetHashCode();
+                hash = hash * 59 + MessageMediaAttachments.GetHashCode();
             }
 
-            if (this.MessageStickerAttachments != null)
+            if (MessageStickerAttachments != null)
             {
-                hash = hash * 59 + this.MessageStickerAttachments.GetHashCode();
+                hash = hash * 59 + MessageStickerAttachments.GetHashCode();
             }
 
-            if (this.QuickReplies != null)
+            if (QuickReplies != null)
             {
-                hash = hash * 59 + this.QuickReplies.GetHashCode();
+                hash = hash * 59 + QuickReplies.GetHashCode();
             }
 
-            if (this.ButtonResponse != null)
+            if (ButtonResponse != null)
             {
-                hash = hash * 59 + this.ButtonResponse.GetHashCode();
+                hash = hash * 59 + ButtonResponse.GetHashCode();
             }
 
-            if (this.Story != null)
+            if (Story != null)
             {
-                hash = hash * 59 + this.Story.GetHashCode();
+                hash = hash * 59 + Story.GetHashCode();
             }
 
-            if (this.Cards != null)
+            if (Cards != null)
             {
-                hash = hash * 59 + this.Cards.GetHashCode();
+                hash = hash * 59 + Cards.GetHashCode();
             }
 
-            if (this.NotificationTemplate != null)
+            if (NotificationTemplate != null)
             {
-                hash = hash * 59 + this.NotificationTemplate.GetHashCode();
+                hash = hash * 59 + NotificationTemplate.GetHashCode();
             }
 
-            if (this.ContentType != null)
+            if (ContentType != null)
             {
-                hash = hash * 59 + this.ContentType.GetHashCode();
+                hash = hash * 59 + ContentType.GetHashCode();
             }
 
-            if (this.Events != null)
+            if (Events != null)
             {
-                hash = hash * 59 + this.Events.GetHashCode();
+                hash = hash * 59 + Events.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class IntegrationActionFields : IEquatable<IntegrationActionField
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IntegrationActionFields);
+        return Equals(obj as IntegrationActionFields);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class IntegrationActionFields : IEquatable<IntegrationActionField
 
         return true &&
             (
-                this.IntegrationAction == other.IntegrationAction ||
-                this.IntegrationAction != null &&
-                this.IntegrationAction.Equals(other.IntegrationAction)
+                IntegrationAction == other.IntegrationAction ||
+                IntegrationAction != null &&
+                IntegrationAction.Equals(other.IntegrationAction)
             ) &&
             (
-                this.RequestMappings == other.RequestMappings ||
-                this.RequestMappings != null &&
-                this.RequestMappings.SequenceEqual(other.RequestMappings)
+                RequestMappings == other.RequestMappings ||
+                RequestMappings != null &&
+                RequestMappings.SequenceEqual(other.RequestMappings)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class IntegrationActionFields : IEquatable<IntegrationActionField
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IntegrationAction != null)
+            if (IntegrationAction != null)
             {
-                hash = hash * 59 + this.IntegrationAction.GetHashCode();
+                hash = hash * 59 + IntegrationAction.GetHashCode();
             }
 
-            if (this.RequestMappings != null)
+            if (RequestMappings != null)
             {
-                hash = hash * 59 + this.RequestMappings.GetHashCode();
+                hash = hash * 59 + RequestMappings.GetHashCode();
             }
 
             return hash;

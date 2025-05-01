@@ -211,7 +211,7 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessagingInitialConfiguration);
+        return Equals(obj as MessagingInitialConfiguration);
     }
 
     /// <summary>
@@ -229,44 +229,44 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
 
         return true &&
             (
-                this.ToAddress == other.ToAddress ||
-                this.ToAddress != null &&
-                this.ToAddress.Equals(other.ToAddress)
+                ToAddress == other.ToAddress ||
+                ToAddress != null &&
+                ToAddress.Equals(other.ToAddress)
             ) &&
             (
-                this.FromAddress == other.FromAddress ||
-                this.FromAddress != null &&
-                this.FromAddress.Equals(other.FromAddress)
+                FromAddress == other.FromAddress ||
+                FromAddress != null &&
+                FromAddress.Equals(other.FromAddress)
             ) &&
             (
-                this.MessageType == other.MessageType ||
-                this.MessageType != null &&
-                this.MessageType.Equals(other.MessageType)
+                MessageType == other.MessageType ||
+                MessageType != null &&
+                MessageType.Equals(other.MessageType)
             ) &&
             (
-                this.Held == other.Held ||
-                this.Held != null &&
-                this.Held.Equals(other.Held)
+                Held == other.Held ||
+                Held != null &&
+                Held.Equals(other.Held)
             ) &&
             (
-                this.Alerting == other.Alerting ||
-                this.Alerting != null &&
-                this.Alerting.Equals(other.Alerting)
+                Alerting == other.Alerting ||
+                Alerting != null &&
+                Alerting.Equals(other.Alerting)
             ) &&
             (
-                this.Inbound == other.Inbound ||
-                this.Inbound != null &&
-                this.Inbound.Equals(other.Inbound)
+                Inbound == other.Inbound ||
+                Inbound != null &&
+                Inbound.Equals(other.Inbound)
             ) &&
             (
-                this.InvitedBy == other.InvitedBy ||
-                this.InvitedBy != null &&
-                this.InvitedBy.Equals(other.InvitedBy)
+                InvitedBy == other.InvitedBy ||
+                InvitedBy != null &&
+                InvitedBy.Equals(other.InvitedBy)
             ) &&
             (
-                this.AdditionalInfo == other.AdditionalInfo ||
-                this.AdditionalInfo != null &&
-                this.AdditionalInfo.SequenceEqual(other.AdditionalInfo)
+                AdditionalInfo == other.AdditionalInfo ||
+                AdditionalInfo != null &&
+                AdditionalInfo.SequenceEqual(other.AdditionalInfo)
             );
     }
 
@@ -281,44 +281,44 @@ public partial class MessagingInitialConfiguration : IEquatable<MessagingInitial
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ToAddress != null)
+            if (ToAddress != null)
             {
-                hash = hash * 59 + this.ToAddress.GetHashCode();
+                hash = hash * 59 + ToAddress.GetHashCode();
             }
 
-            if (this.FromAddress != null)
+            if (FromAddress != null)
             {
-                hash = hash * 59 + this.FromAddress.GetHashCode();
+                hash = hash * 59 + FromAddress.GetHashCode();
             }
 
-            if (this.MessageType != null)
+            if (MessageType != null)
             {
-                hash = hash * 59 + this.MessageType.GetHashCode();
+                hash = hash * 59 + MessageType.GetHashCode();
             }
 
-            if (this.Held != null)
+            if (Held != null)
             {
-                hash = hash * 59 + this.Held.GetHashCode();
+                hash = hash * 59 + Held.GetHashCode();
             }
 
-            if (this.Alerting != null)
+            if (Alerting != null)
             {
-                hash = hash * 59 + this.Alerting.GetHashCode();
+                hash = hash * 59 + Alerting.GetHashCode();
             }
 
-            if (this.Inbound != null)
+            if (Inbound != null)
             {
-                hash = hash * 59 + this.Inbound.GetHashCode();
+                hash = hash * 59 + Inbound.GetHashCode();
             }
 
-            if (this.InvitedBy != null)
+            if (InvitedBy != null)
             {
-                hash = hash * 59 + this.InvitedBy.GetHashCode();
+                hash = hash * 59 + InvitedBy.GetHashCode();
             }
 
-            if (this.AdditionalInfo != null)
+            if (AdditionalInfo != null)
             {
-                hash = hash * 59 + this.AdditionalInfo.GetHashCode();
+                hash = hash * 59 + AdditionalInfo.GetHashCode();
             }
 
             return hash;

@@ -58,7 +58,7 @@ public partial class ActivityPlanServiceLevelImpactOverride : IEquatable<Activit
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ActivityPlanServiceLevelImpactOverride);
+        return Equals(obj as ActivityPlanServiceLevelImpactOverride);
     }
 
     /// <summary>
@@ -76,9 +76,9 @@ public partial class ActivityPlanServiceLevelImpactOverride : IEquatable<Activit
 
         return true &&
             (
-                this.DecreaseByPercent == other.DecreaseByPercent ||
-                this.DecreaseByPercent != null &&
-                this.DecreaseByPercent.Equals(other.DecreaseByPercent)
+                DecreaseByPercent == other.DecreaseByPercent ||
+                DecreaseByPercent != null &&
+                DecreaseByPercent.Equals(other.DecreaseByPercent)
             );
     }
 
@@ -93,9 +93,9 @@ public partial class ActivityPlanServiceLevelImpactOverride : IEquatable<Activit
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DecreaseByPercent != null)
+            if (DecreaseByPercent != null)
             {
-                hash = hash * 59 + this.DecreaseByPercent.GetHashCode();
+                hash = hash * 59 + DecreaseByPercent.GetHashCode();
             }
 
             return hash;

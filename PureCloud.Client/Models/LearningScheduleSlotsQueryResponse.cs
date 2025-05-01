@@ -65,7 +65,7 @@ public partial class LearningScheduleSlotsQueryResponse : IEquatable<LearningSch
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningScheduleSlotsQueryResponse);
+        return Equals(obj as LearningScheduleSlotsQueryResponse);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class LearningScheduleSlotsQueryResponse : IEquatable<LearningSch
 
         return true &&
             (
-                this.SuggestedSlots == other.SuggestedSlots ||
-                this.SuggestedSlots != null &&
-                this.SuggestedSlots.SequenceEqual(other.SuggestedSlots)
+                SuggestedSlots == other.SuggestedSlots ||
+                SuggestedSlots != null &&
+                SuggestedSlots.SequenceEqual(other.SuggestedSlots)
             ) &&
             (
-                this.WfmScheduleActivities == other.WfmScheduleActivities ||
-                this.WfmScheduleActivities != null &&
-                this.WfmScheduleActivities.SequenceEqual(other.WfmScheduleActivities)
+                WfmScheduleActivities == other.WfmScheduleActivities ||
+                WfmScheduleActivities != null &&
+                WfmScheduleActivities.SequenceEqual(other.WfmScheduleActivities)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class LearningScheduleSlotsQueryResponse : IEquatable<LearningSch
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SuggestedSlots != null)
+            if (SuggestedSlots != null)
             {
-                hash = hash * 59 + this.SuggestedSlots.GetHashCode();
+                hash = hash * 59 + SuggestedSlots.GetHashCode();
             }
 
-            if (this.WfmScheduleActivities != null)
+            if (WfmScheduleActivities != null)
             {
-                hash = hash * 59 + this.WfmScheduleActivities.GetHashCode();
+                hash = hash * 59 + WfmScheduleActivities.GetHashCode();
             }
 
             return hash;

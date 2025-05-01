@@ -71,7 +71,7 @@ public partial class PhraseAssociations : IEquatable<PhraseAssociations>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PhraseAssociations);
+        return Equals(obj as PhraseAssociations);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class PhraseAssociations : IEquatable<PhraseAssociations>
 
         return true &&
             (
-                this.PhraseId == other.PhraseId ||
-                this.PhraseId != null &&
-                this.PhraseId.Equals(other.PhraseId)
+                PhraseId == other.PhraseId ||
+                PhraseId != null &&
+                PhraseId.Equals(other.PhraseId)
             ) &&
             (
-                this.DocumentId == other.DocumentId ||
-                this.DocumentId != null &&
-                this.DocumentId.Equals(other.DocumentId)
+                DocumentId == other.DocumentId ||
+                DocumentId != null &&
+                DocumentId.Equals(other.DocumentId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class PhraseAssociations : IEquatable<PhraseAssociations>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PhraseId != null)
+            if (PhraseId != null)
             {
-                hash = hash * 59 + this.PhraseId.GetHashCode();
+                hash = hash * 59 + PhraseId.GetHashCode();
             }
 
-            if (this.DocumentId != null)
+            if (DocumentId != null)
             {
-                hash = hash * 59 + this.DocumentId.GetHashCode();
+                hash = hash * 59 + DocumentId.GetHashCode();
             }
 
             return hash;

@@ -52,7 +52,7 @@ public partial class BuShortTermForecastingSettings : IEquatable<BuShortTermFore
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuShortTermForecastingSettings);
+        return Equals(obj as BuShortTermForecastingSettings);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class BuShortTermForecastingSettings : IEquatable<BuShortTermFore
 
         return true &&
             (
-                this.DefaultHistoryWeeks == other.DefaultHistoryWeeks ||
-                this.DefaultHistoryWeeks != null &&
-                this.DefaultHistoryWeeks.Equals(other.DefaultHistoryWeeks)
+                DefaultHistoryWeeks == other.DefaultHistoryWeeks ||
+                DefaultHistoryWeeks != null &&
+                DefaultHistoryWeeks.Equals(other.DefaultHistoryWeeks)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class BuShortTermForecastingSettings : IEquatable<BuShortTermFore
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DefaultHistoryWeeks != null)
+            if (DefaultHistoryWeeks != null)
             {
-                hash = hash * 59 + this.DefaultHistoryWeeks.GetHashCode();
+                hash = hash * 59 + DefaultHistoryWeeks.GetHashCode();
             }
 
             return hash;

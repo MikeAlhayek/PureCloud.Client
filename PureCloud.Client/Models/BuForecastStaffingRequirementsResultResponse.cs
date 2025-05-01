@@ -162,7 +162,7 @@ public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<B
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuForecastStaffingRequirementsResultResponse);
+        return Equals(obj as BuForecastStaffingRequirementsResultResponse);
     }
 
     /// <summary>
@@ -180,39 +180,39 @@ public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<B
 
         return true &&
             (
-                this.BusinessUnitId == other.BusinessUnitId ||
-                this.BusinessUnitId != null &&
-                this.BusinessUnitId.Equals(other.BusinessUnitId)
+                BusinessUnitId == other.BusinessUnitId ||
+                BusinessUnitId != null &&
+                BusinessUnitId.Equals(other.BusinessUnitId)
             ) &&
             (
-                this.Forecast == other.Forecast ||
-                this.Forecast != null &&
-                this.Forecast.Equals(other.Forecast)
+                Forecast == other.Forecast ||
+                Forecast != null &&
+                Forecast.Equals(other.Forecast)
             ) &&
             (
-                this.ReferenceStartDate == other.ReferenceStartDate ||
-                this.ReferenceStartDate != null &&
-                this.ReferenceStartDate.Equals(other.ReferenceStartDate)
+                ReferenceStartDate == other.ReferenceStartDate ||
+                ReferenceStartDate != null &&
+                ReferenceStartDate.Equals(other.ReferenceStartDate)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             ) &&
             (
-                this.IntervalLengthMinutes == other.IntervalLengthMinutes ||
-                this.IntervalLengthMinutes != null &&
-                this.IntervalLengthMinutes.Equals(other.IntervalLengthMinutes)
+                IntervalLengthMinutes == other.IntervalLengthMinutes ||
+                IntervalLengthMinutes != null &&
+                IntervalLengthMinutes.Equals(other.IntervalLengthMinutes)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Results == other.Results ||
-                this.Results != null &&
-                this.Results.SequenceEqual(other.Results)
+                Results == other.Results ||
+                Results != null &&
+                Results.SequenceEqual(other.Results)
             );
     }
 
@@ -227,39 +227,39 @@ public partial class BuForecastStaffingRequirementsResultResponse : IEquatable<B
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.BusinessUnitId != null)
+            if (BusinessUnitId != null)
             {
-                hash = hash * 59 + this.BusinessUnitId.GetHashCode();
+                hash = hash * 59 + BusinessUnitId.GetHashCode();
             }
 
-            if (this.Forecast != null)
+            if (Forecast != null)
             {
-                hash = hash * 59 + this.Forecast.GetHashCode();
+                hash = hash * 59 + Forecast.GetHashCode();
             }
 
-            if (this.ReferenceStartDate != null)
+            if (ReferenceStartDate != null)
             {
-                hash = hash * 59 + this.ReferenceStartDate.GetHashCode();
+                hash = hash * 59 + ReferenceStartDate.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
-            if (this.IntervalLengthMinutes != null)
+            if (IntervalLengthMinutes != null)
             {
-                hash = hash * 59 + this.IntervalLengthMinutes.GetHashCode();
+                hash = hash * 59 + IntervalLengthMinutes.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Results != null)
+            if (Results != null)
             {
-                hash = hash * 59 + this.Results.GetHashCode();
+                hash = hash * 59 + Results.GetHashCode();
             }
 
             return hash;

@@ -251,7 +251,7 @@ public partial class DocumentBodyTableRowBlockProperties : IEquatable<DocumentBo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentBodyTableRowBlockProperties);
+        return Equals(obj as DocumentBodyTableRowBlockProperties);
     }
 
     /// <summary>
@@ -269,34 +269,34 @@ public partial class DocumentBodyTableRowBlockProperties : IEquatable<DocumentBo
 
         return true &&
             (
-                this.RowType == other.RowType ||
-                this.RowType != null &&
-                this.RowType.Equals(other.RowType)
+                RowType == other.RowType ||
+                RowType != null &&
+                RowType.Equals(other.RowType)
             ) &&
             (
-                this.Alignment == other.Alignment ||
-                this.Alignment != null &&
-                this.Alignment.Equals(other.Alignment)
+                Alignment == other.Alignment ||
+                Alignment != null &&
+                Alignment.Equals(other.Alignment)
             ) &&
             (
-                this.Height == other.Height ||
-                this.Height != null &&
-                this.Height.Equals(other.Height)
+                Height == other.Height ||
+                Height != null &&
+                Height.Equals(other.Height)
             ) &&
             (
-                this.BorderStyle == other.BorderStyle ||
-                this.BorderStyle != null &&
-                this.BorderStyle.Equals(other.BorderStyle)
+                BorderStyle == other.BorderStyle ||
+                BorderStyle != null &&
+                BorderStyle.Equals(other.BorderStyle)
             ) &&
             (
-                this.BorderColor == other.BorderColor ||
-                this.BorderColor != null &&
-                this.BorderColor.Equals(other.BorderColor)
+                BorderColor == other.BorderColor ||
+                BorderColor != null &&
+                BorderColor.Equals(other.BorderColor)
             ) &&
             (
-                this.BackgroundColor == other.BackgroundColor ||
-                this.BackgroundColor != null &&
-                this.BackgroundColor.Equals(other.BackgroundColor)
+                BackgroundColor == other.BackgroundColor ||
+                BackgroundColor != null &&
+                BackgroundColor.Equals(other.BackgroundColor)
             );
     }
 
@@ -311,34 +311,34 @@ public partial class DocumentBodyTableRowBlockProperties : IEquatable<DocumentBo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RowType != null)
+            if (RowType != null)
             {
-                hash = hash * 59 + this.RowType.GetHashCode();
+                hash = hash * 59 + RowType.GetHashCode();
             }
 
-            if (this.Alignment != null)
+            if (Alignment != null)
             {
-                hash = hash * 59 + this.Alignment.GetHashCode();
+                hash = hash * 59 + Alignment.GetHashCode();
             }
 
-            if (this.Height != null)
+            if (Height != null)
             {
-                hash = hash * 59 + this.Height.GetHashCode();
+                hash = hash * 59 + Height.GetHashCode();
             }
 
-            if (this.BorderStyle != null)
+            if (BorderStyle != null)
             {
-                hash = hash * 59 + this.BorderStyle.GetHashCode();
+                hash = hash * 59 + BorderStyle.GetHashCode();
             }
 
-            if (this.BorderColor != null)
+            if (BorderColor != null)
             {
-                hash = hash * 59 + this.BorderColor.GetHashCode();
+                hash = hash * 59 + BorderColor.GetHashCode();
             }
 
-            if (this.BackgroundColor != null)
+            if (BackgroundColor != null)
             {
-                hash = hash * 59 + this.BackgroundColor.GetHashCode();
+                hash = hash * 59 + BackgroundColor.GetHashCode();
             }
 
             return hash;

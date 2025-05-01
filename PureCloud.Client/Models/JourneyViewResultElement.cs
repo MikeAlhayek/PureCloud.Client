@@ -81,7 +81,7 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as JourneyViewResultElement);
+        return Equals(obj as JourneyViewResultElement);
     }
 
     /// <summary>
@@ -99,24 +99,24 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.Equals(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.Equals(other.Metrics)
             ) &&
             (
-                this.FollowedBy == other.FollowedBy ||
-                this.FollowedBy != null &&
-                this.FollowedBy.SequenceEqual(other.FollowedBy)
+                FollowedBy == other.FollowedBy ||
+                FollowedBy != null &&
+                FollowedBy.SequenceEqual(other.FollowedBy)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -131,24 +131,24 @@ public partial class JourneyViewResultElement : IEquatable<JourneyViewResultElem
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.FollowedBy != null)
+            if (FollowedBy != null)
             {
-                hash = hash * 59 + this.FollowedBy.GetHashCode();
+                hash = hash * 59 + FollowedBy.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

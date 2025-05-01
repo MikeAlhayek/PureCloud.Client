@@ -383,12 +383,12 @@ public partial class LogCaptureApi : ILogCaptureApi
     /// <returns></returns>
     public LogCaptureApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -402,17 +402,17 @@ public partial class LogCaptureApi : ILogCaptureApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -422,7 +422,7 @@ public partial class LogCaptureApi : ILogCaptureApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -448,7 +448,7 @@ public partial class LogCaptureApi : ILogCaptureApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -460,7 +460,7 @@ public partial class LogCaptureApi : ILogCaptureApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -505,7 +505,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -514,7 +514,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -527,7 +527,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -543,11 +543,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -621,7 +621,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -630,7 +630,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -643,7 +643,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -659,11 +659,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -738,7 +738,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -747,7 +747,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -760,7 +760,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -776,11 +776,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -806,7 +806,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<LogCaptureDownloadExecutionResponse>(localVarStatusCode,
             localVarHeaders,
-            (LogCaptureDownloadExecutionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureDownloadExecutionResponse)),
+            (LogCaptureDownloadExecutionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureDownloadExecutionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -855,7 +855,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -864,7 +864,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -877,7 +877,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -893,11 +893,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -923,7 +923,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<LogCaptureDownloadExecutionResponse>(localVarStatusCode,
             localVarHeaders,
-            (LogCaptureDownloadExecutionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureDownloadExecutionResponse)),
+            (LogCaptureDownloadExecutionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureDownloadExecutionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -972,7 +972,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -981,7 +981,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -994,7 +994,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -1010,11 +1010,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1040,7 +1040,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<LogCaptureUserConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (LogCaptureUserConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureUserConfiguration)),
+            (LogCaptureUserConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureUserConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1089,7 +1089,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1098,7 +1098,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1111,7 +1111,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -1127,11 +1127,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1157,7 +1157,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<LogCaptureUserConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (LogCaptureUserConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureUserConfiguration)),
+            (LogCaptureUserConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureUserConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1201,7 +1201,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1210,7 +1210,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1225,7 +1225,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Query params
         if (includeExpired != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeExpired", this.Configuration.ApiClient.ParameterToString(includeExpired)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeExpired", Configuration.ApiClient.ParameterToString(includeExpired)));
         }
 
         // Header params
@@ -1239,11 +1239,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1269,7 +1269,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<PagelessEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PagelessEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PagelessEntityListing)),
+            (PagelessEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PagelessEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1313,7 +1313,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1322,7 +1322,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1337,7 +1337,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Query params
         if (includeExpired != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("includeExpired", this.Configuration.ApiClient.ParameterToString(includeExpired)));
+            localVarQueryParams.Add(new Tuple<string, string>("includeExpired", Configuration.ApiClient.ParameterToString(includeExpired)));
         }
 
         // Header params
@@ -1351,11 +1351,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1381,7 +1381,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<PagelessEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (PagelessEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PagelessEntityListing)),
+            (PagelessEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PagelessEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1426,7 +1426,7 @@ public partial class LogCaptureApi : ILogCaptureApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1435,7 +1435,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1456,7 +1456,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1469,11 +1469,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1499,7 +1499,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<LogCaptureDownloadExecutionResponse>(localVarStatusCode,
             localVarHeaders,
-            (LogCaptureDownloadExecutionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureDownloadExecutionResponse)),
+            (LogCaptureDownloadExecutionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureDownloadExecutionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1544,7 +1544,7 @@ public partial class LogCaptureApi : ILogCaptureApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1553,7 +1553,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1574,7 +1574,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1587,11 +1587,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1617,7 +1617,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<LogCaptureDownloadExecutionResponse>(localVarStatusCode,
             localVarHeaders,
-            (LogCaptureDownloadExecutionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureDownloadExecutionResponse)),
+            (LogCaptureDownloadExecutionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureDownloadExecutionResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1668,7 +1668,7 @@ public partial class LogCaptureApi : ILogCaptureApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1677,7 +1677,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1692,17 +1692,17 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -1712,7 +1712,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1725,11 +1725,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1755,7 +1755,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<LogCaptureQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (LogCaptureQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureQueryResponse)),
+            (LogCaptureQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1806,7 +1806,7 @@ public partial class LogCaptureApi : ILogCaptureApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1815,7 +1815,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1830,17 +1830,17 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Query params
         if (before != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            localVarQueryParams.Add(new Tuple<string, string>("before", Configuration.ApiClient.ParameterToString(before)));
         }
 
         if (after != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            localVarQueryParams.Add(new Tuple<string, string>("after", Configuration.ApiClient.ParameterToString(after)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -1850,7 +1850,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1863,11 +1863,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -1893,7 +1893,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<LogCaptureQueryResponse>(localVarStatusCode,
             localVarHeaders,
-            (LogCaptureQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureQueryResponse)),
+            (LogCaptureQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureQueryResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1945,7 +1945,7 @@ public partial class LogCaptureApi : ILogCaptureApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -1954,7 +1954,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1967,7 +1967,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -1979,7 +1979,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -1992,11 +1992,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2022,7 +2022,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<LogCaptureUserConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (LogCaptureUserConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureUserConfiguration)),
+            (LogCaptureUserConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureUserConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2074,7 +2074,7 @@ public partial class LogCaptureApi : ILogCaptureApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2083,7 +2083,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2096,7 +2096,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Path params
         if (userId != null)
         {
-            localVarPathParams.Add("userId", this.Configuration.ApiClient.ParameterToString(userId));
+            localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId));
         }
 
         // Query params
@@ -2108,7 +2108,7 @@ public partial class LogCaptureApi : ILogCaptureApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -2121,11 +2121,11 @@ public partial class LogCaptureApi : ILogCaptureApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -2151,7 +2151,7 @@ public partial class LogCaptureApi : ILogCaptureApi
 
         return new ApiResponse<LogCaptureUserConfiguration>(localVarStatusCode,
             localVarHeaders,
-            (LogCaptureUserConfiguration)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureUserConfiguration)),
+            (LogCaptureUserConfiguration)Configuration.ApiClient.Deserialize(localVarResponse, typeof(LogCaptureUserConfiguration)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

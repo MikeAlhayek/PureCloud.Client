@@ -88,7 +88,7 @@ public partial class BuAgentScheduleHistoryDroppedChange : IEquatable<BuAgentSch
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuAgentScheduleHistoryDroppedChange);
+        return Equals(obj as BuAgentScheduleHistoryDroppedChange);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class BuAgentScheduleHistoryDroppedChange : IEquatable<BuAgentSch
 
         return true &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             ) &&
             (
-                this.ShiftIds == other.ShiftIds ||
-                this.ShiftIds != null &&
-                this.ShiftIds.SequenceEqual(other.ShiftIds)
+                ShiftIds == other.ShiftIds ||
+                ShiftIds != null &&
+                ShiftIds.SequenceEqual(other.ShiftIds)
             ) &&
             (
-                this.FullDayTimeOffMarkerDates == other.FullDayTimeOffMarkerDates ||
-                this.FullDayTimeOffMarkerDates != null &&
-                this.FullDayTimeOffMarkerDates.SequenceEqual(other.FullDayTimeOffMarkerDates)
+                FullDayTimeOffMarkerDates == other.FullDayTimeOffMarkerDates ||
+                FullDayTimeOffMarkerDates != null &&
+                FullDayTimeOffMarkerDates.SequenceEqual(other.FullDayTimeOffMarkerDates)
             ) &&
             (
-                this.Deletes == other.Deletes ||
-                this.Deletes != null &&
-                this.Deletes.Equals(other.Deletes)
+                Deletes == other.Deletes ||
+                Deletes != null &&
+                Deletes.Equals(other.Deletes)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class BuAgentScheduleHistoryDroppedChange : IEquatable<BuAgentSch
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
-            if (this.ShiftIds != null)
+            if (ShiftIds != null)
             {
-                hash = hash * 59 + this.ShiftIds.GetHashCode();
+                hash = hash * 59 + ShiftIds.GetHashCode();
             }
 
-            if (this.FullDayTimeOffMarkerDates != null)
+            if (FullDayTimeOffMarkerDates != null)
             {
-                hash = hash * 59 + this.FullDayTimeOffMarkerDates.GetHashCode();
+                hash = hash * 59 + FullDayTimeOffMarkerDates.GetHashCode();
             }
 
-            if (this.Deletes != null)
+            if (Deletes != null)
             {
-                hash = hash * 59 + this.Deletes.GetHashCode();
+                hash = hash * 59 + Deletes.GetHashCode();
             }
 
             return hash;

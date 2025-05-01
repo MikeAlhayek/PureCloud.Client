@@ -81,7 +81,7 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CoachingSlotsResponse);
+        return Equals(obj as CoachingSlotsResponse);
     }
 
     /// <summary>
@@ -99,24 +99,24 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
 
         return true &&
             (
-                this.SuggestedSlots == other.SuggestedSlots ||
-                this.SuggestedSlots != null &&
-                this.SuggestedSlots.SequenceEqual(other.SuggestedSlots)
+                SuggestedSlots == other.SuggestedSlots ||
+                SuggestedSlots != null &&
+                SuggestedSlots.SequenceEqual(other.SuggestedSlots)
             ) &&
             (
-                this.AttendeeSchedules == other.AttendeeSchedules ||
-                this.AttendeeSchedules != null &&
-                this.AttendeeSchedules.SequenceEqual(other.AttendeeSchedules)
+                AttendeeSchedules == other.AttendeeSchedules ||
+                AttendeeSchedules != null &&
+                AttendeeSchedules.SequenceEqual(other.AttendeeSchedules)
             ) &&
             (
-                this.FacilitatorSchedules == other.FacilitatorSchedules ||
-                this.FacilitatorSchedules != null &&
-                this.FacilitatorSchedules.SequenceEqual(other.FacilitatorSchedules)
+                FacilitatorSchedules == other.FacilitatorSchedules ||
+                FacilitatorSchedules != null &&
+                FacilitatorSchedules.SequenceEqual(other.FacilitatorSchedules)
             ) &&
             (
-                this.WfmScheduleActivities == other.WfmScheduleActivities ||
-                this.WfmScheduleActivities != null &&
-                this.WfmScheduleActivities.SequenceEqual(other.WfmScheduleActivities)
+                WfmScheduleActivities == other.WfmScheduleActivities ||
+                WfmScheduleActivities != null &&
+                WfmScheduleActivities.SequenceEqual(other.WfmScheduleActivities)
             );
     }
 
@@ -131,24 +131,24 @@ public partial class CoachingSlotsResponse : IEquatable<CoachingSlotsResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SuggestedSlots != null)
+            if (SuggestedSlots != null)
             {
-                hash = hash * 59 + this.SuggestedSlots.GetHashCode();
+                hash = hash * 59 + SuggestedSlots.GetHashCode();
             }
 
-            if (this.AttendeeSchedules != null)
+            if (AttendeeSchedules != null)
             {
-                hash = hash * 59 + this.AttendeeSchedules.GetHashCode();
+                hash = hash * 59 + AttendeeSchedules.GetHashCode();
             }
 
-            if (this.FacilitatorSchedules != null)
+            if (FacilitatorSchedules != null)
             {
-                hash = hash * 59 + this.FacilitatorSchedules.GetHashCode();
+                hash = hash * 59 + FacilitatorSchedules.GetHashCode();
             }
 
-            if (this.WfmScheduleActivities != null)
+            if (WfmScheduleActivities != null)
             {
-                hash = hash * 59 + this.WfmScheduleActivities.GetHashCode();
+                hash = hash * 59 + WfmScheduleActivities.GetHashCode();
             }
 
             return hash;

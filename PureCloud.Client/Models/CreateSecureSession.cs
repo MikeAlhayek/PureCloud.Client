@@ -95,7 +95,7 @@ public partial class CreateSecureSession : IEquatable<CreateSecureSession>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreateSecureSession);
+        return Equals(obj as CreateSecureSession);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class CreateSecureSession : IEquatable<CreateSecureSession>
 
         return true &&
             (
-                this.SourceParticipantId == other.SourceParticipantId ||
-                this.SourceParticipantId != null &&
-                this.SourceParticipantId.Equals(other.SourceParticipantId)
+                SourceParticipantId == other.SourceParticipantId ||
+                SourceParticipantId != null &&
+                SourceParticipantId.Equals(other.SourceParticipantId)
             ) &&
             (
-                this.FlowId == other.FlowId ||
-                this.FlowId != null &&
-                this.FlowId.Equals(other.FlowId)
+                FlowId == other.FlowId ||
+                FlowId != null &&
+                FlowId.Equals(other.FlowId)
             ) &&
             (
-                this.UserData == other.UserData ||
-                this.UserData != null &&
-                this.UserData.Equals(other.UserData)
+                UserData == other.UserData ||
+                UserData != null &&
+                UserData.Equals(other.UserData)
             ) &&
             (
-                this.Disconnect == other.Disconnect ||
-                this.Disconnect != null &&
-                this.Disconnect.Equals(other.Disconnect)
+                Disconnect == other.Disconnect ||
+                Disconnect != null &&
+                Disconnect.Equals(other.Disconnect)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class CreateSecureSession : IEquatable<CreateSecureSession>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SourceParticipantId != null)
+            if (SourceParticipantId != null)
             {
-                hash = hash * 59 + this.SourceParticipantId.GetHashCode();
+                hash = hash * 59 + SourceParticipantId.GetHashCode();
             }
 
-            if (this.FlowId != null)
+            if (FlowId != null)
             {
-                hash = hash * 59 + this.FlowId.GetHashCode();
+                hash = hash * 59 + FlowId.GetHashCode();
             }
 
-            if (this.UserData != null)
+            if (UserData != null)
             {
-                hash = hash * 59 + this.UserData.GetHashCode();
+                hash = hash * 59 + UserData.GetHashCode();
             }
 
-            if (this.Disconnect != null)
+            if (Disconnect != null)
             {
-                hash = hash * 59 + this.Disconnect.GetHashCode();
+                hash = hash * 59 + Disconnect.GetHashCode();
             }
 
             return hash;

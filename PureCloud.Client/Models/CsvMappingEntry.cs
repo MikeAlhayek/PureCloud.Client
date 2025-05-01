@@ -71,7 +71,7 @@ public partial class CsvMappingEntry : IEquatable<CsvMappingEntry>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CsvMappingEntry);
+        return Equals(obj as CsvMappingEntry);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class CsvMappingEntry : IEquatable<CsvMappingEntry>
 
         return true &&
             (
-                this.SourceField == other.SourceField ||
-                this.SourceField != null &&
-                this.SourceField.Equals(other.SourceField)
+                SourceField == other.SourceField ||
+                SourceField != null &&
+                SourceField.Equals(other.SourceField)
             ) &&
             (
-                this.TargetField == other.TargetField ||
-                this.TargetField != null &&
-                this.TargetField.Equals(other.TargetField)
+                TargetField == other.TargetField ||
+                TargetField != null &&
+                TargetField.Equals(other.TargetField)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class CsvMappingEntry : IEquatable<CsvMappingEntry>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SourceField != null)
+            if (SourceField != null)
             {
-                hash = hash * 59 + this.SourceField.GetHashCode();
+                hash = hash * 59 + SourceField.GetHashCode();
             }
 
-            if (this.TargetField != null)
+            if (TargetField != null)
             {
-                hash = hash * 59 + this.TargetField.GetHashCode();
+                hash = hash * 59 + TargetField.GetHashCode();
             }
 
             return hash;

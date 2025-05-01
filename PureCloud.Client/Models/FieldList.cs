@@ -151,7 +151,7 @@ public partial class FieldList : IEquatable<FieldList>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FieldList);
+        return Equals(obj as FieldList);
     }
 
     /// <summary>
@@ -169,54 +169,54 @@ public partial class FieldList : IEquatable<FieldList>
 
         return true &&
             (
-                this.CustomLabels == other.CustomLabels ||
-                this.CustomLabels != null &&
-                this.CustomLabels.Equals(other.CustomLabels)
+                CustomLabels == other.CustomLabels ||
+                CustomLabels != null &&
+                CustomLabels.Equals(other.CustomLabels)
             ) &&
             (
-                this.InstructionText == other.InstructionText ||
-                this.InstructionText != null &&
-                this.InstructionText.Equals(other.InstructionText)
+                InstructionText == other.InstructionText ||
+                InstructionText != null &&
+                InstructionText.Equals(other.InstructionText)
             ) &&
             (
-                this.Key == other.Key ||
-                this.Key != null &&
-                this.Key.Equals(other.Key)
+                Key == other.Key ||
+                Key != null &&
+                Key.Equals(other.Key)
             ) &&
             (
-                this.LabelKeys == other.LabelKeys ||
-                this.LabelKeys != null &&
-                this.LabelKeys.SequenceEqual(other.LabelKeys)
+                LabelKeys == other.LabelKeys ||
+                LabelKeys != null &&
+                LabelKeys.SequenceEqual(other.LabelKeys)
             ) &&
             (
-                this.Params == other.Params ||
-                this.Params != null &&
-                this.Params.SequenceEqual(other.Params)
+                Params == other.Params ||
+                Params != null &&
+                Params.SequenceEqual(other.Params)
             ) &&
             (
-                this.Repeatable == other.Repeatable ||
-                this.Repeatable != null &&
-                this.Repeatable.Equals(other.Repeatable)
+                Repeatable == other.Repeatable ||
+                Repeatable != null &&
+                Repeatable.Equals(other.Repeatable)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Required == other.Required ||
-                this.Required != null &&
-                this.Required.Equals(other.Required)
+                Required == other.Required ||
+                Required != null &&
+                Required.Equals(other.Required)
             ) &&
             (
-                this.Gdpr == other.Gdpr ||
-                this.Gdpr != null &&
-                this.Gdpr.Equals(other.Gdpr)
+                Gdpr == other.Gdpr ||
+                Gdpr != null &&
+                Gdpr.Equals(other.Gdpr)
             );
     }
 
@@ -231,54 +231,54 @@ public partial class FieldList : IEquatable<FieldList>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.CustomLabels != null)
+            if (CustomLabels != null)
             {
-                hash = hash * 59 + this.CustomLabels.GetHashCode();
+                hash = hash * 59 + CustomLabels.GetHashCode();
             }
 
-            if (this.InstructionText != null)
+            if (InstructionText != null)
             {
-                hash = hash * 59 + this.InstructionText.GetHashCode();
+                hash = hash * 59 + InstructionText.GetHashCode();
             }
 
-            if (this.Key != null)
+            if (Key != null)
             {
-                hash = hash * 59 + this.Key.GetHashCode();
+                hash = hash * 59 + Key.GetHashCode();
             }
 
-            if (this.LabelKeys != null)
+            if (LabelKeys != null)
             {
-                hash = hash * 59 + this.LabelKeys.GetHashCode();
+                hash = hash * 59 + LabelKeys.GetHashCode();
             }
 
-            if (this.Params != null)
+            if (Params != null)
             {
-                hash = hash * 59 + this.Params.GetHashCode();
+                hash = hash * 59 + Params.GetHashCode();
             }
 
-            if (this.Repeatable != null)
+            if (Repeatable != null)
             {
-                hash = hash * 59 + this.Repeatable.GetHashCode();
+                hash = hash * 59 + Repeatable.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Required != null)
+            if (Required != null)
             {
-                hash = hash * 59 + this.Required.GetHashCode();
+                hash = hash * 59 + Required.GetHashCode();
             }
 
-            if (this.Gdpr != null)
+            if (Gdpr != null)
             {
-                hash = hash * 59 + this.Gdpr.GetHashCode();
+                hash = hash * 59 + Gdpr.GetHashCode();
             }
 
             return hash;

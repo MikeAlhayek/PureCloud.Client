@@ -62,7 +62,7 @@ public partial class TeamMemberAddListingResponse : IEquatable<TeamMemberAddList
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TeamMemberAddListingResponse);
+        return Equals(obj as TeamMemberAddListingResponse);
     }
 
     /// <summary>
@@ -80,14 +80,14 @@ public partial class TeamMemberAddListingResponse : IEquatable<TeamMemberAddList
 
         return true &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.Failures == other.Failures ||
-                this.Failures != null &&
-                this.Failures.SequenceEqual(other.Failures)
+                Failures == other.Failures ||
+                Failures != null &&
+                Failures.SequenceEqual(other.Failures)
             );
     }
 
@@ -102,14 +102,14 @@ public partial class TeamMemberAddListingResponse : IEquatable<TeamMemberAddList
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.Failures != null)
+            if (Failures != null)
             {
-                hash = hash * 59 + this.Failures.GetHashCode();
+                hash = hash * 59 + Failures.GetHashCode();
             }
 
             return hash;

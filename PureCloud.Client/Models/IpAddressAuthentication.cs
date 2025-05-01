@@ -52,7 +52,7 @@ public partial class IpAddressAuthentication : IEquatable<IpAddressAuthenticatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IpAddressAuthentication);
+        return Equals(obj as IpAddressAuthentication);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class IpAddressAuthentication : IEquatable<IpAddressAuthenticatio
 
         return true &&
             (
-                this.NetworkWhitelist == other.NetworkWhitelist ||
-                this.NetworkWhitelist != null &&
-                this.NetworkWhitelist.SequenceEqual(other.NetworkWhitelist)
+                NetworkWhitelist == other.NetworkWhitelist ||
+                NetworkWhitelist != null &&
+                NetworkWhitelist.SequenceEqual(other.NetworkWhitelist)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class IpAddressAuthentication : IEquatable<IpAddressAuthenticatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.NetworkWhitelist != null)
+            if (NetworkWhitelist != null)
             {
-                hash = hash * 59 + this.NetworkWhitelist.GetHashCode();
+                hash = hash * 59 + NetworkWhitelist.GetHashCode();
             }
 
             return hash;

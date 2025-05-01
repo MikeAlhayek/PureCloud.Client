@@ -115,7 +115,7 @@ public partial class KeyPerformanceIndicatorAssessment : IEquatable<KeyPerforman
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KeyPerformanceIndicatorAssessment);
+        return Equals(obj as KeyPerformanceIndicatorAssessment);
     }
 
     /// <summary>
@@ -133,19 +133,19 @@ public partial class KeyPerformanceIndicatorAssessment : IEquatable<KeyPerforman
 
         return true &&
             (
-                this.Kpi == other.Kpi ||
-                this.Kpi != null &&
-                this.Kpi.Equals(other.Kpi)
+                Kpi == other.Kpi ||
+                Kpi != null &&
+                Kpi.Equals(other.Kpi)
             ) &&
             (
-                this.AssessmentResult == other.AssessmentResult ||
-                this.AssessmentResult != null &&
-                this.AssessmentResult.Equals(other.AssessmentResult)
+                AssessmentResult == other.AssessmentResult ||
+                AssessmentResult != null &&
+                AssessmentResult.Equals(other.AssessmentResult)
             ) &&
             (
-                this.Checks == other.Checks ||
-                this.Checks != null &&
-                this.Checks.SequenceEqual(other.Checks)
+                Checks == other.Checks ||
+                Checks != null &&
+                Checks.SequenceEqual(other.Checks)
             );
     }
 
@@ -160,19 +160,19 @@ public partial class KeyPerformanceIndicatorAssessment : IEquatable<KeyPerforman
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Kpi != null)
+            if (Kpi != null)
             {
-                hash = hash * 59 + this.Kpi.GetHashCode();
+                hash = hash * 59 + Kpi.GetHashCode();
             }
 
-            if (this.AssessmentResult != null)
+            if (AssessmentResult != null)
             {
-                hash = hash * 59 + this.AssessmentResult.GetHashCode();
+                hash = hash * 59 + AssessmentResult.GetHashCode();
             }
 
-            if (this.Checks != null)
+            if (Checks != null)
             {
-                hash = hash * 59 + this.Checks.GetHashCode();
+                hash = hash * 59 + Checks.GetHashCode();
             }
 
             return hash;

@@ -63,7 +63,7 @@ public partial class EdgeVersionReport : IEquatable<EdgeVersionReport>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeVersionReport);
+        return Equals(obj as EdgeVersionReport);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class EdgeVersionReport : IEquatable<EdgeVersionReport>
 
         return true &&
             (
-                this.OldestVersion == other.OldestVersion ||
-                this.OldestVersion != null &&
-                this.OldestVersion.Equals(other.OldestVersion)
+                OldestVersion == other.OldestVersion ||
+                OldestVersion != null &&
+                OldestVersion.Equals(other.OldestVersion)
             ) &&
             (
-                this.NewestVersion == other.NewestVersion ||
-                this.NewestVersion != null &&
-                this.NewestVersion.Equals(other.NewestVersion)
+                NewestVersion == other.NewestVersion ||
+                NewestVersion != null &&
+                NewestVersion.Equals(other.NewestVersion)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class EdgeVersionReport : IEquatable<EdgeVersionReport>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OldestVersion != null)
+            if (OldestVersion != null)
             {
-                hash = hash * 59 + this.OldestVersion.GetHashCode();
+                hash = hash * 59 + OldestVersion.GetHashCode();
             }
 
-            if (this.NewestVersion != null)
+            if (NewestVersion != null)
             {
-                hash = hash * 59 + this.NewestVersion.GetHashCode();
+                hash = hash * 59 + NewestVersion.GetHashCode();
             }
 
             return hash;

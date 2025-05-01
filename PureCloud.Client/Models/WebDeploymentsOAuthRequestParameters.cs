@@ -119,7 +119,7 @@ public partial class WebDeploymentsOAuthRequestParameters : IEquatable<WebDeploy
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebDeploymentsOAuthRequestParameters);
+        return Equals(obj as WebDeploymentsOAuthRequestParameters);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class WebDeploymentsOAuthRequestParameters : IEquatable<WebDeploy
 
         return true &&
             (
-                this.Code == other.Code ||
-                this.Code != null &&
-                this.Code.Equals(other.Code)
+                Code == other.Code ||
+                Code != null &&
+                Code.Equals(other.Code)
             ) &&
             (
-                this.RedirectUri == other.RedirectUri ||
-                this.RedirectUri != null &&
-                this.RedirectUri.Equals(other.RedirectUri)
+                RedirectUri == other.RedirectUri ||
+                RedirectUri != null &&
+                RedirectUri.Equals(other.RedirectUri)
             ) &&
             (
-                this.Nonce == other.Nonce ||
-                this.Nonce != null &&
-                this.Nonce.Equals(other.Nonce)
+                Nonce == other.Nonce ||
+                Nonce != null &&
+                Nonce.Equals(other.Nonce)
             ) &&
             (
-                this.MaxAge == other.MaxAge ||
-                this.MaxAge != null &&
-                this.MaxAge.Equals(other.MaxAge)
+                MaxAge == other.MaxAge ||
+                MaxAge != null &&
+                MaxAge.Equals(other.MaxAge)
             ) &&
             (
-                this.CodeVerifier == other.CodeVerifier ||
-                this.CodeVerifier != null &&
-                this.CodeVerifier.Equals(other.CodeVerifier)
+                CodeVerifier == other.CodeVerifier ||
+                CodeVerifier != null &&
+                CodeVerifier.Equals(other.CodeVerifier)
             ) &&
             (
-                this.Iss == other.Iss ||
-                this.Iss != null &&
-                this.Iss.Equals(other.Iss)
+                Iss == other.Iss ||
+                Iss != null &&
+                Iss.Equals(other.Iss)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class WebDeploymentsOAuthRequestParameters : IEquatable<WebDeploy
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Code != null)
+            if (Code != null)
             {
-                hash = hash * 59 + this.Code.GetHashCode();
+                hash = hash * 59 + Code.GetHashCode();
             }
 
-            if (this.RedirectUri != null)
+            if (RedirectUri != null)
             {
-                hash = hash * 59 + this.RedirectUri.GetHashCode();
+                hash = hash * 59 + RedirectUri.GetHashCode();
             }
 
-            if (this.Nonce != null)
+            if (Nonce != null)
             {
-                hash = hash * 59 + this.Nonce.GetHashCode();
+                hash = hash * 59 + Nonce.GetHashCode();
             }
 
-            if (this.MaxAge != null)
+            if (MaxAge != null)
             {
-                hash = hash * 59 + this.MaxAge.GetHashCode();
+                hash = hash * 59 + MaxAge.GetHashCode();
             }
 
-            if (this.CodeVerifier != null)
+            if (CodeVerifier != null)
             {
-                hash = hash * 59 + this.CodeVerifier.GetHashCode();
+                hash = hash * 59 + CodeVerifier.GetHashCode();
             }
 
-            if (this.Iss != null)
+            if (Iss != null)
             {
-                hash = hash * 59 + this.Iss.GetHashCode();
+                hash = hash * 59 + Iss.GetHashCode();
             }
 
             return hash;

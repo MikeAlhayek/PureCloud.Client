@@ -63,7 +63,7 @@ public partial class WfmBuShortTermForecastGenerateProgressTopicModificationInte
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue);
+        return Equals(obj as WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class WfmBuShortTermForecastGenerateProgressTopicModificationInte
 
         return true &&
             (
-                this.IntervalIndex == other.IntervalIndex ||
-                this.IntervalIndex != null &&
-                this.IntervalIndex.Equals(other.IntervalIndex)
+                IntervalIndex == other.IntervalIndex ||
+                IntervalIndex != null &&
+                IntervalIndex.Equals(other.IntervalIndex)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class WfmBuShortTermForecastGenerateProgressTopicModificationInte
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IntervalIndex != null)
+            if (IntervalIndex != null)
             {
-                hash = hash * 59 + this.IntervalIndex.GetHashCode();
+                hash = hash * 59 + IntervalIndex.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

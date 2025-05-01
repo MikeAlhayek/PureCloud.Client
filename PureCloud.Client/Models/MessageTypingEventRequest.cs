@@ -71,7 +71,7 @@ public partial class MessageTypingEventRequest : IEquatable<MessageTypingEventRe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessageTypingEventRequest);
+        return Equals(obj as MessageTypingEventRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class MessageTypingEventRequest : IEquatable<MessageTypingEventRe
 
         return true &&
             (
-                this.Typing == other.Typing ||
-                this.Typing != null &&
-                this.Typing.Equals(other.Typing)
+                Typing == other.Typing ||
+                Typing != null &&
+                Typing.Equals(other.Typing)
             ) &&
             (
-                this.DateSent == other.DateSent ||
-                this.DateSent != null &&
-                this.DateSent.Equals(other.DateSent)
+                DateSent == other.DateSent ||
+                DateSent != null &&
+                DateSent.Equals(other.DateSent)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class MessageTypingEventRequest : IEquatable<MessageTypingEventRe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Typing != null)
+            if (Typing != null)
             {
-                hash = hash * 59 + this.Typing.GetHashCode();
+                hash = hash * 59 + Typing.GetHashCode();
             }
 
-            if (this.DateSent != null)
+            if (DateSent != null)
             {
-                hash = hash * 59 + this.DateSent.GetHashCode();
+                hash = hash * 59 + DateSent.GetHashCode();
             }
 
             return hash;

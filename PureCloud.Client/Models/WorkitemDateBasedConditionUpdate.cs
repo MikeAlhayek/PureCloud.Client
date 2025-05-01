@@ -97,7 +97,7 @@ public partial class WorkitemDateBasedConditionUpdate : IEquatable<WorkitemDateB
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemDateBasedConditionUpdate);
+        return Equals(obj as WorkitemDateBasedConditionUpdate);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class WorkitemDateBasedConditionUpdate : IEquatable<WorkitemDateB
 
         return true &&
             (
-                this.Attribute == other.Attribute ||
-                this.Attribute != null &&
-                this.Attribute.Equals(other.Attribute)
+                Attribute == other.Attribute ||
+                Attribute != null &&
+                Attribute.Equals(other.Attribute)
             ) &&
             (
-                this.RelativeMinutesToInvocation == other.RelativeMinutesToInvocation ||
-                this.RelativeMinutesToInvocation != null &&
-                this.RelativeMinutesToInvocation.Equals(other.RelativeMinutesToInvocation)
+                RelativeMinutesToInvocation == other.RelativeMinutesToInvocation ||
+                RelativeMinutesToInvocation != null &&
+                RelativeMinutesToInvocation.Equals(other.RelativeMinutesToInvocation)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class WorkitemDateBasedConditionUpdate : IEquatable<WorkitemDateB
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Attribute != null)
+            if (Attribute != null)
             {
-                hash = hash * 59 + this.Attribute.GetHashCode();
+                hash = hash * 59 + Attribute.GetHashCode();
             }
 
-            if (this.RelativeMinutesToInvocation != null)
+            if (RelativeMinutesToInvocation != null)
             {
-                hash = hash * 59 + this.RelativeMinutesToInvocation.GetHashCode();
+                hash = hash * 59 + RelativeMinutesToInvocation.GetHashCode();
             }
 
             return hash;

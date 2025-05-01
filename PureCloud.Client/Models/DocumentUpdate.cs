@@ -147,7 +147,7 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentUpdate);
+        return Equals(obj as DocumentUpdate);
     }
 
     /// <summary>
@@ -165,49 +165,49 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
 
         return true &&
             (
-                this.ChangeNumber == other.ChangeNumber ||
-                this.ChangeNumber != null &&
-                this.ChangeNumber.Equals(other.ChangeNumber)
+                ChangeNumber == other.ChangeNumber ||
+                ChangeNumber != null &&
+                ChangeNumber.Equals(other.ChangeNumber)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Read == other.Read ||
-                this.Read != null &&
-                this.Read.Equals(other.Read)
+                Read == other.Read ||
+                Read != null &&
+                Read.Equals(other.Read)
             ) &&
             (
-                this.AddTags == other.AddTags ||
-                this.AddTags != null &&
-                this.AddTags.SequenceEqual(other.AddTags)
+                AddTags == other.AddTags ||
+                AddTags != null &&
+                AddTags.SequenceEqual(other.AddTags)
             ) &&
             (
-                this.RemoveTags == other.RemoveTags ||
-                this.RemoveTags != null &&
-                this.RemoveTags.SequenceEqual(other.RemoveTags)
+                RemoveTags == other.RemoveTags ||
+                RemoveTags != null &&
+                RemoveTags.SequenceEqual(other.RemoveTags)
             ) &&
             (
-                this.AddTagIds == other.AddTagIds ||
-                this.AddTagIds != null &&
-                this.AddTagIds.SequenceEqual(other.AddTagIds)
+                AddTagIds == other.AddTagIds ||
+                AddTagIds != null &&
+                AddTagIds.SequenceEqual(other.AddTagIds)
             ) &&
             (
-                this.RemoveTagIds == other.RemoveTagIds ||
-                this.RemoveTagIds != null &&
-                this.RemoveTagIds.SequenceEqual(other.RemoveTagIds)
+                RemoveTagIds == other.RemoveTagIds ||
+                RemoveTagIds != null &&
+                RemoveTagIds.SequenceEqual(other.RemoveTagIds)
             ) &&
             (
-                this.UpdateAttributes == other.UpdateAttributes ||
-                this.UpdateAttributes != null &&
-                this.UpdateAttributes.SequenceEqual(other.UpdateAttributes)
+                UpdateAttributes == other.UpdateAttributes ||
+                UpdateAttributes != null &&
+                UpdateAttributes.SequenceEqual(other.UpdateAttributes)
             ) &&
             (
-                this.RemoveAttributes == other.RemoveAttributes ||
-                this.RemoveAttributes != null &&
-                this.RemoveAttributes.SequenceEqual(other.RemoveAttributes)
+                RemoveAttributes == other.RemoveAttributes ||
+                RemoveAttributes != null &&
+                RemoveAttributes.SequenceEqual(other.RemoveAttributes)
             );
     }
 
@@ -222,49 +222,49 @@ public partial class DocumentUpdate : IEquatable<DocumentUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ChangeNumber != null)
+            if (ChangeNumber != null)
             {
-                hash = hash * 59 + this.ChangeNumber.GetHashCode();
+                hash = hash * 59 + ChangeNumber.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Read != null)
+            if (Read != null)
             {
-                hash = hash * 59 + this.Read.GetHashCode();
+                hash = hash * 59 + Read.GetHashCode();
             }
 
-            if (this.AddTags != null)
+            if (AddTags != null)
             {
-                hash = hash * 59 + this.AddTags.GetHashCode();
+                hash = hash * 59 + AddTags.GetHashCode();
             }
 
-            if (this.RemoveTags != null)
+            if (RemoveTags != null)
             {
-                hash = hash * 59 + this.RemoveTags.GetHashCode();
+                hash = hash * 59 + RemoveTags.GetHashCode();
             }
 
-            if (this.AddTagIds != null)
+            if (AddTagIds != null)
             {
-                hash = hash * 59 + this.AddTagIds.GetHashCode();
+                hash = hash * 59 + AddTagIds.GetHashCode();
             }
 
-            if (this.RemoveTagIds != null)
+            if (RemoveTagIds != null)
             {
-                hash = hash * 59 + this.RemoveTagIds.GetHashCode();
+                hash = hash * 59 + RemoveTagIds.GetHashCode();
             }
 
-            if (this.UpdateAttributes != null)
+            if (UpdateAttributes != null)
             {
-                hash = hash * 59 + this.UpdateAttributes.GetHashCode();
+                hash = hash * 59 + UpdateAttributes.GetHashCode();
             }
 
-            if (this.RemoveAttributes != null)
+            if (RemoveAttributes != null)
             {
-                hash = hash * 59 + this.RemoveAttributes.GetHashCode();
+                hash = hash * 59 + RemoveAttributes.GetHashCode();
             }
 
             return hash;

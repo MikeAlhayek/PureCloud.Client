@@ -123,7 +123,7 @@ public partial class CertificateDetails : IEquatable<CertificateDetails>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CertificateDetails);
+        return Equals(obj as CertificateDetails);
     }
 
     /// <summary>
@@ -141,39 +141,39 @@ public partial class CertificateDetails : IEquatable<CertificateDetails>
 
         return true &&
             (
-                this.Issuer == other.Issuer ||
-                this.Issuer != null &&
-                this.Issuer.Equals(other.Issuer)
+                Issuer == other.Issuer ||
+                Issuer != null &&
+                Issuer.Equals(other.Issuer)
             ) &&
             (
-                this.Subject == other.Subject ||
-                this.Subject != null &&
-                this.Subject.Equals(other.Subject)
+                Subject == other.Subject ||
+                Subject != null &&
+                Subject.Equals(other.Subject)
             ) &&
             (
-                this.ExpirationDate == other.ExpirationDate ||
-                this.ExpirationDate != null &&
-                this.ExpirationDate.Equals(other.ExpirationDate)
+                ExpirationDate == other.ExpirationDate ||
+                ExpirationDate != null &&
+                ExpirationDate.Equals(other.ExpirationDate)
             ) &&
             (
-                this.IssueDate == other.IssueDate ||
-                this.IssueDate != null &&
-                this.IssueDate.Equals(other.IssueDate)
+                IssueDate == other.IssueDate ||
+                IssueDate != null &&
+                IssueDate.Equals(other.IssueDate)
             ) &&
             (
-                this.Expired == other.Expired ||
-                this.Expired != null &&
-                this.Expired.Equals(other.Expired)
+                Expired == other.Expired ||
+                Expired != null &&
+                Expired.Equals(other.Expired)
             ) &&
             (
-                this.SignatureValid == other.SignatureValid ||
-                this.SignatureValid != null &&
-                this.SignatureValid.Equals(other.SignatureValid)
+                SignatureValid == other.SignatureValid ||
+                SignatureValid != null &&
+                SignatureValid.Equals(other.SignatureValid)
             ) &&
             (
-                this.Valid == other.Valid ||
-                this.Valid != null &&
-                this.Valid.Equals(other.Valid)
+                Valid == other.Valid ||
+                Valid != null &&
+                Valid.Equals(other.Valid)
             );
     }
 
@@ -188,39 +188,39 @@ public partial class CertificateDetails : IEquatable<CertificateDetails>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Issuer != null)
+            if (Issuer != null)
             {
-                hash = hash * 59 + this.Issuer.GetHashCode();
+                hash = hash * 59 + Issuer.GetHashCode();
             }
 
-            if (this.Subject != null)
+            if (Subject != null)
             {
-                hash = hash * 59 + this.Subject.GetHashCode();
+                hash = hash * 59 + Subject.GetHashCode();
             }
 
-            if (this.ExpirationDate != null)
+            if (ExpirationDate != null)
             {
-                hash = hash * 59 + this.ExpirationDate.GetHashCode();
+                hash = hash * 59 + ExpirationDate.GetHashCode();
             }
 
-            if (this.IssueDate != null)
+            if (IssueDate != null)
             {
-                hash = hash * 59 + this.IssueDate.GetHashCode();
+                hash = hash * 59 + IssueDate.GetHashCode();
             }
 
-            if (this.Expired != null)
+            if (Expired != null)
             {
-                hash = hash * 59 + this.Expired.GetHashCode();
+                hash = hash * 59 + Expired.GetHashCode();
             }
 
-            if (this.SignatureValid != null)
+            if (SignatureValid != null)
             {
-                hash = hash * 59 + this.SignatureValid.GetHashCode();
+                hash = hash * 59 + SignatureValid.GetHashCode();
             }
 
-            if (this.Valid != null)
+            if (Valid != null)
             {
-                hash = hash * 59 + this.Valid.GetHashCode();
+                hash = hash * 59 + Valid.GetHashCode();
             }
 
             return hash;

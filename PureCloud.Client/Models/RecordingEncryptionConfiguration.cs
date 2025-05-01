@@ -165,7 +165,7 @@ public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncr
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordingEncryptionConfiguration);
+        return Equals(obj as RecordingEncryptionConfiguration);
     }
 
     /// <summary>
@@ -183,39 +183,39 @@ public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncr
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.ApiId == other.ApiId ||
-                this.ApiId != null &&
-                this.ApiId.Equals(other.ApiId)
+                ApiId == other.ApiId ||
+                ApiId != null &&
+                ApiId.Equals(other.ApiId)
             ) &&
             (
-                this.ApiKey == other.ApiKey ||
-                this.ApiKey != null &&
-                this.ApiKey.Equals(other.ApiKey)
+                ApiKey == other.ApiKey ||
+                ApiKey != null &&
+                ApiKey.Equals(other.ApiKey)
             ) &&
             (
-                this.KeyConfigurationType == other.KeyConfigurationType ||
-                this.KeyConfigurationType != null &&
-                this.KeyConfigurationType.Equals(other.KeyConfigurationType)
+                KeyConfigurationType == other.KeyConfigurationType ||
+                KeyConfigurationType != null &&
+                KeyConfigurationType.Equals(other.KeyConfigurationType)
             ) &&
             (
-                this.LastError == other.LastError ||
-                this.LastError != null &&
-                this.LastError.Equals(other.LastError)
+                LastError == other.LastError ||
+                LastError != null &&
+                LastError.Equals(other.LastError)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -230,39 +230,39 @@ public partial class RecordingEncryptionConfiguration : IEquatable<RecordingEncr
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.ApiId != null)
+            if (ApiId != null)
             {
-                hash = hash * 59 + this.ApiId.GetHashCode();
+                hash = hash * 59 + ApiId.GetHashCode();
             }
 
-            if (this.ApiKey != null)
+            if (ApiKey != null)
             {
-                hash = hash * 59 + this.ApiKey.GetHashCode();
+                hash = hash * 59 + ApiKey.GetHashCode();
             }
 
-            if (this.KeyConfigurationType != null)
+            if (KeyConfigurationType != null)
             {
-                hash = hash * 59 + this.KeyConfigurationType.GetHashCode();
+                hash = hash * 59 + KeyConfigurationType.GetHashCode();
             }
 
-            if (this.LastError != null)
+            if (LastError != null)
             {
-                hash = hash * 59 + this.LastError.GetHashCode();
+                hash = hash * 59 + LastError.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

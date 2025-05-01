@@ -83,7 +83,7 @@ public partial class MatchShiftTradeRequest : IEquatable<MatchShiftTradeRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MatchShiftTradeRequest);
+        return Equals(obj as MatchShiftTradeRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class MatchShiftTradeRequest : IEquatable<MatchShiftTradeRequest>
 
         return true &&
             (
-                this.ReceivingScheduleId == other.ReceivingScheduleId ||
-                this.ReceivingScheduleId != null &&
-                this.ReceivingScheduleId.Equals(other.ReceivingScheduleId)
+                ReceivingScheduleId == other.ReceivingScheduleId ||
+                ReceivingScheduleId != null &&
+                ReceivingScheduleId.Equals(other.ReceivingScheduleId)
             ) &&
             (
-                this.ReceivingShiftId == other.ReceivingShiftId ||
-                this.ReceivingShiftId != null &&
-                this.ReceivingShiftId.Equals(other.ReceivingShiftId)
+                ReceivingShiftId == other.ReceivingShiftId ||
+                ReceivingShiftId != null &&
+                ReceivingShiftId.Equals(other.ReceivingShiftId)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class MatchShiftTradeRequest : IEquatable<MatchShiftTradeRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ReceivingScheduleId != null)
+            if (ReceivingScheduleId != null)
             {
-                hash = hash * 59 + this.ReceivingScheduleId.GetHashCode();
+                hash = hash * 59 + ReceivingScheduleId.GetHashCode();
             }
 
-            if (this.ReceivingShiftId != null)
+            if (ReceivingShiftId != null)
             {
-                hash = hash * 59 + this.ReceivingShiftId.GetHashCode();
+                hash = hash * 59 + ReceivingShiftId.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

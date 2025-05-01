@@ -65,7 +65,7 @@ public partial class SocialKeyword : IEquatable<SocialKeyword>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SocialKeyword);
+        return Equals(obj as SocialKeyword);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class SocialKeyword : IEquatable<SocialKeyword>
 
         return true &&
             (
-                this.Includes == other.Includes ||
-                this.Includes != null &&
-                this.Includes.SequenceEqual(other.Includes)
+                Includes == other.Includes ||
+                Includes != null &&
+                Includes.SequenceEqual(other.Includes)
             ) &&
             (
-                this.Excludes == other.Excludes ||
-                this.Excludes != null &&
-                this.Excludes.SequenceEqual(other.Excludes)
+                Excludes == other.Excludes ||
+                Excludes != null &&
+                Excludes.SequenceEqual(other.Excludes)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class SocialKeyword : IEquatable<SocialKeyword>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Includes != null)
+            if (Includes != null)
             {
-                hash = hash * 59 + this.Includes.GetHashCode();
+                hash = hash * 59 + Includes.GetHashCode();
             }
 
-            if (this.Excludes != null)
+            if (Excludes != null)
             {
-                hash = hash * 59 + this.Excludes.GetHashCode();
+                hash = hash * 59 + Excludes.GetHashCode();
             }
 
             return hash;

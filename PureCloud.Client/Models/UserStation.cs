@@ -129,7 +129,7 @@ public partial class UserStation : IEquatable<UserStation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserStation);
+        return Equals(obj as UserStation);
     }
 
     /// <summary>
@@ -147,44 +147,44 @@ public partial class UserStation : IEquatable<UserStation>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.AssociatedUser == other.AssociatedUser ||
-                this.AssociatedUser != null &&
-                this.AssociatedUser.Equals(other.AssociatedUser)
+                AssociatedUser == other.AssociatedUser ||
+                AssociatedUser != null &&
+                AssociatedUser.Equals(other.AssociatedUser)
             ) &&
             (
-                this.AssociatedDate == other.AssociatedDate ||
-                this.AssociatedDate != null &&
-                this.AssociatedDate.Equals(other.AssociatedDate)
+                AssociatedDate == other.AssociatedDate ||
+                AssociatedDate != null &&
+                AssociatedDate.Equals(other.AssociatedDate)
             ) &&
             (
-                this.DefaultUser == other.DefaultUser ||
-                this.DefaultUser != null &&
-                this.DefaultUser.Equals(other.DefaultUser)
+                DefaultUser == other.DefaultUser ||
+                DefaultUser != null &&
+                DefaultUser.Equals(other.DefaultUser)
             ) &&
             (
-                this.ProviderInfo == other.ProviderInfo ||
-                this.ProviderInfo != null &&
-                this.ProviderInfo.SequenceEqual(other.ProviderInfo)
+                ProviderInfo == other.ProviderInfo ||
+                ProviderInfo != null &&
+                ProviderInfo.SequenceEqual(other.ProviderInfo)
             ) &&
             (
-                this.WebRtcCallAppearances == other.WebRtcCallAppearances ||
-                this.WebRtcCallAppearances != null &&
-                this.WebRtcCallAppearances.Equals(other.WebRtcCallAppearances)
+                WebRtcCallAppearances == other.WebRtcCallAppearances ||
+                WebRtcCallAppearances != null &&
+                WebRtcCallAppearances.Equals(other.WebRtcCallAppearances)
             );
     }
 
@@ -199,44 +199,44 @@ public partial class UserStation : IEquatable<UserStation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.AssociatedUser != null)
+            if (AssociatedUser != null)
             {
-                hash = hash * 59 + this.AssociatedUser.GetHashCode();
+                hash = hash * 59 + AssociatedUser.GetHashCode();
             }
 
-            if (this.AssociatedDate != null)
+            if (AssociatedDate != null)
             {
-                hash = hash * 59 + this.AssociatedDate.GetHashCode();
+                hash = hash * 59 + AssociatedDate.GetHashCode();
             }
 
-            if (this.DefaultUser != null)
+            if (DefaultUser != null)
             {
-                hash = hash * 59 + this.DefaultUser.GetHashCode();
+                hash = hash * 59 + DefaultUser.GetHashCode();
             }
 
-            if (this.ProviderInfo != null)
+            if (ProviderInfo != null)
             {
-                hash = hash * 59 + this.ProviderInfo.GetHashCode();
+                hash = hash * 59 + ProviderInfo.GetHashCode();
             }
 
-            if (this.WebRtcCallAppearances != null)
+            if (WebRtcCallAppearances != null)
             {
-                hash = hash * 59 + this.WebRtcCallAppearances.GetHashCode();
+                hash = hash * 59 + WebRtcCallAppearances.GetHashCode();
             }
 
             return hash;

@@ -59,7 +59,7 @@ public partial class OverrideEscalationTarget : IEquatable<OverrideEscalationTar
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OverrideEscalationTarget);
+        return Equals(obj as OverrideEscalationTarget);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class OverrideEscalationTarget : IEquatable<OverrideEscalationTar
 
         return true &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class OverrideEscalationTarget : IEquatable<OverrideEscalationTar
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
             return hash;

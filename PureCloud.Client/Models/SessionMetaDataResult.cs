@@ -113,7 +113,7 @@ public partial class SessionMetaDataResult : IEquatable<SessionMetaDataResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SessionMetaDataResult);
+        return Equals(obj as SessionMetaDataResult);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class SessionMetaDataResult : IEquatable<SessionMetaDataResult>
 
         return true &&
             (
-                this.SessionInfo == other.SessionInfo ||
-                this.SessionInfo != null &&
-                this.SessionInfo.Equals(other.SessionInfo)
+                SessionInfo == other.SessionInfo ||
+                SessionInfo != null &&
+                SessionInfo.Equals(other.SessionInfo)
             ) &&
             (
-                this.Snapshots == other.Snapshots ||
-                this.Snapshots != null &&
-                this.Snapshots.SequenceEqual(other.Snapshots)
+                Snapshots == other.Snapshots ||
+                Snapshots != null &&
+                Snapshots.SequenceEqual(other.Snapshots)
             ) &&
             (
-                this.DateForecastStart == other.DateForecastStart ||
-                this.DateForecastStart != null &&
-                this.DateForecastStart.Equals(other.DateForecastStart)
+                DateForecastStart == other.DateForecastStart ||
+                DateForecastStart != null &&
+                DateForecastStart.Equals(other.DateForecastStart)
             ) &&
             (
-                this.DateHistoricalStart == other.DateHistoricalStart ||
-                this.DateHistoricalStart != null &&
-                this.DateHistoricalStart.Equals(other.DateHistoricalStart)
+                DateHistoricalStart == other.DateHistoricalStart ||
+                DateHistoricalStart != null &&
+                DateHistoricalStart.Equals(other.DateHistoricalStart)
             ) &&
             (
-                this.AggregateOfferedHistoricalAvailability == other.AggregateOfferedHistoricalAvailability ||
-                this.AggregateOfferedHistoricalAvailability != null &&
-                this.AggregateOfferedHistoricalAvailability.Equals(other.AggregateOfferedHistoricalAvailability)
+                AggregateOfferedHistoricalAvailability == other.AggregateOfferedHistoricalAvailability ||
+                AggregateOfferedHistoricalAvailability != null &&
+                AggregateOfferedHistoricalAvailability.Equals(other.AggregateOfferedHistoricalAvailability)
             ) &&
             (
-                this.AggregateAverageHandleTimeHistoricalAvailability == other.AggregateAverageHandleTimeHistoricalAvailability ||
-                this.AggregateAverageHandleTimeHistoricalAvailability != null &&
-                this.AggregateAverageHandleTimeHistoricalAvailability.Equals(other.AggregateAverageHandleTimeHistoricalAvailability)
+                AggregateAverageHandleTimeHistoricalAvailability == other.AggregateAverageHandleTimeHistoricalAvailability ||
+                AggregateAverageHandleTimeHistoricalAvailability != null &&
+                AggregateAverageHandleTimeHistoricalAvailability.Equals(other.AggregateAverageHandleTimeHistoricalAvailability)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class SessionMetaDataResult : IEquatable<SessionMetaDataResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SessionInfo != null)
+            if (SessionInfo != null)
             {
-                hash = hash * 59 + this.SessionInfo.GetHashCode();
+                hash = hash * 59 + SessionInfo.GetHashCode();
             }
 
-            if (this.Snapshots != null)
+            if (Snapshots != null)
             {
-                hash = hash * 59 + this.Snapshots.GetHashCode();
+                hash = hash * 59 + Snapshots.GetHashCode();
             }
 
-            if (this.DateForecastStart != null)
+            if (DateForecastStart != null)
             {
-                hash = hash * 59 + this.DateForecastStart.GetHashCode();
+                hash = hash * 59 + DateForecastStart.GetHashCode();
             }
 
-            if (this.DateHistoricalStart != null)
+            if (DateHistoricalStart != null)
             {
-                hash = hash * 59 + this.DateHistoricalStart.GetHashCode();
+                hash = hash * 59 + DateHistoricalStart.GetHashCode();
             }
 
-            if (this.AggregateOfferedHistoricalAvailability != null)
+            if (AggregateOfferedHistoricalAvailability != null)
             {
-                hash = hash * 59 + this.AggregateOfferedHistoricalAvailability.GetHashCode();
+                hash = hash * 59 + AggregateOfferedHistoricalAvailability.GetHashCode();
             }
 
-            if (this.AggregateAverageHandleTimeHistoricalAvailability != null)
+            if (AggregateAverageHandleTimeHistoricalAvailability != null)
             {
-                hash = hash * 59 + this.AggregateAverageHandleTimeHistoricalAvailability.GetHashCode();
+                hash = hash * 59 + AggregateAverageHandleTimeHistoricalAvailability.GetHashCode();
             }
 
             return hash;

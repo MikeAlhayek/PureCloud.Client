@@ -59,7 +59,7 @@ public partial class PinnedMessageRequest : IEquatable<PinnedMessageRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PinnedMessageRequest);
+        return Equals(obj as PinnedMessageRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class PinnedMessageRequest : IEquatable<PinnedMessageRequest>
 
         return true &&
             (
-                this.PinnedMessageIds == other.PinnedMessageIds ||
-                this.PinnedMessageIds != null &&
-                this.PinnedMessageIds.SequenceEqual(other.PinnedMessageIds)
+                PinnedMessageIds == other.PinnedMessageIds ||
+                PinnedMessageIds != null &&
+                PinnedMessageIds.SequenceEqual(other.PinnedMessageIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class PinnedMessageRequest : IEquatable<PinnedMessageRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PinnedMessageIds != null)
+            if (PinnedMessageIds != null)
             {
-                hash = hash * 59 + this.PinnedMessageIds.GetHashCode();
+                hash = hash * 59 + PinnedMessageIds.GetHashCode();
             }
 
             return hash;

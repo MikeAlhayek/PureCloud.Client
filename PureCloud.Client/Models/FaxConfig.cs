@@ -71,7 +71,7 @@ public partial class FaxConfig : IEquatable<FaxConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FaxConfig);
+        return Equals(obj as FaxConfig);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class FaxConfig : IEquatable<FaxConfig>
 
         return true &&
             (
-                this.SendEmailNotifications == other.SendEmailNotifications ||
-                this.SendEmailNotifications != null &&
-                this.SendEmailNotifications.Equals(other.SendEmailNotifications)
+                SendEmailNotifications == other.SendEmailNotifications ||
+                SendEmailNotifications != null &&
+                SendEmailNotifications.Equals(other.SendEmailNotifications)
             ) &&
             (
-                this.DisableEmailPii == other.DisableEmailPii ||
-                this.DisableEmailPii != null &&
-                this.DisableEmailPii.Equals(other.DisableEmailPii)
+                DisableEmailPii == other.DisableEmailPii ||
+                DisableEmailPii != null &&
+                DisableEmailPii.Equals(other.DisableEmailPii)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class FaxConfig : IEquatable<FaxConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SendEmailNotifications != null)
+            if (SendEmailNotifications != null)
             {
-                hash = hash * 59 + this.SendEmailNotifications.GetHashCode();
+                hash = hash * 59 + SendEmailNotifications.GetHashCode();
             }
 
-            if (this.DisableEmailPii != null)
+            if (DisableEmailPii != null)
             {
-                hash = hash * 59 + this.DisableEmailPii.GetHashCode();
+                hash = hash * 59 + DisableEmailPii.GetHashCode();
             }
 
             return hash;

@@ -61,7 +61,7 @@ public partial class UserAppConfigurationInfo : IEquatable<UserAppConfigurationI
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserAppConfigurationInfo);
+        return Equals(obj as UserAppConfigurationInfo);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class UserAppConfigurationInfo : IEquatable<UserAppConfigurationI
 
         return true &&
             (
-                this.Current == other.Current ||
-                this.Current != null &&
-                this.Current.Equals(other.Current)
+                Current == other.Current ||
+                Current != null &&
+                Current.Equals(other.Current)
             ) &&
             (
-                this.Effective == other.Effective ||
-                this.Effective != null &&
-                this.Effective.Equals(other.Effective)
+                Effective == other.Effective ||
+                Effective != null &&
+                Effective.Equals(other.Effective)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class UserAppConfigurationInfo : IEquatable<UserAppConfigurationI
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Current != null)
+            if (Current != null)
             {
-                hash = hash * 59 + this.Current.GetHashCode();
+                hash = hash * 59 + Current.GetHashCode();
             }
 
-            if (this.Effective != null)
+            if (Effective != null)
             {
-                hash = hash * 59 + this.Effective.GetHashCode();
+                hash = hash * 59 + Effective.GetHashCode();
             }
 
             return hash;

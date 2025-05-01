@@ -600,7 +600,7 @@ public partial class Recording : IEquatable<Recording>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Recording);
+        return Equals(obj as Recording);
     }
 
     /// <summary>
@@ -618,174 +618,174 @@ public partial class Recording : IEquatable<Recording>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.Path == other.Path ||
-                this.Path != null &&
-                this.Path.Equals(other.Path)
+                Path == other.Path ||
+                Path != null &&
+                Path.Equals(other.Path)
             ) &&
             (
-                this.StartTime == other.StartTime ||
-                this.StartTime != null &&
-                this.StartTime.Equals(other.StartTime)
+                StartTime == other.StartTime ||
+                StartTime != null &&
+                StartTime.Equals(other.StartTime)
             ) &&
             (
-                this.EndTime == other.EndTime ||
-                this.EndTime != null &&
-                this.EndTime.Equals(other.EndTime)
+                EndTime == other.EndTime ||
+                EndTime != null &&
+                EndTime.Equals(other.EndTime)
             ) &&
             (
-                this.Media == other.Media ||
-                this.Media != null &&
-                this.Media.Equals(other.Media)
+                Media == other.Media ||
+                Media != null &&
+                Media.Equals(other.Media)
             ) &&
             (
-                this.MediaSubtype == other.MediaSubtype ||
-                this.MediaSubtype != null &&
-                this.MediaSubtype.Equals(other.MediaSubtype)
+                MediaSubtype == other.MediaSubtype ||
+                MediaSubtype != null &&
+                MediaSubtype.Equals(other.MediaSubtype)
             ) &&
             (
-                this.MediaSubject == other.MediaSubject ||
-                this.MediaSubject != null &&
-                this.MediaSubject.Equals(other.MediaSubject)
+                MediaSubject == other.MediaSubject ||
+                MediaSubject != null &&
+                MediaSubject.Equals(other.MediaSubject)
             ) &&
             (
-                this.Annotations == other.Annotations ||
-                this.Annotations != null &&
-                this.Annotations.SequenceEqual(other.Annotations)
+                Annotations == other.Annotations ||
+                Annotations != null &&
+                Annotations.SequenceEqual(other.Annotations)
             ) &&
             (
-                this.Transcript == other.Transcript ||
-                this.Transcript != null &&
-                this.Transcript.SequenceEqual(other.Transcript)
+                Transcript == other.Transcript ||
+                Transcript != null &&
+                Transcript.SequenceEqual(other.Transcript)
             ) &&
             (
-                this.EmailTranscript == other.EmailTranscript ||
-                this.EmailTranscript != null &&
-                this.EmailTranscript.SequenceEqual(other.EmailTranscript)
+                EmailTranscript == other.EmailTranscript ||
+                EmailTranscript != null &&
+                EmailTranscript.SequenceEqual(other.EmailTranscript)
             ) &&
             (
-                this.MessagingTranscript == other.MessagingTranscript ||
-                this.MessagingTranscript != null &&
-                this.MessagingTranscript.SequenceEqual(other.MessagingTranscript)
+                MessagingTranscript == other.MessagingTranscript ||
+                MessagingTranscript != null &&
+                MessagingTranscript.SequenceEqual(other.MessagingTranscript)
             ) &&
             (
-                this.FileState == other.FileState ||
-                this.FileState != null &&
-                this.FileState.Equals(other.FileState)
+                FileState == other.FileState ||
+                FileState != null &&
+                FileState.Equals(other.FileState)
             ) &&
             (
-                this.RestoreExpirationTime == other.RestoreExpirationTime ||
-                this.RestoreExpirationTime != null &&
-                this.RestoreExpirationTime.Equals(other.RestoreExpirationTime)
+                RestoreExpirationTime == other.RestoreExpirationTime ||
+                RestoreExpirationTime != null &&
+                RestoreExpirationTime.Equals(other.RestoreExpirationTime)
             ) &&
             (
-                this.MediaUris == other.MediaUris ||
-                this.MediaUris != null &&
-                this.MediaUris.SequenceEqual(other.MediaUris)
+                MediaUris == other.MediaUris ||
+                MediaUris != null &&
+                MediaUris.SequenceEqual(other.MediaUris)
             ) &&
             (
-                this.EstimatedTranscodeTimeMs == other.EstimatedTranscodeTimeMs ||
-                this.EstimatedTranscodeTimeMs != null &&
-                this.EstimatedTranscodeTimeMs.Equals(other.EstimatedTranscodeTimeMs)
+                EstimatedTranscodeTimeMs == other.EstimatedTranscodeTimeMs ||
+                EstimatedTranscodeTimeMs != null &&
+                EstimatedTranscodeTimeMs.Equals(other.EstimatedTranscodeTimeMs)
             ) &&
             (
-                this.ActualTranscodeTimeMs == other.ActualTranscodeTimeMs ||
-                this.ActualTranscodeTimeMs != null &&
-                this.ActualTranscodeTimeMs.Equals(other.ActualTranscodeTimeMs)
+                ActualTranscodeTimeMs == other.ActualTranscodeTimeMs ||
+                ActualTranscodeTimeMs != null &&
+                ActualTranscodeTimeMs.Equals(other.ActualTranscodeTimeMs)
             ) &&
             (
-                this.ArchiveDate == other.ArchiveDate ||
-                this.ArchiveDate != null &&
-                this.ArchiveDate.Equals(other.ArchiveDate)
+                ArchiveDate == other.ArchiveDate ||
+                ArchiveDate != null &&
+                ArchiveDate.Equals(other.ArchiveDate)
             ) &&
             (
-                this.ArchiveMedium == other.ArchiveMedium ||
-                this.ArchiveMedium != null &&
-                this.ArchiveMedium.Equals(other.ArchiveMedium)
+                ArchiveMedium == other.ArchiveMedium ||
+                ArchiveMedium != null &&
+                ArchiveMedium.Equals(other.ArchiveMedium)
             ) &&
             (
-                this.DeleteDate == other.DeleteDate ||
-                this.DeleteDate != null &&
-                this.DeleteDate.Equals(other.DeleteDate)
+                DeleteDate == other.DeleteDate ||
+                DeleteDate != null &&
+                DeleteDate.Equals(other.DeleteDate)
             ) &&
             (
-                this.ExportDate == other.ExportDate ||
-                this.ExportDate != null &&
-                this.ExportDate.Equals(other.ExportDate)
+                ExportDate == other.ExportDate ||
+                ExportDate != null &&
+                ExportDate.Equals(other.ExportDate)
             ) &&
             (
-                this.ExportedDate == other.ExportedDate ||
-                this.ExportedDate != null &&
-                this.ExportedDate.Equals(other.ExportedDate)
+                ExportedDate == other.ExportedDate ||
+                ExportedDate != null &&
+                ExportedDate.Equals(other.ExportedDate)
             ) &&
             (
-                this.OutputDurationMs == other.OutputDurationMs ||
-                this.OutputDurationMs != null &&
-                this.OutputDurationMs.Equals(other.OutputDurationMs)
+                OutputDurationMs == other.OutputDurationMs ||
+                OutputDurationMs != null &&
+                OutputDurationMs.Equals(other.OutputDurationMs)
             ) &&
             (
-                this.OutputSizeInBytes == other.OutputSizeInBytes ||
-                this.OutputSizeInBytes != null &&
-                this.OutputSizeInBytes.Equals(other.OutputSizeInBytes)
+                OutputSizeInBytes == other.OutputSizeInBytes ||
+                OutputSizeInBytes != null &&
+                OutputSizeInBytes.Equals(other.OutputSizeInBytes)
             ) &&
             (
-                this.MaxAllowedRestorationsForOrg == other.MaxAllowedRestorationsForOrg ||
-                this.MaxAllowedRestorationsForOrg != null &&
-                this.MaxAllowedRestorationsForOrg.Equals(other.MaxAllowedRestorationsForOrg)
+                MaxAllowedRestorationsForOrg == other.MaxAllowedRestorationsForOrg ||
+                MaxAllowedRestorationsForOrg != null &&
+                MaxAllowedRestorationsForOrg.Equals(other.MaxAllowedRestorationsForOrg)
             ) &&
             (
-                this.RemainingRestorationsAllowedForOrg == other.RemainingRestorationsAllowedForOrg ||
-                this.RemainingRestorationsAllowedForOrg != null &&
-                this.RemainingRestorationsAllowedForOrg.Equals(other.RemainingRestorationsAllowedForOrg)
+                RemainingRestorationsAllowedForOrg == other.RemainingRestorationsAllowedForOrg ||
+                RemainingRestorationsAllowedForOrg != null &&
+                RemainingRestorationsAllowedForOrg.Equals(other.RemainingRestorationsAllowedForOrg)
             ) &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.Users == other.Users ||
-                this.Users != null &&
-                this.Users.SequenceEqual(other.Users)
+                Users == other.Users ||
+                Users != null &&
+                Users.SequenceEqual(other.Users)
             ) &&
             (
-                this.RecordingFileRole == other.RecordingFileRole ||
-                this.RecordingFileRole != null &&
-                this.RecordingFileRole.Equals(other.RecordingFileRole)
+                RecordingFileRole == other.RecordingFileRole ||
+                RecordingFileRole != null &&
+                RecordingFileRole.Equals(other.RecordingFileRole)
             ) &&
             (
-                this.RecordingErrorStatus == other.RecordingErrorStatus ||
-                this.RecordingErrorStatus != null &&
-                this.RecordingErrorStatus.Equals(other.RecordingErrorStatus)
+                RecordingErrorStatus == other.RecordingErrorStatus ||
+                RecordingErrorStatus != null &&
+                RecordingErrorStatus.Equals(other.RecordingErrorStatus)
             ) &&
             (
-                this.OriginalRecordingStartTime == other.OriginalRecordingStartTime ||
-                this.OriginalRecordingStartTime != null &&
-                this.OriginalRecordingStartTime.Equals(other.OriginalRecordingStartTime)
+                OriginalRecordingStartTime == other.OriginalRecordingStartTime ||
+                OriginalRecordingStartTime != null &&
+                OriginalRecordingStartTime.Equals(other.OriginalRecordingStartTime)
             ) &&
             (
-                this.CreationTime == other.CreationTime ||
-                this.CreationTime != null &&
-                this.CreationTime.Equals(other.CreationTime)
+                CreationTime == other.CreationTime ||
+                CreationTime != null &&
+                CreationTime.Equals(other.CreationTime)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -800,174 +800,174 @@ public partial class Recording : IEquatable<Recording>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.Path != null)
+            if (Path != null)
             {
-                hash = hash * 59 + this.Path.GetHashCode();
+                hash = hash * 59 + Path.GetHashCode();
             }
 
-            if (this.StartTime != null)
+            if (StartTime != null)
             {
-                hash = hash * 59 + this.StartTime.GetHashCode();
+                hash = hash * 59 + StartTime.GetHashCode();
             }
 
-            if (this.EndTime != null)
+            if (EndTime != null)
             {
-                hash = hash * 59 + this.EndTime.GetHashCode();
+                hash = hash * 59 + EndTime.GetHashCode();
             }
 
-            if (this.Media != null)
+            if (Media != null)
             {
-                hash = hash * 59 + this.Media.GetHashCode();
+                hash = hash * 59 + Media.GetHashCode();
             }
 
-            if (this.MediaSubtype != null)
+            if (MediaSubtype != null)
             {
-                hash = hash * 59 + this.MediaSubtype.GetHashCode();
+                hash = hash * 59 + MediaSubtype.GetHashCode();
             }
 
-            if (this.MediaSubject != null)
+            if (MediaSubject != null)
             {
-                hash = hash * 59 + this.MediaSubject.GetHashCode();
+                hash = hash * 59 + MediaSubject.GetHashCode();
             }
 
-            if (this.Annotations != null)
+            if (Annotations != null)
             {
-                hash = hash * 59 + this.Annotations.GetHashCode();
+                hash = hash * 59 + Annotations.GetHashCode();
             }
 
-            if (this.Transcript != null)
+            if (Transcript != null)
             {
-                hash = hash * 59 + this.Transcript.GetHashCode();
+                hash = hash * 59 + Transcript.GetHashCode();
             }
 
-            if (this.EmailTranscript != null)
+            if (EmailTranscript != null)
             {
-                hash = hash * 59 + this.EmailTranscript.GetHashCode();
+                hash = hash * 59 + EmailTranscript.GetHashCode();
             }
 
-            if (this.MessagingTranscript != null)
+            if (MessagingTranscript != null)
             {
-                hash = hash * 59 + this.MessagingTranscript.GetHashCode();
+                hash = hash * 59 + MessagingTranscript.GetHashCode();
             }
 
-            if (this.FileState != null)
+            if (FileState != null)
             {
-                hash = hash * 59 + this.FileState.GetHashCode();
+                hash = hash * 59 + FileState.GetHashCode();
             }
 
-            if (this.RestoreExpirationTime != null)
+            if (RestoreExpirationTime != null)
             {
-                hash = hash * 59 + this.RestoreExpirationTime.GetHashCode();
+                hash = hash * 59 + RestoreExpirationTime.GetHashCode();
             }
 
-            if (this.MediaUris != null)
+            if (MediaUris != null)
             {
-                hash = hash * 59 + this.MediaUris.GetHashCode();
+                hash = hash * 59 + MediaUris.GetHashCode();
             }
 
-            if (this.EstimatedTranscodeTimeMs != null)
+            if (EstimatedTranscodeTimeMs != null)
             {
-                hash = hash * 59 + this.EstimatedTranscodeTimeMs.GetHashCode();
+                hash = hash * 59 + EstimatedTranscodeTimeMs.GetHashCode();
             }
 
-            if (this.ActualTranscodeTimeMs != null)
+            if (ActualTranscodeTimeMs != null)
             {
-                hash = hash * 59 + this.ActualTranscodeTimeMs.GetHashCode();
+                hash = hash * 59 + ActualTranscodeTimeMs.GetHashCode();
             }
 
-            if (this.ArchiveDate != null)
+            if (ArchiveDate != null)
             {
-                hash = hash * 59 + this.ArchiveDate.GetHashCode();
+                hash = hash * 59 + ArchiveDate.GetHashCode();
             }
 
-            if (this.ArchiveMedium != null)
+            if (ArchiveMedium != null)
             {
-                hash = hash * 59 + this.ArchiveMedium.GetHashCode();
+                hash = hash * 59 + ArchiveMedium.GetHashCode();
             }
 
-            if (this.DeleteDate != null)
+            if (DeleteDate != null)
             {
-                hash = hash * 59 + this.DeleteDate.GetHashCode();
+                hash = hash * 59 + DeleteDate.GetHashCode();
             }
 
-            if (this.ExportDate != null)
+            if (ExportDate != null)
             {
-                hash = hash * 59 + this.ExportDate.GetHashCode();
+                hash = hash * 59 + ExportDate.GetHashCode();
             }
 
-            if (this.ExportedDate != null)
+            if (ExportedDate != null)
             {
-                hash = hash * 59 + this.ExportedDate.GetHashCode();
+                hash = hash * 59 + ExportedDate.GetHashCode();
             }
 
-            if (this.OutputDurationMs != null)
+            if (OutputDurationMs != null)
             {
-                hash = hash * 59 + this.OutputDurationMs.GetHashCode();
+                hash = hash * 59 + OutputDurationMs.GetHashCode();
             }
 
-            if (this.OutputSizeInBytes != null)
+            if (OutputSizeInBytes != null)
             {
-                hash = hash * 59 + this.OutputSizeInBytes.GetHashCode();
+                hash = hash * 59 + OutputSizeInBytes.GetHashCode();
             }
 
-            if (this.MaxAllowedRestorationsForOrg != null)
+            if (MaxAllowedRestorationsForOrg != null)
             {
-                hash = hash * 59 + this.MaxAllowedRestorationsForOrg.GetHashCode();
+                hash = hash * 59 + MaxAllowedRestorationsForOrg.GetHashCode();
             }
 
-            if (this.RemainingRestorationsAllowedForOrg != null)
+            if (RemainingRestorationsAllowedForOrg != null)
             {
-                hash = hash * 59 + this.RemainingRestorationsAllowedForOrg.GetHashCode();
+                hash = hash * 59 + RemainingRestorationsAllowedForOrg.GetHashCode();
             }
 
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.Users != null)
+            if (Users != null)
             {
-                hash = hash * 59 + this.Users.GetHashCode();
+                hash = hash * 59 + Users.GetHashCode();
             }
 
-            if (this.RecordingFileRole != null)
+            if (RecordingFileRole != null)
             {
-                hash = hash * 59 + this.RecordingFileRole.GetHashCode();
+                hash = hash * 59 + RecordingFileRole.GetHashCode();
             }
 
-            if (this.RecordingErrorStatus != null)
+            if (RecordingErrorStatus != null)
             {
-                hash = hash * 59 + this.RecordingErrorStatus.GetHashCode();
+                hash = hash * 59 + RecordingErrorStatus.GetHashCode();
             }
 
-            if (this.OriginalRecordingStartTime != null)
+            if (OriginalRecordingStartTime != null)
             {
-                hash = hash * 59 + this.OriginalRecordingStartTime.GetHashCode();
+                hash = hash * 59 + OriginalRecordingStartTime.GetHashCode();
             }
 
-            if (this.CreationTime != null)
+            if (CreationTime != null)
             {
-                hash = hash * 59 + this.CreationTime.GetHashCode();
+                hash = hash * 59 + CreationTime.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

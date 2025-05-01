@@ -65,7 +65,7 @@ public partial class WebDeploymentActiveConfigurationOnDeployment : IEquatable<W
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebDeploymentActiveConfigurationOnDeployment);
+        return Equals(obj as WebDeploymentActiveConfigurationOnDeployment);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class WebDeploymentActiveConfigurationOnDeployment : IEquatable<W
 
         return true &&
             (
-                this.ConfigurationVersion == other.ConfigurationVersion ||
-                this.ConfigurationVersion != null &&
-                this.ConfigurationVersion.Equals(other.ConfigurationVersion)
+                ConfigurationVersion == other.ConfigurationVersion ||
+                ConfigurationVersion != null &&
+                ConfigurationVersion.Equals(other.ConfigurationVersion)
             ) &&
             (
-                this.Deployment == other.Deployment ||
-                this.Deployment != null &&
-                this.Deployment.Equals(other.Deployment)
+                Deployment == other.Deployment ||
+                Deployment != null &&
+                Deployment.Equals(other.Deployment)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class WebDeploymentActiveConfigurationOnDeployment : IEquatable<W
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConfigurationVersion != null)
+            if (ConfigurationVersion != null)
             {
-                hash = hash * 59 + this.ConfigurationVersion.GetHashCode();
+                hash = hash * 59 + ConfigurationVersion.GetHashCode();
             }
 
-            if (this.Deployment != null)
+            if (Deployment != null)
             {
-                hash = hash * 59 + this.Deployment.GetHashCode();
+                hash = hash * 59 + Deployment.GetHashCode();
             }
 
             return hash;

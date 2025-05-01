@@ -312,7 +312,7 @@ public partial class CustomerInteractionCenter : IEquatable<CustomerInteractionC
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CustomerInteractionCenter);
+        return Equals(obj as CustomerInteractionCenter);
     }
 
     /// <summary>
@@ -330,89 +330,89 @@ public partial class CustomerInteractionCenter : IEquatable<CustomerInteractionC
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Disabled == other.Disabled ||
-                this.Disabled != null &&
-                this.Disabled.Equals(other.Disabled)
+                Disabled == other.Disabled ||
+                Disabled != null &&
+                Disabled.Equals(other.Disabled)
             ) &&
             (
-                this.IssuerURI == other.IssuerURI ||
-                this.IssuerURI != null &&
-                this.IssuerURI.Equals(other.IssuerURI)
+                IssuerURI == other.IssuerURI ||
+                IssuerURI != null &&
+                IssuerURI.Equals(other.IssuerURI)
             ) &&
             (
-                this.SsoTargetURI == other.SsoTargetURI ||
-                this.SsoTargetURI != null &&
-                this.SsoTargetURI.Equals(other.SsoTargetURI)
+                SsoTargetURI == other.SsoTargetURI ||
+                SsoTargetURI != null &&
+                SsoTargetURI.Equals(other.SsoTargetURI)
             ) &&
             (
-                this.SloURI == other.SloURI ||
-                this.SloURI != null &&
-                this.SloURI.Equals(other.SloURI)
+                SloURI == other.SloURI ||
+                SloURI != null &&
+                SloURI.Equals(other.SloURI)
             ) &&
             (
-                this.SloBinding == other.SloBinding ||
-                this.SloBinding != null &&
-                this.SloBinding.Equals(other.SloBinding)
+                SloBinding == other.SloBinding ||
+                SloBinding != null &&
+                SloBinding.Equals(other.SloBinding)
             ) &&
             (
-                this.RelyingPartyIdentifier == other.RelyingPartyIdentifier ||
-                this.RelyingPartyIdentifier != null &&
-                this.RelyingPartyIdentifier.Equals(other.RelyingPartyIdentifier)
+                RelyingPartyIdentifier == other.RelyingPartyIdentifier ||
+                RelyingPartyIdentifier != null &&
+                RelyingPartyIdentifier.Equals(other.RelyingPartyIdentifier)
             ) &&
             (
-                this.Certificate == other.Certificate ||
-                this.Certificate != null &&
-                this.Certificate.Equals(other.Certificate)
+                Certificate == other.Certificate ||
+                Certificate != null &&
+                Certificate.Equals(other.Certificate)
             ) &&
             (
-                this.Certificates == other.Certificates ||
-                this.Certificates != null &&
-                this.Certificates.SequenceEqual(other.Certificates)
+                Certificates == other.Certificates ||
+                Certificates != null &&
+                Certificates.SequenceEqual(other.Certificates)
             ) &&
             (
-                this.LogoImageData == other.LogoImageData ||
-                this.LogoImageData != null &&
-                this.LogoImageData.Equals(other.LogoImageData)
+                LogoImageData == other.LogoImageData ||
+                LogoImageData != null &&
+                LogoImageData.Equals(other.LogoImageData)
             ) &&
             (
-                this.NameIdentifierFormat == other.NameIdentifierFormat ||
-                this.NameIdentifierFormat != null &&
-                this.NameIdentifierFormat.Equals(other.NameIdentifierFormat)
+                NameIdentifierFormat == other.NameIdentifierFormat ||
+                NameIdentifierFormat != null &&
+                NameIdentifierFormat.Equals(other.NameIdentifierFormat)
             ) &&
             (
-                this.SsoBinding == other.SsoBinding ||
-                this.SsoBinding != null &&
-                this.SsoBinding.Equals(other.SsoBinding)
+                SsoBinding == other.SsoBinding ||
+                SsoBinding != null &&
+                SsoBinding.Equals(other.SsoBinding)
             ) &&
             (
-                this.SignAuthnRequests == other.SignAuthnRequests ||
-                this.SignAuthnRequests != null &&
-                this.SignAuthnRequests.Equals(other.SignAuthnRequests)
+                SignAuthnRequests == other.SignAuthnRequests ||
+                SignAuthnRequests != null &&
+                SignAuthnRequests.Equals(other.SignAuthnRequests)
             ) &&
             (
-                this.ProviderName == other.ProviderName ||
-                this.ProviderName != null &&
-                this.ProviderName.Equals(other.ProviderName)
+                ProviderName == other.ProviderName ||
+                ProviderName != null &&
+                ProviderName.Equals(other.ProviderName)
             ) &&
             (
-                this.DisplayOnLogin == other.DisplayOnLogin ||
-                this.DisplayOnLogin != null &&
-                this.DisplayOnLogin.Equals(other.DisplayOnLogin)
+                DisplayOnLogin == other.DisplayOnLogin ||
+                DisplayOnLogin != null &&
+                DisplayOnLogin.Equals(other.DisplayOnLogin)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -427,89 +427,89 @@ public partial class CustomerInteractionCenter : IEquatable<CustomerInteractionC
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Disabled != null)
+            if (Disabled != null)
             {
-                hash = hash * 59 + this.Disabled.GetHashCode();
+                hash = hash * 59 + Disabled.GetHashCode();
             }
 
-            if (this.IssuerURI != null)
+            if (IssuerURI != null)
             {
-                hash = hash * 59 + this.IssuerURI.GetHashCode();
+                hash = hash * 59 + IssuerURI.GetHashCode();
             }
 
-            if (this.SsoTargetURI != null)
+            if (SsoTargetURI != null)
             {
-                hash = hash * 59 + this.SsoTargetURI.GetHashCode();
+                hash = hash * 59 + SsoTargetURI.GetHashCode();
             }
 
-            if (this.SloURI != null)
+            if (SloURI != null)
             {
-                hash = hash * 59 + this.SloURI.GetHashCode();
+                hash = hash * 59 + SloURI.GetHashCode();
             }
 
-            if (this.SloBinding != null)
+            if (SloBinding != null)
             {
-                hash = hash * 59 + this.SloBinding.GetHashCode();
+                hash = hash * 59 + SloBinding.GetHashCode();
             }
 
-            if (this.RelyingPartyIdentifier != null)
+            if (RelyingPartyIdentifier != null)
             {
-                hash = hash * 59 + this.RelyingPartyIdentifier.GetHashCode();
+                hash = hash * 59 + RelyingPartyIdentifier.GetHashCode();
             }
 
-            if (this.Certificate != null)
+            if (Certificate != null)
             {
-                hash = hash * 59 + this.Certificate.GetHashCode();
+                hash = hash * 59 + Certificate.GetHashCode();
             }
 
-            if (this.Certificates != null)
+            if (Certificates != null)
             {
-                hash = hash * 59 + this.Certificates.GetHashCode();
+                hash = hash * 59 + Certificates.GetHashCode();
             }
 
-            if (this.LogoImageData != null)
+            if (LogoImageData != null)
             {
-                hash = hash * 59 + this.LogoImageData.GetHashCode();
+                hash = hash * 59 + LogoImageData.GetHashCode();
             }
 
-            if (this.NameIdentifierFormat != null)
+            if (NameIdentifierFormat != null)
             {
-                hash = hash * 59 + this.NameIdentifierFormat.GetHashCode();
+                hash = hash * 59 + NameIdentifierFormat.GetHashCode();
             }
 
-            if (this.SsoBinding != null)
+            if (SsoBinding != null)
             {
-                hash = hash * 59 + this.SsoBinding.GetHashCode();
+                hash = hash * 59 + SsoBinding.GetHashCode();
             }
 
-            if (this.SignAuthnRequests != null)
+            if (SignAuthnRequests != null)
             {
-                hash = hash * 59 + this.SignAuthnRequests.GetHashCode();
+                hash = hash * 59 + SignAuthnRequests.GetHashCode();
             }
 
-            if (this.ProviderName != null)
+            if (ProviderName != null)
             {
-                hash = hash * 59 + this.ProviderName.GetHashCode();
+                hash = hash * 59 + ProviderName.GetHashCode();
             }
 
-            if (this.DisplayOnLogin != null)
+            if (DisplayOnLogin != null)
             {
-                hash = hash * 59 + this.DisplayOnLogin.GetHashCode();
+                hash = hash * 59 + DisplayOnLogin.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -210,7 +210,7 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuRescheduleRequest);
+        return Equals(obj as BuRescheduleRequest);
     }
 
     /// <summary>
@@ -228,59 +228,59 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
 
         return true &&
             (
-                this.StartDate == other.StartDate ||
-                this.StartDate != null &&
-                this.StartDate.Equals(other.StartDate)
+                StartDate == other.StartDate ||
+                StartDate != null &&
+                StartDate.Equals(other.StartDate)
             ) &&
             (
-                this.EndDate == other.EndDate ||
-                this.EndDate != null &&
-                this.EndDate.Equals(other.EndDate)
+                EndDate == other.EndDate ||
+                EndDate != null &&
+                EndDate.Equals(other.EndDate)
             ) &&
             (
-                this.AgentIds == other.AgentIds ||
-                this.AgentIds != null &&
-                this.AgentIds.SequenceEqual(other.AgentIds)
+                AgentIds == other.AgentIds ||
+                AgentIds != null &&
+                AgentIds.SequenceEqual(other.AgentIds)
             ) &&
             (
-                this.ActivityCodeIds == other.ActivityCodeIds ||
-                this.ActivityCodeIds != null &&
-                this.ActivityCodeIds.SequenceEqual(other.ActivityCodeIds)
+                ActivityCodeIds == other.ActivityCodeIds ||
+                ActivityCodeIds != null &&
+                ActivityCodeIds.SequenceEqual(other.ActivityCodeIds)
             ) &&
             (
-                this.ManagementUnitIds == other.ManagementUnitIds ||
-                this.ManagementUnitIds != null &&
-                this.ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
+                ManagementUnitIds == other.ManagementUnitIds ||
+                ManagementUnitIds != null &&
+                ManagementUnitIds.SequenceEqual(other.ManagementUnitIds)
             ) &&
             (
-                this.DoNotChangeWeeklyPaidTime == other.DoNotChangeWeeklyPaidTime ||
-                this.DoNotChangeWeeklyPaidTime != null &&
-                this.DoNotChangeWeeklyPaidTime.Equals(other.DoNotChangeWeeklyPaidTime)
+                DoNotChangeWeeklyPaidTime == other.DoNotChangeWeeklyPaidTime ||
+                DoNotChangeWeeklyPaidTime != null &&
+                DoNotChangeWeeklyPaidTime.Equals(other.DoNotChangeWeeklyPaidTime)
             ) &&
             (
-                this.DoNotChangeDailyPaidTime == other.DoNotChangeDailyPaidTime ||
-                this.DoNotChangeDailyPaidTime != null &&
-                this.DoNotChangeDailyPaidTime.Equals(other.DoNotChangeDailyPaidTime)
+                DoNotChangeDailyPaidTime == other.DoNotChangeDailyPaidTime ||
+                DoNotChangeDailyPaidTime != null &&
+                DoNotChangeDailyPaidTime.Equals(other.DoNotChangeDailyPaidTime)
             ) &&
             (
-                this.DoNotChangeShiftStartTimes == other.DoNotChangeShiftStartTimes ||
-                this.DoNotChangeShiftStartTimes != null &&
-                this.DoNotChangeShiftStartTimes.Equals(other.DoNotChangeShiftStartTimes)
+                DoNotChangeShiftStartTimes == other.DoNotChangeShiftStartTimes ||
+                DoNotChangeShiftStartTimes != null &&
+                DoNotChangeShiftStartTimes.Equals(other.DoNotChangeShiftStartTimes)
             ) &&
             (
-                this.DoNotChangeManuallyEditedShifts == other.DoNotChangeManuallyEditedShifts ||
-                this.DoNotChangeManuallyEditedShifts != null &&
-                this.DoNotChangeManuallyEditedShifts.Equals(other.DoNotChangeManuallyEditedShifts)
+                DoNotChangeManuallyEditedShifts == other.DoNotChangeManuallyEditedShifts ||
+                DoNotChangeManuallyEditedShifts != null &&
+                DoNotChangeManuallyEditedShifts.Equals(other.DoNotChangeManuallyEditedShifts)
             ) &&
             (
-                this.ActivitySmoothingType == other.ActivitySmoothingType ||
-                this.ActivitySmoothingType != null &&
-                this.ActivitySmoothingType.Equals(other.ActivitySmoothingType)
+                ActivitySmoothingType == other.ActivitySmoothingType ||
+                ActivitySmoothingType != null &&
+                ActivitySmoothingType.Equals(other.ActivitySmoothingType)
             ) &&
             (
-                this.InduceScheduleVariability == other.InduceScheduleVariability ||
-                this.InduceScheduleVariability != null &&
-                this.InduceScheduleVariability.Equals(other.InduceScheduleVariability)
+                InduceScheduleVariability == other.InduceScheduleVariability ||
+                InduceScheduleVariability != null &&
+                InduceScheduleVariability.Equals(other.InduceScheduleVariability)
             );
     }
 
@@ -295,59 +295,59 @@ public partial class BuRescheduleRequest : IEquatable<BuRescheduleRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartDate != null)
+            if (StartDate != null)
             {
-                hash = hash * 59 + this.StartDate.GetHashCode();
+                hash = hash * 59 + StartDate.GetHashCode();
             }
 
-            if (this.EndDate != null)
+            if (EndDate != null)
             {
-                hash = hash * 59 + this.EndDate.GetHashCode();
+                hash = hash * 59 + EndDate.GetHashCode();
             }
 
-            if (this.AgentIds != null)
+            if (AgentIds != null)
             {
-                hash = hash * 59 + this.AgentIds.GetHashCode();
+                hash = hash * 59 + AgentIds.GetHashCode();
             }
 
-            if (this.ActivityCodeIds != null)
+            if (ActivityCodeIds != null)
             {
-                hash = hash * 59 + this.ActivityCodeIds.GetHashCode();
+                hash = hash * 59 + ActivityCodeIds.GetHashCode();
             }
 
-            if (this.ManagementUnitIds != null)
+            if (ManagementUnitIds != null)
             {
-                hash = hash * 59 + this.ManagementUnitIds.GetHashCode();
+                hash = hash * 59 + ManagementUnitIds.GetHashCode();
             }
 
-            if (this.DoNotChangeWeeklyPaidTime != null)
+            if (DoNotChangeWeeklyPaidTime != null)
             {
-                hash = hash * 59 + this.DoNotChangeWeeklyPaidTime.GetHashCode();
+                hash = hash * 59 + DoNotChangeWeeklyPaidTime.GetHashCode();
             }
 
-            if (this.DoNotChangeDailyPaidTime != null)
+            if (DoNotChangeDailyPaidTime != null)
             {
-                hash = hash * 59 + this.DoNotChangeDailyPaidTime.GetHashCode();
+                hash = hash * 59 + DoNotChangeDailyPaidTime.GetHashCode();
             }
 
-            if (this.DoNotChangeShiftStartTimes != null)
+            if (DoNotChangeShiftStartTimes != null)
             {
-                hash = hash * 59 + this.DoNotChangeShiftStartTimes.GetHashCode();
+                hash = hash * 59 + DoNotChangeShiftStartTimes.GetHashCode();
             }
 
-            if (this.DoNotChangeManuallyEditedShifts != null)
+            if (DoNotChangeManuallyEditedShifts != null)
             {
-                hash = hash * 59 + this.DoNotChangeManuallyEditedShifts.GetHashCode();
+                hash = hash * 59 + DoNotChangeManuallyEditedShifts.GetHashCode();
             }
 
-            if (this.ActivitySmoothingType != null)
+            if (ActivitySmoothingType != null)
             {
-                hash = hash * 59 + this.ActivitySmoothingType.GetHashCode();
+                hash = hash * 59 + ActivitySmoothingType.GetHashCode();
             }
 
-            if (this.InduceScheduleVariability != null)
+            if (InduceScheduleVariability != null)
             {
-                hash = hash * 59 + this.InduceScheduleVariability.GetHashCode();
+                hash = hash * 59 + InduceScheduleVariability.GetHashCode();
             }
 
             return hash;

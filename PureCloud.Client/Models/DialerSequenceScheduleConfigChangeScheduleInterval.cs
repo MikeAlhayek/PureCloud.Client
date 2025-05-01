@@ -76,7 +76,7 @@ public partial class DialerSequenceScheduleConfigChangeScheduleInterval : IEquat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerSequenceScheduleConfigChangeScheduleInterval);
+        return Equals(obj as DialerSequenceScheduleConfigChangeScheduleInterval);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class DialerSequenceScheduleConfigChangeScheduleInterval : IEquat
 
         return true &&
             (
-                this.Start == other.Start ||
-                this.Start != null &&
-                this.Start.Equals(other.Start)
+                Start == other.Start ||
+                Start != null &&
+                Start.Equals(other.Start)
             ) &&
             (
-                this.End == other.End ||
-                this.End != null &&
-                this.End.Equals(other.End)
+                End == other.End ||
+                End != null &&
+                End.Equals(other.End)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class DialerSequenceScheduleConfigChangeScheduleInterval : IEquat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Start != null)
+            if (Start != null)
             {
-                hash = hash * 59 + this.Start.GetHashCode();
+                hash = hash * 59 + Start.GetHashCode();
             }
 
-            if (this.End != null)
+            if (End != null)
             {
-                hash = hash * 59 + this.End.GetHashCode();
+                hash = hash * 59 + End.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

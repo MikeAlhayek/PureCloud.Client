@@ -83,7 +83,7 @@ public partial class OpenDataIngestionRuleRequest : IEquatable<OpenDataIngestion
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenDataIngestionRuleRequest);
+        return Equals(obj as OpenDataIngestionRuleRequest);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class OpenDataIngestionRuleRequest : IEquatable<OpenDataIngestion
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.ExternalSource == other.ExternalSource ||
-                this.ExternalSource != null &&
-                this.ExternalSource.Equals(other.ExternalSource)
+                ExternalSource == other.ExternalSource ||
+                ExternalSource != null &&
+                ExternalSource.Equals(other.ExternalSource)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class OpenDataIngestionRuleRequest : IEquatable<OpenDataIngestion
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.ExternalSource != null)
+            if (ExternalSource != null)
             {
-                hash = hash * 59 + this.ExternalSource.GetHashCode();
+                hash = hash * 59 + ExternalSource.GetHashCode();
             }
 
             return hash;

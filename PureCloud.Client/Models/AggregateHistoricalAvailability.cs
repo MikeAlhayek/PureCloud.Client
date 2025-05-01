@@ -64,7 +64,7 @@ public partial class AggregateHistoricalAvailability : IEquatable<AggregateHisto
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AggregateHistoricalAvailability);
+        return Equals(obj as AggregateHistoricalAvailability);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class AggregateHistoricalAvailability : IEquatable<AggregateHisto
 
         return true &&
             (
-                this.Weekly == other.Weekly ||
-                this.Weekly != null &&
-                this.Weekly.SequenceEqual(other.Weekly)
+                Weekly == other.Weekly ||
+                Weekly != null &&
+                Weekly.SequenceEqual(other.Weekly)
             ) &&
             (
-                this.Yearly == other.Yearly ||
-                this.Yearly != null &&
-                this.Yearly.SequenceEqual(other.Yearly)
+                Yearly == other.Yearly ||
+                Yearly != null &&
+                Yearly.SequenceEqual(other.Yearly)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class AggregateHistoricalAvailability : IEquatable<AggregateHisto
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Weekly != null)
+            if (Weekly != null)
             {
-                hash = hash * 59 + this.Weekly.GetHashCode();
+                hash = hash * 59 + Weekly.GetHashCode();
             }
 
-            if (this.Yearly != null)
+            if (Yearly != null)
             {
-                hash = hash * 59 + this.Yearly.GetHashCode();
+                hash = hash * 59 + Yearly.GetHashCode();
             }
 
             return hash;

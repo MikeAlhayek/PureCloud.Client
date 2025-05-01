@@ -71,7 +71,7 @@ public partial class EstimateAvailableFullDayTimeOffRequest : IEquatable<Estimat
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EstimateAvailableFullDayTimeOffRequest);
+        return Equals(obj as EstimateAvailableFullDayTimeOffRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class EstimateAvailableFullDayTimeOffRequest : IEquatable<Estimat
 
         return true &&
             (
-                this.Date == other.Date ||
-                this.Date != null &&
-                this.Date.Equals(other.Date)
+                Date == other.Date ||
+                Date != null &&
+                Date.Equals(other.Date)
             ) &&
             (
-                this.RequestedDurationMinutes == other.RequestedDurationMinutes ||
-                this.RequestedDurationMinutes != null &&
-                this.RequestedDurationMinutes.Equals(other.RequestedDurationMinutes)
+                RequestedDurationMinutes == other.RequestedDurationMinutes ||
+                RequestedDurationMinutes != null &&
+                RequestedDurationMinutes.Equals(other.RequestedDurationMinutes)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class EstimateAvailableFullDayTimeOffRequest : IEquatable<Estimat
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Date != null)
+            if (Date != null)
             {
-                hash = hash * 59 + this.Date.GetHashCode();
+                hash = hash * 59 + Date.GetHashCode();
             }
 
-            if (this.RequestedDurationMinutes != null)
+            if (RequestedDurationMinutes != null)
             {
-                hash = hash * 59 + this.RequestedDurationMinutes.GetHashCode();
+                hash = hash * 59 + RequestedDurationMinutes.GetHashCode();
             }
 
             return hash;

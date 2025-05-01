@@ -194,7 +194,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuthorizationPolicy);
+        return Equals(obj as AuthorizationPolicy);
     }
 
     /// <summary>
@@ -212,59 +212,59 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.TargetResource == other.TargetResource ||
-                this.TargetResource != null &&
-                this.TargetResource.Equals(other.TargetResource)
+                TargetResource == other.TargetResource ||
+                TargetResource != null &&
+                TargetResource.Equals(other.TargetResource)
             ) &&
             (
-                this.Subject == other.Subject ||
-                this.Subject != null &&
-                this.Subject.Equals(other.Subject)
+                Subject == other.Subject ||
+                Subject != null &&
+                Subject.Equals(other.Subject)
             ) &&
             (
-                this.Effect == other.Effect ||
-                this.Effect != null &&
-                this.Effect.Equals(other.Effect)
+                Effect == other.Effect ||
+                Effect != null &&
+                Effect.Equals(other.Effect)
             ) &&
             (
-                this.Condition == other.Condition ||
-                this.Condition != null &&
-                this.Condition.Equals(other.Condition)
+                Condition == other.Condition ||
+                Condition != null &&
+                Condition.Equals(other.Condition)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.PresetAttributes == other.PresetAttributes ||
-                this.PresetAttributes != null &&
-                this.PresetAttributes.SequenceEqual(other.PresetAttributes)
+                PresetAttributes == other.PresetAttributes ||
+                PresetAttributes != null &&
+                PresetAttributes.SequenceEqual(other.PresetAttributes)
             ) &&
             (
-                this.Active == other.Active ||
-                this.Active != null &&
-                this.Active.Equals(other.Active)
+                Active == other.Active ||
+                Active != null &&
+                Active.Equals(other.Active)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -279,59 +279,59 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.TargetResource != null)
+            if (TargetResource != null)
             {
-                hash = hash * 59 + this.TargetResource.GetHashCode();
+                hash = hash * 59 + TargetResource.GetHashCode();
             }
 
-            if (this.Subject != null)
+            if (Subject != null)
             {
-                hash = hash * 59 + this.Subject.GetHashCode();
+                hash = hash * 59 + Subject.GetHashCode();
             }
 
-            if (this.Effect != null)
+            if (Effect != null)
             {
-                hash = hash * 59 + this.Effect.GetHashCode();
+                hash = hash * 59 + Effect.GetHashCode();
             }
 
-            if (this.Condition != null)
+            if (Condition != null)
             {
-                hash = hash * 59 + this.Condition.GetHashCode();
+                hash = hash * 59 + Condition.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.PresetAttributes != null)
+            if (PresetAttributes != null)
             {
-                hash = hash * 59 + this.PresetAttributes.GetHashCode();
+                hash = hash * 59 + PresetAttributes.GetHashCode();
             }
 
-            if (this.Active != null)
+            if (Active != null)
             {
-                hash = hash * 59 + this.Active.GetHashCode();
+                hash = hash * 59 + Active.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

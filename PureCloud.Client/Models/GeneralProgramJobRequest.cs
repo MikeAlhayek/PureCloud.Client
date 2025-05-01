@@ -327,7 +327,7 @@ public partial class GeneralProgramJobRequest : IEquatable<GeneralProgramJobRequ
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GeneralProgramJobRequest);
+        return Equals(obj as GeneralProgramJobRequest);
     }
 
     /// <summary>
@@ -345,14 +345,14 @@ public partial class GeneralProgramJobRequest : IEquatable<GeneralProgramJobRequ
 
         return true &&
             (
-                this.Dialect == other.Dialect ||
-                this.Dialect != null &&
-                this.Dialect.Equals(other.Dialect)
+                Dialect == other.Dialect ||
+                Dialect != null &&
+                Dialect.Equals(other.Dialect)
             ) &&
             (
-                this.Mode == other.Mode ||
-                this.Mode != null &&
-                this.Mode.Equals(other.Mode)
+                Mode == other.Mode ||
+                Mode != null &&
+                Mode.Equals(other.Mode)
             );
     }
 
@@ -367,14 +367,14 @@ public partial class GeneralProgramJobRequest : IEquatable<GeneralProgramJobRequ
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Dialect != null)
+            if (Dialect != null)
             {
-                hash = hash * 59 + this.Dialect.GetHashCode();
+                hash = hash * 59 + Dialect.GetHashCode();
             }
 
-            if (this.Mode != null)
+            if (Mode != null)
             {
-                hash = hash * 59 + this.Mode.GetHashCode();
+                hash = hash * 59 + Mode.GetHashCode();
             }
 
             return hash;

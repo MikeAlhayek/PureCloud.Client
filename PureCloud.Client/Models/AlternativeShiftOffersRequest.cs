@@ -70,7 +70,7 @@ public partial class AlternativeShiftOffersRequest : IEquatable<AlternativeShift
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AlternativeShiftOffersRequest);
+        return Equals(obj as AlternativeShiftOffersRequest);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class AlternativeShiftOffersRequest : IEquatable<AlternativeShift
 
         return true &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             ) &&
             (
-                this.QueryWeekDate == other.QueryWeekDate ||
-                this.QueryWeekDate != null &&
-                this.QueryWeekDate.Equals(other.QueryWeekDate)
+                QueryWeekDate == other.QueryWeekDate ||
+                QueryWeekDate != null &&
+                QueryWeekDate.Equals(other.QueryWeekDate)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class AlternativeShiftOffersRequest : IEquatable<AlternativeShift
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
-            if (this.QueryWeekDate != null)
+            if (QueryWeekDate != null)
             {
-                hash = hash * 59 + this.QueryWeekDate.GetHashCode();
+                hash = hash * 59 + QueryWeekDate.GetHashCode();
             }
 
             return hash;

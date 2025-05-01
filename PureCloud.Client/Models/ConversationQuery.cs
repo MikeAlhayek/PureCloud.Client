@@ -237,7 +237,7 @@ public partial class ConversationQuery : IEquatable<ConversationQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationQuery);
+        return Equals(obj as ConversationQuery);
     }
 
     /// <summary>
@@ -255,54 +255,54 @@ public partial class ConversationQuery : IEquatable<ConversationQuery>
 
         return true &&
             (
-                this.ConversationFilters == other.ConversationFilters ||
-                this.ConversationFilters != null &&
-                this.ConversationFilters.SequenceEqual(other.ConversationFilters)
+                ConversationFilters == other.ConversationFilters ||
+                ConversationFilters != null &&
+                ConversationFilters.SequenceEqual(other.ConversationFilters)
             ) &&
             (
-                this.SegmentFilters == other.SegmentFilters ||
-                this.SegmentFilters != null &&
-                this.SegmentFilters.SequenceEqual(other.SegmentFilters)
+                SegmentFilters == other.SegmentFilters ||
+                SegmentFilters != null &&
+                SegmentFilters.SequenceEqual(other.SegmentFilters)
             ) &&
             (
-                this.EvaluationFilters == other.EvaluationFilters ||
-                this.EvaluationFilters != null &&
-                this.EvaluationFilters.SequenceEqual(other.EvaluationFilters)
+                EvaluationFilters == other.EvaluationFilters ||
+                EvaluationFilters != null &&
+                EvaluationFilters.SequenceEqual(other.EvaluationFilters)
             ) &&
             (
-                this.SurveyFilters == other.SurveyFilters ||
-                this.SurveyFilters != null &&
-                this.SurveyFilters.SequenceEqual(other.SurveyFilters)
+                SurveyFilters == other.SurveyFilters ||
+                SurveyFilters != null &&
+                SurveyFilters.SequenceEqual(other.SurveyFilters)
             ) &&
             (
-                this.ResolutionFilters == other.ResolutionFilters ||
-                this.ResolutionFilters != null &&
-                this.ResolutionFilters.SequenceEqual(other.ResolutionFilters)
+                ResolutionFilters == other.ResolutionFilters ||
+                ResolutionFilters != null &&
+                ResolutionFilters.SequenceEqual(other.ResolutionFilters)
             ) &&
             (
-                this.Order == other.Order ||
-                this.Order != null &&
-                this.Order.Equals(other.Order)
+                Order == other.Order ||
+                Order != null &&
+                Order.Equals(other.Order)
             ) &&
             (
-                this.OrderBy == other.OrderBy ||
-                this.OrderBy != null &&
-                this.OrderBy.Equals(other.OrderBy)
+                OrderBy == other.OrderBy ||
+                OrderBy != null &&
+                OrderBy.Equals(other.OrderBy)
             ) &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.Aggregations == other.Aggregations ||
-                this.Aggregations != null &&
-                this.Aggregations.SequenceEqual(other.Aggregations)
+                Aggregations == other.Aggregations ||
+                Aggregations != null &&
+                Aggregations.SequenceEqual(other.Aggregations)
             ) &&
             (
-                this.Paging == other.Paging ||
-                this.Paging != null &&
-                this.Paging.Equals(other.Paging)
+                Paging == other.Paging ||
+                Paging != null &&
+                Paging.Equals(other.Paging)
             );
     }
 
@@ -317,54 +317,54 @@ public partial class ConversationQuery : IEquatable<ConversationQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ConversationFilters != null)
+            if (ConversationFilters != null)
             {
-                hash = hash * 59 + this.ConversationFilters.GetHashCode();
+                hash = hash * 59 + ConversationFilters.GetHashCode();
             }
 
-            if (this.SegmentFilters != null)
+            if (SegmentFilters != null)
             {
-                hash = hash * 59 + this.SegmentFilters.GetHashCode();
+                hash = hash * 59 + SegmentFilters.GetHashCode();
             }
 
-            if (this.EvaluationFilters != null)
+            if (EvaluationFilters != null)
             {
-                hash = hash * 59 + this.EvaluationFilters.GetHashCode();
+                hash = hash * 59 + EvaluationFilters.GetHashCode();
             }
 
-            if (this.SurveyFilters != null)
+            if (SurveyFilters != null)
             {
-                hash = hash * 59 + this.SurveyFilters.GetHashCode();
+                hash = hash * 59 + SurveyFilters.GetHashCode();
             }
 
-            if (this.ResolutionFilters != null)
+            if (ResolutionFilters != null)
             {
-                hash = hash * 59 + this.ResolutionFilters.GetHashCode();
+                hash = hash * 59 + ResolutionFilters.GetHashCode();
             }
 
-            if (this.Order != null)
+            if (Order != null)
             {
-                hash = hash * 59 + this.Order.GetHashCode();
+                hash = hash * 59 + Order.GetHashCode();
             }
 
-            if (this.OrderBy != null)
+            if (OrderBy != null)
             {
-                hash = hash * 59 + this.OrderBy.GetHashCode();
+                hash = hash * 59 + OrderBy.GetHashCode();
             }
 
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.Aggregations != null)
+            if (Aggregations != null)
             {
-                hash = hash * 59 + this.Aggregations.GetHashCode();
+                hash = hash * 59 + Aggregations.GetHashCode();
             }
 
-            if (this.Paging != null)
+            if (Paging != null)
             {
-                hash = hash * 59 + this.Paging.GetHashCode();
+                hash = hash * 59 + Paging.GetHashCode();
             }
 
             return hash;

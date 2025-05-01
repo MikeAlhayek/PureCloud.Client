@@ -181,7 +181,7 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportCenterSettings);
+        return Equals(obj as SupportCenterSettings);
     }
 
     /// <summary>
@@ -199,49 +199,49 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
 
         return true &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             ) &&
             (
-                this.KnowledgeBase == other.KnowledgeBase ||
-                this.KnowledgeBase != null &&
-                this.KnowledgeBase.Equals(other.KnowledgeBase)
+                KnowledgeBase == other.KnowledgeBase ||
+                KnowledgeBase != null &&
+                KnowledgeBase.Equals(other.KnowledgeBase)
             ) &&
             (
-                this.CustomMessages == other.CustomMessages ||
-                this.CustomMessages != null &&
-                this.CustomMessages.SequenceEqual(other.CustomMessages)
+                CustomMessages == other.CustomMessages ||
+                CustomMessages != null &&
+                CustomMessages.SequenceEqual(other.CustomMessages)
             ) &&
             (
-                this.RouterType == other.RouterType ||
-                this.RouterType != null &&
-                this.RouterType.Equals(other.RouterType)
+                RouterType == other.RouterType ||
+                RouterType != null &&
+                RouterType.Equals(other.RouterType)
             ) &&
             (
-                this.Screens == other.Screens ||
-                this.Screens != null &&
-                this.Screens.SequenceEqual(other.Screens)
+                Screens == other.Screens ||
+                Screens != null &&
+                Screens.SequenceEqual(other.Screens)
             ) &&
             (
-                this.EnabledCategories == other.EnabledCategories ||
-                this.EnabledCategories != null &&
-                this.EnabledCategories.SequenceEqual(other.EnabledCategories)
+                EnabledCategories == other.EnabledCategories ||
+                EnabledCategories != null &&
+                EnabledCategories.SequenceEqual(other.EnabledCategories)
             ) &&
             (
-                this.LabelFilter == other.LabelFilter ||
-                this.LabelFilter != null &&
-                this.LabelFilter.Equals(other.LabelFilter)
+                LabelFilter == other.LabelFilter ||
+                LabelFilter != null &&
+                LabelFilter.Equals(other.LabelFilter)
             ) &&
             (
-                this.StyleSetting == other.StyleSetting ||
-                this.StyleSetting != null &&
-                this.StyleSetting.Equals(other.StyleSetting)
+                StyleSetting == other.StyleSetting ||
+                StyleSetting != null &&
+                StyleSetting.Equals(other.StyleSetting)
             ) &&
             (
-                this.Feedback == other.Feedback ||
-                this.Feedback != null &&
-                this.Feedback.Equals(other.Feedback)
+                Feedback == other.Feedback ||
+                Feedback != null &&
+                Feedback.Equals(other.Feedback)
             );
     }
 
@@ -256,49 +256,49 @@ public partial class SupportCenterSettings : IEquatable<SupportCenterSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
-            if (this.KnowledgeBase != null)
+            if (KnowledgeBase != null)
             {
-                hash = hash * 59 + this.KnowledgeBase.GetHashCode();
+                hash = hash * 59 + KnowledgeBase.GetHashCode();
             }
 
-            if (this.CustomMessages != null)
+            if (CustomMessages != null)
             {
-                hash = hash * 59 + this.CustomMessages.GetHashCode();
+                hash = hash * 59 + CustomMessages.GetHashCode();
             }
 
-            if (this.RouterType != null)
+            if (RouterType != null)
             {
-                hash = hash * 59 + this.RouterType.GetHashCode();
+                hash = hash * 59 + RouterType.GetHashCode();
             }
 
-            if (this.Screens != null)
+            if (Screens != null)
             {
-                hash = hash * 59 + this.Screens.GetHashCode();
+                hash = hash * 59 + Screens.GetHashCode();
             }
 
-            if (this.EnabledCategories != null)
+            if (EnabledCategories != null)
             {
-                hash = hash * 59 + this.EnabledCategories.GetHashCode();
+                hash = hash * 59 + EnabledCategories.GetHashCode();
             }
 
-            if (this.LabelFilter != null)
+            if (LabelFilter != null)
             {
-                hash = hash * 59 + this.LabelFilter.GetHashCode();
+                hash = hash * 59 + LabelFilter.GetHashCode();
             }
 
-            if (this.StyleSetting != null)
+            if (StyleSetting != null)
             {
-                hash = hash * 59 + this.StyleSetting.GetHashCode();
+                hash = hash * 59 + StyleSetting.GetHashCode();
             }
 
-            if (this.Feedback != null)
+            if (Feedback != null)
             {
-                hash = hash * 59 + this.Feedback.GetHashCode();
+                hash = hash * 59 + Feedback.GetHashCode();
             }
 
             return hash;

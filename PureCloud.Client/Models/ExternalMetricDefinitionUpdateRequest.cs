@@ -121,7 +121,7 @@ public partial class ExternalMetricDefinitionUpdateRequest : IEquatable<External
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalMetricDefinitionUpdateRequest);
+        return Equals(obj as ExternalMetricDefinitionUpdateRequest);
     }
 
     /// <summary>
@@ -139,24 +139,24 @@ public partial class ExternalMetricDefinitionUpdateRequest : IEquatable<External
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Precision == other.Precision ||
-                this.Precision != null &&
-                this.Precision.Equals(other.Precision)
+                Precision == other.Precision ||
+                Precision != null &&
+                Precision.Equals(other.Precision)
             ) &&
             (
-                this.DefaultObjectiveType == other.DefaultObjectiveType ||
-                this.DefaultObjectiveType != null &&
-                this.DefaultObjectiveType.Equals(other.DefaultObjectiveType)
+                DefaultObjectiveType == other.DefaultObjectiveType ||
+                DefaultObjectiveType != null &&
+                DefaultObjectiveType.Equals(other.DefaultObjectiveType)
             ) &&
             (
-                this.Enabled == other.Enabled ||
-                this.Enabled != null &&
-                this.Enabled.Equals(other.Enabled)
+                Enabled == other.Enabled ||
+                Enabled != null &&
+                Enabled.Equals(other.Enabled)
             );
     }
 
@@ -171,24 +171,24 @@ public partial class ExternalMetricDefinitionUpdateRequest : IEquatable<External
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Precision != null)
+            if (Precision != null)
             {
-                hash = hash * 59 + this.Precision.GetHashCode();
+                hash = hash * 59 + Precision.GetHashCode();
             }
 
-            if (this.DefaultObjectiveType != null)
+            if (DefaultObjectiveType != null)
             {
-                hash = hash * 59 + this.DefaultObjectiveType.GetHashCode();
+                hash = hash * 59 + DefaultObjectiveType.GetHashCode();
             }
 
-            if (this.Enabled != null)
+            if (Enabled != null)
             {
-                hash = hash * 59 + this.Enabled.GetHashCode();
+                hash = hash * 59 + Enabled.GetHashCode();
             }
 
             return hash;

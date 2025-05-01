@@ -70,7 +70,7 @@ public partial class Activation : IEquatable<Activation>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Activation);
+        return Equals(obj as Activation);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class Activation : IEquatable<Activation>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.DelayInSeconds == other.DelayInSeconds ||
-                this.DelayInSeconds != null &&
-                this.DelayInSeconds.Equals(other.DelayInSeconds)
+                DelayInSeconds == other.DelayInSeconds ||
+                DelayInSeconds != null &&
+                DelayInSeconds.Equals(other.DelayInSeconds)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class Activation : IEquatable<Activation>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.DelayInSeconds != null)
+            if (DelayInSeconds != null)
             {
-                hash = hash * 59 + this.DelayInSeconds.GetHashCode();
+                hash = hash * 59 + DelayInSeconds.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class StaffingRequirementsPlanningGroupData : IEquatable<Staffing
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as StaffingRequirementsPlanningGroupData);
+        return Equals(obj as StaffingRequirementsPlanningGroupData);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class StaffingRequirementsPlanningGroupData : IEquatable<Staffing
 
         return true &&
             (
-                this.PlanningGroupId == other.PlanningGroupId ||
-                this.PlanningGroupId != null &&
-                this.PlanningGroupId.Equals(other.PlanningGroupId)
+                PlanningGroupId == other.PlanningGroupId ||
+                PlanningGroupId != null &&
+                PlanningGroupId.Equals(other.PlanningGroupId)
             ) &&
             (
-                this.StaffingRequirementsPerInterval == other.StaffingRequirementsPerInterval ||
-                this.StaffingRequirementsPerInterval != null &&
-                this.StaffingRequirementsPerInterval.SequenceEqual(other.StaffingRequirementsPerInterval)
+                StaffingRequirementsPerInterval == other.StaffingRequirementsPerInterval ||
+                StaffingRequirementsPerInterval != null &&
+                StaffingRequirementsPerInterval.SequenceEqual(other.StaffingRequirementsPerInterval)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class StaffingRequirementsPlanningGroupData : IEquatable<Staffing
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PlanningGroupId != null)
+            if (PlanningGroupId != null)
             {
-                hash = hash * 59 + this.PlanningGroupId.GetHashCode();
+                hash = hash * 59 + PlanningGroupId.GetHashCode();
             }
 
-            if (this.StaffingRequirementsPerInterval != null)
+            if (StaffingRequirementsPerInterval != null)
             {
-                hash = hash * 59 + this.StaffingRequirementsPerInterval.GetHashCode();
+                hash = hash * 59 + StaffingRequirementsPerInterval.GetHashCode();
             }
 
             return hash;

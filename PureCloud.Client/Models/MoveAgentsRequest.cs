@@ -71,7 +71,7 @@ public partial class MoveAgentsRequest : IEquatable<MoveAgentsRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MoveAgentsRequest);
+        return Equals(obj as MoveAgentsRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class MoveAgentsRequest : IEquatable<MoveAgentsRequest>
 
         return true &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.DestinationManagementUnitId == other.DestinationManagementUnitId ||
-                this.DestinationManagementUnitId != null &&
-                this.DestinationManagementUnitId.Equals(other.DestinationManagementUnitId)
+                DestinationManagementUnitId == other.DestinationManagementUnitId ||
+                DestinationManagementUnitId != null &&
+                DestinationManagementUnitId.Equals(other.DestinationManagementUnitId)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class MoveAgentsRequest : IEquatable<MoveAgentsRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.DestinationManagementUnitId != null)
+            if (DestinationManagementUnitId != null)
             {
-                hash = hash * 59 + this.DestinationManagementUnitId.GetHashCode();
+                hash = hash * 59 + DestinationManagementUnitId.GetHashCode();
             }
 
             return hash;

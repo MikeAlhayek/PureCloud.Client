@@ -65,7 +65,7 @@ public partial class DatePickerAvailableDateTime : IEquatable<DatePickerAvailabl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DatePickerAvailableDateTime);
+        return Equals(obj as DatePickerAvailableDateTime);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class DatePickerAvailableDateTime : IEquatable<DatePickerAvailabl
 
         return true &&
             (
-                this.Duration == other.Duration ||
-                this.Duration != null &&
-                this.Duration.Equals(other.Duration)
+                Duration == other.Duration ||
+                Duration != null &&
+                Duration.Equals(other.Duration)
             ) &&
             (
-                this.DateTime == other.DateTime ||
-                this.DateTime != null &&
-                this.DateTime.Equals(other.DateTime)
+                DateTime == other.DateTime ||
+                DateTime != null &&
+                DateTime.Equals(other.DateTime)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class DatePickerAvailableDateTime : IEquatable<DatePickerAvailabl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Duration != null)
+            if (Duration != null)
             {
-                hash = hash * 59 + this.Duration.GetHashCode();
+                hash = hash * 59 + Duration.GetHashCode();
             }
 
-            if (this.DateTime != null)
+            if (DateTime != null)
             {
-                hash = hash * 59 + this.DateTime.GetHashCode();
+                hash = hash * 59 + DateTime.GetHashCode();
             }
 
             return hash;

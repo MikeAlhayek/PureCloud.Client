@@ -95,7 +95,7 @@ public partial class FormsTrackTrigger : IEquatable<FormsTrackTrigger>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FormsTrackTrigger);
+        return Equals(obj as FormsTrackTrigger);
     }
 
     /// <summary>
@@ -113,24 +113,24 @@ public partial class FormsTrackTrigger : IEquatable<FormsTrackTrigger>
 
         return true &&
             (
-                this.Selector == other.Selector ||
-                this.Selector != null &&
-                this.Selector.Equals(other.Selector)
+                Selector == other.Selector ||
+                Selector != null &&
+                Selector.Equals(other.Selector)
             ) &&
             (
-                this.FormName == other.FormName ||
-                this.FormName != null &&
-                this.FormName.Equals(other.FormName)
+                FormName == other.FormName ||
+                FormName != null &&
+                FormName.Equals(other.FormName)
             ) &&
             (
-                this.CaptureDataOnFormAbandon == other.CaptureDataOnFormAbandon ||
-                this.CaptureDataOnFormAbandon != null &&
-                this.CaptureDataOnFormAbandon.Equals(other.CaptureDataOnFormAbandon)
+                CaptureDataOnFormAbandon == other.CaptureDataOnFormAbandon ||
+                CaptureDataOnFormAbandon != null &&
+                CaptureDataOnFormAbandon.Equals(other.CaptureDataOnFormAbandon)
             ) &&
             (
-                this.CaptureDataOnFormSubmit == other.CaptureDataOnFormSubmit ||
-                this.CaptureDataOnFormSubmit != null &&
-                this.CaptureDataOnFormSubmit.Equals(other.CaptureDataOnFormSubmit)
+                CaptureDataOnFormSubmit == other.CaptureDataOnFormSubmit ||
+                CaptureDataOnFormSubmit != null &&
+                CaptureDataOnFormSubmit.Equals(other.CaptureDataOnFormSubmit)
             );
     }
 
@@ -145,24 +145,24 @@ public partial class FormsTrackTrigger : IEquatable<FormsTrackTrigger>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Selector != null)
+            if (Selector != null)
             {
-                hash = hash * 59 + this.Selector.GetHashCode();
+                hash = hash * 59 + Selector.GetHashCode();
             }
 
-            if (this.FormName != null)
+            if (FormName != null)
             {
-                hash = hash * 59 + this.FormName.GetHashCode();
+                hash = hash * 59 + FormName.GetHashCode();
             }
 
-            if (this.CaptureDataOnFormAbandon != null)
+            if (CaptureDataOnFormAbandon != null)
             {
-                hash = hash * 59 + this.CaptureDataOnFormAbandon.GetHashCode();
+                hash = hash * 59 + CaptureDataOnFormAbandon.GetHashCode();
             }
 
-            if (this.CaptureDataOnFormSubmit != null)
+            if (CaptureDataOnFormSubmit != null)
             {
-                hash = hash * 59 + this.CaptureDataOnFormSubmit.GetHashCode();
+                hash = hash * 59 + CaptureDataOnFormSubmit.GetHashCode();
             }
 
             return hash;

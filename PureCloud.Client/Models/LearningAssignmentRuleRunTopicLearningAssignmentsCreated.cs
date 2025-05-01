@@ -52,7 +52,7 @@ public partial class LearningAssignmentRuleRunTopicLearningAssignmentsCreated : 
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningAssignmentRuleRunTopicLearningAssignmentsCreated);
+        return Equals(obj as LearningAssignmentRuleRunTopicLearningAssignmentsCreated);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class LearningAssignmentRuleRunTopicLearningAssignmentsCreated : 
 
         return true &&
             (
-                this.Module == other.Module ||
-                this.Module != null &&
-                this.Module.Equals(other.Module)
+                Module == other.Module ||
+                Module != null &&
+                Module.Equals(other.Module)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class LearningAssignmentRuleRunTopicLearningAssignmentsCreated : 
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Module != null)
+            if (Module != null)
             {
-                hash = hash * 59 + this.Module.GetHashCode();
+                hash = hash * 59 + Module.GetHashCode();
             }
 
             return hash;

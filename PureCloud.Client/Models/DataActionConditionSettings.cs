@@ -107,7 +107,7 @@ public partial class DataActionConditionSettings : IEquatable<DataActionConditio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DataActionConditionSettings);
+        return Equals(obj as DataActionConditionSettings);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class DataActionConditionSettings : IEquatable<DataActionConditio
 
         return true &&
             (
-                this.DataActionId == other.DataActionId ||
-                this.DataActionId != null &&
-                this.DataActionId.Equals(other.DataActionId)
+                DataActionId == other.DataActionId ||
+                DataActionId != null &&
+                DataActionId.Equals(other.DataActionId)
             ) &&
             (
-                this.ContactIdField == other.ContactIdField ||
-                this.ContactIdField != null &&
-                this.ContactIdField.Equals(other.ContactIdField)
+                ContactIdField == other.ContactIdField ||
+                ContactIdField != null &&
+                ContactIdField.Equals(other.ContactIdField)
             ) &&
             (
-                this.DataNotFoundResolution == other.DataNotFoundResolution ||
-                this.DataNotFoundResolution != null &&
-                this.DataNotFoundResolution.Equals(other.DataNotFoundResolution)
+                DataNotFoundResolution == other.DataNotFoundResolution ||
+                DataNotFoundResolution != null &&
+                DataNotFoundResolution.Equals(other.DataNotFoundResolution)
             ) &&
             (
-                this.Predicates == other.Predicates ||
-                this.Predicates != null &&
-                this.Predicates.SequenceEqual(other.Predicates)
+                Predicates == other.Predicates ||
+                Predicates != null &&
+                Predicates.SequenceEqual(other.Predicates)
             ) &&
             (
-                this.ContactColumnToDataActionFieldMappings == other.ContactColumnToDataActionFieldMappings ||
-                this.ContactColumnToDataActionFieldMappings != null &&
-                this.ContactColumnToDataActionFieldMappings.SequenceEqual(other.ContactColumnToDataActionFieldMappings)
+                ContactColumnToDataActionFieldMappings == other.ContactColumnToDataActionFieldMappings ||
+                ContactColumnToDataActionFieldMappings != null &&
+                ContactColumnToDataActionFieldMappings.SequenceEqual(other.ContactColumnToDataActionFieldMappings)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class DataActionConditionSettings : IEquatable<DataActionConditio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DataActionId != null)
+            if (DataActionId != null)
             {
-                hash = hash * 59 + this.DataActionId.GetHashCode();
+                hash = hash * 59 + DataActionId.GetHashCode();
             }
 
-            if (this.ContactIdField != null)
+            if (ContactIdField != null)
             {
-                hash = hash * 59 + this.ContactIdField.GetHashCode();
+                hash = hash * 59 + ContactIdField.GetHashCode();
             }
 
-            if (this.DataNotFoundResolution != null)
+            if (DataNotFoundResolution != null)
             {
-                hash = hash * 59 + this.DataNotFoundResolution.GetHashCode();
+                hash = hash * 59 + DataNotFoundResolution.GetHashCode();
             }
 
-            if (this.Predicates != null)
+            if (Predicates != null)
             {
-                hash = hash * 59 + this.Predicates.GetHashCode();
+                hash = hash * 59 + Predicates.GetHashCode();
             }
 
-            if (this.ContactColumnToDataActionFieldMappings != null)
+            if (ContactColumnToDataActionFieldMappings != null)
             {
-                hash = hash * 59 + this.ContactColumnToDataActionFieldMappings.GetHashCode();
+                hash = hash * 59 + ContactColumnToDataActionFieldMappings.GetHashCode();
             }
 
             return hash;

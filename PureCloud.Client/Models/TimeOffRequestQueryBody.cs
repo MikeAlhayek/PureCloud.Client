@@ -183,7 +183,7 @@ public partial class TimeOffRequestQueryBody : IEquatable<TimeOffRequestQueryBod
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeOffRequestQueryBody);
+        return Equals(obj as TimeOffRequestQueryBody);
     }
 
     /// <summary>
@@ -201,29 +201,29 @@ public partial class TimeOffRequestQueryBody : IEquatable<TimeOffRequestQueryBod
 
         return true &&
             (
-                this.Ids == other.Ids ||
-                this.Ids != null &&
-                this.Ids.SequenceEqual(other.Ids)
+                Ids == other.Ids ||
+                Ids != null &&
+                Ids.SequenceEqual(other.Ids)
             ) &&
             (
-                this.UserIds == other.UserIds ||
-                this.UserIds != null &&
-                this.UserIds.SequenceEqual(other.UserIds)
+                UserIds == other.UserIds ||
+                UserIds != null &&
+                UserIds.SequenceEqual(other.UserIds)
             ) &&
             (
-                this.Statuses == other.Statuses ||
-                this.Statuses != null &&
-                this.Statuses.SequenceEqual(other.Statuses)
+                Statuses == other.Statuses ||
+                Statuses != null &&
+                Statuses.SequenceEqual(other.Statuses)
             ) &&
             (
-                this.Substatuses == other.Substatuses ||
-                this.Substatuses != null &&
-                this.Substatuses.SequenceEqual(other.Substatuses)
+                Substatuses == other.Substatuses ||
+                Substatuses != null &&
+                Substatuses.SequenceEqual(other.Substatuses)
             ) &&
             (
-                this.DateRange == other.DateRange ||
-                this.DateRange != null &&
-                this.DateRange.Equals(other.DateRange)
+                DateRange == other.DateRange ||
+                DateRange != null &&
+                DateRange.Equals(other.DateRange)
             );
     }
 
@@ -238,29 +238,29 @@ public partial class TimeOffRequestQueryBody : IEquatable<TimeOffRequestQueryBod
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Ids != null)
+            if (Ids != null)
             {
-                hash = hash * 59 + this.Ids.GetHashCode();
+                hash = hash * 59 + Ids.GetHashCode();
             }
 
-            if (this.UserIds != null)
+            if (UserIds != null)
             {
-                hash = hash * 59 + this.UserIds.GetHashCode();
+                hash = hash * 59 + UserIds.GetHashCode();
             }
 
-            if (this.Statuses != null)
+            if (Statuses != null)
             {
-                hash = hash * 59 + this.Statuses.GetHashCode();
+                hash = hash * 59 + Statuses.GetHashCode();
             }
 
-            if (this.Substatuses != null)
+            if (Substatuses != null)
             {
-                hash = hash * 59 + this.Substatuses.GetHashCode();
+                hash = hash * 59 + Substatuses.GetHashCode();
             }
 
-            if (this.DateRange != null)
+            if (DateRange != null)
             {
-                hash = hash * 59 + this.DateRange.GetHashCode();
+                hash = hash * 59 + DateRange.GetHashCode();
             }
 
             return hash;

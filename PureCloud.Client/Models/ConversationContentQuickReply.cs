@@ -115,7 +115,7 @@ public partial class ConversationContentQuickReply : IEquatable<ConversationCont
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationContentQuickReply);
+        return Equals(obj as ConversationContentQuickReply);
     }
 
     /// <summary>
@@ -133,24 +133,24 @@ public partial class ConversationContentQuickReply : IEquatable<ConversationCont
 
         return true &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Payload == other.Payload ||
-                this.Payload != null &&
-                this.Payload.Equals(other.Payload)
+                Payload == other.Payload ||
+                Payload != null &&
+                Payload.Equals(other.Payload)
             ) &&
             (
-                this.Image == other.Image ||
-                this.Image != null &&
-                this.Image.Equals(other.Image)
+                Image == other.Image ||
+                Image != null &&
+                Image.Equals(other.Image)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             );
     }
 
@@ -165,24 +165,24 @@ public partial class ConversationContentQuickReply : IEquatable<ConversationCont
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Payload != null)
+            if (Payload != null)
             {
-                hash = hash * 59 + this.Payload.GetHashCode();
+                hash = hash * 59 + Payload.GetHashCode();
             }
 
-            if (this.Image != null)
+            if (Image != null)
             {
-                hash = hash * 59 + this.Image.GetHashCode();
+                hash = hash * 59 + Image.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
             return hash;

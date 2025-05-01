@@ -534,7 +534,7 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationQualityV2TopicEvaluationV2);
+        return Equals(obj as EvaluationQualityV2TopicEvaluationV2);
     }
 
     /// <summary>
@@ -552,189 +552,189 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.ConversationId == other.ConversationId ||
-                this.ConversationId != null &&
-                this.ConversationId.Equals(other.ConversationId)
+                ConversationId == other.ConversationId ||
+                ConversationId != null &&
+                ConversationId.Equals(other.ConversationId)
             ) &&
             (
-                this.Agent == other.Agent ||
-                this.Agent != null &&
-                this.Agent.Equals(other.Agent)
+                Agent == other.Agent ||
+                Agent != null &&
+                Agent.Equals(other.Agent)
             ) &&
             (
-                this.Evaluator == other.Evaluator ||
-                this.Evaluator != null &&
-                this.Evaluator.Equals(other.Evaluator)
+                Evaluator == other.Evaluator ||
+                Evaluator != null &&
+                Evaluator.Equals(other.Evaluator)
             ) &&
             (
-                this.EventTime == other.EventTime ||
-                this.EventTime != null &&
-                this.EventTime.Equals(other.EventTime)
+                EventTime == other.EventTime ||
+                EventTime != null &&
+                EventTime.Equals(other.EventTime)
             ) &&
             (
-                this.EvaluationFormId == other.EvaluationFormId ||
-                this.EvaluationFormId != null &&
-                this.EvaluationFormId.Equals(other.EvaluationFormId)
+                EvaluationFormId == other.EvaluationFormId ||
+                EvaluationFormId != null &&
+                EvaluationFormId.Equals(other.EvaluationFormId)
             ) &&
             (
-                this.FormName == other.FormName ||
-                this.FormName != null &&
-                this.FormName.Equals(other.FormName)
+                FormName == other.FormName ||
+                FormName != null &&
+                FormName.Equals(other.FormName)
             ) &&
             (
-                this.ScoringSet == other.ScoringSet ||
-                this.ScoringSet != null &&
-                this.ScoringSet.Equals(other.ScoringSet)
+                ScoringSet == other.ScoringSet ||
+                ScoringSet != null &&
+                ScoringSet.Equals(other.ScoringSet)
             ) &&
             (
-                this.ContextId == other.ContextId ||
-                this.ContextId != null &&
-                this.ContextId.Equals(other.ContextId)
+                ContextId == other.ContextId ||
+                ContextId != null &&
+                ContextId.Equals(other.ContextId)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.AgentHasRead == other.AgentHasRead ||
-                this.AgentHasRead != null &&
-                this.AgentHasRead.Equals(other.AgentHasRead)
+                AgentHasRead == other.AgentHasRead ||
+                AgentHasRead != null &&
+                AgentHasRead.Equals(other.AgentHasRead)
             ) &&
             (
-                this.ReleaseDate == other.ReleaseDate ||
-                this.ReleaseDate != null &&
-                this.ReleaseDate.Equals(other.ReleaseDate)
+                ReleaseDate == other.ReleaseDate ||
+                ReleaseDate != null &&
+                ReleaseDate.Equals(other.ReleaseDate)
             ) &&
             (
-                this.AssignedDate == other.AssignedDate ||
-                this.AssignedDate != null &&
-                this.AssignedDate.Equals(other.AssignedDate)
+                AssignedDate == other.AssignedDate ||
+                AssignedDate != null &&
+                AssignedDate.Equals(other.AssignedDate)
             ) &&
             (
-                this.ChangedDate == other.ChangedDate ||
-                this.ChangedDate != null &&
-                this.ChangedDate.Equals(other.ChangedDate)
+                ChangedDate == other.ChangedDate ||
+                ChangedDate != null &&
+                ChangedDate.Equals(other.ChangedDate)
             ) &&
             (
-                this.EventType == other.EventType ||
-                this.EventType != null &&
-                this.EventType.Equals(other.EventType)
+                EventType == other.EventType ||
+                EventType != null &&
+                EventType.Equals(other.EventType)
             ) &&
             (
-                this.ResourceId == other.ResourceId ||
-                this.ResourceId != null &&
-                this.ResourceId.Equals(other.ResourceId)
+                ResourceId == other.ResourceId ||
+                ResourceId != null &&
+                ResourceId.Equals(other.ResourceId)
             ) &&
             (
-                this.ResourceType == other.ResourceType ||
-                this.ResourceType != null &&
-                this.ResourceType.Equals(other.ResourceType)
+                ResourceType == other.ResourceType ||
+                ResourceType != null &&
+                ResourceType.Equals(other.ResourceType)
             ) &&
             (
-                this.DivisionIds == other.DivisionIds ||
-                this.DivisionIds != null &&
-                this.DivisionIds.SequenceEqual(other.DivisionIds)
+                DivisionIds == other.DivisionIds ||
+                DivisionIds != null &&
+                DivisionIds.SequenceEqual(other.DivisionIds)
             ) &&
             (
-                this.Rescore == other.Rescore ||
-                this.Rescore != null &&
-                this.Rescore.Equals(other.Rescore)
+                Rescore == other.Rescore ||
+                Rescore != null &&
+                Rescore.Equals(other.Rescore)
             ) &&
             (
-                this.ConversationDate == other.ConversationDate ||
-                this.ConversationDate != null &&
-                this.ConversationDate.Equals(other.ConversationDate)
+                ConversationDate == other.ConversationDate ||
+                ConversationDate != null &&
+                ConversationDate.Equals(other.ConversationDate)
             ) &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.SequenceEqual(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.SequenceEqual(other.MediaType)
             ) &&
             (
-                this.Calibration == other.Calibration ||
-                this.Calibration != null &&
-                this.Calibration.Equals(other.Calibration)
+                Calibration == other.Calibration ||
+                Calibration != null &&
+                Calibration.Equals(other.Calibration)
             ) &&
             (
-                this.EvaluationSource == other.EvaluationSource ||
-                this.EvaluationSource != null &&
-                this.EvaluationSource.Equals(other.EvaluationSource)
+                EvaluationSource == other.EvaluationSource ||
+                EvaluationSource != null &&
+                EvaluationSource.Equals(other.EvaluationSource)
             ) &&
             (
-                this.AssigneeUserId == other.AssigneeUserId ||
-                this.AssigneeUserId != null &&
-                this.AssigneeUserId.Equals(other.AssigneeUserId)
+                AssigneeUserId == other.AssigneeUserId ||
+                AssigneeUserId != null &&
+                AssigneeUserId.Equals(other.AssigneeUserId)
             ) &&
             (
-                this.PreviousAssigneeUserId == other.PreviousAssigneeUserId ||
-                this.PreviousAssigneeUserId != null &&
-                this.PreviousAssigneeUserId.Equals(other.PreviousAssigneeUserId)
+                PreviousAssigneeUserId == other.PreviousAssigneeUserId ||
+                PreviousAssigneeUserId != null &&
+                PreviousAssigneeUserId.Equals(other.PreviousAssigneeUserId)
             ) &&
             (
-                this.AssigneeApplicable == other.AssigneeApplicable ||
-                this.AssigneeApplicable != null &&
-                this.AssigneeApplicable.Equals(other.AssigneeApplicable)
+                AssigneeApplicable == other.AssigneeApplicable ||
+                AssigneeApplicable != null &&
+                AssigneeApplicable.Equals(other.AssigneeApplicable)
             ) &&
             (
-                this.EvaluationContextId == other.EvaluationContextId ||
-                this.EvaluationContextId != null &&
-                this.EvaluationContextId.Equals(other.EvaluationContextId)
+                EvaluationContextId == other.EvaluationContextId ||
+                EvaluationContextId != null &&
+                EvaluationContextId.Equals(other.EvaluationContextId)
             ) &&
             (
-                this.DisputeCount == other.DisputeCount ||
-                this.DisputeCount != null &&
-                this.DisputeCount.Equals(other.DisputeCount)
+                DisputeCount == other.DisputeCount ||
+                DisputeCount != null &&
+                DisputeCount.Equals(other.DisputeCount)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.PreviousStatus == other.PreviousStatus ||
-                this.PreviousStatus != null &&
-                this.PreviousStatus.Equals(other.PreviousStatus)
+                PreviousStatus == other.PreviousStatus ||
+                PreviousStatus != null &&
+                PreviousStatus.Equals(other.PreviousStatus)
             ) &&
             (
-                this.DeclinedReview == other.DeclinedReview ||
-                this.DeclinedReview != null &&
-                this.DeclinedReview.Equals(other.DeclinedReview)
+                DeclinedReview == other.DeclinedReview ||
+                DeclinedReview != null &&
+                DeclinedReview.Equals(other.DeclinedReview)
             ) &&
             (
-                this.RetractedEvaluation == other.RetractedEvaluation ||
-                this.RetractedEvaluation != null &&
-                this.RetractedEvaluation.Equals(other.RetractedEvaluation)
+                RetractedEvaluation == other.RetractedEvaluation ||
+                RetractedEvaluation != null &&
+                RetractedEvaluation.Equals(other.RetractedEvaluation)
             ) &&
             (
-                this.RescoreCount == other.RescoreCount ||
-                this.RescoreCount != null &&
-                this.RescoreCount.Equals(other.RescoreCount)
+                RescoreCount == other.RescoreCount ||
+                RescoreCount != null &&
+                RescoreCount.Equals(other.RescoreCount)
             ) &&
             (
-                this.EvaluatorCommentHasUpdated == other.EvaluatorCommentHasUpdated ||
-                this.EvaluatorCommentHasUpdated != null &&
-                this.EvaluatorCommentHasUpdated.Equals(other.EvaluatorCommentHasUpdated)
+                EvaluatorCommentHasUpdated == other.EvaluatorCommentHasUpdated ||
+                EvaluatorCommentHasUpdated != null &&
+                EvaluatorCommentHasUpdated.Equals(other.EvaluatorCommentHasUpdated)
             ) &&
             (
-                this.AgentCommentHasUpdated == other.AgentCommentHasUpdated ||
-                this.AgentCommentHasUpdated != null &&
-                this.AgentCommentHasUpdated.Equals(other.AgentCommentHasUpdated)
+                AgentCommentHasUpdated == other.AgentCommentHasUpdated ||
+                AgentCommentHasUpdated != null &&
+                AgentCommentHasUpdated.Equals(other.AgentCommentHasUpdated)
             ) &&
             (
-                this.PreviousRescoreCount == other.PreviousRescoreCount ||
-                this.PreviousRescoreCount != null &&
-                this.PreviousRescoreCount.Equals(other.PreviousRescoreCount)
+                PreviousRescoreCount == other.PreviousRescoreCount ||
+                PreviousRescoreCount != null &&
+                PreviousRescoreCount.Equals(other.PreviousRescoreCount)
             ) &&
             (
-                this.PreviousEvaluatorUserId == other.PreviousEvaluatorUserId ||
-                this.PreviousEvaluatorUserId != null &&
-                this.PreviousEvaluatorUserId.Equals(other.PreviousEvaluatorUserId)
+                PreviousEvaluatorUserId == other.PreviousEvaluatorUserId ||
+                PreviousEvaluatorUserId != null &&
+                PreviousEvaluatorUserId.Equals(other.PreviousEvaluatorUserId)
             );
     }
 
@@ -749,189 +749,189 @@ public partial class EvaluationQualityV2TopicEvaluationV2 : IEquatable<Evaluatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.ConversationId != null)
+            if (ConversationId != null)
             {
-                hash = hash * 59 + this.ConversationId.GetHashCode();
+                hash = hash * 59 + ConversationId.GetHashCode();
             }
 
-            if (this.Agent != null)
+            if (Agent != null)
             {
-                hash = hash * 59 + this.Agent.GetHashCode();
+                hash = hash * 59 + Agent.GetHashCode();
             }
 
-            if (this.Evaluator != null)
+            if (Evaluator != null)
             {
-                hash = hash * 59 + this.Evaluator.GetHashCode();
+                hash = hash * 59 + Evaluator.GetHashCode();
             }
 
-            if (this.EventTime != null)
+            if (EventTime != null)
             {
-                hash = hash * 59 + this.EventTime.GetHashCode();
+                hash = hash * 59 + EventTime.GetHashCode();
             }
 
-            if (this.EvaluationFormId != null)
+            if (EvaluationFormId != null)
             {
-                hash = hash * 59 + this.EvaluationFormId.GetHashCode();
+                hash = hash * 59 + EvaluationFormId.GetHashCode();
             }
 
-            if (this.FormName != null)
+            if (FormName != null)
             {
-                hash = hash * 59 + this.FormName.GetHashCode();
+                hash = hash * 59 + FormName.GetHashCode();
             }
 
-            if (this.ScoringSet != null)
+            if (ScoringSet != null)
             {
-                hash = hash * 59 + this.ScoringSet.GetHashCode();
+                hash = hash * 59 + ScoringSet.GetHashCode();
             }
 
-            if (this.ContextId != null)
+            if (ContextId != null)
             {
-                hash = hash * 59 + this.ContextId.GetHashCode();
+                hash = hash * 59 + ContextId.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.AgentHasRead != null)
+            if (AgentHasRead != null)
             {
-                hash = hash * 59 + this.AgentHasRead.GetHashCode();
+                hash = hash * 59 + AgentHasRead.GetHashCode();
             }
 
-            if (this.ReleaseDate != null)
+            if (ReleaseDate != null)
             {
-                hash = hash * 59 + this.ReleaseDate.GetHashCode();
+                hash = hash * 59 + ReleaseDate.GetHashCode();
             }
 
-            if (this.AssignedDate != null)
+            if (AssignedDate != null)
             {
-                hash = hash * 59 + this.AssignedDate.GetHashCode();
+                hash = hash * 59 + AssignedDate.GetHashCode();
             }
 
-            if (this.ChangedDate != null)
+            if (ChangedDate != null)
             {
-                hash = hash * 59 + this.ChangedDate.GetHashCode();
+                hash = hash * 59 + ChangedDate.GetHashCode();
             }
 
-            if (this.EventType != null)
+            if (EventType != null)
             {
-                hash = hash * 59 + this.EventType.GetHashCode();
+                hash = hash * 59 + EventType.GetHashCode();
             }
 
-            if (this.ResourceId != null)
+            if (ResourceId != null)
             {
-                hash = hash * 59 + this.ResourceId.GetHashCode();
+                hash = hash * 59 + ResourceId.GetHashCode();
             }
 
-            if (this.ResourceType != null)
+            if (ResourceType != null)
             {
-                hash = hash * 59 + this.ResourceType.GetHashCode();
+                hash = hash * 59 + ResourceType.GetHashCode();
             }
 
-            if (this.DivisionIds != null)
+            if (DivisionIds != null)
             {
-                hash = hash * 59 + this.DivisionIds.GetHashCode();
+                hash = hash * 59 + DivisionIds.GetHashCode();
             }
 
-            if (this.Rescore != null)
+            if (Rescore != null)
             {
-                hash = hash * 59 + this.Rescore.GetHashCode();
+                hash = hash * 59 + Rescore.GetHashCode();
             }
 
-            if (this.ConversationDate != null)
+            if (ConversationDate != null)
             {
-                hash = hash * 59 + this.ConversationDate.GetHashCode();
+                hash = hash * 59 + ConversationDate.GetHashCode();
             }
 
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.Calibration != null)
+            if (Calibration != null)
             {
-                hash = hash * 59 + this.Calibration.GetHashCode();
+                hash = hash * 59 + Calibration.GetHashCode();
             }
 
-            if (this.EvaluationSource != null)
+            if (EvaluationSource != null)
             {
-                hash = hash * 59 + this.EvaluationSource.GetHashCode();
+                hash = hash * 59 + EvaluationSource.GetHashCode();
             }
 
-            if (this.AssigneeUserId != null)
+            if (AssigneeUserId != null)
             {
-                hash = hash * 59 + this.AssigneeUserId.GetHashCode();
+                hash = hash * 59 + AssigneeUserId.GetHashCode();
             }
 
-            if (this.PreviousAssigneeUserId != null)
+            if (PreviousAssigneeUserId != null)
             {
-                hash = hash * 59 + this.PreviousAssigneeUserId.GetHashCode();
+                hash = hash * 59 + PreviousAssigneeUserId.GetHashCode();
             }
 
-            if (this.AssigneeApplicable != null)
+            if (AssigneeApplicable != null)
             {
-                hash = hash * 59 + this.AssigneeApplicable.GetHashCode();
+                hash = hash * 59 + AssigneeApplicable.GetHashCode();
             }
 
-            if (this.EvaluationContextId != null)
+            if (EvaluationContextId != null)
             {
-                hash = hash * 59 + this.EvaluationContextId.GetHashCode();
+                hash = hash * 59 + EvaluationContextId.GetHashCode();
             }
 
-            if (this.DisputeCount != null)
+            if (DisputeCount != null)
             {
-                hash = hash * 59 + this.DisputeCount.GetHashCode();
+                hash = hash * 59 + DisputeCount.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.PreviousStatus != null)
+            if (PreviousStatus != null)
             {
-                hash = hash * 59 + this.PreviousStatus.GetHashCode();
+                hash = hash * 59 + PreviousStatus.GetHashCode();
             }
 
-            if (this.DeclinedReview != null)
+            if (DeclinedReview != null)
             {
-                hash = hash * 59 + this.DeclinedReview.GetHashCode();
+                hash = hash * 59 + DeclinedReview.GetHashCode();
             }
 
-            if (this.RetractedEvaluation != null)
+            if (RetractedEvaluation != null)
             {
-                hash = hash * 59 + this.RetractedEvaluation.GetHashCode();
+                hash = hash * 59 + RetractedEvaluation.GetHashCode();
             }
 
-            if (this.RescoreCount != null)
+            if (RescoreCount != null)
             {
-                hash = hash * 59 + this.RescoreCount.GetHashCode();
+                hash = hash * 59 + RescoreCount.GetHashCode();
             }
 
-            if (this.EvaluatorCommentHasUpdated != null)
+            if (EvaluatorCommentHasUpdated != null)
             {
-                hash = hash * 59 + this.EvaluatorCommentHasUpdated.GetHashCode();
+                hash = hash * 59 + EvaluatorCommentHasUpdated.GetHashCode();
             }
 
-            if (this.AgentCommentHasUpdated != null)
+            if (AgentCommentHasUpdated != null)
             {
-                hash = hash * 59 + this.AgentCommentHasUpdated.GetHashCode();
+                hash = hash * 59 + AgentCommentHasUpdated.GetHashCode();
             }
 
-            if (this.PreviousRescoreCount != null)
+            if (PreviousRescoreCount != null)
             {
-                hash = hash * 59 + this.PreviousRescoreCount.GetHashCode();
+                hash = hash * 59 + PreviousRescoreCount.GetHashCode();
             }
 
-            if (this.PreviousEvaluatorUserId != null)
+            if (PreviousEvaluatorUserId != null)
             {
-                hash = hash * 59 + this.PreviousEvaluatorUserId.GetHashCode();
+                hash = hash * 59 + PreviousEvaluatorUserId.GetHashCode();
             }
 
             return hash;

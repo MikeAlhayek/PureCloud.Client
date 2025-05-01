@@ -81,7 +81,7 @@ public partial class SearchUpdateRequest : IEquatable<SearchUpdateRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SearchUpdateRequest);
+        return Equals(obj as SearchUpdateRequest);
     }
 
     /// <summary>
@@ -99,19 +99,19 @@ public partial class SearchUpdateRequest : IEquatable<SearchUpdateRequest>
 
         return true &&
             (
-                this.SessionId == other.SessionId ||
-                this.SessionId != null &&
-                this.SessionId.Equals(other.SessionId)
+                SessionId == other.SessionId ||
+                SessionId != null &&
+                SessionId.Equals(other.SessionId)
             ) &&
             (
-                this.Answered == other.Answered ||
-                this.Answered != null &&
-                this.Answered.Equals(other.Answered)
+                Answered == other.Answered ||
+                Answered != null &&
+                Answered.Equals(other.Answered)
             ) &&
             (
-                this.SelectedAnswer == other.SelectedAnswer ||
-                this.SelectedAnswer != null &&
-                this.SelectedAnswer.Equals(other.SelectedAnswer)
+                SelectedAnswer == other.SelectedAnswer ||
+                SelectedAnswer != null &&
+                SelectedAnswer.Equals(other.SelectedAnswer)
             );
     }
 
@@ -126,19 +126,19 @@ public partial class SearchUpdateRequest : IEquatable<SearchUpdateRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SessionId != null)
+            if (SessionId != null)
             {
-                hash = hash * 59 + this.SessionId.GetHashCode();
+                hash = hash * 59 + SessionId.GetHashCode();
             }
 
-            if (this.Answered != null)
+            if (Answered != null)
             {
-                hash = hash * 59 + this.Answered.GetHashCode();
+                hash = hash * 59 + Answered.GetHashCode();
             }
 
-            if (this.SelectedAnswer != null)
+            if (SelectedAnswer != null)
             {
-                hash = hash * 59 + this.SelectedAnswer.GetHashCode();
+                hash = hash * 59 + SelectedAnswer.GetHashCode();
             }
 
             return hash;

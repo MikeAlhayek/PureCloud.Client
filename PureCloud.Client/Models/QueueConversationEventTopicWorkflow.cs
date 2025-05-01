@@ -53,7 +53,7 @@ public partial class QueueConversationEventTopicWorkflow : IEquatable<QueueConve
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationEventTopicWorkflow);
+        return Equals(obj as QueueConversationEventTopicWorkflow);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class QueueConversationEventTopicWorkflow : IEquatable<QueueConve
 
         return true &&
             (
-                this.WorkflowId == other.WorkflowId ||
-                this.WorkflowId != null &&
-                this.WorkflowId.Equals(other.WorkflowId)
+                WorkflowId == other.WorkflowId ||
+                WorkflowId != null &&
+                WorkflowId.Equals(other.WorkflowId)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class QueueConversationEventTopicWorkflow : IEquatable<QueueConve
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.WorkflowId != null)
+            if (WorkflowId != null)
             {
-                hash = hash * 59 + this.WorkflowId.GetHashCode();
+                hash = hash * 59 + WorkflowId.GetHashCode();
             }
 
             return hash;

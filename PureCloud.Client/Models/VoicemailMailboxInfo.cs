@@ -141,7 +141,7 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as VoicemailMailboxInfo);
+        return Equals(obj as VoicemailMailboxInfo);
     }
 
     /// <summary>
@@ -159,54 +159,54 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
 
         return true &&
             (
-                this.UsageSizeBytes == other.UsageSizeBytes ||
-                this.UsageSizeBytes != null &&
-                this.UsageSizeBytes.Equals(other.UsageSizeBytes)
+                UsageSizeBytes == other.UsageSizeBytes ||
+                UsageSizeBytes != null &&
+                UsageSizeBytes.Equals(other.UsageSizeBytes)
             ) &&
             (
-                this.TotalCount == other.TotalCount ||
-                this.TotalCount != null &&
-                this.TotalCount.Equals(other.TotalCount)
+                TotalCount == other.TotalCount ||
+                TotalCount != null &&
+                TotalCount.Equals(other.TotalCount)
             ) &&
             (
-                this.UnreadCount == other.UnreadCount ||
-                this.UnreadCount != null &&
-                this.UnreadCount.Equals(other.UnreadCount)
+                UnreadCount == other.UnreadCount ||
+                UnreadCount != null &&
+                UnreadCount.Equals(other.UnreadCount)
             ) &&
             (
-                this.DeletedCount == other.DeletedCount ||
-                this.DeletedCount != null &&
-                this.DeletedCount.Equals(other.DeletedCount)
+                DeletedCount == other.DeletedCount ||
+                DeletedCount != null &&
+                DeletedCount.Equals(other.DeletedCount)
             ) &&
             (
-                this.CreatedDate == other.CreatedDate ||
-                this.CreatedDate != null &&
-                this.CreatedDate.Equals(other.CreatedDate)
+                CreatedDate == other.CreatedDate ||
+                CreatedDate != null &&
+                CreatedDate.Equals(other.CreatedDate)
             ) &&
             (
-                this.ModifiedDate == other.ModifiedDate ||
-                this.ModifiedDate != null &&
-                this.ModifiedDate.Equals(other.ModifiedDate)
+                ModifiedDate == other.ModifiedDate ||
+                ModifiedDate != null &&
+                ModifiedDate.Equals(other.ModifiedDate)
             ) &&
             (
-                this.NewestUnreadDate == other.NewestUnreadDate ||
-                this.NewestUnreadDate != null &&
-                this.NewestUnreadDate.Equals(other.NewestUnreadDate)
+                NewestUnreadDate == other.NewestUnreadDate ||
+                NewestUnreadDate != null &&
+                NewestUnreadDate.Equals(other.NewestUnreadDate)
             ) &&
             (
-                this.OldestUnreadDate == other.OldestUnreadDate ||
-                this.OldestUnreadDate != null &&
-                this.OldestUnreadDate.Equals(other.OldestUnreadDate)
+                OldestUnreadDate == other.OldestUnreadDate ||
+                OldestUnreadDate != null &&
+                OldestUnreadDate.Equals(other.OldestUnreadDate)
             ) &&
             (
-                this.NewestReadDate == other.NewestReadDate ||
-                this.NewestReadDate != null &&
-                this.NewestReadDate.Equals(other.NewestReadDate)
+                NewestReadDate == other.NewestReadDate ||
+                NewestReadDate != null &&
+                NewestReadDate.Equals(other.NewestReadDate)
             ) &&
             (
-                this.OldestReadDate == other.OldestReadDate ||
-                this.OldestReadDate != null &&
-                this.OldestReadDate.Equals(other.OldestReadDate)
+                OldestReadDate == other.OldestReadDate ||
+                OldestReadDate != null &&
+                OldestReadDate.Equals(other.OldestReadDate)
             );
     }
 
@@ -221,54 +221,54 @@ public partial class VoicemailMailboxInfo : IEquatable<VoicemailMailboxInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UsageSizeBytes != null)
+            if (UsageSizeBytes != null)
             {
-                hash = hash * 59 + this.UsageSizeBytes.GetHashCode();
+                hash = hash * 59 + UsageSizeBytes.GetHashCode();
             }
 
-            if (this.TotalCount != null)
+            if (TotalCount != null)
             {
-                hash = hash * 59 + this.TotalCount.GetHashCode();
+                hash = hash * 59 + TotalCount.GetHashCode();
             }
 
-            if (this.UnreadCount != null)
+            if (UnreadCount != null)
             {
-                hash = hash * 59 + this.UnreadCount.GetHashCode();
+                hash = hash * 59 + UnreadCount.GetHashCode();
             }
 
-            if (this.DeletedCount != null)
+            if (DeletedCount != null)
             {
-                hash = hash * 59 + this.DeletedCount.GetHashCode();
+                hash = hash * 59 + DeletedCount.GetHashCode();
             }
 
-            if (this.CreatedDate != null)
+            if (CreatedDate != null)
             {
-                hash = hash * 59 + this.CreatedDate.GetHashCode();
+                hash = hash * 59 + CreatedDate.GetHashCode();
             }
 
-            if (this.ModifiedDate != null)
+            if (ModifiedDate != null)
             {
-                hash = hash * 59 + this.ModifiedDate.GetHashCode();
+                hash = hash * 59 + ModifiedDate.GetHashCode();
             }
 
-            if (this.NewestUnreadDate != null)
+            if (NewestUnreadDate != null)
             {
-                hash = hash * 59 + this.NewestUnreadDate.GetHashCode();
+                hash = hash * 59 + NewestUnreadDate.GetHashCode();
             }
 
-            if (this.OldestUnreadDate != null)
+            if (OldestUnreadDate != null)
             {
-                hash = hash * 59 + this.OldestUnreadDate.GetHashCode();
+                hash = hash * 59 + OldestUnreadDate.GetHashCode();
             }
 
-            if (this.NewestReadDate != null)
+            if (NewestReadDate != null)
             {
-                hash = hash * 59 + this.NewestReadDate.GetHashCode();
+                hash = hash * 59 + NewestReadDate.GetHashCode();
             }
 
-            if (this.OldestReadDate != null)
+            if (OldestReadDate != null)
             {
-                hash = hash * 59 + this.OldestReadDate.GetHashCode();
+                hash = hash * 59 + OldestReadDate.GetHashCode();
             }
 
             return hash;

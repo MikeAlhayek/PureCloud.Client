@@ -242,7 +242,7 @@ public partial class QueueConversationVideoEventTopicMessageDetails : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationVideoEventTopicMessageDetails);
+        return Equals(obj as QueueConversationVideoEventTopicMessageDetails);
     }
 
     /// <summary>
@@ -260,49 +260,49 @@ public partial class QueueConversationVideoEventTopicMessageDetails : IEquatable
 
         return true &&
             (
-                this.MessageId == other.MessageId ||
-                this.MessageId != null &&
-                this.MessageId.Equals(other.MessageId)
+                MessageId == other.MessageId ||
+                MessageId != null &&
+                MessageId.Equals(other.MessageId)
             ) &&
             (
-                this.MessageTime == other.MessageTime ||
-                this.MessageTime != null &&
-                this.MessageTime.Equals(other.MessageTime)
+                MessageTime == other.MessageTime ||
+                MessageTime != null &&
+                MessageTime.Equals(other.MessageTime)
             ) &&
             (
-                this.MessageStatus == other.MessageStatus ||
-                this.MessageStatus != null &&
-                this.MessageStatus.Equals(other.MessageStatus)
+                MessageStatus == other.MessageStatus ||
+                MessageStatus != null &&
+                MessageStatus.Equals(other.MessageStatus)
             ) &&
             (
-                this.MessageSegmentCount == other.MessageSegmentCount ||
-                this.MessageSegmentCount != null &&
-                this.MessageSegmentCount.Equals(other.MessageSegmentCount)
+                MessageSegmentCount == other.MessageSegmentCount ||
+                MessageSegmentCount != null &&
+                MessageSegmentCount.Equals(other.MessageSegmentCount)
             ) &&
             (
-                this.Media == other.Media ||
-                this.Media != null &&
-                this.Media.SequenceEqual(other.Media)
+                Media == other.Media ||
+                Media != null &&
+                Media.SequenceEqual(other.Media)
             ) &&
             (
-                this.ErrorInfo == other.ErrorInfo ||
-                this.ErrorInfo != null &&
-                this.ErrorInfo.Equals(other.ErrorInfo)
+                ErrorInfo == other.ErrorInfo ||
+                ErrorInfo != null &&
+                ErrorInfo.Equals(other.ErrorInfo)
             ) &&
             (
-                this.Stickers == other.Stickers ||
-                this.Stickers != null &&
-                this.Stickers.SequenceEqual(other.Stickers)
+                Stickers == other.Stickers ||
+                Stickers != null &&
+                Stickers.SequenceEqual(other.Stickers)
             ) &&
             (
-                this.MessageMetadata == other.MessageMetadata ||
-                this.MessageMetadata != null &&
-                this.MessageMetadata.Equals(other.MessageMetadata)
+                MessageMetadata == other.MessageMetadata ||
+                MessageMetadata != null &&
+                MessageMetadata.Equals(other.MessageMetadata)
             ) &&
             (
-                this.SocialVisibility == other.SocialVisibility ||
-                this.SocialVisibility != null &&
-                this.SocialVisibility.Equals(other.SocialVisibility)
+                SocialVisibility == other.SocialVisibility ||
+                SocialVisibility != null &&
+                SocialVisibility.Equals(other.SocialVisibility)
             );
     }
 
@@ -317,49 +317,49 @@ public partial class QueueConversationVideoEventTopicMessageDetails : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MessageId != null)
+            if (MessageId != null)
             {
-                hash = hash * 59 + this.MessageId.GetHashCode();
+                hash = hash * 59 + MessageId.GetHashCode();
             }
 
-            if (this.MessageTime != null)
+            if (MessageTime != null)
             {
-                hash = hash * 59 + this.MessageTime.GetHashCode();
+                hash = hash * 59 + MessageTime.GetHashCode();
             }
 
-            if (this.MessageStatus != null)
+            if (MessageStatus != null)
             {
-                hash = hash * 59 + this.MessageStatus.GetHashCode();
+                hash = hash * 59 + MessageStatus.GetHashCode();
             }
 
-            if (this.MessageSegmentCount != null)
+            if (MessageSegmentCount != null)
             {
-                hash = hash * 59 + this.MessageSegmentCount.GetHashCode();
+                hash = hash * 59 + MessageSegmentCount.GetHashCode();
             }
 
-            if (this.Media != null)
+            if (Media != null)
             {
-                hash = hash * 59 + this.Media.GetHashCode();
+                hash = hash * 59 + Media.GetHashCode();
             }
 
-            if (this.ErrorInfo != null)
+            if (ErrorInfo != null)
             {
-                hash = hash * 59 + this.ErrorInfo.GetHashCode();
+                hash = hash * 59 + ErrorInfo.GetHashCode();
             }
 
-            if (this.Stickers != null)
+            if (Stickers != null)
             {
-                hash = hash * 59 + this.Stickers.GetHashCode();
+                hash = hash * 59 + Stickers.GetHashCode();
             }
 
-            if (this.MessageMetadata != null)
+            if (MessageMetadata != null)
             {
-                hash = hash * 59 + this.MessageMetadata.GetHashCode();
+                hash = hash * 59 + MessageMetadata.GetHashCode();
             }
 
-            if (this.SocialVisibility != null)
+            if (SocialVisibility != null)
             {
-                hash = hash * 59 + this.SocialVisibility.GetHashCode();
+                hash = hash * 59 + SocialVisibility.GetHashCode();
             }
 
             return hash;

@@ -97,7 +97,7 @@ public partial class ProgramMappings : IEquatable<ProgramMappings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ProgramMappings);
+        return Equals(obj as ProgramMappings);
     }
 
     /// <summary>
@@ -115,29 +115,29 @@ public partial class ProgramMappings : IEquatable<ProgramMappings>
 
         return true &&
             (
-                this.Program == other.Program ||
-                this.Program != null &&
-                this.Program.Equals(other.Program)
+                Program == other.Program ||
+                Program != null &&
+                Program.Equals(other.Program)
             ) &&
             (
-                this.Queues == other.Queues ||
-                this.Queues != null &&
-                this.Queues.SequenceEqual(other.Queues)
+                Queues == other.Queues ||
+                Queues != null &&
+                Queues.SequenceEqual(other.Queues)
             ) &&
             (
-                this.Flows == other.Flows ||
-                this.Flows != null &&
-                this.Flows.SequenceEqual(other.Flows)
+                Flows == other.Flows ||
+                Flows != null &&
+                Flows.SequenceEqual(other.Flows)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             );
     }
 
@@ -152,29 +152,29 @@ public partial class ProgramMappings : IEquatable<ProgramMappings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Program != null)
+            if (Program != null)
             {
-                hash = hash * 59 + this.Program.GetHashCode();
+                hash = hash * 59 + Program.GetHashCode();
             }
 
-            if (this.Queues != null)
+            if (Queues != null)
             {
-                hash = hash * 59 + this.Queues.GetHashCode();
+                hash = hash * 59 + Queues.GetHashCode();
             }
 
-            if (this.Flows != null)
+            if (Flows != null)
             {
-                hash = hash * 59 + this.Flows.GetHashCode();
+                hash = hash * 59 + Flows.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
             return hash;

@@ -70,7 +70,7 @@ public partial class CampaignRuleConditionGroup : IEquatable<CampaignRuleConditi
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignRuleConditionGroup);
+        return Equals(obj as CampaignRuleConditionGroup);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class CampaignRuleConditionGroup : IEquatable<CampaignRuleConditi
 
         return true &&
             (
-                this.MatchAnyConditions == other.MatchAnyConditions ||
-                this.MatchAnyConditions != null &&
-                this.MatchAnyConditions.Equals(other.MatchAnyConditions)
+                MatchAnyConditions == other.MatchAnyConditions ||
+                MatchAnyConditions != null &&
+                MatchAnyConditions.Equals(other.MatchAnyConditions)
             ) &&
             (
-                this.Conditions == other.Conditions ||
-                this.Conditions != null &&
-                this.Conditions.SequenceEqual(other.Conditions)
+                Conditions == other.Conditions ||
+                Conditions != null &&
+                Conditions.SequenceEqual(other.Conditions)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class CampaignRuleConditionGroup : IEquatable<CampaignRuleConditi
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MatchAnyConditions != null)
+            if (MatchAnyConditions != null)
             {
-                hash = hash * 59 + this.MatchAnyConditions.GetHashCode();
+                hash = hash * 59 + MatchAnyConditions.GetHashCode();
             }
 
-            if (this.Conditions != null)
+            if (Conditions != null)
             {
-                hash = hash * 59 + this.Conditions.GetHashCode();
+                hash = hash * 59 + Conditions.GetHashCode();
             }
 
             return hash;

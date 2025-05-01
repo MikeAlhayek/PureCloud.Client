@@ -59,7 +59,7 @@ public partial class TextBotInputOutputData : IEquatable<TextBotInputOutputData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotInputOutputData);
+        return Equals(obj as TextBotInputOutputData);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class TextBotInputOutputData : IEquatable<TextBotInputOutputData>
 
         return true &&
             (
-                this.Variables == other.Variables ||
-                this.Variables != null &&
-                this.Variables.SequenceEqual(other.Variables)
+                Variables == other.Variables ||
+                Variables != null &&
+                Variables.SequenceEqual(other.Variables)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class TextBotInputOutputData : IEquatable<TextBotInputOutputData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Variables != null)
+            if (Variables != null)
             {
-                hash = hash * 59 + this.Variables.GetHashCode();
+                hash = hash * 59 + Variables.GetHashCode();
             }
 
             return hash;

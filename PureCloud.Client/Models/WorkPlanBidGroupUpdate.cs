@@ -101,7 +101,7 @@ public partial class WorkPlanBidGroupUpdate : IEquatable<WorkPlanBidGroupUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanBidGroupUpdate);
+        return Equals(obj as WorkPlanBidGroupUpdate);
     }
 
     /// <summary>
@@ -119,29 +119,29 @@ public partial class WorkPlanBidGroupUpdate : IEquatable<WorkPlanBidGroupUpdate>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ManagementUnitId == other.ManagementUnitId ||
-                this.ManagementUnitId != null &&
-                this.ManagementUnitId.Equals(other.ManagementUnitId)
+                ManagementUnitId == other.ManagementUnitId ||
+                ManagementUnitId != null &&
+                ManagementUnitId.Equals(other.ManagementUnitId)
             ) &&
             (
-                this.AgentIds == other.AgentIds ||
-                this.AgentIds != null &&
-                this.AgentIds.Equals(other.AgentIds)
+                AgentIds == other.AgentIds ||
+                AgentIds != null &&
+                AgentIds.Equals(other.AgentIds)
             ) &&
             (
-                this.WorkPlans == other.WorkPlans ||
-                this.WorkPlans != null &&
-                this.WorkPlans.Equals(other.WorkPlans)
+                WorkPlans == other.WorkPlans ||
+                WorkPlans != null &&
+                WorkPlans.Equals(other.WorkPlans)
             ) &&
             (
-                this.PlanningGroupIds == other.PlanningGroupIds ||
-                this.PlanningGroupIds != null &&
-                this.PlanningGroupIds.Equals(other.PlanningGroupIds)
+                PlanningGroupIds == other.PlanningGroupIds ||
+                PlanningGroupIds != null &&
+                PlanningGroupIds.Equals(other.PlanningGroupIds)
             );
     }
 
@@ -156,29 +156,29 @@ public partial class WorkPlanBidGroupUpdate : IEquatable<WorkPlanBidGroupUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ManagementUnitId != null)
+            if (ManagementUnitId != null)
             {
-                hash = hash * 59 + this.ManagementUnitId.GetHashCode();
+                hash = hash * 59 + ManagementUnitId.GetHashCode();
             }
 
-            if (this.AgentIds != null)
+            if (AgentIds != null)
             {
-                hash = hash * 59 + this.AgentIds.GetHashCode();
+                hash = hash * 59 + AgentIds.GetHashCode();
             }
 
-            if (this.WorkPlans != null)
+            if (WorkPlans != null)
             {
-                hash = hash * 59 + this.WorkPlans.GetHashCode();
+                hash = hash * 59 + WorkPlans.GetHashCode();
             }
 
-            if (this.PlanningGroupIds != null)
+            if (PlanningGroupIds != null)
             {
-                hash = hash * 59 + this.PlanningGroupIds.GetHashCode();
+                hash = hash * 59 + PlanningGroupIds.GetHashCode();
             }
 
             return hash;

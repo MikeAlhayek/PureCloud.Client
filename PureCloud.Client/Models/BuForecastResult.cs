@@ -89,7 +89,7 @@ public partial class BuForecastResult : IEquatable<BuForecastResult>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuForecastResult);
+        return Equals(obj as BuForecastResult);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class BuForecastResult : IEquatable<BuForecastResult>
 
         return true &&
             (
-                this.ReferenceStartDate == other.ReferenceStartDate ||
-                this.ReferenceStartDate != null &&
-                this.ReferenceStartDate.Equals(other.ReferenceStartDate)
+                ReferenceStartDate == other.ReferenceStartDate ||
+                ReferenceStartDate != null &&
+                ReferenceStartDate.Equals(other.ReferenceStartDate)
             ) &&
             (
-                this.PlanningGroups == other.PlanningGroups ||
-                this.PlanningGroups != null &&
-                this.PlanningGroups.SequenceEqual(other.PlanningGroups)
+                PlanningGroups == other.PlanningGroups ||
+                PlanningGroups != null &&
+                PlanningGroups.SequenceEqual(other.PlanningGroups)
             ) &&
             (
-                this.WeekNumber == other.WeekNumber ||
-                this.WeekNumber != null &&
-                this.WeekNumber.Equals(other.WeekNumber)
+                WeekNumber == other.WeekNumber ||
+                WeekNumber != null &&
+                WeekNumber.Equals(other.WeekNumber)
             ) &&
             (
-                this.WeekCount == other.WeekCount ||
-                this.WeekCount != null &&
-                this.WeekCount.Equals(other.WeekCount)
+                WeekCount == other.WeekCount ||
+                WeekCount != null &&
+                WeekCount.Equals(other.WeekCount)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class BuForecastResult : IEquatable<BuForecastResult>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ReferenceStartDate != null)
+            if (ReferenceStartDate != null)
             {
-                hash = hash * 59 + this.ReferenceStartDate.GetHashCode();
+                hash = hash * 59 + ReferenceStartDate.GetHashCode();
             }
 
-            if (this.PlanningGroups != null)
+            if (PlanningGroups != null)
             {
-                hash = hash * 59 + this.PlanningGroups.GetHashCode();
+                hash = hash * 59 + PlanningGroups.GetHashCode();
             }
 
-            if (this.WeekNumber != null)
+            if (WeekNumber != null)
             {
-                hash = hash * 59 + this.WeekNumber.GetHashCode();
+                hash = hash * 59 + WeekNumber.GetHashCode();
             }
 
-            if (this.WeekCount != null)
+            if (WeekCount != null)
             {
-                hash = hash * 59 + this.WeekCount.GetHashCode();
+                hash = hash * 59 + WeekCount.GetHashCode();
             }
 
             return hash;

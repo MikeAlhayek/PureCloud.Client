@@ -173,7 +173,7 @@ public partial class RecordersState : IEquatable<RecordersState>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecordersState);
+        return Equals(obj as RecordersState);
     }
 
     /// <summary>
@@ -191,19 +191,19 @@ public partial class RecordersState : IEquatable<RecordersState>
 
         return true &&
             (
-                this.AdhocState == other.AdhocState ||
-                this.AdhocState != null &&
-                this.AdhocState.Equals(other.AdhocState)
+                AdhocState == other.AdhocState ||
+                AdhocState != null &&
+                AdhocState.Equals(other.AdhocState)
             ) &&
             (
-                this.CustomerExperienceState == other.CustomerExperienceState ||
-                this.CustomerExperienceState != null &&
-                this.CustomerExperienceState.Equals(other.CustomerExperienceState)
+                CustomerExperienceState == other.CustomerExperienceState ||
+                CustomerExperienceState != null &&
+                CustomerExperienceState.Equals(other.CustomerExperienceState)
             ) &&
             (
-                this.AgentExperienceState == other.AgentExperienceState ||
-                this.AgentExperienceState != null &&
-                this.AgentExperienceState.Equals(other.AgentExperienceState)
+                AgentExperienceState == other.AgentExperienceState ||
+                AgentExperienceState != null &&
+                AgentExperienceState.Equals(other.AgentExperienceState)
             );
     }
 
@@ -218,19 +218,19 @@ public partial class RecordersState : IEquatable<RecordersState>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AdhocState != null)
+            if (AdhocState != null)
             {
-                hash = hash * 59 + this.AdhocState.GetHashCode();
+                hash = hash * 59 + AdhocState.GetHashCode();
             }
 
-            if (this.CustomerExperienceState != null)
+            if (CustomerExperienceState != null)
             {
-                hash = hash * 59 + this.CustomerExperienceState.GetHashCode();
+                hash = hash * 59 + CustomerExperienceState.GetHashCode();
             }
 
-            if (this.AgentExperienceState != null)
+            if (AgentExperienceState != null)
             {
-                hash = hash * 59 + this.AgentExperienceState.GetHashCode();
+                hash = hash * 59 + AgentExperienceState.GetHashCode();
             }
 
             return hash;

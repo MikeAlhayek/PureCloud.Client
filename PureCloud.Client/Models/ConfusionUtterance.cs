@@ -75,7 +75,7 @@ public partial class ConfusionUtterance : IEquatable<ConfusionUtterance>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConfusionUtterance);
+        return Equals(obj as ConfusionUtterance);
     }
 
     /// <summary>
@@ -93,19 +93,19 @@ public partial class ConfusionUtterance : IEquatable<ConfusionUtterance>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.Similarity == other.Similarity ||
-                this.Similarity != null &&
-                this.Similarity.Equals(other.Similarity)
+                Similarity == other.Similarity ||
+                Similarity != null &&
+                Similarity.Equals(other.Similarity)
             );
     }
 
@@ -120,19 +120,19 @@ public partial class ConfusionUtterance : IEquatable<ConfusionUtterance>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.Similarity != null)
+            if (Similarity != null)
             {
-                hash = hash * 59 + this.Similarity.GetHashCode();
+                hash = hash * 59 + Similarity.GetHashCode();
             }
 
             return hash;

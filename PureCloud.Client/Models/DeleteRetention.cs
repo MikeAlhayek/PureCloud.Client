@@ -52,7 +52,7 @@ public partial class DeleteRetention : IEquatable<DeleteRetention>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DeleteRetention);
+        return Equals(obj as DeleteRetention);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class DeleteRetention : IEquatable<DeleteRetention>
 
         return true &&
             (
-                this.Days == other.Days ||
-                this.Days != null &&
-                this.Days.Equals(other.Days)
+                Days == other.Days ||
+                Days != null &&
+                Days.Equals(other.Days)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class DeleteRetention : IEquatable<DeleteRetention>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Days != null)
+            if (Days != null)
             {
-                hash = hash * 59 + this.Days.GetHashCode();
+                hash = hash * 59 + Days.GetHashCode();
             }
 
             return hash;

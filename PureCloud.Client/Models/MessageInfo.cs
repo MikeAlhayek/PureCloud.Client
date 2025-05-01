@@ -89,7 +89,7 @@ public partial class MessageInfo : IEquatable<MessageInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MessageInfo);
+        return Equals(obj as MessageInfo);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class MessageInfo : IEquatable<MessageInfo>
 
         return true &&
             (
-                this.LocalizableMessageCode == other.LocalizableMessageCode ||
-                this.LocalizableMessageCode != null &&
-                this.LocalizableMessageCode.Equals(other.LocalizableMessageCode)
+                LocalizableMessageCode == other.LocalizableMessageCode ||
+                LocalizableMessageCode != null &&
+                LocalizableMessageCode.Equals(other.LocalizableMessageCode)
             ) &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.MessageWithParams == other.MessageWithParams ||
-                this.MessageWithParams != null &&
-                this.MessageWithParams.Equals(other.MessageWithParams)
+                MessageWithParams == other.MessageWithParams ||
+                MessageWithParams != null &&
+                MessageWithParams.Equals(other.MessageWithParams)
             ) &&
             (
-                this.MessageParams == other.MessageParams ||
-                this.MessageParams != null &&
-                this.MessageParams.SequenceEqual(other.MessageParams)
+                MessageParams == other.MessageParams ||
+                MessageParams != null &&
+                MessageParams.SequenceEqual(other.MessageParams)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class MessageInfo : IEquatable<MessageInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.LocalizableMessageCode != null)
+            if (LocalizableMessageCode != null)
             {
-                hash = hash * 59 + this.LocalizableMessageCode.GetHashCode();
+                hash = hash * 59 + LocalizableMessageCode.GetHashCode();
             }
 
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.MessageWithParams != null)
+            if (MessageWithParams != null)
             {
-                hash = hash * 59 + this.MessageWithParams.GetHashCode();
+                hash = hash * 59 + MessageWithParams.GetHashCode();
             }
 
-            if (this.MessageParams != null)
+            if (MessageParams != null)
             {
-                hash = hash * 59 + this.MessageParams.GetHashCode();
+                hash = hash * 59 + MessageParams.GetHashCode();
             }
 
             return hash;

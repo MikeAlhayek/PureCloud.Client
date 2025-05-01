@@ -59,7 +59,7 @@ public partial class TextBotModeOutputPrompts : IEquatable<TextBotModeOutputProm
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotModeOutputPrompts);
+        return Equals(obj as TextBotModeOutputPrompts);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class TextBotModeOutputPrompts : IEquatable<TextBotModeOutputProm
 
         return true &&
             (
-                this.Segments == other.Segments ||
-                this.Segments != null &&
-                this.Segments.SequenceEqual(other.Segments)
+                Segments == other.Segments ||
+                Segments != null &&
+                Segments.SequenceEqual(other.Segments)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class TextBotModeOutputPrompts : IEquatable<TextBotModeOutputProm
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Segments != null)
+            if (Segments != null)
             {
-                hash = hash * 59 + this.Segments.GetHashCode();
+                hash = hash * 59 + Segments.GetHashCode();
             }
 
             return hash;

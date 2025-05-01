@@ -63,7 +63,7 @@ public partial class ExternalContactsSettings : IEquatable<ExternalContactsSetti
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsSettings);
+        return Equals(obj as ExternalContactsSettings);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class ExternalContactsSettings : IEquatable<ExternalContactsSetti
 
         return true &&
             (
-                this.ManuallyAssignDivisionsToInteractions == other.ManuallyAssignDivisionsToInteractions ||
-                this.ManuallyAssignDivisionsToInteractions != null &&
-                this.ManuallyAssignDivisionsToInteractions.Equals(other.ManuallyAssignDivisionsToInteractions)
+                ManuallyAssignDivisionsToInteractions == other.ManuallyAssignDivisionsToInteractions ||
+                ManuallyAssignDivisionsToInteractions != null &&
+                ManuallyAssignDivisionsToInteractions.Equals(other.ManuallyAssignDivisionsToInteractions)
             ) &&
             (
-                this.ManuallyAssignDivisionsToContacts == other.ManuallyAssignDivisionsToContacts ||
-                this.ManuallyAssignDivisionsToContacts != null &&
-                this.ManuallyAssignDivisionsToContacts.Equals(other.ManuallyAssignDivisionsToContacts)
+                ManuallyAssignDivisionsToContacts == other.ManuallyAssignDivisionsToContacts ||
+                ManuallyAssignDivisionsToContacts != null &&
+                ManuallyAssignDivisionsToContacts.Equals(other.ManuallyAssignDivisionsToContacts)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class ExternalContactsSettings : IEquatable<ExternalContactsSetti
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ManuallyAssignDivisionsToInteractions != null)
+            if (ManuallyAssignDivisionsToInteractions != null)
             {
-                hash = hash * 59 + this.ManuallyAssignDivisionsToInteractions.GetHashCode();
+                hash = hash * 59 + ManuallyAssignDivisionsToInteractions.GetHashCode();
             }
 
-            if (this.ManuallyAssignDivisionsToContacts != null)
+            if (ManuallyAssignDivisionsToContacts != null)
             {
-                hash = hash * 59 + this.ManuallyAssignDivisionsToContacts.GetHashCode();
+                hash = hash * 59 + ManuallyAssignDivisionsToContacts.GetHashCode();
             }
 
             return hash;

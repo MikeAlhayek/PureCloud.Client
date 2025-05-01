@@ -268,7 +268,7 @@ public partial class AvailableTopic : IEquatable<AvailableTopic>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AvailableTopic);
+        return Equals(obj as AvailableTopic);
     }
 
     /// <summary>
@@ -286,74 +286,74 @@ public partial class AvailableTopic : IEquatable<AvailableTopic>
 
         return true &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.PermissionDetails == other.PermissionDetails ||
-                this.PermissionDetails != null &&
-                this.PermissionDetails.SequenceEqual(other.PermissionDetails)
+                PermissionDetails == other.PermissionDetails ||
+                PermissionDetails != null &&
+                PermissionDetails.SequenceEqual(other.PermissionDetails)
             ) &&
             (
-                this.RequiresPermissions == other.RequiresPermissions ||
-                this.RequiresPermissions != null &&
-                this.RequiresPermissions.SequenceEqual(other.RequiresPermissions)
+                RequiresPermissions == other.RequiresPermissions ||
+                RequiresPermissions != null &&
+                RequiresPermissions.SequenceEqual(other.RequiresPermissions)
             ) &&
             (
-                this.RequiresDivisionPermissions == other.RequiresDivisionPermissions ||
-                this.RequiresDivisionPermissions != null &&
-                this.RequiresDivisionPermissions.Equals(other.RequiresDivisionPermissions)
+                RequiresDivisionPermissions == other.RequiresDivisionPermissions ||
+                RequiresDivisionPermissions != null &&
+                RequiresDivisionPermissions.Equals(other.RequiresDivisionPermissions)
             ) &&
             (
-                this.RequiresAnyValidator == other.RequiresAnyValidator ||
-                this.RequiresAnyValidator != null &&
-                this.RequiresAnyValidator.Equals(other.RequiresAnyValidator)
+                RequiresAnyValidator == other.RequiresAnyValidator ||
+                RequiresAnyValidator != null &&
+                RequiresAnyValidator.Equals(other.RequiresAnyValidator)
             ) &&
             (
-                this.Enforced == other.Enforced ||
-                this.Enforced != null &&
-                this.Enforced.Equals(other.Enforced)
+                Enforced == other.Enforced ||
+                Enforced != null &&
+                Enforced.Equals(other.Enforced)
             ) &&
             (
-                this.Visibility == other.Visibility ||
-                this.Visibility != null &&
-                this.Visibility.Equals(other.Visibility)
+                Visibility == other.Visibility ||
+                Visibility != null &&
+                Visibility.Equals(other.Visibility)
             ) &&
             (
-                this.Schema == other.Schema ||
-                this.Schema != null &&
-                this.Schema.SequenceEqual(other.Schema)
+                Schema == other.Schema ||
+                Schema != null &&
+                Schema.SequenceEqual(other.Schema)
             ) &&
             (
-                this.RequiresCurrentUser == other.RequiresCurrentUser ||
-                this.RequiresCurrentUser != null &&
-                this.RequiresCurrentUser.Equals(other.RequiresCurrentUser)
+                RequiresCurrentUser == other.RequiresCurrentUser ||
+                RequiresCurrentUser != null &&
+                RequiresCurrentUser.Equals(other.RequiresCurrentUser)
             ) &&
             (
-                this.RequiresCurrentUserOrPermission == other.RequiresCurrentUserOrPermission ||
-                this.RequiresCurrentUserOrPermission != null &&
-                this.RequiresCurrentUserOrPermission.Equals(other.RequiresCurrentUserOrPermission)
+                RequiresCurrentUserOrPermission == other.RequiresCurrentUserOrPermission ||
+                RequiresCurrentUserOrPermission != null &&
+                RequiresCurrentUserOrPermission.Equals(other.RequiresCurrentUserOrPermission)
             ) &&
             (
-                this.Transports == other.Transports ||
-                this.Transports != null &&
-                this.Transports.SequenceEqual(other.Transports)
+                Transports == other.Transports ||
+                Transports != null &&
+                Transports.SequenceEqual(other.Transports)
             ) &&
             (
-                this.PublicApiTemplateUriPaths == other.PublicApiTemplateUriPaths ||
-                this.PublicApiTemplateUriPaths != null &&
-                this.PublicApiTemplateUriPaths.SequenceEqual(other.PublicApiTemplateUriPaths)
+                PublicApiTemplateUriPaths == other.PublicApiTemplateUriPaths ||
+                PublicApiTemplateUriPaths != null &&
+                PublicApiTemplateUriPaths.SequenceEqual(other.PublicApiTemplateUriPaths)
             ) &&
             (
-                this.TopicParameters == other.TopicParameters ||
-                this.TopicParameters != null &&
-                this.TopicParameters.SequenceEqual(other.TopicParameters)
+                TopicParameters == other.TopicParameters ||
+                TopicParameters != null &&
+                TopicParameters.SequenceEqual(other.TopicParameters)
             );
     }
 
@@ -368,74 +368,74 @@ public partial class AvailableTopic : IEquatable<AvailableTopic>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.PermissionDetails != null)
+            if (PermissionDetails != null)
             {
-                hash = hash * 59 + this.PermissionDetails.GetHashCode();
+                hash = hash * 59 + PermissionDetails.GetHashCode();
             }
 
-            if (this.RequiresPermissions != null)
+            if (RequiresPermissions != null)
             {
-                hash = hash * 59 + this.RequiresPermissions.GetHashCode();
+                hash = hash * 59 + RequiresPermissions.GetHashCode();
             }
 
-            if (this.RequiresDivisionPermissions != null)
+            if (RequiresDivisionPermissions != null)
             {
-                hash = hash * 59 + this.RequiresDivisionPermissions.GetHashCode();
+                hash = hash * 59 + RequiresDivisionPermissions.GetHashCode();
             }
 
-            if (this.RequiresAnyValidator != null)
+            if (RequiresAnyValidator != null)
             {
-                hash = hash * 59 + this.RequiresAnyValidator.GetHashCode();
+                hash = hash * 59 + RequiresAnyValidator.GetHashCode();
             }
 
-            if (this.Enforced != null)
+            if (Enforced != null)
             {
-                hash = hash * 59 + this.Enforced.GetHashCode();
+                hash = hash * 59 + Enforced.GetHashCode();
             }
 
-            if (this.Visibility != null)
+            if (Visibility != null)
             {
-                hash = hash * 59 + this.Visibility.GetHashCode();
+                hash = hash * 59 + Visibility.GetHashCode();
             }
 
-            if (this.Schema != null)
+            if (Schema != null)
             {
-                hash = hash * 59 + this.Schema.GetHashCode();
+                hash = hash * 59 + Schema.GetHashCode();
             }
 
-            if (this.RequiresCurrentUser != null)
+            if (RequiresCurrentUser != null)
             {
-                hash = hash * 59 + this.RequiresCurrentUser.GetHashCode();
+                hash = hash * 59 + RequiresCurrentUser.GetHashCode();
             }
 
-            if (this.RequiresCurrentUserOrPermission != null)
+            if (RequiresCurrentUserOrPermission != null)
             {
-                hash = hash * 59 + this.RequiresCurrentUserOrPermission.GetHashCode();
+                hash = hash * 59 + RequiresCurrentUserOrPermission.GetHashCode();
             }
 
-            if (this.Transports != null)
+            if (Transports != null)
             {
-                hash = hash * 59 + this.Transports.GetHashCode();
+                hash = hash * 59 + Transports.GetHashCode();
             }
 
-            if (this.PublicApiTemplateUriPaths != null)
+            if (PublicApiTemplateUriPaths != null)
             {
-                hash = hash * 59 + this.PublicApiTemplateUriPaths.GetHashCode();
+                hash = hash * 59 + PublicApiTemplateUriPaths.GetHashCode();
             }
 
-            if (this.TopicParameters != null)
+            if (TopicParameters != null)
             {
-                hash = hash * 59 + this.TopicParameters.GetHashCode();
+                hash = hash * 59 + TopicParameters.GetHashCode();
             }
 
             return hash;

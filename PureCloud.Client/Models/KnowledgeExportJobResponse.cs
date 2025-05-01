@@ -325,7 +325,7 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeExportJobResponse);
+        return Equals(obj as KnowledgeExportJobResponse);
     }
 
     /// <summary>
@@ -343,74 +343,74 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DownloadURL == other.DownloadURL ||
-                this.DownloadURL != null &&
-                this.DownloadURL.Equals(other.DownloadURL)
+                DownloadURL == other.DownloadURL ||
+                DownloadURL != null &&
+                DownloadURL.Equals(other.DownloadURL)
             ) &&
             (
-                this.FileType == other.FileType ||
-                this.FileType != null &&
-                this.FileType.Equals(other.FileType)
+                FileType == other.FileType ||
+                FileType != null &&
+                FileType.Equals(other.FileType)
             ) &&
             (
-                this.JsonFileVersion == other.JsonFileVersion ||
-                this.JsonFileVersion != null &&
-                this.JsonFileVersion.Equals(other.JsonFileVersion)
+                JsonFileVersion == other.JsonFileVersion ||
+                JsonFileVersion != null &&
+                JsonFileVersion.Equals(other.JsonFileVersion)
             ) &&
             (
-                this.CountDocumentProcessed == other.CountDocumentProcessed ||
-                this.CountDocumentProcessed != null &&
-                this.CountDocumentProcessed.Equals(other.CountDocumentProcessed)
+                CountDocumentProcessed == other.CountDocumentProcessed ||
+                CountDocumentProcessed != null &&
+                CountDocumentProcessed.Equals(other.CountDocumentProcessed)
             ) &&
             (
-                this.ExportFilter == other.ExportFilter ||
-                this.ExportFilter != null &&
-                this.ExportFilter.Equals(other.ExportFilter)
+                ExportFilter == other.ExportFilter ||
+                ExportFilter != null &&
+                ExportFilter.Equals(other.ExportFilter)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.KnowledgeBase == other.KnowledgeBase ||
-                this.KnowledgeBase != null &&
-                this.KnowledgeBase.Equals(other.KnowledgeBase)
+                KnowledgeBase == other.KnowledgeBase ||
+                KnowledgeBase != null &&
+                KnowledgeBase.Equals(other.KnowledgeBase)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ErrorInformation == other.ErrorInformation ||
-                this.ErrorInformation != null &&
-                this.ErrorInformation.Equals(other.ErrorInformation)
+                ErrorInformation == other.ErrorInformation ||
+                ErrorInformation != null &&
+                ErrorInformation.Equals(other.ErrorInformation)
             ) &&
             (
-                this.Source == other.Source ||
-                this.Source != null &&
-                this.Source.Equals(other.Source)
+                Source == other.Source ||
+                Source != null &&
+                Source.Equals(other.Source)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -425,74 +425,74 @@ public partial class KnowledgeExportJobResponse : IEquatable<KnowledgeExportJobR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DownloadURL != null)
+            if (DownloadURL != null)
             {
-                hash = hash * 59 + this.DownloadURL.GetHashCode();
+                hash = hash * 59 + DownloadURL.GetHashCode();
             }
 
-            if (this.FileType != null)
+            if (FileType != null)
             {
-                hash = hash * 59 + this.FileType.GetHashCode();
+                hash = hash * 59 + FileType.GetHashCode();
             }
 
-            if (this.JsonFileVersion != null)
+            if (JsonFileVersion != null)
             {
-                hash = hash * 59 + this.JsonFileVersion.GetHashCode();
+                hash = hash * 59 + JsonFileVersion.GetHashCode();
             }
 
-            if (this.CountDocumentProcessed != null)
+            if (CountDocumentProcessed != null)
             {
-                hash = hash * 59 + this.CountDocumentProcessed.GetHashCode();
+                hash = hash * 59 + CountDocumentProcessed.GetHashCode();
             }
 
-            if (this.ExportFilter != null)
+            if (ExportFilter != null)
             {
-                hash = hash * 59 + this.ExportFilter.GetHashCode();
+                hash = hash * 59 + ExportFilter.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.KnowledgeBase != null)
+            if (KnowledgeBase != null)
             {
-                hash = hash * 59 + this.KnowledgeBase.GetHashCode();
+                hash = hash * 59 + KnowledgeBase.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ErrorInformation != null)
+            if (ErrorInformation != null)
             {
-                hash = hash * 59 + this.ErrorInformation.GetHashCode();
+                hash = hash * 59 + ErrorInformation.GetHashCode();
             }
 
-            if (this.Source != null)
+            if (Source != null)
             {
-                hash = hash * 59 + this.Source.GetHashCode();
+                hash = hash * 59 + Source.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

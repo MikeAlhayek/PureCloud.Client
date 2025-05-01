@@ -97,7 +97,7 @@ public partial class ConversationEnrichmentSentimentV2 : IEquatable<Conversation
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationEnrichmentSentimentV2);
+        return Equals(obj as ConversationEnrichmentSentimentV2);
     }
 
     /// <summary>
@@ -115,9 +115,9 @@ public partial class ConversationEnrichmentSentimentV2 : IEquatable<Conversation
 
         return true &&
             (
-                this.Tag == other.Tag ||
-                this.Tag != null &&
-                this.Tag.Equals(other.Tag)
+                Tag == other.Tag ||
+                Tag != null &&
+                Tag.Equals(other.Tag)
             );
     }
 
@@ -132,9 +132,9 @@ public partial class ConversationEnrichmentSentimentV2 : IEquatable<Conversation
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Tag != null)
+            if (Tag != null)
             {
-                hash = hash * 59 + this.Tag.GetHashCode();
+                hash = hash * 59 + Tag.GetHashCode();
             }
 
             return hash;

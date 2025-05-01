@@ -129,7 +129,7 @@ public partial class QueueMember : IEquatable<QueueMember>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueMember);
+        return Equals(obj as QueueMember);
     }
 
     /// <summary>
@@ -147,44 +147,44 @@ public partial class QueueMember : IEquatable<QueueMember>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.RingNumber == other.RingNumber ||
-                this.RingNumber != null &&
-                this.RingNumber.Equals(other.RingNumber)
+                RingNumber == other.RingNumber ||
+                RingNumber != null &&
+                RingNumber.Equals(other.RingNumber)
             ) &&
             (
-                this.Joined == other.Joined ||
-                this.Joined != null &&
-                this.Joined.Equals(other.Joined)
+                Joined == other.Joined ||
+                Joined != null &&
+                Joined.Equals(other.Joined)
             ) &&
             (
-                this.MemberBy == other.MemberBy ||
-                this.MemberBy != null &&
-                this.MemberBy.Equals(other.MemberBy)
+                MemberBy == other.MemberBy ||
+                MemberBy != null &&
+                MemberBy.Equals(other.MemberBy)
             ) &&
             (
-                this.RoutingStatus == other.RoutingStatus ||
-                this.RoutingStatus != null &&
-                this.RoutingStatus.Equals(other.RoutingStatus)
+                RoutingStatus == other.RoutingStatus ||
+                RoutingStatus != null &&
+                RoutingStatus.Equals(other.RoutingStatus)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -199,44 +199,44 @@ public partial class QueueMember : IEquatable<QueueMember>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.RingNumber != null)
+            if (RingNumber != null)
             {
-                hash = hash * 59 + this.RingNumber.GetHashCode();
+                hash = hash * 59 + RingNumber.GetHashCode();
             }
 
-            if (this.Joined != null)
+            if (Joined != null)
             {
-                hash = hash * 59 + this.Joined.GetHashCode();
+                hash = hash * 59 + Joined.GetHashCode();
             }
 
-            if (this.MemberBy != null)
+            if (MemberBy != null)
             {
-                hash = hash * 59 + this.MemberBy.GetHashCode();
+                hash = hash * 59 + MemberBy.GetHashCode();
             }
 
-            if (this.RoutingStatus != null)
+            if (RoutingStatus != null)
             {
-                hash = hash * 59 + this.RoutingStatus.GetHashCode();
+                hash = hash * 59 + RoutingStatus.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

@@ -99,7 +99,7 @@ public partial class MediaTranscription : IEquatable<MediaTranscription>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaTranscription);
+        return Equals(obj as MediaTranscription);
     }
 
     /// <summary>
@@ -117,19 +117,19 @@ public partial class MediaTranscription : IEquatable<MediaTranscription>
 
         return true &&
             (
-                this.DisplayName == other.DisplayName ||
-                this.DisplayName != null &&
-                this.DisplayName.Equals(other.DisplayName)
+                DisplayName == other.DisplayName ||
+                DisplayName != null &&
+                DisplayName.Equals(other.DisplayName)
             ) &&
             (
-                this.TranscriptionProvider == other.TranscriptionProvider ||
-                this.TranscriptionProvider != null &&
-                this.TranscriptionProvider.Equals(other.TranscriptionProvider)
+                TranscriptionProvider == other.TranscriptionProvider ||
+                TranscriptionProvider != null &&
+                TranscriptionProvider.Equals(other.TranscriptionProvider)
             ) &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             );
     }
 
@@ -144,19 +144,19 @@ public partial class MediaTranscription : IEquatable<MediaTranscription>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DisplayName != null)
+            if (DisplayName != null)
             {
-                hash = hash * 59 + this.DisplayName.GetHashCode();
+                hash = hash * 59 + DisplayName.GetHashCode();
             }
 
-            if (this.TranscriptionProvider != null)
+            if (TranscriptionProvider != null)
             {
-                hash = hash * 59 + this.TranscriptionProvider.GetHashCode();
+                hash = hash * 59 + TranscriptionProvider.GetHashCode();
             }
 
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
             return hash;

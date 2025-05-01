@@ -127,7 +127,7 @@ public partial class SalesforceSettings : IEquatable<SalesforceSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SalesforceSettings);
+        return Equals(obj as SalesforceSettings);
     }
 
     /// <summary>
@@ -145,24 +145,24 @@ public partial class SalesforceSettings : IEquatable<SalesforceSettings>
 
         return true &&
             (
-                this.Channel == other.Channel ||
-                this.Channel != null &&
-                this.Channel.Equals(other.Channel)
+                Channel == other.Channel ||
+                Channel != null &&
+                Channel.Equals(other.Channel)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Categories == other.Categories ||
-                this.Categories != null &&
-                this.Categories.SequenceEqual(other.Categories)
+                Categories == other.Categories ||
+                Categories != null &&
+                Categories.SequenceEqual(other.Categories)
             ) &&
             (
-                this.BaseUrl == other.BaseUrl ||
-                this.BaseUrl != null &&
-                this.BaseUrl.Equals(other.BaseUrl)
+                BaseUrl == other.BaseUrl ||
+                BaseUrl != null &&
+                BaseUrl.Equals(other.BaseUrl)
             );
     }
 
@@ -177,24 +177,24 @@ public partial class SalesforceSettings : IEquatable<SalesforceSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Channel != null)
+            if (Channel != null)
             {
-                hash = hash * 59 + this.Channel.GetHashCode();
+                hash = hash * 59 + Channel.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Categories != null)
+            if (Categories != null)
             {
-                hash = hash * 59 + this.Categories.GetHashCode();
+                hash = hash * 59 + Categories.GetHashCode();
             }
 
-            if (this.BaseUrl != null)
+            if (BaseUrl != null)
             {
-                hash = hash * 59 + this.BaseUrl.GetHashCode();
+                hash = hash * 59 + BaseUrl.GetHashCode();
             }
 
             return hash;

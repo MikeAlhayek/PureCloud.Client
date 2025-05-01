@@ -87,7 +87,7 @@ public partial class KnowledgeExportJobDocumentsFilter : IEquatable<KnowledgeExp
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeExportJobDocumentsFilter);
+        return Equals(obj as KnowledgeExportJobDocumentsFilter);
     }
 
     /// <summary>
@@ -105,24 +105,24 @@ public partial class KnowledgeExportJobDocumentsFilter : IEquatable<KnowledgeExp
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.Entities == other.Entities ||
-                this.Entities != null &&
-                this.Entities.SequenceEqual(other.Entities)
+                Entities == other.Entities ||
+                Entities != null &&
+                Entities.SequenceEqual(other.Entities)
             ) &&
             (
-                this.SourceId == other.SourceId ||
-                this.SourceId != null &&
-                this.SourceId.Equals(other.SourceId)
+                SourceId == other.SourceId ||
+                SourceId != null &&
+                SourceId.Equals(other.SourceId)
             ) &&
             (
-                this.IncludeDocumentsWithFileBody == other.IncludeDocumentsWithFileBody ||
-                this.IncludeDocumentsWithFileBody != null &&
-                this.IncludeDocumentsWithFileBody.Equals(other.IncludeDocumentsWithFileBody)
+                IncludeDocumentsWithFileBody == other.IncludeDocumentsWithFileBody ||
+                IncludeDocumentsWithFileBody != null &&
+                IncludeDocumentsWithFileBody.Equals(other.IncludeDocumentsWithFileBody)
             );
     }
 
@@ -137,24 +137,24 @@ public partial class KnowledgeExportJobDocumentsFilter : IEquatable<KnowledgeExp
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.Entities != null)
+            if (Entities != null)
             {
-                hash = hash * 59 + this.Entities.GetHashCode();
+                hash = hash * 59 + Entities.GetHashCode();
             }
 
-            if (this.SourceId != null)
+            if (SourceId != null)
             {
-                hash = hash * 59 + this.SourceId.GetHashCode();
+                hash = hash * 59 + SourceId.GetHashCode();
             }
 
-            if (this.IncludeDocumentsWithFileBody != null)
+            if (IncludeDocumentsWithFileBody != null)
             {
-                hash = hash * 59 + this.IncludeDocumentsWithFileBody.GetHashCode();
+                hash = hash * 59 + IncludeDocumentsWithFileBody.GetHashCode();
             }
 
             return hash;

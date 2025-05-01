@@ -97,7 +97,7 @@ public partial class RecurrencePeriod : IEquatable<RecurrencePeriod>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RecurrencePeriod);
+        return Equals(obj as RecurrencePeriod);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class RecurrencePeriod : IEquatable<RecurrencePeriod>
 
         return true &&
             (
-                this.Magnitude == other.Magnitude ||
-                this.Magnitude != null &&
-                this.Magnitude.Equals(other.Magnitude)
+                Magnitude == other.Magnitude ||
+                Magnitude != null &&
+                Magnitude.Equals(other.Magnitude)
             ) &&
             (
-                this.Granularity == other.Granularity ||
-                this.Granularity != null &&
-                this.Granularity.Equals(other.Granularity)
+                Granularity == other.Granularity ||
+                Granularity != null &&
+                Granularity.Equals(other.Granularity)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class RecurrencePeriod : IEquatable<RecurrencePeriod>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Magnitude != null)
+            if (Magnitude != null)
             {
-                hash = hash * 59 + this.Magnitude.GetHashCode();
+                hash = hash * 59 + Magnitude.GetHashCode();
             }
 
-            if (this.Granularity != null)
+            if (Granularity != null)
             {
-                hash = hash * 59 + this.Granularity.GetHashCode();
+                hash = hash * 59 + Granularity.GetHashCode();
             }
 
             return hash;

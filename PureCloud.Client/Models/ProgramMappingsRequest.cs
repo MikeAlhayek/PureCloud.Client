@@ -71,7 +71,7 @@ public partial class ProgramMappingsRequest : IEquatable<ProgramMappingsRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ProgramMappingsRequest);
+        return Equals(obj as ProgramMappingsRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class ProgramMappingsRequest : IEquatable<ProgramMappingsRequest>
 
         return true &&
             (
-                this.QueueIds == other.QueueIds ||
-                this.QueueIds != null &&
-                this.QueueIds.SequenceEqual(other.QueueIds)
+                QueueIds == other.QueueIds ||
+                QueueIds != null &&
+                QueueIds.SequenceEqual(other.QueueIds)
             ) &&
             (
-                this.FlowIds == other.FlowIds ||
-                this.FlowIds != null &&
-                this.FlowIds.SequenceEqual(other.FlowIds)
+                FlowIds == other.FlowIds ||
+                FlowIds != null &&
+                FlowIds.SequenceEqual(other.FlowIds)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class ProgramMappingsRequest : IEquatable<ProgramMappingsRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueueIds != null)
+            if (QueueIds != null)
             {
-                hash = hash * 59 + this.QueueIds.GetHashCode();
+                hash = hash * 59 + QueueIds.GetHashCode();
             }
 
-            if (this.FlowIds != null)
+            if (FlowIds != null)
             {
-                hash = hash * 59 + this.FlowIds.GetHashCode();
+                hash = hash * 59 + FlowIds.GetHashCode();
             }
 
             return hash;

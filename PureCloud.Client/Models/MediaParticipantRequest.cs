@@ -211,7 +211,7 @@ public partial class MediaParticipantRequest : IEquatable<MediaParticipantReques
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaParticipantRequest);
+        return Equals(obj as MediaParticipantRequest);
     }
 
     /// <summary>
@@ -229,39 +229,39 @@ public partial class MediaParticipantRequest : IEquatable<MediaParticipantReques
 
         return true &&
             (
-                this.Wrapup == other.Wrapup ||
-                this.Wrapup != null &&
-                this.Wrapup.Equals(other.Wrapup)
+                Wrapup == other.Wrapup ||
+                Wrapup != null &&
+                Wrapup.Equals(other.Wrapup)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Recording == other.Recording ||
-                this.Recording != null &&
-                this.Recording.Equals(other.Recording)
+                Recording == other.Recording ||
+                Recording != null &&
+                Recording.Equals(other.Recording)
             ) &&
             (
-                this.Muted == other.Muted ||
-                this.Muted != null &&
-                this.Muted.Equals(other.Muted)
+                Muted == other.Muted ||
+                Muted != null &&
+                Muted.Equals(other.Muted)
             ) &&
             (
-                this.Confined == other.Confined ||
-                this.Confined != null &&
-                this.Confined.Equals(other.Confined)
+                Confined == other.Confined ||
+                Confined != null &&
+                Confined.Equals(other.Confined)
             ) &&
             (
-                this.Held == other.Held ||
-                this.Held != null &&
-                this.Held.Equals(other.Held)
+                Held == other.Held ||
+                Held != null &&
+                Held.Equals(other.Held)
             ) &&
             (
-                this.WrapupSkipped == other.WrapupSkipped ||
-                this.WrapupSkipped != null &&
-                this.WrapupSkipped.Equals(other.WrapupSkipped)
+                WrapupSkipped == other.WrapupSkipped ||
+                WrapupSkipped != null &&
+                WrapupSkipped.Equals(other.WrapupSkipped)
             );
     }
 
@@ -276,39 +276,39 @@ public partial class MediaParticipantRequest : IEquatable<MediaParticipantReques
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Wrapup != null)
+            if (Wrapup != null)
             {
-                hash = hash * 59 + this.Wrapup.GetHashCode();
+                hash = hash * 59 + Wrapup.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Recording != null)
+            if (Recording != null)
             {
-                hash = hash * 59 + this.Recording.GetHashCode();
+                hash = hash * 59 + Recording.GetHashCode();
             }
 
-            if (this.Muted != null)
+            if (Muted != null)
             {
-                hash = hash * 59 + this.Muted.GetHashCode();
+                hash = hash * 59 + Muted.GetHashCode();
             }
 
-            if (this.Confined != null)
+            if (Confined != null)
             {
-                hash = hash * 59 + this.Confined.GetHashCode();
+                hash = hash * 59 + Confined.GetHashCode();
             }
 
-            if (this.Held != null)
+            if (Held != null)
             {
-                hash = hash * 59 + this.Held.GetHashCode();
+                hash = hash * 59 + Held.GetHashCode();
             }
 
-            if (this.WrapupSkipped != null)
+            if (WrapupSkipped != null)
             {
-                hash = hash * 59 + this.WrapupSkipped.GetHashCode();
+                hash = hash * 59 + WrapupSkipped.GetHashCode();
             }
 
             return hash;

@@ -96,7 +96,7 @@ public partial class ExternalContactsOrganizationChangedTopicTwitterId : IEquata
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsOrganizationChangedTopicTwitterId);
+        return Equals(obj as ExternalContactsOrganizationChangedTopicTwitterId);
     }
 
     /// <summary>
@@ -114,29 +114,29 @@ public partial class ExternalContactsOrganizationChangedTopicTwitterId : IEquata
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.ScreenName == other.ScreenName ||
-                this.ScreenName != null &&
-                this.ScreenName.Equals(other.ScreenName)
+                ScreenName == other.ScreenName ||
+                ScreenName != null &&
+                ScreenName.Equals(other.ScreenName)
             ) &&
             (
-                this.Verified == other.Verified ||
-                this.Verified != null &&
-                this.Verified.Equals(other.Verified)
+                Verified == other.Verified ||
+                Verified != null &&
+                Verified.Equals(other.Verified)
             ) &&
             (
-                this.ProfileUrl == other.ProfileUrl ||
-                this.ProfileUrl != null &&
-                this.ProfileUrl.Equals(other.ProfileUrl)
+                ProfileUrl == other.ProfileUrl ||
+                ProfileUrl != null &&
+                ProfileUrl.Equals(other.ProfileUrl)
             );
     }
 
@@ -151,29 +151,29 @@ public partial class ExternalContactsOrganizationChangedTopicTwitterId : IEquata
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.ScreenName != null)
+            if (ScreenName != null)
             {
-                hash = hash * 59 + this.ScreenName.GetHashCode();
+                hash = hash * 59 + ScreenName.GetHashCode();
             }
 
-            if (this.Verified != null)
+            if (Verified != null)
             {
-                hash = hash * 59 + this.Verified.GetHashCode();
+                hash = hash * 59 + Verified.GetHashCode();
             }
 
-            if (this.ProfileUrl != null)
+            if (ProfileUrl != null)
             {
-                hash = hash * 59 + this.ProfileUrl.GetHashCode();
+                hash = hash * 59 + ProfileUrl.GetHashCode();
             }
 
             return hash;

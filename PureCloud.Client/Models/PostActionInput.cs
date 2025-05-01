@@ -119,7 +119,7 @@ public partial class PostActionInput : IEquatable<PostActionInput>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PostActionInput);
+        return Equals(obj as PostActionInput);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class PostActionInput : IEquatable<PostActionInput>
 
         return true &&
             (
-                this.Category == other.Category ||
-                this.Category != null &&
-                this.Category.Equals(other.Category)
+                Category == other.Category ||
+                Category != null &&
+                Category.Equals(other.Category)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             ) &&
             (
-                this.Config == other.Config ||
-                this.Config != null &&
-                this.Config.Equals(other.Config)
+                Config == other.Config ||
+                Config != null &&
+                Config.Equals(other.Config)
             ) &&
             (
-                this.Contract == other.Contract ||
-                this.Contract != null &&
-                this.Contract.Equals(other.Contract)
+                Contract == other.Contract ||
+                Contract != null &&
+                Contract.Equals(other.Contract)
             ) &&
             (
-                this.Secure == other.Secure ||
-                this.Secure != null &&
-                this.Secure.Equals(other.Secure)
+                Secure == other.Secure ||
+                Secure != null &&
+                Secure.Equals(other.Secure)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class PostActionInput : IEquatable<PostActionInput>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Category != null)
+            if (Category != null)
             {
-                hash = hash * 59 + this.Category.GetHashCode();
+                hash = hash * 59 + Category.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
-            if (this.Config != null)
+            if (Config != null)
             {
-                hash = hash * 59 + this.Config.GetHashCode();
+                hash = hash * 59 + Config.GetHashCode();
             }
 
-            if (this.Contract != null)
+            if (Contract != null)
             {
-                hash = hash * 59 + this.Contract.GetHashCode();
+                hash = hash * 59 + Contract.GetHashCode();
             }
 
-            if (this.Secure != null)
+            if (Secure != null)
             {
-                hash = hash * 59 + this.Secure.GetHashCode();
+                hash = hash * 59 + Secure.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class EmailThreadingSettings : IEquatable<EmailThreadingSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailThreadingSettings);
+        return Equals(obj as EmailThreadingSettings);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class EmailThreadingSettings : IEquatable<EmailThreadingSettings>
 
         return true &&
             (
-                this.StartNewConversationOnSubjectChange == other.StartNewConversationOnSubjectChange ||
-                this.StartNewConversationOnSubjectChange != null &&
-                this.StartNewConversationOnSubjectChange.Equals(other.StartNewConversationOnSubjectChange)
+                StartNewConversationOnSubjectChange == other.StartNewConversationOnSubjectChange ||
+                StartNewConversationOnSubjectChange != null &&
+                StartNewConversationOnSubjectChange.Equals(other.StartNewConversationOnSubjectChange)
             ) &&
             (
-                this.TimeoutInMinutes == other.TimeoutInMinutes ||
-                this.TimeoutInMinutes != null &&
-                this.TimeoutInMinutes.Equals(other.TimeoutInMinutes)
+                TimeoutInMinutes == other.TimeoutInMinutes ||
+                TimeoutInMinutes != null &&
+                TimeoutInMinutes.Equals(other.TimeoutInMinutes)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class EmailThreadingSettings : IEquatable<EmailThreadingSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartNewConversationOnSubjectChange != null)
+            if (StartNewConversationOnSubjectChange != null)
             {
-                hash = hash * 59 + this.StartNewConversationOnSubjectChange.GetHashCode();
+                hash = hash * 59 + StartNewConversationOnSubjectChange.GetHashCode();
             }
 
-            if (this.TimeoutInMinutes != null)
+            if (TimeoutInMinutes != null)
             {
-                hash = hash * 59 + this.TimeoutInMinutes.GetHashCode();
+                hash = hash * 59 + TimeoutInMinutes.GetHashCode();
             }
 
             return hash;

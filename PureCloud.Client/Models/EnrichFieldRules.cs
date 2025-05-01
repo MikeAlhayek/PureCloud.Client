@@ -141,7 +141,7 @@ public partial class EnrichFieldRules : IEquatable<EnrichFieldRules>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EnrichFieldRules);
+        return Equals(obj as EnrichFieldRules);
     }
 
     /// <summary>
@@ -159,19 +159,19 @@ public partial class EnrichFieldRules : IEquatable<EnrichFieldRules>
 
         return true &&
             (
-                this.DefaultAction == other.DefaultAction ||
-                this.DefaultAction != null &&
-                this.DefaultAction.Equals(other.DefaultAction)
+                DefaultAction == other.DefaultAction ||
+                DefaultAction != null &&
+                DefaultAction.Equals(other.DefaultAction)
             ) &&
             (
-                this.Rules == other.Rules ||
-                this.Rules != null &&
-                this.Rules.SequenceEqual(other.Rules)
+                Rules == other.Rules ||
+                Rules != null &&
+                Rules.SequenceEqual(other.Rules)
             ) &&
             (
-                this.DefaultArrayAction == other.DefaultArrayAction ||
-                this.DefaultArrayAction != null &&
-                this.DefaultArrayAction.Equals(other.DefaultArrayAction)
+                DefaultArrayAction == other.DefaultArrayAction ||
+                DefaultArrayAction != null &&
+                DefaultArrayAction.Equals(other.DefaultArrayAction)
             );
     }
 
@@ -186,19 +186,19 @@ public partial class EnrichFieldRules : IEquatable<EnrichFieldRules>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DefaultAction != null)
+            if (DefaultAction != null)
             {
-                hash = hash * 59 + this.DefaultAction.GetHashCode();
+                hash = hash * 59 + DefaultAction.GetHashCode();
             }
 
-            if (this.Rules != null)
+            if (Rules != null)
             {
-                hash = hash * 59 + this.Rules.GetHashCode();
+                hash = hash * 59 + Rules.GetHashCode();
             }
 
-            if (this.DefaultArrayAction != null)
+            if (DefaultArrayAction != null)
             {
-                hash = hash * 59 + this.DefaultArrayAction.GetHashCode();
+                hash = hash * 59 + DefaultArrayAction.GetHashCode();
             }
 
             return hash;

@@ -77,7 +77,7 @@ public partial class MediaUtilization : IEquatable<MediaUtilization>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaUtilization);
+        return Equals(obj as MediaUtilization);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class MediaUtilization : IEquatable<MediaUtilization>
 
         return true &&
             (
-                this.MaximumCapacity == other.MaximumCapacity ||
-                this.MaximumCapacity != null &&
-                this.MaximumCapacity.Equals(other.MaximumCapacity)
+                MaximumCapacity == other.MaximumCapacity ||
+                MaximumCapacity != null &&
+                MaximumCapacity.Equals(other.MaximumCapacity)
             ) &&
             (
-                this.InterruptableMediaTypes == other.InterruptableMediaTypes ||
-                this.InterruptableMediaTypes != null &&
-                this.InterruptableMediaTypes.SequenceEqual(other.InterruptableMediaTypes)
+                InterruptableMediaTypes == other.InterruptableMediaTypes ||
+                InterruptableMediaTypes != null &&
+                InterruptableMediaTypes.SequenceEqual(other.InterruptableMediaTypes)
             ) &&
             (
-                this.IncludeNonAcd == other.IncludeNonAcd ||
-                this.IncludeNonAcd != null &&
-                this.IncludeNonAcd.Equals(other.IncludeNonAcd)
+                IncludeNonAcd == other.IncludeNonAcd ||
+                IncludeNonAcd != null &&
+                IncludeNonAcd.Equals(other.IncludeNonAcd)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class MediaUtilization : IEquatable<MediaUtilization>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MaximumCapacity != null)
+            if (MaximumCapacity != null)
             {
-                hash = hash * 59 + this.MaximumCapacity.GetHashCode();
+                hash = hash * 59 + MaximumCapacity.GetHashCode();
             }
 
-            if (this.InterruptableMediaTypes != null)
+            if (InterruptableMediaTypes != null)
             {
-                hash = hash * 59 + this.InterruptableMediaTypes.GetHashCode();
+                hash = hash * 59 + InterruptableMediaTypes.GetHashCode();
             }
 
-            if (this.IncludeNonAcd != null)
+            if (IncludeNonAcd != null)
             {
-                hash = hash * 59 + this.IncludeNonAcd.GetHashCode();
+                hash = hash * 59 + IncludeNonAcd.GetHashCode();
             }
 
             return hash;

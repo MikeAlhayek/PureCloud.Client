@@ -77,7 +77,7 @@ public partial class MediaIceSelectedPair : IEquatable<MediaIceSelectedPair>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MediaIceSelectedPair);
+        return Equals(obj as MediaIceSelectedPair);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class MediaIceSelectedPair : IEquatable<MediaIceSelectedPair>
 
         return true &&
             (
-                this.Client == other.Client ||
-                this.Client != null &&
-                this.Client.Equals(other.Client)
+                Client == other.Client ||
+                Client != null &&
+                Client.Equals(other.Client)
             ) &&
             (
-                this.Server == other.Server ||
-                this.Server != null &&
-                this.Server.Equals(other.Server)
+                Server == other.Server ||
+                Server != null &&
+                Server.Equals(other.Server)
             ) &&
             (
-                this.CandidatePairSelectedMilliseconds == other.CandidatePairSelectedMilliseconds ||
-                this.CandidatePairSelectedMilliseconds != null &&
-                this.CandidatePairSelectedMilliseconds.Equals(other.CandidatePairSelectedMilliseconds)
+                CandidatePairSelectedMilliseconds == other.CandidatePairSelectedMilliseconds ||
+                CandidatePairSelectedMilliseconds != null &&
+                CandidatePairSelectedMilliseconds.Equals(other.CandidatePairSelectedMilliseconds)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class MediaIceSelectedPair : IEquatable<MediaIceSelectedPair>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Client != null)
+            if (Client != null)
             {
-                hash = hash * 59 + this.Client.GetHashCode();
+                hash = hash * 59 + Client.GetHashCode();
             }
 
-            if (this.Server != null)
+            if (Server != null)
             {
-                hash = hash * 59 + this.Server.GetHashCode();
+                hash = hash * 59 + Server.GetHashCode();
             }
 
-            if (this.CandidatePairSelectedMilliseconds != null)
+            if (CandidatePairSelectedMilliseconds != null)
             {
-                hash = hash * 59 + this.CandidatePairSelectedMilliseconds.GetHashCode();
+                hash = hash * 59 + CandidatePairSelectedMilliseconds.GetHashCode();
             }
 
             return hash;

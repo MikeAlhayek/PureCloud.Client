@@ -53,7 +53,7 @@ public partial class DirectRoutingMediaSettings : IEquatable<DirectRoutingMediaS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DirectRoutingMediaSettings);
+        return Equals(obj as DirectRoutingMediaSettings);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class DirectRoutingMediaSettings : IEquatable<DirectRoutingMediaS
 
         return true &&
             (
-                this.UseAgentAddressOutbound == other.UseAgentAddressOutbound ||
-                this.UseAgentAddressOutbound != null &&
-                this.UseAgentAddressOutbound.Equals(other.UseAgentAddressOutbound)
+                UseAgentAddressOutbound == other.UseAgentAddressOutbound ||
+                UseAgentAddressOutbound != null &&
+                UseAgentAddressOutbound.Equals(other.UseAgentAddressOutbound)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class DirectRoutingMediaSettings : IEquatable<DirectRoutingMediaS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UseAgentAddressOutbound != null)
+            if (UseAgentAddressOutbound != null)
             {
-                hash = hash * 59 + this.UseAgentAddressOutbound.GetHashCode();
+                hash = hash * 59 + UseAgentAddressOutbound.GetHashCode();
             }
 
             return hash;

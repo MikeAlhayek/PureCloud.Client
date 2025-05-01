@@ -254,7 +254,7 @@ public partial class CampaignRuleWarningParameters : IEquatable<CampaignRuleWarn
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignRuleWarningParameters);
+        return Equals(obj as CampaignRuleWarningParameters);
     }
 
     /// <summary>
@@ -272,24 +272,24 @@ public partial class CampaignRuleWarningParameters : IEquatable<CampaignRuleWarn
 
         return true &&
             (
-                this.ActionId == other.ActionId ||
-                this.ActionId != null &&
-                this.ActionId.Equals(other.ActionId)
+                ActionId == other.ActionId ||
+                ActionId != null &&
+                ActionId.Equals(other.ActionId)
             ) &&
             (
-                this.ConditionId == other.ConditionId ||
-                this.ConditionId != null &&
-                this.ConditionId.Equals(other.ConditionId)
+                ConditionId == other.ConditionId ||
+                ConditionId != null &&
+                ConditionId.Equals(other.ConditionId)
             ) &&
             (
-                this.ActionType == other.ActionType ||
-                this.ActionType != null &&
-                this.ActionType.Equals(other.ActionType)
+                ActionType == other.ActionType ||
+                ActionType != null &&
+                ActionType.Equals(other.ActionType)
             ) &&
             (
-                this.ConditionType == other.ConditionType ||
-                this.ConditionType != null &&
-                this.ConditionType.Equals(other.ConditionType)
+                ConditionType == other.ConditionType ||
+                ConditionType != null &&
+                ConditionType.Equals(other.ConditionType)
             );
     }
 
@@ -304,24 +304,24 @@ public partial class CampaignRuleWarningParameters : IEquatable<CampaignRuleWarn
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ActionId != null)
+            if (ActionId != null)
             {
-                hash = hash * 59 + this.ActionId.GetHashCode();
+                hash = hash * 59 + ActionId.GetHashCode();
             }
 
-            if (this.ConditionId != null)
+            if (ConditionId != null)
             {
-                hash = hash * 59 + this.ConditionId.GetHashCode();
+                hash = hash * 59 + ConditionId.GetHashCode();
             }
 
-            if (this.ActionType != null)
+            if (ActionType != null)
             {
-                hash = hash * 59 + this.ActionType.GetHashCode();
+                hash = hash * 59 + ActionType.GetHashCode();
             }
 
-            if (this.ConditionType != null)
+            if (ConditionType != null)
             {
-                hash = hash * 59 + this.ConditionType.GetHashCode();
+                hash = hash * 59 + ConditionType.GetHashCode();
             }
 
             return hash;

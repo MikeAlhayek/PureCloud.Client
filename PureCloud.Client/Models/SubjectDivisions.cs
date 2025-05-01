@@ -71,7 +71,7 @@ public partial class SubjectDivisions : IEquatable<SubjectDivisions>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SubjectDivisions);
+        return Equals(obj as SubjectDivisions);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class SubjectDivisions : IEquatable<SubjectDivisions>
 
         return true &&
             (
-                this.SubjectIds == other.SubjectIds ||
-                this.SubjectIds != null &&
-                this.SubjectIds.SequenceEqual(other.SubjectIds)
+                SubjectIds == other.SubjectIds ||
+                SubjectIds != null &&
+                SubjectIds.SequenceEqual(other.SubjectIds)
             ) &&
             (
-                this.DivisionIds == other.DivisionIds ||
-                this.DivisionIds != null &&
-                this.DivisionIds.SequenceEqual(other.DivisionIds)
+                DivisionIds == other.DivisionIds ||
+                DivisionIds != null &&
+                DivisionIds.SequenceEqual(other.DivisionIds)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class SubjectDivisions : IEquatable<SubjectDivisions>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SubjectIds != null)
+            if (SubjectIds != null)
             {
-                hash = hash * 59 + this.SubjectIds.GetHashCode();
+                hash = hash * 59 + SubjectIds.GetHashCode();
             }
 
-            if (this.DivisionIds != null)
+            if (DivisionIds != null)
             {
-                hash = hash * 59 + this.DivisionIds.GetHashCode();
+                hash = hash * 59 + DivisionIds.GetHashCode();
             }
 
             return hash;

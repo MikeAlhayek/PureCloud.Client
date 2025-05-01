@@ -183,7 +183,7 @@ public partial class OrganizationFeatures : IEquatable<OrganizationFeatures>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OrganizationFeatures);
+        return Equals(obj as OrganizationFeatures);
     }
 
     /// <summary>
@@ -201,69 +201,69 @@ public partial class OrganizationFeatures : IEquatable<OrganizationFeatures>
 
         return true &&
             (
-                this.RealtimeCIC == other.RealtimeCIC ||
-                this.RealtimeCIC != null &&
-                this.RealtimeCIC.Equals(other.RealtimeCIC)
+                RealtimeCIC == other.RealtimeCIC ||
+                RealtimeCIC != null &&
+                RealtimeCIC.Equals(other.RealtimeCIC)
             ) &&
             (
-                this.PureCloudEnvironment == other.PureCloudEnvironment ||
-                this.PureCloudEnvironment != null &&
-                this.PureCloudEnvironment.Equals(other.PureCloudEnvironment)
+                PureCloudEnvironment == other.PureCloudEnvironment ||
+                PureCloudEnvironment != null &&
+                PureCloudEnvironment.Equals(other.PureCloudEnvironment)
             ) &&
             (
-                this.Hipaa == other.Hipaa ||
-                this.Hipaa != null &&
-                this.Hipaa.Equals(other.Hipaa)
+                Hipaa == other.Hipaa ||
+                Hipaa != null &&
+                Hipaa.Equals(other.Hipaa)
             ) &&
             (
-                this.UcEnabled == other.UcEnabled ||
-                this.UcEnabled != null &&
-                this.UcEnabled.Equals(other.UcEnabled)
+                UcEnabled == other.UcEnabled ||
+                UcEnabled != null &&
+                UcEnabled.Equals(other.UcEnabled)
             ) &&
             (
-                this.Pci == other.Pci ||
-                this.Pci != null &&
-                this.Pci.Equals(other.Pci)
+                Pci == other.Pci ||
+                Pci != null &&
+                Pci.Equals(other.Pci)
             ) &&
             (
-                this.PurecloudVoice == other.PurecloudVoice ||
-                this.PurecloudVoice != null &&
-                this.PurecloudVoice.Equals(other.PurecloudVoice)
+                PurecloudVoice == other.PurecloudVoice ||
+                PurecloudVoice != null &&
+                PurecloudVoice.Equals(other.PurecloudVoice)
             ) &&
             (
-                this.XmppFederation == other.XmppFederation ||
-                this.XmppFederation != null &&
-                this.XmppFederation.Equals(other.XmppFederation)
+                XmppFederation == other.XmppFederation ||
+                XmppFederation != null &&
+                XmppFederation.Equals(other.XmppFederation)
             ) &&
             (
-                this.Chat == other.Chat ||
-                this.Chat != null &&
-                this.Chat.Equals(other.Chat)
+                Chat == other.Chat ||
+                Chat != null &&
+                Chat.Equals(other.Chat)
             ) &&
             (
-                this.InformalPhotos == other.InformalPhotos ||
-                this.InformalPhotos != null &&
-                this.InformalPhotos.Equals(other.InformalPhotos)
+                InformalPhotos == other.InformalPhotos ||
+                InformalPhotos != null &&
+                InformalPhotos.Equals(other.InformalPhotos)
             ) &&
             (
-                this.Directory == other.Directory ||
-                this.Directory != null &&
-                this.Directory.Equals(other.Directory)
+                Directory == other.Directory ||
+                Directory != null &&
+                Directory.Equals(other.Directory)
             ) &&
             (
-                this.ContactCenter == other.ContactCenter ||
-                this.ContactCenter != null &&
-                this.ContactCenter.Equals(other.ContactCenter)
+                ContactCenter == other.ContactCenter ||
+                ContactCenter != null &&
+                ContactCenter.Equals(other.ContactCenter)
             ) &&
             (
-                this.UnifiedCommunications == other.UnifiedCommunications ||
-                this.UnifiedCommunications != null &&
-                this.UnifiedCommunications.Equals(other.UnifiedCommunications)
+                UnifiedCommunications == other.UnifiedCommunications ||
+                UnifiedCommunications != null &&
+                UnifiedCommunications.Equals(other.UnifiedCommunications)
             ) &&
             (
-                this.Custserv == other.Custserv ||
-                this.Custserv != null &&
-                this.Custserv.Equals(other.Custserv)
+                Custserv == other.Custserv ||
+                Custserv != null &&
+                Custserv.Equals(other.Custserv)
             );
     }
 
@@ -278,69 +278,69 @@ public partial class OrganizationFeatures : IEquatable<OrganizationFeatures>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RealtimeCIC != null)
+            if (RealtimeCIC != null)
             {
-                hash = hash * 59 + this.RealtimeCIC.GetHashCode();
+                hash = hash * 59 + RealtimeCIC.GetHashCode();
             }
 
-            if (this.PureCloudEnvironment != null)
+            if (PureCloudEnvironment != null)
             {
-                hash = hash * 59 + this.PureCloudEnvironment.GetHashCode();
+                hash = hash * 59 + PureCloudEnvironment.GetHashCode();
             }
 
-            if (this.Hipaa != null)
+            if (Hipaa != null)
             {
-                hash = hash * 59 + this.Hipaa.GetHashCode();
+                hash = hash * 59 + Hipaa.GetHashCode();
             }
 
-            if (this.UcEnabled != null)
+            if (UcEnabled != null)
             {
-                hash = hash * 59 + this.UcEnabled.GetHashCode();
+                hash = hash * 59 + UcEnabled.GetHashCode();
             }
 
-            if (this.Pci != null)
+            if (Pci != null)
             {
-                hash = hash * 59 + this.Pci.GetHashCode();
+                hash = hash * 59 + Pci.GetHashCode();
             }
 
-            if (this.PurecloudVoice != null)
+            if (PurecloudVoice != null)
             {
-                hash = hash * 59 + this.PurecloudVoice.GetHashCode();
+                hash = hash * 59 + PurecloudVoice.GetHashCode();
             }
 
-            if (this.XmppFederation != null)
+            if (XmppFederation != null)
             {
-                hash = hash * 59 + this.XmppFederation.GetHashCode();
+                hash = hash * 59 + XmppFederation.GetHashCode();
             }
 
-            if (this.Chat != null)
+            if (Chat != null)
             {
-                hash = hash * 59 + this.Chat.GetHashCode();
+                hash = hash * 59 + Chat.GetHashCode();
             }
 
-            if (this.InformalPhotos != null)
+            if (InformalPhotos != null)
             {
-                hash = hash * 59 + this.InformalPhotos.GetHashCode();
+                hash = hash * 59 + InformalPhotos.GetHashCode();
             }
 
-            if (this.Directory != null)
+            if (Directory != null)
             {
-                hash = hash * 59 + this.Directory.GetHashCode();
+                hash = hash * 59 + Directory.GetHashCode();
             }
 
-            if (this.ContactCenter != null)
+            if (ContactCenter != null)
             {
-                hash = hash * 59 + this.ContactCenter.GetHashCode();
+                hash = hash * 59 + ContactCenter.GetHashCode();
             }
 
-            if (this.UnifiedCommunications != null)
+            if (UnifiedCommunications != null)
             {
-                hash = hash * 59 + this.UnifiedCommunications.GetHashCode();
+                hash = hash * 59 + UnifiedCommunications.GetHashCode();
             }
 
-            if (this.Custserv != null)
+            if (Custserv != null)
             {
-                hash = hash * 59 + this.Custserv.GetHashCode();
+                hash = hash * 59 + Custserv.GetHashCode();
             }
 
             return hash;

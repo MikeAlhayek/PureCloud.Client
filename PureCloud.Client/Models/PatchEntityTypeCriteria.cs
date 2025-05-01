@@ -207,7 +207,7 @@ public partial class PatchEntityTypeCriteria : IEquatable<PatchEntityTypeCriteri
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PatchEntityTypeCriteria);
+        return Equals(obj as PatchEntityTypeCriteria);
     }
 
     /// <summary>
@@ -225,29 +225,29 @@ public partial class PatchEntityTypeCriteria : IEquatable<PatchEntityTypeCriteri
 
         return true &&
             (
-                this.Key == other.Key ||
-                this.Key != null &&
-                this.Key.Equals(other.Key)
+                Key == other.Key ||
+                Key != null &&
+                Key.Equals(other.Key)
             ) &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             ) &&
             (
-                this.ShouldIgnoreCase == other.ShouldIgnoreCase ||
-                this.ShouldIgnoreCase != null &&
-                this.ShouldIgnoreCase.Equals(other.ShouldIgnoreCase)
+                ShouldIgnoreCase == other.ShouldIgnoreCase ||
+                ShouldIgnoreCase != null &&
+                ShouldIgnoreCase.Equals(other.ShouldIgnoreCase)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.EntityType == other.EntityType ||
-                this.EntityType != null &&
-                this.EntityType.Equals(other.EntityType)
+                EntityType == other.EntityType ||
+                EntityType != null &&
+                EntityType.Equals(other.EntityType)
             );
     }
 
@@ -262,29 +262,29 @@ public partial class PatchEntityTypeCriteria : IEquatable<PatchEntityTypeCriteri
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Key != null)
+            if (Key != null)
             {
-                hash = hash * 59 + this.Key.GetHashCode();
+                hash = hash * 59 + Key.GetHashCode();
             }
 
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
-            if (this.ShouldIgnoreCase != null)
+            if (ShouldIgnoreCase != null)
             {
-                hash = hash * 59 + this.ShouldIgnoreCase.GetHashCode();
+                hash = hash * 59 + ShouldIgnoreCase.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.EntityType != null)
+            if (EntityType != null)
             {
-                hash = hash * 59 + this.EntityType.GetHashCode();
+                hash = hash * 59 + EntityType.GetHashCode();
             }
 
             return hash;

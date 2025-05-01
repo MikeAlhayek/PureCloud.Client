@@ -107,7 +107,7 @@ public partial class CreatePredictorRequest : IEquatable<CreatePredictorRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CreatePredictorRequest);
+        return Equals(obj as CreatePredictorRequest);
     }
 
     /// <summary>
@@ -125,29 +125,29 @@ public partial class CreatePredictorRequest : IEquatable<CreatePredictorRequest>
 
         return true &&
             (
-                this.QueueIds == other.QueueIds ||
-                this.QueueIds != null &&
-                this.QueueIds.SequenceEqual(other.QueueIds)
+                QueueIds == other.QueueIds ||
+                QueueIds != null &&
+                QueueIds.SequenceEqual(other.QueueIds)
             ) &&
             (
-                this.Kpi == other.Kpi ||
-                this.Kpi != null &&
-                this.Kpi.Equals(other.Kpi)
+                Kpi == other.Kpi ||
+                Kpi != null &&
+                Kpi.Equals(other.Kpi)
             ) &&
             (
-                this.RoutingTimeoutSeconds == other.RoutingTimeoutSeconds ||
-                this.RoutingTimeoutSeconds != null &&
-                this.RoutingTimeoutSeconds.Equals(other.RoutingTimeoutSeconds)
+                RoutingTimeoutSeconds == other.RoutingTimeoutSeconds ||
+                RoutingTimeoutSeconds != null &&
+                RoutingTimeoutSeconds.Equals(other.RoutingTimeoutSeconds)
             ) &&
             (
-                this.Schedule == other.Schedule ||
-                this.Schedule != null &&
-                this.Schedule.Equals(other.Schedule)
+                Schedule == other.Schedule ||
+                Schedule != null &&
+                Schedule.Equals(other.Schedule)
             ) &&
             (
-                this.WorkloadBalancingConfig == other.WorkloadBalancingConfig ||
-                this.WorkloadBalancingConfig != null &&
-                this.WorkloadBalancingConfig.Equals(other.WorkloadBalancingConfig)
+                WorkloadBalancingConfig == other.WorkloadBalancingConfig ||
+                WorkloadBalancingConfig != null &&
+                WorkloadBalancingConfig.Equals(other.WorkloadBalancingConfig)
             );
     }
 
@@ -162,29 +162,29 @@ public partial class CreatePredictorRequest : IEquatable<CreatePredictorRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QueueIds != null)
+            if (QueueIds != null)
             {
-                hash = hash * 59 + this.QueueIds.GetHashCode();
+                hash = hash * 59 + QueueIds.GetHashCode();
             }
 
-            if (this.Kpi != null)
+            if (Kpi != null)
             {
-                hash = hash * 59 + this.Kpi.GetHashCode();
+                hash = hash * 59 + Kpi.GetHashCode();
             }
 
-            if (this.RoutingTimeoutSeconds != null)
+            if (RoutingTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.RoutingTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + RoutingTimeoutSeconds.GetHashCode();
             }
 
-            if (this.Schedule != null)
+            if (Schedule != null)
             {
-                hash = hash * 59 + this.Schedule.GetHashCode();
+                hash = hash * 59 + Schedule.GetHashCode();
             }
 
-            if (this.WorkloadBalancingConfig != null)
+            if (WorkloadBalancingConfig != null)
             {
-                hash = hash * 59 + this.WorkloadBalancingConfig.GetHashCode();
+                hash = hash * 59 + WorkloadBalancingConfig.GetHashCode();
             }
 
             return hash;

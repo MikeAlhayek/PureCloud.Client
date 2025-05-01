@@ -59,7 +59,7 @@ public partial class TargetPerformanceProfile : IEquatable<TargetPerformanceProf
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TargetPerformanceProfile);
+        return Equals(obj as TargetPerformanceProfile);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class TargetPerformanceProfile : IEquatable<TargetPerformanceProf
 
         return true &&
             (
-                this.TargetPerformanceProfileId == other.TargetPerformanceProfileId ||
-                this.TargetPerformanceProfileId != null &&
-                this.TargetPerformanceProfileId.Equals(other.TargetPerformanceProfileId)
+                TargetPerformanceProfileId == other.TargetPerformanceProfileId ||
+                TargetPerformanceProfileId != null &&
+                TargetPerformanceProfileId.Equals(other.TargetPerformanceProfileId)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class TargetPerformanceProfile : IEquatable<TargetPerformanceProf
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TargetPerformanceProfileId != null)
+            if (TargetPerformanceProfileId != null)
             {
-                hash = hash * 59 + this.TargetPerformanceProfileId.GetHashCode();
+                hash = hash * 59 + TargetPerformanceProfileId.GetHashCode();
             }
 
             return hash;

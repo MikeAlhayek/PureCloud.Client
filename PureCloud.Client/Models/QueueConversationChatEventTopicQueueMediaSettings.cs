@@ -89,7 +89,7 @@ public partial class QueueConversationChatEventTopicQueueMediaSettings : IEquata
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationChatEventTopicQueueMediaSettings);
+        return Equals(obj as QueueConversationChatEventTopicQueueMediaSettings);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class QueueConversationChatEventTopicQueueMediaSettings : IEquata
 
         return true &&
             (
-                this.AlertingTimeoutSeconds == other.AlertingTimeoutSeconds ||
-                this.AlertingTimeoutSeconds != null &&
-                this.AlertingTimeoutSeconds.Equals(other.AlertingTimeoutSeconds)
+                AlertingTimeoutSeconds == other.AlertingTimeoutSeconds ||
+                AlertingTimeoutSeconds != null &&
+                AlertingTimeoutSeconds.Equals(other.AlertingTimeoutSeconds)
             ) &&
             (
-                this.AutoAnswerAlertToneSeconds == other.AutoAnswerAlertToneSeconds ||
-                this.AutoAnswerAlertToneSeconds != null &&
-                this.AutoAnswerAlertToneSeconds.Equals(other.AutoAnswerAlertToneSeconds)
+                AutoAnswerAlertToneSeconds == other.AutoAnswerAlertToneSeconds ||
+                AutoAnswerAlertToneSeconds != null &&
+                AutoAnswerAlertToneSeconds.Equals(other.AutoAnswerAlertToneSeconds)
             ) &&
             (
-                this.ManualAnswerAlertToneSeconds == other.ManualAnswerAlertToneSeconds ||
-                this.ManualAnswerAlertToneSeconds != null &&
-                this.ManualAnswerAlertToneSeconds.Equals(other.ManualAnswerAlertToneSeconds)
+                ManualAnswerAlertToneSeconds == other.ManualAnswerAlertToneSeconds ||
+                ManualAnswerAlertToneSeconds != null &&
+                ManualAnswerAlertToneSeconds.Equals(other.ManualAnswerAlertToneSeconds)
             ) &&
             (
-                this.EnableAutoAnswer == other.EnableAutoAnswer ||
-                this.EnableAutoAnswer != null &&
-                this.EnableAutoAnswer.Equals(other.EnableAutoAnswer)
+                EnableAutoAnswer == other.EnableAutoAnswer ||
+                EnableAutoAnswer != null &&
+                EnableAutoAnswer.Equals(other.EnableAutoAnswer)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class QueueConversationChatEventTopicQueueMediaSettings : IEquata
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AlertingTimeoutSeconds != null)
+            if (AlertingTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.AlertingTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + AlertingTimeoutSeconds.GetHashCode();
             }
 
-            if (this.AutoAnswerAlertToneSeconds != null)
+            if (AutoAnswerAlertToneSeconds != null)
             {
-                hash = hash * 59 + this.AutoAnswerAlertToneSeconds.GetHashCode();
+                hash = hash * 59 + AutoAnswerAlertToneSeconds.GetHashCode();
             }
 
-            if (this.ManualAnswerAlertToneSeconds != null)
+            if (ManualAnswerAlertToneSeconds != null)
             {
-                hash = hash * 59 + this.ManualAnswerAlertToneSeconds.GetHashCode();
+                hash = hash * 59 + ManualAnswerAlertToneSeconds.GetHashCode();
             }
 
-            if (this.EnableAutoAnswer != null)
+            if (EnableAutoAnswer != null)
             {
-                hash = hash * 59 + this.EnableAutoAnswer.GetHashCode();
+                hash = hash * 59 + EnableAutoAnswer.GetHashCode();
             }
 
             return hash;

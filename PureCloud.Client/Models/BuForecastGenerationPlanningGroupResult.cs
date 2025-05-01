@@ -65,7 +65,7 @@ public partial class BuForecastGenerationPlanningGroupResult : IEquatable<BuFore
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuForecastGenerationPlanningGroupResult);
+        return Equals(obj as BuForecastGenerationPlanningGroupResult);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class BuForecastGenerationPlanningGroupResult : IEquatable<BuFore
 
         return true &&
             (
-                this.PlanningGroupId == other.PlanningGroupId ||
-                this.PlanningGroupId != null &&
-                this.PlanningGroupId.Equals(other.PlanningGroupId)
+                PlanningGroupId == other.PlanningGroupId ||
+                PlanningGroupId != null &&
+                PlanningGroupId.Equals(other.PlanningGroupId)
             ) &&
             (
-                this.MetricResults == other.MetricResults ||
-                this.MetricResults != null &&
-                this.MetricResults.SequenceEqual(other.MetricResults)
+                MetricResults == other.MetricResults ||
+                MetricResults != null &&
+                MetricResults.SequenceEqual(other.MetricResults)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class BuForecastGenerationPlanningGroupResult : IEquatable<BuFore
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PlanningGroupId != null)
+            if (PlanningGroupId != null)
             {
-                hash = hash * 59 + this.PlanningGroupId.GetHashCode();
+                hash = hash * 59 + PlanningGroupId.GetHashCode();
             }
 
-            if (this.MetricResults != null)
+            if (MetricResults != null)
             {
-                hash = hash * 59 + this.MetricResults.GetHashCode();
+                hash = hash * 59 + MetricResults.GetHashCode();
             }
 
             return hash;

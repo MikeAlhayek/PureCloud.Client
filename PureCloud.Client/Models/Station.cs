@@ -237,7 +237,7 @@ public partial class Station : IEquatable<Station>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Station);
+        return Equals(obj as Station);
     }
 
     /// <summary>
@@ -255,84 +255,84 @@ public partial class Station : IEquatable<Station>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.WebRtcUserId == other.WebRtcUserId ||
-                this.WebRtcUserId != null &&
-                this.WebRtcUserId.Equals(other.WebRtcUserId)
+                WebRtcUserId == other.WebRtcUserId ||
+                WebRtcUserId != null &&
+                WebRtcUserId.Equals(other.WebRtcUserId)
             ) &&
             (
-                this.PrimaryEdge == other.PrimaryEdge ||
-                this.PrimaryEdge != null &&
-                this.PrimaryEdge.Equals(other.PrimaryEdge)
+                PrimaryEdge == other.PrimaryEdge ||
+                PrimaryEdge != null &&
+                PrimaryEdge.Equals(other.PrimaryEdge)
             ) &&
             (
-                this.SecondaryEdge == other.SecondaryEdge ||
-                this.SecondaryEdge != null &&
-                this.SecondaryEdge.Equals(other.SecondaryEdge)
+                SecondaryEdge == other.SecondaryEdge ||
+                SecondaryEdge != null &&
+                SecondaryEdge.Equals(other.SecondaryEdge)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.LineAppearanceId == other.LineAppearanceId ||
-                this.LineAppearanceId != null &&
-                this.LineAppearanceId.Equals(other.LineAppearanceId)
+                LineAppearanceId == other.LineAppearanceId ||
+                LineAppearanceId != null &&
+                LineAppearanceId.Equals(other.LineAppearanceId)
             ) &&
             (
-                this.WebRtcMediaDscp == other.WebRtcMediaDscp ||
-                this.WebRtcMediaDscp != null &&
-                this.WebRtcMediaDscp.Equals(other.WebRtcMediaDscp)
+                WebRtcMediaDscp == other.WebRtcMediaDscp ||
+                WebRtcMediaDscp != null &&
+                WebRtcMediaDscp.Equals(other.WebRtcMediaDscp)
             ) &&
             (
-                this.WebRtcPersistentEnabled == other.WebRtcPersistentEnabled ||
-                this.WebRtcPersistentEnabled != null &&
-                this.WebRtcPersistentEnabled.Equals(other.WebRtcPersistentEnabled)
+                WebRtcPersistentEnabled == other.WebRtcPersistentEnabled ||
+                WebRtcPersistentEnabled != null &&
+                WebRtcPersistentEnabled.Equals(other.WebRtcPersistentEnabled)
             ) &&
             (
-                this.WebRtcForceTurn == other.WebRtcForceTurn ||
-                this.WebRtcForceTurn != null &&
-                this.WebRtcForceTurn.Equals(other.WebRtcForceTurn)
+                WebRtcForceTurn == other.WebRtcForceTurn ||
+                WebRtcForceTurn != null &&
+                WebRtcForceTurn.Equals(other.WebRtcForceTurn)
             ) &&
             (
-                this.WebRtcCallAppearances == other.WebRtcCallAppearances ||
-                this.WebRtcCallAppearances != null &&
-                this.WebRtcCallAppearances.Equals(other.WebRtcCallAppearances)
+                WebRtcCallAppearances == other.WebRtcCallAppearances ||
+                WebRtcCallAppearances != null &&
+                WebRtcCallAppearances.Equals(other.WebRtcCallAppearances)
             ) &&
             (
-                this.WebRtcRequireMediaHelper == other.WebRtcRequireMediaHelper ||
-                this.WebRtcRequireMediaHelper != null &&
-                this.WebRtcRequireMediaHelper.Equals(other.WebRtcRequireMediaHelper)
+                WebRtcRequireMediaHelper == other.WebRtcRequireMediaHelper ||
+                WebRtcRequireMediaHelper != null &&
+                WebRtcRequireMediaHelper.Equals(other.WebRtcRequireMediaHelper)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -347,84 +347,84 @@ public partial class Station : IEquatable<Station>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.WebRtcUserId != null)
+            if (WebRtcUserId != null)
             {
-                hash = hash * 59 + this.WebRtcUserId.GetHashCode();
+                hash = hash * 59 + WebRtcUserId.GetHashCode();
             }
 
-            if (this.PrimaryEdge != null)
+            if (PrimaryEdge != null)
             {
-                hash = hash * 59 + this.PrimaryEdge.GetHashCode();
+                hash = hash * 59 + PrimaryEdge.GetHashCode();
             }
 
-            if (this.SecondaryEdge != null)
+            if (SecondaryEdge != null)
             {
-                hash = hash * 59 + this.SecondaryEdge.GetHashCode();
+                hash = hash * 59 + SecondaryEdge.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.LineAppearanceId != null)
+            if (LineAppearanceId != null)
             {
-                hash = hash * 59 + this.LineAppearanceId.GetHashCode();
+                hash = hash * 59 + LineAppearanceId.GetHashCode();
             }
 
-            if (this.WebRtcMediaDscp != null)
+            if (WebRtcMediaDscp != null)
             {
-                hash = hash * 59 + this.WebRtcMediaDscp.GetHashCode();
+                hash = hash * 59 + WebRtcMediaDscp.GetHashCode();
             }
 
-            if (this.WebRtcPersistentEnabled != null)
+            if (WebRtcPersistentEnabled != null)
             {
-                hash = hash * 59 + this.WebRtcPersistentEnabled.GetHashCode();
+                hash = hash * 59 + WebRtcPersistentEnabled.GetHashCode();
             }
 
-            if (this.WebRtcForceTurn != null)
+            if (WebRtcForceTurn != null)
             {
-                hash = hash * 59 + this.WebRtcForceTurn.GetHashCode();
+                hash = hash * 59 + WebRtcForceTurn.GetHashCode();
             }
 
-            if (this.WebRtcCallAppearances != null)
+            if (WebRtcCallAppearances != null)
             {
-                hash = hash * 59 + this.WebRtcCallAppearances.GetHashCode();
+                hash = hash * 59 + WebRtcCallAppearances.GetHashCode();
             }
 
-            if (this.WebRtcRequireMediaHelper != null)
+            if (WebRtcRequireMediaHelper != null)
             {
-                hash = hash * 59 + this.WebRtcRequireMediaHelper.GetHashCode();
+                hash = hash * 59 + WebRtcRequireMediaHelper.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

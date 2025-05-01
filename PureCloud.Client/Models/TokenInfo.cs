@@ -92,7 +92,7 @@ public partial class TokenInfo : IEquatable<TokenInfo>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TokenInfo);
+        return Equals(obj as TokenInfo);
     }
 
     /// <summary>
@@ -110,29 +110,29 @@ public partial class TokenInfo : IEquatable<TokenInfo>
 
         return true &&
             (
-                this.Organization == other.Organization ||
-                this.Organization != null &&
-                this.Organization.Equals(other.Organization)
+                Organization == other.Organization ||
+                Organization != null &&
+                Organization.Equals(other.Organization)
             ) &&
             (
-                this.HomeOrganization == other.HomeOrganization ||
-                this.HomeOrganization != null &&
-                this.HomeOrganization.Equals(other.HomeOrganization)
+                HomeOrganization == other.HomeOrganization ||
+                HomeOrganization != null &&
+                HomeOrganization.Equals(other.HomeOrganization)
             ) &&
             (
-                this.AuthorizedScope == other.AuthorizedScope ||
-                this.AuthorizedScope != null &&
-                this.AuthorizedScope.SequenceEqual(other.AuthorizedScope)
+                AuthorizedScope == other.AuthorizedScope ||
+                AuthorizedScope != null &&
+                AuthorizedScope.SequenceEqual(other.AuthorizedScope)
             ) &&
             (
-                this.ClonedUser == other.ClonedUser ||
-                this.ClonedUser != null &&
-                this.ClonedUser.Equals(other.ClonedUser)
+                ClonedUser == other.ClonedUser ||
+                ClonedUser != null &&
+                ClonedUser.Equals(other.ClonedUser)
             ) &&
             (
-                this.OAuthClient == other.OAuthClient ||
-                this.OAuthClient != null &&
-                this.OAuthClient.Equals(other.OAuthClient)
+                OAuthClient == other.OAuthClient ||
+                OAuthClient != null &&
+                OAuthClient.Equals(other.OAuthClient)
             );
     }
 
@@ -147,29 +147,29 @@ public partial class TokenInfo : IEquatable<TokenInfo>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Organization != null)
+            if (Organization != null)
             {
-                hash = hash * 59 + this.Organization.GetHashCode();
+                hash = hash * 59 + Organization.GetHashCode();
             }
 
-            if (this.HomeOrganization != null)
+            if (HomeOrganization != null)
             {
-                hash = hash * 59 + this.HomeOrganization.GetHashCode();
+                hash = hash * 59 + HomeOrganization.GetHashCode();
             }
 
-            if (this.AuthorizedScope != null)
+            if (AuthorizedScope != null)
             {
-                hash = hash * 59 + this.AuthorizedScope.GetHashCode();
+                hash = hash * 59 + AuthorizedScope.GetHashCode();
             }
 
-            if (this.ClonedUser != null)
+            if (ClonedUser != null)
             {
-                hash = hash * 59 + this.ClonedUser.GetHashCode();
+                hash = hash * 59 + ClonedUser.GetHashCode();
             }
 
-            if (this.OAuthClient != null)
+            if (OAuthClient != null)
             {
-                hash = hash * 59 + this.OAuthClient.GetHashCode();
+                hash = hash * 59 + OAuthClient.GetHashCode();
             }
 
             return hash;

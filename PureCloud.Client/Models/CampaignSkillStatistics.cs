@@ -61,7 +61,7 @@ public partial class CampaignSkillStatistics : IEquatable<CampaignSkillStatistic
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignSkillStatistics);
+        return Equals(obj as CampaignSkillStatistics);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class CampaignSkillStatistics : IEquatable<CampaignSkillStatistic
 
         return true &&
             (
-                this.SkillCombinations == other.SkillCombinations ||
-                this.SkillCombinations != null &&
-                this.SkillCombinations.Equals(other.SkillCombinations)
+                SkillCombinations == other.SkillCombinations ||
+                SkillCombinations != null &&
+                SkillCombinations.Equals(other.SkillCombinations)
             ) &&
             (
-                this.EligibleSkilledAgents == other.EligibleSkilledAgents ||
-                this.EligibleSkilledAgents != null &&
-                this.EligibleSkilledAgents.Equals(other.EligibleSkilledAgents)
+                EligibleSkilledAgents == other.EligibleSkilledAgents ||
+                EligibleSkilledAgents != null &&
+                EligibleSkilledAgents.Equals(other.EligibleSkilledAgents)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class CampaignSkillStatistics : IEquatable<CampaignSkillStatistic
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SkillCombinations != null)
+            if (SkillCombinations != null)
             {
-                hash = hash * 59 + this.SkillCombinations.GetHashCode();
+                hash = hash * 59 + SkillCombinations.GetHashCode();
             }
 
-            if (this.EligibleSkilledAgents != null)
+            if (EligibleSkilledAgents != null)
             {
-                hash = hash * 59 + this.EligibleSkilledAgents.GetHashCode();
+                hash = hash * 59 + EligibleSkilledAgents.GetHashCode();
             }
 
             return hash;

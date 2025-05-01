@@ -127,7 +127,7 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IntentDefinition);
+        return Equals(obj as IntentDefinition);
     }
 
     /// <summary>
@@ -145,39 +145,39 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.EntityTypeBindings == other.EntityTypeBindings ||
-                this.EntityTypeBindings != null &&
-                this.EntityTypeBindings.SequenceEqual(other.EntityTypeBindings)
+                EntityTypeBindings == other.EntityTypeBindings ||
+                EntityTypeBindings != null &&
+                EntityTypeBindings.SequenceEqual(other.EntityTypeBindings)
             ) &&
             (
-                this.EntityNameReferences == other.EntityNameReferences ||
-                this.EntityNameReferences != null &&
-                this.EntityNameReferences.SequenceEqual(other.EntityNameReferences)
+                EntityNameReferences == other.EntityNameReferences ||
+                EntityNameReferences != null &&
+                EntityNameReferences.SequenceEqual(other.EntityNameReferences)
             ) &&
             (
-                this.Utterances == other.Utterances ||
-                this.Utterances != null &&
-                this.Utterances.SequenceEqual(other.Utterances)
+                Utterances == other.Utterances ||
+                Utterances != null &&
+                Utterances.SequenceEqual(other.Utterances)
             ) &&
             (
-                this.AdditionalLanguages == other.AdditionalLanguages ||
-                this.AdditionalLanguages != null &&
-                this.AdditionalLanguages.SequenceEqual(other.AdditionalLanguages)
+                AdditionalLanguages == other.AdditionalLanguages ||
+                AdditionalLanguages != null &&
+                AdditionalLanguages.SequenceEqual(other.AdditionalLanguages)
             );
     }
 
@@ -192,39 +192,39 @@ public partial class IntentDefinition : IEquatable<IntentDefinition>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.EntityTypeBindings != null)
+            if (EntityTypeBindings != null)
             {
-                hash = hash * 59 + this.EntityTypeBindings.GetHashCode();
+                hash = hash * 59 + EntityTypeBindings.GetHashCode();
             }
 
-            if (this.EntityNameReferences != null)
+            if (EntityNameReferences != null)
             {
-                hash = hash * 59 + this.EntityNameReferences.GetHashCode();
+                hash = hash * 59 + EntityNameReferences.GetHashCode();
             }
 
-            if (this.Utterances != null)
+            if (Utterances != null)
             {
-                hash = hash * 59 + this.Utterances.GetHashCode();
+                hash = hash * 59 + Utterances.GetHashCode();
             }
 
-            if (this.AdditionalLanguages != null)
+            if (AdditionalLanguages != null)
             {
-                hash = hash * 59 + this.AdditionalLanguages.GetHashCode();
+                hash = hash * 59 + AdditionalLanguages.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class TypingSetting : IEquatable<TypingSetting>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TypingSetting);
+        return Equals(obj as TypingSetting);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class TypingSetting : IEquatable<TypingSetting>
 
         return true &&
             (
-                this.On == other.On ||
-                this.On != null &&
-                this.On.Equals(other.On)
+                On == other.On ||
+                On != null &&
+                On.Equals(other.On)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class TypingSetting : IEquatable<TypingSetting>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.On != null)
+            if (On != null)
             {
-                hash = hash * 59 + this.On.GetHashCode();
+                hash = hash * 59 + On.GetHashCode();
             }
 
             return hash;

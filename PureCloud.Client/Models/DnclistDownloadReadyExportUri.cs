@@ -74,7 +74,7 @@ public partial class DnclistDownloadReadyExportUri : IEquatable<DnclistDownloadR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DnclistDownloadReadyExportUri);
+        return Equals(obj as DnclistDownloadReadyExportUri);
     }
 
     /// <summary>
@@ -92,19 +92,19 @@ public partial class DnclistDownloadReadyExportUri : IEquatable<DnclistDownloadR
 
         return true &&
             (
-                this.Uri == other.Uri ||
-                this.Uri != null &&
-                this.Uri.Equals(other.Uri)
+                Uri == other.Uri ||
+                Uri != null &&
+                Uri.Equals(other.Uri)
             ) &&
             (
-                this.ExportTimestamp == other.ExportTimestamp ||
-                this.ExportTimestamp != null &&
-                this.ExportTimestamp.Equals(other.ExportTimestamp)
+                ExportTimestamp == other.ExportTimestamp ||
+                ExportTimestamp != null &&
+                ExportTimestamp.Equals(other.ExportTimestamp)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -119,19 +119,19 @@ public partial class DnclistDownloadReadyExportUri : IEquatable<DnclistDownloadR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Uri != null)
+            if (Uri != null)
             {
-                hash = hash * 59 + this.Uri.GetHashCode();
+                hash = hash * 59 + Uri.GetHashCode();
             }
 
-            if (this.ExportTimestamp != null)
+            if (ExportTimestamp != null)
             {
-                hash = hash * 59 + this.ExportTimestamp.GetHashCode();
+                hash = hash * 59 + ExportTimestamp.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

@@ -53,7 +53,7 @@ public partial class InsightsTrendTotalItem : IEquatable<InsightsTrendTotalItem>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InsightsTrendTotalItem);
+        return Equals(obj as InsightsTrendTotalItem);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class InsightsTrendTotalItem : IEquatable<InsightsTrendTotalItem>
 
         return true &&
             (
-                this.Trends == other.Trends ||
-                this.Trends != null &&
-                this.Trends.Equals(other.Trends)
+                Trends == other.Trends ||
+                Trends != null &&
+                Trends.Equals(other.Trends)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class InsightsTrendTotalItem : IEquatable<InsightsTrendTotalItem>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Trends != null)
+            if (Trends != null)
             {
-                hash = hash * 59 + this.Trends.GetHashCode();
+                hash = hash * 59 + Trends.GetHashCode();
             }
 
             return hash;

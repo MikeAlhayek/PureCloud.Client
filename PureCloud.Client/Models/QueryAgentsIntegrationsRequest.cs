@@ -59,7 +59,7 @@ public partial class QueryAgentsIntegrationsRequest : IEquatable<QueryAgentsInte
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueryAgentsIntegrationsRequest);
+        return Equals(obj as QueryAgentsIntegrationsRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class QueryAgentsIntegrationsRequest : IEquatable<QueryAgentsInte
 
         return true &&
             (
-                this.AgentIds == other.AgentIds ||
-                this.AgentIds != null &&
-                this.AgentIds.SequenceEqual(other.AgentIds)
+                AgentIds == other.AgentIds ||
+                AgentIds != null &&
+                AgentIds.SequenceEqual(other.AgentIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class QueryAgentsIntegrationsRequest : IEquatable<QueryAgentsInte
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AgentIds != null)
+            if (AgentIds != null)
             {
-                hash = hash * 59 + this.AgentIds.GetHashCode();
+                hash = hash * 59 + AgentIds.GetHashCode();
             }
 
             return hash;

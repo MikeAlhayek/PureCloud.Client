@@ -59,7 +59,7 @@ public partial class ConversationTagsUpdate : IEquatable<ConversationTagsUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ConversationTagsUpdate);
+        return Equals(obj as ConversationTagsUpdate);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class ConversationTagsUpdate : IEquatable<ConversationTagsUpdate>
 
         return true &&
             (
-                this.ExternalTag == other.ExternalTag ||
-                this.ExternalTag != null &&
-                this.ExternalTag.Equals(other.ExternalTag)
+                ExternalTag == other.ExternalTag ||
+                ExternalTag != null &&
+                ExternalTag.Equals(other.ExternalTag)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class ConversationTagsUpdate : IEquatable<ConversationTagsUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExternalTag != null)
+            if (ExternalTag != null)
             {
-                hash = hash * 59 + this.ExternalTag.GetHashCode();
+                hash = hash * 59 + ExternalTag.GetHashCode();
             }
 
             return hash;

@@ -107,7 +107,7 @@ public partial class ExternalContactsContactChangedTopicContactAddress : IEquata
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ExternalContactsContactChangedTopicContactAddress);
+        return Equals(obj as ExternalContactsContactChangedTopicContactAddress);
     }
 
     /// <summary>
@@ -125,34 +125,34 @@ public partial class ExternalContactsContactChangedTopicContactAddress : IEquata
 
         return true &&
             (
-                this.Address1 == other.Address1 ||
-                this.Address1 != null &&
-                this.Address1.Equals(other.Address1)
+                Address1 == other.Address1 ||
+                Address1 != null &&
+                Address1.Equals(other.Address1)
             ) &&
             (
-                this.Address2 == other.Address2 ||
-                this.Address2 != null &&
-                this.Address2.Equals(other.Address2)
+                Address2 == other.Address2 ||
+                Address2 != null &&
+                Address2.Equals(other.Address2)
             ) &&
             (
-                this.City == other.City ||
-                this.City != null &&
-                this.City.Equals(other.City)
+                City == other.City ||
+                City != null &&
+                City.Equals(other.City)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.PostalCode == other.PostalCode ||
-                this.PostalCode != null &&
-                this.PostalCode.Equals(other.PostalCode)
+                PostalCode == other.PostalCode ||
+                PostalCode != null &&
+                PostalCode.Equals(other.PostalCode)
             ) &&
             (
-                this.CountryCode == other.CountryCode ||
-                this.CountryCode != null &&
-                this.CountryCode.Equals(other.CountryCode)
+                CountryCode == other.CountryCode ||
+                CountryCode != null &&
+                CountryCode.Equals(other.CountryCode)
             );
     }
 
@@ -167,34 +167,34 @@ public partial class ExternalContactsContactChangedTopicContactAddress : IEquata
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Address1 != null)
+            if (Address1 != null)
             {
-                hash = hash * 59 + this.Address1.GetHashCode();
+                hash = hash * 59 + Address1.GetHashCode();
             }
 
-            if (this.Address2 != null)
+            if (Address2 != null)
             {
-                hash = hash * 59 + this.Address2.GetHashCode();
+                hash = hash * 59 + Address2.GetHashCode();
             }
 
-            if (this.City != null)
+            if (City != null)
             {
-                hash = hash * 59 + this.City.GetHashCode();
+                hash = hash * 59 + City.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.PostalCode != null)
+            if (PostalCode != null)
             {
-                hash = hash * 59 + this.PostalCode.GetHashCode();
+                hash = hash * 59 + PostalCode.GetHashCode();
             }
 
-            if (this.CountryCode != null)
+            if (CountryCode != null)
             {
-                hash = hash * 59 + this.CountryCode.GetHashCode();
+                hash = hash * 59 + CountryCode.GetHashCode();
             }
 
             return hash;

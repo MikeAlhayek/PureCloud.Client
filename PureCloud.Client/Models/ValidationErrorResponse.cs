@@ -77,7 +77,7 @@ public partial class ValidationErrorResponse : IEquatable<ValidationErrorRespons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ValidationErrorResponse);
+        return Equals(obj as ValidationErrorResponse);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class ValidationErrorResponse : IEquatable<ValidationErrorRespons
 
         return true &&
             (
-                this.Message == other.Message ||
-                this.Message != null &&
-                this.Message.Equals(other.Message)
+                Message == other.Message ||
+                Message != null &&
+                Message.Equals(other.Message)
             ) &&
             (
-                this.ErrorType == other.ErrorType ||
-                this.ErrorType != null &&
-                this.ErrorType.Equals(other.ErrorType)
+                ErrorType == other.ErrorType ||
+                ErrorType != null &&
+                ErrorType.Equals(other.ErrorType)
             ) &&
             (
-                this.Arguments == other.Arguments ||
-                this.Arguments != null &&
-                this.Arguments.SequenceEqual(other.Arguments)
+                Arguments == other.Arguments ||
+                Arguments != null &&
+                Arguments.SequenceEqual(other.Arguments)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class ValidationErrorResponse : IEquatable<ValidationErrorRespons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Message != null)
+            if (Message != null)
             {
-                hash = hash * 59 + this.Message.GetHashCode();
+                hash = hash * 59 + Message.GetHashCode();
             }
 
-            if (this.ErrorType != null)
+            if (ErrorType != null)
             {
-                hash = hash * 59 + this.ErrorType.GetHashCode();
+                hash = hash * 59 + ErrorType.GetHashCode();
             }
 
-            if (this.Arguments != null)
+            if (Arguments != null)
             {
-                hash = hash * 59 + this.Arguments.GetHashCode();
+                hash = hash * 59 + Arguments.GetHashCode();
             }
 
             return hash;

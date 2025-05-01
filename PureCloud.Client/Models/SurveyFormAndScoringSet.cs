@@ -63,7 +63,7 @@ public partial class SurveyFormAndScoringSet : IEquatable<SurveyFormAndScoringSe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SurveyFormAndScoringSet);
+        return Equals(obj as SurveyFormAndScoringSet);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class SurveyFormAndScoringSet : IEquatable<SurveyFormAndScoringSe
 
         return true &&
             (
-                this.SurveyForm == other.SurveyForm ||
-                this.SurveyForm != null &&
-                this.SurveyForm.Equals(other.SurveyForm)
+                SurveyForm == other.SurveyForm ||
+                SurveyForm != null &&
+                SurveyForm.Equals(other.SurveyForm)
             ) &&
             (
-                this.Answers == other.Answers ||
-                this.Answers != null &&
-                this.Answers.Equals(other.Answers)
+                Answers == other.Answers ||
+                Answers != null &&
+                Answers.Equals(other.Answers)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class SurveyFormAndScoringSet : IEquatable<SurveyFormAndScoringSe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.SurveyForm != null)
+            if (SurveyForm != null)
             {
-                hash = hash * 59 + this.SurveyForm.GetHashCode();
+                hash = hash * 59 + SurveyForm.GetHashCode();
             }
 
-            if (this.Answers != null)
+            if (Answers != null)
             {
-                hash = hash * 59 + this.Answers.GetHashCode();
+                hash = hash * 59 + Answers.GetHashCode();
             }
 
             return hash;

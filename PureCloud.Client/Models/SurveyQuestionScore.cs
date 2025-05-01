@@ -144,7 +144,7 @@ public partial class SurveyQuestionScore : IEquatable<SurveyQuestionScore>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SurveyQuestionScore);
+        return Equals(obj as SurveyQuestionScore);
     }
 
     /// <summary>
@@ -162,49 +162,49 @@ public partial class SurveyQuestionScore : IEquatable<SurveyQuestionScore>
 
         return true &&
             (
-                this.QuestionId == other.QuestionId ||
-                this.QuestionId != null &&
-                this.QuestionId.Equals(other.QuestionId)
+                QuestionId == other.QuestionId ||
+                QuestionId != null &&
+                QuestionId.Equals(other.QuestionId)
             ) &&
             (
-                this.AnswerId == other.AnswerId ||
-                this.AnswerId != null &&
-                this.AnswerId.Equals(other.AnswerId)
+                AnswerId == other.AnswerId ||
+                AnswerId != null &&
+                AnswerId.Equals(other.AnswerId)
             ) &&
             (
-                this.Score == other.Score ||
-                this.Score != null &&
-                this.Score.Equals(other.Score)
+                Score == other.Score ||
+                Score != null &&
+                Score.Equals(other.Score)
             ) &&
             (
-                this.MarkedNA == other.MarkedNA ||
-                this.MarkedNA != null &&
-                this.MarkedNA.Equals(other.MarkedNA)
+                MarkedNA == other.MarkedNA ||
+                MarkedNA != null &&
+                MarkedNA.Equals(other.MarkedNA)
             ) &&
             (
-                this.SystemMarkedNA == other.SystemMarkedNA ||
-                this.SystemMarkedNA != null &&
-                this.SystemMarkedNA.Equals(other.SystemMarkedNA)
+                SystemMarkedNA == other.SystemMarkedNA ||
+                SystemMarkedNA != null &&
+                SystemMarkedNA.Equals(other.SystemMarkedNA)
             ) &&
             (
-                this.AssistedAnswerId == other.AssistedAnswerId ||
-                this.AssistedAnswerId != null &&
-                this.AssistedAnswerId.Equals(other.AssistedAnswerId)
+                AssistedAnswerId == other.AssistedAnswerId ||
+                AssistedAnswerId != null &&
+                AssistedAnswerId.Equals(other.AssistedAnswerId)
             ) &&
             (
-                this.NpsScore == other.NpsScore ||
-                this.NpsScore != null &&
-                this.NpsScore.Equals(other.NpsScore)
+                NpsScore == other.NpsScore ||
+                NpsScore != null &&
+                NpsScore.Equals(other.NpsScore)
             ) &&
             (
-                this.NpsTextAnswer == other.NpsTextAnswer ||
-                this.NpsTextAnswer != null &&
-                this.NpsTextAnswer.Equals(other.NpsTextAnswer)
+                NpsTextAnswer == other.NpsTextAnswer ||
+                NpsTextAnswer != null &&
+                NpsTextAnswer.Equals(other.NpsTextAnswer)
             ) &&
             (
-                this.FreeTextAnswer == other.FreeTextAnswer ||
-                this.FreeTextAnswer != null &&
-                this.FreeTextAnswer.Equals(other.FreeTextAnswer)
+                FreeTextAnswer == other.FreeTextAnswer ||
+                FreeTextAnswer != null &&
+                FreeTextAnswer.Equals(other.FreeTextAnswer)
             );
     }
 
@@ -219,49 +219,49 @@ public partial class SurveyQuestionScore : IEquatable<SurveyQuestionScore>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.QuestionId != null)
+            if (QuestionId != null)
             {
-                hash = hash * 59 + this.QuestionId.GetHashCode();
+                hash = hash * 59 + QuestionId.GetHashCode();
             }
 
-            if (this.AnswerId != null)
+            if (AnswerId != null)
             {
-                hash = hash * 59 + this.AnswerId.GetHashCode();
+                hash = hash * 59 + AnswerId.GetHashCode();
             }
 
-            if (this.Score != null)
+            if (Score != null)
             {
-                hash = hash * 59 + this.Score.GetHashCode();
+                hash = hash * 59 + Score.GetHashCode();
             }
 
-            if (this.MarkedNA != null)
+            if (MarkedNA != null)
             {
-                hash = hash * 59 + this.MarkedNA.GetHashCode();
+                hash = hash * 59 + MarkedNA.GetHashCode();
             }
 
-            if (this.SystemMarkedNA != null)
+            if (SystemMarkedNA != null)
             {
-                hash = hash * 59 + this.SystemMarkedNA.GetHashCode();
+                hash = hash * 59 + SystemMarkedNA.GetHashCode();
             }
 
-            if (this.AssistedAnswerId != null)
+            if (AssistedAnswerId != null)
             {
-                hash = hash * 59 + this.AssistedAnswerId.GetHashCode();
+                hash = hash * 59 + AssistedAnswerId.GetHashCode();
             }
 
-            if (this.NpsScore != null)
+            if (NpsScore != null)
             {
-                hash = hash * 59 + this.NpsScore.GetHashCode();
+                hash = hash * 59 + NpsScore.GetHashCode();
             }
 
-            if (this.NpsTextAnswer != null)
+            if (NpsTextAnswer != null)
             {
-                hash = hash * 59 + this.NpsTextAnswer.GetHashCode();
+                hash = hash * 59 + NpsTextAnswer.GetHashCode();
             }
 
-            if (this.FreeTextAnswer != null)
+            if (FreeTextAnswer != null)
             {
-                hash = hash * 59 + this.FreeTextAnswer.GetHashCode();
+                hash = hash * 59 + FreeTextAnswer.GetHashCode();
             }
 
             return hash;

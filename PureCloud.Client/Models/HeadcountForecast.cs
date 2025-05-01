@@ -71,7 +71,7 @@ public partial class HeadcountForecast : IEquatable<HeadcountForecast>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HeadcountForecast);
+        return Equals(obj as HeadcountForecast);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class HeadcountForecast : IEquatable<HeadcountForecast>
 
         return true &&
             (
-                this.Required == other.Required ||
-                this.Required != null &&
-                this.Required.SequenceEqual(other.Required)
+                Required == other.Required ||
+                Required != null &&
+                Required.SequenceEqual(other.Required)
             ) &&
             (
-                this.RequiredWithoutShrinkage == other.RequiredWithoutShrinkage ||
-                this.RequiredWithoutShrinkage != null &&
-                this.RequiredWithoutShrinkage.SequenceEqual(other.RequiredWithoutShrinkage)
+                RequiredWithoutShrinkage == other.RequiredWithoutShrinkage ||
+                RequiredWithoutShrinkage != null &&
+                RequiredWithoutShrinkage.SequenceEqual(other.RequiredWithoutShrinkage)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class HeadcountForecast : IEquatable<HeadcountForecast>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Required != null)
+            if (Required != null)
             {
-                hash = hash * 59 + this.Required.GetHashCode();
+                hash = hash * 59 + Required.GetHashCode();
             }
 
-            if (this.RequiredWithoutShrinkage != null)
+            if (RequiredWithoutShrinkage != null)
             {
-                hash = hash * 59 + this.RequiredWithoutShrinkage.GetHashCode();
+                hash = hash * 59 + RequiredWithoutShrinkage.GetHashCode();
             }
 
             return hash;

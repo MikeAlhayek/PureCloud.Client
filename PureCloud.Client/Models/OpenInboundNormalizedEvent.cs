@@ -71,7 +71,7 @@ public partial class OpenInboundNormalizedEvent : IEquatable<OpenInboundNormaliz
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OpenInboundNormalizedEvent);
+        return Equals(obj as OpenInboundNormalizedEvent);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class OpenInboundNormalizedEvent : IEquatable<OpenInboundNormaliz
 
         return true &&
             (
-                this.Channel == other.Channel ||
-                this.Channel != null &&
-                this.Channel.Equals(other.Channel)
+                Channel == other.Channel ||
+                Channel != null &&
+                Channel.Equals(other.Channel)
             ) &&
             (
-                this.Events == other.Events ||
-                this.Events != null &&
-                this.Events.SequenceEqual(other.Events)
+                Events == other.Events ||
+                Events != null &&
+                Events.SequenceEqual(other.Events)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class OpenInboundNormalizedEvent : IEquatable<OpenInboundNormaliz
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Channel != null)
+            if (Channel != null)
             {
-                hash = hash * 59 + this.Channel.GetHashCode();
+                hash = hash * 59 + Channel.GetHashCode();
             }
 
-            if (this.Events != null)
+            if (Events != null)
             {
-                hash = hash * 59 + this.Events.GetHashCode();
+                hash = hash * 59 + Events.GetHashCode();
             }
 
             return hash;

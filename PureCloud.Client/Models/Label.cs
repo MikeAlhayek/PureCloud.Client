@@ -81,7 +81,7 @@ public partial class Label : IEquatable<Label>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Label);
+        return Equals(obj as Label);
     }
 
     /// <summary>
@@ -99,19 +99,19 @@ public partial class Label : IEquatable<Label>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Encoded == other.Encoded ||
-                this.Encoded != null &&
-                this.Encoded.Equals(other.Encoded)
+                Encoded == other.Encoded ||
+                Encoded != null &&
+                Encoded.Equals(other.Encoded)
             );
     }
 
@@ -126,19 +126,19 @@ public partial class Label : IEquatable<Label>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Encoded != null)
+            if (Encoded != null)
             {
-                hash = hash * 59 + this.Encoded.GetHashCode();
+                hash = hash * 59 + Encoded.GetHashCode();
             }
 
             return hash;

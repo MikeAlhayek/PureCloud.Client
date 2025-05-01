@@ -150,7 +150,7 @@ public partial class AsyncUserDetailsQuery : IEquatable<AsyncUserDetailsQuery>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AsyncUserDetailsQuery);
+        return Equals(obj as AsyncUserDetailsQuery);
     }
 
     /// <summary>
@@ -168,34 +168,34 @@ public partial class AsyncUserDetailsQuery : IEquatable<AsyncUserDetailsQuery>
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.UserFilters == other.UserFilters ||
-                this.UserFilters != null &&
-                this.UserFilters.SequenceEqual(other.UserFilters)
+                UserFilters == other.UserFilters ||
+                UserFilters != null &&
+                UserFilters.SequenceEqual(other.UserFilters)
             ) &&
             (
-                this.PresenceFilters == other.PresenceFilters ||
-                this.PresenceFilters != null &&
-                this.PresenceFilters.SequenceEqual(other.PresenceFilters)
+                PresenceFilters == other.PresenceFilters ||
+                PresenceFilters != null &&
+                PresenceFilters.SequenceEqual(other.PresenceFilters)
             ) &&
             (
-                this.RoutingStatusFilters == other.RoutingStatusFilters ||
-                this.RoutingStatusFilters != null &&
-                this.RoutingStatusFilters.SequenceEqual(other.RoutingStatusFilters)
+                RoutingStatusFilters == other.RoutingStatusFilters ||
+                RoutingStatusFilters != null &&
+                RoutingStatusFilters.SequenceEqual(other.RoutingStatusFilters)
             ) &&
             (
-                this.Order == other.Order ||
-                this.Order != null &&
-                this.Order.Equals(other.Order)
+                Order == other.Order ||
+                Order != null &&
+                Order.Equals(other.Order)
             ) &&
             (
-                this.Limit == other.Limit ||
-                this.Limit != null &&
-                this.Limit.Equals(other.Limit)
+                Limit == other.Limit ||
+                Limit != null &&
+                Limit.Equals(other.Limit)
             );
     }
 
@@ -210,34 +210,34 @@ public partial class AsyncUserDetailsQuery : IEquatable<AsyncUserDetailsQuery>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.UserFilters != null)
+            if (UserFilters != null)
             {
-                hash = hash * 59 + this.UserFilters.GetHashCode();
+                hash = hash * 59 + UserFilters.GetHashCode();
             }
 
-            if (this.PresenceFilters != null)
+            if (PresenceFilters != null)
             {
-                hash = hash * 59 + this.PresenceFilters.GetHashCode();
+                hash = hash * 59 + PresenceFilters.GetHashCode();
             }
 
-            if (this.RoutingStatusFilters != null)
+            if (RoutingStatusFilters != null)
             {
-                hash = hash * 59 + this.RoutingStatusFilters.GetHashCode();
+                hash = hash * 59 + RoutingStatusFilters.GetHashCode();
             }
 
-            if (this.Order != null)
+            if (Order != null)
             {
-                hash = hash * 59 + this.Order.GetHashCode();
+                hash = hash * 59 + Order.GetHashCode();
             }
 
-            if (this.Limit != null)
+            if (Limit != null)
             {
-                hash = hash * 59 + this.Limit.GetHashCode();
+                hash = hash * 59 + Limit.GetHashCode();
             }
 
             return hash;

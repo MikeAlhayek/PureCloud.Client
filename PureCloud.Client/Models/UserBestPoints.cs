@@ -61,7 +61,7 @@ public partial class UserBestPoints : IEquatable<UserBestPoints>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserBestPoints);
+        return Equals(obj as UserBestPoints);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public partial class UserBestPoints : IEquatable<UserBestPoints>
 
         return true &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.BestPoints == other.BestPoints ||
-                this.BestPoints != null &&
-                this.BestPoints.SequenceEqual(other.BestPoints)
+                BestPoints == other.BestPoints ||
+                BestPoints != null &&
+                BestPoints.SequenceEqual(other.BestPoints)
             );
     }
 
@@ -101,14 +101,14 @@ public partial class UserBestPoints : IEquatable<UserBestPoints>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.BestPoints != null)
+            if (BestPoints != null)
             {
-                hash = hash * 59 + this.BestPoints.GetHashCode();
+                hash = hash * 59 + BestPoints.GetHashCode();
             }
 
             return hash;

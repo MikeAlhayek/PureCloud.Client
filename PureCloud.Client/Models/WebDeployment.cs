@@ -247,7 +247,7 @@ public partial class WebDeployment : IEquatable<WebDeployment>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebDeployment);
+        return Equals(obj as WebDeployment);
     }
 
     /// <summary>
@@ -265,74 +265,74 @@ public partial class WebDeployment : IEquatable<WebDeployment>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.AllowAllDomains == other.AllowAllDomains ||
-                this.AllowAllDomains != null &&
-                this.AllowAllDomains.Equals(other.AllowAllDomains)
+                AllowAllDomains == other.AllowAllDomains ||
+                AllowAllDomains != null &&
+                AllowAllDomains.Equals(other.AllowAllDomains)
             ) &&
             (
-                this.AllowedDomains == other.AllowedDomains ||
-                this.AllowedDomains != null &&
-                this.AllowedDomains.SequenceEqual(other.AllowedDomains)
+                AllowedDomains == other.AllowedDomains ||
+                AllowedDomains != null &&
+                AllowedDomains.SequenceEqual(other.AllowedDomains)
             ) &&
             (
-                this.SupportedContent == other.SupportedContent ||
-                this.SupportedContent != null &&
-                this.SupportedContent.Equals(other.SupportedContent)
+                SupportedContent == other.SupportedContent ||
+                SupportedContent != null &&
+                SupportedContent.Equals(other.SupportedContent)
             ) &&
             (
-                this.Snippet == other.Snippet ||
-                this.Snippet != null &&
-                this.Snippet.Equals(other.Snippet)
+                Snippet == other.Snippet ||
+                Snippet != null &&
+                Snippet.Equals(other.Snippet)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.LastModifiedUser == other.LastModifiedUser ||
-                this.LastModifiedUser != null &&
-                this.LastModifiedUser.Equals(other.LastModifiedUser)
+                LastModifiedUser == other.LastModifiedUser ||
+                LastModifiedUser != null &&
+                LastModifiedUser.Equals(other.LastModifiedUser)
             ) &&
             (
-                this.Flow == other.Flow ||
-                this.Flow != null &&
-                this.Flow.Equals(other.Flow)
+                Flow == other.Flow ||
+                Flow != null &&
+                Flow.Equals(other.Flow)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Configuration == other.Configuration ||
-                this.Configuration != null &&
-                this.Configuration.Equals(other.Configuration)
+                Configuration == other.Configuration ||
+                Configuration != null &&
+                Configuration.Equals(other.Configuration)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -347,74 +347,74 @@ public partial class WebDeployment : IEquatable<WebDeployment>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.AllowAllDomains != null)
+            if (AllowAllDomains != null)
             {
-                hash = hash * 59 + this.AllowAllDomains.GetHashCode();
+                hash = hash * 59 + AllowAllDomains.GetHashCode();
             }
 
-            if (this.AllowedDomains != null)
+            if (AllowedDomains != null)
             {
-                hash = hash * 59 + this.AllowedDomains.GetHashCode();
+                hash = hash * 59 + AllowedDomains.GetHashCode();
             }
 
-            if (this.SupportedContent != null)
+            if (SupportedContent != null)
             {
-                hash = hash * 59 + this.SupportedContent.GetHashCode();
+                hash = hash * 59 + SupportedContent.GetHashCode();
             }
 
-            if (this.Snippet != null)
+            if (Snippet != null)
             {
-                hash = hash * 59 + this.Snippet.GetHashCode();
+                hash = hash * 59 + Snippet.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.LastModifiedUser != null)
+            if (LastModifiedUser != null)
             {
-                hash = hash * 59 + this.LastModifiedUser.GetHashCode();
+                hash = hash * 59 + LastModifiedUser.GetHashCode();
             }
 
-            if (this.Flow != null)
+            if (Flow != null)
             {
-                hash = hash * 59 + this.Flow.GetHashCode();
+                hash = hash * 59 + Flow.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Configuration != null)
+            if (Configuration != null)
             {
-                hash = hash * 59 + this.Configuration.GetHashCode();
+                hash = hash * 59 + Configuration.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

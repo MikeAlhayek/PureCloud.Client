@@ -175,7 +175,7 @@ public partial class MatchCriteria : IEquatable<MatchCriteria>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MatchCriteria);
+        return Equals(obj as MatchCriteria);
     }
 
     /// <summary>
@@ -193,24 +193,24 @@ public partial class MatchCriteria : IEquatable<MatchCriteria>
 
         return true &&
             (
-                this.JsonPath == other.JsonPath ||
-                this.JsonPath != null &&
-                this.JsonPath.Equals(other.JsonPath)
+                JsonPath == other.JsonPath ||
+                JsonPath != null &&
+                JsonPath.Equals(other.JsonPath)
             ) &&
             (
-                this.Operator == other.Operator ||
-                this.Operator != null &&
-                this.Operator.Equals(other.Operator)
+                Operator == other.Operator ||
+                Operator != null &&
+                Operator.Equals(other.Operator)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             );
     }
 
@@ -225,24 +225,24 @@ public partial class MatchCriteria : IEquatable<MatchCriteria>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.JsonPath != null)
+            if (JsonPath != null)
             {
-                hash = hash * 59 + this.JsonPath.GetHashCode();
+                hash = hash * 59 + JsonPath.GetHashCode();
             }
 
-            if (this.Operator != null)
+            if (Operator != null)
             {
-                hash = hash * 59 + this.Operator.GetHashCode();
+                hash = hash * 59 + Operator.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
             return hash;

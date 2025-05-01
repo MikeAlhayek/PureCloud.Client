@@ -127,7 +127,7 @@ public partial class TextBotFlowOutcome : IEquatable<TextBotFlowOutcome>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotFlowOutcome);
+        return Equals(obj as TextBotFlowOutcome);
     }
 
     /// <summary>
@@ -145,29 +145,29 @@ public partial class TextBotFlowOutcome : IEquatable<TextBotFlowOutcome>
 
         return true &&
             (
-                this.OutcomeId == other.OutcomeId ||
-                this.OutcomeId != null &&
-                this.OutcomeId.Equals(other.OutcomeId)
+                OutcomeId == other.OutcomeId ||
+                OutcomeId != null &&
+                OutcomeId.Equals(other.OutcomeId)
             ) &&
             (
-                this.OutcomeValue == other.OutcomeValue ||
-                this.OutcomeValue != null &&
-                this.OutcomeValue.Equals(other.OutcomeValue)
+                OutcomeValue == other.OutcomeValue ||
+                OutcomeValue != null &&
+                OutcomeValue.Equals(other.OutcomeValue)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             ) &&
             (
-                this.DateEnd == other.DateEnd ||
-                this.DateEnd != null &&
-                this.DateEnd.Equals(other.DateEnd)
+                DateEnd == other.DateEnd ||
+                DateEnd != null &&
+                DateEnd.Equals(other.DateEnd)
             ) &&
             (
-                this.Milestones == other.Milestones ||
-                this.Milestones != null &&
-                this.Milestones.SequenceEqual(other.Milestones)
+                Milestones == other.Milestones ||
+                Milestones != null &&
+                Milestones.SequenceEqual(other.Milestones)
             );
     }
 
@@ -182,29 +182,29 @@ public partial class TextBotFlowOutcome : IEquatable<TextBotFlowOutcome>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutcomeId != null)
+            if (OutcomeId != null)
             {
-                hash = hash * 59 + this.OutcomeId.GetHashCode();
+                hash = hash * 59 + OutcomeId.GetHashCode();
             }
 
-            if (this.OutcomeValue != null)
+            if (OutcomeValue != null)
             {
-                hash = hash * 59 + this.OutcomeValue.GetHashCode();
+                hash = hash * 59 + OutcomeValue.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
-            if (this.DateEnd != null)
+            if (DateEnd != null)
             {
-                hash = hash * 59 + this.DateEnd.GetHashCode();
+                hash = hash * 59 + DateEnd.GetHashCode();
             }
 
-            if (this.Milestones != null)
+            if (Milestones != null)
             {
-                hash = hash * 59 + this.Milestones.GetHashCode();
+                hash = hash * 59 + Milestones.GetHashCode();
             }
 
             return hash;

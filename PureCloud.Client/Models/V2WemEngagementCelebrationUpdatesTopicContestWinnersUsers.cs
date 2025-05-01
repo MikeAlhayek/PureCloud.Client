@@ -63,7 +63,7 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers :
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers);
+        return Equals(obj as V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers :
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Rank == other.Rank ||
-                this.Rank != null &&
-                this.Rank.Equals(other.Rank)
+                Rank == other.Rank ||
+                Rank != null &&
+                Rank.Equals(other.Rank)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers :
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Rank != null)
+            if (Rank != null)
             {
-                hash = hash * 59 + this.Rank.GetHashCode();
+                hash = hash * 59 + Rank.GetHashCode();
             }
 
             return hash;

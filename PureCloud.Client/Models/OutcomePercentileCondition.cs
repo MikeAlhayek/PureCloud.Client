@@ -83,7 +83,7 @@ public partial class OutcomePercentileCondition : IEquatable<OutcomePercentileCo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutcomePercentileCondition);
+        return Equals(obj as OutcomePercentileCondition);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class OutcomePercentileCondition : IEquatable<OutcomePercentileCo
 
         return true &&
             (
-                this.OutcomeId == other.OutcomeId ||
-                this.OutcomeId != null &&
-                this.OutcomeId.Equals(other.OutcomeId)
+                OutcomeId == other.OutcomeId ||
+                OutcomeId != null &&
+                OutcomeId.Equals(other.OutcomeId)
             ) &&
             (
-                this.MaximumPercentile == other.MaximumPercentile ||
-                this.MaximumPercentile != null &&
-                this.MaximumPercentile.Equals(other.MaximumPercentile)
+                MaximumPercentile == other.MaximumPercentile ||
+                MaximumPercentile != null &&
+                MaximumPercentile.Equals(other.MaximumPercentile)
             ) &&
             (
-                this.FallbackPercentile == other.FallbackPercentile ||
-                this.FallbackPercentile != null &&
-                this.FallbackPercentile.Equals(other.FallbackPercentile)
+                FallbackPercentile == other.FallbackPercentile ||
+                FallbackPercentile != null &&
+                FallbackPercentile.Equals(other.FallbackPercentile)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class OutcomePercentileCondition : IEquatable<OutcomePercentileCo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.OutcomeId != null)
+            if (OutcomeId != null)
             {
-                hash = hash * 59 + this.OutcomeId.GetHashCode();
+                hash = hash * 59 + OutcomeId.GetHashCode();
             }
 
-            if (this.MaximumPercentile != null)
+            if (MaximumPercentile != null)
             {
-                hash = hash * 59 + this.MaximumPercentile.GetHashCode();
+                hash = hash * 59 + MaximumPercentile.GetHashCode();
             }
 
-            if (this.FallbackPercentile != null)
+            if (FallbackPercentile != null)
             {
-                hash = hash * 59 + this.FallbackPercentile.GetHashCode();
+                hash = hash * 59 + FallbackPercentile.GetHashCode();
             }
 
             return hash;

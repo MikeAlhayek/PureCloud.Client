@@ -192,7 +192,7 @@ public partial class AgentActivity : IEquatable<AgentActivity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AgentActivity);
+        return Equals(obj as AgentActivity);
     }
 
     /// <summary>
@@ -210,74 +210,74 @@ public partial class AgentActivity : IEquatable<AgentActivity>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Agent == other.Agent ||
-                this.Agent != null &&
-                this.Agent.Equals(other.Agent)
+                Agent == other.Agent ||
+                Agent != null &&
+                Agent.Equals(other.Agent)
             ) &&
             (
-                this.NumEvaluations == other.NumEvaluations ||
-                this.NumEvaluations != null &&
-                this.NumEvaluations.Equals(other.NumEvaluations)
+                NumEvaluations == other.NumEvaluations ||
+                NumEvaluations != null &&
+                NumEvaluations.Equals(other.NumEvaluations)
             ) &&
             (
-                this.AverageEvaluationScore == other.AverageEvaluationScore ||
-                this.AverageEvaluationScore != null &&
-                this.AverageEvaluationScore.Equals(other.AverageEvaluationScore)
+                AverageEvaluationScore == other.AverageEvaluationScore ||
+                AverageEvaluationScore != null &&
+                AverageEvaluationScore.Equals(other.AverageEvaluationScore)
             ) &&
             (
-                this.NumCriticalEvaluations == other.NumCriticalEvaluations ||
-                this.NumCriticalEvaluations != null &&
-                this.NumCriticalEvaluations.Equals(other.NumCriticalEvaluations)
+                NumCriticalEvaluations == other.NumCriticalEvaluations ||
+                NumCriticalEvaluations != null &&
+                NumCriticalEvaluations.Equals(other.NumCriticalEvaluations)
             ) &&
             (
-                this.AverageCriticalScore == other.AverageCriticalScore ||
-                this.AverageCriticalScore != null &&
-                this.AverageCriticalScore.Equals(other.AverageCriticalScore)
+                AverageCriticalScore == other.AverageCriticalScore ||
+                AverageCriticalScore != null &&
+                AverageCriticalScore.Equals(other.AverageCriticalScore)
             ) &&
             (
-                this.HighestEvaluationScore == other.HighestEvaluationScore ||
-                this.HighestEvaluationScore != null &&
-                this.HighestEvaluationScore.Equals(other.HighestEvaluationScore)
+                HighestEvaluationScore == other.HighestEvaluationScore ||
+                HighestEvaluationScore != null &&
+                HighestEvaluationScore.Equals(other.HighestEvaluationScore)
             ) &&
             (
-                this.LowestEvaluationScore == other.LowestEvaluationScore ||
-                this.LowestEvaluationScore != null &&
-                this.LowestEvaluationScore.Equals(other.LowestEvaluationScore)
+                LowestEvaluationScore == other.LowestEvaluationScore ||
+                LowestEvaluationScore != null &&
+                LowestEvaluationScore.Equals(other.LowestEvaluationScore)
             ) &&
             (
-                this.HighestCriticalScore == other.HighestCriticalScore ||
-                this.HighestCriticalScore != null &&
-                this.HighestCriticalScore.Equals(other.HighestCriticalScore)
+                HighestCriticalScore == other.HighestCriticalScore ||
+                HighestCriticalScore != null &&
+                HighestCriticalScore.Equals(other.HighestCriticalScore)
             ) &&
             (
-                this.LowestCriticalScore == other.LowestCriticalScore ||
-                this.LowestCriticalScore != null &&
-                this.LowestCriticalScore.Equals(other.LowestCriticalScore)
+                LowestCriticalScore == other.LowestCriticalScore ||
+                LowestCriticalScore != null &&
+                LowestCriticalScore.Equals(other.LowestCriticalScore)
             ) &&
             (
-                this.AgentEvaluatorActivityList == other.AgentEvaluatorActivityList ||
-                this.AgentEvaluatorActivityList != null &&
-                this.AgentEvaluatorActivityList.SequenceEqual(other.AgentEvaluatorActivityList)
+                AgentEvaluatorActivityList == other.AgentEvaluatorActivityList ||
+                AgentEvaluatorActivityList != null &&
+                AgentEvaluatorActivityList.SequenceEqual(other.AgentEvaluatorActivityList)
             ) &&
             (
-                this.NumEvaluationsWithoutViewPermission == other.NumEvaluationsWithoutViewPermission ||
-                this.NumEvaluationsWithoutViewPermission != null &&
-                this.NumEvaluationsWithoutViewPermission.Equals(other.NumEvaluationsWithoutViewPermission)
+                NumEvaluationsWithoutViewPermission == other.NumEvaluationsWithoutViewPermission ||
+                NumEvaluationsWithoutViewPermission != null &&
+                NumEvaluationsWithoutViewPermission.Equals(other.NumEvaluationsWithoutViewPermission)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -292,74 +292,74 @@ public partial class AgentActivity : IEquatable<AgentActivity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Agent != null)
+            if (Agent != null)
             {
-                hash = hash * 59 + this.Agent.GetHashCode();
+                hash = hash * 59 + Agent.GetHashCode();
             }
 
-            if (this.NumEvaluations != null)
+            if (NumEvaluations != null)
             {
-                hash = hash * 59 + this.NumEvaluations.GetHashCode();
+                hash = hash * 59 + NumEvaluations.GetHashCode();
             }
 
-            if (this.AverageEvaluationScore != null)
+            if (AverageEvaluationScore != null)
             {
-                hash = hash * 59 + this.AverageEvaluationScore.GetHashCode();
+                hash = hash * 59 + AverageEvaluationScore.GetHashCode();
             }
 
-            if (this.NumCriticalEvaluations != null)
+            if (NumCriticalEvaluations != null)
             {
-                hash = hash * 59 + this.NumCriticalEvaluations.GetHashCode();
+                hash = hash * 59 + NumCriticalEvaluations.GetHashCode();
             }
 
-            if (this.AverageCriticalScore != null)
+            if (AverageCriticalScore != null)
             {
-                hash = hash * 59 + this.AverageCriticalScore.GetHashCode();
+                hash = hash * 59 + AverageCriticalScore.GetHashCode();
             }
 
-            if (this.HighestEvaluationScore != null)
+            if (HighestEvaluationScore != null)
             {
-                hash = hash * 59 + this.HighestEvaluationScore.GetHashCode();
+                hash = hash * 59 + HighestEvaluationScore.GetHashCode();
             }
 
-            if (this.LowestEvaluationScore != null)
+            if (LowestEvaluationScore != null)
             {
-                hash = hash * 59 + this.LowestEvaluationScore.GetHashCode();
+                hash = hash * 59 + LowestEvaluationScore.GetHashCode();
             }
 
-            if (this.HighestCriticalScore != null)
+            if (HighestCriticalScore != null)
             {
-                hash = hash * 59 + this.HighestCriticalScore.GetHashCode();
+                hash = hash * 59 + HighestCriticalScore.GetHashCode();
             }
 
-            if (this.LowestCriticalScore != null)
+            if (LowestCriticalScore != null)
             {
-                hash = hash * 59 + this.LowestCriticalScore.GetHashCode();
+                hash = hash * 59 + LowestCriticalScore.GetHashCode();
             }
 
-            if (this.AgentEvaluatorActivityList != null)
+            if (AgentEvaluatorActivityList != null)
             {
-                hash = hash * 59 + this.AgentEvaluatorActivityList.GetHashCode();
+                hash = hash * 59 + AgentEvaluatorActivityList.GetHashCode();
             }
 
-            if (this.NumEvaluationsWithoutViewPermission != null)
+            if (NumEvaluationsWithoutViewPermission != null)
             {
-                hash = hash * 59 + this.NumEvaluationsWithoutViewPermission.GetHashCode();
+                hash = hash * 59 + NumEvaluationsWithoutViewPermission.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

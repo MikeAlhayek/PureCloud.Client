@@ -119,7 +119,7 @@ public partial class ContentNotificationTemplate : IEquatable<ContentNotificatio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ContentNotificationTemplate);
+        return Equals(obj as ContentNotificationTemplate);
     }
 
     /// <summary>
@@ -137,34 +137,34 @@ public partial class ContentNotificationTemplate : IEquatable<ContentNotificatio
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Header == other.Header ||
-                this.Header != null &&
-                this.Header.Equals(other.Header)
+                Header == other.Header ||
+                Header != null &&
+                Header.Equals(other.Header)
             ) &&
             (
-                this.Body == other.Body ||
-                this.Body != null &&
-                this.Body.Equals(other.Body)
+                Body == other.Body ||
+                Body != null &&
+                Body.Equals(other.Body)
             ) &&
             (
-                this.Buttons == other.Buttons ||
-                this.Buttons != null &&
-                this.Buttons.SequenceEqual(other.Buttons)
+                Buttons == other.Buttons ||
+                Buttons != null &&
+                Buttons.SequenceEqual(other.Buttons)
             ) &&
             (
-                this.Footer == other.Footer ||
-                this.Footer != null &&
-                this.Footer.Equals(other.Footer)
+                Footer == other.Footer ||
+                Footer != null &&
+                Footer.Equals(other.Footer)
             );
     }
 
@@ -179,34 +179,34 @@ public partial class ContentNotificationTemplate : IEquatable<ContentNotificatio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Header != null)
+            if (Header != null)
             {
-                hash = hash * 59 + this.Header.GetHashCode();
+                hash = hash * 59 + Header.GetHashCode();
             }
 
-            if (this.Body != null)
+            if (Body != null)
             {
-                hash = hash * 59 + this.Body.GetHashCode();
+                hash = hash * 59 + Body.GetHashCode();
             }
 
-            if (this.Buttons != null)
+            if (Buttons != null)
             {
-                hash = hash * 59 + this.Buttons.GetHashCode();
+                hash = hash * 59 + Buttons.GetHashCode();
             }
 
-            if (this.Footer != null)
+            if (Footer != null)
             {
-                hash = hash * 59 + this.Footer.GetHashCode();
+                hash = hash * 59 + Footer.GetHashCode();
             }
 
             return hash;

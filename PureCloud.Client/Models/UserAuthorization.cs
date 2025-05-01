@@ -82,7 +82,7 @@ public partial class UserAuthorization : IEquatable<UserAuthorization>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserAuthorization);
+        return Equals(obj as UserAuthorization);
     }
 
     /// <summary>
@@ -100,24 +100,24 @@ public partial class UserAuthorization : IEquatable<UserAuthorization>
 
         return true &&
             (
-                this.Roles == other.Roles ||
-                this.Roles != null &&
-                this.Roles.SequenceEqual(other.Roles)
+                Roles == other.Roles ||
+                Roles != null &&
+                Roles.SequenceEqual(other.Roles)
             ) &&
             (
-                this.UnusedRoles == other.UnusedRoles ||
-                this.UnusedRoles != null &&
-                this.UnusedRoles.SequenceEqual(other.UnusedRoles)
+                UnusedRoles == other.UnusedRoles ||
+                UnusedRoles != null &&
+                UnusedRoles.SequenceEqual(other.UnusedRoles)
             ) &&
             (
-                this.Permissions == other.Permissions ||
-                this.Permissions != null &&
-                this.Permissions.SequenceEqual(other.Permissions)
+                Permissions == other.Permissions ||
+                Permissions != null &&
+                Permissions.SequenceEqual(other.Permissions)
             ) &&
             (
-                this.PermissionPolicies == other.PermissionPolicies ||
-                this.PermissionPolicies != null &&
-                this.PermissionPolicies.SequenceEqual(other.PermissionPolicies)
+                PermissionPolicies == other.PermissionPolicies ||
+                PermissionPolicies != null &&
+                PermissionPolicies.SequenceEqual(other.PermissionPolicies)
             );
     }
 
@@ -132,24 +132,24 @@ public partial class UserAuthorization : IEquatable<UserAuthorization>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Roles != null)
+            if (Roles != null)
             {
-                hash = hash * 59 + this.Roles.GetHashCode();
+                hash = hash * 59 + Roles.GetHashCode();
             }
 
-            if (this.UnusedRoles != null)
+            if (UnusedRoles != null)
             {
-                hash = hash * 59 + this.UnusedRoles.GetHashCode();
+                hash = hash * 59 + UnusedRoles.GetHashCode();
             }
 
-            if (this.Permissions != null)
+            if (Permissions != null)
             {
-                hash = hash * 59 + this.Permissions.GetHashCode();
+                hash = hash * 59 + Permissions.GetHashCode();
             }
 
-            if (this.PermissionPolicies != null)
+            if (PermissionPolicies != null)
             {
-                hash = hash * 59 + this.PermissionPolicies.GetHashCode();
+                hash = hash * 59 + PermissionPolicies.GetHashCode();
             }
 
             return hash;

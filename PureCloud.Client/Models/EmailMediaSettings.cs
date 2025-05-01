@@ -113,7 +113,7 @@ public partial class EmailMediaSettings : IEquatable<EmailMediaSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EmailMediaSettings);
+        return Equals(obj as EmailMediaSettings);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class EmailMediaSettings : IEquatable<EmailMediaSettings>
 
         return true &&
             (
-                this.EnableAutoAnswer == other.EnableAutoAnswer ||
-                this.EnableAutoAnswer != null &&
-                this.EnableAutoAnswer.Equals(other.EnableAutoAnswer)
+                EnableAutoAnswer == other.EnableAutoAnswer ||
+                EnableAutoAnswer != null &&
+                EnableAutoAnswer.Equals(other.EnableAutoAnswer)
             ) &&
             (
-                this.AlertingTimeoutSeconds == other.AlertingTimeoutSeconds ||
-                this.AlertingTimeoutSeconds != null &&
-                this.AlertingTimeoutSeconds.Equals(other.AlertingTimeoutSeconds)
+                AlertingTimeoutSeconds == other.AlertingTimeoutSeconds ||
+                AlertingTimeoutSeconds != null &&
+                AlertingTimeoutSeconds.Equals(other.AlertingTimeoutSeconds)
             ) &&
             (
-                this.ServiceLevel == other.ServiceLevel ||
-                this.ServiceLevel != null &&
-                this.ServiceLevel.Equals(other.ServiceLevel)
+                ServiceLevel == other.ServiceLevel ||
+                ServiceLevel != null &&
+                ServiceLevel.Equals(other.ServiceLevel)
             ) &&
             (
-                this.AutoAnswerAlertToneSeconds == other.AutoAnswerAlertToneSeconds ||
-                this.AutoAnswerAlertToneSeconds != null &&
-                this.AutoAnswerAlertToneSeconds.Equals(other.AutoAnswerAlertToneSeconds)
+                AutoAnswerAlertToneSeconds == other.AutoAnswerAlertToneSeconds ||
+                AutoAnswerAlertToneSeconds != null &&
+                AutoAnswerAlertToneSeconds.Equals(other.AutoAnswerAlertToneSeconds)
             ) &&
             (
-                this.ManualAnswerAlertToneSeconds == other.ManualAnswerAlertToneSeconds ||
-                this.ManualAnswerAlertToneSeconds != null &&
-                this.ManualAnswerAlertToneSeconds.Equals(other.ManualAnswerAlertToneSeconds)
+                ManualAnswerAlertToneSeconds == other.ManualAnswerAlertToneSeconds ||
+                ManualAnswerAlertToneSeconds != null &&
+                ManualAnswerAlertToneSeconds.Equals(other.ManualAnswerAlertToneSeconds)
             ) &&
             (
-                this.SubTypeSettings == other.SubTypeSettings ||
-                this.SubTypeSettings != null &&
-                this.SubTypeSettings.SequenceEqual(other.SubTypeSettings)
+                SubTypeSettings == other.SubTypeSettings ||
+                SubTypeSettings != null &&
+                SubTypeSettings.SequenceEqual(other.SubTypeSettings)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class EmailMediaSettings : IEquatable<EmailMediaSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EnableAutoAnswer != null)
+            if (EnableAutoAnswer != null)
             {
-                hash = hash * 59 + this.EnableAutoAnswer.GetHashCode();
+                hash = hash * 59 + EnableAutoAnswer.GetHashCode();
             }
 
-            if (this.AlertingTimeoutSeconds != null)
+            if (AlertingTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.AlertingTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + AlertingTimeoutSeconds.GetHashCode();
             }
 
-            if (this.ServiceLevel != null)
+            if (ServiceLevel != null)
             {
-                hash = hash * 59 + this.ServiceLevel.GetHashCode();
+                hash = hash * 59 + ServiceLevel.GetHashCode();
             }
 
-            if (this.AutoAnswerAlertToneSeconds != null)
+            if (AutoAnswerAlertToneSeconds != null)
             {
-                hash = hash * 59 + this.AutoAnswerAlertToneSeconds.GetHashCode();
+                hash = hash * 59 + AutoAnswerAlertToneSeconds.GetHashCode();
             }
 
-            if (this.ManualAnswerAlertToneSeconds != null)
+            if (ManualAnswerAlertToneSeconds != null)
             {
-                hash = hash * 59 + this.ManualAnswerAlertToneSeconds.GetHashCode();
+                hash = hash * 59 + ManualAnswerAlertToneSeconds.GetHashCode();
             }
 
-            if (this.SubTypeSettings != null)
+            if (SubTypeSettings != null)
             {
-                hash = hash * 59 + this.SubTypeSettings.GetHashCode();
+                hash = hash * 59 + SubTypeSettings.GetHashCode();
             }
 
             return hash;

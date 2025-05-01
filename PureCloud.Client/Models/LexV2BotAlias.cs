@@ -200,7 +200,7 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LexV2BotAlias);
+        return Equals(obj as LexV2BotAlias);
     }
 
     /// <summary>
@@ -218,54 +218,54 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Region == other.Region ||
-                this.Region != null &&
-                this.Region.Equals(other.Region)
+                Region == other.Region ||
+                Region != null &&
+                Region.Equals(other.Region)
             ) &&
             (
-                this.AliasId == other.AliasId ||
-                this.AliasId != null &&
-                this.AliasId.Equals(other.AliasId)
+                AliasId == other.AliasId ||
+                AliasId != null &&
+                AliasId.Equals(other.AliasId)
             ) &&
             (
-                this.Bot == other.Bot ||
-                this.Bot != null &&
-                this.Bot.Equals(other.Bot)
+                Bot == other.Bot ||
+                Bot != null &&
+                Bot.Equals(other.Bot)
             ) &&
             (
-                this.BotVersion == other.BotVersion ||
-                this.BotVersion != null &&
-                this.BotVersion.Equals(other.BotVersion)
+                BotVersion == other.BotVersion ||
+                BotVersion != null &&
+                BotVersion.Equals(other.BotVersion)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Intents == other.Intents ||
-                this.Intents != null &&
-                this.Intents.SequenceEqual(other.Intents)
+                Intents == other.Intents ||
+                Intents != null &&
+                Intents.SequenceEqual(other.Intents)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -280,54 +280,54 @@ public partial class LexV2BotAlias : IEquatable<LexV2BotAlias>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Region != null)
+            if (Region != null)
             {
-                hash = hash * 59 + this.Region.GetHashCode();
+                hash = hash * 59 + Region.GetHashCode();
             }
 
-            if (this.AliasId != null)
+            if (AliasId != null)
             {
-                hash = hash * 59 + this.AliasId.GetHashCode();
+                hash = hash * 59 + AliasId.GetHashCode();
             }
 
-            if (this.Bot != null)
+            if (Bot != null)
             {
-                hash = hash * 59 + this.Bot.GetHashCode();
+                hash = hash * 59 + Bot.GetHashCode();
             }
 
-            if (this.BotVersion != null)
+            if (BotVersion != null)
             {
-                hash = hash * 59 + this.BotVersion.GetHashCode();
+                hash = hash * 59 + BotVersion.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Intents != null)
+            if (Intents != null)
             {
-                hash = hash * 59 + this.Intents.GetHashCode();
+                hash = hash * 59 + Intents.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

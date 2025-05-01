@@ -117,7 +117,7 @@ public partial class ScimV2GroupReference : IEquatable<ScimV2GroupReference>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ScimV2GroupReference);
+        return Equals(obj as ScimV2GroupReference);
     }
 
     /// <summary>
@@ -135,19 +135,19 @@ public partial class ScimV2GroupReference : IEquatable<ScimV2GroupReference>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.Ref == other.Ref ||
-                this.Ref != null &&
-                this.Ref.Equals(other.Ref)
+                Ref == other.Ref ||
+                Ref != null &&
+                Ref.Equals(other.Ref)
             );
     }
 
@@ -162,19 +162,19 @@ public partial class ScimV2GroupReference : IEquatable<ScimV2GroupReference>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.Ref != null)
+            if (Ref != null)
             {
-                hash = hash * 59 + this.Ref.GetHashCode();
+                hash = hash * 59 + Ref.GetHashCode();
             }
 
             return hash;

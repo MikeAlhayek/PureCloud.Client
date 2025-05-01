@@ -84,7 +84,7 @@ public partial class BulkJobUpdate : IEquatable<BulkJobUpdate>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BulkJobUpdate);
+        return Equals(obj as BulkJobUpdate);
     }
 
     /// <summary>
@@ -102,9 +102,9 @@ public partial class BulkJobUpdate : IEquatable<BulkJobUpdate>
 
         return true &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             );
     }
 
@@ -119,9 +119,9 @@ public partial class BulkJobUpdate : IEquatable<BulkJobUpdate>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
             return hash;

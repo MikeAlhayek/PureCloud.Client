@@ -682,7 +682,7 @@ public partial class WorkitemsQueueEventsNotificationWorkitem : IEquatable<Worki
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemsQueueEventsNotificationWorkitem);
+        return Equals(obj as WorkitemsQueueEventsNotificationWorkitem);
     }
 
     /// <summary>
@@ -700,174 +700,174 @@ public partial class WorkitemsQueueEventsNotificationWorkitem : IEquatable<Worki
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.TypeId == other.TypeId ||
-                this.TypeId != null &&
-                this.TypeId.Equals(other.TypeId)
+                TypeId == other.TypeId ||
+                TypeId != null &&
+                TypeId.Equals(other.TypeId)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.LanguageId == other.LanguageId ||
-                this.LanguageId != null &&
-                this.LanguageId.Equals(other.LanguageId)
+                LanguageId == other.LanguageId ||
+                LanguageId != null &&
+                LanguageId.Equals(other.LanguageId)
             ) &&
             (
-                this.Priority == other.Priority ||
-                this.Priority != null &&
-                this.Priority.Equals(other.Priority)
+                Priority == other.Priority ||
+                Priority != null &&
+                Priority.Equals(other.Priority)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.DateDue == other.DateDue ||
-                this.DateDue != null &&
-                this.DateDue.Equals(other.DateDue)
+                DateDue == other.DateDue ||
+                DateDue != null &&
+                DateDue.Equals(other.DateDue)
             ) &&
             (
-                this.DateExpires == other.DateExpires ||
-                this.DateExpires != null &&
-                this.DateExpires.Equals(other.DateExpires)
+                DateExpires == other.DateExpires ||
+                DateExpires != null &&
+                DateExpires.Equals(other.DateExpires)
             ) &&
             (
-                this.DateAssignmentStateChanged == other.DateAssignmentStateChanged ||
-                this.DateAssignmentStateChanged != null &&
-                this.DateAssignmentStateChanged.Equals(other.DateAssignmentStateChanged)
+                DateAssignmentStateChanged == other.DateAssignmentStateChanged ||
+                DateAssignmentStateChanged != null &&
+                DateAssignmentStateChanged.Equals(other.DateAssignmentStateChanged)
             ) &&
             (
-                this.DurationSeconds == other.DurationSeconds ||
-                this.DurationSeconds != null &&
-                this.DurationSeconds.Equals(other.DurationSeconds)
+                DurationSeconds == other.DurationSeconds ||
+                DurationSeconds != null &&
+                DurationSeconds.Equals(other.DurationSeconds)
             ) &&
             (
-                this.Ttl == other.Ttl ||
-                this.Ttl != null &&
-                this.Ttl.Equals(other.Ttl)
+                Ttl == other.Ttl ||
+                Ttl != null &&
+                Ttl.Equals(other.Ttl)
             ) &&
             (
-                this.StatusId == other.StatusId ||
-                this.StatusId != null &&
-                this.StatusId.Equals(other.StatusId)
+                StatusId == other.StatusId ||
+                StatusId != null &&
+                StatusId.Equals(other.StatusId)
             ) &&
             (
-                this.StatusCategory == other.StatusCategory ||
-                this.StatusCategory != null &&
-                this.StatusCategory.Equals(other.StatusCategory)
+                StatusCategory == other.StatusCategory ||
+                StatusCategory != null &&
+                StatusCategory.Equals(other.StatusCategory)
             ) &&
             (
-                this.DateClosed == other.DateClosed ||
-                this.DateClosed != null &&
-                this.DateClosed.Equals(other.DateClosed)
+                DateClosed == other.DateClosed ||
+                DateClosed != null &&
+                DateClosed.Equals(other.DateClosed)
             ) &&
             (
-                this.WorkbinId == other.WorkbinId ||
-                this.WorkbinId != null &&
-                this.WorkbinId.Equals(other.WorkbinId)
+                WorkbinId == other.WorkbinId ||
+                WorkbinId != null &&
+                WorkbinId.Equals(other.WorkbinId)
             ) &&
             (
-                this.ReporterId == other.ReporterId ||
-                this.ReporterId != null &&
-                this.ReporterId.Equals(other.ReporterId)
+                ReporterId == other.ReporterId ||
+                ReporterId != null &&
+                ReporterId.Equals(other.ReporterId)
             ) &&
             (
-                this.AssigneeId == other.AssigneeId ||
-                this.AssigneeId != null &&
-                this.AssigneeId.Equals(other.AssigneeId)
+                AssigneeId == other.AssigneeId ||
+                AssigneeId != null &&
+                AssigneeId.Equals(other.AssigneeId)
             ) &&
             (
-                this.ExternalContactId == other.ExternalContactId ||
-                this.ExternalContactId != null &&
-                this.ExternalContactId.Equals(other.ExternalContactId)
+                ExternalContactId == other.ExternalContactId ||
+                ExternalContactId != null &&
+                ExternalContactId.Equals(other.ExternalContactId)
             ) &&
             (
-                this.ExternalTag == other.ExternalTag ||
-                this.ExternalTag != null &&
-                this.ExternalTag.Equals(other.ExternalTag)
+                ExternalTag == other.ExternalTag ||
+                ExternalTag != null &&
+                ExternalTag.Equals(other.ExternalTag)
             ) &&
             (
-                this.WrapupId == other.WrapupId ||
-                this.WrapupId != null &&
-                this.WrapupId.Equals(other.WrapupId)
+                WrapupId == other.WrapupId ||
+                WrapupId != null &&
+                WrapupId.Equals(other.WrapupId)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             ) &&
             (
-                this.Operation == other.Operation ||
-                this.Operation != null &&
-                this.Operation.Equals(other.Operation)
+                Operation == other.Operation ||
+                Operation != null &&
+                Operation.Equals(other.Operation)
             ) &&
             (
-                this.Changes == other.Changes ||
-                this.Changes != null &&
-                this.Changes.SequenceEqual(other.Changes)
+                Changes == other.Changes ||
+                Changes != null &&
+                Changes.SequenceEqual(other.Changes)
             ) &&
             (
-                this.AssignmentState == other.AssignmentState ||
-                this.AssignmentState != null &&
-                this.AssignmentState.Equals(other.AssignmentState)
+                AssignmentState == other.AssignmentState ||
+                AssignmentState != null &&
+                AssignmentState.Equals(other.AssignmentState)
             ) &&
             (
-                this.AssignmentId == other.AssignmentId ||
-                this.AssignmentId != null &&
-                this.AssignmentId.Equals(other.AssignmentId)
+                AssignmentId == other.AssignmentId ||
+                AssignmentId != null &&
+                AssignmentId.Equals(other.AssignmentId)
             ) &&
             (
-                this.AlertTimeoutSeconds == other.AlertTimeoutSeconds ||
-                this.AlertTimeoutSeconds != null &&
-                this.AlertTimeoutSeconds.Equals(other.AlertTimeoutSeconds)
+                AlertTimeoutSeconds == other.AlertTimeoutSeconds ||
+                AlertTimeoutSeconds != null &&
+                AlertTimeoutSeconds.Equals(other.AlertTimeoutSeconds)
             ) &&
             (
-                this.QueueId == other.QueueId ||
-                this.QueueId != null &&
-                this.QueueId.Equals(other.QueueId)
+                QueueId == other.QueueId ||
+                QueueId != null &&
+                QueueId.Equals(other.QueueId)
             ) &&
             (
-                this.CustomFields == other.CustomFields ||
-                this.CustomFields != null &&
-                this.CustomFields.SequenceEqual(other.CustomFields)
+                CustomFields == other.CustomFields ||
+                CustomFields != null &&
+                CustomFields.SequenceEqual(other.CustomFields)
             ) &&
             (
-                this.Wrapup == other.Wrapup ||
-                this.Wrapup != null &&
-                this.Wrapup.Equals(other.Wrapup)
+                Wrapup == other.Wrapup ||
+                Wrapup != null &&
+                Wrapup.Equals(other.Wrapup)
             ) &&
             (
-                this.Sessions == other.Sessions ||
-                this.Sessions != null &&
-                this.Sessions.SequenceEqual(other.Sessions)
+                Sessions == other.Sessions ||
+                Sessions != null &&
+                Sessions.SequenceEqual(other.Sessions)
             ) &&
             (
-                this.SkillIds == other.SkillIds ||
-                this.SkillIds != null &&
-                this.SkillIds.SequenceEqual(other.SkillIds)
+                SkillIds == other.SkillIds ||
+                SkillIds != null &&
+                SkillIds.SequenceEqual(other.SkillIds)
             ) &&
             (
-                this.ScriptId == other.ScriptId ||
-                this.ScriptId != null &&
-                this.ScriptId.Equals(other.ScriptId)
+                ScriptId == other.ScriptId ||
+                ScriptId != null &&
+                ScriptId.Equals(other.ScriptId)
             );
     }
 
@@ -882,174 +882,174 @@ public partial class WorkitemsQueueEventsNotificationWorkitem : IEquatable<Worki
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.TypeId != null)
+            if (TypeId != null)
             {
-                hash = hash * 59 + this.TypeId.GetHashCode();
+                hash = hash * 59 + TypeId.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.LanguageId != null)
+            if (LanguageId != null)
             {
-                hash = hash * 59 + this.LanguageId.GetHashCode();
+                hash = hash * 59 + LanguageId.GetHashCode();
             }
 
-            if (this.Priority != null)
+            if (Priority != null)
             {
-                hash = hash * 59 + this.Priority.GetHashCode();
+                hash = hash * 59 + Priority.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.DateDue != null)
+            if (DateDue != null)
             {
-                hash = hash * 59 + this.DateDue.GetHashCode();
+                hash = hash * 59 + DateDue.GetHashCode();
             }
 
-            if (this.DateExpires != null)
+            if (DateExpires != null)
             {
-                hash = hash * 59 + this.DateExpires.GetHashCode();
+                hash = hash * 59 + DateExpires.GetHashCode();
             }
 
-            if (this.DateAssignmentStateChanged != null)
+            if (DateAssignmentStateChanged != null)
             {
-                hash = hash * 59 + this.DateAssignmentStateChanged.GetHashCode();
+                hash = hash * 59 + DateAssignmentStateChanged.GetHashCode();
             }
 
-            if (this.DurationSeconds != null)
+            if (DurationSeconds != null)
             {
-                hash = hash * 59 + this.DurationSeconds.GetHashCode();
+                hash = hash * 59 + DurationSeconds.GetHashCode();
             }
 
-            if (this.Ttl != null)
+            if (Ttl != null)
             {
-                hash = hash * 59 + this.Ttl.GetHashCode();
+                hash = hash * 59 + Ttl.GetHashCode();
             }
 
-            if (this.StatusId != null)
+            if (StatusId != null)
             {
-                hash = hash * 59 + this.StatusId.GetHashCode();
+                hash = hash * 59 + StatusId.GetHashCode();
             }
 
-            if (this.StatusCategory != null)
+            if (StatusCategory != null)
             {
-                hash = hash * 59 + this.StatusCategory.GetHashCode();
+                hash = hash * 59 + StatusCategory.GetHashCode();
             }
 
-            if (this.DateClosed != null)
+            if (DateClosed != null)
             {
-                hash = hash * 59 + this.DateClosed.GetHashCode();
+                hash = hash * 59 + DateClosed.GetHashCode();
             }
 
-            if (this.WorkbinId != null)
+            if (WorkbinId != null)
             {
-                hash = hash * 59 + this.WorkbinId.GetHashCode();
+                hash = hash * 59 + WorkbinId.GetHashCode();
             }
 
-            if (this.ReporterId != null)
+            if (ReporterId != null)
             {
-                hash = hash * 59 + this.ReporterId.GetHashCode();
+                hash = hash * 59 + ReporterId.GetHashCode();
             }
 
-            if (this.AssigneeId != null)
+            if (AssigneeId != null)
             {
-                hash = hash * 59 + this.AssigneeId.GetHashCode();
+                hash = hash * 59 + AssigneeId.GetHashCode();
             }
 
-            if (this.ExternalContactId != null)
+            if (ExternalContactId != null)
             {
-                hash = hash * 59 + this.ExternalContactId.GetHashCode();
+                hash = hash * 59 + ExternalContactId.GetHashCode();
             }
 
-            if (this.ExternalTag != null)
+            if (ExternalTag != null)
             {
-                hash = hash * 59 + this.ExternalTag.GetHashCode();
+                hash = hash * 59 + ExternalTag.GetHashCode();
             }
 
-            if (this.WrapupId != null)
+            if (WrapupId != null)
             {
-                hash = hash * 59 + this.WrapupId.GetHashCode();
+                hash = hash * 59 + WrapupId.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
-            if (this.Operation != null)
+            if (Operation != null)
             {
-                hash = hash * 59 + this.Operation.GetHashCode();
+                hash = hash * 59 + Operation.GetHashCode();
             }
 
-            if (this.Changes != null)
+            if (Changes != null)
             {
-                hash = hash * 59 + this.Changes.GetHashCode();
+                hash = hash * 59 + Changes.GetHashCode();
             }
 
-            if (this.AssignmentState != null)
+            if (AssignmentState != null)
             {
-                hash = hash * 59 + this.AssignmentState.GetHashCode();
+                hash = hash * 59 + AssignmentState.GetHashCode();
             }
 
-            if (this.AssignmentId != null)
+            if (AssignmentId != null)
             {
-                hash = hash * 59 + this.AssignmentId.GetHashCode();
+                hash = hash * 59 + AssignmentId.GetHashCode();
             }
 
-            if (this.AlertTimeoutSeconds != null)
+            if (AlertTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.AlertTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + AlertTimeoutSeconds.GetHashCode();
             }
 
-            if (this.QueueId != null)
+            if (QueueId != null)
             {
-                hash = hash * 59 + this.QueueId.GetHashCode();
+                hash = hash * 59 + QueueId.GetHashCode();
             }
 
-            if (this.CustomFields != null)
+            if (CustomFields != null)
             {
-                hash = hash * 59 + this.CustomFields.GetHashCode();
+                hash = hash * 59 + CustomFields.GetHashCode();
             }
 
-            if (this.Wrapup != null)
+            if (Wrapup != null)
             {
-                hash = hash * 59 + this.Wrapup.GetHashCode();
+                hash = hash * 59 + Wrapup.GetHashCode();
             }
 
-            if (this.Sessions != null)
+            if (Sessions != null)
             {
-                hash = hash * 59 + this.Sessions.GetHashCode();
+                hash = hash * 59 + Sessions.GetHashCode();
             }
 
-            if (this.SkillIds != null)
+            if (SkillIds != null)
             {
-                hash = hash * 59 + this.SkillIds.GetHashCode();
+                hash = hash * 59 + SkillIds.GetHashCode();
             }
 
-            if (this.ScriptId != null)
+            if (ScriptId != null)
             {
-                hash = hash * 59 + this.ScriptId.GetHashCode();
+                hash = hash * 59 + ScriptId.GetHashCode();
             }
 
             return hash;

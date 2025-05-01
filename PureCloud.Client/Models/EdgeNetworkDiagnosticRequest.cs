@@ -59,7 +59,7 @@ public partial class EdgeNetworkDiagnosticRequest : IEquatable<EdgeNetworkDiagno
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EdgeNetworkDiagnosticRequest);
+        return Equals(obj as EdgeNetworkDiagnosticRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class EdgeNetworkDiagnosticRequest : IEquatable<EdgeNetworkDiagno
 
         return true &&
             (
-                this.Host == other.Host ||
-                this.Host != null &&
-                this.Host.Equals(other.Host)
+                Host == other.Host ||
+                Host != null &&
+                Host.Equals(other.Host)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class EdgeNetworkDiagnosticRequest : IEquatable<EdgeNetworkDiagno
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Host != null)
+            if (Host != null)
             {
-                hash = hash * 59 + this.Host.GetHashCode();
+                hash = hash * 59 + Host.GetHashCode();
             }
 
             return hash;

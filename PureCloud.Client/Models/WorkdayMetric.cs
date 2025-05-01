@@ -111,7 +111,7 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkdayMetric);
+        return Equals(obj as WorkdayMetric);
     }
 
     /// <summary>
@@ -129,39 +129,39 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
 
         return true &&
             (
-                this.Metric == other.Metric ||
-                this.Metric != null &&
-                this.Metric.Equals(other.Metric)
+                Metric == other.Metric ||
+                Metric != null &&
+                Metric.Equals(other.Metric)
             ) &&
             (
-                this.Objective == other.Objective ||
-                this.Objective != null &&
-                this.Objective.Equals(other.Objective)
+                Objective == other.Objective ||
+                Objective != null &&
+                Objective.Equals(other.Objective)
             ) &&
             (
-                this.Points == other.Points ||
-                this.Points != null &&
-                this.Points.Equals(other.Points)
+                Points == other.Points ||
+                Points != null &&
+                Points.Equals(other.Points)
             ) &&
             (
-                this.MaxPoints == other.MaxPoints ||
-                this.MaxPoints != null &&
-                this.MaxPoints.Equals(other.MaxPoints)
+                MaxPoints == other.MaxPoints ||
+                MaxPoints != null &&
+                MaxPoints.Equals(other.MaxPoints)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             ) &&
             (
-                this.PunctualityEvents == other.PunctualityEvents ||
-                this.PunctualityEvents != null &&
-                this.PunctualityEvents.SequenceEqual(other.PunctualityEvents)
+                PunctualityEvents == other.PunctualityEvents ||
+                PunctualityEvents != null &&
+                PunctualityEvents.SequenceEqual(other.PunctualityEvents)
             ) &&
             (
-                this.EvaluationDetails == other.EvaluationDetails ||
-                this.EvaluationDetails != null &&
-                this.EvaluationDetails.SequenceEqual(other.EvaluationDetails)
+                EvaluationDetails == other.EvaluationDetails ||
+                EvaluationDetails != null &&
+                EvaluationDetails.SequenceEqual(other.EvaluationDetails)
             );
     }
 
@@ -176,39 +176,39 @@ public partial class WorkdayMetric : IEquatable<WorkdayMetric>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Metric != null)
+            if (Metric != null)
             {
-                hash = hash * 59 + this.Metric.GetHashCode();
+                hash = hash * 59 + Metric.GetHashCode();
             }
 
-            if (this.Objective != null)
+            if (Objective != null)
             {
-                hash = hash * 59 + this.Objective.GetHashCode();
+                hash = hash * 59 + Objective.GetHashCode();
             }
 
-            if (this.Points != null)
+            if (Points != null)
             {
-                hash = hash * 59 + this.Points.GetHashCode();
+                hash = hash * 59 + Points.GetHashCode();
             }
 
-            if (this.MaxPoints != null)
+            if (MaxPoints != null)
             {
-                hash = hash * 59 + this.MaxPoints.GetHashCode();
+                hash = hash * 59 + MaxPoints.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
-            if (this.PunctualityEvents != null)
+            if (PunctualityEvents != null)
             {
-                hash = hash * 59 + this.PunctualityEvents.GetHashCode();
+                hash = hash * 59 + PunctualityEvents.GetHashCode();
             }
 
-            if (this.EvaluationDetails != null)
+            if (EvaluationDetails != null)
             {
-                hash = hash * 59 + this.EvaluationDetails.GetHashCode();
+                hash = hash * 59 + EvaluationDetails.GetHashCode();
             }
 
             return hash;

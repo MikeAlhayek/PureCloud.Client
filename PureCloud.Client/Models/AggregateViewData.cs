@@ -62,7 +62,7 @@ public partial class AggregateViewData : IEquatable<AggregateViewData>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AggregateViewData);
+        return Equals(obj as AggregateViewData);
     }
 
     /// <summary>
@@ -80,14 +80,14 @@ public partial class AggregateViewData : IEquatable<AggregateViewData>
 
         return true &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Stats == other.Stats ||
-                this.Stats != null &&
-                this.Stats.Equals(other.Stats)
+                Stats == other.Stats ||
+                Stats != null &&
+                Stats.Equals(other.Stats)
             );
     }
 
@@ -102,14 +102,14 @@ public partial class AggregateViewData : IEquatable<AggregateViewData>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Stats != null)
+            if (Stats != null)
             {
-                hash = hash * 59 + this.Stats.GetHashCode();
+                hash = hash * 59 + Stats.GetHashCode();
             }
 
             return hash;

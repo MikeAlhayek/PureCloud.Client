@@ -106,7 +106,7 @@ public partial class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEn
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebDeploymentFlowEntityRef);
+        return Equals(obj as WebDeploymentFlowEntityRef);
     }
 
     /// <summary>
@@ -124,29 +124,29 @@ public partial class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEn
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             ) &&
             (
-                this.FlowDescription == other.FlowDescription ||
-                this.FlowDescription != null &&
-                this.FlowDescription.Equals(other.FlowDescription)
+                FlowDescription == other.FlowDescription ||
+                FlowDescription != null &&
+                FlowDescription.Equals(other.FlowDescription)
             ) &&
             (
-                this.PublishVersion == other.PublishVersion ||
-                this.PublishVersion != null &&
-                this.PublishVersion.Equals(other.PublishVersion)
+                PublishVersion == other.PublishVersion ||
+                PublishVersion != null &&
+                PublishVersion.Equals(other.PublishVersion)
             );
     }
 
@@ -161,29 +161,29 @@ public partial class WebDeploymentFlowEntityRef : IEquatable<WebDeploymentFlowEn
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
-            if (this.FlowDescription != null)
+            if (FlowDescription != null)
             {
-                hash = hash * 59 + this.FlowDescription.GetHashCode();
+                hash = hash * 59 + FlowDescription.GetHashCode();
             }
 
-            if (this.PublishVersion != null)
+            if (PublishVersion != null)
             {
-                hash = hash * 59 + this.PublishVersion.GetHashCode();
+                hash = hash * 59 + PublishVersion.GetHashCode();
             }
 
             return hash;

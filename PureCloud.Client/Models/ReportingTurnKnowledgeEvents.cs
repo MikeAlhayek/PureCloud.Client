@@ -65,7 +65,7 @@ public partial class ReportingTurnKnowledgeEvents : IEquatable<ReportingTurnKnow
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingTurnKnowledgeEvents);
+        return Equals(obj as ReportingTurnKnowledgeEvents);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class ReportingTurnKnowledgeEvents : IEquatable<ReportingTurnKnow
 
         return true &&
             (
-                this.Search == other.Search ||
-                this.Search != null &&
-                this.Search.SequenceEqual(other.Search)
+                Search == other.Search ||
+                Search != null &&
+                Search.SequenceEqual(other.Search)
             ) &&
             (
-                this.Feedback == other.Feedback ||
-                this.Feedback != null &&
-                this.Feedback.SequenceEqual(other.Feedback)
+                Feedback == other.Feedback ||
+                Feedback != null &&
+                Feedback.SequenceEqual(other.Feedback)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class ReportingTurnKnowledgeEvents : IEquatable<ReportingTurnKnow
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Search != null)
+            if (Search != null)
             {
-                hash = hash * 59 + this.Search.GetHashCode();
+                hash = hash * 59 + Search.GetHashCode();
             }
 
-            if (this.Feedback != null)
+            if (Feedback != null)
             {
-                hash = hash * 59 + this.Feedback.GetHashCode();
+                hash = hash * 59 + Feedback.GetHashCode();
             }
 
             return hash;

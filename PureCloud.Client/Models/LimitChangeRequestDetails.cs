@@ -797,7 +797,7 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LimitChangeRequestDetails);
+        return Equals(obj as LimitChangeRequestDetails);
     }
 
     /// <summary>
@@ -815,74 +815,74 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Key == other.Key ||
-                this.Key != null &&
-                this.Key.Equals(other.Key)
+                Key == other.Key ||
+                Key != null &&
+                Key.Equals(other.Key)
             ) &&
             (
-                this.Namespace == other.Namespace ||
-                this.Namespace != null &&
-                this.Namespace.Equals(other.Namespace)
+                Namespace == other.Namespace ||
+                Namespace != null &&
+                Namespace.Equals(other.Namespace)
             ) &&
             (
-                this.RequestedValue == other.RequestedValue ||
-                this.RequestedValue != null &&
-                this.RequestedValue.Equals(other.RequestedValue)
+                RequestedValue == other.RequestedValue ||
+                RequestedValue != null &&
+                RequestedValue.Equals(other.RequestedValue)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.SupportCaseUrl == other.SupportCaseUrl ||
-                this.SupportCaseUrl != null &&
-                this.SupportCaseUrl.Equals(other.SupportCaseUrl)
+                SupportCaseUrl == other.SupportCaseUrl ||
+                SupportCaseUrl != null &&
+                SupportCaseUrl.Equals(other.SupportCaseUrl)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.CurrentValue == other.CurrentValue ||
-                this.CurrentValue != null &&
-                this.CurrentValue.Equals(other.CurrentValue)
+                CurrentValue == other.CurrentValue ||
+                CurrentValue != null &&
+                CurrentValue.Equals(other.CurrentValue)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.StatusHistory == other.StatusHistory ||
-                this.StatusHistory != null &&
-                this.StatusHistory.SequenceEqual(other.StatusHistory)
+                StatusHistory == other.StatusHistory ||
+                StatusHistory != null &&
+                StatusHistory.SequenceEqual(other.StatusHistory)
             ) &&
             (
-                this.DateCompleted == other.DateCompleted ||
-                this.DateCompleted != null &&
-                this.DateCompleted.Equals(other.DateCompleted)
+                DateCompleted == other.DateCompleted ||
+                DateCompleted != null &&
+                DateCompleted.Equals(other.DateCompleted)
             ) &&
             (
-                this.RejectReason == other.RejectReason ||
-                this.RejectReason != null &&
-                this.RejectReason.Equals(other.RejectReason)
+                RejectReason == other.RejectReason ||
+                RejectReason != null &&
+                RejectReason.Equals(other.RejectReason)
             ) &&
             (
-                this.ApprovalNamespaces == other.ApprovalNamespaces ||
-                this.ApprovalNamespaces != null &&
-                this.ApprovalNamespaces.SequenceEqual(other.ApprovalNamespaces)
+                ApprovalNamespaces == other.ApprovalNamespaces ||
+                ApprovalNamespaces != null &&
+                ApprovalNamespaces.SequenceEqual(other.ApprovalNamespaces)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -897,74 +897,74 @@ public partial class LimitChangeRequestDetails : IEquatable<LimitChangeRequestDe
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Key != null)
+            if (Key != null)
             {
-                hash = hash * 59 + this.Key.GetHashCode();
+                hash = hash * 59 + Key.GetHashCode();
             }
 
-            if (this.Namespace != null)
+            if (Namespace != null)
             {
-                hash = hash * 59 + this.Namespace.GetHashCode();
+                hash = hash * 59 + Namespace.GetHashCode();
             }
 
-            if (this.RequestedValue != null)
+            if (RequestedValue != null)
             {
-                hash = hash * 59 + this.RequestedValue.GetHashCode();
+                hash = hash * 59 + RequestedValue.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.SupportCaseUrl != null)
+            if (SupportCaseUrl != null)
             {
-                hash = hash * 59 + this.SupportCaseUrl.GetHashCode();
+                hash = hash * 59 + SupportCaseUrl.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.CurrentValue != null)
+            if (CurrentValue != null)
             {
-                hash = hash * 59 + this.CurrentValue.GetHashCode();
+                hash = hash * 59 + CurrentValue.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.StatusHistory != null)
+            if (StatusHistory != null)
             {
-                hash = hash * 59 + this.StatusHistory.GetHashCode();
+                hash = hash * 59 + StatusHistory.GetHashCode();
             }
 
-            if (this.DateCompleted != null)
+            if (DateCompleted != null)
             {
-                hash = hash * 59 + this.DateCompleted.GetHashCode();
+                hash = hash * 59 + DateCompleted.GetHashCode();
             }
 
-            if (this.RejectReason != null)
+            if (RejectReason != null)
             {
-                hash = hash * 59 + this.RejectReason.GetHashCode();
+                hash = hash * 59 + RejectReason.GetHashCode();
             }
 
-            if (this.ApprovalNamespaces != null)
+            if (ApprovalNamespaces != null)
             {
-                hash = hash * 59 + this.ApprovalNamespaces.GetHashCode();
+                hash = hash * 59 + ApprovalNamespaces.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

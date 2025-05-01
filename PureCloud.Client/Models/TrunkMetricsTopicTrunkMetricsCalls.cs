@@ -63,7 +63,7 @@ public partial class TrunkMetricsTopicTrunkMetricsCalls : IEquatable<TrunkMetric
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TrunkMetricsTopicTrunkMetricsCalls);
+        return Equals(obj as TrunkMetricsTopicTrunkMetricsCalls);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class TrunkMetricsTopicTrunkMetricsCalls : IEquatable<TrunkMetric
 
         return true &&
             (
-                this.InboundCallCount == other.InboundCallCount ||
-                this.InboundCallCount != null &&
-                this.InboundCallCount.Equals(other.InboundCallCount)
+                InboundCallCount == other.InboundCallCount ||
+                InboundCallCount != null &&
+                InboundCallCount.Equals(other.InboundCallCount)
             ) &&
             (
-                this.OutboundCallCount == other.OutboundCallCount ||
-                this.OutboundCallCount != null &&
-                this.OutboundCallCount.Equals(other.OutboundCallCount)
+                OutboundCallCount == other.OutboundCallCount ||
+                OutboundCallCount != null &&
+                OutboundCallCount.Equals(other.OutboundCallCount)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class TrunkMetricsTopicTrunkMetricsCalls : IEquatable<TrunkMetric
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.InboundCallCount != null)
+            if (InboundCallCount != null)
             {
-                hash = hash * 59 + this.InboundCallCount.GetHashCode();
+                hash = hash * 59 + InboundCallCount.GetHashCode();
             }
 
-            if (this.OutboundCallCount != null)
+            if (OutboundCallCount != null)
             {
-                hash = hash * 59 + this.OutboundCallCount.GetHashCode();
+                hash = hash * 59 + OutboundCallCount.GetHashCode();
             }
 
             return hash;

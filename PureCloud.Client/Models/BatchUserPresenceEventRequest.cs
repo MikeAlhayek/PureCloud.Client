@@ -52,7 +52,7 @@ public partial class BatchUserPresenceEventRequest : IEquatable<BatchUserPresenc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BatchUserPresenceEventRequest);
+        return Equals(obj as BatchUserPresenceEventRequest);
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public partial class BatchUserPresenceEventRequest : IEquatable<BatchUserPresenc
 
         return true &&
             (
-                this.UserPresenceEvents == other.UserPresenceEvents ||
-                this.UserPresenceEvents != null &&
-                this.UserPresenceEvents.SequenceEqual(other.UserPresenceEvents)
+                UserPresenceEvents == other.UserPresenceEvents ||
+                UserPresenceEvents != null &&
+                UserPresenceEvents.SequenceEqual(other.UserPresenceEvents)
             );
     }
 
@@ -87,9 +87,9 @@ public partial class BatchUserPresenceEventRequest : IEquatable<BatchUserPresenc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserPresenceEvents != null)
+            if (UserPresenceEvents != null)
             {
-                hash = hash * 59 + this.UserPresenceEvents.GetHashCode();
+                hash = hash * 59 + UserPresenceEvents.GetHashCode();
             }
 
             return hash;

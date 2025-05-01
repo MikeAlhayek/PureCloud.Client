@@ -73,7 +73,7 @@ public partial class FunctionUploadResponse : IEquatable<FunctionUploadResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FunctionUploadResponse);
+        return Equals(obj as FunctionUploadResponse);
     }
 
     /// <summary>
@@ -91,19 +91,19 @@ public partial class FunctionUploadResponse : IEquatable<FunctionUploadResponse>
 
         return true &&
             (
-                this.Url == other.Url ||
-                this.Url != null &&
-                this.Url.Equals(other.Url)
+                Url == other.Url ||
+                Url != null &&
+                Url.Equals(other.Url)
             ) &&
             (
-                this.Headers == other.Headers ||
-                this.Headers != null &&
-                this.Headers.SequenceEqual(other.Headers)
+                Headers == other.Headers ||
+                Headers != null &&
+                Headers.SequenceEqual(other.Headers)
             ) &&
             (
-                this.SignedUrlTimeoutSeconds == other.SignedUrlTimeoutSeconds ||
-                this.SignedUrlTimeoutSeconds != null &&
-                this.SignedUrlTimeoutSeconds.Equals(other.SignedUrlTimeoutSeconds)
+                SignedUrlTimeoutSeconds == other.SignedUrlTimeoutSeconds ||
+                SignedUrlTimeoutSeconds != null &&
+                SignedUrlTimeoutSeconds.Equals(other.SignedUrlTimeoutSeconds)
             );
     }
 
@@ -118,19 +118,19 @@ public partial class FunctionUploadResponse : IEquatable<FunctionUploadResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Url != null)
+            if (Url != null)
             {
-                hash = hash * 59 + this.Url.GetHashCode();
+                hash = hash * 59 + Url.GetHashCode();
             }
 
-            if (this.Headers != null)
+            if (Headers != null)
             {
-                hash = hash * 59 + this.Headers.GetHashCode();
+                hash = hash * 59 + Headers.GetHashCode();
             }
 
-            if (this.SignedUrlTimeoutSeconds != null)
+            if (SignedUrlTimeoutSeconds != null)
             {
-                hash = hash * 59 + this.SignedUrlTimeoutSeconds.GetHashCode();
+                hash = hash * 59 + SignedUrlTimeoutSeconds.GetHashCode();
             }
 
             return hash;

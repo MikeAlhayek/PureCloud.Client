@@ -59,7 +59,7 @@ public partial class TextBotUserInputAlternative : IEquatable<TextBotUserInputAl
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TextBotUserInputAlternative);
+        return Equals(obj as TextBotUserInputAlternative);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class TextBotUserInputAlternative : IEquatable<TextBotUserInputAl
 
         return true &&
             (
-                this.Transcript == other.Transcript ||
-                this.Transcript != null &&
-                this.Transcript.Equals(other.Transcript)
+                Transcript == other.Transcript ||
+                Transcript != null &&
+                Transcript.Equals(other.Transcript)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class TextBotUserInputAlternative : IEquatable<TextBotUserInputAl
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Transcript != null)
+            if (Transcript != null)
             {
-                hash = hash * 59 + this.Transcript.GetHashCode();
+                hash = hash * 59 + Transcript.GetHashCode();
             }
 
             return hash;

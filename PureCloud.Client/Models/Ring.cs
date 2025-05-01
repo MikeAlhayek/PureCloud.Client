@@ -77,7 +77,7 @@ public partial class Ring : IEquatable<Ring>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Ring);
+        return Equals(obj as Ring);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class Ring : IEquatable<Ring>
 
         return true &&
             (
-                this.ExpansionCriteria == other.ExpansionCriteria ||
-                this.ExpansionCriteria != null &&
-                this.ExpansionCriteria.SequenceEqual(other.ExpansionCriteria)
+                ExpansionCriteria == other.ExpansionCriteria ||
+                ExpansionCriteria != null &&
+                ExpansionCriteria.SequenceEqual(other.ExpansionCriteria)
             ) &&
             (
-                this.Actions == other.Actions ||
-                this.Actions != null &&
-                this.Actions.Equals(other.Actions)
+                Actions == other.Actions ||
+                Actions != null &&
+                Actions.Equals(other.Actions)
             ) &&
             (
-                this.MemberGroups == other.MemberGroups ||
-                this.MemberGroups != null &&
-                this.MemberGroups.SequenceEqual(other.MemberGroups)
+                MemberGroups == other.MemberGroups ||
+                MemberGroups != null &&
+                MemberGroups.SequenceEqual(other.MemberGroups)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class Ring : IEquatable<Ring>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ExpansionCriteria != null)
+            if (ExpansionCriteria != null)
             {
-                hash = hash * 59 + this.ExpansionCriteria.GetHashCode();
+                hash = hash * 59 + ExpansionCriteria.GetHashCode();
             }
 
-            if (this.Actions != null)
+            if (Actions != null)
             {
-                hash = hash * 59 + this.Actions.GetHashCode();
+                hash = hash * 59 + Actions.GetHashCode();
             }
 
-            if (this.MemberGroups != null)
+            if (MemberGroups != null)
             {
-                hash = hash * 59 + this.MemberGroups.GetHashCode();
+                hash = hash * 59 + MemberGroups.GetHashCode();
             }
 
             return hash;

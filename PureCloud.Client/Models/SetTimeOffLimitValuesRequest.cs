@@ -70,7 +70,7 @@ public partial class SetTimeOffLimitValuesRequest : IEquatable<SetTimeOffLimitVa
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SetTimeOffLimitValuesRequest);
+        return Equals(obj as SetTimeOffLimitValuesRequest);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class SetTimeOffLimitValuesRequest : IEquatable<SetTimeOffLimitVa
 
         return true &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             ) &&
             (
-                this.Metadata == other.Metadata ||
-                this.Metadata != null &&
-                this.Metadata.Equals(other.Metadata)
+                Metadata == other.Metadata ||
+                Metadata != null &&
+                Metadata.Equals(other.Metadata)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class SetTimeOffLimitValuesRequest : IEquatable<SetTimeOffLimitVa
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
-            if (this.Metadata != null)
+            if (Metadata != null)
             {
-                hash = hash * 59 + this.Metadata.GetHashCode();
+                hash = hash * 59 + Metadata.GetHashCode();
             }
 
             return hash;

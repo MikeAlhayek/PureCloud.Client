@@ -59,7 +59,7 @@ public partial class WebhookInvocationResponse : IEquatable<WebhookInvocationRes
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WebhookInvocationResponse);
+        return Equals(obj as WebhookInvocationResponse);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class WebhookInvocationResponse : IEquatable<WebhookInvocationRes
 
         return true &&
             (
-                this.InvocationId == other.InvocationId ||
-                this.InvocationId != null &&
-                this.InvocationId.Equals(other.InvocationId)
+                InvocationId == other.InvocationId ||
+                InvocationId != null &&
+                InvocationId.Equals(other.InvocationId)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class WebhookInvocationResponse : IEquatable<WebhookInvocationRes
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.InvocationId != null)
+            if (InvocationId != null)
             {
-                hash = hash * 59 + this.InvocationId.GetHashCode();
+                hash = hash * 59 + InvocationId.GetHashCode();
             }
 
             return hash;

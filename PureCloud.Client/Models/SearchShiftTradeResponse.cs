@@ -77,7 +77,7 @@ public partial class SearchShiftTradeResponse : IEquatable<SearchShiftTradeRespo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SearchShiftTradeResponse);
+        return Equals(obj as SearchShiftTradeResponse);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class SearchShiftTradeResponse : IEquatable<SearchShiftTradeRespo
 
         return true &&
             (
-                this.Trade == other.Trade ||
-                this.Trade != null &&
-                this.Trade.Equals(other.Trade)
+                Trade == other.Trade ||
+                Trade != null &&
+                Trade.Equals(other.Trade)
             ) &&
             (
-                this.MatchingReceivingShiftIds == other.MatchingReceivingShiftIds ||
-                this.MatchingReceivingShiftIds != null &&
-                this.MatchingReceivingShiftIds.SequenceEqual(other.MatchingReceivingShiftIds)
+                MatchingReceivingShiftIds == other.MatchingReceivingShiftIds ||
+                MatchingReceivingShiftIds != null &&
+                MatchingReceivingShiftIds.SequenceEqual(other.MatchingReceivingShiftIds)
             ) &&
             (
-                this.Preview == other.Preview ||
-                this.Preview != null &&
-                this.Preview.Equals(other.Preview)
+                Preview == other.Preview ||
+                Preview != null &&
+                Preview.Equals(other.Preview)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class SearchShiftTradeResponse : IEquatable<SearchShiftTradeRespo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Trade != null)
+            if (Trade != null)
             {
-                hash = hash * 59 + this.Trade.GetHashCode();
+                hash = hash * 59 + Trade.GetHashCode();
             }
 
-            if (this.MatchingReceivingShiftIds != null)
+            if (MatchingReceivingShiftIds != null)
             {
-                hash = hash * 59 + this.MatchingReceivingShiftIds.GetHashCode();
+                hash = hash * 59 + MatchingReceivingShiftIds.GetHashCode();
             }
 
-            if (this.Preview != null)
+            if (Preview != null)
             {
-                hash = hash * 59 + this.Preview.GetHashCode();
+                hash = hash * 59 + Preview.GetHashCode();
             }
 
             return hash;

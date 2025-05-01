@@ -53,7 +53,7 @@ public partial class IgnoredActivityCodeIds : IEquatable<IgnoredActivityCodeIds>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IgnoredActivityCodeIds);
+        return Equals(obj as IgnoredActivityCodeIds);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class IgnoredActivityCodeIds : IEquatable<IgnoredActivityCodeIds>
 
         return true &&
             (
-                this.Values == other.Values ||
-                this.Values != null &&
-                this.Values.SequenceEqual(other.Values)
+                Values == other.Values ||
+                Values != null &&
+                Values.SequenceEqual(other.Values)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class IgnoredActivityCodeIds : IEquatable<IgnoredActivityCodeIds>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Values != null)
+            if (Values != null)
             {
-                hash = hash * 59 + this.Values.GetHashCode();
+                hash = hash * 59 + Values.GetHashCode();
             }
 
             return hash;

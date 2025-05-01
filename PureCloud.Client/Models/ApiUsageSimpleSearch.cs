@@ -242,7 +242,7 @@ public partial class ApiUsageSimpleSearch : IEquatable<ApiUsageSimpleSearch>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ApiUsageSimpleSearch);
+        return Equals(obj as ApiUsageSimpleSearch);
     }
 
     /// <summary>
@@ -260,29 +260,29 @@ public partial class ApiUsageSimpleSearch : IEquatable<ApiUsageSimpleSearch>
 
         return true &&
             (
-                this.Interval == other.Interval ||
-                this.Interval != null &&
-                this.Interval.Equals(other.Interval)
+                Interval == other.Interval ||
+                Interval != null &&
+                Interval.Equals(other.Interval)
             ) &&
             (
-                this.Metrics == other.Metrics ||
-                this.Metrics != null &&
-                this.Metrics.SequenceEqual(other.Metrics)
+                Metrics == other.Metrics ||
+                Metrics != null &&
+                Metrics.SequenceEqual(other.Metrics)
             ) &&
             (
-                this.OauthClientNames == other.OauthClientNames ||
-                this.OauthClientNames != null &&
-                this.OauthClientNames.SequenceEqual(other.OauthClientNames)
+                OauthClientNames == other.OauthClientNames ||
+                OauthClientNames != null &&
+                OauthClientNames.SequenceEqual(other.OauthClientNames)
             ) &&
             (
-                this.HttpMethods == other.HttpMethods ||
-                this.HttpMethods != null &&
-                this.HttpMethods.SequenceEqual(other.HttpMethods)
+                HttpMethods == other.HttpMethods ||
+                HttpMethods != null &&
+                HttpMethods.SequenceEqual(other.HttpMethods)
             ) &&
             (
-                this.TemplateUris == other.TemplateUris ||
-                this.TemplateUris != null &&
-                this.TemplateUris.SequenceEqual(other.TemplateUris)
+                TemplateUris == other.TemplateUris ||
+                TemplateUris != null &&
+                TemplateUris.SequenceEqual(other.TemplateUris)
             );
     }
 
@@ -297,29 +297,29 @@ public partial class ApiUsageSimpleSearch : IEquatable<ApiUsageSimpleSearch>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Interval != null)
+            if (Interval != null)
             {
-                hash = hash * 59 + this.Interval.GetHashCode();
+                hash = hash * 59 + Interval.GetHashCode();
             }
 
-            if (this.Metrics != null)
+            if (Metrics != null)
             {
-                hash = hash * 59 + this.Metrics.GetHashCode();
+                hash = hash * 59 + Metrics.GetHashCode();
             }
 
-            if (this.OauthClientNames != null)
+            if (OauthClientNames != null)
             {
-                hash = hash * 59 + this.OauthClientNames.GetHashCode();
+                hash = hash * 59 + OauthClientNames.GetHashCode();
             }
 
-            if (this.HttpMethods != null)
+            if (HttpMethods != null)
             {
-                hash = hash * 59 + this.HttpMethods.GetHashCode();
+                hash = hash * 59 + HttpMethods.GetHashCode();
             }
 
-            if (this.TemplateUris != null)
+            if (TemplateUris != null)
             {
-                hash = hash * 59 + this.TemplateUris.GetHashCode();
+                hash = hash * 59 + TemplateUris.GetHashCode();
             }
 
             return hash;

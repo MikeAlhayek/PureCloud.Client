@@ -125,7 +125,7 @@ public partial class Relationship : IEquatable<Relationship>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Relationship);
+        return Equals(obj as Relationship);
     }
 
     /// <summary>
@@ -143,39 +143,39 @@ public partial class Relationship : IEquatable<Relationship>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.ExternalOrganization == other.ExternalOrganization ||
-                this.ExternalOrganization != null &&
-                this.ExternalOrganization.Equals(other.ExternalOrganization)
+                ExternalOrganization == other.ExternalOrganization ||
+                ExternalOrganization != null &&
+                ExternalOrganization.Equals(other.ExternalOrganization)
             ) &&
             (
-                this._Relationship == other._Relationship ||
-                this._Relationship != null &&
-                this._Relationship.Equals(other._Relationship)
+                _Relationship == other._Relationship ||
+                _Relationship != null &&
+                _Relationship.Equals(other._Relationship)
             ) &&
             (
-                this.ExternalDataSources == other.ExternalDataSources ||
-                this.ExternalDataSources != null &&
-                this.ExternalDataSources.SequenceEqual(other.ExternalDataSources)
+                ExternalDataSources == other.ExternalDataSources ||
+                ExternalDataSources != null &&
+                ExternalDataSources.SequenceEqual(other.ExternalDataSources)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -190,39 +190,39 @@ public partial class Relationship : IEquatable<Relationship>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.ExternalOrganization != null)
+            if (ExternalOrganization != null)
             {
-                hash = hash * 59 + this.ExternalOrganization.GetHashCode();
+                hash = hash * 59 + ExternalOrganization.GetHashCode();
             }
 
-            if (this._Relationship != null)
+            if (_Relationship != null)
             {
-                hash = hash * 59 + this._Relationship.GetHashCode();
+                hash = hash * 59 + _Relationship.GetHashCode();
             }
 
-            if (this.ExternalDataSources != null)
+            if (ExternalDataSources != null)
             {
-                hash = hash * 59 + this.ExternalDataSources.GetHashCode();
+                hash = hash * 59 + ExternalDataSources.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

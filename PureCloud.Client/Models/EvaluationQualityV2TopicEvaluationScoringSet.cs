@@ -63,7 +63,7 @@ public partial class EvaluationQualityV2TopicEvaluationScoringSet : IEquatable<E
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as EvaluationQualityV2TopicEvaluationScoringSet);
+        return Equals(obj as EvaluationQualityV2TopicEvaluationScoringSet);
     }
 
     /// <summary>
@@ -81,14 +81,14 @@ public partial class EvaluationQualityV2TopicEvaluationScoringSet : IEquatable<E
 
         return true &&
             (
-                this.TotalScore == other.TotalScore ||
-                this.TotalScore != null &&
-                this.TotalScore.Equals(other.TotalScore)
+                TotalScore == other.TotalScore ||
+                TotalScore != null &&
+                TotalScore.Equals(other.TotalScore)
             ) &&
             (
-                this.TotalCriticalScore == other.TotalCriticalScore ||
-                this.TotalCriticalScore != null &&
-                this.TotalCriticalScore.Equals(other.TotalCriticalScore)
+                TotalCriticalScore == other.TotalCriticalScore ||
+                TotalCriticalScore != null &&
+                TotalCriticalScore.Equals(other.TotalCriticalScore)
             );
     }
 
@@ -103,14 +103,14 @@ public partial class EvaluationQualityV2TopicEvaluationScoringSet : IEquatable<E
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TotalScore != null)
+            if (TotalScore != null)
             {
-                hash = hash * 59 + this.TotalScore.GetHashCode();
+                hash = hash * 59 + TotalScore.GetHashCode();
             }
 
-            if (this.TotalCriticalScore != null)
+            if (TotalCriticalScore != null)
             {
-                hash = hash * 59 + this.TotalCriticalScore.GetHashCode();
+                hash = hash * 59 + TotalCriticalScore.GetHashCode();
             }
 
             return hash;

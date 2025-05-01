@@ -228,7 +228,7 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainEdgeSoftwareUpdateDto);
+        return Equals(obj as DomainEdgeSoftwareUpdateDto);
     }
 
     /// <summary>
@@ -246,54 +246,54 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
 
         return true &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.MaxDownloadRate == other.MaxDownloadRate ||
-                this.MaxDownloadRate != null &&
-                this.MaxDownloadRate.Equals(other.MaxDownloadRate)
+                MaxDownloadRate == other.MaxDownloadRate ||
+                MaxDownloadRate != null &&
+                MaxDownloadRate.Equals(other.MaxDownloadRate)
             ) &&
             (
-                this.DownloadStartTime == other.DownloadStartTime ||
-                this.DownloadStartTime != null &&
-                this.DownloadStartTime.Equals(other.DownloadStartTime)
+                DownloadStartTime == other.DownloadStartTime ||
+                DownloadStartTime != null &&
+                DownloadStartTime.Equals(other.DownloadStartTime)
             ) &&
             (
-                this.ExecuteStartTime == other.ExecuteStartTime ||
-                this.ExecuteStartTime != null &&
-                this.ExecuteStartTime.Equals(other.ExecuteStartTime)
+                ExecuteStartTime == other.ExecuteStartTime ||
+                ExecuteStartTime != null &&
+                ExecuteStartTime.Equals(other.ExecuteStartTime)
             ) &&
             (
-                this.ExecuteStopTime == other.ExecuteStopTime ||
-                this.ExecuteStopTime != null &&
-                this.ExecuteStopTime.Equals(other.ExecuteStopTime)
+                ExecuteStopTime == other.ExecuteStopTime ||
+                ExecuteStopTime != null &&
+                ExecuteStopTime.Equals(other.ExecuteStopTime)
             ) &&
             (
-                this.ExecuteOnIdle == other.ExecuteOnIdle ||
-                this.ExecuteOnIdle != null &&
-                this.ExecuteOnIdle.Equals(other.ExecuteOnIdle)
+                ExecuteOnIdle == other.ExecuteOnIdle ||
+                ExecuteOnIdle != null &&
+                ExecuteOnIdle.Equals(other.ExecuteOnIdle)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.EdgeUri == other.EdgeUri ||
-                this.EdgeUri != null &&
-                this.EdgeUri.Equals(other.EdgeUri)
+                EdgeUri == other.EdgeUri ||
+                EdgeUri != null &&
+                EdgeUri.Equals(other.EdgeUri)
             ) &&
             (
-                this.CallDrainingWaitTimeSeconds == other.CallDrainingWaitTimeSeconds ||
-                this.CallDrainingWaitTimeSeconds != null &&
-                this.CallDrainingWaitTimeSeconds.Equals(other.CallDrainingWaitTimeSeconds)
+                CallDrainingWaitTimeSeconds == other.CallDrainingWaitTimeSeconds ||
+                CallDrainingWaitTimeSeconds != null &&
+                CallDrainingWaitTimeSeconds.Equals(other.CallDrainingWaitTimeSeconds)
             ) &&
             (
-                this.Current == other.Current ||
-                this.Current != null &&
-                this.Current.Equals(other.Current)
+                Current == other.Current ||
+                Current != null &&
+                Current.Equals(other.Current)
             );
     }
 
@@ -308,54 +308,54 @@ public partial class DomainEdgeSoftwareUpdateDto : IEquatable<DomainEdgeSoftware
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.MaxDownloadRate != null)
+            if (MaxDownloadRate != null)
             {
-                hash = hash * 59 + this.MaxDownloadRate.GetHashCode();
+                hash = hash * 59 + MaxDownloadRate.GetHashCode();
             }
 
-            if (this.DownloadStartTime != null)
+            if (DownloadStartTime != null)
             {
-                hash = hash * 59 + this.DownloadStartTime.GetHashCode();
+                hash = hash * 59 + DownloadStartTime.GetHashCode();
             }
 
-            if (this.ExecuteStartTime != null)
+            if (ExecuteStartTime != null)
             {
-                hash = hash * 59 + this.ExecuteStartTime.GetHashCode();
+                hash = hash * 59 + ExecuteStartTime.GetHashCode();
             }
 
-            if (this.ExecuteStopTime != null)
+            if (ExecuteStopTime != null)
             {
-                hash = hash * 59 + this.ExecuteStopTime.GetHashCode();
+                hash = hash * 59 + ExecuteStopTime.GetHashCode();
             }
 
-            if (this.ExecuteOnIdle != null)
+            if (ExecuteOnIdle != null)
             {
-                hash = hash * 59 + this.ExecuteOnIdle.GetHashCode();
+                hash = hash * 59 + ExecuteOnIdle.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.EdgeUri != null)
+            if (EdgeUri != null)
             {
-                hash = hash * 59 + this.EdgeUri.GetHashCode();
+                hash = hash * 59 + EdgeUri.GetHashCode();
             }
 
-            if (this.CallDrainingWaitTimeSeconds != null)
+            if (CallDrainingWaitTimeSeconds != null)
             {
-                hash = hash * 59 + this.CallDrainingWaitTimeSeconds.GetHashCode();
+                hash = hash * 59 + CallDrainingWaitTimeSeconds.GetHashCode();
             }
 
-            if (this.Current != null)
+            if (Current != null)
             {
-                hash = hash * 59 + this.Current.GetHashCode();
+                hash = hash * 59 + Current.GetHashCode();
             }
 
             return hash;

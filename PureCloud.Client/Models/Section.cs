@@ -85,7 +85,7 @@ public partial class Section : IEquatable<Section>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Section);
+        return Equals(obj as Section);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class Section : IEquatable<Section>
 
         return true &&
             (
-                this.FieldList == other.FieldList ||
-                this.FieldList != null &&
-                this.FieldList.SequenceEqual(other.FieldList)
+                FieldList == other.FieldList ||
+                FieldList != null &&
+                FieldList.SequenceEqual(other.FieldList)
             ) &&
             (
-                this.InstructionText == other.InstructionText ||
-                this.InstructionText != null &&
-                this.InstructionText.Equals(other.InstructionText)
+                InstructionText == other.InstructionText ||
+                InstructionText != null &&
+                InstructionText.Equals(other.InstructionText)
             ) &&
             (
-                this.Key == other.Key ||
-                this.Key != null &&
-                this.Key.Equals(other.Key)
+                Key == other.Key ||
+                Key != null &&
+                Key.Equals(other.Key)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class Section : IEquatable<Section>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.FieldList != null)
+            if (FieldList != null)
             {
-                hash = hash * 59 + this.FieldList.GetHashCode();
+                hash = hash * 59 + FieldList.GetHashCode();
             }
 
-            if (this.InstructionText != null)
+            if (InstructionText != null)
             {
-                hash = hash * 59 + this.InstructionText.GetHashCode();
+                hash = hash * 59 + InstructionText.GetHashCode();
             }
 
-            if (this.Key != null)
+            if (Key != null)
             {
-                hash = hash * 59 + this.Key.GetHashCode();
+                hash = hash * 59 + Key.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
             return hash;

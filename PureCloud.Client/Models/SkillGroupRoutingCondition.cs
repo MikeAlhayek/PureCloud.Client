@@ -145,7 +145,7 @@ public partial class SkillGroupRoutingCondition : IEquatable<SkillGroupRoutingCo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SkillGroupRoutingCondition);
+        return Equals(obj as SkillGroupRoutingCondition);
     }
 
     /// <summary>
@@ -163,24 +163,24 @@ public partial class SkillGroupRoutingCondition : IEquatable<SkillGroupRoutingCo
 
         return true &&
             (
-                this.RoutingSkill == other.RoutingSkill ||
-                this.RoutingSkill != null &&
-                this.RoutingSkill.Equals(other.RoutingSkill)
+                RoutingSkill == other.RoutingSkill ||
+                RoutingSkill != null &&
+                RoutingSkill.Equals(other.RoutingSkill)
             ) &&
             (
-                this.Comparator == other.Comparator ||
-                this.Comparator != null &&
-                this.Comparator.Equals(other.Comparator)
+                Comparator == other.Comparator ||
+                Comparator != null &&
+                Comparator.Equals(other.Comparator)
             ) &&
             (
-                this.Proficiency == other.Proficiency ||
-                this.Proficiency != null &&
-                this.Proficiency.Equals(other.Proficiency)
+                Proficiency == other.Proficiency ||
+                Proficiency != null &&
+                Proficiency.Equals(other.Proficiency)
             ) &&
             (
-                this.ChildConditions == other.ChildConditions ||
-                this.ChildConditions != null &&
-                this.ChildConditions.SequenceEqual(other.ChildConditions)
+                ChildConditions == other.ChildConditions ||
+                ChildConditions != null &&
+                ChildConditions.SequenceEqual(other.ChildConditions)
             );
     }
 
@@ -195,24 +195,24 @@ public partial class SkillGroupRoutingCondition : IEquatable<SkillGroupRoutingCo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RoutingSkill != null)
+            if (RoutingSkill != null)
             {
-                hash = hash * 59 + this.RoutingSkill.GetHashCode();
+                hash = hash * 59 + RoutingSkill.GetHashCode();
             }
 
-            if (this.Comparator != null)
+            if (Comparator != null)
             {
-                hash = hash * 59 + this.Comparator.GetHashCode();
+                hash = hash * 59 + Comparator.GetHashCode();
             }
 
-            if (this.Proficiency != null)
+            if (Proficiency != null)
             {
-                hash = hash * 59 + this.Proficiency.GetHashCode();
+                hash = hash * 59 + Proficiency.GetHashCode();
             }
 
-            if (this.ChildConditions != null)
+            if (ChildConditions != null)
             {
-                hash = hash * 59 + this.ChildConditions.GetHashCode();
+                hash = hash * 59 + ChildConditions.GetHashCode();
             }
 
             return hash;

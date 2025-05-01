@@ -70,7 +70,7 @@ public partial class PublishScriptRequestData : IEquatable<PublishScriptRequestD
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PublishScriptRequestData);
+        return Equals(obj as PublishScriptRequestData);
     }
 
     /// <summary>
@@ -88,14 +88,14 @@ public partial class PublishScriptRequestData : IEquatable<PublishScriptRequestD
 
         return true &&
             (
-                this.ScriptId == other.ScriptId ||
-                this.ScriptId != null &&
-                this.ScriptId.Equals(other.ScriptId)
+                ScriptId == other.ScriptId ||
+                ScriptId != null &&
+                ScriptId.Equals(other.ScriptId)
             ) &&
             (
-                this.VersionId == other.VersionId ||
-                this.VersionId != null &&
-                this.VersionId.Equals(other.VersionId)
+                VersionId == other.VersionId ||
+                VersionId != null &&
+                VersionId.Equals(other.VersionId)
             );
     }
 
@@ -110,14 +110,14 @@ public partial class PublishScriptRequestData : IEquatable<PublishScriptRequestD
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ScriptId != null)
+            if (ScriptId != null)
             {
-                hash = hash * 59 + this.ScriptId.GetHashCode();
+                hash = hash * 59 + ScriptId.GetHashCode();
             }
 
-            if (this.VersionId != null)
+            if (VersionId != null)
             {
-                hash = hash * 59 + this.VersionId.GetHashCode();
+                hash = hash * 59 + VersionId.GetHashCode();
             }
 
             return hash;

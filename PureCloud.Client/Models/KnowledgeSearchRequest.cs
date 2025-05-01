@@ -145,7 +145,7 @@ public partial class KnowledgeSearchRequest : IEquatable<KnowledgeSearchRequest>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeSearchRequest);
+        return Equals(obj as KnowledgeSearchRequest);
     }
 
     /// <summary>
@@ -163,34 +163,34 @@ public partial class KnowledgeSearchRequest : IEquatable<KnowledgeSearchRequest>
 
         return true &&
             (
-                this.Query == other.Query ||
-                this.Query != null &&
-                this.Query.Equals(other.Query)
+                Query == other.Query ||
+                Query != null &&
+                Query.Equals(other.Query)
             ) &&
             (
-                this.PageSize == other.PageSize ||
-                this.PageSize != null &&
-                this.PageSize.Equals(other.PageSize)
+                PageSize == other.PageSize ||
+                PageSize != null &&
+                PageSize.Equals(other.PageSize)
             ) &&
             (
-                this.PageNumber == other.PageNumber ||
-                this.PageNumber != null &&
-                this.PageNumber.Equals(other.PageNumber)
+                PageNumber == other.PageNumber ||
+                PageNumber != null &&
+                PageNumber.Equals(other.PageNumber)
             ) &&
             (
-                this.DocumentType == other.DocumentType ||
-                this.DocumentType != null &&
-                this.DocumentType.Equals(other.DocumentType)
+                DocumentType == other.DocumentType ||
+                DocumentType != null &&
+                DocumentType.Equals(other.DocumentType)
             ) &&
             (
-                this.LanguageCode == other.LanguageCode ||
-                this.LanguageCode != null &&
-                this.LanguageCode.Equals(other.LanguageCode)
+                LanguageCode == other.LanguageCode ||
+                LanguageCode != null &&
+                LanguageCode.Equals(other.LanguageCode)
             ) &&
             (
-                this.SearchOnDraftDocuments == other.SearchOnDraftDocuments ||
-                this.SearchOnDraftDocuments != null &&
-                this.SearchOnDraftDocuments.Equals(other.SearchOnDraftDocuments)
+                SearchOnDraftDocuments == other.SearchOnDraftDocuments ||
+                SearchOnDraftDocuments != null &&
+                SearchOnDraftDocuments.Equals(other.SearchOnDraftDocuments)
             );
     }
 
@@ -205,34 +205,34 @@ public partial class KnowledgeSearchRequest : IEquatable<KnowledgeSearchRequest>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Query != null)
+            if (Query != null)
             {
-                hash = hash * 59 + this.Query.GetHashCode();
+                hash = hash * 59 + Query.GetHashCode();
             }
 
-            if (this.PageSize != null)
+            if (PageSize != null)
             {
-                hash = hash * 59 + this.PageSize.GetHashCode();
+                hash = hash * 59 + PageSize.GetHashCode();
             }
 
-            if (this.PageNumber != null)
+            if (PageNumber != null)
             {
-                hash = hash * 59 + this.PageNumber.GetHashCode();
+                hash = hash * 59 + PageNumber.GetHashCode();
             }
 
-            if (this.DocumentType != null)
+            if (DocumentType != null)
             {
-                hash = hash * 59 + this.DocumentType.GetHashCode();
+                hash = hash * 59 + DocumentType.GetHashCode();
             }
 
-            if (this.LanguageCode != null)
+            if (LanguageCode != null)
             {
-                hash = hash * 59 + this.LanguageCode.GetHashCode();
+                hash = hash * 59 + LanguageCode.GetHashCode();
             }
 
-            if (this.SearchOnDraftDocuments != null)
+            if (SearchOnDraftDocuments != null)
             {
-                hash = hash * 59 + this.SearchOnDraftDocuments.GetHashCode();
+                hash = hash * 59 + SearchOnDraftDocuments.GetHashCode();
             }
 
             return hash;

@@ -133,7 +133,7 @@ public partial class PerformancePredictionCompleteEventTopicPerformancePredictio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification);
+        return Equals(obj as PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification);
     }
 
     /// <summary>
@@ -151,29 +151,29 @@ public partial class PerformancePredictionCompleteEventTopicPerformancePredictio
 
         return true &&
             (
-                this.ScheduleId == other.ScheduleId ||
-                this.ScheduleId != null &&
-                this.ScheduleId.Equals(other.ScheduleId)
+                ScheduleId == other.ScheduleId ||
+                ScheduleId != null &&
+                ScheduleId.Equals(other.ScheduleId)
             ) &&
             (
-                this.WeekDate == other.WeekDate ||
-                this.WeekDate != null &&
-                this.WeekDate.Equals(other.WeekDate)
+                WeekDate == other.WeekDate ||
+                WeekDate != null &&
+                WeekDate.Equals(other.WeekDate)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Error == other.Error ||
-                this.Error != null &&
-                this.Error.Equals(other.Error)
+                Error == other.Error ||
+                Error != null &&
+                Error.Equals(other.Error)
             );
     }
 
@@ -188,29 +188,29 @@ public partial class PerformancePredictionCompleteEventTopicPerformancePredictio
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ScheduleId != null)
+            if (ScheduleId != null)
             {
-                hash = hash * 59 + this.ScheduleId.GetHashCode();
+                hash = hash * 59 + ScheduleId.GetHashCode();
             }
 
-            if (this.WeekDate != null)
+            if (WeekDate != null)
             {
-                hash = hash * 59 + this.WeekDate.GetHashCode();
+                hash = hash * 59 + WeekDate.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Error != null)
+            if (Error != null)
             {
-                hash = hash * 59 + this.Error.GetHashCode();
+                hash = hash * 59 + Error.GetHashCode();
             }
 
             return hash;

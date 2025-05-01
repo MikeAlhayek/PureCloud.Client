@@ -53,7 +53,7 @@ public partial class ColumnStatus : IEquatable<ColumnStatus>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ColumnStatus);
+        return Equals(obj as ColumnStatus);
     }
 
     /// <summary>
@@ -71,9 +71,9 @@ public partial class ColumnStatus : IEquatable<ColumnStatus>
 
         return true &&
             (
-                this.Contactable == other.Contactable ||
-                this.Contactable != null &&
-                this.Contactable.Equals(other.Contactable)
+                Contactable == other.Contactable ||
+                Contactable != null &&
+                Contactable.Equals(other.Contactable)
             );
     }
 
@@ -88,9 +88,9 @@ public partial class ColumnStatus : IEquatable<ColumnStatus>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Contactable != null)
+            if (Contactable != null)
             {
-                hash = hash * 59 + this.Contactable.GetHashCode();
+                hash = hash * 59 + Contactable.GetHashCode();
             }
 
             return hash;

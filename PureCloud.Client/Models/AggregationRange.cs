@@ -64,7 +64,7 @@ public partial class AggregationRange : IEquatable<AggregationRange>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AggregationRange);
+        return Equals(obj as AggregationRange);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class AggregationRange : IEquatable<AggregationRange>
 
         return true &&
             (
-                this.Gte == other.Gte ||
-                this.Gte != null &&
-                this.Gte.Equals(other.Gte)
+                Gte == other.Gte ||
+                Gte != null &&
+                Gte.Equals(other.Gte)
             ) &&
             (
-                this.Lt == other.Lt ||
-                this.Lt != null &&
-                this.Lt.Equals(other.Lt)
+                Lt == other.Lt ||
+                Lt != null &&
+                Lt.Equals(other.Lt)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class AggregationRange : IEquatable<AggregationRange>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Gte != null)
+            if (Gte != null)
             {
-                hash = hash * 59 + this.Gte.GetHashCode();
+                hash = hash * 59 + Gte.GetHashCode();
             }
 
-            if (this.Lt != null)
+            if (Lt != null)
             {
-                hash = hash * 59 + this.Lt.GetHashCode();
+                hash = hash * 59 + Lt.GetHashCode();
             }
 
             return hash;

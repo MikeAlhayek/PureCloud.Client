@@ -227,7 +227,7 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ChatMessageResponse);
+        return Equals(obj as ChatMessageResponse);
     }
 
     /// <summary>
@@ -245,79 +245,79 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ToJid == other.ToJid ||
-                this.ToJid != null &&
-                this.ToJid.Equals(other.ToJid)
+                ToJid == other.ToJid ||
+                ToJid != null &&
+                ToJid.Equals(other.ToJid)
             ) &&
             (
-                this.Jid == other.Jid ||
-                this.Jid != null &&
-                this.Jid.Equals(other.Jid)
+                Jid == other.Jid ||
+                Jid != null &&
+                Jid.Equals(other.Jid)
             ) &&
             (
-                this.Body == other.Body ||
-                this.Body != null &&
-                this.Body.Equals(other.Body)
+                Body == other.Body ||
+                Body != null &&
+                Body.Equals(other.Body)
             ) &&
             (
-                this.Mentions == other.Mentions ||
-                this.Mentions != null &&
-                this.Mentions.SequenceEqual(other.Mentions)
+                Mentions == other.Mentions ||
+                Mentions != null &&
+                Mentions.SequenceEqual(other.Mentions)
             ) &&
             (
-                this.Edited == other.Edited ||
-                this.Edited != null &&
-                this.Edited.Equals(other.Edited)
+                Edited == other.Edited ||
+                Edited != null &&
+                Edited.Equals(other.Edited)
             ) &&
             (
-                this.AttachmentDeleted == other.AttachmentDeleted ||
-                this.AttachmentDeleted != null &&
-                this.AttachmentDeleted.Equals(other.AttachmentDeleted)
+                AttachmentDeleted == other.AttachmentDeleted ||
+                AttachmentDeleted != null &&
+                AttachmentDeleted.Equals(other.AttachmentDeleted)
             ) &&
             (
-                this.FileUri == other.FileUri ||
-                this.FileUri != null &&
-                this.FileUri.Equals(other.FileUri)
+                FileUri == other.FileUri ||
+                FileUri != null &&
+                FileUri.Equals(other.FileUri)
             ) &&
             (
-                this.Thread == other.Thread ||
-                this.Thread != null &&
-                this.Thread.Equals(other.Thread)
+                Thread == other.Thread ||
+                Thread != null &&
+                Thread.Equals(other.Thread)
             ) &&
             (
-                this.ParentThread == other.ParentThread ||
-                this.ParentThread != null &&
-                this.ParentThread.Equals(other.ParentThread)
+                ParentThread == other.ParentThread ||
+                ParentThread != null &&
+                ParentThread.Equals(other.ParentThread)
             ) &&
             (
-                this.User == other.User ||
-                this.User != null &&
-                this.User.Equals(other.User)
+                User == other.User ||
+                User != null &&
+                User.Equals(other.User)
             ) &&
             (
-                this.ToUser == other.ToUser ||
-                this.ToUser != null &&
-                this.ToUser.Equals(other.ToUser)
+                ToUser == other.ToUser ||
+                ToUser != null &&
+                ToUser.Equals(other.ToUser)
             ) &&
             (
-                this.Reactions == other.Reactions ||
-                this.Reactions != null &&
-                this.Reactions.SequenceEqual(other.Reactions)
+                Reactions == other.Reactions ||
+                Reactions != null &&
+                Reactions.SequenceEqual(other.Reactions)
             );
     }
 
@@ -332,79 +332,79 @@ public partial class ChatMessageResponse : IEquatable<ChatMessageResponse>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ToJid != null)
+            if (ToJid != null)
             {
-                hash = hash * 59 + this.ToJid.GetHashCode();
+                hash = hash * 59 + ToJid.GetHashCode();
             }
 
-            if (this.Jid != null)
+            if (Jid != null)
             {
-                hash = hash * 59 + this.Jid.GetHashCode();
+                hash = hash * 59 + Jid.GetHashCode();
             }
 
-            if (this.Body != null)
+            if (Body != null)
             {
-                hash = hash * 59 + this.Body.GetHashCode();
+                hash = hash * 59 + Body.GetHashCode();
             }
 
-            if (this.Mentions != null)
+            if (Mentions != null)
             {
-                hash = hash * 59 + this.Mentions.GetHashCode();
+                hash = hash * 59 + Mentions.GetHashCode();
             }
 
-            if (this.Edited != null)
+            if (Edited != null)
             {
-                hash = hash * 59 + this.Edited.GetHashCode();
+                hash = hash * 59 + Edited.GetHashCode();
             }
 
-            if (this.AttachmentDeleted != null)
+            if (AttachmentDeleted != null)
             {
-                hash = hash * 59 + this.AttachmentDeleted.GetHashCode();
+                hash = hash * 59 + AttachmentDeleted.GetHashCode();
             }
 
-            if (this.FileUri != null)
+            if (FileUri != null)
             {
-                hash = hash * 59 + this.FileUri.GetHashCode();
+                hash = hash * 59 + FileUri.GetHashCode();
             }
 
-            if (this.Thread != null)
+            if (Thread != null)
             {
-                hash = hash * 59 + this.Thread.GetHashCode();
+                hash = hash * 59 + Thread.GetHashCode();
             }
 
-            if (this.ParentThread != null)
+            if (ParentThread != null)
             {
-                hash = hash * 59 + this.ParentThread.GetHashCode();
+                hash = hash * 59 + ParentThread.GetHashCode();
             }
 
-            if (this.User != null)
+            if (User != null)
             {
-                hash = hash * 59 + this.User.GetHashCode();
+                hash = hash * 59 + User.GetHashCode();
             }
 
-            if (this.ToUser != null)
+            if (ToUser != null)
             {
-                hash = hash * 59 + this.ToUser.GetHashCode();
+                hash = hash * 59 + ToUser.GetHashCode();
             }
 
-            if (this.Reactions != null)
+            if (Reactions != null)
             {
-                hash = hash * 59 + this.Reactions.GetHashCode();
+                hash = hash * 59 + Reactions.GetHashCode();
             }
 
             return hash;

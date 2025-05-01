@@ -77,7 +77,7 @@ public partial class TweetUsage : IEquatable<TweetUsage>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TweetUsage);
+        return Equals(obj as TweetUsage);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class TweetUsage : IEquatable<TweetUsage>
 
         return true &&
             (
-                this.IngestionLimit == other.IngestionLimit ||
-                this.IngestionLimit != null &&
-                this.IngestionLimit.Equals(other.IngestionLimit)
+                IngestionLimit == other.IngestionLimit ||
+                IngestionLimit != null &&
+                IngestionLimit.Equals(other.IngestionLimit)
             ) &&
             (
-                this.TweetCount == other.TweetCount ||
-                this.TweetCount != null &&
-                this.TweetCount.Equals(other.TweetCount)
+                TweetCount == other.TweetCount ||
+                TweetCount != null &&
+                TweetCount.Equals(other.TweetCount)
             ) &&
             (
-                this.DateStart == other.DateStart ||
-                this.DateStart != null &&
-                this.DateStart.Equals(other.DateStart)
+                DateStart == other.DateStart ||
+                DateStart != null &&
+                DateStart.Equals(other.DateStart)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class TweetUsage : IEquatable<TweetUsage>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IngestionLimit != null)
+            if (IngestionLimit != null)
             {
-                hash = hash * 59 + this.IngestionLimit.GetHashCode();
+                hash = hash * 59 + IngestionLimit.GetHashCode();
             }
 
-            if (this.TweetCount != null)
+            if (TweetCount != null)
             {
-                hash = hash * 59 + this.TweetCount.GetHashCode();
+                hash = hash * 59 + TweetCount.GetHashCode();
             }
 
-            if (this.DateStart != null)
+            if (DateStart != null)
             {
-                hash = hash * 59 + this.DateStart.GetHashCode();
+                hash = hash * 59 + DateStart.GetHashCode();
             }
 
             return hash;

@@ -224,7 +224,7 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as OutboundSettings);
+        return Equals(obj as OutboundSettings);
     }
 
     /// <summary>
@@ -242,74 +242,74 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.MaxCallsPerAgent == other.MaxCallsPerAgent ||
-                this.MaxCallsPerAgent != null &&
-                this.MaxCallsPerAgent.Equals(other.MaxCallsPerAgent)
+                MaxCallsPerAgent == other.MaxCallsPerAgent ||
+                MaxCallsPerAgent != null &&
+                MaxCallsPerAgent.Equals(other.MaxCallsPerAgent)
             ) &&
             (
-                this.MaxCallsPerAgentDecimal == other.MaxCallsPerAgentDecimal ||
-                this.MaxCallsPerAgentDecimal != null &&
-                this.MaxCallsPerAgentDecimal.Equals(other.MaxCallsPerAgentDecimal)
+                MaxCallsPerAgentDecimal == other.MaxCallsPerAgentDecimal ||
+                MaxCallsPerAgentDecimal != null &&
+                MaxCallsPerAgentDecimal.Equals(other.MaxCallsPerAgentDecimal)
             ) &&
             (
-                this.MaxConfigurableCallsPerAgent == other.MaxConfigurableCallsPerAgent ||
-                this.MaxConfigurableCallsPerAgent != null &&
-                this.MaxConfigurableCallsPerAgent.Equals(other.MaxConfigurableCallsPerAgent)
+                MaxConfigurableCallsPerAgent == other.MaxConfigurableCallsPerAgent ||
+                MaxConfigurableCallsPerAgent != null &&
+                MaxConfigurableCallsPerAgent.Equals(other.MaxConfigurableCallsPerAgent)
             ) &&
             (
-                this.MaxLineUtilization == other.MaxLineUtilization ||
-                this.MaxLineUtilization != null &&
-                this.MaxLineUtilization.Equals(other.MaxLineUtilization)
+                MaxLineUtilization == other.MaxLineUtilization ||
+                MaxLineUtilization != null &&
+                MaxLineUtilization.Equals(other.MaxLineUtilization)
             ) &&
             (
-                this.AbandonSeconds == other.AbandonSeconds ||
-                this.AbandonSeconds != null &&
-                this.AbandonSeconds.Equals(other.AbandonSeconds)
+                AbandonSeconds == other.AbandonSeconds ||
+                AbandonSeconds != null &&
+                AbandonSeconds.Equals(other.AbandonSeconds)
             ) &&
             (
-                this.ComplianceAbandonRateDenominator == other.ComplianceAbandonRateDenominator ||
-                this.ComplianceAbandonRateDenominator != null &&
-                this.ComplianceAbandonRateDenominator.Equals(other.ComplianceAbandonRateDenominator)
+                ComplianceAbandonRateDenominator == other.ComplianceAbandonRateDenominator ||
+                ComplianceAbandonRateDenominator != null &&
+                ComplianceAbandonRateDenominator.Equals(other.ComplianceAbandonRateDenominator)
             ) &&
             (
-                this.AutomaticTimeZoneMapping == other.AutomaticTimeZoneMapping ||
-                this.AutomaticTimeZoneMapping != null &&
-                this.AutomaticTimeZoneMapping.Equals(other.AutomaticTimeZoneMapping)
+                AutomaticTimeZoneMapping == other.AutomaticTimeZoneMapping ||
+                AutomaticTimeZoneMapping != null &&
+                AutomaticTimeZoneMapping.Equals(other.AutomaticTimeZoneMapping)
             ) &&
             (
-                this.RescheduleTimeZoneSkippedContacts == other.RescheduleTimeZoneSkippedContacts ||
-                this.RescheduleTimeZoneSkippedContacts != null &&
-                this.RescheduleTimeZoneSkippedContacts.Equals(other.RescheduleTimeZoneSkippedContacts)
+                RescheduleTimeZoneSkippedContacts == other.RescheduleTimeZoneSkippedContacts ||
+                RescheduleTimeZoneSkippedContacts != null &&
+                RescheduleTimeZoneSkippedContacts.Equals(other.RescheduleTimeZoneSkippedContacts)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -324,74 +324,74 @@ public partial class OutboundSettings : IEquatable<OutboundSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.MaxCallsPerAgent != null)
+            if (MaxCallsPerAgent != null)
             {
-                hash = hash * 59 + this.MaxCallsPerAgent.GetHashCode();
+                hash = hash * 59 + MaxCallsPerAgent.GetHashCode();
             }
 
-            if (this.MaxCallsPerAgentDecimal != null)
+            if (MaxCallsPerAgentDecimal != null)
             {
-                hash = hash * 59 + this.MaxCallsPerAgentDecimal.GetHashCode();
+                hash = hash * 59 + MaxCallsPerAgentDecimal.GetHashCode();
             }
 
-            if (this.MaxConfigurableCallsPerAgent != null)
+            if (MaxConfigurableCallsPerAgent != null)
             {
-                hash = hash * 59 + this.MaxConfigurableCallsPerAgent.GetHashCode();
+                hash = hash * 59 + MaxConfigurableCallsPerAgent.GetHashCode();
             }
 
-            if (this.MaxLineUtilization != null)
+            if (MaxLineUtilization != null)
             {
-                hash = hash * 59 + this.MaxLineUtilization.GetHashCode();
+                hash = hash * 59 + MaxLineUtilization.GetHashCode();
             }
 
-            if (this.AbandonSeconds != null)
+            if (AbandonSeconds != null)
             {
-                hash = hash * 59 + this.AbandonSeconds.GetHashCode();
+                hash = hash * 59 + AbandonSeconds.GetHashCode();
             }
 
-            if (this.ComplianceAbandonRateDenominator != null)
+            if (ComplianceAbandonRateDenominator != null)
             {
-                hash = hash * 59 + this.ComplianceAbandonRateDenominator.GetHashCode();
+                hash = hash * 59 + ComplianceAbandonRateDenominator.GetHashCode();
             }
 
-            if (this.AutomaticTimeZoneMapping != null)
+            if (AutomaticTimeZoneMapping != null)
             {
-                hash = hash * 59 + this.AutomaticTimeZoneMapping.GetHashCode();
+                hash = hash * 59 + AutomaticTimeZoneMapping.GetHashCode();
             }
 
-            if (this.RescheduleTimeZoneSkippedContacts != null)
+            if (RescheduleTimeZoneSkippedContacts != null)
             {
-                hash = hash * 59 + this.RescheduleTimeZoneSkippedContacts.GetHashCode();
+                hash = hash * 59 + RescheduleTimeZoneSkippedContacts.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

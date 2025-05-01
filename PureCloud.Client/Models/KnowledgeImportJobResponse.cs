@@ -311,7 +311,7 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as KnowledgeImportJobResponse);
+        return Equals(obj as KnowledgeImportJobResponse);
     }
 
     /// <summary>
@@ -329,74 +329,74 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.DownloadURL == other.DownloadURL ||
-                this.DownloadURL != null &&
-                this.DownloadURL.Equals(other.DownloadURL)
+                DownloadURL == other.DownloadURL ||
+                DownloadURL != null &&
+                DownloadURL.Equals(other.DownloadURL)
             ) &&
             (
-                this.FailedEntitiesURL == other.FailedEntitiesURL ||
-                this.FailedEntitiesURL != null &&
-                this.FailedEntitiesURL.Equals(other.FailedEntitiesURL)
+                FailedEntitiesURL == other.FailedEntitiesURL ||
+                FailedEntitiesURL != null &&
+                FailedEntitiesURL.Equals(other.FailedEntitiesURL)
             ) &&
             (
-                this.UploadKey == other.UploadKey ||
-                this.UploadKey != null &&
-                this.UploadKey.Equals(other.UploadKey)
+                UploadKey == other.UploadKey ||
+                UploadKey != null &&
+                UploadKey.Equals(other.UploadKey)
             ) &&
             (
-                this.FileType == other.FileType ||
-                this.FileType != null &&
-                this.FileType.Equals(other.FileType)
+                FileType == other.FileType ||
+                FileType != null &&
+                FileType.Equals(other.FileType)
             ) &&
             (
-                this.Settings == other.Settings ||
-                this.Settings != null &&
-                this.Settings.Equals(other.Settings)
+                Settings == other.Settings ||
+                Settings != null &&
+                Settings.Equals(other.Settings)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.Report == other.Report ||
-                this.Report != null &&
-                this.Report.Equals(other.Report)
+                Report == other.Report ||
+                Report != null &&
+                Report.Equals(other.Report)
             ) &&
             (
-                this.KnowledgeBase == other.KnowledgeBase ||
-                this.KnowledgeBase != null &&
-                this.KnowledgeBase.Equals(other.KnowledgeBase)
+                KnowledgeBase == other.KnowledgeBase ||
+                KnowledgeBase != null &&
+                KnowledgeBase.Equals(other.KnowledgeBase)
             ) &&
             (
-                this.CreatedBy == other.CreatedBy ||
-                this.CreatedBy != null &&
-                this.CreatedBy.Equals(other.CreatedBy)
+                CreatedBy == other.CreatedBy ||
+                CreatedBy != null &&
+                CreatedBy.Equals(other.CreatedBy)
             ) &&
             (
-                this.DateCreated == other.DateCreated ||
-                this.DateCreated != null &&
-                this.DateCreated.Equals(other.DateCreated)
+                DateCreated == other.DateCreated ||
+                DateCreated != null &&
+                DateCreated.Equals(other.DateCreated)
             ) &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.SkipConfirmationStep == other.SkipConfirmationStep ||
-                this.SkipConfirmationStep != null &&
-                this.SkipConfirmationStep.Equals(other.SkipConfirmationStep)
+                SkipConfirmationStep == other.SkipConfirmationStep ||
+                SkipConfirmationStep != null &&
+                SkipConfirmationStep.Equals(other.SkipConfirmationStep)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -411,74 +411,74 @@ public partial class KnowledgeImportJobResponse : IEquatable<KnowledgeImportJobR
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.DownloadURL != null)
+            if (DownloadURL != null)
             {
-                hash = hash * 59 + this.DownloadURL.GetHashCode();
+                hash = hash * 59 + DownloadURL.GetHashCode();
             }
 
-            if (this.FailedEntitiesURL != null)
+            if (FailedEntitiesURL != null)
             {
-                hash = hash * 59 + this.FailedEntitiesURL.GetHashCode();
+                hash = hash * 59 + FailedEntitiesURL.GetHashCode();
             }
 
-            if (this.UploadKey != null)
+            if (UploadKey != null)
             {
-                hash = hash * 59 + this.UploadKey.GetHashCode();
+                hash = hash * 59 + UploadKey.GetHashCode();
             }
 
-            if (this.FileType != null)
+            if (FileType != null)
             {
-                hash = hash * 59 + this.FileType.GetHashCode();
+                hash = hash * 59 + FileType.GetHashCode();
             }
 
-            if (this.Settings != null)
+            if (Settings != null)
             {
-                hash = hash * 59 + this.Settings.GetHashCode();
+                hash = hash * 59 + Settings.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.Report != null)
+            if (Report != null)
             {
-                hash = hash * 59 + this.Report.GetHashCode();
+                hash = hash * 59 + Report.GetHashCode();
             }
 
-            if (this.KnowledgeBase != null)
+            if (KnowledgeBase != null)
             {
-                hash = hash * 59 + this.KnowledgeBase.GetHashCode();
+                hash = hash * 59 + KnowledgeBase.GetHashCode();
             }
 
-            if (this.CreatedBy != null)
+            if (CreatedBy != null)
             {
-                hash = hash * 59 + this.CreatedBy.GetHashCode();
+                hash = hash * 59 + CreatedBy.GetHashCode();
             }
 
-            if (this.DateCreated != null)
+            if (DateCreated != null)
             {
-                hash = hash * 59 + this.DateCreated.GetHashCode();
+                hash = hash * 59 + DateCreated.GetHashCode();
             }
 
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.SkipConfirmationStep != null)
+            if (SkipConfirmationStep != null)
             {
-                hash = hash * 59 + this.SkipConfirmationStep.GetHashCode();
+                hash = hash * 59 + SkipConfirmationStep.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

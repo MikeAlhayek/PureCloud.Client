@@ -64,7 +64,7 @@ public partial class AvailableMediaType : IEquatable<AvailableMediaType>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AvailableMediaType);
+        return Equals(obj as AvailableMediaType);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class AvailableMediaType : IEquatable<AvailableMediaType>
 
         return true &&
             (
-                this.MediaType == other.MediaType ||
-                this.MediaType != null &&
-                this.MediaType.Equals(other.MediaType)
+                MediaType == other.MediaType ||
+                MediaType != null &&
+                MediaType.Equals(other.MediaType)
             ) &&
             (
-                this.AvailableSubTypes == other.AvailableSubTypes ||
-                this.AvailableSubTypes != null &&
-                this.AvailableSubTypes.SequenceEqual(other.AvailableSubTypes)
+                AvailableSubTypes == other.AvailableSubTypes ||
+                AvailableSubTypes != null &&
+                AvailableSubTypes.SequenceEqual(other.AvailableSubTypes)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class AvailableMediaType : IEquatable<AvailableMediaType>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.MediaType != null)
+            if (MediaType != null)
             {
-                hash = hash * 59 + this.MediaType.GetHashCode();
+                hash = hash * 59 + MediaType.GetHashCode();
             }
 
-            if (this.AvailableSubTypes != null)
+            if (AvailableSubTypes != null)
             {
-                hash = hash * 59 + this.AvailableSubTypes.GetHashCode();
+                hash = hash * 59 + AvailableSubTypes.GetHashCode();
             }
 
             return hash;

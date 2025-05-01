@@ -134,7 +134,7 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArchitectFlowNotificationFlowNotification);
+        return Equals(obj as ArchitectFlowNotificationFlowNotification);
     }
 
     /// <summary>
@@ -152,44 +152,44 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Deleted == other.Deleted ||
-                this.Deleted != null &&
-                this.Deleted.Equals(other.Deleted)
+                Deleted == other.Deleted ||
+                Deleted != null &&
+                Deleted.Equals(other.Deleted)
             ) &&
             (
-                this.CheckedInVersion == other.CheckedInVersion ||
-                this.CheckedInVersion != null &&
-                this.CheckedInVersion.Equals(other.CheckedInVersion)
+                CheckedInVersion == other.CheckedInVersion ||
+                CheckedInVersion != null &&
+                CheckedInVersion.Equals(other.CheckedInVersion)
             ) &&
             (
-                this.SavedVersion == other.SavedVersion ||
-                this.SavedVersion != null &&
-                this.SavedVersion.Equals(other.SavedVersion)
+                SavedVersion == other.SavedVersion ||
+                SavedVersion != null &&
+                SavedVersion.Equals(other.SavedVersion)
             ) &&
             (
-                this.PublishedVersion == other.PublishedVersion ||
-                this.PublishedVersion != null &&
-                this.PublishedVersion.Equals(other.PublishedVersion)
+                PublishedVersion == other.PublishedVersion ||
+                PublishedVersion != null &&
+                PublishedVersion.Equals(other.PublishedVersion)
             ) &&
             (
-                this.CurrentOperation == other.CurrentOperation ||
-                this.CurrentOperation != null &&
-                this.CurrentOperation.Equals(other.CurrentOperation)
+                CurrentOperation == other.CurrentOperation ||
+                CurrentOperation != null &&
+                CurrentOperation.Equals(other.CurrentOperation)
             );
     }
 
@@ -204,44 +204,44 @@ public partial class ArchitectFlowNotificationFlowNotification : IEquatable<Arch
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Deleted != null)
+            if (Deleted != null)
             {
-                hash = hash * 59 + this.Deleted.GetHashCode();
+                hash = hash * 59 + Deleted.GetHashCode();
             }
 
-            if (this.CheckedInVersion != null)
+            if (CheckedInVersion != null)
             {
-                hash = hash * 59 + this.CheckedInVersion.GetHashCode();
+                hash = hash * 59 + CheckedInVersion.GetHashCode();
             }
 
-            if (this.SavedVersion != null)
+            if (SavedVersion != null)
             {
-                hash = hash * 59 + this.SavedVersion.GetHashCode();
+                hash = hash * 59 + SavedVersion.GetHashCode();
             }
 
-            if (this.PublishedVersion != null)
+            if (PublishedVersion != null)
             {
-                hash = hash * 59 + this.PublishedVersion.GetHashCode();
+                hash = hash * 59 + PublishedVersion.GetHashCode();
             }
 
-            if (this.CurrentOperation != null)
+            if (CurrentOperation != null)
             {
-                hash = hash * 59 + this.CurrentOperation.GetHashCode();
+                hash = hash * 59 + CurrentOperation.GetHashCode();
             }
 
             return hash;

@@ -91,12 +91,12 @@ public partial class DownloadsApi : IDownloadsApi
     /// <returns></returns>
     public DownloadsApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -110,17 +110,17 @@ public partial class DownloadsApi : IDownloadsApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -130,7 +130,7 @@ public partial class DownloadsApi : IDownloadsApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -156,7 +156,7 @@ public partial class DownloadsApi : IDownloadsApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -168,7 +168,7 @@ public partial class DownloadsApi : IDownloadsApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -220,7 +220,7 @@ public partial class DownloadsApi : IDownloadsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -229,7 +229,7 @@ public partial class DownloadsApi : IDownloadsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -242,23 +242,23 @@ public partial class DownloadsApi : IDownloadsApi
         // Path params
         if (downloadId != null)
         {
-            localVarPathParams.Add("downloadId", this.Configuration.ApiClient.ParameterToString(downloadId));
+            localVarPathParams.Add("downloadId", Configuration.ApiClient.ParameterToString(downloadId));
         }
 
         // Query params
         if (contentDisposition != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("contentDisposition", this.Configuration.ApiClient.ParameterToString(contentDisposition)));
+            localVarQueryParams.Add(new Tuple<string, string>("contentDisposition", Configuration.ApiClient.ParameterToString(contentDisposition)));
         }
 
         if (issueRedirect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("issueRedirect", this.Configuration.ApiClient.ParameterToString(issueRedirect)));
+            localVarQueryParams.Add(new Tuple<string, string>("issueRedirect", Configuration.ApiClient.ParameterToString(issueRedirect)));
         }
 
         if (redirectToAuth != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("redirectToAuth", this.Configuration.ApiClient.ParameterToString(redirectToAuth)));
+            localVarQueryParams.Add(new Tuple<string, string>("redirectToAuth", Configuration.ApiClient.ParameterToString(redirectToAuth)));
         }
 
         // Header params
@@ -272,11 +272,11 @@ public partial class DownloadsApi : IDownloadsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -302,7 +302,7 @@ public partial class DownloadsApi : IDownloadsApi
 
         return new ApiResponse<UrlResponse>(localVarStatusCode,
             localVarHeaders,
-            (UrlResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UrlResponse)),
+            (UrlResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UrlResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -357,7 +357,7 @@ public partial class DownloadsApi : IDownloadsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -366,7 +366,7 @@ public partial class DownloadsApi : IDownloadsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -379,23 +379,23 @@ public partial class DownloadsApi : IDownloadsApi
         // Path params
         if (downloadId != null)
         {
-            localVarPathParams.Add("downloadId", this.Configuration.ApiClient.ParameterToString(downloadId));
+            localVarPathParams.Add("downloadId", Configuration.ApiClient.ParameterToString(downloadId));
         }
 
         // Query params
         if (contentDisposition != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("contentDisposition", this.Configuration.ApiClient.ParameterToString(contentDisposition)));
+            localVarQueryParams.Add(new Tuple<string, string>("contentDisposition", Configuration.ApiClient.ParameterToString(contentDisposition)));
         }
 
         if (issueRedirect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("issueRedirect", this.Configuration.ApiClient.ParameterToString(issueRedirect)));
+            localVarQueryParams.Add(new Tuple<string, string>("issueRedirect", Configuration.ApiClient.ParameterToString(issueRedirect)));
         }
 
         if (redirectToAuth != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("redirectToAuth", this.Configuration.ApiClient.ParameterToString(redirectToAuth)));
+            localVarQueryParams.Add(new Tuple<string, string>("redirectToAuth", Configuration.ApiClient.ParameterToString(redirectToAuth)));
         }
 
         // Header params
@@ -409,11 +409,11 @@ public partial class DownloadsApi : IDownloadsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -439,7 +439,7 @@ public partial class DownloadsApi : IDownloadsApi
 
         return new ApiResponse<UrlResponse>(localVarStatusCode,
             localVarHeaders,
-            (UrlResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UrlResponse)),
+            (UrlResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UrlResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

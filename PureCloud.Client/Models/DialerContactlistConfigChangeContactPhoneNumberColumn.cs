@@ -88,7 +88,7 @@ public partial class DialerContactlistConfigChangeContactPhoneNumberColumn : IEq
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DialerContactlistConfigChangeContactPhoneNumberColumn);
+        return Equals(obj as DialerContactlistConfigChangeContactPhoneNumberColumn);
     }
 
     /// <summary>
@@ -106,24 +106,24 @@ public partial class DialerContactlistConfigChangeContactPhoneNumberColumn : IEq
 
         return true &&
             (
-                this.ColumnName == other.ColumnName ||
-                this.ColumnName != null &&
-                this.ColumnName.Equals(other.ColumnName)
+                ColumnName == other.ColumnName ||
+                ColumnName != null &&
+                ColumnName.Equals(other.ColumnName)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.CallableTimeColumn == other.CallableTimeColumn ||
-                this.CallableTimeColumn != null &&
-                this.CallableTimeColumn.Equals(other.CallableTimeColumn)
+                CallableTimeColumn == other.CallableTimeColumn ||
+                CallableTimeColumn != null &&
+                CallableTimeColumn.Equals(other.CallableTimeColumn)
             ) &&
             (
-                this.AdditionalProperties == other.AdditionalProperties ||
-                this.AdditionalProperties != null &&
-                this.AdditionalProperties.SequenceEqual(other.AdditionalProperties)
+                AdditionalProperties == other.AdditionalProperties ||
+                AdditionalProperties != null &&
+                AdditionalProperties.SequenceEqual(other.AdditionalProperties)
             );
     }
 
@@ -138,24 +138,24 @@ public partial class DialerContactlistConfigChangeContactPhoneNumberColumn : IEq
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ColumnName != null)
+            if (ColumnName != null)
             {
-                hash = hash * 59 + this.ColumnName.GetHashCode();
+                hash = hash * 59 + ColumnName.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.CallableTimeColumn != null)
+            if (CallableTimeColumn != null)
             {
-                hash = hash * 59 + this.CallableTimeColumn.GetHashCode();
+                hash = hash * 59 + CallableTimeColumn.GetHashCode();
             }
 
-            if (this.AdditionalProperties != null)
+            if (AdditionalProperties != null)
             {
-                hash = hash * 59 + this.AdditionalProperties.GetHashCode();
+                hash = hash * 59 + AdditionalProperties.GetHashCode();
             }
 
             return hash;

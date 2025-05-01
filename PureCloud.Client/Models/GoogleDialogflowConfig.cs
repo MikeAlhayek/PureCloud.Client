@@ -71,7 +71,7 @@ public partial class GoogleDialogflowConfig : IEquatable<GoogleDialogflowConfig>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as GoogleDialogflowConfig);
+        return Equals(obj as GoogleDialogflowConfig);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class GoogleDialogflowConfig : IEquatable<GoogleDialogflowConfig>
 
         return true &&
             (
-                this.IntegrationId == other.IntegrationId ||
-                this.IntegrationId != null &&
-                this.IntegrationId.Equals(other.IntegrationId)
+                IntegrationId == other.IntegrationId ||
+                IntegrationId != null &&
+                IntegrationId.Equals(other.IntegrationId)
             ) &&
             (
-                this.ConversationProfiles == other.ConversationProfiles ||
-                this.ConversationProfiles != null &&
-                this.ConversationProfiles.SequenceEqual(other.ConversationProfiles)
+                ConversationProfiles == other.ConversationProfiles ||
+                ConversationProfiles != null &&
+                ConversationProfiles.SequenceEqual(other.ConversationProfiles)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class GoogleDialogflowConfig : IEquatable<GoogleDialogflowConfig>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.IntegrationId != null)
+            if (IntegrationId != null)
             {
-                hash = hash * 59 + this.IntegrationId.GetHashCode();
+                hash = hash * 59 + IntegrationId.GetHashCode();
             }
 
-            if (this.ConversationProfiles != null)
+            if (ConversationProfiles != null)
             {
-                hash = hash * 59 + this.ConversationProfiles.GetHashCode();
+                hash = hash * 59 + ConversationProfiles.GetHashCode();
             }
 
             return hash;

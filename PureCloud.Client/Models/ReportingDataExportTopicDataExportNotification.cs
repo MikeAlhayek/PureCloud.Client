@@ -1026,7 +1026,7 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ReportingDataExportTopicDataExportNotification);
+        return Equals(obj as ReportingDataExportTopicDataExportNotification);
     }
 
     /// <summary>
@@ -1044,89 +1044,89 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.RunId == other.RunId ||
-                this.RunId != null &&
-                this.RunId.Equals(other.RunId)
+                RunId == other.RunId ||
+                RunId != null &&
+                RunId.Equals(other.RunId)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Status == other.Status ||
-                this.Status != null &&
-                this.Status.Equals(other.Status)
+                Status == other.Status ||
+                Status != null &&
+                Status.Equals(other.Status)
             ) &&
             (
-                this.ExportFormat == other.ExportFormat ||
-                this.ExportFormat != null &&
-                this.ExportFormat.Equals(other.ExportFormat)
+                ExportFormat == other.ExportFormat ||
+                ExportFormat != null &&
+                ExportFormat.Equals(other.ExportFormat)
             ) &&
             (
-                this.DownloadUrl == other.DownloadUrl ||
-                this.DownloadUrl != null &&
-                this.DownloadUrl.Equals(other.DownloadUrl)
+                DownloadUrl == other.DownloadUrl ||
+                DownloadUrl != null &&
+                DownloadUrl.Equals(other.DownloadUrl)
             ) &&
             (
-                this.ViewType == other.ViewType ||
-                this.ViewType != null &&
-                this.ViewType.Equals(other.ViewType)
+                ViewType == other.ViewType ||
+                ViewType != null &&
+                ViewType.Equals(other.ViewType)
             ) &&
             (
-                this.ExportErrorMessagesType == other.ExportErrorMessagesType ||
-                this.ExportErrorMessagesType != null &&
-                this.ExportErrorMessagesType.Equals(other.ExportErrorMessagesType)
+                ExportErrorMessagesType == other.ExportErrorMessagesType ||
+                ExportErrorMessagesType != null &&
+                ExportErrorMessagesType.Equals(other.ExportErrorMessagesType)
             ) &&
             (
-                this.Read == other.Read ||
-                this.Read != null &&
-                this.Read.Equals(other.Read)
+                Read == other.Read ||
+                Read != null &&
+                Read.Equals(other.Read)
             ) &&
             (
-                this.CreatedDateTime == other.CreatedDateTime ||
-                this.CreatedDateTime != null &&
-                this.CreatedDateTime.Equals(other.CreatedDateTime)
+                CreatedDateTime == other.CreatedDateTime ||
+                CreatedDateTime != null &&
+                CreatedDateTime.Equals(other.CreatedDateTime)
             ) &&
             (
-                this.ModifiedDateTime == other.ModifiedDateTime ||
-                this.ModifiedDateTime != null &&
-                this.ModifiedDateTime.Equals(other.ModifiedDateTime)
+                ModifiedDateTime == other.ModifiedDateTime ||
+                ModifiedDateTime != null &&
+                ModifiedDateTime.Equals(other.ModifiedDateTime)
             ) &&
             (
-                this.PercentageComplete == other.PercentageComplete ||
-                this.PercentageComplete != null &&
-                this.PercentageComplete.Equals(other.PercentageComplete)
+                PercentageComplete == other.PercentageComplete ||
+                PercentageComplete != null &&
+                PercentageComplete.Equals(other.PercentageComplete)
             ) &&
             (
-                this.EmailStatuses == other.EmailStatuses ||
-                this.EmailStatuses != null &&
-                this.EmailStatuses.SequenceEqual(other.EmailStatuses)
+                EmailStatuses == other.EmailStatuses ||
+                EmailStatuses != null &&
+                EmailStatuses.SequenceEqual(other.EmailStatuses)
             ) &&
             (
-                this.EmailErrorDescription == other.EmailErrorDescription ||
-                this.EmailErrorDescription != null &&
-                this.EmailErrorDescription.Equals(other.EmailErrorDescription)
+                EmailErrorDescription == other.EmailErrorDescription ||
+                EmailErrorDescription != null &&
+                EmailErrorDescription.Equals(other.EmailErrorDescription)
             ) &&
             (
-                this.ScheduleExpression == other.ScheduleExpression ||
-                this.ScheduleExpression != null &&
-                this.ScheduleExpression.Equals(other.ScheduleExpression)
+                ScheduleExpression == other.ScheduleExpression ||
+                ScheduleExpression != null &&
+                ScheduleExpression.Equals(other.ScheduleExpression)
             ) &&
             (
-                this.ScheduleStaticLinkUrl == other.ScheduleStaticLinkUrl ||
-                this.ScheduleStaticLinkUrl != null &&
-                this.ScheduleStaticLinkUrl.Equals(other.ScheduleStaticLinkUrl)
+                ScheduleStaticLinkUrl == other.ScheduleStaticLinkUrl ||
+                ScheduleStaticLinkUrl != null &&
+                ScheduleStaticLinkUrl.Equals(other.ScheduleStaticLinkUrl)
             ) &&
             (
-                this.ExportAllowedToRerun == other.ExportAllowedToRerun ||
-                this.ExportAllowedToRerun != null &&
-                this.ExportAllowedToRerun.Equals(other.ExportAllowedToRerun)
+                ExportAllowedToRerun == other.ExportAllowedToRerun ||
+                ExportAllowedToRerun != null &&
+                ExportAllowedToRerun.Equals(other.ExportAllowedToRerun)
             );
     }
 
@@ -1141,89 +1141,89 @@ public partial class ReportingDataExportTopicDataExportNotification : IEquatable
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.RunId != null)
+            if (RunId != null)
             {
-                hash = hash * 59 + this.RunId.GetHashCode();
+                hash = hash * 59 + RunId.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (Status != null)
             {
-                hash = hash * 59 + this.Status.GetHashCode();
+                hash = hash * 59 + Status.GetHashCode();
             }
 
-            if (this.ExportFormat != null)
+            if (ExportFormat != null)
             {
-                hash = hash * 59 + this.ExportFormat.GetHashCode();
+                hash = hash * 59 + ExportFormat.GetHashCode();
             }
 
-            if (this.DownloadUrl != null)
+            if (DownloadUrl != null)
             {
-                hash = hash * 59 + this.DownloadUrl.GetHashCode();
+                hash = hash * 59 + DownloadUrl.GetHashCode();
             }
 
-            if (this.ViewType != null)
+            if (ViewType != null)
             {
-                hash = hash * 59 + this.ViewType.GetHashCode();
+                hash = hash * 59 + ViewType.GetHashCode();
             }
 
-            if (this.ExportErrorMessagesType != null)
+            if (ExportErrorMessagesType != null)
             {
-                hash = hash * 59 + this.ExportErrorMessagesType.GetHashCode();
+                hash = hash * 59 + ExportErrorMessagesType.GetHashCode();
             }
 
-            if (this.Read != null)
+            if (Read != null)
             {
-                hash = hash * 59 + this.Read.GetHashCode();
+                hash = hash * 59 + Read.GetHashCode();
             }
 
-            if (this.CreatedDateTime != null)
+            if (CreatedDateTime != null)
             {
-                hash = hash * 59 + this.CreatedDateTime.GetHashCode();
+                hash = hash * 59 + CreatedDateTime.GetHashCode();
             }
 
-            if (this.ModifiedDateTime != null)
+            if (ModifiedDateTime != null)
             {
-                hash = hash * 59 + this.ModifiedDateTime.GetHashCode();
+                hash = hash * 59 + ModifiedDateTime.GetHashCode();
             }
 
-            if (this.PercentageComplete != null)
+            if (PercentageComplete != null)
             {
-                hash = hash * 59 + this.PercentageComplete.GetHashCode();
+                hash = hash * 59 + PercentageComplete.GetHashCode();
             }
 
-            if (this.EmailStatuses != null)
+            if (EmailStatuses != null)
             {
-                hash = hash * 59 + this.EmailStatuses.GetHashCode();
+                hash = hash * 59 + EmailStatuses.GetHashCode();
             }
 
-            if (this.EmailErrorDescription != null)
+            if (EmailErrorDescription != null)
             {
-                hash = hash * 59 + this.EmailErrorDescription.GetHashCode();
+                hash = hash * 59 + EmailErrorDescription.GetHashCode();
             }
 
-            if (this.ScheduleExpression != null)
+            if (ScheduleExpression != null)
             {
-                hash = hash * 59 + this.ScheduleExpression.GetHashCode();
+                hash = hash * 59 + ScheduleExpression.GetHashCode();
             }
 
-            if (this.ScheduleStaticLinkUrl != null)
+            if (ScheduleStaticLinkUrl != null)
             {
-                hash = hash * 59 + this.ScheduleStaticLinkUrl.GetHashCode();
+                hash = hash * 59 + ScheduleStaticLinkUrl.GetHashCode();
             }
 
-            if (this.ExportAllowedToRerun != null)
+            if (ExportAllowedToRerun != null)
             {
-                hash = hash * 59 + this.ExportAllowedToRerun.GetHashCode();
+                hash = hash * 59 + ExportAllowedToRerun.GetHashCode();
             }
 
             return hash;

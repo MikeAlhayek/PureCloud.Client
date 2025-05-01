@@ -126,7 +126,7 @@ public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TtsVoiceEntity);
+        return Equals(obj as TtsVoiceEntity);
     }
 
     /// <summary>
@@ -144,39 +144,39 @@ public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Gender == other.Gender ||
-                this.Gender != null &&
-                this.Gender.Equals(other.Gender)
+                Gender == other.Gender ||
+                Gender != null &&
+                Gender.Equals(other.Gender)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.Engine == other.Engine ||
-                this.Engine != null &&
-                this.Engine.Equals(other.Engine)
+                Engine == other.Engine ||
+                Engine != null &&
+                Engine.Equals(other.Engine)
             ) &&
             (
-                this.IsDefault == other.IsDefault ||
-                this.IsDefault != null &&
-                this.IsDefault.Equals(other.IsDefault)
+                IsDefault == other.IsDefault ||
+                IsDefault != null &&
+                IsDefault.Equals(other.IsDefault)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -191,39 +191,39 @@ public partial class TtsVoiceEntity : IEquatable<TtsVoiceEntity>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Gender != null)
+            if (Gender != null)
             {
-                hash = hash * 59 + this.Gender.GetHashCode();
+                hash = hash * 59 + Gender.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.Engine != null)
+            if (Engine != null)
             {
-                hash = hash * 59 + this.Engine.GetHashCode();
+                hash = hash * 59 + Engine.GetHashCode();
             }
 
-            if (this.IsDefault != null)
+            if (IsDefault != null)
             {
-                hash = hash * 59 + this.IsDefault.GetHashCode();
+                hash = hash * 59 + IsDefault.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

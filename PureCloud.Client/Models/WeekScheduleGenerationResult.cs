@@ -89,7 +89,7 @@ public partial class WeekScheduleGenerationResult : IEquatable<WeekScheduleGener
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WeekScheduleGenerationResult);
+        return Equals(obj as WeekScheduleGenerationResult);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class WeekScheduleGenerationResult : IEquatable<WeekScheduleGener
 
         return true &&
             (
-                this.Failed == other.Failed ||
-                this.Failed != null &&
-                this.Failed.Equals(other.Failed)
+                Failed == other.Failed ||
+                Failed != null &&
+                Failed.Equals(other.Failed)
             ) &&
             (
-                this.RunId == other.RunId ||
-                this.RunId != null &&
-                this.RunId.Equals(other.RunId)
+                RunId == other.RunId ||
+                RunId != null &&
+                RunId.Equals(other.RunId)
             ) &&
             (
-                this.AgentWarnings == other.AgentWarnings ||
-                this.AgentWarnings != null &&
-                this.AgentWarnings.SequenceEqual(other.AgentWarnings)
+                AgentWarnings == other.AgentWarnings ||
+                AgentWarnings != null &&
+                AgentWarnings.SequenceEqual(other.AgentWarnings)
             ) &&
             (
-                this.AgentWarningCount == other.AgentWarningCount ||
-                this.AgentWarningCount != null &&
-                this.AgentWarningCount.Equals(other.AgentWarningCount)
+                AgentWarningCount == other.AgentWarningCount ||
+                AgentWarningCount != null &&
+                AgentWarningCount.Equals(other.AgentWarningCount)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class WeekScheduleGenerationResult : IEquatable<WeekScheduleGener
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Failed != null)
+            if (Failed != null)
             {
-                hash = hash * 59 + this.Failed.GetHashCode();
+                hash = hash * 59 + Failed.GetHashCode();
             }
 
-            if (this.RunId != null)
+            if (RunId != null)
             {
-                hash = hash * 59 + this.RunId.GetHashCode();
+                hash = hash * 59 + RunId.GetHashCode();
             }
 
-            if (this.AgentWarnings != null)
+            if (AgentWarnings != null)
             {
-                hash = hash * 59 + this.AgentWarnings.GetHashCode();
+                hash = hash * 59 + AgentWarnings.GetHashCode();
             }
 
-            if (this.AgentWarningCount != null)
+            if (AgentWarningCount != null)
             {
-                hash = hash * 59 + this.AgentWarningCount.GetHashCode();
+                hash = hash * 59 + AgentWarningCount.GetHashCode();
             }
 
             return hash;

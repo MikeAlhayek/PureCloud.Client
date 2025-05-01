@@ -115,7 +115,7 @@ public partial class DynamicGroupSkillCondition : IEquatable<DynamicGroupSkillCo
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DynamicGroupSkillCondition);
+        return Equals(obj as DynamicGroupSkillCondition);
     }
 
     /// <summary>
@@ -133,19 +133,19 @@ public partial class DynamicGroupSkillCondition : IEquatable<DynamicGroupSkillCo
 
         return true &&
             (
-                this.RoutingSkillConditions == other.RoutingSkillConditions ||
-                this.RoutingSkillConditions != null &&
-                this.RoutingSkillConditions.SequenceEqual(other.RoutingSkillConditions)
+                RoutingSkillConditions == other.RoutingSkillConditions ||
+                RoutingSkillConditions != null &&
+                RoutingSkillConditions.SequenceEqual(other.RoutingSkillConditions)
             ) &&
             (
-                this.LanguageSkillConditions == other.LanguageSkillConditions ||
-                this.LanguageSkillConditions != null &&
-                this.LanguageSkillConditions.SequenceEqual(other.LanguageSkillConditions)
+                LanguageSkillConditions == other.LanguageSkillConditions ||
+                LanguageSkillConditions != null &&
+                LanguageSkillConditions.SequenceEqual(other.LanguageSkillConditions)
             ) &&
             (
-                this.Operation == other.Operation ||
-                this.Operation != null &&
-                this.Operation.Equals(other.Operation)
+                Operation == other.Operation ||
+                Operation != null &&
+                Operation.Equals(other.Operation)
             );
     }
 
@@ -160,19 +160,19 @@ public partial class DynamicGroupSkillCondition : IEquatable<DynamicGroupSkillCo
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RoutingSkillConditions != null)
+            if (RoutingSkillConditions != null)
             {
-                hash = hash * 59 + this.RoutingSkillConditions.GetHashCode();
+                hash = hash * 59 + RoutingSkillConditions.GetHashCode();
             }
 
-            if (this.LanguageSkillConditions != null)
+            if (LanguageSkillConditions != null)
             {
-                hash = hash * 59 + this.LanguageSkillConditions.GetHashCode();
+                hash = hash * 59 + LanguageSkillConditions.GetHashCode();
             }
 
-            if (this.Operation != null)
+            if (Operation != null)
             {
-                hash = hash * 59 + this.Operation.GetHashCode();
+                hash = hash * 59 + Operation.GetHashCode();
             }
 
             return hash;

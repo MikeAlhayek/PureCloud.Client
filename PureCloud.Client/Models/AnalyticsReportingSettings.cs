@@ -76,7 +76,7 @@ public partial class AnalyticsReportingSettings : IEquatable<AnalyticsReportingS
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsReportingSettings);
+        return Equals(obj as AnalyticsReportingSettings);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public partial class AnalyticsReportingSettings : IEquatable<AnalyticsReportingS
 
         return true &&
             (
-                this.PiiMaskingEnabled == other.PiiMaskingEnabled ||
-                this.PiiMaskingEnabled != null &&
-                this.PiiMaskingEnabled.Equals(other.PiiMaskingEnabled)
+                PiiMaskingEnabled == other.PiiMaskingEnabled ||
+                PiiMaskingEnabled != null &&
+                PiiMaskingEnabled.Equals(other.PiiMaskingEnabled)
             ) &&
             (
-                this.QueueAgentAccessObfuscation == other.QueueAgentAccessObfuscation ||
-                this.QueueAgentAccessObfuscation != null &&
-                this.QueueAgentAccessObfuscation.Equals(other.QueueAgentAccessObfuscation)
+                QueueAgentAccessObfuscation == other.QueueAgentAccessObfuscation ||
+                QueueAgentAccessObfuscation != null &&
+                QueueAgentAccessObfuscation.Equals(other.QueueAgentAccessObfuscation)
             ) &&
             (
-                this.MyInteractionsPiiMaskingEnabled == other.MyInteractionsPiiMaskingEnabled ||
-                this.MyInteractionsPiiMaskingEnabled != null &&
-                this.MyInteractionsPiiMaskingEnabled.Equals(other.MyInteractionsPiiMaskingEnabled)
+                MyInteractionsPiiMaskingEnabled == other.MyInteractionsPiiMaskingEnabled ||
+                MyInteractionsPiiMaskingEnabled != null &&
+                MyInteractionsPiiMaskingEnabled.Equals(other.MyInteractionsPiiMaskingEnabled)
             );
     }
 
@@ -121,19 +121,19 @@ public partial class AnalyticsReportingSettings : IEquatable<AnalyticsReportingS
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PiiMaskingEnabled != null)
+            if (PiiMaskingEnabled != null)
             {
-                hash = hash * 59 + this.PiiMaskingEnabled.GetHashCode();
+                hash = hash * 59 + PiiMaskingEnabled.GetHashCode();
             }
 
-            if (this.QueueAgentAccessObfuscation != null)
+            if (QueueAgentAccessObfuscation != null)
             {
-                hash = hash * 59 + this.QueueAgentAccessObfuscation.GetHashCode();
+                hash = hash * 59 + QueueAgentAccessObfuscation.GetHashCode();
             }
 
-            if (this.MyInteractionsPiiMaskingEnabled != null)
+            if (MyInteractionsPiiMaskingEnabled != null)
             {
-                hash = hash * 59 + this.MyInteractionsPiiMaskingEnabled.GetHashCode();
+                hash = hash * 59 + MyInteractionsPiiMaskingEnabled.GetHashCode();
             }
 
             return hash;

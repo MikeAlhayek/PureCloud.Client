@@ -89,7 +89,7 @@ public partial class LastResultByColumnConditionSettings : IEquatable<LastResult
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LastResultByColumnConditionSettings);
+        return Equals(obj as LastResultByColumnConditionSettings);
     }
 
     /// <summary>
@@ -107,24 +107,24 @@ public partial class LastResultByColumnConditionSettings : IEquatable<LastResult
 
         return true &&
             (
-                this.EmailColumnName == other.EmailColumnName ||
-                this.EmailColumnName != null &&
-                this.EmailColumnName.Equals(other.EmailColumnName)
+                EmailColumnName == other.EmailColumnName ||
+                EmailColumnName != null &&
+                EmailColumnName.Equals(other.EmailColumnName)
             ) &&
             (
-                this.EmailWrapupCodes == other.EmailWrapupCodes ||
-                this.EmailWrapupCodes != null &&
-                this.EmailWrapupCodes.SequenceEqual(other.EmailWrapupCodes)
+                EmailWrapupCodes == other.EmailWrapupCodes ||
+                EmailWrapupCodes != null &&
+                EmailWrapupCodes.SequenceEqual(other.EmailWrapupCodes)
             ) &&
             (
-                this.SmsColumnName == other.SmsColumnName ||
-                this.SmsColumnName != null &&
-                this.SmsColumnName.Equals(other.SmsColumnName)
+                SmsColumnName == other.SmsColumnName ||
+                SmsColumnName != null &&
+                SmsColumnName.Equals(other.SmsColumnName)
             ) &&
             (
-                this.SmsWrapupCodes == other.SmsWrapupCodes ||
-                this.SmsWrapupCodes != null &&
-                this.SmsWrapupCodes.SequenceEqual(other.SmsWrapupCodes)
+                SmsWrapupCodes == other.SmsWrapupCodes ||
+                SmsWrapupCodes != null &&
+                SmsWrapupCodes.SequenceEqual(other.SmsWrapupCodes)
             );
     }
 
@@ -139,24 +139,24 @@ public partial class LastResultByColumnConditionSettings : IEquatable<LastResult
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EmailColumnName != null)
+            if (EmailColumnName != null)
             {
-                hash = hash * 59 + this.EmailColumnName.GetHashCode();
+                hash = hash * 59 + EmailColumnName.GetHashCode();
             }
 
-            if (this.EmailWrapupCodes != null)
+            if (EmailWrapupCodes != null)
             {
-                hash = hash * 59 + this.EmailWrapupCodes.GetHashCode();
+                hash = hash * 59 + EmailWrapupCodes.GetHashCode();
             }
 
-            if (this.SmsColumnName != null)
+            if (SmsColumnName != null)
             {
-                hash = hash * 59 + this.SmsColumnName.GetHashCode();
+                hash = hash * 59 + SmsColumnName.GetHashCode();
             }
 
-            if (this.SmsWrapupCodes != null)
+            if (SmsWrapupCodes != null)
             {
-                hash = hash * 59 + this.SmsWrapupCodes.GetHashCode();
+                hash = hash * 59 + SmsWrapupCodes.GetHashCode();
             }
 
             return hash;

@@ -183,7 +183,7 @@ public partial class LearningModulePreviewUpdateScoStructure : IEquatable<Learni
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LearningModulePreviewUpdateScoStructure);
+        return Equals(obj as LearningModulePreviewUpdateScoStructure);
     }
 
     /// <summary>
@@ -201,34 +201,34 @@ public partial class LearningModulePreviewUpdateScoStructure : IEquatable<Learni
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.SuccessStatus == other.SuccessStatus ||
-                this.SuccessStatus != null &&
-                this.SuccessStatus.Equals(other.SuccessStatus)
+                SuccessStatus == other.SuccessStatus ||
+                SuccessStatus != null &&
+                SuccessStatus.Equals(other.SuccessStatus)
             ) &&
             (
-                this.CompletionStatus == other.CompletionStatus ||
-                this.CompletionStatus != null &&
-                this.CompletionStatus.Equals(other.CompletionStatus)
+                CompletionStatus == other.CompletionStatus ||
+                CompletionStatus != null &&
+                CompletionStatus.Equals(other.CompletionStatus)
             ) &&
             (
-                this.PercentageScore == other.PercentageScore ||
-                this.PercentageScore != null &&
-                this.PercentageScore.Equals(other.PercentageScore)
+                PercentageScore == other.PercentageScore ||
+                PercentageScore != null &&
+                PercentageScore.Equals(other.PercentageScore)
             ) &&
             (
-                this.Children == other.Children ||
-                this.Children != null &&
-                this.Children.SequenceEqual(other.Children)
+                Children == other.Children ||
+                Children != null &&
+                Children.SequenceEqual(other.Children)
             );
     }
 
@@ -243,34 +243,34 @@ public partial class LearningModulePreviewUpdateScoStructure : IEquatable<Learni
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.SuccessStatus != null)
+            if (SuccessStatus != null)
             {
-                hash = hash * 59 + this.SuccessStatus.GetHashCode();
+                hash = hash * 59 + SuccessStatus.GetHashCode();
             }
 
-            if (this.CompletionStatus != null)
+            if (CompletionStatus != null)
             {
-                hash = hash * 59 + this.CompletionStatus.GetHashCode();
+                hash = hash * 59 + CompletionStatus.GetHashCode();
             }
 
-            if (this.PercentageScore != null)
+            if (PercentageScore != null)
             {
-                hash = hash * 59 + this.PercentageScore.GetHashCode();
+                hash = hash * 59 + PercentageScore.GetHashCode();
             }
 
-            if (this.Children != null)
+            if (Children != null)
             {
-                hash = hash * 59 + this.Children.GetHashCode();
+                hash = hash * 59 + Children.GetHashCode();
             }
 
             return hash;

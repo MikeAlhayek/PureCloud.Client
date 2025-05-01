@@ -2795,12 +2795,12 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
     /// <returns></returns>
     public SpeechTextAnalyticsApi(string basePath)
     {
-        this.Configuration = new Configuration(new ApiClient(basePath));
+        Configuration = new Configuration(new ApiClient(basePath));
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -2814,17 +2814,17 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
     {
         if (configuration == null) // use the default one in Configuration
         {
-            this.Configuration = Configuration.Default;
+            Configuration = Configuration.Default;
         }
         else
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
         // ensure API client has configuration ready
-        if (this.Configuration.ApiClient.Configuration == null)
+        if (Configuration.ApiClient.Configuration == null)
         {
-            this.Configuration.ApiClient.Configuration = this.Configuration;
+            Configuration.ApiClient.Configuration = Configuration;
         }
     }
 
@@ -2834,7 +2834,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
     /// <value>The base path</value>
     public string GetBasePath()
     {
-        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+        return Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
 
     /// <summary>
@@ -2860,7 +2860,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
     public Dictionary<string, string> DefaultHeader()
     {
-        return this.Configuration.DefaultHeader;
+        return Configuration.DefaultHeader;
     }
 
     /// <summary>
@@ -2872,7 +2872,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
     [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
     public void AddDefaultHeader(string key, string value)
     {
-        this.Configuration.AddDefaultHeader(key, value);
+        Configuration.AddDefaultHeader(key, value);
     }
 
 
@@ -2917,7 +2917,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -2926,7 +2926,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2939,7 +2939,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -2955,11 +2955,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3033,7 +3033,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3042,7 +3042,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3055,7 +3055,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -3071,11 +3071,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3149,7 +3149,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3158,7 +3158,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3171,7 +3171,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (dictionaryFeedbackId != null)
         {
-            localVarPathParams.Add("dictionaryFeedbackId", this.Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
+            localVarPathParams.Add("dictionaryFeedbackId", Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
         }
 
         // Query params
@@ -3187,11 +3187,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3265,7 +3265,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3274,7 +3274,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3287,7 +3287,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (dictionaryFeedbackId != null)
         {
-            localVarPathParams.Add("dictionaryFeedbackId", this.Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
+            localVarPathParams.Add("dictionaryFeedbackId", Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
         }
 
         // Query params
@@ -3303,11 +3303,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3384,7 +3384,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3393,7 +3393,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3406,13 +3406,13 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
         if (forceDelete != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("forceDelete", this.Configuration.ApiClient.ParameterToString(forceDelete)));
+            localVarQueryParams.Add(new Tuple<string, string>("forceDelete", Configuration.ApiClient.ParameterToString(forceDelete)));
         }
 
         // Header params
@@ -3426,11 +3426,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3456,7 +3456,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<DeleteProgramResponse>(localVarStatusCode,
             localVarHeaders,
-            (DeleteProgramResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteProgramResponse)),
+            (DeleteProgramResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteProgramResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3507,7 +3507,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3516,7 +3516,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3529,13 +3529,13 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
         if (forceDelete != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("forceDelete", this.Configuration.ApiClient.ParameterToString(forceDelete)));
+            localVarQueryParams.Add(new Tuple<string, string>("forceDelete", Configuration.ApiClient.ParameterToString(forceDelete)));
         }
 
         // Header params
@@ -3549,11 +3549,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3579,7 +3579,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<DeleteProgramResponse>(localVarStatusCode,
             localVarHeaders,
-            (DeleteProgramResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteProgramResponse)),
+            (DeleteProgramResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteProgramResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3620,7 +3620,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3629,7 +3629,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3654,11 +3654,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3725,7 +3725,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3734,7 +3734,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3759,11 +3759,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3837,7 +3837,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3846,7 +3846,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3859,7 +3859,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (sentimentFeedbackId != null)
         {
-            localVarPathParams.Add("sentimentFeedbackId", this.Configuration.ApiClient.ParameterToString(sentimentFeedbackId));
+            localVarPathParams.Add("sentimentFeedbackId", Configuration.ApiClient.ParameterToString(sentimentFeedbackId));
         }
 
         // Query params
@@ -3875,11 +3875,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -3953,7 +3953,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -3962,7 +3962,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3975,7 +3975,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (sentimentFeedbackId != null)
         {
-            localVarPathParams.Add("sentimentFeedbackId", this.Configuration.ApiClient.ParameterToString(sentimentFeedbackId));
+            localVarPathParams.Add("sentimentFeedbackId", Configuration.ApiClient.ParameterToString(sentimentFeedbackId));
         }
 
         // Query params
@@ -3991,11 +3991,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4069,7 +4069,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4078,7 +4078,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4091,7 +4091,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -4107,11 +4107,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4185,7 +4185,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4194,7 +4194,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4207,7 +4207,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -4223,11 +4223,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4307,7 +4307,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4316,7 +4316,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4331,32 +4331,32 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (ids != null)
         {
-            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(obj))); });
+            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4370,11 +4370,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4400,7 +4400,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<CategoriesEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (CategoriesEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoriesEntityListing)),
+            (CategoriesEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoriesEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4454,7 +4454,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4463,7 +4463,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4478,32 +4478,32 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (ids != null)
         {
-            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(obj))); });
+            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -4517,11 +4517,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4547,7 +4547,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<CategoriesEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (CategoriesEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoriesEntityListing)),
+            (CategoriesEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CategoriesEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4596,7 +4596,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4605,7 +4605,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4618,7 +4618,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -4634,11 +4634,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4664,7 +4664,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<StaCategory>(localVarStatusCode,
             localVarHeaders,
-            (StaCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
+            (StaCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4713,7 +4713,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4722,7 +4722,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4735,7 +4735,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -4751,11 +4751,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4781,7 +4781,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<StaCategory>(localVarStatusCode,
             localVarHeaders,
-            (StaCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
+            (StaCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4830,7 +4830,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4839,7 +4839,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4852,7 +4852,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -4868,11 +4868,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -4898,7 +4898,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ConversationMetrics>(localVarStatusCode,
             localVarHeaders,
-            (ConversationMetrics)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConversationMetrics)),
+            (ConversationMetrics)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConversationMetrics)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -4947,7 +4947,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -4956,7 +4956,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4969,7 +4969,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -4985,11 +4985,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5015,7 +5015,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ConversationMetrics>(localVarStatusCode,
             localVarHeaders,
-            (ConversationMetrics)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConversationMetrics)),
+            (ConversationMetrics)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConversationMetrics)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5068,7 +5068,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5077,7 +5077,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5090,18 +5090,18 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -5115,11 +5115,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5145,7 +5145,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ConversationCategoriesEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ConversationCategoriesEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConversationCategoriesEntityListing)),
+            (ConversationCategoriesEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConversationCategoriesEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5198,7 +5198,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5207,7 +5207,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5220,18 +5220,18 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         // Header params
@@ -5245,11 +5245,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5275,7 +5275,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ConversationCategoriesEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ConversationCategoriesEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConversationCategoriesEntityListing)),
+            (ConversationCategoriesEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConversationCategoriesEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5331,7 +5331,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5340,7 +5340,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5353,12 +5353,12 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (communicationId != null)
         {
-            localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            localVarPathParams.Add("communicationId", Configuration.ApiClient.ParameterToString(communicationId));
         }
 
         // Query params
@@ -5374,11 +5374,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5404,7 +5404,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TranscriptUrl>(localVarStatusCode,
             localVarHeaders,
-            (TranscriptUrl)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranscriptUrl)),
+            (TranscriptUrl)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranscriptUrl)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5461,7 +5461,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5470,7 +5470,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5483,12 +5483,12 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (communicationId != null)
         {
-            localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            localVarPathParams.Add("communicationId", Configuration.ApiClient.ParameterToString(communicationId));
         }
 
         // Query params
@@ -5504,11 +5504,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5534,7 +5534,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TranscriptUrl>(localVarStatusCode,
             localVarHeaders,
-            (TranscriptUrl)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranscriptUrl)),
+            (TranscriptUrl)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranscriptUrl)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5590,7 +5590,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5599,7 +5599,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5612,12 +5612,12 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (communicationId != null)
         {
-            localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            localVarPathParams.Add("communicationId", Configuration.ApiClient.ParameterToString(communicationId));
         }
 
         // Query params
@@ -5633,11 +5633,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5663,7 +5663,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TranscriptUrls>(localVarStatusCode,
             localVarHeaders,
-            (TranscriptUrls)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranscriptUrls)),
+            (TranscriptUrls)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranscriptUrls)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5720,7 +5720,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5729,7 +5729,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5742,12 +5742,12 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         if (communicationId != null)
         {
-            localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            localVarPathParams.Add("communicationId", Configuration.ApiClient.ParameterToString(communicationId));
         }
 
         // Query params
@@ -5763,11 +5763,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5793,7 +5793,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TranscriptUrls>(localVarStatusCode,
             localVarHeaders,
-            (TranscriptUrls)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranscriptUrls)),
+            (TranscriptUrls)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranscriptUrls)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5842,7 +5842,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5851,7 +5851,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5864,7 +5864,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -5880,11 +5880,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -5910,7 +5910,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SpeechTextAnalyticsConversationSummaryListing>(localVarStatusCode,
             localVarHeaders,
-            (SpeechTextAnalyticsConversationSummaryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsConversationSummaryListing)),
+            (SpeechTextAnalyticsConversationSummaryListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsConversationSummaryListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -5959,7 +5959,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -5968,7 +5968,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5981,7 +5981,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
@@ -5997,11 +5997,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6027,7 +6027,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SpeechTextAnalyticsConversationSummaryListing>(localVarStatusCode,
             localVarHeaders,
-            (SpeechTextAnalyticsConversationSummaryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsConversationSummaryListing)),
+            (SpeechTextAnalyticsConversationSummaryListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsConversationSummaryListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6075,7 +6075,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6084,7 +6084,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6099,17 +6099,17 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (dialect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dialect", this.Configuration.ApiClient.ParameterToString(dialect)));
+            localVarQueryParams.Add(new Tuple<string, string>("dialect", Configuration.ApiClient.ParameterToString(dialect)));
         }
 
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -6123,11 +6123,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6153,7 +6153,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<DictionaryFeedbackEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DictionaryFeedbackEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedbackEntityListing)),
+            (DictionaryFeedbackEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedbackEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6201,7 +6201,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6210,7 +6210,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6225,17 +6225,17 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (dialect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dialect", this.Configuration.ApiClient.ParameterToString(dialect)));
+            localVarQueryParams.Add(new Tuple<string, string>("dialect", Configuration.ApiClient.ParameterToString(dialect)));
         }
 
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -6249,11 +6249,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6279,7 +6279,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<DictionaryFeedbackEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (DictionaryFeedbackEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedbackEntityListing)),
+            (DictionaryFeedbackEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedbackEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6328,7 +6328,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6337,7 +6337,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6350,7 +6350,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (dictionaryFeedbackId != null)
         {
-            localVarPathParams.Add("dictionaryFeedbackId", this.Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
+            localVarPathParams.Add("dictionaryFeedbackId", Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
         }
 
         // Query params
@@ -6366,11 +6366,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6396,7 +6396,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<DictionaryFeedback>(localVarStatusCode,
             localVarHeaders,
-            (DictionaryFeedback)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
+            (DictionaryFeedback)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6445,7 +6445,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6454,7 +6454,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6467,7 +6467,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (dictionaryFeedbackId != null)
         {
-            localVarPathParams.Add("dictionaryFeedbackId", this.Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
+            localVarPathParams.Add("dictionaryFeedbackId", Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
         }
 
         // Query params
@@ -6483,11 +6483,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6513,7 +6513,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<DictionaryFeedback>(localVarStatusCode,
             localVarHeaders,
-            (DictionaryFeedback)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
+            (DictionaryFeedback)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6562,7 +6562,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6571,7 +6571,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6584,7 +6584,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -6600,11 +6600,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6630,7 +6630,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Program>(localVarStatusCode,
             localVarHeaders,
-            (Program)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
+            (Program)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6679,7 +6679,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6688,7 +6688,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6701,7 +6701,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -6717,11 +6717,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6747,7 +6747,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Program>(localVarStatusCode,
             localVarHeaders,
-            (Program)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
+            (Program)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6796,7 +6796,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6805,7 +6805,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6818,7 +6818,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -6834,11 +6834,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6864,7 +6864,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramMappings>(localVarStatusCode,
             localVarHeaders,
-            (ProgramMappings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramMappings)),
+            (ProgramMappings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramMappings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -6913,7 +6913,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -6922,7 +6922,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6935,7 +6935,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -6951,11 +6951,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -6981,7 +6981,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramMappings>(localVarStatusCode,
             localVarHeaders,
-            (ProgramMappings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramMappings)),
+            (ProgramMappings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramMappings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7030,7 +7030,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7039,7 +7039,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7052,7 +7052,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -7068,11 +7068,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7098,7 +7098,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramInsightsSettings>(localVarStatusCode,
             localVarHeaders,
-            (ProgramInsightsSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettings)),
+            (ProgramInsightsSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7147,7 +7147,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7156,7 +7156,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7169,7 +7169,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -7185,11 +7185,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7215,7 +7215,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramInsightsSettings>(localVarStatusCode,
             localVarHeaders,
-            (ProgramInsightsSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettings)),
+            (ProgramInsightsSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7264,7 +7264,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7273,7 +7273,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7286,7 +7286,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -7302,11 +7302,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7332,7 +7332,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramTranscriptionEngines>(localVarStatusCode,
             localVarHeaders,
-            (ProgramTranscriptionEngines)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramTranscriptionEngines)),
+            (ProgramTranscriptionEngines)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramTranscriptionEngines)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7381,7 +7381,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7390,7 +7390,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7403,7 +7403,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -7419,11 +7419,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7449,7 +7449,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramTranscriptionEngines>(localVarStatusCode,
             localVarHeaders,
-            (ProgramTranscriptionEngines)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramTranscriptionEngines)),
+            (ProgramTranscriptionEngines)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramTranscriptionEngines)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7497,7 +7497,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7506,7 +7506,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7521,17 +7521,17 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (state != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            localVarQueryParams.Add(new Tuple<string, string>("state", Configuration.ApiClient.ParameterToString(state)));
         }
 
         // Header params
@@ -7545,11 +7545,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7575,7 +7575,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ProgramsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramsEntityListing)),
+            (ProgramsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7623,7 +7623,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7632,7 +7632,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7647,17 +7647,17 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (state != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            localVarQueryParams.Add(new Tuple<string, string>("state", Configuration.ApiClient.ParameterToString(state)));
         }
 
         // Header params
@@ -7671,11 +7671,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7701,7 +7701,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ProgramsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramsEntityListing)),
+            (ProgramsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7750,7 +7750,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7759,7 +7759,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7772,7 +7772,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -7788,11 +7788,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7818,7 +7818,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<GeneralProgramJob>(localVarStatusCode,
             localVarHeaders,
-            (GeneralProgramJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralProgramJob)),
+            (GeneralProgramJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralProgramJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7867,7 +7867,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7876,7 +7876,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7889,7 +7889,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -7905,11 +7905,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -7935,7 +7935,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<GeneralProgramJob>(localVarStatusCode,
             localVarHeaders,
-            (GeneralProgramJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralProgramJob)),
+            (GeneralProgramJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralProgramJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -7981,7 +7981,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -7990,7 +7990,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8005,12 +8005,12 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -8024,11 +8024,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8054,7 +8054,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramsMappingsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ProgramsMappingsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramsMappingsEntityListing)),
+            (ProgramsMappingsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramsMappingsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8100,7 +8100,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8109,7 +8109,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8124,12 +8124,12 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -8143,11 +8143,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8173,7 +8173,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramsMappingsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ProgramsMappingsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramsMappingsEntityListing)),
+            (ProgramsMappingsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramsMappingsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8222,7 +8222,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8231,7 +8231,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8244,7 +8244,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -8260,11 +8260,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8290,7 +8290,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramJob>(localVarStatusCode,
             localVarHeaders,
-            (ProgramJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramJob)),
+            (ProgramJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8339,7 +8339,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8348,7 +8348,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8361,7 +8361,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -8377,11 +8377,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8407,7 +8407,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramJob>(localVarStatusCode,
             localVarHeaders,
-            (ProgramJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramJob)),
+            (ProgramJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8455,7 +8455,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8464,7 +8464,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8479,17 +8479,17 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (programIds != null)
         {
-            programIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("programIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            programIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("programIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -8503,11 +8503,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8533,7 +8533,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramInsightsSettingsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ProgramInsightsSettingsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettingsEntityListing)),
+            (ProgramInsightsSettingsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettingsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8581,7 +8581,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8590,7 +8590,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8605,17 +8605,17 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (pageNumber != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)));
         }
 
         if (programIds != null)
         {
-            programIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("programIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+            programIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("programIds", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         // Header params
@@ -8629,11 +8629,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8659,7 +8659,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramInsightsSettingsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (ProgramInsightsSettingsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettingsEntityListing)),
+            (ProgramInsightsSettingsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettingsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8701,7 +8701,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8710,7 +8710,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8735,11 +8735,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8765,7 +8765,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SupportedDialectsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SupportedDialectsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SupportedDialectsEntityListing)),
+            (SupportedDialectsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SupportedDialectsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8807,7 +8807,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8816,7 +8816,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8841,11 +8841,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8871,7 +8871,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SupportedDialectsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SupportedDialectsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SupportedDialectsEntityListing)),
+            (SupportedDialectsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SupportedDialectsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -8917,7 +8917,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -8926,7 +8926,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8941,12 +8941,12 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -8960,11 +8960,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -8990,7 +8990,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<UnpublishedProgramsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (UnpublishedProgramsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnpublishedProgramsEntityListing)),
+            (UnpublishedProgramsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnpublishedProgramsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9036,7 +9036,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9045,7 +9045,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9060,12 +9060,12 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         // Header params
@@ -9079,11 +9079,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9109,7 +9109,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<UnpublishedProgramsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (UnpublishedProgramsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnpublishedProgramsEntityListing)),
+            (UnpublishedProgramsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnpublishedProgramsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9151,7 +9151,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9160,7 +9160,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9185,11 +9185,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9215,7 +9215,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<EntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntityListing)),
+            (EntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9257,7 +9257,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9266,7 +9266,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9291,11 +9291,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9321,7 +9321,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<EntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntityListing)),
+            (EntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9365,7 +9365,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9374,7 +9374,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9389,7 +9389,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (dialect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dialect", this.Configuration.ApiClient.ParameterToString(dialect)));
+            localVarQueryParams.Add(new Tuple<string, string>("dialect", Configuration.ApiClient.ParameterToString(dialect)));
         }
 
         // Header params
@@ -9403,11 +9403,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9433,7 +9433,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SentimentFeedbackEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SentimentFeedbackEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SentimentFeedbackEntityListing)),
+            (SentimentFeedbackEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SentimentFeedbackEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9477,7 +9477,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9486,7 +9486,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9501,7 +9501,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (dialect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dialect", this.Configuration.ApiClient.ParameterToString(dialect)));
+            localVarQueryParams.Add(new Tuple<string, string>("dialect", Configuration.ApiClient.ParameterToString(dialect)));
         }
 
         // Header params
@@ -9515,11 +9515,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9545,7 +9545,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SentimentFeedbackEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (SentimentFeedbackEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SentimentFeedbackEntityListing)),
+            (SentimentFeedbackEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SentimentFeedbackEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9587,7 +9587,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9596,7 +9596,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9621,11 +9621,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9651,7 +9651,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SpeechTextAnalyticsSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (SpeechTextAnalyticsSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
+            (SpeechTextAnalyticsSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9693,7 +9693,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9702,7 +9702,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9727,11 +9727,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9757,7 +9757,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SpeechTextAnalyticsSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (SpeechTextAnalyticsSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
+            (SpeechTextAnalyticsSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9806,7 +9806,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9815,7 +9815,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9828,7 +9828,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -9844,11 +9844,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9874,7 +9874,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Topic>(localVarStatusCode,
             localVarHeaders,
-            (Topic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
+            (Topic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -9923,7 +9923,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -9932,7 +9932,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9945,7 +9945,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -9961,11 +9961,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -9991,7 +9991,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Topic>(localVarStatusCode,
             localVarHeaders,
-            (Topic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
+            (Topic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10049,7 +10049,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10058,7 +10058,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10073,42 +10073,42 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (state != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            localVarQueryParams.Add(new Tuple<string, string>("state", Configuration.ApiClient.ParameterToString(state)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (ids != null)
         {
-            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(obj))); });
+            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (dialects != null)
         {
-            dialects.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("dialects", this.Configuration.ApiClient.ParameterToString(obj))); });
+            dialects.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("dialects", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -10122,11 +10122,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10152,7 +10152,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TopicsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TopicsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicsEntityListing)),
+            (TopicsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10210,7 +10210,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10219,7 +10219,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10234,42 +10234,42 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (nextPage != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
+            localVarQueryParams.Add(new Tuple<string, string>("nextPage", Configuration.ApiClient.ParameterToString(nextPage)));
         }
 
         if (pageSize != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", Configuration.ApiClient.ParameterToString(pageSize)));
         }
 
         if (state != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            localVarQueryParams.Add(new Tuple<string, string>("state", Configuration.ApiClient.ParameterToString(state)));
         }
 
         if (name != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            localVarQueryParams.Add(new Tuple<string, string>("name", Configuration.ApiClient.ParameterToString(name)));
         }
 
         if (ids != null)
         {
-            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(obj))); });
+            ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (dialects != null)
         {
-            dialects.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("dialects", this.Configuration.ApiClient.ParameterToString(obj))); });
+            dialects.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("dialects", Configuration.ApiClient.ParameterToString(obj))); });
         }
 
         if (sortBy != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortBy", Configuration.ApiClient.ParameterToString(sortBy)));
         }
 
         if (sortOrder != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+            localVarQueryParams.Add(new Tuple<string, string>("sortOrder", Configuration.ApiClient.ParameterToString(sortOrder)));
         }
 
         // Header params
@@ -10283,11 +10283,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10313,7 +10313,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TopicsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (TopicsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicsEntityListing)),
+            (TopicsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10355,7 +10355,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10364,7 +10364,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10389,11 +10389,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10419,7 +10419,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<EntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntityListing)),
+            (EntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10461,7 +10461,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10470,7 +10470,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10495,11 +10495,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10525,7 +10525,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<EntityListing>(localVarStatusCode,
             localVarHeaders,
-            (EntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntityListing)),
+            (EntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10569,7 +10569,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10578,7 +10578,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10593,7 +10593,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (dialect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dialect", this.Configuration.ApiClient.ParameterToString(dialect)));
+            localVarQueryParams.Add(new Tuple<string, string>("dialect", Configuration.ApiClient.ParameterToString(dialect)));
         }
 
         // Header params
@@ -10607,11 +10607,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10637,7 +10637,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<GeneralTopicsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (GeneralTopicsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralTopicsEntityListing)),
+            (GeneralTopicsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralTopicsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10681,7 +10681,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10690,7 +10690,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10705,7 +10705,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (dialect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dialect", this.Configuration.ApiClient.ParameterToString(dialect)));
+            localVarQueryParams.Add(new Tuple<string, string>("dialect", Configuration.ApiClient.ParameterToString(dialect)));
         }
 
         // Header params
@@ -10719,11 +10719,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10749,7 +10749,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<GeneralTopicsEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (GeneralTopicsEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralTopicsEntityListing)),
+            (GeneralTopicsEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralTopicsEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10793,7 +10793,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10802,7 +10802,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10817,7 +10817,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (dialect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dialect", this.Configuration.ApiClient.ParameterToString(dialect)));
+            localVarQueryParams.Add(new Tuple<string, string>("dialect", Configuration.ApiClient.ParameterToString(dialect)));
         }
 
         // Header params
@@ -10831,11 +10831,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10861,7 +10861,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<UnifiedGeneralTopicEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (UnifiedGeneralTopicEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnifiedGeneralTopicEntityListing)),
+            (UnifiedGeneralTopicEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnifiedGeneralTopicEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -10905,7 +10905,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -10914,7 +10914,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10929,7 +10929,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Query params
         if (dialect != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("dialect", this.Configuration.ApiClient.ParameterToString(dialect)));
+            localVarQueryParams.Add(new Tuple<string, string>("dialect", Configuration.ApiClient.ParameterToString(dialect)));
         }
 
         // Header params
@@ -10943,11 +10943,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -10973,7 +10973,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<UnifiedGeneralTopicEntityListing>(localVarStatusCode,
             localVarHeaders,
-            (UnifiedGeneralTopicEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnifiedGeneralTopicEntityListing)),
+            (UnifiedGeneralTopicEntityListing)Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnifiedGeneralTopicEntityListing)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11022,7 +11022,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11031,7 +11031,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11044,7 +11044,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -11060,11 +11060,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11090,7 +11090,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TopicJob>(localVarStatusCode,
             localVarHeaders,
-            (TopicJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicJob)),
+            (TopicJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11139,7 +11139,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11148,7 +11148,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11161,7 +11161,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (jobId != null)
         {
-            localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+            localVarPathParams.Add("jobId", Configuration.ApiClient.ParameterToString(jobId));
         }
 
         // Query params
@@ -11177,11 +11177,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11207,7 +11207,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TopicJob>(localVarStatusCode,
             localVarHeaders,
-            (TopicJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicJob)),
+            (TopicJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11269,7 +11269,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11278,7 +11278,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11291,23 +11291,23 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (languageId != null)
         {
-            localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId));
+            localVarPathParams.Add("languageId", Configuration.ApiClient.ParameterToString(languageId));
         }
 
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
         if (communicationId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId)));
+            localVarQueryParams.Add(new Tuple<string, string>("communicationId", Configuration.ApiClient.ParameterToString(communicationId)));
         }
 
         if (recordingId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId)));
+            localVarQueryParams.Add(new Tuple<string, string>("recordingId", Configuration.ApiClient.ParameterToString(recordingId)));
         }
 
         // Header params
@@ -11321,11 +11321,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11351,7 +11351,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<CommunicationTranslationList>(localVarStatusCode,
             localVarHeaders,
-            (CommunicationTranslationList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CommunicationTranslationList)),
+            (CommunicationTranslationList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CommunicationTranslationList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11414,7 +11414,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11423,7 +11423,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11436,23 +11436,23 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (languageId != null)
         {
-            localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId));
+            localVarPathParams.Add("languageId", Configuration.ApiClient.ParameterToString(languageId));
         }
 
         if (conversationId != null)
         {
-            localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            localVarPathParams.Add("conversationId", Configuration.ApiClient.ParameterToString(conversationId));
         }
 
         // Query params
         if (communicationId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId)));
+            localVarQueryParams.Add(new Tuple<string, string>("communicationId", Configuration.ApiClient.ParameterToString(communicationId)));
         }
 
         if (recordingId != null)
         {
-            localVarQueryParams.Add(new Tuple<string, string>("recordingId", this.Configuration.ApiClient.ParameterToString(recordingId)));
+            localVarQueryParams.Add(new Tuple<string, string>("recordingId", Configuration.ApiClient.ParameterToString(recordingId)));
         }
 
         // Header params
@@ -11466,11 +11466,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11496,7 +11496,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<CommunicationTranslationList>(localVarStatusCode,
             localVarHeaders,
-            (CommunicationTranslationList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CommunicationTranslationList)),
+            (CommunicationTranslationList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(CommunicationTranslationList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11540,7 +11540,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11549,7 +11549,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11574,11 +11574,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11604,7 +11604,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TranslateSupportedLanguageList>(localVarStatusCode,
             localVarHeaders,
-            (TranslateSupportedLanguageList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranslateSupportedLanguageList)),
+            (TranslateSupportedLanguageList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranslateSupportedLanguageList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11648,7 +11648,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11657,7 +11657,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11682,11 +11682,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11712,7 +11712,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TranslateSupportedLanguageList>(localVarStatusCode,
             localVarHeaders,
-            (TranslateSupportedLanguageList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranslateSupportedLanguageList)),
+            (TranslateSupportedLanguageList)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranslateSupportedLanguageList)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11762,7 +11762,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11771,7 +11771,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11792,7 +11792,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11805,11 +11805,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11835,7 +11835,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SpeechTextAnalyticsSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (SpeechTextAnalyticsSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
+            (SpeechTextAnalyticsSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -11885,7 +11885,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -11894,7 +11894,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11915,7 +11915,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -11928,11 +11928,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -11958,7 +11958,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SpeechTextAnalyticsSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (SpeechTextAnalyticsSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
+            (SpeechTextAnalyticsSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12008,7 +12008,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12017,7 +12017,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12038,7 +12038,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12051,11 +12051,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12081,7 +12081,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<StaCategory>(localVarStatusCode,
             localVarHeaders,
-            (StaCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
+            (StaCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12131,7 +12131,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12140,7 +12140,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12161,7 +12161,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12174,11 +12174,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12204,7 +12204,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<StaCategory>(localVarStatusCode,
             localVarHeaders,
-            (StaCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
+            (StaCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12254,7 +12254,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12263,7 +12263,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12284,7 +12284,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12297,11 +12297,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12327,7 +12327,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<DictionaryFeedback>(localVarStatusCode,
             localVarHeaders,
-            (DictionaryFeedback)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
+            (DictionaryFeedback)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12377,7 +12377,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12386,7 +12386,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12407,7 +12407,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12420,11 +12420,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12450,7 +12450,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<DictionaryFeedback>(localVarStatusCode,
             localVarHeaders,
-            (DictionaryFeedback)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
+            (DictionaryFeedback)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12500,7 +12500,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12509,7 +12509,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12530,7 +12530,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12543,11 +12543,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12573,7 +12573,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Program>(localVarStatusCode,
             localVarHeaders,
-            (Program)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
+            (Program)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12623,7 +12623,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12632,7 +12632,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12653,7 +12653,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12666,11 +12666,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12696,7 +12696,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Program>(localVarStatusCode,
             localVarHeaders,
-            (Program)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
+            (Program)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12746,7 +12746,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12755,7 +12755,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12776,7 +12776,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12789,11 +12789,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12819,7 +12819,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<GeneralProgramJob>(localVarStatusCode,
             localVarHeaders,
-            (GeneralProgramJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralProgramJob)),
+            (GeneralProgramJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralProgramJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12869,7 +12869,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -12878,7 +12878,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12899,7 +12899,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -12912,11 +12912,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -12942,7 +12942,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<GeneralProgramJob>(localVarStatusCode,
             localVarHeaders,
-            (GeneralProgramJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralProgramJob)),
+            (GeneralProgramJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GeneralProgramJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -12992,7 +12992,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13001,7 +13001,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13022,7 +13022,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13035,11 +13035,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13065,7 +13065,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramJob>(localVarStatusCode,
             localVarHeaders,
-            (ProgramJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramJob)),
+            (ProgramJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13115,7 +13115,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13124,7 +13124,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13145,7 +13145,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13158,11 +13158,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13188,7 +13188,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramJob>(localVarStatusCode,
             localVarHeaders,
-            (ProgramJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramJob)),
+            (ProgramJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13238,7 +13238,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13247,7 +13247,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13268,7 +13268,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13281,11 +13281,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13311,7 +13311,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SentimentFeedback>(localVarStatusCode,
             localVarHeaders,
-            (SentimentFeedback)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SentimentFeedback)),
+            (SentimentFeedback)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SentimentFeedback)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13361,7 +13361,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13370,7 +13370,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13391,7 +13391,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13404,11 +13404,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13434,7 +13434,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SentimentFeedback>(localVarStatusCode,
             localVarHeaders,
-            (SentimentFeedback)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SentimentFeedback)),
+            (SentimentFeedback)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SentimentFeedback)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13484,7 +13484,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13493,7 +13493,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13514,7 +13514,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13527,11 +13527,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13557,7 +13557,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Topic>(localVarStatusCode,
             localVarHeaders,
-            (Topic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
+            (Topic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13607,7 +13607,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13616,7 +13616,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13637,7 +13637,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13650,11 +13650,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13680,7 +13680,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Topic>(localVarStatusCode,
             localVarHeaders,
-            (Topic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
+            (Topic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13730,7 +13730,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13739,7 +13739,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13760,7 +13760,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13773,11 +13773,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13803,7 +13803,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TopicJob>(localVarStatusCode,
             localVarHeaders,
-            (TopicJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicJob)),
+            (TopicJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13853,7 +13853,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13862,7 +13862,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13883,7 +13883,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -13896,11 +13896,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -13926,7 +13926,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<TopicJob>(localVarStatusCode,
             localVarHeaders,
-            (TopicJob)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicJob)),
+            (TopicJob)Configuration.ApiClient.Deserialize(localVarResponse, typeof(TopicJob)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -13976,7 +13976,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -13985,7 +13985,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14006,7 +14006,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14019,11 +14019,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14049,7 +14049,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<JsonSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonSearchResponse)),
+            (JsonSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14099,7 +14099,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14108,7 +14108,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14129,7 +14129,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14142,11 +14142,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14172,7 +14172,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<JsonSearchResponse>(localVarStatusCode,
             localVarHeaders,
-            (JsonSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonSearchResponse)),
+            (JsonSearchResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonSearchResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14229,7 +14229,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14238,7 +14238,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14251,7 +14251,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -14263,7 +14263,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14276,11 +14276,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14306,7 +14306,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<StaCategory>(localVarStatusCode,
             localVarHeaders,
-            (StaCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
+            (StaCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14364,7 +14364,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14373,7 +14373,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14386,7 +14386,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (categoryId != null)
         {
-            localVarPathParams.Add("categoryId", this.Configuration.ApiClient.ParameterToString(categoryId));
+            localVarPathParams.Add("categoryId", Configuration.ApiClient.ParameterToString(categoryId));
         }
 
         // Query params
@@ -14398,7 +14398,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14411,11 +14411,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14441,7 +14441,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<StaCategory>(localVarStatusCode,
             localVarHeaders,
-            (StaCategory)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
+            (StaCategory)Configuration.ApiClient.Deserialize(localVarResponse, typeof(StaCategory)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14493,7 +14493,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14502,7 +14502,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14515,7 +14515,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (dictionaryFeedbackId != null)
         {
-            localVarPathParams.Add("dictionaryFeedbackId", this.Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
+            localVarPathParams.Add("dictionaryFeedbackId", Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
         }
 
         // Query params
@@ -14527,7 +14527,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14540,11 +14540,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14570,7 +14570,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<DictionaryFeedback>(localVarStatusCode,
             localVarHeaders,
-            (DictionaryFeedback)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
+            (DictionaryFeedback)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14622,7 +14622,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14631,7 +14631,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14644,7 +14644,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (dictionaryFeedbackId != null)
         {
-            localVarPathParams.Add("dictionaryFeedbackId", this.Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
+            localVarPathParams.Add("dictionaryFeedbackId", Configuration.ApiClient.ParameterToString(dictionaryFeedbackId));
         }
 
         // Query params
@@ -14656,7 +14656,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14669,11 +14669,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14699,7 +14699,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<DictionaryFeedback>(localVarStatusCode,
             localVarHeaders,
-            (DictionaryFeedback)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
+            (DictionaryFeedback)Configuration.ApiClient.Deserialize(localVarResponse, typeof(DictionaryFeedback)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14756,7 +14756,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14765,7 +14765,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14778,7 +14778,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -14790,7 +14790,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14803,11 +14803,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14833,7 +14833,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Program>(localVarStatusCode,
             localVarHeaders,
-            (Program)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
+            (Program)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -14891,7 +14891,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -14900,7 +14900,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14913,7 +14913,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -14925,7 +14925,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -14938,11 +14938,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -14968,7 +14968,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Program>(localVarStatusCode,
             localVarHeaders,
-            (Program)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
+            (Program)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Program)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15025,7 +15025,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15034,7 +15034,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15047,7 +15047,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -15059,7 +15059,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15072,11 +15072,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15102,7 +15102,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramMappings>(localVarStatusCode,
             localVarHeaders,
-            (ProgramMappings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramMappings)),
+            (ProgramMappings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramMappings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15160,7 +15160,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15169,7 +15169,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15182,7 +15182,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -15194,7 +15194,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15207,11 +15207,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15237,7 +15237,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramMappings>(localVarStatusCode,
             localVarHeaders,
-            (ProgramMappings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramMappings)),
+            (ProgramMappings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramMappings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15294,7 +15294,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15303,7 +15303,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15316,7 +15316,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -15328,7 +15328,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15341,11 +15341,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15371,7 +15371,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramInsightsSettings>(localVarStatusCode,
             localVarHeaders,
-            (ProgramInsightsSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettings)),
+            (ProgramInsightsSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15429,7 +15429,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15438,7 +15438,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15451,7 +15451,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -15463,7 +15463,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15476,11 +15476,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15506,7 +15506,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramInsightsSettings>(localVarStatusCode,
             localVarHeaders,
-            (ProgramInsightsSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettings)),
+            (ProgramInsightsSettings)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettings)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15563,7 +15563,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15572,7 +15572,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15585,7 +15585,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -15597,7 +15597,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15610,11 +15610,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15640,7 +15640,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramTranscriptionEngines>(localVarStatusCode,
             localVarHeaders,
-            (ProgramTranscriptionEngines)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramTranscriptionEngines)),
+            (ProgramTranscriptionEngines)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramTranscriptionEngines)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15698,7 +15698,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15707,7 +15707,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15720,7 +15720,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (programId != null)
         {
-            localVarPathParams.Add("programId", this.Configuration.ApiClient.ParameterToString(programId));
+            localVarPathParams.Add("programId", Configuration.ApiClient.ParameterToString(programId));
         }
 
         // Query params
@@ -15732,7 +15732,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15745,11 +15745,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15775,7 +15775,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<ProgramTranscriptionEngines>(localVarStatusCode,
             localVarHeaders,
-            (ProgramTranscriptionEngines)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramTranscriptionEngines)),
+            (ProgramTranscriptionEngines)Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramTranscriptionEngines)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15825,7 +15825,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15834,7 +15834,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15855,7 +15855,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15868,11 +15868,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -15898,7 +15898,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SpeechTextAnalyticsSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (SpeechTextAnalyticsSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
+            (SpeechTextAnalyticsSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -15948,7 +15948,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -15957,7 +15957,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15978,7 +15978,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -15991,11 +15991,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16021,7 +16021,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<SpeechTextAnalyticsSettingsResponse>(localVarStatusCode,
             localVarHeaders,
-            (SpeechTextAnalyticsSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
+            (SpeechTextAnalyticsSettingsResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechTextAnalyticsSettingsResponse)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16078,7 +16078,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16087,7 +16087,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16100,7 +16100,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -16112,7 +16112,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16125,11 +16125,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+        RestResponse localVarResponse = (RestResponse)Configuration.ApiClient.CallApi(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16155,7 +16155,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Topic>(localVarStatusCode,
             localVarHeaders,
-            (Topic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
+            (Topic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -16213,7 +16213,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
             "application/json"
 
         };
-        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
         string[] localVarHttpHeaderAccepts = new string[] {
@@ -16222,7 +16222,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
 
         };
-        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16235,7 +16235,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Path params
         if (topicId != null)
         {
-            localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            localVarPathParams.Add("topicId", Configuration.ApiClient.ParameterToString(topicId));
         }
 
         // Query params
@@ -16247,7 +16247,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // Body param
         if (body != null && body.GetType() != typeof(byte[]))
         {
-            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
         else
         {
@@ -16260,11 +16260,11 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
         // oauth required
         if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
-            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
         }
 
         // make the HTTP request
-        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        RestResponse localVarResponse = (RestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
             Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
@@ -16290,7 +16290,7 @@ public partial class SpeechTextAnalyticsApi : ISpeechTextAnalyticsApi
 
         return new ApiResponse<Topic>(localVarStatusCode,
             localVarHeaders,
-            (Topic)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
+            (Topic)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Topic)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }

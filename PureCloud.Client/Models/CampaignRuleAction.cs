@@ -191,7 +191,7 @@ public partial class CampaignRuleAction : IEquatable<CampaignRuleAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CampaignRuleAction);
+        return Equals(obj as CampaignRuleAction);
     }
 
     /// <summary>
@@ -209,24 +209,24 @@ public partial class CampaignRuleAction : IEquatable<CampaignRuleAction>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Parameters == other.Parameters ||
-                this.Parameters != null &&
-                this.Parameters.Equals(other.Parameters)
+                Parameters == other.Parameters ||
+                Parameters != null &&
+                Parameters.Equals(other.Parameters)
             ) &&
             (
-                this.ActionType == other.ActionType ||
-                this.ActionType != null &&
-                this.ActionType.Equals(other.ActionType)
+                ActionType == other.ActionType ||
+                ActionType != null &&
+                ActionType.Equals(other.ActionType)
             ) &&
             (
-                this.CampaignRuleActionEntities == other.CampaignRuleActionEntities ||
-                this.CampaignRuleActionEntities != null &&
-                this.CampaignRuleActionEntities.Equals(other.CampaignRuleActionEntities)
+                CampaignRuleActionEntities == other.CampaignRuleActionEntities ||
+                CampaignRuleActionEntities != null &&
+                CampaignRuleActionEntities.Equals(other.CampaignRuleActionEntities)
             );
     }
 
@@ -241,24 +241,24 @@ public partial class CampaignRuleAction : IEquatable<CampaignRuleAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Parameters != null)
+            if (Parameters != null)
             {
-                hash = hash * 59 + this.Parameters.GetHashCode();
+                hash = hash * 59 + Parameters.GetHashCode();
             }
 
-            if (this.ActionType != null)
+            if (ActionType != null)
             {
-                hash = hash * 59 + this.ActionType.GetHashCode();
+                hash = hash * 59 + ActionType.GetHashCode();
             }
 
-            if (this.CampaignRuleActionEntities != null)
+            if (CampaignRuleActionEntities != null)
             {
-                hash = hash * 59 + this.CampaignRuleActionEntities.GetHashCode();
+                hash = hash * 59 + CampaignRuleActionEntities.GetHashCode();
             }
 
             return hash;

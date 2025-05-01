@@ -83,7 +83,7 @@ public partial class NluDomainVersionQualityReport : IEquatable<NluDomainVersion
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as NluDomainVersionQualityReport);
+        return Equals(obj as NluDomainVersionQualityReport);
     }
 
     /// <summary>
@@ -101,19 +101,19 @@ public partial class NluDomainVersionQualityReport : IEquatable<NluDomainVersion
 
         return true &&
             (
-                this.Version == other.Version ||
-                this.Version != null &&
-                this.Version.Equals(other.Version)
+                Version == other.Version ||
+                Version != null &&
+                Version.Equals(other.Version)
             ) &&
             (
-                this.ConfusionMatrix == other.ConfusionMatrix ||
-                this.ConfusionMatrix != null &&
-                this.ConfusionMatrix.SequenceEqual(other.ConfusionMatrix)
+                ConfusionMatrix == other.ConfusionMatrix ||
+                ConfusionMatrix != null &&
+                ConfusionMatrix.SequenceEqual(other.ConfusionMatrix)
             ) &&
             (
-                this.Summary == other.Summary ||
-                this.Summary != null &&
-                this.Summary.Equals(other.Summary)
+                Summary == other.Summary ||
+                Summary != null &&
+                Summary.Equals(other.Summary)
             );
     }
 
@@ -128,19 +128,19 @@ public partial class NluDomainVersionQualityReport : IEquatable<NluDomainVersion
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Version != null)
+            if (Version != null)
             {
-                hash = hash * 59 + this.Version.GetHashCode();
+                hash = hash * 59 + Version.GetHashCode();
             }
 
-            if (this.ConfusionMatrix != null)
+            if (ConfusionMatrix != null)
             {
-                hash = hash * 59 + this.ConfusionMatrix.GetHashCode();
+                hash = hash * 59 + ConfusionMatrix.GetHashCode();
             }
 
-            if (this.Summary != null)
+            if (Summary != null)
             {
-                hash = hash * 59 + this.Summary.GetHashCode();
+                hash = hash * 59 + Summary.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class InitiatingAction : IEquatable<InitiatingAction>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InitiatingAction);
+        return Equals(obj as InitiatingAction);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class InitiatingAction : IEquatable<InitiatingAction>
 
         return true &&
             (
-                this.TransactionId == other.TransactionId ||
-                this.TransactionId != null &&
-                this.TransactionId.Equals(other.TransactionId)
+                TransactionId == other.TransactionId ||
+                TransactionId != null &&
+                TransactionId.Equals(other.TransactionId)
             ) &&
             (
-                this.ActionContext == other.ActionContext ||
-                this.ActionContext != null &&
-                this.ActionContext.Equals(other.ActionContext)
+                ActionContext == other.ActionContext ||
+                ActionContext != null &&
+                ActionContext.Equals(other.ActionContext)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class InitiatingAction : IEquatable<InitiatingAction>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.TransactionId != null)
+            if (TransactionId != null)
             {
-                hash = hash * 59 + this.TransactionId.GetHashCode();
+                hash = hash * 59 + TransactionId.GetHashCode();
             }
 
-            if (this.ActionContext != null)
+            if (ActionContext != null)
             {
-                hash = hash * 59 + this.ActionContext.GetHashCode();
+                hash = hash * 59 + ActionContext.GetHashCode();
             }
 
             return hash;

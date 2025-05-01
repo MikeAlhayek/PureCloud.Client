@@ -91,7 +91,7 @@ public partial class WorkPlanConstraintConflictMessage : IEquatable<WorkPlanCons
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkPlanConstraintConflictMessage);
+        return Equals(obj as WorkPlanConstraintConflictMessage);
     }
 
     /// <summary>
@@ -109,14 +109,14 @@ public partial class WorkPlanConstraintConflictMessage : IEquatable<WorkPlanCons
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.Arguments == other.Arguments ||
-                this.Arguments != null &&
-                this.Arguments.SequenceEqual(other.Arguments)
+                Arguments == other.Arguments ||
+                Arguments != null &&
+                Arguments.SequenceEqual(other.Arguments)
             );
     }
 
@@ -131,14 +131,14 @@ public partial class WorkPlanConstraintConflictMessage : IEquatable<WorkPlanCons
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.Arguments != null)
+            if (Arguments != null)
             {
-                hash = hash * 59 + this.Arguments.GetHashCode();
+                hash = hash * 59 + Arguments.GetHashCode();
             }
 
             return hash;

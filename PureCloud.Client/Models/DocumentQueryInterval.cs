@@ -97,7 +97,7 @@ public partial class DocumentQueryInterval : IEquatable<DocumentQueryInterval>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DocumentQueryInterval);
+        return Equals(obj as DocumentQueryInterval);
     }
 
     /// <summary>
@@ -115,14 +115,14 @@ public partial class DocumentQueryInterval : IEquatable<DocumentQueryInterval>
 
         return true &&
             (
-                this.Field == other.Field ||
-                this.Field != null &&
-                this.Field.Equals(other.Field)
+                Field == other.Field ||
+                Field != null &&
+                Field.Equals(other.Field)
             ) &&
             (
-                this.Value == other.Value ||
-                this.Value != null &&
-                this.Value.Equals(other.Value)
+                Value == other.Value ||
+                Value != null &&
+                Value.Equals(other.Value)
             );
     }
 
@@ -137,14 +137,14 @@ public partial class DocumentQueryInterval : IEquatable<DocumentQueryInterval>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Field != null)
+            if (Field != null)
             {
-                hash = hash * 59 + this.Field.GetHashCode();
+                hash = hash * 59 + Field.GetHashCode();
             }
 
-            if (this.Value != null)
+            if (Value != null)
             {
-                hash = hash * 59 + this.Value.GetHashCode();
+                hash = hash * 59 + Value.GetHashCode();
             }
 
             return hash;

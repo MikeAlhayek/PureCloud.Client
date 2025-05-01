@@ -149,7 +149,7 @@ public partial class FlowHealthIntentUtterance : IEquatable<FlowHealthIntentUtte
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as FlowHealthIntentUtterance);
+        return Equals(obj as FlowHealthIntentUtterance);
     }
 
     /// <summary>
@@ -167,34 +167,34 @@ public partial class FlowHealthIntentUtterance : IEquatable<FlowHealthIntentUtte
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Text == other.Text ||
-                this.Text != null &&
-                this.Text.Equals(other.Text)
+                Text == other.Text ||
+                Text != null &&
+                Text.Equals(other.Text)
             ) &&
             (
-                this.IssueCount == other.IssueCount ||
-                this.IssueCount != null &&
-                this.IssueCount.Equals(other.IssueCount)
+                IssueCount == other.IssueCount ||
+                IssueCount != null &&
+                IssueCount.Equals(other.IssueCount)
             ) &&
             (
-                this.StaticValidationResults == other.StaticValidationResults ||
-                this.StaticValidationResults != null &&
-                this.StaticValidationResults.SequenceEqual(other.StaticValidationResults)
+                StaticValidationResults == other.StaticValidationResults ||
+                StaticValidationResults != null &&
+                StaticValidationResults.SequenceEqual(other.StaticValidationResults)
             ) &&
             (
-                this.OutlierInfo == other.OutlierInfo ||
-                this.OutlierInfo != null &&
-                this.OutlierInfo.Equals(other.OutlierInfo)
+                OutlierInfo == other.OutlierInfo ||
+                OutlierInfo != null &&
+                OutlierInfo.Equals(other.OutlierInfo)
             ) &&
             (
-                this.ConfusionInfo == other.ConfusionInfo ||
-                this.ConfusionInfo != null &&
-                this.ConfusionInfo.Equals(other.ConfusionInfo)
+                ConfusionInfo == other.ConfusionInfo ||
+                ConfusionInfo != null &&
+                ConfusionInfo.Equals(other.ConfusionInfo)
             );
     }
 
@@ -209,34 +209,34 @@ public partial class FlowHealthIntentUtterance : IEquatable<FlowHealthIntentUtte
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Text != null)
+            if (Text != null)
             {
-                hash = hash * 59 + this.Text.GetHashCode();
+                hash = hash * 59 + Text.GetHashCode();
             }
 
-            if (this.IssueCount != null)
+            if (IssueCount != null)
             {
-                hash = hash * 59 + this.IssueCount.GetHashCode();
+                hash = hash * 59 + IssueCount.GetHashCode();
             }
 
-            if (this.StaticValidationResults != null)
+            if (StaticValidationResults != null)
             {
-                hash = hash * 59 + this.StaticValidationResults.GetHashCode();
+                hash = hash * 59 + StaticValidationResults.GetHashCode();
             }
 
-            if (this.OutlierInfo != null)
+            if (OutlierInfo != null)
             {
-                hash = hash * 59 + this.OutlierInfo.GetHashCode();
+                hash = hash * 59 + OutlierInfo.GetHashCode();
             }
 
-            if (this.ConfusionInfo != null)
+            if (ConfusionInfo != null)
             {
-                hash = hash * 59 + this.ConfusionInfo.GetHashCode();
+                hash = hash * 59 + ConfusionInfo.GetHashCode();
             }
 
             return hash;

@@ -71,7 +71,7 @@ public partial class UserProfilesInDateRangeRequest : IEquatable<UserProfilesInD
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as UserProfilesInDateRangeRequest);
+        return Equals(obj as UserProfilesInDateRangeRequest);
     }
 
     /// <summary>
@@ -89,14 +89,14 @@ public partial class UserProfilesInDateRangeRequest : IEquatable<UserProfilesInD
 
         return true &&
             (
-                this.StartWorkday == other.StartWorkday ||
-                this.StartWorkday != null &&
-                this.StartWorkday.Equals(other.StartWorkday)
+                StartWorkday == other.StartWorkday ||
+                StartWorkday != null &&
+                StartWorkday.Equals(other.StartWorkday)
             ) &&
             (
-                this.EndWorkday == other.EndWorkday ||
-                this.EndWorkday != null &&
-                this.EndWorkday.Equals(other.EndWorkday)
+                EndWorkday == other.EndWorkday ||
+                EndWorkday != null &&
+                EndWorkday.Equals(other.EndWorkday)
             );
     }
 
@@ -111,14 +111,14 @@ public partial class UserProfilesInDateRangeRequest : IEquatable<UserProfilesInD
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.StartWorkday != null)
+            if (StartWorkday != null)
             {
-                hash = hash * 59 + this.StartWorkday.GetHashCode();
+                hash = hash * 59 + StartWorkday.GetHashCode();
             }
 
-            if (this.EndWorkday != null)
+            if (EndWorkday != null)
             {
-                hash = hash * 59 + this.EndWorkday.GetHashCode();
+                hash = hash * 59 + EndWorkday.GetHashCode();
             }
 
             return hash;

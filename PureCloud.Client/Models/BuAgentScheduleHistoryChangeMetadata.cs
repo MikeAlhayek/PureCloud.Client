@@ -64,7 +64,7 @@ public partial class BuAgentScheduleHistoryChangeMetadata : IEquatable<BuAgentSc
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as BuAgentScheduleHistoryChangeMetadata);
+        return Equals(obj as BuAgentScheduleHistoryChangeMetadata);
     }
 
     /// <summary>
@@ -82,14 +82,14 @@ public partial class BuAgentScheduleHistoryChangeMetadata : IEquatable<BuAgentSc
 
         return true &&
             (
-                this.DateModified == other.DateModified ||
-                this.DateModified != null &&
-                this.DateModified.Equals(other.DateModified)
+                DateModified == other.DateModified ||
+                DateModified != null &&
+                DateModified.Equals(other.DateModified)
             ) &&
             (
-                this.ModifiedBy == other.ModifiedBy ||
-                this.ModifiedBy != null &&
-                this.ModifiedBy.Equals(other.ModifiedBy)
+                ModifiedBy == other.ModifiedBy ||
+                ModifiedBy != null &&
+                ModifiedBy.Equals(other.ModifiedBy)
             );
     }
 
@@ -104,14 +104,14 @@ public partial class BuAgentScheduleHistoryChangeMetadata : IEquatable<BuAgentSc
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.DateModified != null)
+            if (DateModified != null)
             {
-                hash = hash * 59 + this.DateModified.GetHashCode();
+                hash = hash * 59 + DateModified.GetHashCode();
             }
 
-            if (this.ModifiedBy != null)
+            if (ModifiedBy != null)
             {
-                hash = hash * 59 + this.ModifiedBy.GetHashCode();
+                hash = hash * 59 + ModifiedBy.GetHashCode();
             }
 
             return hash;

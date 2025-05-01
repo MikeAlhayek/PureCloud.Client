@@ -59,7 +59,7 @@ public partial class RoleDivisionGrants : IEquatable<RoleDivisionGrants>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as RoleDivisionGrants);
+        return Equals(obj as RoleDivisionGrants);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class RoleDivisionGrants : IEquatable<RoleDivisionGrants>
 
         return true &&
             (
-                this.Grants == other.Grants ||
-                this.Grants != null &&
-                this.Grants.SequenceEqual(other.Grants)
+                Grants == other.Grants ||
+                Grants != null &&
+                Grants.SequenceEqual(other.Grants)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class RoleDivisionGrants : IEquatable<RoleDivisionGrants>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Grants != null)
+            if (Grants != null)
             {
-                hash = hash * 59 + this.Grants.GetHashCode();
+                hash = hash * 59 + Grants.GetHashCode();
             }
 
             return hash;

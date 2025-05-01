@@ -92,7 +92,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as CredentialType);
+        return Equals(obj as CredentialType);
     }
 
     /// <summary>
@@ -110,29 +110,29 @@ public partial class CredentialType : IEquatable<CredentialType>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Properties == other.Properties ||
-                this.Properties != null &&
-                this.Properties.Equals(other.Properties)
+                Properties == other.Properties ||
+                Properties != null &&
+                Properties.Equals(other.Properties)
             ) &&
             (
-                this.DisplayOrder == other.DisplayOrder ||
-                this.DisplayOrder != null &&
-                this.DisplayOrder.SequenceEqual(other.DisplayOrder)
+                DisplayOrder == other.DisplayOrder ||
+                DisplayOrder != null &&
+                DisplayOrder.SequenceEqual(other.DisplayOrder)
             ) &&
             (
-                this.Required == other.Required ||
-                this.Required != null &&
-                this.Required.SequenceEqual(other.Required)
+                Required == other.Required ||
+                Required != null &&
+                Required.SequenceEqual(other.Required)
             );
     }
 
@@ -147,29 +147,29 @@ public partial class CredentialType : IEquatable<CredentialType>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Properties != null)
+            if (Properties != null)
             {
-                hash = hash * 59 + this.Properties.GetHashCode();
+                hash = hash * 59 + Properties.GetHashCode();
             }
 
-            if (this.DisplayOrder != null)
+            if (DisplayOrder != null)
             {
-                hash = hash * 59 + this.DisplayOrder.GetHashCode();
+                hash = hash * 59 + DisplayOrder.GetHashCode();
             }
 
-            if (this.Required != null)
+            if (Required != null)
             {
-                hash = hash * 59 + this.Required.GetHashCode();
+                hash = hash * 59 + Required.GetHashCode();
             }
 
             return hash;

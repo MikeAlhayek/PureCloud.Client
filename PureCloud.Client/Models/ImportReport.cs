@@ -85,7 +85,7 @@ public partial class ImportReport : IEquatable<ImportReport>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ImportReport);
+        return Equals(obj as ImportReport);
     }
 
     /// <summary>
@@ -103,24 +103,24 @@ public partial class ImportReport : IEquatable<ImportReport>
 
         return true &&
             (
-                this.Errors == other.Errors ||
-                this.Errors != null &&
-                this.Errors.SequenceEqual(other.Errors)
+                Errors == other.Errors ||
+                Errors != null &&
+                Errors.SequenceEqual(other.Errors)
             ) &&
             (
-                this.Validated == other.Validated ||
-                this.Validated != null &&
-                this.Validated.Equals(other.Validated)
+                Validated == other.Validated ||
+                Validated != null &&
+                Validated.Equals(other.Validated)
             ) &&
             (
-                this.Imported == other.Imported ||
-                this.Imported != null &&
-                this.Imported.Equals(other.Imported)
+                Imported == other.Imported ||
+                Imported != null &&
+                Imported.Equals(other.Imported)
             ) &&
             (
-                this.TotalDocuments == other.TotalDocuments ||
-                this.TotalDocuments != null &&
-                this.TotalDocuments.Equals(other.TotalDocuments)
+                TotalDocuments == other.TotalDocuments ||
+                TotalDocuments != null &&
+                TotalDocuments.Equals(other.TotalDocuments)
             );
     }
 
@@ -135,24 +135,24 @@ public partial class ImportReport : IEquatable<ImportReport>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Errors != null)
+            if (Errors != null)
             {
-                hash = hash * 59 + this.Errors.GetHashCode();
+                hash = hash * 59 + Errors.GetHashCode();
             }
 
-            if (this.Validated != null)
+            if (Validated != null)
             {
-                hash = hash * 59 + this.Validated.GetHashCode();
+                hash = hash * 59 + Validated.GetHashCode();
             }
 
-            if (this.Imported != null)
+            if (Imported != null)
             {
-                hash = hash * 59 + this.Imported.GetHashCode();
+                hash = hash * 59 + Imported.GetHashCode();
             }
 
-            if (this.TotalDocuments != null)
+            if (TotalDocuments != null)
             {
-                hash = hash * 59 + this.TotalDocuments.GetHashCode();
+                hash = hash * 59 + TotalDocuments.GetHashCode();
             }
 
             return hash;

@@ -59,7 +59,7 @@ public partial class HistoricalImportDeleteFilesJobRequest : IEquatable<Historic
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as HistoricalImportDeleteFilesJobRequest);
+        return Equals(obj as HistoricalImportDeleteFilesJobRequest);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ public partial class HistoricalImportDeleteFilesJobRequest : IEquatable<Historic
 
         return true &&
             (
-                this.RequestIds == other.RequestIds ||
-                this.RequestIds != null &&
-                this.RequestIds.SequenceEqual(other.RequestIds)
+                RequestIds == other.RequestIds ||
+                RequestIds != null &&
+                RequestIds.SequenceEqual(other.RequestIds)
             );
     }
 
@@ -94,9 +94,9 @@ public partial class HistoricalImportDeleteFilesJobRequest : IEquatable<Historic
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.RequestIds != null)
+            if (RequestIds != null)
             {
-                hash = hash * 59 + this.RequestIds.GetHashCode();
+                hash = hash * 59 + RequestIds.GetHashCode();
             }
 
             return hash;

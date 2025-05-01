@@ -109,7 +109,7 @@ public partial class SupportCenterScreen : IEquatable<SupportCenterScreen>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as SupportCenterScreen);
+        return Equals(obj as SupportCenterScreen);
     }
 
     /// <summary>
@@ -127,14 +127,14 @@ public partial class SupportCenterScreen : IEquatable<SupportCenterScreen>
 
         return true &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.ModuleSettings == other.ModuleSettings ||
-                this.ModuleSettings != null &&
-                this.ModuleSettings.SequenceEqual(other.ModuleSettings)
+                ModuleSettings == other.ModuleSettings ||
+                ModuleSettings != null &&
+                ModuleSettings.SequenceEqual(other.ModuleSettings)
             );
     }
 
@@ -149,14 +149,14 @@ public partial class SupportCenterScreen : IEquatable<SupportCenterScreen>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.ModuleSettings != null)
+            if (ModuleSettings != null)
             {
-                hash = hash * 59 + this.ModuleSettings.GetHashCode();
+                hash = hash * 59 + ModuleSettings.GetHashCode();
             }
 
             return hash;

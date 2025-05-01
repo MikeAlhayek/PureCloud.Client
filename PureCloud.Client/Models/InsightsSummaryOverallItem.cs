@@ -77,7 +77,7 @@ public partial class InsightsSummaryOverallItem : IEquatable<InsightsSummaryOver
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InsightsSummaryOverallItem);
+        return Equals(obj as InsightsSummaryOverallItem);
     }
 
     /// <summary>
@@ -95,19 +95,19 @@ public partial class InsightsSummaryOverallItem : IEquatable<InsightsSummaryOver
 
         return true &&
             (
-                this.ComparativePeriod == other.ComparativePeriod ||
-                this.ComparativePeriod != null &&
-                this.ComparativePeriod.Equals(other.ComparativePeriod)
+                ComparativePeriod == other.ComparativePeriod ||
+                ComparativePeriod != null &&
+                ComparativePeriod.Equals(other.ComparativePeriod)
             ) &&
             (
-                this.PrimaryPeriod == other.PrimaryPeriod ||
-                this.PrimaryPeriod != null &&
-                this.PrimaryPeriod.Equals(other.PrimaryPeriod)
+                PrimaryPeriod == other.PrimaryPeriod ||
+                PrimaryPeriod != null &&
+                PrimaryPeriod.Equals(other.PrimaryPeriod)
             ) &&
             (
-                this.PercentOfGoalChange == other.PercentOfGoalChange ||
-                this.PercentOfGoalChange != null &&
-                this.PercentOfGoalChange.Equals(other.PercentOfGoalChange)
+                PercentOfGoalChange == other.PercentOfGoalChange ||
+                PercentOfGoalChange != null &&
+                PercentOfGoalChange.Equals(other.PercentOfGoalChange)
             );
     }
 
@@ -122,19 +122,19 @@ public partial class InsightsSummaryOverallItem : IEquatable<InsightsSummaryOver
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.ComparativePeriod != null)
+            if (ComparativePeriod != null)
             {
-                hash = hash * 59 + this.ComparativePeriod.GetHashCode();
+                hash = hash * 59 + ComparativePeriod.GetHashCode();
             }
 
-            if (this.PrimaryPeriod != null)
+            if (PrimaryPeriod != null)
             {
-                hash = hash * 59 + this.PrimaryPeriod.GetHashCode();
+                hash = hash * 59 + PrimaryPeriod.GetHashCode();
             }
 
-            if (this.PercentOfGoalChange != null)
+            if (PercentOfGoalChange != null)
             {
-                hash = hash * 59 + this.PercentOfGoalChange.GetHashCode();
+                hash = hash * 59 + PercentOfGoalChange.GetHashCode();
             }
 
             return hash;

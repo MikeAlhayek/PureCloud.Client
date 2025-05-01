@@ -40,7 +40,7 @@ public partial class AuditQueryResponse : IEquatable<AuditQueryResponse>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuditQueryResponse);
+        return Equals(obj as AuditQueryResponse);
     }
 
     /// <summary>

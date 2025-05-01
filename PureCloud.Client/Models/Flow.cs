@@ -569,7 +569,7 @@ public partial class Flow : IEquatable<Flow>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as Flow);
+        return Equals(obj as Flow);
     }
 
     /// <summary>
@@ -587,124 +587,124 @@ public partial class Flow : IEquatable<Flow>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Name == other.Name ||
-                this.Name != null &&
-                this.Name.Equals(other.Name)
+                Name == other.Name ||
+                Name != null &&
+                Name.Equals(other.Name)
             ) &&
             (
-                this.Division == other.Division ||
-                this.Division != null &&
-                this.Division.Equals(other.Division)
+                Division == other.Division ||
+                Division != null &&
+                Division.Equals(other.Division)
             ) &&
             (
-                this.Description == other.Description ||
-                this.Description != null &&
-                this.Description.Equals(other.Description)
+                Description == other.Description ||
+                Description != null &&
+                Description.Equals(other.Description)
             ) &&
             (
-                this.Type == other.Type ||
-                this.Type != null &&
-                this.Type.Equals(other.Type)
+                Type == other.Type ||
+                Type != null &&
+                Type.Equals(other.Type)
             ) &&
             (
-                this.LockedUser == other.LockedUser ||
-                this.LockedUser != null &&
-                this.LockedUser.Equals(other.LockedUser)
+                LockedUser == other.LockedUser ||
+                LockedUser != null &&
+                LockedUser.Equals(other.LockedUser)
             ) &&
             (
-                this.LockedClient == other.LockedClient ||
-                this.LockedClient != null &&
-                this.LockedClient.Equals(other.LockedClient)
+                LockedClient == other.LockedClient ||
+                LockedClient != null &&
+                LockedClient.Equals(other.LockedClient)
             ) &&
             (
-                this.Active == other.Active ||
-                this.Active != null &&
-                this.Active.Equals(other.Active)
+                Active == other.Active ||
+                Active != null &&
+                Active.Equals(other.Active)
             ) &&
             (
-                this.System == other.System ||
-                this.System != null &&
-                this.System.Equals(other.System)
+                System == other.System ||
+                System != null &&
+                System.Equals(other.System)
             ) &&
             (
-                this.Deleted == other.Deleted ||
-                this.Deleted != null &&
-                this.Deleted.Equals(other.Deleted)
+                Deleted == other.Deleted ||
+                Deleted != null &&
+                Deleted.Equals(other.Deleted)
             ) &&
             (
-                this.PublishedVersion == other.PublishedVersion ||
-                this.PublishedVersion != null &&
-                this.PublishedVersion.Equals(other.PublishedVersion)
+                PublishedVersion == other.PublishedVersion ||
+                PublishedVersion != null &&
+                PublishedVersion.Equals(other.PublishedVersion)
             ) &&
             (
-                this.SavedVersion == other.SavedVersion ||
-                this.SavedVersion != null &&
-                this.SavedVersion.Equals(other.SavedVersion)
+                SavedVersion == other.SavedVersion ||
+                SavedVersion != null &&
+                SavedVersion.Equals(other.SavedVersion)
             ) &&
             (
-                this.InputSchema == other.InputSchema ||
-                this.InputSchema != null &&
-                this.InputSchema.Equals(other.InputSchema)
+                InputSchema == other.InputSchema ||
+                InputSchema != null &&
+                InputSchema.Equals(other.InputSchema)
             ) &&
             (
-                this.OutputSchema == other.OutputSchema ||
-                this.OutputSchema != null &&
-                this.OutputSchema.Equals(other.OutputSchema)
+                OutputSchema == other.OutputSchema ||
+                OutputSchema != null &&
+                OutputSchema.Equals(other.OutputSchema)
             ) &&
             (
-                this.CheckedInVersion == other.CheckedInVersion ||
-                this.CheckedInVersion != null &&
-                this.CheckedInVersion.Equals(other.CheckedInVersion)
+                CheckedInVersion == other.CheckedInVersion ||
+                CheckedInVersion != null &&
+                CheckedInVersion.Equals(other.CheckedInVersion)
             ) &&
             (
-                this.DebugVersion == other.DebugVersion ||
-                this.DebugVersion != null &&
-                this.DebugVersion.Equals(other.DebugVersion)
+                DebugVersion == other.DebugVersion ||
+                DebugVersion != null &&
+                DebugVersion.Equals(other.DebugVersion)
             ) &&
             (
-                this.PublishedBy == other.PublishedBy ||
-                this.PublishedBy != null &&
-                this.PublishedBy.Equals(other.PublishedBy)
+                PublishedBy == other.PublishedBy ||
+                PublishedBy != null &&
+                PublishedBy.Equals(other.PublishedBy)
             ) &&
             (
-                this.CurrentOperation == other.CurrentOperation ||
-                this.CurrentOperation != null &&
-                this.CurrentOperation.Equals(other.CurrentOperation)
+                CurrentOperation == other.CurrentOperation ||
+                CurrentOperation != null &&
+                CurrentOperation.Equals(other.CurrentOperation)
             ) &&
             (
-                this.NluInfo == other.NluInfo ||
-                this.NluInfo != null &&
-                this.NluInfo.Equals(other.NluInfo)
+                NluInfo == other.NluInfo ||
+                NluInfo != null &&
+                NluInfo.Equals(other.NluInfo)
             ) &&
             (
-                this.SupportedLanguages == other.SupportedLanguages ||
-                this.SupportedLanguages != null &&
-                this.SupportedLanguages.SequenceEqual(other.SupportedLanguages)
+                SupportedLanguages == other.SupportedLanguages ||
+                SupportedLanguages != null &&
+                SupportedLanguages.SequenceEqual(other.SupportedLanguages)
             ) &&
             (
-                this.CompatibleFlowTypes == other.CompatibleFlowTypes ||
-                this.CompatibleFlowTypes != null &&
-                this.CompatibleFlowTypes.SequenceEqual(other.CompatibleFlowTypes)
+                CompatibleFlowTypes == other.CompatibleFlowTypes ||
+                CompatibleFlowTypes != null &&
+                CompatibleFlowTypes.SequenceEqual(other.CompatibleFlowTypes)
             ) &&
             (
-                this.WorktypeId == other.WorktypeId ||
-                this.WorktypeId != null &&
-                this.WorktypeId.Equals(other.WorktypeId)
+                WorktypeId == other.WorktypeId ||
+                WorktypeId != null &&
+                WorktypeId.Equals(other.WorktypeId)
             ) &&
             (
-                this.VirtualAgentEnabled == other.VirtualAgentEnabled ||
-                this.VirtualAgentEnabled != null &&
-                this.VirtualAgentEnabled.Equals(other.VirtualAgentEnabled)
+                VirtualAgentEnabled == other.VirtualAgentEnabled ||
+                VirtualAgentEnabled != null &&
+                VirtualAgentEnabled.Equals(other.VirtualAgentEnabled)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -719,124 +719,124 @@ public partial class Flow : IEquatable<Flow>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (Name != null)
             {
-                hash = hash * 59 + this.Name.GetHashCode();
+                hash = hash * 59 + Name.GetHashCode();
             }
 
-            if (this.Division != null)
+            if (Division != null)
             {
-                hash = hash * 59 + this.Division.GetHashCode();
+                hash = hash * 59 + Division.GetHashCode();
             }
 
-            if (this.Description != null)
+            if (Description != null)
             {
-                hash = hash * 59 + this.Description.GetHashCode();
+                hash = hash * 59 + Description.GetHashCode();
             }
 
-            if (this.Type != null)
+            if (Type != null)
             {
-                hash = hash * 59 + this.Type.GetHashCode();
+                hash = hash * 59 + Type.GetHashCode();
             }
 
-            if (this.LockedUser != null)
+            if (LockedUser != null)
             {
-                hash = hash * 59 + this.LockedUser.GetHashCode();
+                hash = hash * 59 + LockedUser.GetHashCode();
             }
 
-            if (this.LockedClient != null)
+            if (LockedClient != null)
             {
-                hash = hash * 59 + this.LockedClient.GetHashCode();
+                hash = hash * 59 + LockedClient.GetHashCode();
             }
 
-            if (this.Active != null)
+            if (Active != null)
             {
-                hash = hash * 59 + this.Active.GetHashCode();
+                hash = hash * 59 + Active.GetHashCode();
             }
 
-            if (this.System != null)
+            if (System != null)
             {
-                hash = hash * 59 + this.System.GetHashCode();
+                hash = hash * 59 + System.GetHashCode();
             }
 
-            if (this.Deleted != null)
+            if (Deleted != null)
             {
-                hash = hash * 59 + this.Deleted.GetHashCode();
+                hash = hash * 59 + Deleted.GetHashCode();
             }
 
-            if (this.PublishedVersion != null)
+            if (PublishedVersion != null)
             {
-                hash = hash * 59 + this.PublishedVersion.GetHashCode();
+                hash = hash * 59 + PublishedVersion.GetHashCode();
             }
 
-            if (this.SavedVersion != null)
+            if (SavedVersion != null)
             {
-                hash = hash * 59 + this.SavedVersion.GetHashCode();
+                hash = hash * 59 + SavedVersion.GetHashCode();
             }
 
-            if (this.InputSchema != null)
+            if (InputSchema != null)
             {
-                hash = hash * 59 + this.InputSchema.GetHashCode();
+                hash = hash * 59 + InputSchema.GetHashCode();
             }
 
-            if (this.OutputSchema != null)
+            if (OutputSchema != null)
             {
-                hash = hash * 59 + this.OutputSchema.GetHashCode();
+                hash = hash * 59 + OutputSchema.GetHashCode();
             }
 
-            if (this.CheckedInVersion != null)
+            if (CheckedInVersion != null)
             {
-                hash = hash * 59 + this.CheckedInVersion.GetHashCode();
+                hash = hash * 59 + CheckedInVersion.GetHashCode();
             }
 
-            if (this.DebugVersion != null)
+            if (DebugVersion != null)
             {
-                hash = hash * 59 + this.DebugVersion.GetHashCode();
+                hash = hash * 59 + DebugVersion.GetHashCode();
             }
 
-            if (this.PublishedBy != null)
+            if (PublishedBy != null)
             {
-                hash = hash * 59 + this.PublishedBy.GetHashCode();
+                hash = hash * 59 + PublishedBy.GetHashCode();
             }
 
-            if (this.CurrentOperation != null)
+            if (CurrentOperation != null)
             {
-                hash = hash * 59 + this.CurrentOperation.GetHashCode();
+                hash = hash * 59 + CurrentOperation.GetHashCode();
             }
 
-            if (this.NluInfo != null)
+            if (NluInfo != null)
             {
-                hash = hash * 59 + this.NluInfo.GetHashCode();
+                hash = hash * 59 + NluInfo.GetHashCode();
             }
 
-            if (this.SupportedLanguages != null)
+            if (SupportedLanguages != null)
             {
-                hash = hash * 59 + this.SupportedLanguages.GetHashCode();
+                hash = hash * 59 + SupportedLanguages.GetHashCode();
             }
 
-            if (this.CompatibleFlowTypes != null)
+            if (CompatibleFlowTypes != null)
             {
-                hash = hash * 59 + this.CompatibleFlowTypes.GetHashCode();
+                hash = hash * 59 + CompatibleFlowTypes.GetHashCode();
             }
 
-            if (this.WorktypeId != null)
+            if (WorktypeId != null)
             {
-                hash = hash * 59 + this.WorktypeId.GetHashCode();
+                hash = hash * 59 + WorktypeId.GetHashCode();
             }
 
-            if (this.VirtualAgentEnabled != null)
+            if (VirtualAgentEnabled != null)
             {
-                hash = hash * 59 + this.VirtualAgentEnabled.GetHashCode();
+                hash = hash * 59 + VirtualAgentEnabled.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

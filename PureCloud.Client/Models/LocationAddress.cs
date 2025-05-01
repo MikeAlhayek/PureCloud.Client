@@ -118,7 +118,7 @@ public partial class LocationAddress : IEquatable<LocationAddress>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as LocationAddress);
+        return Equals(obj as LocationAddress);
     }
 
     /// <summary>
@@ -136,39 +136,39 @@ public partial class LocationAddress : IEquatable<LocationAddress>
 
         return true &&
             (
-                this.City == other.City ||
-                this.City != null &&
-                this.City.Equals(other.City)
+                City == other.City ||
+                City != null &&
+                City.Equals(other.City)
             ) &&
             (
-                this.Country == other.Country ||
-                this.Country != null &&
-                this.Country.Equals(other.Country)
+                Country == other.Country ||
+                Country != null &&
+                Country.Equals(other.Country)
             ) &&
             (
-                this.CountryName == other.CountryName ||
-                this.CountryName != null &&
-                this.CountryName.Equals(other.CountryName)
+                CountryName == other.CountryName ||
+                CountryName != null &&
+                CountryName.Equals(other.CountryName)
             ) &&
             (
-                this.State == other.State ||
-                this.State != null &&
-                this.State.Equals(other.State)
+                State == other.State ||
+                State != null &&
+                State.Equals(other.State)
             ) &&
             (
-                this.Street1 == other.Street1 ||
-                this.Street1 != null &&
-                this.Street1.Equals(other.Street1)
+                Street1 == other.Street1 ||
+                Street1 != null &&
+                Street1.Equals(other.Street1)
             ) &&
             (
-                this.Street2 == other.Street2 ||
-                this.Street2 != null &&
-                this.Street2.Equals(other.Street2)
+                Street2 == other.Street2 ||
+                Street2 != null &&
+                Street2.Equals(other.Street2)
             ) &&
             (
-                this.Zipcode == other.Zipcode ||
-                this.Zipcode != null &&
-                this.Zipcode.Equals(other.Zipcode)
+                Zipcode == other.Zipcode ||
+                Zipcode != null &&
+                Zipcode.Equals(other.Zipcode)
             );
     }
 
@@ -183,39 +183,39 @@ public partial class LocationAddress : IEquatable<LocationAddress>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.City != null)
+            if (City != null)
             {
-                hash = hash * 59 + this.City.GetHashCode();
+                hash = hash * 59 + City.GetHashCode();
             }
 
-            if (this.Country != null)
+            if (Country != null)
             {
-                hash = hash * 59 + this.Country.GetHashCode();
+                hash = hash * 59 + Country.GetHashCode();
             }
 
-            if (this.CountryName != null)
+            if (CountryName != null)
             {
-                hash = hash * 59 + this.CountryName.GetHashCode();
+                hash = hash * 59 + CountryName.GetHashCode();
             }
 
-            if (this.State != null)
+            if (State != null)
             {
-                hash = hash * 59 + this.State.GetHashCode();
+                hash = hash * 59 + State.GetHashCode();
             }
 
-            if (this.Street1 != null)
+            if (Street1 != null)
             {
-                hash = hash * 59 + this.Street1.GetHashCode();
+                hash = hash * 59 + Street1.GetHashCode();
             }
 
-            if (this.Street2 != null)
+            if (Street2 != null)
             {
-                hash = hash * 59 + this.Street2.GetHashCode();
+                hash = hash * 59 + Street2.GetHashCode();
             }
 
-            if (this.Zipcode != null)
+            if (Zipcode != null)
             {
-                hash = hash * 59 + this.Zipcode.GetHashCode();
+                hash = hash * 59 + Zipcode.GetHashCode();
             }
 
             return hash;

@@ -112,7 +112,7 @@ public partial class AnalyticsAgentStateAgentResponse : IEquatable<AnalyticsAgen
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AnalyticsAgentStateAgentResponse);
+        return Equals(obj as AnalyticsAgentStateAgentResponse);
     }
 
     /// <summary>
@@ -130,34 +130,34 @@ public partial class AnalyticsAgentStateAgentResponse : IEquatable<AnalyticsAgen
 
         return true &&
             (
-                this.UserId == other.UserId ||
-                this.UserId != null &&
-                this.UserId.Equals(other.UserId)
+                UserId == other.UserId ||
+                UserId != null &&
+                UserId.Equals(other.UserId)
             ) &&
             (
-                this.DivisionId == other.DivisionId ||
-                this.DivisionId != null &&
-                this.DivisionId.Equals(other.DivisionId)
+                DivisionId == other.DivisionId ||
+                DivisionId != null &&
+                DivisionId.Equals(other.DivisionId)
             ) &&
             (
-                this.UserName == other.UserName ||
-                this.UserName != null &&
-                this.UserName.Equals(other.UserName)
+                UserName == other.UserName ||
+                UserName != null &&
+                UserName.Equals(other.UserName)
             ) &&
             (
-                this.ManagerId == other.ManagerId ||
-                this.ManagerId != null &&
-                this.ManagerId.Equals(other.ManagerId)
+                ManagerId == other.ManagerId ||
+                ManagerId != null &&
+                ManagerId.Equals(other.ManagerId)
             ) &&
             (
-                this.SessionCount == other.SessionCount ||
-                this.SessionCount != null &&
-                this.SessionCount.Equals(other.SessionCount)
+                SessionCount == other.SessionCount ||
+                SessionCount != null &&
+                SessionCount.Equals(other.SessionCount)
             ) &&
             (
-                this.Sessions == other.Sessions ||
-                this.Sessions != null &&
-                this.Sessions.SequenceEqual(other.Sessions)
+                Sessions == other.Sessions ||
+                Sessions != null &&
+                Sessions.SequenceEqual(other.Sessions)
             );
     }
 
@@ -172,34 +172,34 @@ public partial class AnalyticsAgentStateAgentResponse : IEquatable<AnalyticsAgen
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.UserId != null)
+            if (UserId != null)
             {
-                hash = hash * 59 + this.UserId.GetHashCode();
+                hash = hash * 59 + UserId.GetHashCode();
             }
 
-            if (this.DivisionId != null)
+            if (DivisionId != null)
             {
-                hash = hash * 59 + this.DivisionId.GetHashCode();
+                hash = hash * 59 + DivisionId.GetHashCode();
             }
 
-            if (this.UserName != null)
+            if (UserName != null)
             {
-                hash = hash * 59 + this.UserName.GetHashCode();
+                hash = hash * 59 + UserName.GetHashCode();
             }
 
-            if (this.ManagerId != null)
+            if (ManagerId != null)
             {
-                hash = hash * 59 + this.ManagerId.GetHashCode();
+                hash = hash * 59 + ManagerId.GetHashCode();
             }
 
-            if (this.SessionCount != null)
+            if (SessionCount != null)
             {
-                hash = hash * 59 + this.SessionCount.GetHashCode();
+                hash = hash * 59 + SessionCount.GetHashCode();
             }
 
-            if (this.Sessions != null)
+            if (Sessions != null)
             {
-                hash = hash * 59 + this.Sessions.GetHashCode();
+                hash = hash * 59 + Sessions.GetHashCode();
             }
 
             return hash;

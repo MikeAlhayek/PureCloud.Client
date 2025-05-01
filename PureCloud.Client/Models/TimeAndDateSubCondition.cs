@@ -41,7 +41,7 @@ public partial class TimeAndDateSubCondition : IEquatable<TimeAndDateSubConditio
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as TimeAndDateSubCondition);
+        return Equals(obj as TimeAndDateSubCondition);
     }
 
     /// <summary>

@@ -107,7 +107,7 @@ public partial class DomainPermission : IEquatable<DomainPermission>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as DomainPermission);
+        return Equals(obj as DomainPermission);
     }
 
     /// <summary>
@@ -125,34 +125,34 @@ public partial class DomainPermission : IEquatable<DomainPermission>
 
         return true &&
             (
-                this.Domain == other.Domain ||
-                this.Domain != null &&
-                this.Domain.Equals(other.Domain)
+                Domain == other.Domain ||
+                Domain != null &&
+                Domain.Equals(other.Domain)
             ) &&
             (
-                this.EntityType == other.EntityType ||
-                this.EntityType != null &&
-                this.EntityType.Equals(other.EntityType)
+                EntityType == other.EntityType ||
+                EntityType != null &&
+                EntityType.Equals(other.EntityType)
             ) &&
             (
-                this.Action == other.Action ||
-                this.Action != null &&
-                this.Action.Equals(other.Action)
+                Action == other.Action ||
+                Action != null &&
+                Action.Equals(other.Action)
             ) &&
             (
-                this.Label == other.Label ||
-                this.Label != null &&
-                this.Label.Equals(other.Label)
+                Label == other.Label ||
+                Label != null &&
+                Label.Equals(other.Label)
             ) &&
             (
-                this.AllowsConditions == other.AllowsConditions ||
-                this.AllowsConditions != null &&
-                this.AllowsConditions.Equals(other.AllowsConditions)
+                AllowsConditions == other.AllowsConditions ||
+                AllowsConditions != null &&
+                AllowsConditions.Equals(other.AllowsConditions)
             ) &&
             (
-                this.DivisionAware == other.DivisionAware ||
-                this.DivisionAware != null &&
-                this.DivisionAware.Equals(other.DivisionAware)
+                DivisionAware == other.DivisionAware ||
+                DivisionAware != null &&
+                DivisionAware.Equals(other.DivisionAware)
             );
     }
 
@@ -167,34 +167,34 @@ public partial class DomainPermission : IEquatable<DomainPermission>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Domain != null)
+            if (Domain != null)
             {
-                hash = hash * 59 + this.Domain.GetHashCode();
+                hash = hash * 59 + Domain.GetHashCode();
             }
 
-            if (this.EntityType != null)
+            if (EntityType != null)
             {
-                hash = hash * 59 + this.EntityType.GetHashCode();
+                hash = hash * 59 + EntityType.GetHashCode();
             }
 
-            if (this.Action != null)
+            if (Action != null)
             {
-                hash = hash * 59 + this.Action.GetHashCode();
+                hash = hash * 59 + Action.GetHashCode();
             }
 
-            if (this.Label != null)
+            if (Label != null)
             {
-                hash = hash * 59 + this.Label.GetHashCode();
+                hash = hash * 59 + Label.GetHashCode();
             }
 
-            if (this.AllowsConditions != null)
+            if (AllowsConditions != null)
             {
-                hash = hash * 59 + this.AllowsConditions.GetHashCode();
+                hash = hash * 59 + AllowsConditions.GetHashCode();
             }
 
-            if (this.DivisionAware != null)
+            if (DivisionAware != null)
             {
-                hash = hash * 59 + this.DivisionAware.GetHashCode();
+                hash = hash * 59 + DivisionAware.GetHashCode();
             }
 
             return hash;

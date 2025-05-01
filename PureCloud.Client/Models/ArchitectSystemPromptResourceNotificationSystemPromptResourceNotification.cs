@@ -112,7 +112,7 @@ public partial class ArchitectSystemPromptResourceNotificationSystemPromptResour
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification);
+        return Equals(obj as ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification);
     }
 
     /// <summary>
@@ -130,34 +130,34 @@ public partial class ArchitectSystemPromptResourceNotificationSystemPromptResour
 
         return true &&
             (
-                this.PromptId == other.PromptId ||
-                this.PromptId != null &&
-                this.PromptId.Equals(other.PromptId)
+                PromptId == other.PromptId ||
+                PromptId != null &&
+                PromptId.Equals(other.PromptId)
             ) &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.Language == other.Language ||
-                this.Language != null &&
-                this.Language.Equals(other.Language)
+                Language == other.Language ||
+                Language != null &&
+                Language.Equals(other.Language)
             ) &&
             (
-                this.MediaUri == other.MediaUri ||
-                this.MediaUri != null &&
-                this.MediaUri.Equals(other.MediaUri)
+                MediaUri == other.MediaUri ||
+                MediaUri != null &&
+                MediaUri.Equals(other.MediaUri)
             ) &&
             (
-                this.UploadStatus == other.UploadStatus ||
-                this.UploadStatus != null &&
-                this.UploadStatus.Equals(other.UploadStatus)
+                UploadStatus == other.UploadStatus ||
+                UploadStatus != null &&
+                UploadStatus.Equals(other.UploadStatus)
             ) &&
             (
-                this.DurationSeconds == other.DurationSeconds ||
-                this.DurationSeconds != null &&
-                this.DurationSeconds.Equals(other.DurationSeconds)
+                DurationSeconds == other.DurationSeconds ||
+                DurationSeconds != null &&
+                DurationSeconds.Equals(other.DurationSeconds)
             );
     }
 
@@ -172,34 +172,34 @@ public partial class ArchitectSystemPromptResourceNotificationSystemPromptResour
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.PromptId != null)
+            if (PromptId != null)
             {
-                hash = hash * 59 + this.PromptId.GetHashCode();
+                hash = hash * 59 + PromptId.GetHashCode();
             }
 
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.Language != null)
+            if (Language != null)
             {
-                hash = hash * 59 + this.Language.GetHashCode();
+                hash = hash * 59 + Language.GetHashCode();
             }
 
-            if (this.MediaUri != null)
+            if (MediaUri != null)
             {
-                hash = hash * 59 + this.MediaUri.GetHashCode();
+                hash = hash * 59 + MediaUri.GetHashCode();
             }
 
-            if (this.UploadStatus != null)
+            if (UploadStatus != null)
             {
-                hash = hash * 59 + this.UploadStatus.GetHashCode();
+                hash = hash * 59 + UploadStatus.GetHashCode();
             }
 
-            if (this.DurationSeconds != null)
+            if (DurationSeconds != null)
             {
-                hash = hash * 59 + this.DurationSeconds.GetHashCode();
+                hash = hash * 59 + DurationSeconds.GetHashCode();
             }
 
             return hash;

@@ -107,7 +107,7 @@ public partial class MeteredAssignmentByAgent : IEquatable<MeteredAssignmentByAg
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as MeteredAssignmentByAgent);
+        return Equals(obj as MeteredAssignmentByAgent);
     }
 
     /// <summary>
@@ -125,34 +125,34 @@ public partial class MeteredAssignmentByAgent : IEquatable<MeteredAssignmentByAg
 
         return true &&
             (
-                this.EvaluationContextId == other.EvaluationContextId ||
-                this.EvaluationContextId != null &&
-                this.EvaluationContextId.Equals(other.EvaluationContextId)
+                EvaluationContextId == other.EvaluationContextId ||
+                EvaluationContextId != null &&
+                EvaluationContextId.Equals(other.EvaluationContextId)
             ) &&
             (
-                this.Evaluators == other.Evaluators ||
-                this.Evaluators != null &&
-                this.Evaluators.SequenceEqual(other.Evaluators)
+                Evaluators == other.Evaluators ||
+                Evaluators != null &&
+                Evaluators.SequenceEqual(other.Evaluators)
             ) &&
             (
-                this.MaxNumberEvaluations == other.MaxNumberEvaluations ||
-                this.MaxNumberEvaluations != null &&
-                this.MaxNumberEvaluations.Equals(other.MaxNumberEvaluations)
+                MaxNumberEvaluations == other.MaxNumberEvaluations ||
+                MaxNumberEvaluations != null &&
+                MaxNumberEvaluations.Equals(other.MaxNumberEvaluations)
             ) &&
             (
-                this.EvaluationForm == other.EvaluationForm ||
-                this.EvaluationForm != null &&
-                this.EvaluationForm.Equals(other.EvaluationForm)
+                EvaluationForm == other.EvaluationForm ||
+                EvaluationForm != null &&
+                EvaluationForm.Equals(other.EvaluationForm)
             ) &&
             (
-                this.TimeInterval == other.TimeInterval ||
-                this.TimeInterval != null &&
-                this.TimeInterval.Equals(other.TimeInterval)
+                TimeInterval == other.TimeInterval ||
+                TimeInterval != null &&
+                TimeInterval.Equals(other.TimeInterval)
             ) &&
             (
-                this.TimeZone == other.TimeZone ||
-                this.TimeZone != null &&
-                this.TimeZone.Equals(other.TimeZone)
+                TimeZone == other.TimeZone ||
+                TimeZone != null &&
+                TimeZone.Equals(other.TimeZone)
             );
     }
 
@@ -167,34 +167,34 @@ public partial class MeteredAssignmentByAgent : IEquatable<MeteredAssignmentByAg
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.EvaluationContextId != null)
+            if (EvaluationContextId != null)
             {
-                hash = hash * 59 + this.EvaluationContextId.GetHashCode();
+                hash = hash * 59 + EvaluationContextId.GetHashCode();
             }
 
-            if (this.Evaluators != null)
+            if (Evaluators != null)
             {
-                hash = hash * 59 + this.Evaluators.GetHashCode();
+                hash = hash * 59 + Evaluators.GetHashCode();
             }
 
-            if (this.MaxNumberEvaluations != null)
+            if (MaxNumberEvaluations != null)
             {
-                hash = hash * 59 + this.MaxNumberEvaluations.GetHashCode();
+                hash = hash * 59 + MaxNumberEvaluations.GetHashCode();
             }
 
-            if (this.EvaluationForm != null)
+            if (EvaluationForm != null)
             {
-                hash = hash * 59 + this.EvaluationForm.GetHashCode();
+                hash = hash * 59 + EvaluationForm.GetHashCode();
             }
 
-            if (this.TimeInterval != null)
+            if (TimeInterval != null)
             {
-                hash = hash * 59 + this.TimeInterval.GetHashCode();
+                hash = hash * 59 + TimeInterval.GetHashCode();
             }
 
-            if (this.TimeZone != null)
+            if (TimeZone != null)
             {
-                hash = hash * 59 + this.TimeZone.GetHashCode();
+                hash = hash * 59 + TimeZone.GetHashCode();
             }
 
             return hash;

@@ -65,7 +65,7 @@ public partial class QueueConversationSocialExpressionEventTopicJourneyCustomer 
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as QueueConversationSocialExpressionEventTopicJourneyCustomer);
+        return Equals(obj as QueueConversationSocialExpressionEventTopicJourneyCustomer);
     }
 
     /// <summary>
@@ -83,14 +83,14 @@ public partial class QueueConversationSocialExpressionEventTopicJourneyCustomer 
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.IdType == other.IdType ||
-                this.IdType != null &&
-                this.IdType.Equals(other.IdType)
+                IdType == other.IdType ||
+                IdType != null &&
+                IdType.Equals(other.IdType)
             );
     }
 
@@ -105,14 +105,14 @@ public partial class QueueConversationSocialExpressionEventTopicJourneyCustomer 
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.IdType != null)
+            if (IdType != null)
             {
-                hash = hash * 59 + this.IdType.GetHashCode();
+                hash = hash * 59 + IdType.GetHashCode();
             }
 
             return hash;

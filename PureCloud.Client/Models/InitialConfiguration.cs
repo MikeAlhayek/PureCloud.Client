@@ -113,7 +113,7 @@ public partial class InitialConfiguration : IEquatable<InitialConfiguration>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as InitialConfiguration);
+        return Equals(obj as InitialConfiguration);
     }
 
     /// <summary>
@@ -131,34 +131,34 @@ public partial class InitialConfiguration : IEquatable<InitialConfiguration>
 
         return true &&
             (
-                this.AudioState == other.AudioState ||
-                this.AudioState != null &&
-                this.AudioState.Equals(other.AudioState)
+                AudioState == other.AudioState ||
+                AudioState != null &&
+                AudioState.Equals(other.AudioState)
             ) &&
             (
-                this.Alerting == other.Alerting ||
-                this.Alerting != null &&
-                this.Alerting.Equals(other.Alerting)
+                Alerting == other.Alerting ||
+                Alerting != null &&
+                Alerting.Equals(other.Alerting)
             ) &&
             (
-                this.Inbound == other.Inbound ||
-                this.Inbound != null &&
-                this.Inbound.Equals(other.Inbound)
+                Inbound == other.Inbound ||
+                Inbound != null &&
+                Inbound.Equals(other.Inbound)
             ) &&
             (
-                this.InvitedBy == other.InvitedBy ||
-                this.InvitedBy != null &&
-                this.InvitedBy.Equals(other.InvitedBy)
+                InvitedBy == other.InvitedBy ||
+                InvitedBy != null &&
+                InvitedBy.Equals(other.InvitedBy)
             ) &&
             (
-                this.RecordingActive == other.RecordingActive ||
-                this.RecordingActive != null &&
-                this.RecordingActive.Equals(other.RecordingActive)
+                RecordingActive == other.RecordingActive ||
+                RecordingActive != null &&
+                RecordingActive.Equals(other.RecordingActive)
             ) &&
             (
-                this.AdditionalInfo == other.AdditionalInfo ||
-                this.AdditionalInfo != null &&
-                this.AdditionalInfo.SequenceEqual(other.AdditionalInfo)
+                AdditionalInfo == other.AdditionalInfo ||
+                AdditionalInfo != null &&
+                AdditionalInfo.SequenceEqual(other.AdditionalInfo)
             );
     }
 
@@ -173,34 +173,34 @@ public partial class InitialConfiguration : IEquatable<InitialConfiguration>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.AudioState != null)
+            if (AudioState != null)
             {
-                hash = hash * 59 + this.AudioState.GetHashCode();
+                hash = hash * 59 + AudioState.GetHashCode();
             }
 
-            if (this.Alerting != null)
+            if (Alerting != null)
             {
-                hash = hash * 59 + this.Alerting.GetHashCode();
+                hash = hash * 59 + Alerting.GetHashCode();
             }
 
-            if (this.Inbound != null)
+            if (Inbound != null)
             {
-                hash = hash * 59 + this.Inbound.GetHashCode();
+                hash = hash * 59 + Inbound.GetHashCode();
             }
 
-            if (this.InvitedBy != null)
+            if (InvitedBy != null)
             {
-                hash = hash * 59 + this.InvitedBy.GetHashCode();
+                hash = hash * 59 + InvitedBy.GetHashCode();
             }
 
-            if (this.RecordingActive != null)
+            if (RecordingActive != null)
             {
-                hash = hash * 59 + this.RecordingActive.GetHashCode();
+                hash = hash * 59 + RecordingActive.GetHashCode();
             }
 
-            if (this.AdditionalInfo != null)
+            if (AdditionalInfo != null)
             {
-                hash = hash * 59 + this.AdditionalInfo.GetHashCode();
+                hash = hash * 59 + AdditionalInfo.GetHashCode();
             }
 
             return hash;

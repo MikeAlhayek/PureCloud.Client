@@ -104,7 +104,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as AuthorizationSettings);
+        return Equals(obj as AuthorizationSettings);
     }
 
     /// <summary>
@@ -122,34 +122,34 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
 
         return true &&
             (
-                this.Id == other.Id ||
-                this.Id != null &&
-                this.Id.Equals(other.Id)
+                Id == other.Id ||
+                Id != null &&
+                Id.Equals(other.Id)
             ) &&
             (
-                this.AnalysisEnabled == other.AnalysisEnabled ||
-                this.AnalysisEnabled != null &&
-                this.AnalysisEnabled.Equals(other.AnalysisEnabled)
+                AnalysisEnabled == other.AnalysisEnabled ||
+                AnalysisEnabled != null &&
+                AnalysisEnabled.Equals(other.AnalysisEnabled)
             ) &&
             (
-                this.AnalysisDays == other.AnalysisDays ||
-                this.AnalysisDays != null &&
-                this.AnalysisDays.Equals(other.AnalysisDays)
+                AnalysisDays == other.AnalysisDays ||
+                AnalysisDays != null &&
+                AnalysisDays.Equals(other.AnalysisDays)
             ) &&
             (
-                this.DateLastCalculated == other.DateLastCalculated ||
-                this.DateLastCalculated != null &&
-                this.DateLastCalculated.Equals(other.DateLastCalculated)
+                DateLastCalculated == other.DateLastCalculated ||
+                DateLastCalculated != null &&
+                DateLastCalculated.Equals(other.DateLastCalculated)
             ) &&
             (
-                this.DateLastActive == other.DateLastActive ||
-                this.DateLastActive != null &&
-                this.DateLastActive.Equals(other.DateLastActive)
+                DateLastActive == other.DateLastActive ||
+                DateLastActive != null &&
+                DateLastActive.Equals(other.DateLastActive)
             ) &&
             (
-                this.SelfUri == other.SelfUri ||
-                this.SelfUri != null &&
-                this.SelfUri.Equals(other.SelfUri)
+                SelfUri == other.SelfUri ||
+                SelfUri != null &&
+                SelfUri.Equals(other.SelfUri)
             );
     }
 
@@ -164,34 +164,34 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Id != null)
+            if (Id != null)
             {
-                hash = hash * 59 + this.Id.GetHashCode();
+                hash = hash * 59 + Id.GetHashCode();
             }
 
-            if (this.AnalysisEnabled != null)
+            if (AnalysisEnabled != null)
             {
-                hash = hash * 59 + this.AnalysisEnabled.GetHashCode();
+                hash = hash * 59 + AnalysisEnabled.GetHashCode();
             }
 
-            if (this.AnalysisDays != null)
+            if (AnalysisDays != null)
             {
-                hash = hash * 59 + this.AnalysisDays.GetHashCode();
+                hash = hash * 59 + AnalysisDays.GetHashCode();
             }
 
-            if (this.DateLastCalculated != null)
+            if (DateLastCalculated != null)
             {
-                hash = hash * 59 + this.DateLastCalculated.GetHashCode();
+                hash = hash * 59 + DateLastCalculated.GetHashCode();
             }
 
-            if (this.DateLastActive != null)
+            if (DateLastActive != null)
             {
-                hash = hash * 59 + this.DateLastActive.GetHashCode();
+                hash = hash * 59 + DateLastActive.GetHashCode();
             }
 
-            if (this.SelfUri != null)
+            if (SelfUri != null)
             {
-                hash = hash * 59 + this.SelfUri.GetHashCode();
+                hash = hash * 59 + SelfUri.GetHashCode();
             }
 
             return hash;

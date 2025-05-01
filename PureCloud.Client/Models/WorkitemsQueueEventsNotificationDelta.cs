@@ -122,7 +122,7 @@ public partial class WorkitemsQueueEventsNotificationDelta : IEquatable<Workitem
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as WorkitemsQueueEventsNotificationDelta);
+        return Equals(obj as WorkitemsQueueEventsNotificationDelta);
     }
 
     /// <summary>
@@ -140,24 +140,24 @@ public partial class WorkitemsQueueEventsNotificationDelta : IEquatable<Workitem
 
         return true &&
             (
-                this.Op == other.Op ||
-                this.Op != null &&
-                this.Op.Equals(other.Op)
+                Op == other.Op ||
+                Op != null &&
+                Op.Equals(other.Op)
             ) &&
             (
-                this.Field == other.Field ||
-                this.Field != null &&
-                this.Field.Equals(other.Field)
+                Field == other.Field ||
+                Field != null &&
+                Field.Equals(other.Field)
             ) &&
             (
-                this.OldValue == other.OldValue ||
-                this.OldValue != null &&
-                this.OldValue.Equals(other.OldValue)
+                OldValue == other.OldValue ||
+                OldValue != null &&
+                OldValue.Equals(other.OldValue)
             ) &&
             (
-                this.NewValue == other.NewValue ||
-                this.NewValue != null &&
-                this.NewValue.Equals(other.NewValue)
+                NewValue == other.NewValue ||
+                NewValue != null &&
+                NewValue.Equals(other.NewValue)
             );
     }
 
@@ -172,24 +172,24 @@ public partial class WorkitemsQueueEventsNotificationDelta : IEquatable<Workitem
         {
             int hash = 41;
             // Suitable nullity checks etc, of course :)
-            if (this.Op != null)
+            if (Op != null)
             {
-                hash = hash * 59 + this.Op.GetHashCode();
+                hash = hash * 59 + Op.GetHashCode();
             }
 
-            if (this.Field != null)
+            if (Field != null)
             {
-                hash = hash * 59 + this.Field.GetHashCode();
+                hash = hash * 59 + Field.GetHashCode();
             }
 
-            if (this.OldValue != null)
+            if (OldValue != null)
             {
-                hash = hash * 59 + this.OldValue.GetHashCode();
+                hash = hash * 59 + OldValue.GetHashCode();
             }
 
-            if (this.NewValue != null)
+            if (NewValue != null)
             {
-                hash = hash * 59 + this.NewValue.GetHashCode();
+                hash = hash * 59 + NewValue.GetHashCode();
             }
 
             return hash;
